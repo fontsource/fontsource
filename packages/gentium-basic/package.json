@@ -1,6 +1,6 @@
 {
   "name": "fontsource-gentium-basic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gentium Basic font in NPM glory.",
   "main": "index.css",
   "keywords": [
