@@ -27,6 +27,9 @@ jobs:
       - name: Build fonts
         run: yarn build-google
 
+      - name: Format files
+        run: yarn format
+
       - name: Stage changes
         run: git add --all
 
