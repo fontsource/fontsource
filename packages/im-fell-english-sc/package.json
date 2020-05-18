@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-im-fell-english-sc",
+  "version": "1.0.1",
+  "description": "IM Fell English SC font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "IM Fell English SC",
+    "im-fell-english-sc"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/im-fell-english-sc"
+}

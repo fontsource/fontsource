@@ -1,0 +1,12 @@
+/* ma-shan-zheng-chinese-simplified-400-normal CSS*/
+@font-face {
+  font-family: 'Ma Shan Zheng';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Ma Shan Zheng Regular'),
+    local('MaShanZheng-Regular'), 
+    url('./files/ma-shan-zheng-chinese-simplified-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ma-shan-zheng-chinese-simplified-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-timmana",
+  "version": "1.0.1",
+  "description": "Timmana font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Timmana",
+    "timmana"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/timmana"
+}

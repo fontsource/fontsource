@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-tenali-ramakrishna",
+  "version": "1.0.1",
+  "description": "Tenali Ramakrishna font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Tenali Ramakrishna",
+    "tenali-ramakrishna"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/tenali-ramakrishna"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-tenor-sans",
+  "version": "1.0.1",
+  "description": "Tenor Sans font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Tenor Sans",
+    "tenor-sans"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/tenor-sans"
+}

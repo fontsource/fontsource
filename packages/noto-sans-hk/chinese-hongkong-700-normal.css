@@ -1,0 +1,12 @@
+/* noto-sans-hk-chinese-hongkong-700-normal CSS*/
+@font-face {
+  font-family: 'Noto Sans HK';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Noto Sans HK Thin'),
+    local('NotoSansHK-Thin'), 
+    url('./files/noto-sans-hk-chinese-hongkong-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-sans-hk-chinese-hongkong-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

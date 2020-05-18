@@ -1,0 +1,72 @@
+/* pridi-thai-200-normal CSS*/
+@font-face {
+  font-family: 'Pridi';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Pridi ExtraLight'),
+    local('Pridi-ExtraLight'), 
+    url('./files/pridi-thai-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/pridi-thai-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* pridi-thai-300-normal CSS*/
+@font-face {
+  font-family: 'Pridi';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Pridi Light'),
+    local('Pridi-Light'), 
+    url('./files/pridi-thai-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/pridi-thai-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* pridi-thai-400-normal CSS*/
+@font-face {
+  font-family: 'Pridi';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Pridi Regular'),
+    local('Pridi-Regular'), 
+    url('./files/pridi-thai-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/pridi-thai-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* pridi-thai-500-normal CSS*/
+@font-face {
+  font-family: 'Pridi';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Pridi Medium'),
+    local('Pridi-Medium'), 
+    url('./files/pridi-thai-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/pridi-thai-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* pridi-thai-600-normal CSS*/
+@font-face {
+  font-family: 'Pridi';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Pridi SemiBold'),
+    local('Pridi-SemiBold'), 
+    url('./files/pridi-thai-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/pridi-thai-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* pridi-thai-700-normal CSS*/
+@font-face {
+  font-family: 'Pridi';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Pridi Bold'),
+    local('Pridi-Bold'), 
+    url('./files/pridi-thai-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/pridi-thai-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

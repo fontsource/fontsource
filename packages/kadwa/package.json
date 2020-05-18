@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-kadwa",
+  "version": "1.0.1",
+  "description": "Kadwa font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Kadwa",
+    "kadwa"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/kadwa"
+}

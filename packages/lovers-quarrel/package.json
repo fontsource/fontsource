@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-lovers-quarrel",
+  "version": "1.0.1",
+  "description": "Lovers Quarrel font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Lovers Quarrel",
+    "lovers-quarrel"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/lovers-quarrel"
+}

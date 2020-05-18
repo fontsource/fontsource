@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-imprima",
+  "version": "1.0.1",
+  "description": "Imprima font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Imprima",
+    "imprima"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/imprima"
+}

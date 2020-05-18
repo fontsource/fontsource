@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-ma-shan-zheng",
+  "version": "1.0.1",
+  "description": "Ma Shan Zheng font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Ma Shan Zheng",
+    "ma-shan-zheng"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/ma-shan-zheng"
+}

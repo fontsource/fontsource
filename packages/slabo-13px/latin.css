@@ -1,0 +1,12 @@
+/* slabo-13px-latin-400-normal CSS*/
+@font-face {
+  font-family: 'Slabo 13px';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Slabo 13px'),
+    local('Slabo13px-Regular'), 
+    url('./files/slabo-13px-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/slabo-13px-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

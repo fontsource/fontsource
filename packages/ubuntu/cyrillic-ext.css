@@ -1,0 +1,96 @@
+/* ubuntu-cyrillic-ext-300-normal CSS*/
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Ubuntu Light'),
+    local('Ubuntu-Light'), 
+    url('./files/ubuntu-cyrillic-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ubuntu-cyrillic-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* ubuntu-cyrillic-ext-300-italic CSS*/
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Ubuntu Light Italic'),
+    local('Ubuntu-LightItalic'), 
+    url('./files/ubuntu-cyrillic-ext-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ubuntu-cyrillic-ext-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* ubuntu-cyrillic-ext-400-normal CSS*/
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Ubuntu Regular'),
+    local('Ubuntu-Regular'), 
+    url('./files/ubuntu-cyrillic-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ubuntu-cyrillic-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* ubuntu-cyrillic-ext-400-italic CSS*/
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Ubuntu Italic'),
+    local('Ubuntu-Italic'), 
+    url('./files/ubuntu-cyrillic-ext-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ubuntu-cyrillic-ext-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* ubuntu-cyrillic-ext-500-normal CSS*/
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Ubuntu Medium'),
+    local('Ubuntu-Medium'), 
+    url('./files/ubuntu-cyrillic-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ubuntu-cyrillic-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* ubuntu-cyrillic-ext-500-italic CSS*/
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Ubuntu Medium Italic'),
+    local('Ubuntu-MediumItalic'), 
+    url('./files/ubuntu-cyrillic-ext-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ubuntu-cyrillic-ext-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* ubuntu-cyrillic-ext-700-normal CSS*/
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Ubuntu Bold'),
+    local('Ubuntu-Bold'), 
+    url('./files/ubuntu-cyrillic-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ubuntu-cyrillic-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* ubuntu-cyrillic-ext-700-italic CSS*/
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Ubuntu Bold Italic'),
+    local('Ubuntu-BoldItalic'), 
+    url('./files/ubuntu-cyrillic-ext-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/ubuntu-cyrillic-ext-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

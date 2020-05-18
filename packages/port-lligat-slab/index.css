@@ -1,0 +1,12 @@
+/* port-lligat-slab-latin-400-normal CSS*/
+@font-face {
+  font-family: 'Port Lligat Slab';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Port Lligat Slab'),
+    local('PortLligatSlab-Regular'), 
+    url('./files/port-lligat-slab-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/port-lligat-slab-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

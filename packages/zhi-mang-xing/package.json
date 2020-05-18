@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-zhi-mang-xing",
+  "version": "1.0.1",
+  "description": "Zhi Mang Xing font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Zhi Mang Xing",
+    "zhi-mang-xing"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/zhi-mang-xing"
+}

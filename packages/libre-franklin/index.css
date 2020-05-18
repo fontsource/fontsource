@@ -1,0 +1,216 @@
+/* libre-franklin-latin-100-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Libre Franklin Thin'),
+    local('LibreFranklin-Thin'), 
+    url('./files/libre-franklin-latin-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-100-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Libre Franklin Thin Italic'),
+    local('LibreFranklin-ThinItalic'), 
+    url('./files/libre-franklin-latin-100-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-100-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-200-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Libre Franklin ExtraLight'),
+    local('LibreFranklin-ExtraLight'), 
+    url('./files/libre-franklin-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-200-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Libre Franklin ExtraLight Italic'),
+    local('LibreFranklin-ExtraLightItalic'), 
+    url('./files/libre-franklin-latin-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-300-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Libre Franklin Light'),
+    local('LibreFranklin-Light'), 
+    url('./files/libre-franklin-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-300-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Libre Franklin Light Italic'),
+    local('LibreFranklin-LightItalic'), 
+    url('./files/libre-franklin-latin-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-400-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Libre Franklin'),
+    local('LibreFranklin-Regular'), 
+    url('./files/libre-franklin-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-400-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Libre Franklin Italic'),
+    local('LibreFranklin-Italic'), 
+    url('./files/libre-franklin-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-500-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Libre Franklin Medium'),
+    local('LibreFranklin-Medium'), 
+    url('./files/libre-franklin-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-500-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Libre Franklin Medium Italic'),
+    local('LibreFranklin-MediumItalic'), 
+    url('./files/libre-franklin-latin-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-600-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Libre Franklin SemiBold'),
+    local('LibreFranklin-SemiBold'), 
+    url('./files/libre-franklin-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-600-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Libre Franklin SemiBold Italic'),
+    local('LibreFranklin-SemiBoldItalic'), 
+    url('./files/libre-franklin-latin-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-700-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Libre Franklin Bold'),
+    local('LibreFranklin-Bold'), 
+    url('./files/libre-franklin-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-700-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Libre Franklin Bold Italic'),
+    local('LibreFranklin-BoldItalic'), 
+    url('./files/libre-franklin-latin-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-800-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Libre Franklin ExtraBold'),
+    local('LibreFranklin-ExtraBold'), 
+    url('./files/libre-franklin-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-800-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Libre Franklin ExtraBold Italic'),
+    local('LibreFranklin-ExtraBoldItalic'), 
+    url('./files/libre-franklin-latin-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-900-normal CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Libre Franklin Black'),
+    local('LibreFranklin-Black'), 
+    url('./files/libre-franklin-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* libre-franklin-latin-900-italic CSS*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Libre Franklin Black Italic'),
+    local('LibreFranklin-BlackItalic'), 
+    url('./files/libre-franklin-latin-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/libre-franklin-latin-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

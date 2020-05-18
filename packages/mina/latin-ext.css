@@ -1,0 +1,24 @@
+/* mina-latin-ext-400-normal CSS*/
+@font-face {
+  font-family: 'Mina';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Mina'),
+    local('Mina-Regular'), 
+    url('./files/mina-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mina-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* mina-latin-ext-700-normal CSS*/
+@font-face {
+  font-family: 'Mina';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Mina Bold'),
+    local('Mina-Bold'), 
+    url('./files/mina-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mina-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

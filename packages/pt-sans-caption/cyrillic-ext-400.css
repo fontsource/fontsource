@@ -1,0 +1,12 @@
+/* pt-sans-caption-cyrillic-ext-400-normal CSS*/
+@font-face {
+  font-family: 'PT Sans Caption';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('PT Sans Caption'),
+    local('PTSans-Caption'), 
+    url('./files/pt-sans-caption-cyrillic-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/pt-sans-caption-cyrillic-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

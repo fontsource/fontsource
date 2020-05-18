@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-im-fell-dw-pica",
+  "version": "1.0.1",
+  "description": "IM Fell DW Pica font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "IM Fell DW Pica",
+    "im-fell-dw-pica"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/im-fell-dw-pica"
+}
