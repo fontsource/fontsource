@@ -49,8 +49,17 @@ test()*/
 // Production
 const production = () => {
   _.forOwn(fonts, font => {
-    // NPM currently doesn't like the package name b612 for spam purposes
-    if (!(font.id === `b612` || font.id === "b612-mono")) {
+    // NPM currently doesn't like these package names for spam purposes
+    if (
+      !(
+        font.id === "b612" ||
+        font.id === "b612-mono" ||
+        font.id === "goudy-bookletter-1911" ||
+        font.id === "libre-barcode-128" ||
+        font.id === "libre-barcode-128-text" ||
+        font.id === "vt323"
+      )
+    ) {
       queue.push(`${font.id}`)
     }
   })
