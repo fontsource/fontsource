@@ -12,6 +12,7 @@ Ensure it is an Open Source downloadable font.
 **Link to font source**
 
 **Link to font license**
+Accepted licenses are SIL OFL, Apache 2, MIT and Ubuntu Font License 1.0.
 
 **Additional context**
 Add any other context here.
