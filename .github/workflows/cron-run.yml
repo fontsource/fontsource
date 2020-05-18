@@ -1,14 +1,12 @@
-name: Build and Release [Manual]
+name: Build and Release [Weekly]
 
 on:
   schedule:
-    - cron: "0 0 * * MON"
+    - cron: "0 0 * * 0"
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    if: github.actor == github.event.repository.owner.login
 
     steps:
       - name: checkout
