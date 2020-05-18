@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-the-girl-next-door",
+  "version": "1.0.2",
+  "description": "The Girl Next Door font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "The Girl Next Door",
+    "the-girl-next-door"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/the-girl-next-door"
+}

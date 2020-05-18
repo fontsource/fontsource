@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-shanti",
+  "version": "1.0.2",
+  "description": "Shanti font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Shanti",
+    "shanti"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/shanti"
+}

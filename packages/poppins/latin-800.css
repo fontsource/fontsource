@@ -1,0 +1,24 @@
+/* poppins-latin-800-normal CSS File*/
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Poppins ExtraBold'),
+    local('Poppins-ExtraBold'), 
+    url('./files/poppins-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/poppins-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* poppins-latin-800-italic CSS File*/
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Poppins ExtraBold Italic'),
+    local('Poppins-ExtraBoldItalic'), 
+    url('./files/poppins-latin-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/poppins-latin-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-sue-ellen-francisco",
+  "version": "1.0.2",
+  "description": "Sue Ellen Francisco font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Sue Ellen Francisco",
+    "sue-ellen-francisco"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/sue-ellen-francisco"
+}

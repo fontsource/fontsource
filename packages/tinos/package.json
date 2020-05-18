@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-tinos",
+  "version": "1.0.2",
+  "description": "Tinos font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Tinos",
+    "tinos"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/tinos"
+}

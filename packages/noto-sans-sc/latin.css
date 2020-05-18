@@ -1,0 +1,72 @@
+/* noto-sans-sc-latin-100-normal CSS File*/
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Noto Sans SC Thin'),
+    local('NotoSansSC-Thin'), 
+    url('./files/noto-sans-sc-latin-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-sans-sc-latin-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-sc-latin-300-normal CSS File*/
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Noto Sans SC Light'),
+    local('NotoSansSC-Light'), 
+    url('./files/noto-sans-sc-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-sans-sc-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-sc-latin-400-normal CSS File*/
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Noto Sans SC Regular'),
+    local('NotoSansSC-Regular'), 
+    url('./files/noto-sans-sc-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-sans-sc-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-sc-latin-500-normal CSS File*/
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Noto Sans SC Medium'),
+    local('NotoSansSC-Medium'), 
+    url('./files/noto-sans-sc-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-sans-sc-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-sc-latin-700-normal CSS File*/
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Noto Sans SC Bold'),
+    local('NotoSansSC-Bold'), 
+    url('./files/noto-sans-sc-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-sans-sc-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-sc-latin-900-normal CSS File*/
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Noto Sans SC Black'),
+    local('NotoSansSC-Black'), 
+    url('./files/noto-sans-sc-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-sans-sc-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

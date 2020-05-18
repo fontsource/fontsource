@@ -1,0 +1,24 @@
+/* source-code-pro-latin-ext-200-normal CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Source Code Pro ExtraLight'),
+    local('SourceCodePro-ExtraLight'), 
+    url('./files/source-code-pro-latin-ext-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-latin-ext-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-latin-ext-200-italic CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Source Code Pro ExtraLight Italic'),
+    local('SourceCodePro-ExtraLightIt'), 
+    url('./files/source-code-pro-latin-ext-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-latin-ext-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

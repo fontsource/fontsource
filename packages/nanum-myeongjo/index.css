@@ -1,0 +1,35 @@
+/* nanum-myeongjo-latin-400-normal CSS File*/
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('NanumMyeongjo'), 
+    url('./files/nanum-myeongjo-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/nanum-myeongjo-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nanum-myeongjo-latin-700-normal CSS File*/
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('NanumMyeongjo Bold'),
+    local('NanumMyeongjoBold'), 
+    url('./files/nanum-myeongjo-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/nanum-myeongjo-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nanum-myeongjo-latin-800-normal CSS File*/
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('NanumMyeongjo ExtraBold'),
+    local('NanumMyeongjoExtraBold'), 
+    url('./files/nanum-myeongjo-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/nanum-myeongjo-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

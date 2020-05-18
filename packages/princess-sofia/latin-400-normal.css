@@ -1,0 +1,12 @@
+/* princess-sofia-latin-400-normal CSS File*/
+@font-face {
+  font-family: 'Princess Sofia';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Princess Sofia'),
+    local('PrincessSofia'), 
+    url('./files/princess-sofia-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/princess-sofia-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

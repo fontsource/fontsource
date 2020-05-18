@@ -1,0 +1,84 @@
+/* noto-serif-jp-japanese-200-normal CSS File*/
+@font-face {
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Noto Serif JP ExtraLight'),
+    local('NotoSerifJP-ExtraLight'), 
+    url('./files/noto-serif-jp-japanese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-serif-jp-japanese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-serif-jp-japanese-300-normal CSS File*/
+@font-face {
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Noto Serif JP Light'),
+    local('NotoSerifJP-Light'), 
+    url('./files/noto-serif-jp-japanese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-serif-jp-japanese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-serif-jp-japanese-400-normal CSS File*/
+@font-face {
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Noto Serif JP'),
+    local('NotoSerifJP-Regular'), 
+    url('./files/noto-serif-jp-japanese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-serif-jp-japanese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-serif-jp-japanese-500-normal CSS File*/
+@font-face {
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Noto Serif JP Medium'),
+    local('NotoSerifJP-Medium'), 
+    url('./files/noto-serif-jp-japanese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-serif-jp-japanese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-serif-jp-japanese-600-normal CSS File*/
+@font-face {
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Noto Serif JP SemiBold'),
+    local('NotoSerifJP-SemiBold'), 
+    url('./files/noto-serif-jp-japanese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-serif-jp-japanese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-serif-jp-japanese-700-normal CSS File*/
+@font-face {
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Noto Serif JP Bold'),
+    local('NotoSerifJP-Bold'), 
+    url('./files/noto-serif-jp-japanese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-serif-jp-japanese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-serif-jp-japanese-900-normal CSS File*/
+@font-face {
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Noto Serif JP Black'),
+    local('NotoSerifJP-Black'), 
+    url('./files/noto-serif-jp-japanese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/noto-serif-jp-japanese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

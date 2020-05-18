@@ -1,0 +1,108 @@
+/* saira-semi-condensed-latin-100-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Saira SemiCondensed Thin'),
+    local('SairaSemiCondensed-Thin'), 
+    url('./files/saira-semi-condensed-latin-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-semi-condensed-latin-200-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Saira SemiCondensed ExtraLight'),
+    local('SairaSemiCondensed-ExtraLight'), 
+    url('./files/saira-semi-condensed-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-semi-condensed-latin-300-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Saira SemiCondensed Light'),
+    local('SairaSemiCondensed-Light'), 
+    url('./files/saira-semi-condensed-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-semi-condensed-latin-400-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Saira SemiCondensed Regular'),
+    local('SairaSemiCondensed-Regular'), 
+    url('./files/saira-semi-condensed-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-semi-condensed-latin-500-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Saira SemiCondensed Medium'),
+    local('SairaSemiCondensed-Medium'), 
+    url('./files/saira-semi-condensed-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-semi-condensed-latin-600-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Saira SemiCondensed SemiBold'),
+    local('SairaSemiCondensed-SemiBold'), 
+    url('./files/saira-semi-condensed-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-semi-condensed-latin-700-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Saira SemiCondensed Bold'),
+    local('SairaSemiCondensed-Bold'), 
+    url('./files/saira-semi-condensed-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-semi-condensed-latin-800-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Saira SemiCondensed ExtraBold'),
+    local('SairaSemiCondensed-ExtraBold'), 
+    url('./files/saira-semi-condensed-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-semi-condensed-latin-900-normal CSS File*/
+@font-face {
+  font-family: 'Saira Semi Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Saira SemiCondensed Black'),
+    local('SairaSemiCondensed-Black'), 
+    url('./files/saira-semi-condensed-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-semi-condensed-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

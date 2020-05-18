@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-stalinist-one",
+  "version": "1.0.2",
+  "description": "Stalinist One font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Stalinist One",
+    "stalinist-one"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/stalinist-one"
+}

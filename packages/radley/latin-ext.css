@@ -1,0 +1,24 @@
+/* radley-latin-ext-400-normal CSS File*/
+@font-face {
+  font-family: 'Radley';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Radley Regular'),
+    local('Radley-Regular'), 
+    url('./files/radley-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/radley-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* radley-latin-ext-400-italic CSS File*/
+@font-face {
+  font-family: 'Radley';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Radley Italic'),
+    local('Radley-Italic'), 
+    url('./files/radley-latin-ext-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/radley-latin-ext-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

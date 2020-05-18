@@ -1,0 +1,12 @@
+/* pattaya-thai-400-normal CSS File*/
+@font-face {
+  font-family: 'Pattaya';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Pattaya'),
+    local('Pattaya-Regular'), 
+    url('./files/pattaya-thai-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/pattaya-thai-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

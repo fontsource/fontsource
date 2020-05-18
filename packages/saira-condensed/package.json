@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-saira-condensed",
+  "version": "1.0.2",
+  "description": "Saira Condensed font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Saira Condensed",
+    "saira-condensed"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/saira-condensed"
+}

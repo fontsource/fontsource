@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-quicksand",
+  "version": "1.0.2",
+  "description": "Quicksand font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Quicksand",
+    "quicksand"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/quicksand"
+}

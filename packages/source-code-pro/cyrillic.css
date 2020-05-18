@@ -1,0 +1,168 @@
+/* source-code-pro-cyrillic-200-normal CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Source Code Pro ExtraLight'),
+    local('SourceCodePro-ExtraLight'), 
+    url('./files/source-code-pro-cyrillic-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-200-italic CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Source Code Pro ExtraLight Italic'),
+    local('SourceCodePro-ExtraLightIt'), 
+    url('./files/source-code-pro-cyrillic-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-300-normal CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Source Code Pro Light'),
+    local('SourceCodePro-Light'), 
+    url('./files/source-code-pro-cyrillic-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-300-italic CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Source Code Pro Light Italic'),
+    local('SourceCodePro-LightIt'), 
+    url('./files/source-code-pro-cyrillic-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-400-normal CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Source Code Pro Regular'),
+    local('SourceCodePro-Regular'), 
+    url('./files/source-code-pro-cyrillic-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-400-italic CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Source Code Pro Italic'),
+    local('SourceCodePro-It'), 
+    url('./files/source-code-pro-cyrillic-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-500-normal CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Source Code Pro Medium'),
+    local('SourceCodePro-Medium'), 
+    url('./files/source-code-pro-cyrillic-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-500-italic CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Source Code Pro Medium Italic'),
+    local('SourceCodePro-MediumIt'), 
+    url('./files/source-code-pro-cyrillic-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-600-normal CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Source Code Pro SemiBold'),
+    local('SourceCodePro-SemiBold'), 
+    url('./files/source-code-pro-cyrillic-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-600-italic CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Source Code Pro SemiBold Italic'),
+    local('SourceCodePro-SemiBoldIt'), 
+    url('./files/source-code-pro-cyrillic-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-700-normal CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Source Code Pro Bold'),
+    local('SourceCodePro-Bold'), 
+    url('./files/source-code-pro-cyrillic-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-700-italic CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Source Code Pro Bold Italic'),
+    local('SourceCodePro-BoldIt'), 
+    url('./files/source-code-pro-cyrillic-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-900-normal CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Source Code Pro Black'),
+    local('SourceCodePro-Black'), 
+    url('./files/source-code-pro-cyrillic-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-cyrillic-900-italic CSS File*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Source Code Pro Black Italic'),
+    local('SourceCodePro-BlackIt'), 
+    url('./files/source-code-pro-cyrillic-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-code-pro-cyrillic-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
