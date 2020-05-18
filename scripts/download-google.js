@@ -57,6 +57,8 @@ const production = () => {
         font.id === "goudy-bookletter-1911" ||
         font.id === "libre-barcode-128" ||
         font.id === "libre-barcode-128-text" ||
+        font.id === "m-plus-1p" ||
+        font.id === "m-plus-rounded-1c" ||
         font.id === "vt323"
       )
     ) {
