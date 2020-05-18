@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-arsenal",
+  "version": "2.0.0",
+  "description": "Arsenal font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Arsenal",
+    "arsenal"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/arsenal"
+}

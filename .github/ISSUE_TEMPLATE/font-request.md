@@ -1,10 +1,9 @@
 ---
 name: Font request
 about: Request a new Open Source font
-title: ''
+title: ""
 labels: font request
-assignees: ''
-
+assignees: ""
 ---
 
 **Font Name**
