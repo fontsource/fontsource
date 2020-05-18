@@ -1,6 +1,6 @@
 {
   "name": "fontsource-nixie-one",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Nixie One font in NPM glory.",
   "main": "index.css",
   "keywords": [
