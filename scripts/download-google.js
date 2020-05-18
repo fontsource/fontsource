@@ -49,7 +49,7 @@ test()*/
 // Production
 const production = () => {
   _.forOwn(fonts, font => {
-    // NPM currently doesn't like these package names for spam purposes
+    // NPM currently doesn't like these package names for false flagged 'spammy' names
     if (
       !(
         font.id === "b612" ||

@@ -3,7 +3,7 @@ const _ = require(`lodash`)
 exports.packageJson = _.template(
   `{
   "name": "fontsource-<%= fontId %>",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "<%= fontName %> font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -22,7 +22,7 @@ exports.packageJson = _.template(
 )
 
 exports.fontFace = _.template(
-  `/* <%= fontId %>-<%= subset %>-<%= weight %>-<%= style %> CSS File*/
+  `/* <%= fontId %>-<%= subset %>-<%= weight %>-<%= style %>*/
 @font-face {
   font-family: '<%= fontName %>';
   font-style: <%= style %>;
