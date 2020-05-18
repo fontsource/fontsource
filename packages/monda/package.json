@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-monda",
+  "version": "1.0.0",
+  "description": "Monda font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Monda",
+    "monda"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/monda"
+}

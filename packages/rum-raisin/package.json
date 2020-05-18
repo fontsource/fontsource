@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-rum-raisin",
+  "version": "1.0.0",
+  "description": "Rum Raisin font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Rum Raisin",
+    "rum-raisin"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/rum-raisin"
+}

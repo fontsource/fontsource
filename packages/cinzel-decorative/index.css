@@ -1,0 +1,36 @@
+/* cinzel-decorative-latin-400-normal*/
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Cinzel Decorative Regular'),
+    local('CinzelDecorative-Regular'), 
+    url('./files/cinzel-decorative-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/cinzel-decorative-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* cinzel-decorative-latin-700-normal*/
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Cinzel Decorative Bold'),
+    local('CinzelDecorative-Bold'), 
+    url('./files/cinzel-decorative-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/cinzel-decorative-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* cinzel-decorative-latin-900-normal*/
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Cinzel Decorative Black'),
+    local('CinzelDecorative-Black'), 
+    url('./files/cinzel-decorative-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/cinzel-decorative-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

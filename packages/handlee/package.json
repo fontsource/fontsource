@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-handlee",
+  "version": "1.0.0",
+  "description": "Handlee font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Handlee",
+    "handlee"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/handlee"
+}

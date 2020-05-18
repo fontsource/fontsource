@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-nothing-you-could-do",
+  "version": "1.0.0",
+  "description": "Nothing You Could Do font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Nothing You Could Do",
+    "nothing-you-could-do"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/nothing-you-could-do"
+}

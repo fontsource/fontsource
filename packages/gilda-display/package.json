@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-gilda-display",
+  "version": "1.0.0",
+  "description": "Gilda Display font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Gilda Display",
+    "gilda-display"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/gilda-display"
+}

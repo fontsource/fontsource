@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-cambay",
+  "version": "1.0.0",
+  "description": "Cambay font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Cambay",
+    "cambay"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/cambay"
+}

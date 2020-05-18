@@ -1,0 +1,12 @@
+/* dawning-of-a-new-day-latin-400-normal*/
+@font-face {
+  font-family: 'Dawning of a New Day';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Dawning of a New Day'),
+    local('DawningofaNewDay'), 
+    url('./files/dawning-of-a-new-day-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/dawning-of-a-new-day-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-baloo-tammudu-2",
+  "version": "1.0.0",
+  "description": "Baloo Tammudu 2 font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Baloo Tammudu 2",
+    "baloo-tammudu-2"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/baloo-tammudu-2"
+}

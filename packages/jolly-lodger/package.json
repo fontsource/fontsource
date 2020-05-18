@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-jolly-lodger",
+  "version": "1.0.0",
+  "description": "Jolly Lodger font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Jolly Lodger",
+    "jolly-lodger"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/jolly-lodger"
+}

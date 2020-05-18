@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-east-sea-dokdo",
+  "version": "1.0.0",
+  "description": "East Sea Dokdo font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "East Sea Dokdo",
+    "east-sea-dokdo"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/east-sea-dokdo"
+}

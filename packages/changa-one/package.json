@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-changa-one",
+  "version": "1.0.0",
+  "description": "Changa One font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Changa One",
+    "changa-one"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/changa-one"
+}

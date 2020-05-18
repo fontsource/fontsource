@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-darker-grotesque",
+  "version": "1.0.0",
+  "description": "Darker Grotesque font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Darker Grotesque",
+    "darker-grotesque"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/darker-grotesque"
+}

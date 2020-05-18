@@ -1,0 +1,108 @@
+/* saira-extra-condensed-vietnamese-100-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Saira ExtraCondensed Thin'),
+    local('SairaExtraCondensed-Thin'), 
+    url('./files/saira-extra-condensed-vietnamese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-extra-condensed-vietnamese-200-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Saira ExtraCondensed ExtraLight'),
+    local('SairaExtraCondensed-ExtraLight'), 
+    url('./files/saira-extra-condensed-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-extra-condensed-vietnamese-300-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Saira ExtraCondensed Light'),
+    local('SairaExtraCondensed-Light'), 
+    url('./files/saira-extra-condensed-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-extra-condensed-vietnamese-400-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Saira ExtraCondensed Regular'),
+    local('SairaExtraCondensed-Regular'), 
+    url('./files/saira-extra-condensed-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-extra-condensed-vietnamese-500-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Saira ExtraCondensed Medium'),
+    local('SairaExtraCondensed-Medium'), 
+    url('./files/saira-extra-condensed-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-extra-condensed-vietnamese-600-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Saira ExtraCondensed SemiBold'),
+    local('SairaExtraCondensed-SemiBold'), 
+    url('./files/saira-extra-condensed-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-extra-condensed-vietnamese-700-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Saira ExtraCondensed Bold'),
+    local('SairaExtraCondensed-Bold'), 
+    url('./files/saira-extra-condensed-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-extra-condensed-vietnamese-800-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Saira ExtraCondensed ExtraBold'),
+    local('SairaExtraCondensed-ExtraBold'), 
+    url('./files/saira-extra-condensed-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* saira-extra-condensed-vietnamese-900-normal*/
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Saira ExtraCondensed Black'),
+    local('SairaExtraCondensed-Black'), 
+    url('./files/saira-extra-condensed-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/saira-extra-condensed-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
