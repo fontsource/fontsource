@@ -1,6 +1,6 @@
 {
   "name": "fontsource-stardos-stencil",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Stardos Stencil font in NPM glory.",
   "main": "index.css",
   "keywords": [

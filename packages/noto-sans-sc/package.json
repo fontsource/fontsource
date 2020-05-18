@@ -1,6 +1,6 @@
 {
   "name": "fontsource-noto-sans-sc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Noto Sans SC font in NPM glory.",
   "main": "index.css",
   "keywords": [
