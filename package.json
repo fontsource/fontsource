@@ -23,8 +23,8 @@
     "format": "yarn format:prettier && yarn format:eslint",
     "format:eslint": "eslint **/*.{js,jsx} --fix",
     "format:prettier": "prettier --write **/*.{js,jsx,json,md}",
-    "build-google": "node scripts/download-google.js",
-    "readme-update-google": "node scripts/google-readme-updater.js",
+    "build:google": "node scripts/google/download-google.js",
+    "readme-update:google": "node scripts/google/google-readme-updater.js && yarn format",
     "deploy": "lerna publish patch --message 'chore: release new versions'",
     "deploy:ci": "lerna publish patch --yes --message 'chore: release new versions'",
     "deploy:dry-run": "lerna publish --yes --no-git-tag-version --no-push"

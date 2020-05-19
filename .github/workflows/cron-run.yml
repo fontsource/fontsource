@@ -23,7 +23,7 @@ jobs:
         run: yarn
 
       - name: Build fonts
-        run: yarn build-google
+        run: yarn build:google
 
       - name: Format files
         run: yarn format
