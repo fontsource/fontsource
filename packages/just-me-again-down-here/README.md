@@ -33,7 +33,7 @@ Alternatively, the same solutions could be imported via SCSS!
 
 _Do confirm on Google Fonts (or elsewhere) whether your font supports a certain subset, weight or style beforehand as these examples may not reflect actual compatibility._
 
-## Licensing 
+## Licensing
 
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
@@ -43,4 +43,3 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 ## Other Notes
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/DecliningLotus/fontsource/issues).
-
