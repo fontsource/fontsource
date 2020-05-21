@@ -13,7 +13,7 @@ fs.ensureDirSync(`packages`)
 // Create an async queue object
 const processQueue = (font, cb) => {
   console.log(`Downloading ${font}`)
-  shell.exec(`node ./scripts/google-font-packager.js ${font}`, () => {
+  shell.exec(`node ./scripts/google/google-font-packager.js ${font}`, () => {
     cb()
   })
 }
