@@ -47,6 +47,10 @@ Alternatively, the same solutions could be imported via SCSS!
 
 _Do confirm on Google Fonts (or elsewhere) whether your font supports a certain subset, weight or style beforehand as these examples may not reflect actual compatibility._
 
+## Adding New Fonts
+
+For Open Source fonts that are not automatically updated by the Google ecosystem, we have a generic packager that builds CSS files for you. Click [here](https://github.com/DecliningLotus/fontsource/blob/master/scripts/generic/generic-packager.md) to see how to use it.
+
 ## Licensing
 
 It is important to always read the license for every font that you use.
