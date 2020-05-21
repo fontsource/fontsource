@@ -1,5 +1,7 @@
 # Fontsource
 
+[![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
+
 An updating monorepo rebuilt off of its predecessor [Typefaces](https://github.com/KyleAMathews/typefaces), full of self-hostable Open Source fonts bundled into individual NPM packages!
 
 ## About
@@ -45,12 +47,16 @@ Alternatively, the same solutions could be imported via SCSS!
 
 _Do confirm on Google Fonts (or elsewhere) whether your font supports a certain subset, weight or style beforehand as these examples may not reflect actual compatibility._
 
+## Adding New Fonts
+
+For Open Source fonts that are not automatically updated by the Google ecosystem, we have a generic packager that builds CSS files for you. Click [here](https://github.com/DecliningLotus/fontsource/blob/master/scripts/generic/generic-packager.md) to see how to use it.
+
 ## Licensing
 
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
 
-[Google Fonts License Attributions](https://fonts.google.com/attribution)
+You can find their specific licenses on each package `README.md`.
 
 ## Other Notes
 
