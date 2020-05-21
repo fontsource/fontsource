@@ -73,6 +73,8 @@ Alternatively, the same solutions could be imported via SCSS!
 @import "~fontsource-<%= fontId %>/vietnamese-300-italic";
 \`\`\`
 
+_These examples may not reflect actual compatibility. Please refer below._
+
 Supported variables:
 - Subsets: \`[<%= subsets %>]\`
 - Weights: \`[<%= weights %>]\`

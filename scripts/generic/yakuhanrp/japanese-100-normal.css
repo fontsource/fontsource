@@ -1,0 +1,13 @@
+/* yakuhanrp-japanese-100-normal*/
+@font-face {
+  font-family: 'YakuHanRP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    url('./files/yakuhanrp-japanese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/yakuhanrp-japanese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  
+  unicode-range: U+3001-3002, U+3008-3011, U+3014-3015, U+30fb, U+ff01, U+ff08-ff09, U+ff1a-ff1b, U+ff1f, U+ff3b, U+ff3d, U+ff5b, U+ff5d;
+
+}
