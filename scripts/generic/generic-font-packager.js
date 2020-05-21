@@ -117,13 +117,16 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
     }
   })
   console.log("Created CSS files.")
-})
 
-const packageReadme = readme({
-  fontId,
-  fontName,
+  const packageReadme = readme({
+    fontId,
+    fontName,
+    subsets,
+    weights,
+    styles,
+  })
+  fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 })
-fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
 // Write out package.json file
 const packageJSON = packageJson({
