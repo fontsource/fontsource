@@ -52,7 +52,7 @@ _Do confirm on Google Fonts (or elsewhere) whether your font supports a certain 
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
 
-[Google Fonts License Attributions](https://fonts.google.com/attribution)
+You can find their specific licenses on each package `README.md`.
 
 ## Other Notes
 
