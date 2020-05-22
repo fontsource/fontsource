@@ -27,6 +27,7 @@
     "build:generic": "node scripts/generic/generic-font-packager.js",
     "build:google": "node scripts/google/download-google.js",
     "readme-update:google": "node scripts/google/google-readme-updater.js && yarn format",
+    "util:renamer": "node scripts/generic/renamer.js",
     "deploy": "lerna publish patch --message 'chore: release new versions'",
     "deploy:ci": "lerna publish patch --yes --message 'chore: release new versions'",
     "deploy:dry-run": "lerna publish --yes --no-git-tag-version --no-push"
