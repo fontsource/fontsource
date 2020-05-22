@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-ostrich-sans-inline",
+  "version": "1.0.0",
+  "description": "Ostrich Sans Inline font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Ostrich Sans Inline",
+    "ostrich-sans-inline"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/ostrich-sans-inline"
+}
