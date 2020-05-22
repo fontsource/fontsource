@@ -4,6 +4,8 @@
 
 An updating monorepo rebuilt off of its predecessor [Typefaces](https://github.com/KyleAMathews/typefaces), full of self-hostable Open Source fonts bundled into individual NPM packages!
 
+Our supported font list can be found [here](https://github.com/DecliningLotus/fontsource/blob/master/FONTLIST.md).
+
 ## About
 
 - Self-hosting brings _significant performance gains_ as typically loading fonts from hosted font services, such as Google Fonts, lead to an extra (render blocking) network request. To provide perspective, for simple websites it has been seen to _double_ visual load times. Benchmarks can be found [here](https://github.com/HTTPArchive/almanac.httparchive.org/pull/607) and [here](https://github.com/reactiflux/reactiflux.com/pull/21).
