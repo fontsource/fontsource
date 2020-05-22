@@ -12,6 +12,10 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - league-mono-narrow
 - league-mono-wide
 - league-spartan
+- ostrich-sans
+- ostrich-sans-dashed
+- ostrich-sans-inline
+- ostrich-sans-rounded
 
 ## Other
 
