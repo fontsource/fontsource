@@ -6,6 +6,7 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 
 ## [The League Of Moveable Type](https://www.theleagueofmoveabletype.com/)
 
+- junction
 - league-mono
 - league-mono-condensed
 - league-mono-extended
