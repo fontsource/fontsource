@@ -24,7 +24,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
 
 7. You must then enter the new package folder and edit `README.md` with references to the correct subsets, weights, styles, licenses and attributions to the font you are packaging for. Add any specific notes too!
 
-8. Once ready, just copy over the new package folder over to the main packages directory. Create a pull request, it'll be reviewed and added to the repository!
+8. Once ready, just copy over the new package folder over to the main packages directory and update `FONTLIST.md` in the main repo. Create a pull request, it'll be reviewed and added to the repository!
 
 ## Tools
 
