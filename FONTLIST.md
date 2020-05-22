@@ -11,6 +11,7 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - league-mono-extended
 - league-mono-narrow
 - league-mono-wide
+- league-spartan
 
 ## Other
 

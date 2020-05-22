@@ -85,7 +85,7 @@ Supported variables:
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
 
-Font [Source](insert link) and [License](insert link).
+Font [Source](<%= source %>) and [License](<%= license %>).
 
 ## Other Notes
 
