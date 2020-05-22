@@ -36,7 +36,6 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
     name.pop()
     weights.push(name.slice(-1)[0])
     name.pop()
-    console.log(name)
     subsets.push(name.join("-"))
   })
   subsets = [...new Set(subsets)]
