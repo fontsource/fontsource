@@ -11,7 +11,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
    1. `<fontid>-<subset>-<weight>-<style>.extension`
    2. We do not support anything other than woff and woff2. We expect both file formats.
 
-3. Open `config.js` located in this directory and enter the fontid, font name and an optional unicode range if you are aware of it for performance benefits.
+3. Open `config.js` located in this directory and enter the fontid, font name, link to source, link to license and an optional unicode range if you are aware of it for performance benefits.
 
 4. Note `<fontid>` will be used for filename purposes and therefore it must be:
 
@@ -22,7 +22,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
 
 6. Within the main directory, run `yarn build:generic`. This will generate a folder in `scripts/generic` using the fontid as the folder name.
 
-7. You must then enter the new package folder and edit `README.md` with references to the correct subsets, weights, styles, licenses and attributions to the font you are packaging for. Add any specific notes too!
+7. Review `README.md` to ensure everything is correct and linked appropriately. Add other specific notes too if applicable!
 
 8. Once ready, just copy over the new package folder over to the main packages directory and update `FONTLIST.md` in the main repo. Create a pull request, it'll be reviewed and added to the repository!
 
