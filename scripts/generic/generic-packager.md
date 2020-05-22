@@ -4,7 +4,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
 
 ## Usage
 
-1. Fork this repo, run `yarn` to install dependencies and head over to the `scripts/generic/files` folder.
+1. Fork this repo, run `yarn` to install dependencies and create a new `files` folder, shown in directory order `scripts/generic/files`.
 
 2. Place all woff and woff2 files within this files directory and it **must** be in the filename format as specified:
 
@@ -25,3 +25,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
 7. You must then enter the new package folder and edit `README.md` with references to the correct subsets, weights, styles, licenses and attributions to the font you are packaging for. Add any specific notes too!
 
 8. Once ready, just copy over the new package folder over to the main packages directory. Create a pull request, it'll be reviewed and added to the repository!
+
+## Tools
+
+You are also able to run `yarn util:renamer` to rename all files in the `files` directory to lowercase, as well as replace any font weights in word format, to numbers. Note that this isn't stable and is prone to accidental replacements. Use with caution.

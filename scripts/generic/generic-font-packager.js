@@ -31,12 +31,12 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
 
   files.forEach(file => {
     // Remove file path and extension
-    name = file.slice(22, -6).split("-")
+    name = file.slice(23 + Object.keys(config.fontId).length, -6).split("-")
     styles.push(name.slice(-1)[0])
     name.pop()
     weights.push(name.slice(-1)[0])
     name.pop()
-    subsets.push(name.slice(-1)[0])
+    subsets.push(name.join("-"))
   })
   subsets = [...new Set(subsets)]
   weights = [...new Set(weights)]
