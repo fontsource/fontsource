@@ -5,8 +5,8 @@
   font-display: swap;
   font-weight: 800;
   src:
-    local('Montserrat Alternates Thin'),
-    local('MontserratAlternates-Thin'), 
+    local('Montserrat Alternates ExtraBold'),
+    local('MontserratAlternates-ExtraBold'), 
     url('./files/montserrat-alternates-cyrillic-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/montserrat-alternates-cyrillic-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
