@@ -39,6 +39,10 @@ const fontDir = `packages/${apiFont.id}`
 fs.ensureDirSync(fontDir)
 fs.ensureDirSync(`${fontDir}/files`)
 
+let subsetReadme = []
+let weightReadme = []
+let styleReadme = []
+
 // Update checking
 let changed = false
 
@@ -191,6 +195,11 @@ if (changed) {
               if (item.fontStyle !== style || once === true) {
                 return ""
               }
+
+              subsetReadme.push(subset)
+              weightReadme.push(weight)
+              styleReadme.push(style)
+
               once = true
               return fontFace({
                 fontId: apiFont.id,
@@ -229,9 +238,15 @@ if (changed) {
 // If everything ran successfully, apply new updates to package.
 if (changed) {
   // Write README.md
+  subsetReadme = [...new Set(subsetReadme)]
+  weightReadme = [...new Set(weightReadme)]
+  styleReadme = [...new Set(styleReadme)]
   const packageReadme = readme({
     fontId: apiFont.id,
     fontName: apiFont.family,
+    subsets: subsetReadme,
+    weights: weightReadme,
+    styles: styleReadme,
   })
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
