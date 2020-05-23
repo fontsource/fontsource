@@ -51,7 +51,7 @@ _Do confirm on Google Fonts (or elsewhere) whether your font supports a certain 
 
 ## Adding New Fonts
 
-For Open Source fonts that are not automatically updated by the Google ecosystem, we have a generic packager that builds CSS files for you. Click [here](https://github.com/DecliningLotus/fontsource/blob/master/scripts/generic/generic-packager.md) to see how to use it. 
+For Open Source fonts that are not automatically updated by the Google ecosystem, we have a generic packager that builds CSS files for you. Click [here](https://github.com/DecliningLotus/fontsource/blob/master/scripts/generic/generic-packager.md) to see how to use it.
 
 Otherwise, make a request by creating an [issue](https://github.com/DecliningLotus/fontsource/issues)!
 
