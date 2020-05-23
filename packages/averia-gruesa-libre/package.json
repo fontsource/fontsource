@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-averia-gruesa-libre",
+  "version": "2.1.0",
+  "description": "Averia Gruesa Libre font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Averia Gruesa Libre",
+    "averia-gruesa-libre"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/averia-gruesa-libre"
+}

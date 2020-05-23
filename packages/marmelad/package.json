@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-marmelad",
+  "version": "2.1.0",
+  "description": "Marmelad font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Marmelad",
+    "marmelad"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/marmelad"
+}

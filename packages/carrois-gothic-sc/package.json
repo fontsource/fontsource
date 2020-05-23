@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-carrois-gothic-sc",
+  "version": "2.1.0",
+  "description": "Carrois Gothic SC font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Carrois Gothic SC",
+    "carrois-gothic-sc"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/carrois-gothic-sc"
+}

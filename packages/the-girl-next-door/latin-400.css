@@ -1,0 +1,12 @@
+/* the-girl-next-door-latin-400-normal*/
+@font-face {
+  font-family: 'The Girl Next Door';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('The Girl Next Door'),
+    local('TheGirlNextDoor'), 
+    url('./files/the-girl-next-door-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/the-girl-next-door-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

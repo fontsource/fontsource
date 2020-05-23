@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-averia-libre",
+  "version": "2.1.0",
+  "description": "Averia Libre font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Averia Libre",
+    "averia-libre"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/averia-libre"
+}

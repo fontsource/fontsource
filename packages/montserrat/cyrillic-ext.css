@@ -1,0 +1,216 @@
+/* montserrat-cyrillic-ext-100-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Montserrat Thin'),
+    local('Montserrat-Thin'), 
+    url('./files/montserrat-cyrillic-ext-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-100-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Montserrat Thin Italic'),
+    local('Montserrat-ThinItalic'), 
+    url('./files/montserrat-cyrillic-ext-100-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-100-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-200-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Montserrat ExtraLight'),
+    local('Montserrat-ExtraLight'), 
+    url('./files/montserrat-cyrillic-ext-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-200-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Montserrat ExtraLight Italic'),
+    local('Montserrat-ExtraLightItalic'), 
+    url('./files/montserrat-cyrillic-ext-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-300-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Montserrat Light'),
+    local('Montserrat-Light'), 
+    url('./files/montserrat-cyrillic-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-300-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Montserrat Light Italic'),
+    local('Montserrat-LightItalic'), 
+    url('./files/montserrat-cyrillic-ext-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-400-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Montserrat Regular'),
+    local('Montserrat-Regular'), 
+    url('./files/montserrat-cyrillic-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-400-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Montserrat Italic'),
+    local('Montserrat-Italic'), 
+    url('./files/montserrat-cyrillic-ext-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-500-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Montserrat Medium'),
+    local('Montserrat-Medium'), 
+    url('./files/montserrat-cyrillic-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-500-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Montserrat Medium Italic'),
+    local('Montserrat-MediumItalic'), 
+    url('./files/montserrat-cyrillic-ext-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-600-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Montserrat SemiBold'),
+    local('Montserrat-SemiBold'), 
+    url('./files/montserrat-cyrillic-ext-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-600-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Montserrat SemiBold Italic'),
+    local('Montserrat-SemiBoldItalic'), 
+    url('./files/montserrat-cyrillic-ext-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-700-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Montserrat Bold'),
+    local('Montserrat-Bold'), 
+    url('./files/montserrat-cyrillic-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-700-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Montserrat Bold Italic'),
+    local('Montserrat-BoldItalic'), 
+    url('./files/montserrat-cyrillic-ext-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-800-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Montserrat ExtraBold'),
+    local('Montserrat-ExtraBold'), 
+    url('./files/montserrat-cyrillic-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-800-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Montserrat ExtraBold Italic'),
+    local('Montserrat-ExtraBoldItalic'), 
+    url('./files/montserrat-cyrillic-ext-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-900-normal*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Montserrat Black'),
+    local('Montserrat-Black'), 
+    url('./files/montserrat-cyrillic-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-cyrillic-ext-900-italic*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Montserrat Black Italic'),
+    local('Montserrat-BlackItalic'), 
+    url('./files/montserrat-cyrillic-ext-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/montserrat-cyrillic-ext-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

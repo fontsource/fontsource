@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-baloo-tamma-2",
+  "version": "2.1.0",
+  "description": "Baloo Tamma 2 font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Baloo Tamma 2",
+    "baloo-tamma-2"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/baloo-tamma-2"
+}

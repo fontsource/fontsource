@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-arapey",
+  "version": "2.1.0",
+  "description": "Arapey font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Arapey",
+    "arapey"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/arapey"
+}

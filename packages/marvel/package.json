@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-marvel",
+  "version": "2.1.0",
+  "description": "Marvel font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Marvel",
+    "marvel"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/marvel"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-coming-soon",
+  "version": "2.1.0",
+  "description": "Coming Soon font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Coming Soon",
+    "coming-soon"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/coming-soon"
+}

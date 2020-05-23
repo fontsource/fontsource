@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-herr-von-muellerhoff",
+  "version": "2.1.0",
+  "description": "Herr Von Muellerhoff font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Herr Von Muellerhoff",
+    "herr-von-muellerhoff"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/herr-von-muellerhoff"
+}

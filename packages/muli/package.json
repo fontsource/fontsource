@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-muli",
+  "version": "2.1.0",
+  "description": "Muli font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Muli",
+    "muli"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/muli"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-chewy",
+  "version": "2.1.0",
+  "description": "Chewy font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Chewy",
+    "chewy"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/chewy"
+}

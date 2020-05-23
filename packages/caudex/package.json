@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-caudex",
+  "version": "2.1.0",
+  "description": "Caudex font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Caudex",
+    "caudex"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/caudex"
+}

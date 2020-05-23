@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-jacques-francois-shadow",
+  "version": "2.1.0",
+  "description": "Jacques Francois Shadow font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Jacques Francois Shadow",
+    "jacques-francois-shadow"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/jacques-francois-shadow"
+}

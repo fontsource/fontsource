@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-gfs-didot",
+  "version": "2.1.0",
+  "description": "GFS Didot font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "GFS Didot",
+    "gfs-didot"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/gfs-didot"
+}

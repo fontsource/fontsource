@@ -1,0 +1,12 @@
+/* open-sans-cyrillic-300-italic*/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Open Sans Light Italic'),
+    local('OpenSans-LightItalic'), 
+    url('./files/open-sans-cyrillic-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/open-sans-cyrillic-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

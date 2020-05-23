@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-encode-sans-condensed",
+  "version": "2.1.0",
+  "description": "Encode Sans Condensed font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Encode Sans Condensed",
+    "encode-sans-condensed"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/encode-sans-condensed"
+}

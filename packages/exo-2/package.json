@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-exo-2",
+  "version": "2.1.0",
+  "description": "Exo 2 font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Exo 2",
+    "exo-2"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/exo-2"
+}

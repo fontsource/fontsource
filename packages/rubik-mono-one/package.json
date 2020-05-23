@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-rubik-mono-one",
+  "version": "2.1.0",
+  "description": "Rubik Mono One font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Rubik Mono One",
+    "rubik-mono-one"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/rubik-mono-one"
+}

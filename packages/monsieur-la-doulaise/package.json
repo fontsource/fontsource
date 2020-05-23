@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-monsieur-la-doulaise",
+  "version": "2.1.0",
+  "description": "Monsieur La Doulaise font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Monsieur La Doulaise",
+    "monsieur-la-doulaise"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/monsieur-la-doulaise"
+}

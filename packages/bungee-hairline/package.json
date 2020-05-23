@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-bungee-hairline",
+  "version": "2.1.0",
+  "description": "Bungee Hairline font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Bungee Hairline",
+    "bungee-hairline"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/bungee-hairline"
+}

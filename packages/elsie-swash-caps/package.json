@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-elsie-swash-caps",
+  "version": "2.1.0",
+  "description": "Elsie Swash Caps font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Elsie Swash Caps",
+    "elsie-swash-caps"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/elsie-swash-caps"
+}

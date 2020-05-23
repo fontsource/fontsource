@@ -1,0 +1,60 @@
+/* hind-guntur-telugu-300-normal*/
+@font-face {
+  font-family: 'Hind Guntur';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Hind Guntur Light'),
+    local('HindGuntur-Light'), 
+    url('./files/hind-guntur-telugu-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/hind-guntur-telugu-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* hind-guntur-telugu-400-normal*/
+@font-face {
+  font-family: 'Hind Guntur';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Hind Guntur Regular'),
+    local('HindGuntur-Regular'), 
+    url('./files/hind-guntur-telugu-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/hind-guntur-telugu-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* hind-guntur-telugu-500-normal*/
+@font-face {
+  font-family: 'Hind Guntur';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Hind Guntur Medium'),
+    local('HindGuntur-Medium'), 
+    url('./files/hind-guntur-telugu-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/hind-guntur-telugu-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* hind-guntur-telugu-600-normal*/
+@font-face {
+  font-family: 'Hind Guntur';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Hind Guntur SemiBold'),
+    local('HindGuntur-SemiBold'), 
+    url('./files/hind-guntur-telugu-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/hind-guntur-telugu-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* hind-guntur-telugu-700-normal*/
+@font-face {
+  font-family: 'Hind Guntur';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Hind Guntur Bold'),
+    local('HindGuntur-Bold'), 
+    url('./files/hind-guntur-telugu-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/hind-guntur-telugu-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
