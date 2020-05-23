@@ -190,8 +190,9 @@ if (changed) {
           styles = [...new Set(styles)]
 
           styles.forEach(style => {
+            let once = false
             cssWeightStyle = variants.map(item => {
-              if (item.fontStyle !== style) {
+              if (item.fontStyle !== style || once === true) {
                 return ""
               }
 
@@ -199,30 +200,29 @@ if (changed) {
               weightReadme.push(weight)
               styleReadme.push(style)
 
-              if (item.fontWeight === weight) {
-                return fontFace({
-                  fontId: apiFont.id,
-                  fontName: apiFont.family,
-                  locals: item.local,
-                  style,
+              once = true
+              return fontFace({
+                fontId: apiFont.id,
+                fontName: apiFont.family,
+                locals: item.local,
+                style,
+                subset,
+                weight,
+                woffPath: makeFontFilePathWeightStyle(
+                  item,
                   subset,
                   weight,
-                  woffPath: makeFontFilePathWeightStyle(
-                    item,
-                    subset,
-                    weight,
-                    style,
-                    "woff"
-                  ),
-                  woff2Path: makeFontFilePathWeightStyle(
-                    item,
-                    subset,
-                    weight,
-                    style,
-                    "woff2"
-                  ),
-                })
-              }
+                  style,
+                  "woff"
+                ),
+                woff2Path: makeFontFilePathWeightStyle(
+                  item,
+                  subset,
+                  weight,
+                  style,
+                  "woff2"
+                ),
+              })
             })
             const fileContentWeightStyle = cssWeightStyle.join("")
 
