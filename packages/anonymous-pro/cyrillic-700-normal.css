@@ -5,8 +5,8 @@
   font-display: swap;
   font-weight: 700;
   src:
-    local('Anonymous Pro Regular'),
-    local('AnonymousPro-Regular'), 
+    local('Anonymous Pro Bold'),
+    local('AnonymousPro-Bold'), 
     url('./files/anonymous-pro-cyrillic-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/anonymous-pro-cyrillic-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
