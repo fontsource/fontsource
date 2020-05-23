@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-galdeano",
+  "version": "1.0.0",
+  "description": "Galdeano font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Galdeano",
+    "galdeano"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/galdeano"
+}

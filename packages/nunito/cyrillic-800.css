@@ -1,0 +1,24 @@
+/* nunito-cyrillic-800-normal*/
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Nunito ExtraBold'),
+    local('Nunito-ExtraBold'), 
+    url('./files/nunito-cyrillic-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/nunito-cyrillic-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nunito-cyrillic-800-italic*/
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Nunito ExtraBold Italic'),
+    local('Nunito-ExtraBoldItalic'), 
+    url('./files/nunito-cyrillic-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/nunito-cyrillic-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

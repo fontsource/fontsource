@@ -1,0 +1,120 @@
+/* alegreya-greek-ext-400-normal*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Alegreya Regular'),
+    local('Alegreya-Regular'), 
+    url('./files/alegreya-greek-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-400-italic*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Alegreya Italic'),
+    local('Alegreya-Italic'), 
+    url('./files/alegreya-greek-ext-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-500-normal*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Alegreya Medium'),
+    local('Alegreya-Medium'), 
+    url('./files/alegreya-greek-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-500-italic*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Alegreya Medium Italic'),
+    local('Alegreya-MediumItalic'), 
+    url('./files/alegreya-greek-ext-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-700-normal*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Alegreya Bold'),
+    local('Alegreya-Bold'), 
+    url('./files/alegreya-greek-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-700-italic*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Alegreya Bold Italic'),
+    local('Alegreya-BoldItalic'), 
+    url('./files/alegreya-greek-ext-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-800-normal*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Alegreya ExtraBold'),
+    local('Alegreya-ExtraBold'), 
+    url('./files/alegreya-greek-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-800-italic*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Alegreya ExtraBold Italic'),
+    local('Alegreya-ExtraBoldItalic'), 
+    url('./files/alegreya-greek-ext-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-900-normal*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Alegreya Black'),
+    local('Alegreya-Black'), 
+    url('./files/alegreya-greek-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-greek-ext-900-italic*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Alegreya Black Italic'),
+    local('Alegreya-BlackItalic'), 
+    url('./files/alegreya-greek-ext-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-greek-ext-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

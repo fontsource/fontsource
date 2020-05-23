@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-reem-kufi",
+  "version": "1.0.0",
+  "description": "Reem Kufi font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Reem Kufi",
+    "reem-kufi"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/reem-kufi"
+}

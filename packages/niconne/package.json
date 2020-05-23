@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-niconne",
+  "version": "1.0.0",
+  "description": "Niconne font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Niconne",
+    "niconne"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/niconne"
+}

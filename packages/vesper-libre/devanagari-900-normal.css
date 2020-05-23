@@ -1,0 +1,12 @@
+/* vesper-libre-devanagari-900-normal*/
+@font-face {
+  font-family: 'Vesper Libre';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Vesper Libre Heavy'),
+    local('VesperLibre-Heavy'), 
+    url('./files/vesper-libre-devanagari-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/vesper-libre-devanagari-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-miss-fajardose",
+  "version": "1.0.0",
+  "description": "Miss Fajardose font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Miss Fajardose",
+    "miss-fajardose"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/miss-fajardose"
+}

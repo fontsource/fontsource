@@ -1,0 +1,24 @@
+/* alegreya-sans-latin-ext-800-normal*/
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Alegreya Sans ExtraBold'),
+    local('AlegreyaSans-ExtraBold'), 
+    url('./files/alegreya-sans-latin-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-sans-latin-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* alegreya-sans-latin-ext-800-italic*/
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Alegreya Sans ExtraBold Italic'),
+    local('AlegreyaSans-ExtraBoldItalic'), 
+    url('./files/alegreya-sans-latin-ext-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/alegreya-sans-latin-ext-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

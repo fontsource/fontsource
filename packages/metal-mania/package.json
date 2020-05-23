@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-metal-mania",
+  "version": "1.0.0",
+  "description": "Metal Mania font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Metal Mania",
+    "metal-mania"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/metal-mania"
+}

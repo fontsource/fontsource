@@ -1,0 +1,84 @@
+/* oxanium-latin-ext-200-normal*/
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Oxanium ExtraLight'),
+    local('Oxanium-ExtraLight'), 
+    url('./files/oxanium-latin-ext-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/oxanium-latin-ext-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* oxanium-latin-ext-300-normal*/
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Oxanium Light'),
+    local('Oxanium-Light'), 
+    url('./files/oxanium-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/oxanium-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* oxanium-latin-ext-400-normal*/
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Oxanium Regular'),
+    local('Oxanium-Regular'), 
+    url('./files/oxanium-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/oxanium-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* oxanium-latin-ext-500-normal*/
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Oxanium Medium'),
+    local('Oxanium-Medium'), 
+    url('./files/oxanium-latin-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/oxanium-latin-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* oxanium-latin-ext-600-normal*/
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Oxanium SemiBold'),
+    local('Oxanium-SemiBold'), 
+    url('./files/oxanium-latin-ext-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/oxanium-latin-ext-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* oxanium-latin-ext-700-normal*/
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Oxanium Bold'),
+    local('Oxanium-Bold'), 
+    url('./files/oxanium-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/oxanium-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* oxanium-latin-ext-800-normal*/
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Oxanium ExtraBold'),
+    local('Oxanium-ExtraBold'), 
+    url('./files/oxanium-latin-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/oxanium-latin-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

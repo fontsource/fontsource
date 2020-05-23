@@ -1,0 +1,24 @@
+/* mali-thai-600-normal*/
+@font-face {
+  font-family: 'Mali';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Mali SemiBold'),
+    local('Mali-SemiBold'), 
+    url('./files/mali-thai-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mali-thai-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* mali-thai-600-italic*/
+@font-face {
+  font-family: 'Mali';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Mali SemiBold Italic'),
+    local('Mali-SemiBoldItalic'), 
+    url('./files/mali-thai-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mali-thai-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

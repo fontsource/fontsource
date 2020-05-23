@@ -1,0 +1,72 @@
+/* bellota-vietnamese-300-normal*/
+@font-face {
+  font-family: 'Bellota';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Bellota Light'),
+    local('Bellota-Light'), 
+    url('./files/bellota-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/bellota-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* bellota-vietnamese-300-italic*/
+@font-face {
+  font-family: 'Bellota';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Bellota Light Italic'),
+    local('Bellota-LightItalic'), 
+    url('./files/bellota-vietnamese-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/bellota-vietnamese-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* bellota-vietnamese-400-normal*/
+@font-face {
+  font-family: 'Bellota';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Bellota Regular'),
+    local('Bellota-Regular'), 
+    url('./files/bellota-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/bellota-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* bellota-vietnamese-400-italic*/
+@font-face {
+  font-family: 'Bellota';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Bellota Italic'),
+    local('Bellota-Italic'), 
+    url('./files/bellota-vietnamese-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/bellota-vietnamese-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* bellota-vietnamese-700-normal*/
+@font-face {
+  font-family: 'Bellota';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Bellota Bold'),
+    local('Bellota-Bold'), 
+    url('./files/bellota-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/bellota-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* bellota-vietnamese-700-italic*/
+@font-face {
+  font-family: 'Bellota';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Bellota Bold Italic'),
+    local('Bellota-BoldItalic'), 
+    url('./files/bellota-vietnamese-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/bellota-vietnamese-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

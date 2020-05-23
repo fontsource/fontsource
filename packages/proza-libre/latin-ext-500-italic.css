@@ -1,0 +1,12 @@
+/* proza-libre-latin-ext-500-italic*/
+@font-face {
+  font-family: 'Proza Libre';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Proza Libre Medium Italic'),
+    local('ProzaLibre-MediumItalic'), 
+    url('./files/proza-libre-latin-ext-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/proza-libre-latin-ext-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

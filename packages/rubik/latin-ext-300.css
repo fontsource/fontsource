@@ -1,0 +1,24 @@
+/* rubik-latin-ext-300-normal*/
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Rubik Light'),
+    local('Rubik-Light'), 
+    url('./files/rubik-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/rubik-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* rubik-latin-ext-300-italic*/
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Rubik Light Italic'),
+    local('Rubik-LightItalic'), 
+    url('./files/rubik-latin-ext-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/rubik-latin-ext-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

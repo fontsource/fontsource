@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-archivo-black",
+  "version": "1.0.0",
+  "description": "Archivo Black font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Archivo Black",
+    "archivo-black"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/archivo-black"
+}

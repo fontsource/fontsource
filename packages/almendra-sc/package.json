@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-almendra-sc",
+  "version": "1.0.0",
+  "description": "Almendra SC font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Almendra SC",
+    "almendra-sc"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/almendra-sc"
+}

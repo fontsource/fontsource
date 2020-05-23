@@ -1,0 +1,12 @@
+/* source-sans-pro-latin-200-normal*/
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Source Sans Pro ExtraLight'),
+    local('SourceSansPro-ExtraLight'), 
+    url('./files/source-sans-pro-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-sans-pro-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

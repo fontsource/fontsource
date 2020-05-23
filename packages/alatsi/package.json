@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-alatsi",
+  "version": "1.0.0",
+  "description": "Alatsi font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Alatsi",
+    "alatsi"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/alatsi"
+}

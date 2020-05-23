@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-fascinate-inline",
+  "version": "1.0.0",
+  "description": "Fascinate Inline font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Fascinate Inline",
+    "fascinate-inline"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/fascinate-inline"
+}

@@ -1,0 +1,12 @@
+/* halant-latin-500-normal*/
+@font-face {
+  font-family: 'Halant';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Halant Medium'),
+    local('Halant-Medium'), 
+    url('./files/halant-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/halant-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

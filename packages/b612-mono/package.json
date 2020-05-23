@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-b612-mono",
+  "version": "1.0.0",
+  "description": "B612 Mono font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "B612 Mono",
+    "b612-mono"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/b612-mono"
+}

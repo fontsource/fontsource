@@ -1,0 +1,12 @@
+/* simonetta-latin-ext-900-normal*/
+@font-face {
+  font-family: 'Simonetta';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Simonetta Black'),
+    local('Simonetta-Black'), 
+    url('./files/simonetta-latin-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/simonetta-latin-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

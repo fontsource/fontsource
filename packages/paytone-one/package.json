@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-paytone-one",
+  "version": "1.0.0",
+  "description": "Paytone One font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Paytone One",
+    "paytone-one"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/paytone-one"
+}

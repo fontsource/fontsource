@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-k2d",
+  "version": "1.0.0",
+  "description": "K2D font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "K2D",
+    "k2d"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/k2d"
+}

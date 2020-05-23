@@ -1,0 +1,160 @@
+/* muli-vietnamese-200-normal*/
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: 
+    url('./files/muli-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-200-italic*/
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src: 
+    url('./files/muli-vietnamese-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-300-normal*/
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: 
+    url('./files/muli-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-300-italic*/
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: 
+    url('./files/muli-vietnamese-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-400-normal*/
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: 
+    url('./files/muli-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-400-italic*/
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: 
+    url('./files/muli-vietnamese-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-500-normal*/
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: 
+    url('./files/muli-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-500-italic*/
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: 
+    url('./files/muli-vietnamese-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-600-normal*/
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: 
+    url('./files/muli-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-600-italic*/
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: 
+    url('./files/muli-vietnamese-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-700-normal*/
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: 
+    url('./files/muli-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-700-italic*/
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: 
+    url('./files/muli-vietnamese-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-800-normal*/
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: 
+    url('./files/muli-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-800-italic*/
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src: 
+    url('./files/muli-vietnamese-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-900-normal*/
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: 
+    url('./files/muli-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* muli-vietnamese-900-italic*/
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src: 
+    url('./files/muli-vietnamese-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/muli-vietnamese-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
