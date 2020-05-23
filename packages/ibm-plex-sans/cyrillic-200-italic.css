@@ -5,8 +5,8 @@
   font-display: swap;
   font-weight: 200;
   src:
-    local('IBM Plex Sans Thin Italic'),
-    local('IBMPlexSans-ThinItalic'), 
+    local('IBM Plex Sans ExtraLight Italic'),
+    local('IBMPlexSans-ExtraLightItalic'), 
     url('./files/ibm-plex-sans-cyrillic-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/ibm-plex-sans-cyrillic-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

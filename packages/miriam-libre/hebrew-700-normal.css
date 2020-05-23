@@ -5,8 +5,8 @@
   font-display: swap;
   font-weight: 700;
   src:
-    local('Miriam Libre Regular'),
-    local('MiriamLibre-Regular'), 
+    local('Miriam Libre Bold'),
+    local('MiriamLibre-Bold'), 
     url('./files/miriam-libre-hebrew-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/miriam-libre-hebrew-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

@@ -5,8 +5,8 @@
   font-display: swap;
   font-weight: 400;
   src:
-    local('Averia Serif Libre Light Italic'),
-    local('AveriaSerifLibre-LightItalic'), 
+    local('Averia Serif Libre Italic'),
+    local('AveriaSerifLibre-Italic'), 
     url('./files/averia-serif-libre-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/averia-serif-libre-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

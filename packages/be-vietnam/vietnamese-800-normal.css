@@ -5,8 +5,8 @@
   font-display: swap;
   font-weight: 800;
   src:
-    local('Be Vietnam Thin'),
-    local('BeVietnam-Thin'), 
+    local('Be Vietnam ExtraBold'),
+    local('BeVietnam-ExtraBold'), 
     url('./files/be-vietnam-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/be-vietnam-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
