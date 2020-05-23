@@ -9,6 +9,7 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - blackout-midnight
 - blackout-sunrise
 - blackout-two-am
+- chunk-five
 - junction
 - league-gothic
 - league-gothic-condensed
