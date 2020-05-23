@@ -6,6 +6,9 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 
 ## [The League Of Moveable Type](https://www.theleagueofmoveabletype.com/)
 
+- blackout-midnight
+- blackout-sunrise
+- blackout-two-am
 - junction
 - league-gothic
 - league-gothic-condensed
