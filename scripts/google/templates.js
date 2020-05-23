@@ -72,7 +72,12 @@ Alternatively, the same solutions could be imported via SCSS!
 @import "~fontsource-<%= fontId %>/vietnamese-300-italic";
 \`\`\`
 
-_Do confirm on Google Fonts (or elsewhere) whether your font supports a certain subset, weight or style beforehand as these examples may not reflect actual compatibility._
+_These examples may not reflect actual compatibility. Please refer below._
+
+Supported variables:
+- Subsets: \`[<%= subsets %>]\`
+- Weights: \`[<%= weights %>]\`
+- Styles: \`[<%= styles %>]\`
 
 ## Licensing 
 
