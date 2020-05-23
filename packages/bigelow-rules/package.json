@@ -1,6 +1,6 @@
 {
   "name": "fontsource-bigelow-rules",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bigelow Rules font in NPM glory.",
   "main": "index.css",
   "keywords": [

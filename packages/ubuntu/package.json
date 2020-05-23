@@ -1,6 +1,6 @@
 {
   "name": "fontsource-ubuntu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Ubuntu font in NPM glory.",
   "main": "index.css",
   "keywords": [

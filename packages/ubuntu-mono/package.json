@@ -1,6 +1,6 @@
 {
   "name": "fontsource-ubuntu-mono",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Ubuntu Mono font in NPM glory.",
   "main": "index.css",
   "keywords": [

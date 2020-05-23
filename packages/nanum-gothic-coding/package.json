@@ -1,6 +1,6 @@
 {
   "name": "fontsource-nanum-gothic-coding",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Nanum Gothic Coding font in NPM glory.",
   "main": "index.css",
   "keywords": [
