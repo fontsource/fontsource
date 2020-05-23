@@ -26,6 +26,9 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 
 ## Other
 
+- syne
+- syne-italic
+- syne-mono
 - yakuhanjp
 - yakuhanjps
 - yakuhanmp
