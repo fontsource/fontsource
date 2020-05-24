@@ -42,8 +42,8 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
   weights = [...new Set(weights)]
   styles = [...new Set(styles)]
 
-  let css = []
   subsets.forEach(subset => {
+    let css = []
     let cssSubset = []
     weights.forEach(weight => {
       let cssWeight = []
