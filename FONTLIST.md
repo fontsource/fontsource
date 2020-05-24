@@ -26,6 +26,9 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 
 ## Other
 
+- cascadia-code
+- cascadia-mono
+- hack
 - syne
 - syne-italic
 - syne-mono
