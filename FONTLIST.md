@@ -28,15 +28,8 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 
 - cascadia-code
 - cascadia-mono
-- dseg7-classic
-- dseg7-classic-mini
-- dseg7-modern
-- dseg7-modern-mini
-- dseg7-seggchan
-- dseg14-classic
-- dseg14-classic-mini
-- dseg14-modern
-- dseg14-modern-mini
+- dseg7
+- dseg14
 - dseg-weather
 - hack
 - syne
