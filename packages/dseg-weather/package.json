@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-dseg-weather",
+  "version": "1.0.0",
+  "description": "DSEG Weather font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "DSEG Weather",
+    "dseg-weather"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/dseg-weather"
+}
