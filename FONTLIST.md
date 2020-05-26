@@ -37,6 +37,7 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - syne-italic
 - syne-mono
 - vazir
+- victor-mono
 - yakuhanjp
 - yakuhanjps
 - yakuhanmp
