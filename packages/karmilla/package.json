@@ -1,0 +1,17 @@
+{
+  "name": "fontsource-karmilla",
+  "version": "1.0.0",
+  "description": "Karmilla font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Karmilla",
+    "karmilla"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/karmilla"
+}
