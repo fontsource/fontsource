@@ -1,4 +1,5 @@
 # Fontsource Nova Script
+
 [![npm version](https://badge.fury.io/js/fontsource-nova-script.svg)](https://github.com/DecliningLotus/fontsource) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
 
 The CSS and web font files to easily self-host the “Nova Script” font. Please visit the main [Fontsource monorepo](https://github.com/DecliningLotus/fontsource) to view more details on this package.
@@ -35,6 +36,7 @@ Alternatively, the same solutions could be imported via SCSS!
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
+
 - Subsets: `[latin]`
 - Weights: `[400]`
 - Styles: `[normal]`
@@ -47,7 +49,7 @@ body {
 }
 ```
 
-## Licensing 
+## Licensing
 
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
@@ -57,4 +59,3 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 ## Other Notes
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/DecliningLotus/fontsource/issues).
-
