@@ -1,6 +1,6 @@
 # Fontsource YakuHanMPs
 
-[![npm version](https://badge.fury.io/js/fontsource-yakuhanmps.svg)](https://github.com/DecliningLotus/fontsource) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
+[![npm version](https://badge.fury.io/js/fontsource-yakuhanmps.svg)](https://github.com/DecliningLotus/fontsource) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
 
 The CSS and web font files to easily self-host the “YakuHanMPs” font. Please visit the main [Fontsource monorepo](https://github.com/DecliningLotus/fontsource) to view more details on this package.
 
@@ -29,8 +29,8 @@ import "fontsource-yakuhanmps/greek-700-normal.css" // Select either normal or i
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-yakuhanmps/index";
-@import "~fontsource-yakuhanmps/vietnamese-300-italic";
+@import "~fontsource-yakuhanmps/index.css";
+@import "~fontsource-yakuhanmps/vietnamese-300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._
