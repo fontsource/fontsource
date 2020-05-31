@@ -29,8 +29,8 @@ import "fontsource-dseg7/greek-700-normal.css" // Select either normal or italic
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-dseg7/index";
-@import "~fontsource-dseg7/vietnamese-300-italic";
+@import "~fontsource-dseg7/index.css";
+@import "~fontsource-dseg7/vietnamese-300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._

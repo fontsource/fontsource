@@ -29,8 +29,8 @@ import "fontsource-karmilla/greek-700-normal.css" // Select either normal or ita
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-karmilla/index";
-@import "~fontsource-karmilla/vietnamese-300-italic";
+@import "~fontsource-karmilla/index.css";
+@import "~fontsource-karmilla/vietnamese-300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._
