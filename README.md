@@ -1,6 +1,6 @@
 # Fontsource
 
-[![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
+[![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
 
 An updating monorepo rebuilt off of its predecessor [Typefaces](https://github.com/KyleAMathews/typefaces), full of self-hostable Open Source fonts bundled into individual NPM packages!
 
@@ -26,7 +26,7 @@ This is an installation example using Open Sans, applicable to all other fonts s
 yarn add fontsource-open-sans //npm install fontsource-open-sans
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could simply import it into your `layout.js` component or `gatsby-browser.js` for limited circumstances.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
 
 ```javascript
 import "fontsource-open-sans" //require("fontsource-open-sans")
@@ -43,11 +43,19 @@ import "fontsource-open-sans/greek-700-normal.css" // Select either normal or it
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-open-sans/index";
-@import "~fontsource-open-sans/vietnamese-300-italic";
+@import "~fontsource-open-sans/index.css";
+@import "~fontsource-open-sans/vietnamese-300-italic.css";
 ```
 
 _Do confirm on Google Fonts (or elsewhere) whether your font supports a certain subset, weight or style beforehand as these examples may not reflect actual compatibility._
+
+Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
+
+```css
+body {
+  font-family: "Open Sans";
+}
+```
 
 ## Adding New Fonts
 
