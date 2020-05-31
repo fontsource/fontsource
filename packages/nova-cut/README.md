@@ -1,6 +1,5 @@
 # Fontsource Nova Cut
-
-[![npm version](https://badge.fury.io/js/fontsource-nova-cut.svg)](https://github.com/DecliningLotus/fontsource) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
+[![npm version](https://badge.fury.io/js/fontsource-nova-cut.svg)](https://github.com/DecliningLotus/fontsource) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
 
 The CSS and web font files to easily self-host the “Nova Cut” font. Please visit the main [Fontsource monorepo](https://github.com/DecliningLotus/fontsource) to view more details on this package.
 
@@ -12,7 +11,7 @@ Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Too
 yarn add fontsource-nova-cut // npm install fontsource-nova-cut
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could simply import it into your `layout.js` component or `gatsby-browser.js` for limited circumstances.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
 
 ```javascript
 import "fontsource-nova-cut" //require("fontsource-nova-cut")
@@ -29,19 +28,26 @@ import "fontsource-nova-cut/greek-700-normal.css" // Select either normal or ita
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-nova-cut/index";
-@import "~fontsource-nova-cut/vietnamese-300-italic";
+@import "~fontsource-nova-cut/index.css";
+@import "~fontsource-nova-cut/vietnamese-300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
-
 - Subsets: `[latin]`
 - Weights: `[400]`
 - Styles: `[normal]`
 
-## Licensing
+Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
+
+```css
+body {
+  font-family: "Nova Cut";
+}
+```
+
+## Licensing 
 
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
@@ -51,3 +57,4 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 ## Other Notes
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/DecliningLotus/fontsource/issues).
+
