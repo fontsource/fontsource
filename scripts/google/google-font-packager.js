@@ -62,6 +62,7 @@ if (fs.existsSync(`${fontDir}/last-modified.json`)) {
 
 // Processing each subset of given font ID.
 if (changed) {
+  fs.emptyDirSync(fontDir)
   subsets.forEach(subset => {
     // Generate filenames
     const makeFontFilePath = (item, subsetName, extension) => {
