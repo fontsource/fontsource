@@ -37,7 +37,7 @@ const subsets = [[apiFont.defSubset, apiFont]].concat(
 // Set file directories
 const fontDir = `packages/${apiFont.id}`
 fs.ensureDirSync(fontDir)
-fs.ensureDirSync(`${fontDir}/files`)
+fs.ensureDirSync(`scripts/temp_packages`)
 
 let subsetReadme = []
 let weightReadme = []
@@ -62,7 +62,15 @@ if (fs.existsSync(`${fontDir}/last-modified.json`)) {
 
 // Processing each subset of given font ID.
 if (changed) {
-  fs.emptyDirSync(fontDir)
+  // Wipe old font files preserving package.json
+  if (fs.existsSync(`${fontDir}/package.json`)) {
+    fs.copySync(`${fontDir}/package.json`, `scripts/temp_packages/package.json`)
+    fs.emptyDirSync(fontDir)
+    fs.copySync(`scripts/temp_packages/package.json`, `${fontDir}/package.json`)
+    fs.emptyDirSync(`scripts/temp_packages`)
+  }
+
+  fs.ensureDirSync(`${fontDir}/files`)
   subsets.forEach(subset => {
     // Generate filenames
     const makeFontFilePath = (item, subsetName, extension) => {
@@ -151,7 +159,7 @@ if (changed) {
         fs.writeFileSync(cssPath, fileContentDefault)
 
         // index.css
-        if (subset === "latin" || subsets.length === 1) {
+        if (subset === apiFont.defSubset || subsets.length === 1) {
           fs.writeFileSync(`${fontDir}/index.css`, fileContentDefault)
         }
 
