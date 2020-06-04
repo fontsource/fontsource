@@ -7,6 +7,7 @@ const config = require("./config")
 
 const fontId = config.fontId
 const fontName = config.fontName
+const defSubset = config.defaultSubset
 const unicoderange = config.unicoderange
 
 // Create folder structure
@@ -112,7 +113,7 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
     fs.writeFileSync(cssPath, fileContentDefault)
 
     // index.css
-    if (subset === "latin" || subsets.length === 1) {
+    if (subset === defSubset || subsets.length === 1) {
       fs.writeFileSync(`${fontDir}/index.css`, fileContentDefault)
     }
   })
