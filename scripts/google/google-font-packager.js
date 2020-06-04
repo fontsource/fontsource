@@ -46,12 +46,10 @@ let styleReadme = []
 // Update checking
 let changed = false
 
-if (fs.existsSync(`${fontDir}/last-modified.json`)) {
-  const lastModifiedJson = jsonfile.readFileSync(
-    `${fontDir}/last-modified.json`
-  )
+if (fs.existsSync(`${fontDir}/metadata.json`)) {
+  let metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
   if (!changed) {
-    changed = lastModifiedJson.lastModified !== apiFont.lastModified
+    changed = metadata.lastModified !== apiFont.lastModified
   }
 } else {
   changed = true
@@ -134,7 +132,7 @@ if (changed) {
       // Prep CSS writing.
       const variants = _.sortBy(apiFont.variants, item => {
         let sortString = item.fontWeight
-        if (item.fontStyle === `italic`) {
+        if (item.fontStyle === `italic` || item.fontStyle === `oblique`) {
           sortString += item.fontStyle
         }
         return sortString
@@ -270,8 +268,14 @@ if (changed) {
     fs.writeFileSync(`${fontDir}/package.json`, packageJSON)
   }
 
-  // Write last-modified.json
-  jsonfile.writeFileSync(`${fontDir}/last-modified.json`, {
+  // Write metadata.json
+  jsonfile.writeFileSync(`${fontDir}/metadata.json`, {
+    fontId: apiFont.id,
+    fontName: apiFont.family,
+    subsets: subsetReadme,
+    weights: weightReadme,
+    styles: styleReadme,
+    defSubset: apiFont.defSubset,
     lastModified: apiFont.lastModified,
     version: apiFont.version,
   })
