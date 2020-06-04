@@ -134,7 +134,7 @@ if (changed) {
       // Prep CSS writing.
       const variants = _.sortBy(apiFont.variants, item => {
         let sortString = item.fontWeight
-        if (item.fontStyle === `italic`) {
+        if (item.fontStyle === `italic` || item.fontStyle === `oblique`) {
           sortString += item.fontStyle
         }
         return sortString
