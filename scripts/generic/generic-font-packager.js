@@ -1,6 +1,7 @@
 const _ = require(`lodash`)
 const fs = require(`fs-extra`)
 const glob = require(`glob`)
+const jsonfile = require(`jsonfile`)
 
 const { packageJson, fontFace, readme } = require(`./templates`)
 const config = require("./config")
@@ -129,6 +130,20 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
     license: config.licenselink,
   })
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
+
+  // Write metadata.json
+  const datetime = new Date()
+  jsonfile.writeFileSync(`${fontDir}/metadata.json`, {
+    fontId,
+    fontName,
+    subsets,
+    weights,
+    styles,
+    defSubset,
+    source: config.sourcelink,
+    license: config.licenselink,
+    lastModified: datetime.toISOString().slice(0, 10),
+  })
 })
 
 // Write out package.json file
