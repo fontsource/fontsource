@@ -7,6 +7,7 @@ const config = {
   fontName: "",
   defaultSubset: "latin",
   unicoderange: "null",
+  version: "",
   sourcelink: "",
   licenselink: "",
   type: "other",
