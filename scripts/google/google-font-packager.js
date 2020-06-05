@@ -255,6 +255,7 @@ if (changed) {
     subsets: subsetReadme,
     weights: weightReadme,
     styles: styleReadme,
+    version: apiFont.version,
   })
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
