@@ -71,9 +71,7 @@ if (changed) {
       `scripts/temp_packages/${apiFont.id}-package.json`,
       `${fontDir}/package.json`
     )
-    fs.removeSync(
-      `scripts/temp_packages/scripts/temp_packages/${apiFont.id}-package.json`
-    )
+    fs.removeSync(`scripts/temp_packages/${apiFont.id}-package.json`)
   }
 
   fs.ensureDirSync(`${fontDir}/files`)
