@@ -278,6 +278,9 @@ if (changed) {
     defSubset: apiFont.defSubset,
     lastModified: apiFont.lastModified,
     version: apiFont.version,
+    source: "https://fonts.google.com/",
+    license: "https://fonts.google.com/attribution",
+    type: "google",
   })
 }
 
