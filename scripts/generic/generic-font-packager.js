@@ -128,6 +128,7 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
     styles,
     source: config.sourcelink,
     license: config.licenselink,
+    version: config.version,
   })
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 

@@ -97,6 +97,8 @@ Font [Source](<%= source %>) and [License](<%= license %>).
 
 ## Other Notes
 
+Font version (provided by source): \`<%= version %>\`.
+
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/DecliningLotus/fontsource/issues).
 
 `
