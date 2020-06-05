@@ -62,10 +62,18 @@ if (fs.existsSync(`${fontDir}/metadata.json`)) {
 if (changed) {
   // Wipe old font files preserving package.json
   if (fs.existsSync(`${fontDir}/package.json`)) {
-    fs.copySync(`${fontDir}/package.json`, `scripts/temp_packages/package.json`)
+    fs.copySync(
+      `${fontDir}/package.json`,
+      `scripts/temp_packages/${apiFont.id}-package.json`
+    )
     fs.emptyDirSync(fontDir)
-    fs.copySync(`scripts/temp_packages/package.json`, `${fontDir}/package.json`)
-    fs.emptyDirSync(`scripts/temp_packages`)
+    fs.copySync(
+      `scripts/temp_packages/${apiFont.id}-package.json`,
+      `${fontDir}/package.json`
+    )
+    fs.removeSync(
+      `scripts/temp_packages/scripts/temp_packages/${apiFont.id}-package.json`
+    )
   }
 
   fs.ensureDirSync(`${fontDir}/files`)
