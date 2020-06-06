@@ -12,7 +12,10 @@ exports.packageJson = _.template(
     "font family",
     "google fonts",
     "<%= fontName %>",
-    "<%= fontId %>"
+    "<%= fontId %>",
+    "css",
+    "front-end",
+    "web"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
