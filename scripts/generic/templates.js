@@ -46,7 +46,7 @@ The CSS and web font files to easily self-host the “<%= fontName %>” font. P
 
 ## Installation
 
-Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Tools like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are prebuilt example solutions that are compatible.
+Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Solutions like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are prebuilt examples that are compatible.
 
 \`\`\`javascript
 yarn add fontsource-<%= fontId %> // npm install fontsource-<%= fontId %>
@@ -55,7 +55,7 @@ yarn add fontsource-<%= fontId %> // npm install fontsource-<%= fontId %>
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (\`layout.js\`), page component, or \`gatsby-browser.js\`.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>" //require("fontsource-<%= fontId %>")
+import "fontsource-<%= fontId %>" // require("fontsource-<%= fontId %>")
 \`\`\`
 
 Fontsource allows you to select font subsets, weights and even individual styles, allowing you to cut down on payload sizes to the last byte! The default selection above, however, sticks to the Latin subset including all weights and styles.
