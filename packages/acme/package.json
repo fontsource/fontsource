@@ -1,6 +1,6 @@
 {
   "name": "fontsource-acme",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Acme font in NPM glory.",
   "main": "index.css",
   "keywords": [

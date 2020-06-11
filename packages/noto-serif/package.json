@@ -1,6 +1,6 @@
 {
   "name": "fontsource-noto-serif",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Noto Serif font in NPM glory.",
   "main": "index.css",
   "keywords": [

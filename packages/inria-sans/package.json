@@ -1,6 +1,6 @@
 {
   "name": "fontsource-inria-sans",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Inria Sans font in NPM glory.",
   "main": "index.css",
   "keywords": [
