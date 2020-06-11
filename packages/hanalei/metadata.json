@@ -1,0 +1,13 @@
+{
+  "fontId": "hanalei",
+  "fontName": "Hanalei",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-09-17",
+  "version": "v10",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

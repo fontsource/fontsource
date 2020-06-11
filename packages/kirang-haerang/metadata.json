@@ -1,0 +1,13 @@
+{
+  "fontId": "kirang-haerang",
+  "fontName": "Kirang Haerang",
+  "subsets": ["korean", "latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v8",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

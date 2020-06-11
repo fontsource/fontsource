@@ -1,0 +1,13 @@
+{
+  "fontId": "pt-sans-narrow",
+  "fontName": "PT Sans Narrow",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
+  "weights": ["400", "700"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-22",
+  "version": "v11",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

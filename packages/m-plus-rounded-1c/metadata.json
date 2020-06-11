@@ -1,0 +1,23 @@
+{
+  "fontId": "m-plus-rounded-1c",
+  "fontName": "M PLUS Rounded 1c",
+  "subsets": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "greek-ext",
+    "hebrew",
+    "japanese",
+    "latin",
+    "latin-ext",
+    "vietnamese"
+  ],
+  "weights": ["100", "300", "400", "500", "700", "800", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-11-05",
+  "version": "v10",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

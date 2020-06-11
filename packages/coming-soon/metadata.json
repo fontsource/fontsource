@@ -1,0 +1,13 @@
+{
+  "fontId": "coming-soon",
+  "fontName": "Coming Soon",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-26",
+  "version": "v11",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

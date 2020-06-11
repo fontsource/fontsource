@@ -1,0 +1,13 @@
+{
+  "fontId": "sarabun",
+  "fontName": "Sarabun",
+  "subsets": ["latin", "latin-ext", "thai", "vietnamese"],
+  "weights": ["100", "200", "300", "400", "500", "600", "700", "800"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2020-03-03",
+  "version": "v7",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

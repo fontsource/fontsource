@@ -1,0 +1,13 @@
+{
+  "fontId": "caladea",
+  "fontName": "Caladea",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2020-03-03",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

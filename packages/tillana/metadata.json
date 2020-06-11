@@ -1,0 +1,13 @@
+{
+  "fontId": "tillana",
+  "fontName": "Tillana",
+  "subsets": ["devanagari", "latin", "latin-ext"],
+  "weights": ["400", "500", "600", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v5",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

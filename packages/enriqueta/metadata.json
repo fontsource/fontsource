@@ -1,0 +1,13 @@
+{
+  "fontId": "enriqueta",
+  "fontName": "Enriqueta",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400", "500", "600", "700"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-26",
+  "version": "v9",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

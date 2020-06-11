@@ -1,0 +1,13 @@
+{
+  "fontId": "lato",
+  "fontName": "Lato",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["100", "300", "400", "700", "900"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-23",
+  "version": "v16",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

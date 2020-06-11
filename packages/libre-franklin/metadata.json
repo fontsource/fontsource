@@ -1,0 +1,13 @@
+{
+  "fontId": "libre-franklin",
+  "fontName": "Libre Franklin",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-22",
+  "version": "v4",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

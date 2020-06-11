@@ -1,0 +1,13 @@
+{
+  "fontId": "pinyon-script",
+  "fontName": "Pinyon Script",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-03-30",
+  "version": "v10",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

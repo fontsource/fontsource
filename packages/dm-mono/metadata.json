@@ -1,0 +1,13 @@
+{
+  "fontId": "dm-mono",
+  "fontName": "DM Mono",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["300", "400", "500"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2020-05-06",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

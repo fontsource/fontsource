@@ -1,0 +1,13 @@
+{
+  "fontId": "philosopher",
+  "fontName": "Philosopher",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "vietnamese"],
+  "weights": ["400", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2020-01-30",
+  "version": "v12",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,21 @@
+{
+  "fontId": "source-sans-pro",
+  "fontName": "Source Sans Pro",
+  "subsets": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "greek-ext",
+    "latin",
+    "latin-ext",
+    "vietnamese"
+  ],
+  "weights": ["200", "300", "400", "600", "700", "900"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-23",
+  "version": "v13",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

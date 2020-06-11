@@ -1,0 +1,21 @@
+{
+  "fontId": "open-sans",
+  "fontName": "Open Sans",
+  "subsets": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "greek-ext",
+    "latin",
+    "latin-ext",
+    "vietnamese"
+  ],
+  "weights": ["300", "400", "600", "700", "800"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-23",
+  "version": "v17",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

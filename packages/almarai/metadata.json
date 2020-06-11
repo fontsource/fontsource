@@ -1,0 +1,13 @@
+{
+  "fontId": "almarai",
+  "fontName": "Almarai",
+  "subsets": ["arabic"],
+  "weights": ["300", "400", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "arabic",
+  "lastModified": "2020-03-03",
+  "version": "v2",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

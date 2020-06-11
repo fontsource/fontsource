@@ -1,0 +1,13 @@
+{
+  "fontId": "francois-one",
+  "fontName": "Francois One",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-17",
+  "version": "v14",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,13 @@
+{
+  "fontId": "nobile",
+  "fontName": "Nobile",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400", "500", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v11",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

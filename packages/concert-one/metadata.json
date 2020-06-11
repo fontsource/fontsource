@@ -1,0 +1,13 @@
+{
+  "fontId": "concert-one",
+  "fontName": "Concert One",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-17",
+  "version": "v10",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

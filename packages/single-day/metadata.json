@@ -1,0 +1,13 @@
+{
+  "fontId": "single-day",
+  "fontName": "Single Day",
+  "subsets": ["korean"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "korean",
+  "lastModified": "2020-03-03",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

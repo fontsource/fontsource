@@ -1,0 +1,13 @@
+{
+  "fontId": "sura",
+  "fontName": "Sura",
+  "subsets": ["devanagari", "latin", "latin-ext"],
+  "weights": ["400", "700"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v4",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

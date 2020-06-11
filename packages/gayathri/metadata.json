@@ -1,0 +1,13 @@
+{
+  "fontId": "gayathri",
+  "fontName": "Gayathri",
+  "subsets": ["latin", "malayalam"],
+  "weights": ["100", "400", "700"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-11-05",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

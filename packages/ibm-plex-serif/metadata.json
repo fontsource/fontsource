@@ -1,0 +1,13 @@
+{
+  "fontId": "ibm-plex-serif",
+  "fontName": "IBM Plex Serif",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+  "weights": ["100", "200", "300", "400", "500", "600", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v8",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

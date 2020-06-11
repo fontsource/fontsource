@@ -1,0 +1,13 @@
+{
+  "fontId": "nanum-gothic",
+  "fontName": "Nanum Gothic",
+  "subsets": ["korean", "latin"],
+  "weights": ["400", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-22",
+  "version": "v17",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

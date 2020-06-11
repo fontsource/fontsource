@@ -1,0 +1,13 @@
+{
+  "fontId": "tajawal",
+  "fontName": "Tajawal",
+  "subsets": ["arabic", "latin"],
+  "weights": ["200", "300", "400", "500", "700", "800", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v3",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

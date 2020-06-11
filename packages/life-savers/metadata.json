@@ -1,0 +1,13 @@
+{
+  "fontId": "life-savers",
+  "fontName": "Life Savers",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v10",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

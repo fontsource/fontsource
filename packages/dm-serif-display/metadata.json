@@ -1,0 +1,13 @@
+{
+  "fontId": "dm-serif-display",
+  "fontName": "DM Serif Display",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-11-19",
+  "version": "v4",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

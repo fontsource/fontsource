@@ -1,0 +1,13 @@
+{
+  "fontId": "mukta-malar",
+  "fontName": "Mukta Malar",
+  "subsets": ["latin", "latin-ext", "tamil"],
+  "weights": ["200", "300", "400", "500", "600", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v6",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

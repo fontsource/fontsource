@@ -1,0 +1,13 @@
+{
+  "fontId": "cabin-condensed",
+  "fontName": "Cabin Condensed",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400", "500", "600", "700"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-17",
+  "version": "v13",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

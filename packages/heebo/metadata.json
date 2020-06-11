@@ -1,0 +1,13 @@
+{
+  "fontId": "heebo",
+  "fontName": "Heebo",
+  "subsets": ["hebrew", "latin"],
+  "weights": ["100", "300", "400", "500", "700", "800", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-05-14",
+  "version": "v7",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

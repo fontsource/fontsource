@@ -1,0 +1,13 @@
+{
+  "fontId": "nanum-myeongjo",
+  "fontName": "Nanum Myeongjo",
+  "subsets": ["korean", "latin"],
+  "weights": ["400", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-17",
+  "version": "v15",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

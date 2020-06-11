@@ -1,0 +1,13 @@
+{
+  "fontId": "prata",
+  "fontName": "Prata",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "vietnamese"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-01-30",
+  "version": "v11",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,13 @@
+{
+  "fontId": "notable",
+  "fontName": "Notable",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-11-05",
+  "version": "v4",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

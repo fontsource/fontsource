@@ -1,0 +1,13 @@
+{
+  "fontId": "kantumruy",
+  "fontName": "Kantumruy",
+  "subsets": ["khmer"],
+  "weights": ["300", "400", "700"],
+  "styles": ["normal"],
+  "defSubset": "khmer",
+  "lastModified": "2019-07-26",
+  "version": "v7",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

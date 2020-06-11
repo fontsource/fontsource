@@ -1,0 +1,13 @@
+{
+  "fontId": "public-sans",
+  "fontName": "Public Sans",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2020-04-21",
+  "version": "v3",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

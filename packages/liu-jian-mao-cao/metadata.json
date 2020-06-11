@@ -1,0 +1,13 @@
+{
+  "fontId": "liu-jian-mao-cao",
+  "fontName": "Liu Jian Mao Cao",
+  "subsets": ["chinese-simplified", "latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-11-05",
+  "version": "v5",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

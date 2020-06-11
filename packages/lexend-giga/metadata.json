@@ -1,0 +1,13 @@
+{
+  "fontId": "lexend-giga",
+  "fontName": "Lexend Giga",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-03-03",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

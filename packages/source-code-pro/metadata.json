@@ -1,0 +1,20 @@
+{
+  "fontId": "source-code-pro",
+  "fontName": "Source Code Pro",
+  "subsets": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "latin",
+    "latin-ext",
+    "vietnamese"
+  ],
+  "weights": ["200", "300", "400", "500", "600", "700", "900"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-08-22",
+  "version": "v11",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

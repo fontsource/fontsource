@@ -1,0 +1,13 @@
+{
+  "fontId": "kaushan-script",
+  "fontName": "Kaushan Script",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-17",
+  "version": "v8",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

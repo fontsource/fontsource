@@ -1,0 +1,13 @@
+{
+  "fontId": "cormorant-garamond",
+  "fontName": "Cormorant Garamond",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+  "weights": ["300", "400", "500", "600", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-17",
+  "version": "v7",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

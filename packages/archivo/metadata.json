@@ -1,0 +1,13 @@
+{
+  "fontId": "archivo",
+  "fontName": "Archivo",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400", "500", "600", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-26",
+  "version": "v6",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

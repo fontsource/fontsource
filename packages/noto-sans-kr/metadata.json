@@ -1,0 +1,13 @@
+{
+  "fontId": "noto-sans-kr",
+  "fontName": "Noto Sans KR",
+  "subsets": ["korean", "latin"],
+  "weights": ["100", "300", "400", "500", "700", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-22",
+  "version": "v12",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

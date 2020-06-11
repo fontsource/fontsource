@@ -1,0 +1,13 @@
+{
+  "fontId": "noto-sans-hk",
+  "fontName": "Noto Sans HK",
+  "subsets": ["chinese-hongkong", "latin"],
+  "weights": ["100", "300", "400", "500", "700", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v5",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

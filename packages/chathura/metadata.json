@@ -1,0 +1,13 @@
+{
+  "fontId": "chathura",
+  "fontName": "Chathura",
+  "subsets": ["latin", "telugu"],
+  "weights": ["100", "300", "400", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v5",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,13 @@
+{
+  "fontId": "slabo-27px",
+  "fontName": "Slabo 27px",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-22",
+  "version": "v6",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,13 @@
+{
+  "fontId": "baloo-tammudu-2",
+  "fontName": "Baloo Tammudu 2",
+  "subsets": ["latin", "latin-ext", "telugu", "vietnamese"],
+  "weights": ["400", "500", "600", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-03-06",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

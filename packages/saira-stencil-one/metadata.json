@@ -1,0 +1,13 @@
+{
+  "fontId": "saira-stencil-one",
+  "fontName": "Saira Stencil One",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-11-05",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

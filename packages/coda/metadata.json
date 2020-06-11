@@ -1,0 +1,13 @@
+{
+  "fontId": "coda",
+  "fontName": "Coda",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v15",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

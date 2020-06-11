@@ -1,0 +1,13 @@
+{
+  "fontId": "kosugi-maru",
+  "fontName": "Kosugi Maru",
+  "subsets": ["cyrillic", "japanese", "latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-03-03",
+  "version": "v6",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

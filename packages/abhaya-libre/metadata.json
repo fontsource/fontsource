@@ -1,0 +1,13 @@
+{
+  "fontId": "abhaya-libre",
+  "fontName": "Abhaya Libre",
+  "subsets": ["latin", "latin-ext", "sinhala"],
+  "weights": ["400", "500", "600", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v5",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

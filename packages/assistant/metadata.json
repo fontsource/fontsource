@@ -1,0 +1,13 @@
+{
+  "fontId": "assistant",
+  "fontName": "Assistant",
+  "subsets": ["hebrew", "latin"],
+  "weights": ["200", "300", "400", "600", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-17",
+  "version": "v4",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

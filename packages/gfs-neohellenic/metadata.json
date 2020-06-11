@@ -1,0 +1,13 @@
+{
+  "fontId": "gfs-neohellenic",
+  "fontName": "GFS Neohellenic",
+  "subsets": ["greek"],
+  "weights": ["400", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "greek",
+  "lastModified": "2019-07-16",
+  "version": "v12",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

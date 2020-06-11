@@ -1,0 +1,13 @@
+{
+  "fontId": "b612-mono",
+  "fontName": "B612 Mono",
+  "subsets": ["latin"],
+  "weights": ["400", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-11-05",
+  "version": "v4",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

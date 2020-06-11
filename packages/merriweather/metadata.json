@@ -1,0 +1,13 @@
+{
+  "fontId": "merriweather",
+  "fontName": "Merriweather",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+  "weights": ["300", "400", "700", "900"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-22",
+  "version": "v21",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

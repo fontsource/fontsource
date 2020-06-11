@@ -1,0 +1,13 @@
+{
+  "fontId": "noto-sans-sc",
+  "fontName": "Noto Sans SC",
+  "subsets": ["chinese-simplified", "latin"],
+  "weights": ["100", "300", "400", "500", "700", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-03-05",
+  "version": "v11",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

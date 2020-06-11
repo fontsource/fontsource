@@ -1,0 +1,13 @@
+{
+  "fontId": "damion",
+  "fontName": "Damion",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v9",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

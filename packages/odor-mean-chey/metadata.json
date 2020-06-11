@@ -1,0 +1,13 @@
+{
+  "fontId": "odor-mean-chey",
+  "fontName": "Odor Mean Chey",
+  "subsets": ["khmer"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "khmer",
+  "lastModified": "2019-07-16",
+  "version": "v11",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

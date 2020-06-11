@@ -1,0 +1,13 @@
+{
+  "fontId": "poly",
+  "fontName": "Poly",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v10",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

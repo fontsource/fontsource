@@ -1,0 +1,13 @@
+{
+  "fontId": "alfa-slab-one",
+  "fontName": "Alfa Slab One",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-17",
+  "version": "v9",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,13 @@
+{
+  "fontId": "dosis",
+  "fontName": "Dosis",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["200", "300", "400", "500", "600", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-02-05",
+  "version": "v17",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

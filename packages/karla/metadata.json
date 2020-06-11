@@ -1,0 +1,13 @@
+{
+  "fontId": "karla",
+  "fontName": "Karla",
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "latin",
+  "lastModified": "2019-12-08",
+  "version": "v13",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

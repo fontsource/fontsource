@@ -1,0 +1,13 @@
+{
+  "fontId": "mada",
+  "fontName": "Mada",
+  "subsets": ["arabic", "latin"],
+  "weights": ["200", "300", "400", "500", "600", "700", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v8",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

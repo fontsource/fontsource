@@ -1,0 +1,13 @@
+{
+  "fontId": "bahianita",
+  "fontName": "Bahianita",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-11-05",
+  "version": "v2",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

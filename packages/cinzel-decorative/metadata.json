@@ -1,0 +1,13 @@
+{
+  "fontId": "cinzel-decorative",
+  "fontName": "Cinzel Decorative",
+  "subsets": ["latin"],
+  "weights": ["400", "700", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2019-07-16",
+  "version": "v8",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
