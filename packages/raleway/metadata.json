@@ -1,12 +1,12 @@
 {
   "fontId": "raleway",
   "fontName": "Raleway",
-  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+  "subsets": ["latin", "latin-ext"],
   "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   "styles": ["normal", "italic"],
   "defSubset": "latin",
-  "lastModified": "2020-06-18",
-  "version": "v15",
+  "lastModified": "2020-06-23",
+  "version": "v16",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
