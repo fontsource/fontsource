@@ -1,12 +1,12 @@
 {
-  "fontId": "poppins",
-  "fontName": "Poppins",
-  "subsets": ["devanagari", "latin", "latin-ext"],
+  "fontId": "grenze-gotisch",
+  "fontName": "Grenze Gotisch",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
   "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  "styles": ["normal", "italic"],
+  "styles": ["normal"],
   "defSubset": "latin",
-  "lastModified": "2019-10-15",
-  "version": "v9",
+  "lastModified": "2020-07-08",
+  "version": "v1",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
