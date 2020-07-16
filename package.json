@@ -14,7 +14,7 @@
     "async": "^3.2.0",
     "fs-extra": "^9.0.0",
     "jsonfile": "^6.0.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "shelljs": "^0.8.4",
     "sync-request": "^6.1.0",
     "wget-improved": "^3.2.0"
