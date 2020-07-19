@@ -1,12 +1,12 @@
 {
   "fontId": "harmattan",
   "fontName": "Harmattan",
-  "subsets": ["arabic", "latin"],
-  "weights": ["400"],
+  "subsets": ["latin", "latin-ext"],
+  "weights": ["400", "700"],
   "styles": ["normal"],
   "defSubset": "latin",
-  "lastModified": "2019-07-16",
-  "version": "v6",
+  "lastModified": "2020-07-15",
+  "version": "v7",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Encode Sans Thin'),
-    local('EncodeSans-Thin'), 
+  src: 
     url('./files/encode-sans-latin-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -16,9 +14,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Encode Sans ExtraLight'),
-    local('EncodeSans-ExtraLight'), 
+  src: 
     url('./files/encode-sans-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -28,9 +24,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Encode Sans Light'),
-    local('EncodeSans-Light'), 
+  src: 
     url('./files/encode-sans-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -40,9 +34,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Encode Sans Regular'),
-    local('EncodeSans-Regular'), 
+  src: 
     url('./files/encode-sans-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -52,9 +44,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Encode Sans Medium'),
-    local('EncodeSans-Medium'), 
+  src: 
     url('./files/encode-sans-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -64,9 +54,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Encode Sans SemiBold'),
-    local('EncodeSans-SemiBold'), 
+  src: 
     url('./files/encode-sans-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -76,9 +64,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Encode Sans Bold'),
-    local('EncodeSans-Bold'), 
+  src: 
     url('./files/encode-sans-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -88,9 +74,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Encode Sans ExtraBold'),
-    local('EncodeSans-ExtraBold'), 
+  src: 
     url('./files/encode-sans-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -100,9 +84,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Encode Sans Black'),
-    local('EncodeSans-Black'), 
+  src: 
     url('./files/encode-sans-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/encode-sans-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

@@ -1,12 +1,19 @@
 {
   "fontId": "source-serif-pro",
   "fontName": "Source Serif Pro",
-  "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "600", "700"],
-  "styles": ["normal"],
+  "subsets": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "latin",
+    "latin-ext",
+    "vietnamese"
+  ],
+  "weights": ["200", "300", "400", "600", "700", "900"],
+  "styles": ["normal", "italic"],
   "defSubset": "latin",
-  "lastModified": "2019-07-17",
-  "version": "v7",
+  "lastModified": "2020-07-13",
+  "version": "v8",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
