@@ -3,7 +3,7 @@
   "fontName": "Balsamiq Sans",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
   "weights": ["400", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2020-05-06",
   "version": "v1",

@@ -3,7 +3,7 @@
   "fontName": "GFS Neohellenic",
   "subsets": ["greek"],
   "weights": ["400", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "greek",
   "lastModified": "2019-07-16",
   "version": "v12",

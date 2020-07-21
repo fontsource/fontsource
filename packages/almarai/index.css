@@ -8,7 +8,8 @@
     local('Almarai Light'),
     local('Almarai-Light'), 
     url('./files/almarai-arabic-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/almarai-arabic-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/almarai-arabic-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/almarai-arabic-300-normal.ttf') format('truetype');
 }
 /* almarai-arabic-400-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Almarai'),
     local('Almarai-Regular'), 
     url('./files/almarai-arabic-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/almarai-arabic-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/almarai-arabic-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/almarai-arabic-400-normal.ttf') format('truetype');
 }
 /* almarai-arabic-700-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Almarai Bold'),
     local('Almarai-Bold'), 
     url('./files/almarai-arabic-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/almarai-arabic-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/almarai-arabic-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/almarai-arabic-700-normal.ttf') format('truetype');
 }
 /* almarai-arabic-800-normal*/
 @font-face {
@@ -44,5 +47,6 @@
     local('Almarai ExtraBold'),
     local('Almarai-ExtraBold'), 
     url('./files/almarai-arabic-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/almarai-arabic-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/almarai-arabic-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/almarai-arabic-800-normal.ttf') format('truetype');
 }

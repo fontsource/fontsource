@@ -3,7 +3,7 @@
   "fontName": "PT Sans",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
   "weights": ["400", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-22",
   "version": "v11",

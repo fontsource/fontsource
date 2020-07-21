@@ -1,15 +1,3 @@
-/* im-fell-english-latin-400-normal*/
-@font-face {
-  font-family: 'IM Fell English';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src:
-    local('IM FELL English Roman'),
-    local('IM_FELL_English_Roman'), 
-    url('./files/im-fell-english-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/im-fell-english-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* im-fell-english-latin-400-italic*/
 @font-face {
   font-family: 'IM Fell English';
@@ -20,5 +8,19 @@
     local('IM FELL English Italic'),
     local('IM_FELL_English_Italic'), 
     url('./files/im-fell-english-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/im-fell-english-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/im-fell-english-latin-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/im-fell-english-latin-400-italic.ttf') format('truetype');
+}
+/* im-fell-english-latin-400-normal*/
+@font-face {
+  font-family: 'IM Fell English';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('IM FELL English Roman'),
+    local('IM_FELL_English_Roman'), 
+    url('./files/im-fell-english-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/im-fell-english-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/im-fell-english-latin-400-normal.ttf') format('truetype');
 }

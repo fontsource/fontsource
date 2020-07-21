@@ -3,7 +3,7 @@
   "fontName": "B612",
   "subsets": ["latin"],
   "weights": ["400", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-11-05",
   "version": "v4",

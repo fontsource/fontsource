@@ -8,7 +8,8 @@
     local('Big Shoulders Text Thin'),
     local('BigShouldersText-Thin'), 
     url('./files/big-shoulders-text-vietnamese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-vietnamese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-100-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-100-normal.ttf') format('truetype');
 }
 /* big-shoulders-text-vietnamese-300-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Big Shoulders Text Light'),
     local('BigShouldersText-Light'), 
     url('./files/big-shoulders-text-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-300-normal.ttf') format('truetype');
 }
 /* big-shoulders-text-vietnamese-400-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Big Shoulders Text Regular'),
     local('BigShouldersText-Regular'), 
     url('./files/big-shoulders-text-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-400-normal.ttf') format('truetype');
 }
 /* big-shoulders-text-vietnamese-500-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Big Shoulders Text Medium'),
     local('BigShouldersText-Medium'), 
     url('./files/big-shoulders-text-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-500-normal.ttf') format('truetype');
 }
 /* big-shoulders-text-vietnamese-600-normal*/
 @font-face {
@@ -56,7 +60,8 @@
     local('Big Shoulders Text SemiBold'),
     local('BigShouldersText-SemiBold'), 
     url('./files/big-shoulders-text-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-600-normal.ttf') format('truetype');
 }
 /* big-shoulders-text-vietnamese-700-normal*/
 @font-face {
@@ -68,7 +73,8 @@
     local('Big Shoulders Text Bold'),
     local('BigShouldersText-Bold'), 
     url('./files/big-shoulders-text-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-700-normal.ttf') format('truetype');
 }
 /* big-shoulders-text-vietnamese-800-normal*/
 @font-face {
@@ -80,7 +86,8 @@
     local('Big Shoulders Text ExtraBold'),
     local('BigShouldersText-ExtraBold'), 
     url('./files/big-shoulders-text-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-800-normal.ttf') format('truetype');
 }
 /* big-shoulders-text-vietnamese-900-normal*/
 @font-face {
@@ -92,5 +99,6 @@
     local('Big Shoulders Text Black'),
     local('BigShouldersText-Black'), 
     url('./files/big-shoulders-text-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/big-shoulders-text-vietnamese-900-normal.ttf') format('truetype');
 }

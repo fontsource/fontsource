@@ -3,7 +3,7 @@
   "fontName": "Crimson Text",
   "subsets": ["latin"],
   "weights": ["400", "600", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-22",
   "version": "v10",

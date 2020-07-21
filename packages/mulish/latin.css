@@ -1,13 +1,3 @@
-/* mulish-latin-200-normal*/
-@font-face {
-  font-family: 'Mulish';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200;
-  src: 
-    url('./files/mulish-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* mulish-latin-200-italic*/
 @font-face {
   font-family: 'Mulish';
@@ -16,17 +6,19 @@
   font-weight: 200;
   src: 
     url('./files/mulish-latin-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-200-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-200-italic.ttf') format('truetype');
 }
-/* mulish-latin-300-normal*/
+/* mulish-latin-200-normal*/
 @font-face {
   font-family: 'Mulish';
   font-style: normal;
   font-display: swap;
-  font-weight: 300;
+  font-weight: 200;
   src: 
-    url('./files/mulish-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mulish-latin-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-200-normal.ttf') format('truetype');
 }
 /* mulish-latin-300-italic*/
 @font-face {
@@ -36,17 +28,19 @@
   font-weight: 300;
   src: 
     url('./files/mulish-latin-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-300-italic.ttf') format('truetype');
 }
-/* mulish-latin-400-normal*/
+/* mulish-latin-300-normal*/
 @font-face {
   font-family: 'Mulish';
   font-style: normal;
   font-display: swap;
-  font-weight: 400;
+  font-weight: 300;
   src: 
-    url('./files/mulish-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mulish-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-300-normal.ttf') format('truetype');
 }
 /* mulish-latin-400-italic*/
 @font-face {
@@ -56,17 +50,19 @@
   font-weight: 400;
   src: 
     url('./files/mulish-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-400-italic.ttf') format('truetype');
 }
-/* mulish-latin-500-normal*/
+/* mulish-latin-400-normal*/
 @font-face {
   font-family: 'Mulish';
   font-style: normal;
   font-display: swap;
-  font-weight: 500;
+  font-weight: 400;
   src: 
-    url('./files/mulish-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mulish-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-400-normal.ttf') format('truetype');
 }
 /* mulish-latin-500-italic*/
 @font-face {
@@ -76,17 +72,19 @@
   font-weight: 500;
   src: 
     url('./files/mulish-latin-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-500-italic.ttf') format('truetype');
 }
-/* mulish-latin-600-normal*/
+/* mulish-latin-500-normal*/
 @font-face {
   font-family: 'Mulish';
   font-style: normal;
   font-display: swap;
-  font-weight: 600;
+  font-weight: 500;
   src: 
-    url('./files/mulish-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mulish-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-500-normal.ttf') format('truetype');
 }
 /* mulish-latin-600-italic*/
 @font-face {
@@ -96,17 +94,19 @@
   font-weight: 600;
   src: 
     url('./files/mulish-latin-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-600-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-600-italic.ttf') format('truetype');
 }
-/* mulish-latin-700-normal*/
+/* mulish-latin-600-normal*/
 @font-face {
   font-family: 'Mulish';
   font-style: normal;
   font-display: swap;
-  font-weight: 700;
+  font-weight: 600;
   src: 
-    url('./files/mulish-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mulish-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-600-normal.ttf') format('truetype');
 }
 /* mulish-latin-700-italic*/
 @font-face {
@@ -116,17 +116,19 @@
   font-weight: 700;
   src: 
     url('./files/mulish-latin-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-700-italic.ttf') format('truetype');
 }
-/* mulish-latin-800-normal*/
+/* mulish-latin-700-normal*/
 @font-face {
   font-family: 'Mulish';
   font-style: normal;
   font-display: swap;
-  font-weight: 800;
+  font-weight: 700;
   src: 
-    url('./files/mulish-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mulish-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-700-normal.ttf') format('truetype');
 }
 /* mulish-latin-800-italic*/
 @font-face {
@@ -136,17 +138,19 @@
   font-weight: 800;
   src: 
     url('./files/mulish-latin-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-800-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-800-italic.ttf') format('truetype');
 }
-/* mulish-latin-900-normal*/
+/* mulish-latin-800-normal*/
 @font-face {
   font-family: 'Mulish';
   font-style: normal;
   font-display: swap;
-  font-weight: 900;
+  font-weight: 800;
   src: 
-    url('./files/mulish-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mulish-latin-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-800-normal.ttf') format('truetype');
 }
 /* mulish-latin-900-italic*/
 @font-face {
@@ -156,5 +160,17 @@
   font-weight: 900;
   src: 
     url('./files/mulish-latin-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mulish-latin-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-900-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-900-italic.ttf') format('truetype');
+}
+/* mulish-latin-900-normal*/
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: 
+    url('./files/mulish-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/mulish-latin-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/mulish-latin-900-normal.ttf') format('truetype');
 }

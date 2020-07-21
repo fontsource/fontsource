@@ -8,7 +8,8 @@
     local('Ranga Regular'),
     local('Ranga-Regular'), 
     url('./files/ranga-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ranga-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/ranga-latin-ext-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/ranga-latin-ext-400-normal.ttf') format('truetype');
 }
 /* ranga-latin-ext-700-normal*/
 @font-face {
@@ -20,5 +21,6 @@
     local('Ranga Bold'),
     local('Ranga-Bold'), 
     url('./files/ranga-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ranga-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/ranga-latin-ext-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/ranga-latin-ext-700-normal.ttf') format('truetype');
 }

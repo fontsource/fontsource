@@ -8,7 +8,8 @@
     local('Alef Regular'),
     local('Alef-Regular'), 
     url('./files/alef-hebrew-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/alef-hebrew-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/alef-hebrew-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/alef-hebrew-400-normal.ttf') format('truetype');
 }
 /* alef-hebrew-700-normal*/
 @font-face {
@@ -20,5 +21,6 @@
     local('Alef Bold'),
     local('Alef-Bold'), 
     url('./files/alef-hebrew-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/alef-hebrew-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/alef-hebrew-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/alef-hebrew-700-normal.ttf') format('truetype');
 }

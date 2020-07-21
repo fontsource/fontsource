@@ -3,7 +3,7 @@
   "fontName": "Livvic",
   "subsets": ["latin", "latin-ext", "vietnamese"],
   "weights": ["100", "200", "300", "400", "500", "600", "700", "900"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-11-05",
   "version": "v3",

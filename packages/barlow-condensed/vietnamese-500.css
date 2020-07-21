@@ -1,15 +1,3 @@
-/* barlow-condensed-vietnamese-500-normal*/
-@font-face {
-  font-family: 'Barlow Condensed';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 500;
-  src:
-    local('Barlow Condensed Medium'),
-    local('BarlowCondensed-Medium'), 
-    url('./files/barlow-condensed-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* barlow-condensed-vietnamese-500-italic*/
 @font-face {
   font-family: 'Barlow Condensed';
@@ -20,5 +8,19 @@
     local('Barlow Condensed Medium Italic'),
     local('BarlowCondensed-MediumItalic'), 
     url('./files/barlow-condensed-vietnamese-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/barlow-condensed-vietnamese-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/barlow-condensed-vietnamese-500-italic.ttf') format('truetype');
+}
+/* barlow-condensed-vietnamese-500-normal*/
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Barlow Condensed Medium'),
+    local('BarlowCondensed-Medium'), 
+    url('./files/barlow-condensed-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/barlow-condensed-vietnamese-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/barlow-condensed-vietnamese-500-normal.ttf') format('truetype');
 }

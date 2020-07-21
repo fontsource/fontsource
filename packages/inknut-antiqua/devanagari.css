@@ -8,7 +8,8 @@
     local('Inknut Antiqua Light'),
     local('InknutAntiqua-Light'), 
     url('./files/inknut-antiqua-devanagari-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/inknut-antiqua-devanagari-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-300-normal.ttf') format('truetype');
 }
 /* inknut-antiqua-devanagari-400-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Inknut Antiqua Regular'),
     local('InknutAntiqua-Regular'), 
     url('./files/inknut-antiqua-devanagari-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/inknut-antiqua-devanagari-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-400-normal.ttf') format('truetype');
 }
 /* inknut-antiqua-devanagari-500-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Inknut Antiqua Medium'),
     local('InknutAntiqua-Medium'), 
     url('./files/inknut-antiqua-devanagari-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/inknut-antiqua-devanagari-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-500-normal.ttf') format('truetype');
 }
 /* inknut-antiqua-devanagari-600-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Inknut Antiqua SemiBold'),
     local('InknutAntiqua-SemiBold'), 
     url('./files/inknut-antiqua-devanagari-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/inknut-antiqua-devanagari-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-600-normal.ttf') format('truetype');
 }
 /* inknut-antiqua-devanagari-700-normal*/
 @font-face {
@@ -56,7 +60,8 @@
     local('Inknut Antiqua Bold'),
     local('InknutAntiqua-Bold'), 
     url('./files/inknut-antiqua-devanagari-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/inknut-antiqua-devanagari-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-700-normal.ttf') format('truetype');
 }
 /* inknut-antiqua-devanagari-800-normal*/
 @font-face {
@@ -68,7 +73,8 @@
     local('Inknut Antiqua ExtraBold'),
     local('InknutAntiqua-ExtraBold'), 
     url('./files/inknut-antiqua-devanagari-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/inknut-antiqua-devanagari-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-800-normal.ttf') format('truetype');
 }
 /* inknut-antiqua-devanagari-900-normal*/
 @font-face {
@@ -80,5 +86,6 @@
     local('Inknut Antiqua Black'),
     local('InknutAntiqua-Black'), 
     url('./files/inknut-antiqua-devanagari-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/inknut-antiqua-devanagari-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/inknut-antiqua-devanagari-900-normal.ttf') format('truetype');
 }

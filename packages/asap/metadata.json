@@ -3,7 +3,7 @@
   "fontName": "Asap",
   "subsets": ["latin", "latin-ext", "vietnamese"],
   "weights": ["400", "500", "600", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-26",
   "version": "v11",

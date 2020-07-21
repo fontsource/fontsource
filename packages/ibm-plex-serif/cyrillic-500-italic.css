@@ -8,5 +8,6 @@
     local('IBM Plex Serif Medium Italic'),
     local('IBMPlexSerif-MediumItalic'), 
     url('./files/ibm-plex-serif-cyrillic-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ibm-plex-serif-cyrillic-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/ibm-plex-serif-cyrillic-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/ibm-plex-serif-cyrillic-500-italic.ttf') format('truetype');
 }

@@ -1,15 +1,3 @@
-/* kulim-park-latin-600-normal*/
-@font-face {
-  font-family: 'Kulim Park';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 600;
-  src:
-    local('Kulim Park SemiBold'),
-    local('KulimPark-SemiBold'), 
-    url('./files/kulim-park-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/kulim-park-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* kulim-park-latin-600-italic*/
 @font-face {
   font-family: 'Kulim Park';
@@ -20,5 +8,19 @@
     local('Kulim Park SemiBold Italic'),
     local('KulimPark-SemiBoldItalic'), 
     url('./files/kulim-park-latin-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/kulim-park-latin-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/kulim-park-latin-600-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/kulim-park-latin-600-italic.ttf') format('truetype');
+}
+/* kulim-park-latin-600-normal*/
+@font-face {
+  font-family: 'Kulim Park';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Kulim Park SemiBold'),
+    local('KulimPark-SemiBold'), 
+    url('./files/kulim-park-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/kulim-park-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/kulim-park-latin-600-normal.ttf') format('truetype');
 }

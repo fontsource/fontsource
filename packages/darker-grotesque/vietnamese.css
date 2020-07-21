@@ -8,7 +8,8 @@
     local('Darker Grotesque Light'),
     local('DarkerGrotesque-Light'), 
     url('./files/darker-grotesque-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/darker-grotesque-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-300-normal.ttf') format('truetype');
 }
 /* darker-grotesque-vietnamese-400-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Darker Grotesque Regular'),
     local('DarkerGrotesque-Regular'), 
     url('./files/darker-grotesque-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/darker-grotesque-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-400-normal.ttf') format('truetype');
 }
 /* darker-grotesque-vietnamese-500-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Darker Grotesque Medium'),
     local('DarkerGrotesque-Medium'), 
     url('./files/darker-grotesque-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/darker-grotesque-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-500-normal.ttf') format('truetype');
 }
 /* darker-grotesque-vietnamese-600-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Darker Grotesque SemiBold'),
     local('DarkerGrotesque-SemiBold'), 
     url('./files/darker-grotesque-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/darker-grotesque-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-600-normal.ttf') format('truetype');
 }
 /* darker-grotesque-vietnamese-700-normal*/
 @font-face {
@@ -56,7 +60,8 @@
     local('Darker Grotesque Bold'),
     local('DarkerGrotesque-Bold'), 
     url('./files/darker-grotesque-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/darker-grotesque-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-700-normal.ttf') format('truetype');
 }
 /* darker-grotesque-vietnamese-800-normal*/
 @font-face {
@@ -68,7 +73,8 @@
     local('Darker Grotesque ExtraBold'),
     local('DarkerGrotesque-ExtraBold'), 
     url('./files/darker-grotesque-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/darker-grotesque-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-800-normal.ttf') format('truetype');
 }
 /* darker-grotesque-vietnamese-900-normal*/
 @font-face {
@@ -80,5 +86,6 @@
     local('Darker Grotesque Black'),
     local('DarkerGrotesque-Black'), 
     url('./files/darker-grotesque-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/darker-grotesque-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/darker-grotesque-vietnamese-900-normal.ttf') format('truetype');
 }

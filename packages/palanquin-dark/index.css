@@ -8,7 +8,8 @@
     local('Palanquin Dark Regular'),
     local('PalanquinDark-Regular'), 
     url('./files/palanquin-dark-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/palanquin-dark-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/palanquin-dark-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/palanquin-dark-latin-400-normal.ttf') format('truetype');
 }
 /* palanquin-dark-latin-500-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Palanquin Dark Medium'),
     local('PalanquinDark-Medium'), 
     url('./files/palanquin-dark-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/palanquin-dark-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/palanquin-dark-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/palanquin-dark-latin-500-normal.ttf') format('truetype');
 }
 /* palanquin-dark-latin-600-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Palanquin Dark SemiBold'),
     local('PalanquinDark-SemiBold'), 
     url('./files/palanquin-dark-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/palanquin-dark-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/palanquin-dark-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/palanquin-dark-latin-600-normal.ttf') format('truetype');
 }
 /* palanquin-dark-latin-700-normal*/
 @font-face {
@@ -44,5 +47,6 @@
     local('Palanquin Dark Bold'),
     local('PalanquinDark-Bold'), 
     url('./files/palanquin-dark-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/palanquin-dark-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/palanquin-dark-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/palanquin-dark-latin-700-normal.ttf') format('truetype');
 }

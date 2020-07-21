@@ -8,7 +8,8 @@
     local('Passion One Regular'),
     local('PassionOne-Regular'), 
     url('./files/passion-one-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/passion-one-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/passion-one-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/passion-one-latin-400-normal.ttf') format('truetype');
 }
 /* passion-one-latin-700-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Passion One Bold'),
     local('PassionOne-Bold'), 
     url('./files/passion-one-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/passion-one-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/passion-one-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/passion-one-latin-700-normal.ttf') format('truetype');
 }
 /* passion-one-latin-900-normal*/
 @font-face {
@@ -32,5 +34,6 @@
     local('Passion One Black'),
     local('PassionOne-Black'), 
     url('./files/passion-one-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/passion-one-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/passion-one-latin-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/passion-one-latin-900-normal.ttf') format('truetype');
 }

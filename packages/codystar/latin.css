@@ -8,7 +8,8 @@
     local('Codystar Light'),
     local('Codystar-Light'), 
     url('./files/codystar-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/codystar-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/codystar-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/codystar-latin-300-normal.ttf') format('truetype');
 }
 /* codystar-latin-400-normal*/
 @font-face {
@@ -19,5 +20,6 @@
   src:
     local('Codystar'), 
     url('./files/codystar-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/codystar-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/codystar-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/codystar-latin-400-normal.ttf') format('truetype');
 }

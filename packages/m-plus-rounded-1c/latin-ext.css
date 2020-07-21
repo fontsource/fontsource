@@ -8,7 +8,8 @@
     local('M PLUS Rounded 1c Thin'),
     local('MPLUSRounded1c-Thin'), 
     url('./files/m-plus-rounded-1c-latin-ext-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-rounded-1c-latin-ext-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-100-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-100-normal.ttf') format('truetype');
 }
 /* m-plus-rounded-1c-latin-ext-300-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('M PLUS Rounded 1c Light'),
     local('MPLUSRounded1c-Light'), 
     url('./files/m-plus-rounded-1c-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-rounded-1c-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-300-normal.ttf') format('truetype');
 }
 /* m-plus-rounded-1c-latin-ext-400-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('M PLUS Rounded 1c'),
     local('MPLUSRounded1c-Regular'), 
     url('./files/m-plus-rounded-1c-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-rounded-1c-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-400-normal.ttf') format('truetype');
 }
 /* m-plus-rounded-1c-latin-ext-500-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('M PLUS Rounded 1c Medium'),
     local('MPLUSRounded1c-Medium'), 
     url('./files/m-plus-rounded-1c-latin-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-rounded-1c-latin-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-500-normal.ttf') format('truetype');
 }
 /* m-plus-rounded-1c-latin-ext-700-normal*/
 @font-face {
@@ -56,7 +60,8 @@
     local('M PLUS Rounded 1c Bold'),
     local('MPLUSRounded1c-Bold'), 
     url('./files/m-plus-rounded-1c-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-rounded-1c-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-700-normal.ttf') format('truetype');
 }
 /* m-plus-rounded-1c-latin-ext-800-normal*/
 @font-face {
@@ -68,7 +73,8 @@
     local('M PLUS Rounded 1c ExtraBold'),
     local('MPLUSRounded1c-ExtraBold'), 
     url('./files/m-plus-rounded-1c-latin-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-rounded-1c-latin-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-800-normal.ttf') format('truetype');
 }
 /* m-plus-rounded-1c-latin-ext-900-normal*/
 @font-face {
@@ -80,5 +86,6 @@
     local('M PLUS Rounded 1c Black'),
     local('MPLUSRounded1c-Black'), 
     url('./files/m-plus-rounded-1c-latin-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-rounded-1c-latin-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-rounded-1c-latin-ext-900-normal.ttf') format('truetype');
 }

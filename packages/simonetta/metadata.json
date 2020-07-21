@@ -3,7 +3,7 @@
   "fontName": "Simonetta",
   "subsets": ["latin", "latin-ext"],
   "weights": ["400", "900"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-26",
   "version": "v10",

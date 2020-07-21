@@ -3,7 +3,7 @@
   "fontName": "Puritan",
   "subsets": ["latin"],
   "weights": ["400", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-16",
   "version": "v11",

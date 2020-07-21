@@ -3,7 +3,7 @@
   "fontName": "Rosario",
   "subsets": ["latin", "latin-ext", "vietnamese"],
   "weights": ["300", "400", "500", "600", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2020-06-26",
   "version": "v18",

@@ -8,7 +8,8 @@
     local('Rowdies Light'),
     local('Rowdies-Light'), 
     url('./files/rowdies-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/rowdies-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rowdies-vietnamese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rowdies-vietnamese-300-normal.ttf') format('truetype');
 }
 /* rowdies-vietnamese-400-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Rowdies Regular'),
     local('Rowdies-Regular'), 
     url('./files/rowdies-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/rowdies-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rowdies-vietnamese-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rowdies-vietnamese-400-normal.ttf') format('truetype');
 }
 /* rowdies-vietnamese-700-normal*/
 @font-face {
@@ -32,5 +34,6 @@
     local('Rowdies Bold'),
     local('Rowdies-Bold'), 
     url('./files/rowdies-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/rowdies-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rowdies-vietnamese-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rowdies-vietnamese-700-normal.ttf') format('truetype');
 }

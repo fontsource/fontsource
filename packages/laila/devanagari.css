@@ -8,7 +8,8 @@
     local('Laila Light'),
     local('Laila-Light'), 
     url('./files/laila-devanagari-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/laila-devanagari-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-300-normal.ttf') format('truetype');
 }
 /* laila-devanagari-400-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Laila Regular'),
     local('Laila-Regular'), 
     url('./files/laila-devanagari-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/laila-devanagari-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-400-normal.ttf') format('truetype');
 }
 /* laila-devanagari-500-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Laila Medium'),
     local('Laila-Medium'), 
     url('./files/laila-devanagari-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/laila-devanagari-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-500-normal.ttf') format('truetype');
 }
 /* laila-devanagari-600-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Laila SemiBold'),
     local('Laila-SemiBold'), 
     url('./files/laila-devanagari-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/laila-devanagari-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-600-normal.ttf') format('truetype');
 }
 /* laila-devanagari-700-normal*/
 @font-face {
@@ -56,5 +60,6 @@
     local('Laila Bold'),
     local('Laila-Bold'), 
     url('./files/laila-devanagari-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/laila-devanagari-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/laila-devanagari-700-normal.ttf') format('truetype');
 }

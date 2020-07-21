@@ -1,15 +1,3 @@
-/* source-serif-pro-cyrillic-300-normal*/
-@font-face {
-  font-family: 'Source Serif Pro';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 300;
-  src:
-    local('Source Serif Pro Light'),
-    local('SourceSerifPro-Light'), 
-    url('./files/source-serif-pro-cyrillic-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-serif-pro-cyrillic-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* source-serif-pro-cyrillic-300-italic*/
 @font-face {
   font-family: 'Source Serif Pro';
@@ -20,5 +8,19 @@
     local('Source Serif Pro Light Italic'),
     local('SourceSerifPro-LightIt'), 
     url('./files/source-serif-pro-cyrillic-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-serif-pro-cyrillic-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/source-serif-pro-cyrillic-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/source-serif-pro-cyrillic-300-italic.ttf') format('truetype');
+}
+/* source-serif-pro-cyrillic-300-normal*/
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Source Serif Pro Light'),
+    local('SourceSerifPro-Light'), 
+    url('./files/source-serif-pro-cyrillic-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/source-serif-pro-cyrillic-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/source-serif-pro-cyrillic-300-normal.ttf') format('truetype');
 }

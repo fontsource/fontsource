@@ -3,7 +3,7 @@
   "fontName": "DM Sans",
   "subsets": ["latin", "latin-ext"],
   "weights": ["400", "500", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-11-14",
   "version": "v4",

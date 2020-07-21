@@ -1,12 +1,12 @@
 {
   "fontId": "poppins",
   "fontName": "Poppins",
-  "subsets": ["latin", "latin-ext"],
+  "subsets": ["devanagari", "latin", "latin-ext"],
   "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "lastModified": "2020-07-13",
-  "version": "v11",
+  "lastModified": "2020-07-20",
+  "version": "v12",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

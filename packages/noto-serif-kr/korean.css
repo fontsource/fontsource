@@ -8,7 +8,8 @@
     local('Noto Serif KR ExtraLight'),
     local('NotoSerifKR-ExtraLight'), 
     url('./files/noto-serif-kr-korean-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-kr-korean-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-200-normal.otf') format('opentype');
 }
 /* noto-serif-kr-korean-300-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Noto Serif KR Light'),
     local('NotoSerifKR-Light'), 
     url('./files/noto-serif-kr-korean-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-kr-korean-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-300-normal.otf') format('opentype');
 }
 /* noto-serif-kr-korean-400-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Noto Serif KR'),
     local('NotoSerifKR-Regular'), 
     url('./files/noto-serif-kr-korean-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-kr-korean-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-400-normal.otf') format('opentype');
 }
 /* noto-serif-kr-korean-500-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Noto Serif KR Medium'),
     local('NotoSerifKR-Medium'), 
     url('./files/noto-serif-kr-korean-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-kr-korean-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-500-normal.otf') format('opentype');
 }
 /* noto-serif-kr-korean-600-normal*/
 @font-face {
@@ -56,7 +60,8 @@
     local('Noto Serif KR SemiBold'),
     local('NotoSerifKR-SemiBold'), 
     url('./files/noto-serif-kr-korean-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-kr-korean-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-600-normal.otf') format('opentype');
 }
 /* noto-serif-kr-korean-700-normal*/
 @font-face {
@@ -68,7 +73,8 @@
     local('Noto Serif KR Bold'),
     local('NotoSerifKR-Bold'), 
     url('./files/noto-serif-kr-korean-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-kr-korean-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-700-normal.otf') format('opentype');
 }
 /* noto-serif-kr-korean-900-normal*/
 @font-face {
@@ -80,5 +86,6 @@
     local('Noto Serif KR Black'),
     local('NotoSerifKR-Black'), 
     url('./files/noto-serif-kr-korean-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-kr-korean-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/noto-serif-kr-korean-900-normal.otf') format('opentype');
 }

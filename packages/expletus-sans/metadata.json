@@ -3,7 +3,7 @@
   "fontName": "Expletus Sans",
   "subsets": ["latin"],
   "weights": ["400", "500", "600", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-16",
   "version": "v13",

@@ -8,7 +8,8 @@
     local('Tajawal ExtraLight'),
     local('Tajawal-ExtraLight'), 
     url('./files/tajawal-arabic-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tajawal-arabic-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-200-normal.ttf') format('truetype');
 }
 /* tajawal-arabic-300-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Tajawal Light'),
     local('Tajawal-Light'), 
     url('./files/tajawal-arabic-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tajawal-arabic-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-300-normal.ttf') format('truetype');
 }
 /* tajawal-arabic-400-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Tajawal'),
     local('Tajawal-Regular'), 
     url('./files/tajawal-arabic-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tajawal-arabic-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-400-normal.ttf') format('truetype');
 }
 /* tajawal-arabic-500-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Tajawal Medium'),
     local('Tajawal-Medium'), 
     url('./files/tajawal-arabic-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tajawal-arabic-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-500-normal.ttf') format('truetype');
 }
 /* tajawal-arabic-700-normal*/
 @font-face {
@@ -56,7 +60,8 @@
     local('Tajawal Bold'),
     local('Tajawal-Bold'), 
     url('./files/tajawal-arabic-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tajawal-arabic-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-700-normal.ttf') format('truetype');
 }
 /* tajawal-arabic-800-normal*/
 @font-face {
@@ -68,7 +73,8 @@
     local('Tajawal ExtraBold'),
     local('Tajawal-ExtraBold'), 
     url('./files/tajawal-arabic-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tajawal-arabic-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-800-normal.ttf') format('truetype');
 }
 /* tajawal-arabic-900-normal*/
 @font-face {
@@ -80,5 +86,6 @@
     local('Tajawal Black'),
     local('Tajawal-Black'), 
     url('./files/tajawal-arabic-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tajawal-arabic-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/tajawal-arabic-900-normal.ttf') format('truetype');
 }

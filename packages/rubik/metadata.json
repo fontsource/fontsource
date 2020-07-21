@@ -3,7 +3,7 @@
   "fontName": "Rubik",
   "subsets": ["cyrillic", "hebrew", "latin", "latin-ext"],
   "weights": ["300", "400", "500", "700", "900"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-22",
   "version": "v9",

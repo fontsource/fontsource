@@ -3,7 +3,7 @@
   "fontName": "Bellota Text",
   "subsets": ["cyrillic", "latin", "latin-ext", "vietnamese"],
   "weights": ["300", "400", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2020-04-21",
   "version": "v1",

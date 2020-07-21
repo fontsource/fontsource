@@ -3,7 +3,7 @@
   "fontName": "Be Vietnam",
   "subsets": ["latin", "latin-ext", "vietnamese"],
   "weights": ["100", "300", "400", "500", "600", "700", "800"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2020-03-03",
   "version": "v1",

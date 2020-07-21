@@ -8,7 +8,8 @@
     local('Baloo Thambi 2 Regular'),
     local('BalooThambi2-Regular'), 
     url('./files/baloo-thambi-2-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-thambi-2-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-400-normal.ttf') format('truetype');
 }
 /* baloo-thambi-2-vietnamese-500-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Baloo Thambi 2 Medium'),
     local('BalooThambi2-Medium'), 
     url('./files/baloo-thambi-2-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-thambi-2-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-500-normal.ttf') format('truetype');
 }
 /* baloo-thambi-2-vietnamese-600-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Baloo Thambi 2 SemiBold'),
     local('BalooThambi2-SemiBold'), 
     url('./files/baloo-thambi-2-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-thambi-2-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-600-normal.ttf') format('truetype');
 }
 /* baloo-thambi-2-vietnamese-700-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Baloo Thambi 2 Bold'),
     local('BalooThambi2-Bold'), 
     url('./files/baloo-thambi-2-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-thambi-2-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-700-normal.ttf') format('truetype');
 }
 /* baloo-thambi-2-vietnamese-800-normal*/
 @font-face {
@@ -56,5 +60,6 @@
     local('Baloo Thambi 2 ExtraBold'),
     local('BalooThambi2-ExtraBold'), 
     url('./files/baloo-thambi-2-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-thambi-2-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/baloo-thambi-2-vietnamese-800-normal.ttf') format('truetype');
 }

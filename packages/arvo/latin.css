@@ -1,14 +1,3 @@
-/* arvo-latin-400-normal*/
-@font-face {
-  font-family: 'Arvo';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src:
-    local('Arvo'), 
-    url('./files/arvo-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/arvo-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* arvo-latin-400-italic*/
 @font-face {
   font-family: 'Arvo';
@@ -18,19 +7,20 @@
   src:
     local('Arvo-Italic'), 
     url('./files/arvo-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/arvo-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/arvo-latin-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/arvo-latin-400-italic.ttf') format('truetype');
 }
-/* arvo-latin-700-normal*/
+/* arvo-latin-400-normal*/
 @font-face {
   font-family: 'Arvo';
   font-style: normal;
   font-display: swap;
-  font-weight: 700;
+  font-weight: 400;
   src:
-    local('Arvo Bold'),
-    local('Arvo-Bold'), 
-    url('./files/arvo-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/arvo-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Arvo'), 
+    url('./files/arvo-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/arvo-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/arvo-latin-400-normal.ttf') format('truetype');
 }
 /* arvo-latin-700-italic*/
 @font-face {
@@ -42,5 +32,19 @@
     local('Arvo Bold Italic'),
     local('Arvo-BoldItalic'), 
     url('./files/arvo-latin-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/arvo-latin-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/arvo-latin-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/arvo-latin-700-italic.ttf') format('truetype');
+}
+/* arvo-latin-700-normal*/
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Arvo Bold'),
+    local('Arvo-Bold'), 
+    url('./files/arvo-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/arvo-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/arvo-latin-700-normal.ttf') format('truetype');
 }

@@ -1,15 +1,3 @@
-/* scada-latin-ext-400-normal*/
-@font-face {
-  font-family: 'Scada';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src:
-    local('Scada Regular'),
-    local('Scada-Regular'), 
-    url('./files/scada-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/scada-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* scada-latin-ext-400-italic*/
 @font-face {
   font-family: 'Scada';
@@ -20,19 +8,21 @@
     local('Scada Italic'),
     local('Scada-Italic'), 
     url('./files/scada-latin-ext-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/scada-latin-ext-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/scada-latin-ext-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/scada-latin-ext-400-italic.ttf') format('truetype');
 }
-/* scada-latin-ext-700-normal*/
+/* scada-latin-ext-400-normal*/
 @font-face {
   font-family: 'Scada';
   font-style: normal;
   font-display: swap;
-  font-weight: 700;
+  font-weight: 400;
   src:
-    local('Scada Bold'),
-    local('Scada-Bold'), 
-    url('./files/scada-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/scada-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Scada Regular'),
+    local('Scada-Regular'), 
+    url('./files/scada-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/scada-latin-ext-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/scada-latin-ext-400-normal.ttf') format('truetype');
 }
 /* scada-latin-ext-700-italic*/
 @font-face {
@@ -44,5 +34,19 @@
     local('Scada Bold Italic'),
     local('Scada-BoldItalic'), 
     url('./files/scada-latin-ext-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/scada-latin-ext-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/scada-latin-ext-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/scada-latin-ext-700-italic.ttf') format('truetype');
+}
+/* scada-latin-ext-700-normal*/
+@font-face {
+  font-family: 'Scada';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Scada Bold'),
+    local('Scada-Bold'), 
+    url('./files/scada-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/scada-latin-ext-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/scada-latin-ext-700-normal.ttf') format('truetype');
 }

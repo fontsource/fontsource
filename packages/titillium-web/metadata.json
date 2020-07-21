@@ -3,7 +3,7 @@
   "fontName": "Titillium Web",
   "subsets": ["latin", "latin-ext"],
   "weights": ["200", "300", "400", "600", "700", "900"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-22",
   "version": "v8",

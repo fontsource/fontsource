@@ -3,7 +3,7 @@
   "fontName": "Montserrat Alternates",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
   "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-16",
   "version": "v11",

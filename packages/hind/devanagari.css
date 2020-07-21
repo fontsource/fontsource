@@ -8,7 +8,8 @@
     local('Hind Light'),
     local('Hind-Light'), 
     url('./files/hind-devanagari-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-devanagari-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-300-normal.ttf') format('truetype');
 }
 /* hind-devanagari-400-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Hind Regular'),
     local('Hind-Regular'), 
     url('./files/hind-devanagari-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-devanagari-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-400-normal.ttf') format('truetype');
 }
 /* hind-devanagari-500-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Hind Medium'),
     local('Hind-Medium'), 
     url('./files/hind-devanagari-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-devanagari-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-500-normal.ttf') format('truetype');
 }
 /* hind-devanagari-600-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Hind SemiBold'),
     local('Hind-SemiBold'), 
     url('./files/hind-devanagari-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-devanagari-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-600-normal.ttf') format('truetype');
 }
 /* hind-devanagari-700-normal*/
 @font-face {
@@ -56,5 +60,6 @@
     local('Hind Bold'),
     local('Hind-Bold'), 
     url('./files/hind-devanagari-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-devanagari-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/hind-devanagari-700-normal.ttf') format('truetype');
 }

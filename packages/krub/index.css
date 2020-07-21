@@ -1,15 +1,3 @@
-/* krub-latin-200-normal*/
-@font-face {
-  font-family: 'Krub';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200;
-  src:
-    local('Krub ExtraLight'),
-    local('Krub-ExtraLight'), 
-    url('./files/krub-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* krub-latin-200-italic*/
 @font-face {
   font-family: 'Krub';
@@ -20,19 +8,21 @@
     local('Krub ExtraLight Italic'),
     local('Krub-ExtraLightItalic'), 
     url('./files/krub-latin-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-200-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-200-italic.ttf') format('truetype');
 }
-/* krub-latin-300-normal*/
+/* krub-latin-200-normal*/
 @font-face {
   font-family: 'Krub';
   font-style: normal;
   font-display: swap;
-  font-weight: 300;
+  font-weight: 200;
   src:
-    local('Krub Light'),
-    local('Krub-Light'), 
-    url('./files/krub-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Krub ExtraLight'),
+    local('Krub-ExtraLight'), 
+    url('./files/krub-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/krub-latin-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-200-normal.ttf') format('truetype');
 }
 /* krub-latin-300-italic*/
 @font-face {
@@ -44,19 +34,21 @@
     local('Krub Light Italic'),
     local('Krub-LightItalic'), 
     url('./files/krub-latin-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-300-italic.ttf') format('truetype');
 }
-/* krub-latin-400-normal*/
+/* krub-latin-300-normal*/
 @font-face {
   font-family: 'Krub';
   font-style: normal;
   font-display: swap;
-  font-weight: 400;
+  font-weight: 300;
   src:
-    local('Krub Regular'),
-    local('Krub-Regular'), 
-    url('./files/krub-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Krub Light'),
+    local('Krub-Light'), 
+    url('./files/krub-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/krub-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-300-normal.ttf') format('truetype');
 }
 /* krub-latin-400-italic*/
 @font-face {
@@ -68,19 +60,21 @@
     local('Krub Italic'),
     local('Krub-Italic'), 
     url('./files/krub-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-400-italic.ttf') format('truetype');
 }
-/* krub-latin-500-normal*/
+/* krub-latin-400-normal*/
 @font-face {
   font-family: 'Krub';
   font-style: normal;
   font-display: swap;
-  font-weight: 500;
+  font-weight: 400;
   src:
-    local('Krub Medium'),
-    local('Krub-Medium'), 
-    url('./files/krub-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Krub Regular'),
+    local('Krub-Regular'), 
+    url('./files/krub-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/krub-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-400-normal.ttf') format('truetype');
 }
 /* krub-latin-500-italic*/
 @font-face {
@@ -92,19 +86,21 @@
     local('Krub Medium Italic'),
     local('Krub-MediumItalic'), 
     url('./files/krub-latin-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-500-italic.ttf') format('truetype');
 }
-/* krub-latin-600-normal*/
+/* krub-latin-500-normal*/
 @font-face {
   font-family: 'Krub';
   font-style: normal;
   font-display: swap;
-  font-weight: 600;
+  font-weight: 500;
   src:
-    local('Krub SemiBold'),
-    local('Krub-SemiBold'), 
-    url('./files/krub-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Krub Medium'),
+    local('Krub-Medium'), 
+    url('./files/krub-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/krub-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-500-normal.ttf') format('truetype');
 }
 /* krub-latin-600-italic*/
 @font-face {
@@ -116,19 +112,21 @@
     local('Krub SemiBold Italic'),
     local('Krub-SemiBoldItalic'), 
     url('./files/krub-latin-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-600-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-600-italic.ttf') format('truetype');
 }
-/* krub-latin-700-normal*/
+/* krub-latin-600-normal*/
 @font-face {
   font-family: 'Krub';
   font-style: normal;
   font-display: swap;
-  font-weight: 700;
+  font-weight: 600;
   src:
-    local('Krub Bold'),
-    local('Krub-Bold'), 
-    url('./files/krub-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Krub SemiBold'),
+    local('Krub-SemiBold'), 
+    url('./files/krub-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/krub-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-600-normal.ttf') format('truetype');
 }
 /* krub-latin-700-italic*/
 @font-face {
@@ -140,5 +138,19 @@
     local('Krub Bold Italic'),
     local('Krub-BoldItalic'), 
     url('./files/krub-latin-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-latin-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-700-italic.ttf') format('truetype');
+}
+/* krub-latin-700-normal*/
+@font-face {
+  font-family: 'Krub';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Krub Bold'),
+    local('Krub-Bold'), 
+    url('./files/krub-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/krub-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/krub-latin-700-normal.ttf') format('truetype');
 }

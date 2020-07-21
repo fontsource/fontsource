@@ -8,5 +8,6 @@
     local('Cormorant Unicase Bold'),
     local('CormorantUnicase-Bold'), 
     url('./files/cormorant-unicase-cyrillic-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cormorant-unicase-cyrillic-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/cormorant-unicase-cyrillic-ext-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/cormorant-unicase-cyrillic-ext-700-normal.ttf') format('truetype');
 }

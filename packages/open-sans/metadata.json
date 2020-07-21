@@ -11,7 +11,7 @@
     "vietnamese"
   ],
   "weights": ["300", "400", "600", "700", "800"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-23",
   "version": "v17",

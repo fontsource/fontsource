@@ -8,7 +8,8 @@
     local('Rajdhani Light'),
     local('Rajdhani-Light'), 
     url('./files/rajdhani-devanagari-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/rajdhani-devanagari-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-300-normal.ttf') format('truetype');
 }
 /* rajdhani-devanagari-400-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('Rajdhani Regular'),
     local('Rajdhani-Regular'), 
     url('./files/rajdhani-devanagari-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/rajdhani-devanagari-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-400-normal.ttf') format('truetype');
 }
 /* rajdhani-devanagari-500-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('Rajdhani Medium'),
     local('Rajdhani-Medium'), 
     url('./files/rajdhani-devanagari-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/rajdhani-devanagari-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-500-normal.ttf') format('truetype');
 }
 /* rajdhani-devanagari-600-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('Rajdhani SemiBold'),
     local('Rajdhani-SemiBold'), 
     url('./files/rajdhani-devanagari-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/rajdhani-devanagari-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-600-normal.ttf') format('truetype');
 }
 /* rajdhani-devanagari-700-normal*/
 @font-face {
@@ -56,5 +60,6 @@
     local('Rajdhani Bold'),
     local('Rajdhani-Bold'), 
     url('./files/rajdhani-devanagari-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/rajdhani-devanagari-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/rajdhani-devanagari-700-normal.ttf') format('truetype');
 }

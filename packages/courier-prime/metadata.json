@@ -3,7 +3,7 @@
   "fontName": "Courier Prime",
   "subsets": ["latin", "latin-ext"],
   "weights": ["400", "700"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2020-03-03",
   "version": "v1",

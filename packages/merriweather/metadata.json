@@ -3,7 +3,7 @@
   "fontName": "Merriweather",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
   "weights": ["300", "400", "700", "900"],
-  "styles": ["normal", "italic"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
   "lastModified": "2019-07-22",
   "version": "v21",

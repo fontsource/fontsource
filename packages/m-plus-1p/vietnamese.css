@@ -8,7 +8,8 @@
     local('M PLUS 1p Thin'),
     local('MPLUS1p-Thin'), 
     url('./files/m-plus-1p-vietnamese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-vietnamese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-100-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-100-normal.ttf') format('truetype');
 }
 /* m-plus-1p-vietnamese-300-normal*/
 @font-face {
@@ -20,7 +21,8 @@
     local('M PLUS 1p Light'),
     local('MPLUS1p-Light'), 
     url('./files/m-plus-1p-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-300-normal.ttf') format('truetype');
 }
 /* m-plus-1p-vietnamese-400-normal*/
 @font-face {
@@ -32,7 +34,8 @@
     local('M PLUS 1p'),
     local('MPLUS1p-Regular'), 
     url('./files/m-plus-1p-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-400-normal.ttf') format('truetype');
 }
 /* m-plus-1p-vietnamese-500-normal*/
 @font-face {
@@ -44,7 +47,8 @@
     local('M PLUS 1p Medium'),
     local('MPLUS1p-Medium'), 
     url('./files/m-plus-1p-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-500-normal.ttf') format('truetype');
 }
 /* m-plus-1p-vietnamese-700-normal*/
 @font-face {
@@ -56,7 +60,8 @@
     local('M PLUS 1p Bold'),
     local('MPLUS1p-Bold'), 
     url('./files/m-plus-1p-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-700-normal.ttf') format('truetype');
 }
 /* m-plus-1p-vietnamese-800-normal*/
 @font-face {
@@ -68,7 +73,8 @@
     local('M PLUS 1p ExtraBold'),
     local('MPLUS1p-ExtraBold'), 
     url('./files/m-plus-1p-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-800-normal.ttf') format('truetype');
 }
 /* m-plus-1p-vietnamese-900-normal*/
 @font-face {
@@ -80,5 +86,6 @@
     local('M PLUS 1p Black'),
     local('MPLUS1p-Black'), 
     url('./files/m-plus-1p-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('./files/m-plus-1p-vietnamese-900-normal.ttf') format('truetype');
 }
