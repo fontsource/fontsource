@@ -3,7 +3,7 @@ const _ = require(`lodash`)
 exports.packageJson = _.template(
   `{
   "name": "fontsource-<%= fontId %>",
-  "version": "1.0.0",
+  "version": "2.2.0",
   "description": "<%= fontName %> font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -35,7 +35,8 @@ exports.fontFace = _.template(
     local('<%= localName %>'),<% });
     %> 
     url('<%= woff2Path %>') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('<%= woffPath %>') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('<%= woffPath %>') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('<%= ttforotfPath %>') format('<%= ttforotf %>');
 }
 `
 )
