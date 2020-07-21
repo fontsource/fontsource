@@ -1,6 +1,6 @@
 {
   "name": "fontsource-meddon",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Meddon font in NPM glory.",
   "main": "index.css",
   "keywords": [

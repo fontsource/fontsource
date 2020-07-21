@@ -1,6 +1,6 @@
 {
   "name": "fontsource-fira-sans",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Fira Sans font in NPM glory.",
   "main": "index.css",
   "keywords": [

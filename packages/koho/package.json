@@ -1,6 +1,6 @@
 {
   "name": "fontsource-koho",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "KoHo font in NPM glory.",
   "main": "index.css",
   "keywords": [
