@@ -1,15 +1,17 @@
 {
   "name": "fontsource-league-spartan",
-  "version": "1.0.2",
+  "version": "2.2.0",
   "description": "League Spartan font in NPM glory.",
   "main": "index.css",
   "keywords": [
     "fontsource",
     "font",
     "font family",
-    "google fonts",
     "League Spartan",
-    "league-spartan"
+    "league-spartan",
+    "css",
+    "front-end",
+    "web"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",

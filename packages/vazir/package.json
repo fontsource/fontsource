@@ -1,15 +1,17 @@
 {
   "name": "fontsource-vazir",
-  "version": "1.0.2",
+  "version": "2.2.0",
   "description": "Vazir font in NPM glory.",
   "main": "index.css",
   "keywords": [
     "fontsource",
     "font",
     "font family",
-    "google fonts",
     "Vazir",
-    "vazir"
+    "vazir",
+    "css",
+    "front-end",
+    "web"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",

@@ -1,15 +1,17 @@
 {
   "name": "fontsource-dseg14",
-  "version": "1.0.2",
+  "version": "2.2.0",
   "description": "DSEG14 font in NPM glory.",
   "main": "index.css",
   "keywords": [
     "fontsource",
     "font",
     "font family",
-    "google fonts",
     "DSEG14",
-    "dseg14"
+    "dseg14",
+    "css",
+    "front-end",
+    "web"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",

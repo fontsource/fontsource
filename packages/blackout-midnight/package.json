@@ -1,15 +1,17 @@
 {
   "name": "fontsource-blackout-midnight",
-  "version": "1.0.2",
+  "version": "2.2.0",
   "description": "Blackout Midnight font in NPM glory.",
   "main": "index.css",
   "keywords": [
     "fontsource",
     "font",
     "font family",
-    "google fonts",
     "Blackout Midnight",
-    "blackout-midnight"
+    "blackout-midnight",
+    "css",
+    "front-end",
+    "web"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",

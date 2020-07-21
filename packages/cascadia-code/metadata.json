@@ -1,0 +1,13 @@
+{
+  "fontId": "cascadia-code",
+  "fontName": "Cascadia Code",
+  "subsets": ["latin-ext", "pl-latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin-ext",
+  "lastModified": "2020-07-21",
+  "version": "v2005.15",
+  "source": "https://github.com/microsoft/cascadia-code",
+  "license": "https://github.com/microsoft/cascadia-code/blob/master/LICENSE",
+  "type": "other"
+}

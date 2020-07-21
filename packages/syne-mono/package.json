@@ -1,15 +1,17 @@
 {
   "name": "fontsource-syne-mono",
-  "version": "1.0.2",
+  "version": "2.2.0",
   "description": "Syne Mono font in NPM glory.",
   "main": "index.css",
   "keywords": [
     "fontsource",
     "font",
     "font family",
-    "google fonts",
     "Syne Mono",
-    "syne-mono"
+    "syne-mono",
+    "css",
+    "front-end",
+    "web"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",

@@ -1,15 +1,17 @@
 {
   "name": "fontsource-syne-italic",
-  "version": "1.0.2",
+  "version": "2.2.0",
   "description": "Syne Italic font in NPM glory.",
   "main": "index.css",
   "keywords": [
     "fontsource",
     "font",
     "font family",
-    "google fonts",
     "Syne Italic",
-    "syne-italic"
+    "syne-italic",
+    "css",
+    "front-end",
+    "web"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
