@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "async": "^3.2.0",
+    "flat": "^5.0.0",
     "fs-extra": "^9.0.0",
+    "google-font-metadata": "^1.2.0",
+    "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.0.1",
     "lodash": "^4.17.19",
     "shelljs": "^0.8.4",
-    "sync-request": "^6.1.0",
     "wget-improved": "^3.2.0"
   },
   "scripts": {
@@ -25,11 +27,14 @@
     "format:eslint": "eslint **/*.{js,jsx} --fix",
     "format:prettier": "prettier --write **/*.{js,jsx,json,md}",
     "build:generic": "node scripts/generic/generic-font-packager.js",
-    "build:google": "node scripts/google/download-google.js",
+    "build:googlev1": "node scripts/google/download-google-v1.js",
+    "build:googlev2": "node scripts/google/download-google-v2.js",
+    "parser:v1": "npm explore google-font-metadata -- yarn parser:v1",
+    "parser:v2": "npm explore google-font-metadata -- yarn parser:v2",
     "readme-update:google": "node scripts/google/google-readme-updater.js",
     "util:renamer": "node scripts/generic/renamer.js",
     "deploy": "lerna publish patch --message 'chore: release new versions'",
-    "deploy:ci": "lerna publish patch --yes --message 'chore: release new versions'",
+    "deploy:ci": "lerna publish 2.2.0 --yes --message 'chore: release new versions'",
     "deploy:dry-run": "lerna publish --yes --no-git-tag-version --no-push"
   },
   "publishConfig": {
