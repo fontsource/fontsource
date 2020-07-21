@@ -117,7 +117,9 @@ if (changed) {
             weight,
             woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
             woffPath: makeFontFilePath(subset, weight, style, "woff"),
-            ttforotf: ttforotf(subset, weight, style),
+            ttforotf: ttforotf(subset, weight, style)
+              .replace("otf", "opentype")
+              .replace("ttf", "truetype"),
             ttforotfPath: makeFontFilePath(
               subset,
               weight,
