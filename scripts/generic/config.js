@@ -4,13 +4,14 @@
 // type helps identify the category of font, such as Google or not. Keep it "other" unless directed to do so.
 
 const config = {
-  fontId: "",
-  fontName: "",
+  fontId: "goudymediaeval",
+  fontName: "Goudy Mediaeval",
   defaultSubset: "latin",
   unicoderange: "null",
   version: "",
-  sourcelink: "",
-  licenselink: "",
+  sourcelink:
+    "https://www.onlinewebfonts.com/download/24b2eac64e0cb26cc8851d7fdf940b88",
+  licenselink: "http://moorstation.org/typoasis/designers/steffmann/index.htm",
   type: "other",
 }
 
