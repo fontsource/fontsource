@@ -31,6 +31,7 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - dseg7
 - dseg14
 - dseg-weather
+- goudymediaeval
 - hack
 - jetbrains-mono
 - karmilla
