@@ -1,6 +1,6 @@
 {
   "name": "fontsource-ibm-plex-sans",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "description": "IBM Plex Sans font in NPM glory.",
   "main": "index.css",
   "keywords": [
