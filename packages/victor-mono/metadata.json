@@ -1,1 +1,13 @@
-{"fontId":"victor-mono","fontName":"Victor Mono","subsets":["latin","latin-oblique"],"weights":["100","200","300","400","500","600","700"],"styles":["italic","normal"],"defSubset":"latin","lastModified":"2020-07-21","version":"v1.3.1","source":"https://github.com/rubjo/victor-mono","license":"https://github.com/rubjo/victor-mono/blob/master/LICENSE","type":"other"}
+{
+  "fontId": "victor-mono",
+  "fontName": "Victor Mono",
+  "subsets": ["latin", "latin-oblique"],
+  "weights": ["100", "200", "300", "400", "500", "600", "700"],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-07-21",
+  "version": "v1.3.1",
+  "source": "https://github.com/rubjo/victor-mono",
+  "license": "https://github.com/rubjo/victor-mono/blob/master/LICENSE",
+  "type": "other"
+}

@@ -1,1 +1,13 @@
-{"fontId":"league-gothic","fontName":"League Gothic","subsets":["latin"],"weights":["400"],"styles":["italic","normal"],"defSubset":"latin","lastModified":"2020-07-21","version":"v34","source":"https://github.com/theleagueof/league-gothic","license":"https://github.com/theleagueof/league-gothic/blob/master/Open%20Font%20License.markdown","type":"league"}
+{
+  "fontId": "league-gothic",
+  "fontName": "League Gothic",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-07-21",
+  "version": "v34",
+  "source": "https://github.com/theleagueof/league-gothic",
+  "license": "https://github.com/theleagueof/league-gothic/blob/master/Open%20Font%20License.markdown",
+  "type": "league"
+}
