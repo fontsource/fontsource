@@ -31,7 +31,7 @@ exports.fontFace = _.template(
   font-style: <%= style %>;
   font-display: swap;
   font-weight: <%= weight %>;
-  src:<% _.each(locals, function(localName) { %>
+  src:<% _.forEach(locals, function(localName) { %>
     local('<%= localName %>'),<% });
     %> 
     url('<%= woff2Path %>') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */

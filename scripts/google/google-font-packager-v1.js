@@ -106,28 +106,31 @@ if (changed) {
     font.weights.forEach(weight => {
       cssWeight = []
       font.styles.forEach(style => {
-        let css = fontFace({
-          fontId: font.id,
-          fontName: font.family,
-          locals: font.variants[weight][style][subset].local,
-          style,
-          subset,
-          weight,
-          woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
-          woffPath: makeFontFilePath(subset, weight, style, "woff"),
-          ttforotf: ttforotf(subset, weight, style),
-          ttforotfPath: makeFontFilePath(
+        // Some fonts may have variants 400, 400i, 700 but not 700i.
+        if (style in font.variants[weight]) {
+          let css = fontFace({
+            fontId: font.id,
+            fontName: font.family,
+            locals: font.variants[weight][style][subset].local,
+            style,
             subset,
             weight,
-            style,
-            ttforotf(subset, weight, style)
-          ),
-        })
-        cssWeight.push(css)
-        cssSubset.push(css)
+            woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
+            woffPath: makeFontFilePath(subset, weight, style, "woff"),
+            ttforotf: ttforotf(subset, weight, style),
+            ttforotfPath: makeFontFilePath(
+              subset,
+              weight,
+              style,
+              ttforotf(subset, weight, style)
+            ),
+          })
+          cssWeight.push(css)
+          cssSubset.push(css)
 
-        const cssStylePath = `${fontDir}/${subset}-${weight}-${style}.css`
-        fs.writeFileSync(cssStylePath, css)
+          const cssStylePath = `${fontDir}/${subset}-${weight}-${style}.css`
+          fs.writeFileSync(cssStylePath, css)
+        }
       })
       const cssWeightPath = `${fontDir}/${subset}-${weight}.css`
       fs.writeFileSync(cssWeightPath, cssWeight.join(""))
