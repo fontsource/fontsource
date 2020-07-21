@@ -64,7 +64,7 @@ if (changed) {
 
   // Filter out local font links and only leave URLs for each pair
   const links = downloadURLPairs
-    .filter(pair => isAbsoluteUrl(pair[1]))
+    .filter(pair => isAbsoluteUrl(pair[1].toString()))
     .map(file => {
       const types = file[0].split(".")
       const dest = makeFontDownloadPath(
