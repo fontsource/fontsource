@@ -23,14 +23,14 @@ fs.ensureDirSync(fontDir)
 fs.ensureDirSync(`scripts/temp_packages`)
 
 // Update checking
-let changed = true
+let changed = false
 
-/* if (fs.existsSync(`${fontDir}/metadata.json`)) {
+if (fs.existsSync(`${fontDir}/metadata.json`)) {
   let metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
   changed = metadata.lastModified !== font.lastModified
 } else {
   changed = true
-} */
+}
 
 // Processing each subset of given font ID.
 if (changed) {

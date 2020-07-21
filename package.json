@@ -33,8 +33,8 @@
     "parser:v2": "npm explore google-font-metadata -- yarn parser:v2",
     "readme-update:google": "node scripts/google/google-readme-updater.js",
     "util:renamer": "node scripts/generic/renamer.js",
-    "deploy": "lerna publish patch --message 'chore: release new versions'",
-    "deploy:ci": "lerna publish 2.2.0 --yes --message 'chore: release new versions'",
+    "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
+    "deploy:ci": "lerna publish 2.2.1 --yes --force-publish --message 'chore: release new versions'",
     "deploy:dry-run": "lerna publish --yes --no-git-tag-version --no-push"
   },
   "publishConfig": {
