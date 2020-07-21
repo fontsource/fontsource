@@ -24,8 +24,16 @@ jobs:
       - name: Install packages
         run: yarn
 
+      - name: Fetch API
+        run: npm explore google-font-metadata -- node ./scripts/api-gen.js $GOOGLE_API_KEY
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: Parse APIv1
+        run: npm explore google-font-metadata -- yarn parser:v1
+
       - name: Build fonts
-        run: yarn build:google
+        run: yarn build:googlev1
 
       - name: Format files
         run: yarn format
