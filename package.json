@@ -7,7 +7,7 @@
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
-    "lerna": "^3.20.2",
+    "lerna": "^3.22.1",
     "prettier": "^2.0.5"
   },
   "dependencies": {
@@ -34,7 +34,7 @@
     "readme-update:google": "node scripts/google/google-readme-updater.js",
     "util:renamer": "node scripts/generic/renamer.js",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
-    "deploy:ci": "lerna publish 2.2.1 --yes --force-publish --message 'chore: release new versions'",
+    "deploy:ci": "lerna publish patch --yes --force-publish --message 'chore: release new versions'",
     "deploy:dry-run": "lerna publish --yes --no-git-tag-version --no-push"
   },
   "publishConfig": {
