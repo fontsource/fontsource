@@ -1,14 +1,12 @@
 name: Build and Release [Manual]
 
-on:
-  watch:
-    types: [started]
+on: [workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    if: github.actor == github.event.repository.owner.login
+    if: github.actor == "DecliningLotus"
 
     steps:
       - name: checkout
