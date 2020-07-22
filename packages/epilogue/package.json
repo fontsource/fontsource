@@ -1,6 +1,6 @@
 {
   "name": "fontsource-epilogue",
-  "version": "2.2.1",
+  "version": "2.2.3",
   "description": "Epilogue font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -16,5 +16,6 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/epilogue"
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/epilogue",
+  "gitHead": "5a7131094483365077f575a9da00a78be3c83891"
 }

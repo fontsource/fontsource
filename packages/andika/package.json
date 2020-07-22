@@ -1,6 +1,6 @@
 {
   "name": "fontsource-andika",
-  "version": "2.2.1",
+  "version": "2.2.3",
   "description": "Andika font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -13,5 +13,6 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/andika"
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/andika",
+  "gitHead": "5a7131094483365077f575a9da00a78be3c83891"
 }
