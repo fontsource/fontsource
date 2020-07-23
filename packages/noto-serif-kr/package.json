@@ -1,6 +1,6 @@
 {
   "name": "fontsource-noto-serif-kr",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Noto Serif KR font in NPM glory.",
   "main": "index.css",
   "keywords": [
