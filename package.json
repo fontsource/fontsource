@@ -34,7 +34,10 @@
     "readme-update:google": "node scripts/google/google-readme-updater.js",
     "util:renamer": "node scripts/generic/renamer.js",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
-    "deploy:ci": "lerna publish patch --yes --message 'chore: release new versions'"
+    "deploy:ci": "lerna version patch --no-push --yes && lerna publish from-git --yes --message 'chore: release new versions' && git push --follow-tags --no-verify origin master"
+  },
+  "resolutions": {
+    "npm-packlist": "1.1.12"
   },
   "publishConfig": {
     "access": "public"
