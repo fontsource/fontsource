@@ -1,0 +1,13 @@
+{
+  "fontId": "recursive",
+  "fontName": "Recursive",
+  "subsets": ["latin", "vietnamese"],
+  "weights": ["300", "400", "500", "600", "700", "800", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-07-23",
+  "version": "v20",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

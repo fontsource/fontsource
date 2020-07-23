@@ -1,0 +1,20 @@
+{
+  "name": "fontsource-recursive",
+  "version": "2.2.0",
+  "description": "Recursive font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Recursive",
+    "recursive",
+    "css",
+    "front-end",
+    "web"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/recursive"
+}
