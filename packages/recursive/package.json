@@ -1,6 +1,6 @@
 {
   "name": "fontsource-recursive",
-  "version": "2.2.1",
+  "version": "2.2.6",
   "description": "Recursive font in NPM glory.",
   "main": "index.css",
   "keywords": [
