@@ -2600,10 +2600,10 @@ globby@^9.2.0:
     pify "^4.0.1"
     slash "^2.0.0"
 
-google-font-metadata@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/google-font-metadata/-/google-font-metadata-1.2.0.tgz#d33033b276660dcd97cd49ec62a62cc099f50b73"
-  integrity sha512-BJbK+OywJ4EJsXs4YkHbavIIM2B37vKMQGK2t8AvGrYyoyheJO6ZVp99Sj5OjQp4NJ1yHL9ln2PZ6rbfQOlI+Q==
+google-font-metadata@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/google-font-metadata/-/google-font-metadata-1.2.1.tgz#5f526cd7b096a3209ca83c8a22a83d515607348e"
+  integrity sha512-F3eqqIF/BcGAY8AlMmOim44urMyEHo2xhNTxwPqnRC5RHZlEWp5OX7xR8rRgSbEmT4pBcEhIRoa59TbA8pZmnw==
   dependencies:
     async "^3.2.0"
     axios "^0.19.2"
