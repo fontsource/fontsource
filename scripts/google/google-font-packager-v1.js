@@ -80,7 +80,7 @@ if (changed) {
       }
     })
 
-  // Download all font files in parallel
+  // Download all font files
   async.map(links, (d, downloadDone) => {
     const { url, dest } = d
     download(url, dest, err => {
@@ -139,49 +139,6 @@ if (changed) {
     })
     const cssSubsetPath = `${fontDir}/${subset}.css`
     fs.writeFileSync(cssSubsetPath, cssSubset.join(""))
-
-    if (subset === font.defSubset || font.subsets.length === 1) {
-      fs.writeFileSync(`${fontDir}/index.css`, cssSubset.join(""))
-    }
-  })
-}
-
-// If everything ran successfully, apply new updates to package.
-if (changed) {
-  // Write README.md
-  const packageReadme = readme({
-    fontId: font.id,
-    fontName: font.family,
-    subsets: font.subsets,
-    weights: font.weights,
-    styles: font.styles,
-    version: font.version,
-  })
-  fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
-
-  // Write out package.json file
-  const packageJSON = packageJson({
-    fontId: font.id,
-    fontName: font.family,
-  })
-  // Once created, don't interfere with lerna updates
-  if (!fs.existsSync(`${fontDir}/package.json`)) {
-    fs.writeFileSync(`${fontDir}/package.json`, packageJSON)
-  }
-
-  // Write metadata.json
-  jsonfile.writeFileSync(`${fontDir}/metadata.json`, {
-    fontId: font.id,
-    fontName: font.family,
-    subsets: font.subsets,
-    weights: font.weights,
-    styles: font.styles,
-    defSubset: font.defSubset,
-    lastModified: font.lastModified,
-    version: font.version,
-    source: "https://fonts.google.com/",
-    license: "https://fonts.google.com/attribution",
-    type: "google",
   })
 }
 
