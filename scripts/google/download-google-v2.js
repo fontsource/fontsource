@@ -3,7 +3,7 @@ const async = require(`async`)
 const fs = require(`fs-extra`)
 const shell = require(`shelljs`)
 
-const fontsv1 = require(`google-font-metadata/data/google-fonts-v1.json`)
+const fontsv2 = require(`google-font-metadata`)
 
 fs.ensureDirSync(`packages`)
 
@@ -11,7 +11,7 @@ fs.ensureDirSync(`packages`)
 const processQueue = (fontid, cb) => {
   console.log(`Downloading ${fontid}`)
   shell.exec(
-    `node ./scripts/google/google-font-packager-v1.js ${fontid}`,
+    `node ./scripts/google/google-font-packager-v2.js ${fontid}`,
     () => {
       cb()
     }
@@ -24,7 +24,7 @@ const queue = async.queue(processQueue, 12)
 
 queue.drain(() => {
   console.log(
-    `All ${Object.keys(fontsv1).length} Google Fonts V1 have been processed.`
+    `All ${Object.keys(fontsv2).length} Google Fonts V2 have been processed.`
   )
 })
 
@@ -48,7 +48,7 @@ test() */
 
 // Production
 const production = () => {
-  _.forOwn(fontsv1, font => {
+  _.forOwn(fontsv2, font => {
     queue.push(`${font.id}`)
   })
 }
