@@ -1,12 +1,12 @@
-name: Build and Release [Weekly]
+name: Build and Release [Force Rebuild] [Manual]
 
-on:
-  schedule:
-    - cron: "0 0 * * 0"
+on: [workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    if: github.actor == 'DecliningLotus'
 
     steps:
       - name: checkout
@@ -18,6 +18,7 @@ jobs:
         run: |
           git config --global user.name 'DecliningLotus'
           git config --global user.email 'DecliningLotus@users.noreply.github.com'
+
       - name: Install packages
         run: yarn
 
@@ -30,13 +31,13 @@ jobs:
         run: npm explore google-font-metadata -- yarn parser:v1
 
       - name: Build fonts APIv1
-        run: yarn build:googlev1
+        run: yarn build:googlev1-force
 
       - name: Parse APIv2
         run: npm explore google-font-metadata -- yarn parser:v2
 
       - name: Build fonts APIv2
-        run: yarn build:googlev2
+        run: yarn build:googlev2-force
 
       - name: Format files
         run: yarn format

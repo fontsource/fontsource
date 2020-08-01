@@ -5,13 +5,15 @@ const shell = require(`shelljs`)
 
 const fontsv1 = require(`google-font-metadata/data/google-fonts-v1.json`)
 
+const force = process.argv[2]
+
 fs.ensureDirSync(`packages`)
 
 // Create an async queue object
 const processQueue = (fontid, cb) => {
   console.log(`Downloading ${fontid}`)
   shell.exec(
-    `node ./scripts/google/google-font-packager-v1.js ${fontid}`,
+    `node ./scripts/google/google-font-packager-v1.js ${fontid} ${force}`,
     () => {
       cb()
     }

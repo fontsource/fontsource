@@ -7,13 +7,14 @@ const jsonfile = require(`jsonfile`)
 const apiFont = require(`google-font-metadata/data/google-fonts-v1.json`)
 
 const download = require(`./download-file`)
-const { packageJson, fontFace, readme } = require(`./templates`)
+const { fontFace } = require(`./templates`)
 
 const id = process.argv[2]
 if (!id) {
   console.warn(`Google Font ID has not been passed into packager.`)
   process.exit()
 }
+const force = process.argv[3]
 
 const font = apiFont[id]
 
@@ -33,7 +34,7 @@ if (fs.existsSync(`${fontDir}/metadata.json`)) {
 }
 
 // Processing each subset of given font ID.
-if (changed) {
+if (changed || force == "force") {
   // Wipe old font files preserving package.json
   if (fs.existsSync(`${fontDir}/package.json`)) {
     fs.copySync(

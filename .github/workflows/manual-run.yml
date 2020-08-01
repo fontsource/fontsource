@@ -30,8 +30,14 @@ jobs:
       - name: Parse APIv1
         run: npm explore google-font-metadata -- yarn parser:v1
 
-      - name: Build fonts
+      - name: Build fonts APIv1
         run: yarn build:googlev1
+
+      - name: Parse APIv2
+        run: npm explore google-font-metadata -- yarn parser:v2
+
+      - name: Build fonts APIv2
+        run: yarn build:googlev2
 
       - name: Format files
         run: yarn format

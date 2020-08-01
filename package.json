@@ -29,6 +29,8 @@
     "build:generic": "node scripts/generic/generic-font-packager.js",
     "build:googlev1": "node scripts/google/download-google-v1.js",
     "build:googlev2": "node scripts/google/download-google-v2.js",
+    "build:googlev1-force": "node scripts/google/download-google-v1.js force",
+    "build:googlev2-force": "node scripts/google/download-google-v2.js force",
     "parser:v1": "npm explore google-font-metadata -- yarn parser:v1",
     "parser:v2": "npm explore google-font-metadata -- yarn parser:v2",
     "readme-update:google": "node scripts/google/google-readme-updater.js",
