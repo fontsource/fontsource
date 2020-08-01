@@ -14,6 +14,7 @@ if (!id) {
   console.warn(`Google Font ID has not been passed into packager.`)
   process.exit()
 }
+const force = process.argv[3]
 
 const font = apiFont[id]
 
@@ -33,7 +34,7 @@ if (fs.existsSync(`${fontDir}/metadata.json`)) {
 }
 
 // Processing each subset of given font ID.
-if (changed) {
+if (changed || force == "force") {
   fs.ensureDirSync(`./${fontDir}/files`)
 
   // Generate filenames
@@ -177,7 +178,7 @@ if (changed) {
 }
 
 // If everything ran successfully, apply new updates to package.
-if (changed) {
+if (changed || force == "force") {
   // Write README.md
   const packageReadme = readme({
     fontId: font.id,
