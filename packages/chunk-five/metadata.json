@@ -1,1 +1,13 @@
-{"fontId":"chunk-five","fontName":"Chunk Five","subsets":["latin"],"weights":["800"],"styles":["normal"],"defSubset":"latin","lastModified":"2020-08-02","version":"v5","source":"https://github.com/theleagueof/chunk","license":"https://github.com/theleagueof/chunk/blob/master/Open%20Font%20License.markdown","type":"league"}
+{
+  "fontId": "chunk-five",
+  "fontName": "Chunk Five",
+  "subsets": ["latin"],
+  "weights": ["800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-08-02",
+  "version": "v5",
+  "source": "https://github.com/theleagueof/chunk",
+  "license": "https://github.com/theleagueof/chunk/blob/master/Open%20Font%20License.markdown",
+  "type": "league"
+}
