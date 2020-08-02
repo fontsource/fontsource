@@ -7,7 +7,6 @@
   src:
     url('./files/jetbrains-mono-all-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/jetbrains-mono-all-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* jetbrains-mono-all-400-normal*/
 @font-face {
@@ -18,7 +17,6 @@
   src:
     url('./files/jetbrains-mono-all-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/jetbrains-mono-all-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* jetbrains-mono-all-500-italic*/
 @font-face {
@@ -29,7 +27,6 @@
   src:
     url('./files/jetbrains-mono-all-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/jetbrains-mono-all-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* jetbrains-mono-all-500-normal*/
 @font-face {
@@ -40,7 +37,6 @@
   src:
     url('./files/jetbrains-mono-all-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/jetbrains-mono-all-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* jetbrains-mono-all-700-italic*/
 @font-face {
@@ -51,7 +47,6 @@
   src:
     url('./files/jetbrains-mono-all-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/jetbrains-mono-all-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* jetbrains-mono-all-700-normal*/
 @font-face {
@@ -62,7 +57,6 @@
   src:
     url('./files/jetbrains-mono-all-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/jetbrains-mono-all-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* jetbrains-mono-all-800-italic*/
 @font-face {
@@ -73,7 +67,6 @@
   src:
     url('./files/jetbrains-mono-all-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/jetbrains-mono-all-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* jetbrains-mono-all-800-normal*/
 @font-face {
@@ -84,5 +77,4 @@
   src:
     url('./files/jetbrains-mono-all-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/jetbrains-mono-all-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
