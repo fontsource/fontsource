@@ -7,7 +7,7 @@
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
-    "lerna": "^3.22.1",
+    "lerna": "3.18.4",
     "prettier": "^2.0.5"
   },
   "dependencies": {
@@ -38,10 +38,7 @@
     "util:generic-renamer": "node scripts/generic/renamer.js",
     "util:package-json-rebuild": "node scripts/utils/package-json-rebuild.js",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
-    "deploy:ci": "lerna version 3.0.0 --yes --force-publish --no-push --message 'chore: release new versions' && lerna publish from-git --yes  && git push --follow-tags --no-verify origin master"
-  },
-  "resolutions": {
-    "npm-packlist": "1.1.12"
+    "deploy:ci": "lerna version 3.0.1 --yes --force-publish --no-push --message 'chore: release new versions' && lerna publish from-git --yes  && git push --follow-tags --no-verify origin master"
   },
   "publishConfig": {
     "access": "public"
