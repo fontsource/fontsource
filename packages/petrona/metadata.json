@@ -1,12 +1,12 @@
 {
   "fontId": "petrona",
   "fontName": "Petrona",
-  "subsets": ["latin"],
-  "weights": ["400"],
-  "styles": ["normal"],
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "lastModified": "2020-07-23",
-  "version": "v9",
+  "lastModified": "2020-07-29",
+  "version": "v10",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
