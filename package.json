@@ -34,6 +34,7 @@
     "parser:v1": "npm explore google-font-metadata -- yarn parser:v1",
     "parser:v2": "npm explore google-font-metadata -- yarn parser:v2",
     "readme-update:google": "node scripts/google/google-readme-updater.js",
+    "util:generic-rebuild": "node scripts/generic/rebuilder.js",
     "util:renamer": "node scripts/generic/renamer.js",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
     "deploy:ci": "lerna version patch --yes --no-push --message 'chore: release new versions' && lerna publish from-git --yes  && git push --follow-tags --no-verify origin master"

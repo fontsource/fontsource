@@ -1,4 +1,3 @@
-const _ = require(`lodash`)
 const fs = require(`fs-extra`)
 const glob = require(`glob`)
 const jsonfile = require(`jsonfile`)
@@ -9,7 +8,6 @@ const config = require("./config")
 const fontId = config.fontId
 const fontName = config.fontName
 const defSubset = config.defaultSubset
-const unicoderange = config.unicoderange
 
 // Create folder structure
 const fontFileDir = `scripts/generic/files`
@@ -45,60 +43,23 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
   styles = [...new Set(styles)]
 
   subsets.forEach(subset => {
-    let css = []
     let cssSubset = []
     weights.forEach(weight => {
       let cssWeight = []
       styles.forEach(style => {
         let cssStyle = []
-        css.push(
-          fontFace({
-            fontId,
-            fontName,
-            style,
-            subset,
-            weight,
-            woffPath: makeFontFilePath(subset, weight, style, "woff"),
-            woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
-            unicoderange,
-          })
-        )
-        cssSubset.push(
-          fontFace({
-            fontId,
-            fontName,
-            style,
-            subset,
-            weight,
-            woffPath: makeFontFilePath(subset, weight, style, "woff"),
-            woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
-            unicoderange,
-          })
-        )
-        cssWeight.push(
-          fontFace({
-            fontId,
-            fontName,
-            style,
-            subset,
-            weight,
-            woffPath: makeFontFilePath(subset, weight, style, "woff"),
-            woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
-            unicoderange,
-          })
-        )
-        cssStyle.push(
-          fontFace({
-            fontId,
-            fontName,
-            style,
-            subset,
-            weight,
-            woffPath: makeFontFilePath(subset, weight, style, "woff"),
-            woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
-            unicoderange,
-          })
-        )
+        const css = fontFace({
+          fontId,
+          fontName,
+          style,
+          subset,
+          weight,
+          woffPath: makeFontFilePath(subset, weight, style, "woff"),
+          woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
+        })
+        cssSubset.push(css)
+        cssWeight.push(css)
+        cssStyle.push(css)
         const fileContentStyle = cssStyle.join("")
         const cssStylePath = `${fontDir}/${subset}-${weight}-${style}.css`
         fs.writeFileSync(cssStylePath, fileContentStyle)
@@ -106,17 +67,17 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
       const fileContentWeight = cssWeight.join("")
       const cssWeightPath = `${fontDir}/${subset}-${weight}.css`
       fs.writeFileSync(cssWeightPath, fileContentWeight)
+
+      // index.css
+      if (subset === defSubset && weight == "400") {
+        fs.writeFileSync(`${fontDir}/index.css`, fileContentWeight)
+      }
     })
 
-    const fileContentDefault = css.join("")
+    const fileContentSubset = cssSubset.join("")
     // subset.css
     const cssPath = `${fontDir}/${subset}.css`
-    fs.writeFileSync(cssPath, fileContentDefault)
-
-    // index.css
-    if (subset === defSubset || subsets.length === 1) {
-      fs.writeFileSync(`${fontDir}/index.css`, fileContentDefault)
-    }
+    fs.writeFileSync(cssPath, fileContentSubset)
   })
   console.log("Created CSS files.")
 
