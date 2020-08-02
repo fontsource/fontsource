@@ -16,5 +16,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/recursive"
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/recursive#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/recursive"
+  }
 }

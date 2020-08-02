@@ -1,1 +1,13 @@
-{"fontId":"blackout-two-am","fontName":"Blackout Two AM","subsets":["latin"],"weights":["400"],"styles":["normal"],"defSubset":"latin","lastModified":"2020-08-02","version":"v1","source":"https://github.com/theleagueof/blackout","license":"https://github.com/theleagueof/blackout/blob/master/Open%20Font%20License.markdown","type":"league"}
+{
+  "fontId": "blackout-two-am",
+  "fontName": "Blackout Two AM",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-08-02",
+  "version": "v1",
+  "source": "https://github.com/theleagueof/blackout",
+  "license": "https://github.com/theleagueof/blackout/blob/master/Open%20Font%20License.markdown",
+  "type": "league"
+}

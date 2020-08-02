@@ -1,1 +1,13 @@
-{"fontId":"jetbrains-mono","fontName":"Jetbrains Mono","subsets":["all"],"weights":["400","500","700","800"],"styles":["italic","normal"],"defSubset":"all","lastModified":"2020-08-02","version":"v1.06","source":"https://github.com/JetBrains/JetBrainsMono","license":"https://github.com/JetBrains/JetBrainsMono/blob/master/LICENSE","type":"other"}
+{
+  "fontId": "jetbrains-mono",
+  "fontName": "Jetbrains Mono",
+  "subsets": ["all"],
+  "weights": ["400", "500", "700", "800"],
+  "styles": ["italic", "normal"],
+  "defSubset": "all",
+  "lastModified": "2020-08-02",
+  "version": "v1.06",
+  "source": "https://github.com/JetBrains/JetBrainsMono",
+  "license": "https://github.com/JetBrains/JetBrainsMono/blob/master/LICENSE",
+  "type": "other"
+}

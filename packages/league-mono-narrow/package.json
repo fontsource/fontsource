@@ -17,8 +17,8 @@
   "license": "MIT",
   "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/league-mono-narrow#readme",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/fontsource/fontsource.git",
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/league-mono-narrow"
   }
 }
