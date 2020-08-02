@@ -3,7 +3,7 @@ const _ = require(`lodash`)
 exports.packageJson = _.template(
   `{
   "name": "fontsource-<%= fontId %>",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "<%= fontName %> font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -19,8 +19,12 @@ exports.packageJson = _.template(
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>",
-  "homepage": "https://github.com/fontsource/fontsource"
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>#readme",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/<%= fontId %>"
+  }
 }
 `
 )
