@@ -7,7 +7,6 @@
   src:
     url('./files/yakuhanrps-japanese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/yakuhanrps-japanese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* yakuhanrps-japanese-300-normal*/
 @font-face {
@@ -18,7 +17,6 @@
   src:
     url('./files/yakuhanrps-japanese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/yakuhanrps-japanese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* yakuhanrps-japanese-400-normal*/
 @font-face {
@@ -29,7 +27,6 @@
   src:
     url('./files/yakuhanrps-japanese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/yakuhanrps-japanese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* yakuhanrps-japanese-500-normal*/
 @font-face {
@@ -40,7 +37,6 @@
   src:
     url('./files/yakuhanrps-japanese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/yakuhanrps-japanese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* yakuhanrps-japanese-700-normal*/
 @font-face {
@@ -51,7 +47,6 @@
   src:
     url('./files/yakuhanrps-japanese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/yakuhanrps-japanese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* yakuhanrps-japanese-800-normal*/
 @font-face {
@@ -62,7 +57,6 @@
   src:
     url('./files/yakuhanrps-japanese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/yakuhanrps-japanese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* yakuhanrps-japanese-900-normal*/
 @font-face {
@@ -73,5 +67,4 @@
   src:
     url('./files/yakuhanrps-japanese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/yakuhanrps-japanese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }

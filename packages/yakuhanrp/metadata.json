@@ -1,13 +1,1 @@
-{
-  "fontId": "yakuhanrp",
-  "fontName": "YakuHanRP",
-  "subsets": ["japanese"],
-  "weights": ["100", "300", "400", "500", "700", "800", "900"],
-  "styles": ["normal"],
-  "defSubset": "japanese",
-  "lastModified": "2020-07-21",
-  "version": "v3.3.1",
-  "source": "https://github.com/qrac/yakuhanjp",
-  "license": "https://github.com/qrac/yakuhanjp#license",
-  "type": "other"
-}
+{"fontId":"yakuhanrp","fontName":"YakuHanRP","subsets":["japanese"],"weights":["100","300","400","500","700","800","900"],"styles":["normal"],"defSubset":"japanese","lastModified":"2020-08-02","version":"v3.3.1","source":"https://github.com/qrac/yakuhanjp","license":"https://github.com/qrac/yakuhanjp#license","type":"other"}
