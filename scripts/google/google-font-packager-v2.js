@@ -214,6 +214,9 @@ if (changed || force == "force") {
     license: "https://fonts.google.com/attribution",
     type: "google",
   })
+
+  // Copy CHANGELOG.md over from main repo
+  fs.copySync(`./CHANGELOG.md`, `${fontDir}/CHANGELOG.md`)
 }
 
 console.log(`Finished processing ${font.id}`)
