@@ -2,7 +2,7 @@
   "fontId": "molle",
   "fontName": "Molle",
   "subsets": ["latin", "latin-ext"],
-  "weights": [],
+  "weights": ["400"],
   "styles": ["italic"],
   "defSubset": "latin",
   "lastModified": "2020-07-23",

@@ -1,0 +1,9 @@
+/* battambang-khmer-700-normal*/
+@font-face {
+  font-family: 'Battambang';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/battambang-khmer-700-normal.woff2') format('woff2'), url('./files/battambang-all-700-normal.woff') format('woff'), url('./files/battambang-all-700-normal.ttf') format('truetype');
+  unicode-range: U+1780-17FF, U+200C, U+25CC;
+}

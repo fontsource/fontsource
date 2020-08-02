@@ -1,8 +1,8 @@
 # Fontsource Port Lligat Slab
 
-[![npm version](https://badge.fury.io/js/fontsource-port-lligat-slab.svg)](https://www.npmjs.com/package/fontsource-port-lligat-slab) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/DecliningLotus/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/fontsource-port-lligat-slab)](https://github.com/DecliningLotus/fontsource) [![Total downloads](https://badgen.net/npm/dt/fontsource-port-lligat-slab)](https://github.com/DecliningLotus/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star)](https://GitHub.com/DecliningLotus/fontsource/stargazers/)
+[![npm version](https://badge.fury.io/js/fontsource-port-lligat-slab.svg)](https://www.npmjs.com/package/fontsource-port-lligat-slab) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/fontsource-port-lligat-slab)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/fontsource-port-lligat-slab)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
-The CSS and web font files to easily self-host the “Port Lligat Slab” font. Please visit the main [Fontsource monorepo](https://github.com/DecliningLotus/fontsource) to view more details on this package.
+The CSS and web font files to easily self-host the “Port Lligat Slab” font. Please visit the main [Fontsource monorepo](https://github.com/fontsource/fontsource) to view more details on this package.
 
 ## Installation
 
@@ -15,29 +15,27 @@ yarn add fontsource-port-lligat-slab // npm install fontsource-port-lligat-slab
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
 
 ```javascript
-import "fontsource-port-lligat-slab" // require("fontsource-port-lligat-slab")
+import "fontsource-port-lligat-slab" // Defaults to weight 400 with all styles included.
 ```
 
-Fontsource allows you to select font subsets, weights and even individual styles, allowing you to cut down on payload sizes to the last byte! The default selection above, however, sticks to the Latin subset including all weights and styles.
+Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "fontsource-port-lligat-slab/latin-ext.css" // All weights and styles included.
-import "fontsource-port-lligat-slab/cyrillic-ext-400.css" // All styles included.
-import "fontsource-port-lligat-slab/greek-700-normal.css" // Select either normal or italic.
+import "fontsource-port-lligat-slab/500.css" // All styles included.
+import "fontsource-port-lligat-slab/900-normal.css" // Select either normal or italic.
 ```
 
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
 @import "~fontsource-port-lligat-slab/index.css";
-@import "~fontsource-port-lligat-slab/vietnamese-300-italic.css";
+@import "~fontsource-port-lligat-slab/300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
 
-- Subsets: `[latin]`
 - Weights: `[400]`
 - Styles: `[normal]`
 
@@ -48,6 +46,18 @@ body {
   font-family: "Port Lligat Slab";
 }
 ```
+
+## Additional Options
+
+In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
+
+```javascript
+import "fontsource-port-lligat-slab/latin-ext.css" // All weights and styles included.
+import "fontsource-port-lligat-slab/cyrillic-ext-500.css" // All styles included.
+import "fontsource-port-lligat-slab/greek-900-normal.css" // Select either normal or italic.
+```
+
+- Supported subsets: `[latin]`
 
 ## Licensing
 
@@ -60,4 +70,4 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 Font version (provided by source): `v9`.
 
-Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/DecliningLotus/fontsource/issues).
+Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).
