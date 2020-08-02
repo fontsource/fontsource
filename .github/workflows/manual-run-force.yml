@@ -1,4 +1,4 @@
-name: Build and Release [Force Rebuild] [Manual]
+name: Build and Release [Force Rebuild No Deploy] [Manual]
 
 on: [workflow_dispatch]
 
@@ -54,16 +54,3 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Authenticate with Registry
-        run: |
-          yarn logout
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Publish package
-        run: npm run deploy:ci
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
