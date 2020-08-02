@@ -61,7 +61,10 @@ directories.forEach(directory => {
           fs.writeFileSync(cssWeightPath, fileContentWeight)
 
           // index.css
-          if (subset === metadata.defSubset && weight == "400") {
+          if (
+            subset === metadata.defSubset &&
+            (weight == "400" || metadata.weights.length == 1)
+          ) {
             fs.writeFileSync(`${fontDir}/index.css`, fileContentWeight)
           }
         })

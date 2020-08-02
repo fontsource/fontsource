@@ -7,7 +7,6 @@
   src:
     url('./files/vazir-farsi-digits-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/vazir-farsi-digits-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* vazir-farsi-digits-300-normal*/
 @font-face {
@@ -18,7 +17,6 @@
   src:
     url('./files/vazir-farsi-digits-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/vazir-farsi-digits-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* vazir-farsi-digits-400-normal*/
 @font-face {
@@ -29,7 +27,6 @@
   src:
     url('./files/vazir-farsi-digits-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/vazir-farsi-digits-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* vazir-farsi-digits-500-normal*/
 @font-face {
@@ -40,7 +37,6 @@
   src:
     url('./files/vazir-farsi-digits-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/vazir-farsi-digits-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* vazir-farsi-digits-700-normal*/
 @font-face {
@@ -51,7 +47,6 @@
   src:
     url('./files/vazir-farsi-digits-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/vazir-farsi-digits-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }
 /* vazir-farsi-digits-900-normal*/
 @font-face {
@@ -62,5 +57,4 @@
   src:
     url('./files/vazir-farsi-digits-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/vazir-farsi-digits-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  
 }

@@ -15,6 +15,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/DecliningLotus/fontsource/tree/master/packages/chunk-five",
-  "gitHead": "5a7131094483365077f575a9da00a78be3c83891"
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/chunk-five#readme",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/chunk-five"
+  }
 }
