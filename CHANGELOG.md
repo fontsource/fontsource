@@ -28,6 +28,7 @@ These occur when an automatic update is pushed from a source, such as Google, or
 ### Fixes
 
 - Adjusted templates.js to add more relevant fields to package.json [#37](https://github.com/fontsource/fontsource/pull/37)
+- Resolved subsets not correctly being identified when packaging files through the generic packager. [#45](https://github.com/fontsource/fontsource/pull/45)
 
 # 2.x Release
 
