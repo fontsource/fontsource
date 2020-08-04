@@ -40,8 +40,7 @@ exports.fontFace = _.template(
     local('<%= localName %>'),<% });
     %> 
     url('<%= woff2Path %>') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('<%= woffPath %>') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('<%= ttforotfPath %>') format('<%= ttforotf %>');
+    url('<%= woffPath %>') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 `
 )
@@ -53,7 +52,7 @@ exports.fontFaceUnicode = _.template(
   font-style: <%= style %>;
   font-display: swap;
   font-weight: <%= weight %>;
-  src: url('<%= woff2Path %>') format('woff2'), url('<%= woffPath %>') format('woff'), url('<%= ttforotfPath %>') format('<%= ttforotf %>');
+  src: url('<%= woff2Path %>') format('woff2'), url('<%= woffPath %>') format('woff');
   unicode-range: <%= unicodeRange %>;
 }
 `
