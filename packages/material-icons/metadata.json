@@ -1,0 +1,13 @@
+{
+  "fontId": "material-icons",
+  "fontName": "Material Icons",
+  "subsets": ["base", "outlined"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "base",
+  "lastModified": "2020-08-04",
+  "version": "3.0.1",
+  "source": "https://github.com/google/material-design-icons",
+  "license": "https://github.com/google/material-design-icons/blob/master/LICENSE",
+  "type": "icons"
+}

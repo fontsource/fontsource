@@ -24,6 +24,10 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - ostrich-sans-inline
 - ostrich-sans-rounded
 
+## Icons
+
+- material-icons
+
 ## Other
 
 - cascadia-code
