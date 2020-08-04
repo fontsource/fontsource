@@ -1,0 +1,24 @@
+{
+  "name": "fontsource-material-icons",
+  "version": "3.0.0",
+  "description": "Material Icons font in NPM glory.",
+  "main": "index.css",
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "Material Icons",
+    "material-icons",
+    "css",
+    "front-end",
+    "web"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/material-icons#readme",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/material-icons"
+  }
+}
