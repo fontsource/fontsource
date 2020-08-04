@@ -66,14 +66,17 @@ if (changed || force == "force") {
   // Filter out local font links and only leave URLs for each pair
   const links = downloadURLPairs
     .filter(pair => isAbsoluteUrl(pair[1].toString()))
+    .filter(file => {
+      const extension = file[0].split(".")[4]
+      if (extension == "truetype" || extension == "opentype") {
+        return false
+      } else {
+        return true
+      }
+    })
     .map(file => {
       const types = file[0].split(".")
-      const dest = makeFontDownloadPath(
-        types[2],
-        types[0],
-        types[1],
-        types[4].replace("truetype", "ttf").replace("opentype", "otf")
-      )
+      const dest = makeFontDownloadPath(types[2], types[0], types[1], types[4])
       const url = file[1]
       return {
         url,
@@ -93,15 +96,6 @@ if (changed || force == "force") {
   })
 
   // Generate CSS
-  const ttforotf = (subset, weight, style) => {
-    if (
-      Object.keys(font.variants[weight][style][subset].url).includes("opentype")
-    ) {
-      return "otf"
-    }
-    return "ttf"
-  }
-
   font.subsets.forEach(subset => {
     cssSubset = []
     font.weights.forEach(weight => {
@@ -118,15 +112,6 @@ if (changed || force == "force") {
             weight,
             woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
             woffPath: makeFontFilePath(subset, weight, style, "woff"),
-            ttforotf: ttforotf(subset, weight, style)
-              .replace("otf", "opentype")
-              .replace("ttf", "truetype"),
-            ttforotfPath: makeFontFilePath(
-              subset,
-              weight,
-              style,
-              ttforotf(subset, weight, style)
-            ),
           })
           cssWeight.push(css)
           cssSubset.push(css)
