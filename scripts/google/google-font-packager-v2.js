@@ -72,24 +72,15 @@ if (changed || force == "force") {
   let oldLinks = downloadURLPairs
     .filter(pair => isAbsoluteUrl(pair[1].toString()))
     .filter(file => {
-      const types = file[0].split(".")
-      if (
-        types[4] === "woff" ||
-        types[4] === "truetype" ||
-        types[4] === "opentype"
-      ) {
+      const extension = file[0].split(".")[4]
+      if (extension === "woff") {
         return true
       }
       return false
     })
     .map(file => {
       const types = file[0].split(".")
-      const dest = makeFontDownloadPath(
-        "all",
-        types[0],
-        types[1],
-        types[4].replace("truetype", "ttf").replace("opentype", "otf")
-      )
+      const dest = makeFontDownloadPath("all", types[0], types[1], types[4])
       const url = file[1]
       return {
         url,
@@ -117,15 +108,6 @@ if (changed || force == "force") {
   })
 
   // Generate CSS
-  const ttforotf = (subset, weight, style) => {
-    if (
-      Object.keys(font.variants[weight][style][subset].url).includes("opentype")
-    ) {
-      return "otf"
-    }
-    return "ttf"
-  }
-
   const unicodeKeys = Object.keys(font.unicodeRange)
 
   font.weights.forEach(weight => {
@@ -149,15 +131,6 @@ if (changed || force == "force") {
               "woff2"
             ),
             woffPath: makeFontFilePath("all", weight, style, "woff"),
-            ttforotf: ttforotf(subset, weight, style)
-              .replace("otf", "opentype")
-              .replace("ttf", "truetype"),
-            ttforotfPath: makeFontFilePath(
-              "all",
-              weight,
-              style,
-              ttforotf(subset, weight, style)
-            ),
             unicodeRange: font.unicodeRange[subset],
           })
           cssStyle.push(css)
