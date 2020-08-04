@@ -30,8 +30,8 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
   let styles = []
 
   files.forEach(file => {
-    // Remove file path and extension
-    name = file.slice(23 + Object.keys(config.fontId).length, -6).split("-")
+    // Remove file path and extension. 34 characters to account for scripts/generic/... filepath
+    name = file.slice(34 + fontId.length, -6).split("-")
     styles.push(name.slice(-1)[0])
     name.pop()
     weights.push(name.slice(-1)[0])
