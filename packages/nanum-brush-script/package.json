@@ -1,6 +1,6 @@
 {
   "name": "fontsource-nanum-brush-script",
-  "version": "2.2.6",
+  "version": "3.0.3",
   "description": "Nanum Brush Script font in NPM glory.",
   "main": "index.css",
   "keywords": [

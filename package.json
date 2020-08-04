@@ -38,7 +38,7 @@
     "util:generic-renamer": "node scripts/generic/renamer.js",
     "util:package-json-rebuild": "node scripts/utils/package-json-rebuild.js",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
-    "deploy:ci": "lerna version 3.0.3 --yes --force-publish --no-push && lerna publish from-git --yes && git push --follow-tags --no-verify origin master"
+    "deploy:ci": "lerna publish patch --yes"
   },
   "resolutions": {
     "npm-packlist": "1.1.12"
