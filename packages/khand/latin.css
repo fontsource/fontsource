@@ -8,8 +8,7 @@
     local('Khand Light'),
     local('Khand-Light'), 
     url('./files/khand-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/khand-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/khand-latin-300-normal.ttf') format('truetype');
+    url('./files/khand-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* khand-latin-400-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Khand Regular'),
     local('Khand-Regular'), 
     url('./files/khand-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/khand-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/khand-latin-400-normal.ttf') format('truetype');
+    url('./files/khand-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* khand-latin-500-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Khand Medium'),
     local('Khand-Medium'), 
     url('./files/khand-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/khand-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/khand-latin-500-normal.ttf') format('truetype');
+    url('./files/khand-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* khand-latin-600-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Khand SemiBold'),
     local('Khand-SemiBold'), 
     url('./files/khand-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/khand-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/khand-latin-600-normal.ttf') format('truetype');
+    url('./files/khand-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* khand-latin-700-normal*/
 @font-face {
@@ -60,6 +56,5 @@
     local('Khand Bold'),
     local('Khand-Bold'), 
     url('./files/khand-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/khand-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/khand-latin-700-normal.ttf') format('truetype');
+    url('./files/khand-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

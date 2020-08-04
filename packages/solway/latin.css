@@ -8,8 +8,7 @@
     local('Solway Light'),
     local('Solway-Light'), 
     url('./files/solway-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/solway-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/solway-latin-300-normal.ttf') format('truetype');
+    url('./files/solway-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* solway-latin-400-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Solway Regular'),
     local('Solway-Regular'), 
     url('./files/solway-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/solway-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/solway-latin-400-normal.ttf') format('truetype');
+    url('./files/solway-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* solway-latin-500-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Solway Medium'),
     local('Solway-Medium'), 
     url('./files/solway-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/solway-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/solway-latin-500-normal.ttf') format('truetype');
+    url('./files/solway-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* solway-latin-700-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Solway Bold'),
     local('Solway-Bold'), 
     url('./files/solway-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/solway-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/solway-latin-700-normal.ttf') format('truetype');
+    url('./files/solway-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* solway-latin-800-normal*/
 @font-face {
@@ -60,6 +56,5 @@
     local('Solway ExtraBold'),
     local('Solway-ExtraBold'), 
     url('./files/solway-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/solway-latin-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/solway-latin-800-normal.ttf') format('truetype');
+    url('./files/solway-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

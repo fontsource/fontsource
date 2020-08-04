@@ -8,8 +8,7 @@
     local('Biryani ExtraLight'),
     local('Biryani-ExtraLight'), 
     url('./files/biryani-devanagari-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biryani-devanagari-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biryani-devanagari-200-normal.ttf') format('truetype');
+    url('./files/biryani-devanagari-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biryani-devanagari-300-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Biryani Light'),
     local('Biryani-Light'), 
     url('./files/biryani-devanagari-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biryani-devanagari-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biryani-devanagari-300-normal.ttf') format('truetype');
+    url('./files/biryani-devanagari-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biryani-devanagari-400-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Biryani Regular'),
     local('Biryani-Regular'), 
     url('./files/biryani-devanagari-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biryani-devanagari-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biryani-devanagari-400-normal.ttf') format('truetype');
+    url('./files/biryani-devanagari-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biryani-devanagari-600-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Biryani SemiBold'),
     local('Biryani-SemiBold'), 
     url('./files/biryani-devanagari-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biryani-devanagari-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biryani-devanagari-600-normal.ttf') format('truetype');
+    url('./files/biryani-devanagari-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biryani-devanagari-700-normal*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Biryani Bold'),
     local('Biryani-Bold'), 
     url('./files/biryani-devanagari-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biryani-devanagari-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biryani-devanagari-700-normal.ttf') format('truetype');
+    url('./files/biryani-devanagari-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biryani-devanagari-800-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Biryani ExtraBold'),
     local('Biryani-ExtraBold'), 
     url('./files/biryani-devanagari-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biryani-devanagari-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biryani-devanagari-800-normal.ttf') format('truetype');
+    url('./files/biryani-devanagari-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biryani-devanagari-900-normal*/
 @font-face {
@@ -86,6 +80,5 @@
     local('Biryani Black'),
     local('Biryani-Black'), 
     url('./files/biryani-devanagari-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biryani-devanagari-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biryani-devanagari-900-normal.ttf') format('truetype');
+    url('./files/biryani-devanagari-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

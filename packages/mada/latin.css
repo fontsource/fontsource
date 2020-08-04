@@ -8,8 +8,7 @@
     local('Mada ExtraLight'),
     local('Mada-ExtraLight'), 
     url('./files/mada-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-latin-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/mada-latin-200-normal.ttf') format('truetype');
+    url('./files/mada-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* mada-latin-300-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Mada Light'),
     local('Mada-Light'), 
     url('./files/mada-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/mada-latin-300-normal.ttf') format('truetype');
+    url('./files/mada-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* mada-latin-400-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Mada Regular'),
     local('Mada-Regular'), 
     url('./files/mada-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/mada-latin-400-normal.ttf') format('truetype');
+    url('./files/mada-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* mada-latin-500-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Mada Medium'),
     local('Mada-Medium'), 
     url('./files/mada-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/mada-latin-500-normal.ttf') format('truetype');
+    url('./files/mada-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* mada-latin-600-normal*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Mada SemiBold'),
     local('Mada-SemiBold'), 
     url('./files/mada-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/mada-latin-600-normal.ttf') format('truetype');
+    url('./files/mada-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* mada-latin-700-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Mada Bold'),
     local('Mada-Bold'), 
     url('./files/mada-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/mada-latin-700-normal.ttf') format('truetype');
+    url('./files/mada-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* mada-latin-900-normal*/
 @font-face {
@@ -86,6 +80,5 @@
     local('Mada Black'),
     local('Mada-Black'), 
     url('./files/mada-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-latin-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/mada-latin-900-normal.ttf') format('truetype');
+    url('./files/mada-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

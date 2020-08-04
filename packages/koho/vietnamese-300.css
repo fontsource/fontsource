@@ -8,8 +8,7 @@
     local('KoHo Light Italic'),
     local('KoHo-LightItalic'), 
     url('./files/koho-vietnamese-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-300-italic.ttf') format('truetype');
+    url('./files/koho-vietnamese-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-300-normal*/
 @font-face {
@@ -21,6 +20,5 @@
     local('KoHo Light'),
     local('KoHo-Light'), 
     url('./files/koho-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-300-normal.ttf') format('truetype');
+    url('./files/koho-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

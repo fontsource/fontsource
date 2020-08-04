@@ -8,8 +8,7 @@
     local('Sansita Italic'),
     local('Sansita-Italic'), 
     url('./files/sansita-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sansita-latin-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sansita-latin-400-italic.ttf') format('truetype');
+    url('./files/sansita-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sansita-latin-400-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Sansita Regular'),
     local('Sansita-Regular'), 
     url('./files/sansita-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sansita-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sansita-latin-400-normal.ttf') format('truetype');
+    url('./files/sansita-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sansita-latin-700-italic*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Sansita Bold Italic'),
     local('Sansita-BoldItalic'), 
     url('./files/sansita-latin-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sansita-latin-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sansita-latin-700-italic.ttf') format('truetype');
+    url('./files/sansita-latin-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sansita-latin-700-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Sansita Bold'),
     local('Sansita-Bold'), 
     url('./files/sansita-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sansita-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sansita-latin-700-normal.ttf') format('truetype');
+    url('./files/sansita-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sansita-latin-800-italic*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Sansita ExtraBold Italic'),
     local('Sansita-ExtraBoldItalic'), 
     url('./files/sansita-latin-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sansita-latin-800-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sansita-latin-800-italic.ttf') format('truetype');
+    url('./files/sansita-latin-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sansita-latin-800-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Sansita ExtraBold'),
     local('Sansita-ExtraBold'), 
     url('./files/sansita-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sansita-latin-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sansita-latin-800-normal.ttf') format('truetype');
+    url('./files/sansita-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sansita-latin-900-italic*/
 @font-face {
@@ -86,8 +80,7 @@
     local('Sansita Black Italic'),
     local('Sansita-BlackItalic'), 
     url('./files/sansita-latin-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sansita-latin-900-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sansita-latin-900-italic.ttf') format('truetype');
+    url('./files/sansita-latin-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sansita-latin-900-normal*/
 @font-face {
@@ -99,6 +92,5 @@
     local('Sansita Black'),
     local('Sansita-Black'), 
     url('./files/sansita-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sansita-latin-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sansita-latin-900-normal.ttf') format('truetype');
+    url('./files/sansita-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

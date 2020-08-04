@@ -8,8 +8,7 @@
     local('Sarabun ExtraBold Italic'),
     local('Sarabun-ExtraBoldItalic'), 
     url('./files/sarabun-latin-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sarabun-latin-800-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sarabun-latin-800-italic.ttf') format('truetype');
+    url('./files/sarabun-latin-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sarabun-latin-800-normal*/
 @font-face {
@@ -21,6 +20,5 @@
     local('Sarabun ExtraBold'),
     local('Sarabun-ExtraBold'), 
     url('./files/sarabun-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sarabun-latin-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sarabun-latin-800-normal.ttf') format('truetype');
+    url('./files/sarabun-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

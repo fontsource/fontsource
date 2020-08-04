@@ -8,8 +8,7 @@
     local('Noto Serif TC ExtraLight'),
     local('NotoSerifTC-ExtraLight'), 
     url('./files/noto-serif-tc-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-tc-latin-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-serif-tc-latin-200-normal.otf') format('opentype');
+    url('./files/noto-serif-tc-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-serif-tc-latin-300-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Noto Serif TC Light'),
     local('NotoSerifTC-Light'), 
     url('./files/noto-serif-tc-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-tc-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-serif-tc-latin-300-normal.otf') format('opentype');
+    url('./files/noto-serif-tc-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-serif-tc-latin-400-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Noto Serif TC'),
     local('NotoSerifTC-Regular'), 
     url('./files/noto-serif-tc-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-tc-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-serif-tc-latin-400-normal.otf') format('opentype');
+    url('./files/noto-serif-tc-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-serif-tc-latin-500-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Noto Serif TC Medium'),
     local('NotoSerifTC-Medium'), 
     url('./files/noto-serif-tc-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-tc-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-serif-tc-latin-500-normal.otf') format('opentype');
+    url('./files/noto-serif-tc-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-serif-tc-latin-600-normal*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Noto Serif TC SemiBold'),
     local('NotoSerifTC-SemiBold'), 
     url('./files/noto-serif-tc-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-tc-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-serif-tc-latin-600-normal.otf') format('opentype');
+    url('./files/noto-serif-tc-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-serif-tc-latin-700-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Noto Serif TC Bold'),
     local('NotoSerifTC-Bold'), 
     url('./files/noto-serif-tc-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-tc-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-serif-tc-latin-700-normal.otf') format('opentype');
+    url('./files/noto-serif-tc-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-serif-tc-latin-900-normal*/
 @font-face {
@@ -86,6 +80,5 @@
     local('Noto Serif TC Black'),
     local('NotoSerifTC-Black'), 
     url('./files/noto-serif-tc-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-serif-tc-latin-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-serif-tc-latin-900-normal.otf') format('opentype');
+    url('./files/noto-serif-tc-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

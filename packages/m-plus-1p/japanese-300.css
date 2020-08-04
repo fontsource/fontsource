@@ -8,6 +8,5 @@
     local('M PLUS 1p Light'),
     local('MPLUS1p-Light'), 
     url('./files/m-plus-1p-japanese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-japanese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/m-plus-1p-japanese-300-normal.ttf') format('truetype');
+    url('./files/m-plus-1p-japanese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

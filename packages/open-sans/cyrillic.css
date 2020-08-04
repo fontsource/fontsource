@@ -8,8 +8,7 @@
     local('Open Sans Light Italic'),
     local('OpenSans-LightItalic'), 
     url('./files/open-sans-cyrillic-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-300-italic.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-300-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Open Sans Light'),
     local('OpenSans-Light'), 
     url('./files/open-sans-cyrillic-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-300-normal.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-400-italic*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Open Sans Italic'),
     local('OpenSans-Italic'), 
     url('./files/open-sans-cyrillic-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-400-italic.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-400-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Open Sans Regular'),
     local('OpenSans-Regular'), 
     url('./files/open-sans-cyrillic-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-400-normal.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-600-italic*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Open Sans SemiBold Italic'),
     local('OpenSans-SemiBoldItalic'), 
     url('./files/open-sans-cyrillic-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-600-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-600-italic.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-600-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Open Sans SemiBold'),
     local('OpenSans-SemiBold'), 
     url('./files/open-sans-cyrillic-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-600-normal.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-700-italic*/
 @font-face {
@@ -86,8 +80,7 @@
     local('Open Sans Bold Italic'),
     local('OpenSans-BoldItalic'), 
     url('./files/open-sans-cyrillic-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-700-italic.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-700-normal*/
 @font-face {
@@ -99,8 +92,7 @@
     local('Open Sans Bold'),
     local('OpenSans-Bold'), 
     url('./files/open-sans-cyrillic-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-700-normal.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-800-italic*/
 @font-face {
@@ -112,8 +104,7 @@
     local('Open Sans ExtraBold Italic'),
     local('OpenSans-ExtraBoldItalic'), 
     url('./files/open-sans-cyrillic-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-800-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-800-italic.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-cyrillic-800-normal*/
 @font-face {
@@ -125,6 +116,5 @@
     local('Open Sans ExtraBold'),
     local('OpenSans-ExtraBold'), 
     url('./files/open-sans-cyrillic-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/open-sans-cyrillic-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/open-sans-cyrillic-800-normal.ttf') format('truetype');
+    url('./files/open-sans-cyrillic-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

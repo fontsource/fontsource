@@ -8,8 +8,7 @@
     local('Gayathri Thin'),
     local('Gayathri-Thin'), 
     url('./files/gayathri-malayalam-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/gayathri-malayalam-100-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/gayathri-malayalam-100-normal.ttf') format('truetype');
+    url('./files/gayathri-malayalam-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* gayathri-malayalam-400-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Gayathri Regular'),
     local('Gayathri-Regular'), 
     url('./files/gayathri-malayalam-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/gayathri-malayalam-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/gayathri-malayalam-400-normal.ttf') format('truetype');
+    url('./files/gayathri-malayalam-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* gayathri-malayalam-700-normal*/
 @font-face {
@@ -34,6 +32,5 @@
     local('Gayathri Bold'),
     local('Gayathri-Bold'), 
     url('./files/gayathri-malayalam-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/gayathri-malayalam-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/gayathri-malayalam-700-normal.ttf') format('truetype');
+    url('./files/gayathri-malayalam-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

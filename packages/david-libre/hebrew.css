@@ -8,8 +8,7 @@
     local('David Libre'),
     local('DavidLibre-Regular'), 
     url('./files/david-libre-hebrew-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/david-libre-hebrew-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/david-libre-hebrew-400-normal.ttf') format('truetype');
+    url('./files/david-libre-hebrew-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* david-libre-hebrew-500-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('David Libre Medium'),
     local('DavidLibre-Medium'), 
     url('./files/david-libre-hebrew-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/david-libre-hebrew-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/david-libre-hebrew-500-normal.ttf') format('truetype');
+    url('./files/david-libre-hebrew-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* david-libre-hebrew-700-normal*/
 @font-face {
@@ -34,6 +32,5 @@
     local('David Libre Bold'),
     local('DavidLibre-Bold'), 
     url('./files/david-libre-hebrew-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/david-libre-hebrew-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/david-libre-hebrew-700-normal.ttf') format('truetype');
+    url('./files/david-libre-hebrew-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

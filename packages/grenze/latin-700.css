@@ -8,8 +8,7 @@
     local('Grenze Bold Italic'),
     local('Grenze-BoldItalic'), 
     url('./files/grenze-latin-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-latin-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/grenze-latin-700-italic.ttf') format('truetype');
+    url('./files/grenze-latin-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* grenze-latin-700-normal*/
 @font-face {
@@ -21,6 +20,5 @@
     local('Grenze Bold'),
     local('Grenze-Bold'), 
     url('./files/grenze-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/grenze-latin-700-normal.ttf') format('truetype');
+    url('./files/grenze-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

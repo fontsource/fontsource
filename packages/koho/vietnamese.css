@@ -8,8 +8,7 @@
     local('KoHo ExtraLight Italic'),
     local('KoHo-ExtraLightItalic'), 
     url('./files/koho-vietnamese-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-200-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-200-italic.ttf') format('truetype');
+    url('./files/koho-vietnamese-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-200-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('KoHo ExtraLight'),
     local('KoHo-ExtraLight'), 
     url('./files/koho-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-200-normal.ttf') format('truetype');
+    url('./files/koho-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-300-italic*/
 @font-face {
@@ -34,8 +32,7 @@
     local('KoHo Light Italic'),
     local('KoHo-LightItalic'), 
     url('./files/koho-vietnamese-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-300-italic.ttf') format('truetype');
+    url('./files/koho-vietnamese-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-300-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('KoHo Light'),
     local('KoHo-Light'), 
     url('./files/koho-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-300-normal.ttf') format('truetype');
+    url('./files/koho-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-400-italic*/
 @font-face {
@@ -60,8 +56,7 @@
     local('KoHo Italic'),
     local('KoHo-Italic'), 
     url('./files/koho-vietnamese-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-400-italic.ttf') format('truetype');
+    url('./files/koho-vietnamese-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-400-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('KoHo Regular'),
     local('KoHo-Regular'), 
     url('./files/koho-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-400-normal.ttf') format('truetype');
+    url('./files/koho-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-500-italic*/
 @font-face {
@@ -86,8 +80,7 @@
     local('KoHo Medium Italic'),
     local('KoHo-MediumItalic'), 
     url('./files/koho-vietnamese-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-500-italic.ttf') format('truetype');
+    url('./files/koho-vietnamese-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-500-normal*/
 @font-face {
@@ -99,8 +92,7 @@
     local('KoHo Medium'),
     local('KoHo-Medium'), 
     url('./files/koho-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-500-normal.ttf') format('truetype');
+    url('./files/koho-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-600-italic*/
 @font-face {
@@ -112,8 +104,7 @@
     local('KoHo SemiBold Italic'),
     local('KoHo-SemiBoldItalic'), 
     url('./files/koho-vietnamese-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-600-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-600-italic.ttf') format('truetype');
+    url('./files/koho-vietnamese-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-600-normal*/
 @font-face {
@@ -125,8 +116,7 @@
     local('KoHo SemiBold'),
     local('KoHo-SemiBold'), 
     url('./files/koho-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-600-normal.ttf') format('truetype');
+    url('./files/koho-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-700-italic*/
 @font-face {
@@ -138,8 +128,7 @@
     local('KoHo Bold Italic'),
     local('KoHo-BoldItalic'), 
     url('./files/koho-vietnamese-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-700-italic.ttf') format('truetype');
+    url('./files/koho-vietnamese-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* koho-vietnamese-700-normal*/
 @font-face {
@@ -151,6 +140,5 @@
     local('KoHo Bold'),
     local('KoHo-Bold'), 
     url('./files/koho-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-vietnamese-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/koho-vietnamese-700-normal.ttf') format('truetype');
+    url('./files/koho-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

@@ -8,8 +8,7 @@
     local('Taviraj Black Italic'),
     local('Taviraj-BlackItalic'), 
     url('./files/taviraj-latin-ext-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/taviraj-latin-ext-900-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/taviraj-latin-ext-900-italic.ttf') format('truetype');
+    url('./files/taviraj-latin-ext-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* taviraj-latin-ext-900-normal*/
 @font-face {
@@ -21,6 +20,5 @@
     local('Taviraj Black'),
     local('Taviraj-Black'), 
     url('./files/taviraj-latin-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/taviraj-latin-ext-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/taviraj-latin-ext-900-normal.ttf') format('truetype');
+    url('./files/taviraj-latin-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

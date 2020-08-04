@@ -8,8 +8,7 @@
     local('Blinker Thin'),
     local('Blinker-Thin'), 
     url('./files/blinker-latin-ext-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/blinker-latin-ext-100-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/blinker-latin-ext-100-normal.ttf') format('truetype');
+    url('./files/blinker-latin-ext-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* blinker-latin-ext-200-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Blinker ExtraLight'),
     local('Blinker-ExtraLight'), 
     url('./files/blinker-latin-ext-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/blinker-latin-ext-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/blinker-latin-ext-200-normal.ttf') format('truetype');
+    url('./files/blinker-latin-ext-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* blinker-latin-ext-300-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Blinker Light'),
     local('Blinker-Light'), 
     url('./files/blinker-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/blinker-latin-ext-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/blinker-latin-ext-300-normal.ttf') format('truetype');
+    url('./files/blinker-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* blinker-latin-ext-400-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Blinker'),
     local('Blinker-Regular'), 
     url('./files/blinker-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/blinker-latin-ext-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/blinker-latin-ext-400-normal.ttf') format('truetype');
+    url('./files/blinker-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* blinker-latin-ext-600-normal*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Blinker SemiBold'),
     local('Blinker-SemiBold'), 
     url('./files/blinker-latin-ext-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/blinker-latin-ext-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/blinker-latin-ext-600-normal.ttf') format('truetype');
+    url('./files/blinker-latin-ext-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* blinker-latin-ext-700-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Blinker Bold'),
     local('Blinker-Bold'), 
     url('./files/blinker-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/blinker-latin-ext-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/blinker-latin-ext-700-normal.ttf') format('truetype');
+    url('./files/blinker-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* blinker-latin-ext-800-normal*/
 @font-face {
@@ -86,8 +80,7 @@
     local('Blinker ExtraBold'),
     local('Blinker-ExtraBold'), 
     url('./files/blinker-latin-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/blinker-latin-ext-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/blinker-latin-ext-800-normal.ttf') format('truetype');
+    url('./files/blinker-latin-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* blinker-latin-ext-900-normal*/
 @font-face {
@@ -99,6 +92,5 @@
     local('Blinker Black'),
     local('Blinker-Black'), 
     url('./files/blinker-latin-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/blinker-latin-ext-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/blinker-latin-ext-900-normal.ttf') format('truetype');
+    url('./files/blinker-latin-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

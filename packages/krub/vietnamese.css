@@ -8,8 +8,7 @@
     local('Krub ExtraLight Italic'),
     local('Krub-ExtraLightItalic'), 
     url('./files/krub-vietnamese-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-200-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-200-italic.ttf') format('truetype');
+    url('./files/krub-vietnamese-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-200-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Krub ExtraLight'),
     local('Krub-ExtraLight'), 
     url('./files/krub-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-200-normal.ttf') format('truetype');
+    url('./files/krub-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-300-italic*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Krub Light Italic'),
     local('Krub-LightItalic'), 
     url('./files/krub-vietnamese-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-300-italic.ttf') format('truetype');
+    url('./files/krub-vietnamese-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-300-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Krub Light'),
     local('Krub-Light'), 
     url('./files/krub-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-300-normal.ttf') format('truetype');
+    url('./files/krub-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-400-italic*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Krub Italic'),
     local('Krub-Italic'), 
     url('./files/krub-vietnamese-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-400-italic.ttf') format('truetype');
+    url('./files/krub-vietnamese-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-400-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Krub Regular'),
     local('Krub-Regular'), 
     url('./files/krub-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-400-normal.ttf') format('truetype');
+    url('./files/krub-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-500-italic*/
 @font-face {
@@ -86,8 +80,7 @@
     local('Krub Medium Italic'),
     local('Krub-MediumItalic'), 
     url('./files/krub-vietnamese-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-500-italic.ttf') format('truetype');
+    url('./files/krub-vietnamese-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-500-normal*/
 @font-face {
@@ -99,8 +92,7 @@
     local('Krub Medium'),
     local('Krub-Medium'), 
     url('./files/krub-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-500-normal.ttf') format('truetype');
+    url('./files/krub-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-600-italic*/
 @font-face {
@@ -112,8 +104,7 @@
     local('Krub SemiBold Italic'),
     local('Krub-SemiBoldItalic'), 
     url('./files/krub-vietnamese-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-600-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-600-italic.ttf') format('truetype');
+    url('./files/krub-vietnamese-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-600-normal*/
 @font-face {
@@ -125,8 +116,7 @@
     local('Krub SemiBold'),
     local('Krub-SemiBold'), 
     url('./files/krub-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-600-normal.ttf') format('truetype');
+    url('./files/krub-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-700-italic*/
 @font-face {
@@ -138,8 +128,7 @@
     local('Krub Bold Italic'),
     local('Krub-BoldItalic'), 
     url('./files/krub-vietnamese-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-700-italic.ttf') format('truetype');
+    url('./files/krub-vietnamese-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* krub-vietnamese-700-normal*/
 @font-face {
@@ -151,6 +140,5 @@
     local('Krub Bold'),
     local('Krub-Bold'), 
     url('./files/krub-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/krub-vietnamese-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/krub-vietnamese-700-normal.ttf') format('truetype');
+    url('./files/krub-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

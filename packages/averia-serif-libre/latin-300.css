@@ -8,8 +8,7 @@
     local('Averia Serif Libre Light Italic'),
     local('AveriaSerifLibre-LightItalic'), 
     url('./files/averia-serif-libre-latin-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/averia-serif-libre-latin-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/averia-serif-libre-latin-300-italic.ttf') format('truetype');
+    url('./files/averia-serif-libre-latin-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* averia-serif-libre-latin-300-normal*/
 @font-face {
@@ -21,6 +20,5 @@
     local('Averia Serif Libre Light'),
     local('AveriaSerifLibre-Light'), 
     url('./files/averia-serif-libre-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/averia-serif-libre-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/averia-serif-libre-latin-300-normal.ttf') format('truetype');
+    url('./files/averia-serif-libre-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

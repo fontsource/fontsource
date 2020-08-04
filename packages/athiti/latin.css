@@ -8,8 +8,7 @@
     local('Athiti ExtraLight'),
     local('Athiti-ExtraLight'), 
     url('./files/athiti-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/athiti-latin-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/athiti-latin-200-normal.ttf') format('truetype');
+    url('./files/athiti-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* athiti-latin-300-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Athiti Light'),
     local('Athiti-Light'), 
     url('./files/athiti-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/athiti-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/athiti-latin-300-normal.ttf') format('truetype');
+    url('./files/athiti-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* athiti-latin-400-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Athiti'),
     local('Athiti-Regular'), 
     url('./files/athiti-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/athiti-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/athiti-latin-400-normal.ttf') format('truetype');
+    url('./files/athiti-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* athiti-latin-500-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Athiti Medium'),
     local('Athiti-Medium'), 
     url('./files/athiti-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/athiti-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/athiti-latin-500-normal.ttf') format('truetype');
+    url('./files/athiti-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* athiti-latin-600-normal*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Athiti SemiBold'),
     local('Athiti-SemiBold'), 
     url('./files/athiti-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/athiti-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/athiti-latin-600-normal.ttf') format('truetype');
+    url('./files/athiti-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* athiti-latin-700-normal*/
 @font-face {
@@ -73,6 +68,5 @@
     local('Athiti Bold'),
     local('Athiti-Bold'), 
     url('./files/athiti-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/athiti-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/athiti-latin-700-normal.ttf') format('truetype');
+    url('./files/athiti-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

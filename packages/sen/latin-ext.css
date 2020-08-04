@@ -8,8 +8,7 @@
     local('Sen Regular'),
     local('Sen-Regular'), 
     url('./files/sen-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sen-latin-ext-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sen-latin-ext-400-normal.ttf') format('truetype');
+    url('./files/sen-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sen-latin-ext-700-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Sen Bold'),
     local('Sen-Bold'), 
     url('./files/sen-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sen-latin-ext-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sen-latin-ext-700-normal.ttf') format('truetype');
+    url('./files/sen-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* sen-latin-ext-800-normal*/
 @font-face {
@@ -34,6 +32,5 @@
     local('Sen ExtraBold'),
     local('Sen-ExtraBold'), 
     url('./files/sen-latin-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sen-latin-ext-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/sen-latin-ext-800-normal.ttf') format('truetype');
+    url('./files/sen-latin-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

@@ -8,8 +8,7 @@
     local('Cardo Italic'),
     local('Cardo-Italic'), 
     url('./files/cardo-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cardo-latin-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/cardo-latin-400-italic.ttf') format('truetype');
+    url('./files/cardo-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* cardo-latin-400-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Cardo'),
     local('Cardo-Regular'), 
     url('./files/cardo-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cardo-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/cardo-latin-400-normal.ttf') format('truetype');
+    url('./files/cardo-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* cardo-latin-700-normal*/
 @font-face {
@@ -34,6 +32,5 @@
     local('Cardo Bold'),
     local('Cardo-Bold'), 
     url('./files/cardo-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cardo-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/cardo-latin-700-normal.ttf') format('truetype');
+    url('./files/cardo-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

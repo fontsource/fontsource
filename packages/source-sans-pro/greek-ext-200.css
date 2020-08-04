@@ -8,8 +8,7 @@
     local('Source Sans Pro ExtraLight Italic'),
     local('SourceSansPro-ExtraLightItalic'), 
     url('./files/source-sans-pro-greek-ext-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-sans-pro-greek-ext-200-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/source-sans-pro-greek-ext-200-italic.ttf') format('truetype');
+    url('./files/source-sans-pro-greek-ext-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* source-sans-pro-greek-ext-200-normal*/
 @font-face {
@@ -21,6 +20,5 @@
     local('Source Sans Pro ExtraLight'),
     local('SourceSansPro-ExtraLight'), 
     url('./files/source-sans-pro-greek-ext-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-sans-pro-greek-ext-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/source-sans-pro-greek-ext-200-normal.ttf') format('truetype');
+    url('./files/source-sans-pro-greek-ext-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

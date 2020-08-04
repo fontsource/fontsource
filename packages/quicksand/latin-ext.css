@@ -6,8 +6,7 @@
   font-weight: 300;
   src: 
     url('./files/quicksand-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/quicksand-latin-ext-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/quicksand-latin-ext-300-normal.ttf') format('truetype');
+    url('./files/quicksand-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* quicksand-latin-ext-400-normal*/
 @font-face {
@@ -17,8 +16,7 @@
   font-weight: 400;
   src: 
     url('./files/quicksand-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/quicksand-latin-ext-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/quicksand-latin-ext-400-normal.ttf') format('truetype');
+    url('./files/quicksand-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* quicksand-latin-ext-500-normal*/
 @font-face {
@@ -28,8 +26,7 @@
   font-weight: 500;
   src: 
     url('./files/quicksand-latin-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/quicksand-latin-ext-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/quicksand-latin-ext-500-normal.ttf') format('truetype');
+    url('./files/quicksand-latin-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* quicksand-latin-ext-600-normal*/
 @font-face {
@@ -39,8 +36,7 @@
   font-weight: 600;
   src: 
     url('./files/quicksand-latin-ext-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/quicksand-latin-ext-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/quicksand-latin-ext-600-normal.ttf') format('truetype');
+    url('./files/quicksand-latin-ext-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* quicksand-latin-ext-700-normal*/
 @font-face {
@@ -50,6 +46,5 @@
   font-weight: 700;
   src: 
     url('./files/quicksand-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/quicksand-latin-ext-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/quicksand-latin-ext-700-normal.ttf') format('truetype');
+    url('./files/quicksand-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

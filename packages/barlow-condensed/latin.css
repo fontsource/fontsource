@@ -8,8 +8,7 @@
     local('Barlow Condensed Thin Italic'),
     local('BarlowCondensed-ThinItalic'), 
     url('./files/barlow-condensed-latin-100-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-100-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-100-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-100-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-100-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Barlow Condensed Thin'),
     local('BarlowCondensed-Thin'), 
     url('./files/barlow-condensed-latin-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-100-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-100-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-200-italic*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Barlow Condensed ExtraLight Italic'),
     local('BarlowCondensed-ExtraLightItalic'), 
     url('./files/barlow-condensed-latin-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-200-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-200-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-200-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Barlow Condensed ExtraLight'),
     local('BarlowCondensed-ExtraLight'), 
     url('./files/barlow-condensed-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-200-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-300-italic*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Barlow Condensed Light Italic'),
     local('BarlowCondensed-LightItalic'), 
     url('./files/barlow-condensed-latin-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-300-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-300-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Barlow Condensed Light'),
     local('BarlowCondensed-Light'), 
     url('./files/barlow-condensed-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-300-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-400-italic*/
 @font-face {
@@ -86,8 +80,7 @@
     local('Barlow Condensed Italic'),
     local('BarlowCondensed-Italic'), 
     url('./files/barlow-condensed-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-400-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-400-normal*/
 @font-face {
@@ -99,8 +92,7 @@
     local('Barlow Condensed Regular'),
     local('BarlowCondensed-Regular'), 
     url('./files/barlow-condensed-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-400-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-500-italic*/
 @font-face {
@@ -112,8 +104,7 @@
     local('Barlow Condensed Medium Italic'),
     local('BarlowCondensed-MediumItalic'), 
     url('./files/barlow-condensed-latin-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-500-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-500-normal*/
 @font-face {
@@ -125,8 +116,7 @@
     local('Barlow Condensed Medium'),
     local('BarlowCondensed-Medium'), 
     url('./files/barlow-condensed-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-500-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-600-italic*/
 @font-face {
@@ -138,8 +128,7 @@
     local('Barlow Condensed SemiBold Italic'),
     local('BarlowCondensed-SemiBoldItalic'), 
     url('./files/barlow-condensed-latin-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-600-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-600-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-600-normal*/
 @font-face {
@@ -151,8 +140,7 @@
     local('Barlow Condensed SemiBold'),
     local('BarlowCondensed-SemiBold'), 
     url('./files/barlow-condensed-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-600-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-700-italic*/
 @font-face {
@@ -164,8 +152,7 @@
     local('Barlow Condensed Bold Italic'),
     local('BarlowCondensed-BoldItalic'), 
     url('./files/barlow-condensed-latin-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-700-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-700-normal*/
 @font-face {
@@ -177,8 +164,7 @@
     local('Barlow Condensed Bold'),
     local('BarlowCondensed-Bold'), 
     url('./files/barlow-condensed-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-700-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-800-italic*/
 @font-face {
@@ -190,8 +176,7 @@
     local('Barlow Condensed ExtraBold Italic'),
     local('BarlowCondensed-ExtraBoldItalic'), 
     url('./files/barlow-condensed-latin-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-800-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-800-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-800-normal*/
 @font-face {
@@ -203,8 +188,7 @@
     local('Barlow Condensed ExtraBold'),
     local('BarlowCondensed-ExtraBold'), 
     url('./files/barlow-condensed-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-800-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-900-italic*/
 @font-face {
@@ -216,8 +200,7 @@
     local('Barlow Condensed Black Italic'),
     local('BarlowCondensed-BlackItalic'), 
     url('./files/barlow-condensed-latin-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-900-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-900-italic.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* barlow-condensed-latin-900-normal*/
 @font-face {
@@ -229,6 +212,5 @@
     local('Barlow Condensed Black'),
     local('BarlowCondensed-Black'), 
     url('./files/barlow-condensed-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-latin-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/barlow-condensed-latin-900-normal.ttf') format('truetype');
+    url('./files/barlow-condensed-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

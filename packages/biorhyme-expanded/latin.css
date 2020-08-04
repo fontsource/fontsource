@@ -8,8 +8,7 @@
     local('BioRhyme Expanded ExtraLight'),
     local('BioRhymeExpanded-ExtraLight'), 
     url('./files/biorhyme-expanded-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biorhyme-expanded-latin-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biorhyme-expanded-latin-200-normal.ttf') format('truetype');
+    url('./files/biorhyme-expanded-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biorhyme-expanded-latin-300-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('BioRhyme Expanded Light'),
     local('BioRhymeExpanded-Light'), 
     url('./files/biorhyme-expanded-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biorhyme-expanded-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biorhyme-expanded-latin-300-normal.ttf') format('truetype');
+    url('./files/biorhyme-expanded-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biorhyme-expanded-latin-400-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('BioRhyme Expanded'),
     local('BioRhymeExpanded-Regular'), 
     url('./files/biorhyme-expanded-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biorhyme-expanded-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biorhyme-expanded-latin-400-normal.ttf') format('truetype');
+    url('./files/biorhyme-expanded-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biorhyme-expanded-latin-700-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('BioRhyme Expanded Bold'),
     local('BioRhymeExpanded-Bold'), 
     url('./files/biorhyme-expanded-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biorhyme-expanded-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biorhyme-expanded-latin-700-normal.ttf') format('truetype');
+    url('./files/biorhyme-expanded-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* biorhyme-expanded-latin-800-normal*/
 @font-face {
@@ -60,6 +56,5 @@
     local('BioRhyme Expanded ExtraBold'),
     local('BioRhymeExpanded-ExtraBold'), 
     url('./files/biorhyme-expanded-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/biorhyme-expanded-latin-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/biorhyme-expanded-latin-800-normal.ttf') format('truetype');
+    url('./files/biorhyme-expanded-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

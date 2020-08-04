@@ -8,8 +8,7 @@
     local('Cabin Sketch Regular'),
     local('CabinSketch-Regular'), 
     url('./files/cabin-sketch-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cabin-sketch-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/cabin-sketch-latin-400-normal.ttf') format('truetype');
+    url('./files/cabin-sketch-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* cabin-sketch-latin-700-normal*/
 @font-face {
@@ -21,6 +20,5 @@
     local('Cabin Sketch Bold'),
     local('CabinSketch-Bold'), 
     url('./files/cabin-sketch-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cabin-sketch-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/cabin-sketch-latin-700-normal.ttf') format('truetype');
+    url('./files/cabin-sketch-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

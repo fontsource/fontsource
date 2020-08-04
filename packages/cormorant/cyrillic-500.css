@@ -8,8 +8,7 @@
     local('Cormorant Medium Italic'),
     local('Cormorant-MediumItalic'), 
     url('./files/cormorant-cyrillic-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cormorant-cyrillic-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/cormorant-cyrillic-500-italic.ttf') format('truetype');
+    url('./files/cormorant-cyrillic-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* cormorant-cyrillic-500-normal*/
 @font-face {
@@ -21,6 +20,5 @@
     local('Cormorant Medium'),
     local('Cormorant-Medium'), 
     url('./files/cormorant-cyrillic-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cormorant-cyrillic-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/cormorant-cyrillic-500-normal.ttf') format('truetype');
+    url('./files/cormorant-cyrillic-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

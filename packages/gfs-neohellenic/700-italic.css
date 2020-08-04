@@ -4,6 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src: url('./files/gfs-neohellenic-greek-700-italic.woff2') format('woff2'), url('./files/gfs-neohellenic-all-700-italic.woff') format('woff'), url('./files/gfs-neohellenic-all-700-italic.ttf') format('truetype');
+  src: url('./files/gfs-neohellenic-greek-700-italic.woff2') format('woff2'), url('./files/gfs-neohellenic-all-700-italic.woff') format('woff');
   unicode-range: U+0370-03FF;
 }

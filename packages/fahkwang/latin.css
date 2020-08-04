@@ -8,8 +8,7 @@
     local('Fahkwang ExtraLight Italic'),
     local('Fahkwang-ExtraLightItalic'), 
     url('./files/fahkwang-latin-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-200-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-200-italic.ttf') format('truetype');
+    url('./files/fahkwang-latin-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-200-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Fahkwang ExtraLight'),
     local('Fahkwang-ExtraLight'), 
     url('./files/fahkwang-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-200-normal.ttf') format('truetype');
+    url('./files/fahkwang-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-300-italic*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Fahkwang Light Italic'),
     local('Fahkwang-LightItalic'), 
     url('./files/fahkwang-latin-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-300-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-300-italic.ttf') format('truetype');
+    url('./files/fahkwang-latin-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-300-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Fahkwang Light'),
     local('Fahkwang-Light'), 
     url('./files/fahkwang-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-300-normal.ttf') format('truetype');
+    url('./files/fahkwang-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-400-italic*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Fahkwang Italic'),
     local('Fahkwang-Italic'), 
     url('./files/fahkwang-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-400-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-400-italic.ttf') format('truetype');
+    url('./files/fahkwang-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-400-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Fahkwang Regular'),
     local('Fahkwang-Regular'), 
     url('./files/fahkwang-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-400-normal.ttf') format('truetype');
+    url('./files/fahkwang-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-500-italic*/
 @font-face {
@@ -86,8 +80,7 @@
     local('Fahkwang Medium Italic'),
     local('Fahkwang-MediumItalic'), 
     url('./files/fahkwang-latin-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-500-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-500-italic.ttf') format('truetype');
+    url('./files/fahkwang-latin-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-500-normal*/
 @font-face {
@@ -99,8 +92,7 @@
     local('Fahkwang Medium'),
     local('Fahkwang-Medium'), 
     url('./files/fahkwang-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-500-normal.ttf') format('truetype');
+    url('./files/fahkwang-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-600-italic*/
 @font-face {
@@ -112,8 +104,7 @@
     local('Fahkwang SemiBold Italic'),
     local('Fahkwang-SemiBoldItalic'), 
     url('./files/fahkwang-latin-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-600-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-600-italic.ttf') format('truetype');
+    url('./files/fahkwang-latin-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-600-normal*/
 @font-face {
@@ -125,8 +116,7 @@
     local('Fahkwang SemiBold'),
     local('Fahkwang-SemiBold'), 
     url('./files/fahkwang-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-600-normal.ttf') format('truetype');
+    url('./files/fahkwang-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-700-italic*/
 @font-face {
@@ -138,8 +128,7 @@
     local('Fahkwang Bold Italic'),
     local('Fahkwang-BoldItalic'), 
     url('./files/fahkwang-latin-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-700-italic.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-700-italic.ttf') format('truetype');
+    url('./files/fahkwang-latin-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fahkwang-latin-700-normal*/
 @font-face {
@@ -151,6 +140,5 @@
     local('Fahkwang Bold'),
     local('Fahkwang-Bold'), 
     url('./files/fahkwang-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/fahkwang-latin-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/fahkwang-latin-700-normal.ttf') format('truetype');
+    url('./files/fahkwang-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

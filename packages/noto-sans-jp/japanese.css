@@ -8,8 +8,7 @@
     local('Noto Sans Japanese Thin'),
     local('NotoSansJapanese-Thin'), 
     url('./files/noto-sans-jp-japanese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-jp-japanese-100-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-sans-jp-japanese-100-normal.otf') format('opentype');
+    url('./files/noto-sans-jp-japanese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-sans-jp-japanese-300-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Noto Sans Japanese Light'),
     local('NotoSansJapanese-Light'), 
     url('./files/noto-sans-jp-japanese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-jp-japanese-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-sans-jp-japanese-300-normal.otf') format('opentype');
+    url('./files/noto-sans-jp-japanese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-sans-jp-japanese-400-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Noto Sans Japanese Regular'),
     local('NotoSansJapanese-Regular'), 
     url('./files/noto-sans-jp-japanese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-jp-japanese-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-sans-jp-japanese-400-normal.otf') format('opentype');
+    url('./files/noto-sans-jp-japanese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-sans-jp-japanese-500-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Noto Sans Japanese Medium'),
     local('NotoSansJapanese-Medium'), 
     url('./files/noto-sans-jp-japanese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-jp-japanese-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-sans-jp-japanese-500-normal.otf') format('opentype');
+    url('./files/noto-sans-jp-japanese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-sans-jp-japanese-700-normal*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Noto Sans Japanese Bold'),
     local('NotoSansJapanese-Bold'), 
     url('./files/noto-sans-jp-japanese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-jp-japanese-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-sans-jp-japanese-700-normal.otf') format('opentype');
+    url('./files/noto-sans-jp-japanese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* noto-sans-jp-japanese-900-normal*/
 @font-face {
@@ -73,6 +68,5 @@
     local('Noto Sans Japanese Black'),
     local('NotoSansJapanese-Black'), 
     url('./files/noto-sans-jp-japanese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-jp-japanese-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/noto-sans-jp-japanese-900-normal.otf') format('opentype');
+    url('./files/noto-sans-jp-japanese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

@@ -4,6 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/almarai-arabic-400-normal.woff2') format('woff2'), url('./files/almarai-all-400-normal.woff') format('woff'), url('./files/almarai-all-400-normal.ttf') format('truetype');
+  src: url('./files/almarai-arabic-400-normal.woff2') format('woff2'), url('./files/almarai-all-400-normal.woff') format('woff');
   unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
 }

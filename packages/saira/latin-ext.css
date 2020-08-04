@@ -8,8 +8,7 @@
     local('Saira Thin'),
     local('Saira-Thin'), 
     url('./files/saira-latin-ext-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-100-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-100-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* saira-latin-ext-200-normal*/
 @font-face {
@@ -21,8 +20,7 @@
     local('Saira ExtraLight'),
     local('Saira-ExtraLight'), 
     url('./files/saira-latin-ext-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-200-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-200-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* saira-latin-ext-300-normal*/
 @font-face {
@@ -34,8 +32,7 @@
     local('Saira Light'),
     local('Saira-Light'), 
     url('./files/saira-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-300-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-300-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* saira-latin-ext-400-normal*/
 @font-face {
@@ -47,8 +44,7 @@
     local('Saira Regular'),
     local('Saira-Regular'), 
     url('./files/saira-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-400-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-400-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* saira-latin-ext-500-normal*/
 @font-face {
@@ -60,8 +56,7 @@
     local('Saira Medium'),
     local('Saira-Medium'), 
     url('./files/saira-latin-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-500-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-500-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* saira-latin-ext-600-normal*/
 @font-face {
@@ -73,8 +68,7 @@
     local('Saira SemiBold'),
     local('Saira-SemiBold'), 
     url('./files/saira-latin-ext-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-600-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-600-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* saira-latin-ext-700-normal*/
 @font-face {
@@ -86,8 +80,7 @@
     local('Saira Bold'),
     local('Saira-Bold'), 
     url('./files/saira-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-700-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-700-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* saira-latin-ext-800-normal*/
 @font-face {
@@ -99,8 +92,7 @@
     local('Saira ExtraBold'),
     local('Saira-ExtraBold'), 
     url('./files/saira-latin-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-800-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-800-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* saira-latin-ext-900-normal*/
 @font-face {
@@ -112,6 +104,5 @@
     local('Saira Black'),
     local('Saira-Black'), 
     url('./files/saira-latin-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/saira-latin-ext-900-normal.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('./files/saira-latin-ext-900-normal.ttf') format('truetype');
+    url('./files/saira-latin-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
