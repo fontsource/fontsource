@@ -35,6 +35,7 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - dseg7
 - dseg14
 - dseg-weather
+- firago
 - jetbrains-mono
 - karmilla
 - syne
