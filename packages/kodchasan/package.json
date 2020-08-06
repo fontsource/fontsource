@@ -1,6 +1,6 @@
 {
   "name": "fontsource-kodchasan",
-  "version": "3.0.5",
+  "version": "3.0.7",
   "description": "Kodchasan font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -18,5 +18,6 @@
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/kodchasan"
-  }
+  },
+  "gitHead": "da9d581070ac4b571fa45f8b7a7b0f98bafc9986"
 }

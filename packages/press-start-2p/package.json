@@ -1,6 +1,6 @@
 {
   "name": "fontsource-press-start-2p",
-  "version": "3.0.5",
+  "version": "3.0.7",
   "description": "Press Start 2P font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -18,5 +18,6 @@
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/press-start-2p"
-  }
+  },
+  "gitHead": "da9d581070ac4b571fa45f8b7a7b0f98bafc9986"
 }

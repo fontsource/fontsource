@@ -1,6 +1,6 @@
 {
   "name": "fontsource-goudy-bookletter-1911",
-  "version": "3.0.5",
+  "version": "3.0.7",
   "description": "Goudy Bookletter 1911 font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -18,5 +18,6 @@
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/goudy-bookletter-1911"
-  }
+  },
+  "gitHead": "da9d581070ac4b571fa45f8b7a7b0f98bafc9986"
 }
