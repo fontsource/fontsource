@@ -1,6 +1,6 @@
 {
   "name": "fontsource-ibm-plex-mono",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "IBM Plex Mono font in NPM glory.",
   "main": "index.css",
   "keywords": [
