@@ -1,6 +1,6 @@
 {
   "name": "fontsource-long-cang",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "Long Cang font in NPM glory.",
   "main": "index.css",
   "keywords": [
@@ -19,5 +19,5 @@
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/long-cang"
   },
-  "gitHead": "da9d581070ac4b571fa45f8b7a7b0f98bafc9986"
+  "gitHead": "9bd9a7143897d39e0fdbbca366a889a4028edf5b"
 }
