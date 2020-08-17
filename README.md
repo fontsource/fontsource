@@ -27,7 +27,7 @@ This is an installation example using Open Sans, applicable to all other fonts s
 yarn add fontsource-open-sans // npm install fontsource-open-sans
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
 import "fontsource-open-sans" // Defaults to weight 400 with all styles included.
