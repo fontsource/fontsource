@@ -46,7 +46,7 @@ jobs:
 
       - name: Commit files
         run: >-
-          git commit -m "chore(build): update fontsources $GITHUB_RUN_NUMBER"
+          git commit -m "chore(build): update fontsources [Weekly $GITHUB_RUN_NUMBER]"
         continue-on-error: true
 
       - name: Push changes
