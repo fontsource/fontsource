@@ -3,53 +3,14 @@ const async = require(`async`)
 const flatten = require(`flat`)
 const fs = require(`fs-extra`)
 const isAbsoluteUrl = require(`is-absolute-url`)
-const jsonfile = require(`jsonfile`)
 const apiFont = require(`google-font-metadata/data/google-fonts-v1.json`)
 
 const download = require(`./download-file`)
 const { fontFace } = require(`./templates`)
 
-const id = process.argv[2]
-if (!id) {
-  console.warn(`Google Font ID has not been passed into packager.`)
-  process.exit()
-}
-const force = process.argv[3]
-
-const font = apiFont[id]
-
-// Set file directories
-const fontDir = `packages/${font.id}`
-fs.ensureDirSync(fontDir)
-fs.ensureDirSync(`scripts/temp_packages`)
-
-// Update checking
-let changed = false
-
-if (fs.existsSync(`${fontDir}/metadata.json`)) {
-  let metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
-  changed = metadata.lastModified !== font.lastModified
-} else {
-  changed = true
-}
-
-// Processing each subset of given font ID.
-if (changed || force == "force") {
-  // Wipe old font files preserving package.json
-  if (fs.existsSync(`${fontDir}/package.json`)) {
-    fs.copySync(
-      `./${fontDir}/package.json`,
-      `./scripts/temp_packages/${font.id}-package.json`
-    )
-    fs.emptyDirSync(fontDir)
-    fs.copySync(
-      `./scripts/temp_packages/${font.id}-package.json`,
-      `./${fontDir}/package.json`
-    )
-    fs.removeSync(`./scripts/temp_packages/${font.id}-package.json`)
-  }
-
-  fs.ensureDirSync(`./${fontDir}/files`)
+module.exports = function (id) {
+  const font = apiFont[id]
+  const fontDir = `packages/${font.id}`
 
   // Generate filenames
   const makeFontDownloadPath = (subset, weight, style, extension) => {
@@ -127,5 +88,3 @@ if (changed || force == "force") {
     fs.writeFileSync(cssSubsetPath, cssSubset.join(""))
   })
 }
-
-console.log(`Finished processing ${font.id}`)

@@ -72,6 +72,7 @@ exports.fontFace = _.template(
 
 exports.readme = _.template(
   `# Fontsource <%= fontName %>
+
 [![npm version](https://badge.fury.io/js/fontsource-<%= fontId %>.svg)](https://www.npmjs.com/package/fontsource-<%= fontId %>) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/fontsource-<%= fontId %>)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/fontsource-<%= fontId %>)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
 The CSS and web font files to easily self-host the “<%= fontName %>” font. Please visit the main [Fontsource monorepo](https://github.com/fontsource/fontsource) to view more details on this package.
@@ -108,6 +109,7 @@ Alternatively, the same solutions could be imported via SCSS!
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
+
 - Subsets: \`[<%= subsets %>]\`
 - Weights: \`[<%= weights %>]\`
 - Styles: \`[<%= styles %>]\`
@@ -120,7 +122,7 @@ body {
 }
 \`\`\`
 
-## Licensing 
+## Licensing
 
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
@@ -132,6 +134,5 @@ Font [Source](<%= source %>) and [License](<%= license %>).
 Font version (provided by source): \`<%= version %>\`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).
-
 `
 )
