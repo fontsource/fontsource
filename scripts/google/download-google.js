@@ -32,10 +32,10 @@ queue.error((err, fontid) => {
 })
 
 // Testing
-const test = () => {
+/* const test = () => {
   queue.push(`noto-sans-jp`)
 }
-test()
+test() */
 
 // Production
 const production = () => {
@@ -43,4 +43,4 @@ const production = () => {
     queue.push(`${font.id}`)
   })
 }
-//production()
+production()
