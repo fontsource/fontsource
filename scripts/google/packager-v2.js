@@ -3,39 +3,14 @@ const async = require(`async`)
 const flatten = require(`flat`)
 const fs = require(`fs-extra`)
 const isAbsoluteUrl = require(`is-absolute-url`)
-const jsonfile = require(`jsonfile`)
 const apiFont = require(`google-font-metadata`)
 
 const download = require(`./download-file`)
-const { packageJson, fontFaceUnicode, readme } = require(`./templates`)
+const { fontFaceUnicode } = require(`./templates`)
 
-const id = process.argv[2]
-if (!id) {
-  console.warn(`Google Font ID has not been passed into packager.`)
-  process.exit()
-}
-const force = process.argv[3]
-
-const font = apiFont[id]
-
-// Set file directories
-const fontDir = `packages/${font.id}`
-fs.ensureDirSync(fontDir)
-fs.ensureDirSync(`scripts/temp_packages`)
-
-// Update checking
-let changed = false
-
-if (fs.existsSync(`${fontDir}/metadata.json`)) {
-  let metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
-  changed = metadata.lastModified !== font.lastModified
-} else {
-  changed = true
-}
-
-// Processing each subset of given font ID.
-if (changed || force == "force") {
-  fs.ensureDirSync(`./${fontDir}/files`)
+module.exports = function (id) {
+  const font = apiFont[id]
+  const fontDir = `packages/${font.id}`
 
   // Generate filenames
   const makeFontDownloadPath = (subset, weight, style, extension) => {
@@ -149,47 +124,3 @@ if (changed || force == "force") {
     }
   })
 }
-
-// If everything ran successfully, apply new updates to package.
-if (changed || force == "force") {
-  // Write README.md
-  const packageReadme = readme({
-    fontId: font.id,
-    fontName: font.family,
-    subsets: font.subsets,
-    weights: font.weights,
-    styles: font.styles,
-    version: font.version,
-  })
-  fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
-
-  // Write out package.json file
-  const packageJSON = packageJson({
-    fontId: font.id,
-    fontName: font.family,
-  })
-  // Once created, don't interfere with lerna updates
-  if (!fs.existsSync(`${fontDir}/package.json`)) {
-    fs.writeFileSync(`${fontDir}/package.json`, packageJSON)
-  }
-
-  // Write metadata.json
-  jsonfile.writeFileSync(`${fontDir}/metadata.json`, {
-    fontId: font.id,
-    fontName: font.family,
-    subsets: font.subsets,
-    weights: font.weights,
-    styles: font.styles,
-    defSubset: font.defSubset,
-    lastModified: font.lastModified,
-    version: font.version,
-    source: "https://fonts.google.com/",
-    license: "https://fonts.google.com/attribution",
-    type: "google",
-  })
-
-  // Copy CHANGELOG.md over from main repo
-  fs.copySync(`./CHANGELOG.md`, `${fontDir}/CHANGELOG.md`)
-}
-
-console.log(`Finished processing ${font.id}`)
