@@ -17,7 +17,7 @@
     "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.0.1",
     "lerna": "^3.22.1",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "shelljs": "^0.8.4",
     "wget-improved": "^3.2.0"
   },
