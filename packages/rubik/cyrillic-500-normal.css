@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Rubik Medium'),
-    local('Rubik-Medium'), 
+  src: 
     url('./files/rubik-cyrillic-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-cyrillic-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

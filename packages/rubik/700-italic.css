@@ -1,3 +1,12 @@
+/* rubik-cyrillic-ext-700-italic*/
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/rubik-cyrillic-ext-700-italic.woff2') format('woff2'), url('./files/rubik-all-700-italic.woff') format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
 /* rubik-cyrillic-700-italic*/
 @font-face {
   font-family: 'Rubik';

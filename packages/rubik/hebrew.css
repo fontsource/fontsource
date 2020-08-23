@@ -4,9 +4,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Rubik Light Italic'),
-    local('Rubik-LightItalic'), 
+  src: 
     url('./files/rubik-hebrew-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -16,9 +14,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Rubik Light'),
-    local('Rubik-Light'), 
+  src: 
     url('./files/rubik-hebrew-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -28,9 +24,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Rubik Italic'),
-    local('Rubik-Italic'), 
+  src: 
     url('./files/rubik-hebrew-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -40,9 +34,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Rubik'),
-    local('Rubik-Regular'), 
+  src: 
     url('./files/rubik-hebrew-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -52,9 +44,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Rubik Medium Italic'),
-    local('Rubik-MediumItalic'), 
+  src: 
     url('./files/rubik-hebrew-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -64,11 +54,29 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Rubik Medium'),
-    local('Rubik-Medium'), 
+  src: 
     url('./files/rubik-hebrew-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* rubik-hebrew-600-italic*/
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: 
+    url('./files/rubik-hebrew-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/rubik-hebrew-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* rubik-hebrew-600-normal*/
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: 
+    url('./files/rubik-hebrew-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/rubik-hebrew-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* rubik-hebrew-700-italic*/
 @font-face {
@@ -76,9 +84,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Rubik Bold Italic'),
-    local('Rubik-BoldItalic'), 
+  src: 
     url('./files/rubik-hebrew-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -88,11 +94,29 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Rubik Bold'),
-    local('Rubik-Bold'), 
+  src: 
     url('./files/rubik-hebrew-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* rubik-hebrew-800-italic*/
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src: 
+    url('./files/rubik-hebrew-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/rubik-hebrew-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* rubik-hebrew-800-normal*/
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: 
+    url('./files/rubik-hebrew-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/rubik-hebrew-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* rubik-hebrew-900-italic*/
 @font-face {
@@ -100,9 +124,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Rubik Black Italic'),
-    local('Rubik-BlackItalic'), 
+  src: 
     url('./files/rubik-hebrew-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -112,9 +134,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Rubik Black'),
-    local('Rubik-Black'), 
+  src: 
     url('./files/rubik-hebrew-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/rubik-hebrew-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

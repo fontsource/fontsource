@@ -1,12 +1,12 @@
 {
   "fontId": "merriweather-sans",
   "fontName": "Merriweather Sans",
-  "subsets": ["latin", "latin-ext"],
-  "weights": ["300", "400", "700", "800"],
+  "subsets": ["cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+  "weights": ["300", "400", "500", "600", "700", "800"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "lastModified": "2019-07-17",
-  "version": "v11",
+  "lastModified": "2020-08-21",
+  "version": "v13",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

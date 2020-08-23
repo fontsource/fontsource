@@ -12,7 +12,7 @@ Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Sol
 yarn add fontsource-merriweather-sans // npm install fontsource-merriweather-sans
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
 import "fontsource-merriweather-sans" // Defaults to weight 400 with all styles included.
@@ -36,7 +36,7 @@ _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
 
-- Weights: `[300,400,700,800]`
+- Weights: `[300,400,500,600,700,800]`
 - Styles: `[italic,normal]`
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
@@ -57,7 +57,7 @@ import "fontsource-merriweather-sans/cyrillic-ext-500.css" // All styles include
 import "fontsource-merriweather-sans/greek-900-normal.css" // Select either normal or italic.
 ```
 
-- Supported subsets: `[latin,latin-ext]`
+- Supported subsets: `[cyrillic-ext,latin,latin-ext,vietnamese]`
 
 ## Licensing
 
@@ -68,6 +68,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v11`.
+Font version (provided by source): `v13`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).
