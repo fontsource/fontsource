@@ -12,14 +12,23 @@ These occur when an automatic update is pushed from a source, such as Google, or
 
 ### BREAKING CHANGES
 
-`import fontsource-<font name>` or `index.css` no longer defaults to contain ALL weights and styles for a font. It now only contains weight 400 with all styles included. This was changed to prevent fonts, such as Noto Sans JP, to counter-intuitively generate 1MB+ CSS files with the new unicode-range feature.
+- `import fontsource-<font name>` or `index.css` no longer defaults to contain ALL weights and styles for a font. It now only contains weight 400 with all styles included. This was changed to prevent fonts, such as Noto Sans JP, to counter-intuitively generate 1MB+ CSS files with the new unicode-range feature.
+  Simply choose the necessary weights and styles from now on with `import fontsource-<font name>/<weight>.css` or `import fontsource-<font name>/<weight>-<style>.css`. [#37](https://github.com/fontsource/fontsource/pull/37) [#42](https://github.com/fontsource/fontsource/pull/42)
 
-Simply choose the necessary weights and styles from now on with `import fontsource-<font name>/<weight>.css` or `import fontsource-<font name>/<weight>-<style>.css`.
+- TTF/OTF support has been removed due to NPM package size limitations. Browser compatability goes as low as: [caniuse](https://caniuse.com/#feat=woff) [#44](https://github.com/fontsource/fontsource/pull/44)
 
 ### Features
 
 - Added unicode-range CSS selector to all fonts. It is no longer necessary for individual subsets to be defined when importing CSS files but backwards compatability remains. Use `import fontsource-<font name>/<weight>.css` or `import fontsource-<font name>/<weight>-<style>.css` to leverage the new feature from now on. [#37](https://github.com/fontsource/fontsource/pull/37)
-- Adjusted template.js to add more repository information to package.json. [#37](https://github.com/fontsource/fontsource/pull/37)
+- Added package.json rebuilder. [#43](https://github.com/fontsource/fontsource/pull/43)
+- Added force rebuild to Google package. [#37](https://github.com/fontsource/fontsource/pull/37)
+- Added force rebuild to non-Google packages. [#42](https://github.com/fontsource/fontsource/pull/42)
+- Copy `CHANGELOG.md` to every individual package. [#41](https://github.com/fontsource/fontsource/pull/41)
+
+### Fixes
+
+- Adjusted templates.js to add more relevant fields to package.json [#37](https://github.com/fontsource/fontsource/pull/37)
+- Resolved subsets not correctly being identified when packaging files through the generic packager. [#45](https://github.com/fontsource/fontsource/pull/45)
 
 # 2.x Release
 
