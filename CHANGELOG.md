@@ -23,6 +23,7 @@ These occur when an automatic update is pushed from a source, such as Google, or
 - Added package.json rebuilder. [#43](https://github.com/fontsource/fontsource/pull/43)
 - Added force rebuild to Google package. [#37](https://github.com/fontsource/fontsource/pull/37)
 - Added force rebuild to non-Google packages. [#42](https://github.com/fontsource/fontsource/pull/42)
+- Autogenerate `FONTLIST.md`and added `FONTLIST.json`. [#58](https://github.com/fontsource/fontsource/pull/58)
 - Copy `CHANGELOG.md` to every individual package. [#41](https://github.com/fontsource/fontsource/pull/41)
 
 ### Fixes
