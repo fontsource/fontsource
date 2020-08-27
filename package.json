@@ -35,6 +35,7 @@
     "util:generic-rebuild": "node scripts/generic/rebuilder.js",
     "util:generic-renamer": "node scripts/generic/renamer.js",
     "util:package-json-rebuild": "node scripts/utils/package-json-rebuild.js",
+    "util:fontlist": "node scripts/utils/fontlist-generator.js",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
     "deploy:ci": "lerna publish patch --yes"
   },
