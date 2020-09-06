@@ -1,3 +1,12 @@
+/* harmattan-arabic-700-normal*/
+@font-face {
+  font-family: 'Harmattan';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/harmattan-arabic-700-normal.woff2') format('woff2'), url('./files/harmattan-all-700-normal.woff') format('woff');
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
 /* harmattan-latin-ext-700-normal*/
 @font-face {
   font-family: 'Harmattan';

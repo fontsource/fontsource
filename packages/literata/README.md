@@ -12,7 +12,7 @@ Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Sol
 yarn add fontsource-literata // npm install fontsource-literata
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
 import "fontsource-literata" // Defaults to weight 400 with all styles included.
@@ -36,7 +36,7 @@ _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
 
-- Weights: `[400,500,600,700]`
+- Weights: `[200,300,400,500,600,700,800,900]`
 - Styles: `[italic,normal]`
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
@@ -57,7 +57,7 @@ import "fontsource-literata/cyrillic-ext-500.css" // All styles included.
 import "fontsource-literata/greek-900-normal.css" // Select either normal or italic.
 ```
 
-- Supported subsets: `[cyrillic,greek,greek-ext,latin,latin-ext,vietnamese]`
+- Supported subsets: `[cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese]`
 
 ## Licensing
 
@@ -68,6 +68,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v16`.
+Font version (provided by source): `v17`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

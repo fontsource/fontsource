@@ -1,3 +1,43 @@
+/* literata-cyrillic-200-italic*/
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src: 
+    url('./files/literata-cyrillic-200-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/literata-cyrillic-200-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* literata-cyrillic-200-normal*/
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: 
+    url('./files/literata-cyrillic-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/literata-cyrillic-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* literata-cyrillic-300-italic*/
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: 
+    url('./files/literata-cyrillic-300-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/literata-cyrillic-300-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* literata-cyrillic-300-normal*/
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: 
+    url('./files/literata-cyrillic-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/literata-cyrillic-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 /* literata-cyrillic-400-italic*/
 @font-face {
   font-family: 'Literata';
@@ -77,4 +117,44 @@
   src: 
     url('./files/literata-cyrillic-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/literata-cyrillic-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* literata-cyrillic-800-italic*/
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src: 
+    url('./files/literata-cyrillic-800-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/literata-cyrillic-800-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* literata-cyrillic-800-normal*/
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: 
+    url('./files/literata-cyrillic-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/literata-cyrillic-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* literata-cyrillic-900-italic*/
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src: 
+    url('./files/literata-cyrillic-900-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/literata-cyrillic-900-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* literata-cyrillic-900-normal*/
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: 
+    url('./files/literata-cyrillic-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/literata-cyrillic-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

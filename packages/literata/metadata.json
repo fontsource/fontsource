@@ -3,17 +3,18 @@
   "fontName": "Literata",
   "subsets": [
     "cyrillic",
+    "cyrillic-ext",
     "greek",
     "greek-ext",
     "latin",
     "latin-ext",
     "vietnamese"
   ],
-  "weights": ["400", "500", "600", "700"],
+  "weights": ["200", "300", "400", "500", "600", "700", "800", "900"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "lastModified": "2020-06-26",
-  "version": "v16",
+  "lastModified": "2020-09-02",
+  "version": "v17",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

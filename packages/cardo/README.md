@@ -12,7 +12,7 @@ Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Sol
 yarn add fontsource-cardo // npm install fontsource-cardo
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
 import "fontsource-cardo" // Defaults to weight 400 with all styles included.
@@ -68,6 +68,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v11`.
+Font version (provided by source): `v12`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

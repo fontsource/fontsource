@@ -39,7 +39,6 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - jetbrains-mono
 - karmilla
 - metropolis
-- syne
 - syne-italic
 - syne-mono
 - vazir
