@@ -16,7 +16,7 @@ directories.forEach(directory => {
   const fontDir = `./packages/${directory}`
   const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
 
-  if (metadata.type != "google") {
+  if (metadata.type !== "google") {
     const packageJSONData = jsonfile.readFileSync(`${fontDir}/package.json`)
 
     // Clear directory
@@ -30,16 +30,16 @@ directories.forEach(directory => {
     }
 
     glob(fontDir + "/**/*.woff2", {}, (err, files) => {
-      let subsets = metadata.subsets
-      let weights = metadata.weights
-      let styles = metadata.styles
+      const subsets = metadata.subsets
+      const weights = metadata.weights
+      const styles = metadata.styles
 
       subsets.forEach(subset => {
-        let cssSubset = []
+        const cssSubset = []
         weights.forEach(weight => {
-          let cssWeight = []
+          const cssWeight = []
           styles.forEach(style => {
-            let cssStyle = []
+            const cssStyle = []
             const css = fontFace({
               fontId: metadata.fontId,
               fontName: metadata.fontName,
@@ -63,7 +63,7 @@ directories.forEach(directory => {
           // index.css
           if (
             subset === metadata.defSubset &&
-            (weight == "400" || metadata.weights.length == 1)
+            (weight === "400" || metadata.weights.length === 1)
           ) {
             fs.writeFileSync(`${fontDir}/index.css`, fileContentWeight)
           }
@@ -102,6 +102,10 @@ directories.forEach(directory => {
         license: metadata.license,
         type: metadata.type,
       })
+
+      if (err) {
+        console.error(err)
+      }
     })
 
     // Write out package.json file
