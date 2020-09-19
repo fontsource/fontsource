@@ -25,7 +25,7 @@ module.exports = function (id) {
   const downloadURLPairs = _.toPairs(flatten(font.variants))
 
   // Filter out local font links and only leave URLs for each pair
-  let links = downloadURLPairs
+  const links = downloadURLPairs
     .filter(pair => isAbsoluteUrl(pair[1].toString()))
     .filter(file => file[0].split(".")[4] === "woff2")
     .map(file => {
@@ -86,13 +86,13 @@ module.exports = function (id) {
   const unicodeKeys = Object.keys(font.unicodeRange)
 
   font.weights.forEach(weight => {
-    cssWeight = []
+    const cssWeight = []
     font.styles.forEach(style => {
-      cssStyle = []
+      const cssStyle = []
       unicodeKeys.forEach(subset => {
         // Some fonts may have variants 400, 400i, 700 but not 700i.
         if (style in font.variants[weight]) {
-          let css = fontFaceUnicode({
+          const css = fontFaceUnicode({
             fontId: font.id,
             fontName: font.family,
             locals: font.variants[weight][style][subset].local,

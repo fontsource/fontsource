@@ -29,7 +29,7 @@ module.exports = function (id) {
     .filter(pair => isAbsoluteUrl(pair[1].toString()))
     .filter(file => {
       const extension = file[0].split(".")[4]
-      if (extension == "truetype" || extension == "opentype") {
+      if (extension === "truetype" || extension === "opentype") {
         return false
       } else {
         return true
@@ -58,13 +58,13 @@ module.exports = function (id) {
 
   // Generate CSS
   font.subsets.forEach(subset => {
-    cssSubset = []
+    const cssSubset = []
     font.weights.forEach(weight => {
-      cssWeight = []
+      const cssWeight = []
       font.styles.forEach(style => {
         // Some fonts may have variants 400, 400i, 700 but not 700i.
         if (style in font.variants[weight]) {
-          let css = fontFace({
+          const css = fontFace({
             fontId: font.id,
             fontName: font.family,
             locals: font.variants[weight][style][subset].local,
