@@ -28,7 +28,7 @@ queue.drain(() => {
 })
 
 queue.error((err, fontid) => {
-  console.error(`${fontid} experienced an error.`)
+  console.error(`${fontid} experienced an error.`, err)
 })
 
 // Testing

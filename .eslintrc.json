@@ -1,10 +1,14 @@
 {
   "env": {
-    "es6": true,
+    "commonjs": true,
+    "es2021": true,
     "node": true
   },
-  "extends": ["plugin:prettier/recommended"],
+  "extends": ["standard", "plugin:prettier/recommended", "prettier/standard"],
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 12
+  },
+  "rules": {
+    "prettier/prettier": "warn"
   }
 }

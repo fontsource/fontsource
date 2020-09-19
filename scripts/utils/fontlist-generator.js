@@ -11,25 +11,24 @@ const getDirectories = () =>
 
 const directories = getDirectories()
 
-let fontlist = []
-let league = []
-let icons = []
-let other = []
+const fontlist = []
+const league = []
+const icons = []
+const other = []
 
 directories.forEach(directory => {
   const fontDir = `./packages/${directory}`
   const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
-  let object = { [metadata.fontId]: metadata.type }
+  const object = { [metadata.fontId]: metadata.type }
   fontlist.push(object)
 
-  if (metadata.type == "league") {
+  if (metadata.type === "league") {
     league.push(metadata.fontId)
-  } else if (metadata.type == "icons") {
+  } else if (metadata.type === "icons") {
     icons.push(metadata.fontId)
-  } else if (metadata.type == "other") {
+  } else if (metadata.type === "other") {
     other.push(metadata.fontId)
-  } else if (metadata.type == "google") {
-    return
+  } else if (metadata.type === "google") {
   } else {
     console.log(`${metadata.fontId} has unknown type ${metadata.type}.`)
   }

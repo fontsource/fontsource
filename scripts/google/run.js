@@ -22,13 +22,13 @@ fs.ensureDirSync(fontDir)
 let changed = false
 
 if (fs.existsSync(`${fontDir}/metadata.json`)) {
-  let metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
+  const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
   changed = metadata.lastModified !== font.lastModified
 } else {
   changed = true
 }
 
-if (changed || force == "force") {
+if (changed || force === "force") {
   // Wipe old font files preserving package.json
   if (fs.existsSync(`${fontDir}/package.json`)) {
     fs.copySync(

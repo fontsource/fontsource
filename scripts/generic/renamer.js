@@ -3,7 +3,7 @@ const glob = require(`glob`)
 
 const fontFileDir = `scripts/generic/files`
 
-let weightNames = [
+const weightNames = [
   "thin",
   "hairline",
   "extralight",
@@ -25,7 +25,7 @@ let weightNames = [
   "bold",
   "black",
 ]
-let weightNum = [
+const weightNum = [
   100,
   100,
   200,
@@ -51,8 +51,8 @@ let weightNum = [
 const parser = files => {
   files.forEach(file => {
     file = file.toLowerCase()
-    for (let [index] of weightNames.entries()) {
-      fileNew = file.replace(weightNames[index], weightNum[index])
+    for (const [index] of weightNames.entries()) {
+      const fileNew = file.replace(weightNames[index], weightNum[index])
       try {
         fs.renameSync(file, fileNew)
       } catch (err) {}
@@ -62,8 +62,14 @@ const parser = files => {
 
 glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
   parser(files)
+  if (err) {
+    console.error(err)
+  }
 })
 
 glob(fontFileDir + "/**/*.woff", {}, (err, files) => {
   parser(files)
+  if (err) {
+    console.error(err)
+  }
 })

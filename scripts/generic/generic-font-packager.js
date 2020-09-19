@@ -31,7 +31,7 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
 
   files.forEach(file => {
     // Remove file path and extension. 34 characters to account for scripts/generic/... filepath
-    name = file.slice(23 + fontId.length, -6).split("-")
+    const name = file.slice(23 + fontId.length, -6).split("-")
     styles.push(name.slice(-1)[0])
     name.pop()
     weights.push(name.slice(-1)[0])
@@ -43,11 +43,11 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
   styles = [...new Set(styles)]
 
   subsets.forEach(subset => {
-    let cssSubset = []
+    const cssSubset = []
     weights.forEach(weight => {
-      let cssWeight = []
+      const cssWeight = []
       styles.forEach(style => {
-        let cssStyle = []
+        const cssStyle = []
         const css = fontFace({
           fontId,
           fontName,
@@ -69,7 +69,7 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
       fs.writeFileSync(cssWeightPath, fileContentWeight)
 
       // index.css
-      if (subset === defSubset && (weight == "400" || weights.length == 1)) {
+      if (subset === defSubset && (weight === "400" || weights.length === 1)) {
         fs.writeFileSync(`${fontDir}/index.css`, fileContentWeight)
       }
     })
@@ -108,6 +108,10 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
     license: config.licenselink,
     type: config.type,
   })
+
+  if (err) {
+    console.error(err)
+  }
 })
 
 // Write out package.json file
