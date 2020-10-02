@@ -29,6 +29,7 @@ directories.forEach(directory => {
   } else if (metadata.type === "other") {
     other.push(metadata.fontId)
   } else if (metadata.type === "google") {
+    // Empty to prevent calling unknown type catch
   } else {
     console.log(`${metadata.fontId} has unknown type ${metadata.type}.`)
   }
