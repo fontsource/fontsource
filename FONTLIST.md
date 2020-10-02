@@ -1,5 +1,9 @@
 # Supported Font List
 
+## [Search Directory](https://fontsource.github.io/fontsource-search-directory/)
+
+Can be found [here](https://fontsource.github.io/fontsource-search-directory/).
+
 ## [Google Fonts](https://fonts.google.com/)
 
 All Google Fonts are supported and updated weekly. Find the whole list [here](https://fonts.google.com/).
