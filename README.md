@@ -5,7 +5,7 @@
 An updating monorepo full of self-hostable Open Source fonts bundled into individual NPM packages!
 Inspired by the aging [Typefaces](https://github.com/KyleAMathews/typefaces) project and primarily built using [Google Font Metadata](https://github.com/fontsource/google-font-metadata).
 
-Our supported font search directory can be found [here](https://fontsource.github.io/search-directory/) or alternatively in Markdown format [here](https://github.com/fontsource/fontsource/blob/master/FONTLIST.md).
+Our supported font search directory can be found [here](https://fontsource.github.io/search-directory/) (in very early development) or alternatively in Markdown format [here](https://github.com/fontsource/fontsource/blob/master/FONTLIST.md).
 
 ##
 
