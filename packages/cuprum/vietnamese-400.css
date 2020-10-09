@@ -4,9 +4,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cuprum Italic'),
-    local('Cuprum-Italic'), 
+  src: 
     url('./files/cuprum-vietnamese-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/cuprum-vietnamese-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -16,9 +14,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cuprum Regular'),
-    local('Cuprum-Regular'), 
+  src: 
     url('./files/cuprum-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/cuprum-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

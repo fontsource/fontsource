@@ -36,6 +36,7 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 
 - cascadia-code
 - cascadia-mono
+- cooper-hewitt
 - dseg-weather
 - dseg14
 - dseg7
