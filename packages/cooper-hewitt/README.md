@@ -38,7 +38,7 @@ _These examples may not reflect actual compatibility. Please refer below._
 Supported variables:
 
 - Subsets: `[all]`
-- Weights: `[100,200,300,500,600,700,900]`
+- Weights: `[100,200,300,400,500,600,700,800]`
 - Styles: `[italic,normal]`
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
