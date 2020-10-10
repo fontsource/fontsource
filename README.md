@@ -75,9 +75,9 @@ See [CHANGELOG.md](https://github.com/fontsource/fontsource/blob/master/CHANGELO
 
 ## Adding New Fonts
 
-For Open Source fonts that are not automatically updated by the Google ecosystem, we have a generic packager that builds CSS files for you. Click [here](https://github.com/DecliningLotus/fontsource/blob/master/scripts/generic/generic-packager.md) to see how to use it.
+For Open Source fonts that are not automatically updated by the Google ecosystem, we have a generic packager that builds CSS files for the project.
 
-Otherwise, make a request by creating an [issue](https://github.com/DecliningLotus/fontsource/issues)!
+Make a request by creating an [issue](https://github.com/fontsource/fontsource/issues)!
 
 ## Licensing
 
@@ -88,4 +88,4 @@ You can find their specific licenses on each package `README.md`.
 
 ## Other Notes
 
-Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/DecliningLotus/fontsource/issues).
+Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).
