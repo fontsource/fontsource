@@ -14,14 +14,15 @@ exports.packageJson = _.template(
     "<%= fontId %>",
     "css",
     "front-end",
-    "web"
+    "web",
+    "typeface"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>#readme",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/fontsource/fontsource.git",
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/<%= fontId %>"
   }
 }
@@ -42,14 +43,15 @@ exports.packageJsonRebuild = _.template(
     "<%= fontId %>",
     "css",
     "front-end",
-    "web"
+    "web",
+    "typeface"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>#readme",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/fontsource/fontsource.git",
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/<%= fontId %>"
   }
 }
