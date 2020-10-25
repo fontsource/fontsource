@@ -36,7 +36,7 @@ _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
 
-- Weights: `[200,300,400,600,700,800]`
+- Weights: `[200,300,400,500,600,700,800]`
 - Styles: `[normal]`
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
@@ -57,7 +57,7 @@ import "fontsource-assistant/cyrillic-ext-500.css" // All styles included.
 import "fontsource-assistant/greek-900-normal.css" // Select either normal or italic.
 ```
 
-- Supported subsets: `[hebrew,latin]`
+- Supported subsets: `[hebrew,latin,latin-ext]`
 
 ## Licensing
 
@@ -68,6 +68,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v5`.
+Font version (provided by source): `v6`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

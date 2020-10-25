@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Assistant ExtraLight'),
-    local('Assistant-ExtraLight'), 
+  src: 
     url('./files/assistant-hebrew-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/assistant-hebrew-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -16,9 +14,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Assistant Light'),
-    local('Assistant-Light'), 
+  src: 
     url('./files/assistant-hebrew-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/assistant-hebrew-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -28,11 +24,19 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Assistant'),
-    local('Assistant-Regular'), 
+  src: 
     url('./files/assistant-hebrew-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/assistant-hebrew-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* assistant-hebrew-500-normal*/
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: 
+    url('./files/assistant-hebrew-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/assistant-hebrew-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* assistant-hebrew-600-normal*/
 @font-face {
@@ -40,9 +44,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Assistant SemiBold'),
-    local('Assistant-SemiBold'), 
+  src: 
     url('./files/assistant-hebrew-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/assistant-hebrew-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -52,9 +54,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Assistant Bold'),
-    local('Assistant-Bold'), 
+  src: 
     url('./files/assistant-hebrew-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/assistant-hebrew-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -64,9 +64,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Assistant ExtraBold'),
-    local('Assistant-ExtraBold'), 
+  src: 
     url('./files/assistant-hebrew-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/assistant-hebrew-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
