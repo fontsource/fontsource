@@ -1,12 +1,12 @@
 {
   "fontId": "libre-franklin",
   "fontName": "Libre Franklin",
-  "subsets": ["latin", "latin-ext"],
+  "subsets": ["latin", "latin-ext", "vietnamese"],
   "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "lastModified": "2020-09-10",
-  "version": "v5",
+  "lastModified": "2020-11-06",
+  "version": "v6",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

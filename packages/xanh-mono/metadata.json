@@ -1,0 +1,13 @@
+{
+  "fontId": "xanh-mono",
+  "fontName": "Xanh Mono",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400"],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-11-06",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

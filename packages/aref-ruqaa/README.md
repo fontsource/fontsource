@@ -57,7 +57,7 @@ import "fontsource-aref-ruqaa/cyrillic-ext-500.css" // All styles included.
 import "fontsource-aref-ruqaa/greek-900-normal.css" // Select either normal or italic.
 ```
 
-- Supported subsets: `[arabic,latin]`
+- Supported subsets: `[arabic,latin,latin-ext]`
 
 ## Licensing
 
@@ -68,6 +68,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v10`.
+Font version (provided by source): `v12`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

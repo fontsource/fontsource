@@ -1,0 +1,13 @@
+{
+  "fontId": "big-shoulders-inline-text",
+  "fontName": "Big Shoulders Inline Text",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["100", "300", "400", "500", "600", "700", "800", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-11-06",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

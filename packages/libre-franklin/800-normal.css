@@ -1,3 +1,12 @@
+/* libre-franklin-vietnamese-800-normal*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/libre-franklin-vietnamese-800-normal.woff2') format('woff2'), url('./files/libre-franklin-all-800-normal.woff') format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
 /* libre-franklin-latin-ext-800-normal*/
 @font-face {
   font-family: 'Libre Franklin';

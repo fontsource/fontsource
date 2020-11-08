@@ -1,0 +1,13 @@
+{
+  "fontId": "libre-barcode-ean13-text",
+  "fontName": "Libre Barcode EAN13 Text",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "lastModified": "2020-11-03",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
