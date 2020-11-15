@@ -22,7 +22,7 @@ jobs:
         run: yarn
 
       - name: Fetch API
-        run: npm explore google-font-metadata -- node ./scripts/api-gen.js $GOOGLE_API_KEY
+        run: npm explore google-font-metadata -- yarn parser:gen $GOOGLE_API_KEY
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 

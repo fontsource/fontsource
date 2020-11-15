@@ -1,7 +1,7 @@
 const fs = require(`fs-extra`)
 const jsonfile = require(`jsonfile`)
 
-const apiFont = require(`google-font-metadata`)
+const { APIv2 } = require(`google-font-metadata`)
 const packagerv1 = require(`./packager-v1`)
 const packagerv2 = require(`./packager-v2`)
 const { readme, packageJson } = require(`./templates`)
@@ -12,7 +12,7 @@ if (!id) {
   process.exit()
 }
 const force = process.argv[3]
-const font = apiFont[id]
+const font = APIv2[id]
 
 // Set file directories
 const fontDir = `packages/${font.id}`
