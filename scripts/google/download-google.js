@@ -3,7 +3,7 @@ const async = require(`async`)
 const fs = require(`fs-extra`)
 const shell = require(`shelljs`)
 
-const fonts = require(`google-font-metadata`)
+const { APIv2 } = require(`google-font-metadata`)
 const force = process.argv[2]
 
 fs.ensureDirSync(`packages`)
@@ -23,7 +23,7 @@ const queue = async.queue(processQueue, 12)
 
 queue.drain(() => {
   console.log(
-    `All ${Object.keys(fonts).length} Google Fonts have been processed.`
+    `All ${Object.keys(APIv2).length} Google Fonts have been processed.`
   )
 })
 
@@ -39,7 +39,7 @@ test() */
 
 // Production
 const production = () => {
-  _.forOwn(fonts, font => {
+  _.forOwn(APIv2, font => {
     queue.push(`${font.id}`)
   })
 }
