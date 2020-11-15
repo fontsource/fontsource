@@ -18,7 +18,7 @@
     "async": "^3.2.0",
     "flat": "^5.0.2",
     "fs-extra": "^9.0.0",
-    "google-font-metadata": "^1.3.3",
+    "google-font-metadata": "^2.0.0",
     "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.1.0",
     "lerna": "^3.22.1",

@@ -3,13 +3,13 @@ const async = require(`async`)
 const flatten = require(`flat`)
 const fs = require(`fs-extra`)
 const isAbsoluteUrl = require(`is-absolute-url`)
-const apiFont = require(`google-font-metadata`)
+const { APIv2 } = require(`google-font-metadata`)
 
 const download = require(`./download-file`)
 const { fontFaceUnicode } = require(`./templates`)
 
 module.exports = function (id) {
-  const font = apiFont[id]
+  const font = APIv2[id]
   const fontDir = `packages/${font.id}`
 
   // Generate filenames
