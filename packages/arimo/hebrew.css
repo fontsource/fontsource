@@ -4,9 +4,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Arimo Italic'),
-    local('Arimo-Italic'), 
+  src: 
     url('./files/arimo-hebrew-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/arimo-hebrew-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -16,11 +14,49 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Arimo Regular'),
-    local('Arimo-Regular'), 
+  src: 
     url('./files/arimo-hebrew-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/arimo-hebrew-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* arimo-hebrew-500-italic*/
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: 
+    url('./files/arimo-hebrew-500-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/arimo-hebrew-500-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* arimo-hebrew-500-normal*/
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: 
+    url('./files/arimo-hebrew-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/arimo-hebrew-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* arimo-hebrew-600-italic*/
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: 
+    url('./files/arimo-hebrew-600-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/arimo-hebrew-600-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* arimo-hebrew-600-normal*/
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: 
+    url('./files/arimo-hebrew-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./files/arimo-hebrew-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* arimo-hebrew-700-italic*/
 @font-face {
@@ -28,9 +64,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Arimo Bold Italic'),
-    local('Arimo-BoldItalic'), 
+  src: 
     url('./files/arimo-hebrew-700-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/arimo-hebrew-700-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -40,9 +74,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Arimo Bold'),
-    local('Arimo-Bold'), 
+  src: 
     url('./files/arimo-hebrew-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./files/arimo-hebrew-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

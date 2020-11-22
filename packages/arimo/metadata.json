@@ -11,11 +11,11 @@
     "latin-ext",
     "vietnamese"
   ],
-  "weights": ["400", "700"],
+  "weights": ["400", "500", "600", "700"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "lastModified": "2020-09-25",
-  "version": "v15",
+  "lastModified": "2020-11-20",
+  "version": "v16",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
