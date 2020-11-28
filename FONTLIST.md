@@ -34,6 +34,7 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 
 ## Other
 
+- aileron
 - cascadia-code
 - cascadia-mono
 - charis-sil

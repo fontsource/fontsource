@@ -5,8 +5,8 @@
   "weights": ["200", "300", "400", "600", "700", "800", "900"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "lastModified": "2020-11-20",
-  "version": "v15",
+  "lastModified": "2020-11-25",
+  "version": "v16",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
