@@ -1,13 +1,20 @@
 {
   "fontId": "jetbrains-mono",
-  "fontName": "Jetbrains Mono",
-  "subsets": ["all"],
-  "weights": ["400", "500", "700", "800"],
+  "fontName": "JetBrains Mono",
+  "subsets": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "latin",
+    "latin-ext",
+    "vietnamese"
+  ],
+  "weights": ["100", "200", "300", "400", "500", "600", "700", "800"],
   "styles": ["italic", "normal"],
-  "defSubset": "all",
-  "lastModified": "2020-08-02",
-  "version": "v1.06",
-  "source": "https://github.com/JetBrains/JetBrainsMono",
-  "license": "https://github.com/JetBrains/JetBrainsMono/blob/master/LICENSE",
-  "type": "other"
+  "defSubset": "latin",
+  "lastModified": "2020-12-02",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
 }

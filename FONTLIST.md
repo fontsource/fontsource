@@ -44,7 +44,6 @@ All Google Fonts are supported and updated weekly. Find the whole list [here](ht
 - dseg14
 - dseg7
 - firago
-- jetbrains-mono
 - karmilla
 - metropolis
 - syne-italic
