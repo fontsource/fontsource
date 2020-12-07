@@ -43,8 +43,7 @@
     "util:package-json-rebuild": "node scripts/utils/package-json-rebuild.js",
     "util:fontlist": "node scripts/utils/fontlist-generator.js",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
-    "deploy:ci": "lerna publish patch --yes",
-    "variable": "node scripts/google/variable.js"
+    "deploy:ci": "lerna publish patch --yes"
   },
   "resolutions": {
     "npm-packlist": "1.1.12"
