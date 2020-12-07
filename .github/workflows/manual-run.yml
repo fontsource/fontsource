@@ -28,10 +28,13 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: Parse APIv1
-        run: npm explore google-font-metadata -- yarn parser:v1
+        run: yarn parser:v1
 
       - name: Parse APIv2
-        run: npm explore google-font-metadata -- yarn parser:v2
+        run: yarn parser:v2
+
+      - name: Parse Variable
+        run: yarn parser:variable
 
       - name: Build fonts
         run: yarn build:google
