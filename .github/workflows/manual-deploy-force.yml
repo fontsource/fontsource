@@ -1,0 +1,37 @@
+name: Build and Release [Force Deploy] [Manual]
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    if: github.actor == 'DecliningLotus'
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name 'DecliningLotus'
+          git config --global user.email 'DecliningLotus@users.noreply.github.com'
+
+      - name: Install packages
+        run: yarn
+
+      - name: Authenticate with Registry
+        run: |
+          yarn logout
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish package
+        run: npm run deploy:next
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
