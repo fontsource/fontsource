@@ -215,7 +215,7 @@ body {
 
 ## Variable Fonts
 
-This particular typeface supports variable fonts.
+This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
 
 Begin by importing both the variable and fallback font for non-compatible browsers.
 
@@ -230,7 +230,7 @@ import "fontsource-<%= fontId %>/variable.css" // Contains ONLY variable weights
 import "fontsource-<%= fontId %>/variable-normal.css" // Normal variant.
 import "fontsource-<%= fontId %>/variable-italic.css" // Italic variant.
 // Or
-import "fontsource-<%= fontId %>/variable-full.css" // This contains ALL variable axes. Font files are larger.
+import "fontsource-<%= fontId %>/variable-full.css" // This contains ALL variable axes. Font files are larger. Both normal and italic.
 import "fontsource-<%= fontId %>/variable-full-normal.css" // Normal variant.
 import "fontsource-<%= fontId %>/variable-full-italic.css" // Italic variant.
 \`\`\`
