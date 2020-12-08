@@ -12,6 +12,10 @@
   "weights": ["100", "200", "300", "400", "500", "600", "700"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "wght": { "default": "400", "min": "100", "max": "700", "step": "1" }
+  },
   "lastModified": "2020-07-13",
   "version": "v12",
   "source": "https://fonts.google.com/",

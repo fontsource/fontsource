@@ -47,6 +47,48 @@ body {
 }
 ```
 
+## Variable Fonts
+
+This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
+
+Begin by importing both the variable and fallback font for non-compatible browsers.
+
+```js
+import "fontsource-recursive/400.css" // Weight 400
+```
+
+Select either a stripped down weights only variant of the font or a full feature variant that contains all the variable axes.
+
+```js
+import "fontsource-recursive/variable.css" // Contains ONLY variable weights and no other axes. Both normal and italic.
+import "fontsource-recursive/variable-normal.css" // Normal variant.
+import "fontsource-recursive/variable-italic.css" // Italic variant.
+// Or
+import "fontsource-recursive/variable-full.css" // This contains ALL variable axes. Font files are larger. Both normal and italic.
+import "fontsource-recursive/variable-full-normal.css" // Normal variant.
+import "fontsource-recursive/variable-full-italic.css" // Italic variant.
+```
+
+Note a `full` or `italic` variant may NOT exist if there are no additional axes other than weight.
+
+Followed by the CSS using the @supports tag, which checks whether the browser is capable of utilising variable fonts. Fallback fonts and their relevant CSS should be used outside the block, whilst all variable options should be used within the @supports block and utilising the font-variation-settings tag.
+
+```css
+h1 {
+  font-family: Recursive;
+  font-weight: 400;
+}
+
+@supports (font-variation-settings: normal) {
+  h1 {
+    font-family: RecursiveVariable;
+    font-variation-settings: "wght" 400;
+  }
+}
+```
+
+_To view the available variable axes that may be included in the font, click [here](https://fonts.google.com/variablefonts). The meanings of all axes and the restrictions associated with them are explained there._
+
 ## Additional Options
 
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.

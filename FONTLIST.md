@@ -8,6 +8,8 @@ Can be found [here](https://fontsource.github.io/search-directory/).
 
 All Google Fonts are supported and updated weekly. Find the whole list [here](https://fonts.google.com/).
 
+Variable fonts from Google are included. Supported list [here](https://fonts.google.com/variablefonts).
+
 ## [The League Of Moveable Type](https://www.theleagueofmoveabletype.com/)
 
 - blackout-midnight

@@ -4,9 +4,19 @@ Fontsource will log all notable changes within this file.
 
 #### Patch (0.0.x)
 
-These occur when an automatic update is pushed from a source, such as Google, or Fontsource may apply patches. Due to version mismatching and lack of accurate tracking, a specific version for a Fontsource patch cannot be logged. Fixes are mentioned in each minor update instead.
+These occur when an automatic update is pushed from a source, such as Google, or Fontsource may apply patches. Due to version mismatching and lack of accurate tracking, a specific version for a Fontsource patch cannot be logged into the changelog. Note that Google may push [breaking changes](https://github.com/google/fonts/issues/1307) on their end to individual fonts which Fontsource cannot predict for.
+
+#### Minor (0.x.x)
+
+These will always contain changes from Fontsource's end.
 
 # 3.x Release
+
+## 3.1.x
+
+### Features
+
+- Initial variable font support for Google Fonts. Supported fonts can be found [here](https://fonts.google.com/variablefonts) with their package README's explaining installation instructions. [#103](https://github.com/fontsource/fontsource/pull/103)
 
 ## 3.0.x
 
@@ -21,8 +31,9 @@ These occur when an automatic update is pushed from a source, such as Google, or
 
 - Added unicode-range CSS selector to all fonts. It is no longer necessary for individual subsets to be defined when importing CSS files but backwards compatability remains. Use `import fontsource-<font name>/<weight>.css` or `import fontsource-<font name>/<weight>-<style>.css` to leverage the new feature from now on. [#37](https://github.com/fontsource/fontsource/pull/37)
 - Added package.json rebuilder. [#43](https://github.com/fontsource/fontsource/pull/43)
-- Added force rebuild to Google package. [#37](https://github.com/fontsource/fontsource/pull/37)
+- Added force rebuild to Google packages. [#37](https://github.com/fontsource/fontsource/pull/37)
 - Added force rebuild to non-Google packages. [#42](https://github.com/fontsource/fontsource/pull/42)
+- Autogenerate `FONTLIST.md` and added `FONTLIST.json`. [#58](https://github.com/fontsource/fontsource/pull/58)
 - Copy `CHANGELOG.md` to every individual package. [#41](https://github.com/fontsource/fontsource/pull/41)
 
 ### Fixes

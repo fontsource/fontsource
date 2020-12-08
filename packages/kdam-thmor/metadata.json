@@ -5,6 +5,7 @@
   "weights": ["400"],
   "styles": ["normal"],
   "defSubset": "khmer",
+  "variable": false,
   "lastModified": "2020-10-08",
   "version": "v9",
   "source": "https://fonts.google.com/",

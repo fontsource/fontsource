@@ -5,8 +5,12 @@
   "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "lastModified": "2020-09-29",
-  "version": "v11",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
+  },
+  "lastModified": "2020-12-08",
+  "version": "v12",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

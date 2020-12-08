@@ -12,7 +12,7 @@ Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Sol
 yarn add fontsource-oleo-script-swash-caps // npm install fontsource-oleo-script-swash-caps
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
 import "fontsource-oleo-script-swash-caps" // Defaults to weight 400 with all styles included.

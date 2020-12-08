@@ -5,6 +5,7 @@
   "weights": ["300", "400", "700", "800"],
   "styles": ["normal"],
   "defSubset": "arabic",
+  "variable": false,
   "lastModified": "2020-09-25",
   "version": "v4",
   "source": "https://fonts.google.com/",

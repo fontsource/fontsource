@@ -5,6 +5,9 @@
   "weights": ["400", "500", "600", "700", "800", "900"],
   "styles": ["normal"],
   "defSubset": "latin",
+  "variable": {
+    "wght": { "default": "400", "min": "400", "max": "900", "step": "1" }
+  },
   "lastModified": "2020-08-20",
   "version": "v10",
   "source": "https://fonts.google.com/",

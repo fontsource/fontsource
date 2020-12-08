@@ -12,7 +12,7 @@ Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Sol
 yarn add fontsource-vollkorn // npm install fontsource-vollkorn
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
 import "fontsource-vollkorn" // Defaults to weight 400 with all styles included.
@@ -46,6 +46,48 @@ body {
   font-family: "Vollkorn";
 }
 ```
+
+## Variable Fonts
+
+This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
+
+Begin by importing both the variable and fallback font for non-compatible browsers.
+
+```js
+import "fontsource-vollkorn/400.css" // Weight 400
+```
+
+Select either a stripped down weights only variant of the font or a full feature variant that contains all the variable axes.
+
+```js
+import "fontsource-vollkorn/variable.css" // Contains ONLY variable weights and no other axes. Both normal and italic.
+import "fontsource-vollkorn/variable-normal.css" // Normal variant.
+import "fontsource-vollkorn/variable-italic.css" // Italic variant.
+// Or
+import "fontsource-vollkorn/variable-full.css" // This contains ALL variable axes. Font files are larger. Both normal and italic.
+import "fontsource-vollkorn/variable-full-normal.css" // Normal variant.
+import "fontsource-vollkorn/variable-full-italic.css" // Italic variant.
+```
+
+Note a `full` or `italic` variant may NOT exist if there are no additional axes other than weight.
+
+Followed by the CSS using the @supports tag, which checks whether the browser is capable of utilising variable fonts. Fallback fonts and their relevant CSS should be used outside the block, whilst all variable options should be used within the @supports block and utilising the font-variation-settings tag.
+
+```css
+h1 {
+  font-family: Vollkorn;
+  font-weight: 400;
+}
+
+@supports (font-variation-settings: normal) {
+  h1 {
+    font-family: VollkornVariable;
+    font-variation-settings: "wght" 400;
+  }
+}
+```
+
+_To view the available variable axes that may be included in the font, click [here](https://fonts.google.com/variablefonts). The meanings of all axes and the restrictions associated with them are explained there._
 
 ## Additional Options
 

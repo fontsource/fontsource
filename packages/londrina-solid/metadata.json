@@ -5,6 +5,7 @@
   "weights": ["100", "300", "400", "900"],
   "styles": ["normal"],
   "defSubset": "latin",
+  "variable": false,
   "lastModified": "2020-09-02",
   "version": "v10",
   "source": "https://fonts.google.com/",

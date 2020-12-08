@@ -1,0 +1,14 @@
+{
+  "fontId": "andika-new-basic",
+  "fontName": "Andika New Basic",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["400", "700"],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2020-12-08",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

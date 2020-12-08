@@ -15,6 +15,7 @@
   "weights": ["100", "300", "400", "500", "700", "800", "900"],
   "styles": ["normal"],
   "defSubset": "latin",
+  "variable": false,
   "lastModified": "2019-11-05",
   "version": "v10",
   "source": "https://fonts.google.com/",

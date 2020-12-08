@@ -13,6 +13,7 @@
   "weights": ["100", "300", "400", "500", "700", "900"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
+  "variable": false,
   "lastModified": "2019-07-24",
   "version": "v20",
   "source": "https://fonts.google.com/",
