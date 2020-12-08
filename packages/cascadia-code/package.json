@@ -1,6 +1,6 @@
 {
   "name": "fontsource-cascadia-code",
-  "version": "3.0.8",
+  "version": "3.1.1",
   "description": "Cascadia Code font in NPM glory.",
   "main": "index.css",
   "keywords": [
