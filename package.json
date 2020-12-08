@@ -35,6 +35,7 @@
     "build:google-force": "node scripts/google/download-google.js force",
     "parser:v1": "npm explore google-font-metadata -- yarn parser:v1",
     "parser:v2": "npm explore google-font-metadata -- yarn parser:v2",
+    "parser:variable": "npm explore google-font-metadata -- yarn variable:gen && npm explore google-font-metadata -- yarn variable:parse",
     "readme-update:google": "node scripts/google/google-readme-updater.js",
     "util:generic-rebuild": "node scripts/generic/rebuilder.js",
     "util:generic-renamer": "node scripts/generic/renamer.js",

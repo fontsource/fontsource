@@ -1,10 +1,11 @@
-const fs = require(`fs-extra`)
-const jsonfile = require(`jsonfile`)
+const fs = require("fs-extra")
+const jsonfile = require("jsonfile")
 
-const { APIv2 } = require(`google-font-metadata`)
-const packagerv1 = require(`./packager-v1`)
-const packagerv2 = require(`./packager-v2`)
-const { readme, packageJson } = require(`./templates`)
+const { APIv2, APIVariable } = require("google-font-metadata")
+const packagerv1 = require("./packager-v1")
+const packagerv2 = require("./packager-v2")
+const variable = require("./variable")
+const { packageJson, readme, readmeVariable } = require("./templates")
 
 const id = process.argv[2]
 if (!id) {
@@ -48,15 +49,37 @@ if (changed || force === "force") {
   packagerv1(font.id)
   packagerv2(font.id)
 
+  let variableMeta = false
+  let variableFlag = false
+  if (font.id in APIVariable) {
+    variable(font.id)
+    variableMeta = APIVariable[font.id].axes
+
+    variableFlag = true
+  }
+
   // Write README.md
-  const packageReadme = readme({
-    fontId: font.id,
-    fontName: font.family,
-    subsets: font.subsets,
-    weights: font.weights,
-    styles: font.styles,
-    version: font.version,
-  })
+  let packageReadme
+  if (variableFlag) {
+    packageReadme = readmeVariable({
+      fontId: font.id,
+      fontName: font.family,
+      subsets: font.subsets,
+      weights: font.weights,
+      styles: font.styles,
+      version: font.version,
+    })
+  } else {
+    packageReadme = readme({
+      fontId: font.id,
+      fontName: font.family,
+      subsets: font.subsets,
+      weights: font.weights,
+      styles: font.styles,
+      version: font.version,
+    })
+  }
+
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
   // Don't create package.json if already exists to prevent lerna versioning conflicts
@@ -78,6 +101,7 @@ if (changed || force === "force") {
     weights: font.weights,
     styles: font.styles,
     defSubset: font.defSubset,
+    variable: variableMeta,
     lastModified: font.lastModified,
     version: font.version,
     source: "https://fonts.google.com/",

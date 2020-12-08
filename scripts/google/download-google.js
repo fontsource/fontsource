@@ -1,13 +1,13 @@
-const _ = require(`lodash`)
-const async = require(`async`)
-const fs = require(`fs-extra`)
-const shell = require(`shelljs`)
+const _ = require("lodash")
+const async = require("async")
+const fs = require("fs-extra")
+const shell = require("shelljs")
 
-const { APIv2 } = require(`google-font-metadata`)
+const { APIv2, APIVariable } = require("google-font-metadata")
 const force = process.argv[2]
 
-fs.ensureDirSync(`packages`)
-fs.ensureDirSync(`scripts/temp_packages`)
+fs.ensureDirSync("packages")
+fs.ensureDirSync("scripts/temp_packages")
 
 // Create an async queue object
 const processQueue = (fontid, cb) => {
@@ -25,6 +25,9 @@ queue.drain(() => {
   console.log(
     `All ${Object.keys(APIv2).length} Google Fonts have been processed.`
   )
+  console.log(
+    `${Object.keys(APIVariable).length} variable fonts have been processed.`
+  )
 })
 
 queue.error((err, fontid) => {
@@ -33,7 +36,10 @@ queue.error((err, fontid) => {
 
 // Testing
 /* const test = () => {
-  queue.push(`noto-sans-jp`)
+  queue.push("recursive")
+  queue.push("texturina")
+  queue.push("cabin")
+  queue.push("actor")
 }
 test() */
 
