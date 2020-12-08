@@ -3,7 +3,7 @@ const _ = require(`lodash`)
 exports.packageJson = _.template(
   `{
   "name": "fontsource-<%= fontId %>",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "<%= fontName %> font in NPM glory.",
   "main": "index.css",
   "keywords": [
