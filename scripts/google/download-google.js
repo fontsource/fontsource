@@ -38,6 +38,7 @@ queue.error((err, fontid) => {
 /* const test = () => {
   queue.push("recursive")
   queue.push("texturina")
+  queue.push("cabin")
   queue.push("actor")
 }
 test() */
