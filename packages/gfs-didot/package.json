@@ -1,6 +1,6 @@
 {
   "name": "fontsource-gfs-didot",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "GFS Didot font in NPM glory.",
   "main": "index.css",
   "keywords": [
