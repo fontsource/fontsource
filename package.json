@@ -42,7 +42,7 @@
     "util:package-json-rebuild": "node scripts/utils/package-json-rebuild.js",
     "util:fontlist": "node scripts/utils/fontlist-generator.js",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
-    "deploy:next": "lerna publish 3.1.0 --force-publish --yes",
+    "deploy:next": "lerna publish minor --force-publish --yes",
     "deploy:ci": "lerna publish patch --yes"
   },
   "resolutions": {
