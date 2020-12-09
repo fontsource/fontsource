@@ -1,6 +1,6 @@
 {
   "name": "fontsource-noto-sans-kr",
-  "version": "3.1.3",
+  "version": "3.1.4",
   "description": "Noto Sans KR font in NPM glory.",
   "main": "index.css",
   "keywords": [

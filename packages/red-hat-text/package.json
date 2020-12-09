@@ -1,6 +1,6 @@
 {
   "name": "fontsource-red-hat-text",
-  "version": "3.1.3",
+  "version": "3.1.4",
   "description": "Red Hat Text font in NPM glory.",
   "main": "index.css",
   "keywords": [

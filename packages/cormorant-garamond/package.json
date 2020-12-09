@@ -1,6 +1,6 @@
 {
   "name": "fontsource-cormorant-garamond",
-  "version": "3.1.3",
+  "version": "3.1.4",
   "description": "Cormorant Garamond font in NPM glory.",
   "main": "index.css",
   "keywords": [
