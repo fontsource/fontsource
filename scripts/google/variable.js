@@ -99,7 +99,7 @@ module.exports = function (id) {
           type,
           wdth: `${fontVariable.axes.wdth.min}% ${fontVariable.axes.wdth.max}%`,
           weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
-          woff2Path: makeFontFilePath(subset, type, style),
+          woff2Path: makeFontFilePath(subset, type, origStyle),
           unicodeRange: font.unicodeRange[subset],
         })
         cssStyle.push(cssWght)
@@ -130,7 +130,7 @@ module.exports = function (id) {
           subset,
           type,
           weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
-          woff2Path: makeFontFilePath(subset, type, style),
+          woff2Path: makeFontFilePath(subset, type, origStyle),
           unicodeRange: font.unicodeRange[subset],
         })
         cssStyle.push(cssWght)
