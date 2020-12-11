@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^7.14.0",
-    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-prettier": "^7.0.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
@@ -17,7 +17,7 @@
     "async": "^3.2.0",
     "flat": "^5.0.2",
     "fs-extra": "^9.0.0",
-    "google-font-metadata": "^2.0.0",
+    "google-font-metadata": "^2.0.1",
     "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.1.0",
     "lerna": "^3.22.1",
