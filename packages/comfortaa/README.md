@@ -69,7 +69,7 @@ import "fontsource-comfortaa/variable-full-normal.css" // Normal variant.
 import "fontsource-comfortaa/variable-full-italic.css" // Italic variant.
 ```
 
-Note a `full` or `italic` variant may NOT exist if there are no additional axes other than weight.
+Note a `full` or `italic` variant may NOT exist if there are no additional axes other than wght and/or ital. You can check the available axes [here](https://fonts.google.com/variablefonts).
 
 Followed by the CSS using the @supports tag, which checks whether the browser is capable of utilising variable fonts. Fallback fonts and their relevant CSS should be used outside the block, whilst all variable options should be used within the @supports block and utilising the font-variation-settings tag.
 
