@@ -78,68 +78,71 @@ module.exports = function (id) {
   fs.writeFileSync(cssPath, css.join(""))
 
   // full CSS Generation
-  if ("wdth" in fontVariable.axes) {
-    const css = []
-    font.styles.forEach(style => {
-      const origStyle = style
-      if ("slnt" in fontVariable.axes && style === "normal") {
-        // SLNT has a different style linked to it.
-        style = `oblique ${fontVariable.axes.slnt.max * -1}deg ${
-          fontVariable.axes.slnt.min * -1
-        }deg`
-      }
-      const cssStyle = []
-      font.subsets.forEach(subset => {
-        const type = "full"
-        const cssWght = fontFaceVariableWdth({
-          fontId: font.id,
-          fontName: variableName,
-          style,
-          subset,
-          type,
-          wdth: `${fontVariable.axes.wdth.min}% ${fontVariable.axes.wdth.max}%`,
-          weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
-          woff2Path: makeFontFilePath(subset, type, origStyle),
-          unicodeRange: font.unicodeRange[subset],
+  if ("full" in fontVariable.variants) {
+    // Wdth requires a different CSS template (font-stretch)
+    if ("wdth" in fontVariable.axes) {
+      const css = []
+      font.styles.forEach(style => {
+        const origStyle = style
+        if ("slnt" in fontVariable.axes && style === "normal") {
+          // SLNT has a different style linked to it.
+          style = `oblique ${fontVariable.axes.slnt.max * -1}deg ${
+            fontVariable.axes.slnt.min * -1
+          }deg`
+        }
+        const cssStyle = []
+        font.subsets.forEach(subset => {
+          const type = "full"
+          const cssWght = fontFaceVariableWdth({
+            fontId: font.id,
+            fontName: variableName,
+            style,
+            subset,
+            type,
+            wdth: `${fontVariable.axes.wdth.min}% ${fontVariable.axes.wdth.max}%`,
+            weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
+            woff2Path: makeFontFilePath(subset, type, origStyle),
+            unicodeRange: font.unicodeRange[subset],
+          })
+          cssStyle.push(cssWght)
+          css.push(cssWght)
         })
-        cssStyle.push(cssWght)
-        css.push(cssWght)
+        const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`
+        fs.writeFileSync(cssStylePath, cssStyle.join(""))
       })
-      const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`
-      fs.writeFileSync(cssStylePath, cssStyle.join(""))
-    })
-    const cssPath = `${fontDir}/variable-full.css`
-    fs.writeFileSync(cssPath, css.join(""))
-  } else {
-    const css = []
-    font.styles.forEach(style => {
-      const origStyle = style
-      if ("slnt" in fontVariable.axes && style === "normal") {
-        // SLNT has a different style linked to it.
-        style = `oblique ${fontVariable.axes.slnt.max * -1}deg ${
-          fontVariable.axes.slnt.min * -1
-        }deg`
-      }
-      const cssStyle = []
-      font.subsets.forEach(subset => {
-        const type = "full"
-        const cssWght = fontFaceVariable({
-          fontId: font.id,
-          fontName: variableName,
-          style,
-          subset,
-          type,
-          weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
-          woff2Path: makeFontFilePath(subset, type, origStyle),
-          unicodeRange: font.unicodeRange[subset],
+      const cssPath = `${fontDir}/variable-full.css`
+      fs.writeFileSync(cssPath, css.join(""))
+    } else {
+      const css = []
+      font.styles.forEach(style => {
+        const origStyle = style
+        if ("slnt" in fontVariable.axes && style === "normal") {
+          // SLNT has a different style linked to it.
+          style = `oblique ${fontVariable.axes.slnt.max * -1}deg ${
+            fontVariable.axes.slnt.min * -1
+          }deg`
+        }
+        const cssStyle = []
+        font.subsets.forEach(subset => {
+          const type = "full"
+          const cssWght = fontFaceVariable({
+            fontId: font.id,
+            fontName: variableName,
+            style,
+            subset,
+            type,
+            weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
+            woff2Path: makeFontFilePath(subset, type, origStyle),
+            unicodeRange: font.unicodeRange[subset],
+          })
+          cssStyle.push(cssWght)
+          css.push(cssWght)
         })
-        cssStyle.push(cssWght)
-        css.push(cssWght)
+        const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`
+        fs.writeFileSync(cssStylePath, cssStyle.join(""))
       })
-      const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`
-      fs.writeFileSync(cssStylePath, cssStyle.join(""))
-    })
-    const cssPath = `${fontDir}/variable-full.css`
-    fs.writeFileSync(cssPath, css.join(""))
+      const cssPath = `${fontDir}/variable-full.css`
+      fs.writeFileSync(cssPath, css.join(""))
+    }
   }
 }
