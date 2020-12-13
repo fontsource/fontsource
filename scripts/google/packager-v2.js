@@ -86,7 +86,6 @@ module.exports = function (id) {
   const unicodeKeys = Object.keys(font.unicodeRange)
 
   font.weights.forEach(weight => {
-    const cssWeight = []
     font.styles.forEach(style => {
       const cssStyle = []
       unicodeKeys.forEach(subset => {
@@ -109,18 +108,24 @@ module.exports = function (id) {
             unicodeRange: font.unicodeRange[subset],
           })
           cssStyle.push(css)
-          cssWeight.push(css)
         }
       })
+      // Write down CSS
       if (style in font.variants[weight]) {
-        const cssStylePath = `${fontDir}/${weight}-${style}.css`
-        fs.writeFileSync(cssStylePath, cssStyle.join(""))
+        if (style === "normal") {
+          const cssPath = `${fontDir}/${weight}.css`
+          fs.writeFileSync(cssPath, cssStyle.join(""))
+
+          // Generate index CSS
+          if (weight === "400") {
+            fs.writeFileSync(`${fontDir}/index.css`, cssStyle.join(""))
+          }
+        } else {
+          // If italic or else, define specific style CSS file
+          const cssStylePath = `${fontDir}/${weight}-${style}.css`
+          fs.writeFileSync(cssStylePath, cssStyle.join(""))
+        }
       }
     })
-    const cssWeightPath = `${fontDir}/${weight}.css`
-    fs.writeFileSync(cssWeightPath, cssWeight.join(""))
-    if (weight === "400") {
-      fs.writeFileSync(`${fontDir}/index.css`, cssWeight.join(""))
-    }
   })
 }
