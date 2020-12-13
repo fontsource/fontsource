@@ -18,6 +18,11 @@ These will always contain changes from Fontsource's end.
 
 - Initial variable font support for Google Fonts. Supported fonts can be found [here](https://fonts.google.com/variablefonts) with their package README's explaining installation instructions. [#103](https://github.com/fontsource/fontsource/pull/103)
 
+### Fixes
+
+- Resolve incorrect filename generation for oblique/slnt variable fonts. [#106](https://github.com/fontsource/fontsource/pull/106) [#109](https://github.com/fontsource/fontsource/pull/109)
+- Prevent full variant variable CSS files to be generated for fonts that do not have any extra axes. [#110](https://github.com/fontsource/fontsource/pull/110)
+
 ## 3.0.x
 
 ### BREAKING CHANGES
