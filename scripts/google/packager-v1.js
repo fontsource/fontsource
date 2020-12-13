@@ -60,7 +60,6 @@ module.exports = function (id) {
   font.subsets.forEach(subset => {
     const cssSubset = []
     font.weights.forEach(weight => {
-      const cssWeight = []
       font.styles.forEach(style => {
         // Some fonts may have variants 400, 400i, 700 but not 700i.
         if (style in font.variants[weight]) {
@@ -74,15 +73,20 @@ module.exports = function (id) {
             woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
             woffPath: makeFontFilePath(subset, weight, style, "woff"),
           })
-          cssWeight.push(css)
-          cssSubset.push(css)
 
-          const cssStylePath = `${fontDir}/${subset}-${weight}-${style}.css`
-          fs.writeFileSync(cssStylePath, css)
+          if (style === "normal") {
+            const cssPath = `${fontDir}/${subset}-${weight}.css`
+            fs.writeFileSync(cssPath, css)
+
+            // Should only push normal variants into subset
+            cssSubset.push(css)
+          } else {
+            // If italic or else, define specific style CSS file
+            const cssStylePath = `${fontDir}/${subset}-${weight}-${style}.css`
+            fs.writeFileSync(cssStylePath, css)
+          }
         }
       })
-      const cssWeightPath = `${fontDir}/${subset}-${weight}.css`
-      fs.writeFileSync(cssWeightPath, cssWeight.join(""))
     })
     const cssSubsetPath = `${fontDir}/${subset}.css`
     fs.writeFileSync(cssSubsetPath, cssSubset.join(""))
