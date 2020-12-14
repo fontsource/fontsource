@@ -53,7 +53,6 @@ module.exports = function (id) {
   const variableName = `${font.family}Variable`
 
   // wghtOnly CSS Generation
-  const css = []
   font.styles.forEach(style => {
     const cssStyle = []
     font.subsets.forEach(subset => {
@@ -69,20 +68,25 @@ module.exports = function (id) {
         unicodeRange: font.unicodeRange[subset],
       })
       cssStyle.push(cssWght)
-      css.push(cssWght)
     })
-    const cssStylePath = `${fontDir}/variable-${style}.css`
-    fs.writeFileSync(cssStylePath, cssStyle.join(""))
+
+    // Write down CSS
+    if (style === "normal") {
+      const cssPath = `${fontDir}/variable.css`
+      fs.writeFileSync(cssPath, cssStyle.join(""))
+    } else {
+      // If italic or else, define specific style CSS file
+      const cssStylePath = `${fontDir}/variable-${style}.css`
+      fs.writeFileSync(cssStylePath, cssStyle.join(""))
+    }
   })
-  const cssPath = `${fontDir}/variable.css`
-  fs.writeFileSync(cssPath, css.join(""))
 
   // full CSS Generation
   if ("full" in fontVariable.variants) {
     // Wdth requires a different CSS template (font-stretch)
     if ("wdth" in fontVariable.axes) {
-      const css = []
       font.styles.forEach(style => {
+        // Preserve the 'normal' style as a flag
         const origStyle = style
         if ("slnt" in fontVariable.axes && style === "normal") {
           // SLNT has a different style linked to it.
@@ -105,15 +109,19 @@ module.exports = function (id) {
             unicodeRange: font.unicodeRange[subset],
           })
           cssStyle.push(cssWght)
-          css.push(cssWght)
         })
-        const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`
-        fs.writeFileSync(cssStylePath, cssStyle.join(""))
+
+        // Write down CSS
+        if (origStyle === "normal") {
+          const cssPath = `${fontDir}/variable-full.css`
+          fs.writeFileSync(cssPath, cssStyle.join(""))
+        } else {
+          // If italic or else, define specific style CSS file
+          const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`
+          fs.writeFileSync(cssStylePath, cssStyle.join(""))
+        }
       })
-      const cssPath = `${fontDir}/variable-full.css`
-      fs.writeFileSync(cssPath, css.join(""))
     } else {
-      const css = []
       font.styles.forEach(style => {
         const origStyle = style
         if ("slnt" in fontVariable.axes && style === "normal") {
@@ -136,13 +144,18 @@ module.exports = function (id) {
             unicodeRange: font.unicodeRange[subset],
           })
           cssStyle.push(cssWght)
-          css.push(cssWght)
         })
-        const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`
-        fs.writeFileSync(cssStylePath, cssStyle.join(""))
+
+        // Write down CSS
+        if (origStyle === "normal") {
+          const cssPath = `${fontDir}/variable-full.css`
+          fs.writeFileSync(cssPath, cssStyle.join(""))
+        } else {
+          // If italic or else, define specific style CSS file
+          const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`
+          fs.writeFileSync(cssStylePath, cssStyle.join(""))
+        }
       })
-      const cssPath = `${fontDir}/variable-full.css`
-      fs.writeFileSync(cssPath, css.join(""))
     }
   }
 }
