@@ -90,21 +90,21 @@ yarn add fontsource-<%= fontId %> // npm install fontsource-<%= fontId %>
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (\`layout.js\`), page component (\`index.js\`), or \`gatsby-browser.js\`.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>" // Defaults to weight 400 with all styles included.
+import "fontsource-<%= fontId %>" // Defaults to weight 400 with normal variant.
 \`\`\`
 
 Fontsource allows you to select font subsets, weights and even individual styles, allowing you to cut down on payload sizes to the last byte! The default selection above, however, sticks to the Latin subset including all weights and styles.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>/latin-ext.css" // All weights and styles included.
-import "fontsource-<%= fontId %>/cyrillic-ext-400.css" // All styles included.
-import "fontsource-<%= fontId %>/greek-700-normal.css" // Select either normal or italic.
+import "fontsource-<%= fontId %>/latin-ext.css" // All weights with normal style included.
+import "fontsource-<%= fontId %>/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "fontsource-<%= fontId %>/greek-900-italic.css" // Italic variant.
 \`\`\`
 
 Alternatively, the same solutions could be imported via SCSS!
 
 \`\`\`scss
-@import "~fontsource-<%= fontId %>/index.css";
+@import "~fontsource-<%= fontId %>/index.css"; // Weight 400.
 @import "~fontsource-<%= fontId %>/vietnamese-300-italic.css";
 \`\`\`
 

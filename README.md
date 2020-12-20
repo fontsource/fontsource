@@ -30,14 +30,14 @@ yarn add fontsource-open-sans // npm install fontsource-open-sans
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
-import "fontsource-open-sans" // Defaults to weight 400 with all styles included.
+import "fontsource-open-sans" // Defaults to weight 400 with normal variant.
 ```
 
 Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "fontsource-open-sans/500.css" // All styles included.
-import "fontsource-open-sans/900-normal.css" // Select either normal or italic.
+import "fontsource-open-sans/500.css" // Weight 500.
+import "fontsource-open-sans/900-italic.css" // Italic variant.
 ```
 
 Alternatively, the same solutions could be imported via SCSS!
@@ -66,9 +66,9 @@ This repository supports variable fonts that Google Fonts provide. You can find 
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
 
 ```javascript
-import "fontsource-open-sans/latin-ext.css" // All weights and styles included.
-import "fontsource-open-sans/cyrillic-ext-500.css" // All styles included.
-import "fontsource-open-sans/greek-900-normal.css" // Select either normal or italic.
+import "fontsource-open-sans/latin-ext.css" // All weights with normal style included.
+import "fontsource-open-sans/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "fontsource-open-sans/greek-900-italic.css" // Italic variant.
 ```
 
 _Examples above may not reflect actual variant availability._

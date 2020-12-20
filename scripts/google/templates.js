@@ -104,20 +104,20 @@ yarn add fontsource-<%= fontId %> // npm install fontsource-<%= fontId %>
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (\`layout.js\`), page component (\`index.js\`), or \`gatsby-browser.js\`.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>" // Defaults to weight 400 with all styles included.
+import "fontsource-<%= fontId %>" // Defaults to weight 400.
 \`\`\`
 
 Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>/500.css" // All styles included.
-import "fontsource-<%= fontId %>/900-normal.css" // Select either normal or italic.
+import "fontsource-<%= fontId %>/500.css" // Weight 500.
+import "fontsource-<%= fontId %>/900-italic.css" // Italic variant.
 \`\`\`
 
 Alternatively, the same solutions could be imported via SCSS!
 
 \`\`\`scss
-@import "~fontsource-<%= fontId %>/index.css";
+@import "~fontsource-<%= fontId %>/index.css"; // Weight 400.
 @import "~fontsource-<%= fontId %>/300-italic.css";
 \`\`\`
 
@@ -141,9 +141,9 @@ body {
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>/latin-ext.css" // All weights and styles included.
-import "fontsource-<%= fontId %>/cyrillic-ext-500.css" // All styles included.
-import "fontsource-<%= fontId %>/greek-900-normal.css" // Select either normal or italic.
+import "fontsource-<%= fontId %>/latin-ext.css" // All weights with normal style included.
+import "fontsource-<%= fontId %>/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "fontsource-<%= fontId %>/greek-900-normal.css" // Italic variant.
 \`\`\`
 
 - Supported subsets: \`[<%= subsets %>]\`
@@ -181,20 +181,20 @@ yarn add fontsource-<%= fontId %> // npm install fontsource-<%= fontId %>
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (\`layout.js\`), page component (\`index.js\`), or \`gatsby-browser.js\`.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>" // Defaults to weight 400 with all styles included.
+import "fontsource-<%= fontId %>" // Defaults to weight 400.
 \`\`\`
 
 Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>/500.css" // All styles included.
-import "fontsource-<%= fontId %>/900-normal.css" // Select either normal or italic.
+import "fontsource-<%= fontId %>/500.css" // Weight 500.
+import "fontsource-<%= fontId %>/900-italic.css" // Italic variant.
 \`\`\`
 
 Alternatively, the same solutions could be imported via SCSS!
 
 \`\`\`scss
-@import "~fontsource-<%= fontId %>/index.css";
+@import "~fontsource-<%= fontId %>/index.css"; // Weight 400.
 @import "~fontsource-<%= fontId %>/300-italic.css";
 \`\`\`
 
@@ -220,18 +220,16 @@ This particular typeface supports [variable fonts](https://developer.mozilla.org
 Begin by importing both the variable and fallback font for non-compatible browsers.
 
 \`\`\`js
-import "fontsource-<%= fontId %>/400.css" // Weight 400
+import "fontsource-<%= fontId %>/400.css" // Weight 400.
 \`\`\`
 
 Select either a stripped down weights only variant of the font or a full feature variant that contains all the variable axes.
 
 \`\`\`js
-import "fontsource-<%= fontId %>/variable.css" // Contains ONLY variable weights and no other axes. Both normal and italic.
-import "fontsource-<%= fontId %>/variable-normal.css" // Normal variant.
+import "fontsource-<%= fontId %>/variable.css" // Contains ONLY variable weights and no other axes.
 import "fontsource-<%= fontId %>/variable-italic.css" // Italic variant.
 // Or
-import "fontsource-<%= fontId %>/variable-full.css" // This contains ALL variable axes. Font files are larger. Both normal and italic.
-import "fontsource-<%= fontId %>/variable-full-normal.css" // Normal variant.
+import "fontsource-<%= fontId %>/variable-full.css" // This contains ALL variable axes. Font files are larger.
 import "fontsource-<%= fontId %>/variable-full-italic.css" // Italic variant.
 \`\`\`
 
@@ -260,9 +258,9 @@ _To view the available variable axes that may be included in the font, click [he
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
 
 \`\`\`javascript
-import "fontsource-<%= fontId %>/latin-ext.css" // All weights and styles included.
-import "fontsource-<%= fontId %>/cyrillic-ext-500.css" // All styles included.
-import "fontsource-<%= fontId %>/greek-900-normal.css" // Select either normal or italic.
+import "fontsource-<%= fontId %>/latin-ext.css" // All weights with normal style included.
+import "fontsource-<%= fontId %>/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "fontsource-<%= fontId %>/greek-900-italic.css" // Italic variant.
 \`\`\`
 
 - Supported subsets: \`[<%= subsets %>]\`
