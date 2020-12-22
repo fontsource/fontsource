@@ -1,7 +1,7 @@
 const fs = require(`fs-extra`)
-const glob = require(`glob`)
 const jsonfile = require(`jsonfile`)
-const { packageJsonRebuild, fontFace, readme } = require(`./templates`)
+
+const packager = require("./generic-packager")
 
 // Find names of all packages.
 const getDirectories = () =>
@@ -16,6 +16,7 @@ directories.forEach(directory => {
   const fontDir = `./packages/${directory}`
   const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
 
+  // Rebuild only non-Google fonts
   if (metadata.type !== "google") {
     const packageJSONData = jsonfile.readFileSync(`${fontDir}/package.json`)
 
@@ -25,97 +26,26 @@ directories.forEach(directory => {
     fs.copySync(`./scripts/temp_packages/${directory}`, `./${fontDir}/files`)
     fs.removeSync(`./scripts/temp_packages/${directory}`)
 
-    const makeFontFilePath = (subset, weight, style, extension) => {
-      return `./files/${metadata.fontId}-${subset}-${weight}-${style}.${extension}`
-    }
-
-    glob(fontDir + "/**/*.woff2", {}, (err, files) => {
-      const subsets = metadata.subsets
-      const weights = metadata.weights
-      const styles = metadata.styles
-
-      subsets.forEach(subset => {
-        const cssSubset = []
-        weights.forEach(weight => {
-          const cssWeight = []
-          styles.forEach(style => {
-            const cssStyle = []
-            const css = fontFace({
-              fontId: metadata.fontId,
-              fontName: metadata.fontName,
-              style,
-              subset,
-              weight,
-              woffPath: makeFontFilePath(subset, weight, style, "woff"),
-              woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
-            })
-            cssSubset.push(css)
-            cssWeight.push(css)
-            cssStyle.push(css)
-            const fileContentStyle = cssStyle.join("")
-            const cssStylePath = `${fontDir}/${subset}-${weight}-${style}.css`
-            fs.writeFileSync(cssStylePath, fileContentStyle)
-          })
-          const fileContentWeight = cssWeight.join("")
-          const cssWeightPath = `${fontDir}/${subset}-${weight}.css`
-          fs.writeFileSync(cssWeightPath, fileContentWeight)
-
-          // index.css
-          if (
-            subset === metadata.defSubset &&
-            (weight === "400" || metadata.weights.length === 1)
-          ) {
-            fs.writeFileSync(`${fontDir}/index.css`, fileContentWeight)
-          }
-        })
-
-        const fileContentSubset = cssSubset.join("")
-        // subset.css
-        const cssPath = `${fontDir}/${subset}.css`
-        fs.writeFileSync(cssPath, fileContentSubset)
-      })
-
-      const packageReadme = readme({
-        fontId: metadata.fontId,
-        fontName: metadata.fontName,
-        subsets,
-        weights,
-        styles,
-        source: metadata.source,
-        license: metadata.license,
-        version: metadata.version,
-      })
-      fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
-
-      // Write metadata.json
-      const datetime = new Date()
-      jsonfile.writeFileSync(`${fontDir}/metadata.json`, {
-        fontId: metadata.fontId,
-        fontName: metadata.fontName,
-        subsets,
-        weights,
-        styles,
-        defSubset: metadata.defSubset,
-        lastModified: datetime.toISOString().slice(0, 10),
-        version: metadata.version,
-        source: metadata.source,
-        license: metadata.license,
-        type: metadata.type,
-      })
-
-      if (err) {
-        console.error(err)
-      }
-    })
-
-    // Write out package.json file
-    const packageJSON = packageJsonRebuild({
+    // Create object to store all necessary data to run package function
+    const fontObject = {
       fontId: metadata.fontId,
       fontName: metadata.fontName,
-      name: packageJSONData.name,
-      version: packageJSONData.version,
-    })
-    fs.writeFileSync(`${fontDir}/package.json`, packageJSON)
-    console.log(`Finished processing ${metadata.fontId}.`)
+      subsets: metadata.subsets,
+      weights: metadata.weights,
+      styles: metadata.styles,
+      defSubset: metadata.defSubset,
+      variable: false,
+      lastModified: metadata.lastModified,
+      source: metadata.source,
+      license: metadata.license,
+      version: metadata.version,
+      type: metadata.type,
+
+      fontDir,
+      packageVersion: packageJSONData.version,
+    }
+
+    // Generate files (true for rebuildFlag)
+    packager(fontObject, true)
   }
 })
