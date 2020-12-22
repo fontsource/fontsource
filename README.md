@@ -24,27 +24,27 @@ Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Sol
 This is an installation example using Open Sans, applicable to all other fonts searchable via NPM or the packages directory.
 
 ```javascript
-yarn add fontsource-open-sans // npm install fontsource-open-sans
+yarn add @fontsource/open-sans // npm install @fontsource/open-sans
 ```
 
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
-import "fontsource-open-sans" // Defaults to weight 400 with normal variant.
+import "@fontsource/open-sans" // Defaults to weight 400 with normal variant.
 ```
 
 Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "fontsource-open-sans/500.css" // Weight 500.
-import "fontsource-open-sans/900-italic.css" // Italic variant.
+import "@fontsource/open-sans/500.css" // Weight 500.
+import "@fontsource/open-sans/900-italic.css" // Italic variant.
 ```
 
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-open-sans/index.css";
-@import "~fontsource-open-sans/300-italic.css";
+@import "~@fontsource/open-sans/index.css";
+@import "~@fontsource/open-sans/300-italic.css";
 ```
 
 _Do confirm on Google Fonts (or elsewhere) whether your font supports a certain subset, weight or style beforehand as these examples may not reflect actual compatibility._
@@ -66,9 +66,9 @@ This repository supports variable fonts that Google Fonts provide. You can find 
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
 
 ```javascript
-import "fontsource-open-sans/latin-ext.css" // All weights with normal style included.
-import "fontsource-open-sans/cyrillic-ext-500.css" // Weight 500 with normal style.
-import "fontsource-open-sans/greek-900-italic.css" // Italic variant.
+import "@fontsource/open-sans/latin-ext.css" // All weights with normal style included.
+import "@fontsource/open-sans/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "@fontsource/open-sans/greek-900-italic.css" // Italic variant.
 ```
 
 _Examples above may not reflect actual variant availability._
