@@ -21,11 +21,11 @@ fs.copy(fontFileDir, `${fontDir}/files`, err => {
 })
 
 // Read filenames to derive the following information
-let subsets = []
-let weights = []
-let styles = []
-
 glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
+  let subsets = []
+  let weights = []
+  let styles = []
+
   files.forEach(file => {
     // Remove file path and extension.
     // 23 characters to account for scripts / generic /...filepath, -6 for .woff2
@@ -43,27 +43,27 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
   if (err) {
     console.error(err)
   }
+
+  // Create object to store all necessary data to run package function
+  const datetime = new Date()
+
+  const fontObject = {
+    fontId,
+    fontName,
+    subsets,
+    weights,
+    styles,
+    defSubset,
+    variable: false,
+    source: config.sourcelink,
+    license: config.licenselink,
+    version: config.version,
+    lastModified: datetime.toISOString().slice(0, 10),
+    type: config.type,
+
+    fontDir,
+  }
+
+  // Generate files (false for rebuildFlag)
+  packager(fontObject, false)
 })
-
-// Create object to store all necessary data to run package function
-const datetime = new Date()
-
-const fontObject = {
-  fontId,
-  fontName,
-  subsets,
-  weights,
-  styles,
-  defSubset,
-  variable: false,
-  source: config.sourcelink,
-  license: config.licenselink,
-  version: config.version,
-  lastModified: datetime.toISOString().slice(0, 10),
-  type: config.type,
-
-  fontDir,
-}
-
-// Generate files (false for rebuildFlag)
-packager(fontObject, false)
