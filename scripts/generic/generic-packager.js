@@ -84,8 +84,8 @@ module.exports = function (font, rebuildFlag) {
     subsets,
     weights,
     styles,
-    source: font.sourcelink,
-    license: font.licenselink,
+    source: font.source,
+    license: font.license,
     version: font.version,
   })
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
