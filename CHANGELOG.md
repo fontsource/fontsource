@@ -10,6 +10,19 @@ These occur when an automatic update is pushed from a source, such as Google, or
 
 These will always contain changes from Fontsource's end.
 
+# 4.x Release
+
+## 4.0.x
+
+### BREAKING CHANGES
+
+- `import fontsource-<font name>/<weight>` now only contains normal style variants of fonts. The `-normal.css` files throughout the respository have been removed. Importing italic variants remain the same via `import fontsource-<font name>/<weight>-italic.css`.
+  Please see [#88](https://github.com/fontsource/fontsource/issues/88) for more details. [#112](https://github.com/fontsource/fontsource/pull/112)
+
+### Features
+
+- All non-Google fonts now have weight specific files that match 3.0.x as they previously were only importable via subsets. Simply use as normal with `import fontsource-<font name>/<weight>.css`. [#92](https://github.com/fontsource/fontsource/issues/92) [#115](https://github.com/fontsource/fontsource/pull/115)
+
 # 3.x Release
 
 ## 3.1.x
