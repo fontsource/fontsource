@@ -11,7 +11,8 @@
     "ostrich-sans",
     "css",
     "front-end",
-    "web"
+    "web",
+    "typeface"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
@@ -20,6 +21,5 @@
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/ostrich-sans"
-  },
-  "gitHead": "9bd9a7143897d39e0fdbbca366a889a4028edf5b"
+  }
 }
