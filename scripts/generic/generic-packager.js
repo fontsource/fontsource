@@ -98,6 +98,7 @@ module.exports = function (font, rebuildFlag) {
     weights,
     styles,
     defSubset,
+    variable: font.variable,
     lastModified: font.lastModified,
     version: font.version,
     source: font.source,
