@@ -15,29 +15,27 @@ yarn add fontsource-charis-sil // npm install fontsource-charis-sil
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
-import "fontsource-charis-sil" // Defaults to weight 400 with all styles included.
+import "fontsource-charis-sil" // Defaults to weight 400.
 ```
 
-Fontsource allows you to select font subsets, weights and even individual styles, allowing you to cut down on payload sizes to the last byte! The default selection above, however, sticks to the Latin subset including all weights and styles.
+Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "fontsource-charis-sil/latin-ext.css" // All weights and styles included.
-import "fontsource-charis-sil/cyrillic-ext-400.css" // All styles included.
-import "fontsource-charis-sil/greek-700-normal.css" // Select either normal or italic.
+import "fontsource-charis-sil/500.css" // Weight 500.
+import "fontsource-charis-sil/900-italic.css" // Italic variant.
 ```
 
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-charis-sil/index.css";
-@import "~fontsource-charis-sil/vietnamese-300-italic.css";
+@import "~fontsource-charis-sil/index.css"; // Weight 400.
+@import "~fontsource-charis-sil/300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
 
-- Subsets: `[all]`
 - Weights: `[400,700]`
 - Styles: `[italic,normal]`
 
@@ -48,6 +46,18 @@ body {
   font-family: "Charis SIL";
 }
 ```
+
+## Additional Options
+
+In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
+
+```javascript
+import "fontsource-charis-sil/latin-ext.css" // All weights with normal style included.
+import "fontsource-charis-sil/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "fontsource-charis-sil/greek-900-normal.css" // Italic variant.
+```
+
+- Supported subsets: `[all]`
 
 ## Licensing
 

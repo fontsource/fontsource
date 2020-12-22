@@ -12,32 +12,30 @@ Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Sol
 yarn add fontsource-league-spartan // npm install fontsource-league-spartan
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component, or `gatsby-browser.js`.
+Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
-import "fontsource-league-spartan" // Defaults to weight 400 with all styles included.
+import "fontsource-league-spartan" // Defaults to weight 400.
 ```
 
-Fontsource allows you to select font subsets, weights and even individual styles, allowing you to cut down on payload sizes to the last byte! The default selection above, however, sticks to the Latin subset including all weights and styles.
+Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "fontsource-league-spartan/latin-ext.css" // All weights and styles included.
-import "fontsource-league-spartan/cyrillic-ext-400.css" // All styles included.
-import "fontsource-league-spartan/greek-700-normal.css" // Select either normal or italic.
+import "fontsource-league-spartan/500.css" // Weight 500.
+import "fontsource-league-spartan/900-italic.css" // Italic variant.
 ```
 
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-league-spartan/index.css";
-@import "~fontsource-league-spartan/vietnamese-300-italic.css";
+@import "~fontsource-league-spartan/index.css"; // Weight 400.
+@import "~fontsource-league-spartan/300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
 
-- Subsets: `[latin]`
 - Weights: `[200,300,400,500,600,700,800,900]`
 - Styles: `[normal]`
 
@@ -48,6 +46,18 @@ body {
   font-family: "League Spartan";
 }
 ```
+
+## Additional Options
+
+In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
+
+```javascript
+import "fontsource-league-spartan/latin-ext.css" // All weights with normal style included.
+import "fontsource-league-spartan/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "fontsource-league-spartan/greek-900-normal.css" // Italic variant.
+```
+
+- Supported subsets: `[latin]`
 
 ## Licensing
 
