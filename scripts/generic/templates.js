@@ -31,7 +31,7 @@ exports.packageJson = _.template(
 
 exports.packageJsonRebuild = _.template(
   `{
-  "name": "<%= name %>",
+  "name": "fontsource-<%= fontId %>",
   "version": "<%= version %>",
   "description": "<%= fontName %> font in NPM glory.",
   "main": "index.css",
