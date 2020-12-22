@@ -1,13 +1,1 @@
-{
-  "fontId": "dseg-weather",
-  "fontName": "DSEG Weather",
-  "subsets": ["latin"],
-  "weights": ["400"],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "lastModified": "2020-08-02",
-  "version": "v0.46",
-  "source": "https://github.com/keshikan/DSEG",
-  "license": "https://github.com/keshikan/DSEG/blob/master/DSEG-LICENSE.txt",
-  "type": "other"
-}
+{"fontId":"dseg-weather","fontName":"DSEG Weather","subsets":["latin"],"weights":["400"],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2020-08-02","version":"v0.46","source":"https://github.com/keshikan/DSEG","license":"https://github.com/keshikan/DSEG/blob/master/DSEG-LICENSE.txt","type":"other"}

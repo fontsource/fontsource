@@ -1,13 +1,1 @@
-{
-  "fontId": "dseg14",
-  "fontName": "DSEG14",
-  "subsets": ["classic", "classic-mini", "modern", "modern-mini"],
-  "weights": ["300", "400", "700"],
-  "styles": ["italic", "normal"],
-  "defSubset": "classic",
-  "lastModified": "2020-08-02",
-  "version": "v0.46",
-  "source": "https://github.com/keshikan/DSEG",
-  "license": "https://github.com/keshikan/DSEG/blob/master/DSEG-LICENSE.txt",
-  "type": "other"
-}
+{"fontId":"dseg14","fontName":"DSEG14","subsets":["classic","classic-mini","modern","modern-mini"],"weights":["300","400","700"],"styles":["italic","normal"],"defSubset":"classic","variable":false,"lastModified":"2020-08-02","version":"v0.46","source":"https://github.com/keshikan/DSEG","license":"https://github.com/keshikan/DSEG/blob/master/DSEG-LICENSE.txt","type":"other"}
