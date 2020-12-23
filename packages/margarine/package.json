@@ -1,1 +1,25 @@
-{"name":"@fontsource/margarine","version":"4.0.0","description":"Margarine font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Margarine","margarine"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/margarine#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/margarine"}}
+{
+  "name": "@fontsource/margarine",
+  "version": "4.0.0",
+  "description": "Margarine font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Margarine",
+    "margarine"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/margarine#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/margarine"
+  }
+}

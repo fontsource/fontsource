@@ -1,1 +1,25 @@
-{"name":"@fontsource/inika","version":"4.0.0","description":"Inika font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Inika","inika"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/inika#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/inika"}}
+{
+  "name": "@fontsource/inika",
+  "version": "4.0.0",
+  "description": "Inika font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Inika",
+    "inika"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/inika#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/inika"
+  }
+}

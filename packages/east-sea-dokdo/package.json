@@ -1,1 +1,25 @@
-{"name":"@fontsource/east-sea-dokdo","version":"4.0.0","description":"East Sea Dokdo font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","East Sea Dokdo","east-sea-dokdo"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/east-sea-dokdo#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/east-sea-dokdo"}}
+{
+  "name": "@fontsource/east-sea-dokdo",
+  "version": "4.0.0",
+  "description": "East Sea Dokdo font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "East Sea Dokdo",
+    "east-sea-dokdo"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/east-sea-dokdo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/east-sea-dokdo"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/ramabhadra","version":"4.0.0","description":"Ramabhadra font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Ramabhadra","ramabhadra"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/ramabhadra#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/ramabhadra"}}
+{
+  "name": "@fontsource/ramabhadra",
+  "version": "4.0.0",
+  "description": "Ramabhadra font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Ramabhadra",
+    "ramabhadra"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ramabhadra#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/ramabhadra"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/fondamento","version":"4.0.0","description":"Fondamento font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Fondamento","fondamento"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/fondamento#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/fondamento"}}
+{
+  "name": "@fontsource/fondamento",
+  "version": "4.0.0",
+  "description": "Fondamento font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Fondamento",
+    "fondamento"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fondamento#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/fondamento"
+  }
+}

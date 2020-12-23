@@ -1,1 +1,25 @@
-{"name":"@fontsource/gamja-flower","version":"4.0.0","description":"Gamja Flower font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Gamja Flower","gamja-flower"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/gamja-flower#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/gamja-flower"}}
+{
+  "name": "@fontsource/gamja-flower",
+  "version": "4.0.0",
+  "description": "Gamja Flower font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Gamja Flower",
+    "gamja-flower"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/gamja-flower#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/gamja-flower"
+  }
+}

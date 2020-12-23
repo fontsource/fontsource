@@ -1,1 +1,25 @@
-{"name":"@fontsource/almendra-sc","version":"4.0.0","description":"Almendra SC font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Almendra SC","almendra-sc"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/almendra-sc#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/almendra-sc"}}
+{
+  "name": "@fontsource/almendra-sc",
+  "version": "4.0.0",
+  "description": "Almendra SC font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Almendra SC",
+    "almendra-sc"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/almendra-sc#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/almendra-sc"
+  }
+}

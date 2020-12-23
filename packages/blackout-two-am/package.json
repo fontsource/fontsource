@@ -1,1 +1,28 @@
-{"name":"@fontsource/blackout-two-am","version":"4.0.0","description":"Blackout Two AM font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","Blackout Two AM","blackout-two-am","css","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/blackout-two-am#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/blackout-two-am"}}
+{
+  "name": "@fontsource/blackout-two-am",
+  "version": "4.0.0",
+  "description": "Blackout Two AM font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "Blackout Two AM",
+    "blackout-two-am",
+    "css",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/blackout-two-am#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/blackout-two-am"
+  }
+}

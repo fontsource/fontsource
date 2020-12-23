@@ -1,1 +1,25 @@
-{"name":"@fontsource/vampiro-one","version":"4.0.0","description":"Vampiro One font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Vampiro One","vampiro-one"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/vampiro-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/vampiro-one"}}
+{
+  "name": "@fontsource/vampiro-one",
+  "version": "4.0.0",
+  "description": "Vampiro One font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Vampiro One",
+    "vampiro-one"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/vampiro-one#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/vampiro-one"
+  }
+}

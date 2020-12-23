@@ -1,1 +1,25 @@
-{"name":"@fontsource/ribeye-marrow","version":"4.0.0","description":"Ribeye Marrow font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Ribeye Marrow","ribeye-marrow"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/ribeye-marrow#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/ribeye-marrow"}}
+{
+  "name": "@fontsource/ribeye-marrow",
+  "version": "4.0.0",
+  "description": "Ribeye Marrow font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Ribeye Marrow",
+    "ribeye-marrow"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ribeye-marrow#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/ribeye-marrow"
+  }
+}

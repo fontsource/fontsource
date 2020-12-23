@@ -1,1 +1,28 @@
-{"name":"@fontsource/cascadia-code","version":"4.0.0","description":"Cascadia Code font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","Cascadia Code","cascadia-code","css","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/cascadia-code#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/cascadia-code"}}
+{
+  "name": "@fontsource/cascadia-code",
+  "version": "4.0.0",
+  "description": "Cascadia Code font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "Cascadia Code",
+    "cascadia-code",
+    "css",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/cascadia-code#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/cascadia-code"
+  }
+}

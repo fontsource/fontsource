@@ -1,1 +1,25 @@
-{"name":"@fontsource/mallanna","version":"4.0.0","description":"Mallanna font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Mallanna","mallanna"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/mallanna#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/mallanna"}}
+{
+  "name": "@fontsource/mallanna",
+  "version": "4.0.0",
+  "description": "Mallanna font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Mallanna",
+    "mallanna"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mallanna#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/mallanna"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/keania-one","version":"4.0.0","description":"Keania One font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Keania One","keania-one"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/keania-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/keania-one"}}
+{
+  "name": "@fontsource/keania-one",
+  "version": "4.0.0",
+  "description": "Keania One font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Keania One",
+    "keania-one"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/keania-one#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/keania-one"
+  }
+}

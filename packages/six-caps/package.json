@@ -1,1 +1,25 @@
-{"name":"@fontsource/six-caps","version":"4.0.0","description":"Six Caps font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Six Caps","six-caps"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/six-caps#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/six-caps"}}
+{
+  "name": "@fontsource/six-caps",
+  "version": "4.0.0",
+  "description": "Six Caps font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Six Caps",
+    "six-caps"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/six-caps#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/six-caps"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/neuton","version":"4.0.0","description":"Neuton font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Neuton","neuton"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/neuton#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/neuton"}}
+{
+  "name": "@fontsource/neuton",
+  "version": "4.0.0",
+  "description": "Neuton font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Neuton",
+    "neuton"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/neuton#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/neuton"
+  }
+}

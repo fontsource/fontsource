@@ -1,1 +1,25 @@
-{"name":"@fontsource/calligraffitti","version":"4.0.0","description":"Calligraffitti font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Calligraffitti","calligraffitti"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/calligraffitti#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/calligraffitti"}}
+{
+  "name": "@fontsource/calligraffitti",
+  "version": "4.0.0",
+  "description": "Calligraffitti font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Calligraffitti",
+    "calligraffitti"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/calligraffitti#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/calligraffitti"
+  }
+}

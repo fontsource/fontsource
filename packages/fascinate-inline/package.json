@@ -1,1 +1,25 @@
-{"name":"@fontsource/fascinate-inline","version":"4.0.0","description":"Fascinate Inline font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Fascinate Inline","fascinate-inline"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/fascinate-inline#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/fascinate-inline"}}
+{
+  "name": "@fontsource/fascinate-inline",
+  "version": "4.0.0",
+  "description": "Fascinate Inline font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Fascinate Inline",
+    "fascinate-inline"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fascinate-inline#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/fascinate-inline"
+  }
+}

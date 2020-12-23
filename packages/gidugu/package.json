@@ -1,1 +1,25 @@
-{"name":"@fontsource/gidugu","version":"4.0.0","description":"Gidugu font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Gidugu","gidugu"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/gidugu#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/gidugu"}}
+{
+  "name": "@fontsource/gidugu",
+  "version": "4.0.0",
+  "description": "Gidugu font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Gidugu",
+    "gidugu"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/gidugu#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/gidugu"
+  }
+}

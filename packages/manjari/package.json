@@ -1,1 +1,25 @@
-{"name":"@fontsource/manjari","version":"4.0.0","description":"Manjari font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Manjari","manjari"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/manjari#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/manjari"}}
+{
+  "name": "@fontsource/manjari",
+  "version": "4.0.0",
+  "description": "Manjari font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Manjari",
+    "manjari"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/manjari#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/manjari"
+  }
+}

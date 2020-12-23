@@ -1,1 +1,25 @@
-{"name":"@fontsource/crafty-girls","version":"4.0.0","description":"Crafty Girls font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Crafty Girls","crafty-girls"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/crafty-girls#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/crafty-girls"}}
+{
+  "name": "@fontsource/crafty-girls",
+  "version": "4.0.0",
+  "description": "Crafty Girls font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Crafty Girls",
+    "crafty-girls"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/crafty-girls#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/crafty-girls"
+  }
+}

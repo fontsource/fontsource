@@ -1,1 +1,25 @@
-{"name":"@fontsource/arapey","version":"4.0.0","description":"Arapey font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Arapey","arapey"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/arapey#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/arapey"}}
+{
+  "name": "@fontsource/arapey",
+  "version": "4.0.0",
+  "description": "Arapey font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Arapey",
+    "arapey"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/arapey#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/arapey"
+  }
+}

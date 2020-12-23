@@ -1,1 +1,25 @@
-{"name":"@fontsource/rouge-script","version":"4.0.0","description":"Rouge Script font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Rouge Script","rouge-script"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/rouge-script#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/rouge-script"}}
+{
+  "name": "@fontsource/rouge-script",
+  "version": "4.0.0",
+  "description": "Rouge Script font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Rouge Script",
+    "rouge-script"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rouge-script#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/rouge-script"
+  }
+}

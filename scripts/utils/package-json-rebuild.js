@@ -21,7 +21,7 @@ directories.forEach(directory => {
     description: packageJSON.description,
     main: "index.css",
     publishConfig: {
-      "access": "public"
+      access: "public",
     },
     keywords: packageJSON.keywords,
     author: "Lotus <declininglotus@gmail.com>",

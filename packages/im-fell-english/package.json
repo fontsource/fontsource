@@ -1,1 +1,25 @@
-{"name":"@fontsource/im-fell-english","version":"4.0.0","description":"IM Fell English font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","IM Fell English","im-fell-english"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/im-fell-english#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/im-fell-english"}}
+{
+  "name": "@fontsource/im-fell-english",
+  "version": "4.0.0",
+  "description": "IM Fell English font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "IM Fell English",
+    "im-fell-english"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/im-fell-english#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/im-fell-english"
+  }
+}

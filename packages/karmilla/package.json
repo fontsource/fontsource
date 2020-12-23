@@ -1,1 +1,28 @@
-{"name":"@fontsource/karmilla","version":"4.0.0","description":"Karmilla font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","Karmilla","karmilla","css","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/karmilla#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/karmilla"}}
+{
+  "name": "@fontsource/karmilla",
+  "version": "4.0.0",
+  "description": "Karmilla font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "Karmilla",
+    "karmilla",
+    "css",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/karmilla#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/karmilla"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/great-vibes","version":"4.0.0","description":"Great Vibes font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Great Vibes","great-vibes"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/great-vibes#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/great-vibes"}}
+{
+  "name": "@fontsource/great-vibes",
+  "version": "4.0.0",
+  "description": "Great Vibes font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Great Vibes",
+    "great-vibes"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/great-vibes#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/great-vibes"
+  }
+}

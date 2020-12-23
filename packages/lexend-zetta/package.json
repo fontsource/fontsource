@@ -1,1 +1,25 @@
-{"name":"@fontsource/lexend-zetta","version":"4.0.0","description":"Lexend Zetta font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Lexend Zetta","lexend-zetta"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/lexend-zetta#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/lexend-zetta"}}
+{
+  "name": "@fontsource/lexend-zetta",
+  "version": "4.0.0",
+  "description": "Lexend Zetta font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Lexend Zetta",
+    "lexend-zetta"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lexend-zetta#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/lexend-zetta"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/snippet","version":"4.0.0","description":"Snippet font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Snippet","snippet"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/snippet#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/snippet"}}
+{
+  "name": "@fontsource/snippet",
+  "version": "4.0.0",
+  "description": "Snippet font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Snippet",
+    "snippet"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/snippet#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/snippet"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/fenix","version":"4.0.0","description":"Fenix font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Fenix","fenix"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/fenix#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/fenix"}}
+{
+  "name": "@fontsource/fenix",
+  "version": "4.0.0",
+  "description": "Fenix font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Fenix",
+    "fenix"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fenix#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/fenix"
+  }
+}

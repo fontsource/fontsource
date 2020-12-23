@@ -1,1 +1,25 @@
-{"name":"@fontsource/jacques-francois-shadow","version":"4.0.0","description":"Jacques Francois Shadow font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Jacques Francois Shadow","jacques-francois-shadow"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/jacques-francois-shadow#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/jacques-francois-shadow"}}
+{
+  "name": "@fontsource/jacques-francois-shadow",
+  "version": "4.0.0",
+  "description": "Jacques Francois Shadow font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Jacques Francois Shadow",
+    "jacques-francois-shadow"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/jacques-francois-shadow#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/jacques-francois-shadow"
+  }
+}

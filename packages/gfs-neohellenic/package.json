@@ -1,1 +1,25 @@
-{"name":"@fontsource/gfs-neohellenic","version":"4.0.0","description":"GFS Neohellenic font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","GFS Neohellenic","gfs-neohellenic"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/gfs-neohellenic#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/gfs-neohellenic"}}
+{
+  "name": "@fontsource/gfs-neohellenic",
+  "version": "4.0.0",
+  "description": "GFS Neohellenic font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "GFS Neohellenic",
+    "gfs-neohellenic"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/gfs-neohellenic#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/gfs-neohellenic"
+  }
+}

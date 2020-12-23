@@ -1,1 +1,28 @@
-{"name":"@fontsource/yakuhanmps","version":"4.0.0","description":"YakuHanMPs font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","YakuHanMPs","yakuhanmps","css","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/yakuhanmps#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/yakuhanmps"}}
+{
+  "name": "@fontsource/yakuhanmps",
+  "version": "4.0.0",
+  "description": "YakuHanMPs font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "YakuHanMPs",
+    "yakuhanmps",
+    "css",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/yakuhanmps#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/yakuhanmps"
+  }
+}

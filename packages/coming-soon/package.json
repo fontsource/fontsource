@@ -1,1 +1,25 @@
-{"name":"@fontsource/coming-soon","version":"4.0.0","description":"Coming Soon font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Coming Soon","coming-soon"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/coming-soon#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/coming-soon"}}
+{
+  "name": "@fontsource/coming-soon",
+  "version": "4.0.0",
+  "description": "Coming Soon font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Coming Soon",
+    "coming-soon"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/coming-soon#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/coming-soon"
+  }
+}

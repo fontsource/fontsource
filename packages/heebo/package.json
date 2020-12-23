@@ -1,1 +1,25 @@
-{"name":"@fontsource/heebo","version":"4.0.0","description":"Heebo font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Heebo","heebo"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/heebo#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/heebo"}}
+{
+  "name": "@fontsource/heebo",
+  "version": "4.0.0",
+  "description": "Heebo font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Heebo",
+    "heebo"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/heebo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/heebo"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/sirin-stencil","version":"4.0.0","description":"Sirin Stencil font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Sirin Stencil","sirin-stencil"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/sirin-stencil#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/sirin-stencil"}}
+{
+  "name": "@fontsource/sirin-stencil",
+  "version": "4.0.0",
+  "description": "Sirin Stencil font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Sirin Stencil",
+    "sirin-stencil"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sirin-stencil#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/sirin-stencil"
+  }
+}

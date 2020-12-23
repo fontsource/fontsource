@@ -1,1 +1,28 @@
-{"name":"@fontsource/aileron","version":"4.0.0","description":"Aileron font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","Aileron","aileron","css","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/aileron#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/aileron"}}
+{
+  "name": "@fontsource/aileron",
+  "version": "4.0.0",
+  "description": "Aileron font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "Aileron",
+    "aileron",
+    "css",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/aileron#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/aileron"
+  }
+}

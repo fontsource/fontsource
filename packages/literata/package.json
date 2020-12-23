@@ -1,1 +1,25 @@
-{"name":"@fontsource/literata","version":"4.0.0","description":"Literata font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Literata","literata"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/literata#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/literata"}}
+{
+  "name": "@fontsource/literata",
+  "version": "4.0.0",
+  "description": "Literata font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Literata",
+    "literata"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/literata#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/literata"
+  }
+}

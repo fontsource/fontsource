@@ -1,1 +1,25 @@
-{"name":"@fontsource/niramit","version":"4.0.0","description":"Niramit font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Niramit","niramit"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/niramit#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/niramit"}}
+{
+  "name": "@fontsource/niramit",
+  "version": "4.0.0",
+  "description": "Niramit font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Niramit",
+    "niramit"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/niramit#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/niramit"
+  }
+}

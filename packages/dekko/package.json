@@ -1,1 +1,25 @@
-{"name":"@fontsource/dekko","version":"4.0.0","description":"Dekko font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Dekko","dekko"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/dekko#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/dekko"}}
+{
+  "name": "@fontsource/dekko",
+  "version": "4.0.0",
+  "description": "Dekko font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Dekko",
+    "dekko"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/dekko#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/dekko"
+  }
+}

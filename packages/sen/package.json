@@ -1,1 +1,25 @@
-{"name":"@fontsource/sen","version":"4.0.0","description":"Sen font in NPM glory.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Sen","sen"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/sen#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/sen"}}
+{
+  "name": "@fontsource/sen",
+  "version": "4.0.0",
+  "description": "Sen font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Sen",
+    "sen"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sen#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/sen"
+  }
+}
