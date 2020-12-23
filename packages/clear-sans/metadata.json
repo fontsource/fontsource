@@ -1,1 +1,14 @@
-{"fontId":"clear-sans","fontName":"Clear Sans","subsets":["all"],"weights":["100","300","400","500","700"],"styles":["normal","italic"],"defSubset":"all","variable":false,"lastModified":"2020-10-15","version":"1.00","source":"https://01.org/clear-sans","license":"http://www.apache.org/licenses/LICENSE-2.0","type":"other"}
+{
+  "fontId": "clear-sans",
+  "fontName": "Clear Sans",
+  "subsets": ["all"],
+  "weights": ["100", "300", "400", "500", "700"],
+  "styles": ["normal", "italic"],
+  "defSubset": "all",
+  "variable": false,
+  "lastModified": "2020-10-15",
+  "version": "1.00",
+  "source": "https://01.org/clear-sans",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "type": "other"
+}

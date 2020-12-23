@@ -1,6 +1,6 @@
 # Fontsource Cuprum
 
-[![npm version](https://badge.fury.io/js/fontsource-cuprum.svg)](https://www.npmjs.com/package/fontsource-cuprum) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/fontsource-cuprum)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/fontsource-cuprum)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
+[![npm (scoped)](https://img.shields.io/npm/v/@fontsource/cuprum?color=brightgreen)](https://www.npmjs.com/package/@fontsource/cuprum) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/cuprum)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/cuprum)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
 The CSS and web font files to easily self-host the “Cuprum” font. Please visit the main [Fontsource monorepo](https://github.com/fontsource/fontsource) to view more details on this package.
 
@@ -9,27 +9,27 @@ The CSS and web font files to easily self-host the “Cuprum” font. Please vis
 Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Solutions like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are prebuilt examples that are compatible.
 
 ```javascript
-yarn add fontsource-cuprum // npm install fontsource-cuprum
+yarn add @fontsource/cuprum // npm install @fontsource/cuprum
 ```
 
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
-import "fontsource-cuprum" // Defaults to weight 400 with all styles included.
+import "@fontsource/cuprum" // Defaults to weight 400.
 ```
 
 Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "fontsource-cuprum/500.css" // All styles included.
-import "fontsource-cuprum/900-normal.css" // Select either normal or italic.
+import "@fontsource/cuprum/500.css" // Weight 500.
+import "@fontsource/cuprum/900-italic.css" // Italic variant.
 ```
 
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-cuprum/index.css";
-@import "~fontsource-cuprum/300-italic.css";
+@import "~@fontsource/cuprum/index.css"; // Weight 400.
+@import "~@fontsource/cuprum/300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._
@@ -54,19 +54,17 @@ This particular typeface supports [variable fonts](https://developer.mozilla.org
 Begin by importing both the variable and fallback font for non-compatible browsers.
 
 ```js
-import "fontsource-cuprum/400.css" // Weight 400
+import "@fontsource/cuprum/400.css" // Weight 400.
 ```
 
 Select either a stripped down weights only variant of the font or a full feature variant that contains all the variable axes.
 
 ```js
-import "fontsource-cuprum/variable.css" // Contains ONLY variable weights and no other axes. Both normal and italic.
-import "fontsource-cuprum/variable-normal.css" // Normal variant.
-import "fontsource-cuprum/variable-italic.css" // Italic variant.
+import "@fontsource/cuprum/variable.css" // Contains ONLY variable weights and no other axes.
+import "@fontsource/cuprum/variable-italic.css" // Italic variant.
 // Or
-import "fontsource-cuprum/variable-full.css" // This contains ALL variable axes. Font files are larger. Both normal and italic.
-import "fontsource-cuprum/variable-full-normal.css" // Normal variant.
-import "fontsource-cuprum/variable-full-italic.css" // Italic variant.
+import "@fontsource/cuprum/variable-full.css" // This contains ALL variable axes. Font files are larger.
+import "@fontsource/cuprum/variable-full-italic.css" // Italic variant.
 ```
 
 Note a `full` or `italic` variant may NOT exist if there are no additional axes other than wght and/or ital. You can check the available axes [here](https://fonts.google.com/variablefonts).
@@ -94,9 +92,9 @@ _To view the available variable axes that may be included in the font, click [he
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
 
 ```javascript
-import "fontsource-cuprum/latin-ext.css" // All weights and styles included.
-import "fontsource-cuprum/cyrillic-ext-500.css" // All styles included.
-import "fontsource-cuprum/greek-900-normal.css" // Select either normal or italic.
+import "@fontsource/cuprum/latin-ext.css" // All weights with normal style included.
+import "@fontsource/cuprum/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "@fontsource/cuprum/greek-900-italic.css" // Italic variant.
 ```
 
 - Supported subsets: `[cyrillic,cyrillic-ext,latin,latin-ext,vietnamese]`

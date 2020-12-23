@@ -1,6 +1,6 @@
 # Fontsource Yrsa
 
-[![npm version](https://badge.fury.io/js/fontsource-yrsa.svg)](https://www.npmjs.com/package/fontsource-yrsa) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/fontsource-yrsa)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/fontsource-yrsa)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/DecliningLotus/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
+[![npm (scoped)](https://img.shields.io/npm/v/@fontsource/yrsa?color=brightgreen)](https://www.npmjs.com/package/@fontsource/yrsa) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/yrsa)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/yrsa)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
 The CSS and web font files to easily self-host the “Yrsa” font. Please visit the main [Fontsource monorepo](https://github.com/fontsource/fontsource) to view more details on this package.
 
@@ -9,27 +9,27 @@ The CSS and web font files to easily self-host the “Yrsa” font. Please visit
 Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Solutions like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are prebuilt examples that are compatible.
 
 ```javascript
-yarn add fontsource-yrsa // npm install fontsource-yrsa
+yarn add @fontsource/yrsa // npm install @fontsource/yrsa
 ```
 
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
-import "fontsource-yrsa" // Defaults to weight 400 with all styles included.
+import "@fontsource/yrsa" // Defaults to weight 400.
 ```
 
 Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "fontsource-yrsa/500.css" // All styles included.
-import "fontsource-yrsa/900-normal.css" // Select either normal or italic.
+import "@fontsource/yrsa/500.css" // Weight 500.
+import "@fontsource/yrsa/900-italic.css" // Italic variant.
 ```
 
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~fontsource-yrsa/index.css";
-@import "~fontsource-yrsa/300-italic.css";
+@import "~@fontsource/yrsa/index.css"; // Weight 400.
+@import "~@fontsource/yrsa/300-italic.css";
 ```
 
 _These examples may not reflect actual compatibility. Please refer below._
@@ -52,9 +52,9 @@ body {
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
 
 ```javascript
-import "fontsource-yrsa/latin-ext.css" // All weights and styles included.
-import "fontsource-yrsa/cyrillic-ext-500.css" // All styles included.
-import "fontsource-yrsa/greek-900-normal.css" // Select either normal or italic.
+import "@fontsource/yrsa/latin-ext.css" // All weights with normal style included.
+import "@fontsource/yrsa/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "@fontsource/yrsa/greek-900-normal.css" // Italic variant.
 ```
 
 - Supported subsets: `[latin,latin-ext]`

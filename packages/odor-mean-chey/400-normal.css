@@ -1,9 +1,0 @@
-/* odor-mean-chey-khmer-400-normal*/
-@font-face {
-  font-family: 'Odor Mean Chey';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url('./files/odor-mean-chey-khmer-400-normal.woff2') format('woff2'), url('./files/odor-mean-chey-all-400-normal.woff') format('woff');
-  unicode-range: U+1780-17FF, U+200C, U+25CC;
-}
