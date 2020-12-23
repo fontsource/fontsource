@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/margarine",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Margarine font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

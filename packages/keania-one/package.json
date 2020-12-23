@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/keania-one",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Keania One font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/oxygen-mono",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Oxygen Mono font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

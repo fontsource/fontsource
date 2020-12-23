@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/denk-one",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Denk One font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/love-ya-like-a-sister",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Love Ya Like A Sister font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

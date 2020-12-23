@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/tenali-ramakrishna",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Tenali Ramakrishna font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

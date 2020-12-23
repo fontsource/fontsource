@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/quando",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Quando font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

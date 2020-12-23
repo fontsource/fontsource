@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/architects-daughter",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Architects Daughter font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

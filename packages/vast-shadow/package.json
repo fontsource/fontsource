@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/vast-shadow",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Vast Shadow font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

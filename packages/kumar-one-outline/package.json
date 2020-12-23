@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/kumar-one-outline",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Kumar One Outline font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/carrois-gothic-sc",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Carrois Gothic SC font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

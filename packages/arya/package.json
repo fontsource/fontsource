@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/arya",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Arya font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

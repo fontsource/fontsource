@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/cinzel-decorative",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Cinzel Decorative font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

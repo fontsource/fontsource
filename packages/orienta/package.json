@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/orienta",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Orienta font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

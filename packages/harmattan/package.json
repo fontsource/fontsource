@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/harmattan",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Harmattan font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

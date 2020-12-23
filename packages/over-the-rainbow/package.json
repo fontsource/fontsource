@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/over-the-rainbow",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Over the Rainbow font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

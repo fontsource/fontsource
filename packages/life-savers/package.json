@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/life-savers",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Life Savers font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

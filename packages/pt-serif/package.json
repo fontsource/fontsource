@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/pt-serif",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "PT Serif font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

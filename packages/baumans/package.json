@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/baumans",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Baumans font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

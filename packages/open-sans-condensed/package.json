@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/open-sans-condensed",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Open Sans Condensed font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

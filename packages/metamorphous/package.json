@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/metamorphous",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Metamorphous font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

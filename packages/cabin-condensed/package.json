@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/cabin-condensed",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Cabin Condensed font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

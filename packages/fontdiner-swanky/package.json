@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/fontdiner-swanky",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Fontdiner Swanky font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

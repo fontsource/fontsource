@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/lusitana",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Lusitana font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

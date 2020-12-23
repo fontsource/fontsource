@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/elsie",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Elsie font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

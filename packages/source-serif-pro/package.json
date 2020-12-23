@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/source-serif-pro",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Source Serif Pro font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

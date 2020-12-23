@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/just-another-hand",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Just Another Hand font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

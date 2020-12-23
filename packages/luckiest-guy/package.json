@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/luckiest-guy",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Luckiest Guy font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

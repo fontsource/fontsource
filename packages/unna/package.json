@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/unna",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Unna font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

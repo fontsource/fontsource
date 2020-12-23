@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/holtwood-one-sc",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Holtwood One SC font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

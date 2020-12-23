@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/kumar-one",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Kumar One font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

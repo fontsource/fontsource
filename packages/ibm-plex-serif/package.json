@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/ibm-plex-serif",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "IBM Plex Serif font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

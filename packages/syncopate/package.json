@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/syncopate",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Syncopate font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

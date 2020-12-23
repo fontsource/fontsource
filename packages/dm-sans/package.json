@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/dm-sans",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "DM Sans font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

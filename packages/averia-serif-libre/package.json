@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/averia-serif-libre",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Averia Serif Libre font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

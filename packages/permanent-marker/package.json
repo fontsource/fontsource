@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/permanent-marker",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Permanent Marker font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

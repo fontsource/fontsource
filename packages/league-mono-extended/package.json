@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/league-mono-extended",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "League Mono Extended font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

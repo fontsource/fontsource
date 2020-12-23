@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/mukta-malar",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Mukta Malar font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/dseg7",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "DSEG7 font in NPM glory.",
   "main": "index.css",
   "publishConfig": {
