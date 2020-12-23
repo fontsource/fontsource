@@ -21,5 +21,6 @@
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/butterfly-kids"
-  }
+  },
+  "gitHead": "dd7a4e2dfdebc6c20c3fadef27fdc60c51e0baed"
 }
