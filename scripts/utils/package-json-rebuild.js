@@ -20,6 +20,9 @@ directories.forEach(directory => {
     version: packageJSON.version,
     description: packageJSON.description,
     main: "index.css",
+    publishConfig: {
+      "access": "public"
+    },
     keywords: packageJSON.keywords,
     author: "Lotus <declininglotus@gmail.com>",
     license: "MIT",
