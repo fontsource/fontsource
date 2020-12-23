@@ -6,8 +6,5 @@
       "message": "chore: release new versions"
     }
   },
-  "stream": true,
-  "publishConfig": {
-    "access": "public"
-  }
+  "stream": true
 }
