@@ -5,6 +5,5 @@
     "publish": {
       "message": "chore: release new versions"
     }
-  },
-  "stream": true
+  }
 }
