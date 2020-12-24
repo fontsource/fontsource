@@ -41,6 +41,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - cascadia-mono
 - charis-sil
 - clear-sans
+- comic-mono
 - cooper-hewitt
 - dseg-weather
 - dseg14
