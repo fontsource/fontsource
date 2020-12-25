@@ -1,27 +1,34 @@
-const _ = require(`lodash`)
+const _ = require("lodash")
 
-exports.fontlistMarkdown = _.template(
-  `# Supported Font List
-
-## [Search Directory](https://fontsource.github.io/search-directory/)
-
-Can be found [here](https://fontsource.github.io/search-directory/).
-
-## [Google Fonts](https://fonts.google.com/)
-
-All Google Fonts are supported and updated weekly. Find the whole list [here](https://fonts.google.com/).
-
-Variable fonts from Google are included. Supported list [here](https://fonts.google.com/variablefonts).
-
-## [The League Of Moveable Type](https://www.theleagueofmoveabletype.com/)
-<% _.forEach(league, function(fontName) { %>
-- <%= fontName %><% });%>
-
-## Icons
-<% _.forEach(icons, function(fontName) { %>
-- <%= fontName %><% });%>
-
-## Other
-<% _.forEach(other, function(fontName) { %>
-- <%= fontName %><% });%>`
+exports.packageJson = _.template(
+  `{
+  "name": "@fontsource/<%= fontId %>",
+  "version": "<%= version %>",
+  "description": "<%= fontName %> font in NPM glory.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "<%= fontName %>",
+    "<%= fontId %>",
+    "css",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/<%= fontId %>"
+  }
+}
+`
 )
