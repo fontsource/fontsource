@@ -3,6 +3,9 @@
   "version": "4.0.1",
   "description": "Comic Mono font in NPM glory.",
   "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "fontsource",
     "font",
