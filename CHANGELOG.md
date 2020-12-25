@@ -26,6 +26,10 @@ These will always contain changes from Fontsource's end.
 
 - All non-Google fonts now have weight specific files that match 3.0.x as they previously were only importable via subsets. Simply use as normal with `import @fontsource/<font name>/<weight>.css`. [#92](https://github.com/fontsource/fontsource/issues/92) [#115](https://github.com/fontsource/fontsource/pull/115)
 
+### Fixes
+
+- Add publishConfig to package.json templates for scoped packages to successfully publish. [#118](https://github.com/fontsource/fontsource/pull/118)
+
 # 3.x Release
 
 ## 3.1.x
