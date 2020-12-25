@@ -6,21 +6,16 @@ const isAbsoluteUrl = require("is-absolute-url")
 const { APIv2 } = require("google-font-metadata")
 
 const download = require("./download-file")
-const findClosest = require("../utils/find-closest")
 const { fontFaceUnicode } = require("./templates")
+const {
+  makeFontDownloadPath,
+  makeFontFilePath,
+  findClosest,
+} = require("../utils/utils")
 
 module.exports = function (id) {
   const font = APIv2[id]
   const fontDir = `packages/${font.id}`
-
-  // Generate filenames
-  const makeFontDownloadPath = (subset, weight, style, extension) => {
-    return `./${fontDir}/files/${font.id}-${subset}-${weight}-${style}.${extension}`
-  }
-
-  const makeFontFilePath = (subset, weight, style, extension) => {
-    return `./files/${font.id}-${subset}-${weight}-${style}.${extension}`
-  }
 
   // Parse API and split into variant + link array pairs. [['weight.style.subset.url|local.extension','link to font or local name'],...]
   const downloadURLPairs = _.toPairs(flatten(font.variants))
@@ -32,6 +27,8 @@ module.exports = function (id) {
     .map(file => {
       const types = file[0].split(".")
       const dest = makeFontDownloadPath(
+        fontDir,
+        font.id,
         types[2].replace("[", "").replace("]", ""),
         types[0],
         types[1],
@@ -56,7 +53,13 @@ module.exports = function (id) {
     })
     .map(file => {
       const types = file[0].split(".")
-      const dest = makeFontDownloadPath("all", types[0], types[1], types[4])
+      const dest = makeFontDownloadPath(
+        font.id,
+        "all",
+        types[0],
+        types[1],
+        types[4]
+      )
       const url = file[1]
       return {
         url,
@@ -103,12 +106,13 @@ module.exports = function (id) {
             subset,
             weight,
             woff2Path: makeFontFilePath(
+              font.id,
               subset.replace("[", "").replace("]", ""),
               weight,
               style,
               "woff2"
             ),
-            woffPath: makeFontFilePath("all", weight, style, "woff"),
+            woffPath: makeFontFilePath(font.id, "all", weight, style, "woff"),
             unicodeRange: font.unicodeRange[subset],
           })
           cssStyle.push(css)

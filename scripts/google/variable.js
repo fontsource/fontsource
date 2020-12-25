@@ -13,7 +13,7 @@ module.exports = function (id) {
   const fontVariable = APIVariable[id]
   const fontDir = `packages/${font.id}`
 
-  // Generate filenames
+  // Generate filenames - variable specific
   const makeFontDownloadPath = (subset, type, style) => {
     return `./${fontDir}/files/${font.id}-${subset}-variable-${type}-${style}.woff2`
   }
