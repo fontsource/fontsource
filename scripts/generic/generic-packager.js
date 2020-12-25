@@ -1,6 +1,7 @@
 const fs = require("fs-extra")
 const jsonfile = require("jsonfile")
 
+const findClosest = require("../utils/find-closest")
 const {
   packageJson,
   packageJsonRebuild,
@@ -22,6 +23,9 @@ module.exports = function (font, rebuildFlag) {
   const makeFontFilePath = (subset, weight, style, extension) => {
     return `./files/${fontId}-${subset}-${weight}-${style}.${extension}`
   }
+
+  // Find the weight for index.css in the case weight 400 does not exist.
+  const indexWeight = findClosest(font.weights, 400)
 
   // Generate CSS files
   subsets.forEach(subset => {
@@ -54,7 +58,7 @@ module.exports = function (font, rebuildFlag) {
             fs.writeFileSync(cssPath, cssFile)
 
             // Write index.css
-            if (weight === "400" || weights.length === 1) {
+            if (weight === indexWeight) {
               fs.writeFileSync(`${fontDir}/index.css`, cssStyle.join(""))
             }
           }

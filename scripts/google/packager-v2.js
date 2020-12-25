@@ -1,12 +1,13 @@
-const _ = require(`lodash`)
-const async = require(`async`)
-const flatten = require(`flat`)
-const fs = require(`fs-extra`)
-const isAbsoluteUrl = require(`is-absolute-url`)
-const { APIv2 } = require(`google-font-metadata`)
+const _ = require("lodash")
+const async = require("async")
+const flatten = require("flat")
+const fs = require("fs-extra")
+const isAbsoluteUrl = require("is-absolute-url")
+const { APIv2 } = require("google-font-metadata")
 
-const download = require(`./download-file`)
-const { fontFaceUnicode } = require(`./templates`)
+const download = require("./download-file")
+const findClosest = require("../utils/find-closest")
+const { fontFaceUnicode } = require("./templates")
 
 module.exports = function (id) {
   const font = APIv2[id]
@@ -82,6 +83,9 @@ module.exports = function (id) {
     })
   })
 
+  // Find the weight for index.css in the case weight 400 does not exist.
+  const indexWeight = findClosest(font.weights, 400)
+
   // Generate CSS
   const unicodeKeys = Object.keys(font.unicodeRange)
 
@@ -117,7 +121,7 @@ module.exports = function (id) {
           fs.writeFileSync(cssPath, cssStyle.join(""))
 
           // Generate index CSS
-          if (weight === "400") {
+          if (weight === indexWeight) {
             fs.writeFileSync(`${fontDir}/index.css`, cssStyle.join(""))
           }
         } else {

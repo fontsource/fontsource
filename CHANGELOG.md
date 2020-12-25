@@ -29,6 +29,7 @@ These will always contain changes from Fontsource's end.
 ### Fixes
 
 - Add publishConfig to package.json templates for scoped packages to successfully publish. [#118](https://github.com/fontsource/fontsource/pull/118)
+- Generate index.css for fonts that do not have weight 400. [#119](https://github.com/fontsource/fontsource/pull/119)
 
 # 3.x Release
 
