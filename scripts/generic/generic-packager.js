@@ -2,12 +2,8 @@ const fs = require("fs-extra")
 const jsonfile = require("jsonfile")
 
 const { makeFontFilePath, findClosest } = require("../utils/utils")
-const {
-  packageJson,
-  packageJsonRebuild,
-  fontFace,
-  readme,
-} = require("./templates")
+const { fontFace, readme } = require("./templates")
+const { packageJson } = require("../utils/templates")
 
 module.exports = function (font, rebuildFlag) {
   const fontDir = font.fontDir
@@ -109,15 +105,17 @@ module.exports = function (font, rebuildFlag) {
   let packageJSON
   // If the rebuilder is using the function, it needs to pass the existing package version
   if (rebuildFlag) {
-    packageJSON = packageJsonRebuild({
+    packageJSON = packageJson({
       fontId: fontId,
       fontName: fontName,
       version: font.packageVersion,
     })
   } else {
+    const mainRepoPackageJson = jsonfile.readFileSync("./package.json")
     packageJSON = packageJson({
       fontId,
       fontName,
+      version: mainRepoPackageJson.version,
     })
   }
   fs.writeFileSync(`${fontDir}/package.json`, packageJSON)
