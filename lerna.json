@@ -3,6 +3,7 @@
   "version": "independent",
   "command": {
     "publish": {
+      "ignoreChanges": ["*.json"],
       "message": "chore: release new versions"
     }
   }
