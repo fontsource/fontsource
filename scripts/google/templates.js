@@ -6,6 +6,9 @@ exports.packageJson = _.template(
   "version": "4.0.0",
   "description": "<%= fontName %> font in NPM glory.",
   "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "fontsource",
     "font",
