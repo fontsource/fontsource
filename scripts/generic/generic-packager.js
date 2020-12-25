@@ -1,7 +1,7 @@
 const fs = require("fs-extra")
 const jsonfile = require("jsonfile")
 
-const findClosest = require("../utils/find-closest")
+const { makeFontFilePath, findClosest } = require("../utils/utils")
 const {
   packageJson,
   packageJsonRebuild,
@@ -19,11 +19,6 @@ module.exports = function (font, rebuildFlag) {
   const styles = font.styles
   const defSubset = font.defSubset
 
-  // Generate filepaths for fontfiles in CSS
-  const makeFontFilePath = (subset, weight, style, extension) => {
-    return `./files/${fontId}-${subset}-${weight}-${style}.${extension}`
-  }
-
   // Find the weight for index.css in the case weight 400 does not exist.
   const indexWeight = findClosest(font.weights, 400)
 
@@ -39,8 +34,8 @@ module.exports = function (font, rebuildFlag) {
           style,
           subset,
           weight,
-          woffPath: makeFontFilePath(subset, weight, style, "woff"),
-          woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
+          woffPath: makeFontFilePath(fontId, subset, weight, style, "woff"),
+          woff2Path: makeFontFilePath(fontId, subset, weight, style, "woff2"),
         })
         cssSubset.push(css)
         cssStyle.push(css)
