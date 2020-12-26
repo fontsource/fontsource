@@ -6,7 +6,7 @@ const isAbsoluteUrl = require("is-absolute-url")
 const { APIv1 } = require("google-font-metadata")
 
 const download = require("./download-file")
-const { fontFace } = require("./templates")
+const { fontFace } = require("../templates/css")
 const { makeFontDownloadPath, makeFontFilePath } = require("../utils/utils.js")
 
 module.exports = function (id) {
@@ -77,6 +77,7 @@ module.exports = function (id) {
               "woff2"
             ),
             woffPath: makeFontFilePath(font.id, subset, weight, style, "woff"),
+            unicodeRange: false,
           })
 
           if (style === "normal") {

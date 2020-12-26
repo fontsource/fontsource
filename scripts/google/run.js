@@ -5,8 +5,8 @@ const { APIv2, APIVariable } = require("google-font-metadata")
 const packagerv1 = require("./packager-v1")
 const packagerv2 = require("./packager-v2")
 const variable = require("./variable")
-const { readme, readmeVariable } = require("./templates")
-const { packageJson } = require("../utils/templates")
+const { readme } = require("../templates/readme")
+const { packageJson } = require("../templates/package")
 
 const id = process.argv[2]
 if (!id) {
@@ -60,26 +60,15 @@ if (changed || force === "force") {
   }
 
   // Write README.md
-  let packageReadme
-  if (variableFlag) {
-    packageReadme = readmeVariable({
-      fontId: font.id,
-      fontName: font.family,
-      subsets: font.subsets,
-      weights: font.weights,
-      styles: font.styles,
-      version: font.version,
-    })
-  } else {
-    packageReadme = readme({
-      fontId: font.id,
-      fontName: font.family,
-      subsets: font.subsets,
-      weights: font.weights,
-      styles: font.styles,
-      version: font.version,
-    })
-  }
+  const packageReadme = readme({
+    fontId: font.id,
+    fontName: font.family,
+    subsets: font.subsets,
+    weights: font.weights,
+    styles: font.styles,
+    variable: variableFlag,
+    version: font.version,
+  })
 
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
