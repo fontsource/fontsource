@@ -1,13 +1,10 @@
 const fs = require("fs-extra")
 const jsonfile = require("jsonfile")
 
-const findClosest = require("../utils/find-closest")
-const {
-  packageJson,
-  packageJsonRebuild,
-  fontFace,
-  readme,
-} = require("./templates")
+const { makeFontFilePath, findClosest } = require("../utils/utils")
+const { readme } = require("../templates/readme")
+const { packageJson } = require("../templates/package")
+const { fontFace } = require("../templates/css")
 
 module.exports = function (font, rebuildFlag) {
   const fontDir = font.fontDir
@@ -18,11 +15,6 @@ module.exports = function (font, rebuildFlag) {
   const weights = font.weights
   const styles = font.styles
   const defSubset = font.defSubset
-
-  // Generate filepaths for fontfiles in CSS
-  const makeFontFilePath = (subset, weight, style, extension) => {
-    return `./files/${fontId}-${subset}-${weight}-${style}.${extension}`
-  }
 
   // Find the weight for index.css in the case weight 400 does not exist.
   const indexWeight = findClosest(font.weights, 400)
@@ -39,8 +31,10 @@ module.exports = function (font, rebuildFlag) {
           style,
           subset,
           weight,
-          woffPath: makeFontFilePath(subset, weight, style, "woff"),
-          woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
+          locals: [],
+          woffPath: makeFontFilePath(fontId, subset, weight, style, "woff"),
+          woff2Path: makeFontFilePath(fontId, subset, weight, style, "woff2"),
+          unicodeRange: false,
         })
         cssSubset.push(css)
         cssStyle.push(css)
@@ -88,9 +82,11 @@ module.exports = function (font, rebuildFlag) {
     subsets,
     weights,
     styles,
+    variable: false,
     source: font.source,
     license: font.license,
     version: font.version,
+    type: font.type,
   })
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
@@ -114,15 +110,17 @@ module.exports = function (font, rebuildFlag) {
   let packageJSON
   // If the rebuilder is using the function, it needs to pass the existing package version
   if (rebuildFlag) {
-    packageJSON = packageJsonRebuild({
+    packageJSON = packageJson({
       fontId: fontId,
       fontName: fontName,
       version: font.packageVersion,
     })
   } else {
+    const mainRepoPackageJson = jsonfile.readFileSync("./package.json")
     packageJSON = packageJson({
       fontId,
       fontName,
+      version: mainRepoPackageJson.version,
     })
   }
   fs.writeFileSync(`${fontDir}/package.json`, packageJSON)

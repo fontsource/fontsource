@@ -5,7 +5,8 @@ const { APIv2, APIVariable } = require("google-font-metadata")
 const packagerv1 = require("./packager-v1")
 const packagerv2 = require("./packager-v2")
 const variable = require("./variable")
-const { packageJson, readme, readmeVariable } = require("./templates")
+const { readme } = require("../templates/readme")
+const { packageJson } = require("../templates/package")
 
 const id = process.argv[2]
 if (!id) {
@@ -59,35 +60,27 @@ if (changed || force === "force") {
   }
 
   // Write README.md
-  let packageReadme
-  if (variableFlag) {
-    packageReadme = readmeVariable({
-      fontId: font.id,
-      fontName: font.family,
-      subsets: font.subsets,
-      weights: font.weights,
-      styles: font.styles,
-      version: font.version,
-    })
-  } else {
-    packageReadme = readme({
-      fontId: font.id,
-      fontName: font.family,
-      subsets: font.subsets,
-      weights: font.weights,
-      styles: font.styles,
-      version: font.version,
-    })
-  }
+  const packageReadme = readme({
+    fontId: font.id,
+    fontName: font.family,
+    subsets: font.subsets,
+    weights: font.weights,
+    styles: font.styles,
+    variable: variableFlag,
+    version: font.version,
+    type: "google",
+  })
 
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
   // Don't create package.json if already exists to prevent lerna versioning conflicts
   if (!fs.existsSync(`${fontDir}/package.json`)) {
+    const mainRepoPackageJson = jsonfile.readFileSync("./package.json")
     // Write out package.json file
     const packageJSON = packageJson({
       fontId: font.id,
       fontName: font.family,
+      version: mainRepoPackageJson.version,
     })
 
     fs.writeFileSync(`${fontDir}/package.json`, packageJSON)

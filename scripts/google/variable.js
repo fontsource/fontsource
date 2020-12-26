@@ -6,14 +6,14 @@ const isAbsoluteUrl = require("is-absolute-url")
 const { APIv2, APIVariable } = require("google-font-metadata")
 
 const download = require("./download-file")
-const { fontFaceVariable, fontFaceVariableWdth } = require("./templates")
+const { fontFaceVariable, fontFaceVariableWdth } = require("../templates/css")
 
 module.exports = function (id) {
   const font = APIv2[id]
   const fontVariable = APIVariable[id]
   const fontDir = `packages/${font.id}`
 
-  // Generate filenames
+  // Generate filenames - variable specific
   const makeFontDownloadPath = (subset, type, style) => {
     return `./${fontDir}/files/${font.id}-${subset}-variable-${type}-${style}.woff2`
   }

@@ -1,25 +1,17 @@
-const _ = require(`lodash`)
-const async = require(`async`)
-const flatten = require(`flat`)
-const fs = require(`fs-extra`)
-const isAbsoluteUrl = require(`is-absolute-url`)
-const { APIv1 } = require(`google-font-metadata`)
+const _ = require("lodash")
+const async = require("async")
+const flatten = require("flat")
+const fs = require("fs-extra")
+const isAbsoluteUrl = require("is-absolute-url")
+const { APIv1 } = require("google-font-metadata")
 
-const download = require(`./download-file`)
-const { fontFace } = require(`./templates`)
+const download = require("./download-file")
+const { fontFace } = require("../templates/css")
+const { makeFontDownloadPath, makeFontFilePath } = require("../utils/utils.js")
 
 module.exports = function (id) {
   const font = APIv1[id]
   const fontDir = `packages/${font.id}`
-
-  // Generate filenames
-  const makeFontDownloadPath = (subset, weight, style, extension) => {
-    return `./${fontDir}/files/${font.id}-${subset}-${weight}-${style}.${extension}`
-  }
-
-  const makeFontFilePath = (subset, weight, style, extension) => {
-    return `./files/${font.id}-${subset}-${weight}-${style}.${extension}`
-  }
 
   // Parse API and split into variant + link array pairs. [['weight.style.subset.url|local.extension','link to font or local name'],...]
   const downloadURLPairs = _.toPairs(flatten(font.variants))
@@ -37,7 +29,14 @@ module.exports = function (id) {
     })
     .map(file => {
       const types = file[0].split(".")
-      const dest = makeFontDownloadPath(types[2], types[0], types[1], types[4])
+      const dest = makeFontDownloadPath(
+        fontDir,
+        font.id,
+        types[2],
+        types[0],
+        types[1],
+        types[4]
+      )
       const url = file[1]
       return {
         url,
@@ -70,8 +69,15 @@ module.exports = function (id) {
             style,
             subset,
             weight,
-            woff2Path: makeFontFilePath(subset, weight, style, "woff2"),
-            woffPath: makeFontFilePath(subset, weight, style, "woff"),
+            woff2Path: makeFontFilePath(
+              font.id,
+              subset,
+              weight,
+              style,
+              "woff2"
+            ),
+            woffPath: makeFontFilePath(font.id, subset, weight, style, "woff"),
+            unicodeRange: false,
           })
 
           if (style === "normal") {

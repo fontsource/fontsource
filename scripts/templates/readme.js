@@ -1,79 +1,4 @@
-const _ = require(`lodash`)
-
-exports.packageJson = _.template(
-  `{
-  "name": "@fontsource/<%= fontId %>",
-  "version": "4.0.0",
-  "description": "<%= fontName %> font in NPM glory.",
-  "main": "index.css",
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "<%= fontName %>",
-    "<%= fontId %>",
-    "css",
-    "front-end",
-    "web",
-    "typeface"
-  ],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/<%= fontId %>"
-  }
-}
-`
-)
-
-exports.packageJsonRebuild = _.template(
-  `{
-  "name": "@fontsource/<%= fontId %>",
-  "version": "<%= version %>",
-  "description": "<%= fontName %> font in NPM glory.",
-  "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "<%= fontName %>",
-    "<%= fontId %>",
-    "css",
-    "front-end",
-    "web",
-    "typeface"
-  ],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/<%= fontId %>"
-  }
-}
-`
-)
-
-exports.fontFace = _.template(
-  `/* <%= fontId %>-<%= subset %>-<%= weight %>-<%= style %>*/
-@font-face {
-  font-family: '<%= fontName %>';
-  font-style: <%= style %>;
-  font-display: swap;
-  font-weight: <%= weight %>;
-  src:
-    url('<%= woff2Path %>') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('<%= woffPath %>') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-`
-)
+const _ = require("lodash")
 
 exports.readme = _.template(
   `# Fontsource <%= fontName %>
@@ -125,6 +50,46 @@ body {
 }
 \`\`\`
 
+<% if (variable) { %>## Variable Fonts
+
+This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
+
+Begin by importing both the variable and fallback font for non-compatible browsers.
+
+\`\`\`js
+import "@fontsource/<%= fontId %>/400.css" // Weight 400.
+\`\`\`
+
+Select either a stripped down weights only variant of the font or a full feature variant that contains all the variable axes.
+
+\`\`\`js
+import "@fontsource/<%= fontId %>/variable.css" // Contains ONLY variable weights and no other axes.
+import "@fontsource/<%= fontId %>/variable-italic.css" // Italic variant.
+// Or
+import "@fontsource/<%= fontId %>/variable-full.css" // This contains ALL variable axes. Font files are larger.
+import "@fontsource/<%= fontId %>/variable-full-italic.css" // Italic variant.
+\`\`\`
+
+Note a \`full\` or \`italic\` variant may NOT exist if there are no additional axes other than wght and/or ital. You can check the available axes [here](https://fonts.google.com/variablefonts).
+
+Followed by the CSS using the @supports tag, which checks whether the browser is capable of utilising variable fonts. Fallback fonts and their relevant CSS should be used outside the block, whilst all variable options should be used within the @supports block and utilising the font-variation-settings tag.
+
+\`\`\`css
+h1 {
+  font-family: <%= fontName %>;
+  font-weight: 400;
+}
+
+@supports (font-variation-settings: normal) {
+  h1 {
+    font-family: <%= fontName %>Variable;
+    font-variation-settings: "wght" 400;
+  }
+}
+\`\`\`
+
+_To view the available variable axes that may be included in the font, click [here](https://fonts.google.com/variablefonts). The meanings of all axes and the restrictions associated with them are explained there._<% } %>
+
 ## Additional Options
 
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
@@ -132,7 +97,7 @@ In the rare case you need to individually select a language subset and not utili
 \`\`\`javascript
 import "@fontsource/<%= fontId %>/latin-ext.css" // All weights with normal style included.
 import "@fontsource/<%= fontId %>/cyrillic-ext-500.css" // Weight 500 with normal style.
-import "@fontsource/<%= fontId %>/greek-900-normal.css" // Italic variant.
+import "@fontsource/<%= fontId %>/greek-900-italic.css" // Italic variant.
 \`\`\`
 
 - Supported subsets: \`[<%= subsets %>]\`
@@ -142,7 +107,7 @@ import "@fontsource/<%= fontId %>/greek-900-normal.css" // Italic variant.
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
 
-Font [Source](<%= source %>) and [License](<%= license %>).
+<% if (type == "google") { %>[Google Fonts License Attributions](https://fonts.google.com/attribution)<% } else { %>Font [Source](<%= source %>) and [License](<%= license %>).<% } %>
 
 ## Other Notes
 
