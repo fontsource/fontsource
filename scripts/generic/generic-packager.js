@@ -31,6 +31,7 @@ module.exports = function (font, rebuildFlag) {
           style,
           subset,
           weight,
+          locals: [],
           woffPath: makeFontFilePath(fontId, subset, weight, style, "woff"),
           woff2Path: makeFontFilePath(fontId, subset, weight, style, "woff2"),
           unicodeRange: false,
@@ -85,6 +86,7 @@ module.exports = function (font, rebuildFlag) {
     source: font.source,
     license: font.license,
     version: font.version,
+    type: font.type,
   })
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
