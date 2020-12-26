@@ -68,6 +68,7 @@ if (changed || force === "force") {
     styles: font.styles,
     variable: variableFlag,
     version: font.version,
+    type: "google",
   })
 
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
