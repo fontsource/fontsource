@@ -6,7 +6,7 @@ const isAbsoluteUrl = require("is-absolute-url")
 const { APIv2, APIVariable } = require("google-font-metadata")
 
 const download = require("./download-file")
-const { fontFaceVariable, fontFaceVariableWdth } = require("./templates")
+const { fontFaceVariable, fontFaceVariableWdth } = require("../templates/css")
 
 module.exports = function (id) {
   const font = APIv2[id]

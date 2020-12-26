@@ -6,7 +6,7 @@ const isAbsoluteUrl = require("is-absolute-url")
 const { APIv2 } = require("google-font-metadata")
 
 const download = require("./download-file")
-const { fontFaceUnicode } = require("./templates")
+const { fontFace } = require("../templates/css")
 const {
   makeFontDownloadPath,
   makeFontFilePath,
@@ -41,7 +41,7 @@ module.exports = function (id) {
       }
     })
 
-  // Get woff and ttf/otf all subset variant
+  // Get woff all subset variant
   let oldLinks = downloadURLPairs
     .filter(pair => isAbsoluteUrl(pair[1].toString()))
     .filter(file => {
@@ -54,6 +54,7 @@ module.exports = function (id) {
     .map(file => {
       const types = file[0].split(".")
       const dest = makeFontDownloadPath(
+        fontDir,
         font.id,
         "all",
         types[0],
@@ -98,13 +99,13 @@ module.exports = function (id) {
       unicodeKeys.forEach(subset => {
         // Some fonts may have variants 400, 400i, 700 but not 700i.
         if (style in font.variants[weight]) {
-          const css = fontFaceUnicode({
+          const css = fontFace({
             fontId: font.id,
             fontName: font.family,
-            locals: font.variants[weight][style][subset].local,
             style,
             subset,
             weight,
+            locals: [],
             woff2Path: makeFontFilePath(
               font.id,
               subset.replace("[", "").replace("]", ""),

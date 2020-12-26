@@ -2,8 +2,9 @@ const fs = require("fs-extra")
 const jsonfile = require("jsonfile")
 
 const { makeFontFilePath, findClosest } = require("../utils/utils")
-const { fontFace, readme } = require("./templates")
-const { packageJson } = require("../utils/templates")
+const { readme } = require("../templates/readme")
+const { packageJson } = require("../templates/package")
+const { fontFace } = require("../templates/css")
 
 module.exports = function (font, rebuildFlag) {
   const fontDir = font.fontDir
@@ -32,6 +33,7 @@ module.exports = function (font, rebuildFlag) {
           weight,
           woffPath: makeFontFilePath(fontId, subset, weight, style, "woff"),
           woff2Path: makeFontFilePath(fontId, subset, weight, style, "woff2"),
+          unicodeRange: false,
         })
         cssSubset.push(css)
         cssStyle.push(css)
@@ -79,6 +81,7 @@ module.exports = function (font, rebuildFlag) {
     subsets,
     weights,
     styles,
+    variable: false,
     source: font.source,
     license: font.license,
     version: font.version,
