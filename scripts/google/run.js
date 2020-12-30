@@ -5,8 +5,9 @@ const { APIv2, APIVariable } = require("google-font-metadata")
 const packagerv1 = require("./packager-v1")
 const packagerv2 = require("./packager-v2")
 const variable = require("./variable")
-const { readme } = require("../templates/readme")
 const { packageJson } = require("../templates/package")
+const { scssMixins } = require("../templates/scss")
+const { readme } = require("../templates/readme")
 
 const id = process.argv[2]
 if (!id) {
@@ -46,7 +47,7 @@ if (changed || force === "force") {
   }
   fs.ensureDirSync(`./${fontDir}/files`)
 
-  // Generate files
+  // Generate CSS files
   packagerv1(font.id)
   packagerv2(font.id)
 
@@ -58,6 +59,27 @@ if (changed || force === "force") {
 
     variableFlag = true
   }
+
+  // Generate SCSS files
+  fs.ensureDirSync(`./${fontDir}/scss`)
+
+  // Make the key value pairs in the required format - subset: (unicodeRangeValues), subset:...
+  const unicodeMap = Object.entries(font.unicodeRange)
+    .map(subArr => {
+      subArr[1] = `(${subArr[1]})`
+      return subArr.join(": ")
+    })
+    .join(", ")
+
+  const scss = scssMixins({
+    fontId: font.id,
+    fontName: font.family,
+    defSubset: font.defSubset,
+    defUnicode: font.unicodeRange[font.defSubset],
+    unicodeMap,
+  })
+
+  fs.writeFileSync(`${fontDir}/scss/mixins.scss`, scss)
 
   // Write README.md
   const packageReadme = readme({
