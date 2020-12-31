@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('IBM Plex Sans Condensed Thin'),
-    local('IBMPlexSansCond-Thin'), 
-    url('./files/ibm-plex-sans-condensed-latin-ext-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ibm-plex-sans-condensed-latin-ext-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('IBMPlexSansCond-Thin'), url('./files/ibm-plex-sans-condensed-latin-ext-100-normal.woff2') format('woff2'), url('./files/ibm-plex-sans-condensed-latin-ext-100-normal.woff') format('woff');
+  
 }
 /* ibm-plex-sans-condensed-latin-ext-200-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 200;
   src:
     local('IBM Plex Sans Condensed ExtraLight'),
-    local('IBMPlexSansCond-ExtraLight'), 
-    url('./files/ibm-plex-sans-condensed-latin-ext-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ibm-plex-sans-condensed-latin-ext-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('IBMPlexSansCond-ExtraLight'), url('./files/ibm-plex-sans-condensed-latin-ext-200-normal.woff2') format('woff2'), url('./files/ibm-plex-sans-condensed-latin-ext-200-normal.woff') format('woff');
+  
 }
 /* ibm-plex-sans-condensed-latin-ext-300-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 300;
   src:
     local('IBM Plex Sans Condensed Light'),
-    local('IBMPlexSansCond-Light'), 
-    url('./files/ibm-plex-sans-condensed-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ibm-plex-sans-condensed-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('IBMPlexSansCond-Light'), url('./files/ibm-plex-sans-condensed-latin-ext-300-normal.woff2') format('woff2'), url('./files/ibm-plex-sans-condensed-latin-ext-300-normal.woff') format('woff');
+  
 }
 /* ibm-plex-sans-condensed-latin-ext-400-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 400;
   src:
     local('IBM Plex Sans Condensed'),
-    local('IBMPlexSansCond'), 
-    url('./files/ibm-plex-sans-condensed-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ibm-plex-sans-condensed-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('IBMPlexSansCond'), url('./files/ibm-plex-sans-condensed-latin-ext-400-normal.woff2') format('woff2'), url('./files/ibm-plex-sans-condensed-latin-ext-400-normal.woff') format('woff');
+  
 }
 /* ibm-plex-sans-condensed-latin-ext-500-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 500;
   src:
     local('IBM Plex Sans Condensed Medium'),
-    local('IBMPlexSansCond-Medium'), 
-    url('./files/ibm-plex-sans-condensed-latin-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ibm-plex-sans-condensed-latin-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('IBMPlexSansCond-Medium'), url('./files/ibm-plex-sans-condensed-latin-ext-500-normal.woff2') format('woff2'), url('./files/ibm-plex-sans-condensed-latin-ext-500-normal.woff') format('woff');
+  
 }
 /* ibm-plex-sans-condensed-latin-ext-600-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 600;
   src:
     local('IBM Plex Sans Condensed SemiBold'),
-    local('IBMPlexSansCond-SemiBold'), 
-    url('./files/ibm-plex-sans-condensed-latin-ext-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ibm-plex-sans-condensed-latin-ext-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('IBMPlexSansCond-SemiBold'), url('./files/ibm-plex-sans-condensed-latin-ext-600-normal.woff2') format('woff2'), url('./files/ibm-plex-sans-condensed-latin-ext-600-normal.woff') format('woff');
+  
 }
 /* ibm-plex-sans-condensed-latin-ext-700-normal*/
 @font-face {
@@ -78,7 +72,6 @@
   font-weight: 700;
   src:
     local('IBM Plex Sans Condensed Bold'),
-    local('IBMPlexSansCond-Bold'), 
-    url('./files/ibm-plex-sans-condensed-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/ibm-plex-sans-condensed-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('IBMPlexSansCond-Bold'), url('./files/ibm-plex-sans-condensed-latin-ext-700-normal.woff2') format('woff2'), url('./files/ibm-plex-sans-condensed-latin-ext-700-normal.woff') format('woff');
+  
 }

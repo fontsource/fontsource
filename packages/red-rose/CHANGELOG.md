@@ -12,6 +12,16 @@ These will always contain changes from Fontsource's end.
 
 # 4.x Release
 
+## 4.1.x
+
+### Features
+
+- Added customisable SASS support through mixins for more flexible user setups. [#64](https://github.com/fontsource/fontsource/issues/64) [#122](https://github.com/fontsource/fontsource/pull/122)
+
+### Fixes
+
+- Major refactor to organise the templates and generic packager. [#120](https://github.com/fontsource/fontsource/pull/120)
+
 ## 4.0.x
 
 ### BREAKING CHANGES
@@ -19,12 +29,17 @@ These will always contain changes from Fontsource's end.
 - Package names have been renamed from `fontsource-<font name>` to the safer, more authentic scoped format `@fontsource/<font name>`.
   That means all packages will need to be reinstalled with `yarn add @fontsource/<font name>` or `npm install @fontsource/<font name>` with imports updated to the new package such as `import @fontsource/open-sans/400-italic.css`. [#108](https://github.com/fontsource/fontsource/issues/108)
 
-- `import @fontsource/<font name>/<weight>` now only contains normal style variants of fonts. The `-normal.css` files throughout the respository have been removed. Importing italic variants remain the same via `import @fontsource/<font name>/<weight>-italic.css`.
+- `import @fontsource/<font name>/<weight>.css` now only contains normal style variants of fonts. The `-normal.css` files throughout the respository have been removed. Importing italic variants remain the same via `import @fontsource/<font name>/<weight>-italic.css`.
   Please see [#88](https://github.com/fontsource/fontsource/issues/88) for more details. [#112](https://github.com/fontsource/fontsource/pull/112)
 
 ### Features
 
 - All non-Google fonts now have weight specific files that match 3.0.x as they previously were only importable via subsets. Simply use as normal with `import @fontsource/<font name>/<weight>.css`. [#92](https://github.com/fontsource/fontsource/issues/92) [#115](https://github.com/fontsource/fontsource/pull/115)
+
+### Fixes
+
+- Add publishConfig to package.json templates for scoped packages to successfully publish. [#118](https://github.com/fontsource/fontsource/pull/118)
+- Generate index.css for fonts that do not have weight 400. [#119](https://github.com/fontsource/fontsource/pull/119)
 
 # 3.x Release
 

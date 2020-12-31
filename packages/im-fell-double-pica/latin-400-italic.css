@@ -6,7 +6,6 @@
   font-weight: 400;
   src:
     local('IM FELL Double Pica Italic'),
-    local('IM_FELL_Double_Pica_Italic'), 
-    url('./files/im-fell-double-pica-latin-400-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/im-fell-double-pica-latin-400-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('IM_FELL_Double_Pica_Italic'), url('./files/im-fell-double-pica-latin-400-italic.woff2') format('woff2'), url('./files/im-fell-double-pica-latin-400-italic.woff') format('woff');
+  
 }

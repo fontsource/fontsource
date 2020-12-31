@@ -32,6 +32,30 @@ Alternatively, the same solutions could be imported via SCSS!
 @import "~@fontsource/amatic-sc/300-italic.css";
 ```
 
+For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
+
+```scss
+@import "~@fontsource/amatic-sc/scss/mixins";
+
+// Uses a unicode-range map to automatically generate multiple @font-face rules.
+@include fontFace(
+  $weight: 500,
+  $display: fallback,
+  $fontDir: "~@fontsource/amatic-sc/files"
+);
+
+// Fully customisable single @font-face mixin.
+@include fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "~@fontsource/amatic-sc/files/amatic-sc-latin-500-normal.woff2",
+  $unicodeRange: false
+);
+// More options available in link below.
+```
+
+You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/amatic-sc/scss/mixins.scss).
+
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
@@ -54,7 +78,7 @@ In the rare case you need to individually select a language subset and not utili
 ```javascript
 import "@fontsource/amatic-sc/latin-ext.css" // All weights with normal style included.
 import "@fontsource/amatic-sc/cyrillic-ext-500.css" // Weight 500 with normal style.
-import "@fontsource/amatic-sc/greek-900-normal.css" // Italic variant.
+import "@fontsource/amatic-sc/greek-900-italic.css" // Italic variant.
 ```
 
 - Supported subsets: `[cyrillic,hebrew,latin,latin-ext,vietnamese]`

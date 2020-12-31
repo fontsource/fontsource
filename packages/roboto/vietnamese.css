@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('Roboto Thin'),
-    local('Roboto-Thin'), 
-    url('./files/roboto-vietnamese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/roboto-vietnamese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Roboto-Thin'), url('./files/roboto-vietnamese-100-normal.woff2') format('woff2'), url('./files/roboto-vietnamese-100-normal.woff') format('woff');
+  
 }
 /* roboto-vietnamese-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Roboto Light'),
-    local('Roboto-Light'), 
-    url('./files/roboto-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/roboto-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Roboto-Light'), url('./files/roboto-vietnamese-300-normal.woff2') format('woff2'), url('./files/roboto-vietnamese-300-normal.woff') format('woff');
+  
 }
 /* roboto-vietnamese-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('Roboto'),
-    local('Roboto-Regular'), 
-    url('./files/roboto-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/roboto-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Roboto-Regular'), url('./files/roboto-vietnamese-400-normal.woff2') format('woff2'), url('./files/roboto-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* roboto-vietnamese-500-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 500;
   src:
     local('Roboto Medium'),
-    local('Roboto-Medium'), 
-    url('./files/roboto-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/roboto-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Roboto-Medium'), url('./files/roboto-vietnamese-500-normal.woff2') format('woff2'), url('./files/roboto-vietnamese-500-normal.woff') format('woff');
+  
 }
 /* roboto-vietnamese-700-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 700;
   src:
     local('Roboto Bold'),
-    local('Roboto-Bold'), 
-    url('./files/roboto-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/roboto-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Roboto-Bold'), url('./files/roboto-vietnamese-700-normal.woff2') format('woff2'), url('./files/roboto-vietnamese-700-normal.woff') format('woff');
+  
 }
 /* roboto-vietnamese-900-normal*/
 @font-face {
@@ -66,7 +61,6 @@
   font-weight: 900;
   src:
     local('Roboto Black'),
-    local('Roboto-Black'), 
-    url('./files/roboto-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/roboto-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Roboto-Black'), url('./files/roboto-vietnamese-900-normal.woff2') format('woff2'), url('./files/roboto-vietnamese-900-normal.woff') format('woff');
+  
 }

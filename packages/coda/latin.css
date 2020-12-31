@@ -6,9 +6,8 @@
   font-weight: 400;
   src:
     local('Coda Regular'),
-    local('Coda-Regular'), 
-    url('./files/coda-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/coda-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Coda-Regular'), url('./files/coda-latin-400-normal.woff2') format('woff2'), url('./files/coda-latin-400-normal.woff') format('woff');
+  
 }
 /* coda-latin-800-normal*/
 @font-face {
@@ -18,7 +17,6 @@
   font-weight: 800;
   src:
     local('Coda ExtraBold'),
-    local('Coda-ExtraBold'), 
-    url('./files/coda-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/coda-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Coda-ExtraBold'), url('./files/coda-latin-800-normal.woff2') format('woff2'), url('./files/coda-latin-800-normal.woff') format('woff');
+  
 }

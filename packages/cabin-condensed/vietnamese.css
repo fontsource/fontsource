@@ -6,9 +6,8 @@
   font-weight: 400;
   src:
     local('Cabin Condensed'),
-    local('CabinCondensed-Regular'), 
-    url('./files/cabin-condensed-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cabin-condensed-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CabinCondensed-Regular'), url('./files/cabin-condensed-vietnamese-400-normal.woff2') format('woff2'), url('./files/cabin-condensed-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* cabin-condensed-vietnamese-500-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 500;
   src:
     local('Cabin Condensed Medium'),
-    local('CabinCondensed-Medium'), 
-    url('./files/cabin-condensed-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cabin-condensed-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CabinCondensed-Medium'), url('./files/cabin-condensed-vietnamese-500-normal.woff2') format('woff2'), url('./files/cabin-condensed-vietnamese-500-normal.woff') format('woff');
+  
 }
 /* cabin-condensed-vietnamese-600-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 600;
   src:
     local('Cabin Condensed SemiBold'),
-    local('CabinCondensed-SemiBold'), 
-    url('./files/cabin-condensed-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cabin-condensed-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CabinCondensed-SemiBold'), url('./files/cabin-condensed-vietnamese-600-normal.woff2') format('woff2'), url('./files/cabin-condensed-vietnamese-600-normal.woff') format('woff');
+  
 }
 /* cabin-condensed-vietnamese-700-normal*/
 @font-face {
@@ -42,7 +39,6 @@
   font-weight: 700;
   src:
     local('Cabin Condensed Bold'),
-    local('CabinCondensed-Bold'), 
-    url('./files/cabin-condensed-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cabin-condensed-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CabinCondensed-Bold'), url('./files/cabin-condensed-vietnamese-700-normal.woff2') format('woff2'), url('./files/cabin-condensed-vietnamese-700-normal.woff') format('woff');
+  
 }

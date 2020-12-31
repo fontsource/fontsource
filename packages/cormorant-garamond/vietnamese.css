@@ -6,9 +6,8 @@
   font-weight: 300;
   src:
     local('Cormorant Garamond Light'),
-    local('CormorantGaramond-Light'), 
-    url('./files/cormorant-garamond-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cormorant-garamond-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CormorantGaramond-Light'), url('./files/cormorant-garamond-vietnamese-300-normal.woff2') format('woff2'), url('./files/cormorant-garamond-vietnamese-300-normal.woff') format('woff');
+  
 }
 /* cormorant-garamond-vietnamese-400-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 400;
   src:
     local('Cormorant Garamond Regular'),
-    local('CormorantGaramond-Regular'), 
-    url('./files/cormorant-garamond-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cormorant-garamond-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CormorantGaramond-Regular'), url('./files/cormorant-garamond-vietnamese-400-normal.woff2') format('woff2'), url('./files/cormorant-garamond-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* cormorant-garamond-vietnamese-500-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 500;
   src:
     local('Cormorant Garamond Medium'),
-    local('CormorantGaramond-Medium'), 
-    url('./files/cormorant-garamond-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cormorant-garamond-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CormorantGaramond-Medium'), url('./files/cormorant-garamond-vietnamese-500-normal.woff2') format('woff2'), url('./files/cormorant-garamond-vietnamese-500-normal.woff') format('woff');
+  
 }
 /* cormorant-garamond-vietnamese-600-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 600;
   src:
     local('Cormorant Garamond SemiBold'),
-    local('CormorantGaramond-SemiBold'), 
-    url('./files/cormorant-garamond-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cormorant-garamond-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CormorantGaramond-SemiBold'), url('./files/cormorant-garamond-vietnamese-600-normal.woff2') format('woff2'), url('./files/cormorant-garamond-vietnamese-600-normal.woff') format('woff');
+  
 }
 /* cormorant-garamond-vietnamese-700-normal*/
 @font-face {
@@ -54,7 +50,6 @@
   font-weight: 700;
   src:
     local('Cormorant Garamond Bold'),
-    local('CormorantGaramond-Bold'), 
-    url('./files/cormorant-garamond-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cormorant-garamond-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CormorantGaramond-Bold'), url('./files/cormorant-garamond-vietnamese-700-normal.woff2') format('woff2'), url('./files/cormorant-garamond-vietnamese-700-normal.woff') format('woff');
+  
 }

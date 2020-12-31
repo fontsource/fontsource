@@ -6,7 +6,6 @@
   font-weight: 400;
   src:
     local('Cute Font Regular'),
-    local('CuteFont-Regular'), 
-    url('./files/cute-font-korean-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cute-font-korean-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('CuteFont-Regular'), url('./files/cute-font-korean-400-normal.woff2') format('woff2'), url('./files/cute-font-korean-400-normal.woff') format('woff');
+  
 }

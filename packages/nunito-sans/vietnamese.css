@@ -6,9 +6,8 @@
   font-weight: 200;
   src:
     local('Nunito Sans ExtraLight'),
-    local('NunitoSans-ExtraLight'), 
-    url('./files/nunito-sans-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/nunito-sans-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NunitoSans-ExtraLight'), url('./files/nunito-sans-vietnamese-200-normal.woff2') format('woff2'), url('./files/nunito-sans-vietnamese-200-normal.woff') format('woff');
+  
 }
 /* nunito-sans-vietnamese-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Nunito Sans Light'),
-    local('NunitoSans-Light'), 
-    url('./files/nunito-sans-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/nunito-sans-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NunitoSans-Light'), url('./files/nunito-sans-vietnamese-300-normal.woff2') format('woff2'), url('./files/nunito-sans-vietnamese-300-normal.woff') format('woff');
+  
 }
 /* nunito-sans-vietnamese-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('Nunito Sans Regular'),
-    local('NunitoSans-Regular'), 
-    url('./files/nunito-sans-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/nunito-sans-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NunitoSans-Regular'), url('./files/nunito-sans-vietnamese-400-normal.woff2') format('woff2'), url('./files/nunito-sans-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* nunito-sans-vietnamese-600-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 600;
   src:
     local('Nunito Sans SemiBold'),
-    local('NunitoSans-SemiBold'), 
-    url('./files/nunito-sans-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/nunito-sans-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NunitoSans-SemiBold'), url('./files/nunito-sans-vietnamese-600-normal.woff2') format('woff2'), url('./files/nunito-sans-vietnamese-600-normal.woff') format('woff');
+  
 }
 /* nunito-sans-vietnamese-700-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 700;
   src:
     local('Nunito Sans Bold'),
-    local('NunitoSans-Bold'), 
-    url('./files/nunito-sans-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/nunito-sans-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NunitoSans-Bold'), url('./files/nunito-sans-vietnamese-700-normal.woff2') format('woff2'), url('./files/nunito-sans-vietnamese-700-normal.woff') format('woff');
+  
 }
 /* nunito-sans-vietnamese-800-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 800;
   src:
     local('Nunito Sans ExtraBold'),
-    local('NunitoSans-ExtraBold'), 
-    url('./files/nunito-sans-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/nunito-sans-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NunitoSans-ExtraBold'), url('./files/nunito-sans-vietnamese-800-normal.woff2') format('woff2'), url('./files/nunito-sans-vietnamese-800-normal.woff') format('woff');
+  
 }
 /* nunito-sans-vietnamese-900-normal*/
 @font-face {
@@ -78,7 +72,6 @@
   font-weight: 900;
   src:
     local('Nunito Sans Black'),
-    local('NunitoSans-Black'), 
-    url('./files/nunito-sans-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/nunito-sans-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NunitoSans-Black'), url('./files/nunito-sans-vietnamese-900-normal.woff2') format('woff2'), url('./files/nunito-sans-vietnamese-900-normal.woff') format('woff');
+  
 }

@@ -6,9 +6,8 @@
   font-weight: 400;
   src:
     local('Baloo Chettan 2 Regular'),
-    local('BalooChettan2-Regular'), 
-    url('./files/baloo-chettan-2-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-chettan-2-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BalooChettan2-Regular'), url('./files/baloo-chettan-2-latin-ext-400-normal.woff2') format('woff2'), url('./files/baloo-chettan-2-latin-ext-400-normal.woff') format('woff');
+  
 }
 /* baloo-chettan-2-latin-ext-500-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 500;
   src:
     local('Baloo Chettan 2 Medium'),
-    local('BalooChettan2-Medium'), 
-    url('./files/baloo-chettan-2-latin-ext-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-chettan-2-latin-ext-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BalooChettan2-Medium'), url('./files/baloo-chettan-2-latin-ext-500-normal.woff2') format('woff2'), url('./files/baloo-chettan-2-latin-ext-500-normal.woff') format('woff');
+  
 }
 /* baloo-chettan-2-latin-ext-600-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 600;
   src:
     local('Baloo Chettan 2 SemiBold'),
-    local('BalooChettan2-SemiBold'), 
-    url('./files/baloo-chettan-2-latin-ext-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-chettan-2-latin-ext-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BalooChettan2-SemiBold'), url('./files/baloo-chettan-2-latin-ext-600-normal.woff2') format('woff2'), url('./files/baloo-chettan-2-latin-ext-600-normal.woff') format('woff');
+  
 }
 /* baloo-chettan-2-latin-ext-700-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 700;
   src:
     local('Baloo Chettan 2 Bold'),
-    local('BalooChettan2-Bold'), 
-    url('./files/baloo-chettan-2-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-chettan-2-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BalooChettan2-Bold'), url('./files/baloo-chettan-2-latin-ext-700-normal.woff2') format('woff2'), url('./files/baloo-chettan-2-latin-ext-700-normal.woff') format('woff');
+  
 }
 /* baloo-chettan-2-latin-ext-800-normal*/
 @font-face {
@@ -54,7 +50,6 @@
   font-weight: 800;
   src:
     local('Baloo Chettan 2 ExtraBold'),
-    local('BalooChettan2-ExtraBold'), 
-    url('./files/baloo-chettan-2-latin-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/baloo-chettan-2-latin-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BalooChettan2-ExtraBold'), url('./files/baloo-chettan-2-latin-ext-800-normal.woff2') format('woff2'), url('./files/baloo-chettan-2-latin-ext-800-normal.woff') format('woff');
+  
 }

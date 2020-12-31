@@ -6,9 +6,8 @@
   font-weight: 400;
   src:
     local('Cardo'),
-    local('Cardo-Regular'), 
-    url('./files/cardo-greek-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cardo-greek-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Cardo-Regular'), url('./files/cardo-greek-ext-400-normal.woff2') format('woff2'), url('./files/cardo-greek-ext-400-normal.woff') format('woff');
+  
 }
 /* cardo-greek-ext-700-normal*/
 @font-face {
@@ -18,7 +17,6 @@
   font-weight: 700;
   src:
     local('Cardo Bold'),
-    local('Cardo-Bold'), 
-    url('./files/cardo-greek-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/cardo-greek-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Cardo-Bold'), url('./files/cardo-greek-ext-700-normal.woff2') format('woff2'), url('./files/cardo-greek-ext-700-normal.woff') format('woff');
+  
 }

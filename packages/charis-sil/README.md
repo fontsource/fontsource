@@ -64,8 +64,6 @@ body {
 }
 ```
 
-
-
 ## Additional Options
 
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.

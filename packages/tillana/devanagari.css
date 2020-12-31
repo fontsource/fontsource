@@ -6,9 +6,8 @@
   font-weight: 400;
   src:
     local('Tillana Regular'),
-    local('Tillana-Regular'), 
-    url('./files/tillana-devanagari-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tillana-devanagari-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Tillana-Regular'), url('./files/tillana-devanagari-400-normal.woff2') format('woff2'), url('./files/tillana-devanagari-400-normal.woff') format('woff');
+  
 }
 /* tillana-devanagari-500-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 500;
   src:
     local('Tillana Medium'),
-    local('Tillana-Medium'), 
-    url('./files/tillana-devanagari-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tillana-devanagari-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Tillana-Medium'), url('./files/tillana-devanagari-500-normal.woff2') format('woff2'), url('./files/tillana-devanagari-500-normal.woff') format('woff');
+  
 }
 /* tillana-devanagari-600-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 600;
   src:
     local('Tillana SemiBold'),
-    local('Tillana-SemiBold'), 
-    url('./files/tillana-devanagari-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tillana-devanagari-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Tillana-SemiBold'), url('./files/tillana-devanagari-600-normal.woff2') format('woff2'), url('./files/tillana-devanagari-600-normal.woff') format('woff');
+  
 }
 /* tillana-devanagari-700-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 700;
   src:
     local('Tillana Bold'),
-    local('Tillana-Bold'), 
-    url('./files/tillana-devanagari-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tillana-devanagari-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Tillana-Bold'), url('./files/tillana-devanagari-700-normal.woff2') format('woff2'), url('./files/tillana-devanagari-700-normal.woff') format('woff');
+  
 }
 /* tillana-devanagari-800-normal*/
 @font-face {
@@ -54,7 +50,6 @@
   font-weight: 800;
   src:
     local('Tillana ExtraBold'),
-    local('Tillana-ExtraBold'), 
-    url('./files/tillana-devanagari-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/tillana-devanagari-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Tillana-ExtraBold'), url('./files/tillana-devanagari-800-normal.woff2') format('woff2'), url('./files/tillana-devanagari-800-normal.woff') format('woff');
+  
 }

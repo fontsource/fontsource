@@ -6,9 +6,8 @@
   font-weight: 300;
   src:
     local('Sunflower Light'),
-    local('Sunflower-Light'), 
-    url('./files/sunflower-korean-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sunflower-korean-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sunflower-Light'), url('./files/sunflower-korean-300-normal.woff2') format('woff2'), url('./files/sunflower-korean-300-normal.woff') format('woff');
+  
 }
 /* sunflower-korean-500-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 500;
   src:
     local('Sunflower Medium'),
-    local('Sunflower-Medium'), 
-    url('./files/sunflower-korean-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sunflower-korean-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sunflower-Medium'), url('./files/sunflower-korean-500-normal.woff2') format('woff2'), url('./files/sunflower-korean-500-normal.woff') format('woff');
+  
 }
 /* sunflower-korean-700-normal*/
 @font-face {
@@ -30,7 +28,6 @@
   font-weight: 700;
   src:
     local('Sunflower Bold'),
-    local('Sunflower-Bold'), 
-    url('./files/sunflower-korean-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sunflower-korean-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sunflower-Bold'), url('./files/sunflower-korean-700-normal.woff2') format('woff2'), url('./files/sunflower-korean-700-normal.woff') format('woff');
+  
 }

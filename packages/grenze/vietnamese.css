@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('Grenze Thin'),
-    local('Grenze-Thin'), 
-    url('./files/grenze-vietnamese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-Thin'), url('./files/grenze-vietnamese-100-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-100-normal.woff') format('woff');
+  
 }
 /* grenze-vietnamese-200-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 200;
   src:
     local('Grenze ExtraLight'),
-    local('Grenze-ExtraLight'), 
-    url('./files/grenze-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-ExtraLight'), url('./files/grenze-vietnamese-200-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-200-normal.woff') format('woff');
+  
 }
 /* grenze-vietnamese-300-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 300;
   src:
     local('Grenze Light'),
-    local('Grenze-Light'), 
-    url('./files/grenze-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-Light'), url('./files/grenze-vietnamese-300-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-300-normal.woff') format('woff');
+  
 }
 /* grenze-vietnamese-400-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 400;
   src:
     local('Grenze Regular'),
-    local('Grenze-Regular'), 
-    url('./files/grenze-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-Regular'), url('./files/grenze-vietnamese-400-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* grenze-vietnamese-500-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 500;
   src:
     local('Grenze Medium'),
-    local('Grenze-Medium'), 
-    url('./files/grenze-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-Medium'), url('./files/grenze-vietnamese-500-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-500-normal.woff') format('woff');
+  
 }
 /* grenze-vietnamese-600-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 600;
   src:
     local('Grenze SemiBold'),
-    local('Grenze-SemiBold'), 
-    url('./files/grenze-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-SemiBold'), url('./files/grenze-vietnamese-600-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-600-normal.woff') format('woff');
+  
 }
 /* grenze-vietnamese-700-normal*/
 @font-face {
@@ -78,9 +72,8 @@
   font-weight: 700;
   src:
     local('Grenze Bold'),
-    local('Grenze-Bold'), 
-    url('./files/grenze-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-Bold'), url('./files/grenze-vietnamese-700-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-700-normal.woff') format('woff');
+  
 }
 /* grenze-vietnamese-800-normal*/
 @font-face {
@@ -90,9 +83,8 @@
   font-weight: 800;
   src:
     local('Grenze ExtraBold'),
-    local('Grenze-ExtraBold'), 
-    url('./files/grenze-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-ExtraBold'), url('./files/grenze-vietnamese-800-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-800-normal.woff') format('woff');
+  
 }
 /* grenze-vietnamese-900-normal*/
 @font-face {
@@ -102,7 +94,6 @@
   font-weight: 900;
   src:
     local('Grenze Black'),
-    local('Grenze-Black'), 
-    url('./files/grenze-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/grenze-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Grenze-Black'), url('./files/grenze-vietnamese-900-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-900-normal.woff') format('woff');
+  
 }

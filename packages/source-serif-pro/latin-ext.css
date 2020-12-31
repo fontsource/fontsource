@@ -6,9 +6,8 @@
   font-weight: 200;
   src:
     local('Source Serif Pro ExtraLight'),
-    local('SourceSerifPro-ExtraLight'), 
-    url('./files/source-serif-pro-latin-ext-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-serif-pro-latin-ext-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceSerifPro-ExtraLight'), url('./files/source-serif-pro-latin-ext-200-normal.woff2') format('woff2'), url('./files/source-serif-pro-latin-ext-200-normal.woff') format('woff');
+  
 }
 /* source-serif-pro-latin-ext-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Source Serif Pro Light'),
-    local('SourceSerifPro-Light'), 
-    url('./files/source-serif-pro-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-serif-pro-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceSerifPro-Light'), url('./files/source-serif-pro-latin-ext-300-normal.woff2') format('woff2'), url('./files/source-serif-pro-latin-ext-300-normal.woff') format('woff');
+  
 }
 /* source-serif-pro-latin-ext-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('Source Serif Pro'),
-    local('SourceSerifPro-Regular'), 
-    url('./files/source-serif-pro-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-serif-pro-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceSerifPro-Regular'), url('./files/source-serif-pro-latin-ext-400-normal.woff2') format('woff2'), url('./files/source-serif-pro-latin-ext-400-normal.woff') format('woff');
+  
 }
 /* source-serif-pro-latin-ext-600-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 600;
   src:
     local('Source Serif Pro SemiBold'),
-    local('SourceSerifPro-SemiBold'), 
-    url('./files/source-serif-pro-latin-ext-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-serif-pro-latin-ext-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceSerifPro-SemiBold'), url('./files/source-serif-pro-latin-ext-600-normal.woff2') format('woff2'), url('./files/source-serif-pro-latin-ext-600-normal.woff') format('woff');
+  
 }
 /* source-serif-pro-latin-ext-700-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 700;
   src:
     local('Source Serif Pro Bold'),
-    local('SourceSerifPro-Bold'), 
-    url('./files/source-serif-pro-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-serif-pro-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceSerifPro-Bold'), url('./files/source-serif-pro-latin-ext-700-normal.woff2') format('woff2'), url('./files/source-serif-pro-latin-ext-700-normal.woff') format('woff');
+  
 }
 /* source-serif-pro-latin-ext-900-normal*/
 @font-face {
@@ -66,7 +61,6 @@
   font-weight: 900;
   src:
     local('Source Serif Pro Black'),
-    local('SourceSerifPro-Black'), 
-    url('./files/source-serif-pro-latin-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-serif-pro-latin-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceSerifPro-Black'), url('./files/source-serif-pro-latin-ext-900-normal.woff2') format('woff2'), url('./files/source-serif-pro-latin-ext-900-normal.woff') format('woff');
+  
 }

@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('M PLUS 1p Thin'),
-    local('MPLUS1p-Thin'), 
-    url('./files/m-plus-1p-greek-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-greek-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('MPLUS1p-Thin'), url('./files/m-plus-1p-greek-100-normal.woff2') format('woff2'), url('./files/m-plus-1p-greek-100-normal.woff') format('woff');
+  
 }
 /* m-plus-1p-greek-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('M PLUS 1p Light'),
-    local('MPLUS1p-Light'), 
-    url('./files/m-plus-1p-greek-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-greek-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('MPLUS1p-Light'), url('./files/m-plus-1p-greek-300-normal.woff2') format('woff2'), url('./files/m-plus-1p-greek-300-normal.woff') format('woff');
+  
 }
 /* m-plus-1p-greek-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('M PLUS 1p'),
-    local('MPLUS1p-Regular'), 
-    url('./files/m-plus-1p-greek-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-greek-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('MPLUS1p-Regular'), url('./files/m-plus-1p-greek-400-normal.woff2') format('woff2'), url('./files/m-plus-1p-greek-400-normal.woff') format('woff');
+  
 }
 /* m-plus-1p-greek-500-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 500;
   src:
     local('M PLUS 1p Medium'),
-    local('MPLUS1p-Medium'), 
-    url('./files/m-plus-1p-greek-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-greek-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('MPLUS1p-Medium'), url('./files/m-plus-1p-greek-500-normal.woff2') format('woff2'), url('./files/m-plus-1p-greek-500-normal.woff') format('woff');
+  
 }
 /* m-plus-1p-greek-700-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 700;
   src:
     local('M PLUS 1p Bold'),
-    local('MPLUS1p-Bold'), 
-    url('./files/m-plus-1p-greek-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-greek-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('MPLUS1p-Bold'), url('./files/m-plus-1p-greek-700-normal.woff2') format('woff2'), url('./files/m-plus-1p-greek-700-normal.woff') format('woff');
+  
 }
 /* m-plus-1p-greek-800-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 800;
   src:
     local('M PLUS 1p ExtraBold'),
-    local('MPLUS1p-ExtraBold'), 
-    url('./files/m-plus-1p-greek-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-greek-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('MPLUS1p-ExtraBold'), url('./files/m-plus-1p-greek-800-normal.woff2') format('woff2'), url('./files/m-plus-1p-greek-800-normal.woff') format('woff');
+  
 }
 /* m-plus-1p-greek-900-normal*/
 @font-face {
@@ -78,7 +72,6 @@
   font-weight: 900;
   src:
     local('M PLUS 1p Black'),
-    local('MPLUS1p-Black'), 
-    url('./files/m-plus-1p-greek-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/m-plus-1p-greek-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('MPLUS1p-Black'), url('./files/m-plus-1p-greek-900-normal.woff2') format('woff2'), url('./files/m-plus-1p-greek-900-normal.woff') format('woff');
+  
 }

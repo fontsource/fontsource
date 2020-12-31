@@ -6,9 +6,8 @@
   font-weight: 300;
   src:
     local('Sulphur Point Light'),
-    local('SulphurPoint-Light'), 
-    url('./files/sulphur-point-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sulphur-point-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SulphurPoint-Light'), url('./files/sulphur-point-latin-ext-300-normal.woff2') format('woff2'), url('./files/sulphur-point-latin-ext-300-normal.woff') format('woff');
+  
 }
 /* sulphur-point-latin-ext-400-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 400;
   src:
     local('Sulphur Point Regular'),
-    local('SulphurPoint-Regular'), 
-    url('./files/sulphur-point-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sulphur-point-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SulphurPoint-Regular'), url('./files/sulphur-point-latin-ext-400-normal.woff2') format('woff2'), url('./files/sulphur-point-latin-ext-400-normal.woff') format('woff');
+  
 }
 /* sulphur-point-latin-ext-700-normal*/
 @font-face {
@@ -30,7 +28,6 @@
   font-weight: 700;
   src:
     local('Sulphur Point Bold'),
-    local('SulphurPoint-Bold'), 
-    url('./files/sulphur-point-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sulphur-point-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SulphurPoint-Bold'), url('./files/sulphur-point-latin-ext-700-normal.woff2') format('woff2'), url('./files/sulphur-point-latin-ext-700-normal.woff') format('woff');
+  
 }

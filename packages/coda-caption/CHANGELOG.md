@@ -12,6 +12,16 @@ These will always contain changes from Fontsource's end.
 
 # 4.x Release
 
+## 4.1.x
+
+### Features
+
+- Added customisable SASS support through mixins for more flexible user setups. [#64](https://github.com/fontsource/fontsource/issues/64) [#122](https://github.com/fontsource/fontsource/pull/122)
+
+### Fixes
+
+- Major refactor to organise the templates and generic packager. [#120](https://github.com/fontsource/fontsource/pull/120)
+
 ## 4.0.x
 
 ### BREAKING CHANGES
@@ -29,6 +39,7 @@ These will always contain changes from Fontsource's end.
 ### Fixes
 
 - Add publishConfig to package.json templates for scoped packages to successfully publish. [#118](https://github.com/fontsource/fontsource/pull/118)
+- Generate index.css for fonts that do not have weight 400. [#119](https://github.com/fontsource/fontsource/pull/119)
 
 # 3.x Release
 

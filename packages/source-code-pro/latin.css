@@ -6,9 +6,8 @@
   font-weight: 200;
   src:
     local('Source Code Pro ExtraLight'),
-    local('SourceCodePro-ExtraLight'), 
-    url('./files/source-code-pro-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-code-pro-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceCodePro-ExtraLight'), url('./files/source-code-pro-latin-200-normal.woff2') format('woff2'), url('./files/source-code-pro-latin-200-normal.woff') format('woff');
+  
 }
 /* source-code-pro-latin-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Source Code Pro Light'),
-    local('SourceCodePro-Light'), 
-    url('./files/source-code-pro-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-code-pro-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceCodePro-Light'), url('./files/source-code-pro-latin-300-normal.woff2') format('woff2'), url('./files/source-code-pro-latin-300-normal.woff') format('woff');
+  
 }
 /* source-code-pro-latin-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('Source Code Pro Regular'),
-    local('SourceCodePro-Regular'), 
-    url('./files/source-code-pro-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-code-pro-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceCodePro-Regular'), url('./files/source-code-pro-latin-400-normal.woff2') format('woff2'), url('./files/source-code-pro-latin-400-normal.woff') format('woff');
+  
 }
 /* source-code-pro-latin-500-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 500;
   src:
     local('Source Code Pro Medium'),
-    local('SourceCodePro-Medium'), 
-    url('./files/source-code-pro-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-code-pro-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceCodePro-Medium'), url('./files/source-code-pro-latin-500-normal.woff2') format('woff2'), url('./files/source-code-pro-latin-500-normal.woff') format('woff');
+  
 }
 /* source-code-pro-latin-600-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 600;
   src:
     local('Source Code Pro SemiBold'),
-    local('SourceCodePro-SemiBold'), 
-    url('./files/source-code-pro-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-code-pro-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceCodePro-SemiBold'), url('./files/source-code-pro-latin-600-normal.woff2') format('woff2'), url('./files/source-code-pro-latin-600-normal.woff') format('woff');
+  
 }
 /* source-code-pro-latin-700-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 700;
   src:
     local('Source Code Pro Bold'),
-    local('SourceCodePro-Bold'), 
-    url('./files/source-code-pro-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-code-pro-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceCodePro-Bold'), url('./files/source-code-pro-latin-700-normal.woff2') format('woff2'), url('./files/source-code-pro-latin-700-normal.woff') format('woff');
+  
 }
 /* source-code-pro-latin-900-normal*/
 @font-face {
@@ -78,7 +72,6 @@
   font-weight: 900;
   src:
     local('Source Code Pro Black'),
-    local('SourceCodePro-Black'), 
-    url('./files/source-code-pro-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/source-code-pro-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('SourceCodePro-Black'), url('./files/source-code-pro-latin-900-normal.woff2') format('woff2'), url('./files/source-code-pro-latin-900-normal.woff') format('woff');
+  
 }

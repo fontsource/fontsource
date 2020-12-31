@@ -6,9 +6,8 @@
   font-weight: 200;
   src:
     local('Mada ExtraLight'),
-    local('Mada-ExtraLight'), 
-    url('./files/mada-arabic-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-arabic-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mada-ExtraLight'), url('./files/mada-arabic-200-normal.woff2') format('woff2'), url('./files/mada-arabic-200-normal.woff') format('woff');
+  
 }
 /* mada-arabic-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Mada Light'),
-    local('Mada-Light'), 
-    url('./files/mada-arabic-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-arabic-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mada-Light'), url('./files/mada-arabic-300-normal.woff2') format('woff2'), url('./files/mada-arabic-300-normal.woff') format('woff');
+  
 }
 /* mada-arabic-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('Mada Regular'),
-    local('Mada-Regular'), 
-    url('./files/mada-arabic-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-arabic-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mada-Regular'), url('./files/mada-arabic-400-normal.woff2') format('woff2'), url('./files/mada-arabic-400-normal.woff') format('woff');
+  
 }
 /* mada-arabic-500-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 500;
   src:
     local('Mada Medium'),
-    local('Mada-Medium'), 
-    url('./files/mada-arabic-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-arabic-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mada-Medium'), url('./files/mada-arabic-500-normal.woff2') format('woff2'), url('./files/mada-arabic-500-normal.woff') format('woff');
+  
 }
 /* mada-arabic-600-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 600;
   src:
     local('Mada SemiBold'),
-    local('Mada-SemiBold'), 
-    url('./files/mada-arabic-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-arabic-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mada-SemiBold'), url('./files/mada-arabic-600-normal.woff2') format('woff2'), url('./files/mada-arabic-600-normal.woff') format('woff');
+  
 }
 /* mada-arabic-700-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 700;
   src:
     local('Mada Bold'),
-    local('Mada-Bold'), 
-    url('./files/mada-arabic-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-arabic-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mada-Bold'), url('./files/mada-arabic-700-normal.woff2') format('woff2'), url('./files/mada-arabic-700-normal.woff') format('woff');
+  
 }
 /* mada-arabic-900-normal*/
 @font-face {
@@ -78,7 +72,6 @@
   font-weight: 900;
   src:
     local('Mada Black'),
-    local('Mada-Black'), 
-    url('./files/mada-arabic-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mada-arabic-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mada-Black'), url('./files/mada-arabic-900-normal.woff2') format('woff2'), url('./files/mada-arabic-900-normal.woff') format('woff');
+  
 }

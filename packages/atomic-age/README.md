@@ -32,6 +32,30 @@ Alternatively, the same solutions could be imported via SCSS!
 @import "~@fontsource/atomic-age/300-italic.css";
 ```
 
+For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
+
+```scss
+@import "~@fontsource/atomic-age/scss/mixins";
+
+// Uses a unicode-range map to automatically generate multiple @font-face rules.
+@include fontFace(
+  $weight: 500,
+  $display: fallback,
+  $fontDir: "~@fontsource/atomic-age/files"
+);
+
+// Fully customisable single @font-face mixin.
+@include fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "~@fontsource/atomic-age/files/atomic-age-latin-500-normal.woff2",
+  $unicodeRange: false
+);
+// More options available in link below.
+```
+
+You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/atomic-age/scss/mixins.scss).
+
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
@@ -54,7 +78,7 @@ In the rare case you need to individually select a language subset and not utili
 ```javascript
 import "@fontsource/atomic-age/latin-ext.css" // All weights with normal style included.
 import "@fontsource/atomic-age/cyrillic-ext-500.css" // Weight 500 with normal style.
-import "@fontsource/atomic-age/greek-900-normal.css" // Italic variant.
+import "@fontsource/atomic-age/greek-900-italic.css" // Italic variant.
 ```
 
 - Supported subsets: `[latin]`

@@ -41,7 +41,8 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 @include fontFaceCustom(
   $weight: 600,
   $display: optional,
-  $woff2Path: "~@fontsource/league-mono-narrow/files/league-mono-narrow-latin-500-normal.woff2",
+  $woff2Path:
+    "~@fontsource/league-mono-narrow/files/league-mono-narrow-latin-500-normal.woff2",
   $unicodeRange: false
 );
 // More options available in link below.
@@ -63,8 +64,6 @@ body {
   font-family: "League Mono Narrow";
 }
 ```
-
-
 
 ## Additional Options
 

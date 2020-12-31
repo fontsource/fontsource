@@ -6,9 +6,8 @@
   font-weight: 200;
   src:
     local('KoHo ExtraLight'),
-    local('KoHo-ExtraLight'), 
-    url('./files/koho-thai-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-thai-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('KoHo-ExtraLight'), url('./files/koho-thai-200-normal.woff2') format('woff2'), url('./files/koho-thai-200-normal.woff') format('woff');
+  
 }
 /* koho-thai-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('KoHo Light'),
-    local('KoHo-Light'), 
-    url('./files/koho-thai-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-thai-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('KoHo-Light'), url('./files/koho-thai-300-normal.woff2') format('woff2'), url('./files/koho-thai-300-normal.woff') format('woff');
+  
 }
 /* koho-thai-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('KoHo Regular'),
-    local('KoHo-Regular'), 
-    url('./files/koho-thai-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-thai-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('KoHo-Regular'), url('./files/koho-thai-400-normal.woff2') format('woff2'), url('./files/koho-thai-400-normal.woff') format('woff');
+  
 }
 /* koho-thai-500-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 500;
   src:
     local('KoHo Medium'),
-    local('KoHo-Medium'), 
-    url('./files/koho-thai-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-thai-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('KoHo-Medium'), url('./files/koho-thai-500-normal.woff2') format('woff2'), url('./files/koho-thai-500-normal.woff') format('woff');
+  
 }
 /* koho-thai-600-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 600;
   src:
     local('KoHo SemiBold'),
-    local('KoHo-SemiBold'), 
-    url('./files/koho-thai-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-thai-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('KoHo-SemiBold'), url('./files/koho-thai-600-normal.woff2') format('woff2'), url('./files/koho-thai-600-normal.woff') format('woff');
+  
 }
 /* koho-thai-700-normal*/
 @font-face {
@@ -66,7 +61,6 @@
   font-weight: 700;
   src:
     local('KoHo Bold'),
-    local('KoHo-Bold'), 
-    url('./files/koho-thai-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/koho-thai-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('KoHo-Bold'), url('./files/koho-thai-700-normal.woff2') format('woff2'), url('./files/koho-thai-700-normal.woff') format('woff');
+  
 }

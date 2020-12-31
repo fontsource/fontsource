@@ -32,6 +32,31 @@ Alternatively, the same solutions could be imported via SCSS!
 @import "~@fontsource/roboto-mono/300-italic.css";
 ```
 
+For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
+
+```scss
+@import "~@fontsource/roboto-mono/scss/mixins";
+
+// Uses a unicode-range map to automatically generate multiple @font-face rules.
+@include fontFace(
+  $weight: 500,
+  $display: fallback,
+  $fontDir: "~@fontsource/roboto-mono/files"
+);
+
+// Fully customisable single @font-face mixin.
+@include fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path:
+    "~@fontsource/roboto-mono/files/roboto-mono-latin-500-normal.woff2",
+  $unicodeRange: false
+);
+// More options available in link below.
+```
+
+You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/roboto-mono/scss/mixins.scss).
+
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:

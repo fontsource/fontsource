@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('Prompt Thin'),
-    local('Prompt-Thin'), 
-    url('./files/prompt-thai-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-Thin'), url('./files/prompt-thai-100-normal.woff2') format('woff2'), url('./files/prompt-thai-100-normal.woff') format('woff');
+  
 }
 /* prompt-thai-200-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 200;
   src:
     local('Prompt ExtraLight'),
-    local('Prompt-ExtraLight'), 
-    url('./files/prompt-thai-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-ExtraLight'), url('./files/prompt-thai-200-normal.woff2') format('woff2'), url('./files/prompt-thai-200-normal.woff') format('woff');
+  
 }
 /* prompt-thai-300-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 300;
   src:
     local('Prompt Light'),
-    local('Prompt-Light'), 
-    url('./files/prompt-thai-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-Light'), url('./files/prompt-thai-300-normal.woff2') format('woff2'), url('./files/prompt-thai-300-normal.woff') format('woff');
+  
 }
 /* prompt-thai-400-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 400;
   src:
     local('Prompt'),
-    local('Prompt-Regular'), 
-    url('./files/prompt-thai-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-Regular'), url('./files/prompt-thai-400-normal.woff2') format('woff2'), url('./files/prompt-thai-400-normal.woff') format('woff');
+  
 }
 /* prompt-thai-500-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 500;
   src:
     local('Prompt Medium'),
-    local('Prompt-Medium'), 
-    url('./files/prompt-thai-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-Medium'), url('./files/prompt-thai-500-normal.woff2') format('woff2'), url('./files/prompt-thai-500-normal.woff') format('woff');
+  
 }
 /* prompt-thai-600-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 600;
   src:
     local('Prompt SemiBold'),
-    local('Prompt-SemiBold'), 
-    url('./files/prompt-thai-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-SemiBold'), url('./files/prompt-thai-600-normal.woff2') format('woff2'), url('./files/prompt-thai-600-normal.woff') format('woff');
+  
 }
 /* prompt-thai-700-normal*/
 @font-face {
@@ -78,9 +72,8 @@
   font-weight: 700;
   src:
     local('Prompt Bold'),
-    local('Prompt-Bold'), 
-    url('./files/prompt-thai-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-Bold'), url('./files/prompt-thai-700-normal.woff2') format('woff2'), url('./files/prompt-thai-700-normal.woff') format('woff');
+  
 }
 /* prompt-thai-800-normal*/
 @font-face {
@@ -90,9 +83,8 @@
   font-weight: 800;
   src:
     local('Prompt ExtraBold'),
-    local('Prompt-ExtraBold'), 
-    url('./files/prompt-thai-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-ExtraBold'), url('./files/prompt-thai-800-normal.woff2') format('woff2'), url('./files/prompt-thai-800-normal.woff') format('woff');
+  
 }
 /* prompt-thai-900-normal*/
 @font-face {
@@ -102,7 +94,6 @@
   font-weight: 900;
   src:
     local('Prompt Black'),
-    local('Prompt-Black'), 
-    url('./files/prompt-thai-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/prompt-thai-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Prompt-Black'), url('./files/prompt-thai-900-normal.woff2') format('woff2'), url('./files/prompt-thai-900-normal.woff') format('woff');
+  
 }

@@ -6,9 +6,8 @@
   font-weight: 300;
   src:
     local('Merriweather Light'),
-    local('Merriweather-Light'), 
-    url('./files/merriweather-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/merriweather-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Merriweather-Light'), url('./files/merriweather-latin-ext-300-normal.woff2') format('woff2'), url('./files/merriweather-latin-ext-300-normal.woff') format('woff');
+  
 }
 /* merriweather-latin-ext-400-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 400;
   src:
     local('Merriweather Regular'),
-    local('Merriweather-Regular'), 
-    url('./files/merriweather-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/merriweather-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Merriweather-Regular'), url('./files/merriweather-latin-ext-400-normal.woff2') format('woff2'), url('./files/merriweather-latin-ext-400-normal.woff') format('woff');
+  
 }
 /* merriweather-latin-ext-700-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 700;
   src:
     local('Merriweather Bold'),
-    local('Merriweather-Bold'), 
-    url('./files/merriweather-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/merriweather-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Merriweather-Bold'), url('./files/merriweather-latin-ext-700-normal.woff2') format('woff2'), url('./files/merriweather-latin-ext-700-normal.woff') format('woff');
+  
 }
 /* merriweather-latin-ext-900-normal*/
 @font-face {
@@ -42,7 +39,6 @@
   font-weight: 900;
   src:
     local('Merriweather Black'),
-    local('Merriweather-Black'), 
-    url('./files/merriweather-latin-ext-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/merriweather-latin-ext-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Merriweather-Black'), url('./files/merriweather-latin-ext-900-normal.woff2') format('woff2'), url('./files/merriweather-latin-ext-900-normal.woff') format('woff');
+  
 }

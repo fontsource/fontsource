@@ -1,1 +1,14 @@
-{"fontId":"blackout-sunrise","fontName":"Blackout Sunrise","subsets":["latin"],"weights":["400"],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2020-08-02","version":"v1","source":"https://github.com/theleagueof/blackout","license":"https://github.com/theleagueof/blackout/blob/master/Open%20Font%20License.markdown","type":"league"}
+{
+  "fontId": "blackout-sunrise",
+  "fontName": "Blackout Sunrise",
+  "subsets": ["latin"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2020-08-02",
+  "version": "v1",
+  "source": "https://github.com/theleagueof/blackout",
+  "license": "https://github.com/theleagueof/blackout/blob/master/Open%20Font%20License.markdown",
+  "type": "league"
+}

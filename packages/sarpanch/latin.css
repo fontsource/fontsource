@@ -6,9 +6,8 @@
   font-weight: 400;
   src:
     local('Sarpanch Regular'),
-    local('Sarpanch-Regular'), 
-    url('./files/sarpanch-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sarpanch-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sarpanch-Regular'), url('./files/sarpanch-latin-400-normal.woff2') format('woff2'), url('./files/sarpanch-latin-400-normal.woff') format('woff');
+  
 }
 /* sarpanch-latin-500-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 500;
   src:
     local('Sarpanch Medium'),
-    local('Sarpanch-Medium'), 
-    url('./files/sarpanch-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sarpanch-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sarpanch-Medium'), url('./files/sarpanch-latin-500-normal.woff2') format('woff2'), url('./files/sarpanch-latin-500-normal.woff') format('woff');
+  
 }
 /* sarpanch-latin-600-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 600;
   src:
     local('Sarpanch SemiBold'),
-    local('Sarpanch-SemiBold'), 
-    url('./files/sarpanch-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sarpanch-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sarpanch-SemiBold'), url('./files/sarpanch-latin-600-normal.woff2') format('woff2'), url('./files/sarpanch-latin-600-normal.woff') format('woff');
+  
 }
 /* sarpanch-latin-700-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 700;
   src:
     local('Sarpanch Bold'),
-    local('Sarpanch-Bold'), 
-    url('./files/sarpanch-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sarpanch-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sarpanch-Bold'), url('./files/sarpanch-latin-700-normal.woff2') format('woff2'), url('./files/sarpanch-latin-700-normal.woff') format('woff');
+  
 }
 /* sarpanch-latin-800-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 800;
   src:
     local('Sarpanch ExtraBold'),
-    local('Sarpanch-ExtraBold'), 
-    url('./files/sarpanch-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sarpanch-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sarpanch-ExtraBold'), url('./files/sarpanch-latin-800-normal.woff2') format('woff2'), url('./files/sarpanch-latin-800-normal.woff') format('woff');
+  
 }
 /* sarpanch-latin-900-normal*/
 @font-face {
@@ -66,7 +61,6 @@
   font-weight: 900;
   src:
     local('Sarpanch Black'),
-    local('Sarpanch-Black'), 
-    url('./files/sarpanch-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/sarpanch-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Sarpanch-Black'), url('./files/sarpanch-latin-900-normal.woff2') format('woff2'), url('./files/sarpanch-latin-900-normal.woff') format('woff');
+  
 }

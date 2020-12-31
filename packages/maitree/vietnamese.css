@@ -6,9 +6,8 @@
   font-weight: 200;
   src:
     local('Maitree ExtraLight'),
-    local('Maitree-ExtraLight'), 
-    url('./files/maitree-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/maitree-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Maitree-ExtraLight'), url('./files/maitree-vietnamese-200-normal.woff2') format('woff2'), url('./files/maitree-vietnamese-200-normal.woff') format('woff');
+  
 }
 /* maitree-vietnamese-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Maitree Light'),
-    local('Maitree-Light'), 
-    url('./files/maitree-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/maitree-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Maitree-Light'), url('./files/maitree-vietnamese-300-normal.woff2') format('woff2'), url('./files/maitree-vietnamese-300-normal.woff') format('woff');
+  
 }
 /* maitree-vietnamese-400-normal*/
 @font-face {
@@ -29,9 +27,8 @@
   font-display: swap;
   font-weight: 400;
   src:
-    local('Maitree'), 
-    url('./files/maitree-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/maitree-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Maitree'), url('./files/maitree-vietnamese-400-normal.woff2') format('woff2'), url('./files/maitree-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* maitree-vietnamese-500-normal*/
 @font-face {
@@ -41,9 +38,8 @@
   font-weight: 500;
   src:
     local('Maitree Medium'),
-    local('Maitree-Medium'), 
-    url('./files/maitree-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/maitree-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Maitree-Medium'), url('./files/maitree-vietnamese-500-normal.woff2') format('woff2'), url('./files/maitree-vietnamese-500-normal.woff') format('woff');
+  
 }
 /* maitree-vietnamese-600-normal*/
 @font-face {
@@ -53,9 +49,8 @@
   font-weight: 600;
   src:
     local('Maitree SemiBold'),
-    local('Maitree-SemiBold'), 
-    url('./files/maitree-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/maitree-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Maitree-SemiBold'), url('./files/maitree-vietnamese-600-normal.woff2') format('woff2'), url('./files/maitree-vietnamese-600-normal.woff') format('woff');
+  
 }
 /* maitree-vietnamese-700-normal*/
 @font-face {
@@ -65,7 +60,6 @@
   font-weight: 700;
   src:
     local('Maitree Bold'),
-    local('Maitree-Bold'), 
-    url('./files/maitree-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/maitree-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Maitree-Bold'), url('./files/maitree-vietnamese-700-normal.woff2') format('woff2'), url('./files/maitree-vietnamese-700-normal.woff') format('woff');
+  
 }

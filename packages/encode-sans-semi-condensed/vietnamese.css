@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('Encode Sans Semi Condensed Thin'),
-    local('EncodeSansSemiCondensed-Thin'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-Thin'), url('./files/encode-sans-semi-condensed-vietnamese-100-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-100-normal.woff') format('woff');
+  
 }
 /* encode-sans-semi-condensed-vietnamese-200-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 200;
   src:
     local('Encode Sans Semi Condensed ExtraLight'),
-    local('EncodeSansSemiCondensed-ExtraLight'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-ExtraLight'), url('./files/encode-sans-semi-condensed-vietnamese-200-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-200-normal.woff') format('woff');
+  
 }
 /* encode-sans-semi-condensed-vietnamese-300-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 300;
   src:
     local('Encode Sans Semi Condensed Light'),
-    local('EncodeSansSemiCondensed-Light'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-Light'), url('./files/encode-sans-semi-condensed-vietnamese-300-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-300-normal.woff') format('woff');
+  
 }
 /* encode-sans-semi-condensed-vietnamese-400-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 400;
   src:
     local('Encode Sans Semi Condensed Regular'),
-    local('EncodeSansSemiCondensed-Regular'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-Regular'), url('./files/encode-sans-semi-condensed-vietnamese-400-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* encode-sans-semi-condensed-vietnamese-500-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 500;
   src:
     local('Encode Sans Semi Condensed Medium'),
-    local('EncodeSansSemiCondensed-Medium'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-Medium'), url('./files/encode-sans-semi-condensed-vietnamese-500-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-500-normal.woff') format('woff');
+  
 }
 /* encode-sans-semi-condensed-vietnamese-600-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 600;
   src:
     local('Encode Sans Semi Condensed SemiBold'),
-    local('EncodeSansSemiCondensed-SemiBold'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-SemiBold'), url('./files/encode-sans-semi-condensed-vietnamese-600-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-600-normal.woff') format('woff');
+  
 }
 /* encode-sans-semi-condensed-vietnamese-700-normal*/
 @font-face {
@@ -78,9 +72,8 @@
   font-weight: 700;
   src:
     local('Encode Sans Semi Condensed Bold'),
-    local('EncodeSansSemiCondensed-Bold'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-Bold'), url('./files/encode-sans-semi-condensed-vietnamese-700-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-700-normal.woff') format('woff');
+  
 }
 /* encode-sans-semi-condensed-vietnamese-800-normal*/
 @font-face {
@@ -90,9 +83,8 @@
   font-weight: 800;
   src:
     local('Encode Sans Semi Condensed ExtraBold'),
-    local('EncodeSansSemiCondensed-ExtraBold'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-ExtraBold'), url('./files/encode-sans-semi-condensed-vietnamese-800-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-800-normal.woff') format('woff');
+  
 }
 /* encode-sans-semi-condensed-vietnamese-900-normal*/
 @font-face {
@@ -102,7 +94,6 @@
   font-weight: 900;
   src:
     local('Encode Sans Semi Condensed Black'),
-    local('EncodeSansSemiCondensed-Black'), 
-    url('./files/encode-sans-semi-condensed-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/encode-sans-semi-condensed-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('EncodeSansSemiCondensed-Black'), url('./files/encode-sans-semi-condensed-vietnamese-900-normal.woff2') format('woff2'), url('./files/encode-sans-semi-condensed-vietnamese-900-normal.woff') format('woff');
+  
 }

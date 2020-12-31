@@ -6,9 +6,8 @@
   font-weight: 400;
   src:
     local('Playfair Display SC Regular'),
-    local('PlayfairDisplaySC-Regular'), 
-    url('./files/playfair-display-sc-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/playfair-display-sc-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('PlayfairDisplaySC-Regular'), url('./files/playfair-display-sc-vietnamese-400-normal.woff2') format('woff2'), url('./files/playfair-display-sc-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* playfair-display-sc-vietnamese-700-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 700;
   src:
     local('Playfair Display SC Bold'),
-    local('PlayfairDisplaySC-Bold'), 
-    url('./files/playfair-display-sc-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/playfair-display-sc-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('PlayfairDisplaySC-Bold'), url('./files/playfair-display-sc-vietnamese-700-normal.woff2') format('woff2'), url('./files/playfair-display-sc-vietnamese-700-normal.woff') format('woff');
+  
 }
 /* playfair-display-sc-vietnamese-900-normal*/
 @font-face {
@@ -30,7 +28,6 @@
   font-weight: 900;
   src:
     local('Playfair Display SC Black'),
-    local('PlayfairDisplaySC-Black'), 
-    url('./files/playfair-display-sc-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/playfair-display-sc-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('PlayfairDisplaySC-Black'), url('./files/playfair-display-sc-vietnamese-900-normal.woff2') format('woff2'), url('./files/playfair-display-sc-vietnamese-900-normal.woff') format('woff');
+  
 }

@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('Big Shoulders Text Thin'),
-    local('BigShouldersText-Thin'), 
-    url('./files/big-shoulders-text-latin-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-latin-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BigShouldersText-Thin'), url('./files/big-shoulders-text-latin-100-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-100-normal.woff') format('woff');
+  
 }
 /* big-shoulders-text-latin-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Big Shoulders Text Light'),
-    local('BigShouldersText-Light'), 
-    url('./files/big-shoulders-text-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BigShouldersText-Light'), url('./files/big-shoulders-text-latin-300-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-300-normal.woff') format('woff');
+  
 }
 /* big-shoulders-text-latin-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('Big Shoulders Text Regular'),
-    local('BigShouldersText-Regular'), 
-    url('./files/big-shoulders-text-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BigShouldersText-Regular'), url('./files/big-shoulders-text-latin-400-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-400-normal.woff') format('woff');
+  
 }
 /* big-shoulders-text-latin-500-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 500;
   src:
     local('Big Shoulders Text Medium'),
-    local('BigShouldersText-Medium'), 
-    url('./files/big-shoulders-text-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BigShouldersText-Medium'), url('./files/big-shoulders-text-latin-500-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-500-normal.woff') format('woff');
+  
 }
 /* big-shoulders-text-latin-600-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 600;
   src:
     local('Big Shoulders Text SemiBold'),
-    local('BigShouldersText-SemiBold'), 
-    url('./files/big-shoulders-text-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BigShouldersText-SemiBold'), url('./files/big-shoulders-text-latin-600-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-600-normal.woff') format('woff');
+  
 }
 /* big-shoulders-text-latin-700-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 700;
   src:
     local('Big Shoulders Text Bold'),
-    local('BigShouldersText-Bold'), 
-    url('./files/big-shoulders-text-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BigShouldersText-Bold'), url('./files/big-shoulders-text-latin-700-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-700-normal.woff') format('woff');
+  
 }
 /* big-shoulders-text-latin-800-normal*/
 @font-face {
@@ -78,9 +72,8 @@
   font-weight: 800;
   src:
     local('Big Shoulders Text ExtraBold'),
-    local('BigShouldersText-ExtraBold'), 
-    url('./files/big-shoulders-text-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BigShouldersText-ExtraBold'), url('./files/big-shoulders-text-latin-800-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-800-normal.woff') format('woff');
+  
 }
 /* big-shoulders-text-latin-900-normal*/
 @font-face {
@@ -90,7 +83,6 @@
   font-weight: 900;
   src:
     local('Big Shoulders Text Black'),
-    local('BigShouldersText-Black'), 
-    url('./files/big-shoulders-text-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/big-shoulders-text-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BigShouldersText-Black'), url('./files/big-shoulders-text-latin-900-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-900-normal.woff') format('woff');
+  
 }

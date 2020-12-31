@@ -6,7 +6,6 @@
   font-weight: 300;
   src:
     local('Chakra Petch Light'),
-    local('ChakraPetch-Light'), 
-    url('./files/chakra-petch-latin-ext-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/chakra-petch-latin-ext-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('ChakraPetch-Light'), url('./files/chakra-petch-latin-ext-300-normal.woff2') format('woff2'), url('./files/chakra-petch-latin-ext-300-normal.woff') format('woff');
+  
 }

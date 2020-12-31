@@ -1,1 +1,14 @@
-{"fontId":"league-mono-condensed","fontName":"League Mono Condensed","subsets":["latin-ext"],"weights":["100","200","300","400","500","600","700","800"],"styles":["normal"],"defSubset":"latin-ext","variable":false,"lastModified":"2020-08-02","version":"v2.2","source":"https://github.com/sursly/leaguemono","license":"https://github.com/sursly/leaguemono/blob/master/ofl.markdown","type":"league"}
+{
+  "fontId": "league-mono-condensed",
+  "fontName": "League Mono Condensed",
+  "subsets": ["latin-ext"],
+  "weights": ["100", "200", "300", "400", "500", "600", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin-ext",
+  "variable": false,
+  "lastModified": "2020-08-02",
+  "version": "v2.2",
+  "source": "https://github.com/sursly/leaguemono",
+  "license": "https://github.com/sursly/leaguemono/blob/master/ofl.markdown",
+  "type": "league"
+}

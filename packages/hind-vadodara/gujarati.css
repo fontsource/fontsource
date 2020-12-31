@@ -6,9 +6,8 @@
   font-weight: 300;
   src:
     local('Hind Vadodara Light'),
-    local('HindVadodara-Light'), 
-    url('./files/hind-vadodara-gujarati-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-vadodara-gujarati-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('HindVadodara-Light'), url('./files/hind-vadodara-gujarati-300-normal.woff2') format('woff2'), url('./files/hind-vadodara-gujarati-300-normal.woff') format('woff');
+  
 }
 /* hind-vadodara-gujarati-400-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 400;
   src:
     local('Hind Vadodara Regular'),
-    local('HindVadodara-Regular'), 
-    url('./files/hind-vadodara-gujarati-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-vadodara-gujarati-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('HindVadodara-Regular'), url('./files/hind-vadodara-gujarati-400-normal.woff2') format('woff2'), url('./files/hind-vadodara-gujarati-400-normal.woff') format('woff');
+  
 }
 /* hind-vadodara-gujarati-500-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 500;
   src:
     local('Hind Vadodara Medium'),
-    local('HindVadodara-Medium'), 
-    url('./files/hind-vadodara-gujarati-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-vadodara-gujarati-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('HindVadodara-Medium'), url('./files/hind-vadodara-gujarati-500-normal.woff2') format('woff2'), url('./files/hind-vadodara-gujarati-500-normal.woff') format('woff');
+  
 }
 /* hind-vadodara-gujarati-600-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 600;
   src:
     local('Hind Vadodara SemiBold'),
-    local('HindVadodara-SemiBold'), 
-    url('./files/hind-vadodara-gujarati-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-vadodara-gujarati-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('HindVadodara-SemiBold'), url('./files/hind-vadodara-gujarati-600-normal.woff2') format('woff2'), url('./files/hind-vadodara-gujarati-600-normal.woff') format('woff');
+  
 }
 /* hind-vadodara-gujarati-700-normal*/
 @font-face {
@@ -54,7 +50,6 @@
   font-weight: 700;
   src:
     local('Hind Vadodara Bold'),
-    local('HindVadodara-Bold'), 
-    url('./files/hind-vadodara-gujarati-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/hind-vadodara-gujarati-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('HindVadodara-Bold'), url('./files/hind-vadodara-gujarati-700-normal.woff2') format('woff2'), url('./files/hind-vadodara-gujarati-700-normal.woff') format('woff');
+  
 }

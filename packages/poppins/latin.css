@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('Poppins Thin'),
-    local('Poppins-Thin'), 
-    url('./files/poppins-latin-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-Thin'), url('./files/poppins-latin-100-normal.woff2') format('woff2'), url('./files/poppins-latin-100-normal.woff') format('woff');
+  
 }
 /* poppins-latin-200-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 200;
   src:
     local('Poppins ExtraLight'),
-    local('Poppins-ExtraLight'), 
-    url('./files/poppins-latin-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-ExtraLight'), url('./files/poppins-latin-200-normal.woff2') format('woff2'), url('./files/poppins-latin-200-normal.woff') format('woff');
+  
 }
 /* poppins-latin-300-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 300;
   src:
     local('Poppins Light'),
-    local('Poppins-Light'), 
-    url('./files/poppins-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-Light'), url('./files/poppins-latin-300-normal.woff2') format('woff2'), url('./files/poppins-latin-300-normal.woff') format('woff');
+  
 }
 /* poppins-latin-400-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 400;
   src:
     local('Poppins Regular'),
-    local('Poppins-Regular'), 
-    url('./files/poppins-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-Regular'), url('./files/poppins-latin-400-normal.woff2') format('woff2'), url('./files/poppins-latin-400-normal.woff') format('woff');
+  
 }
 /* poppins-latin-500-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 500;
   src:
     local('Poppins Medium'),
-    local('Poppins-Medium'), 
-    url('./files/poppins-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-Medium'), url('./files/poppins-latin-500-normal.woff2') format('woff2'), url('./files/poppins-latin-500-normal.woff') format('woff');
+  
 }
 /* poppins-latin-600-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 600;
   src:
     local('Poppins SemiBold'),
-    local('Poppins-SemiBold'), 
-    url('./files/poppins-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-SemiBold'), url('./files/poppins-latin-600-normal.woff2') format('woff2'), url('./files/poppins-latin-600-normal.woff') format('woff');
+  
 }
 /* poppins-latin-700-normal*/
 @font-face {
@@ -78,9 +72,8 @@
   font-weight: 700;
   src:
     local('Poppins Bold'),
-    local('Poppins-Bold'), 
-    url('./files/poppins-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-Bold'), url('./files/poppins-latin-700-normal.woff2') format('woff2'), url('./files/poppins-latin-700-normal.woff') format('woff');
+  
 }
 /* poppins-latin-800-normal*/
 @font-face {
@@ -90,9 +83,8 @@
   font-weight: 800;
   src:
     local('Poppins ExtraBold'),
-    local('Poppins-ExtraBold'), 
-    url('./files/poppins-latin-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-ExtraBold'), url('./files/poppins-latin-800-normal.woff2') format('woff2'), url('./files/poppins-latin-800-normal.woff') format('woff');
+  
 }
 /* poppins-latin-900-normal*/
 @font-face {
@@ -102,7 +94,6 @@
   font-weight: 900;
   src:
     local('Poppins Black'),
-    local('Poppins-Black'), 
-    url('./files/poppins-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/poppins-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Poppins-Black'), url('./files/poppins-latin-900-normal.woff2') format('woff2'), url('./files/poppins-latin-900-normal.woff') format('woff');
+  
 }

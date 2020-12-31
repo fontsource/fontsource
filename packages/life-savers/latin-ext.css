@@ -6,9 +6,8 @@
   font-weight: 400;
   src:
     local('Life Savers Regular'),
-    local('LifeSavers-Regular'), 
-    url('./files/life-savers-latin-ext-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/life-savers-latin-ext-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('LifeSavers-Regular'), url('./files/life-savers-latin-ext-400-normal.woff2') format('woff2'), url('./files/life-savers-latin-ext-400-normal.woff') format('woff');
+  
 }
 /* life-savers-latin-ext-700-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 700;
   src:
     local('Life Savers Bold'),
-    local('LifeSavers-Bold'), 
-    url('./files/life-savers-latin-ext-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/life-savers-latin-ext-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('LifeSavers-Bold'), url('./files/life-savers-latin-ext-700-normal.woff2') format('woff2'), url('./files/life-savers-latin-ext-700-normal.woff') format('woff');
+  
 }
 /* life-savers-latin-ext-800-normal*/
 @font-face {
@@ -30,7 +28,6 @@
   font-weight: 800;
   src:
     local('Life Savers ExtraBold'),
-    local('LifeSavers-ExtraBold'), 
-    url('./files/life-savers-latin-ext-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/life-savers-latin-ext-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('LifeSavers-ExtraBold'), url('./files/life-savers-latin-ext-800-normal.woff2') format('woff2'), url('./files/life-savers-latin-ext-800-normal.woff') format('woff');
+  
 }

@@ -6,9 +6,8 @@
   font-weight: 200;
   src:
     local('Mitr ExtraLight'),
-    local('Mitr-ExtraLight'), 
-    url('./files/mitr-thai-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mitr-thai-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mitr-ExtraLight'), url('./files/mitr-thai-200-normal.woff2') format('woff2'), url('./files/mitr-thai-200-normal.woff') format('woff');
+  
 }
 /* mitr-thai-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Mitr Light'),
-    local('Mitr-Light'), 
-    url('./files/mitr-thai-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mitr-thai-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mitr-Light'), url('./files/mitr-thai-300-normal.woff2') format('woff2'), url('./files/mitr-thai-300-normal.woff') format('woff');
+  
 }
 /* mitr-thai-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('Mitr Regular'),
-    local('Mitr-Regular'), 
-    url('./files/mitr-thai-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mitr-thai-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mitr-Regular'), url('./files/mitr-thai-400-normal.woff2') format('woff2'), url('./files/mitr-thai-400-normal.woff') format('woff');
+  
 }
 /* mitr-thai-500-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 500;
   src:
     local('Mitr Medium'),
-    local('Mitr-Medium'), 
-    url('./files/mitr-thai-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mitr-thai-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mitr-Medium'), url('./files/mitr-thai-500-normal.woff2') format('woff2'), url('./files/mitr-thai-500-normal.woff') format('woff');
+  
 }
 /* mitr-thai-600-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 600;
   src:
     local('Mitr SemiBold'),
-    local('Mitr-SemiBold'), 
-    url('./files/mitr-thai-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mitr-thai-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mitr-SemiBold'), url('./files/mitr-thai-600-normal.woff2') format('woff2'), url('./files/mitr-thai-600-normal.woff') format('woff');
+  
 }
 /* mitr-thai-700-normal*/
 @font-face {
@@ -66,7 +61,6 @@
   font-weight: 700;
   src:
     local('Mitr Bold'),
-    local('Mitr-Bold'), 
-    url('./files/mitr-thai-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/mitr-thai-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('Mitr-Bold'), url('./files/mitr-thai-700-normal.woff2') format('woff2'), url('./files/mitr-thai-700-normal.woff') format('woff');
+  
 }

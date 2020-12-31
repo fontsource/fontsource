@@ -6,7 +6,6 @@
   font-weight: 900;
   src:
     local('Vollkorn SC Black'),
-    local('VollkornSC-Black'), 
-    url('./files/vollkorn-sc-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/vollkorn-sc-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('VollkornSC-Black'), url('./files/vollkorn-sc-vietnamese-900-normal.woff2') format('woff2'), url('./files/vollkorn-sc-vietnamese-900-normal.woff') format('woff');
+  
 }

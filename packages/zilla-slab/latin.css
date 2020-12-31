@@ -6,9 +6,8 @@
   font-weight: 300;
   src:
     local('Zilla Slab Light'),
-    local('ZillaSlab-Light'), 
-    url('./files/zilla-slab-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/zilla-slab-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('ZillaSlab-Light'), url('./files/zilla-slab-latin-300-normal.woff2') format('woff2'), url('./files/zilla-slab-latin-300-normal.woff') format('woff');
+  
 }
 /* zilla-slab-latin-400-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 400;
   src:
     local('Zilla Slab'),
-    local('ZillaSlab-Regular'), 
-    url('./files/zilla-slab-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/zilla-slab-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('ZillaSlab-Regular'), url('./files/zilla-slab-latin-400-normal.woff2') format('woff2'), url('./files/zilla-slab-latin-400-normal.woff') format('woff');
+  
 }
 /* zilla-slab-latin-500-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 500;
   src:
     local('Zilla Slab Medium'),
-    local('ZillaSlab-Medium'), 
-    url('./files/zilla-slab-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/zilla-slab-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('ZillaSlab-Medium'), url('./files/zilla-slab-latin-500-normal.woff2') format('woff2'), url('./files/zilla-slab-latin-500-normal.woff') format('woff');
+  
 }
 /* zilla-slab-latin-600-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 600;
   src:
     local('Zilla Slab SemiBold'),
-    local('ZillaSlab-SemiBold'), 
-    url('./files/zilla-slab-latin-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/zilla-slab-latin-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('ZillaSlab-SemiBold'), url('./files/zilla-slab-latin-600-normal.woff2') format('woff2'), url('./files/zilla-slab-latin-600-normal.woff') format('woff');
+  
 }
 /* zilla-slab-latin-700-normal*/
 @font-face {
@@ -54,7 +50,6 @@
   font-weight: 700;
   src:
     local('Zilla Slab Bold'),
-    local('ZillaSlab-Bold'), 
-    url('./files/zilla-slab-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/zilla-slab-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('ZillaSlab-Bold'), url('./files/zilla-slab-latin-700-normal.woff2') format('woff2'), url('./files/zilla-slab-latin-700-normal.woff') format('woff');
+  
 }

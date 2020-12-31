@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('Barlow Condensed Thin'),
-    local('BarlowCondensed-Thin'), 
-    url('./files/barlow-condensed-vietnamese-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-Thin'), url('./files/barlow-condensed-vietnamese-100-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-100-normal.woff') format('woff');
+  
 }
 /* barlow-condensed-vietnamese-200-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 200;
   src:
     local('Barlow Condensed ExtraLight'),
-    local('BarlowCondensed-ExtraLight'), 
-    url('./files/barlow-condensed-vietnamese-200-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-200-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-ExtraLight'), url('./files/barlow-condensed-vietnamese-200-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-200-normal.woff') format('woff');
+  
 }
 /* barlow-condensed-vietnamese-300-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 300;
   src:
     local('Barlow Condensed Light'),
-    local('BarlowCondensed-Light'), 
-    url('./files/barlow-condensed-vietnamese-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-Light'), url('./files/barlow-condensed-vietnamese-300-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-300-normal.woff') format('woff');
+  
 }
 /* barlow-condensed-vietnamese-400-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 400;
   src:
     local('Barlow Condensed Regular'),
-    local('BarlowCondensed-Regular'), 
-    url('./files/barlow-condensed-vietnamese-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-Regular'), url('./files/barlow-condensed-vietnamese-400-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-400-normal.woff') format('woff');
+  
 }
 /* barlow-condensed-vietnamese-500-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 500;
   src:
     local('Barlow Condensed Medium'),
-    local('BarlowCondensed-Medium'), 
-    url('./files/barlow-condensed-vietnamese-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-Medium'), url('./files/barlow-condensed-vietnamese-500-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-500-normal.woff') format('woff');
+  
 }
 /* barlow-condensed-vietnamese-600-normal*/
 @font-face {
@@ -66,9 +61,8 @@
   font-weight: 600;
   src:
     local('Barlow Condensed SemiBold'),
-    local('BarlowCondensed-SemiBold'), 
-    url('./files/barlow-condensed-vietnamese-600-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-600-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-SemiBold'), url('./files/barlow-condensed-vietnamese-600-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-600-normal.woff') format('woff');
+  
 }
 /* barlow-condensed-vietnamese-700-normal*/
 @font-face {
@@ -78,9 +72,8 @@
   font-weight: 700;
   src:
     local('Barlow Condensed Bold'),
-    local('BarlowCondensed-Bold'), 
-    url('./files/barlow-condensed-vietnamese-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-Bold'), url('./files/barlow-condensed-vietnamese-700-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-700-normal.woff') format('woff');
+  
 }
 /* barlow-condensed-vietnamese-800-normal*/
 @font-face {
@@ -90,9 +83,8 @@
   font-weight: 800;
   src:
     local('Barlow Condensed ExtraBold'),
-    local('BarlowCondensed-ExtraBold'), 
-    url('./files/barlow-condensed-vietnamese-800-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-800-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-ExtraBold'), url('./files/barlow-condensed-vietnamese-800-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-800-normal.woff') format('woff');
+  
 }
 /* barlow-condensed-vietnamese-900-normal*/
 @font-face {
@@ -102,7 +94,6 @@
   font-weight: 900;
   src:
     local('Barlow Condensed Black'),
-    local('BarlowCondensed-Black'), 
-    url('./files/barlow-condensed-vietnamese-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/barlow-condensed-vietnamese-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('BarlowCondensed-Black'), url('./files/barlow-condensed-vietnamese-900-normal.woff2') format('woff2'), url('./files/barlow-condensed-vietnamese-900-normal.woff') format('woff');
+  
 }

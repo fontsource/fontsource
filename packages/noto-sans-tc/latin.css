@@ -6,9 +6,8 @@
   font-weight: 100;
   src:
     local('Noto Sans TC Thin'),
-    local('NotoSansTC-Thin'), 
-    url('./files/noto-sans-tc-latin-100-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-tc-latin-100-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NotoSansTC-Thin'), url('./files/noto-sans-tc-latin-100-normal.woff2') format('woff2'), url('./files/noto-sans-tc-latin-100-normal.woff') format('woff');
+  
 }
 /* noto-sans-tc-latin-300-normal*/
 @font-face {
@@ -18,9 +17,8 @@
   font-weight: 300;
   src:
     local('Noto Sans TC Light'),
-    local('NotoSansTC-Light'), 
-    url('./files/noto-sans-tc-latin-300-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-tc-latin-300-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NotoSansTC-Light'), url('./files/noto-sans-tc-latin-300-normal.woff2') format('woff2'), url('./files/noto-sans-tc-latin-300-normal.woff') format('woff');
+  
 }
 /* noto-sans-tc-latin-400-normal*/
 @font-face {
@@ -30,9 +28,8 @@
   font-weight: 400;
   src:
     local('Noto Sans TC Regular'),
-    local('NotoSansTC-Regular'), 
-    url('./files/noto-sans-tc-latin-400-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-tc-latin-400-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NotoSansTC-Regular'), url('./files/noto-sans-tc-latin-400-normal.woff2') format('woff2'), url('./files/noto-sans-tc-latin-400-normal.woff') format('woff');
+  
 }
 /* noto-sans-tc-latin-500-normal*/
 @font-face {
@@ -42,9 +39,8 @@
   font-weight: 500;
   src:
     local('Noto Sans TC Medium'),
-    local('NotoSansTC-Medium'), 
-    url('./files/noto-sans-tc-latin-500-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-tc-latin-500-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NotoSansTC-Medium'), url('./files/noto-sans-tc-latin-500-normal.woff2') format('woff2'), url('./files/noto-sans-tc-latin-500-normal.woff') format('woff');
+  
 }
 /* noto-sans-tc-latin-700-normal*/
 @font-face {
@@ -54,9 +50,8 @@
   font-weight: 700;
   src:
     local('Noto Sans TC Bold'),
-    local('NotoSansTC-Bold'), 
-    url('./files/noto-sans-tc-latin-700-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-tc-latin-700-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NotoSansTC-Bold'), url('./files/noto-sans-tc-latin-700-normal.woff2') format('woff2'), url('./files/noto-sans-tc-latin-700-normal.woff') format('woff');
+  
 }
 /* noto-sans-tc-latin-900-normal*/
 @font-face {
@@ -66,7 +61,6 @@
   font-weight: 900;
   src:
     local('Noto Sans TC Black'),
-    local('NotoSansTC-Black'), 
-    url('./files/noto-sans-tc-latin-900-normal.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('./files/noto-sans-tc-latin-900-normal.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    local('NotoSansTC-Black'), url('./files/noto-sans-tc-latin-900-normal.woff2') format('woff2'), url('./files/noto-sans-tc-latin-900-normal.woff') format('woff');
+  
 }
