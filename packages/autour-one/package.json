@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/autour-one",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Autour One font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

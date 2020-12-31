@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/sen",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Sen font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

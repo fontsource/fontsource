@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/junge",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Junge font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

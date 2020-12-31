@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/blackout-sunrise",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Blackout Sunrise font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

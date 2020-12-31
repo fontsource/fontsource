@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/germania-one",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Germania One font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

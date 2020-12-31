@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/khand",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Khand font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

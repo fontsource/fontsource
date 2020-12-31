@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/pt-serif-caption",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "PT Serif Caption font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

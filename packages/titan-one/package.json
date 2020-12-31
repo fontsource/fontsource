@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/titan-one",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Titan One font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

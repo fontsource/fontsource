@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/average",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Average font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

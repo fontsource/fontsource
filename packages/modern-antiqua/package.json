@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/modern-antiqua",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Modern Antiqua font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

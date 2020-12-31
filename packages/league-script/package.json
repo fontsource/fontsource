@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/league-script",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "League Script font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

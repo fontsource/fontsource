@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/goldman",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Goldman font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

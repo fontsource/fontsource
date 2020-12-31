@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/jetbrains-mono",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Jetbrains Mono font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

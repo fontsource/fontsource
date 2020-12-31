@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/port-lligat-sans",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Port Lligat Sans font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/judson",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Judson font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

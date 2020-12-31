@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/frank-ruhl-libre",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Frank Ruhl Libre font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

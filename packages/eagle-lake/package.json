@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/eagle-lake",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Eagle Lake font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

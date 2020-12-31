@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/el-messiri",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "El Messiri font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/hind-vadodara",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Hind Vadodara font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

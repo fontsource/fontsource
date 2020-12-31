@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/gidugu",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Gidugu font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/k2d",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "K2D font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

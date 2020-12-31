@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/open-sans",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Open Sans font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

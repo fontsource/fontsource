@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/annie-use-your-telescope",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Annie Use Your Telescope font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

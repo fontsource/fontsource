@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/mr-de-haviland",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Mr De Haviland font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

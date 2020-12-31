@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/im-fell-great-primer",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "IM Fell Great Primer font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

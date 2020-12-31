@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/ostrich-sans-dashed",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Ostrich Sans Dashed font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/siemreap",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Siemreap font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

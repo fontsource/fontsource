@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/red-hat-display",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Red Hat Display font in NPM glory.",
   "main": "index.css",
   "publishConfig": {
