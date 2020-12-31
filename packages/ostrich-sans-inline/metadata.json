@@ -1,14 +1,1 @@
-{
-  "fontId": "ostrich-sans-inline",
-  "fontName": "Ostrich Sans Inline",
-  "subsets": ["latin"],
-  "weights": ["400"],
-  "styles": ["italic", "normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2020-08-02",
-  "version": "v13",
-  "source": "https://github.com/theleagueof/ostrich-sans",
-  "license": "https://github.com/theleagueof/ostrich-sans/blob/master/Open%20Font%20License.markdown",
-  "type": "league"
-}
+{"fontId":"ostrich-sans-inline","fontName":"Ostrich Sans Inline","subsets":["latin"],"weights":["400"],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2020-08-02","version":"v13","source":"https://github.com/theleagueof/ostrich-sans","license":"https://github.com/theleagueof/ostrich-sans/blob/master/Open%20Font%20License.markdown","type":"league"}

@@ -1,0 +1,22 @@
+@mixin fontFaceCustom(
+  $fontName: "DSEG Weather",
+  $fontId: "dseg-weather",
+  $style: normal,
+  $display: swap,
+  $weight: 400,
+  $woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-latin-#{$weight}-#{$style}.woff2",
+  $woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-latin-#{$weight}-#{$style}.woff",
+  $unicodeRange: false,
+  $unicodeRangeValues: null
+) {
+  @font-face {
+    font-family: "#{$fontName}";
+    font-style: $style;
+    font-display: $display;
+    font-weight: $weight;
+    src: url("#{$woff2Path}") format("woff2"), url("#{$woffPath}") format("woff");
+    @if $unicodeRange {
+      unicode-range: $unicodeRangeValues;
+    }
+  }
+}

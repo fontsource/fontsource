@@ -1,14 +1,1 @@
-{
-  "fontId": "junction",
-  "fontName": "Junction",
-  "subsets": ["latin"],
-  "weights": ["300", "400", "700"],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2020-08-02",
-  "version": "v10",
-  "source": "https://github.com/theleagueof/junction",
-  "license": "https://github.com/theleagueof/junction/blob/master/Open%20Font%20License.markdown",
-  "type": "league"
-}
+{"fontId":"junction","fontName":"Junction","subsets":["latin"],"weights":["300","400","700"],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2020-08-02","version":"v10","source":"https://github.com/theleagueof/junction","license":"https://github.com/theleagueof/junction/blob/master/Open%20Font%20License.markdown","type":"league"}

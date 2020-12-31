@@ -32,6 +32,23 @@ Alternatively, the same solutions could be imported via SCSS!
 @import "~@fontsource/comic-mono/300-italic.css";
 ```
 
+For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
+
+```scss
+@import "~@fontsource/comic-mono/scss/mixins";
+
+// Fully customisable single @font-face mixin.
+@include fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "~@fontsource/comic-mono/files/comic-mono-latin-500-normal.woff2",
+  $unicodeRange: false
+);
+// More options available in link below.
+```
+
+You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/comic-mono/scss/mixins.scss).
+
 _These examples may not reflect actual compatibility. Please refer below._
 
 Supported variables:
@@ -47,6 +64,8 @@ body {
 }
 ```
 
+
+
 ## Additional Options
 
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
@@ -54,7 +73,7 @@ In the rare case you need to individually select a language subset and not utili
 ```javascript
 import "@fontsource/comic-mono/latin-ext.css" // All weights with normal style included.
 import "@fontsource/comic-mono/cyrillic-ext-500.css" // Weight 500 with normal style.
-import "@fontsource/comic-mono/greek-900-normal.css" // Italic variant.
+import "@fontsource/comic-mono/greek-900-italic.css" // Italic variant.
 ```
 
 - Supported subsets: `[latin]`

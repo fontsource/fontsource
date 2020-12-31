@@ -10,6 +10,7 @@
     "fontsource",
     "font",
     "font family",
+    "google fonts",
     "League Mono Wide",
     "league-mono-wide",
     "css",
@@ -24,6 +25,5 @@
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/league-mono-wide"
-  },
-  "gitHead": "dd7a4e2dfdebc6c20c3fadef27fdc60c51e0baed"
+  }
 }
