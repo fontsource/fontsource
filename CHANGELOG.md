@@ -16,7 +16,7 @@ These will always contain changes from Fontsource's end.
 
 ### Features
 
-- Added customisable SASS support through mixins for more flexible setups. [#64](https://github.com/fontsource/fontsource/issues/64) [#122](https://github.com/fontsource/fontsource/pull/122)
+- Added customisable SASS support through mixins for more flexible user setups. [#64](https://github.com/fontsource/fontsource/issues/64) [#122](https://github.com/fontsource/fontsource/pull/122)
 
 ### Fixes
 
