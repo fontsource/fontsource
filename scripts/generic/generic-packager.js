@@ -80,9 +80,9 @@ module.exports = function (font, rebuildFlag) {
   fs.ensureDirSync(`./${fontDir}/scss`)
 
   const scss = scssGeneric({
-    fontId: font.id,
-    fontName: font.family,
-    defSubset: font.defSubset,
+    fontId,
+    fontName,
+    defSubset,
   })
 
   fs.writeFileSync(`${fontDir}/scss/mixins.scss`, scss)
