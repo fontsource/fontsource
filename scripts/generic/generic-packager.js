@@ -2,9 +2,10 @@ const fs = require("fs-extra")
 const jsonfile = require("jsonfile")
 
 const { makeFontFilePath, findClosest } = require("../utils/utils")
-const { readme } = require("../templates/readme")
-const { packageJson } = require("../templates/package")
 const { fontFace } = require("../templates/css")
+const { scssGeneric } = require("../templates/scss")
+const { packageJson } = require("../templates/package")
+const { readme } = require("../templates/readme")
 
 module.exports = function (font, rebuildFlag) {
   const fontDir = font.fontDir
@@ -74,6 +75,17 @@ module.exports = function (font, rebuildFlag) {
     })
     console.log("Created CSS files.")
   })
+
+  // Write SCSS file
+  fs.ensureDirSync(`./${fontDir}/scss`)
+
+  const scss = scssGeneric({
+    fontId,
+    fontName,
+    defSubset,
+  })
+
+  fs.writeFileSync(`${fontDir}/scss/mixins.scss`, scss)
 
   // Write README.md
   const packageReadme = readme({
