@@ -47,13 +47,25 @@ Alternatively, the same solutions could be imported via SCSS!
 @import "~@fontsource/open-sans/300-italic.css";
 ```
 
-For more advanced setups, you can use our highly customisable mixins that can modify many of the existing @font-face variables.
+For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
 
 ```scss
 @import "~@fontsource/open-sans/scss/mixins";
 
-@include fontFace($weight: 500, $display: fallback, $fontDir: "./files");
-@include fontFaceCustom($weight: 600, $display: optional, $unicodeRange: false);
+// Uses a unicode-range map to automatically generate multiple @font-face rules.
+@include fontFace(
+  $weight: 500,
+  $display: fallback,
+  $fontDir: "~@fontsource/open-sans/files"
+);
+
+// Fully customisable single @font-face mixin.
+@include fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "~@fontsource/open-sans/files/open-sans-latin-500-normal.woff2",
+  $unicodeRange: false
+);
 // More options available in link below.
 ```
 
