@@ -1,14 +1,1 @@
-{
-  "fontId": "karmilla",
-  "fontName": "Karmilla",
-  "subsets": ["all"],
-  "weights": ["400", "700"],
-  "styles": ["normal"],
-  "defSubset": "all",
-  "variable": false,
-  "lastModified": "2020-08-02",
-  "version": "v0.15b",
-  "source": "https://github.com/ms-studio/karmilla",
-  "license": "https://github.com/ms-studio/karmilla/blob/master/OFL.txt",
-  "type": "other"
-}
+{"fontId":"karmilla","fontName":"Karmilla","subsets":["all"],"weights":["400","700"],"styles":["normal"],"defSubset":"all","variable":false,"lastModified":"2020-08-02","version":"v0.15b","source":"https://github.com/ms-studio/karmilla","license":"https://github.com/ms-studio/karmilla/blob/master/OFL.txt","type":"other"}
