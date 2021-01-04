@@ -8,14 +8,15 @@ const { packageJson } = require("../templates/package")
 const { readme } = require("../templates/readme")
 
 module.exports = function (font, rebuildFlag) {
-  const fontDir = font.fontDir
-
-  const fontId = font.fontId
-  const fontName = font.fontName
-  const subsets = font.subsets
-  const weights = font.weights
-  const styles = font.styles
-  const defSubset = font.defSubset
+  const {
+    fontDir,
+    fontId,
+    fontName,
+    subsets,
+    weights,
+    styles,
+    defSubset,
+  } = font
 
   // Find the weight for index.css in the case weight 400 does not exist.
   const indexWeight = findClosest(font.weights, 400)
