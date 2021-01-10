@@ -1,0 +1,14 @@
+{
+  "fontId": "potta-one",
+  "fontName": "Potta One",
+  "subsets": ["japanese", "latin", "latin-ext", "vietnamese"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-01-08",
+  "version": "v2",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
