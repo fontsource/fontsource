@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Big Shoulders Stencil Text Thin'),
-    local('BigShouldersStencilText-Thin'), url('./files/big-shoulders-stencil-text-vietnamese-100-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-100-normal.woff') format('woff');
+  src: url('./files/big-shoulders-stencil-text-vietnamese-100-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-100-normal.woff') format('woff');
   
 }
 /* big-shoulders-stencil-text-vietnamese-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Big Shoulders Stencil Text Light'),
-    local('BigShouldersStencilText-Light'), url('./files/big-shoulders-stencil-text-vietnamese-300-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/big-shoulders-stencil-text-vietnamese-300-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-300-normal.woff') format('woff');
   
 }
 /* big-shoulders-stencil-text-vietnamese-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Big Shoulders Stencil Text Regular'),
-    local('BigShouldersStencilText-Regular'), url('./files/big-shoulders-stencil-text-vietnamese-400-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/big-shoulders-stencil-text-vietnamese-400-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-400-normal.woff') format('woff');
   
 }
 /* big-shoulders-stencil-text-vietnamese-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Big Shoulders Stencil Text Medium'),
-    local('BigShouldersStencilText-Medium'), url('./files/big-shoulders-stencil-text-vietnamese-500-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/big-shoulders-stencil-text-vietnamese-500-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-500-normal.woff') format('woff');
   
 }
 /* big-shoulders-stencil-text-vietnamese-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Big Shoulders Stencil Text SemiBold'),
-    local('BigShouldersStencilText-SemiBold'), url('./files/big-shoulders-stencil-text-vietnamese-600-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/big-shoulders-stencil-text-vietnamese-600-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-600-normal.woff') format('woff');
   
 }
 /* big-shoulders-stencil-text-vietnamese-700-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Big Shoulders Stencil Text Bold'),
-    local('BigShouldersStencilText-Bold'), url('./files/big-shoulders-stencil-text-vietnamese-700-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/big-shoulders-stencil-text-vietnamese-700-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-700-normal.woff') format('woff');
   
 }
 /* big-shoulders-stencil-text-vietnamese-800-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Big Shoulders Stencil Text ExtraBold'),
-    local('BigShouldersStencilText-ExtraBold'), url('./files/big-shoulders-stencil-text-vietnamese-800-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/big-shoulders-stencil-text-vietnamese-800-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-800-normal.woff') format('woff');
   
 }
 /* big-shoulders-stencil-text-vietnamese-900-normal*/
@@ -81,8 +67,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Big Shoulders Stencil Text Black'),
-    local('BigShouldersStencilText-Black'), url('./files/big-shoulders-stencil-text-vietnamese-900-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-900-normal.woff') format('woff');
+  src: url('./files/big-shoulders-stencil-text-vietnamese-900-normal.woff2') format('woff2'), url('./files/big-shoulders-stencil-text-vietnamese-900-normal.woff') format('woff');
   
 }

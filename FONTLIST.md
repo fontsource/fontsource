@@ -49,6 +49,8 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - firago
 - karmilla
 - metropolis
+- noto-mono
+- plus-jakarta-sans
 - syne-italic
 - vazir
 - victor-mono

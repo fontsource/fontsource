@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Mada Medium'),
-    local('Mada-Medium'), url('./files/mada-latin-500-normal.woff2') format('woff2'), url('./files/mada-latin-500-normal.woff') format('woff');
+  src: url('./files/mada-latin-500-normal.woff2') format('woff2'), url('./files/mada-latin-500-normal.woff') format('woff');
   
 }

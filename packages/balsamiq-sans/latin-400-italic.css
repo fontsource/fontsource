@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Balsamiq Sans Italic'),
-    local('BalsamiqSans-Italic'), url('./files/balsamiq-sans-latin-400-italic.woff2') format('woff2'), url('./files/balsamiq-sans-latin-400-italic.woff') format('woff');
+  src: url('./files/balsamiq-sans-latin-400-italic.woff2') format('woff2'), url('./files/balsamiq-sans-latin-400-italic.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('DM Mono Medium Italic'),
-    local('DMMono-MediumItalic'), url('./files/dm-mono-latin-500-italic.woff2') format('woff2'), url('./files/dm-mono-latin-500-italic.woff') format('woff');
+  src: url('./files/dm-mono-latin-500-italic.woff2') format('woff2'), url('./files/dm-mono-latin-500-italic.woff') format('woff');
   
 }

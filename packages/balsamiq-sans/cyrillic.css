@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Balsamiq Sans Regular'),
-    local('BalsamiqSans-Regular'), url('./files/balsamiq-sans-cyrillic-400-normal.woff2') format('woff2'), url('./files/balsamiq-sans-cyrillic-400-normal.woff') format('woff');
+  src: url('./files/balsamiq-sans-cyrillic-400-normal.woff2') format('woff2'), url('./files/balsamiq-sans-cyrillic-400-normal.woff') format('woff');
   
 }
 /* balsamiq-sans-cyrillic-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Balsamiq Sans Bold'),
-    local('BalsamiqSans-Bold'), url('./files/balsamiq-sans-cyrillic-700-normal.woff2') format('woff2'), url('./files/balsamiq-sans-cyrillic-700-normal.woff') format('woff');
+  src: url('./files/balsamiq-sans-cyrillic-700-normal.woff2') format('woff2'), url('./files/balsamiq-sans-cyrillic-700-normal.woff') format('woff');
   
 }

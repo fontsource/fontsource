@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('DM Mono Light'),
-    local('DMMono-Light'), url('./files/dm-mono-latin-300-normal.woff2') format('woff2'), url('./files/dm-mono-latin-300-normal.woff') format('woff');
+  src: url('./files/dm-mono-latin-300-normal.woff2') format('woff2'), url('./files/dm-mono-latin-300-normal.woff') format('woff');
   
 }
 /* dm-mono-latin-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('DM Mono Regular'),
-    local('DMMono-Regular'), url('./files/dm-mono-latin-400-normal.woff2') format('woff2'), url('./files/dm-mono-latin-400-normal.woff') format('woff');
+  src: url('./files/dm-mono-latin-400-normal.woff2') format('woff2'), url('./files/dm-mono-latin-400-normal.woff') format('woff');
   
 }
 /* dm-mono-latin-500-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('DM Mono Medium'),
-    local('DMMono-Medium'), url('./files/dm-mono-latin-500-normal.woff2') format('woff2'), url('./files/dm-mono-latin-500-normal.woff') format('woff');
+  src: url('./files/dm-mono-latin-500-normal.woff2') format('woff2'), url('./files/dm-mono-latin-500-normal.woff') format('woff');
   
 }

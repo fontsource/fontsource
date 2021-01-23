@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Big Shoulders Inline Text Black'),
-    local('BigShouldersInlineText-Black'), url('./files/big-shoulders-inline-text-latin-900-normal.woff2') format('woff2'), url('./files/big-shoulders-inline-text-latin-900-normal.woff') format('woff');
+  src: url('./files/big-shoulders-inline-text-latin-900-normal.woff2') format('woff2'), url('./files/big-shoulders-inline-text-latin-900-normal.woff') format('woff');
   
 }

@@ -6,8 +6,8 @@
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,
-  "lastModified": "2020-07-23",
-  "version": "v2",
+  "lastModified": "2021-01-21",
+  "version": "v3",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Kumbh Sans Light'),
-    local('KumbhSans-Light'), url('./files/kumbh-sans-latin-ext-300-normal.woff2') format('woff2'), url('./files/kumbh-sans-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/kumbh-sans-latin-ext-300-normal.woff2') format('woff2'), url('./files/kumbh-sans-latin-ext-300-normal.woff') format('woff');
   
 }

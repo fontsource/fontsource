@@ -41,7 +41,8 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 @include fontFaceCustom(
   $weight: 600,
   $display: optional,
-  $woff2Path: "~@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-500-normal.woff2",
+  $woff2Path:
+    "~@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-500-normal.woff2",
   $unicodeRange: false
 );
 // More options available in link below.
@@ -63,8 +64,6 @@ body {
   font-family: "Plus Jakarta Sans";
 }
 ```
-
-
 
 ## Additional Options
 

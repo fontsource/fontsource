@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Kumbh Sans Bold'),
-    local('KumbhSans-Bold'), url('./files/kumbh-sans-latin-ext-700-normal.woff2') format('woff2'), url('./files/kumbh-sans-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/kumbh-sans-latin-ext-700-normal.woff2') format('woff2'), url('./files/kumbh-sans-latin-ext-700-normal.woff') format('woff');
   
 }
