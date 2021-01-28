@@ -1,0 +1,54 @@
+{
+  "name": "next-lotus-starter",
+  "description": "Next.js starter to kickstart my projects.",
+  "version": "1.0.0",
+  "author": "Lotus <declininglotus@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "start": "next start",
+    "format:lint": "eslint --fix **/*.{js,jsx,ts,tsx}",
+    "format:prettier": "prettier --write **/*.{js,jsx,ts,tsx,css,md,json}",
+    "format": "yarn format:lint && yarn format:prettier"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.1.6",
+    "@chakra-ui/theme-tools": "^1.0.2",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@fontsource/poppins": "^4.1.0",
+    "framer-motion": "^3.1.3",
+    "next": "^10.0.5",
+    "next-pwa": "^5.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.19",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "next-sitemap": "^1.4.15",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DecliningLotus/next-lotus-starter"
+  },
+  "bugs": {
+    "url": "https://github.com/DecliningLotus/next-lotus-starter/issues"
+  }
+}
