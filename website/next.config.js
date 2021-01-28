@@ -1,9 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const withPWA = require("next-pwa");
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+});
 
-module.exports = withPWA({
-  pwa: {
-    dest: "public",
-    disable: process.env.NODE_ENV === "development",
-  },
+module.exports = withMDX({
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 });

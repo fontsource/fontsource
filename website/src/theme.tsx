@@ -14,8 +14,8 @@ const config = {
 };
 
 const fonts = {
-  heading: `'Poppins', sans-serif`,
-  body: `'Poppins', sans-serif`,
+  heading: `'Inter', sans-serif`,
+  body: `'Inter', sans-serif`,
 };
 
 const colors = {
