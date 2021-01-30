@@ -10,7 +10,7 @@ const breakpoints = createBreakpoints({
 
 const config = {
   useSystemColorMode: false,
-  initialColorMode: "dark",
+  initialColorMode: "light",
 };
 
 const fonts = {

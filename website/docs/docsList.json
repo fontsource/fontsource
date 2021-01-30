@@ -1,0 +1,8 @@
+[
+  {
+    "key": "installation",
+    "title": "Installation",
+    "path": "/docs/installation"
+  },
+  { "key": "sass", "title": "Sass", "path": "/docs/sass" }
+]

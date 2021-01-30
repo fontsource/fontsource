@@ -4,6 +4,7 @@ import { PropsWithChildren } from "react";
 import { Container } from "./Container";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar/Navbar";
+import { Sidebar } from "./Sidebar";
 
 export type PageContainerProps = PropsWithChildren<FlexProps>;
 
@@ -14,7 +15,10 @@ export const PageContainer = ({ children, ...props }: PageContainerProps) => {
   return (
     <Container minHeight="100vh" bg={bgColor} color={color} {...props}>
       <Navbar />
-      {children}
+      <Container flexDirection="row">
+        <Sidebar minWidth="30%" />
+        <Container minWidth="70%">{children}</Container>
+      </Container>
       <Footer />
     </Container>
   );
