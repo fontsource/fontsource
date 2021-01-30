@@ -1,4 +1,3 @@
-import * as ChakraComponents from "@chakra-ui/react";
 import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
@@ -7,6 +6,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import path from "path";
 
 import { Main } from "../../components/Main";
+import * as CustomMdxComponents from "../../components/MdxComponents";
 import { NextChakraLink } from "../../components/NextChakraLink";
 import { PageContainer } from "../../components/PageContainer";
 import { DOCS_PATH, docsFilePaths } from "../../utils/mdxUtils";
@@ -14,7 +14,7 @@ import { DOCS_PATH, docsFilePaths } from "../../utils/mdxUtils";
 // MDX components since Webpack isn't importing them
 const components = {
   a: NextChakraLink,
-  ...ChakraComponents,
+  ...CustomMdxComponents,
 };
 
 export default function DocsPage({ source, frontMatter }) {
@@ -39,7 +39,7 @@ export const getStaticProps = async ({ params }) => {
     components,
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [require("remark-slug")],
       rehypePlugins: [],
     },
     scope: data,
