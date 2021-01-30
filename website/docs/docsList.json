@@ -1,4 +1,5 @@
 [
+  { "key": "home", "title": "Home", "path": "/docs/home" },
   {
     "key": "installation",
     "title": "Installation",
