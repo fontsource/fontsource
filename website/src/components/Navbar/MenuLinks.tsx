@@ -27,12 +27,8 @@ export const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/page2">Page 2 </MenuItem>
-        <MenuItem to="https://github.com/DecliningLotus/next-lotus-starter">
-          <Button size="sm" rounded="md" variant="outline" colorScheme="black">
-            GitHub
-          </Button>
-        </MenuItem>
+        <MenuItem to="/docs/getting-started">Documentation</MenuItem>
+        <MenuItem to="/fonts">Font Previews</MenuItem>
         <DarkModeSwitch />
       </Stack>
     </Box>

@@ -1,9 +1,9 @@
 [
   { "key": "home", "title": "Home", "path": "/docs/home" },
   {
-    "key": "installation",
-    "title": "Installation",
-    "path": "/docs/installation"
+    "key": "getting-started",
+    "title": "Getting Started",
+    "path": "/docs/getting-started"
   },
   { "key": "sass", "title": "Sass", "path": "/docs/sass" }
 ]
