@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/bodoni-moda",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Bodoni Moda font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

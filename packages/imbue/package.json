@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/imbue",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Imbue font in NPM glory.",
   "main": "index.css",
   "publishConfig": {

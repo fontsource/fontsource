@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/kreon",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Kreon font in NPM glory.",
   "main": "index.css",
   "publishConfig": {
