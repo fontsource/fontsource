@@ -1,6 +1,6 @@
 {
-  "name": "next-lotus-starter",
-  "description": "Next.js starter to kickstart my projects.",
+  "name": "fontsource-website",
+  "description": "Fontsource website built using Next.js.",
   "version": "1.0.0",
   "author": "Lotus <declininglotus@gmail.com>",
   "private": true,
@@ -21,7 +21,6 @@
     "@emotion/styled": "^11.0.0",
     "@fontsource/inter": "^4.1.0",
     "@fontsource/poppins": "^4.1.0",
-    "@mapbox/rehype-prism": "^0.5.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^10.0.5",
@@ -58,9 +57,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DecliningLotus/next-lotus-starter"
+    "url": "https://github.com/fontsource/fontsource"
   },
   "bugs": {
-    "url": "https://github.com/DecliningLotus/next-lotus-starter/issues"
+    "url": "https://github.com/fontsource/fontsource"
   }
 }

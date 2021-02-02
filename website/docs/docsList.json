@@ -1,5 +1,9 @@
 [
-  { "key": "home", "title": "Home", "path": "/docs/home" },
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "path": "/docs/introduction"
+  },
   {
     "key": "getting-started",
     "title": "Getting Started",

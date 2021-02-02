@@ -6,14 +6,12 @@ import renderToString from "next-mdx-remote/render-to-string";
 import path from "path";
 
 import { Main } from "../../components/Main";
-import * as CustomMdxComponents from "../../components/MdxComponents";
-import { NextChakraLink } from "../../components/NextChakraLink";
+import CustomMdxComponents from "../../components/MdxComponents";
 import { PageContainer } from "../../components/PageContainer";
 import { DOCS_PATH, docsFilePaths } from "../../utils/mdxUtils";
 
 // MDX components since Webpack isn't importing them
 const components = {
-  a: NextChakraLink,
   ...CustomMdxComponents,
 };
 
@@ -24,7 +22,13 @@ export default function DocsPage({ source, frontMatter }) {
       <Head>
         <title>Fontsource | {frontMatter.title}</title>
       </Head>
-      <Main>{content}</Main>
+      <Main
+        borderLeftWidth={{ base: 0, md: "1px" }}
+        maxWidth={{ base: "90vw", md: "55vw" }}
+        paddingLeft={{ base: "1rem", md: "2em" }}
+      >
+        {content}
+      </Main>
     </PageContainer>
   );
 }
