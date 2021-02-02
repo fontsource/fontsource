@@ -1,4 +1,4 @@
-import { Button, Code, Heading, Link, List, Text } from "@chakra-ui/react";
+import { Button, Heading } from "@chakra-ui/react";
 import Head from "next/head";
 
 import { Container } from "../components/Container";
@@ -12,16 +12,15 @@ const Index = () => (
       <title>Fontsource</title>
     </Head>
     <Main>
-      <Heading fontSize="6vw">Fontsource</Heading>
-      <Container flexDirection="row" maxWidth="48rem" py={2}>
-        <NextChakraLink href="/docs/getting-started" flexGrow={1} mx={2}>
-          <Button width="100%" variant="outline" colorScheme="green">
+      <Heading fontSize={{ base: "6vw", xl: "75px" }}>Fontsource</Heading>
+      <Container flexDirection="row" maxWidth="60rem" py={2}>
+        <NextChakraLink href="/docs/introduction" flexGrow={2} mx={2}>
+          <Button size="lg" width="100%" variant="outline" colorScheme="gray">
             Documentation
           </Button>
         </NextChakraLink>
-
-        <NextChakraLink href="/fonts" flexGrow={3} mx={2}>
-          <Button width="100%" variant="solid" colorScheme="green">
+        <NextChakraLink href="/fonts" flexGrow={2} mx={2}>
+          <Button size="lg" width="100%" variant="outline" colorScheme="gray">
             Font Previews
           </Button>
         </NextChakraLink>

@@ -17,15 +17,17 @@ export const PageContainer = ({
   children,
   ...props
 }: PageContainerProps) => {
-  const bgColor = useColorModeValue("gray.50", "gray.900");
+  const bgColor = useColorModeValue("white", "gray.900");
   const color = useColorModeValue("black", "white");
 
   return (
     <Container minHeight="100vh" bg={bgColor} color={color} {...props}>
       <Navbar />
-      <Container flexDirection="row">
-        {ifSidebar && <Sidebar minWidth="30%" />}
-        <Container minWidth="70%">{children}</Container>
+      <Container flexDirection="row" alignItems="start">
+        {ifSidebar && (
+          <Sidebar minWidth="25%" display={{ base: "none", md: "block" }} />
+        )}
+        {children}
       </Container>
       <Footer />
     </Container>
