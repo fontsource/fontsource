@@ -33,8 +33,9 @@ $unicodeMap: (<%= unicodeMap %>) !default;
   }
 }
 
-$woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2" !default;
-$woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff" !default;
+$fontDir: "~@fontsource/#{$fontId}/files" !default;
+$woff2Path: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2" !default;
+$woffPath: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff" !default;
 $unicodeRange: false !default;
 $unicodeRangeValues: (<%= defUnicode %>) !default;
 
@@ -69,8 +70,9 @@ $fontId: "<%= fontId %>" !default;
 $style: normal !default;
 $display: swap !default;
 $weight: 400 !default;
-$woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2" !default;
-$woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff" !default;
+$fontDir: "~@fontsource/#{$fontId}/files" !default;
+$woff2Path: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2" !default;
+$woffPath: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff" !default;
 $unicodeRange: false !default;
 $unicodeRangeValues: null !default;
 
