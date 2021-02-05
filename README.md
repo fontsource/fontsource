@@ -63,7 +63,7 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 @include fontFaceCustom(
   $weight: 600,
   $display: optional,
-  $woff2Path: "~@fontsource/open-sans/files/open-sans-latin-500-normal.woff2",
+  $woff2Path: "#{$fontDir}/custom-file.woff2",
   $unicodeRange: false
 );
 ```
