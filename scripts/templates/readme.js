@@ -63,6 +63,19 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 // More options available in link below.
 \`\`\`
 
+We also have default variables that you can use!
+
+\`\`\`scss
+@import "~@fontsource/<%= fontId %>/scss/mixins";
+
+$style: italic;
+
+@include fontFace($weight: 500);
+@include fontFace($weight: 600);
+
+// Applies italic to both @includes.
+\`\`\`
+
 You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>/scss/mixins.scss).
 
 _These examples may not reflect actual compatibility. Please refer below._
