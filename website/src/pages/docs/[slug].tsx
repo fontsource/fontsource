@@ -1,5 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
@@ -33,9 +34,9 @@ export default function DocsPage({ source, frontMatter }) {
   );
 }
 
-export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(DOCS_PATH, `${params.slug}.mdx`);
-  const source = fs.readFileSync(postFilePath);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const docFilePath = path.join(DOCS_PATH, `${params.slug}.mdx`);
+  const source = fs.readFileSync(docFilePath);
 
   const { content, data } = matter(source);
 
@@ -57,7 +58,7 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = docsFilePaths
     // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ""))
