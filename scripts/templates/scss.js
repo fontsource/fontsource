@@ -1,14 +1,22 @@
 const _ = require("lodash")
 
 exports.scssMixins = _.template(
-  `@mixin fontFace(
-  $fontName: "<%= fontName %>",
-  $fontId: "<%= fontId %>",
-  $style: normal,
-  $display: swap,
-  $weight: 400,
-  $fontDir: "~@fontsource/#{$fontId}/files",
-  $unicodeMap: (<%= unicodeMap %>)
+  `$fontName: "<%= fontName %>" !default;
+$fontId: "<%= fontId %>" !default;
+$style: normal !default;
+$display: swap !default;
+$weight: 400 !default;
+$fontDir: "~@fontsource/#{$fontId}/files" !default;
+$unicodeMap: (<%= unicodeMap %>) !default;
+
+@mixin fontFace(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $fontDir: $fontDir,
+  $unicodeMap: $unicodeMap
 ) {
   @each $subset, $unicodeRangeValues in $unicodeMap {
     @font-face {
@@ -25,16 +33,21 @@ exports.scssMixins = _.template(
   }
 }
 
+$woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2" !default;
+$woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff" !default;
+$unicodeRange: false !default;
+$unicodeRangeValues: (<%= defUnicode %>) !default;
+
 @mixin fontFaceCustom(
-  $fontName: "<%= fontName %>",
-  $fontId: "<%= fontId %>",
-  $style: normal,
-  $display: swap,
-  $weight: 400,
-  $woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2",
-  $woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff",
-  $unicodeRange: false,
-  $unicodeRangeValues: (<%= defUnicode %>)
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $woff2Path: $woff2Path,
+  $woffPath: $woffPath,
+  $unicodeRange: $unicodeRange,
+  $unicodeRangeValues: $unicodeRangeValues
 ) {
   @font-face {
     font-family: "#{$fontName}";
@@ -51,16 +64,26 @@ exports.scssMixins = _.template(
 )
 
 exports.scssGeneric = _.template(
-  `@mixin fontFaceCustom(
-  $fontName: "<%= fontName %>",
-  $fontId: "<%= fontId %>",
-  $style: normal,
-  $display: swap,
-  $weight: 400,
-  $woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2",
-  $woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff",
-  $unicodeRange: false,
-  $unicodeRangeValues: null
+  `$fontName: "<%= fontName %>" !default;
+$fontId: "<%= fontId %>" !default;
+$style: normal !default;
+$display: swap !default;
+$weight: 400 !default;
+$woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2" !default;
+$woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff" !default;
+$unicodeRange: false !default;
+$unicodeRangeValues: null !default;
+
+@mixin fontFaceCustom(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $woff2Path: $woff2Path,
+  $woffPath: $woffPath,
+  $unicodeRange: $unicodeRange,
+  $unicodeRangeValues: $unicodeRangeValues
 ) {
   @font-face {
     font-family: "#{$fontName}";
