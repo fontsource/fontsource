@@ -18,7 +18,7 @@ These will always contain changes from Fontsource's end.
 
 - Added default variables to SCSS mixins. [#144](https://github.com/fontsource/fontsource/pull/144)
 - Added $fontDir variable to SCSS mixins. [#146](https://github.com/fontsource/fontsource/pull/146)
-- Added variable font and $defSubset variable SCSS mixins. [#147](https://github.com/fontsource/fontsource/pull/147)
+- Added variable font support and $defSubset variable to SCSS mixins. [#147](https://github.com/fontsource/fontsource/pull/147)
 
 ### Documentation
 
