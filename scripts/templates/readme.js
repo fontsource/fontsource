@@ -131,6 +131,8 @@ h1 {
 }
 \`\`\`
 
+For Sass mixins, please use fontFaceVariable() and fontFaceVariableCustom which introduces the new $type variable to choose between "wghtOnly" and "full".
+
 _To view the available variable axes that may be included in the font, click [here](https://fonts.google.com/variablefonts). The meanings of all axes and the restrictions associated with them are explained there._<% } %>
 
 ## Additional Options
