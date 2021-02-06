@@ -1,1 +1,25 @@
-{"name":"@fontsource/lancelot","version":"4.1.0","description":"Self-host the Lancelot font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Lancelot","lancelot"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/lancelot#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/lancelot"}}
+{
+  "name": "@fontsource/lancelot",
+  "version": "4.1.0",
+  "description": "Self-host the Lancelot font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Lancelot",
+    "lancelot"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lancelot#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/lancelot"
+  }
+}

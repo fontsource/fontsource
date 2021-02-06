@@ -1,1 +1,25 @@
-{"name":"@fontsource/bitter","version":"4.1.1","description":"Self-host the Bitter font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Bitter","bitter"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/bitter#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/bitter"}}
+{
+  "name": "@fontsource/bitter",
+  "version": "4.1.1",
+  "description": "Self-host the Bitter font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Bitter",
+    "bitter"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bitter#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/bitter"
+  }
+}

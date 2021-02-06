@@ -1,1 +1,25 @@
-{"name":"@fontsource/cinzel","version":"4.1.1","description":"Self-host the Cinzel font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Cinzel","cinzel"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/cinzel#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/cinzel"}}
+{
+  "name": "@fontsource/cinzel",
+  "version": "4.1.1",
+  "description": "Self-host the Cinzel font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Cinzel",
+    "cinzel"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/cinzel#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/cinzel"
+  }
+}

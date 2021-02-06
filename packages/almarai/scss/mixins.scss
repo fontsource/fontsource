@@ -1,11 +1,19 @@
+$fontName: "Almarai" !default;
+$fontId: "almarai" !default;
+$style: normal !default;
+$display: swap !default;
+$weight: 400 !default;
+$fontDir: "~@fontsource/#{$fontId}/files" !default;
+$unicodeMap: (arabic: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC)) !default;
+
 @mixin fontFace(
-  $fontName: "Almarai",
-  $fontId: "almarai",
-  $style: normal,
-  $display: swap,
-  $weight: 400,
-  $fontDir: "~@fontsource/#{$fontId}/files",
-  $unicodeMap: (arabic: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC))
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $fontDir: $fontDir,
+  $unicodeMap: $unicodeMap
 ) {
   @each $subset, $unicodeRangeValues in $unicodeMap {
     @font-face {
@@ -13,25 +21,29 @@
       font-style: $style;
       font-display: $display;
       font-weight: $weight;
-      src: url("#{$fontDir}/#{$fontId}-#{$subset}-#{$weight}-#{$style}.woff2")
-          format("woff2"),
-        url("#{$fontDir}/#{$fontId}-all-#{$weight}-#{$style}.woff")
-          format("woff");
+      src: url("#{$fontDir}/#{$fontId}-#{$subset}-#{$weight}-#{$style}.woff2") format("woff2"),
+        url("#{$fontDir}/#{$fontId}-all-#{$weight}-#{$style}.woff") format("woff");
       unicode-range: $unicodeRangeValues;
     }
   }
 }
 
+$defSubset: "arabic" !default;
+$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2" !default;
+$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff" !default;
+$unicodeRange: false !default;
+$unicodeRangeValues: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC) !default;
+
 @mixin fontFaceCustom(
-  $fontName: "Almarai",
-  $fontId: "almarai",
-  $style: normal,
-  $display: swap,
-  $weight: 400,
-  $woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-arabic-#{$weight}-#{$style}.woff2",
-  $woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-arabic-#{$weight}-#{$style}.woff",
-  $unicodeRange: false,
-  $unicodeRangeValues: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC)
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $woff2Path: $woff2Path,
+  $woffPath: $woffPath,
+  $unicodeRange: $unicodeRange,
+  $unicodeRangeValues: $unicodeRangeValues
 ) {
   @font-face {
     font-family: "#{$fontName}";
@@ -44,3 +56,5 @@
     }
   }
 }
+
+

@@ -1,1 +1,25 @@
-{"name":"@fontsource/asar","version":"4.1.0","description":"Self-host the Asar font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Asar","asar"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/asar#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/asar"}}
+{
+  "name": "@fontsource/asar",
+  "version": "4.1.0",
+  "description": "Self-host the Asar font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Asar",
+    "asar"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/asar#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/asar"
+  }
+}

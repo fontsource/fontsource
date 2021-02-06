@@ -1,1 +1,25 @@
-{"name":"@fontsource/irish-grover","version":"4.1.0","description":"Self-host the Irish Grover font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Irish Grover","irish-grover"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/irish-grover#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/irish-grover"}}
+{
+  "name": "@fontsource/irish-grover",
+  "version": "4.1.0",
+  "description": "Self-host the Irish Grover font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Irish Grover",
+    "irish-grover"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/irish-grover#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/irish-grover"
+  }
+}

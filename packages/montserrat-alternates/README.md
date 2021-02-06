@@ -48,11 +48,23 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 @include fontFaceCustom(
   $weight: 600,
   $display: optional,
-  $woff2Path:
-    "~@fontsource/montserrat-alternates/files/montserrat-alternates-latin-500-normal.woff2",
+  $woff2Path: "#{$fontDir}/custom-file.woff2",
   $unicodeRange: false
 );
 // More options available in link below.
+```
+
+We also have default variables that you can use!
+
+```scss
+@import "~@fontsource/montserrat-alternates/scss/mixins";
+
+$style: italic;
+
+@include fontFace($weight: 500);
+@include fontFace($weight: 600);
+
+// Applies italic to both @includes.
 ```
 
 You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/montserrat-alternates/scss/mixins.scss).

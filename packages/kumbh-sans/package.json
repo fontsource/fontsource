@@ -1,1 +1,28 @@
-{"name":"@fontsource/kumbh-sans","version":"4.1.1","description":"Self-host the Kumbh Sans font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Kumbh Sans","kumbh-sans","css","front-end","web"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/kumbh-sans#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/kumbh-sans"}}
+{
+  "name": "@fontsource/kumbh-sans",
+  "version": "4.1.1",
+  "description": "Self-host the Kumbh Sans font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Kumbh Sans",
+    "kumbh-sans",
+    "css",
+    "front-end",
+    "web"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/kumbh-sans#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/kumbh-sans"
+  }
+}

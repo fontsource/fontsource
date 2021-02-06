@@ -1,1 +1,25 @@
-{"name":"@fontsource/inria-serif","version":"4.1.0","description":"Self-host the Inria Serif font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Inria Serif","inria-serif"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/inria-serif#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/inria-serif"}}
+{
+  "name": "@fontsource/inria-serif",
+  "version": "4.1.0",
+  "description": "Self-host the Inria Serif font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Inria Serif",
+    "inria-serif"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/inria-serif#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/inria-serif"
+  }
+}

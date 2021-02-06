@@ -48,10 +48,23 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 @include fontFaceCustom(
   $weight: 600,
   $display: optional,
-  $woff2Path: "~@fontsource/rochester/files/rochester-latin-500-normal.woff2",
+  $woff2Path: "#{$fontDir}/custom-file.woff2",
   $unicodeRange: false
 );
 // More options available in link below.
+```
+
+We also have default variables that you can use!
+
+```scss
+@import "~@fontsource/rochester/scss/mixins";
+
+$style: italic;
+
+@include fontFace($weight: 500);
+@include fontFace($weight: 600);
+
+// Applies italic to both @includes.
 ```
 
 You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/rochester/scss/mixins.scss).

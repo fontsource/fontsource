@@ -1,1 +1,29 @@
-{"name":"@fontsource/junction","version":"4.1.0","description":"Self-host the Junction font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Junction","junction","css","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/junction#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/junction"}}
+{
+  "name": "@fontsource/junction",
+  "version": "4.1.0",
+  "description": "Self-host the Junction font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Junction",
+    "junction",
+    "css",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/junction#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/junction"
+  }
+}

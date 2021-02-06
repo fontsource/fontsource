@@ -1,1 +1,25 @@
-{"name":"@fontsource/el-messiri","version":"4.1.0","description":"Self-host the El Messiri font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","El Messiri","el-messiri"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/el-messiri#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/el-messiri"}}
+{
+  "name": "@fontsource/el-messiri",
+  "version": "4.1.0",
+  "description": "Self-host the El Messiri font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "El Messiri",
+    "el-messiri"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/el-messiri#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/el-messiri"
+  }
+}

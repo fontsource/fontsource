@@ -1,1 +1,25 @@
-{"name":"@fontsource/merriweather-sans","version":"4.1.1","description":"Self-host the Merriweather Sans font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Merriweather Sans","merriweather-sans"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/merriweather-sans#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/merriweather-sans"}}
+{
+  "name": "@fontsource/merriweather-sans",
+  "version": "4.1.1",
+  "description": "Self-host the Merriweather Sans font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Merriweather Sans",
+    "merriweather-sans"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/merriweather-sans#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/merriweather-sans"
+  }
+}
