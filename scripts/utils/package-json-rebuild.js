@@ -18,7 +18,7 @@ directories.forEach(directory => {
   jsonfile.writeFileSync(`${fontDir}/package.json`, {
     name: packageJSON.name,
     version: packageJSON.version,
-    description: packageJSON.description,
+    description: `Self-host the ${metadata.fontName} font in a neatly bundled NPM package.`,
     main: "index.css",
     publishConfig: {
       access: "public",
