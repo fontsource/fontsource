@@ -71,13 +71,37 @@ if (changed || force === "force") {
     })
     .join(", ")
 
-  const scss = scssMixins({
-    fontId: font.id,
-    fontName: font.family,
-    defSubset: font.defSubset,
-    defUnicode: font.unicodeRange[font.defSubset],
-    unicodeMap,
-  })
+  let scss
+  // Include variable mixins if needed
+  if (variableFlag) {
+    const variableWeight = `${variableMeta.wght.min} ${variableMeta.wght.max}`
+    let variableWdth
+    if ("wdth" in variableMeta) {
+      variableWdth = `${variableMeta.wdth.min}% ${variableMeta.wdth.max}%`
+    } else {
+      variableWdth = "null"
+    }
+
+    scss = scssMixins({
+      fontId: font.id,
+      fontName: font.family,
+      defSubset: font.defSubset,
+      defUnicode: font.unicodeRange[font.defSubset],
+      unicodeMap,
+      variableFlag,
+      variableWeight,
+      variableWdth,
+    })
+  } else {
+    scss = scssMixins({
+      fontId: font.id,
+      fontName: font.family,
+      defSubset: font.defSubset,
+      defUnicode: font.unicodeRange[font.defSubset],
+      unicodeMap,
+      variableFlag,
+    })
+  }
 
   fs.writeFileSync(`${fontDir}/scss/mixins.scss`, scss)
 

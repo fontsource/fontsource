@@ -12,6 +12,18 @@ These will always contain changes from Fontsource's end.
 
 # 4.x Release
 
+## 4.2.x
+
+### Features
+
+- Added default variables to SCSS mixins. [#144](https://github.com/fontsource/fontsource/pull/144)
+- Added $fontDir variable to SCSS mixins. [#146](https://github.com/fontsource/fontsource/pull/146)
+- Added variable font support and $defSubset variable to SCSS mixins. [#147](https://github.com/fontsource/fontsource/pull/147)
+
+### Documentation
+
+- Changed package.json descriptions to something more mature. [#148](https://github.com/fontsource/fontsource/pull/148)
+
 ## 4.1.x
 
 ### Features
