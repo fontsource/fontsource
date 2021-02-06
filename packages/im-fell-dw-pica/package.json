@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/im-fell-dw-pica",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Self-host the IM Fell DW Pica font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/roboto-mono",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "Self-host the Roboto Mono font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

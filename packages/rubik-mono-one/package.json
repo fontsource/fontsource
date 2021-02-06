@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/rubik-mono-one",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Self-host the Rubik Mono One font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
