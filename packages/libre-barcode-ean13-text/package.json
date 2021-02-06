@@ -26,5 +26,5 @@
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/libre-barcode-ean13-text"
-  },
+  }
 }
