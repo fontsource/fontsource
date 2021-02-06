@@ -4,7 +4,7 @@ exports.packageJson = _.template(
   `{
   "name": "@fontsource/<%= fontId %>",
   "version": "<%= version %>",
-  "description": "<%= fontName %> font in NPM glory.",
+  "description": "Self-host the <%= fontName %> font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
     "access": "public"
@@ -17,6 +17,7 @@ exports.packageJson = _.template(
     "<%= fontName %>",
     "<%= fontId %>",
     "css",
+    "sass",
     "front-end",
     "web",
     "typeface"
