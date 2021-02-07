@@ -5,7 +5,7 @@ import { NextChakraLink } from "../NextChakraLink";
 export const Logo = () => {
   return (
     <NextChakraLink href="/">
-      <Text fontWeight={700}>Fontsource</Text>
+      <Text fontWeight="700">Fontsource</Text>
     </NextChakraLink>
   );
 };

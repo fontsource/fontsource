@@ -1,36 +1,37 @@
 import { Skeleton, Text } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
-import DefaultErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import useSWR from "swr";
 
 import { PageContainer } from "../../components/PageContainer";
 import { fetcher, fontsourceData } from "../../utils/fontsourceUtils";
 
-export default function FontPage({ font }) {
+export default function FontPage({ metadata }) {
   const { isFallback } = useRouter();
-  const { data, error } = useSWR(fontsourceData.list, fetcher, {
-    initialData: font,
-  });
 
-  if (error) {
+  if (isFallback) {
     return (
       <>
         <Head>
           <meta name="robots" content="noindex" />
+          <title>Loading...</title>
         </Head>
-        <DefaultErrorPage statusCode={404} />
+        <PageContainer>
+          <Skeleton height="20px" />
+        </PageContainer>
       </>
     );
   }
 
-  if (!data) return <Skeleton height="20px" />;
-
   return (
-    <PageContainer>
-      {isFallback ? <Skeleton height="20px" /> : <Text>Loaded</Text>}
-    </PageContainer>
+    <>
+      <Head>
+        <title>{metadata.fontName} | Fontsource</title>
+      </Head>
+      <PageContainer>
+        <Text>Loaded</Text>
+      </PageContainer>
+    </>
   );
 }
 
@@ -41,9 +42,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const metadata = await fetcher(
       fontsourceData.data(`${params.font}`).metadata
     );
-    return metadata ? { props: { metadata } } : { notFound: true };
+    return metadata
+      ? { props: { metadata }, revalidate: 7200 }
+      : { notFound: true };
   } catch (error) {
-    // If GitHub of all places died
+    // If metadata doesn't exist
     console.error(error);
     return { notFound: true };
   }
@@ -52,7 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   // Gets FONTLIST.json, find all keys and determine paths
   const paths = await fetcher(fontsourceData.list).then((res) =>
-    res.map((fonts) => Object.keys(fonts)).map((font) => ({ params: { font } }))
+    Object.keys(res).map((font) => ({ params: { font } }))
   );
 
   return {

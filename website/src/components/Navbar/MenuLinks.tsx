@@ -1,11 +1,11 @@
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 
 import { NextChakraLink } from "../NextChakraLink";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 
 const MenuItem = ({ children, to = "/", ...rest }) => {
   return (
-    <NextChakraLink href={to}>
+    <NextChakraLink href={to} prefetch={false}>
       <Text display="block" {...rest}>
         {children}
       </Text>
