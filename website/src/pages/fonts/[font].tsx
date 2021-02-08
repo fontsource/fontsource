@@ -1,4 +1,5 @@
 import { Skeleton, Text } from "@chakra-ui/react";
+import { Octokit } from "@octokit/rest";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -6,7 +7,7 @@ import { useRouter } from "next/router";
 import { FontPageProps, MetadataProps } from "../../@types/[font]";
 import { PageContainer } from "../../components/PageContainer";
 import FontDownload from "../../hooks/FontDownload";
-import { fetcher, fontsourceData } from "../../utils/fontsourceUtils";
+import { fetcher, fontsourceDownload } from "../../utils/fontsourceUtils";
 
 export default function FontPage({ metadata, downloadLink }: FontPageProps) {
   const { isFallback } = useRouter();
@@ -49,10 +50,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // so this `fetcher` function will be executed on the server-side.
   try {
     const metadata: MetadataProps = await fetcher(
-      fontsourceData.data(`${params.font}`).metadata
+      fontsourceDownload.data(`${params.font}`).metadata
     );
 
-    const downloadLink = await fontsourceData.fontDownload(
+    const downloadLink = fontsourceDownload.fontDownload(
       metadata.fontId,
       metadata.defSubset,
       metadata.weights
@@ -70,9 +71,25 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Gets FONTLIST.json, find all keys and determine paths
-  const paths = await fetcher(fontsourceData.list).then((res) =>
-    Object.keys(res).map((font) => ({ params: { font } }))
-  );
+  const octokit = new Octokit({
+    auth: process.env.GITHUB_PAT,
+    userAgent: "Fontsource Website",
+  });
+
+  // Cannot update @octokit/rest past 18.0.9 until this issue is resolved - https://github.com/octokit/rest.js/issues/1971
+  let content;
+  await octokit.repos
+    .getContent({
+      owner: "fontsource",
+      repo: "fontsource",
+      path: "/FONTLIST.json",
+    })
+    .then(({ data }) => {
+      // content will be base64 encoded
+      content = JSON.parse(Buffer.from(data.content, "base64").toString());
+    });
+
+  const paths = Object.keys(content).map((font) => ({ params: { font } }));
 
   return {
     paths,

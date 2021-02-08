@@ -1,24 +1,19 @@
-const baseUrl =
-  "https://raw.githubusercontent.com/fontsource/fontsource/master";
+// GitHub API has too many restrictions to actually be feasible for individual font downloads.
+// Likewise jsdelivr won't process packages larger than 100MB e.g. Noto Serif TC
+const baseUrlDownload = "https://unpkg.com";
 
-const fontsourceData = {
-  base: baseUrl,
-  list: `${baseUrl}/FONTLIST.json`,
-  readme: `${baseUrl}/README.md`,
-  changelog: `${baseUrl}/CHANGELOG.md`,
-
+const fontsourceDownload = {
   data(fontId: string) {
-    const dir = `${baseUrl}/packages/${fontId}`;
+    const dir = `${baseUrlDownload}/@fontsource/${fontId}`;
     return {
       metadata: `${dir}/metadata.json`,
-      readme: `${dir}/README.md`,
       npm: `https://www.npmjs.com/package/@fontsource/${fontId}`,
       repo: `https://github.com/fontsource/fontsource/tree/master/packages/${fontId}`,
     };
   },
 
   fontDownload(fontId: string, defSubset: string, weightArr: number[]) {
-    const dir = `${baseUrl}/packages/${fontId}`;
+    const dir = `${baseUrlDownload}/@fontsource/${fontId}`;
 
     // Rarely some fonts do not have a 400 weight
     const findClosest = () => {
@@ -37,4 +32,4 @@ const fontsourceData = {
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export { fetcher, fontsourceData };
+export { fetcher, fontsourceDownload };

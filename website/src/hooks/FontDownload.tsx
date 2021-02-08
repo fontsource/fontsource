@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { MetadataProps } from "../pages/fonts/[font]";
+import { MetadataProps } from "../@types/[font]";
 
 const FontDownload = (metadata: MetadataProps, downloadLink: string) => {
   const [fontLoaded, setFontLoaded] = useState(false);
