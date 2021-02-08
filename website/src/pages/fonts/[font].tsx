@@ -3,54 +3,12 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
+import { FontPageProps, MetadataProps } from "../../@types/[font]";
 import { PageContainer } from "../../components/PageContainer";
 import FontDownload from "../../hooks/FontDownload";
 import { fetcher, fontsourceData } from "../../utils/fontsourceUtils";
 
-export interface MetadataProps {
-  fontId: string;
-  fontName: string;
-  subsets: string[];
-  weights: number[];
-  styles: string;
-  defSubset: string;
-  variable: false | VariableMetadata;
-  lastModified: string;
-  version: string;
-  source: string;
-  license: string;
-  type: "google" | "icons" | "other";
-}
-
-// Pulled from here - https://fonts.google.com/variablefonts#axis-definitions
-interface VariableMetadata {
-  ital?: Axes;
-  opsz?: Axes;
-  slnt?: Axes;
-  wdth?: Axes;
-  wght: Axes;
-  CASL?: Axes;
-  CSRV?: Axes;
-  GRAD?: Axes;
-  MONO?: Axes;
-  SOFT?: Axes;
-  WONK?: Axes;
-  XPRN?: Axes;
-}
-
-interface Axes {
-  default: string;
-  min: string;
-  max: string;
-  step: string;
-}
-
-interface FontPage {
-  metadata: MetadataProps;
-  downloadLink: string;
-}
-
-export default function FontPage({ metadata, downloadLink }: FontPage) {
+export default function FontPage({ metadata, downloadLink }: FontPageProps) {
   const { isFallback } = useRouter();
 
   let fontLoaded: boolean;
