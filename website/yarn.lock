@@ -1994,6 +1994,11 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.1.5"
 
+"@types/css-font-loading-module@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@types/css-font-loading-module/-/css-font-loading-module-0.0.4.tgz#94a835e27d1af444c65cba88523533c174463d64"
+  integrity sha512-ENdXf7MW4m9HeDojB2Ukbi7lYMIuQNBHVf98dbzaiG4EEJREBd6oleVAjrLRCrp7dm6CK1mmdmU9tcgF61acbw==
+
 "@types/hast@^2.0.0":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@types/hast/-/hast-2.3.1.tgz#b16872f2a6144c7025f296fb9636a667ebb79cd9"

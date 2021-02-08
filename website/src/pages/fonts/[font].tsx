@@ -4,12 +4,61 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import { PageContainer } from "../../components/PageContainer";
+import FontDownload from "../../hooks/FontDownload";
 import { fetcher, fontsourceData } from "../../utils/fontsourceUtils";
 
-export default function FontPage({ metadata }) {
+export interface MetadataProps {
+  fontId: string;
+  fontName: string;
+  subsets: string[];
+  weights: number[];
+  styles: string;
+  defSubset: string;
+  variable: false | VariableMetadata;
+  lastModified: string;
+  version: string;
+  source: string;
+  license: string;
+  type: "google" | "icons" | "other";
+}
+
+// Pulled from here - https://fonts.google.com/variablefonts#axis-definitions
+interface VariableMetadata {
+  ital?: Axes;
+  opsz?: Axes;
+  slnt?: Axes;
+  wdth?: Axes;
+  wght: Axes;
+  CASL?: Axes;
+  CSRV?: Axes;
+  GRAD?: Axes;
+  MONO?: Axes;
+  SOFT?: Axes;
+  WONK?: Axes;
+  XPRN?: Axes;
+}
+
+interface Axes {
+  default: string;
+  min: string;
+  max: string;
+  step: string;
+}
+
+interface FontPage {
+  metadata: MetadataProps;
+  downloadLink: string;
+}
+
+export default function FontPage({ metadata, downloadLink }: FontPage) {
   const { isFallback } = useRouter();
 
-  if (isFallback) {
+  let fontLoaded: boolean;
+  if (metadata) {
+    fontLoaded = FontDownload(metadata, downloadLink);
+  }
+
+  if (isFallback || !fontLoaded) {
     return (
       <>
         <Head>
@@ -17,7 +66,7 @@ export default function FontPage({ metadata }) {
           <title>Loading...</title>
         </Head>
         <PageContainer>
-          <Skeleton height="20px" />
+          <Skeleton height="50px" />
         </PageContainer>
       </>
     );
@@ -29,7 +78,9 @@ export default function FontPage({ metadata }) {
         <title>{metadata.fontName} | Fontsource</title>
       </Head>
       <PageContainer>
-        <Text>Loaded</Text>
+        <Text style={{ fontFamily: metadata.fontName }}>
+          The quick brown fox jumps over the lazy dog.
+        </Text>
       </PageContainer>
     </>
   );
@@ -39,11 +90,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // `getStaticProps` is invoked on the server-side,
   // so this `fetcher` function will be executed on the server-side.
   try {
-    const metadata = await fetcher(
+    const metadata: MetadataProps = await fetcher(
       fontsourceData.data(`${params.font}`).metadata
     );
+
+    const downloadLink = await fontsourceData.fontDownload(
+      metadata.fontId,
+      metadata.defSubset,
+      metadata.weights
+    );
+
     return metadata
-      ? { props: { metadata }, revalidate: 7200 }
+      ? { props: { metadata, downloadLink }, revalidate: 7200 }
       : { notFound: true };
   } catch (error) {
     // If metadata doesn't exist
