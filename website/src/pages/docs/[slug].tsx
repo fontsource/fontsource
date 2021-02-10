@@ -19,7 +19,7 @@ const components = {
 export default function DocsPage({ source, frontMatter }) {
   const content = hydrate(source, { components });
   return (
-    <PageContainer>
+    <PageContainer ifDocs={true}>
       <Head>
         <title>Fontsource | {frontMatter.title}</title>
       </Head>

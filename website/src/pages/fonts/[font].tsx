@@ -1,10 +1,14 @@
 import { Skeleton, Text } from "@chakra-ui/react";
 import { Octokit } from "@octokit/rest";
+import { capitalCase } from "capital-case";
+import { promises as fs } from "fs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import path from "path";
 
 import { FontPageProps, MetadataProps } from "../../@types/[font]";
+import { Main } from "../../components/Main";
 import { PageContainer } from "../../components/PageContainer";
 import FontDownload from "../../hooks/FontDownload";
 import { fetcher, fontsourceDownload } from "../../utils/fontsourceUtils";
@@ -24,8 +28,10 @@ export default function FontPage({ metadata, downloadLink }: FontPageProps) {
           <meta name="robots" content="noindex" />
           <title>Loading...</title>
         </Head>
-        <PageContainer>
-          <Skeleton height="50px" />
+        <PageContainer ifDocs={false}>
+          <Main>
+            <Skeleton height="50px" />
+          </Main>
         </PageContainer>
       </>
     );
@@ -36,10 +42,12 @@ export default function FontPage({ metadata, downloadLink }: FontPageProps) {
       <Head>
         <title>{metadata.fontName} | Fontsource</title>
       </Head>
-      <PageContainer>
-        <Text style={{ fontFamily: metadata.fontName }}>
-          The quick brown fox jumps over the lazy dog.
-        </Text>
+      <PageContainer ifDocs={false}>
+        <Main>
+          <Text style={{ fontFamily: metadata.fontName }}>
+            The quick brown fox jumps over the lazy dog.
+          </Text>
+        </Main>
       </PageContainer>
     </>
   );
@@ -59,8 +67,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       metadata.weights
     );
 
+    const fontList = params.font;
+
     return metadata
-      ? { props: { metadata, downloadLink }, revalidate: 7200 }
+      ? { props: { metadata, downloadLink, fontList }, revalidate: 7200 }
       : { notFound: true };
   } catch (error) {
     // If metadata doesn't exist
@@ -89,10 +99,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
       content = JSON.parse(Buffer.from(data.content, "base64").toString());
     });
 
-  const paths = Object.keys(content).map((font) => ({ params: { font } }));
+  const fontList = Object.keys(content);
+
+  // For sidebar
+  const fontListPath = path.join(process.cwd(), "src/configs/fontList.json");
+  const sideBarList = fontList.map((font) => ({
+    key: font,
+    title: capitalCase(font.replace("-", " ")),
+    path: `/fonts/${font}`,
+  }));
+  await fs.writeFile(fontListPath, JSON.stringify(sideBarList));
+
+  const paths = fontList.map((font) => ({ params: { font } }));
 
   return {
     paths,
+    // Fallback to generate any new fonts that are introduced.
     fallback: true,
   };
 };

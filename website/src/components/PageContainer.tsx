@@ -8,12 +8,14 @@ import { Sidebar } from "./Sidebar";
 
 interface SidebarProp {
   ifSidebar?: boolean;
+  ifDocs: boolean;
 }
 
 export type PageContainerProps = PropsWithChildren<FlexProps> & SidebarProp;
 
 export const PageContainer = ({
   ifSidebar = true,
+  ifDocs,
   children,
   ...props
 }: PageContainerProps) => {
@@ -25,7 +27,11 @@ export const PageContainer = ({
       <Navbar />
       <Container flexDirection="row" alignItems="start">
         {ifSidebar && (
-          <Sidebar minWidth="25%" display={{ base: "none", md: "block" }} />
+          <Sidebar
+            ifDocs={ifDocs}
+            minWidth="25%"
+            display={{ base: "none", md: "block" }}
+          />
         )}
         {children}
       </Container>
