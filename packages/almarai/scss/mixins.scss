@@ -1,10 +1,10 @@
-$fontName: "Almarai" !default;
-$fontId: "almarai" !default;
-$style: normal !default;
-$display: swap !default;
-$weight: 400 !default;
-$fontDir: "~@fontsource/#{$fontId}/files" !default;
-$unicodeMap: (arabic: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC)) !default;
+$fontName: "Almarai";
+$fontId: "almarai";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+$unicodeMap: (arabic: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC));
 
 @mixin fontFace(
   $fontName: $fontName,
@@ -28,11 +28,11 @@ $unicodeMap: (arabic: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+
   }
 }
 
-$defSubset: "arabic" !default;
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2" !default;
-$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff" !default;
-$unicodeRange: false !default;
-$unicodeRangeValues: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC) !default;
+$defSubset: "arabic";
+$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
+$unicodeRange: false;
+$unicodeRangeValues: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC);
 
 @mixin fontFaceCustom(
   $fontName: $fontName,

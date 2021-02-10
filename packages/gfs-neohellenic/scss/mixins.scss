@@ -1,10 +1,10 @@
-$fontName: "GFS Neohellenic" !default;
-$fontId: "gfs-neohellenic" !default;
-$style: normal !default;
-$display: swap !default;
-$weight: 400 !default;
-$fontDir: "~@fontsource/#{$fontId}/files" !default;
-$unicodeMap: (greek: (U+0370-03FF)) !default;
+$fontName: "GFS Neohellenic";
+$fontId: "gfs-neohellenic";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+$unicodeMap: (greek: (U+0370-03FF));
 
 @mixin fontFace(
   $fontName: $fontName,
@@ -28,11 +28,11 @@ $unicodeMap: (greek: (U+0370-03FF)) !default;
   }
 }
 
-$defSubset: "greek" !default;
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2" !default;
-$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff" !default;
-$unicodeRange: false !default;
-$unicodeRangeValues: (U+0370-03FF) !default;
+$defSubset: "greek";
+$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
+$unicodeRange: false;
+$unicodeRangeValues: (U+0370-03FF);
 
 @mixin fontFaceCustom(
   $fontName: $fontName,

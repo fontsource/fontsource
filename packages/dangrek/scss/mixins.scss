@@ -1,10 +1,10 @@
-$fontName: "Dangrek" !default;
-$fontId: "dangrek" !default;
-$style: normal !default;
-$display: swap !default;
-$weight: 400 !default;
-$fontDir: "~@fontsource/#{$fontId}/files" !default;
-$unicodeMap: (khmer: (U+1780-17FF, U+200C, U+25CC)) !default;
+$fontName: "Dangrek";
+$fontId: "dangrek";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+$unicodeMap: (khmer: (U+1780-17FF, U+200C, U+25CC));
 
 @mixin fontFace(
   $fontName: $fontName,
@@ -28,11 +28,11 @@ $unicodeMap: (khmer: (U+1780-17FF, U+200C, U+25CC)) !default;
   }
 }
 
-$defSubset: "khmer" !default;
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2" !default;
-$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff" !default;
-$unicodeRange: false !default;
-$unicodeRangeValues: (U+1780-17FF, U+200C, U+25CC) !default;
+$defSubset: "khmer";
+$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
+$unicodeRange: false;
+$unicodeRangeValues: (U+1780-17FF, U+200C, U+25CC);
 
 @mixin fontFaceCustom(
   $fontName: $fontName,

@@ -1,10 +1,10 @@
-$fontName: "Dr Sugiyama" !default;
-$fontId: "dr-sugiyama" !default;
-$style: normal !default;
-$display: swap !default;
-$weight: 400 !default;
-$fontDir: "~@fontsource/#{$fontId}/files" !default;
-$unicodeMap: (latin-ext: (U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF), latin: (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD)) !default;
+$fontName: "Dr Sugiyama";
+$fontId: "dr-sugiyama";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+$unicodeMap: (latin-ext: (U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF), latin: (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD));
 
 @mixin fontFace(
   $fontName: $fontName,
@@ -28,11 +28,11 @@ $unicodeMap: (latin-ext: (U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
   }
 }
 
-$defSubset: "latin" !default;
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2" !default;
-$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff" !default;
-$unicodeRange: false !default;
-$unicodeRangeValues: (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD) !default;
+$defSubset: "latin";
+$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
+$unicodeRange: false;
+$unicodeRangeValues: (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD);
 
 @mixin fontFaceCustom(
   $fontName: $fontName,
