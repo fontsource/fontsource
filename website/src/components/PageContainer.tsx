@@ -24,8 +24,8 @@ export const PageContainer = ({
 
   return (
     <Container minHeight="100vh" bg={bgColor} color={color} {...props}>
-      <Navbar />
-      <Container flexDirection="row" alignItems="start">
+      <Navbar maxWidth="72rem" />
+      <Container px={8} maxWidth="72rem" flexDirection="row" alignItems="start">
         {ifSidebar && (
           <Sidebar
             ifDocs={ifDocs}

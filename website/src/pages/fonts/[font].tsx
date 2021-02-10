@@ -43,7 +43,7 @@ export default function FontPage({ metadata, downloadLink }: FontPageProps) {
         <title>{metadata.fontName} | Fontsource</title>
       </Head>
       <PageContainer ifDocs={false}>
-        <Main>
+        <Main maxWidth={{ base: "90vw", md: "55vw" }}>
           <Text style={{ fontFamily: metadata.fontName }}>
             The quick brown fox jumps over the lazy dog.
           </Text>
