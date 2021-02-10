@@ -7,7 +7,7 @@ import { NextChakraLink } from "../../components/NextChakraLink";
 import { PageContainer } from "../../components/PageContainer";
 
 const Index = () => (
-  <PageContainer ifSidebar={true}>
+  <PageContainer ifDocs={false} ifSidebar={true}>
     <Head>
       <title>Fonts | Fontsource</title>
     </Head>

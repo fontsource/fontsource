@@ -1,6 +1,7 @@
 // GitHub API has too many restrictions to actually be feasible for individual font downloads.
-// Likewise jsdelivr won't process packages larger than 100MB e.g. Noto Serif TC
-const baseUrlDownload = "https://unpkg.com";
+// UNPKG is a bit unreliable as it blocks our requests sometimes.
+// We've got special permission from jsdelivr to bypass restrictions - https://github.com/jsdelivr/jsdelivr/issues/18279
+const baseUrlDownload = "https://cdn.jsdelivr.net/npm";
 
 const fontsourceDownload = {
   data(fontId: string) {
