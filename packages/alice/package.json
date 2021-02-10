@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/alice",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Self-host the Alice font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/astloch",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Self-host the Astloch font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
