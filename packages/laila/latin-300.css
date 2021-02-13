@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Laila Light'),
-    local('Laila-Light'), url('./files/laila-latin-300-normal.woff2') format('woff2'), url('./files/laila-latin-300-normal.woff') format('woff');
+  src: url('./files/laila-latin-300-normal.woff2') format('woff2'), url('./files/laila-latin-300-normal.woff') format('woff');
   
 }

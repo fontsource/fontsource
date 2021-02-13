@@ -1,0 +1,14 @@
+{
+  "fontId": "reggae-one",
+  "fontName": "Reggae One",
+  "subsets": ["cyrillic", "japanese", "latin", "latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-02-12",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Laila Light'),
-    local('Laila-Light'), url('./files/laila-devanagari-300-normal.woff2') format('woff2'), url('./files/laila-devanagari-300-normal.woff') format('woff');
+  src: url('./files/laila-devanagari-300-normal.woff2') format('woff2'), url('./files/laila-devanagari-300-normal.woff') format('woff');
   
 }
 /* laila-devanagari-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Laila Regular'),
-    local('Laila-Regular'), url('./files/laila-devanagari-400-normal.woff2') format('woff2'), url('./files/laila-devanagari-400-normal.woff') format('woff');
+  src: url('./files/laila-devanagari-400-normal.woff2') format('woff2'), url('./files/laila-devanagari-400-normal.woff') format('woff');
   
 }
 /* laila-devanagari-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Laila Medium'),
-    local('Laila-Medium'), url('./files/laila-devanagari-500-normal.woff2') format('woff2'), url('./files/laila-devanagari-500-normal.woff') format('woff');
+  src: url('./files/laila-devanagari-500-normal.woff2') format('woff2'), url('./files/laila-devanagari-500-normal.woff') format('woff');
   
 }
 /* laila-devanagari-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Laila SemiBold'),
-    local('Laila-SemiBold'), url('./files/laila-devanagari-600-normal.woff2') format('woff2'), url('./files/laila-devanagari-600-normal.woff') format('woff');
+  src: url('./files/laila-devanagari-600-normal.woff2') format('woff2'), url('./files/laila-devanagari-600-normal.woff') format('woff');
   
 }
 /* laila-devanagari-700-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Laila Bold'),
-    local('Laila-Bold'), url('./files/laila-devanagari-700-normal.woff2') format('woff2'), url('./files/laila-devanagari-700-normal.woff') format('woff');
+  src: url('./files/laila-devanagari-700-normal.woff2') format('woff2'), url('./files/laila-devanagari-700-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Laila SemiBold'),
-    local('Laila-SemiBold'), url('./files/laila-devanagari-600-normal.woff2') format('woff2'), url('./files/laila-devanagari-600-normal.woff') format('woff');
+  src: url('./files/laila-devanagari-600-normal.woff2') format('woff2'), url('./files/laila-devanagari-600-normal.woff') format('woff');
   
 }

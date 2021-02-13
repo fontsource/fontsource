@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Alegreya Regular'),
-    local('Alegreya-Regular'), url('./files/alegreya-greek-ext-400-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-400-normal.woff') format('woff');
+  src: url('./files/alegreya-greek-ext-400-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-400-normal.woff') format('woff');
   
 }
 /* alegreya-greek-ext-500-normal*/
@@ -15,9 +13,16 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Alegreya Medium'),
-    local('Alegreya-Medium'), url('./files/alegreya-greek-ext-500-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-500-normal.woff') format('woff');
+  src: url('./files/alegreya-greek-ext-500-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-500-normal.woff') format('woff');
+  
+}
+/* alegreya-greek-ext-600-normal*/
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/alegreya-greek-ext-600-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-600-normal.woff') format('woff');
   
 }
 /* alegreya-greek-ext-700-normal*/
@@ -26,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Alegreya Bold'),
-    local('Alegreya-Bold'), url('./files/alegreya-greek-ext-700-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-700-normal.woff') format('woff');
+  src: url('./files/alegreya-greek-ext-700-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-700-normal.woff') format('woff');
   
 }
 /* alegreya-greek-ext-800-normal*/
@@ -37,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Alegreya ExtraBold'),
-    local('Alegreya-ExtraBold'), url('./files/alegreya-greek-ext-800-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-800-normal.woff') format('woff');
+  src: url('./files/alegreya-greek-ext-800-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-800-normal.woff') format('woff');
   
 }
 /* alegreya-greek-ext-900-normal*/
@@ -48,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Alegreya Black'),
-    local('Alegreya-Black'), url('./files/alegreya-greek-ext-900-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-900-normal.woff') format('woff');
+  src: url('./files/alegreya-greek-ext-900-normal.woff2') format('woff2'), url('./files/alegreya-greek-ext-900-normal.woff') format('woff');
   
 }

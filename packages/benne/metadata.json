@@ -1,0 +1,14 @@
+{
+  "fontId": "benne",
+  "fontName": "Benne",
+  "subsets": ["kannada", "latin", "latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-02-10",
+  "version": "v8",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

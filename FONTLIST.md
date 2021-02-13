@@ -37,6 +37,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 ## Other
 
 - aileron
+- carlito
 - cascadia-code
 - cascadia-mono
 - charis-sil
@@ -49,6 +50,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - firago
 - karmilla
 - metropolis
+- mononoki
 - noto-mono
 - plus-jakarta-sans
 - syne-italic

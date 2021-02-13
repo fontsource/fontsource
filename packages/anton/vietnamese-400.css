@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Anton Regular'),
-    local('Anton-Regular'), url('./files/anton-vietnamese-400-normal.woff2') format('woff2'), url('./files/anton-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/anton-vietnamese-400-normal.woff2') format('woff2'), url('./files/anton-vietnamese-400-normal.woff') format('woff');
   
 }
