@@ -20,6 +20,10 @@ These will always contain changes from Fontsource's end.
 - Added $fontDir variable to SCSS mixins. [#146](https://github.com/fontsource/fontsource/pull/146)
 - Added variable font support and $defSubset variable to SCSS mixins. [#147](https://github.com/fontsource/fontsource/pull/147)
 
+### Fixes
+
+- Removed all default variable flags from SCSS mixins till further notice to resolve errors relating to importing multiple fonts. [#155](https://github.com/fontsource/fontsource/pull/155)
+
 ### Documentation
 
 - Changed package.json descriptions to something more mature. [#148](https://github.com/fontsource/fontsource/pull/148)
