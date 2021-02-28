@@ -9,8 +9,8 @@
     "opsz": { "default": "14", "min": "10", "max": "100", "step": "0.1" },
     "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
   },
-  "lastModified": "2021-02-17",
-  "version": "v3",
+  "lastModified": "2021-02-25",
+  "version": "v6",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
