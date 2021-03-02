@@ -23,6 +23,7 @@ These will always contain changes from Fontsource's end.
 ### Fixes
 
 - Removed all default variable flags from SCSS mixins till further notice to resolve errors relating to importing multiple fonts. [#155](https://github.com/fontsource/fontsource/pull/155)
+- Resolved incorrect unicodeMap numeric subset names that linked to the wrong files. [#167](https://github.com/fontsource/fontsource/pull/167)
 
 ### Documentation
 
