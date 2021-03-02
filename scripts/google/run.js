@@ -66,6 +66,7 @@ if (changed || force === "force") {
   // Make the key value pairs in the required format - subset: (unicodeRangeValues), subset:...
   const unicodeMap = Object.entries(font.unicodeRange)
     .map(subArr => {
+      subArr[0] = subArr[0].replace(/[[\]]/g, "")
       subArr[1] = `(${subArr[1]})`
       return subArr.join(": ")
     })
