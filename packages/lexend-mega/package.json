@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/lexend-mega",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "Self-host the Lexend Mega font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

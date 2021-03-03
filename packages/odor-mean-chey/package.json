@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/odor-mean-chey",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Self-host the Odor Mean Chey font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

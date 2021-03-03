@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/exo",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Self-host the Exo font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
