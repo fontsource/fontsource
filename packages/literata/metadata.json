@@ -18,8 +18,8 @@
     "opsz": { "default": "14", "min": "7", "max": "72", "step": "0.1" },
     "wght": { "default": "400", "min": "200", "max": "900", "step": "1" }
   },
-  "lastModified": "2021-02-25",
-  "version": "v22",
+  "lastModified": "2021-03-11",
+  "version": "v23",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
