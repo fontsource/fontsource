@@ -89,16 +89,18 @@ $stretch: <%= variableWdth %>;
 ) {
   @each $subset, $unicodeRangeValues in $unicodeMap {
     @include fontFaceCustom(
-        $fontName: $fontName,
-        $fontId: $fontId,
-        $style: $style,
-        $display: $display,
-        $weight: $weight,
-        $fontDir: $fontDir,
-        $subset: $subset,
-        $unicodeRange: true,
-        $unicodeRangeValues: $unicodeRangeValues
-      )
+      $fontName: $fontName,
+      $fontId: $fontId,
+      $style: $style,
+      $display: $display,
+      $weight: $weight,
+      $fontDir: $fontDir,
+      $subset: $subset,
+      $type: $type,
+      $stretch: $stretch,
+      $unicodeRange: true,
+      $unicodeRangeValues: $unicodeRangeValues
+    )
   }
 }
 
@@ -112,17 +114,19 @@ $stretch: <%= variableWdth %>;
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
 ) {
-  @include fontFaceCustom(
-        $fontName: "#{$fontName}",
-        $fontId: $fontId,
-        $style: $style,
-        $display: $display,
-        $weight: $weight,
-        $subset: $subset,
-        $woff2Path: $woff2Path,
-        $unicodeRange: $unicodeRange,
-        $unicodeRangeValues: $unicodeRangeValues
-      )
+    @include fontFaceCustom(
+      $fontName: "#{$fontName}",
+      $fontId: $fontId,
+      $style: $style,
+      $display: $display,
+      $weight: $weight,
+      $subset: $subset,
+      $type: $type,
+      $stretch: $stretch,
+      $woff2Path: $woff2Path,
+      $unicodeRange: $unicodeRange,
+      $unicodeRangeValues: $unicodeRangeValues
+    )
   }
 }<% } %>
 `
@@ -135,10 +139,9 @@ $style: normal;
 $display: swap;
 $weight: 400;
 $fontDir: "~@fontsource/#{$fontId}/files";
-$woff2Path: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2";
-$woffPath: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff";
 $unicodeRange: false;
 $unicodeRangeValues: null;
+$defSubset: "<%= defSubset %>";
 
 @mixin fontFaceCustom(
   $fontName: $fontName,
@@ -146,17 +149,19 @@ $unicodeRangeValues: null;
   $style: $style,
   $display: $display,
   $weight: $weight,
-  $woff2Path: $woff2Path,
-  $woffPath: $woffPath,
+  $subset: $defSubset,
+  $woff2Path: null,
+  $woffPath: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
 ) {
+  $urlBase: "#{$fontDir}/#{$fontId}-#{$subset}-#{$weight}-#{$style}";
   @font-face {
     font-family: "#{$fontName}";
     font-style: $style;
     font-display: $display;
     font-weight: $weight;
-    src: url("#{$woff2Path}") format("woff2"), url("#{$woffPath}") format("woff");
+    src: url(if($woff2Path,$woff2Path, "#{$urlBase}.woff2")) format("woff2") url(if($woffPath,$woffPath, "#{$urlBase}.woff")) format("woff");
     @if $unicodeRange {
       unicode-range: $unicodeRangeValues;
     }
