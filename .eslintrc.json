@@ -4,7 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["standard", "plugin:prettier/recommended", "prettier/standard"],
+  "extends": ["standard", "plugin:prettier/recommended"],
   "parserOptions": {
     "ecmaVersion": 12
   },
