@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/im-fell-great-primer",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "Self-host the IM Fell Great Primer font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/mogra",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "Self-host the Mogra font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
