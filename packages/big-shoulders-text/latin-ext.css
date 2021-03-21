@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Big Shoulders Text Thin'),
-    local('BigShouldersText-Thin'), url('./files/big-shoulders-text-latin-ext-100-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-100-normal.woff') format('woff');
+  src: url('./files/big-shoulders-text-latin-ext-100-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-100-normal.woff') format('woff');
   
 }
 /* big-shoulders-text-latin-ext-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Big Shoulders Text Light'),
-    local('BigShouldersText-Light'), url('./files/big-shoulders-text-latin-ext-300-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/big-shoulders-text-latin-ext-300-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-300-normal.woff') format('woff');
   
 }
 /* big-shoulders-text-latin-ext-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Big Shoulders Text Regular'),
-    local('BigShouldersText-Regular'), url('./files/big-shoulders-text-latin-ext-400-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/big-shoulders-text-latin-ext-400-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-400-normal.woff') format('woff');
   
 }
 /* big-shoulders-text-latin-ext-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Big Shoulders Text Medium'),
-    local('BigShouldersText-Medium'), url('./files/big-shoulders-text-latin-ext-500-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/big-shoulders-text-latin-ext-500-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-500-normal.woff') format('woff');
   
 }
 /* big-shoulders-text-latin-ext-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Big Shoulders Text SemiBold'),
-    local('BigShouldersText-SemiBold'), url('./files/big-shoulders-text-latin-ext-600-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/big-shoulders-text-latin-ext-600-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-600-normal.woff') format('woff');
   
 }
 /* big-shoulders-text-latin-ext-700-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Big Shoulders Text Bold'),
-    local('BigShouldersText-Bold'), url('./files/big-shoulders-text-latin-ext-700-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/big-shoulders-text-latin-ext-700-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-700-normal.woff') format('woff');
   
 }
 /* big-shoulders-text-latin-ext-800-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Big Shoulders Text ExtraBold'),
-    local('BigShouldersText-ExtraBold'), url('./files/big-shoulders-text-latin-ext-800-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/big-shoulders-text-latin-ext-800-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-800-normal.woff') format('woff');
   
 }
 /* big-shoulders-text-latin-ext-900-normal*/
@@ -81,8 +67,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Big Shoulders Text Black'),
-    local('BigShouldersText-Black'), url('./files/big-shoulders-text-latin-ext-900-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-900-normal.woff') format('woff');
+  src: url('./files/big-shoulders-text-latin-ext-900-normal.woff2') format('woff2'), url('./files/big-shoulders-text-latin-ext-900-normal.woff') format('woff');
   
 }

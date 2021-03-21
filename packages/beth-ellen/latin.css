@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Beth Ellen Regular'),
-    local('BethEllen-Regular'), url('./files/beth-ellen-latin-400-normal.woff2') format('woff2'), url('./files/beth-ellen-latin-400-normal.woff') format('woff');
+  src: url('./files/beth-ellen-latin-400-normal.woff2') format('woff2'), url('./files/beth-ellen-latin-400-normal.woff') format('woff');
   
 }

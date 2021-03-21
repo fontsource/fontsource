@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Elsie Swash Caps Regular'),
-    local('ElsieSwashCaps-Regular'), url('./files/elsie-swash-caps-latin-400-normal.woff2') format('woff2'), url('./files/elsie-swash-caps-latin-400-normal.woff') format('woff');
+  src: url('./files/elsie-swash-caps-latin-400-normal.woff2') format('woff2'), url('./files/elsie-swash-caps-latin-400-normal.woff') format('woff');
   
 }
 /* elsie-swash-caps-latin-900-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Elsie Swash Caps Black'),
-    local('ElsieSwashCaps-Black'), url('./files/elsie-swash-caps-latin-900-normal.woff2') format('woff2'), url('./files/elsie-swash-caps-latin-900-normal.woff') format('woff');
+  src: url('./files/elsie-swash-caps-latin-900-normal.woff2') format('woff2'), url('./files/elsie-swash-caps-latin-900-normal.woff') format('woff');
   
 }

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Baloo Paaji 2 Regular'),
-    local('BalooPaaji2-Regular'), url('./files/baloo-paaji-2-latin-400-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-400-normal.woff') format('woff');
+  src: url('./files/baloo-paaji-2-latin-400-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-400-normal.woff') format('woff');
   
 }
 /* baloo-paaji-2-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Baloo Paaji 2 Medium'),
-    local('BalooPaaji2-Medium'), url('./files/baloo-paaji-2-latin-500-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-500-normal.woff') format('woff');
+  src: url('./files/baloo-paaji-2-latin-500-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-500-normal.woff') format('woff');
   
 }
 /* baloo-paaji-2-latin-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Baloo Paaji 2 SemiBold'),
-    local('BalooPaaji2-SemiBold'), url('./files/baloo-paaji-2-latin-600-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-600-normal.woff') format('woff');
+  src: url('./files/baloo-paaji-2-latin-600-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-600-normal.woff') format('woff');
   
 }
 /* baloo-paaji-2-latin-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Baloo Paaji 2 Bold'),
-    local('BalooPaaji2-Bold'), url('./files/baloo-paaji-2-latin-700-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-700-normal.woff') format('woff');
+  src: url('./files/baloo-paaji-2-latin-700-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-700-normal.woff') format('woff');
   
 }
 /* baloo-paaji-2-latin-800-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Baloo Paaji 2 ExtraBold'),
-    local('BalooPaaji2-ExtraBold'), url('./files/baloo-paaji-2-latin-800-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-800-normal.woff') format('woff');
+  src: url('./files/baloo-paaji-2-latin-800-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-latin-800-normal.woff') format('woff');
   
 }

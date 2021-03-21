@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Nova Flat'),
-    local('NovaFlat'), url('./files/nova-flat-latin-400-normal.woff2') format('woff2'), url('./files/nova-flat-latin-400-normal.woff') format('woff');
+  src: url('./files/nova-flat-latin-400-normal.woff2') format('woff2'), url('./files/nova-flat-latin-400-normal.woff') format('woff');
   
 }

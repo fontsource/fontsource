@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Rakkas Regular'),
-    local('Rakkas-Regular'), url('./files/rakkas-latin-ext-400-normal.woff2') format('woff2'), url('./files/rakkas-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/rakkas-latin-ext-400-normal.woff2') format('woff2'), url('./files/rakkas-latin-ext-400-normal.woff') format('woff');
   
 }

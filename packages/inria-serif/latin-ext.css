@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Inria Serif Light'),
-    local('InriaSerif-Light'), url('./files/inria-serif-latin-ext-300-normal.woff2') format('woff2'), url('./files/inria-serif-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/inria-serif-latin-ext-300-normal.woff2') format('woff2'), url('./files/inria-serif-latin-ext-300-normal.woff') format('woff');
   
 }
 /* inria-serif-latin-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Inria Serif Regular'),
-    local('InriaSerif-Regular'), url('./files/inria-serif-latin-ext-400-normal.woff2') format('woff2'), url('./files/inria-serif-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/inria-serif-latin-ext-400-normal.woff2') format('woff2'), url('./files/inria-serif-latin-ext-400-normal.woff') format('woff');
   
 }
 /* inria-serif-latin-ext-700-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Inria Serif Bold'),
-    local('InriaSerif-Bold'), url('./files/inria-serif-latin-ext-700-normal.woff2') format('woff2'), url('./files/inria-serif-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/inria-serif-latin-ext-700-normal.woff2') format('woff2'), url('./files/inria-serif-latin-ext-700-normal.woff') format('woff');
   
 }

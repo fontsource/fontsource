@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Junge'),
-    local('Junge-Regular'), url('./files/junge-latin-400-normal.woff2') format('woff2'), url('./files/junge-latin-400-normal.woff') format('woff');
+  src: url('./files/junge-latin-400-normal.woff2') format('woff2'), url('./files/junge-latin-400-normal.woff') format('woff');
   
 }

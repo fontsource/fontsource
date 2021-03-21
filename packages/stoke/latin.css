@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Stoke Light'),
-    local('Stoke-Light'), url('./files/stoke-latin-300-normal.woff2') format('woff2'), url('./files/stoke-latin-300-normal.woff') format('woff');
+  src: url('./files/stoke-latin-300-normal.woff2') format('woff2'), url('./files/stoke-latin-300-normal.woff') format('woff');
   
 }
 /* stoke-latin-400-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Stoke Regular'),
-    local('Stoke-Regular'), url('./files/stoke-latin-400-normal.woff2') format('woff2'), url('./files/stoke-latin-400-normal.woff') format('woff');
+  src: url('./files/stoke-latin-400-normal.woff2') format('woff2'), url('./files/stoke-latin-400-normal.woff') format('woff');
   
 }

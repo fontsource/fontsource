@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Grenze Black Italic'),
-    local('Grenze-BlackItalic'), url('./files/grenze-latin-900-italic.woff2') format('woff2'), url('./files/grenze-latin-900-italic.woff') format('woff');
+  src: url('./files/grenze-latin-900-italic.woff2') format('woff2'), url('./files/grenze-latin-900-italic.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Bigshot One Regular'),
-    local('BigshotOne-Regular'), url('./files/bigshot-one-latin-400-normal.woff2') format('woff2'), url('./files/bigshot-one-latin-400-normal.woff') format('woff');
+  src: url('./files/bigshot-one-latin-400-normal.woff2') format('woff2'), url('./files/bigshot-one-latin-400-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Londrina Shadow Regular'),
-    local('LondrinaShadow-Regular'), url('./files/londrina-shadow-latin-400-normal.woff2') format('woff2'), url('./files/londrina-shadow-latin-400-normal.woff') format('woff');
+  src: url('./files/londrina-shadow-latin-400-normal.woff2') format('woff2'), url('./files/londrina-shadow-latin-400-normal.woff') format('woff');
   
 }

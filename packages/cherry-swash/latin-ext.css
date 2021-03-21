@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cherry Swash'),
-    local('CherrySwash-Regular'), url('./files/cherry-swash-latin-ext-400-normal.woff2') format('woff2'), url('./files/cherry-swash-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/cherry-swash-latin-ext-400-normal.woff2') format('woff2'), url('./files/cherry-swash-latin-ext-400-normal.woff') format('woff');
   
 }
 /* cherry-swash-latin-ext-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cherry Swash Bold'),
-    local('CherrySwash-Bold'), url('./files/cherry-swash-latin-ext-700-normal.woff2') format('woff2'), url('./files/cherry-swash-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/cherry-swash-latin-ext-700-normal.woff2') format('woff2'), url('./files/cherry-swash-latin-ext-700-normal.woff') format('woff');
   
 }

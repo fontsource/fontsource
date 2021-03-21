@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Modern Antiqua Regular'),
-    local('ModernAntiqua-Regular'), url('./files/modern-antiqua-latin-ext-400-normal.woff2') format('woff2'), url('./files/modern-antiqua-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/modern-antiqua-latin-ext-400-normal.woff2') format('woff2'), url('./files/modern-antiqua-latin-ext-400-normal.woff') format('woff');
   
 }

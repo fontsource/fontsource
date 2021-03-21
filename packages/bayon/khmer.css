@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Bayon Regular'),
-    local('Bayon-Regular'), url('./files/bayon-khmer-400-normal.woff2') format('woff2'), url('./files/bayon-khmer-400-normal.woff') format('woff');
+  src: url('./files/bayon-khmer-400-normal.woff2') format('woff2'), url('./files/bayon-khmer-400-normal.woff') format('woff');
   
 }

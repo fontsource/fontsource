@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Baloo Bhai 2 Regular'),
-    local('BalooBhai2-Regular'), url('./files/baloo-bhai-2-latin-ext-400-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/baloo-bhai-2-latin-ext-400-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-latin-ext-400-normal.woff') format('woff');
   
 }

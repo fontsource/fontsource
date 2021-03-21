@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Fahkwang Regular'),
-    local('Fahkwang-Regular'), url('./files/fahkwang-latin-ext-400-normal.woff2') format('woff2'), url('./files/fahkwang-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/fahkwang-latin-ext-400-normal.woff2') format('woff2'), url('./files/fahkwang-latin-ext-400-normal.woff') format('woff');
   
 }

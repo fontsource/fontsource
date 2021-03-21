@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Kodchasan ExtraLight'),
-    local('Kodchasan-ExtraLight'), url('./files/kodchasan-thai-200-normal.woff2') format('woff2'), url('./files/kodchasan-thai-200-normal.woff') format('woff');
+  src: url('./files/kodchasan-thai-200-normal.woff2') format('woff2'), url('./files/kodchasan-thai-200-normal.woff') format('woff');
   
 }

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Gupter Regular'),
-    local('Gupter-Regular'), url('./files/gupter-latin-400-normal.woff2') format('woff2'), url('./files/gupter-latin-400-normal.woff') format('woff');
+  src: url('./files/gupter-latin-400-normal.woff2') format('woff2'), url('./files/gupter-latin-400-normal.woff') format('woff');
   
 }
 /* gupter-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Gupter Medium'),
-    local('Gupter-Medium'), url('./files/gupter-latin-500-normal.woff2') format('woff2'), url('./files/gupter-latin-500-normal.woff') format('woff');
+  src: url('./files/gupter-latin-500-normal.woff2') format('woff2'), url('./files/gupter-latin-500-normal.woff') format('woff');
   
 }
 /* gupter-latin-700-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Gupter Bold'),
-    local('Gupter-Bold'), url('./files/gupter-latin-700-normal.woff2') format('woff2'), url('./files/gupter-latin-700-normal.woff') format('woff');
+  src: url('./files/gupter-latin-700-normal.woff2') format('woff2'), url('./files/gupter-latin-700-normal.woff') format('woff');
   
 }

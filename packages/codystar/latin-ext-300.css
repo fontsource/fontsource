@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Codystar Light'),
-    local('Codystar-Light'), url('./files/codystar-latin-ext-300-normal.woff2') format('woff2'), url('./files/codystar-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/codystar-latin-ext-300-normal.woff2') format('woff2'), url('./files/codystar-latin-ext-300-normal.woff') format('woff');
   
 }

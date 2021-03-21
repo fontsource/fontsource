@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Solway Light'),
-    local('Solway-Light'), url('./files/solway-latin-300-normal.woff2') format('woff2'), url('./files/solway-latin-300-normal.woff') format('woff');
+  src: url('./files/solway-latin-300-normal.woff2') format('woff2'), url('./files/solway-latin-300-normal.woff') format('woff');
   
 }
 /* solway-latin-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Solway Regular'),
-    local('Solway-Regular'), url('./files/solway-latin-400-normal.woff2') format('woff2'), url('./files/solway-latin-400-normal.woff') format('woff');
+  src: url('./files/solway-latin-400-normal.woff2') format('woff2'), url('./files/solway-latin-400-normal.woff') format('woff');
   
 }
 /* solway-latin-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Solway Medium'),
-    local('Solway-Medium'), url('./files/solway-latin-500-normal.woff2') format('woff2'), url('./files/solway-latin-500-normal.woff') format('woff');
+  src: url('./files/solway-latin-500-normal.woff2') format('woff2'), url('./files/solway-latin-500-normal.woff') format('woff');
   
 }
 /* solway-latin-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Solway Bold'),
-    local('Solway-Bold'), url('./files/solway-latin-700-normal.woff2') format('woff2'), url('./files/solway-latin-700-normal.woff') format('woff');
+  src: url('./files/solway-latin-700-normal.woff2') format('woff2'), url('./files/solway-latin-700-normal.woff') format('woff');
   
 }
 /* solway-latin-800-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Solway ExtraBold'),
-    local('Solway-ExtraBold'), url('./files/solway-latin-800-normal.woff2') format('woff2'), url('./files/solway-latin-800-normal.woff') format('woff');
+  src: url('./files/solway-latin-800-normal.woff2') format('woff2'), url('./files/solway-latin-800-normal.woff') format('woff');
   
 }

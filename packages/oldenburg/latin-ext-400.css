@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Oldenburg'),
-    local('Oldenburg-Regular'), url('./files/oldenburg-latin-ext-400-normal.woff2') format('woff2'), url('./files/oldenburg-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/oldenburg-latin-ext-400-normal.woff2') format('woff2'), url('./files/oldenburg-latin-ext-400-normal.woff') format('woff');
   
 }

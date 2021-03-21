@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Nokora Regular'),
-    local('Nokora-Regular'), url('./files/nokora-khmer-400-normal.woff2') format('woff2'), url('./files/nokora-khmer-400-normal.woff') format('woff');
+  src: url('./files/nokora-khmer-400-normal.woff2') format('woff2'), url('./files/nokora-khmer-400-normal.woff') format('woff');
   
 }
 /* nokora-khmer-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Nokora Bold'),
-    local('Nokora-Bold'), url('./files/nokora-khmer-700-normal.woff2') format('woff2'), url('./files/nokora-khmer-700-normal.woff') format('woff');
+  src: url('./files/nokora-khmer-700-normal.woff2') format('woff2'), url('./files/nokora-khmer-700-normal.woff') format('woff');
   
 }

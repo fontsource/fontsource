@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Fahkwang ExtraLight'),
-    local('Fahkwang-ExtraLight'), url('./files/fahkwang-latin-200-normal.woff2') format('woff2'), url('./files/fahkwang-latin-200-normal.woff') format('woff');
+  src: url('./files/fahkwang-latin-200-normal.woff2') format('woff2'), url('./files/fahkwang-latin-200-normal.woff') format('woff');
   
 }
 /* fahkwang-latin-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Fahkwang Light'),
-    local('Fahkwang-Light'), url('./files/fahkwang-latin-300-normal.woff2') format('woff2'), url('./files/fahkwang-latin-300-normal.woff') format('woff');
+  src: url('./files/fahkwang-latin-300-normal.woff2') format('woff2'), url('./files/fahkwang-latin-300-normal.woff') format('woff');
   
 }
 /* fahkwang-latin-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Fahkwang Regular'),
-    local('Fahkwang-Regular'), url('./files/fahkwang-latin-400-normal.woff2') format('woff2'), url('./files/fahkwang-latin-400-normal.woff') format('woff');
+  src: url('./files/fahkwang-latin-400-normal.woff2') format('woff2'), url('./files/fahkwang-latin-400-normal.woff') format('woff');
   
 }
 /* fahkwang-latin-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Fahkwang Medium'),
-    local('Fahkwang-Medium'), url('./files/fahkwang-latin-500-normal.woff2') format('woff2'), url('./files/fahkwang-latin-500-normal.woff') format('woff');
+  src: url('./files/fahkwang-latin-500-normal.woff2') format('woff2'), url('./files/fahkwang-latin-500-normal.woff') format('woff');
   
 }
 /* fahkwang-latin-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Fahkwang SemiBold'),
-    local('Fahkwang-SemiBold'), url('./files/fahkwang-latin-600-normal.woff2') format('woff2'), url('./files/fahkwang-latin-600-normal.woff') format('woff');
+  src: url('./files/fahkwang-latin-600-normal.woff2') format('woff2'), url('./files/fahkwang-latin-600-normal.woff') format('woff');
   
 }
 /* fahkwang-latin-700-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Fahkwang Bold'),
-    local('Fahkwang-Bold'), url('./files/fahkwang-latin-700-normal.woff2') format('woff2'), url('./files/fahkwang-latin-700-normal.woff') format('woff');
+  src: url('./files/fahkwang-latin-700-normal.woff2') format('woff2'), url('./files/fahkwang-latin-700-normal.woff') format('woff');
   
 }

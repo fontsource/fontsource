@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Inknut Antiqua ExtraBold'),
-    local('InknutAntiqua-ExtraBold'), url('./files/inknut-antiqua-latin-800-normal.woff2') format('woff2'), url('./files/inknut-antiqua-latin-800-normal.woff') format('woff');
+  src: url('./files/inknut-antiqua-latin-800-normal.woff2') format('woff2'), url('./files/inknut-antiqua-latin-800-normal.woff') format('woff');
   
 }

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Kantumruy Light'),
-    local('KantumruyLight'), url('./files/kantumruy-khmer-300-normal.woff2') format('woff2'), url('./files/kantumruy-khmer-300-normal.woff') format('woff');
+  src: url('./files/kantumruy-khmer-300-normal.woff2') format('woff2'), url('./files/kantumruy-khmer-300-normal.woff') format('woff');
   
 }
 /* kantumruy-khmer-400-normal*/
@@ -15,8 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Kantumruy'), url('./files/kantumruy-khmer-400-normal.woff2') format('woff2'), url('./files/kantumruy-khmer-400-normal.woff') format('woff');
+  src: url('./files/kantumruy-khmer-400-normal.woff2') format('woff2'), url('./files/kantumruy-khmer-400-normal.woff') format('woff');
   
 }
 /* kantumruy-khmer-700-normal*/
@@ -25,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Kantumruy Bold'),
-    local('Kantumruy-Bold'), url('./files/kantumruy-khmer-700-normal.woff2') format('woff2'), url('./files/kantumruy-khmer-700-normal.woff') format('woff');
+  src: url('./files/kantumruy-khmer-700-normal.woff2') format('woff2'), url('./files/kantumruy-khmer-700-normal.woff') format('woff');
   
 }

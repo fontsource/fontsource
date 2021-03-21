@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Encode Sans Semi Expanded Regular'),
-    local('EncodeSansSemiExpanded-Regular'), url('./files/encode-sans-semi-expanded-vietnamese-400-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-vietnamese-400-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-vietnamese-400-normal.woff') format('woff');
   
 }

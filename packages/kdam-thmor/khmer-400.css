@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Kdam Thmor'),
-    local('KdamThmor'), url('./files/kdam-thmor-khmer-400-normal.woff2') format('woff2'), url('./files/kdam-thmor-khmer-400-normal.woff') format('woff');
+  src: url('./files/kdam-thmor-khmer-400-normal.woff2') format('woff2'), url('./files/kdam-thmor-khmer-400-normal.woff') format('woff');
   
 }

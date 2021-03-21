@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Diplomata'),
-    local('Diplomata-Regular'), url('./files/diplomata-latin-ext-400-normal.woff2') format('woff2'), url('./files/diplomata-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/diplomata-latin-ext-400-normal.woff2') format('woff2'), url('./files/diplomata-latin-ext-400-normal.woff') format('woff');
   
 }

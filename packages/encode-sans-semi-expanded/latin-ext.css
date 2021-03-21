@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Encode Sans Semi Expanded Thin'),
-    local('EncodeSansSemiExpanded-Thin'), url('./files/encode-sans-semi-expanded-latin-ext-100-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-100-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-100-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-100-normal.woff') format('woff');
   
 }
 /* encode-sans-semi-expanded-latin-ext-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Encode Sans Semi Expanded ExtraLight'),
-    local('EncodeSansSemiExpanded-ExtraLight'), url('./files/encode-sans-semi-expanded-latin-ext-200-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-200-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-200-normal.woff') format('woff');
   
 }
 /* encode-sans-semi-expanded-latin-ext-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Encode Sans Semi Expanded Light'),
-    local('EncodeSansSemiExpanded-Light'), url('./files/encode-sans-semi-expanded-latin-ext-300-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-300-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-300-normal.woff') format('woff');
   
 }
 /* encode-sans-semi-expanded-latin-ext-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Encode Sans Semi Expanded Regular'),
-    local('EncodeSansSemiExpanded-Regular'), url('./files/encode-sans-semi-expanded-latin-ext-400-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-400-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-400-normal.woff') format('woff');
   
 }
 /* encode-sans-semi-expanded-latin-ext-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Encode Sans Semi Expanded Medium'),
-    local('EncodeSansSemiExpanded-Medium'), url('./files/encode-sans-semi-expanded-latin-ext-500-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-500-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-500-normal.woff') format('woff');
   
 }
 /* encode-sans-semi-expanded-latin-ext-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Encode Sans Semi Expanded SemiBold'),
-    local('EncodeSansSemiExpanded-SemiBold'), url('./files/encode-sans-semi-expanded-latin-ext-600-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-600-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-600-normal.woff') format('woff');
   
 }
 /* encode-sans-semi-expanded-latin-ext-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Encode Sans Semi Expanded Bold'),
-    local('EncodeSansSemiExpanded-Bold'), url('./files/encode-sans-semi-expanded-latin-ext-700-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-700-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-700-normal.woff') format('woff');
   
 }
 /* encode-sans-semi-expanded-latin-ext-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Encode Sans Semi Expanded ExtraBold'),
-    local('EncodeSansSemiExpanded-ExtraBold'), url('./files/encode-sans-semi-expanded-latin-ext-800-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-800-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-800-normal.woff') format('woff');
   
 }
 /* encode-sans-semi-expanded-latin-ext-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Encode Sans Semi Expanded Black'),
-    local('EncodeSansSemiExpanded-Black'), url('./files/encode-sans-semi-expanded-latin-ext-900-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-900-normal.woff') format('woff');
+  src: url('./files/encode-sans-semi-expanded-latin-ext-900-normal.woff2') format('woff2'), url('./files/encode-sans-semi-expanded-latin-ext-900-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Prosto One'),
-    local('ProstoOne-Regular'), url('./files/prosto-one-latin-400-normal.woff2') format('woff2'), url('./files/prosto-one-latin-400-normal.woff') format('woff');
+  src: url('./files/prosto-one-latin-400-normal.woff2') format('woff2'), url('./files/prosto-one-latin-400-normal.woff') format('woff');
   
 }

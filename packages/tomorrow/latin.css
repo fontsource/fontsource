@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Tomorrow Thin'),
-    local('Tomorrow-Thin'), url('./files/tomorrow-latin-100-normal.woff2') format('woff2'), url('./files/tomorrow-latin-100-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-100-normal.woff2') format('woff2'), url('./files/tomorrow-latin-100-normal.woff') format('woff');
   
 }
 /* tomorrow-latin-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Tomorrow ExtraLight'),
-    local('Tomorrow-ExtraLight'), url('./files/tomorrow-latin-200-normal.woff2') format('woff2'), url('./files/tomorrow-latin-200-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-200-normal.woff2') format('woff2'), url('./files/tomorrow-latin-200-normal.woff') format('woff');
   
 }
 /* tomorrow-latin-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Tomorrow Light'),
-    local('Tomorrow-Light'), url('./files/tomorrow-latin-300-normal.woff2') format('woff2'), url('./files/tomorrow-latin-300-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-300-normal.woff2') format('woff2'), url('./files/tomorrow-latin-300-normal.woff') format('woff');
   
 }
 /* tomorrow-latin-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Tomorrow Regular'),
-    local('Tomorrow-Regular'), url('./files/tomorrow-latin-400-normal.woff2') format('woff2'), url('./files/tomorrow-latin-400-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-400-normal.woff2') format('woff2'), url('./files/tomorrow-latin-400-normal.woff') format('woff');
   
 }
 /* tomorrow-latin-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Tomorrow Medium'),
-    local('Tomorrow-Medium'), url('./files/tomorrow-latin-500-normal.woff2') format('woff2'), url('./files/tomorrow-latin-500-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-500-normal.woff2') format('woff2'), url('./files/tomorrow-latin-500-normal.woff') format('woff');
   
 }
 /* tomorrow-latin-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Tomorrow SemiBold'),
-    local('Tomorrow-SemiBold'), url('./files/tomorrow-latin-600-normal.woff2') format('woff2'), url('./files/tomorrow-latin-600-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-600-normal.woff2') format('woff2'), url('./files/tomorrow-latin-600-normal.woff') format('woff');
   
 }
 /* tomorrow-latin-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Tomorrow Bold'),
-    local('Tomorrow-Bold'), url('./files/tomorrow-latin-700-normal.woff2') format('woff2'), url('./files/tomorrow-latin-700-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-700-normal.woff2') format('woff2'), url('./files/tomorrow-latin-700-normal.woff') format('woff');
   
 }
 /* tomorrow-latin-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Tomorrow ExtraBold'),
-    local('Tomorrow-ExtraBold'), url('./files/tomorrow-latin-800-normal.woff2') format('woff2'), url('./files/tomorrow-latin-800-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-800-normal.woff2') format('woff2'), url('./files/tomorrow-latin-800-normal.woff') format('woff');
   
 }
 /* tomorrow-latin-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Tomorrow Black'),
-    local('Tomorrow-Black'), url('./files/tomorrow-latin-900-normal.woff2') format('woff2'), url('./files/tomorrow-latin-900-normal.woff') format('woff');
+  src: url('./files/tomorrow-latin-900-normal.woff2') format('woff2'), url('./files/tomorrow-latin-900-normal.woff') format('woff');
   
 }

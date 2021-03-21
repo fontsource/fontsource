@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Srisakdi Regular'),
-    local('Srisakdi-Regular'), url('./files/srisakdi-vietnamese-400-normal.woff2') format('woff2'), url('./files/srisakdi-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/srisakdi-vietnamese-400-normal.woff2') format('woff2'), url('./files/srisakdi-vietnamese-400-normal.woff') format('woff');
   
 }
 /* srisakdi-vietnamese-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Srisakdi Bold'),
-    local('Srisakdi-Bold'), url('./files/srisakdi-vietnamese-700-normal.woff2') format('woff2'), url('./files/srisakdi-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/srisakdi-vietnamese-700-normal.woff2') format('woff2'), url('./files/srisakdi-vietnamese-700-normal.woff') format('woff');
   
 }

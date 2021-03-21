@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Mukta Mahee ExtraLight'),
-    local('MuktaMahee-ExtraLight'), url('./files/mukta-mahee-latin-200-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-200-normal.woff') format('woff');
+  src: url('./files/mukta-mahee-latin-200-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-200-normal.woff') format('woff');
   
 }
 /* mukta-mahee-latin-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Mukta Mahee Light'),
-    local('MuktaMahee-Light'), url('./files/mukta-mahee-latin-300-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-300-normal.woff') format('woff');
+  src: url('./files/mukta-mahee-latin-300-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-300-normal.woff') format('woff');
   
 }
 /* mukta-mahee-latin-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Mukta Mahee Regular'),
-    local('MuktaMahee-Regular'), url('./files/mukta-mahee-latin-400-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-400-normal.woff') format('woff');
+  src: url('./files/mukta-mahee-latin-400-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-400-normal.woff') format('woff');
   
 }
 /* mukta-mahee-latin-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Mukta Mahee Medium'),
-    local('MuktaMahee-Medium'), url('./files/mukta-mahee-latin-500-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-500-normal.woff') format('woff');
+  src: url('./files/mukta-mahee-latin-500-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-500-normal.woff') format('woff');
   
 }
 /* mukta-mahee-latin-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Mukta Mahee SemiBold'),
-    local('MuktaMahee-SemiBold'), url('./files/mukta-mahee-latin-600-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-600-normal.woff') format('woff');
+  src: url('./files/mukta-mahee-latin-600-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-600-normal.woff') format('woff');
   
 }
 /* mukta-mahee-latin-700-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Mukta Mahee Bold'),
-    local('MuktaMahee-Bold'), url('./files/mukta-mahee-latin-700-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-700-normal.woff') format('woff');
+  src: url('./files/mukta-mahee-latin-700-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-700-normal.woff') format('woff');
   
 }
 /* mukta-mahee-latin-800-normal*/
@@ -70,8 +58,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Mukta Mahee ExtraBold'),
-    local('MuktaMahee-ExtraBold'), url('./files/mukta-mahee-latin-800-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-800-normal.woff') format('woff');
+  src: url('./files/mukta-mahee-latin-800-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-800-normal.woff') format('woff');
   
 }

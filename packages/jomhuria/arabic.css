@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Jomhuria'),
-    local('Jomhuria-Regular'), url('./files/jomhuria-arabic-400-normal.woff2') format('woff2'), url('./files/jomhuria-arabic-400-normal.woff') format('woff');
+  src: url('./files/jomhuria-arabic-400-normal.woff2') format('woff2'), url('./files/jomhuria-arabic-400-normal.woff') format('woff');
   
 }

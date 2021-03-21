@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Flamenco Light'),
-    local('Flamenco-Light'), url('./files/flamenco-latin-300-normal.woff2') format('woff2'), url('./files/flamenco-latin-300-normal.woff') format('woff');
+  src: url('./files/flamenco-latin-300-normal.woff2') format('woff2'), url('./files/flamenco-latin-300-normal.woff') format('woff');
   
 }
 /* flamenco-latin-400-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Flamenco Regular'),
-    local('Flamenco-Regular'), url('./files/flamenco-latin-400-normal.woff2') format('woff2'), url('./files/flamenco-latin-400-normal.woff') format('woff');
+  src: url('./files/flamenco-latin-400-normal.woff2') format('woff2'), url('./files/flamenco-latin-400-normal.woff') format('woff');
   
 }

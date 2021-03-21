@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Farro Medium'),
-    local('Farro-Medium'), url('./files/farro-latin-500-normal.woff2') format('woff2'), url('./files/farro-latin-500-normal.woff') format('woff');
+  src: url('./files/farro-latin-500-normal.woff2') format('woff2'), url('./files/farro-latin-500-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Angkor Regular'),
-    local('Angkor-Regular'), url('./files/angkor-khmer-400-normal.woff2') format('woff2'), url('./files/angkor-khmer-400-normal.woff') format('woff');
+  src: url('./files/angkor-khmer-400-normal.woff2') format('woff2'), url('./files/angkor-khmer-400-normal.woff') format('woff');
   
 }

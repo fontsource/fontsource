@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Rum Raisin'),
-    local('RumRaisin-Regular'), url('./files/rum-raisin-latin-400-normal.woff2') format('woff2'), url('./files/rum-raisin-latin-400-normal.woff') format('woff');
+  src: url('./files/rum-raisin-latin-400-normal.woff2') format('woff2'), url('./files/rum-raisin-latin-400-normal.woff') format('woff');
   
 }

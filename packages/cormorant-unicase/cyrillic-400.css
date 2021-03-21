@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cormorant Unicase Regular'),
-    local('CormorantUnicase-Regular'), url('./files/cormorant-unicase-cyrillic-400-normal.woff2') format('woff2'), url('./files/cormorant-unicase-cyrillic-400-normal.woff') format('woff');
+  src: url('./files/cormorant-unicase-cyrillic-400-normal.woff2') format('woff2'), url('./files/cormorant-unicase-cyrillic-400-normal.woff') format('woff');
   
 }

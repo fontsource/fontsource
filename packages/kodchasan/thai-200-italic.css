@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Kodchasan ExtraLight Italic'),
-    local('Kodchasan-ExtraLightItalic'), url('./files/kodchasan-thai-200-italic.woff2') format('woff2'), url('./files/kodchasan-thai-200-italic.woff') format('woff');
+  src: url('./files/kodchasan-thai-200-italic.woff2') format('woff2'), url('./files/kodchasan-thai-200-italic.woff') format('woff');
   
 }

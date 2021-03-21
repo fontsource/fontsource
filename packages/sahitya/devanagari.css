@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Sahitya'),
-    local('Sahitya-Regular'), url('./files/sahitya-devanagari-400-normal.woff2') format('woff2'), url('./files/sahitya-devanagari-400-normal.woff') format('woff');
+  src: url('./files/sahitya-devanagari-400-normal.woff2') format('woff2'), url('./files/sahitya-devanagari-400-normal.woff') format('woff');
   
 }
 /* sahitya-devanagari-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Sahitya Bold'),
-    local('Sahitya-Bold'), url('./files/sahitya-devanagari-700-normal.woff2') format('woff2'), url('./files/sahitya-devanagari-700-normal.woff') format('woff');
+  src: url('./files/sahitya-devanagari-700-normal.woff2') format('woff2'), url('./files/sahitya-devanagari-700-normal.woff') format('woff');
   
 }

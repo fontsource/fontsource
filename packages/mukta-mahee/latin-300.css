@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Mukta Mahee Light'),
-    local('MuktaMahee-Light'), url('./files/mukta-mahee-latin-300-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-300-normal.woff') format('woff');
+  src: url('./files/mukta-mahee-latin-300-normal.woff2') format('woff2'), url('./files/mukta-mahee-latin-300-normal.woff') format('woff');
   
 }

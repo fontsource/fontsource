@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Liu Jian Mao Cao Regular'),
-    local('LiuJianMaoCao-Regular'), url('./files/liu-jian-mao-cao-latin-400-normal.woff2') format('woff2'), url('./files/liu-jian-mao-cao-latin-400-normal.woff') format('woff');
+  src: url('./files/liu-jian-mao-cao-latin-400-normal.woff2') format('woff2'), url('./files/liu-jian-mao-cao-latin-400-normal.woff') format('woff');
   
 }

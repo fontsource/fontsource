@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Simonetta Regular'),
-    local('Simonetta-Regular'), url('./files/simonetta-latin-400-normal.woff2') format('woff2'), url('./files/simonetta-latin-400-normal.woff') format('woff');
+  src: url('./files/simonetta-latin-400-normal.woff2') format('woff2'), url('./files/simonetta-latin-400-normal.woff') format('woff');
   
 }

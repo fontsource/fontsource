@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Rosarivo Italic'),
-    local('Rosarivo-Italic'), url('./files/rosarivo-latin-ext-400-italic.woff2') format('woff2'), url('./files/rosarivo-latin-ext-400-italic.woff') format('woff');
+  src: url('./files/rosarivo-latin-ext-400-italic.woff2') format('woff2'), url('./files/rosarivo-latin-ext-400-italic.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Grenze ExtraBold'),
-    local('Grenze-ExtraBold'), url('./files/grenze-vietnamese-800-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/grenze-vietnamese-800-normal.woff2') format('woff2'), url('./files/grenze-vietnamese-800-normal.woff') format('woff');
   
 }

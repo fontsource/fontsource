@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Aubrey Regular'),
-    local('Aubrey-Regular'), url('./files/aubrey-latin-400-normal.woff2') format('woff2'), url('./files/aubrey-latin-400-normal.woff') format('woff');
+  src: url('./files/aubrey-latin-400-normal.woff2') format('woff2'), url('./files/aubrey-latin-400-normal.woff') format('woff');
   
 }

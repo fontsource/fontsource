@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Geostar'),
-    local('Geostar-Regular'), url('./files/geostar-latin-400-normal.woff2') format('woff2'), url('./files/geostar-latin-400-normal.woff') format('woff');
+  src: url('./files/geostar-latin-400-normal.woff2') format('woff2'), url('./files/geostar-latin-400-normal.woff') format('woff');
   
 }

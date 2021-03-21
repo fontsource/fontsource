@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Metal Mania'),
-    local('MetalMania-Regular'), url('./files/metal-mania-latin-400-normal.woff2') format('woff2'), url('./files/metal-mania-latin-400-normal.woff') format('woff');
+  src: url('./files/metal-mania-latin-400-normal.woff2') format('woff2'), url('./files/metal-mania-latin-400-normal.woff') format('woff');
   
 }

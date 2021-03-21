@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Linden Hill Regular'),
-    local('LindenHill-Regular'), url('./files/linden-hill-latin-400-normal.woff2') format('woff2'), url('./files/linden-hill-latin-400-normal.woff') format('woff');
+  src: url('./files/linden-hill-latin-400-normal.woff2') format('woff2'), url('./files/linden-hill-latin-400-normal.woff') format('woff');
   
 }

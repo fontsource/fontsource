@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Long Cang Regular'),
-    local('LongCang-Regular'), url('./files/long-cang-chinese-simplified-400-normal.woff2') format('woff2'), url('./files/long-cang-chinese-simplified-400-normal.woff') format('woff');
+  src: url('./files/long-cang-chinese-simplified-400-normal.woff2') format('woff2'), url('./files/long-cang-chinese-simplified-400-normal.woff') format('woff');
   
 }

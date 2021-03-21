@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('East Sea Dokdo Regular'),
-    local('EastSeaDokdo-Regular'), url('./files/east-sea-dokdo-korean-400-normal.woff2') format('woff2'), url('./files/east-sea-dokdo-korean-400-normal.woff') format('woff');
+  src: url('./files/east-sea-dokdo-korean-400-normal.woff2') format('woff2'), url('./files/east-sea-dokdo-korean-400-normal.woff') format('woff');
   
 }

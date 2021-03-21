@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Baloo Paaji 2 Regular'),
-    local('BalooPaaji2-Regular'), url('./files/baloo-paaji-2-vietnamese-400-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/baloo-paaji-2-vietnamese-400-normal.woff2') format('woff2'), url('./files/baloo-paaji-2-vietnamese-400-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Grenze Medium'),
-    local('Grenze-Medium'), url('./files/grenze-latin-ext-500-normal.woff2') format('woff2'), url('./files/grenze-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/grenze-latin-ext-500-normal.woff2') format('woff2'), url('./files/grenze-latin-ext-500-normal.woff') format('woff');
   
 }

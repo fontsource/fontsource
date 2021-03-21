@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Tienne Regular'),
-    local('Tienne-Regular'), url('./files/tienne-latin-400-normal.woff2') format('woff2'), url('./files/tienne-latin-400-normal.woff') format('woff');
+  src: url('./files/tienne-latin-400-normal.woff2') format('woff2'), url('./files/tienne-latin-400-normal.woff') format('woff');
   
 }
 /* tienne-latin-700-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Tienne Bold'),
-    local('Tienne-Bold'), url('./files/tienne-latin-700-normal.woff2') format('woff2'), url('./files/tienne-latin-700-normal.woff') format('woff');
+  src: url('./files/tienne-latin-700-normal.woff2') format('woff2'), url('./files/tienne-latin-700-normal.woff') format('woff');
   
 }
 /* tienne-latin-900-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Tienne Black'),
-    local('Tienne-Black'), url('./files/tienne-latin-900-normal.woff2') format('woff2'), url('./files/tienne-latin-900-normal.woff') format('woff');
+  src: url('./files/tienne-latin-900-normal.woff2') format('woff2'), url('./files/tienne-latin-900-normal.woff') format('woff');
   
 }

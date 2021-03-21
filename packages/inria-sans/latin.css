@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Inria Sans Light'),
-    local('InriaSans-Light'), url('./files/inria-sans-latin-300-normal.woff2') format('woff2'), url('./files/inria-sans-latin-300-normal.woff') format('woff');
+  src: url('./files/inria-sans-latin-300-normal.woff2') format('woff2'), url('./files/inria-sans-latin-300-normal.woff') format('woff');
   
 }
 /* inria-sans-latin-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Inria Sans Regular'),
-    local('InriaSans-Regular'), url('./files/inria-sans-latin-400-normal.woff2') format('woff2'), url('./files/inria-sans-latin-400-normal.woff') format('woff');
+  src: url('./files/inria-sans-latin-400-normal.woff2') format('woff2'), url('./files/inria-sans-latin-400-normal.woff') format('woff');
   
 }
 /* inria-sans-latin-700-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Inria Sans Bold'),
-    local('InriaSans-Bold'), url('./files/inria-sans-latin-700-normal.woff2') format('woff2'), url('./files/inria-sans-latin-700-normal.woff') format('woff');
+  src: url('./files/inria-sans-latin-700-normal.woff2') format('woff2'), url('./files/inria-sans-latin-700-normal.woff') format('woff');
   
 }

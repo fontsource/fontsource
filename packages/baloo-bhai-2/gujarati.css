@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Baloo Bhai 2 Regular'),
-    local('BalooBhai2-Regular'), url('./files/baloo-bhai-2-gujarati-400-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-400-normal.woff') format('woff');
+  src: url('./files/baloo-bhai-2-gujarati-400-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-400-normal.woff') format('woff');
   
 }
 /* baloo-bhai-2-gujarati-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Baloo Bhai 2 Medium'),
-    local('BalooBhai2-Medium'), url('./files/baloo-bhai-2-gujarati-500-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-500-normal.woff') format('woff');
+  src: url('./files/baloo-bhai-2-gujarati-500-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-500-normal.woff') format('woff');
   
 }
 /* baloo-bhai-2-gujarati-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Baloo Bhai 2 SemiBold'),
-    local('BalooBhai2-SemiBold'), url('./files/baloo-bhai-2-gujarati-600-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-600-normal.woff') format('woff');
+  src: url('./files/baloo-bhai-2-gujarati-600-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-600-normal.woff') format('woff');
   
 }
 /* baloo-bhai-2-gujarati-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Baloo Bhai 2 Bold'),
-    local('BalooBhai2-Bold'), url('./files/baloo-bhai-2-gujarati-700-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-700-normal.woff') format('woff');
+  src: url('./files/baloo-bhai-2-gujarati-700-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-700-normal.woff') format('woff');
   
 }
 /* baloo-bhai-2-gujarati-800-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Baloo Bhai 2 ExtraBold'),
-    local('BalooBhai2-ExtraBold'), url('./files/baloo-bhai-2-gujarati-800-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-800-normal.woff') format('woff');
+  src: url('./files/baloo-bhai-2-gujarati-800-normal.woff2') format('woff2'), url('./files/baloo-bhai-2-gujarati-800-normal.woff') format('woff');
   
 }

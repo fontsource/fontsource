@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Solway Light'),
-    local('Solway-Light'), url('./files/solway-latin-300-normal.woff2') format('woff2'), url('./files/solway-latin-300-normal.woff') format('woff');
+  src: url('./files/solway-latin-300-normal.woff2') format('woff2'), url('./files/solway-latin-300-normal.woff') format('woff');
   
 }

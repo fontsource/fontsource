@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Mina'),
-    local('Mina-Regular'), url('./files/mina-latin-400-normal.woff2') format('woff2'), url('./files/mina-latin-400-normal.woff') format('woff');
+  src: url('./files/mina-latin-400-normal.woff2') format('woff2'), url('./files/mina-latin-400-normal.woff') format('woff');
   
 }
 /* mina-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Mina Bold'),
-    local('Mina-Bold'), url('./files/mina-latin-700-normal.woff2') format('woff2'), url('./files/mina-latin-700-normal.woff') format('woff');
+  src: url('./files/mina-latin-700-normal.woff2') format('woff2'), url('./files/mina-latin-700-normal.woff') format('woff');
   
 }

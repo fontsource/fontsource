@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Kantumruy Light'),
-    local('KantumruyLight'), url('./files/kantumruy-khmer-300-normal.woff2') format('woff2'), url('./files/kantumruy-khmer-300-normal.woff') format('woff');
+  src: url('./files/kantumruy-khmer-300-normal.woff2') format('woff2'), url('./files/kantumruy-khmer-300-normal.woff') format('woff');
   
 }

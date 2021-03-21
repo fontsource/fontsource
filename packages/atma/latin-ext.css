@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Atma Light'),
-    local('Atma-Light'), url('./files/atma-latin-ext-300-normal.woff2') format('woff2'), url('./files/atma-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/atma-latin-ext-300-normal.woff2') format('woff2'), url('./files/atma-latin-ext-300-normal.woff') format('woff');
   
 }
 /* atma-latin-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Atma Regular'),
-    local('Atma-Regular'), url('./files/atma-latin-ext-400-normal.woff2') format('woff2'), url('./files/atma-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/atma-latin-ext-400-normal.woff2') format('woff2'), url('./files/atma-latin-ext-400-normal.woff') format('woff');
   
 }
 /* atma-latin-ext-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Atma Medium'),
-    local('Atma-Medium'), url('./files/atma-latin-ext-500-normal.woff2') format('woff2'), url('./files/atma-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/atma-latin-ext-500-normal.woff2') format('woff2'), url('./files/atma-latin-ext-500-normal.woff') format('woff');
   
 }
 /* atma-latin-ext-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Atma SemiBold'),
-    local('Atma-SemiBold'), url('./files/atma-latin-ext-600-normal.woff2') format('woff2'), url('./files/atma-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/atma-latin-ext-600-normal.woff2') format('woff2'), url('./files/atma-latin-ext-600-normal.woff') format('woff');
   
 }
 /* atma-latin-ext-700-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Atma Bold'),
-    local('Atma-Bold'), url('./files/atma-latin-ext-700-normal.woff2') format('woff2'), url('./files/atma-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/atma-latin-ext-700-normal.woff2') format('woff2'), url('./files/atma-latin-ext-700-normal.woff') format('woff');
   
 }

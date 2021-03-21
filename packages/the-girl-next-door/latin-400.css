@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('The Girl Next Door'),
-    local('TheGirlNextDoor'), url('./files/the-girl-next-door-latin-400-normal.woff2') format('woff2'), url('./files/the-girl-next-door-latin-400-normal.woff') format('woff');
+  src: url('./files/the-girl-next-door-latin-400-normal.woff2') format('woff2'), url('./files/the-girl-next-door-latin-400-normal.woff') format('woff');
   
 }

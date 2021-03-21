@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Charmonman Regular'),
-    local('Charmonman-Regular'), url('./files/charmonman-latin-ext-400-normal.woff2') format('woff2'), url('./files/charmonman-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/charmonman-latin-ext-400-normal.woff2') format('woff2'), url('./files/charmonman-latin-ext-400-normal.woff') format('woff');
   
 }
 /* charmonman-latin-ext-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Charmonman Bold'),
-    local('Charmonman-Bold'), url('./files/charmonman-latin-ext-700-normal.woff2') format('woff2'), url('./files/charmonman-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/charmonman-latin-ext-700-normal.woff2') format('woff2'), url('./files/charmonman-latin-ext-700-normal.woff') format('woff');
   
 }
