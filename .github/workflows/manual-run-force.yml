@@ -36,8 +36,11 @@ jobs:
       - name: Parse Variable
         run: yarn parser:variable
 
-      - name: Build fonts
+      - name: Build fonts (Google)
         run: yarn build:google-force
+
+      - name: Rebuild non-Google fonts
+        run: yarn build:generic-force
 
       - name: Generate fontlist
         run: yarn util:fontlist
