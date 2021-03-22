@@ -92,6 +92,7 @@ module.exports = function (font, rebuildFlag) {
   const packageReadme = readme({
     fontId,
     fontName,
+    fontNameNoSpace: fontName.replace(" ", ""),
     subsets,
     weights,
     styles,
