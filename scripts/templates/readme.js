@@ -45,9 +45,9 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
   $weight: 500,
   $display: fallback,
   $fontDir: "~@fontsource/<%= fontId %>/files"
-);<% } %>
+);
 
-// Fully customisable single @font-face mixin.
+<% } %>// Fully customisable single @font-face mixin.
 @include <%= fontNameNoSpace %>.fontFaceCustom(
   $weight: 600,
   $display: optional,
@@ -66,9 +66,9 @@ For those not using Dart Sass, you can still use @import although it can be high
   $weight: 500,
   $display: fallback,
   $fontDir: "~@fontsource/<%= fontId %>/files"
-);<% } %>
+);
 
-// Fully customisable single @font-face mixin.
+<% } %>// Fully customisable single @font-face mixin.
 @include fontFaceCustom(
   $weight: 600,
   $display: optional,
