@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cardo'),
-    local('Cardo-Regular'), url('./files/cardo-latin-400-normal.woff2') format('woff2'), url('./files/cardo-latin-400-normal.woff') format('woff');
+  src: url('./files/cardo-latin-400-normal.woff2') format('woff2'), url('./files/cardo-latin-400-normal.woff') format('woff');
   
 }
 /* cardo-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cardo Bold'),
-    local('Cardo-Bold'), url('./files/cardo-latin-700-normal.woff2') format('woff2'), url('./files/cardo-latin-700-normal.woff') format('woff');
+  src: url('./files/cardo-latin-700-normal.woff2') format('woff2'), url('./files/cardo-latin-700-normal.woff') format('woff');
   
 }

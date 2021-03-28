@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('El Messiri'),
-    local('ElMessiri-Regular'), url('./files/el-messiri-cyrillic-400-normal.woff2') format('woff2'), url('./files/el-messiri-cyrillic-400-normal.woff') format('woff');
+  src: url('./files/el-messiri-cyrillic-400-normal.woff2') format('woff2'), url('./files/el-messiri-cyrillic-400-normal.woff') format('woff');
   
 }
 /* el-messiri-cyrillic-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('El Messiri Medium'),
-    local('ElMessiri-Medium'), url('./files/el-messiri-cyrillic-500-normal.woff2') format('woff2'), url('./files/el-messiri-cyrillic-500-normal.woff') format('woff');
+  src: url('./files/el-messiri-cyrillic-500-normal.woff2') format('woff2'), url('./files/el-messiri-cyrillic-500-normal.woff') format('woff');
   
 }
 /* el-messiri-cyrillic-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('El Messiri SemiBold'),
-    local('ElMessiri-SemiBold'), url('./files/el-messiri-cyrillic-600-normal.woff2') format('woff2'), url('./files/el-messiri-cyrillic-600-normal.woff') format('woff');
+  src: url('./files/el-messiri-cyrillic-600-normal.woff2') format('woff2'), url('./files/el-messiri-cyrillic-600-normal.woff') format('woff');
   
 }
 /* el-messiri-cyrillic-700-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('El Messiri Bold'),
-    local('ElMessiri-Bold'), url('./files/el-messiri-cyrillic-700-normal.woff2') format('woff2'), url('./files/el-messiri-cyrillic-700-normal.woff') format('woff');
+  src: url('./files/el-messiri-cyrillic-700-normal.woff2') format('woff2'), url('./files/el-messiri-cyrillic-700-normal.woff') format('woff');
   
 }

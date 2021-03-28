@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Cairo ExtraLight'),
-    local('Cairo-ExtraLight'), url('./files/cairo-arabic-200-normal.woff2') format('woff2'), url('./files/cairo-arabic-200-normal.woff') format('woff');
+  src: url('./files/cairo-arabic-200-normal.woff2') format('woff2'), url('./files/cairo-arabic-200-normal.woff') format('woff');
   
 }
 /* cairo-arabic-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Cairo Light'),
-    local('Cairo-Light'), url('./files/cairo-arabic-300-normal.woff2') format('woff2'), url('./files/cairo-arabic-300-normal.woff') format('woff');
+  src: url('./files/cairo-arabic-300-normal.woff2') format('woff2'), url('./files/cairo-arabic-300-normal.woff') format('woff');
   
 }
 /* cairo-arabic-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cairo Regular'),
-    local('Cairo-Regular'), url('./files/cairo-arabic-400-normal.woff2') format('woff2'), url('./files/cairo-arabic-400-normal.woff') format('woff');
+  src: url('./files/cairo-arabic-400-normal.woff2') format('woff2'), url('./files/cairo-arabic-400-normal.woff') format('woff');
   
 }
 /* cairo-arabic-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Cairo SemiBold'),
-    local('Cairo-SemiBold'), url('./files/cairo-arabic-600-normal.woff2') format('woff2'), url('./files/cairo-arabic-600-normal.woff') format('woff');
+  src: url('./files/cairo-arabic-600-normal.woff2') format('woff2'), url('./files/cairo-arabic-600-normal.woff') format('woff');
   
 }
 /* cairo-arabic-700-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cairo Bold'),
-    local('Cairo-Bold'), url('./files/cairo-arabic-700-normal.woff2') format('woff2'), url('./files/cairo-arabic-700-normal.woff') format('woff');
+  src: url('./files/cairo-arabic-700-normal.woff2') format('woff2'), url('./files/cairo-arabic-700-normal.woff') format('woff');
   
 }
 /* cairo-arabic-900-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Cairo Black'),
-    local('Cairo-Black'), url('./files/cairo-arabic-900-normal.woff2') format('woff2'), url('./files/cairo-arabic-900-normal.woff') format('woff');
+  src: url('./files/cairo-arabic-900-normal.woff2') format('woff2'), url('./files/cairo-arabic-900-normal.woff') format('woff');
   
 }

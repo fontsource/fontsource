@@ -35,6 +35,27 @@ Alternatively, the same solutions could be imported via SCSS!
 For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
 
 ```scss
+@use "@fontsource/asap/scss/mixins" as Asap;
+
+// Uses a unicode-range map to automatically generate multiple @font-face rules.
+@include Asap.fontFace(
+  $weight: 500,
+  $display: fallback,
+  $fontDir: "~@fontsource/asap/files"
+);
+
+// Fully customisable single @font-face mixin.
+@include Asap.fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "#{$fontDir}/custom-file.woff2",
+  $unicodeRange: false
+);
+```
+
+For those not using Dart Sass, you can still use @import although it can be highly problematic as variables are placed in the global scope which can conflict with existing Sass setups. It's highly recommended to migrate to Dart Sass as all other versions have been deprecated.
+
+```scss
 @import "~@fontsource/asap/scss/mixins";
 
 // Uses a unicode-range map to automatically generate multiple @font-face rules.
@@ -51,20 +72,6 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
   $woff2Path: "#{$fontDir}/custom-file.woff2",
   $unicodeRange: false
 );
-// More options available in link below.
-```
-
-We also have default variables that you can use!
-
-```scss
-@import "~@fontsource/asap/scss/mixins";
-
-$style: italic;
-
-@include fontFace($weight: 500);
-@include fontFace($weight: 600);
-
-// Applies italic to both @includes.
 ```
 
 You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/asap/scss/mixins.scss).
@@ -83,6 +90,48 @@ body {
   font-family: "Asap";
 }
 ```
+
+## Variable Fonts
+
+This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
+
+Begin by importing both the variable and fallback font for non-compatible browsers.
+
+```js
+import "@fontsource/asap/400.css" // Weight 400.
+```
+
+Select either a stripped down weights only variant of the font or a full feature variant that contains all the variable axes.
+
+```js
+import "@fontsource/asap/variable.css" // Contains ONLY variable weights and no other axes.
+import "@fontsource/asap/variable-italic.css" // Italic variant.
+// Or
+import "@fontsource/asap/variable-full.css" // This contains ALL variable axes. Font files are larger.
+import "@fontsource/asap/variable-full-italic.css" // Italic variant.
+```
+
+Note a `full` or `italic` variant may NOT exist if there are no additional axes other than wght and/or ital. You can check the available axes [here](https://fonts.google.com/variablefonts).
+
+Followed by the CSS using the @supports tag, which checks whether the browser is capable of utilising variable fonts. Fallback fonts and their relevant CSS should be used outside the block, whilst all variable options should be used within the @supports block and utilising the font-variation-settings tag.
+
+```css
+h1 {
+  font-family: Asap;
+  font-weight: 400;
+}
+
+@supports (font-variation-settings: normal) {
+  h1 {
+    font-family: AsapVariable;
+    font-variation-settings: "wght" 400;
+  }
+}
+```
+
+For Sass mixins, please use fontFaceVariable() and fontFaceVariableCustom which introduces the new $type variable to choose between "wghtOnly" and "full".
+
+_To view the available variable axes that may be included in the font, click [here](https://fonts.google.com/variablefonts). The meanings of all axes and the restrictions associated with them are explained there._
 
 ## Additional Options
 
@@ -105,6 +154,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v13`.
+Font version (provided by source): `v15`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

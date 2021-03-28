@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Noto Sans'),
-    local('NotoSans'), url('./files/noto-sans-cyrillic-400-normal.woff2') format('woff2'), url('./files/noto-sans-cyrillic-400-normal.woff') format('woff');
+  src: url('./files/noto-sans-cyrillic-400-normal.woff2') format('woff2'), url('./files/noto-sans-cyrillic-400-normal.woff') format('woff');
   
 }
 /* noto-sans-cyrillic-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Noto Sans Bold'),
-    local('NotoSans-Bold'), url('./files/noto-sans-cyrillic-700-normal.woff2') format('woff2'), url('./files/noto-sans-cyrillic-700-normal.woff') format('woff');
+  src: url('./files/noto-sans-cyrillic-700-normal.woff2') format('woff2'), url('./files/noto-sans-cyrillic-700-normal.woff') format('woff');
   
 }

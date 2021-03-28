@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Alegreya SC Regular'),
-    local('AlegreyaSC-Regular'), url('./files/alegreya-sc-latin-400-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-400-normal.woff') format('woff');
+  src: url('./files/alegreya-sc-latin-400-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-400-normal.woff') format('woff');
   
 }
 /* alegreya-sc-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Alegreya SC Medium'),
-    local('AlegreyaSC-Medium'), url('./files/alegreya-sc-latin-500-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-500-normal.woff') format('woff');
+  src: url('./files/alegreya-sc-latin-500-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-500-normal.woff') format('woff');
   
 }
 /* alegreya-sc-latin-700-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Alegreya SC Bold'),
-    local('AlegreyaSC-Bold'), url('./files/alegreya-sc-latin-700-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-700-normal.woff') format('woff');
+  src: url('./files/alegreya-sc-latin-700-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-700-normal.woff') format('woff');
   
 }
 /* alegreya-sc-latin-800-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Alegreya SC ExtraBold'),
-    local('AlegreyaSC-ExtraBold'), url('./files/alegreya-sc-latin-800-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-800-normal.woff') format('woff');
+  src: url('./files/alegreya-sc-latin-800-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-800-normal.woff') format('woff');
   
 }
 /* alegreya-sc-latin-900-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Alegreya SC Black'),
-    local('AlegreyaSC-Black'), url('./files/alegreya-sc-latin-900-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-900-normal.woff') format('woff');
+  src: url('./files/alegreya-sc-latin-900-normal.woff2') format('woff2'), url('./files/alegreya-sc-latin-900-normal.woff') format('woff');
   
 }

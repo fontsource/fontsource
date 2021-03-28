@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cardo Bold'),
-    local('Cardo-Bold'), url('./files/cardo-greek-ext-700-normal.woff2') format('woff2'), url('./files/cardo-greek-ext-700-normal.woff') format('woff');
+  src: url('./files/cardo-greek-ext-700-normal.woff2') format('woff2'), url('./files/cardo-greek-ext-700-normal.woff') format('woff');
   
 }

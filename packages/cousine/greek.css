@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cousine Regular'),
-    local('Cousine-Regular'), url('./files/cousine-greek-400-normal.woff2') format('woff2'), url('./files/cousine-greek-400-normal.woff') format('woff');
+  src: url('./files/cousine-greek-400-normal.woff2') format('woff2'), url('./files/cousine-greek-400-normal.woff') format('woff');
   
 }
 /* cousine-greek-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cousine Bold'),
-    local('Cousine-Bold'), url('./files/cousine-greek-700-normal.woff2') format('woff2'), url('./files/cousine-greek-700-normal.woff') format('woff');
+  src: url('./files/cousine-greek-700-normal.woff2') format('woff2'), url('./files/cousine-greek-700-normal.woff') format('woff');
   
 }

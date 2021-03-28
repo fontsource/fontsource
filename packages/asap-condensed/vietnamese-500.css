@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Asap Condensed Medium'),
-    local('AsapCondensed-Medium'), url('./files/asap-condensed-vietnamese-500-normal.woff2') format('woff2'), url('./files/asap-condensed-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/asap-condensed-vietnamese-500-normal.woff2') format('woff2'), url('./files/asap-condensed-vietnamese-500-normal.woff') format('woff');
   
 }

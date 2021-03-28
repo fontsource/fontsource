@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Cormorant Infant Light Italic'),
-    local('CormorantInfant-LightItalic'), url('./files/cormorant-infant-vietnamese-300-italic.woff2') format('woff2'), url('./files/cormorant-infant-vietnamese-300-italic.woff') format('woff');
+  src: url('./files/cormorant-infant-vietnamese-300-italic.woff2') format('woff2'), url('./files/cormorant-infant-vietnamese-300-italic.woff') format('woff');
   
 }

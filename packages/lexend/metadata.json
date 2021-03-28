@@ -1,0 +1,14 @@
+{
+  "fontId": "lexend",
+  "fontName": "Lexend",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": ["100", "300", "400", "500", "600", "700", "800"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-03-22",
+  "version": "v2",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

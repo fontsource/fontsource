@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Alegreya Sans SC Thin'),
-    local('AlegreyaSansSC-Thin'), url('./files/alegreya-sans-sc-greek-ext-100-normal.woff2') format('woff2'), url('./files/alegreya-sans-sc-greek-ext-100-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-sc-greek-ext-100-normal.woff2') format('woff2'), url('./files/alegreya-sans-sc-greek-ext-100-normal.woff') format('woff');
   
 }

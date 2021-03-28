@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Noto Sans Bold Italic'),
-    local('NotoSans-BoldItalic'), url('./files/noto-sans-cyrillic-ext-700-italic.woff2') format('woff2'), url('./files/noto-sans-cyrillic-ext-700-italic.woff') format('woff');
+  src: url('./files/noto-sans-cyrillic-ext-700-italic.woff2') format('woff2'), url('./files/noto-sans-cyrillic-ext-700-italic.woff') format('woff');
   
 }

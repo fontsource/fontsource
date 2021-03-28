@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Cormorant Light'),
-    local('Cormorant-Light'), url('./files/cormorant-latin-ext-300-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/cormorant-latin-ext-300-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-300-normal.woff') format('woff');
   
 }
 /* cormorant-latin-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cormorant Regular'),
-    local('Cormorant-Regular'), url('./files/cormorant-latin-ext-400-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/cormorant-latin-ext-400-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-400-normal.woff') format('woff');
   
 }
 /* cormorant-latin-ext-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Cormorant Medium'),
-    local('Cormorant-Medium'), url('./files/cormorant-latin-ext-500-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/cormorant-latin-ext-500-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-500-normal.woff') format('woff');
   
 }
 /* cormorant-latin-ext-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Cormorant SemiBold'),
-    local('Cormorant-SemiBold'), url('./files/cormorant-latin-ext-600-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/cormorant-latin-ext-600-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-600-normal.woff') format('woff');
   
 }
 /* cormorant-latin-ext-700-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cormorant Bold'),
-    local('Cormorant-Bold'), url('./files/cormorant-latin-ext-700-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/cormorant-latin-ext-700-normal.woff2') format('woff2'), url('./files/cormorant-latin-ext-700-normal.woff') format('woff');
   
 }

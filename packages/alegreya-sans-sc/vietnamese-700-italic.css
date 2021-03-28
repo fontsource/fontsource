@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Alegreya Sans SC Bold Italic'),
-    local('AlegreyaSansSC-BoldItalic'), url('./files/alegreya-sans-sc-vietnamese-700-italic.woff2') format('woff2'), url('./files/alegreya-sans-sc-vietnamese-700-italic.woff') format('woff');
+  src: url('./files/alegreya-sans-sc-vietnamese-700-italic.woff2') format('woff2'), url('./files/alegreya-sans-sc-vietnamese-700-italic.woff') format('woff');
   
 }

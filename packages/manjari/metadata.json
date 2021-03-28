@@ -1,13 +1,13 @@
 {
   "fontId": "manjari",
   "fontName": "Manjari",
-  "subsets": ["latin", "malayalam"],
+  "subsets": ["latin", "latin-ext", "malayalam"],
   "weights": ["100", "400", "700"],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,
-  "lastModified": "2020-07-23",
-  "version": "v3",
+  "lastModified": "2021-03-22",
+  "version": "v4",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

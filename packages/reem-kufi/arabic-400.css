@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Reem Kufi Regular'),
-    local('ReemKufi-Regular'), url('./files/reem-kufi-arabic-400-normal.woff2') format('woff2'), url('./files/reem-kufi-arabic-400-normal.woff') format('woff');
+  src: url('./files/reem-kufi-arabic-400-normal.woff2') format('woff2'), url('./files/reem-kufi-arabic-400-normal.woff') format('woff');
   
 }

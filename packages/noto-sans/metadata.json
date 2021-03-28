@@ -15,8 +15,8 @@
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,
-  "lastModified": "2020-09-25",
-  "version": "v11",
+  "lastModified": "2021-03-24",
+  "version": "v12",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Alegreya Sans Thin'),
-    local('AlegreyaSans-Thin'), url('./files/alegreya-sans-greek-ext-100-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-100-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-greek-ext-100-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-100-normal.woff') format('woff');
   
 }
 /* alegreya-sans-greek-ext-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Alegreya Sans Light'),
-    local('AlegreyaSans-Light'), url('./files/alegreya-sans-greek-ext-300-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-300-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-greek-ext-300-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-300-normal.woff') format('woff');
   
 }
 /* alegreya-sans-greek-ext-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Alegreya Sans Regular'),
-    local('AlegreyaSans-Regular'), url('./files/alegreya-sans-greek-ext-400-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-400-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-greek-ext-400-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-400-normal.woff') format('woff');
   
 }
 /* alegreya-sans-greek-ext-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Alegreya Sans Medium'),
-    local('AlegreyaSans-Medium'), url('./files/alegreya-sans-greek-ext-500-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-500-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-greek-ext-500-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-500-normal.woff') format('woff');
   
 }
 /* alegreya-sans-greek-ext-700-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Alegreya Sans Bold'),
-    local('AlegreyaSans-Bold'), url('./files/alegreya-sans-greek-ext-700-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-700-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-greek-ext-700-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-700-normal.woff') format('woff');
   
 }
 /* alegreya-sans-greek-ext-800-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Alegreya Sans ExtraBold'),
-    local('AlegreyaSans-ExtraBold'), url('./files/alegreya-sans-greek-ext-800-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-800-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-greek-ext-800-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-800-normal.woff') format('woff');
   
 }
 /* alegreya-sans-greek-ext-900-normal*/
@@ -70,8 +58,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Alegreya Sans Black'),
-    local('AlegreyaSans-Black'), url('./files/alegreya-sans-greek-ext-900-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-900-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-greek-ext-900-normal.woff2') format('woff2'), url('./files/alegreya-sans-greek-ext-900-normal.woff') format('woff');
   
 }

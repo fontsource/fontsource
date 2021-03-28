@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Vesper Libre'),
-    local('VesperLibre-Regular'), url('./files/vesper-libre-latin-400-normal.woff2') format('woff2'), url('./files/vesper-libre-latin-400-normal.woff') format('woff');
+  src: url('./files/vesper-libre-latin-400-normal.woff2') format('woff2'), url('./files/vesper-libre-latin-400-normal.woff') format('woff');
   
 }
 /* vesper-libre-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Vesper Libre Medium'),
-    local('VesperLibre-Medium'), url('./files/vesper-libre-latin-500-normal.woff2') format('woff2'), url('./files/vesper-libre-latin-500-normal.woff') format('woff');
+  src: url('./files/vesper-libre-latin-500-normal.woff2') format('woff2'), url('./files/vesper-libre-latin-500-normal.woff') format('woff');
   
 }
 /* vesper-libre-latin-700-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Vesper Libre Bold'),
-    local('VesperLibre-Bold'), url('./files/vesper-libre-latin-700-normal.woff2') format('woff2'), url('./files/vesper-libre-latin-700-normal.woff') format('woff');
+  src: url('./files/vesper-libre-latin-700-normal.woff2') format('woff2'), url('./files/vesper-libre-latin-700-normal.woff') format('woff');
   
 }
 /* vesper-libre-latin-900-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Vesper Libre Heavy'),
-    local('VesperLibre-Heavy'), url('./files/vesper-libre-latin-900-normal.woff2') format('woff2'), url('./files/vesper-libre-latin-900-normal.woff') format('woff');
+  src: url('./files/vesper-libre-latin-900-normal.woff2') format('woff2'), url('./files/vesper-libre-latin-900-normal.woff') format('woff');
   
 }

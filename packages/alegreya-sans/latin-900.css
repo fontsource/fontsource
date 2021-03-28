@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Alegreya Sans Black'),
-    local('AlegreyaSans-Black'), url('./files/alegreya-sans-latin-900-normal.woff2') format('woff2'), url('./files/alegreya-sans-latin-900-normal.woff') format('woff');
+  src: url('./files/alegreya-sans-latin-900-normal.woff2') format('woff2'), url('./files/alegreya-sans-latin-900-normal.woff') format('woff');
   
 }

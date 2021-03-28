@@ -2,12 +2,16 @@
   "fontId": "archivo",
   "fontName": "Archivo",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "500", "600", "700"],
+  "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2020-09-02",
-  "version": "v7",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "wdth": { "default": "100", "min": "62", "max": "125", "step": "0.1" },
+    "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
+  },
+  "lastModified": "2021-03-22",
+  "version": "v8",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Tinos Bold'),
-    local('Tinos-Bold'), url('./files/tinos-latin-ext-700-normal.woff2') format('woff2'), url('./files/tinos-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/tinos-latin-ext-700-normal.woff2') format('woff2'), url('./files/tinos-latin-ext-700-normal.woff') format('woff');
   
 }

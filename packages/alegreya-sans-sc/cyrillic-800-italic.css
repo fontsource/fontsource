@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Alegreya Sans SC ExtraBold Italic'),
-    local('AlegreyaSansSC-ExtraBoldItalic'), url('./files/alegreya-sans-sc-cyrillic-800-italic.woff2') format('woff2'), url('./files/alegreya-sans-sc-cyrillic-800-italic.woff') format('woff');
+  src: url('./files/alegreya-sans-sc-cyrillic-800-italic.woff2') format('woff2'), url('./files/alegreya-sans-sc-cyrillic-800-italic.woff') format('woff');
   
 }

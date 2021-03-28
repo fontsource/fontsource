@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Amatic SC Regular'),
-    local('AmaticSC-Regular'), url('./files/amatic-sc-latin-ext-400-normal.woff2') format('woff2'), url('./files/amatic-sc-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/amatic-sc-latin-ext-400-normal.woff2') format('woff2'), url('./files/amatic-sc-latin-ext-400-normal.woff') format('woff');
   
 }
 /* amatic-sc-latin-ext-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Amatic SC Bold'),
-    local('AmaticSC-Bold'), url('./files/amatic-sc-latin-ext-700-normal.woff2') format('woff2'), url('./files/amatic-sc-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/amatic-sc-latin-ext-700-normal.woff2') format('woff2'), url('./files/amatic-sc-latin-ext-700-normal.woff') format('woff');
   
 }

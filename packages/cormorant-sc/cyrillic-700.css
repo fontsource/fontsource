@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cormorant SC Bold'),
-    local('CormorantSC-Bold'), url('./files/cormorant-sc-cyrillic-700-normal.woff2') format('woff2'), url('./files/cormorant-sc-cyrillic-700-normal.woff') format('woff');
+  src: url('./files/cormorant-sc-cyrillic-700-normal.woff2') format('woff2'), url('./files/cormorant-sc-cyrillic-700-normal.woff') format('woff');
   
 }

@@ -7,6 +7,15 @@
   src: url('./files/manjari-malayalam-700-normal.woff2') format('woff2'), url('./files/manjari-all-700-normal.woff') format('woff');
   unicode-range: U+0307, U+0323, U+0964-0965, U+0D02-0D7F, U+200C-200D, U+20B9, U+25CC;
 }
+/* manjari-latin-ext-700-normal*/
+@font-face {
+  font-family: 'Manjari';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/manjari-latin-ext-700-normal.woff2') format('woff2'), url('./files/manjari-all-700-normal.woff') format('woff');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 /* manjari-latin-700-normal*/
 @font-face {
   font-family: 'Manjari';

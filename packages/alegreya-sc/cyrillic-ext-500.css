@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Alegreya SC Medium'),
-    local('AlegreyaSC-Medium'), url('./files/alegreya-sc-cyrillic-ext-500-normal.woff2') format('woff2'), url('./files/alegreya-sc-cyrillic-ext-500-normal.woff') format('woff');
+  src: url('./files/alegreya-sc-cyrillic-ext-500-normal.woff2') format('woff2'), url('./files/alegreya-sc-cyrillic-ext-500-normal.woff') format('woff');
   
 }

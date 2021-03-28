@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Cormorant SC Light'),
-    local('CormorantSC-Light'), url('./files/cormorant-sc-vietnamese-300-normal.woff2') format('woff2'), url('./files/cormorant-sc-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/cormorant-sc-vietnamese-300-normal.woff2') format('woff2'), url('./files/cormorant-sc-vietnamese-300-normal.woff') format('woff');
   
 }

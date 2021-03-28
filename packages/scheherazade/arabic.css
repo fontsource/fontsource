@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Scheherazade'),
-    local('Scheherazade-Regular'), url('./files/scheherazade-arabic-400-normal.woff2') format('woff2'), url('./files/scheherazade-arabic-400-normal.woff') format('woff');
+  src: url('./files/scheherazade-arabic-400-normal.woff2') format('woff2'), url('./files/scheherazade-arabic-400-normal.woff') format('woff');
   
 }
 /* scheherazade-arabic-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Scheherazade Bold'),
-    local('Scheherazade-Bold'), url('./files/scheherazade-arabic-700-normal.woff2') format('woff2'), url('./files/scheherazade-arabic-700-normal.woff') format('woff');
+  src: url('./files/scheherazade-arabic-700-normal.woff2') format('woff2'), url('./files/scheherazade-arabic-700-normal.woff') format('woff');
   
 }

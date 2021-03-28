@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Source Code Pro ExtraLight'),
-    local('SourceCodePro-ExtraLight'), url('./files/source-code-pro-cyrillic-ext-200-normal.woff2') format('woff2'), url('./files/source-code-pro-cyrillic-ext-200-normal.woff') format('woff');
+  src: url('./files/source-code-pro-cyrillic-ext-200-normal.woff2') format('woff2'), url('./files/source-code-pro-cyrillic-ext-200-normal.woff') format('woff');
   
 }

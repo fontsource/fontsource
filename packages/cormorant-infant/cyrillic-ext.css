@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Cormorant Infant Light'),
-    local('CormorantInfant-Light'), url('./files/cormorant-infant-cyrillic-ext-300-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-300-normal.woff') format('woff');
+  src: url('./files/cormorant-infant-cyrillic-ext-300-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-300-normal.woff') format('woff');
   
 }
 /* cormorant-infant-cyrillic-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cormorant Infant Regular'),
-    local('CormorantInfant-Regular'), url('./files/cormorant-infant-cyrillic-ext-400-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-400-normal.woff') format('woff');
+  src: url('./files/cormorant-infant-cyrillic-ext-400-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-400-normal.woff') format('woff');
   
 }
 /* cormorant-infant-cyrillic-ext-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Cormorant Infant Medium'),
-    local('CormorantInfant-Medium'), url('./files/cormorant-infant-cyrillic-ext-500-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-500-normal.woff') format('woff');
+  src: url('./files/cormorant-infant-cyrillic-ext-500-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-500-normal.woff') format('woff');
   
 }
 /* cormorant-infant-cyrillic-ext-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Cormorant Infant SemiBold'),
-    local('CormorantInfant-SemiBold'), url('./files/cormorant-infant-cyrillic-ext-600-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-600-normal.woff') format('woff');
+  src: url('./files/cormorant-infant-cyrillic-ext-600-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-600-normal.woff') format('woff');
   
 }
 /* cormorant-infant-cyrillic-ext-700-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cormorant Infant Bold'),
-    local('CormorantInfant-Bold'), url('./files/cormorant-infant-cyrillic-ext-700-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-700-normal.woff') format('woff');
+  src: url('./files/cormorant-infant-cyrillic-ext-700-normal.woff2') format('woff2'), url('./files/cormorant-infant-cyrillic-ext-700-normal.woff') format('woff');
   
 }
