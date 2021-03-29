@@ -97,12 +97,7 @@ module.exports = function (font, rebuildFlag) {
       fontId,
       fontName,
     })
-    glob(`${fontDir}/**/*.css`, (er, files) =>
-      files.forEach(file => {
-        fs.appendFileSync(file, icons)
-      })
-    )
-    glob(`${fontDir}/**/*.scss`, (er, files) =>
+    glob(`${fontDir}/**/*.{css,scss}`, (er, files) =>
       files.forEach(file => {
         fs.appendFileSync(file, icons)
       })
