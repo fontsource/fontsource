@@ -1,14 +1,14 @@
-/* material-icons-base-400-normal*/
+/* material-icons-sharp-all-400-normal*/
 @font-face {
-  font-family: 'Material Icons';
+  font-family: 'Material Icons Sharp';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/material-icons-base-400-normal.woff2') format('woff2'), url('./files/material-icons-base-400-normal.woff') format('woff');
+  src: url('./files/material-icons-sharp-all-400-normal.woff2') format('woff2'), url('./files/material-icons-sharp-all-400-normal.woff') format('woff');
   
 }
-.material-icons {
-  font-family: 'Material Icons';
+.material-icons-sharp {
+  font-family: 'Material Icons Sharp';
   font-weight: normal;
   font-style: normal;
   font-size: 24px;  /* Preferred icon size */
