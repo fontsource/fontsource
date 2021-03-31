@@ -91,7 +91,7 @@ module.exports = function (font, rebuildFlag) {
 
   fs.writeFileSync(`${fontDir}/scss/mixins.scss`, scss)
 
-  // Material Icons
+  // Material Icons #152
   if (type === "icons") {
     const icons = materialIcons({
       fontId,
