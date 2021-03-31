@@ -1,1 +1,14 @@
-{"fontId":"plus-jakarta-sans","fontName":"Plus Jakarta Sans","subsets":["latin"],"weights":["200","300","400","500","700","800"],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2021-01-23","version":"v2.5","source":"https://github.com/tokotype/PlusJakartaSans","license":"https://github.com/tokotype/PlusJakartaSans/blob/master/LICENSE.md","type":"other"}
+{
+  "fontId": "plus-jakarta-sans",
+  "fontName": "Plus Jakarta Sans",
+  "subsets": ["latin"],
+  "weights": ["200", "300", "400", "500", "700", "800"],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-01-23",
+  "version": "v2.5",
+  "source": "https://github.com/tokotype/PlusJakartaSans",
+  "license": "https://github.com/tokotype/PlusJakartaSans/blob/master/LICENSE.md",
+  "type": "other"
+}

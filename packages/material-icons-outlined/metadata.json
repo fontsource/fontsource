@@ -1,1 +1,14 @@
-{"fontId":"material-icons-outlined","fontName":"Material Icons Outlined","subsets":["all"],"weights":["400"],"styles":["normal"],"defSubset":"all","variable":false,"lastModified":"2021-03-31","version":"v4","source":"https://github.com/google/material-design-icons","license":"https://github.com/google/material-design-icons/blob/master/LICENSE","type":"icons"}
+{
+  "fontId": "material-icons-outlined",
+  "fontName": "Material Icons Outlined",
+  "subsets": ["all"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "all",
+  "variable": false,
+  "lastModified": "2021-03-31",
+  "version": "v4",
+  "source": "https://github.com/google/material-design-icons",
+  "license": "https://github.com/google/material-design-icons/blob/master/LICENSE",
+  "type": "icons"
+}

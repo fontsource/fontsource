@@ -38,12 +38,8 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 @use "@fontsource/material-icons-outlined/scss/mixins" as MaterialIcons Outlined;
 
 // Fully customisable single @font-face mixin.
-@include MaterialIcons Outlined.fontFaceCustom(
-  $weight: 600,
-  $display: optional,
-  $woff2Path: "#{$fontDir}/custom-file.woff2",
-  $unicodeRange: false
-);
+@include MaterialIcons Outlined.fontFaceCustom($weight: 600, $display: optional, $woff2Path:
+      "#{$fontDir}/custom-file.woff2", $unicodeRange: false);
 ```
 
 For those not using Dart Sass, you can still use @import although it can be highly problematic as variables are placed in the global scope which can conflict with existing Sass setups. It's highly recommended to migrate to Dart Sass as all other versions have been deprecated.
@@ -76,8 +72,6 @@ body {
   font-family: "Material Icons Outlined";
 }
 ```
-
-
 
 ## Additional Options
 

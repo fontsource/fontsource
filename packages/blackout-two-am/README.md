@@ -38,12 +38,8 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 @use "@fontsource/blackout-two-am/scss/mixins" as BlackoutTwo AM;
 
 // Fully customisable single @font-face mixin.
-@include BlackoutTwo AM.fontFaceCustom(
-  $weight: 600,
-  $display: optional,
-  $woff2Path: "#{$fontDir}/custom-file.woff2",
-  $unicodeRange: false
-);
+@include BlackoutTwo AM.fontFaceCustom($weight: 600, $display: optional, $woff2Path:
+      "#{$fontDir}/custom-file.woff2", $unicodeRange: false);
 ```
 
 For those not using Dart Sass, you can still use @import although it can be highly problematic as variables are placed in the global scope which can conflict with existing Sass setups. It's highly recommended to migrate to Dart Sass as all other versions have been deprecated.
@@ -76,8 +72,6 @@ body {
   font-family: "Blackout Two AM";
 }
 ```
-
-
 
 ## Additional Options
 

@@ -33,6 +33,10 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 ## Icons
 
 - material-icons
+- material-icons-outlined
+- material-icons-rounded
+- material-icons-sharp
+- material-icons-two-tone
 
 ## Other
 
