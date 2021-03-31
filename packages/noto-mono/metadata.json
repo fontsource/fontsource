@@ -1,14 +1,1 @@
-{
-  "fontId": "noto-mono",
-  "fontName": "Noto Mono",
-  "subsets": ["latin"],
-  "weights": ["400"],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2021-01-23",
-  "version": "v1",
-  "source": "https://www.google.com/get/noto/#mono-mono",
-  "license": "https://github.com/googlefonts/noto-fonts/blob/master/LICENSE",
-  "type": "other"
-}
+{"fontId":"noto-mono","fontName":"Noto Mono","subsets":["latin"],"weights":["400"],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2021-01-23","version":"v1","source":"https://www.google.com/get/noto/#mono-mono","license":"https://github.com/googlefonts/noto-fonts/blob/master/LICENSE","type":"other"}
