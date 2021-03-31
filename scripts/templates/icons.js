@@ -1,14 +1,8 @@
-/* material-icons-base-400-normal*/
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url('./files/material-icons-base-400-normal.woff2') format('woff2'), url('./files/material-icons-base-400-normal.woff') format('woff');
-  
-}
-.material-icons {
-  font-family: 'Material Icons';
+const _ = require("lodash")
+
+exports.materialIcons = _.template(
+  `.<%= fontId %> {
+  font-family: '<%= fontName %>';
   font-weight: normal;
   font-style: normal;
   font-size: 24px;  /* Preferred icon size */
@@ -22,4 +16,5 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-}
+}`
+)

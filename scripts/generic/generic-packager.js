@@ -1,11 +1,13 @@
 const fs = require("fs-extra")
 const jsonfile = require("jsonfile")
+const glob = require("glob")
 
 const { makeFontFilePath, findClosest } = require("../utils/utils")
 const { fontFace } = require("../templates/css")
 const { scssGeneric } = require("../templates/scss")
 const { packageJson } = require("../templates/package")
 const { readme } = require("../templates/readme")
+const { materialIcons } = require("../templates/icons")
 
 module.exports = function (font, rebuildFlag) {
   const {
@@ -16,6 +18,7 @@ module.exports = function (font, rebuildFlag) {
     weights,
     styles,
     defSubset,
+    type,
   } = font
 
   // Find the weight for index.css in the case weight 400 does not exist.
@@ -88,6 +91,19 @@ module.exports = function (font, rebuildFlag) {
 
   fs.writeFileSync(`${fontDir}/scss/mixins.scss`, scss)
 
+  // Material Icons #152
+  if (type === "icons") {
+    const icons = materialIcons({
+      fontId,
+      fontName,
+    })
+    glob(`${fontDir}/**/*.{css,scss}`, (er, files) =>
+      files.forEach(file => {
+        fs.appendFileSync(file, icons)
+      })
+    )
+  }
+
   // Write README.md
   const packageReadme = readme({
     fontId,
@@ -100,7 +116,7 @@ module.exports = function (font, rebuildFlag) {
     source: font.source,
     license: font.license,
     version: font.version,
-    type: font.type,
+    type,
   })
   fs.writeFileSync(`${fontDir}/README.md`, packageReadme)
 
@@ -117,7 +133,7 @@ module.exports = function (font, rebuildFlag) {
     version: font.version,
     source: font.source,
     license: font.license,
-    type: font.type,
+    type,
   })
 
   // Write out package.json file

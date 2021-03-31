@@ -1,44 +1,44 @@
-# Fontsource Material Icons
+# Fontsource Material Icons Rounded
 
-[![npm (scoped)](https://img.shields.io/npm/v/@fontsource/material-icons?color=brightgreen)](https://www.npmjs.com/package/@fontsource/material-icons) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/material-icons)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/material-icons)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
+[![npm (scoped)](https://img.shields.io/npm/v/@fontsource/material-icons-rounded?color=brightgreen)](https://www.npmjs.com/package/@fontsource/material-icons-rounded) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/material-icons-rounded)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/material-icons-rounded)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
-The CSS and web font files to easily self-host the “Material Icons” font. Please visit the main [Fontsource monorepo](https://github.com/fontsource/fontsource) to view more details on this package.
+The CSS and web font files to easily self-host the “Material Icons Rounded” font. Please visit the main [Fontsource monorepo](https://github.com/fontsource/fontsource) to view more details on this package.
 
 ## Installation
 
 Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Solutions like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are prebuilt examples that are compatible.
 
 ```javascript
-yarn add @fontsource/material-icons // npm install @fontsource/material-icons
+yarn add @fontsource/material-icons-rounded // npm install @fontsource/material-icons-rounded
 ```
 
 Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
 
 ```javascript
-import "@fontsource/material-icons" // Defaults to weight 400.
+import "@fontsource/material-icons-rounded" // Defaults to weight 400.
 ```
 
 Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "@fontsource/material-icons/500.css" // Weight 500.
-import "@fontsource/material-icons/900-italic.css" // Italic variant.
+import "@fontsource/material-icons-rounded/500.css" // Weight 500.
+import "@fontsource/material-icons-rounded/900-italic.css" // Italic variant.
 ```
 
 Alternatively, the same solutions could be imported via SCSS!
 
 ```scss
-@import "~@fontsource/material-icons/index.css"; // Weight 400.
-@import "~@fontsource/material-icons/300-italic.css";
+@import "~@fontsource/material-icons-rounded/index.css"; // Weight 400.
+@import "~@fontsource/material-icons-rounded/300-italic.css";
 ```
 
 For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
 
 ```scss
-@use "@fontsource/material-icons/scss/mixins" as MaterialIcons;
+@use "@fontsource/material-icons-rounded/scss/mixins" as MaterialIcons Rounded;
 
 // Fully customisable single @font-face mixin.
-@include MaterialIcons.fontFaceCustom(
+@include MaterialIcons Rounded.fontFaceCustom(
   $weight: 600,
   $display: optional,
   $woff2Path: "#{$fontDir}/custom-file.woff2",
@@ -49,7 +49,7 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 For those not using Dart Sass, you can still use @import although it can be highly problematic as variables are placed in the global scope which can conflict with existing Sass setups. It's highly recommended to migrate to Dart Sass as all other versions have been deprecated.
 
 ```scss
-@import "~@fontsource/material-icons/scss/mixins";
+@import "~@fontsource/material-icons-rounded/scss/mixins";
 
 // Fully customisable single @font-face mixin.
 @include fontFaceCustom(
@@ -60,7 +60,7 @@ For those not using Dart Sass, you can still use @import although it can be high
 );
 ```
 
-You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/material-icons/scss/mixins.scss).
+You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/material-icons-rounded/scss/mixins.scss).
 
 _These examples may not reflect actual compatibility. Please refer below._
 
@@ -73,7 +73,7 @@ Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS
 
 ```css
 body {
-  font-family: "Material Icons";
+  font-family: "Material Icons Rounded";
 }
 ```
 
@@ -84,12 +84,12 @@ body {
 In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
 
 ```javascript
-import "@fontsource/material-icons/latin-ext.css" // All weights with normal style included.
-import "@fontsource/material-icons/cyrillic-ext-500.css" // Weight 500 with normal style.
-import "@fontsource/material-icons/greek-900-italic.css" // Italic variant.
+import "@fontsource/material-icons-rounded/latin-ext.css" // All weights with normal style included.
+import "@fontsource/material-icons-rounded/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "@fontsource/material-icons-rounded/greek-900-italic.css" // Italic variant.
 ```
 
-- Supported subsets: `[base]`
+- Supported subsets: `[all]`
 
 ## Licensing
 
