@@ -1,7 +1,7 @@
 {
-  "name": "@fontsource/material-icons",
+  "name": "@fontsource/material-icons-outlined",
   "version": "4.2.0",
-  "description": "Self-host the Material Icons font in a neatly bundled NPM package.",
+  "description": "Self-host the Material Icons Outlined font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
     "access": "public"
@@ -11,8 +11,8 @@
     "font",
     "font family",
     "google fonts",
-    "Material Icons",
-    "material-icons",
+    "Material Icons Outlined",
+    "material-icons-outlined",
     "css",
     "sass",
     "front-end",
@@ -21,10 +21,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/material-icons#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/material-icons-outlined#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/material-icons"
+    "directory": "packages/material-icons-outlined"
   }
 }

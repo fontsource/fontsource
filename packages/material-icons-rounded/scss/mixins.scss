@@ -1,11 +1,11 @@
-$fontName: "Material Icons";
-$fontId: "material-icons";
+$fontName: "Material Icons Rounded";
+$fontId: "material-icons-rounded";
 $style: normal;
 $display: swap;
 $weight: 400;
 $fontDir: "~@fontsource/#{$fontId}/files";
-$woff2Path: "#{$fontDir}/#{$fontId}-base-#{$weight}-#{$style}.woff2";
-$woffPath: "#{$fontDir}/#{$fontId}-base-#{$weight}-#{$style}.woff";
+$woff2Path: "#{$fontDir}/#{$fontId}-all-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-all-#{$weight}-#{$style}.woff";
 $unicodeRange: false;
 $unicodeRangeValues: null;
 
@@ -31,8 +31,8 @@ $unicodeRangeValues: null;
     }
   }
 }
-.material-icons {
-  font-family: 'Material Icons';
+.material-icons-rounded {
+  font-family: 'Material Icons Rounded';
   font-weight: normal;
   font-style: normal;
   font-size: 24px;  /* Preferred icon size */
