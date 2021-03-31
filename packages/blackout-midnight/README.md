@@ -35,17 +35,29 @@ Alternatively, the same solutions could be imported via SCSS!
 For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
 
 ```scss
+@use "@fontsource/blackout-midnight/scss/mixins" as BlackoutMidnight;
+
+// Fully customisable single @font-face mixin.
+@include BlackoutMidnight.fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "#{$fontDir}/custom-file.woff2",
+  $unicodeRange: false
+);
+```
+
+For those not using Dart Sass, you can still use @import although it can be highly problematic as variables are placed in the global scope which can conflict with existing Sass setups. It's highly recommended to migrate to Dart Sass as all other versions have been deprecated.
+
+```scss
 @import "~@fontsource/blackout-midnight/scss/mixins";
 
 // Fully customisable single @font-face mixin.
 @include fontFaceCustom(
   $weight: 600,
   $display: optional,
-  $woff2Path:
-    "~@fontsource/blackout-midnight/files/blackout-midnight-latin-500-normal.woff2",
+  $woff2Path: "#{$fontDir}/custom-file.woff2",
   $unicodeRange: false
 );
-// More options available in link below.
 ```
 
 You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/blackout-midnight/scss/mixins.scss).
@@ -64,6 +76,8 @@ body {
   font-family: "Blackout Midnight";
 }
 ```
+
+
 
 ## Additional Options
 
