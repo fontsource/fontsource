@@ -1,14 +1,1 @@
-{
-  "fontId": "ostrich-sans-rounded",
-  "fontName": "Ostrich Sans Rounded",
-  "subsets": ["latin"],
-  "weights": ["500"],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2020-08-02",
-  "version": "v13",
-  "source": "https://github.com/theleagueof/ostrich-sans",
-  "license": "https://github.com/theleagueof/ostrich-sans/blob/master/Open%20Font%20License.markdown",
-  "type": "league"
-}
+{"fontId":"ostrich-sans-rounded","fontName":"Ostrich Sans Rounded","subsets":["latin"],"weights":["500"],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2020-08-02","version":"v13","source":"https://github.com/theleagueof/ostrich-sans","license":"https://github.com/theleagueof/ostrich-sans/blob/master/Open%20Font%20License.markdown","type":"league"}

@@ -1,13 +1,24 @@
+$fontName: "Comic Mono";
+$fontId: "comic-mono";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+$woff2Path: "#{$fontDir}/#{$fontId}-latin-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-latin-#{$weight}-#{$style}.woff";
+$unicodeRange: false;
+$unicodeRangeValues: null;
+
 @mixin fontFaceCustom(
-  $fontName: "Comic Mono",
-  $fontId: "comic-mono",
-  $style: normal,
-  $display: swap,
-  $weight: 400,
-  $woff2Path: "~@fontsource/#{$fontId}/files/#{$fontId}-latin-#{$weight}-#{$style}.woff2",
-  $woffPath: "~@fontsource/#{$fontId}/files/#{$fontId}-latin-#{$weight}-#{$style}.woff",
-  $unicodeRange: false,
-  $unicodeRangeValues: null
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $woff2Path: $woff2Path,
+  $woffPath: $woffPath,
+  $unicodeRange: $unicodeRange,
+  $unicodeRangeValues: $unicodeRangeValues
 ) {
   @font-face {
     font-family: "#{$fontName}";

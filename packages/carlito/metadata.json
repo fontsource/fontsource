@@ -1,14 +1,1 @@
-{
-  "fontId": "carlito",
-  "fontName": "Carlito",
-  "subsets": ["latin"],
-  "weights": ["400", "700"],
-  "styles": ["italic", "normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2021-02-13",
-  "version": "v1.0",
-  "source": "https://github.com/google/fonts/issues/1441",
-  "license": "https://opensource.org/licenses/OFL-1.1",
-  "type": "other"
-}
+{"fontId":"carlito","fontName":"Carlito","subsets":["latin"],"weights":["400","700"],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2021-02-13","version":"v1.0","source":"https://github.com/google/fonts/issues/1441","license":"https://opensource.org/licenses/OFL-1.1","type":"other"}
