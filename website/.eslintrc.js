@@ -30,7 +30,6 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:mdx/recommended",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
   ],
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",

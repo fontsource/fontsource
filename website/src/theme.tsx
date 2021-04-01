@@ -8,11 +8,6 @@ const breakpoints = createBreakpoints({
   xl: "80em",
 });
 
-const config = {
-  useSystemColorMode: false,
-  initialColorMode: "light",
-};
-
 const fonts = {
   heading: `'Inter', sans-serif`,
   body: `'Inter', sans-serif`,
@@ -25,7 +20,6 @@ const colors = {
 const theme = extendTheme({
   breakpoints,
   colors,
-  config,
   fonts,
 });
 
