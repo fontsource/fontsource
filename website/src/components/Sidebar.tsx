@@ -25,9 +25,8 @@ export const Sidebar = ({ ifDocs, ...rest }) => {
   );
 };
 
-const SidebarLinks = ({ key, path, title }) => (
+const SidebarLinks = ({ path, title }) => (
   <NextChakraLink
-    key={key}
     href={path}
     prefetch={false}
     passHref
