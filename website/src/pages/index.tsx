@@ -1,4 +1,4 @@
-import { Button, Heading } from "@chakra-ui/react";
+import { Button, Heading, Text } from "@chakra-ui/react";
 import Head from "next/head";
 
 import { Container } from "../components/Container";
@@ -11,8 +11,14 @@ const Index = () => (
     <Head>
       <title>Fontsource</title>
     </Head>
-    <Main>
-      <Heading fontSize={{ base: "6vw", xl: "75px" }}>Fontsource</Heading>
+    <Main mx="auto" textAlign="center">
+      <Heading
+        fontSize={{ base: "6vw", xl: "75px" }}
+        mt={{ base: "4vw", xl: "180px" }}
+      >
+        Fontsource
+      </Heading>
+      <Text>Self-host Open Source fonts in neatly bundled NPM packages.</Text>
       <Container flexDirection="row" maxWidth="60rem" py={2}>
         <NextChakraLink
           href="/docs/introduction"

@@ -30,7 +30,8 @@ export default function FontPage({ metadata, downloadLink }: FontPageProps) {
         </Head>
         <PageContainer ifDocs={false}>
           <Main>
-            <Skeleton height="50px" />
+            <Skeleton height="50px" width="100%" />
+            <Text>Loading...</Text>
           </Main>
         </PageContainer>
       </>
@@ -45,7 +46,7 @@ export default function FontPage({ metadata, downloadLink }: FontPageProps) {
       <PageContainer ifDocs={false}>
         <Main maxWidth={{ base: "90vw", md: "55vw" }}>
           <Text style={{ fontFamily: metadata.fontName }}>
-            The quick brown fox jumps over the lazy dog.
+            Sphinx of black quartz, judge my vow.
           </Text>
         </Main>
       </PageContainer>

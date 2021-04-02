@@ -14,7 +14,7 @@ const fonts = {
 };
 
 const colors = {
-  black: "#16161D",
+  black: "#111",
 };
 
 const theme = extendTheme({
