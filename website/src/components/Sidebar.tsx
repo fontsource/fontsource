@@ -29,7 +29,6 @@ const SidebarLinks = ({ path, title }) => (
   <NextChakraLink
     href={path}
     prefetch={false}
-    passHref
     display="flex"
     my={2}
     fontSize="sm"

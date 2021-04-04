@@ -9,10 +9,12 @@ import { PageContainer } from "../../components/PageContainer";
 const Index = () => (
   <PageContainer ifDocs={false} ifSidebar={true}>
     <Head>
-      <title>Fonts | Fontsource</title>
+      <title>Preview | Fontsource</title>
     </Head>
-    <Main>
-      <Heading fontSize={{ base: "6vw", xl: "75px" }}>Fontsource</Heading>
+    <Main mx="auto">
+      <Heading fontSize={{ base: "6vw", xl: "75px" }} mt="22vh">
+        Fontsource
+      </Heading>
       <Container flexDirection="row" maxWidth="60rem" py={2}>
         <NextChakraLink href="/fonts/roboto" flexGrow={2} mx={2}>
           <Button size="lg" width="100%" variant="outline" colorScheme="gray">
