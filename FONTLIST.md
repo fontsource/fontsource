@@ -42,8 +42,6 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 
 - aileron
 - carlito
-- cascadia-code
-- cascadia-mono
 - charis-sil
 - clear-sans
 - comic-mono

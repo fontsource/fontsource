@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Baloo Tamma 2 Regular'),
-    local('BalooTamma2-Regular'), url('./files/baloo-tamma-2-vietnamese-400-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/baloo-tamma-2-vietnamese-400-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-400-normal.woff') format('woff');
   
 }
 /* baloo-tamma-2-vietnamese-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Baloo Tamma 2 Medium'),
-    local('BalooTamma2-Medium'), url('./files/baloo-tamma-2-vietnamese-500-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/baloo-tamma-2-vietnamese-500-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-500-normal.woff') format('woff');
   
 }
 /* baloo-tamma-2-vietnamese-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Baloo Tamma 2 SemiBold'),
-    local('BalooTamma2-SemiBold'), url('./files/baloo-tamma-2-vietnamese-600-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/baloo-tamma-2-vietnamese-600-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-600-normal.woff') format('woff');
   
 }
 /* baloo-tamma-2-vietnamese-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Baloo Tamma 2 Bold'),
-    local('BalooTamma2-Bold'), url('./files/baloo-tamma-2-vietnamese-700-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/baloo-tamma-2-vietnamese-700-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-700-normal.woff') format('woff');
   
 }
 /* baloo-tamma-2-vietnamese-800-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Baloo Tamma 2 ExtraBold'),
-    local('BalooTamma2-ExtraBold'), url('./files/baloo-tamma-2-vietnamese-800-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/baloo-tamma-2-vietnamese-800-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-vietnamese-800-normal.woff') format('woff');
   
 }

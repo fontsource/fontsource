@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Baloo Da 2 SemiBold'),
-    local('BalooDa2-SemiBold'), url('./files/baloo-da-2-bengali-600-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-600-normal.woff') format('woff');
+  src: url('./files/baloo-da-2-bengali-600-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-600-normal.woff') format('woff');
   
 }

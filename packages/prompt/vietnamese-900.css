@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Prompt Black'),
-    local('Prompt-Black'), url('./files/prompt-vietnamese-900-normal.woff2') format('woff2'), url('./files/prompt-vietnamese-900-normal.woff') format('woff');
+  src: url('./files/prompt-vietnamese-900-normal.woff2') format('woff2'), url('./files/prompt-vietnamese-900-normal.woff') format('woff');
   
 }

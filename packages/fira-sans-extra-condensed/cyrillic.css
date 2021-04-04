@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Fira Sans Extra Condensed Thin'),
-    local('FiraSansExtraCondensed-Thin'), url('./files/fira-sans-extra-condensed-cyrillic-100-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-100-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-100-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-100-normal.woff') format('woff');
   
 }
 /* fira-sans-extra-condensed-cyrillic-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Fira Sans Extra Condensed ExtraLight'),
-    local('FiraSansExtraCondensed-ExtraLight'), url('./files/fira-sans-extra-condensed-cyrillic-200-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-200-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-200-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-200-normal.woff') format('woff');
   
 }
 /* fira-sans-extra-condensed-cyrillic-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Fira Sans Extra Condensed Light'),
-    local('FiraSansExtraCondensed-Light'), url('./files/fira-sans-extra-condensed-cyrillic-300-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-300-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-300-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-300-normal.woff') format('woff');
   
 }
 /* fira-sans-extra-condensed-cyrillic-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Fira Sans Extra Condensed Regular'),
-    local('FiraSansExtraCondensed-Regular'), url('./files/fira-sans-extra-condensed-cyrillic-400-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-400-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-400-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-400-normal.woff') format('woff');
   
 }
 /* fira-sans-extra-condensed-cyrillic-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Fira Sans Extra Condensed Medium'),
-    local('FiraSansExtraCondensed-Medium'), url('./files/fira-sans-extra-condensed-cyrillic-500-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-500-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-500-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-500-normal.woff') format('woff');
   
 }
 /* fira-sans-extra-condensed-cyrillic-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Fira Sans Extra Condensed SemiBold'),
-    local('FiraSansExtraCondensed-SemiBold'), url('./files/fira-sans-extra-condensed-cyrillic-600-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-600-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-600-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-600-normal.woff') format('woff');
   
 }
 /* fira-sans-extra-condensed-cyrillic-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Fira Sans Extra Condensed Bold'),
-    local('FiraSansExtraCondensed-Bold'), url('./files/fira-sans-extra-condensed-cyrillic-700-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-700-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-700-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-700-normal.woff') format('woff');
   
 }
 /* fira-sans-extra-condensed-cyrillic-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Fira Sans Extra Condensed ExtraBold'),
-    local('FiraSansExtraCondensed-ExtraBold'), url('./files/fira-sans-extra-condensed-cyrillic-800-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-800-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-800-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-800-normal.woff') format('woff');
   
 }
 /* fira-sans-extra-condensed-cyrillic-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Fira Sans Extra Condensed Black'),
-    local('FiraSansExtraCondensed-Black'), url('./files/fira-sans-extra-condensed-cyrillic-900-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-900-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-cyrillic-900-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-cyrillic-900-normal.woff') format('woff');
   
 }

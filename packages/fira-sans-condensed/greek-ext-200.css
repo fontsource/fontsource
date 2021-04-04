@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Fira Sans Condensed ExtraLight'),
-    local('FiraSansCondensed-ExtraLight'), url('./files/fira-sans-condensed-greek-ext-200-normal.woff2') format('woff2'), url('./files/fira-sans-condensed-greek-ext-200-normal.woff') format('woff');
+  src: url('./files/fira-sans-condensed-greek-ext-200-normal.woff2') format('woff2'), url('./files/fira-sans-condensed-greek-ext-200-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Baloo Thambi 2 Regular'),
-    local('BalooThambi2-Regular'), url('./files/baloo-thambi-2-latin-400-normal.woff2') format('woff2'), url('./files/baloo-thambi-2-latin-400-normal.woff') format('woff');
+  src: url('./files/baloo-thambi-2-latin-400-normal.woff2') format('woff2'), url('./files/baloo-thambi-2-latin-400-normal.woff') format('woff');
   
 }

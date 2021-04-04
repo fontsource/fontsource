@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Fira Sans Condensed Light Italic'),
-    local('FiraSansCondensed-LightItalic'), url('./files/fira-sans-condensed-cyrillic-ext-300-italic.woff2') format('woff2'), url('./files/fira-sans-condensed-cyrillic-ext-300-italic.woff') format('woff');
+  src: url('./files/fira-sans-condensed-cyrillic-ext-300-italic.woff2') format('woff2'), url('./files/fira-sans-condensed-cyrillic-ext-300-italic.woff') format('woff');
   
 }

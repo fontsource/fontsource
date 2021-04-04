@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Baloo Thambi 2 ExtraBold'),
-    local('BalooThambi2-ExtraBold'), url('./files/baloo-thambi-2-vietnamese-800-normal.woff2') format('woff2'), url('./files/baloo-thambi-2-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/baloo-thambi-2-vietnamese-800-normal.woff2') format('woff2'), url('./files/baloo-thambi-2-vietnamese-800-normal.woff') format('woff');
   
 }

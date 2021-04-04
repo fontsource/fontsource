@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Spectral Light'),
-    local('Spectral-Light'), url('./files/spectral-vietnamese-300-normal.woff2') format('woff2'), url('./files/spectral-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/spectral-vietnamese-300-normal.woff2') format('woff2'), url('./files/spectral-vietnamese-300-normal.woff') format('woff');
   
 }

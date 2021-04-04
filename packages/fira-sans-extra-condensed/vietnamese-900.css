@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Fira Sans Extra Condensed Black'),
-    local('FiraSansExtraCondensed-Black'), url('./files/fira-sans-extra-condensed-vietnamese-900-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-vietnamese-900-normal.woff') format('woff');
+  src: url('./files/fira-sans-extra-condensed-vietnamese-900-normal.woff2') format('woff2'), url('./files/fira-sans-extra-condensed-vietnamese-900-normal.woff') format('woff');
   
 }

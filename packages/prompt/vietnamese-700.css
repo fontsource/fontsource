@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Prompt Bold'),
-    local('Prompt-Bold'), url('./files/prompt-vietnamese-700-normal.woff2') format('woff2'), url('./files/prompt-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/prompt-vietnamese-700-normal.woff2') format('woff2'), url('./files/prompt-vietnamese-700-normal.woff') format('woff');
   
 }

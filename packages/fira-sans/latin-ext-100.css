@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Fira Sans Thin'),
-    local('FiraSans-Thin'), url('./files/fira-sans-latin-ext-100-normal.woff2') format('woff2'), url('./files/fira-sans-latin-ext-100-normal.woff') format('woff');
+  src: url('./files/fira-sans-latin-ext-100-normal.woff2') format('woff2'), url('./files/fira-sans-latin-ext-100-normal.woff') format('woff');
   
 }

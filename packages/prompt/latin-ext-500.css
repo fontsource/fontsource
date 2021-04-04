@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Prompt Medium'),
-    local('Prompt-Medium'), url('./files/prompt-latin-ext-500-normal.woff2') format('woff2'), url('./files/prompt-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/prompt-latin-ext-500-normal.woff2') format('woff2'), url('./files/prompt-latin-ext-500-normal.woff') format('woff');
   
 }

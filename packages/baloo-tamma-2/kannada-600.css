@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Baloo Tamma 2 SemiBold'),
-    local('BalooTamma2-SemiBold'), url('./files/baloo-tamma-2-kannada-600-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-kannada-600-normal.woff') format('woff');
+  src: url('./files/baloo-tamma-2-kannada-600-normal.woff2') format('woff2'), url('./files/baloo-tamma-2-kannada-600-normal.woff') format('woff');
   
 }

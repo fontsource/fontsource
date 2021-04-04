@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Tajawal ExtraBold'),
-    local('Tajawal-ExtraBold'), url('./files/tajawal-arabic-800-normal.woff2') format('woff2'), url('./files/tajawal-arabic-800-normal.woff') format('woff');
+  src: url('./files/tajawal-arabic-800-normal.woff2') format('woff2'), url('./files/tajawal-arabic-800-normal.woff') format('woff');
   
 }

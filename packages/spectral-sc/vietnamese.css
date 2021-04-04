@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Spectral SC ExtraLight'),
-    local('SpectralSC-ExtraLight'), url('./files/spectral-sc-vietnamese-200-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-200-normal.woff') format('woff');
+  src: url('./files/spectral-sc-vietnamese-200-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-200-normal.woff') format('woff');
   
 }
 /* spectral-sc-vietnamese-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Spectral SC Light'),
-    local('SpectralSC-Light'), url('./files/spectral-sc-vietnamese-300-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/spectral-sc-vietnamese-300-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-300-normal.woff') format('woff');
   
 }
 /* spectral-sc-vietnamese-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Spectral SC Regular'),
-    local('SpectralSC-Regular'), url('./files/spectral-sc-vietnamese-400-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/spectral-sc-vietnamese-400-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-400-normal.woff') format('woff');
   
 }
 /* spectral-sc-vietnamese-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Spectral SC Medium'),
-    local('SpectralSC-Medium'), url('./files/spectral-sc-vietnamese-500-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/spectral-sc-vietnamese-500-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-500-normal.woff') format('woff');
   
 }
 /* spectral-sc-vietnamese-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Spectral SC SemiBold'),
-    local('SpectralSC-SemiBold'), url('./files/spectral-sc-vietnamese-600-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/spectral-sc-vietnamese-600-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-600-normal.woff') format('woff');
   
 }
 /* spectral-sc-vietnamese-700-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Spectral SC Bold'),
-    local('SpectralSC-Bold'), url('./files/spectral-sc-vietnamese-700-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/spectral-sc-vietnamese-700-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-700-normal.woff') format('woff');
   
 }
 /* spectral-sc-vietnamese-800-normal*/
@@ -70,8 +58,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Spectral SC ExtraBold'),
-    local('SpectralSC-ExtraBold'), url('./files/spectral-sc-vietnamese-800-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/spectral-sc-vietnamese-800-normal.woff2') format('woff2'), url('./files/spectral-sc-vietnamese-800-normal.woff') format('woff');
   
 }

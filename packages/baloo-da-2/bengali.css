@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Baloo Da 2 Regular'),
-    local('BalooDa2-Regular'), url('./files/baloo-da-2-bengali-400-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-400-normal.woff') format('woff');
+  src: url('./files/baloo-da-2-bengali-400-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-400-normal.woff') format('woff');
   
 }
 /* baloo-da-2-bengali-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Baloo Da 2 Medium'),
-    local('BalooDa2-Medium'), url('./files/baloo-da-2-bengali-500-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-500-normal.woff') format('woff');
+  src: url('./files/baloo-da-2-bengali-500-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-500-normal.woff') format('woff');
   
 }
 /* baloo-da-2-bengali-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Baloo Da 2 SemiBold'),
-    local('BalooDa2-SemiBold'), url('./files/baloo-da-2-bengali-600-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-600-normal.woff') format('woff');
+  src: url('./files/baloo-da-2-bengali-600-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-600-normal.woff') format('woff');
   
 }
 /* baloo-da-2-bengali-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Baloo Da 2 Bold'),
-    local('BalooDa2-Bold'), url('./files/baloo-da-2-bengali-700-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-700-normal.woff') format('woff');
+  src: url('./files/baloo-da-2-bengali-700-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-700-normal.woff') format('woff');
   
 }
 /* baloo-da-2-bengali-800-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Baloo Da 2 ExtraBold'),
-    local('BalooDa2-ExtraBold'), url('./files/baloo-da-2-bengali-800-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-800-normal.woff') format('woff');
+  src: url('./files/baloo-da-2-bengali-800-normal.woff2') format('woff2'), url('./files/baloo-da-2-bengali-800-normal.woff') format('woff');
   
 }

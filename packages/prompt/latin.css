@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Prompt Thin'),
-    local('Prompt-Thin'), url('./files/prompt-latin-100-normal.woff2') format('woff2'), url('./files/prompt-latin-100-normal.woff') format('woff');
+  src: url('./files/prompt-latin-100-normal.woff2') format('woff2'), url('./files/prompt-latin-100-normal.woff') format('woff');
   
 }
 /* prompt-latin-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Prompt ExtraLight'),
-    local('Prompt-ExtraLight'), url('./files/prompt-latin-200-normal.woff2') format('woff2'), url('./files/prompt-latin-200-normal.woff') format('woff');
+  src: url('./files/prompt-latin-200-normal.woff2') format('woff2'), url('./files/prompt-latin-200-normal.woff') format('woff');
   
 }
 /* prompt-latin-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Prompt Light'),
-    local('Prompt-Light'), url('./files/prompt-latin-300-normal.woff2') format('woff2'), url('./files/prompt-latin-300-normal.woff') format('woff');
+  src: url('./files/prompt-latin-300-normal.woff2') format('woff2'), url('./files/prompt-latin-300-normal.woff') format('woff');
   
 }
 /* prompt-latin-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Prompt'),
-    local('Prompt-Regular'), url('./files/prompt-latin-400-normal.woff2') format('woff2'), url('./files/prompt-latin-400-normal.woff') format('woff');
+  src: url('./files/prompt-latin-400-normal.woff2') format('woff2'), url('./files/prompt-latin-400-normal.woff') format('woff');
   
 }
 /* prompt-latin-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Prompt Medium'),
-    local('Prompt-Medium'), url('./files/prompt-latin-500-normal.woff2') format('woff2'), url('./files/prompt-latin-500-normal.woff') format('woff');
+  src: url('./files/prompt-latin-500-normal.woff2') format('woff2'), url('./files/prompt-latin-500-normal.woff') format('woff');
   
 }
 /* prompt-latin-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Prompt SemiBold'),
-    local('Prompt-SemiBold'), url('./files/prompt-latin-600-normal.woff2') format('woff2'), url('./files/prompt-latin-600-normal.woff') format('woff');
+  src: url('./files/prompt-latin-600-normal.woff2') format('woff2'), url('./files/prompt-latin-600-normal.woff') format('woff');
   
 }
 /* prompt-latin-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Prompt Bold'),
-    local('Prompt-Bold'), url('./files/prompt-latin-700-normal.woff2') format('woff2'), url('./files/prompt-latin-700-normal.woff') format('woff');
+  src: url('./files/prompt-latin-700-normal.woff2') format('woff2'), url('./files/prompt-latin-700-normal.woff') format('woff');
   
 }
 /* prompt-latin-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Prompt ExtraBold'),
-    local('Prompt-ExtraBold'), url('./files/prompt-latin-800-normal.woff2') format('woff2'), url('./files/prompt-latin-800-normal.woff') format('woff');
+  src: url('./files/prompt-latin-800-normal.woff2') format('woff2'), url('./files/prompt-latin-800-normal.woff') format('woff');
   
 }
 /* prompt-latin-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Prompt Black'),
-    local('Prompt-Black'), url('./files/prompt-latin-900-normal.woff2') format('woff2'), url('./files/prompt-latin-900-normal.woff') format('woff');
+  src: url('./files/prompt-latin-900-normal.woff2') format('woff2'), url('./files/prompt-latin-900-normal.woff') format('woff');
   
 }

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Spectral ExtraLight'),
-    local('Spectral-ExtraLight'), url('./files/spectral-latin-ext-200-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/spectral-latin-ext-200-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-200-normal.woff') format('woff');
   
 }
 /* spectral-latin-ext-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Spectral Light'),
-    local('Spectral-Light'), url('./files/spectral-latin-ext-300-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/spectral-latin-ext-300-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-300-normal.woff') format('woff');
   
 }
 /* spectral-latin-ext-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Spectral Regular'),
-    local('Spectral-Regular'), url('./files/spectral-latin-ext-400-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/spectral-latin-ext-400-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-400-normal.woff') format('woff');
   
 }
 /* spectral-latin-ext-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Spectral Medium'),
-    local('Spectral-Medium'), url('./files/spectral-latin-ext-500-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/spectral-latin-ext-500-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-500-normal.woff') format('woff');
   
 }
 /* spectral-latin-ext-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Spectral SemiBold'),
-    local('Spectral-SemiBold'), url('./files/spectral-latin-ext-600-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/spectral-latin-ext-600-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-600-normal.woff') format('woff');
   
 }
 /* spectral-latin-ext-700-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Spectral Bold'),
-    local('Spectral-Bold'), url('./files/spectral-latin-ext-700-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/spectral-latin-ext-700-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-700-normal.woff') format('woff');
   
 }
 /* spectral-latin-ext-800-normal*/
@@ -70,8 +58,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Spectral ExtraBold'),
-    local('Spectral-ExtraBold'), url('./files/spectral-latin-ext-800-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/spectral-latin-ext-800-normal.woff2') format('woff2'), url('./files/spectral-latin-ext-800-normal.woff') format('woff');
   
 }
