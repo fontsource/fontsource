@@ -12,10 +12,7 @@ const Index = () => (
       <title>Fontsource</title>
     </Head>
     <Main mx="auto" textAlign="center">
-      <Heading
-        fontSize={{ base: "6vw", xl: "75px" }}
-        mt={{ base: "4vw", xl: "180px" }}
-      >
+      <Heading fontSize={{ base: "6vw", xl: "75px" }} mt="22vh">
         Fontsource
       </Heading>
       <Text>Self-host Open Source fonts in neatly bundled NPM packages.</Text>

@@ -57,11 +57,11 @@ export const MobileNavContent = ({
           exit={{ opacity: 0 }}
         >
           <Stack
-            w="100%"
+            width="100%"
             bg={bgNav}
-            h="100vh"
+            height="100vh"
             overflow="auto"
-            pos="absolute"
+            position="absolute"
             top="0"
             left="0"
             zIndex={99}
@@ -71,7 +71,7 @@ export const MobileNavContent = ({
               align="center"
               justify="space-between"
               wrap="wrap"
-              w="100%"
+              width="100%"
               p={8}
             >
               <Logo />

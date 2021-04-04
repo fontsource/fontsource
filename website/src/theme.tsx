@@ -9,7 +9,7 @@ const breakpoints = createBreakpoints({
 });
 
 const fonts = {
-  heading: `'Inter', sans-serif`,
+  heading: `'Raleway', sans-serif`,
   body: `'Inter', sans-serif`,
 };
 

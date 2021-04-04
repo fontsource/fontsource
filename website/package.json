@@ -22,6 +22,7 @@
     "@emotion/styled": "^11",
     "@fontsource/inter": "^4.2.2",
     "@fontsource/poppins": "^4.2.2",
+    "@fontsource/raleway": "^4.2.2",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^10.1.3",
