@@ -1,4 +1,5 @@
-import { Flex, FlexProps, Text } from "@chakra-ui/react";
+import { Button, Flex, FlexProps, Link } from "@chakra-ui/react";
+import { AiFillGithub } from "react-icons/ai";
 
 export const Footer = (props: FlexProps) => (
   <Flex
@@ -10,7 +11,15 @@ export const Footer = (props: FlexProps) => (
     justify="space-between"
     {...props}
   >
-    <Text>Developed by Lotus</Text>
-    <Text>GitHub</Text>
+    <Link href="https://github.com/DecliningLotus" isExternal>
+      <Button variant="ghost" size="sm">
+        Developed by Lotus
+      </Button>
+    </Link>
+    <Link href="https://github.com/fontsource/fontsource" isExternal>
+      <Button variant="ghost" size="sm" rightIcon={<AiFillGithub />}>
+        GitHub
+      </Button>
+    </Link>
   </Flex>
 );
