@@ -8,6 +8,17 @@ const breakpoints = createBreakpoints({
   xl: "80em",
 });
 
+// Currently a bug with theme.config typings for initialColorMode. Workaround.
+interface ThemeConfig {
+  useSystemColorMode?: boolean;
+  initialColorMode: "light" | "dark";
+}
+
+const config: ThemeConfig = {
+  useSystemColorMode: false,
+  initialColorMode: "light",
+};
+
 const fonts = {
   heading: `'Raleway', sans-serif`,
   body: `'Inter', sans-serif`,
@@ -19,6 +30,7 @@ const colors = {
 
 const theme = extendTheme({
   breakpoints,
+  config,
   colors,
   fonts,
 });
