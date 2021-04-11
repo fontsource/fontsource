@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Roboto Thin'),
-    local('Roboto-Thin'), url('./files/roboto-greek-ext-100-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-100-normal.woff') format('woff');
+  src: url('./files/roboto-greek-ext-100-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-100-normal.woff') format('woff');
   
 }
 /* roboto-greek-ext-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Roboto Light'),
-    local('Roboto-Light'), url('./files/roboto-greek-ext-300-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-300-normal.woff') format('woff');
+  src: url('./files/roboto-greek-ext-300-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-300-normal.woff') format('woff');
   
 }
 /* roboto-greek-ext-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Roboto'),
-    local('Roboto-Regular'), url('./files/roboto-greek-ext-400-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-400-normal.woff') format('woff');
+  src: url('./files/roboto-greek-ext-400-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-400-normal.woff') format('woff');
   
 }
 /* roboto-greek-ext-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Roboto Medium'),
-    local('Roboto-Medium'), url('./files/roboto-greek-ext-500-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-500-normal.woff') format('woff');
+  src: url('./files/roboto-greek-ext-500-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-500-normal.woff') format('woff');
   
 }
 /* roboto-greek-ext-700-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Roboto Bold'),
-    local('Roboto-Bold'), url('./files/roboto-greek-ext-700-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-700-normal.woff') format('woff');
+  src: url('./files/roboto-greek-ext-700-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-700-normal.woff') format('woff');
   
 }
 /* roboto-greek-ext-900-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Roboto Black'),
-    local('Roboto-Black'), url('./files/roboto-greek-ext-900-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-900-normal.woff') format('woff');
+  src: url('./files/roboto-greek-ext-900-normal.woff2') format('woff2'), url('./files/roboto-greek-ext-900-normal.woff') format('woff');
   
 }
