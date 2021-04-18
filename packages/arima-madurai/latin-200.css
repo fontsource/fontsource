@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Arima Madurai ExtraLight'),
-    local('ArimaMadurai-ExtraLight'), url('./files/arima-madurai-latin-200-normal.woff2') format('woff2'), url('./files/arima-madurai-latin-200-normal.woff') format('woff');
+  src: url('./files/arima-madurai-latin-200-normal.woff2') format('woff2'), url('./files/arima-madurai-latin-200-normal.woff') format('woff');
   
 }

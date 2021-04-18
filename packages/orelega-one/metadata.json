@@ -1,0 +1,14 @@
+{
+  "fontId": "orelega-one",
+  "fontName": "Orelega One",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
+  "weights": ["400"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-04-12",
+  "version": "v1",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

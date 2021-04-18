@@ -1,13 +1,13 @@
 {
   "fontId": "monda",
   "fontName": "Monda",
-  "subsets": ["latin", "latin-ext"],
+  "subsets": ["latin", "latin-ext", "vietnamese"],
   "weights": ["400", "700"],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,
-  "lastModified": "2020-09-02",
-  "version": "v10",
+  "lastModified": "2021-04-12",
+  "version": "v11",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"
