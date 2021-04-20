@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import path from "path";
 
 import { FontPageProps, MetadataProps } from "../../@types/[font]";
+import { FontPreview } from "../../components/FontPreview";
 import { Main } from "../../components/Main";
 import { PageContainer } from "../../components/PageContainer";
 import FontDownload from "../../hooks/FontDownload";
@@ -29,7 +30,7 @@ export default function FontPage({ metadata, downloadLink }: FontPageProps) {
           <title>Loading...</title>
         </Head>
         <PageContainer ifDocs={false}>
-          <Main>
+          <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }}>
             <Skeleton height="50px" width="100%" />
             <Text>Loading...</Text>
           </Main>
@@ -44,10 +45,8 @@ export default function FontPage({ metadata, downloadLink }: FontPageProps) {
         <title>{metadata.fontName} | Fontsource</title>
       </Head>
       <PageContainer ifDocs={false}>
-        <Main maxWidth={{ base: "90vw", md: "55vw" }}>
-          <Text style={{ fontFamily: metadata.fontName }}>
-            Sphinx of black quartz, judge my vow.
-          </Text>
+        <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }}>
+          <FontPreview {...metadata} />
         </Main>
       </PageContainer>
     </>

@@ -48,7 +48,7 @@ interface Hit {
 interface Search {
   hits: Hit[];
   currentRefinement: string;
-  refine: (event) => void;
+  refine: (event: string) => void;
 }
 
 const Search = ({ hits, currentRefinement, refine }: Search) => {
@@ -106,11 +106,8 @@ const Search = ({ hits, currentRefinement, refine }: Search) => {
 };
 const CustomSearch = connectAutoComplete(Search);
 
-interface LoadingProps {
-  isSearchStalled: boolean;
-}
 const LoadingIndicator = connectStateResults(
-  ({ isSearchStalled }: LoadingProps) =>
+  ({ isSearchStalled }) =>
     isSearchStalled && (
       <Stack mt={2} direction="column">
         <Button isLoading />
@@ -120,7 +117,7 @@ const LoadingIndicator = connectStateResults(
 
 interface PaginationButtonProps {
   page: number;
-  refine: (event) => void;
+  refine: (event: number) => void;
   createURL: (page: number) => string;
 }
 
@@ -147,7 +144,7 @@ interface PaginationProps {
   currentRefinement: number;
   // Number of pages
   nbPages: number;
-  refine: (event) => void;
+  refine: (event: number) => void;
   createURL: (page: number) => string;
 }
 

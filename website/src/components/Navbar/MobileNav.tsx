@@ -24,7 +24,6 @@ export const MobileNavButton = (
     <Box display={{ base: "inline-block", md: "none" }} onClick={onToggle}>
       <IconButton
         display={{ base: "flex", md: "none" }}
-        aria-label="Open menu"
         fontSize="20px"
         color={useColorModeValue("gray.800", "inherit")}
         variant="ghost"

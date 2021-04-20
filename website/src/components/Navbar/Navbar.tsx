@@ -7,6 +7,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 import { NextChakraLink } from "../NextChakraLink";
 import { DarkModeSwitch } from "./DarkModeSwitch";
@@ -20,7 +21,11 @@ export const Logo = () => {
   );
 };
 
-const NavbarContainer = ({ children, ...props }) => {
+interface NavbarContainerProps {
+  children: ReactNode;
+}
+
+const NavbarContainer = ({ children, ...props }: NavbarContainerProps) => {
   return (
     <Flex
       as="nav"
@@ -36,7 +41,12 @@ const NavbarContainer = ({ children, ...props }) => {
   );
 };
 
-export const MenuItem = ({ children, to = "/", ...rest }) => {
+interface MenuItemProps {
+  children: ReactNode;
+  to: string;
+}
+
+export const MenuItem = ({ children, to = "/", ...rest }: MenuItemProps) => {
   return (
     <NextChakraLink href={to}>
       <Text display="block" {...rest}>

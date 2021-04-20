@@ -3,7 +3,7 @@ export interface MetadataProps {
   fontName: string;
   subsets: string[];
   weights: number[];
-  styles: string;
+  styles: string[];
   defSubset: string;
   variable: false | VariableMetadataProps;
   lastModified: string;
