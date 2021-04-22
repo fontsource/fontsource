@@ -21,7 +21,7 @@ import "@fontsource/lato" // Defaults to weight 400.
 Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
 
 ```javascript
-import "@fontsource/lato/500.css" // Weight 500.
+import "@fontsource/lato/700.css" // Weight 700.
 import "@fontsource/lato/900-italic.css" // Italic variant.
 ```
 
@@ -39,14 +39,14 @@ For more advanced setups, you can use our highly customisable Sass mixins that c
 
 // Uses a unicode-range map to automatically generate multiple @font-face rules.
 @include fontFace(
-  $weight: 500,
+  $weight: 700,
   $display: fallback,
   $fontDir: "~@fontsource/lato/files"
 );
 
 // Fully customisable single @font-face mixin.
 @include fontFaceCustom(
-  $weight: 600,
+  $weight: 900,
   $display: optional,
   $woff2Path: "#{$fontDir}/custom-file.woff2",
   $unicodeRange: false
@@ -61,8 +61,8 @@ We also have default variables that you can use!
 
 $style: italic;
 
-@include fontFace($weight: 500);
-@include fontFace($weight: 600);
+@include fontFace($weight: 700);
+@include fontFace($weight: 900);
 
 // Applies italic to both @includes.
 ```
@@ -90,7 +90,7 @@ In the rare case you need to individually select a language subset and not utili
 
 ```javascript
 import "@fontsource/lato/latin-ext.css" // All weights with normal style included.
-import "@fontsource/lato/cyrillic-ext-500.css" // Weight 500 with normal style.
+import "@fontsource/lato/cyrillic-ext-700.css" // Weight 700 with normal style.
 import "@fontsource/lato/greek-900-italic.css" // Italic variant.
 ```
 
