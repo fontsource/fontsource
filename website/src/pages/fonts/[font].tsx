@@ -25,7 +25,7 @@ export default function FontPage({ metadata }: FontPageProps) {
           <title>Loading... | Fontsource</title>
         </Head>
         <PageContainer ifDocs={false}>
-          <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }}>
+          <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }} mb={12}>
             <Skeleton height="50px" />
           </Main>
         </PageContainer>
@@ -39,7 +39,7 @@ export default function FontPage({ metadata }: FontPageProps) {
         <title>{metadata.fontName} | Fontsource</title>
       </Head>
       <PageContainer ifDocs={false}>
-        <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }}>
+        <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }} mb={12}>
           <FontPreview {...metadata} />
         </Main>
       </PageContainer>
