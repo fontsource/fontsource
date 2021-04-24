@@ -1,4 +1,4 @@
-import { Flex, FlexProps } from "@chakra-ui/react";
+import { Box, Stack, StackProps } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
 
 import docsList from "../configs/docsList.json";
@@ -26,22 +26,23 @@ export const Sidebar = ({ ifDocs, ...rest }) => {
 };
 
 const SidebarLinks = ({ path, title }) => (
-  <NextChakraLink
-    href={path}
-    prefetch={false}
-    display="flex"
-    my={2}
-    fontSize="sm"
-    fontWeight="600"
-  >
-    {title}
-  </NextChakraLink>
+  <Box px={2}>
+    <NextChakraLink
+      href={path}
+      prefetch={false}
+      mr="auto"
+      fontSize="sm"
+      fontWeight="700"
+      _focus={{ outline: 0 }}
+    >
+      {title}
+    </NextChakraLink>
+  </Box>
 );
 
-const SidebarContainer = (props: PropsWithChildren<FlexProps>) => (
-  <Flex
+const SidebarContainer = (props: PropsWithChildren<StackProps>) => (
+  <Stack
     as="aside"
-    direction="column"
     py={4}
     marginTop={4}
     height="80vh"

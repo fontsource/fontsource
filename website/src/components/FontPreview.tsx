@@ -64,15 +64,10 @@ export const FontPreview = (metadata: MetadataProps) => {
   return (
     <>
       <Box>
-        <Heading>{metadata.fontName}</Heading>
-        <Divider mt={2} />
+        <Heading size="2xl">{metadata.fontName}</Heading>
+        <Divider mt={1} />
       </Box>
-      <Heading>Options</Heading>
-      <SimpleGrid columns={{ md: 1, lg: 2 }}>
-        <Text>Styles: {metadata.styles.join(", ")}</Text>
-        <Text>Weights: {metadata.weights.join(", ")}</Text>
-      </SimpleGrid>
-      <Heading>Preview</Heading>
+
       <SimpleGrid columns={{ md: 1, lg: 2 }}>
         <Select
           value={weight}
@@ -126,14 +121,20 @@ export const FontPreview = (metadata: MetadataProps) => {
           <Box color="black" as={AiOutlineFontSize} />
         </SliderThumb>
       </Slider>
-      <Heading>Quick Installation</Heading>
+      <Box>
+        <Heading mt={2}>Quick Installation</Heading>
+        <Divider mt={1} />
+      </Box>
       <Text>
         Fontsource has a variety of methods to import CSS, such as using a
         bundler like Webpack. Full documentation can be found here.
       </Text>
       <Code>yarn add @fontsource/{metadata.fontId}</Code>
       <Code>import &quot;@fontsource/{metadata.fontId}.css&quot;</Code>
-      <Heading>Licensing</Heading>
+      <Box>
+        <Heading mt={2}>Licensing</Heading>
+        <Divider mt={1} />
+      </Box>
       <Text>
         It is important to always read the license for every font that you use.
         Most of the fonts in the collection use the SIL Open Font License, v1.1.
@@ -141,21 +142,24 @@ export const FontPreview = (metadata: MetadataProps) => {
         Font License v1.0.
       </Text>
       <SimpleGrid columns={{ md: 1, lg: 2 }}>
-        <Link to={metadata.source} isExternal>
+        <Link href={metadata.source} isExternal mr="auto" fontWeight="700">
           Source <ExternalLinkIcon />
         </Link>
-        <Link to={metadata.license} isExternal>
+        <Link href={metadata.license} isExternal mr="auto" fontWeight="700">
           License <ExternalLinkIcon />
         </Link>
       </SimpleGrid>
-      <Heading>Other Notes</Heading>
+      <Box>
+        <Heading mt={2}>Other Notes</Heading>
+        <Divider mt={1} />
+      </Box>
       <Text>Font version (provided by source): {metadata.version}</Text>
       <Text>
         Feel free to star and contribute new ideas to this repository that aim
         to improve the performance of font loading, as well as expanding the
         existing library we already have. Any suggestions or ideas can be voiced
         via an{" "}
-        <Link to="https://github.com/fontsource/fontsource/issues" isExternal>
+        <Link href="https://github.com/fontsource/fontsource/issues" isExternal>
           issue <ExternalLinkIcon />
         </Link>
         .
