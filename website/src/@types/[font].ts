@@ -38,5 +38,5 @@ export interface AxesProps {
 
 export interface FontPageProps {
   metadata: MetadataProps;
-  downloadLink: string;
+  downloadLink?: string;
 }

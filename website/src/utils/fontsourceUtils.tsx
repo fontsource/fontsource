@@ -13,24 +13,39 @@ const fontsourceDownload = {
     };
   },
 
-  fontDownload(fontId: string, defSubset: string, weightArr: number[]) {
+  fontDownload(
+    fontId: string,
+    defSubset: string,
+    weight: number,
+    style: string
+  ) {
     const dir = `${baseUrlDownload}/@fontsource/${fontId}`;
 
-    // Rarely some fonts do not have a 400 weight
-    const findClosest = () => {
-      // Convert all string values of weights into numbers
-      weightArr = weightArr.map((weight) => {
-        return Number(weight);
-      });
-      // Return as string for comparison
-      return weightArr.reduce((prev, curr) =>
-        Math.abs(curr - 400) < Math.abs(prev - 400) ? curr : prev
-      );
-    };
-    return `${dir}/files/${fontId}-${defSubset}-${findClosest()}-normal.woff2`;
+    return `${dir}/files/${fontId}-${defSubset}-${weight}-${style}.woff2`;
   },
 };
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export { fetcher, fontsourceDownload };
+// Rarely some fonts do not have a 400 weight
+const findClosestWeight = (weightArr: number[]) => {
+  // Convert all string values of weights into numbers
+  weightArr = weightArr.map((weight) => {
+    return Number(weight);
+  });
+  // Return as string for comparison
+  return weightArr.reduce((prev, curr) =>
+    Math.abs(curr - 400) < Math.abs(prev - 400) ? curr : prev
+  );
+};
+
+// Rarely some fonts do not have a normal style
+const findClosestStyle = (styleArr: string[]) => {
+  if (styleArr.includes("normal")) {
+    return "normal";
+  } else {
+    return styleArr[0];
+  }
+};
+
+export { fetcher, findClosestStyle, findClosestWeight, fontsourceDownload };

@@ -30,7 +30,7 @@
     "@types/css-font-loading-module": "^0.0.4",
     "algoliasearch": "^4.9.0",
     "capital-case": "^1.0.4",
-    "framer-motion": "^4.1.5",
+    "framer-motion": "^4.1.9",
     "gray-matter": "^4.0.2",
     "next": "^10.1.3",
     "next-mdx-remote": "^2.1.4",
