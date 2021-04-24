@@ -1,12 +1,7 @@
-import Highlight, { defaultProps, Language } from "prism-react-renderer";
+import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/duotoneDark";
 
-interface CodeProps {
-  children: string;
-  className: string | Language;
-}
-
-export const Code = ({ children, className }: CodeProps) => {
+export const Code = ({ children, className }) => {
   const language = className.replace(/language-/, "");
   return (
     <Highlight
