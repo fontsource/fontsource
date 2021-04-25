@@ -27,7 +27,7 @@ export const NextChakraLink = ({
       shallow={shallow}
       prefetch={prefetch}
     >
-      <ChakraLink {...chakraProps} />
+      <ChakraLink transition="none" {...chakraProps} />
     </NextLink>
   );
 };
