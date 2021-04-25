@@ -1,36 +1,73 @@
-import { Box, Stack, StackProps } from "@chakra-ui/react";
-import { PropsWithChildren } from "react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Box, Button, Heading, Stack, StackProps } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 import docsList from "../configs/docsList.json";
 import fontList from "../configs/fontList.json";
 import { NextChakraLink } from "./NextChakraLink";
 
-export const Sidebar = ({ ifDocs, ...rest }) => {
-  if (ifDocs) {
+interface DocProps {
+  key: string;
+  title: string;
+  path?: string;
+  isParent?: boolean;
+  isExternal?: boolean;
+  isActive?: boolean;
+}
+
+const DocSidebarLinks = ({
+  title,
+  path,
+  isParent,
+  isExternal,
+  isActive,
+}: DocProps) => {
+  if (isParent) {
     return (
-      <SidebarContainer {...rest}>
-        {docsList.map((page) => (
-          <SidebarLinks key={page.key} path={page.path} title={page.title} />
-        ))}
-      </SidebarContainer>
+      <Heading size="sm" pt={2} pb={4}>
+        {title}
+      </Heading>
     );
   }
 
   return (
-    <SidebarContainer {...rest}>
-      {fontList.map((page) => (
-        <SidebarLinks key={page.key} path={page.path} title={page.title} />
-      ))}
-    </SidebarContainer>
+    <NextChakraLink
+      href={path}
+      prefetch={false}
+      isExternal={isExternal}
+      fontWeight="700"
+      _hover={{ textDecoration: "none" }}
+    >
+      <Button
+        size="sm"
+        width="100%"
+        variant="ghost"
+        colorScheme="gray"
+        my={0.5}
+        justifyContent="left"
+        rightIcon={isExternal && <ExternalLinkIcon />}
+        isActive={isActive}
+        _focus={{
+          boxShadow: "none",
+        }}
+      >
+        {title}
+      </Button>
+    </NextChakraLink>
   );
 };
 
-const SidebarLinks = ({ path, title }) => (
+interface FontProps {
+  key: string;
+  title: string;
+  path: string;
+}
+
+const FontSidebarLinks = ({ path, title }: FontProps) => (
   <Box px={2}>
     <NextChakraLink
       href={path}
       prefetch={false}
-      mr="auto"
       fontSize="sm"
       fontWeight="700"
       _focus={{ outline: 0 }}
@@ -40,7 +77,7 @@ const SidebarLinks = ({ path, title }) => (
   </Box>
 );
 
-const SidebarContainer = (props: PropsWithChildren<StackProps>) => (
+const SidebarContainer = (props: StackProps) => (
   <Stack
     as="aside"
     py={4}
@@ -51,3 +88,26 @@ const SidebarContainer = (props: PropsWithChildren<StackProps>) => (
     {...props}
   />
 );
+
+export const Sidebar = ({ ifDocs, ...rest }) => {
+  const { asPath } = useRouter();
+
+  const isActive = (path: string) => path == asPath;
+
+  return (
+    <SidebarContainer {...rest}>
+      <Heading size="sm" pb={4}>
+        Contents
+      </Heading>
+      {ifDocs
+        ? docsList.map((page) => (
+            <DocSidebarLinks
+              key={page.key}
+              isActive={isActive(page.path)}
+              {...page}
+            />
+          ))
+        : fontList.map((page) => <FontSidebarLinks key={page.key} {...page} />)}
+    </SidebarContainer>
+  );
+};
