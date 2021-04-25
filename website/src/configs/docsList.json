@@ -32,7 +32,7 @@
   {
     "key": "material-icons",
     "title": "Material Icons",
-    "path": "docs/icons/material-icons"
+    "path": "/docs/icons/material-icons"
   },
   {
     "key": "guides",
@@ -42,27 +42,27 @@
   {
     "key": "gatsby",
     "title": "Gatsby",
-    "path": "/docs/gatsby",
+    "path": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#using-google-fonts",
     "isChild": true,
     "isExternal": true
   },
   {
     "key": "nextjs",
     "title": "Next.js",
-    "path": "/docs/nextjs",
+    "path": "/docs/guides/nextjs",
     "isChild": true
   },
   {
     "key": "chakra-ui",
     "title": "Chakra UI",
-    "path": "/docs/chakra-ui",
+    "path": "https://chakra-ui.com/guides/using-fonts",
     "isChild": true,
     "isExternal": true
   },
   {
     "key": "material-ui",
     "title": "Material UI",
-    "path": "/docs/material-ui",
+    "path": "https://next.material-ui.com/components/typography/#install-with-npm",
     "isChild": true,
     "isExternal": true
   }

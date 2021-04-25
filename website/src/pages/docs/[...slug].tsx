@@ -34,8 +34,14 @@ export default function DocsPage({ source, frontMatter }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const docFilePath = path.join(DOCS_PATH, `${params.slug}.mdx`);
+interface PathProps {
+  params: {
+    slug: string[];
+  };
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
+  const docFilePath = path.join(DOCS_PATH, `${params.slug.join("/")}.mdx`);
   const source = fs.readFileSync(docFilePath);
 
   const { content, data } = matter(source);
@@ -62,6 +68,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = docsFilePaths
     // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ""))
+    // Split into array for a nested dynamic route
+    .map((path) => path.split("/"))
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }));
 
