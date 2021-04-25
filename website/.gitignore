@@ -41,6 +41,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# custom
-/src/configs/fontList.json
