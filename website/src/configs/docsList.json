@@ -9,5 +9,61 @@
     "title": "Getting Started",
     "path": "/docs/getting-started"
   },
-  { "key": "sass", "title": "Sass", "path": "/docs/sass" }
+  {
+    "key": "sass",
+    "title": "Sass",
+    "isParent": true
+  },
+  {
+    "key": "mixins",
+    "title": "Mixins",
+    "path": "/docs/sass/mixins"
+  },
+  {
+    "key": "legacy",
+    "title": "Legacy",
+    "path": "/docs/sass/legacy"
+  },
+  {
+    "key": "icons",
+    "title": "Icons",
+    "isParent": true
+  },
+  {
+    "key": "material-icons",
+    "title": "Material Icons",
+    "path": "docs/icons/material-icons"
+  },
+  {
+    "key": "guides",
+    "title": "Guides",
+    "isParent": true
+  },
+  {
+    "key": "gatsby",
+    "title": "Gatsby",
+    "path": "/docs/gatsby",
+    "isChild": true,
+    "isExternal": true
+  },
+  {
+    "key": "nextjs",
+    "title": "Next.js",
+    "path": "/docs/nextjs",
+    "isChild": true
+  },
+  {
+    "key": "chakra-ui",
+    "title": "Chakra UI",
+    "path": "/docs/chakra-ui",
+    "isChild": true,
+    "isExternal": true
+  },
+  {
+    "key": "material-ui",
+    "title": "Material UI",
+    "path": "/docs/material-ui",
+    "isChild": true,
+    "isExternal": true
+  }
 ]

@@ -1,18 +1,1 @@
-{
-  "actor": "google",
-  "cabin": "google",
-  "lato": "google",
-  "league-gothic": "league",
-  "league-spartan": "league",
-  "material-icons": "icons",
-  "noto-sans-jp": "google",
-  "roboto": "google",
-  "roboto-condensed": "google",
-  "roboto-mono": "google",
-  "roboto-slab": "google",
-  "rubik": "google",
-  "ubuntu": "google",
-  "work-sans": "google",
-  "zilla-slab": "google",
-  "zilla-slab-highlight": "google"
-}
+[{"key":"actor","title":"Actor","path":"/fonts/actor"},{"key":"cabin","title":"Cabin","path":"/fonts/cabin"},{"key":"lato","title":"Lato","path":"/fonts/lato"},{"key":"league-gothic","title":"League Gothic","path":"/fonts/league-gothic"},{"key":"league-spartan","title":"League Spartan","path":"/fonts/league-spartan"},{"key":"material-icons","title":"Material Icons","path":"/fonts/material-icons"},{"key":"noto-sans-jp","title":"Noto Sans Jp","path":"/fonts/noto-sans-jp"},{"key":"roboto","title":"Roboto","path":"/fonts/roboto"},{"key":"roboto-condensed","title":"Roboto Condensed","path":"/fonts/roboto-condensed"},{"key":"roboto-mono","title":"Roboto Mono","path":"/fonts/roboto-mono"},{"key":"roboto-slab","title":"Roboto Slab","path":"/fonts/roboto-slab"},{"key":"rubik","title":"Rubik","path":"/fonts/rubik"},{"key":"ubuntu","title":"Ubuntu","path":"/fonts/ubuntu"},{"key":"work-sans","title":"Work Sans","path":"/fonts/work-sans"},{"key":"zilla-slab","title":"Zilla Slab","path":"/fonts/zilla-slab"},{"key":"zilla-slab-highlight","title":"Zilla Slab Highlight","path":"/fonts/zilla-slab-highlight"}]
