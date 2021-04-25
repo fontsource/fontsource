@@ -21,9 +21,14 @@ const createDocsFilePaths = (DOCS_PATH) => {
 
   searchDirectories(DOCS_PATH);
 
+  // Get rid of the absolute filepaths and double backslashes which next-mdx-remote won't parse
+  // e.g. ['getting-started.mdx', 'sass/mixins.mdx']
   // Filter for only include md(x) files
-  return files.filter((path) => /\.mdx?$/.test(path));
-};
+  const filesCleaned = files
+    .map((file) => file.replace(`${DOCS_PATH}\\`, "").replace(/\\/g, "/"))
+    .filter((path) => /\.mdx?$/.test(path));
 
+  return filesCleaned;
+};
 // docsFilePaths is the list of all mdx files inside the DOCS_PATH directory
 export const docsFilePaths = createDocsFilePaths(DOCS_PATH);

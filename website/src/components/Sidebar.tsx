@@ -12,16 +12,12 @@ interface DocProps {
   path?: string;
   isParent?: boolean;
   isExternal?: boolean;
-  isActive?: boolean;
 }
 
-const DocSidebarLinks = ({
-  title,
-  path,
-  isParent,
-  isExternal,
-  isActive,
-}: DocProps) => {
+const DocSidebarLinks = ({ title, path, isParent, isExternal }: DocProps) => {
+  const { asPath } = useRouter();
+  const isActive = (path: string) => path == asPath;
+
   if (isParent) {
     return (
       <Heading size="sm" pt={2} pb={4}>
@@ -46,7 +42,7 @@ const DocSidebarLinks = ({
         my={0.5}
         justifyContent="left"
         rightIcon={isExternal && <ExternalLinkIcon />}
-        isActive={isActive}
+        isActive={isActive(path)}
         _focus={{
           boxShadow: "none",
         }}
@@ -90,23 +86,13 @@ const SidebarContainer = (props: StackProps) => (
 );
 
 export const Sidebar = ({ ifDocs, ...rest }) => {
-  const { asPath } = useRouter();
-
-  const isActive = (path: string) => path == asPath;
-
   return (
     <SidebarContainer {...rest}>
       <Heading size="sm" pb={4}>
         Contents
       </Heading>
       {ifDocs
-        ? docsList.map((page) => (
-            <DocSidebarLinks
-              key={page.key}
-              isActive={isActive(page.path)}
-              {...page}
-            />
-          ))
+        ? docsList.map((page) => <DocSidebarLinks key={page.key} {...page} />)
         : fontList.map((page) => <FontSidebarLinks key={page.key} {...page} />)}
     </SidebarContainer>
   );
