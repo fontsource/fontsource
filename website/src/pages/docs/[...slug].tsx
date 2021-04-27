@@ -26,7 +26,9 @@ export default function DocsPage({ source, frontMatter }) {
       <Main
         borderLeftWidth={{ base: 0, md: "1px" }}
         maxWidth={{ base: "90vw", md: "55vw" }}
-        paddingLeft={{ base: "1rem", md: "2em" }}
+        pl={{ base: "1rem", md: "2em" }}
+        minHeight="80vh"
+        spacing="none"
       >
         {content}
       </Main>

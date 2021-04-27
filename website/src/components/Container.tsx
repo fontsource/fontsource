@@ -6,7 +6,7 @@ export const Container = (props: FlexProps) => {
       direction="column"
       alignItems="center"
       justifyContent="flex-start"
-      width="100%"
+      width={{ md: "none", lg: "100%" }}
       {...props}
     />
   );
