@@ -10,20 +10,31 @@
     "path": "/docs/getting-started"
   },
   {
+    "key": "variable-fonts",
+    "title": "Variable Fonts",
+    "path": "/docs/variable-fonts"
+  },
+  {
+    "key": "legacy",
+    "title": "Legacy",
+    "path": "/docs/legacy"
+  },
+  {
     "key": "sass",
     "title": "Sass",
     "isParent": true
   },
   {
-    "key": "mixins",
+    "key": "sass-mixins",
     "title": "Mixins",
     "path": "/docs/sass/mixins"
   },
   {
-    "key": "legacy",
-    "title": "Legacy",
-    "path": "/docs/sass/legacy"
+    "key": "sass-variable",
+    "title": "Variable Mixins",
+    "path": "/docs/sass/variable-mixins"
   },
+
   {
     "key": "icons",
     "title": "Icons",
