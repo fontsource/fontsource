@@ -1,0 +1,21 @@
+---
+title: Legacy
+---
+
+# Legacy
+
+---
+
+## Additional Options
+
+---
+
+In the rare case you need to individually select a language subset and not utilize the CSS [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range) selector, you may specify the import as follows.
+
+```jsx
+import "@fontsource/open-sans/latin-ext.css"; // All weights with normal style included.
+import "@fontsource/open-sans/cyrillic-ext-500.css"; // Weight 500 with normal style.
+import "@fontsource/open-sans/greek-900-italic.css"; // Italic variant.
+```
+
+> **Note:** This is especially not recommended for languages, such as Japanese, with a large amount of characters due to their large associated file sizes.
