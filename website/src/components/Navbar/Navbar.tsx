@@ -1,10 +1,10 @@
 import {
   Box,
+  Button,
   Flex,
   FlexProps,
   Stack,
   StackProps,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
@@ -16,7 +16,9 @@ import { MobileNavButton, MobileNavContent } from "./MobileNav";
 export const Logo = () => {
   return (
     <NextChakraLink href="/">
-      <Text fontWeight="700">Fontsource</Text>
+      <Button size="md" width="100%" variant="ghost" colorScheme="gray">
+        Fontsource
+      </Button>
     </NextChakraLink>
   );
 };
@@ -49,15 +51,21 @@ interface MenuItemProps {
 export const MenuItem = ({ children, to = "/", ...rest }: MenuItemProps) => {
   return (
     <NextChakraLink href={to}>
-      <Text display="block" {...rest}>
+      <Button
+        size="md"
+        width="100%"
+        variant="ghost"
+        colorScheme="gray"
+        {...rest}
+      >
         {children}
-      </Text>
+      </Button>
     </NextChakraLink>
   );
 };
 
 export const MenuStack = (props: StackProps) => (
-  <Stack spacing={8} align="center" justify="flex-end" {...props}>
+  <Stack spacing={6} align="center" justify="flex-end" {...props}>
     <MenuItem to="/">Home</MenuItem>
     <MenuItem to="/docs/introduction">Documentation</MenuItem>
     <MenuItem to="/fonts">Font Previews</MenuItem>

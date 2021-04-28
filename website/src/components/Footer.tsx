@@ -9,6 +9,7 @@ export const Footer = (props: FlexProps) => (
     pb={4}
     width="100%"
     justify="space-between"
+    maxWidth="72rem"
     {...props}
   >
     <Link href="https://github.com/DecliningLotus" isExternal>

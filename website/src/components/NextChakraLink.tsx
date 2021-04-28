@@ -27,7 +27,11 @@ export const NextChakraLink = ({
       shallow={shallow}
       prefetch={prefetch}
     >
-      <ChakraLink transition="none" {...chakraProps} />
+      <ChakraLink
+        transition="none"
+        _hover={{ textDecoration: "none" }}
+        {...chakraProps}
+      />
     </NextLink>
   );
 };
