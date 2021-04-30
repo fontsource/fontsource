@@ -8,7 +8,6 @@ export const Main = (props: StackProps) => (
       sm: "0.5rem",
       md: "1rem",
     }}
-    mx={{ sm: 4, md: 8 }}
     {...props}
   />
 );

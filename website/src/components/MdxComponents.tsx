@@ -1,8 +1,10 @@
 /* eslint-disable react/display-name */
 import {
   Alert,
+  Box,
   Code as InlineCode,
   Divider,
+  Flex,
   Heading,
   ListItem,
   Table,
@@ -39,9 +41,9 @@ const BlockQuote = (props) => {
 
 const CustomMdxComponents = {
   // Typography
-  h1: (props) => <Heading size="2xl" {...props} />,
-  h2: (props) => <Heading mt={8} size="lg" {...props} />,
-  h3: (props) => <Heading mt={8} size="md" {...props} />,
+  h1: (props) => <Heading as="h1" size="2xl" {...props} />,
+  h2: (props) => <Heading as="h2" mt={8} size="lg" {...props} />,
+  h3: (props) => <Heading as="h3" mt={8} size="md" {...props} />,
   p: (props) => <Text lineHeight="1.6" my="1.25rem" {...props} />,
   a: (props) => (
     <NextChakraLink
@@ -50,11 +52,15 @@ const CustomMdxComponents = {
       {...props}
     />
   ),
-  ul: (props) => <UnorderedList {...props} />,
+  ul: (props) => <UnorderedList pl={6} {...props} />,
   li: (props) => <ListItem mb={4} {...props} />,
 
   // Code
-  code: (props) => <Code {...props} />,
+  code: (props) => (
+    <Box>
+      <Code {...props} />
+    </Box>
+  ),
   inlineCode: (props) => <InlineCode {...props} />,
 
   // Table

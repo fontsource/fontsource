@@ -1,4 +1,4 @@
-import { FlexProps, useColorModeValue } from "@chakra-ui/react";
+import { Box, FlexProps, useColorModeValue } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
 
 import { Container } from "./Container";
@@ -23,19 +23,22 @@ export const PageContainer = ({
   const color = useColorModeValue("black", "white");
 
   return (
-    <Container minHeight="100vh" bg={bgColor} color={color} {...props}>
-      <Navbar maxWidth="72rem" />
-      <Container px={8} maxWidth="72rem" flexDirection="row" alignItems="start">
-        {ifSidebar && (
-          <Sidebar
-            ifDocs={ifDocs}
-            minWidth="25%"
-            display={{ base: "none", md: "block" }}
-          />
-        )}
-        {children}
+    <Box bg={bgColor} color={color}>
+      <Container minHeight="100vh" maxWidth="72rem" mx="auto" {...props}>
+        <Navbar />
+        <Container px={8} flexDirection="row" alignItems="start">
+          {ifSidebar && (
+            <Sidebar
+              ifDocs={ifDocs}
+              minWidth="25%"
+              display={{ base: "none", md: "block" }}
+              pl={4}
+            />
+          )}
+          {children}
+        </Container>
+        <Footer />
       </Container>
-      <Footer />
-    </Container>
+    </Box>
   );
 };

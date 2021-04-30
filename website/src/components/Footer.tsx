@@ -6,7 +6,7 @@ export const Footer = (props: FlexProps) => (
     as="footer"
     mt="auto"
     px={8}
-    pb={4}
+    py={4}
     width="100%"
     justify="space-between"
     maxWidth="72rem"

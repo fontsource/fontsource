@@ -25,10 +25,12 @@ export default function DocsPage({ source, frontMatter }) {
       </Head>
       <Main
         borderLeftWidth={{ base: 0, md: "1px" }}
-        maxWidth={{ base: "90vw", md: "55vw" }}
+        ml={{ md: 8 }}
         pl={{ base: "1rem", md: "2em" }}
         minHeight="80vh"
         spacing="none"
+        maxWidth="49rem"
+        width="100%"
       >
         {content}
       </Main>
