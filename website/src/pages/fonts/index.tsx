@@ -12,10 +12,10 @@ const Index = () => (
       <title>Preview | Fontsource</title>
     </Head>
     <Main mx="auto">
-      <Heading fontSize={{ base: "6vw", xl: "75px" }} mt="22vh">
+      <Heading fontSize={{ base: "10vw", md: "6vw", xl: "75px" }} mt="22vh">
         Fontsource
       </Heading>
-      <Container flexDirection="row" maxWidth="60rem" py={2}>
+      <Container py={2}>
         <SearchModal />
       </Container>
     </Main>

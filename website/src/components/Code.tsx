@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/duotoneDark";
 
@@ -22,11 +23,11 @@ export const Code = ({ children, className }) => {
           }}
         >
           {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
+            <Box key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
                 <span key={key} {...getTokenProps({ token, key })} />
               ))}
-            </div>
+            </Box>
           ))}
         </pre>
       )}
