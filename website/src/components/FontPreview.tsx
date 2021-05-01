@@ -1,6 +1,7 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Button,
   Code,
   Divider,
   Heading,
@@ -27,6 +28,7 @@ import {
   findClosestWeight,
   fontsourceDownload,
 } from "../utils/fontsourceUtils";
+import { NextChakraLink } from "./NextChakraLink";
 
 export const FontPreview = (metadata: MetadataProps) => {
   const { isFallback, events } = useRouter();
@@ -127,10 +129,52 @@ export const FontPreview = (metadata: MetadataProps) => {
       </Box>
       <Text>
         Fontsource has a variety of methods to import CSS, such as using a
-        bundler like Webpack. Full documentation can be found here.
+        bundler like Webpack. Full documentation can be found{" "}
+        <NextChakraLink
+          prefetch={false}
+          href="/docs/getting-started"
+          borderBottom="1px dotted"
+          _hover={{ textDecoration: "none" }}
+        >
+          here
+        </NextChakraLink>
+        .
       </Text>
       <Code>yarn add @fontsource/{metadata.fontId}</Code>
       <Code>import &quot;@fontsource/{metadata.fontId}.css&quot;</Code>
+      <Code>body &#123; font-family: &quot;Open Sans&quot;; &#125;</Code>
+      {metadata.variable && (
+        <>
+          <Box>
+            <Heading mt={2}>Variable</Heading>
+            <Divider mt={1} />
+          </Box>
+          <Text>
+            This font supports the variable font specification. You can find all
+            the available variable axis&apos;{" "}
+            <Link
+              href="https://fonts.google.com/variablefonts"
+              isExternal
+              mr="auto"
+            >
+              here <ExternalLinkIcon />
+            </Link>
+            .
+          </Text>
+          <Text>
+            To see how Fontsource integrates with variable fonts, check the{" "}
+            <NextChakraLink
+              prefetch={false}
+              href="/docs/variable-fonts"
+              borderBottom="1px dotted"
+              _hover={{ textDecoration: "none" }}
+            >
+              documentation
+            </NextChakraLink>
+            .
+          </Text>
+        </>
+      )}
       <Box>
         <Heading mt={2}>Licensing</Heading>
         <Divider mt={1} />
@@ -143,10 +187,14 @@ export const FontPreview = (metadata: MetadataProps) => {
       </Text>
       <SimpleGrid columns={{ md: 1, lg: 2 }}>
         <Link href={metadata.source} isExternal mr="auto" fontWeight="700">
-          Source <ExternalLinkIcon />
+          <Button variant="ghost" rightIcon={<ExternalLinkIcon />}>
+            Source
+          </Button>
         </Link>
         <Link href={metadata.license} isExternal mr="auto" fontWeight="700">
-          License <ExternalLinkIcon />
+          <Button variant="ghost" rightIcon={<ExternalLinkIcon />}>
+            License
+          </Button>
         </Link>
       </SimpleGrid>
       <Box>
