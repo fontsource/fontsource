@@ -50,7 +50,7 @@ const SidebarButton = ({
       >
         <Button
           size="sm"
-          width="100%"
+          width="98%"
           variant="ghost"
           colorScheme="gray"
           justifyContent="left"
