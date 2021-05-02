@@ -16,8 +16,8 @@ jobs:
 
       - name: Configure CI Git User
         run: |
-          git config --global user.name 'DecliningLotus'
-          git config --global user.email 'DecliningLotus@users.noreply.github.com'
+          git config --global user.name 'fontsource-bot'
+          git config --global user.email 'fontsource-bot@users.noreply.github.com'
       - name: Install packages
         run: yarn
 
