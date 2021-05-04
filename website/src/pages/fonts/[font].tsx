@@ -12,9 +12,10 @@ import { FontPreview } from "../../components/FontPreview";
 import { Main } from "../../components/Main";
 import { PageContainer } from "../../components/PageContainer";
 import fontListTemp from "../../configs/fontListTemp.json";
+import { selectDefPreviewText } from "../../utils/defPreviewLanguage";
 import { fetcher, fontsourceDownload } from "../../utils/fontsourceUtils";
 
-export default function FontPage({ metadata }: FontPageProps) {
+export default function FontPage({ metadata, defPreviewText }: FontPageProps) {
   const { isFallback } = useRouter();
 
   if (isFallback) {
@@ -46,7 +47,7 @@ export default function FontPage({ metadata }: FontPageProps) {
       </Head>
       <PageContainer ifDocs={false}>
         <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }} mb={12} ml={{ md: 8 }}>
-          <FontPreview {...metadata} />
+          <FontPreview defPreviewText={defPreviewText} metadata={metadata} />
         </Main>
       </PageContainer>
     </>
@@ -54,15 +55,19 @@ export default function FontPage({ metadata }: FontPageProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // `getStaticProps` is invoked on the server-side,
-  // so this `fetcher` function will be executed on the server-side.
   try {
     const metadata: MetadataProps = await fetcher(
       fontsourceDownload.data(`${params.font}`).metadata
     );
 
+    // Generates preview texts in matching languages
+    const defPreviewText = selectDefPreviewText(
+      metadata.fontId,
+      metadata.defSubset
+    );
+
     return metadata
-      ? { props: { metadata }, revalidate: 7200 }
+      ? { props: { metadata, defPreviewText }, revalidate: 7200 }
       : { notFound: true };
   } catch (error) {
     // If metadata doesn't exist

@@ -22,7 +22,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineFontSize } from "react-icons/ai";
 
 import { MetadataProps } from "../@types/[font]";
-import FontDownload from "../hooks/FontDownload";
+import useFontDownload from "../hooks/useFontDownload";
 import {
   findClosestStyle,
   findClosestWeight,
@@ -30,27 +30,31 @@ import {
 } from "../utils/fontsourceUtils";
 import { NextChakraLink } from "./NextChakraLink";
 
-export const FontPreview = (metadata: MetadataProps) => {
+interface FontPreviewProps {
+  defPreviewText: string;
+  metadata: MetadataProps;
+}
+
+export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
   const { isFallback, events } = useRouter();
 
   const [fontSize, setFontSize] = useState(32);
 
-  const defPreviewText = "Sphinx of black quartz, judge my vow.";
   const [previewText, setPreviewText] = useState(defPreviewText);
-
   const defWeight = findClosestWeight(metadata.weights);
   const [weight, setWeight] = useState(defWeight);
 
   const defStyle = findClosestStyle(metadata.styles);
   const [style, setStyle] = useState(defStyle);
   // Return states back to defaults when switching pages, else changed weight will remain
-  useEffect(() =>
+  useEffect(() => {
     events.on("routeChangeStart", () => {
       setStyle(defStyle);
       setWeight(defWeight);
+      // Figure out bug that doesn't load different preview texts unless page is reloaded
       setPreviewText(defPreviewText);
-    })
-  );
+    });
+  }, [events, defPreviewText, defStyle, defWeight]);
 
   const downloadLink = fontsourceDownload.fontDownload(
     metadata.fontId,
@@ -59,7 +63,7 @@ export const FontPreview = (metadata: MetadataProps) => {
     style
   );
 
-  const fontLoaded = FontDownload(metadata, downloadLink);
+  const fontLoaded = useFontDownload(metadata, downloadLink);
 
   const bgSlider = useColorModeValue("gray.200", "gray.700");
   const bgSliderFilled = useColorModeValue("black", "white");
@@ -71,11 +75,10 @@ export const FontPreview = (metadata: MetadataProps) => {
         <Divider mt={1} />
       </Box>
 
-      <SimpleGrid columns={{ md: 1, lg: 2 }}>
+      <SimpleGrid spacing={2} columns={{ md: 1, lg: 2 }}>
         <Select
           value={weight}
           onChange={(event) => setWeight(+event.target.value)}
-          width="80%"
         >
           {metadata.weights.map((weight) => (
             <option key={`${metadata.fontId}-${weight}`} value={weight}>
@@ -86,7 +89,6 @@ export const FontPreview = (metadata: MetadataProps) => {
         <Select
           value={style}
           onChange={(event) => setStyle(event.target.value)}
-          width="80%"
         >
           {metadata.styles.map((style) => (
             <option key={`${metadata.fontId}-${style}`} value={style}>
