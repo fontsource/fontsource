@@ -1,0 +1,118 @@
+---
+title: Mixins
+---
+
+# Sass Mixins
+
+---
+
+A basic implementation into your typical project that compiles with Sass/SCSS is the following:
+
+```scss
+@import "~@fontsource/open-sans/index.css";
+@import "~@fontsource/open-sans/300-italic.css";
+```
+
+## @use
+
+---
+
+For more advanced setups, you can use our highly customizable Sass mixins that can modify many of the existing [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) variables.
+
+You can view what the full SCSS file looks like [here](https://github.com/fontsource/fontsource/tree/master/packages/open-sans/scss/mixins.scss).
+
+```scss
+@use "@fontsource/open-sans/scss/mixins" as OpenSans;
+```
+
+> **Note:** This uses the [`@use`](https://sass-lang.com/documentation/at-rules/use) Sass function which is only supported by Dart Sass. For older, deprecated solutions read over the Legacy section below.
+
+### FontFace Mixin
+
+---
+
+Generates a CSS file similar to [this](https://github.com/fontsource/fontsource/blob/main/packages/open-sans/400.css) where all unicode-range subsets are generated using the [`@each`](https://sass-lang.com/documentation/at-rules/control/each) Sass function.
+
+```scss
+@include OpenSans.fontFace(
+  $weight: 500,
+  $display: fallback,
+  $fontDir: "~@fontsource/open-sans/files"
+);
+```
+
+### FontFace Mixin Inputs
+
+---
+
+Only supported by Google fonts. For fonts outside that ecosystem, only `fontFaceCustom` is usable.
+
+| Variable    | CSS Selector                                                                                 | Options                                         | Default                           |
+| ----------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------------------------------- |
+| $weight     | [`font-weight`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)                | Varies per font package.                        | `400`                             |
+| $style      | [`font-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)                  | `normal`, `italic`                              | `normal`                          |
+| $display    | [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)   | `auto`, `block`, `swap`, `fallback`, `optional` | `swap`                            |
+| $fontName   | [`font-family`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)                | Up to user preference.                          | Varies per font package.          |
+| $fontId     | N/A                                                                                          | Used to resolve default $fontDir.               | Varies per font package.          |
+| $fontDir    | `src`                                                                                        | Directory where all font files are.             | `"~@fontsource/#{$fontId}/files"` |
+| $unicodeMap | [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range) | Key value pair of subsets and unicode values.   | Varies per font package.          |
+
+### FontFaceCustom Mixin
+
+---
+
+For a far more granular mixin that removes the [`@each`](https://sass-lang.com/documentation/at-rules/control/each) function and allows the developer to specify additional parameters such as including unicode-range or choosing different paths for either the `woff` or `woff2` file.
+
+```scss
+@include OpenSans.fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "~@fontsource/open-sans/files/open-sans-latin-500-normal.woff2",
+  $unicodeRange: false
+);
+```
+
+### FontFaceCustom Mixin Inputs
+
+---
+
+Included in both Google and other font foundry families.
+
+| Variable            | CSS Selector                                                                                 | Options                                         | Default                                                                       |
+| ------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------- |
+| $weight             | [`font-weight`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)                | Varies per font package.                        | `400`                                                                         |
+| $style              | [`font-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)                  | `normal`, `italic`                              | `normal`                                                                      |
+| $display            | [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)   | `auto`, `block`, `swap`, `fallback`, `optional` | `swap`                                                                        |
+| $fontName           | [`font-family`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)                | Up to user preference.                          | Varies per font package.                                                      |
+| $fontId             | N/A                                                                                          | Used to resolve default font file paths.        | Varies per font package.                                                      |
+| $woff2Path          | `src`                                                                                        | Direct filepath to WOFF2 font file.             | `"~@fontsource/#{$fontId}/files/#{$fontId}-latin-#{$weight}-#{$style}.woff2"` |
+| $woffPath           | `src`                                                                                        | Direct filepath to WOFF font file.              | `"~@fontsource/#{$fontId}/files/#{$fontId}-latin-#{$weight}-#{$style}.woff"`  |
+| $unicodeRange       | [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range) | `true`, `false`                                 | `false`                                                                       |
+| $unicodeRangeValues | [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range) | Values for unicode-range.                       | Latin unicode range.                                                          |
+
+---
+
+## Legacy Sass Implementations
+
+---
+
+[`@use`](https://sass-lang.com/documentation/at-rules/use) is only compatible with Dart Sass. [`@import`](https://sass-lang.com/documentation/at-rules/import) is for all other deprecated Sass implementations.
+
+```scss
+@import "~@fontsource/open-sans/scss/mixins";
+
+@include fontFace(
+  $weight: 500,
+  $display: fallback,
+  $fontDir: "~@fontsource/open-sans/files"
+);
+
+@include fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "~@fontsource/open-sans/files/open-sans-latin-500-normal.woff2",
+  $unicodeRange: false
+);
+```
+
+> **Note:** This implementation can be problematic as the mixin variables may pollute the global namespace and affect other components in your project.

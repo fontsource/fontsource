@@ -1,0 +1,33 @@
+---
+title: Variable Mixins
+---
+
+# Variable Mixins
+
+---
+
+The variable font counterpart for Sass mixins. The only difference is the addition of the `$type` variable. Refer to the [Variable Fonts](/docs/variable-fonts) page for more details.
+
+### FontFaceVariable
+
+---
+
+```scss
+@include OpenSans.fontFaceVariable($weight: 500, $type: "wghtOnly");
+```
+
+### FontFaceVariableCustom
+
+---
+
+```scss
+@include OpenSans.fontFaceVariableCustom($weight: 600, $type: "full");
+```
+
+### New Mixin Inputs
+
+---
+
+| Variable | Options            | Default    |
+| -------- | ------------------ | ---------- |
+| $type    | `wghtOnly`, `full` | `wghtOnly` |

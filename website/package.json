@@ -1,0 +1,73 @@
+{
+  "name": "fontsource-website",
+  "description": "Fontsource website built using Next.js.",
+  "version": "1.0.0",
+  "author": "Lotus <declininglotus@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:watch": "next-remote-watch ./docs",
+    "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "start": "next start",
+    "format:lint": "eslint --fix **/*.{js,jsx,ts,tsx}",
+    "format:prettier": "prettier --write **/*.{js,jsx,ts,tsx,css,md,json}",
+    "format": "yarn format:lint && yarn format:prettier"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^1.0.12",
+    "@chakra-ui/react": "^1.6.0",
+    "@chakra-ui/theme-tools": "^1.1.6",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11.3.0",
+    "@fontsource/inter": "^4.2.2",
+    "@fontsource/poppins": "^4.2.2",
+    "@fontsource/raleway": "^4.2.2",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^10.2.0",
+    "@octokit/rest": "18.0.9",
+    "@types/css-font-loading-module": "^0.0.4",
+    "algoliasearch": "^4.9.1",
+    "capital-case": "^1.0.4",
+    "framer-motion": "^4.1.11",
+    "gray-matter": "^4.0.3",
+    "next": "^10.2.0",
+    "next-mdx-remote": "^2.1.4",
+    "prism-react-renderer": "^1.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.1.0",
+    "react-instantsearch-dom": "^6.10.3",
+    "react-remove-scroll": "^2.4.1",
+    "remark-slug": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1",
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-instantsearch-dom": "^6.10.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-mdx": "^1.13.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "next-remote-watch": "^1.0.0",
+    "next-sitemap": "^1.6.34",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource"
+  },
+  "bugs": {
+    "url": "https://github.com/fontsource/fontsource"
+  }
+}

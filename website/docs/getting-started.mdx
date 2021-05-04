@@ -1,0 +1,42 @@
+---
+title: Getting Started
+---
+
+# Getting Started
+
+---
+
+Fontsource supports a variety of import methods. It either assumes you are using a bundler, such as Webpack, to load in CSS, or using Sass mixins which is explained [here](/docs/sass/mixins).
+
+## Quick Installation
+
+---
+
+This is an installation example using Open Sans, applicable to all other fonts searchable via the [directory](/fonts).
+
+```js
+  yarn add @fontsource/open-sans // npm install @fontsource/open-sans
+```
+
+Then within your app entry file, page or site component, import it in. E.g. `_app.jsx` or `index.jsx` etc.
+
+```jsx
+import "@fontsource/open-sans"; // Defaults to weight 400 with normal variant.
+```
+
+Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range) selector, all language subsets are accounted for.
+
+```jsx
+import "@fontsource/open-sans/500.css"; // Weight 500.
+import "@fontsource/open-sans/900-italic.css"; // Italic variant.
+```
+
+> **Note:** The range of supported weights and styles a font may support is shown in each directory listing or package README.
+
+Once imported, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
+
+```css
+body {
+  font-family: "Open Sans";
+}
+```

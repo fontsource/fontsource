@@ -1,0 +1,55 @@
+---
+title: Variable Fonts
+---
+
+# Variable Fonts
+
+---
+
+These are an evolution to the OpenType font specification that enables many different variations of a typeface to be incorporated into a single file. This could allow for more creative decisions or even a reduction in bundle size if you are importing a lot of different weights for the same font.
+
+More details can be found on the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
+
+A limited set of Google fonts support this feature and the full list of those supported can be found [here](https://fonts.google.com/variablefonts).
+
+## Installation
+
+---
+
+This particular example uses the [Cabin font](https://fonts.google.com/specimen/Cabin).
+
+Begin by importing both the variable and fallback font for non-compatible browsers.
+
+```jsx
+import "@fontsource/cabin/400.css"; // Weight 400.
+```
+
+Select either a stripped down weights only variant of the font or a full feature variant that contains all the variable axes.
+
+```jsx
+import "@fontsource/cabin/variable.css"; // Contains ONLY variable weights and no other axes.
+import "@fontsource/cabin/variable-italic.css"; // Italic variant.
+// Or
+import "@fontsource/cabin/variable-full.css"; // This contains ALL variable axes. Font files are larger.
+import "@fontsource/cabin/variable-full-italic.css"; // Italic variant.
+```
+
+> **Note:** A full or italic variant may NOT exist if there are no additional axes other than wght and/or ital. You can check the available axes [here](https://fonts.google.com/variablefonts).
+
+For the CSS, you should consider using the [`@supports`](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) tag, which checks whether the browser is capable of utilising variable fonts. Fallback fonts and their relevant CSS should be used outside the block, whilst all variable options should be used within the [`@supports`](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) block and utilising the [`font-variation-settings`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings) tag.
+
+```css
+h1 {
+  font-family: Cabin;
+  font-weight: 400;
+}
+
+@supports (font-variation-settings: normal) {
+  h1 {
+    font-family: CabinVariable;
+    font-variation-settings: "wght" 400;
+  }
+}
+```
+
+Alternatively, you can choose to have the default browser fonts to act as the fallback which will only affect a very [small subset of users](https://caniuse.com/variable-fonts) in a minor way. This is something the current Fontsource website actually does.

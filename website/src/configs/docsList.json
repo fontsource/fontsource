@@ -1,0 +1,77 @@
+[
+  {
+    "key": "introduction",
+    "title": "Introduction",
+    "path": "/docs/introduction"
+  },
+  {
+    "key": "getting-started",
+    "title": "Getting Started",
+    "path": "/docs/getting-started"
+  },
+  {
+    "key": "variable-fonts",
+    "title": "Variable Fonts",
+    "path": "/docs/variable-fonts"
+  },
+  {
+    "key": "legacy",
+    "title": "Legacy",
+    "path": "/docs/legacy"
+  },
+  {
+    "key": "sass",
+    "title": "Sass",
+    "isParent": true
+  },
+  {
+    "key": "sass-mixins",
+    "title": "Mixins",
+    "path": "/docs/sass/mixins"
+  },
+  {
+    "key": "sass-variable",
+    "title": "Variable Mixins",
+    "path": "/docs/sass/variable-mixins"
+  },
+
+  {
+    "key": "icons",
+    "title": "Icons",
+    "isParent": true
+  },
+  {
+    "key": "material-icons",
+    "title": "Material Icons",
+    "path": "/docs/icons/material-icons"
+  },
+  {
+    "key": "guides",
+    "title": "Guides",
+    "isParent": true
+  },
+  {
+    "key": "gatsby",
+    "title": "Gatsby",
+    "path": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#using-google-fonts",
+
+    "isExternal": true
+  },
+  {
+    "key": "nextjs",
+    "title": "Next.js",
+    "path": "/docs/guides/nextjs"
+  },
+  {
+    "key": "chakra-ui",
+    "title": "Chakra UI",
+    "path": "https://chakra-ui.com/guides/using-fonts",
+    "isExternal": true
+  },
+  {
+    "key": "material-ui",
+    "title": "Material UI",
+    "path": "https://next.material-ui.com/components/typography/#install-with-npm",
+    "isExternal": true
+  }
+]
