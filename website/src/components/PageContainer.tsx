@@ -25,7 +25,7 @@ export const PageContainer = ({
   return (
     <Box bg={bgColor} color={color}>
       <Container minHeight="100vh" maxWidth="72rem" mx="auto" {...props}>
-        <Navbar />
+        <Navbar ifDocs={ifDocs} />
         <Container px={8} flexDirection="row" alignItems="start">
           {ifSidebar && (
             <Sidebar

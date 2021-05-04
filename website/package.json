@@ -39,6 +39,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.1.0",
     "react-instantsearch-dom": "^6.10.3",
+    "react-remove-scroll": "^2.4.1",
     "remark-slug": "^6.0.0"
   },
   "devDependencies": {
@@ -51,13 +52,13 @@
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-mdx": "^1.12.0",
+    "eslint-plugin-mdx": "^1.13.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "next-remote-watch": "^1.0.0",
-    "next-sitemap": "^1.6.25",
+    "next-sitemap": "^1.6.34",
     "prettier": "^2.2.1",
     "typescript": "^4.2.4"
   },
