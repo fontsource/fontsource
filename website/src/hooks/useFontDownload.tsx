@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { MetadataProps } from "../@types/[font]";
 
-const FontDownload = (metadata: MetadataProps, downloadLink: string) => {
+const useFontDownload = (metadata: MetadataProps, downloadLink: string) => {
   const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect(() => {
@@ -21,4 +21,4 @@ const FontDownload = (metadata: MetadataProps, downloadLink: string) => {
   return fontLoaded;
 };
 
-export default FontDownload;
+export default useFontDownload;

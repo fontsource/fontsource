@@ -81,7 +81,7 @@ export const MenuStack = (props: StackProps) => (
     <MenuItem display={{ base: "none", md: "block" }} to="/">
       Home
     </MenuItem>
-    <HStack pb={4}>
+    <HStack pb={{ base: 4, md: 0 }}>
       <MenuItem to="/docs/introduction">Documentation</MenuItem>
       <MenuItem to="/fonts">Font Previews</MenuItem>
     </HStack>
@@ -92,7 +92,6 @@ export const MenuStack = (props: StackProps) => (
         variant="ghost"
         fontSize="xl"
         icon={<AiFillGithub />}
-        isExternal
         href="https://github.com/fontsource/fontsource"
       />
     </HStack>
