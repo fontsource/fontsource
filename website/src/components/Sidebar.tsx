@@ -3,9 +3,11 @@ import {
   Box,
   Button,
   ButtonProps,
+  Divider,
   Heading,
   Stack,
   StackProps,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
@@ -13,12 +15,35 @@ import docsList from "../configs/docsList.json";
 import fontList from "../configs/fontList.json";
 import { NextChakraLink } from "./NextChakraLink";
 
+const SidebarHeading = ({ title, ...props }) => {
+  const headingColor = useColorModeValue("gray.600", "gray.200");
+  return (
+    <>
+      <Heading
+        size="sm"
+        pt={{ base: 6, md: 4 }}
+        textAlign={{ base: "center", md: "inherit" }}
+        textTransform="uppercase"
+        fontWeight="800"
+        color={headingColor}
+        letterSpacing={{ base: "1px", md: "0.5px" }}
+        {...props}
+      >
+        {title}
+      </Heading>
+      <Divider />
+    </>
+  );
+};
+
 interface SidebarButtonProps {
   key: string;
   title: string;
   path?: string;
   isParent?: boolean;
   isExternal?: boolean;
+  isOpen?: boolean;
+  onToggle?: () => void;
 }
 
 const SidebarButton = ({
@@ -26,21 +51,19 @@ const SidebarButton = ({
   path,
   isParent,
   isExternal,
+  isOpen,
+  onToggle,
   ...props
 }: SidebarButtonProps & ButtonProps) => {
   const { asPath } = useRouter();
   const isActive = (path: string) => path == asPath;
 
   if (isParent) {
-    return (
-      <Heading size="sm" pt={2} pb={4}>
-        {title}
-      </Heading>
-    );
+    return <SidebarHeading title={title} />;
   }
 
   return (
-    <Box>
+    <Box align="center">
       <NextChakraLink
         href={path}
         prefetch={false}
@@ -50,15 +73,19 @@ const SidebarButton = ({
       >
         <Button
           size="sm"
-          width="98%"
+          width={{
+            base: "50%",
+            md: "98%",
+          }}
           variant="ghost"
           colorScheme="gray"
-          justifyContent="left"
+          justifyContent={{ base: "center", md: "left" }}
           rightIcon={isExternal && <ExternalLinkIcon />}
           isActive={isActive(path)}
           _focus={{
             boxShadow: "none",
           }}
+          onClick={isOpen && onToggle}
           {...props}
         >
           {title}
@@ -81,21 +108,38 @@ const SidebarContainer = (props: StackProps) => (
   />
 );
 
-export const Sidebar = ({ ifDocs, ...rest }) => {
+interface SidebarProps extends StackProps {
+  ifDocs: boolean;
+  onToggle?: () => void;
+  isOpen?: boolean;
+}
+
+export const Sidebar = ({
+  ifDocs,
+  onToggle,
+  isOpen,
+  ...rest
+}: SidebarProps) => {
   return (
     <SidebarContainer {...rest}>
-      <Heading size="sm" pb={4}>
-        Contents
-      </Heading>
+      <SidebarHeading title={"Contents"} pt={{ base: 6, md: 2 }} />
       {ifDocs
         ? docsList.map((page) => (
-            <SidebarButton key={page.key} my={0.5} {...page} />
+            <SidebarButton
+              key={page.key}
+              my={0.5}
+              isOpen={isOpen}
+              onToggle={onToggle}
+              {...page}
+            />
           ))
         : fontList.map((page) => (
             <SidebarButton
               key={page.key}
               isParent={false}
               isExternal={false}
+              isOpen={isOpen}
+              onToggle={onToggle}
               {...page}
             />
           ))}

@@ -1,13 +1,16 @@
 import {
   Box,
   Button,
+  ButtonProps,
   Flex,
-  FlexProps,
+  HStack,
+  IconButton,
   Stack,
   StackProps,
   useDisclosure,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
+import { AiFillGithub } from "react-icons/ai";
 
 import { NextChakraLink } from "../NextChakraLink";
 import { DarkModeSwitch } from "./DarkModeSwitch";
@@ -48,7 +51,11 @@ interface MenuItemProps {
   to: string;
 }
 
-export const MenuItem = ({ children, to = "/", ...rest }: MenuItemProps) => {
+export const MenuItem = ({
+  children,
+  to = "/",
+  ...props
+}: MenuItemProps & ButtonProps) => {
   return (
     <NextChakraLink href={to}>
       <Button
@@ -56,7 +63,7 @@ export const MenuItem = ({ children, to = "/", ...rest }: MenuItemProps) => {
         width="100%"
         variant="ghost"
         colorScheme="gray"
-        {...rest}
+        {...props}
       >
         {children}
       </Button>
@@ -65,15 +72,38 @@ export const MenuItem = ({ children, to = "/", ...rest }: MenuItemProps) => {
 };
 
 export const MenuStack = (props: StackProps) => (
-  <Stack spacing={6} align="center" justify="flex-end" {...props}>
-    <MenuItem to="/">Home</MenuItem>
-    <MenuItem to="/docs/introduction">Documentation</MenuItem>
-    <MenuItem to="/fonts">Font Previews</MenuItem>
-    <DarkModeSwitch />
+  <Stack
+    spacing={{ base: 0, md: 4 }}
+    align="center"
+    justify="flex-end"
+    {...props}
+  >
+    <MenuItem display={{ base: "none", md: "block" }} to="/">
+      Home
+    </MenuItem>
+    <HStack pb={4}>
+      <MenuItem to="/docs/introduction">Documentation</MenuItem>
+      <MenuItem to="/fonts">Font Previews</MenuItem>
+    </HStack>
+    <HStack>
+      <DarkModeSwitch />
+      <IconButton
+        aria-label="Link to GitHub"
+        variant="ghost"
+        fontSize="xl"
+        icon={<AiFillGithub />}
+        isExternal
+        href="https://github.com/fontsource/fontsource"
+      />
+    </HStack>
   </Stack>
 );
 
-export const Navbar = (props: FlexProps) => {
+interface NavbarProps {
+  ifDocs: boolean;
+}
+
+export const Navbar = ({ ifDocs, ...props }: NavbarProps) => {
   const { isOpen, onToggle } = useDisclosure();
   return (
     <>
@@ -91,7 +121,7 @@ export const Navbar = (props: FlexProps) => {
           isOpen={isOpen}
         />
       </NavbarContainer>
-      <MobileNavContent isOpen={isOpen} onToggle={onToggle} />
+      <MobileNavContent isOpen={isOpen} onToggle={onToggle} ifDocs={ifDocs} />
     </>
   );
 };

@@ -34,9 +34,9 @@ export const FontPreview = (metadata: MetadataProps) => {
   const { isFallback, events } = useRouter();
 
   const [fontSize, setFontSize] = useState(32);
-  const [previewText, setPreviewText] = useState(
-    "Sphinx of black quartz, judge my vow."
-  );
+
+  const defPreviewText = "Sphinx of black quartz, judge my vow.";
+  const [previewText, setPreviewText] = useState(defPreviewText);
 
   const defWeight = findClosestWeight(metadata.weights);
   const [weight, setWeight] = useState(defWeight);
@@ -48,6 +48,7 @@ export const FontPreview = (metadata: MetadataProps) => {
     events.on("routeChangeStart", () => {
       setStyle(defStyle);
       setWeight(defWeight);
+      setPreviewText(defPreviewText);
     })
   );
 
