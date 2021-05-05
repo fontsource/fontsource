@@ -131,6 +131,7 @@ module.exports = function (font, rebuildFlag) {
     variable: font.variable,
     lastModified: font.lastModified,
     version: font.version,
+    category: font.category,
     source: font.source,
     license: font.license,
     type,
