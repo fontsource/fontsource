@@ -67,6 +67,7 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
 
   const bgSlider = useColorModeValue("gray.200", "gray.700");
   const bgSliderFilled = useColorModeValue("black", "white");
+  const selectHeadingColor = useColorModeValue("gray.500", "gray.100");
 
   return (
     <>
@@ -76,26 +77,48 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
       </Box>
 
       <SimpleGrid spacing={2} columns={{ md: 1, lg: 2 }}>
-        <Select
-          value={weight}
-          onChange={(event) => setWeight(+event.target.value)}
-        >
-          {metadata.weights.map((weight) => (
-            <option key={`${metadata.fontId}-${weight}`} value={weight}>
-              {weight}
-            </option>
-          ))}
-        </Select>
-        <Select
-          value={style}
-          onChange={(event) => setStyle(event.target.value)}
-        >
-          {metadata.styles.map((style) => (
-            <option key={`${metadata.fontId}-${style}`} value={style}>
-              {style}
-            </option>
-          ))}
-        </Select>
+        <Box>
+          <Text
+            fontSize="xs"
+            fontWeight="700"
+            color={selectHeadingColor}
+            textTransform="uppercase"
+            letterSpacing="1px"
+          >
+            Weights
+          </Text>
+          <Select
+            value={weight}
+            onChange={(event) => setWeight(+event.target.value)}
+          >
+            {metadata.weights.map((weight) => (
+              <option key={`${metadata.fontId}-${weight}`} value={weight}>
+                {weight}
+              </option>
+            ))}
+          </Select>
+        </Box>
+        <Box>
+          <Text
+            fontSize="xs"
+            fontWeight="700"
+            color={selectHeadingColor}
+            textTransform="uppercase"
+            letterSpacing="1px"
+          >
+            Styles
+          </Text>
+          <Select
+            value={style}
+            onChange={(event) => setStyle(event.target.value)}
+          >
+            {metadata.styles.map((style) => (
+              <option key={`${metadata.fontId}-${style}`} value={style}>
+                {style}
+              </option>
+            ))}
+          </Select>
+        </Box>
       </SimpleGrid>
 
       <Skeleton width="100%" isLoaded={fontLoaded && !isFallback}>
