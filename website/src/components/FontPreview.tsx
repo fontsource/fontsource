@@ -51,7 +51,7 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
     events.on("routeChangeStart", () => {
       setStyle(defStyle);
       setWeight(defWeight);
-      // Figure out bug that doesn't load different preview texts unless page is reloaded
+      // Refer to _app.tsx for temp workaround until Next.js bug is fixed for resetting this state
       setPreviewText(defPreviewText);
     });
   }, [events, defPreviewText, defStyle, defWeight]);
