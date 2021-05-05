@@ -45,6 +45,11 @@ jobs:
       - name: Generate fontlist
         run: yarn util:fontlist
 
+      - name: Generate Algolia index
+        run: yarn util:algolia
+        env:
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+
       - name: Format files
         run: yarn format
 
