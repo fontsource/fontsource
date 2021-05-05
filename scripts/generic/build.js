@@ -55,10 +55,11 @@ glob(fontFileDir + "/**/*.woff2", {}, (err, files) => {
     styles,
     defSubset,
     variable: false,
+    lastModified: datetime.toISOString().slice(0, 10),
+    category: config.category,
     source: config.sourcelink,
     license: config.licenselink,
     version: config.version,
-    lastModified: datetime.toISOString().slice(0, 10),
     type: config.type,
 
     fontDir,

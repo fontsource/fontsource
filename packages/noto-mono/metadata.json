@@ -8,6 +8,7 @@
   "variable": false,
   "lastModified": "2021-01-23",
   "version": "v1",
+  "category": "monospace",
   "source": "https://www.google.com/get/noto/#mono-mono",
   "license": "https://github.com/googlefonts/noto-fonts/blob/master/LICENSE",
   "type": "other"
