@@ -25,6 +25,7 @@ import {
   InstantSearch,
 } from "react-instantsearch-dom";
 
+import { MetadataProps } from "../../@types/[font]";
 import { NextChakraLink } from "../NextChakraLink";
 
 const indexName = "prod_FONTS";
@@ -35,13 +36,7 @@ const searchClient = algoliasearch(
 const hitsPerPage = 8;
 
 // Should match Algolia index records
-interface Hit {
-  family: string;
-  category: "serif" | "sans-serif" | "handwriting" | "display" | "monospace";
-  variants: string[];
-  subsets: string[];
-  version: string;
-  lastModified: string;
+interface Hit extends MetadataProps {
   objectID: string;
 }
 
@@ -77,7 +72,7 @@ const Search = ({ hits, currentRefinement, refine }: Search) => {
       </InputGroup>
       <Stack rounded="lg">
         {hits.map((hit) => {
-          const fontPath = hit.family.toLowerCase().replaceAll(" ", "-");
+          const fontPath = hit.fontName.toLowerCase().replaceAll(" ", "-");
           return (
             <NextChakraLink
               prefetch={false}
@@ -91,7 +86,7 @@ const Search = ({ hits, currentRefinement, refine }: Search) => {
                 leftIcon={<AiOutlineFontSize />}
                 justifyContent="left"
               >
-                <Text>{hit.family}</Text>
+                <Text>{hit.fontName}</Text>
                 <Spacer />
                 <Text fontSize="sm" color={fontCategory}>
                   {hit.category}
