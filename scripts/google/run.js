@@ -145,6 +145,7 @@ if (changed || force === "force") {
     variable: variableMeta,
     lastModified: font.lastModified,
     version: font.version,
+    category: font.category,
     source: "https://fonts.google.com/",
     license: "https://fonts.google.com/attribution",
     type: "google",

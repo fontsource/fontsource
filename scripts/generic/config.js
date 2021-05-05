@@ -9,6 +9,7 @@ const config = {
   defaultSubset: "latin",
   unicoderange: "null",
   version: "",
+  category: "",
   sourcelink: "",
   licenselink: "",
   type: "other",

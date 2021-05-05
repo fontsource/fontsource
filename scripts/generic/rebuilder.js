@@ -36,9 +36,10 @@ directories.forEach(directory => {
       defSubset: metadata.defSubset,
       variable: false,
       lastModified: metadata.lastModified,
+      version: metadata.version,
+      category: metadata.category,
       source: metadata.source,
       license: metadata.license,
-      version: metadata.version,
       type: metadata.type,
 
       fontDir,
