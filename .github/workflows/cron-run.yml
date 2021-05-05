@@ -41,6 +41,11 @@ jobs:
       - name: Generate fontlist
         run: yarn util:fontlist
 
+      - name: Generate Algolia index
+        run: yarn util:algolia
+        env:
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+
       - name: Format files
         run: yarn format
 
@@ -63,6 +68,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Publish package
         run: npm run deploy:ci
         env:
