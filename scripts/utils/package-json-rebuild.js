@@ -1,14 +1,7 @@
 const fs = require(`fs-extra`)
 const jsonfile = require(`jsonfile`)
 
-// Find names of all packages.
-const getDirectories = () =>
-  fs
-    .readdirSync("./packages", { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name)
-
-const directories = getDirectories()
+const { directories } = require("./utils")
 
 directories.forEach(directory => {
   const fontDir = `./packages/${directory}`
