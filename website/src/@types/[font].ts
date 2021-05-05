@@ -10,6 +10,7 @@ export interface MetadataProps {
   version: string;
   source: string;
   license: string;
+  category: string;
   type: "google" | "icons" | "other";
 }
 
