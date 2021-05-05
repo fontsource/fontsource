@@ -8,6 +8,7 @@
   "variable": false,
   "lastModified": "2020-08-02",
   "version": "v2.2",
+  "category": "monospace",
   "source": "https://github.com/sursly/leaguemono",
   "license": "https://github.com/sursly/leaguemono/blob/master/ofl.markdown",
   "type": "league"
