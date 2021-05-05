@@ -1,3 +1,5 @@
+const fs = require("fs-extra")
+
 // Generate filenames and paths
 const makeFontDownloadPath = (
   fontDir,
@@ -28,4 +30,18 @@ const findClosest = (arr, num) => {
   )
 }
 
-module.exports = { makeFontDownloadPath, makeFontFilePath, findClosest }
+// Find names of all packages.
+const getDirectories = () =>
+  fs
+    .readdirSync("./packages", { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name)
+
+const directories = getDirectories()
+
+module.exports = {
+  makeFontDownloadPath,
+  makeFontFilePath,
+  findClosest,
+  directories,
+}
