@@ -168,7 +168,9 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
       </Text>
       <Code>yarn add @fontsource/{metadata.fontId}</Code>
       <Code>import &quot;@fontsource/{metadata.fontId}.css&quot;</Code>
-      <Code>body &#123; font-family: &quot;Open Sans&quot;; &#125;</Code>
+      <Code>
+        body &#123; font-family: &quot;{metadata.fontName}&quot;; &#125;
+      </Code>
       {metadata.variable && (
         <>
           <Box>
