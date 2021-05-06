@@ -10,7 +10,6 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  InputRightElement,
   Spacer,
   Stack,
   Text,
