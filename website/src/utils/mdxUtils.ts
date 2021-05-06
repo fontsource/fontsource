@@ -22,10 +22,10 @@ const createDocsFilePaths = (DOCS_PATH) => {
   searchDirectories(DOCS_PATH);
 
   // Get rid of the absolute filepaths and double backslashes which next-mdx-remote won't parse
-  // e.g. ['getting-started.mdx', 'sass/mixins.mdx']
+  // e.g. ['/getting-started.mdx', '/sass/mixins.mdx']
   // Filter for only include md(x) files
   const filesCleaned = files
-    .map((file) => file.replace(`${DOCS_PATH}\\`, "").replace(/\\/g, "/"))
+    .map((file) => file.replace(DOCS_PATH, "").replace(/\\/g, "/"))
     .filter((path) => /\.mdx?$/.test(path));
 
   return filesCleaned;
