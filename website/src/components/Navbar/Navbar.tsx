@@ -5,6 +5,7 @@ import {
   Flex,
   HStack,
   IconButton,
+  Link,
   Stack,
   StackProps,
   useDisclosure,
@@ -87,13 +88,14 @@ export const MenuStack = (props: StackProps) => (
     </HStack>
     <HStack>
       <DarkModeSwitch />
-      <IconButton
-        aria-label="Link to GitHub"
-        variant="ghost"
-        fontSize="xl"
-        icon={<AiFillGithub />}
-        href="https://github.com/fontsource/fontsource"
-      />
+      <Link href="https://github.com/fontsource/fontsource" isExternal>
+        <IconButton
+          aria-label="Link to GitHub"
+          variant="ghost"
+          fontSize="xl"
+          icon={<AiFillGithub />}
+        />
+      </Link>
     </HStack>
   </Stack>
 );

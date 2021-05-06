@@ -27,7 +27,10 @@ export const Footer = (props: FlexProps) => {
       direction={{ base: "column", sm: "row" }}
       {...props}
     >
-      <Link href="https://vercel.com/?utm_source=fontsource&utm_campaign=oss" isExternal>
+      <Link
+        href="https://vercel.com/?utm_source=fontsource&utm_campaign=oss"
+        isExternal
+      >
         <Button
           variant="ghost"
           size="sm"
