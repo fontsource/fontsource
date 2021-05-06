@@ -2,8 +2,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import hydrate from "next-mdx-remote/hydrate";
-import renderToString from "next-mdx-remote/render-to-string";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
 
 import { Main } from "../../components/Main";
@@ -17,7 +17,6 @@ const components = {
 };
 
 export default function DocsPage({ source, frontMatter }) {
-  const content = hydrate(source, { components });
   return (
     <PageContainer ifDocs={true}>
       <Head>
@@ -32,7 +31,7 @@ export default function DocsPage({ source, frontMatter }) {
         maxWidth="49rem"
         width="100%"
       >
-        {content}
+        <MDXRemote {...source} components={components} />
       </Main>
     </PageContainer>
   );
@@ -50,8 +49,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
 
   const { content, data } = matter(source);
 
-  const mdxSource = await renderToString(content, {
-    components,
+  const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require("remark-slug")],
