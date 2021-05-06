@@ -110,7 +110,6 @@ if (changed || force === "force") {
   const packageReadme = readme({
     fontId: font.id,
     fontName: font.family,
-    fontNameNoSpace: font.family.replace(" ", ""),
     subsets: font.subsets,
     weights: font.weights,
     styles: font.styles,
