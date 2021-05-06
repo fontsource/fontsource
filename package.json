@@ -16,7 +16,7 @@
   "dependencies": {
     "algoliasearch": "^4.9.1",
     "async": "^3.2.0",
-    "dotenv": "^8.6.0",
+    "dotenv": "^9.0.0",
     "flat": "^5.0.2",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.6",
