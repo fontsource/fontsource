@@ -35,9 +35,9 @@ jsonfile.writeFile("FONTLIST.json", Object.assign({}, ...fontlist))
 const fontlistMarkdown = _.template(
   `# Supported Font List
 
-## [Search Directory](https://fontsource.github.io/search-directory/)
+## [Search Directory](https://fontsource.org/)
 
-Can be found [here](https://fontsource.github.io/search-directory/).
+Can be found [here](https://fontsource.org/).
 
 ## [Google Fonts](https://fonts.google.com/)
 
