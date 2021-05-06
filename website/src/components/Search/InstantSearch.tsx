@@ -23,6 +23,7 @@ import {
   connectPagination,
   connectStateResults,
   InstantSearch,
+  PoweredBy,
 } from "react-instantsearch-dom";
 
 import { MetadataProps } from "../../@types/[font]";
@@ -214,6 +215,17 @@ export const FontSearch = () => {
         <CustomSearch />
         <LoadingIndicator />
         <CustomPagination />
+        <Box
+          position={{ base: "inherit", md: "absolute" }}
+          transform={{ base: "scale(0.7)", md: "scale(0.7) translateY(-155%)" }}
+          align="center"
+          mt={2}
+          ml={{
+            md: "65%",
+          }}
+        >
+          <PoweredBy />
+        </Box>
       </Box>
     </InstantSearch>
   );

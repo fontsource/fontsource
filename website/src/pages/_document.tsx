@@ -8,30 +8,19 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en" dir="ltr">
         <Head>
-          <meta name="application-name" content="next-lotus-starter" />
+          <meta name="application-name" content="Fontsource" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="default"
           />
-          <meta
-            name="apple-mobile-web-app-title"
-            content="next-lotus-starter"
-          />
+          <meta name="apple-mobile-web-app-title" content="Fontsource" />
           <meta
             name="description"
-            content="Personal starter template for my Next.js projects."
+            content="Self-host fonts in neatly bundled NPM packages."
           />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta
-            name="msapplication-config"
-            content="/icons/browserconfig.xml"
-          />
-          <meta name="msapplication-TileColor" content="#2B5797" />
-          <meta name="msapplication-tap-highlight" content="no" />
-          <meta name="theme-color" content="#000000" />
-
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -49,36 +38,39 @@ export default class Document extends NextDocument {
             sizes="16x16"
             href="/icons/favicon-16x16.png"
           />
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="manifest" href="/manifest.webmanifest" />
           <link
             rel="mask-icon"
             href="/icons/safari-pinned-tab.svg"
-            color="#5bbad5"
+            color="#000000"
           />
           <link rel="shortcut icon" href="/icons/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#da532c" />
+          <meta name="msapplication-config" content="/browserconfig.xml" />
+          <meta name="theme-color" content="#ffffff" />
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://yourdomain.com" />
-          <meta name="twitter:title" content="next-lotus-starter" />
+          <meta name="twitter:url" content="https://fontsource.org" />
+          <meta name="twitter:title" content="Fontsource" />
           <meta
             name="twitter:description"
-            content="Personal starter template for my Next.js projects."
+            content="Self-host fonts in neatly bundled NPM packages."
           />
           <meta
             name="twitter:image"
-            content="https://yourdomain.com/public/icons/android-chrome-192x192.png"
+            content="https://fontsource.org/icons/android-chrome-192x192.png"
           />
           <meta name="twitter:creator" content="@lotusdevshack" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="next-lotus-starter" />
+          <meta property="og:title" content="Fontsource" />
           <meta
             property="og:description"
-            content="Personal starter template for my Next.js projects."
+            content="Self-host fonts in neatly bundled NPM packages."
           />
-          <meta property="og:site_name" content="next-lotus-starter" />
-          <meta property="og:url" content="https://yourdomain.com" />
+          <meta property="og:site_name" content="Fontsource" />
+          <meta property="og:url" content="https://fontsource.org" />
           <meta
             property="og:image"
-            content="https://yourdomain.com/public/icons/apple-touch-icon.png"
+            content="https://fontsource.org/icons/apple-touch-icon.png"
           />
         </Head>
         <body>
