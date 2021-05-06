@@ -72,8 +72,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = docsFilePaths
     // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ""))
-    // Split into array for a nested dynamic route
-    .map((path) => path.split("/"))
+    // Split into array for a nested dynamic route. Splice to remove first "/" creating empty array value
+    .map((path) => path.split("/").splice(1))
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }));
 
