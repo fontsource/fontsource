@@ -2,88 +2,27 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@fontsource/baloo-thambi-2?color=brightgreen)](https://www.npmjs.com/package/@fontsource/baloo-thambi-2) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/baloo-thambi-2)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/baloo-thambi-2)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
-The CSS and web font files to easily self-host the “Baloo Thambi 2” font. Please visit the main [Fontsource monorepo](https://github.com/fontsource/fontsource) to view more details on this package.
+The CSS and web font files to easily self-host the “Baloo Thambi 2” font. Please visit the main [Fontsource website](https://fontsource.org/fonts/baloo-thambi-2) to view more details on this package.
 
-## Installation
+## Quick Installation
 
-Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Solutions like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are prebuilt examples that are compatible.
+Fontsource has a variety of methods to import CSS, such as using a bundler like Webpack. Alternatively, it supports SASS. Full documentation can be found [here](https://fontsource.org/docs/introduction).
 
 ```javascript
 yarn add @fontsource/baloo-thambi-2 // npm install @fontsource/baloo-thambi-2
 ```
 
-Then within your app entry file or site component, import it in. For example in Gatsby, you could choose to import it into a layout template (`layout.js`), page component (`index.js`), or `gatsby-browser.js`.
+Within your app entry file or site component, import it in.
 
 ```javascript
 import "@fontsource/baloo-thambi-2" // Defaults to weight 400.
 ```
 
-Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS unicode-range selector, all language subsets are accounted for.
-
-```javascript
-import "@fontsource/baloo-thambi-2/500.css" // Weight 500.
-import "@fontsource/baloo-thambi-2/900-italic.css" // Italic variant.
-```
-
-Alternatively, the same solutions could be imported via SCSS!
-
-```scss
-@import "~@fontsource/baloo-thambi-2/index.css"; // Weight 400.
-@import "~@fontsource/baloo-thambi-2/300-italic.css";
-```
-
-For more advanced setups, you can use our highly customisable Sass mixins that can modify many of the existing @font-face variables.
-
-```scss
-@use "@fontsource/baloo-thambi-2/scss/mixins" as BalooThambi 2;
-
-// Uses a unicode-range map to automatically generate multiple @font-face rules.
-@include BalooThambi 2fontface
-  (
-    $weight: 500,
-    $display: fallback,
-    $fontDir: "~@fontsource/baloo-thambi-2/files"
-  );
-
-// Fully customisable single @font-face mixin.
-@include BalooThambi 2fontfacecustom
-  (
-    $weight: 600,
-    $display: optional,
-    $woff2Path: "#{$fontDir}/custom-file.woff2",
-    $unicodeRange: false
-  );
-```
-
-For those not using Dart Sass, you can still use @import although it can be highly problematic as variables are placed in the global scope which can conflict with existing Sass setups. It's highly recommended to migrate to Dart Sass as all other versions have been deprecated.
-
-```scss
-@import "~@fontsource/baloo-thambi-2/scss/mixins";
-
-// Uses a unicode-range map to automatically generate multiple @font-face rules.
-@include fontFace(
-  $weight: 500,
-  $display: fallback,
-  $fontDir: "~@fontsource/baloo-thambi-2/files"
-);
-
-// Fully customisable single @font-face mixin.
-@include fontFaceCustom(
-  $weight: 600,
-  $display: optional,
-  $woff2Path: "#{$fontDir}/custom-file.woff2",
-  $unicodeRange: false
-);
-```
-
-You can see all of the existing inputtable mixin variables [here](https://github.com/fontsource/fontsource/tree/master/packages/baloo-thambi-2/scss/mixins.scss).
-
-_These examples may not reflect actual compatibility. Please refer below._
-
 Supported variables:
 
 - Weights: `[400,500,600,700,800]`
 - Styles: `[normal]`
+- Supported subsets: `[latin,latin-ext,tamil,vietnamese]`
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
 
@@ -92,18 +31,6 @@ body {
   font-family: "Baloo Thambi 2";
 }
 ```
-
-## Additional Options
-
-In the rare case you need to individually select a language subset and not utilize the CSS unicode-range selector, you may specify the import as follows. This is especially not recommended for languages, such as Japanese, with a large amount of characters.
-
-```javascript
-import "@fontsource/baloo-thambi-2/latin-ext.css" // All weights with normal style included.
-import "@fontsource/baloo-thambi-2/cyrillic-ext-500.css" // Weight 500 with normal style.
-import "@fontsource/baloo-thambi-2/greek-900-italic.css" // Italic variant.
-```
-
-- Supported subsets: `[latin,latin-ext,tamil,vietnamese]`
 
 ## Licensing
 

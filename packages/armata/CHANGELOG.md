@@ -12,6 +12,22 @@ These will always contain changes from Fontsource's end.
 
 # 4.x Release
 
+## 4.3.x
+
+### Features
+
+- Added 'category' key to metadata.json. [#189](https://github.com/fontsource/fontsource/pull/189)
+
+### Fixes
+
+- Update dependencies. [#187](https://github.com/fontsource/fontsource/pull/187)
+
+### Documentation
+
+- New website. [#186](https://github.com/fontsource/fontsource/pull/186) [#188](https://github.com/fontsource/fontsource/pull/188) [#191](https://github.com/fontsource/fontsource/pull/191) [#192](https://github.com/fontsource/fontsource/pull/192) [#193](https://github.com/fontsource/fontsource/pull/193) [#194](https://github.com/fontsource/fontsource/pull/194) [#195](https://github.com/fontsource/fontsource/pull/195) [#196](https://github.com/fontsource/fontsource/pull/196) [#197](https://github.com/fontsource/fontsource/pull/197) [#198](https://github.com/fontsource/fontsource/pull/198)
+- Update READMEs with new information. [#199](https://github.com/fontsource/fontsource/pull/199)
+- GitHub Actions Git configs changed to 'fontsource-bot'. [#200](https://github.com/fontsource/fontsource/pull/200)
+
 ## 4.2.x
 
 ### Features
@@ -24,10 +40,14 @@ These will always contain changes from Fontsource's end.
 
 - Removed all default variable flags from SCSS mixins till further notice to resolve errors relating to importing multiple fonts. [#155](https://github.com/fontsource/fontsource/pull/155)
 - Resolved incorrect unicodeMap numeric subset names that linked to the wrong files. [#167](https://github.com/fontsource/fontsource/pull/167)
+- Update Material Icons [#177](https://github.com/fontsource/fontsource/pull/177)
+- Apply previous SCSS Generic updates [#178](https://github.com/fontsource/fontsource/pull/178)
+- Update dependencies [#168](https://github.com/fontsource/fontsource/pull/168) [#169](https://github.com/fontsource/fontsource/pull/169)
 
 ### Documentation
 
 - Changed package.json descriptions to something more mature. [#148](https://github.com/fontsource/fontsource/pull/148)
+- README updates for Sass usage. [#173](https://github.com/fontsource/fontsource/pull/173)
 
 ## 4.1.x
 
