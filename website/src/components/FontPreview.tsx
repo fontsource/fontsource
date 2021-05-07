@@ -5,6 +5,8 @@ import {
   Code,
   Divider,
   Heading,
+  HStack,
+  IconButton,
   Input,
   Link,
   Select,
@@ -19,7 +21,8 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { AiOutlineFontSize } from "react-icons/ai";
+import { AiFillGithub, AiOutlineFontSize } from "react-icons/ai";
+import { ImNpm } from "react-icons/im";
 
 import { MetadataProps } from "../@types/[font]";
 import useFontDownload from "../hooks/useFontDownload";
@@ -72,7 +75,31 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
   return (
     <>
       <Box>
-        <Heading size="2xl">{metadata.fontName}</Heading>
+        <SimpleGrid columns={{ base: 1, sm: 2 }}>
+          <Heading size="2xl">{metadata.fontName}</Heading>
+          <HStack display={{ base: "none", sm: "flex" }} ml="auto">
+            <Link
+              isExternal
+              href={`https://www.npmjs.com/package/@fontsource/${metadata.fontId}`}
+            >
+              <IconButton
+                aria-label="Link to NPM"
+                variant="ghost"
+                icon={<ImNpm />}
+              />
+            </Link>
+            <Link
+              isExternal
+              href={`https://github.com/fontsource/fontsource/tree/main/packages/${metadata.fontId}#readme`}
+            >
+              <IconButton
+                aria-label="Link to Github"
+                variant="ghost"
+                icon={<AiFillGithub />}
+              />
+            </Link>
+          </HStack>
+        </SimpleGrid>
         <Divider mt={1} />
       </Box>
 
@@ -213,7 +240,7 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
         Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu
         Font License v1.0.
       </Text>
-      <SimpleGrid columns={{ md: 1, lg: 2 }}>
+      <SimpleGrid columns={{ base: 1, sm: 2 }}>
         <Link href={metadata.source} isExternal mr="auto" fontWeight="700">
           <Button variant="ghost" rightIcon={<ExternalLinkIcon />}>
             Source

@@ -28,6 +28,7 @@ These will always contain changes from Fontsource's end.
 - Update READMEs with new information. [#199](https://github.com/fontsource/fontsource/pull/199)
 - GitHub Actions Git configs changed to 'fontsource-bot'. [#200](https://github.com/fontsource/fontsource/pull/200)
 - Update dependencies. [#207](https://github.com/fontsource/fontsource/pull/207) [#209](https://github.com/fontsource/fontsource/pull/209)
+- Add NPM and GitHub links to each Font Preview page. [#210](https://github.com/fontsource/fontsource/pull/210)
 
 ## 4.2.x
 
