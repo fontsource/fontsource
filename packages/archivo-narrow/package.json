@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/archivo-narrow",
-  "version": "4.2.2",
+  "version": "4.3.0",
   "description": "Self-host the Archivo Narrow font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/source-serif-pro",
-  "version": "4.2.3",
+  "version": "4.3.0",
   "description": "Self-host the Source Serif Pro font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

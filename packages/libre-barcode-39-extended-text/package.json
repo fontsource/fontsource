@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/libre-barcode-39-extended-text",
-  "version": "4.2.3",
+  "version": "4.3.0",
   "description": "Self-host the Libre Barcode 39 Extended Text font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

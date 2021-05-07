@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/caesar-dressing",
-  "version": "4.2.3",
+  "version": "4.3.0",
   "description": "Self-host the Caesar Dressing font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

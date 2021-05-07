@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/jacques-francois-shadow",
-  "version": "4.2.3",
+  "version": "4.3.0",
   "description": "Self-host the Jacques Francois Shadow font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

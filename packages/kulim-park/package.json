@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/kulim-park",
-  "version": "4.2.3",
+  "version": "4.3.0",
   "description": "Self-host the Kulim Park font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

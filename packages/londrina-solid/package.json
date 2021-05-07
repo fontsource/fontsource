@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/londrina-solid",
-  "version": "4.2.2",
+  "version": "4.3.0",
   "description": "Self-host the Londrina Solid font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {

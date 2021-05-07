@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/text-me-one",
-  "version": "4.2.3",
+  "version": "4.3.0",
   "description": "Self-host the Text Me One font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
