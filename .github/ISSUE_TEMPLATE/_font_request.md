@@ -1,8 +1,8 @@
 ---
-name: Font request
-about: Request a new Open Source font
-title: ""
-labels: font request
+name: "➕ Font request"
+about: "Request a new Open Source font."
+title: "Font Request: "
+labels: "font request"
 assignees: ""
 ---
 
