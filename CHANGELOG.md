@@ -27,6 +27,7 @@ These will always contain changes from Fontsource's end.
 - New website. [#186](https://github.com/fontsource/fontsource/pull/186) [#188](https://github.com/fontsource/fontsource/pull/188) [#191](https://github.com/fontsource/fontsource/pull/191) [#192](https://github.com/fontsource/fontsource/pull/192) [#193](https://github.com/fontsource/fontsource/pull/193) [#194](https://github.com/fontsource/fontsource/pull/194) [#195](https://github.com/fontsource/fontsource/pull/195) [#196](https://github.com/fontsource/fontsource/pull/196) [#197](https://github.com/fontsource/fontsource/pull/197) [#198](https://github.com/fontsource/fontsource/pull/198)
 - Update READMEs with new information. [#199](https://github.com/fontsource/fontsource/pull/199)
 - GitHub Actions Git configs changed to 'fontsource-bot'. [#200](https://github.com/fontsource/fontsource/pull/200)
+- Update dependencies. [#207](https://github.com/fontsource/fontsource/pull/207)
 
 ## 4.2.x
 
