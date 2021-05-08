@@ -47,18 +47,12 @@ jobs:
 
       - name: Format files
         run: yarn format
-
-      - name: Stage changes
-        run: git add --all
-
-      - name: Commit files
-        run: |
-          git config --local user.email "83556432+fontsource-bot@users.noreply.github.com"
-          git config --local user.name "fontsource-bot"
-          git commit -m "chore(build): update fontsources [Force Rebuild $GITHUB_RUN_NUMBER]"
-        continue-on-error: true
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+        
+      - name: Stage, commit and push files
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_user_name: "fontsource-bot"
+          commit_user_email: "83556432+fontsource-bot@users.noreply.github.com"
+          commit_author: "fontsource-bot <83556432+fontsource-bot@users.noreply.github.com>" 
+          commit_message: "chore(build): update packages [Force Rebuild $GITHUB_RUN_NUMBER]"
+        continue-on-error: true
