@@ -41,6 +41,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 ## Other
 
 - aileron
+- atkinson-hyperlegible
 - carlito
 - charis-sil
 - clear-sans
