@@ -20,8 +20,8 @@ const config: ThemeConfig = {
 };
 
 const fonts = {
-  heading: `'Raleway', sans-serif`,
-  body: `'Inter', sans-serif`,
+  heading: `'RalewayVariable', sans-serif`,
+  body: `'InterVariable', sans-serif`,
 };
 
 const colors = {
