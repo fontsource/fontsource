@@ -10,6 +10,8 @@ import { FontPreview } from "../../components/FontPreview";
 import { Main } from "../../components/Main";
 import { PageContainer } from "../../components/PageContainer";
 import fontListAlgolia from "../../configs/algolia.json";
+// Import when testing and don't want to build 1000+ pages
+// import fontListAlgolia from "../../configs/fontListTemp.json";
 import { selectDefPreviewText } from "../../utils/defPreviewLanguage";
 import { fetcher, fontsourceDownload } from "../../utils/fontsourceUtils";
 
@@ -82,6 +84,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     title: font.fontName,
     path: `/fonts/${font.fontId}`,
   }));
+  // Used in Sidebar component
   await fs.writeFile(fontListPath, JSON.stringify(sideBarList));
 
   // Pushes a list of fontIds which will be used as paths e.g. /fonts/abel
