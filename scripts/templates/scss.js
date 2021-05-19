@@ -1,6 +1,51 @@
 const _ = require("lodash")
 
-exports.scssMixins = _.template(
+// Make the key value pairs in the required format - subset: (unicodeRangeValues), subset:...
+const unicodeMapGen = unicodeRange =>
+  Object.entries(unicodeRange)
+    .map(subArr => {
+      subArr[0] = subArr[0].replace(/[[\]]/g, "")
+      subArr[1] = `(${subArr[1]})`
+      return subArr.join(": ")
+    })
+    .join(", ")
+
+const generateSCSS = (font, variableFlag, variableMeta) => {
+  const unicodeMap = unicodeMapGen(font.unicodeRange)
+
+  // Include variable mixins if needed
+  if (variableFlag) {
+    const variableWeight = `${variableMeta.wght.min} ${variableMeta.wght.max}`
+    let variableWdth
+    if ("wdth" in variableMeta) {
+      variableWdth = `${variableMeta.wdth.min}% ${variableMeta.wdth.max}%`
+    } else {
+      variableWdth = "null"
+    }
+
+    return scssMixins({
+      fontId: font.id,
+      fontName: font.family,
+      defSubset: font.defSubset,
+      defUnicode: font.unicodeRange[font.defSubset],
+      unicodeMap,
+      variableFlag,
+      variableWeight,
+      variableWdth,
+    })
+  } else {
+    return scssMixins({
+      fontId: font.id,
+      fontName: font.family,
+      defSubset: font.defSubset,
+      defUnicode: font.unicodeRange[font.defSubset],
+      unicodeMap,
+      variableFlag,
+    })
+  }
+}
+
+const scssMixins = _.template(
   `$fontName: "<%= fontName %>";
 $fontId: "<%= fontId %>";
 $style: normal;
@@ -120,7 +165,7 @@ $woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-variable-#{$type}-#{$style}.wo
 `
 )
 
-exports.scssGeneric = _.template(
+const scssGeneric = _.template(
   `$fontName: "<%= fontName %>";
 $fontId: "<%= fontId %>";
 $style: normal;
@@ -156,3 +201,5 @@ $unicodeRangeValues: null;
 }
 `
 )
+
+module.exports = { scssMixins, scssGeneric, generateSCSS, unicodeMapGen }

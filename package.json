@@ -8,9 +8,11 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^5.1.0",
+    "jest": "^26.6.3",
     "prettier": "^2.2.1"
   },
   "dependencies": {
@@ -21,12 +23,12 @@
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",
     "google-font-metadata": "^2.0.2",
+    "got": "^11.8.2",
     "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.1.0",
     "lerna": "^4.0.0",
     "lodash": "^4.17.21",
-    "shelljs": "^0.8.4",
-    "wget-improved": "^3.2.1"
+    "mock-fs": "^4.14.0"
   },
   "scripts": {
     "format": "yarn format:prettier && yarn format:eslint",
@@ -45,6 +47,7 @@
     "util:fontlist": "node scripts/utils/fontlist-generator.js",
     "util:generic-renamer": "node scripts/generic/renamer.js",
     "util:package-json-rebuild": "node scripts/utils/package-json-rebuild.js",
+    "test": "jest",
     "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish",
     "deploy:next": "lerna publish minor --force-publish --yes",
     "deploy:ci": "lerna publish patch --yes"

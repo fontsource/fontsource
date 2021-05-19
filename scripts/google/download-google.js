@@ -1,9 +1,9 @@
 const _ = require("lodash")
 const async = require("async")
 const fs = require("fs-extra")
-const shell = require("shelljs")
 
 const { APIv2, APIVariable } = require("google-font-metadata")
+const run = require("./run")
 const force = process.argv[2]
 
 fs.ensureDirSync("packages")
@@ -12,9 +12,8 @@ fs.ensureDirSync("scripts/temp_packages")
 // Create an async queue object
 const processQueue = (fontid, cb) => {
   console.log(`Downloading ${fontid}`)
-  shell.exec(`node ./scripts/google/run.js ${fontid} ${force}`, () => {
-    cb()
-  })
+  run(fontid, force)
+  cb()
 }
 
 // EventEmitter listener is usually set at a default limit of 10, below chosen 12 concurrent workers
@@ -35,13 +34,19 @@ queue.error((err, fontid) => {
 })
 
 // Testing
-/* const test = () => {
+/* const development = () => {
   queue.push("recursive")
   queue.push("texturina")
   queue.push("cabin")
   queue.push("actor")
+  queue.push("abel")
+  queue.push("noto-sans-jp")
+  queue.push("noto-sans-tc")
+  queue.push("noto-sans-sc")
+  queue.push("noto-sans-kr")
+  queue.push("zilla-slab-highlight")
 }
-test() */
+development() */
 
 // Production
 const production = () => {
