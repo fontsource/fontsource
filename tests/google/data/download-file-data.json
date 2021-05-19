@@ -1,0 +1,3143 @@
+{
+  "APIv1Variant": {
+    "400": {
+      "italic": {
+        "latin": {
+          "local": ["ABeeZee Italic", "ABeeZee-Italic"],
+          "url": {
+            "woff2": "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8D.woff2",
+            "woff": "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8F.woff",
+            "truetype": "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8G.ttf"
+          }
+        }
+      }
+    }
+  },
+  "APIv1Result": [
+    [
+      ["400", "italic", "latin", "url", "woff2"],
+      "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8D.woff2"
+    ],
+    [
+      ["400", "italic", "latin", "url", "woff"],
+      "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8F.woff"
+    ]
+  ],
+
+  "APIv2Variant": {
+    "100": {
+      "normal": {
+        "[0]": {
+          "local": ["Noto Sans HK Thin", "NotoSansHK-Thin"],
+          "url": {
+            "woff2": "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHp2WPP0IMAVxt9WteveoOOkzD_1Iv4Hrzhqj9DSTKYk.0.woff2",
+            "woff": "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHpw.woff",
+            "opentype": "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHp1.otf"
+          }
+        }
+      }
+    }
+  },
+  "APIv2Result": [
+    [
+      ["100", "normal", "[0]", "url", "woff2"],
+      "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHp2WPP0IMAVxt9WteveoOOkzD_1Iv4Hrzhqj9DSTKYk.0.woff2"
+    ],
+    [
+      ["100", "normal", "[0]", "url", "woff"],
+      "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHpw.woff"
+    ]
+  ],
+
+  "APIVariableVariant": {
+    "full": {
+      "italic": {
+        "vietnamese": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_BCnhRv.woff2",
+        "latin-ext": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_FCnhRv.woff2"
+      }
+    }
+  },
+  "APIVariableResult": [
+    [
+      ["full", "italic", "vietnamese"],
+      "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_BCnhRv.woff2"
+    ],
+    [
+      ["full", "italic", "latin-ext"],
+      "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_FCnhRv.woff2"
+    ]
+  ],
+
+  "filter": {
+    "abel": [
+      {
+        "url": "https://fonts.gstatic.com/s/abel/v12/MwQ5bhbm2POE2V9BOw.woff",
+        "dest": "./packages/abel/files/abel-latin-400-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/abel/v12/MwQ5bhbm2POE2V9BPQ.woff2",
+        "dest": "./packages/abel/files/abel-latin-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/abel/v12/MwQ5bhbm2POE6Vs.woff",
+        "dest": "./packages/abel/files/abel-all-400-normal.woff"
+      }
+    ],
+
+    "noto-sans-jp": [
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQojgF8lI.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQojgF8lQ.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-100-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQojgN8lI.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQojgN8lQ.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-100-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioa3Xdg.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioa3Xdm.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-300-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioa1Xdg.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioa1Xdm.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-300-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFYyQgP.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFYyQgJ.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-400-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFYwQgP.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFYwQgJ.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-400-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisa3Xdg.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisa3Xdm.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-500-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisa1Xdg.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisa1Xdm.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-500-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0a3Xdg.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0a3Xdm.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-700-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0a1Xdg.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0a1Xdm.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-700-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8a3Xdg.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8a3Xdm.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-japanese-900-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8a1Xdg.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8a1Xdm.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-latin-900-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.0.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-0-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggJ.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-all-100-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.1.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-1-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.2.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-2-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.3.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-3-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.4.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-4-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.5.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-5-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.6.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-6-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.7.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-7-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.8.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-8-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.9.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-9-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.10.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-10-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.11.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-11-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.12.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-12-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.13.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-13-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.14.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-14-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.15.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-15-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.16.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-16-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.17.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-17-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.18.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-18-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.19.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-19-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.20.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-20-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.21.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-21-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.22.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-22-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.23.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-23-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.24.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-24-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.25.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-25-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.26.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-26-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.27.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-27-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.28.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-28-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.29.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-29-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.30.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-30-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.31.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-31-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.32.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-32-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.33.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-33-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.34.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-34-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.35.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-35-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.36.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-36-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.37.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-37-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.38.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-38-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.39.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-39-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.40.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-40-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.41.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-41-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.42.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-42-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.43.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-43-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.44.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-44-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.45.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-45-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.46.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-46-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.47.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-47-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.48.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-48-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.49.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-49-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.50.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-50-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.51.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-51-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.52.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-52-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.53.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-53-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.54.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-54-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.55.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-55-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.56.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-56-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.57.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-57-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.58.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-58-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.59.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-59-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.60.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-60-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.61.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-61-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.62.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-62-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.63.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-63-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.64.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-64-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.65.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-65-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.66.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-66-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.67.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-67-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.68.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-68-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.69.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-69-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.70.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-70-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.71.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-71-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.72.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-72-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.73.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-73-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.74.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-74-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.75.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-75-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.76.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-76-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.77.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-77-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.78.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-78-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.79.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-79-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.80.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-80-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.81.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-81-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.82.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-82-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.83.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-83-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.84.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-84-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.85.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-85-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.86.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-86-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.87.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-87-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.88.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-88-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.89.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-89-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.90.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-90-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.91.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-91-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.92.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-92-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.93.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-93-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.94.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-94-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.95.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-95-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.96.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-96-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.97.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-97-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.98.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-98-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.99.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-99-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.100.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-100-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.101.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-101-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.102.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-102-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.103.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-103-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.104.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-104-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.105.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-105-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.106.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-106-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.107.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-107-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.108.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-108-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.109.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-109-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.110.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-110-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.111.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-111-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.112.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-112-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.113.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-113-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.114.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-114-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.115.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-115-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.116.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-116-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.117.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-117-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.118.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-118-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6ofjtqLzI2JPCgQBnw7HFQoggPkENvl4B0ZLgOquiXidBa3qHiDcp2RQ.119.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-119-100-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.0.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-0-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq0Q.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-all-300-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.1.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-1-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.2.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-2-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.3.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-3-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.4.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-4-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.5.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-5-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.6.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-6-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.7.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-7-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.8.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-8-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.9.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-9-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.10.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-10-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.11.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-11-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.12.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-12-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.13.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-13-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.14.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-14-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.15.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-15-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.16.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-16-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.17.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-17-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.18.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-18-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.19.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-19-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.20.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-20-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.21.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-21-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.22.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-22-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.23.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-23-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.24.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-24-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.25.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-25-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.26.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-26-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.27.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-27-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.28.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-28-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.29.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-29-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.30.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-30-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.31.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-31-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.32.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-32-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.33.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-33-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.34.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-34-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.35.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-35-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.36.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-36-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.37.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-37-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.38.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-38-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.39.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-39-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.40.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-40-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.41.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-41-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.42.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-42-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.43.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-43-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.44.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-44-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.45.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-45-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.46.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-46-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.47.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-47-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.48.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-48-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.49.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-49-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.50.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-50-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.51.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-51-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.52.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-52-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.53.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-53-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.54.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-54-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.55.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-55-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.56.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-56-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.57.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-57-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.58.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-58-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.59.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-59-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.60.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-60-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.61.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-61-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.62.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-62-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.63.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-63-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.64.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-64-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.65.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-65-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.66.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-66-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.67.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-67-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.68.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-68-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.69.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-69-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.70.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-70-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.71.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-71-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.72.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-72-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.73.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-73-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.74.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-74-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.75.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-75-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.76.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-76-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.77.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-77-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.78.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-78-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.79.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-79-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.80.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-80-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.81.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-81-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.82.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-82-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.83.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-83-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.84.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-84-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.85.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-85-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.86.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-86-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.87.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-87-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.88.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-88-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.89.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-89-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.90.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-90-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.91.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-91-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.92.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-92-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.93.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-93-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.94.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-94-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.95.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-95-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.96.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-96-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.97.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-97-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.98.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-98-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.99.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-99-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.100.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-100-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.101.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-101-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.102.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-102-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.103.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-103-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.104.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-104-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.105.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-105-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.106.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-106-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.107.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-107-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.108.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-108-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.109.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-109-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.110.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-110-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.111.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-111-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.112.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-112-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.113.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-113-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.114.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-114-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.115.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-115-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.116.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-116-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.117.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-117-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.118.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-118-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQaioq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.119.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-119-300-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.0.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-0-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFoxQ.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-all-400-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.1.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-1-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.2.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-2-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.3.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-3-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.4.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-4-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.5.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-5-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.6.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-6-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.7.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-7-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.8.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-8-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.9.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-9-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.10.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-10-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.11.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-11-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.12.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-12-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.13.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-13-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.14.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-14-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.15.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-15-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.16.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-16-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.17.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-17-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.18.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-18-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.19.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-19-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.20.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-20-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.21.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-21-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.22.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-22-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.23.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-23-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.24.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-24-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.25.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-25-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.26.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-26-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.27.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-27-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.28.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-28-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.29.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-29-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.30.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-30-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.31.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-31-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.32.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-32-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.33.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-33-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.34.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-34-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.35.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-35-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.36.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-36-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.37.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-37-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.38.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-38-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.39.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-39-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.40.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-40-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.41.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-41-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.42.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-42-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.43.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-43-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.44.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-44-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.45.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-45-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.46.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-46-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.47.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-47-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.48.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-48-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.49.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-49-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.50.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-50-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.51.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-51-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.52.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-52-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.53.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-53-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.54.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-54-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.55.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-55-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.56.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-56-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.57.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-57-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.58.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-58-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.59.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-59-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.60.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-60-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.61.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-61-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.62.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-62-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.63.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-63-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.64.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-64-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.65.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-65-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.66.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-66-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.67.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-67-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.68.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-68-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.69.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-69-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.70.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-70-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.71.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-71-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.72.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-72-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.73.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-73-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.74.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-74-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.75.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-75-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.76.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-76-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.77.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-77-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.78.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-78-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.79.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-79-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.80.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-80-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.81.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-81-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.82.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-82-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.83.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-83-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.84.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-84-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.85.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-85-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.86.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-86-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.87.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-87-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.88.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-88-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.89.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-89-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.90.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-90-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.91.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-91-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.92.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-92-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.93.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-93-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.94.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-94-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.95.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-95-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.96.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-96-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.97.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-97-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.98.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-98-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.99.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-99-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.100.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-100-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.101.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-101-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.102.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-102-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.103.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-103-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.104.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-104-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.105.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-105-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.106.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-106-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.107.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-107-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.108.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-108-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.109.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-109-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.110.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-110-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.111.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-111-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.112.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-112-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.113.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-113-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.114.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-114-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.115.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-115-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.116.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-116-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.117.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-117-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.118.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-118-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.119.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-119-400-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.0.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-0-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq0Q.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-all-500-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.1.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-1-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.2.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-2-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.3.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-3-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.4.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-4-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.5.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-5-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.6.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-6-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.7.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-7-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.8.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-8-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.9.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-9-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.10.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-10-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.11.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-11-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.12.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-12-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.13.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-13-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.14.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-14-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.15.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-15-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.16.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-16-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.17.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-17-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.18.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-18-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.19.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-19-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.20.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-20-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.21.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-21-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.22.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-22-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.23.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-23-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.24.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-24-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.25.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-25-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.26.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-26-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.27.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-27-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.28.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-28-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.29.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-29-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.30.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-30-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.31.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-31-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.32.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-32-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.33.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-33-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.34.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-34-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.35.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-35-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.36.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-36-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.37.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-37-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.38.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-38-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.39.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-39-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.40.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-40-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.41.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-41-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.42.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-42-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.43.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-43-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.44.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-44-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.45.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-45-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.46.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-46-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.47.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-47-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.48.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-48-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.49.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-49-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.50.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-50-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.51.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-51-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.52.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-52-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.53.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-53-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.54.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-54-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.55.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-55-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.56.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-56-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.57.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-57-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.58.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-58-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.59.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-59-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.60.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-60-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.61.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-61-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.62.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-62-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.63.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-63-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.64.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-64-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.65.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-65-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.66.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-66-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.67.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-67-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.68.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-68-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.69.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-69-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.70.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-70-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.71.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-71-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.72.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-72-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.73.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-73-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.74.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-74-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.75.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-75-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.76.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-76-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.77.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-77-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.78.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-78-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.79.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-79-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.80.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-80-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.81.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-81-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.82.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-82-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.83.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-83-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.84.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-84-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.85.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-85-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.86.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-86-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.87.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-87-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.88.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-88-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.89.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-89-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.90.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-90-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.91.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-91-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.92.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-92-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.93.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-93-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.94.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-94-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.95.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-95-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.96.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-96-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.97.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-97-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.98.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-98-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.99.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-99-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.100.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-100-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.101.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-101-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.102.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-102-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.103.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-103-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.104.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-104-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.105.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-105-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.106.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-106-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.107.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-107-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.108.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-108-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.109.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-109-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.110.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-110-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.111.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-111-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.112.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-112-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.113.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-113-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.114.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-114-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.115.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-115-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.116.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-116-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.117.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-117-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.118.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-118-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQMisq1xVxjfp_dakBof6Bs-tb3ab2FNISVac.119.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-119-500-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.0.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-0-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q0Q.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-all-700-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.1.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-1-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.2.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-2-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.3.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-3-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.4.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-4-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.5.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-5-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.6.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-6-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.7.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-7-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.8.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-8-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.9.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-9-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.10.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-10-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.11.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-11-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.12.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-12-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.13.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-13-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.14.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-14-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.15.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-15-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.16.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-16-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.17.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-17-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.18.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-18-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.19.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-19-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.20.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-20-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.21.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-21-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.22.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-22-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.23.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-23-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.24.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-24-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.25.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-25-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.26.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-26-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.27.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-27-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.28.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-28-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.29.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-29-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.30.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-30-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.31.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-31-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.32.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-32-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.33.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-33-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.34.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-34-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.35.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-35-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.36.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-36-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.37.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-37-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.38.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-38-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.39.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-39-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.40.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-40-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.41.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-41-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.42.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-42-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.43.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-43-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.44.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-44-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.45.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-45-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.46.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-46-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.47.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-47-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.48.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-48-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.49.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-49-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.50.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-50-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.51.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-51-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.52.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-52-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.53.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-53-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.54.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-54-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.55.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-55-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.56.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-56-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.57.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-57-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.58.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-58-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.59.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-59-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.60.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-60-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.61.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-61-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.62.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-62-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.63.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-63-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.64.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-64-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.65.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-65-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.66.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-66-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.67.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-67-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.68.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-68-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.69.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-69-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.70.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-70-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.71.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-71-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.72.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-72-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.73.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-73-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.74.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-74-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.75.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-75-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.76.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-76-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.77.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-77-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.78.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-78-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.79.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-79-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.80.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-80-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.81.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-81-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.82.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-82-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.83.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-83-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.84.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-84-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.85.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-85-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.86.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-86-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.87.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-87-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.88.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-88-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.89.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-89-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.90.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-90-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.91.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-91-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.92.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-92-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.93.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-93-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.94.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-94-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.95.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-95-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.96.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-96-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.97.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-97-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.98.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-98-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.99.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-99-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.100.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-100-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.101.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-101-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.102.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-102-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.103.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-103-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.104.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-104-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.105.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-105-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.106.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-106-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.107.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-107-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.108.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-108-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.109.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-109-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.110.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-110-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.111.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-111-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.112.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-112-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.113.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-113-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.114.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-114-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.115.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-115-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.116.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-116-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.117.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-117-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.118.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-118-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQei0q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.119.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-119-700-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.0.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-0-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q0Q.woff",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-all-900-normal.woff"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.1.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-1-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.2.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-2-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.3.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-3-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.4.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-4-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.5.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-5-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.6.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-6-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.7.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-7-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.8.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-8-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.9.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-9-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.10.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-10-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.11.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-11-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.12.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-12-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.13.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-13-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.14.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-14-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.15.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-15-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.16.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-16-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.17.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-17-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.18.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-18-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.19.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-19-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.20.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-20-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.21.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-21-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.22.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-22-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.23.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-23-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.24.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-24-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.25.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-25-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.26.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-26-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.27.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-27-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.28.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-28-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.29.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-29-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.30.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-30-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.31.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-31-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.32.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-32-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.33.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-33-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.34.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-34-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.35.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-35-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.36.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-36-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.37.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-37-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.38.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-38-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.39.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-39-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.40.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-40-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.41.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-41-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.42.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-42-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.43.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-43-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.44.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-44-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.45.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-45-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.46.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-46-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.47.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-47-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.48.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-48-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.49.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-49-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.50.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-50-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.51.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-51-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.52.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-52-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.53.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-53-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.54.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-54-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.55.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-55-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.56.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-56-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.57.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-57-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.58.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-58-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.59.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-59-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.60.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-60-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.61.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-61-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.62.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-62-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.63.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-63-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.64.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-64-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.65.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-65-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.66.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-66-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.67.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-67-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.68.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-68-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.69.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-69-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.70.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-70-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.71.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-71-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.72.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-72-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.73.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-73-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.74.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-74-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.75.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-75-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.76.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-76-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.77.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-77-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.78.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-78-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.79.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-79-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.80.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-80-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.81.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-81-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.82.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-82-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.83.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-83-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.84.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-84-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.85.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-85-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.86.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-86-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.87.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-87-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.88.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-88-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.89.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-89-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.90.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-90-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.91.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-91-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.92.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-92-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.93.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-93-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.94.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-94-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.95.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-95-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.96.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-96-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.97.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-97-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.98.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-98-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.99.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-99-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.100.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-100-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.101.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-101-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.102.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-102-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.103.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-103-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.104.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-104-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.105.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-105-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.106.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-106-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.107.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-107-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.108.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-108-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.109.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-109-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.110.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-110-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.111.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-111-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.112.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-112-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.113.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-113-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.114.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-114-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.115.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-115-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.116.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-116-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.117.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-117-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.118.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-118-900-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notosansjp/v28/-F6pfjtqLzI2JPCgQBnw7HFQQi8q1xVxjfp_dakBof6Bs-tb3ab2FNISVac.119.woff2",
+        "dest": "./packages/noto-sans-jp/files/noto-sans-jp-119-900-normal.woff2"
+      }
+    ]
+  },
+
+  "variableFilter": {
+    "cabin": [
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4x0qWljRw-Pd8___1amg.woff2",
+        "dest": "./packages/cabin/files/cabin-vietnamese-variable-full-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4x0qWljRw-Pd8-__1amg.woff2",
+        "dest": "./packages/cabin/files/cabin-latin-ext-variable-full-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4x0qWljRw-Pd8w__0.woff2",
+        "dest": "./packages/cabin/files/cabin-latin-variable-full-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_BCnhRv.woff2",
+        "dest": "./packages/cabin/files/cabin-vietnamese-variable-full-italic.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_FCnhRv.woff2",
+        "dest": "./packages/cabin/files/cabin-latin-ext-variable-full-italic.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_9Cng.woff2",
+        "dest": "./packages/cabin/files/cabin-latin-variable-full-italic.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4i0qWljRw-PfU81xCKCpdpbgZJl6XvptnsBXw.woff2",
+        "dest": "./packages/cabin/files/cabin-vietnamese-variable-wghtOnly-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvp9nsBXw.woff2",
+        "dest": "./packages/cabin/files/cabin-latin-ext-variable-wghtOnly-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvqdns.woff2",
+        "dest": "./packages/cabin/files/cabin-latin-variable-wghtOnly-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnhHXi-Ag.woff2",
+        "dest": "./packages/cabin/files/cabin-vietnamese-variable-wghtOnly-italic.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OngHXi-Ag.woff2",
+        "dest": "./packages/cabin/files/cabin-latin-ext-variable-wghtOnly-italic.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnuHXg.woff2",
+        "dest": "./packages/cabin/files/cabin-latin-variable-wghtOnly-italic.woff2"
+      }
+    ]
+  }
+}
