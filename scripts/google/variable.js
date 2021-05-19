@@ -13,7 +13,7 @@ module.exports = function (id) {
   }
 
   // Generate CSS
-  const variableName = `${font.family}Variable`
+  const variableName = `${font.family}Variables`
 
   // wghtOnly CSS Generation
   font.styles.forEach(style => {
