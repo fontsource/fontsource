@@ -30,6 +30,10 @@ These will always contain changes from Fontsource's end.
 - Update dependencies. [#207](https://github.com/fontsource/fontsource/pull/207) [#209](https://github.com/fontsource/fontsource/pull/209)
 - Add NPM and GitHub links to each Font Preview page. [#210](https://github.com/fontsource/fontsource/pull/210)
 
+### Miscellaneous
+
+- Add testing and improve local build speeds. [#222](https://github.com/fontsource/fontsource/pull/222)
+
 ## 4.2.x
 
 ### Features
