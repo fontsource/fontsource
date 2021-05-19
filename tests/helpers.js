@@ -18,7 +18,7 @@ const readDirContents = (dirPath, fileNames) => {
       .readFileSync(path.join(dirPath, file))
       .toString()
       // Remove whitespace due to possible diffs
-      .replaceAll(/\s/g, "")
+      .replace(/\s/g, "")
     fileContents.push(content)
   })
   return fileContents
