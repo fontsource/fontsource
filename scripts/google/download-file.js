@@ -168,4 +168,10 @@ const download = (fontId, isVariable) => {
   })
 }
 
-module.exports = { download, gotDownload }
+module.exports = {
+  download,
+  gotDownload,
+  pairGenerator,
+  filterLinks,
+  variableLinks,
+}
