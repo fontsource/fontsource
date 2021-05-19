@@ -56,8 +56,6 @@ describe("Generate Variable CSS", () => {
       fileNames
     )
 
-    console.log(cssContent)
-    console.log(expectedCSSContent)
     expect(cssContent).toEqual(expectedCSSContent)
   })
 
