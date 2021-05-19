@@ -7,7 +7,7 @@ const packagerv1 = require("./packager-v1")
 const packagerv2 = require("./packager-v2")
 const variable = require("./variable")
 const { packageJson } = require("../templates/package")
-const { scssMixins } = require("../templates/scss")
+const { generateSCSS } = require("../templates/scss")
 const { readme } = require("../templates/readme")
 
 module.exports = function (id, force) {
@@ -61,48 +61,7 @@ module.exports = function (id, force) {
 
     // Generate SCSS files
     fs.ensureDirSync(`./${fontDir}/scss`)
-
-    // Make the key value pairs in the required format - subset: (unicodeRangeValues), subset:...
-    const unicodeMap = Object.entries(font.unicodeRange)
-      .map(subArr => {
-        subArr[0] = subArr[0].replace(/[[\]]/g, "")
-        subArr[1] = `(${subArr[1]})`
-        return subArr.join(": ")
-      })
-      .join(", ")
-
-    let scss
-    // Include variable mixins if needed
-    if (variableFlag) {
-      const variableWeight = `${variableMeta.wght.min} ${variableMeta.wght.max}`
-      let variableWdth
-      if ("wdth" in variableMeta) {
-        variableWdth = `${variableMeta.wdth.min}% ${variableMeta.wdth.max}%`
-      } else {
-        variableWdth = "null"
-      }
-
-      scss = scssMixins({
-        fontId: font.id,
-        fontName: font.family,
-        defSubset: font.defSubset,
-        defUnicode: font.unicodeRange[font.defSubset],
-        unicodeMap,
-        variableFlag,
-        variableWeight,
-        variableWdth,
-      })
-    } else {
-      scss = scssMixins({
-        fontId: font.id,
-        fontName: font.family,
-        defSubset: font.defSubset,
-        defUnicode: font.unicodeRange[font.defSubset],
-        unicodeMap,
-        variableFlag,
-      })
-    }
-
+    const scss = generateSCSS(font, variableFlag, variableMeta)
     fs.writeFileSync(`${fontDir}/scss/mixins.scss`, scss)
 
     // Write README.md
