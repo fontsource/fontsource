@@ -1,0 +1,11 @@
+/* abel-latin-400-normal*/
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Abel Regular'),
+    local('Abel-Regular'), url('./files/abel-latin-400-normal.woff2') format('woff2'), url('./files/abel-latin-400-normal.woff') format('woff');
+  
+}

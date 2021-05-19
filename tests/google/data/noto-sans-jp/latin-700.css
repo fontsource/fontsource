@@ -1,0 +1,11 @@
+/* noto-sans-jp-latin-700-normal*/
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Noto Sans Japanese Bold'),
+    local('NotoSansJapanese-Bold'), url('./files/noto-sans-jp-latin-700-normal.woff2') format('woff2'), url('./files/noto-sans-jp-latin-700-normal.woff') format('woff');
+  
+}

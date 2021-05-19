@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-jp",
+  "fontName": "Noto Sans JP",
+  "subsets": ["japanese", "latin"],
+  "weights": ["100", "300", "400", "500", "700", "900"],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2020-11-12",
+  "version": "v28",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
