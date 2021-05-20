@@ -2,36 +2,39 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2020
+    "ecmaVersion": 2021,
+    "project": "./tsconfig.json"
   },
   "env": {
     "commonjs": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
+  "plugins": ["@typescript-eslint", "jest", "promise", "unicorn"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:node/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
+    "airbnb-typescript/base",
     "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
     "plugin:jest/recommended",
     "plugin:prettier/recommended"
   ],
   "rules": {
     "prettier/prettier": "warn",
-    "node/no-unsupported-features/es-syntax": [
-      "error",
-      {
-        "ignores": ["modules"]
-      }
-    ],
-    "node/no-missing-import": [
-      "error",
-      {
-        "tryExtensions": [".js", ".ts"]
-      }
-    ]
+    // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
+    "no-prototype-builtins": "off",
+    // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    // Allow most functions to rely on type inference. If the function is exported, then `@typescript-eslint/explicit-module-boundary-types` will ensure it's typed.
+    "@typescript-eslint/explicit-function-return-type": "off",
+    // Common abbreviations are known and readable
+    "unicorn/prevent-abbreviations": "off",
+    // Airbnb prefers forEach
+    "unicorn/no-array-for-each": "off",
+    // It's not accurate in the monorepo style
+    "import/no-extraneous-dependencies": "off"
   }
 }
