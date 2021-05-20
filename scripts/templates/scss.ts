@@ -1,49 +1,6 @@
-const _ = require("lodash")
-
-// Make the key value pairs in the required format - subset: (unicodeRangeValues), subset:...
-const unicodeMapGen = unicodeRange =>
-  Object.entries(unicodeRange)
-    .map(subArr => {
-      subArr[0] = subArr[0].replace(/[[\]]/g, "")
-      subArr[1] = `(${subArr[1]})`
-      return subArr.join(": ")
-    })
-    .join(", ")
-
-const generateSCSS = (font, variableFlag, variableMeta) => {
-  const unicodeMap = unicodeMapGen(font.unicodeRange)
-
-  // Include variable mixins if needed
-  if (variableFlag) {
-    const variableWeight = `${variableMeta.wght.min} ${variableMeta.wght.max}`
-    let variableWdth
-    if ("wdth" in variableMeta) {
-      variableWdth = `${variableMeta.wdth.min}% ${variableMeta.wdth.max}%`
-    } else {
-      variableWdth = "null"
-    }
-
-    return scssMixins({
-      fontId: font.id,
-      fontName: font.family,
-      defSubset: font.defSubset,
-      defUnicode: font.unicodeRange[font.defSubset],
-      unicodeMap,
-      variableFlag,
-      variableWeight,
-      variableWdth,
-    })
-  } else {
-    return scssMixins({
-      fontId: font.id,
-      fontName: font.family,
-      defSubset: font.defSubset,
-      defUnicode: font.unicodeRange[font.defSubset],
-      unicodeMap,
-      variableFlag,
-    })
-  }
-}
+/* eslint-disable no-param-reassign */
+import * as _ from "lodash";
+import { APIv2, APIVariable } from "google-font-metadata";
 
 const scssMixins = _.template(
   `$fontName: "<%= fontName %>";
@@ -163,7 +120,7 @@ $woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-variable-#{$type}-#{$style}.wo
   }
 }<% } %>
 `
-)
+);
 
 const scssGeneric = _.template(
   `$fontName: "<%= fontName %>";
@@ -200,6 +157,54 @@ $unicodeRangeValues: null;
   }
 }
 `
-)
+);
 
-module.exports = { scssMixins, scssGeneric, generateSCSS, unicodeMapGen }
+export interface UnicodeRange {
+  [subset: string]: string;
+}
+// Make the key value pairs in the required format - subset: (unicodeRangeValues), subset:...
+const unicodeMapGen = (unicodeRange: UnicodeRange): string =>
+  Object.entries(unicodeRange)
+    .map(subArr => {
+      subArr[0] = subArr[0].replace(/[[\]]/g, "");
+      subArr[1] = `(${subArr[1]})`;
+      return subArr.join(": ");
+    })
+    .join(", ");
+
+const generateSCSS = (id: string, variableFlag: boolean): string => {
+  const font = APIv2[id];
+  const unicodeMap = unicodeMapGen(font.unicodeRange);
+
+  // Include variable mixins if needed
+  if (variableFlag) {
+    const variableMeta = APIVariable[font.id].axes;
+    const variableWeight = `${variableMeta.wght.min} ${variableMeta.wght.max}`;
+    const variableWdth =
+      "wdth" in variableMeta
+        ? `${variableMeta.wdth.min}% ${variableMeta.wdth.max}%`
+        : "null";
+
+    return scssMixins({
+      fontId: font.id,
+      fontName: font.family,
+      defSubset: font.defSubset,
+      defUnicode: font.unicodeRange[font.defSubset],
+      unicodeMap,
+      variableFlag,
+      variableWeight,
+      variableWdth,
+    });
+  }
+
+  return scssMixins({
+    fontId: font.id,
+    fontName: font.family,
+    defSubset: font.defSubset,
+    defUnicode: font.unicodeRange[font.defSubset],
+    unicodeMap,
+    variableFlag,
+  });
+};
+
+export { scssMixins, scssGeneric, generateSCSS, unicodeMapGen };

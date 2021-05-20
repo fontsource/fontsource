@@ -1,21 +1,24 @@
-const fs = require("fs-extra")
-const { APIv2 } = require("google-font-metadata")
+import fs from "fs-extra";
+import { APIv2 } from "google-font-metadata";
 
-const { fontFace } = require("../templates/css")
-const { makeFontFilePath, findClosest } = require("../utils/utils")
+import { fontFace } from "../templates/css";
+import { makeFontFilePath, findClosest } from "../utils/utils";
 
-module.exports = function (id) {
-  const font = APIv2[id]
-  const fontDir = `packages/${font.id}`
+const packagerV2 = (id: string): void => {
+  const font = APIv2[id];
+  const fontDir = `packages/${font.id}`;
+
   // Find the weight for index.css in the case weight 400 does not exist.
-  const indexWeight = findClosest(font.weights, 400)
+  // Convert to number since google-font-metadata has weight nums in string
+  const weightArr = font.weights.map(weight => Number(weight));
+  const indexWeight = findClosest(weightArr, 400);
 
   // Generate CSS
-  const unicodeKeys = Object.keys(font.unicodeRange)
+  const unicodeKeys = Object.keys(font.unicodeRange);
 
   font.weights.forEach(weight => {
     font.styles.forEach(style => {
-      const cssStyle = []
+      const cssStyle: string[] = [];
       unicodeKeys.forEach(subset => {
         // Some fonts may have variants 400, 400i, 700 but not 700i.
         if (style in font.variants[weight]) {
@@ -35,26 +38,28 @@ module.exports = function (id) {
             ),
             woffPath: makeFontFilePath(font.id, "all", weight, style, "woff"),
             unicodeRange: font.unicodeRange[subset],
-          })
-          cssStyle.push(css)
+          });
+          cssStyle.push(css);
         }
-      })
+      });
       // Write down CSS
       if (style in font.variants[weight]) {
         if (style === "normal") {
-          const cssPath = `${fontDir}/${weight}.css`
-          fs.writeFileSync(cssPath, cssStyle.join(""))
+          const cssPath = `${fontDir}/${weight}.css`;
+          fs.writeFileSync(cssPath, cssStyle.join(""));
 
           // Generate index CSS
           if (weight === indexWeight) {
-            fs.writeFileSync(`${fontDir}/index.css`, cssStyle.join(""))
+            fs.writeFileSync(`${fontDir}/index.css`, cssStyle.join(""));
           }
         } else {
           // If italic or else, define specific style CSS file
-          const cssStylePath = `${fontDir}/${weight}-${style}.css`
-          fs.writeFileSync(cssStylePath, cssStyle.join(""))
+          const cssStylePath = `${fontDir}/${weight}-${style}.css`;
+          fs.writeFileSync(cssStylePath, cssStyle.join(""));
         }
       }
-    })
-  })
-}
+    });
+  });
+};
+
+export { packagerV2 };

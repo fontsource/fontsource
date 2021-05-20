@@ -1,13 +1,12 @@
-const fs = require(`fs-extra`)
-const jsonfile = require(`jsonfile`)
-
-const { directories } = require("./utils")
+import fs from "fs-extra";
+import jsonfile from "jsonfile";
+import { directories } from "./utils";
 
 directories.forEach(directory => {
-  const fontDir = `./packages/${directory}`
-  const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`)
-  const packageJSON = jsonfile.readFileSync(`${fontDir}/package.json`)
-  fs.removeSync(`${fontDir}/package.json`)
+  const fontDir = `./packages/${directory}`;
+  const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
+  const packageJSON = jsonfile.readFileSync(`${fontDir}/package.json`);
+  fs.removeSync(`${fontDir}/package.json`);
   jsonfile.writeFileSync(`${fontDir}/package.json`, {
     name: packageJSON.name,
     version: packageJSON.version,
@@ -25,5 +24,5 @@ directories.forEach(directory => {
       url: "https://github.com/fontsource/fontsource.git",
       directory: `packages/${metadata.fontId}`,
     },
-  })
-})
+  });
+});

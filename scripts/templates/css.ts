@@ -1,6 +1,6 @@
-const _ = require("lodash")
+import * as _ from "lodash";
 
-exports.fontFace = _.template(
+const fontFace = _.template(
   `/* <%= fontId %>-<%= subset %>-<%= weight %>-<%= style %>*/
 @font-face {
   font-family: '<%= fontName %>';
@@ -13,9 +13,9 @@ exports.fontFace = _.template(
   <% if (unicodeRange) { %>unicode-range: <%= unicodeRange %>;<% } %>
 }
 `
-)
+);
 
-exports.fontFaceVariable = _.template(
+const fontFaceVariable = _.template(
   `/* <%= fontId %>-<%= subset %>-variable-<%= type %>-<%= style %> */
 @font-face {
   font-family: '<%= fontName %>';
@@ -26,9 +26,9 @@ exports.fontFaceVariable = _.template(
   unicode-range: <%= unicodeRange %>;
 }  
 `
-)
+);
 
-exports.fontFaceVariableWdth = _.template(
+const fontFaceVariableWdth = _.template(
   `/* <%= fontId %>-<%= subset %>-variable-<%= type %>-<%= style %> */
 @font-face {
   font-family: '<%= fontName %>';
@@ -40,4 +40,6 @@ exports.fontFaceVariableWdth = _.template(
   unicode-range: <%= unicodeRange %>;
 }  
 `
-)
+);
+
+export { fontFace, fontFaceVariable, fontFaceVariableWdth };
