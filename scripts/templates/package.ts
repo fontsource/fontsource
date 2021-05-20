@@ -1,6 +1,6 @@
-const _ = require("lodash")
+import * as _ from "lodash";
 
-exports.packageJson = _.template(
+const packageJson = _.template(
   `{
   "name": "@fontsource/<%= fontId %>",
   "version": "<%= version %>",
@@ -32,4 +32,6 @@ exports.packageJson = _.template(
   }
 }
 `
-)
+);
+
+export { packageJson };

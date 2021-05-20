@@ -1,6 +1,6 @@
-const _ = require("lodash")
+import * as _ from "lodash";
 
-exports.materialIcons = _.template(
+const materialIcons = _.template(
   `.<%= fontId %> {
   font-family: '<%= fontName %>';
   font-weight: normal;
@@ -17,4 +17,6 @@ exports.materialIcons = _.template(
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
 }`
-)
+);
+
+export { materialIcons };

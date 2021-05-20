@@ -1,8 +1,9 @@
-jest.mock("google-font-metadata")
-const mock = require("mock-fs")
-const { readDir, readDirContents } = require("../helpers")
+import mock from "mock-fs";
 
-const packagerV1 = require("../../scripts/google/packager-v1")
+import { readDir, readDirContents } from "../helpers";
+import { packagerV1 } from "../../scripts/google/packager-v1";
+
+jest.mock("google-font-metadata");
 
 describe("Generate V1 CSS", () => {
   beforeEach(() => {
@@ -18,29 +19,29 @@ describe("Generate V1 CSS", () => {
           /* Empty directory */
         },
       },
-    })
-  })
+    });
+  });
 
   test("Abel CSS", () => {
-    packagerV1("abel")
-    const dirPath = "./packages/abel"
-    const fileNames = readDir(dirPath)
+    packagerV1("abel");
+    const dirPath = "./packages/abel";
+    const fileNames = readDir(dirPath);
 
-    expect(fileNames).toEqual(["latin-400.css", "latin.css"])
+    expect(fileNames).toEqual(["latin-400.css", "latin.css"]);
 
-    const cssContent = readDirContents(dirPath, fileNames)
-    mock.restore()
+    const cssContent = readDirContents(dirPath, fileNames);
+    mock.restore();
     const expectedCSSContent = readDirContents(
       "./tests/google/data/abel",
       fileNames
-    )
-    expect(cssContent).toEqual(expectedCSSContent)
-  })
+    );
+    expect(cssContent).toEqual(expectedCSSContent);
+  });
 
   test("Cabin CSS", () => {
-    packagerV1("cabin")
-    const dirPath = "./packages/cabin"
-    const fileNames = readDir(dirPath)
+    packagerV1("cabin");
+    const dirPath = "./packages/cabin";
+    const fileNames = readDir(dirPath);
 
     expect(fileNames).toEqual([
       "latin-400-italic.css",
@@ -70,21 +71,21 @@ describe("Generate V1 CSS", () => {
       "vietnamese-700-italic.css",
       "vietnamese-700.css",
       "vietnamese.css",
-    ])
+    ]);
 
-    const cssContent = readDirContents(dirPath, fileNames)
-    mock.restore()
+    const cssContent = readDirContents(dirPath, fileNames);
+    mock.restore();
     const expectedCSSContent = readDirContents(
       "./tests/google/data/cabin",
       fileNames
-    )
-    expect(cssContent).toEqual(expectedCSSContent)
-  })
+    );
+    expect(cssContent).toEqual(expectedCSSContent);
+  });
 
   test("Noto Sans JP CSS", () => {
-    packagerV1("noto-sans-jp")
-    const dirPath = "./packages/noto-sans-jp"
-    const fileNames = readDir(dirPath)
+    packagerV1("noto-sans-jp");
+    const dirPath = "./packages/noto-sans-jp";
+    const fileNames = readDir(dirPath);
 
     expect(fileNames).toEqual([
       "japanese-100.css",
@@ -101,18 +102,18 @@ describe("Generate V1 CSS", () => {
       "latin-700.css",
       "latin-900.css",
       "latin.css",
-    ])
+    ]);
 
-    const cssContent = readDirContents(dirPath, fileNames)
-    mock.restore()
+    const cssContent = readDirContents(dirPath, fileNames);
+    mock.restore();
     const expectedCSSContent = readDirContents(
       "./tests/google/data/noto-sans-jp",
       fileNames
-    )
-    expect(cssContent).toEqual(expectedCSSContent)
-  })
+    );
+    expect(cssContent).toEqual(expectedCSSContent);
+  });
 
   afterEach(() => {
-    mock.restore()
-  })
-})
+    mock.restore();
+  });
+});

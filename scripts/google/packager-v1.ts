@@ -1,16 +1,16 @@
-const fs = require("fs-extra")
-const { APIv1 } = require("google-font-metadata")
+import fs from "fs-extra";
+import { APIv1 } from "google-font-metadata";
 
-const { fontFace } = require("../templates/css")
-const { makeFontFilePath } = require("../utils/utils.js")
+import { fontFace } from "../templates/css";
+import { makeFontFilePath } from "../utils/utils";
 
-module.exports = function (id) {
-  const font = APIv1[id]
-  const fontDir = `packages/${font.id}`
+const packagerV1 = (id: string): void => {
+  const font = APIv1[id];
+  const fontDir = `packages/${font.id}`;
 
   // Generate CSS
   font.subsets.forEach(subset => {
-    const cssSubset = []
+    const cssSubset: string[] = [];
     font.weights.forEach(weight => {
       font.styles.forEach(style => {
         // Some fonts may have variants 400, 400i, 700 but not 700i.
@@ -31,23 +31,25 @@ module.exports = function (id) {
             ),
             woffPath: makeFontFilePath(font.id, subset, weight, style, "woff"),
             unicodeRange: false,
-          })
+          });
 
           if (style === "normal") {
-            const cssPath = `${fontDir}/${subset}-${weight}.css`
-            fs.writeFileSync(cssPath, css)
+            const cssPath = `${fontDir}/${subset}-${weight}.css`;
+            fs.writeFileSync(cssPath, css);
 
             // Should only push normal variants into subset
-            cssSubset.push(css)
+            cssSubset.push(css);
           } else {
             // If italic or else, define specific style CSS file
-            const cssStylePath = `${fontDir}/${subset}-${weight}-${style}.css`
-            fs.writeFileSync(cssStylePath, css)
+            const cssStylePath = `${fontDir}/${subset}-${weight}-${style}.css`;
+            fs.writeFileSync(cssStylePath, css);
           }
         }
-      })
-    })
-    const cssSubsetPath = `${fontDir}/${subset}.css`
-    fs.writeFileSync(cssSubsetPath, cssSubset.join(""))
-  })
-}
+      });
+    });
+    const cssSubsetPath = `${fontDir}/${subset}.css`;
+    fs.writeFileSync(cssSubsetPath, cssSubset.join(""));
+  });
+};
+
+export { packagerV1 };
