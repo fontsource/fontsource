@@ -33,6 +33,7 @@ These will always contain changes from Fontsource's end.
 ### Miscellaneous
 
 - Add testing and improve local build speeds. [#222](https://github.com/fontsource/fontsource/pull/222)
+- Typescript Migration. [#229](https://github.com/fontsource/fontsource/pull/229)
 
 ## 4.2.x
 
