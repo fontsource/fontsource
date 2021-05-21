@@ -4,7 +4,10 @@ import path from "path";
 const readDir = (dirPath: string): string[] => {
   const fileArr: string[] = [];
   fs.readdirSync(dirPath).forEach(file => {
-    fileArr.push(file);
+    const extension = file.split(".")[1];
+    if (extension === "css" || extension === "scss") {
+      fileArr.push(file);
+    }
   });
 
   return fileArr;

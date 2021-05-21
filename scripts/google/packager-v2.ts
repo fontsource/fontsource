@@ -49,7 +49,7 @@ const packagerV2 = (id: string): void => {
           fs.writeFileSync(cssPath, cssStyle.join(""));
 
           // Generate index CSS
-          if (weight === indexWeight) {
+          if (Number(weight) === indexWeight) {
             fs.writeFileSync(`${fontDir}/index.css`, cssStyle.join(""));
           }
         } else {

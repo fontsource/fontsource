@@ -41,13 +41,13 @@ describe("Font paths", () => {
 
 describe("Find closest available weights", () => {
   test("400 is available", () => {
-    expect(findClosest([300, 400, 500], 400)).toBe("400");
+    expect(findClosest([300, 400, 500], 400)).toBe(400);
   });
 
   test("400 is not available", () => {
     // Rounds down by default
-    expect(findClosest([200, 300, 500, 600], 400)).toBe("300");
-    expect(findClosest([200], 400)).toBe("200");
-    expect(findClosest([200, 500], 400)).toBe("500");
+    expect(findClosest([200, 300, 500, 600], 400)).toBe(300);
+    expect(findClosest([200], 400)).toBe(200);
+    expect(findClosest([200, 500], 400)).toBe(500);
   });
 });

@@ -6,13 +6,13 @@
 const config = {
   fontId: "",
   fontName: "",
-  defaultSubset: "latin",
+  defSubset: "latin",
   unicoderange: "null",
   version: "",
   category: "",
   sourcelink: "",
   licenselink: "",
   type: "other",
-}
+};
 
-module.exports = config
+export { config };
