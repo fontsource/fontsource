@@ -12,9 +12,9 @@ fs.ensureDirSync("packages");
 fs.ensureDirSync("scripts/temp_packages");
 
 // Create an async queue object
-const processQueue = (fontid: string, cb: () => void) => {
-  console.log(`Downloading ${fontid}`);
-  run(fontid, force);
+const processQueue = (fontId: string, cb: () => void) => {
+  console.log(`Downloading ${fontId}`);
+  run(fontId, force);
   cb();
 };
 
@@ -38,18 +38,21 @@ queue.error((err, fontid) => {
 
 // Testing
 /* const development = () => {
-  queue.push("recursive")
-  queue.push("texturina")
-  queue.push("cabin")
-  queue.push("actor")
-  queue.push("abel")
-  queue.push("noto-sans-jp")
-  queue.push("noto-sans-tc")
-  queue.push("noto-sans-sc")
-  queue.push("noto-sans-kr")
-  queue.push("zilla-slab-highlight")
-}
-development() */
+  const fonts = [
+    "recursive",
+    "texturina",
+    "cabin",
+    "actor",
+    "abel",
+    "noto-sans-jp",
+    "noto-sans-tc",
+    "noto-sans-sc",
+    "noto-sans-kr",
+    "zilla-slab-highlight",
+  ];
+  fonts.forEach(font => queue.push(font));
+};
+development(); */
 
 // Production
 const production = () => {
