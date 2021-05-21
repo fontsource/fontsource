@@ -117,7 +117,6 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
       const cssPath = `${fontDir}/${subset}.css`;
       fs.writeFileSync(cssPath, fileContentSubset);
     });
-    console.log("Created CSS files.");
   });
 
   // Write SCSS file
