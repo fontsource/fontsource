@@ -42,12 +42,12 @@ const makeVariableFontFilePath = (
 };
 
 // Insert a weight array to find the closest number given num - used for index.css gen
-const findClosest = (arr: number[], num: number): string => {
+const findClosest = (arr: number[], num: number): number => {
   // Array of absolute values showing diff from target number
   const indexArr = arr.map(weight => Math.abs(Number(weight) - num));
   // Find smallest diff
   const min = Math.min(...indexArr);
-  const closest = String(arr[indexArr.indexOf(min)]);
+  const closest = arr[indexArr.indexOf(min)];
 
   return closest;
 };

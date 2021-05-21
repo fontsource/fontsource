@@ -46,7 +46,7 @@
   },
   "scripts": {
     "format": "yarn format:prettier && yarn format:eslint",
-    "format:scripts": "prettier --write ./scripts/**/*.{js,jsx,ts,tsx,json,md}",
+    "format:scripts": "prettier --write ./scripts/**/*.{js,jsx,ts,tsx,json,md} && prettier --write ./tests/**/*.{js,jsx,ts,tsx,json,md}",
     "format:eslint": "eslint **/*.{js,jsx,ts,tsx} --fix",
     "format:prettier": "prettier --write **/*.{js,jsx,ts,tsx,json,md}",
     "build:generic": "ts-node scripts/generic/build.js",
