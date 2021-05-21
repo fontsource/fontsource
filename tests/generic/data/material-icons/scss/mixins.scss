@@ -1,0 +1,49 @@
+$fontName: "Material Icons";
+$fontId: "material-icons";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+$woff2Path: "#{$fontDir}/#{$fontId}-base-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-base-#{$weight}-#{$style}.woff";
+$unicodeRange: false;
+$unicodeRangeValues: null;
+
+@mixin fontFaceCustom(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $woff2Path: $woff2Path,
+  $woffPath: $woffPath,
+  $unicodeRange: $unicodeRange,
+  $unicodeRangeValues: $unicodeRangeValues
+) {
+  @font-face {
+    font-family: "#{$fontName}";
+    font-style: $style;
+    font-display: $display;
+    font-weight: $weight;
+    src: url("#{$woff2Path}") format("woff2"), url("#{$woffPath}") format("woff");
+    @if $unicodeRange {
+      unicode-range: $unicodeRangeValues;
+    }
+  }
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
