@@ -193,8 +193,6 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
     });
   }
   fs.writeFileSync(`${fontDir}/package.json`, packageJSON);
-
-  console.log(`Finished processing ${fontId}.`);
 };
 
 export { packager };

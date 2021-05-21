@@ -40,5 +40,7 @@ directories.forEach(directory => {
 
     // Generate files (true for rebuildFlag)
     packager(fontObject, true);
+
+    console.log(`Finished processing ${metadata.fontId}.`);
   }
 });
