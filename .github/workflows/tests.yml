@@ -1,9 +1,13 @@
-name: Tests
+name: Packager Tests
 on:
   pull_request:
     branches: [main]
+      paths-ignore:
+        - 'website/**'
   push:
     branches: [main]
+      paths-ignore:
+        - 'website/**'
 
 jobs:
   build:
