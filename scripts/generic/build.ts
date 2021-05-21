@@ -76,4 +76,6 @@ glob(`${fontFileDir}/**/*.woff2`, {}, (err, files) => {
 
   // Generate files (false for rebuildFlag)
   packager(fontObject, false);
+
+  console.log(`Finished processing ${fontId}.`);
 });
