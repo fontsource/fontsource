@@ -10,36 +10,40 @@ import { packageJson } from "../templates/package";
 import { generateSCSS } from "../templates/scss";
 import { readme } from "../templates/readme";
 
-const run = (id: string, force: string): void => {
+const run = async (id: string, force: string): Promise<void> => {
   const font = APIv2[id];
 
   // Set file directories
   const fontDir = `packages/${font.id}`;
-  fs.ensureDirSync(fontDir);
+  await fs.ensureDir(fontDir);
 
   // Update checking
   let changed = false;
 
-  if (fs.existsSync(`${fontDir}/metadata.json`)) {
+  try {
+    await fs.access(`${fontDir}/metadata.json`);
     const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
     changed = metadata.lastModified !== font.lastModified;
-  } else {
+  } catch {
     changed = true;
   }
 
   if (changed || force === "force") {
     // Wipe old font files preserving package.json
-    if (fs.existsSync(`${fontDir}/package.json`)) {
-      fs.copySync(
+    try {
+      await fs.access(`${fontDir}/package.json`);
+      await fs.copy(
         `./${fontDir}/package.json`,
         `./scripts/temp_packages/${font.id}-package.json`
       );
-      fs.emptyDirSync(fontDir);
-      fs.copySync(
+      await fs.emptyDir(fontDir);
+      await fs.copy(
         `./scripts/temp_packages/${font.id}-package.json`,
         `./${fontDir}/package.json`
       );
-      fs.removeSync(`./scripts/temp_packages/${font.id}-package.json`);
+      await fs.remove(`./scripts/temp_packages/${font.id}-package.json`);
+    } catch {
+      // Continue regardless of error
     }
 
     interface Axes {
@@ -61,16 +65,16 @@ const run = (id: string, force: string): void => {
     }
 
     // Download files
-    download(font.id, variableFlag);
+    await download(font.id, variableFlag);
 
     // Generate CSS files
     packagerV1(font.id);
     packagerV2(font.id);
 
     // Generate SCSS files
-    fs.ensureDirSync(`./${fontDir}/scss`);
+    await fs.ensureDir(`./${fontDir}/scss`);
     const scss = generateSCSS(font.id, variableFlag);
-    fs.writeFileSync(`${fontDir}/scss/mixins.scss`, scss);
+    await fs.writeFile(`${fontDir}/scss/mixins.scss`, scss);
 
     // Write README.md
     const packageReadme = readme({
@@ -84,11 +88,13 @@ const run = (id: string, force: string): void => {
       type: "google",
     });
 
-    fs.writeFileSync(`${fontDir}/README.md`, packageReadme);
+    await fs.writeFile(`${fontDir}/README.md`, packageReadme);
 
     // Don't create package.json if already exists to prevent lerna versioning conflicts
-    if (!fs.existsSync(`${fontDir}/package.json`)) {
-      const mainRepoPackageJson = jsonfile.readFileSync("./package.json");
+    try {
+      await fs.access(`${fontDir}/package.json`);
+    } catch {
+      const mainRepoPackageJson = await jsonfile.readFile("./package.json");
       // Write out package.json file
       const packageJSON = packageJson({
         fontId: font.id,
@@ -96,11 +102,11 @@ const run = (id: string, force: string): void => {
         version: mainRepoPackageJson.version,
       });
 
-      fs.writeFileSync(`${fontDir}/package.json`, packageJSON);
+      await fs.writeFile(`${fontDir}/package.json`, packageJSON);
     }
 
     // Write metadata.json
-    jsonfile.writeFileSync(`${fontDir}/metadata.json`, {
+    await jsonfile.writeFile(`${fontDir}/metadata.json`, {
       fontId: font.id,
       fontName: font.family,
       subsets: font.subsets,
@@ -117,10 +123,8 @@ const run = (id: string, force: string): void => {
     });
 
     // Copy CHANGELOG.md over from main repo
-    fs.copySync(`./CHANGELOG.md`, `${fontDir}/CHANGELOG.md`);
+    await fs.copy(`./CHANGELOG.md`, `${fontDir}/CHANGELOG.md`);
   }
-
-  console.log(`Finished processing ${font.id}`);
 };
 
 export { run };

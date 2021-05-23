@@ -5,6 +5,7 @@ import fs from "fs-extra";
 import isAbsoluteUrl from "is-absolute-url";
 import { APIv1, APIv2, APIVariable } from "google-font-metadata";
 import got from "got";
+import { EventEmitter } from "events";
 
 import {
   makeFontDownloadPath,
@@ -178,23 +179,33 @@ const variableLinks = (fontId: string): DownloadLinks[] => {
   return links;
 };
 
-const download = (fontId: string, isVariable: boolean): void => {
+const downloadQueue = async (d: DownloadLinks, cb: () => void) => {
+  const { url, dest } = d;
+  await gotDownload(url, dest);
+  cb();
+};
+
+EventEmitter.defaultMaxListeners = 0;
+const queue = async.queue(downloadQueue, 60);
+
+const download = async (fontId: string, isVariable: boolean): Promise<void> => {
   const fontDir = `packages/${fontId}`;
 
-  fs.ensureDirSync(`./${fontDir}/files`);
+  await fs.ensureDir(`./${fontDir}/files`);
 
-  const links = filterLinks(fontId);
+  const links = await filterLinks(fontId);
   // Add variable font URLs to the links array
   if (isVariable) {
-    const variable = variableLinks(fontId);
+    const variable = await variableLinks(fontId);
     variable.forEach(link => links.push(link));
   }
 
   // Download all font files
-  async.map(links, d => {
-    const { url, dest } = d;
-    gotDownload(url, dest);
-  });
+  for (const d of links) {
+    queue.push(d);
+  }
+
+  await queue.drain();
 };
 
 export { download, gotDownload, pairGenerator, filterLinks, variableLinks };
