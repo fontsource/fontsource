@@ -15,7 +15,7 @@ yarn add @fontsource/source-code-pro // npm install @fontsource/source-code-pro
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/source-code-pro" // Defaults to weight 400.
+import "@fontsource/source-code-pro"; // Defaults to weight 400.
 ```
 
 Supported variables:

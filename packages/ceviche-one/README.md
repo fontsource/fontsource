@@ -15,7 +15,7 @@ yarn add @fontsource/ceviche-one // npm install @fontsource/ceviche-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ceviche-one" // Defaults to weight 400.
+import "@fontsource/ceviche-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

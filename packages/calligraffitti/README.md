@@ -15,7 +15,7 @@ yarn add @fontsource/calligraffitti // npm install @fontsource/calligraffitti
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/calligraffitti" // Defaults to weight 400.
+import "@fontsource/calligraffitti"; // Defaults to weight 400.
 ```
 
 Supported variables:

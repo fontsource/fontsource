@@ -15,7 +15,7 @@ yarn add @fontsource/noto-serif-jp // npm install @fontsource/noto-serif-jp
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/noto-serif-jp" // Defaults to weight 400.
+import "@fontsource/noto-serif-jp"; // Defaults to weight 400.
 ```
 
 Supported variables:

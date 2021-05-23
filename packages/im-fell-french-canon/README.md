@@ -15,7 +15,7 @@ yarn add @fontsource/im-fell-french-canon // npm install @fontsource/im-fell-fre
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/im-fell-french-canon" // Defaults to weight 400.
+import "@fontsource/im-fell-french-canon"; // Defaults to weight 400.
 ```
 
 Supported variables:

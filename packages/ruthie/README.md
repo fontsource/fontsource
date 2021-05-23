@@ -15,7 +15,7 @@ yarn add @fontsource/ruthie // npm install @fontsource/ruthie
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ruthie" // Defaults to weight 400.
+import "@fontsource/ruthie"; // Defaults to weight 400.
 ```
 
 Supported variables:

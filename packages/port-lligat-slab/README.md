@@ -15,7 +15,7 @@ yarn add @fontsource/port-lligat-slab // npm install @fontsource/port-lligat-sla
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/port-lligat-slab" // Defaults to weight 400.
+import "@fontsource/port-lligat-slab"; // Defaults to weight 400.
 ```
 
 Supported variables:

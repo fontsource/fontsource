@@ -15,7 +15,7 @@ yarn add @fontsource/snowburst-one // npm install @fontsource/snowburst-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/snowburst-one" // Defaults to weight 400.
+import "@fontsource/snowburst-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

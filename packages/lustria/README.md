@@ -15,7 +15,7 @@ yarn add @fontsource/lustria // npm install @fontsource/lustria
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lustria" // Defaults to weight 400.
+import "@fontsource/lustria"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/andada // npm install @fontsource/andada
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/andada" // Defaults to weight 400.
+import "@fontsource/andada"; // Defaults to weight 400.
 ```
 
 Supported variables:

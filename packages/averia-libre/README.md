@@ -15,7 +15,7 @@ yarn add @fontsource/averia-libre // npm install @fontsource/averia-libre
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/averia-libre" // Defaults to weight 400.
+import "@fontsource/averia-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

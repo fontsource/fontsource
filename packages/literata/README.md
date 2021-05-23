@@ -15,7 +15,7 @@ yarn add @fontsource/literata // npm install @fontsource/literata
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/literata" // Defaults to weight 400.
+import "@fontsource/literata"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/nova-cut // npm install @fontsource/nova-cut
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nova-cut" // Defaults to weight 400.
+import "@fontsource/nova-cut"; // Defaults to weight 400.
 ```
 
 Supported variables:

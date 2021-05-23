@@ -15,7 +15,7 @@ yarn add @fontsource/petrona // npm install @fontsource/petrona
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/petrona" // Defaults to weight 400.
+import "@fontsource/petrona"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/sunshiney // npm install @fontsource/sunshiney
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sunshiney" // Defaults to weight 400.
+import "@fontsource/sunshiney"; // Defaults to weight 400.
 ```
 
 Supported variables:

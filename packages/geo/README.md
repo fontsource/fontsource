@@ -15,7 +15,7 @@ yarn add @fontsource/geo // npm install @fontsource/geo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/geo" // Defaults to weight 400.
+import "@fontsource/geo"; // Defaults to weight 400.
 ```
 
 Supported variables:

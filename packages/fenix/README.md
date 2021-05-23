@@ -15,7 +15,7 @@ yarn add @fontsource/fenix // npm install @fontsource/fenix
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fenix" // Defaults to weight 400.
+import "@fontsource/fenix"; // Defaults to weight 400.
 ```
 
 Supported variables:

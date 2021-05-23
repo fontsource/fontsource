@@ -15,7 +15,7 @@ yarn add @fontsource/miltonian-tattoo // npm install @fontsource/miltonian-tatto
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/miltonian-tattoo" // Defaults to weight 400.
+import "@fontsource/miltonian-tattoo"; // Defaults to weight 400.
 ```
 
 Supported variables:

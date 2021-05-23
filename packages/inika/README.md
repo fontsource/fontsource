@@ -15,7 +15,7 @@ yarn add @fontsource/inika // npm install @fontsource/inika
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/inika" // Defaults to weight 400.
+import "@fontsource/inika"; // Defaults to weight 400.
 ```
 
 Supported variables:

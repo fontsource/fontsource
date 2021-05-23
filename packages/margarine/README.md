@@ -15,7 +15,7 @@ yarn add @fontsource/margarine // npm install @fontsource/margarine
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/margarine" // Defaults to weight 400.
+import "@fontsource/margarine"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/expletus-sans // npm install @fontsource/expletus-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/expletus-sans" // Defaults to weight 400.
+import "@fontsource/expletus-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

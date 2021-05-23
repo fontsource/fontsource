@@ -15,7 +15,7 @@ yarn add @fontsource/blackout-sunrise // npm install @fontsource/blackout-sunris
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/blackout-sunrise" // Defaults to weight 400.
+import "@fontsource/blackout-sunrise"; // Defaults to weight 400.
 ```
 
 Supported variables:

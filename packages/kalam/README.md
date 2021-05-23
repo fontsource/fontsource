@@ -15,7 +15,7 @@ yarn add @fontsource/kalam // npm install @fontsource/kalam
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kalam" // Defaults to weight 400.
+import "@fontsource/kalam"; // Defaults to weight 400.
 ```
 
 Supported variables:

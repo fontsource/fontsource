@@ -15,7 +15,7 @@ yarn add @fontsource/karma // npm install @fontsource/karma
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/karma" // Defaults to weight 400.
+import "@fontsource/karma"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/rationale // npm install @fontsource/rationale
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rationale" // Defaults to weight 400.
+import "@fontsource/rationale"; // Defaults to weight 400.
 ```
 
 Supported variables:

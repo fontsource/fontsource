@@ -15,7 +15,7 @@ yarn add @fontsource/arapey // npm install @fontsource/arapey
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/arapey" // Defaults to weight 400.
+import "@fontsource/arapey"; // Defaults to weight 400.
 ```
 
 Supported variables:

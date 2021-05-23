@@ -15,7 +15,7 @@ yarn add @fontsource/lexend-tera // npm install @fontsource/lexend-tera
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lexend-tera" // Defaults to weight 400.
+import "@fontsource/lexend-tera"; // Defaults to weight 400.
 ```
 
 Supported variables:

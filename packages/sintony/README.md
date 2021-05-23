@@ -15,7 +15,7 @@ yarn add @fontsource/sintony // npm install @fontsource/sintony
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sintony" // Defaults to weight 400.
+import "@fontsource/sintony"; // Defaults to weight 400.
 ```
 
 Supported variables:

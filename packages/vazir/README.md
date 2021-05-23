@@ -15,7 +15,7 @@ yarn add @fontsource/vazir // npm install @fontsource/vazir
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vazir" // Defaults to weight 400.
+import "@fontsource/vazir"; // Defaults to weight 400.
 ```
 
 Supported variables:

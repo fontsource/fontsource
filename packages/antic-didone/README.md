@@ -15,7 +15,7 @@ yarn add @fontsource/antic-didone // npm install @fontsource/antic-didone
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/antic-didone" // Defaults to weight 400.
+import "@fontsource/antic-didone"; // Defaults to weight 400.
 ```
 
 Supported variables:

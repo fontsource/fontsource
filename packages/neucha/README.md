@@ -15,7 +15,7 @@ yarn add @fontsource/neucha // npm install @fontsource/neucha
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/neucha" // Defaults to weight 400.
+import "@fontsource/neucha"; // Defaults to weight 400.
 ```
 
 Supported variables:

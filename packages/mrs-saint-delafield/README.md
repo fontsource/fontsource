@@ -15,7 +15,7 @@ yarn add @fontsource/mrs-saint-delafield // npm install @fontsource/mrs-saint-de
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mrs-saint-delafield" // Defaults to weight 400.
+import "@fontsource/mrs-saint-delafield"; // Defaults to weight 400.
 ```
 
 Supported variables:

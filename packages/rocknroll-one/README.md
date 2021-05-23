@@ -15,7 +15,7 @@ yarn add @fontsource/rocknroll-one // npm install @fontsource/rocknroll-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rocknroll-one" // Defaults to weight 400.
+import "@fontsource/rocknroll-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

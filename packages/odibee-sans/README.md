@@ -15,7 +15,7 @@ yarn add @fontsource/odibee-sans // npm install @fontsource/odibee-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/odibee-sans" // Defaults to weight 400.
+import "@fontsource/odibee-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

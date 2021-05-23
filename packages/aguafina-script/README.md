@@ -15,7 +15,7 @@ yarn add @fontsource/aguafina-script // npm install @fontsource/aguafina-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/aguafina-script" // Defaults to weight 400.
+import "@fontsource/aguafina-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

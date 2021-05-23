@@ -15,7 +15,7 @@ yarn add @fontsource/lily-script-one // npm install @fontsource/lily-script-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lily-script-one" // Defaults to weight 400.
+import "@fontsource/lily-script-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

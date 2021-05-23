@@ -15,7 +15,7 @@ yarn add @fontsource/passion-one // npm install @fontsource/passion-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/passion-one" // Defaults to weight 400.
+import "@fontsource/passion-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

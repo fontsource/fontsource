@@ -15,7 +15,7 @@ yarn add @fontsource/trade-winds // npm install @fontsource/trade-winds
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/trade-winds" // Defaults to weight 400.
+import "@fontsource/trade-winds"; // Defaults to weight 400.
 ```
 
 Supported variables:

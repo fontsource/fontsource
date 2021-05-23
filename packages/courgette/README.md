@@ -15,7 +15,7 @@ yarn add @fontsource/courgette // npm install @fontsource/courgette
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/courgette" // Defaults to weight 400.
+import "@fontsource/courgette"; // Defaults to weight 400.
 ```
 
 Supported variables:

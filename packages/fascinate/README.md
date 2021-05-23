@@ -15,7 +15,7 @@ yarn add @fontsource/fascinate // npm install @fontsource/fascinate
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fascinate" // Defaults to weight 400.
+import "@fontsource/fascinate"; // Defaults to weight 400.
 ```
 
 Supported variables:

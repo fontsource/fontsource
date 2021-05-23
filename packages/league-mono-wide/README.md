@@ -15,7 +15,7 @@ yarn add @fontsource/league-mono-wide // npm install @fontsource/league-mono-wid
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/league-mono-wide" // Defaults to weight 400.
+import "@fontsource/league-mono-wide"; // Defaults to weight 400.
 ```
 
 Supported variables:

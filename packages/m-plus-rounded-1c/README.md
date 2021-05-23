@@ -15,7 +15,7 @@ yarn add @fontsource/m-plus-rounded-1c // npm install @fontsource/m-plus-rounded
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/m-plus-rounded-1c" // Defaults to weight 400.
+import "@fontsource/m-plus-rounded-1c"; // Defaults to weight 400.
 ```
 
 Supported variables:

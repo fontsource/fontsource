@@ -15,7 +15,7 @@ yarn add @fontsource/headland-one // npm install @fontsource/headland-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/headland-one" // Defaults to weight 400.
+import "@fontsource/headland-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/ballet // npm install @fontsource/ballet
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ballet" // Defaults to weight 400.
+import "@fontsource/ballet"; // Defaults to weight 400.
 ```
 
 Supported variables:

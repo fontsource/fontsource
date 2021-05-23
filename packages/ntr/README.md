@@ -15,7 +15,7 @@ yarn add @fontsource/ntr // npm install @fontsource/ntr
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ntr" // Defaults to weight 400.
+import "@fontsource/ntr"; // Defaults to weight 400.
 ```
 
 Supported variables:

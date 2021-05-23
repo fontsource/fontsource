@@ -15,7 +15,7 @@ yarn add @fontsource/permanent-marker // npm install @fontsource/permanent-marke
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/permanent-marker" // Defaults to weight 400.
+import "@fontsource/permanent-marker"; // Defaults to weight 400.
 ```
 
 Supported variables:

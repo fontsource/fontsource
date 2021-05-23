@@ -15,7 +15,7 @@ yarn add @fontsource/asul // npm install @fontsource/asul
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/asul" // Defaults to weight 400.
+import "@fontsource/asul"; // Defaults to weight 400.
 ```
 
 Supported variables:

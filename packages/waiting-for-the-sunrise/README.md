@@ -15,7 +15,7 @@ yarn add @fontsource/waiting-for-the-sunrise // npm install @fontsource/waiting-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/waiting-for-the-sunrise" // Defaults to weight 400.
+import "@fontsource/waiting-for-the-sunrise"; // Defaults to weight 400.
 ```
 
 Supported variables:

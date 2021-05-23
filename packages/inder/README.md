@@ -15,7 +15,7 @@ yarn add @fontsource/inder // npm install @fontsource/inder
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/inder" // Defaults to weight 400.
+import "@fontsource/inder"; // Defaults to weight 400.
 ```
 
 Supported variables:

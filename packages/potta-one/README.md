@@ -15,7 +15,7 @@ yarn add @fontsource/potta-one // npm install @fontsource/potta-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/potta-one" // Defaults to weight 400.
+import "@fontsource/potta-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

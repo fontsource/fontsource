@@ -15,7 +15,7 @@ yarn add @fontsource/comic-neue // npm install @fontsource/comic-neue
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/comic-neue" // Defaults to weight 400.
+import "@fontsource/comic-neue"; // Defaults to weight 400.
 ```
 
 Supported variables:

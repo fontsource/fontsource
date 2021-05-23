@@ -15,7 +15,7 @@ yarn add @fontsource/port-lligat-sans // npm install @fontsource/port-lligat-san
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/port-lligat-sans" // Defaults to weight 400.
+import "@fontsource/port-lligat-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

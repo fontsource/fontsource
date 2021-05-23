@@ -15,7 +15,7 @@ yarn add @fontsource/libre-baskerville // npm install @fontsource/libre-baskervi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/libre-baskerville" // Defaults to weight 400.
+import "@fontsource/libre-baskerville"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/encode-sans-semi-expanded // npm install @fontsource/encode
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/encode-sans-semi-expanded" // Defaults to weight 400.
+import "@fontsource/encode-sans-semi-expanded"; // Defaults to weight 400.
 ```
 
 Supported variables:

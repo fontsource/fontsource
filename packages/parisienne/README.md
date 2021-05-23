@@ -15,7 +15,7 @@ yarn add @fontsource/parisienne // npm install @fontsource/parisienne
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/parisienne" // Defaults to weight 400.
+import "@fontsource/parisienne"; // Defaults to weight 400.
 ```
 
 Supported variables:

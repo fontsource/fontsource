@@ -15,7 +15,7 @@ yarn add @fontsource/princess-sofia // npm install @fontsource/princess-sofia
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/princess-sofia" // Defaults to weight 400.
+import "@fontsource/princess-sofia"; // Defaults to weight 400.
 ```
 
 Supported variables:

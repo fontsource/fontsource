@@ -15,7 +15,7 @@ yarn add @fontsource/rubik-mono-one // npm install @fontsource/rubik-mono-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rubik-mono-one" // Defaults to weight 400.
+import "@fontsource/rubik-mono-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

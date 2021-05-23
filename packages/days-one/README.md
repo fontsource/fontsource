@@ -15,7 +15,7 @@ yarn add @fontsource/days-one // npm install @fontsource/days-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/days-one" // Defaults to weight 400.
+import "@fontsource/days-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

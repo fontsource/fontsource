@@ -15,7 +15,7 @@ yarn add @fontsource/marcellus-sc // npm install @fontsource/marcellus-sc
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/marcellus-sc" // Defaults to weight 400.
+import "@fontsource/marcellus-sc"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/federant // npm install @fontsource/federant
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/federant" // Defaults to weight 400.
+import "@fontsource/federant"; // Defaults to weight 400.
 ```
 
 Supported variables:

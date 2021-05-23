@@ -15,7 +15,7 @@ yarn add @fontsource/passero-one // npm install @fontsource/passero-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/passero-one" // Defaults to weight 400.
+import "@fontsource/passero-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

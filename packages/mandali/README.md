@@ -15,7 +15,7 @@ yarn add @fontsource/mandali // npm install @fontsource/mandali
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mandali" // Defaults to weight 400.
+import "@fontsource/mandali"; // Defaults to weight 400.
 ```
 
 Supported variables:

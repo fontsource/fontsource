@@ -15,7 +15,7 @@ yarn add @fontsource/blackout-two-am // npm install @fontsource/blackout-two-am
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/blackout-two-am" // Defaults to weight 400.
+import "@fontsource/blackout-two-am"; // Defaults to weight 400.
 ```
 
 Supported variables:

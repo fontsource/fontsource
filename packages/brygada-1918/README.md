@@ -15,7 +15,7 @@ yarn add @fontsource/brygada-1918 // npm install @fontsource/brygada-1918
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/brygada-1918" // Defaults to weight 400.
+import "@fontsource/brygada-1918"; // Defaults to weight 400.
 ```
 
 Supported variables:

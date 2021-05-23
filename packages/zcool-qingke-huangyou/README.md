@@ -15,7 +15,7 @@ yarn add @fontsource/zcool-qingke-huangyou // npm install @fontsource/zcool-qing
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/zcool-qingke-huangyou" // Defaults to weight 400.
+import "@fontsource/zcool-qingke-huangyou"; // Defaults to weight 400.
 ```
 
 Supported variables:

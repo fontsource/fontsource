@@ -15,7 +15,7 @@ yarn add @fontsource/varela-round // npm install @fontsource/varela-round
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/varela-round" // Defaults to weight 400.
+import "@fontsource/varela-round"; // Defaults to weight 400.
 ```
 
 Supported variables:

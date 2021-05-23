@@ -15,7 +15,7 @@ yarn add @fontsource/stylish // npm install @fontsource/stylish
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/stylish" // Defaults to weight 400.
+import "@fontsource/stylish"; // Defaults to weight 400.
 ```
 
 Supported variables:

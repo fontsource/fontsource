@@ -15,7 +15,7 @@ yarn add @fontsource/inknut-antiqua // npm install @fontsource/inknut-antiqua
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/inknut-antiqua" // Defaults to weight 400.
+import "@fontsource/inknut-antiqua"; // Defaults to weight 400.
 ```
 
 Supported variables:

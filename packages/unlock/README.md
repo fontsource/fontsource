@@ -15,7 +15,7 @@ yarn add @fontsource/unlock // npm install @fontsource/unlock
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/unlock" // Defaults to weight 400.
+import "@fontsource/unlock"; // Defaults to weight 400.
 ```
 
 Supported variables:

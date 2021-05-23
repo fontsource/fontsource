@@ -15,7 +15,7 @@ yarn add @fontsource/east-sea-dokdo // npm install @fontsource/east-sea-dokdo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/east-sea-dokdo" // Defaults to weight 400.
+import "@fontsource/east-sea-dokdo"; // Defaults to weight 400.
 ```
 
 Supported variables:

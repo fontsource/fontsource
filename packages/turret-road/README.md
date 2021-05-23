@@ -15,7 +15,7 @@ yarn add @fontsource/turret-road // npm install @fontsource/turret-road
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/turret-road" // Defaults to weight 400.
+import "@fontsource/turret-road"; // Defaults to weight 400.
 ```
 
 Supported variables:

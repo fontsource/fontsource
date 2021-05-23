@@ -15,7 +15,7 @@ yarn add @fontsource/share-tech-mono // npm install @fontsource/share-tech-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/share-tech-mono" // Defaults to weight 400.
+import "@fontsource/share-tech-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

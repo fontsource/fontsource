@@ -15,7 +15,7 @@ yarn add @fontsource/xanh-mono // npm install @fontsource/xanh-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/xanh-mono" // Defaults to weight 400.
+import "@fontsource/xanh-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

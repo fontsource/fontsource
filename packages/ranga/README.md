@@ -15,7 +15,7 @@ yarn add @fontsource/ranga // npm install @fontsource/ranga
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ranga" // Defaults to weight 400.
+import "@fontsource/ranga"; // Defaults to weight 400.
 ```
 
 Supported variables:

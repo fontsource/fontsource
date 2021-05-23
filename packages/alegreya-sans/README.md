@@ -15,7 +15,7 @@ yarn add @fontsource/alegreya-sans // npm install @fontsource/alegreya-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/alegreya-sans" // Defaults to weight 400.
+import "@fontsource/alegreya-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

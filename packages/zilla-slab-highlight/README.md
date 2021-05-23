@@ -15,7 +15,7 @@ yarn add @fontsource/zilla-slab-highlight // npm install @fontsource/zilla-slab-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/zilla-slab-highlight" // Defaults to weight 400.
+import "@fontsource/zilla-slab-highlight"; // Defaults to weight 400.
 ```
 
 Supported variables:

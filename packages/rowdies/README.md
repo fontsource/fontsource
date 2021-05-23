@@ -15,7 +15,7 @@ yarn add @fontsource/rowdies // npm install @fontsource/rowdies
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rowdies" // Defaults to weight 400.
+import "@fontsource/rowdies"; // Defaults to weight 400.
 ```
 
 Supported variables:

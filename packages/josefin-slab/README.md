@@ -15,7 +15,7 @@ yarn add @fontsource/josefin-slab // npm install @fontsource/josefin-slab
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/josefin-slab" // Defaults to weight 400.
+import "@fontsource/josefin-slab"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/open-sans-condensed // npm install @fontsource/open-sans-co
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/open-sans-condensed" // Defaults to weight 400.
+import "@fontsource/open-sans-condensed"; // Defaults to weight 400.
 ```
 
 Supported variables:

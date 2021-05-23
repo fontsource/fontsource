@@ -15,7 +15,7 @@ yarn add @fontsource/leckerli-one // npm install @fontsource/leckerli-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/leckerli-one" // Defaults to weight 400.
+import "@fontsource/leckerli-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

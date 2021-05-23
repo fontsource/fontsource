@@ -15,7 +15,7 @@ yarn add @fontsource/fahkwang // npm install @fontsource/fahkwang
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fahkwang" // Defaults to weight 400.
+import "@fontsource/fahkwang"; // Defaults to weight 400.
 ```
 
 Supported variables:

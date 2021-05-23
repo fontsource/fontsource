@@ -15,7 +15,7 @@ yarn add @fontsource/cabin-sketch // npm install @fontsource/cabin-sketch
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cabin-sketch" // Defaults to weight 400.
+import "@fontsource/cabin-sketch"; // Defaults to weight 400.
 ```
 
 Supported variables:

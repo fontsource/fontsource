@@ -15,7 +15,7 @@ yarn add @fontsource/cinzel // npm install @fontsource/cinzel
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cinzel" // Defaults to weight 400.
+import "@fontsource/cinzel"; // Defaults to weight 400.
 ```
 
 Supported variables:

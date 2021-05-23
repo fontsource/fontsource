@@ -15,7 +15,7 @@ yarn add @fontsource/almendra // npm install @fontsource/almendra
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/almendra" // Defaults to weight 400.
+import "@fontsource/almendra"; // Defaults to weight 400.
 ```
 
 Supported variables:

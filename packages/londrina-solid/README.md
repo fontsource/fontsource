@@ -15,7 +15,7 @@ yarn add @fontsource/londrina-solid // npm install @fontsource/londrina-solid
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/londrina-solid" // Defaults to weight 400.
+import "@fontsource/londrina-solid"; // Defaults to weight 400.
 ```
 
 Supported variables:

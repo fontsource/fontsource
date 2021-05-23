@@ -15,7 +15,7 @@ yarn add @fontsource/gudea // npm install @fontsource/gudea
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gudea" // Defaults to weight 400.
+import "@fontsource/gudea"; // Defaults to weight 400.
 ```
 
 Supported variables:

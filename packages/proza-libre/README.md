@@ -15,7 +15,7 @@ yarn add @fontsource/proza-libre // npm install @fontsource/proza-libre
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/proza-libre" // Defaults to weight 400.
+import "@fontsource/proza-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

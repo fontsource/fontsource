@@ -15,7 +15,7 @@ yarn add @fontsource/rhodium-libre // npm install @fontsource/rhodium-libre
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rhodium-libre" // Defaults to weight 400.
+import "@fontsource/rhodium-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

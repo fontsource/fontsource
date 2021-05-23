@@ -15,7 +15,7 @@ yarn add @fontsource/asset // npm install @fontsource/asset
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/asset" // Defaults to weight 400.
+import "@fontsource/asset"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/big-shoulders-stencil-display // npm install @fontsource/bi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/big-shoulders-stencil-display" // Defaults to weight 400.
+import "@fontsource/big-shoulders-stencil-display"; // Defaults to weight 400.
 ```
 
 Supported variables:

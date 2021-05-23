@@ -15,7 +15,7 @@ yarn add @fontsource/arbutus-slab // npm install @fontsource/arbutus-slab
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/arbutus-slab" // Defaults to weight 400.
+import "@fontsource/arbutus-slab"; // Defaults to weight 400.
 ```
 
 Supported variables:

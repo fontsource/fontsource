@@ -15,7 +15,7 @@ yarn add @fontsource/the-girl-next-door // npm install @fontsource/the-girl-next
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/the-girl-next-door" // Defaults to weight 400.
+import "@fontsource/the-girl-next-door"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/qwigley // npm install @fontsource/qwigley
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/qwigley" // Defaults to weight 400.
+import "@fontsource/qwigley"; // Defaults to weight 400.
 ```
 
 Supported variables:

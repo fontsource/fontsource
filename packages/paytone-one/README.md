@@ -15,7 +15,7 @@ yarn add @fontsource/paytone-one // npm install @fontsource/paytone-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/paytone-one" // Defaults to weight 400.
+import "@fontsource/paytone-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

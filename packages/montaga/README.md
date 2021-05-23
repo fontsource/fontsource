@@ -15,7 +15,7 @@ yarn add @fontsource/montaga // npm install @fontsource/montaga
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/montaga" // Defaults to weight 400.
+import "@fontsource/montaga"; // Defaults to weight 400.
 ```
 
 Supported variables:

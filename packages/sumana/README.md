@@ -15,7 +15,7 @@ yarn add @fontsource/sumana // npm install @fontsource/sumana
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sumana" // Defaults to weight 400.
+import "@fontsource/sumana"; // Defaults to weight 400.
 ```
 
 Supported variables:

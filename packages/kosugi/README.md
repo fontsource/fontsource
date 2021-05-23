@@ -15,7 +15,7 @@ yarn add @fontsource/kosugi // npm install @fontsource/kosugi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kosugi" // Defaults to weight 400.
+import "@fontsource/kosugi"; // Defaults to weight 400.
 ```
 
 Supported variables:

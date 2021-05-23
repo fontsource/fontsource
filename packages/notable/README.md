@@ -15,7 +15,7 @@ yarn add @fontsource/notable // npm install @fontsource/notable
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/notable" // Defaults to weight 400.
+import "@fontsource/notable"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/ostrich-sans-rounded // npm install @fontsource/ostrich-san
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ostrich-sans-rounded" // Defaults to weight 400.
+import "@fontsource/ostrich-sans-rounded"; // Defaults to weight 400.
 ```
 
 Supported variables:

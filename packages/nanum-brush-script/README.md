@@ -15,7 +15,7 @@ yarn add @fontsource/nanum-brush-script // npm install @fontsource/nanum-brush-s
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nanum-brush-script" // Defaults to weight 400.
+import "@fontsource/nanum-brush-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

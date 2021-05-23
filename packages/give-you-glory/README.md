@@ -15,7 +15,7 @@ yarn add @fontsource/give-you-glory // npm install @fontsource/give-you-glory
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/give-you-glory" // Defaults to weight 400.
+import "@fontsource/give-you-glory"; // Defaults to weight 400.
 ```
 
 Supported variables:

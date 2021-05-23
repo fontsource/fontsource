@@ -15,7 +15,7 @@ yarn add @fontsource/lacquer // npm install @fontsource/lacquer
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lacquer" // Defaults to weight 400.
+import "@fontsource/lacquer"; // Defaults to weight 400.
 ```
 
 Supported variables:

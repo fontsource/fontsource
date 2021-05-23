@@ -15,7 +15,7 @@ yarn add @fontsource/amita // npm install @fontsource/amita
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/amita" // Defaults to weight 400.
+import "@fontsource/amita"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/roboto-slab // npm install @fontsource/roboto-slab
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/roboto-slab" // Defaults to weight 400.
+import "@fontsource/roboto-slab"; // Defaults to weight 400.
 ```
 
 Supported variables:

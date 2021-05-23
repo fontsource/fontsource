@@ -15,7 +15,7 @@ yarn add @fontsource/cutive-mono // npm install @fontsource/cutive-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cutive-mono" // Defaults to weight 400.
+import "@fontsource/cutive-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

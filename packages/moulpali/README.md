@@ -15,7 +15,7 @@ yarn add @fontsource/moulpali // npm install @fontsource/moulpali
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/moulpali" // Defaults to weight 400.
+import "@fontsource/moulpali"; // Defaults to weight 400.
 ```
 
 Supported variables:

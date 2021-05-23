@@ -15,7 +15,7 @@ yarn add @fontsource/livvic // npm install @fontsource/livvic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/livvic" // Defaults to weight 400.
+import "@fontsource/livvic"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/khand // npm install @fontsource/khand
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/khand" // Defaults to weight 400.
+import "@fontsource/khand"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/titillium-web // npm install @fontsource/titillium-web
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/titillium-web" // Defaults to weight 400.
+import "@fontsource/titillium-web"; // Defaults to weight 400.
 ```
 
 Supported variables:

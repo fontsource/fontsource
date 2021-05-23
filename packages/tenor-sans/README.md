@@ -15,7 +15,7 @@ yarn add @fontsource/tenor-sans // npm install @fontsource/tenor-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/tenor-sans" // Defaults to weight 400.
+import "@fontsource/tenor-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

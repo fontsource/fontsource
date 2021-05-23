@@ -15,7 +15,7 @@ yarn add @fontsource/kumar-one // npm install @fontsource/kumar-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kumar-one" // Defaults to weight 400.
+import "@fontsource/kumar-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

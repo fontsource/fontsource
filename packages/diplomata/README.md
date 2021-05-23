@@ -15,7 +15,7 @@ yarn add @fontsource/diplomata // npm install @fontsource/diplomata
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/diplomata" // Defaults to weight 400.
+import "@fontsource/diplomata"; // Defaults to weight 400.
 ```
 
 Supported variables:

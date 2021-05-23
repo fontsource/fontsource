@@ -15,7 +15,7 @@ yarn add @fontsource/puritan // npm install @fontsource/puritan
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/puritan" // Defaults to weight 400.
+import "@fontsource/puritan"; // Defaults to weight 400.
 ```
 
 Supported variables:

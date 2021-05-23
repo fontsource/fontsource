@@ -15,7 +15,7 @@ yarn add @fontsource/lexend-peta // npm install @fontsource/lexend-peta
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lexend-peta" // Defaults to weight 400.
+import "@fontsource/lexend-peta"; // Defaults to weight 400.
 ```
 
 Supported variables:

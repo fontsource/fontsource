@@ -15,7 +15,7 @@ yarn add @fontsource/indie-flower // npm install @fontsource/indie-flower
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/indie-flower" // Defaults to weight 400.
+import "@fontsource/indie-flower"; // Defaults to weight 400.
 ```
 
 Supported variables:

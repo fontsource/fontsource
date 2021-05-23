@@ -15,7 +15,7 @@ yarn add @fontsource/ostrich-sans // npm install @fontsource/ostrich-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ostrich-sans" // Defaults to weight 400.
+import "@fontsource/ostrich-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

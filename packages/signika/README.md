@@ -15,7 +15,7 @@ yarn add @fontsource/signika // npm install @fontsource/signika
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/signika" // Defaults to weight 400.
+import "@fontsource/signika"; // Defaults to weight 400.
 ```
 
 Supported variables:

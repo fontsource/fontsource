@@ -15,7 +15,7 @@ yarn add @fontsource/great-vibes // npm install @fontsource/great-vibes
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/great-vibes" // Defaults to weight 400.
+import "@fontsource/great-vibes"; // Defaults to weight 400.
 ```
 
 Supported variables:

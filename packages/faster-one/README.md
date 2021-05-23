@@ -15,7 +15,7 @@ yarn add @fontsource/faster-one // npm install @fontsource/faster-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/faster-one" // Defaults to weight 400.
+import "@fontsource/faster-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/just-me-again-down-here // npm install @fontsource/just-me-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/just-me-again-down-here" // Defaults to weight 400.
+import "@fontsource/just-me-again-down-here"; // Defaults to weight 400.
 ```
 
 Supported variables:

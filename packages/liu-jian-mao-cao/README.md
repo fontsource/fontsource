@@ -15,7 +15,7 @@ yarn add @fontsource/liu-jian-mao-cao // npm install @fontsource/liu-jian-mao-ca
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/liu-jian-mao-cao" // Defaults to weight 400.
+import "@fontsource/liu-jian-mao-cao"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/aladin // npm install @fontsource/aladin
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/aladin" // Defaults to weight 400.
+import "@fontsource/aladin"; // Defaults to weight 400.
 ```
 
 Supported variables:

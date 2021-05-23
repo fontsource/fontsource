@@ -15,7 +15,7 @@ yarn add @fontsource/lexend-mega // npm install @fontsource/lexend-mega
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lexend-mega" // Defaults to weight 400.
+import "@fontsource/lexend-mega"; // Defaults to weight 400.
 ```
 
 Supported variables:

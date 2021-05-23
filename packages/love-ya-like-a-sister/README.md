@@ -15,7 +15,7 @@ yarn add @fontsource/love-ya-like-a-sister // npm install @fontsource/love-ya-li
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/love-ya-like-a-sister" // Defaults to weight 400.
+import "@fontsource/love-ya-like-a-sister"; // Defaults to weight 400.
 ```
 
 Supported variables:

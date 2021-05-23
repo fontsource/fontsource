@@ -15,7 +15,7 @@ yarn add @fontsource/kdam-thmor // npm install @fontsource/kdam-thmor
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kdam-thmor" // Defaults to weight 400.
+import "@fontsource/kdam-thmor"; // Defaults to weight 400.
 ```
 
 Supported variables:

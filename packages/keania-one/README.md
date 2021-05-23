@@ -15,7 +15,7 @@ yarn add @fontsource/keania-one // npm install @fontsource/keania-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/keania-one" // Defaults to weight 400.
+import "@fontsource/keania-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

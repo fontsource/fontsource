@@ -15,7 +15,7 @@ yarn add @fontsource/ranchers // npm install @fontsource/ranchers
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ranchers" // Defaults to weight 400.
+import "@fontsource/ranchers"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/londrina-sketch // npm install @fontsource/londrina-sketch
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/londrina-sketch" // Defaults to weight 400.
+import "@fontsource/londrina-sketch"; // Defaults to weight 400.
 ```
 
 Supported variables:

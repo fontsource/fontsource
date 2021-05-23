@@ -15,7 +15,7 @@ yarn add @fontsource/elsie // npm install @fontsource/elsie
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/elsie" // Defaults to weight 400.
+import "@fontsource/elsie"; // Defaults to weight 400.
 ```
 
 Supported variables:

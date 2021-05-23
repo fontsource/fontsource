@@ -15,7 +15,7 @@ yarn add @fontsource/covered-by-your-grace // npm install @fontsource/covered-by
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/covered-by-your-grace" // Defaults to weight 400.
+import "@fontsource/covered-by-your-grace"; // Defaults to weight 400.
 ```
 
 Supported variables:

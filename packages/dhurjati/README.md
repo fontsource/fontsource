@@ -15,7 +15,7 @@ yarn add @fontsource/dhurjati // npm install @fontsource/dhurjati
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dhurjati" // Defaults to weight 400.
+import "@fontsource/dhurjati"; // Defaults to weight 400.
 ```
 
 Supported variables:

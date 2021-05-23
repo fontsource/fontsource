@@ -15,7 +15,7 @@ yarn add @fontsource/doppio-one // npm install @fontsource/doppio-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/doppio-one" // Defaults to weight 400.
+import "@fontsource/doppio-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

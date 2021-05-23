@@ -15,7 +15,7 @@ yarn add @fontsource/pt-sans-caption // npm install @fontsource/pt-sans-caption
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pt-sans-caption" // Defaults to weight 400.
+import "@fontsource/pt-sans-caption"; // Defaults to weight 400.
 ```
 
 Supported variables:

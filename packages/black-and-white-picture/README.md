@@ -15,7 +15,7 @@ yarn add @fontsource/black-and-white-picture // npm install @fontsource/black-an
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/black-and-white-picture" // Defaults to weight 400.
+import "@fontsource/black-and-white-picture"; // Defaults to weight 400.
 ```
 
 Supported variables:

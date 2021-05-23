@@ -15,7 +15,7 @@ yarn add @fontsource/marvel // npm install @fontsource/marvel
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/marvel" // Defaults to weight 400.
+import "@fontsource/marvel"; // Defaults to weight 400.
 ```
 
 Supported variables:

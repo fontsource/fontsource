@@ -15,7 +15,7 @@ yarn add @fontsource/chicle // npm install @fontsource/chicle
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/chicle" // Defaults to weight 400.
+import "@fontsource/chicle"; // Defaults to weight 400.
 ```
 
 Supported variables:

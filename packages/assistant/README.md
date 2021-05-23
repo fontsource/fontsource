@@ -15,7 +15,7 @@ yarn add @fontsource/assistant // npm install @fontsource/assistant
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/assistant" // Defaults to weight 400.
+import "@fontsource/assistant"; // Defaults to weight 400.
 ```
 
 Supported variables:

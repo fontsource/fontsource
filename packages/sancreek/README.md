@@ -15,7 +15,7 @@ yarn add @fontsource/sancreek // npm install @fontsource/sancreek
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sancreek" // Defaults to weight 400.
+import "@fontsource/sancreek"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/gotu // npm install @fontsource/gotu
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gotu" // Defaults to weight 400.
+import "@fontsource/gotu"; // Defaults to weight 400.
 ```
 
 Supported variables:

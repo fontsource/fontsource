@@ -15,7 +15,7 @@ yarn add @fontsource/blackout-midnight // npm install @fontsource/blackout-midni
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/blackout-midnight" // Defaults to weight 400.
+import "@fontsource/blackout-midnight"; // Defaults to weight 400.
 ```
 
 Supported variables:

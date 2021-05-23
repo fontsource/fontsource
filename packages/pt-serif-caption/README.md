@@ -15,7 +15,7 @@ yarn add @fontsource/pt-serif-caption // npm install @fontsource/pt-serif-captio
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pt-serif-caption" // Defaults to weight 400.
+import "@fontsource/pt-serif-caption"; // Defaults to weight 400.
 ```
 
 Supported variables:

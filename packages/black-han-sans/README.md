@@ -15,7 +15,7 @@ yarn add @fontsource/black-han-sans // npm install @fontsource/black-han-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/black-han-sans" // Defaults to weight 400.
+import "@fontsource/black-han-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/acme // npm install @fontsource/acme
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/acme" // Defaults to weight 400.
+import "@fontsource/acme"; // Defaults to weight 400.
 ```
 
 Supported variables:

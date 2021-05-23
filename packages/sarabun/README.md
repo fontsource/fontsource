@@ -15,7 +15,7 @@ yarn add @fontsource/sarabun // npm install @fontsource/sarabun
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sarabun" // Defaults to weight 400.
+import "@fontsource/sarabun"; // Defaults to weight 400.
 ```
 
 Supported variables:

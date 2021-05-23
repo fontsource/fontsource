@@ -15,7 +15,7 @@ yarn add @fontsource/seymour-one // npm install @fontsource/seymour-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/seymour-one" // Defaults to weight 400.
+import "@fontsource/seymour-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

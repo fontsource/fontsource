@@ -15,7 +15,7 @@ yarn add @fontsource/libre-franklin // npm install @fontsource/libre-franklin
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/libre-franklin" // Defaults to weight 400.
+import "@fontsource/libre-franklin"; // Defaults to weight 400.
 ```
 
 Supported variables:

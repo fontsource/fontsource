@@ -15,7 +15,7 @@ yarn add @fontsource/pontano-sans // npm install @fontsource/pontano-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pontano-sans" // Defaults to weight 400.
+import "@fontsource/pontano-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

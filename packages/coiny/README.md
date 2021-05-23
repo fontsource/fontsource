@@ -15,7 +15,7 @@ yarn add @fontsource/coiny // npm install @fontsource/coiny
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/coiny" // Defaults to weight 400.
+import "@fontsource/coiny"; // Defaults to weight 400.
 ```
 
 Supported variables:

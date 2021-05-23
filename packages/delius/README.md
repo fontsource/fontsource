@@ -15,7 +15,7 @@ yarn add @fontsource/delius // npm install @fontsource/delius
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/delius" // Defaults to weight 400.
+import "@fontsource/delius"; // Defaults to weight 400.
 ```
 
 Supported variables:

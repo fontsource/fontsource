@@ -15,7 +15,7 @@ yarn add @fontsource/quando // npm install @fontsource/quando
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/quando" // Defaults to weight 400.
+import "@fontsource/quando"; // Defaults to weight 400.
 ```
 
 Supported variables:

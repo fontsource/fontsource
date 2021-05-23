@@ -15,7 +15,7 @@ yarn add @fontsource/akaya-telivigala // npm install @fontsource/akaya-telivigal
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/akaya-telivigala" // Defaults to weight 400.
+import "@fontsource/akaya-telivigala"; // Defaults to weight 400.
 ```
 
 Supported variables:

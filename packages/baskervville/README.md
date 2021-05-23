@@ -15,7 +15,7 @@ yarn add @fontsource/baskervville // npm install @fontsource/baskervville
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/baskervville" // Defaults to weight 400.
+import "@fontsource/baskervville"; // Defaults to weight 400.
 ```
 
 Supported variables:

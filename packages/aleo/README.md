@@ -15,7 +15,7 @@ yarn add @fontsource/aleo // npm install @fontsource/aleo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/aleo" // Defaults to weight 400.
+import "@fontsource/aleo"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/coda-caption // npm install @fontsource/coda-caption
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/coda-caption" // Defaults to weight 400.
+import "@fontsource/coda-caption"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/atomic-age // npm install @fontsource/atomic-age
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/atomic-age" // Defaults to weight 400.
+import "@fontsource/atomic-age"; // Defaults to weight 400.
 ```
 
 Supported variables:

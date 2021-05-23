@@ -15,7 +15,7 @@ yarn add @fontsource/pirata-one // npm install @fontsource/pirata-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pirata-one" // Defaults to weight 400.
+import "@fontsource/pirata-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/contrail-one // npm install @fontsource/contrail-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/contrail-one" // Defaults to weight 400.
+import "@fontsource/contrail-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

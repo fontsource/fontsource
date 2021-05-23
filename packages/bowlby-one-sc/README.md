@@ -15,7 +15,7 @@ yarn add @fontsource/bowlby-one-sc // npm install @fontsource/bowlby-one-sc
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bowlby-one-sc" // Defaults to weight 400.
+import "@fontsource/bowlby-one-sc"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/homenaje // npm install @fontsource/homenaje
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/homenaje" // Defaults to weight 400.
+import "@fontsource/homenaje"; // Defaults to weight 400.
 ```
 
 Supported variables:

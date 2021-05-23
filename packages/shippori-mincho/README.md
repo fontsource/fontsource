@@ -15,7 +15,7 @@ yarn add @fontsource/shippori-mincho // npm install @fontsource/shippori-mincho
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/shippori-mincho" // Defaults to weight 400.
+import "@fontsource/shippori-mincho"; // Defaults to weight 400.
 ```
 
 Supported variables:

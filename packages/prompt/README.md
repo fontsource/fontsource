@@ -15,7 +15,7 @@ yarn add @fontsource/prompt // npm install @fontsource/prompt
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/prompt" // Defaults to weight 400.
+import "@fontsource/prompt"; // Defaults to weight 400.
 ```
 
 Supported variables:

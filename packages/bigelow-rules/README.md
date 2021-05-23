@@ -15,7 +15,7 @@ yarn add @fontsource/bigelow-rules // npm install @fontsource/bigelow-rules
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bigelow-rules" // Defaults to weight 400.
+import "@fontsource/bigelow-rules"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/mako // npm install @fontsource/mako
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mako" // Defaults to weight 400.
+import "@fontsource/mako"; // Defaults to weight 400.
 ```
 
 Supported variables:

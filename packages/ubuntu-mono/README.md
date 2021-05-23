@@ -15,7 +15,7 @@ yarn add @fontsource/ubuntu-mono // npm install @fontsource/ubuntu-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ubuntu-mono" // Defaults to weight 400.
+import "@fontsource/ubuntu-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

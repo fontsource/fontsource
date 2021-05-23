@@ -15,7 +15,7 @@ yarn add @fontsource/joti-one // npm install @fontsource/joti-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/joti-one" // Defaults to weight 400.
+import "@fontsource/joti-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

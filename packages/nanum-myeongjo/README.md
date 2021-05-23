@@ -15,7 +15,7 @@ yarn add @fontsource/nanum-myeongjo // npm install @fontsource/nanum-myeongjo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nanum-myeongjo" // Defaults to weight 400.
+import "@fontsource/nanum-myeongjo"; // Defaults to weight 400.
 ```
 
 Supported variables:

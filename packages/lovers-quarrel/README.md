@@ -15,7 +15,7 @@ yarn add @fontsource/lovers-quarrel // npm install @fontsource/lovers-quarrel
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lovers-quarrel" // Defaults to weight 400.
+import "@fontsource/lovers-quarrel"; // Defaults to weight 400.
 ```
 
 Supported variables:

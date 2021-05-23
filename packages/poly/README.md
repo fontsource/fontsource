@@ -15,7 +15,7 @@ yarn add @fontsource/poly // npm install @fontsource/poly
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/poly" // Defaults to weight 400.
+import "@fontsource/poly"; // Defaults to weight 400.
 ```
 
 Supported variables:

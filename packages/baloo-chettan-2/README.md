@@ -15,7 +15,7 @@ yarn add @fontsource/baloo-chettan-2 // npm install @fontsource/baloo-chettan-2
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/baloo-chettan-2" // Defaults to weight 400.
+import "@fontsource/baloo-chettan-2"; // Defaults to weight 400.
 ```
 
 Supported variables:

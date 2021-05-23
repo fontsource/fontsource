@@ -15,7 +15,7 @@ yarn add @fontsource/istok-web // npm install @fontsource/istok-web
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/istok-web" // Defaults to weight 400.
+import "@fontsource/istok-web"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/mr-bedfort // npm install @fontsource/mr-bedfort
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mr-bedfort" // Defaults to weight 400.
+import "@fontsource/mr-bedfort"; // Defaults to weight 400.
 ```
 
 Supported variables:

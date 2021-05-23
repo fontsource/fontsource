@@ -15,7 +15,7 @@ yarn add @fontsource/voltaire // npm install @fontsource/voltaire
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/voltaire" // Defaults to weight 400.
+import "@fontsource/voltaire"; // Defaults to weight 400.
 ```
 
 Supported variables:

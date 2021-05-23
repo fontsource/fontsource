@@ -15,7 +15,7 @@ yarn add @fontsource/goudy-bookletter-1911 // npm install @fontsource/goudy-book
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/goudy-bookletter-1911" // Defaults to weight 400.
+import "@fontsource/goudy-bookletter-1911"; // Defaults to weight 400.
 ```
 
 Supported variables:

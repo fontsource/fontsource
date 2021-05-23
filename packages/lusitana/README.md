@@ -15,7 +15,7 @@ yarn add @fontsource/lusitana // npm install @fontsource/lusitana
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lusitana" // Defaults to weight 400.
+import "@fontsource/lusitana"; // Defaults to weight 400.
 ```
 
 Supported variables:

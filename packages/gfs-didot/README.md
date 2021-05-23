@@ -15,7 +15,7 @@ yarn add @fontsource/gfs-didot // npm install @fontsource/gfs-didot
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gfs-didot" // Defaults to weight 400.
+import "@fontsource/gfs-didot"; // Defaults to weight 400.
 ```
 
 Supported variables:

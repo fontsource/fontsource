@@ -15,7 +15,7 @@ yarn add @fontsource/homemade-apple // npm install @fontsource/homemade-apple
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/homemade-apple" // Defaults to weight 400.
+import "@fontsource/homemade-apple"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/antic // npm install @fontsource/antic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/antic" // Defaults to weight 400.
+import "@fontsource/antic"; // Defaults to weight 400.
 ```
 
 Supported variables:

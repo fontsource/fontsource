@@ -15,7 +15,7 @@ yarn add @fontsource/devonshire // npm install @fontsource/devonshire
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/devonshire" // Defaults to weight 400.
+import "@fontsource/devonshire"; // Defaults to weight 400.
 ```
 
 Supported variables:

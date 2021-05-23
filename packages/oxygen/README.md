@@ -15,7 +15,7 @@ yarn add @fontsource/oxygen // npm install @fontsource/oxygen
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/oxygen" // Defaults to weight 400.
+import "@fontsource/oxygen"; // Defaults to weight 400.
 ```
 
 Supported variables:

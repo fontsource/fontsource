@@ -15,7 +15,7 @@ yarn add @fontsource/jockey-one // npm install @fontsource/jockey-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jockey-one" // Defaults to weight 400.
+import "@fontsource/jockey-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

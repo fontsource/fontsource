@@ -15,7 +15,7 @@ yarn add @fontsource/dm-sans // npm install @fontsource/dm-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dm-sans" // Defaults to weight 400.
+import "@fontsource/dm-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

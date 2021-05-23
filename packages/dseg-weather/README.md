@@ -15,7 +15,7 @@ yarn add @fontsource/dseg-weather // npm install @fontsource/dseg-weather
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dseg-weather" // Defaults to weight 400.
+import "@fontsource/dseg-weather"; // Defaults to weight 400.
 ```
 
 Supported variables:

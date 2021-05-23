@@ -15,7 +15,7 @@ yarn add @fontsource/amiri // npm install @fontsource/amiri
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/amiri" // Defaults to weight 400.
+import "@fontsource/amiri"; // Defaults to weight 400.
 ```
 
 Supported variables:

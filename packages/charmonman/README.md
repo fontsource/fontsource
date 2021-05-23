@@ -15,7 +15,7 @@ yarn add @fontsource/charmonman // npm install @fontsource/charmonman
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/charmonman" // Defaults to weight 400.
+import "@fontsource/charmonman"; // Defaults to weight 400.
 ```
 
 Supported variables:

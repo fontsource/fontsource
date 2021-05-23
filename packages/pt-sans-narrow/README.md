@@ -15,7 +15,7 @@ yarn add @fontsource/pt-sans-narrow // npm install @fontsource/pt-sans-narrow
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pt-sans-narrow" // Defaults to weight 400.
+import "@fontsource/pt-sans-narrow"; // Defaults to weight 400.
 ```
 
 Supported variables:

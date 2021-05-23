@@ -15,7 +15,7 @@ yarn add @fontsource/wendy-one // npm install @fontsource/wendy-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/wendy-one" // Defaults to weight 400.
+import "@fontsource/wendy-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/vast-shadow // npm install @fontsource/vast-shadow
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vast-shadow" // Defaults to weight 400.
+import "@fontsource/vast-shadow"; // Defaults to weight 400.
 ```
 
 Supported variables:

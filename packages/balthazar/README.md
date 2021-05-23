@@ -15,7 +15,7 @@ yarn add @fontsource/balthazar // npm install @fontsource/balthazar
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/balthazar" // Defaults to weight 400.
+import "@fontsource/balthazar"; // Defaults to weight 400.
 ```
 
 Supported variables:

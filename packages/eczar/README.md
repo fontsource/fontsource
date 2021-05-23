@@ -15,7 +15,7 @@ yarn add @fontsource/eczar // npm install @fontsource/eczar
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/eczar" // Defaults to weight 400.
+import "@fontsource/eczar"; // Defaults to weight 400.
 ```
 
 Supported variables:

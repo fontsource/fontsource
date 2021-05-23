@@ -15,7 +15,7 @@ yarn add @fontsource/balsamiq-sans // npm install @fontsource/balsamiq-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/balsamiq-sans" // Defaults to weight 400.
+import "@fontsource/balsamiq-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

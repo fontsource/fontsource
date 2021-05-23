@@ -15,7 +15,7 @@ yarn add @fontsource/peddana // npm install @fontsource/peddana
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/peddana" // Defaults to weight 400.
+import "@fontsource/peddana"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/clicker-script // npm install @fontsource/clicker-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/clicker-script" // Defaults to weight 400.
+import "@fontsource/clicker-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

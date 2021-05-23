@@ -15,7 +15,7 @@ yarn add @fontsource/epilogue // npm install @fontsource/epilogue
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/epilogue" // Defaults to weight 400.
+import "@fontsource/epilogue"; // Defaults to weight 400.
 ```
 
 Supported variables:

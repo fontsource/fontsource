@@ -15,7 +15,7 @@ yarn add @fontsource/romanesco // npm install @fontsource/romanesco
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/romanesco" // Defaults to weight 400.
+import "@fontsource/romanesco"; // Defaults to weight 400.
 ```
 
 Supported variables:

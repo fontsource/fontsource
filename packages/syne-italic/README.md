@@ -15,7 +15,7 @@ yarn add @fontsource/syne-italic // npm install @fontsource/syne-italic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/syne-italic" // Defaults to weight 400.
+import "@fontsource/syne-italic"; // Defaults to weight 400.
 ```
 
 Supported variables:

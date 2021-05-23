@@ -15,7 +15,7 @@ yarn add @fontsource/chathura // npm install @fontsource/chathura
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/chathura" // Defaults to weight 400.
+import "@fontsource/chathura"; // Defaults to weight 400.
 ```
 
 Supported variables:

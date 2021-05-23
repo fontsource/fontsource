@@ -15,7 +15,7 @@ yarn add @fontsource/eagle-lake // npm install @fontsource/eagle-lake
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/eagle-lake" // Defaults to weight 400.
+import "@fontsource/eagle-lake"; // Defaults to weight 400.
 ```
 
 Supported variables:

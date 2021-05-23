@@ -15,7 +15,7 @@ yarn add @fontsource/happy-monkey // npm install @fontsource/happy-monkey
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/happy-monkey" // Defaults to weight 400.
+import "@fontsource/happy-monkey"; // Defaults to weight 400.
 ```
 
 Supported variables:

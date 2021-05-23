@@ -15,7 +15,7 @@ yarn add @fontsource/playfair-display // npm install @fontsource/playfair-displa
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/playfair-display" // Defaults to weight 400.
+import "@fontsource/playfair-display"; // Defaults to weight 400.
 ```
 
 Supported variables:

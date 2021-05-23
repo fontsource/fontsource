@@ -15,7 +15,7 @@ yarn add @fontsource/odor-mean-chey // npm install @fontsource/odor-mean-chey
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/odor-mean-chey" // Defaults to weight 400.
+import "@fontsource/odor-mean-chey"; // Defaults to weight 400.
 ```
 
 Supported variables:

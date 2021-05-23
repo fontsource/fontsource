@@ -15,7 +15,7 @@ yarn add @fontsource/lemon // npm install @fontsource/lemon
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lemon" // Defaults to weight 400.
+import "@fontsource/lemon"; // Defaults to weight 400.
 ```
 
 Supported variables:

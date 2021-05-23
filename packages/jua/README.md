@@ -15,7 +15,7 @@ yarn add @fontsource/jua // npm install @fontsource/jua
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jua" // Defaults to weight 400.
+import "@fontsource/jua"; // Defaults to weight 400.
 ```
 
 Supported variables:

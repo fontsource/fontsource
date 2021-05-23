@@ -15,7 +15,7 @@ yarn add @fontsource/pt-sans // npm install @fontsource/pt-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pt-sans" // Defaults to weight 400.
+import "@fontsource/pt-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

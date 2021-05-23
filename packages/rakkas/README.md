@@ -15,7 +15,7 @@ yarn add @fontsource/rakkas // npm install @fontsource/rakkas
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rakkas" // Defaults to weight 400.
+import "@fontsource/rakkas"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/yrsa // npm install @fontsource/yrsa
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/yrsa" // Defaults to weight 400.
+import "@fontsource/yrsa"; // Defaults to weight 400.
 ```
 
 Supported variables:

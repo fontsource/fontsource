@@ -15,7 +15,7 @@ yarn add @fontsource/cambay // npm install @fontsource/cambay
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cambay" // Defaults to weight 400.
+import "@fontsource/cambay"; // Defaults to weight 400.
 ```
 
 Supported variables:

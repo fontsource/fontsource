@@ -15,7 +15,7 @@ yarn add @fontsource/angkor // npm install @fontsource/angkor
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/angkor" // Defaults to weight 400.
+import "@fontsource/angkor"; // Defaults to weight 400.
 ```
 
 Supported variables:

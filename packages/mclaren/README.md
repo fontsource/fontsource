@@ -15,7 +15,7 @@ yarn add @fontsource/mclaren // npm install @fontsource/mclaren
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mclaren" // Defaults to weight 400.
+import "@fontsource/mclaren"; // Defaults to weight 400.
 ```
 
 Supported variables:

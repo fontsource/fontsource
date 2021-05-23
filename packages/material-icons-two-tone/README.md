@@ -15,7 +15,7 @@ yarn add @fontsource/material-icons-two-tone // npm install @fontsource/material
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/material-icons-two-tone" // Defaults to weight 400.
+import "@fontsource/material-icons-two-tone"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/dekko // npm install @fontsource/dekko
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dekko" // Defaults to weight 400.
+import "@fontsource/dekko"; // Defaults to weight 400.
 ```
 
 Supported variables:

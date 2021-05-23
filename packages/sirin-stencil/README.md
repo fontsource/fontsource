@@ -15,7 +15,7 @@ yarn add @fontsource/sirin-stencil // npm install @fontsource/sirin-stencil
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sirin-stencil" // Defaults to weight 400.
+import "@fontsource/sirin-stencil"; // Defaults to weight 400.
 ```
 
 Supported variables:

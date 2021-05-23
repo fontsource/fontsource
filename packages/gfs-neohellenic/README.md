@@ -15,7 +15,7 @@ yarn add @fontsource/gfs-neohellenic // npm install @fontsource/gfs-neohellenic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gfs-neohellenic" // Defaults to weight 400.
+import "@fontsource/gfs-neohellenic"; // Defaults to weight 400.
 ```
 
 Supported variables:

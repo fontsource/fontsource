@@ -15,7 +15,7 @@ yarn add @fontsource/economica // npm install @fontsource/economica
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/economica" // Defaults to weight 400.
+import "@fontsource/economica"; // Defaults to weight 400.
 ```
 
 Supported variables:

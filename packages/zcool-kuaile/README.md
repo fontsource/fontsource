@@ -15,7 +15,7 @@ yarn add @fontsource/zcool-kuaile // npm install @fontsource/zcool-kuaile
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/zcool-kuaile" // Defaults to weight 400.
+import "@fontsource/zcool-kuaile"; // Defaults to weight 400.
 ```
 
 Supported variables:

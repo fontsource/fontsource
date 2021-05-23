@@ -15,7 +15,7 @@ yarn add @fontsource/dancing-script // npm install @fontsource/dancing-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dancing-script" // Defaults to weight 400.
+import "@fontsource/dancing-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

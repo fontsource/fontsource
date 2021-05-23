@@ -15,7 +15,7 @@ yarn add @fontsource/big-shoulders-inline-text // npm install @fontsource/big-sh
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/big-shoulders-inline-text" // Defaults to weight 400.
+import "@fontsource/big-shoulders-inline-text"; // Defaults to weight 400.
 ```
 
 Supported variables:

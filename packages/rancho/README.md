@@ -15,7 +15,7 @@ yarn add @fontsource/rancho // npm install @fontsource/rancho
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rancho" // Defaults to weight 400.
+import "@fontsource/rancho"; // Defaults to weight 400.
 ```
 
 Supported variables:

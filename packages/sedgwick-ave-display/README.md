@@ -15,7 +15,7 @@ yarn add @fontsource/sedgwick-ave-display // npm install @fontsource/sedgwick-av
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sedgwick-ave-display" // Defaults to weight 400.
+import "@fontsource/sedgwick-ave-display"; // Defaults to weight 400.
 ```
 
 Supported variables:

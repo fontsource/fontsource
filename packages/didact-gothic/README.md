@@ -15,7 +15,7 @@ yarn add @fontsource/didact-gothic // npm install @fontsource/didact-gothic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/didact-gothic" // Defaults to weight 400.
+import "@fontsource/didact-gothic"; // Defaults to weight 400.
 ```
 
 Supported variables:

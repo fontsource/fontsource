@@ -15,7 +15,7 @@ yarn add @fontsource/uncial-antiqua // npm install @fontsource/uncial-antiqua
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/uncial-antiqua" // Defaults to weight 400.
+import "@fontsource/uncial-antiqua"; // Defaults to weight 400.
 ```
 
 Supported variables:

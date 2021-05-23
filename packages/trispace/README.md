@@ -15,7 +15,7 @@ yarn add @fontsource/trispace // npm install @fontsource/trispace
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/trispace" // Defaults to weight 400.
+import "@fontsource/trispace"; // Defaults to weight 400.
 ```
 
 Supported variables:

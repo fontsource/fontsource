@@ -15,7 +15,7 @@ yarn add @fontsource/eb-garamond // npm install @fontsource/eb-garamond
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/eb-garamond" // Defaults to weight 400.
+import "@fontsource/eb-garamond"; // Defaults to weight 400.
 ```
 
 Supported variables:

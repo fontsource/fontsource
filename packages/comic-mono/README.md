@@ -15,7 +15,7 @@ yarn add @fontsource/comic-mono // npm install @fontsource/comic-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/comic-mono" // Defaults to weight 400.
+import "@fontsource/comic-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

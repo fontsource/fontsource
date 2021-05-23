@@ -15,7 +15,7 @@ yarn add @fontsource/kumbh-sans // npm install @fontsource/kumbh-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kumbh-sans" // Defaults to weight 400.
+import "@fontsource/kumbh-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

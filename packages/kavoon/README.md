@@ -15,7 +15,7 @@ yarn add @fontsource/kavoon // npm install @fontsource/kavoon
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kavoon" // Defaults to weight 400.
+import "@fontsource/kavoon"; // Defaults to weight 400.
 ```
 
 Supported variables:

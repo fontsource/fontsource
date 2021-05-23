@@ -15,7 +15,7 @@ yarn add @fontsource/kavivanar // npm install @fontsource/kavivanar
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kavivanar" // Defaults to weight 400.
+import "@fontsource/kavivanar"; // Defaults to weight 400.
 ```
 
 Supported variables:

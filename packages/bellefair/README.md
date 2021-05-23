@@ -15,7 +15,7 @@ yarn add @fontsource/bellefair // npm install @fontsource/bellefair
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bellefair" // Defaults to weight 400.
+import "@fontsource/bellefair"; // Defaults to weight 400.
 ```
 
 Supported variables:

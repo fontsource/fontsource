@@ -15,7 +15,7 @@ yarn add @fontsource/new-rocker // npm install @fontsource/new-rocker
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/new-rocker" // Defaults to weight 400.
+import "@fontsource/new-rocker"; // Defaults to weight 400.
 ```
 
 Supported variables:

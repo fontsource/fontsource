@@ -15,7 +15,7 @@ yarn add @fontsource/mogra // npm install @fontsource/mogra
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mogra" // Defaults to weight 400.
+import "@fontsource/mogra"; // Defaults to weight 400.
 ```
 
 Supported variables:

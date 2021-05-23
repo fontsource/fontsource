@@ -15,7 +15,7 @@ yarn add @fontsource/padauk // npm install @fontsource/padauk
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/padauk" // Defaults to weight 400.
+import "@fontsource/padauk"; // Defaults to weight 400.
 ```
 
 Supported variables:

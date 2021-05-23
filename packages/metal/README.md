@@ -15,7 +15,7 @@ yarn add @fontsource/metal // npm install @fontsource/metal
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/metal" // Defaults to weight 400.
+import "@fontsource/metal"; // Defaults to weight 400.
 ```
 
 Supported variables:

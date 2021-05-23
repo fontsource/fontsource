@@ -15,7 +15,7 @@ yarn add @fontsource/calistoga // npm install @fontsource/calistoga
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/calistoga" // Defaults to weight 400.
+import "@fontsource/calistoga"; // Defaults to weight 400.
 ```
 
 Supported variables:

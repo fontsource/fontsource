@@ -15,7 +15,7 @@ yarn add @fontsource/plus-jakarta-sans // npm install @fontsource/plus-jakarta-s
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/plus-jakarta-sans" // Defaults to weight 400.
+import "@fontsource/plus-jakarta-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

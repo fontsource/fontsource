@@ -15,7 +15,7 @@ yarn add @fontsource/norican // npm install @fontsource/norican
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/norican" // Defaults to weight 400.
+import "@fontsource/norican"; // Defaults to weight 400.
 ```
 
 Supported variables:

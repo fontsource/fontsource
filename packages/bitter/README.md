@@ -15,7 +15,7 @@ yarn add @fontsource/bitter // npm install @fontsource/bitter
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bitter" // Defaults to weight 400.
+import "@fontsource/bitter"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/zen-dots // npm install @fontsource/zen-dots
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/zen-dots" // Defaults to weight 400.
+import "@fontsource/zen-dots"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/offside // npm install @fontsource/offside
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/offside" // Defaults to weight 400.
+import "@fontsource/offside"; // Defaults to weight 400.
 ```
 
 Supported variables:

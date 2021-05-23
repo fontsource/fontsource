@@ -15,7 +15,7 @@ yarn add @fontsource/erica-one // npm install @fontsource/erica-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/erica-one" // Defaults to weight 400.
+import "@fontsource/erica-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/bungee-outline // npm install @fontsource/bungee-outline
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bungee-outline" // Defaults to weight 400.
+import "@fontsource/bungee-outline"; // Defaults to weight 400.
 ```
 
 Supported variables:

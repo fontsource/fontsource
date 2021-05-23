@@ -15,7 +15,7 @@ yarn add @fontsource/mr-de-haviland // npm install @fontsource/mr-de-haviland
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mr-de-haviland" // Defaults to weight 400.
+import "@fontsource/mr-de-haviland"; // Defaults to weight 400.
 ```
 
 Supported variables:

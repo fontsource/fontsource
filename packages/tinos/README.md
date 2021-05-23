@@ -15,7 +15,7 @@ yarn add @fontsource/tinos // npm install @fontsource/tinos
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/tinos" // Defaults to weight 400.
+import "@fontsource/tinos"; // Defaults to weight 400.
 ```
 
 Supported variables:

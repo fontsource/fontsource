@@ -15,7 +15,7 @@ yarn add @fontsource/delius-swash-caps // npm install @fontsource/delius-swash-c
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/delius-swash-caps" // Defaults to weight 400.
+import "@fontsource/delius-swash-caps"; // Defaults to weight 400.
 ```
 
 Supported variables:

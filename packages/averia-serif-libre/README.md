@@ -15,7 +15,7 @@ yarn add @fontsource/averia-serif-libre // npm install @fontsource/averia-serif-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/averia-serif-libre" // Defaults to weight 400.
+import "@fontsource/averia-serif-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

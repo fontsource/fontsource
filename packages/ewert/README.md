@@ -15,7 +15,7 @@ yarn add @fontsource/ewert // npm install @fontsource/ewert
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ewert" // Defaults to weight 400.
+import "@fontsource/ewert"; // Defaults to weight 400.
 ```
 
 Supported variables:

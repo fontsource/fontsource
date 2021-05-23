@@ -15,7 +15,7 @@ yarn add @fontsource/sniglet // npm install @fontsource/sniglet
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sniglet" // Defaults to weight 400.
+import "@fontsource/sniglet"; // Defaults to weight 400.
 ```
 
 Supported variables:

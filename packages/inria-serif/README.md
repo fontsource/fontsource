@@ -15,7 +15,7 @@ yarn add @fontsource/inria-serif // npm install @fontsource/inria-serif
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/inria-serif" // Defaults to weight 400.
+import "@fontsource/inria-serif"; // Defaults to weight 400.
 ```
 
 Supported variables:

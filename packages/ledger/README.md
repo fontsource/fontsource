@@ -15,7 +15,7 @@ yarn add @fontsource/ledger // npm install @fontsource/ledger
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ledger" // Defaults to weight 400.
+import "@fontsource/ledger"; // Defaults to weight 400.
 ```
 
 Supported variables:

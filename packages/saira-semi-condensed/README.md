@@ -15,7 +15,7 @@ yarn add @fontsource/saira-semi-condensed // npm install @fontsource/saira-semi-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/saira-semi-condensed" // Defaults to weight 400.
+import "@fontsource/saira-semi-condensed"; // Defaults to weight 400.
 ```
 
 Supported variables:

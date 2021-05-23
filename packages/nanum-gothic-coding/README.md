@@ -15,7 +15,7 @@ yarn add @fontsource/nanum-gothic-coding // npm install @fontsource/nanum-gothic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nanum-gothic-coding" // Defaults to weight 400.
+import "@fontsource/nanum-gothic-coding"; // Defaults to weight 400.
 ```
 
 Supported variables:

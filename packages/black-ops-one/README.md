@@ -15,7 +15,7 @@ yarn add @fontsource/black-ops-one // npm install @fontsource/black-ops-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/black-ops-one" // Defaults to weight 400.
+import "@fontsource/black-ops-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

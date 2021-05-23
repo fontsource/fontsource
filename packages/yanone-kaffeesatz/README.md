@@ -15,7 +15,7 @@ yarn add @fontsource/yanone-kaffeesatz // npm install @fontsource/yanone-kaffees
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/yanone-kaffeesatz" // Defaults to weight 400.
+import "@fontsource/yanone-kaffeesatz"; // Defaults to weight 400.
 ```
 
 Supported variables:

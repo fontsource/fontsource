@@ -15,7 +15,7 @@ yarn add @fontsource/original-surfer // npm install @fontsource/original-surfer
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/original-surfer" // Defaults to weight 400.
+import "@fontsource/original-surfer"; // Defaults to weight 400.
 ```
 
 Supported variables:

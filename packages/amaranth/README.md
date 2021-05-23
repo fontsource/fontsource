@@ -15,7 +15,7 @@ yarn add @fontsource/amaranth // npm install @fontsource/amaranth
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/amaranth" // Defaults to weight 400.
+import "@fontsource/amaranth"; // Defaults to weight 400.
 ```
 
 Supported variables:

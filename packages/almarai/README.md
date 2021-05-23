@@ -15,7 +15,7 @@ yarn add @fontsource/almarai // npm install @fontsource/almarai
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/almarai" // Defaults to weight 400.
+import "@fontsource/almarai"; // Defaults to weight 400.
 ```
 
 Supported variables:

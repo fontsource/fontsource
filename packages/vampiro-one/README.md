@@ -15,7 +15,7 @@ yarn add @fontsource/vampiro-one // npm install @fontsource/vampiro-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vampiro-one" // Defaults to weight 400.
+import "@fontsource/vampiro-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

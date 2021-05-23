@@ -15,7 +15,7 @@ yarn add @fontsource/nova-round // npm install @fontsource/nova-round
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nova-round" // Defaults to weight 400.
+import "@fontsource/nova-round"; // Defaults to weight 400.
 ```
 
 Supported variables:

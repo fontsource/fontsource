@@ -15,7 +15,7 @@ yarn add @fontsource/galindo // npm install @fontsource/galindo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/galindo" // Defaults to weight 400.
+import "@fontsource/galindo"; // Defaults to weight 400.
 ```
 
 Supported variables:

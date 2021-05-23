@@ -15,7 +15,7 @@ yarn add @fontsource/sacramento // npm install @fontsource/sacramento
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sacramento" // Defaults to weight 400.
+import "@fontsource/sacramento"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/stint-ultra-expanded // npm install @fontsource/stint-ultra
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/stint-ultra-expanded" // Defaults to weight 400.
+import "@fontsource/stint-ultra-expanded"; // Defaults to weight 400.
 ```
 
 Supported variables:

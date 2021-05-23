@@ -15,7 +15,7 @@ yarn add @fontsource/tauri // npm install @fontsource/tauri
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/tauri" // Defaults to weight 400.
+import "@fontsource/tauri"; // Defaults to weight 400.
 ```
 
 Supported variables:

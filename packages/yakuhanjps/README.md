@@ -15,7 +15,7 @@ yarn add @fontsource/yakuhanjps // npm install @fontsource/yakuhanjps
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/yakuhanjps" // Defaults to weight 400.
+import "@fontsource/yakuhanjps"; // Defaults to weight 400.
 ```
 
 Supported variables:

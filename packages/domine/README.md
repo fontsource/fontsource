@@ -15,7 +15,7 @@ yarn add @fontsource/domine // npm install @fontsource/domine
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/domine" // Defaults to weight 400.
+import "@fontsource/domine"; // Defaults to weight 400.
 ```
 
 Supported variables:

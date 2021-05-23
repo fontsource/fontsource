@@ -15,7 +15,7 @@ yarn add @fontsource/emilys-candy // npm install @fontsource/emilys-candy
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/emilys-candy" // Defaults to weight 400.
+import "@fontsource/emilys-candy"; // Defaults to weight 400.
 ```
 
 Supported variables:

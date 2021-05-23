@@ -15,7 +15,7 @@ yarn add @fontsource/material-icons-sharp // npm install @fontsource/material-ic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/material-icons-sharp" // Defaults to weight 400.
+import "@fontsource/material-icons-sharp"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/croissant-one // npm install @fontsource/croissant-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/croissant-one" // Defaults to weight 400.
+import "@fontsource/croissant-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

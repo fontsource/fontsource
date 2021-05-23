@@ -15,7 +15,7 @@ yarn add @fontsource/ravi-prakash // npm install @fontsource/ravi-prakash
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ravi-prakash" // Defaults to weight 400.
+import "@fontsource/ravi-prakash"; // Defaults to weight 400.
 ```
 
 Supported variables:

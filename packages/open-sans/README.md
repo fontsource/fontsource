@@ -15,7 +15,7 @@ yarn add @fontsource/open-sans // npm install @fontsource/open-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/open-sans" // Defaults to weight 400.
+import "@fontsource/open-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:
@@ -41,6 +41,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v18`.
+Font version (provided by source): `v20`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

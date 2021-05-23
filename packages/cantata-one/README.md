@@ -15,7 +15,7 @@ yarn add @fontsource/cantata-one // npm install @fontsource/cantata-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cantata-one" // Defaults to weight 400.
+import "@fontsource/cantata-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

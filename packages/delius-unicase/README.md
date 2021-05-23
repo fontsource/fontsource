@@ -15,7 +15,7 @@ yarn add @fontsource/delius-unicase // npm install @fontsource/delius-unicase
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/delius-unicase" // Defaults to weight 400.
+import "@fontsource/delius-unicase"; // Defaults to weight 400.
 ```
 
 Supported variables:

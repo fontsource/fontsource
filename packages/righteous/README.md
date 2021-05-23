@@ -15,7 +15,7 @@ yarn add @fontsource/righteous // npm install @fontsource/righteous
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/righteous" // Defaults to weight 400.
+import "@fontsource/righteous"; // Defaults to weight 400.
 ```
 
 Supported variables:

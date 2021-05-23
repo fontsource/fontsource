@@ -15,7 +15,7 @@ yarn add @fontsource/mate-sc // npm install @fontsource/mate-sc
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mate-sc" // Defaults to weight 400.
+import "@fontsource/mate-sc"; // Defaults to weight 400.
 ```
 
 Supported variables:

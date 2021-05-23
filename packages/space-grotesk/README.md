@@ -15,7 +15,7 @@ yarn add @fontsource/space-grotesk // npm install @fontsource/space-grotesk
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/space-grotesk" // Defaults to weight 400.
+import "@fontsource/space-grotesk"; // Defaults to weight 400.
 ```
 
 Supported variables:

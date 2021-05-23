@@ -15,7 +15,7 @@ yarn add @fontsource/medievalsharp // npm install @fontsource/medievalsharp
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/medievalsharp" // Defaults to weight 400.
+import "@fontsource/medievalsharp"; // Defaults to weight 400.
 ```
 
 Supported variables:

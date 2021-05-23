@@ -15,7 +15,7 @@ yarn add @fontsource/saira-stencil-one // npm install @fontsource/saira-stencil-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/saira-stencil-one" // Defaults to weight 400.
+import "@fontsource/saira-stencil-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/ropa-sans // npm install @fontsource/ropa-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ropa-sans" // Defaults to weight 400.
+import "@fontsource/ropa-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

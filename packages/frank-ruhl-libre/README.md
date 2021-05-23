@@ -15,7 +15,7 @@ yarn add @fontsource/frank-ruhl-libre // npm install @fontsource/frank-ruhl-libr
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/frank-ruhl-libre" // Defaults to weight 400.
+import "@fontsource/frank-ruhl-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

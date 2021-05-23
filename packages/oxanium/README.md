@@ -15,7 +15,7 @@ yarn add @fontsource/oxanium // npm install @fontsource/oxanium
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/oxanium" // Defaults to weight 400.
+import "@fontsource/oxanium"; // Defaults to weight 400.
 ```
 
 Supported variables:

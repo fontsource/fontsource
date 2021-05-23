@@ -15,7 +15,7 @@ yarn add @fontsource/yusei-magic // npm install @fontsource/yusei-magic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/yusei-magic" // Defaults to weight 400.
+import "@fontsource/yusei-magic"; // Defaults to weight 400.
 ```
 
 Supported variables:

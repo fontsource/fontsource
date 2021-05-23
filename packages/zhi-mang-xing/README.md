@@ -15,7 +15,7 @@ yarn add @fontsource/zhi-mang-xing // npm install @fontsource/zhi-mang-xing
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/zhi-mang-xing" // Defaults to weight 400.
+import "@fontsource/zhi-mang-xing"; // Defaults to weight 400.
 ```
 
 Supported variables:

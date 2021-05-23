@@ -15,7 +15,7 @@ yarn add @fontsource/vesper-libre // npm install @fontsource/vesper-libre
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vesper-libre" // Defaults to weight 400.
+import "@fontsource/vesper-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

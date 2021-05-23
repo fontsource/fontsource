@@ -15,7 +15,7 @@ yarn add @fontsource/corben // npm install @fontsource/corben
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/corben" // Defaults to weight 400.
+import "@fontsource/corben"; // Defaults to weight 400.
 ```
 
 Supported variables:

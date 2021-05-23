@@ -15,7 +15,7 @@ yarn add @fontsource/monofett // npm install @fontsource/monofett
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/monofett" // Defaults to weight 400.
+import "@fontsource/monofett"; // Defaults to weight 400.
 ```
 
 Supported variables:

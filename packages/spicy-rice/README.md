@@ -15,7 +15,7 @@ yarn add @fontsource/spicy-rice // npm install @fontsource/spicy-rice
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/spicy-rice" // Defaults to weight 400.
+import "@fontsource/spicy-rice"; // Defaults to weight 400.
 ```
 
 Supported variables:

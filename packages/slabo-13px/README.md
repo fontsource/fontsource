@@ -15,7 +15,7 @@ yarn add @fontsource/slabo-13px // npm install @fontsource/slabo-13px
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/slabo-13px" // Defaults to weight 400.
+import "@fontsource/slabo-13px"; // Defaults to weight 400.
 ```
 
 Supported variables:

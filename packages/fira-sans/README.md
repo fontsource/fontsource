@@ -15,7 +15,7 @@ yarn add @fontsource/fira-sans // npm install @fontsource/fira-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fira-sans" // Defaults to weight 400.
+import "@fontsource/fira-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

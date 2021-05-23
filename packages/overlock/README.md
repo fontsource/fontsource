@@ -15,7 +15,7 @@ yarn add @fontsource/overlock // npm install @fontsource/overlock
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/overlock" // Defaults to weight 400.
+import "@fontsource/overlock"; // Defaults to weight 400.
 ```
 
 Supported variables:

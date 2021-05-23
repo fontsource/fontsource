@@ -15,7 +15,7 @@ yarn add @fontsource/sevillana // npm install @fontsource/sevillana
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sevillana" // Defaults to weight 400.
+import "@fontsource/sevillana"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/hanalei-fill // npm install @fontsource/hanalei-fill
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/hanalei-fill" // Defaults to weight 400.
+import "@fontsource/hanalei-fill"; // Defaults to weight 400.
 ```
 
 Supported variables:

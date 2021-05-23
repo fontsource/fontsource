@@ -15,7 +15,7 @@ yarn add @fontsource/kumar-one-outline // npm install @fontsource/kumar-one-outl
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kumar-one-outline" // Defaults to weight 400.
+import "@fontsource/kumar-one-outline"; // Defaults to weight 400.
 ```
 
 Supported variables:

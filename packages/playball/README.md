@@ -15,7 +15,7 @@ yarn add @fontsource/playball // npm install @fontsource/playball
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/playball" // Defaults to weight 400.
+import "@fontsource/playball"; // Defaults to weight 400.
 ```
 
 Supported variables:

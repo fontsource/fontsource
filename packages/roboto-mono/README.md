@@ -15,7 +15,7 @@ yarn add @fontsource/roboto-mono // npm install @fontsource/roboto-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/roboto-mono" // Defaults to weight 400.
+import "@fontsource/roboto-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/ruluko // npm install @fontsource/ruluko
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ruluko" // Defaults to weight 400.
+import "@fontsource/ruluko"; // Defaults to weight 400.
 ```
 
 Supported variables:

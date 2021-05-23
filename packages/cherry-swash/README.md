@@ -15,7 +15,7 @@ yarn add @fontsource/cherry-swash // npm install @fontsource/cherry-swash
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cherry-swash" // Defaults to weight 400.
+import "@fontsource/cherry-swash"; // Defaults to weight 400.
 ```
 
 Supported variables:

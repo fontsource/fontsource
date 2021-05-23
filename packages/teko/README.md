@@ -15,7 +15,7 @@ yarn add @fontsource/teko // npm install @fontsource/teko
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/teko" // Defaults to weight 400.
+import "@fontsource/teko"; // Defaults to weight 400.
 ```
 
 Supported variables:

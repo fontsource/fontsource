@@ -15,7 +15,7 @@ yarn add @fontsource/niramit // npm install @fontsource/niramit
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/niramit" // Defaults to weight 400.
+import "@fontsource/niramit"; // Defaults to weight 400.
 ```
 
 Supported variables:

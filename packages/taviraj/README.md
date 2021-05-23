@@ -15,7 +15,7 @@ yarn add @fontsource/taviraj // npm install @fontsource/taviraj
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/taviraj" // Defaults to weight 400.
+import "@fontsource/taviraj"; // Defaults to weight 400.
 ```
 
 Supported variables:

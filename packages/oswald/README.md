@@ -15,7 +15,7 @@ yarn add @fontsource/oswald // npm install @fontsource/oswald
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/oswald" // Defaults to weight 400.
+import "@fontsource/oswald"; // Defaults to weight 400.
 ```
 
 Supported variables:

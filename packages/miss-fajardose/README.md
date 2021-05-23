@@ -15,7 +15,7 @@ yarn add @fontsource/miss-fajardose // npm install @fontsource/miss-fajardose
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/miss-fajardose" // Defaults to weight 400.
+import "@fontsource/miss-fajardose"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/habibi // npm install @fontsource/habibi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/habibi" // Defaults to weight 400.
+import "@fontsource/habibi"; // Defaults to weight 400.
 ```
 
 Supported variables:

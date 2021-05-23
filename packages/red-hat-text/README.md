@@ -15,7 +15,7 @@ yarn add @fontsource/red-hat-text // npm install @fontsource/red-hat-text
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/red-hat-text" // Defaults to weight 400.
+import "@fontsource/red-hat-text"; // Defaults to weight 400.
 ```
 
 Supported variables:

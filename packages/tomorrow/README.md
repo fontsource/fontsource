@@ -15,7 +15,7 @@ yarn add @fontsource/tomorrow // npm install @fontsource/tomorrow
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/tomorrow" // Defaults to weight 400.
+import "@fontsource/tomorrow"; // Defaults to weight 400.
 ```
 
 Supported variables:

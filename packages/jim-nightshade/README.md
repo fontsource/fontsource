@@ -15,7 +15,7 @@ yarn add @fontsource/jim-nightshade // npm install @fontsource/jim-nightshade
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jim-nightshade" // Defaults to weight 400.
+import "@fontsource/jim-nightshade"; // Defaults to weight 400.
 ```
 
 Supported variables:

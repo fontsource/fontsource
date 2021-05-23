@@ -15,7 +15,7 @@ yarn add @fontsource/architects-daughter // npm install @fontsource/architects-d
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/architects-daughter" // Defaults to weight 400.
+import "@fontsource/architects-daughter"; // Defaults to weight 400.
 ```
 
 Supported variables:

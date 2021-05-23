@@ -15,7 +15,7 @@ yarn add @fontsource/londrina-shadow // npm install @fontsource/londrina-shadow
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/londrina-shadow" // Defaults to weight 400.
+import "@fontsource/londrina-shadow"; // Defaults to weight 400.
 ```
 
 Supported variables:

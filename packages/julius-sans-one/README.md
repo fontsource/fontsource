@@ -15,7 +15,7 @@ yarn add @fontsource/julius-sans-one // npm install @fontsource/julius-sans-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/julius-sans-one" // Defaults to weight 400.
+import "@fontsource/julius-sans-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

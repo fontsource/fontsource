@@ -15,7 +15,7 @@ yarn add @fontsource/pridi // npm install @fontsource/pridi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pridi" // Defaults to weight 400.
+import "@fontsource/pridi"; // Defaults to weight 400.
 ```
 
 Supported variables:

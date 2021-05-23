@@ -15,7 +15,7 @@ yarn add @fontsource/long-cang // npm install @fontsource/long-cang
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/long-cang" // Defaults to weight 400.
+import "@fontsource/long-cang"; // Defaults to weight 400.
 ```
 
 Supported variables:

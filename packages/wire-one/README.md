@@ -15,7 +15,7 @@ yarn add @fontsource/wire-one // npm install @fontsource/wire-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/wire-one" // Defaults to weight 400.
+import "@fontsource/wire-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

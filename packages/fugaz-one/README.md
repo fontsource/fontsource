@@ -15,7 +15,7 @@ yarn add @fontsource/fugaz-one // npm install @fontsource/fugaz-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fugaz-one" // Defaults to weight 400.
+import "@fontsource/fugaz-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/lobster-two // npm install @fontsource/lobster-two
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lobster-two" // Defaults to weight 400.
+import "@fontsource/lobster-two"; // Defaults to weight 400.
 ```
 
 Supported variables:

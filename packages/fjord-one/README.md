@@ -15,7 +15,7 @@ yarn add @fontsource/fjord-one // npm install @fontsource/fjord-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fjord-one" // Defaults to weight 400.
+import "@fontsource/fjord-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

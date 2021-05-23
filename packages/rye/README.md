@@ -15,7 +15,7 @@ yarn add @fontsource/rye // npm install @fontsource/rye
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rye" // Defaults to weight 400.
+import "@fontsource/rye"; // Defaults to weight 400.
 ```
 
 Supported variables:

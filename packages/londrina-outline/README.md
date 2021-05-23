@@ -15,7 +15,7 @@ yarn add @fontsource/londrina-outline // npm install @fontsource/londrina-outlin
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/londrina-outline" // Defaults to weight 400.
+import "@fontsource/londrina-outline"; // Defaults to weight 400.
 ```
 
 Supported variables:

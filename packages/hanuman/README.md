@@ -15,7 +15,7 @@ yarn add @fontsource/hanuman // npm install @fontsource/hanuman
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/hanuman" // Defaults to weight 400.
+import "@fontsource/hanuman"; // Defaults to weight 400.
 ```
 
 Supported variables:

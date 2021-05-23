@@ -15,7 +15,7 @@ yarn add @fontsource/skranji // npm install @fontsource/skranji
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/skranji" // Defaults to weight 400.
+import "@fontsource/skranji"; // Defaults to weight 400.
 ```
 
 Supported variables:

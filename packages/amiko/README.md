@@ -15,7 +15,7 @@ yarn add @fontsource/amiko // npm install @fontsource/amiko
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/amiko" // Defaults to weight 400.
+import "@fontsource/amiko"; // Defaults to weight 400.
 ```
 
 Supported variables:

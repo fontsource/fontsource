@@ -15,7 +15,7 @@ yarn add @fontsource/nanum-pen-script // npm install @fontsource/nanum-pen-scrip
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nanum-pen-script" // Defaults to weight 400.
+import "@fontsource/nanum-pen-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

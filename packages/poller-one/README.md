@@ -15,7 +15,7 @@ yarn add @fontsource/poller-one // npm install @fontsource/poller-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/poller-one" // Defaults to weight 400.
+import "@fontsource/poller-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

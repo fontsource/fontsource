@@ -15,7 +15,7 @@ yarn add @fontsource/aubrey // npm install @fontsource/aubrey
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/aubrey" // Defaults to weight 400.
+import "@fontsource/aubrey"; // Defaults to weight 400.
 ```
 
 Supported variables:

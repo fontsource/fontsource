@@ -15,7 +15,7 @@ yarn add @fontsource/song-myung // npm install @fontsource/song-myung
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/song-myung" // Defaults to weight 400.
+import "@fontsource/song-myung"; // Defaults to weight 400.
 ```
 
 Supported variables:

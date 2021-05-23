@@ -15,7 +15,7 @@ yarn add @fontsource/manuale // npm install @fontsource/manuale
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/manuale" // Defaults to weight 400.
+import "@fontsource/manuale"; // Defaults to weight 400.
 ```
 
 Supported variables:

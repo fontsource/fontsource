@@ -15,7 +15,7 @@ yarn add @fontsource/suez-one // npm install @fontsource/suez-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/suez-one" // Defaults to weight 400.
+import "@fontsource/suez-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/gochi-hand // npm install @fontsource/gochi-hand
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gochi-hand" // Defaults to weight 400.
+import "@fontsource/gochi-hand"; // Defaults to weight 400.
 ```
 
 Supported variables:

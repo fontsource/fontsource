@@ -15,7 +15,7 @@ yarn add @fontsource/sansita-swashed // npm install @fontsource/sansita-swashed
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sansita-swashed" // Defaults to weight 400.
+import "@fontsource/sansita-swashed"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/russo-one // npm install @fontsource/russo-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/russo-one" // Defaults to weight 400.
+import "@fontsource/russo-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

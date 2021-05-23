@@ -15,7 +15,7 @@ yarn add @fontsource/francois-one // npm install @fontsource/francois-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/francois-one" // Defaults to weight 400.
+import "@fontsource/francois-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

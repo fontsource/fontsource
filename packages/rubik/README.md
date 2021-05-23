@@ -15,7 +15,7 @@ yarn add @fontsource/rubik // npm install @fontsource/rubik
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rubik" // Defaults to weight 400.
+import "@fontsource/rubik"; // Defaults to weight 400.
 ```
 
 Supported variables:

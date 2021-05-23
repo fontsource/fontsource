@@ -15,7 +15,7 @@ yarn add @fontsource/manrope // npm install @fontsource/manrope
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/manrope" // Defaults to weight 400.
+import "@fontsource/manrope"; // Defaults to weight 400.
 ```
 
 Supported variables:

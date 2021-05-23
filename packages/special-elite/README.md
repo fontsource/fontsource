@@ -15,7 +15,7 @@ yarn add @fontsource/special-elite // npm install @fontsource/special-elite
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/special-elite" // Defaults to weight 400.
+import "@fontsource/special-elite"; // Defaults to weight 400.
 ```
 
 Supported variables:

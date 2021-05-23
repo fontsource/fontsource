@@ -15,7 +15,7 @@ yarn add @fontsource/league-script // npm install @fontsource/league-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/league-script" // Defaults to weight 400.
+import "@fontsource/league-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

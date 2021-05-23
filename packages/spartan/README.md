@@ -15,7 +15,7 @@ yarn add @fontsource/spartan // npm install @fontsource/spartan
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/spartan" // Defaults to weight 400.
+import "@fontsource/spartan"; // Defaults to weight 400.
 ```
 
 Supported variables:

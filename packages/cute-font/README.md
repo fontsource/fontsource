@@ -15,7 +15,7 @@ yarn add @fontsource/cute-font // npm install @fontsource/cute-font
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cute-font" // Defaults to weight 400.
+import "@fontsource/cute-font"; // Defaults to weight 400.
 ```
 
 Supported variables:

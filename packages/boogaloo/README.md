@@ -15,7 +15,7 @@ yarn add @fontsource/boogaloo // npm install @fontsource/boogaloo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/boogaloo" // Defaults to weight 400.
+import "@fontsource/boogaloo"; // Defaults to weight 400.
 ```
 
 Supported variables:

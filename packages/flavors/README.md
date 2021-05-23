@@ -15,7 +15,7 @@ yarn add @fontsource/flavors // npm install @fontsource/flavors
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/flavors" // Defaults to weight 400.
+import "@fontsource/flavors"; // Defaults to weight 400.
 ```
 
 Supported variables:

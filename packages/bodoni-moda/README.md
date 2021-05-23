@@ -15,7 +15,7 @@ yarn add @fontsource/bodoni-moda // npm install @fontsource/bodoni-moda
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bodoni-moda" // Defaults to weight 400.
+import "@fontsource/bodoni-moda"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/kirang-haerang // npm install @fontsource/kirang-haerang
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kirang-haerang" // Defaults to weight 400.
+import "@fontsource/kirang-haerang"; // Defaults to weight 400.
 ```
 
 Supported variables:

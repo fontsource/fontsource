@@ -15,7 +15,7 @@ yarn add @fontsource/lilita-one // npm install @fontsource/lilita-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lilita-one" // Defaults to weight 400.
+import "@fontsource/lilita-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

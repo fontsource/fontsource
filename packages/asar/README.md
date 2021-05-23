@@ -15,7 +15,7 @@ yarn add @fontsource/asar // npm install @fontsource/asar
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/asar" // Defaults to weight 400.
+import "@fontsource/asar"; // Defaults to weight 400.
 ```
 
 Supported variables:

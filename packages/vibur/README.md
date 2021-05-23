@@ -15,7 +15,7 @@ yarn add @fontsource/vibur // npm install @fontsource/vibur
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vibur" // Defaults to weight 400.
+import "@fontsource/vibur"; // Defaults to weight 400.
 ```
 
 Supported variables:

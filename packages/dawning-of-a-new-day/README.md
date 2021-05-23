@@ -15,7 +15,7 @@ yarn add @fontsource/dawning-of-a-new-day // npm install @fontsource/dawning-of-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dawning-of-a-new-day" // Defaults to weight 400.
+import "@fontsource/dawning-of-a-new-day"; // Defaults to weight 400.
 ```
 
 Supported variables:

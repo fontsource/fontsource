@@ -15,7 +15,7 @@ yarn add @fontsource/cooper-hewitt // npm install @fontsource/cooper-hewitt
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cooper-hewitt" // Defaults to weight 400.
+import "@fontsource/cooper-hewitt"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/petit-formal-script // npm install @fontsource/petit-formal
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/petit-formal-script" // Defaults to weight 400.
+import "@fontsource/petit-formal-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

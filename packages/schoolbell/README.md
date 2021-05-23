@@ -15,7 +15,7 @@ yarn add @fontsource/schoolbell // npm install @fontsource/schoolbell
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/schoolbell" // Defaults to weight 400.
+import "@fontsource/schoolbell"; // Defaults to weight 400.
 ```
 
 Supported variables:

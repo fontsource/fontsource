@@ -15,7 +15,7 @@ yarn add @fontsource/palanquin // npm install @fontsource/palanquin
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/palanquin" // Defaults to weight 400.
+import "@fontsource/palanquin"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/heebo // npm install @fontsource/heebo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/heebo" // Defaults to weight 400.
+import "@fontsource/heebo"; // Defaults to weight 400.
 ```
 
 Supported variables:

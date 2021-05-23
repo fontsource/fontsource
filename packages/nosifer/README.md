@@ -15,7 +15,7 @@ yarn add @fontsource/nosifer // npm install @fontsource/nosifer
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nosifer" // Defaults to weight 400.
+import "@fontsource/nosifer"; // Defaults to weight 400.
 ```
 
 Supported variables:

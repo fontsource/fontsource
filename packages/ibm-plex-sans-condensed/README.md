@@ -15,7 +15,7 @@ yarn add @fontsource/ibm-plex-sans-condensed // npm install @fontsource/ibm-plex
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ibm-plex-sans-condensed" // Defaults to weight 400.
+import "@fontsource/ibm-plex-sans-condensed"; // Defaults to weight 400.
 ```
 
 Supported variables:

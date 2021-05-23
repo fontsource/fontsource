@@ -15,7 +15,7 @@ yarn add @fontsource/noticia-text // npm install @fontsource/noticia-text
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/noticia-text" // Defaults to weight 400.
+import "@fontsource/noticia-text"; // Defaults to weight 400.
 ```
 
 Supported variables:

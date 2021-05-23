@@ -15,7 +15,7 @@ yarn add @fontsource/linden-hill // npm install @fontsource/linden-hill
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/linden-hill" // Defaults to weight 400.
+import "@fontsource/linden-hill"; // Defaults to weight 400.
 ```
 
 Supported variables:

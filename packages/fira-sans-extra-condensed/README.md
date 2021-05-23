@@ -15,7 +15,7 @@ yarn add @fontsource/fira-sans-extra-condensed // npm install @fontsource/fira-s
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fira-sans-extra-condensed" // Defaults to weight 400.
+import "@fontsource/fira-sans-extra-condensed"; // Defaults to weight 400.
 ```
 
 Supported variables:

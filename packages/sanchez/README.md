@@ -15,7 +15,7 @@ yarn add @fontsource/sanchez // npm install @fontsource/sanchez
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sanchez" // Defaults to weight 400.
+import "@fontsource/sanchez"; // Defaults to weight 400.
 ```
 
 Supported variables:

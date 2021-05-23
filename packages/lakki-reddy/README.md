@@ -15,7 +15,7 @@ yarn add @fontsource/lakki-reddy // npm install @fontsource/lakki-reddy
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lakki-reddy" // Defaults to weight 400.
+import "@fontsource/lakki-reddy"; // Defaults to weight 400.
 ```
 
 Supported variables:

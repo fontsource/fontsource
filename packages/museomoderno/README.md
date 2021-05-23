@@ -15,7 +15,7 @@ yarn add @fontsource/museomoderno // npm install @fontsource/museomoderno
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/museomoderno" // Defaults to weight 400.
+import "@fontsource/museomoderno"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/taprom // npm install @fontsource/taprom
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/taprom" // Defaults to weight 400.
+import "@fontsource/taprom"; // Defaults to weight 400.
 ```
 
 Supported variables:

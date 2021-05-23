@@ -15,7 +15,7 @@ yarn add @fontsource/siemreap // npm install @fontsource/siemreap
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/siemreap" // Defaults to weight 400.
+import "@fontsource/siemreap"; // Defaults to weight 400.
 ```
 
 Supported variables:

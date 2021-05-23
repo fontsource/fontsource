@@ -15,7 +15,7 @@ yarn add @fontsource/sofadi-one // npm install @fontsource/sofadi-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sofadi-one" // Defaults to weight 400.
+import "@fontsource/sofadi-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

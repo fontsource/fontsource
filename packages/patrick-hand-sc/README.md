@@ -15,7 +15,7 @@ yarn add @fontsource/patrick-hand-sc // npm install @fontsource/patrick-hand-sc
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/patrick-hand-sc" // Defaults to weight 400.
+import "@fontsource/patrick-hand-sc"; // Defaults to weight 400.
 ```
 
 Supported variables:

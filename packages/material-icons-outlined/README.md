@@ -15,7 +15,7 @@ yarn add @fontsource/material-icons-outlined // npm install @fontsource/material
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/material-icons-outlined" // Defaults to weight 400.
+import "@fontsource/material-icons-outlined"; // Defaults to weight 400.
 ```
 
 Supported variables:

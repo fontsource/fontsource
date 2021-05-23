@@ -15,7 +15,7 @@ yarn add @fontsource/rasa // npm install @fontsource/rasa
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rasa" // Defaults to weight 400.
+import "@fontsource/rasa"; // Defaults to weight 400.
 ```
 
 Supported variables:

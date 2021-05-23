@@ -15,7 +15,7 @@ yarn add @fontsource/caveat-brush // npm install @fontsource/caveat-brush
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/caveat-brush" // Defaults to weight 400.
+import "@fontsource/caveat-brush"; // Defaults to weight 400.
 ```
 
 Supported variables:

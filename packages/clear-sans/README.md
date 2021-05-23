@@ -15,7 +15,7 @@ yarn add @fontsource/clear-sans // npm install @fontsource/clear-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/clear-sans" // Defaults to weight 400.
+import "@fontsource/clear-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

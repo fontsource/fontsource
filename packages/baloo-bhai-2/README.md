@@ -15,7 +15,7 @@ yarn add @fontsource/baloo-bhai-2 // npm install @fontsource/baloo-bhai-2
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/baloo-bhai-2" // Defaults to weight 400.
+import "@fontsource/baloo-bhai-2"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/ubuntu-condensed // npm install @fontsource/ubuntu-condense
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ubuntu-condensed" // Defaults to weight 400.
+import "@fontsource/ubuntu-condensed"; // Defaults to weight 400.
 ```
 
 Supported variables:

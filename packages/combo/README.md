@@ -15,7 +15,7 @@ yarn add @fontsource/combo // npm install @fontsource/combo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/combo" // Defaults to weight 400.
+import "@fontsource/combo"; // Defaults to weight 400.
 ```
 
 Supported variables:

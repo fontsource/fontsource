@@ -15,7 +15,7 @@ yarn add @fontsource/allura // npm install @fontsource/allura
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/allura" // Defaults to weight 400.
+import "@fontsource/allura"; // Defaults to weight 400.
 ```
 
 Supported variables:

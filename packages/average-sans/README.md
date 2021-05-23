@@ -15,7 +15,7 @@ yarn add @fontsource/average-sans // npm install @fontsource/average-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/average-sans" // Defaults to weight 400.
+import "@fontsource/average-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

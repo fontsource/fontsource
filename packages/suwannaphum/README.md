@@ -15,7 +15,7 @@ yarn add @fontsource/suwannaphum // npm install @fontsource/suwannaphum
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/suwannaphum" // Defaults to weight 400.
+import "@fontsource/suwannaphum"; // Defaults to weight 400.
 ```
 
 Supported variables:

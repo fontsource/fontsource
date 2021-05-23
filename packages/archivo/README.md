@@ -15,7 +15,7 @@ yarn add @fontsource/archivo // npm install @fontsource/archivo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/archivo" // Defaults to weight 400.
+import "@fontsource/archivo"; // Defaults to weight 400.
 ```
 
 Supported variables:

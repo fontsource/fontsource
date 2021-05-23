@@ -15,7 +15,7 @@ yarn add @fontsource/abel // npm install @fontsource/abel
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/abel" // Defaults to weight 400.
+import "@fontsource/abel"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/elsie-swash-caps // npm install @fontsource/elsie-swash-cap
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/elsie-swash-caps" // Defaults to weight 400.
+import "@fontsource/elsie-swash-caps"; // Defaults to weight 400.
 ```
 
 Supported variables:

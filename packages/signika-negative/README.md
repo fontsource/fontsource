@@ -15,7 +15,7 @@ yarn add @fontsource/signika-negative // npm install @fontsource/signika-negativ
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/signika-negative" // Defaults to weight 400.
+import "@fontsource/signika-negative"; // Defaults to weight 400.
 ```
 
 Supported variables:

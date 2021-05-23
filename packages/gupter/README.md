@@ -15,7 +15,7 @@ yarn add @fontsource/gupter // npm install @fontsource/gupter
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gupter" // Defaults to weight 400.
+import "@fontsource/gupter"; // Defaults to weight 400.
 ```
 
 Supported variables:

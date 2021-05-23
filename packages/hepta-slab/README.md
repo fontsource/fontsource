@@ -15,7 +15,7 @@ yarn add @fontsource/hepta-slab // npm install @fontsource/hepta-slab
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/hepta-slab" // Defaults to weight 400.
+import "@fontsource/hepta-slab"; // Defaults to weight 400.
 ```
 
 Supported variables:

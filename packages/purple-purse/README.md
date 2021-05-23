@@ -15,7 +15,7 @@ yarn add @fontsource/purple-purse // npm install @fontsource/purple-purse
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/purple-purse" // Defaults to weight 400.
+import "@fontsource/purple-purse"; // Defaults to weight 400.
 ```
 
 Supported variables:

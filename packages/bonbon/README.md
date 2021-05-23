@@ -15,7 +15,7 @@ yarn add @fontsource/bonbon // npm install @fontsource/bonbon
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bonbon" // Defaults to weight 400.
+import "@fontsource/bonbon"; // Defaults to weight 400.
 ```
 
 Supported variables:

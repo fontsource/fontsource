@@ -15,7 +15,7 @@ yarn add @fontsource/bubbler-one // npm install @fontsource/bubbler-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bubbler-one" // Defaults to weight 400.
+import "@fontsource/bubbler-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

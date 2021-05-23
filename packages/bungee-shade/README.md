@@ -15,7 +15,7 @@ yarn add @fontsource/bungee-shade // npm install @fontsource/bungee-shade
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bungee-shade" // Defaults to weight 400.
+import "@fontsource/bungee-shade"; // Defaults to weight 400.
 ```
 
 Supported variables:

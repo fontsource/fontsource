@@ -15,7 +15,7 @@ yarn add @fontsource/faustina // npm install @fontsource/faustina
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/faustina" // Defaults to weight 400.
+import "@fontsource/faustina"; // Defaults to weight 400.
 ```
 
 Supported variables:

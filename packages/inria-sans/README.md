@@ -15,7 +15,7 @@ yarn add @fontsource/inria-sans // npm install @fontsource/inria-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/inria-sans" // Defaults to weight 400.
+import "@fontsource/inria-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

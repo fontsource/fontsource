@@ -15,7 +15,7 @@ yarn add @fontsource/anaheim // npm install @fontsource/anaheim
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/anaheim" // Defaults to weight 400.
+import "@fontsource/anaheim"; // Defaults to weight 400.
 ```
 
 Supported variables:

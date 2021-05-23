@@ -15,7 +15,7 @@ yarn add @fontsource/ruslan-display // npm install @fontsource/ruslan-display
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ruslan-display" // Defaults to weight 400.
+import "@fontsource/ruslan-display"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/crimson-pro // npm install @fontsource/crimson-pro
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/crimson-pro" // Defaults to weight 400.
+import "@fontsource/crimson-pro"; // Defaults to weight 400.
 ```
 
 Supported variables:

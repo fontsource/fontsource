@@ -15,7 +15,7 @@ yarn add @fontsource/marko-one // npm install @fontsource/marko-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/marko-one" // Defaults to weight 400.
+import "@fontsource/marko-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

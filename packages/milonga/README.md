@@ -15,7 +15,7 @@ yarn add @fontsource/milonga // npm install @fontsource/milonga
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/milonga" // Defaults to weight 400.
+import "@fontsource/milonga"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/arsenal // npm install @fontsource/arsenal
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/arsenal" // Defaults to weight 400.
+import "@fontsource/arsenal"; // Defaults to weight 400.
 ```
 
 Supported variables:

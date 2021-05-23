@@ -15,7 +15,7 @@ yarn add @fontsource/staatliches // npm install @fontsource/staatliches
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/staatliches" // Defaults to weight 400.
+import "@fontsource/staatliches"; // Defaults to weight 400.
 ```
 
 Supported variables:

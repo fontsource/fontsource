@@ -15,7 +15,7 @@ yarn add @fontsource/jost // npm install @fontsource/jost
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jost" // Defaults to weight 400.
+import "@fontsource/jost"; // Defaults to weight 400.
 ```
 
 Supported variables:

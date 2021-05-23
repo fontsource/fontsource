@@ -15,7 +15,7 @@ yarn add @fontsource/libre-barcode-ean13-text // npm install @fontsource/libre-b
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/libre-barcode-ean13-text" // Defaults to weight 400.
+import "@fontsource/libre-barcode-ean13-text"; // Defaults to weight 400.
 ```
 
 Supported variables:

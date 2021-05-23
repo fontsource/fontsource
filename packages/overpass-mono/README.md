@@ -15,7 +15,7 @@ yarn add @fontsource/overpass-mono // npm install @fontsource/overpass-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/overpass-mono" // Defaults to weight 400.
+import "@fontsource/overpass-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

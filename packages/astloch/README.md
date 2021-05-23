@@ -15,7 +15,7 @@ yarn add @fontsource/astloch // npm install @fontsource/astloch
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/astloch" // Defaults to weight 400.
+import "@fontsource/astloch"; // Defaults to weight 400.
 ```
 
 Supported variables:

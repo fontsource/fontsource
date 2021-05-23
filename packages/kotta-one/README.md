@@ -15,7 +15,7 @@ yarn add @fontsource/kotta-one // npm install @fontsource/kotta-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kotta-one" // Defaults to weight 400.
+import "@fontsource/kotta-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

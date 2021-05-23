@@ -15,7 +15,7 @@ yarn add @fontsource/sansita // npm install @fontsource/sansita
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sansita" // Defaults to weight 400.
+import "@fontsource/sansita"; // Defaults to weight 400.
 ```
 
 Supported variables:

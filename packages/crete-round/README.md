@@ -15,7 +15,7 @@ yarn add @fontsource/crete-round // npm install @fontsource/crete-round
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/crete-round" // Defaults to weight 400.
+import "@fontsource/crete-round"; // Defaults to weight 400.
 ```
 
 Supported variables:

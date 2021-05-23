@@ -15,7 +15,7 @@ yarn add @fontsource/inconsolata // npm install @fontsource/inconsolata
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/inconsolata" // Defaults to weight 400.
+import "@fontsource/inconsolata"; // Defaults to weight 400.
 ```
 
 Supported variables:

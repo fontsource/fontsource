@@ -15,7 +15,7 @@ yarn add @fontsource/shadows-into-light // npm install @fontsource/shadows-into-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/shadows-into-light" // Defaults to weight 400.
+import "@fontsource/shadows-into-light"; // Defaults to weight 400.
 ```
 
 Supported variables:

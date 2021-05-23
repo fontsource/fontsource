@@ -15,7 +15,7 @@ yarn add @fontsource/karmilla // npm install @fontsource/karmilla
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/karmilla" // Defaults to weight 400.
+import "@fontsource/karmilla"; // Defaults to weight 400.
 ```
 
 Supported variables:

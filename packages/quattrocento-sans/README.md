@@ -15,7 +15,7 @@ yarn add @fontsource/quattrocento-sans // npm install @fontsource/quattrocento-s
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/quattrocento-sans" // Defaults to weight 400.
+import "@fontsource/quattrocento-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

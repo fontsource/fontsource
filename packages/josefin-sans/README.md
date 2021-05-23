@@ -15,7 +15,7 @@ yarn add @fontsource/josefin-sans // npm install @fontsource/josefin-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/josefin-sans" // Defaults to weight 400.
+import "@fontsource/josefin-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

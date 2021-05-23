@@ -15,7 +15,7 @@ yarn add @fontsource/marmelad // npm install @fontsource/marmelad
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/marmelad" // Defaults to weight 400.
+import "@fontsource/marmelad"; // Defaults to weight 400.
 ```
 
 Supported variables:

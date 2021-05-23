@@ -15,7 +15,7 @@ yarn add @fontsource/belleza // npm install @fontsource/belleza
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/belleza" // Defaults to weight 400.
+import "@fontsource/belleza"; // Defaults to weight 400.
 ```
 
 Supported variables:

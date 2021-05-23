@@ -15,7 +15,7 @@ yarn add @fontsource/caudex // npm install @fontsource/caudex
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/caudex" // Defaults to weight 400.
+import "@fontsource/caudex"; // Defaults to weight 400.
 ```
 
 Supported variables:

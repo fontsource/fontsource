@@ -15,7 +15,7 @@ yarn add @fontsource/viaoda-libre // npm install @fontsource/viaoda-libre
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/viaoda-libre" // Defaults to weight 400.
+import "@fontsource/viaoda-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

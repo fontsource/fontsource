@@ -15,7 +15,7 @@ yarn add @fontsource/gentium-book-basic // npm install @fontsource/gentium-book-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gentium-book-basic" // Defaults to weight 400.
+import "@fontsource/gentium-book-basic"; // Defaults to weight 400.
 ```
 
 Supported variables:

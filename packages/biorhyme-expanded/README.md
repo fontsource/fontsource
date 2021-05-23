@@ -15,7 +15,7 @@ yarn add @fontsource/biorhyme-expanded // npm install @fontsource/biorhyme-expan
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/biorhyme-expanded" // Defaults to weight 400.
+import "@fontsource/biorhyme-expanded"; // Defaults to weight 400.
 ```
 
 Supported variables:

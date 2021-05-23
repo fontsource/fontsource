@@ -15,7 +15,7 @@ yarn add @fontsource/dm-mono // npm install @fontsource/dm-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dm-mono" // Defaults to weight 400.
+import "@fontsource/dm-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

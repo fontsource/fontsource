@@ -15,7 +15,7 @@ yarn add @fontsource/commissioner // npm install @fontsource/commissioner
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/commissioner" // Defaults to weight 400.
+import "@fontsource/commissioner"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/dseg7 // npm install @fontsource/dseg7
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dseg7" // Defaults to weight 400.
+import "@fontsource/dseg7"; // Defaults to weight 400.
 ```
 
 Supported variables:

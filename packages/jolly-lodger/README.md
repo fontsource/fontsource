@@ -15,7 +15,7 @@ yarn add @fontsource/jolly-lodger // npm install @fontsource/jolly-lodger
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jolly-lodger" // Defaults to weight 400.
+import "@fontsource/jolly-lodger"; // Defaults to weight 400.
 ```
 
 Supported variables:

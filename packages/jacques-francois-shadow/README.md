@@ -15,7 +15,7 @@ yarn add @fontsource/jacques-francois-shadow // npm install @fontsource/jacques-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jacques-francois-shadow" // Defaults to weight 400.
+import "@fontsource/jacques-francois-shadow"; // Defaults to weight 400.
 ```
 
 Supported variables:

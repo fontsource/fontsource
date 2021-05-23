@@ -15,7 +15,7 @@ yarn add @fontsource/nova-mono // npm install @fontsource/nova-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nova-mono" // Defaults to weight 400.
+import "@fontsource/nova-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

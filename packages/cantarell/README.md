@@ -15,7 +15,7 @@ yarn add @fontsource/cantarell // npm install @fontsource/cantarell
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cantarell" // Defaults to weight 400.
+import "@fontsource/cantarell"; // Defaults to weight 400.
 ```
 
 Supported variables:

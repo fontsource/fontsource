@@ -15,7 +15,7 @@ yarn add @fontsource/cuprum // npm install @fontsource/cuprum
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cuprum" // Defaults to weight 400.
+import "@fontsource/cuprum"; // Defaults to weight 400.
 ```
 
 Supported variables:

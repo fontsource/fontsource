@@ -15,7 +15,7 @@ yarn add @fontsource/sorts-mill-goudy // npm install @fontsource/sorts-mill-goud
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sorts-mill-goudy" // Defaults to weight 400.
+import "@fontsource/sorts-mill-goudy"; // Defaults to weight 400.
 ```
 
 Supported variables:

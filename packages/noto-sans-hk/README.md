@@ -15,7 +15,7 @@ yarn add @fontsource/noto-sans-hk // npm install @fontsource/noto-sans-hk
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/noto-sans-hk" // Defaults to weight 400.
+import "@fontsource/noto-sans-hk"; // Defaults to weight 400.
 ```
 
 Supported variables:

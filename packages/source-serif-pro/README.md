@@ -15,7 +15,7 @@ yarn add @fontsource/source-serif-pro // npm install @fontsource/source-serif-pr
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/source-serif-pro" // Defaults to weight 400.
+import "@fontsource/source-serif-pro"; // Defaults to weight 400.
 ```
 
 Supported variables:

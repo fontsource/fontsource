@@ -15,7 +15,7 @@ yarn add @fontsource/exo // npm install @fontsource/exo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/exo" // Defaults to weight 400.
+import "@fontsource/exo"; // Defaults to weight 400.
 ```
 
 Supported variables:

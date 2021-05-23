@@ -15,7 +15,7 @@ yarn add @fontsource/alata // npm install @fontsource/alata
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/alata" // Defaults to weight 400.
+import "@fontsource/alata"; // Defaults to weight 400.
 ```
 
 Supported variables:

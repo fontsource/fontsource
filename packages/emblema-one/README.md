@@ -15,7 +15,7 @@ yarn add @fontsource/emblema-one // npm install @fontsource/emblema-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/emblema-one" // Defaults to weight 400.
+import "@fontsource/emblema-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

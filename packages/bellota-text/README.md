@@ -15,7 +15,7 @@ yarn add @fontsource/bellota-text // npm install @fontsource/bellota-text
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bellota-text" // Defaults to weight 400.
+import "@fontsource/bellota-text"; // Defaults to weight 400.
 ```
 
 Supported variables:

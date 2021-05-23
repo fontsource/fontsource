@@ -15,7 +15,7 @@ yarn add @fontsource/butcherman // npm install @fontsource/butcherman
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/butcherman" // Defaults to weight 400.
+import "@fontsource/butcherman"; // Defaults to weight 400.
 ```
 
 Supported variables:

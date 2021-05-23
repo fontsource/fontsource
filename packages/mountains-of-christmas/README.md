@@ -15,7 +15,7 @@ yarn add @fontsource/mountains-of-christmas // npm install @fontsource/mountains
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mountains-of-christmas" // Defaults to weight 400.
+import "@fontsource/mountains-of-christmas"; // Defaults to weight 400.
 ```
 
 Supported variables:

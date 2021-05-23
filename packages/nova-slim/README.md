@@ -15,7 +15,7 @@ yarn add @fontsource/nova-slim // npm install @fontsource/nova-slim
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nova-slim" // Defaults to weight 400.
+import "@fontsource/nova-slim"; // Defaults to weight 400.
 ```
 
 Supported variables:

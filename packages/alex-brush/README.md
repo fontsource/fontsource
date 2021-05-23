@@ -15,7 +15,7 @@ yarn add @fontsource/alex-brush // npm install @fontsource/alex-brush
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/alex-brush" // Defaults to weight 400.
+import "@fontsource/alex-brush"; // Defaults to weight 400.
 ```
 
 Supported variables:

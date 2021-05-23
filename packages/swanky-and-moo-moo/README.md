@@ -15,7 +15,7 @@ yarn add @fontsource/swanky-and-moo-moo // npm install @fontsource/swanky-and-mo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/swanky-and-moo-moo" // Defaults to weight 400.
+import "@fontsource/swanky-and-moo-moo"; // Defaults to weight 400.
 ```
 
 Supported variables:

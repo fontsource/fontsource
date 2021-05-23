@@ -15,7 +15,7 @@ yarn add @fontsource/nothing-you-could-do // npm install @fontsource/nothing-you
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nothing-you-could-do" // Defaults to weight 400.
+import "@fontsource/nothing-you-could-do"; // Defaults to weight 400.
 ```
 
 Supported variables:

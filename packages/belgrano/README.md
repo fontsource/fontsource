@@ -15,7 +15,7 @@ yarn add @fontsource/belgrano // npm install @fontsource/belgrano
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/belgrano" // Defaults to weight 400.
+import "@fontsource/belgrano"; // Defaults to weight 400.
 ```
 
 Supported variables:

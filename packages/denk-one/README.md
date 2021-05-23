@@ -15,7 +15,7 @@ yarn add @fontsource/denk-one // npm install @fontsource/denk-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/denk-one" // Defaults to weight 400.
+import "@fontsource/denk-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

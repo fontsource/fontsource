@@ -15,7 +15,7 @@ yarn add @fontsource/damion // npm install @fontsource/damion
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/damion" // Defaults to weight 400.
+import "@fontsource/damion"; // Defaults to weight 400.
 ```
 
 Supported variables:

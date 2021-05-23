@@ -15,7 +15,7 @@ yarn add @fontsource/cabin-condensed // npm install @fontsource/cabin-condensed
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cabin-condensed" // Defaults to weight 400.
+import "@fontsource/cabin-condensed"; // Defaults to weight 400.
 ```
 
 Supported variables:

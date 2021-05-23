@@ -15,7 +15,7 @@ yarn add @fontsource/ribeye-marrow // npm install @fontsource/ribeye-marrow
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ribeye-marrow" // Defaults to weight 400.
+import "@fontsource/ribeye-marrow"; // Defaults to weight 400.
 ```
 
 Supported variables:

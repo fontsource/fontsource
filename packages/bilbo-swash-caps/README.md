@@ -15,7 +15,7 @@ yarn add @fontsource/bilbo-swash-caps // npm install @fontsource/bilbo-swash-cap
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bilbo-swash-caps" // Defaults to weight 400.
+import "@fontsource/bilbo-swash-caps"; // Defaults to weight 400.
 ```
 
 Supported variables:

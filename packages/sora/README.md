@@ -15,7 +15,7 @@ yarn add @fontsource/sora // npm install @fontsource/sora
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sora" // Defaults to weight 400.
+import "@fontsource/sora"; // Defaults to weight 400.
 ```
 
 Supported variables:

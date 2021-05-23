@@ -15,7 +15,7 @@ yarn add @fontsource/stoke // npm install @fontsource/stoke
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/stoke" // Defaults to weight 400.
+import "@fontsource/stoke"; // Defaults to weight 400.
 ```
 
 Supported variables:

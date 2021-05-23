@@ -15,7 +15,7 @@ yarn add @fontsource/big-shoulders-display // npm install @fontsource/big-should
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/big-shoulders-display" // Defaults to weight 400.
+import "@fontsource/big-shoulders-display"; // Defaults to weight 400.
 ```
 
 Supported variables:

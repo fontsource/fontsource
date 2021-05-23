@@ -15,7 +15,7 @@ yarn add @fontsource/suranna // npm install @fontsource/suranna
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/suranna" // Defaults to weight 400.
+import "@fontsource/suranna"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/just-another-hand // npm install @fontsource/just-another-h
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/just-another-hand" // Defaults to weight 400.
+import "@fontsource/just-another-hand"; // Defaults to weight 400.
 ```
 
 Supported variables:

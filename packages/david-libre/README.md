@@ -15,7 +15,7 @@ yarn add @fontsource/david-libre // npm install @fontsource/david-libre
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/david-libre" // Defaults to weight 400.
+import "@fontsource/david-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

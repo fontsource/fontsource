@@ -15,7 +15,7 @@ yarn add @fontsource/text-me-one // npm install @fontsource/text-me-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/text-me-one" // Defaults to weight 400.
+import "@fontsource/text-me-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

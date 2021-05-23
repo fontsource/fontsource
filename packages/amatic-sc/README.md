@@ -15,7 +15,7 @@ yarn add @fontsource/amatic-sc // npm install @fontsource/amatic-sc
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/amatic-sc" // Defaults to weight 400.
+import "@fontsource/amatic-sc"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/fredoka-one // npm install @fontsource/fredoka-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fredoka-one" // Defaults to weight 400.
+import "@fontsource/fredoka-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

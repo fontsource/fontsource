@@ -15,7 +15,7 @@ yarn add @fontsource/hammersmith-one // npm install @fontsource/hammersmith-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/hammersmith-one" // Defaults to weight 400.
+import "@fontsource/hammersmith-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

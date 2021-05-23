@@ -15,7 +15,7 @@ yarn add @fontsource/ma-shan-zheng // npm install @fontsource/ma-shan-zheng
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ma-shan-zheng" // Defaults to weight 400.
+import "@fontsource/ma-shan-zheng"; // Defaults to weight 400.
 ```
 
 Supported variables:

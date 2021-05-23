@@ -15,7 +15,7 @@ yarn add @fontsource/grenze // npm install @fontsource/grenze
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/grenze" // Defaults to weight 400.
+import "@fontsource/grenze"; // Defaults to weight 400.
 ```
 
 Supported variables:

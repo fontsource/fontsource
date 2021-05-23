@@ -15,7 +15,7 @@ yarn add @fontsource/modern-antiqua // npm install @fontsource/modern-antiqua
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/modern-antiqua" // Defaults to weight 400.
+import "@fontsource/modern-antiqua"; // Defaults to weight 400.
 ```
 
 Supported variables:

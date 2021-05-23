@@ -15,7 +15,7 @@ yarn add @fontsource/engagement // npm install @fontsource/engagement
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/engagement" // Defaults to weight 400.
+import "@fontsource/engagement"; // Defaults to weight 400.
 ```
 
 Supported variables:

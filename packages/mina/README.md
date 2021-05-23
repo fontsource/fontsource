@@ -15,7 +15,7 @@ yarn add @fontsource/mina // npm install @fontsource/mina
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mina" // Defaults to weight 400.
+import "@fontsource/mina"; // Defaults to weight 400.
 ```
 
 Supported variables:

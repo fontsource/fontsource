@@ -15,7 +15,7 @@ yarn add @fontsource/coming-soon // npm install @fontsource/coming-soon
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/coming-soon" // Defaults to weight 400.
+import "@fontsource/coming-soon"; // Defaults to weight 400.
 ```
 
 Supported variables:

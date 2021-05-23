@@ -15,7 +15,7 @@ yarn add @fontsource/markazi-text // npm install @fontsource/markazi-text
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/markazi-text" // Defaults to weight 400.
+import "@fontsource/markazi-text"; // Defaults to weight 400.
 ```
 
 Supported variables:

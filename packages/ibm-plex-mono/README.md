@@ -15,7 +15,7 @@ yarn add @fontsource/ibm-plex-mono // npm install @fontsource/ibm-plex-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ibm-plex-mono" // Defaults to weight 400.
+import "@fontsource/ibm-plex-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

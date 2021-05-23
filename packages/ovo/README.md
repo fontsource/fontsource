@@ -15,7 +15,7 @@ yarn add @fontsource/ovo // npm install @fontsource/ovo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ovo" // Defaults to weight 400.
+import "@fontsource/ovo"; // Defaults to weight 400.
 ```
 
 Supported variables:

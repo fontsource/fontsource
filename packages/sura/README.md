@@ -15,7 +15,7 @@ yarn add @fontsource/sura // npm install @fontsource/sura
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sura" // Defaults to weight 400.
+import "@fontsource/sura"; // Defaults to weight 400.
 ```
 
 Supported variables:

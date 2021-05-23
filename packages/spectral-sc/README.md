@@ -15,7 +15,7 @@ yarn add @fontsource/spectral-sc // npm install @fontsource/spectral-sc
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/spectral-sc" // Defaults to weight 400.
+import "@fontsource/spectral-sc"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/meera-inimai // npm install @fontsource/meera-inimai
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/meera-inimai" // Defaults to weight 400.
+import "@fontsource/meera-inimai"; // Defaults to weight 400.
 ```
 
 Supported variables:

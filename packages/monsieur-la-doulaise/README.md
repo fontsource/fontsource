@@ -15,7 +15,7 @@ yarn add @fontsource/monsieur-la-doulaise // npm install @fontsource/monsieur-la
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/monsieur-la-doulaise" // Defaults to weight 400.
+import "@fontsource/monsieur-la-doulaise"; // Defaults to weight 400.
 ```
 
 Supported variables:

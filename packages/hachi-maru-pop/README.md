@@ -15,7 +15,7 @@ yarn add @fontsource/hachi-maru-pop // npm install @fontsource/hachi-maru-pop
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/hachi-maru-pop" // Defaults to weight 400.
+import "@fontsource/hachi-maru-pop"; // Defaults to weight 400.
 ```
 
 Supported variables:

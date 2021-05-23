@@ -15,7 +15,7 @@ yarn add @fontsource/syne-mono // npm install @fontsource/syne-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/syne-mono" // Defaults to weight 400.
+import "@fontsource/syne-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

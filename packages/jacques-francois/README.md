@@ -15,7 +15,7 @@ yarn add @fontsource/jacques-francois // npm install @fontsource/jacques-francoi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jacques-francois" // Defaults to weight 400.
+import "@fontsource/jacques-francois"; // Defaults to weight 400.
 ```
 
 Supported variables:

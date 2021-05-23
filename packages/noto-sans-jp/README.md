@@ -15,7 +15,7 @@ yarn add @fontsource/noto-sans-jp // npm install @fontsource/noto-sans-jp
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/noto-sans-jp" // Defaults to weight 400.
+import "@fontsource/noto-sans-jp"; // Defaults to weight 400.
 ```
 
 Supported variables:

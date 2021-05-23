@@ -15,7 +15,7 @@ yarn add @fontsource/cardo // npm install @fontsource/cardo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cardo" // Defaults to weight 400.
+import "@fontsource/cardo"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/aldrich // npm install @fontsource/aldrich
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/aldrich" // Defaults to weight 400.
+import "@fontsource/aldrich"; // Defaults to weight 400.
 ```
 
 Supported variables:

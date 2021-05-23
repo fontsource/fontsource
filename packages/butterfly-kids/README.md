@@ -15,7 +15,7 @@ yarn add @fontsource/butterfly-kids // npm install @fontsource/butterfly-kids
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/butterfly-kids" // Defaults to weight 400.
+import "@fontsource/butterfly-kids"; // Defaults to weight 400.
 ```
 
 Supported variables:

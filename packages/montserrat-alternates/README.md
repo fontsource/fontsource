@@ -15,7 +15,7 @@ yarn add @fontsource/montserrat-alternates // npm install @fontsource/montserrat
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/montserrat-alternates" // Defaults to weight 400.
+import "@fontsource/montserrat-alternates"; // Defaults to weight 400.
 ```
 
 Supported variables:

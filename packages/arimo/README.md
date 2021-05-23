@@ -15,7 +15,7 @@ yarn add @fontsource/arimo // npm install @fontsource/arimo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/arimo" // Defaults to weight 400.
+import "@fontsource/arimo"; // Defaults to weight 400.
 ```
 
 Supported variables:

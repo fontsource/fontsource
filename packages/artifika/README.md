@@ -15,7 +15,7 @@ yarn add @fontsource/artifika // npm install @fontsource/artifika
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/artifika" // Defaults to weight 400.
+import "@fontsource/artifika"; // Defaults to weight 400.
 ```
 
 Supported variables:

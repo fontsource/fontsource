@@ -15,7 +15,7 @@ yarn add @fontsource/knewave // npm install @fontsource/knewave
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/knewave" // Defaults to weight 400.
+import "@fontsource/knewave"; // Defaults to weight 400.
 ```
 
 Supported variables:

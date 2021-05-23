@@ -15,7 +15,7 @@ yarn add @fontsource/hi-melody // npm install @fontsource/hi-melody
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/hi-melody" // Defaults to weight 400.
+import "@fontsource/hi-melody"; // Defaults to weight 400.
 ```
 
 Supported variables:

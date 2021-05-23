@@ -15,7 +15,7 @@ yarn add @fontsource/junction // npm install @fontsource/junction
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/junction" // Defaults to weight 400.
+import "@fontsource/junction"; // Defaults to weight 400.
 ```
 
 Supported variables:

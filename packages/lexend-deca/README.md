@@ -15,7 +15,7 @@ yarn add @fontsource/lexend-deca // npm install @fontsource/lexend-deca
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lexend-deca" // Defaults to weight 400.
+import "@fontsource/lexend-deca"; // Defaults to weight 400.
 ```
 
 Supported variables:

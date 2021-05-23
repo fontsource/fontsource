@@ -15,7 +15,7 @@ yarn add @fontsource/freckle-face // npm install @fontsource/freckle-face
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/freckle-face" // Defaults to weight 400.
+import "@fontsource/freckle-face"; // Defaults to weight 400.
 ```
 
 Supported variables:

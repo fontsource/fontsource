@@ -15,7 +15,7 @@ yarn add @fontsource/biryani // npm install @fontsource/biryani
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/biryani" // Defaults to weight 400.
+import "@fontsource/biryani"; // Defaults to weight 400.
 ```
 
 Supported variables:

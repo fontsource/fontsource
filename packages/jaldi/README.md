@@ -15,7 +15,7 @@ yarn add @fontsource/jaldi // npm install @fontsource/jaldi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jaldi" // Defaults to weight 400.
+import "@fontsource/jaldi"; // Defaults to weight 400.
 ```
 
 Supported variables:

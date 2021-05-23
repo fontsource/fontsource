@@ -15,7 +15,7 @@ yarn add @fontsource/lancelot // npm install @fontsource/lancelot
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lancelot" // Defaults to weight 400.
+import "@fontsource/lancelot"; // Defaults to weight 400.
 ```
 
 Supported variables:

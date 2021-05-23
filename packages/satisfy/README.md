@@ -15,7 +15,7 @@ yarn add @fontsource/satisfy // npm install @fontsource/satisfy
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/satisfy" // Defaults to weight 400.
+import "@fontsource/satisfy"; // Defaults to weight 400.
 ```
 
 Supported variables:

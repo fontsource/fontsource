@@ -15,7 +15,7 @@ yarn add @fontsource/gafata // npm install @fontsource/gafata
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gafata" // Defaults to weight 400.
+import "@fontsource/gafata"; // Defaults to weight 400.
 ```
 
 Supported variables:

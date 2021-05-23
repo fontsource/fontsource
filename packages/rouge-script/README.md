@@ -15,7 +15,7 @@ yarn add @fontsource/rouge-script // npm install @fontsource/rouge-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rouge-script" // Defaults to weight 400.
+import "@fontsource/rouge-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/im-fell-great-primer-sc // npm install @fontsource/im-fell-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/im-fell-great-primer-sc" // Defaults to weight 400.
+import "@fontsource/im-fell-great-primer-sc"; // Defaults to weight 400.
 ```
 
 Supported variables:

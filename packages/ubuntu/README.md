@@ -15,7 +15,7 @@ yarn add @fontsource/ubuntu // npm install @fontsource/ubuntu
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ubuntu" // Defaults to weight 400.
+import "@fontsource/ubuntu"; // Defaults to weight 400.
 ```
 
 Supported variables:

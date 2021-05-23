@@ -15,7 +15,7 @@ yarn add @fontsource/bentham // npm install @fontsource/bentham
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bentham" // Defaults to weight 400.
+import "@fontsource/bentham"; // Defaults to weight 400.
 ```
 
 Supported variables:

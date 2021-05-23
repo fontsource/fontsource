@@ -15,7 +15,7 @@ yarn add @fontsource/monoton // npm install @fontsource/monoton
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/monoton" // Defaults to weight 400.
+import "@fontsource/monoton"; // Defaults to weight 400.
 ```
 
 Supported variables:

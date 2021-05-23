@@ -15,7 +15,7 @@ yarn add @fontsource/poor-story // npm install @fontsource/poor-story
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/poor-story" // Defaults to weight 400.
+import "@fontsource/poor-story"; // Defaults to weight 400.
 ```
 
 Supported variables:

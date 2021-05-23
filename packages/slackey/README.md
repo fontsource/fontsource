@@ -15,7 +15,7 @@ yarn add @fontsource/slackey // npm install @fontsource/slackey
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/slackey" // Defaults to weight 400.
+import "@fontsource/slackey"; // Defaults to weight 400.
 ```
 
 Supported variables:

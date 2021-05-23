@@ -15,7 +15,7 @@ yarn add @fontsource/rochester // npm install @fontsource/rochester
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rochester" // Defaults to weight 400.
+import "@fontsource/rochester"; // Defaults to weight 400.
 ```
 
 Supported variables:

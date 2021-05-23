@@ -15,7 +15,7 @@ yarn add @fontsource/lora // npm install @fontsource/lora
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lora" // Defaults to weight 400.
+import "@fontsource/lora"; // Defaults to weight 400.
 ```
 
 Supported variables:

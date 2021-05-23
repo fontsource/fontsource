@@ -15,7 +15,7 @@ yarn add @fontsource/timmana // npm install @fontsource/timmana
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/timmana" // Defaults to weight 400.
+import "@fontsource/timmana"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/fanwood-text // npm install @fontsource/fanwood-text
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fanwood-text" // Defaults to weight 400.
+import "@fontsource/fanwood-text"; // Defaults to weight 400.
 ```
 
 Supported variables:

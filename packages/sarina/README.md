@@ -15,7 +15,7 @@ yarn add @fontsource/sarina // npm install @fontsource/sarina
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sarina" // Defaults to weight 400.
+import "@fontsource/sarina"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/cormorant-infant // npm install @fontsource/cormorant-infan
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cormorant-infant" // Defaults to weight 400.
+import "@fontsource/cormorant-infant"; // Defaults to weight 400.
 ```
 
 Supported variables:

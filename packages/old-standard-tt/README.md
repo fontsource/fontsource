@@ -15,7 +15,7 @@ yarn add @fontsource/old-standard-tt // npm install @fontsource/old-standard-tt
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/old-standard-tt" // Defaults to weight 400.
+import "@fontsource/old-standard-tt"; // Defaults to weight 400.
 ```
 
 Supported variables:

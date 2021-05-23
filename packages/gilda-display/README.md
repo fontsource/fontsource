@@ -15,7 +15,7 @@ yarn add @fontsource/gilda-display // npm install @fontsource/gilda-display
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gilda-display" // Defaults to weight 400.
+import "@fontsource/gilda-display"; // Defaults to weight 400.
 ```
 
 Supported variables:

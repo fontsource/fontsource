@@ -15,7 +15,7 @@ yarn add @fontsource/bad-script // npm install @fontsource/bad-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bad-script" // Defaults to weight 400.
+import "@fontsource/bad-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

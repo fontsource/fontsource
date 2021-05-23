@@ -15,7 +15,7 @@ yarn add @fontsource/sawarabi-gothic // npm install @fontsource/sawarabi-gothic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sawarabi-gothic" // Defaults to weight 400.
+import "@fontsource/sawarabi-gothic"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/jetbrains-mono // npm install @fontsource/jetbrains-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jetbrains-mono" // Defaults to weight 400.
+import "@fontsource/jetbrains-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

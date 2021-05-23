@@ -15,7 +15,7 @@ yarn add @fontsource/merriweather-sans // npm install @fontsource/merriweather-s
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/merriweather-sans" // Defaults to weight 400.
+import "@fontsource/merriweather-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

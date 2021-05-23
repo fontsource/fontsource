@@ -15,7 +15,7 @@ yarn add @fontsource/oi // npm install @fontsource/oi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/oi" // Defaults to weight 400.
+import "@fontsource/oi"; // Defaults to weight 400.
 ```
 
 Supported variables:

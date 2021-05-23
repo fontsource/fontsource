@@ -15,7 +15,7 @@ yarn add @fontsource/monda // npm install @fontsource/monda
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/monda" // Defaults to weight 400.
+import "@fontsource/monda"; // Defaults to weight 400.
 ```
 
 Supported variables:

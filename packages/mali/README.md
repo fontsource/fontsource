@@ -15,7 +15,7 @@ yarn add @fontsource/mali // npm install @fontsource/mali
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mali" // Defaults to weight 400.
+import "@fontsource/mali"; // Defaults to weight 400.
 ```
 
 Supported variables:

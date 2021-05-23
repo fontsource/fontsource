@@ -15,7 +15,7 @@ yarn add @fontsource/b612-mono // npm install @fontsource/b612-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/b612-mono" // Defaults to weight 400.
+import "@fontsource/b612-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

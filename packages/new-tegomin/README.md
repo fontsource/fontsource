@@ -15,7 +15,7 @@ yarn add @fontsource/new-tegomin // npm install @fontsource/new-tegomin
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/new-tegomin" // Defaults to weight 400.
+import "@fontsource/new-tegomin"; // Defaults to weight 400.
 ```
 
 Supported variables:

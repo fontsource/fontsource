@@ -15,7 +15,7 @@ yarn add @fontsource/ostrich-sans-dashed // npm install @fontsource/ostrich-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ostrich-sans-dashed" // Defaults to weight 400.
+import "@fontsource/ostrich-sans-dashed"; // Defaults to weight 400.
 ```
 
 Supported variables:

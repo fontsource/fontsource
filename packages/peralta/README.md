@@ -15,7 +15,7 @@ yarn add @fontsource/peralta // npm install @fontsource/peralta
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/peralta" // Defaults to weight 400.
+import "@fontsource/peralta"; // Defaults to weight 400.
 ```
 
 Supported variables:

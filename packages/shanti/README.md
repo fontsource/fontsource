@@ -15,7 +15,7 @@ yarn add @fontsource/shanti // npm install @fontsource/shanti
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/shanti" // Defaults to weight 400.
+import "@fontsource/shanti"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/stick // npm install @fontsource/stick
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/stick" // Defaults to weight 400.
+import "@fontsource/stick"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/merienda // npm install @fontsource/merienda
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/merienda" // Defaults to weight 400.
+import "@fontsource/merienda"; // Defaults to weight 400.
 ```
 
 Supported variables:

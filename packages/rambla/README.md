@@ -15,7 +15,7 @@ yarn add @fontsource/rambla // npm install @fontsource/rambla
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rambla" // Defaults to weight 400.
+import "@fontsource/rambla"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/six-caps // npm install @fontsource/six-caps
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/six-caps" // Defaults to weight 400.
+import "@fontsource/six-caps"; // Defaults to weight 400.
 ```
 
 Supported variables:

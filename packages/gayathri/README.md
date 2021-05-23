@@ -15,7 +15,7 @@ yarn add @fontsource/gayathri // npm install @fontsource/gayathri
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gayathri" // Defaults to weight 400.
+import "@fontsource/gayathri"; // Defaults to weight 400.
 ```
 
 Supported variables:

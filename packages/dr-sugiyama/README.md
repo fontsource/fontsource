@@ -15,7 +15,7 @@ yarn add @fontsource/dr-sugiyama // npm install @fontsource/dr-sugiyama
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dr-sugiyama" // Defaults to weight 400.
+import "@fontsource/dr-sugiyama"; // Defaults to weight 400.
 ```
 
 Supported variables:

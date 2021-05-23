@@ -15,7 +15,7 @@ yarn add @fontsource/piazzolla // npm install @fontsource/piazzolla
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/piazzolla" // Defaults to weight 400.
+import "@fontsource/piazzolla"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/antonio // npm install @fontsource/antonio
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/antonio" // Defaults to weight 400.
+import "@fontsource/antonio"; // Defaults to weight 400.
 ```
 
 Supported variables:

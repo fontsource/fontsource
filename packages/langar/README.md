@@ -15,7 +15,7 @@ yarn add @fontsource/langar // npm install @fontsource/langar
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/langar" // Defaults to weight 400.
+import "@fontsource/langar"; // Defaults to weight 400.
 ```
 
 Supported variables:

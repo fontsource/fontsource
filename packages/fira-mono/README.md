@@ -15,7 +15,7 @@ yarn add @fontsource/fira-mono // npm install @fontsource/fira-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fira-mono" // Defaults to weight 400.
+import "@fontsource/fira-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/short-stack // npm install @fontsource/short-stack
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/short-stack" // Defaults to weight 400.
+import "@fontsource/short-stack"; // Defaults to weight 400.
 ```
 
 Supported variables:

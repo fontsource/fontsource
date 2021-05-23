@@ -15,7 +15,7 @@ yarn add @fontsource/coustard // npm install @fontsource/coustard
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/coustard" // Defaults to weight 400.
+import "@fontsource/coustard"; // Defaults to weight 400.
 ```
 
 Supported variables:

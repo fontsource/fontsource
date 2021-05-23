@@ -15,7 +15,7 @@ yarn add @fontsource/della-respira // npm install @fontsource/della-respira
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/della-respira" // Defaults to weight 400.
+import "@fontsource/della-respira"; // Defaults to weight 400.
 ```
 
 Supported variables:

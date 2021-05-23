@@ -15,7 +15,7 @@ yarn add @fontsource/sunflower // npm install @fontsource/sunflower
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sunflower" // Defaults to weight 400.
+import "@fontsource/sunflower"; // Defaults to weight 400.
 ```
 
 Supported variables:

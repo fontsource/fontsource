@@ -15,7 +15,7 @@ yarn add @fontsource/nova-square // npm install @fontsource/nova-square
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nova-square" // Defaults to weight 400.
+import "@fontsource/nova-square"; // Defaults to weight 400.
 ```
 
 Supported variables:

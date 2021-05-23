@@ -15,7 +15,7 @@ yarn add @fontsource/imprima // npm install @fontsource/imprima
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/imprima" // Defaults to weight 400.
+import "@fontsource/imprima"; // Defaults to weight 400.
 ```
 
 Supported variables:

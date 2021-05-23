@@ -15,7 +15,7 @@ yarn add @fontsource/maitree // npm install @fontsource/maitree
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/maitree" // Defaults to weight 400.
+import "@fontsource/maitree"; // Defaults to weight 400.
 ```
 
 Supported variables:

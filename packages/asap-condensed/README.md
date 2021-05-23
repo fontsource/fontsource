@@ -15,7 +15,7 @@ yarn add @fontsource/asap-condensed // npm install @fontsource/asap-condensed
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/asap-condensed" // Defaults to weight 400.
+import "@fontsource/asap-condensed"; // Defaults to weight 400.
 ```
 
 Supported variables:

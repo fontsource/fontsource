@@ -15,7 +15,7 @@ yarn add @fontsource/gloria-hallelujah // npm install @fontsource/gloria-hallelu
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gloria-hallelujah" // Defaults to weight 400.
+import "@fontsource/gloria-hallelujah"; // Defaults to weight 400.
 ```
 
 Supported variables:

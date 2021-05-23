@@ -15,7 +15,7 @@ yarn add @fontsource/athiti // npm install @fontsource/athiti
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/athiti" // Defaults to weight 400.
+import "@fontsource/athiti"; // Defaults to weight 400.
 ```
 
 Supported variables:

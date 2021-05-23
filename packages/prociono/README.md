@@ -15,7 +15,7 @@ yarn add @fontsource/prociono // npm install @fontsource/prociono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/prociono" // Defaults to weight 400.
+import "@fontsource/prociono"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/beth-ellen // npm install @fontsource/beth-ellen
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/beth-ellen" // Defaults to weight 400.
+import "@fontsource/beth-ellen"; // Defaults to weight 400.
 ```
 
 Supported variables:

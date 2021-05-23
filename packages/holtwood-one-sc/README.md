@@ -15,7 +15,7 @@ yarn add @fontsource/holtwood-one-sc // npm install @fontsource/holtwood-one-sc
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/holtwood-one-sc" // Defaults to weight 400.
+import "@fontsource/holtwood-one-sc"; // Defaults to weight 400.
 ```
 
 Supported variables:

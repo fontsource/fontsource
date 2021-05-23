@@ -15,7 +15,7 @@ yarn add @fontsource/miniver // npm install @fontsource/miniver
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/miniver" // Defaults to weight 400.
+import "@fontsource/miniver"; // Defaults to weight 400.
 ```
 
 Supported variables:

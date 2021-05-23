@@ -15,7 +15,7 @@ yarn add @fontsource/cormorant-unicase // npm install @fontsource/cormorant-unic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cormorant-unicase" // Defaults to weight 400.
+import "@fontsource/cormorant-unicase"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/cambo // npm install @fontsource/cambo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cambo" // Defaults to weight 400.
+import "@fontsource/cambo"; // Defaults to weight 400.
 ```
 
 Supported variables:

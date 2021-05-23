@@ -15,7 +15,7 @@ yarn add @fontsource/gurajada // npm install @fontsource/gurajada
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gurajada" // Defaults to weight 400.
+import "@fontsource/gurajada"; // Defaults to weight 400.
 ```
 
 Supported variables:

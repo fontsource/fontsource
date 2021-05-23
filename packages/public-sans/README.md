@@ -15,7 +15,7 @@ yarn add @fontsource/public-sans // npm install @fontsource/public-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/public-sans" // Defaults to weight 400.
+import "@fontsource/public-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

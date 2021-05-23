@@ -15,7 +15,7 @@ yarn add @fontsource/tangerine // npm install @fontsource/tangerine
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/tangerine" // Defaults to weight 400.
+import "@fontsource/tangerine"; // Defaults to weight 400.
 ```
 
 Supported variables:

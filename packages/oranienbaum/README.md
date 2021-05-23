@@ -15,7 +15,7 @@ yarn add @fontsource/oranienbaum // npm install @fontsource/oranienbaum
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/oranienbaum" // Defaults to weight 400.
+import "@fontsource/oranienbaum"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/metamorphous // npm install @fontsource/metamorphous
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/metamorphous" // Defaults to weight 400.
+import "@fontsource/metamorphous"; // Defaults to weight 400.
 ```
 
 Supported variables:

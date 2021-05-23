@@ -15,7 +15,7 @@ yarn add @fontsource/trykker // npm install @fontsource/trykker
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/trykker" // Defaults to weight 400.
+import "@fontsource/trykker"; // Defaults to weight 400.
 ```
 
 Supported variables:

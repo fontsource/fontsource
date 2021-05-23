@@ -15,7 +15,7 @@ yarn add @fontsource/vollkorn // npm install @fontsource/vollkorn
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vollkorn" // Defaults to weight 400.
+import "@fontsource/vollkorn"; // Defaults to weight 400.
 ```
 
 Supported variables:

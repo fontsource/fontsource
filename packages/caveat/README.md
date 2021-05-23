@@ -15,7 +15,7 @@ yarn add @fontsource/caveat // npm install @fontsource/caveat
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/caveat" // Defaults to weight 400.
+import "@fontsource/caveat"; // Defaults to weight 400.
 ```
 
 Supported variables:

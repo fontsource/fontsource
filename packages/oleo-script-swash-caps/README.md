@@ -15,7 +15,7 @@ yarn add @fontsource/oleo-script-swash-caps // npm install @fontsource/oleo-scri
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/oleo-script-swash-caps" // Defaults to weight 400.
+import "@fontsource/oleo-script-swash-caps"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/supermercado-one // npm install @fontsource/supermercado-on
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/supermercado-one" // Defaults to weight 400.
+import "@fontsource/supermercado-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

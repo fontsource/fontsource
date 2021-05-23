@@ -15,7 +15,7 @@ yarn add @fontsource/texturina // npm install @fontsource/texturina
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/texturina" // Defaults to weight 400.
+import "@fontsource/texturina"; // Defaults to weight 400.
 ```
 
 Supported variables:

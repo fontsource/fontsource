@@ -15,7 +15,7 @@ yarn add @fontsource/inter // npm install @fontsource/inter
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/inter" // Defaults to weight 400.
+import "@fontsource/inter"; // Defaults to weight 400.
 ```
 
 Supported variables:

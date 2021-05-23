@@ -15,7 +15,7 @@ yarn add @fontsource/chelsea-market // npm install @fontsource/chelsea-market
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/chelsea-market" // Defaults to weight 400.
+import "@fontsource/chelsea-market"; // Defaults to weight 400.
 ```
 
 Supported variables:

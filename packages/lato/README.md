@@ -15,7 +15,7 @@ yarn add @fontsource/lato // npm install @fontsource/lato
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lato" // Defaults to weight 400.
+import "@fontsource/lato"; // Defaults to weight 400.
 ```
 
 Supported variables:

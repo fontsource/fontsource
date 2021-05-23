@@ -15,7 +15,7 @@ yarn add @fontsource/alike // npm install @fontsource/alike
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/alike" // Defaults to weight 400.
+import "@fontsource/alike"; // Defaults to weight 400.
 ```
 
 Supported variables:

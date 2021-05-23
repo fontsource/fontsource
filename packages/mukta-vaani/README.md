@@ -15,7 +15,7 @@ yarn add @fontsource/mukta-vaani // npm install @fontsource/mukta-vaani
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mukta-vaani" // Defaults to weight 400.
+import "@fontsource/mukta-vaani"; // Defaults to weight 400.
 ```
 
 Supported variables:

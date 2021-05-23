@@ -15,7 +15,7 @@ yarn add @fontsource/neuton // npm install @fontsource/neuton
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/neuton" // Defaults to weight 400.
+import "@fontsource/neuton"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/vt323 // npm install @fontsource/vt323
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vt323" // Defaults to weight 400.
+import "@fontsource/vt323"; // Defaults to weight 400.
 ```
 
 Supported variables:

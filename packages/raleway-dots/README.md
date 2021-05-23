@@ -15,7 +15,7 @@ yarn add @fontsource/raleway-dots // npm install @fontsource/raleway-dots
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/raleway-dots" // Defaults to weight 400.
+import "@fontsource/raleway-dots"; // Defaults to weight 400.
 ```
 
 Supported variables:

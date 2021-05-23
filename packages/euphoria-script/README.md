@@ -15,7 +15,7 @@ yarn add @fontsource/euphoria-script // npm install @fontsource/euphoria-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/euphoria-script" // Defaults to weight 400.
+import "@fontsource/euphoria-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

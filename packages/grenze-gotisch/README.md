@@ -15,7 +15,7 @@ yarn add @fontsource/grenze-gotisch // npm install @fontsource/grenze-gotisch
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/grenze-gotisch" // Defaults to weight 400.
+import "@fontsource/grenze-gotisch"; // Defaults to weight 400.
 ```
 
 Supported variables:

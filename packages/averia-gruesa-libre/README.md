@@ -15,7 +15,7 @@ yarn add @fontsource/averia-gruesa-libre // npm install @fontsource/averia-grues
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/averia-gruesa-libre" // Defaults to weight 400.
+import "@fontsource/averia-gruesa-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

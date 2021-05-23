@@ -15,7 +15,7 @@ yarn add @fontsource/advent-pro // npm install @fontsource/advent-pro
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/advent-pro" // Defaults to weight 400.
+import "@fontsource/advent-pro"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/kadwa // npm install @fontsource/kadwa
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kadwa" // Defaults to weight 400.
+import "@fontsource/kadwa"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/volkhov // npm install @fontsource/volkhov
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/volkhov" // Defaults to weight 400.
+import "@fontsource/volkhov"; // Defaults to weight 400.
 ```
 
 Supported variables:

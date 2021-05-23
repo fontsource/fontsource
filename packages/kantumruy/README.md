@@ -15,7 +15,7 @@ yarn add @fontsource/kantumruy // npm install @fontsource/kantumruy
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kantumruy" // Defaults to weight 400.
+import "@fontsource/kantumruy"; // Defaults to weight 400.
 ```
 
 Supported variables:

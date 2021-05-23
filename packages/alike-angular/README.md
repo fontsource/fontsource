@@ -15,7 +15,7 @@ yarn add @fontsource/alike-angular // npm install @fontsource/alike-angular
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/alike-angular" // Defaults to weight 400.
+import "@fontsource/alike-angular"; // Defaults to weight 400.
 ```
 
 Supported variables:

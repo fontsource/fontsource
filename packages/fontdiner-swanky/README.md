@@ -15,7 +15,7 @@ yarn add @fontsource/fontdiner-swanky // npm install @fontsource/fontdiner-swank
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fontdiner-swanky" // Defaults to weight 400.
+import "@fontsource/fontdiner-swanky"; // Defaults to weight 400.
 ```
 
 Supported variables:

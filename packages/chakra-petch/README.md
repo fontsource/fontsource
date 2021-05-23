@@ -15,7 +15,7 @@ yarn add @fontsource/chakra-petch // npm install @fontsource/chakra-petch
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/chakra-petch" // Defaults to weight 400.
+import "@fontsource/chakra-petch"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/chonburi // npm install @fontsource/chonburi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/chonburi" // Defaults to weight 400.
+import "@fontsource/chonburi"; // Defaults to weight 400.
 ```
 
 Supported variables:

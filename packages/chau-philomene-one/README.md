@@ -15,7 +15,7 @@ yarn add @fontsource/chau-philomene-one // npm install @fontsource/chau-philomen
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/chau-philomene-one" // Defaults to weight 400.
+import "@fontsource/chau-philomene-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

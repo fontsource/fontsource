@@ -15,7 +15,7 @@ yarn add @fontsource/meie-script // npm install @fontsource/meie-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/meie-script" // Defaults to weight 400.
+import "@fontsource/meie-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/frijole // npm install @fontsource/frijole
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/frijole" // Defaults to weight 400.
+import "@fontsource/frijole"; // Defaults to weight 400.
 ```
 
 Supported variables:

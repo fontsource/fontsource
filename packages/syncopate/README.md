@@ -15,7 +15,7 @@ yarn add @fontsource/syncopate // npm install @fontsource/syncopate
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/syncopate" // Defaults to weight 400.
+import "@fontsource/syncopate"; // Defaults to weight 400.
 ```
 
 Supported variables:

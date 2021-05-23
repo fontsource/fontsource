@@ -15,7 +15,7 @@ yarn add @fontsource/cousine // npm install @fontsource/cousine
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cousine" // Defaults to weight 400.
+import "@fontsource/cousine"; // Defaults to weight 400.
 ```
 
 Supported variables:

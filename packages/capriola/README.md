@@ -15,7 +15,7 @@ yarn add @fontsource/capriola // npm install @fontsource/capriola
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/capriola" // Defaults to weight 400.
+import "@fontsource/capriola"; // Defaults to weight 400.
 ```
 
 Supported variables:

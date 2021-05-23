@@ -15,7 +15,7 @@ yarn add @fontsource/palanquin-dark // npm install @fontsource/palanquin-dark
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/palanquin-dark" // Defaults to weight 400.
+import "@fontsource/palanquin-dark"; // Defaults to weight 400.
 ```
 
 Supported variables:

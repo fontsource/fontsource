@@ -15,7 +15,7 @@ yarn add @fontsource/germania-one // npm install @fontsource/germania-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/germania-one" // Defaults to weight 400.
+import "@fontsource/germania-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/grand-hotel // npm install @fontsource/grand-hotel
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/grand-hotel" // Defaults to weight 400.
+import "@fontsource/grand-hotel"; // Defaults to weight 400.
 ```
 
 Supported variables:

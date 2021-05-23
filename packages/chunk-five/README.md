@@ -15,7 +15,7 @@ yarn add @fontsource/chunk-five // npm install @fontsource/chunk-five
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/chunk-five" // Defaults to weight 400.
+import "@fontsource/chunk-five"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/solway // npm install @fontsource/solway
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/solway" // Defaults to weight 400.
+import "@fontsource/solway"; // Defaults to weight 400.
 ```
 
 Supported variables:

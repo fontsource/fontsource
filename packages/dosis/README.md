@@ -15,7 +15,7 @@ yarn add @fontsource/dosis // npm install @fontsource/dosis
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dosis" // Defaults to weight 400.
+import "@fontsource/dosis"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/recursive // npm install @fontsource/recursive
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/recursive" // Defaults to weight 400.
+import "@fontsource/recursive"; // Defaults to weight 400.
 ```
 
 Supported variables:

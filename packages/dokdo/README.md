@@ -15,7 +15,7 @@ yarn add @fontsource/dokdo // npm install @fontsource/dokdo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dokdo" // Defaults to weight 400.
+import "@fontsource/dokdo"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/koulen // npm install @fontsource/koulen
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/koulen" // Defaults to weight 400.
+import "@fontsource/koulen"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/stardos-stencil // npm install @fontsource/stardos-stencil
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/stardos-stencil" // Defaults to weight 400.
+import "@fontsource/stardos-stencil"; // Defaults to weight 400.
 ```
 
 Supported variables:

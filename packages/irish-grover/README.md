@@ -15,7 +15,7 @@ yarn add @fontsource/irish-grover // npm install @fontsource/irish-grover
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/irish-grover" // Defaults to weight 400.
+import "@fontsource/irish-grover"; // Defaults to weight 400.
 ```
 
 Supported variables:

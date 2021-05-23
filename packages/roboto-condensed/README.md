@@ -15,7 +15,7 @@ yarn add @fontsource/roboto-condensed // npm install @fontsource/roboto-condense
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/roboto-condensed" // Defaults to weight 400.
+import "@fontsource/roboto-condensed"; // Defaults to weight 400.
 ```
 
 Supported variables:

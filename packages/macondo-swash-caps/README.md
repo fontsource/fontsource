@@ -15,7 +15,7 @@ yarn add @fontsource/macondo-swash-caps // npm install @fontsource/macondo-swash
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/macondo-swash-caps" // Defaults to weight 400.
+import "@fontsource/macondo-swash-caps"; // Defaults to weight 400.
 ```
 
 Supported variables:

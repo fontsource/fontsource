@@ -15,7 +15,7 @@ yarn add @fontsource/mononoki // npm install @fontsource/mononoki
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mononoki" // Defaults to weight 400.
+import "@fontsource/mononoki"; // Defaults to weight 400.
 ```
 
 Supported variables:

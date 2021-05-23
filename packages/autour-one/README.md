@@ -15,7 +15,7 @@ yarn add @fontsource/autour-one // npm install @fontsource/autour-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/autour-one" // Defaults to weight 400.
+import "@fontsource/autour-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

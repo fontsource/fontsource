@@ -15,7 +15,7 @@ yarn add @fontsource/libre-caslon-display // npm install @fontsource/libre-caslo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/libre-caslon-display" // Defaults to weight 400.
+import "@fontsource/libre-caslon-display"; // Defaults to weight 400.
 ```
 
 Supported variables:

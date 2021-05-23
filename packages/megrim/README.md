@@ -15,7 +15,7 @@ yarn add @fontsource/megrim // npm install @fontsource/megrim
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/megrim" // Defaults to weight 400.
+import "@fontsource/megrim"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/kanit // npm install @fontsource/kanit
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kanit" // Defaults to weight 400.
+import "@fontsource/kanit"; // Defaults to weight 400.
 ```
 
 Supported variables:

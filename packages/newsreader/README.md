@@ -15,7 +15,7 @@ yarn add @fontsource/newsreader // npm install @fontsource/newsreader
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/newsreader" // Defaults to weight 400.
+import "@fontsource/newsreader"; // Defaults to weight 400.
 ```
 
 Supported variables:

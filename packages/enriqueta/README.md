@@ -15,7 +15,7 @@ yarn add @fontsource/enriqueta // npm install @fontsource/enriqueta
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/enriqueta" // Defaults to weight 400.
+import "@fontsource/enriqueta"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/secular-one // npm install @fontsource/secular-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/secular-one" // Defaults to weight 400.
+import "@fontsource/secular-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

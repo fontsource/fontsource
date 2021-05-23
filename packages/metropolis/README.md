@@ -15,7 +15,7 @@ yarn add @fontsource/metropolis // npm install @fontsource/metropolis
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/metropolis" // Defaults to weight 400.
+import "@fontsource/metropolis"; // Defaults to weight 400.
 ```
 
 Supported variables:

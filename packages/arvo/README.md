@@ -15,7 +15,7 @@ yarn add @fontsource/arvo // npm install @fontsource/arvo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/arvo" // Defaults to weight 400.
+import "@fontsource/arvo"; // Defaults to weight 400.
 ```
 
 Supported variables:

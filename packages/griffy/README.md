@@ -15,7 +15,7 @@ yarn add @fontsource/griffy // npm install @fontsource/griffy
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/griffy" // Defaults to weight 400.
+import "@fontsource/griffy"; // Defaults to weight 400.
 ```
 
 Supported variables:

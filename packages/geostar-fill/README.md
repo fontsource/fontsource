@@ -15,7 +15,7 @@ yarn add @fontsource/geostar-fill // npm install @fontsource/geostar-fill
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/geostar-fill" // Defaults to weight 400.
+import "@fontsource/geostar-fill"; // Defaults to weight 400.
 ```
 
 Supported variables:

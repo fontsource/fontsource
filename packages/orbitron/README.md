@@ -15,7 +15,7 @@ yarn add @fontsource/orbitron // npm install @fontsource/orbitron
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/orbitron" // Defaults to weight 400.
+import "@fontsource/orbitron"; // Defaults to weight 400.
 ```
 
 Supported variables:

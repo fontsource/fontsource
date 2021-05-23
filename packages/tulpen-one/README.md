@@ -15,7 +15,7 @@ yarn add @fontsource/tulpen-one // npm install @fontsource/tulpen-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/tulpen-one" // Defaults to weight 400.
+import "@fontsource/tulpen-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

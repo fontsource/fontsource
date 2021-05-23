@@ -15,7 +15,7 @@ yarn add @fontsource/aref-ruqaa // npm install @fontsource/aref-ruqaa
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/aref-ruqaa" // Defaults to weight 400.
+import "@fontsource/aref-ruqaa"; // Defaults to weight 400.
 ```
 
 Supported variables:

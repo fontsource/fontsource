@@ -15,7 +15,7 @@ yarn add @fontsource/luckiest-guy // npm install @fontsource/luckiest-guy
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/luckiest-guy" // Defaults to weight 400.
+import "@fontsource/luckiest-guy"; // Defaults to weight 400.
 ```
 
 Supported variables:

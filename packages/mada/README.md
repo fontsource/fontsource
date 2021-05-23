@@ -15,7 +15,7 @@ yarn add @fontsource/mada // npm install @fontsource/mada
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mada" // Defaults to weight 400.
+import "@fontsource/mada"; // Defaults to weight 400.
 ```
 
 Supported variables:

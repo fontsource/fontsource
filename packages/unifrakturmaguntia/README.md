@@ -15,7 +15,7 @@ yarn add @fontsource/unifrakturmaguntia // npm install @fontsource/unifrakturmag
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/unifrakturmaguntia" // Defaults to weight 400.
+import "@fontsource/unifrakturmaguntia"; // Defaults to weight 400.
 ```
 
 Supported variables:

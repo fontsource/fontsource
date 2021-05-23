@@ -15,7 +15,7 @@ yarn add @fontsource/medula-one // npm install @fontsource/medula-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/medula-one" // Defaults to weight 400.
+import "@fontsource/medula-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

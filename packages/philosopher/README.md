@@ -15,7 +15,7 @@ yarn add @fontsource/philosopher // npm install @fontsource/philosopher
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/philosopher" // Defaults to weight 400.
+import "@fontsource/philosopher"; // Defaults to weight 400.
 ```
 
 Supported variables:

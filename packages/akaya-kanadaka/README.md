@@ -15,7 +15,7 @@ yarn add @fontsource/akaya-kanadaka // npm install @fontsource/akaya-kanadaka
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/akaya-kanadaka" // Defaults to weight 400.
+import "@fontsource/akaya-kanadaka"; // Defaults to weight 400.
 ```
 
 Supported variables:

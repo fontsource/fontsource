@@ -15,7 +15,7 @@ yarn add @fontsource/quintessential // npm install @fontsource/quintessential
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/quintessential" // Defaults to weight 400.
+import "@fontsource/quintessential"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/fraunces // npm install @fontsource/fraunces
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fraunces" // Defaults to weight 400.
+import "@fontsource/fraunces"; // Defaults to weight 400.
 ```
 
 Supported variables:

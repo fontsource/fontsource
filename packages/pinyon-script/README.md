@@ -15,7 +15,7 @@ yarn add @fontsource/pinyon-script // npm install @fontsource/pinyon-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pinyon-script" // Defaults to weight 400.
+import "@fontsource/pinyon-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

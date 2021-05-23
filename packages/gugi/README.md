@@ -15,7 +15,7 @@ yarn add @fontsource/gugi // npm install @fontsource/gugi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gugi" // Defaults to weight 400.
+import "@fontsource/gugi"; // Defaults to weight 400.
 ```
 
 Supported variables:

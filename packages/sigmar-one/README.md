@@ -15,7 +15,7 @@ yarn add @fontsource/sigmar-one // npm install @fontsource/sigmar-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sigmar-one" // Defaults to weight 400.
+import "@fontsource/sigmar-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

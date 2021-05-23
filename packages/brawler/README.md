@@ -15,7 +15,7 @@ yarn add @fontsource/brawler // npm install @fontsource/brawler
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/brawler" // Defaults to weight 400.
+import "@fontsource/brawler"; // Defaults to weight 400.
 ```
 
 Supported variables:

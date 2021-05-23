@@ -15,7 +15,7 @@ yarn add @fontsource/bangers // npm install @fontsource/bangers
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bangers" // Defaults to weight 400.
+import "@fontsource/bangers"; // Defaults to weight 400.
 ```
 
 Supported variables:

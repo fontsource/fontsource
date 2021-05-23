@@ -15,7 +15,7 @@ yarn add @fontsource/zcool-xiaowei // npm install @fontsource/zcool-xiaowei
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/zcool-xiaowei" // Defaults to weight 400.
+import "@fontsource/zcool-xiaowei"; // Defaults to weight 400.
 ```
 
 Supported variables:

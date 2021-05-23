@@ -15,7 +15,7 @@ yarn add @fontsource/catamaran // npm install @fontsource/catamaran
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/catamaran" // Defaults to weight 400.
+import "@fontsource/catamaran"; // Defaults to weight 400.
 ```
 
 Supported variables:

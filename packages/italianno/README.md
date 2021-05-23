@@ -15,7 +15,7 @@ yarn add @fontsource/italianno // npm install @fontsource/italianno
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/italianno" // Defaults to weight 400.
+import "@fontsource/italianno"; // Defaults to weight 400.
 ```
 
 Supported variables:

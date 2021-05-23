@@ -15,7 +15,7 @@ yarn add @fontsource/rock-salt // npm install @fontsource/rock-salt
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rock-salt" // Defaults to weight 400.
+import "@fontsource/rock-salt"; // Defaults to weight 400.
 ```
 
 Supported variables:

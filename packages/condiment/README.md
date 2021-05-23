@@ -15,7 +15,7 @@ yarn add @fontsource/condiment // npm install @fontsource/condiment
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/condiment" // Defaults to weight 400.
+import "@fontsource/condiment"; // Defaults to weight 400.
 ```
 
 Supported variables:

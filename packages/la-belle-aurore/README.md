@@ -15,7 +15,7 @@ yarn add @fontsource/la-belle-aurore // npm install @fontsource/la-belle-aurore
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/la-belle-aurore" // Defaults to weight 400.
+import "@fontsource/la-belle-aurore"; // Defaults to weight 400.
 ```
 
 Supported variables:

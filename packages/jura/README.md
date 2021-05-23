@@ -15,7 +15,7 @@ yarn add @fontsource/jura // npm install @fontsource/jura
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jura" // Defaults to weight 400.
+import "@fontsource/jura"; // Defaults to weight 400.
 ```
 
 Supported variables:

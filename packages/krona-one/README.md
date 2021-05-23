@@ -15,7 +15,7 @@ yarn add @fontsource/krona-one // npm install @fontsource/krona-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/krona-one" // Defaults to weight 400.
+import "@fontsource/krona-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

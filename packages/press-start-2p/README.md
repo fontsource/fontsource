@@ -15,7 +15,7 @@ yarn add @fontsource/press-start-2p // npm install @fontsource/press-start-2p
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/press-start-2p" // Defaults to weight 400.
+import "@fontsource/press-start-2p"; // Defaults to weight 400.
 ```
 
 Supported variables:

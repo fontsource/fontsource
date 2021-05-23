@@ -15,7 +15,7 @@ yarn add @fontsource/farsan // npm install @fontsource/farsan
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/farsan" // Defaults to weight 400.
+import "@fontsource/farsan"; // Defaults to weight 400.
 ```
 
 Supported variables:

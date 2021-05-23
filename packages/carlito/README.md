@@ -15,7 +15,7 @@ yarn add @fontsource/carlito // npm install @fontsource/carlito
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/carlito" // Defaults to weight 400.
+import "@fontsource/carlito"; // Defaults to weight 400.
 ```
 
 Supported variables:

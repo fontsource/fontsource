@@ -15,7 +15,7 @@ yarn add @fontsource/im-fell-double-pica // npm install @fontsource/im-fell-doub
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/im-fell-double-pica" // Defaults to weight 400.
+import "@fontsource/im-fell-double-pica"; // Defaults to weight 400.
 ```
 
 Supported variables:

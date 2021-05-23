@@ -15,7 +15,7 @@ yarn add @fontsource/play // npm install @fontsource/play
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/play" // Defaults to weight 400.
+import "@fontsource/play"; // Defaults to weight 400.
 ```
 
 Supported variables:

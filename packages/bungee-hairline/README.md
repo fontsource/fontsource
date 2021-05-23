@@ -15,7 +15,7 @@ yarn add @fontsource/bungee-hairline // npm install @fontsource/bungee-hairline
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bungee-hairline" // Defaults to weight 400.
+import "@fontsource/bungee-hairline"; // Defaults to weight 400.
 ```
 
 Supported variables:

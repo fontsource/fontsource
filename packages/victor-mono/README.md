@@ -15,7 +15,7 @@ yarn add @fontsource/victor-mono // npm install @fontsource/victor-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/victor-mono" // Defaults to weight 400.
+import "@fontsource/victor-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

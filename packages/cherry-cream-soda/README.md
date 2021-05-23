@@ -15,7 +15,7 @@ yarn add @fontsource/cherry-cream-soda // npm install @fontsource/cherry-cream-s
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/cherry-cream-soda" // Defaults to weight 400.
+import "@fontsource/cherry-cream-soda"; // Defaults to weight 400.
 ```
 
 Supported variables:

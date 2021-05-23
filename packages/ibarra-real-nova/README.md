@@ -15,7 +15,7 @@ yarn add @fontsource/ibarra-real-nova // npm install @fontsource/ibarra-real-nov
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ibarra-real-nova" // Defaults to weight 400.
+import "@fontsource/ibarra-real-nova"; // Defaults to weight 400.
 ```
 
 Supported variables:

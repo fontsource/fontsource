@@ -15,7 +15,7 @@ yarn add @fontsource/benchnine // npm install @fontsource/benchnine
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/benchnine" // Defaults to weight 400.
+import "@fontsource/benchnine"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/aileron // npm install @fontsource/aileron
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/aileron" // Defaults to weight 400.
+import "@fontsource/aileron"; // Defaults to weight 400.
 ```
 
 Supported variables:

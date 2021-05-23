@@ -15,7 +15,7 @@ yarn add @fontsource/halant // npm install @fontsource/halant
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/halant" // Defaults to weight 400.
+import "@fontsource/halant"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/voces // npm install @fontsource/voces
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/voces" // Defaults to weight 400.
+import "@fontsource/voces"; // Defaults to weight 400.
 ```
 
 Supported variables:

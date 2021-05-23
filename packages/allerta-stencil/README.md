@@ -15,7 +15,7 @@ yarn add @fontsource/allerta-stencil // npm install @fontsource/allerta-stencil
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/allerta-stencil" // Defaults to weight 400.
+import "@fontsource/allerta-stencil"; // Defaults to weight 400.
 ```
 
 Supported variables:

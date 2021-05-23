@@ -15,7 +15,7 @@ yarn add @fontsource/firago // npm install @fontsource/firago
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/firago" // Defaults to weight 400.
+import "@fontsource/firago"; // Defaults to weight 400.
 ```
 
 Supported variables:

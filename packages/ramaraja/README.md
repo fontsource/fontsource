@@ -15,7 +15,7 @@ yarn add @fontsource/ramaraja // npm install @fontsource/ramaraja
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ramaraja" // Defaults to weight 400.
+import "@fontsource/ramaraja"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/patua-one // npm install @fontsource/patua-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/patua-one" // Defaults to weight 400.
+import "@fontsource/patua-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

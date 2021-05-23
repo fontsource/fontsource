@@ -15,7 +15,7 @@ yarn add @fontsource/vidaloka // npm install @fontsource/vidaloka
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vidaloka" // Defaults to weight 400.
+import "@fontsource/vidaloka"; // Defaults to weight 400.
 ```
 
 Supported variables:

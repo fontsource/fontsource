@@ -15,7 +15,7 @@ yarn add @fontsource/koho // npm install @fontsource/koho
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/koho" // Defaults to weight 400.
+import "@fontsource/koho"; // Defaults to weight 400.
 ```
 
 Supported variables:

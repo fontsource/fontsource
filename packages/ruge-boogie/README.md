@@ -15,7 +15,7 @@ yarn add @fontsource/ruge-boogie // npm install @fontsource/ruge-boogie
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ruge-boogie" // Defaults to weight 400.
+import "@fontsource/ruge-boogie"; // Defaults to weight 400.
 ```
 
 Supported variables:

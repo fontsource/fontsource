@@ -15,7 +15,7 @@ yarn add @fontsource/graduate // npm install @fontsource/graduate
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/graduate" // Defaults to weight 400.
+import "@fontsource/graduate"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/kelly-slab // npm install @fontsource/kelly-slab
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kelly-slab" // Defaults to weight 400.
+import "@fontsource/kelly-slab"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/tenali-ramakrishna // npm install @fontsource/tenali-ramakr
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/tenali-ramakrishna" // Defaults to weight 400.
+import "@fontsource/tenali-ramakrishna"; // Defaults to weight 400.
 ```
 
 Supported variables:

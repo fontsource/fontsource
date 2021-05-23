@@ -15,7 +15,7 @@ yarn add @fontsource/courier-prime // npm install @fontsource/courier-prime
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/courier-prime" // Defaults to weight 400.
+import "@fontsource/courier-prime"; // Defaults to weight 400.
 ```
 
 Supported variables:

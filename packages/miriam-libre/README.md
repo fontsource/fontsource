@@ -15,7 +15,7 @@ yarn add @fontsource/miriam-libre // npm install @fontsource/miriam-libre
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/miriam-libre" // Defaults to weight 400.
+import "@fontsource/miriam-libre"; // Defaults to weight 400.
 ```
 
 Supported variables:

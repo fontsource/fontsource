@@ -15,7 +15,7 @@ yarn add @fontsource/stalinist-one // npm install @fontsource/stalinist-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/stalinist-one" // Defaults to weight 400.
+import "@fontsource/stalinist-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/arya // npm install @fontsource/arya
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/arya" // Defaults to weight 400.
+import "@fontsource/arya"; // Defaults to weight 400.
 ```
 
 Supported variables:

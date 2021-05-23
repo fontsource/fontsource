@@ -15,7 +15,7 @@ yarn add @fontsource/mrs-sheppards // npm install @fontsource/mrs-sheppards
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mrs-sheppards" // Defaults to weight 400.
+import "@fontsource/mrs-sheppards"; // Defaults to weight 400.
 ```
 
 Supported variables:

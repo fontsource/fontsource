@@ -15,7 +15,7 @@ yarn add @fontsource/seaweed-script // npm install @fontsource/seaweed-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/seaweed-script" // Defaults to weight 400.
+import "@fontsource/seaweed-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

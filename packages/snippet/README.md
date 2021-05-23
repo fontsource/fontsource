@@ -15,7 +15,7 @@ yarn add @fontsource/snippet // npm install @fontsource/snippet
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/snippet" // Defaults to weight 400.
+import "@fontsource/snippet"; // Defaults to weight 400.
 ```
 
 Supported variables:

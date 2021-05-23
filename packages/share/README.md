@@ -15,7 +15,7 @@ yarn add @fontsource/share // npm install @fontsource/share
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/share" // Defaults to weight 400.
+import "@fontsource/share"; // Defaults to weight 400.
 ```
 
 Supported variables:

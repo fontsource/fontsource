@@ -15,7 +15,7 @@ yarn add @fontsource/herr-von-muellerhoff // npm install @fontsource/herr-von-mu
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/herr-von-muellerhoff" // Defaults to weight 400.
+import "@fontsource/herr-von-muellerhoff"; // Defaults to weight 400.
 ```
 
 Supported variables:

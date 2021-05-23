@@ -15,7 +15,7 @@ yarn add @fontsource/rum-raisin // npm install @fontsource/rum-raisin
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/rum-raisin" // Defaults to weight 400.
+import "@fontsource/rum-raisin"; // Defaults to weight 400.
 ```
 
 Supported variables:

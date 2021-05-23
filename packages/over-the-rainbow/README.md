@@ -15,7 +15,7 @@ yarn add @fontsource/over-the-rainbow // npm install @fontsource/over-the-rainbo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/over-the-rainbow" // Defaults to weight 400.
+import "@fontsource/over-the-rainbow"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/martel-sans // npm install @fontsource/martel-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/martel-sans" // Defaults to weight 400.
+import "@fontsource/martel-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

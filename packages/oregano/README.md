@@ -15,7 +15,7 @@ yarn add @fontsource/oregano // npm install @fontsource/oregano
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/oregano" // Defaults to weight 400.
+import "@fontsource/oregano"; // Defaults to weight 400.
 ```
 
 Supported variables:

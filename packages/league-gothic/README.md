@@ -15,7 +15,7 @@ yarn add @fontsource/league-gothic // npm install @fontsource/league-gothic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/league-gothic" // Defaults to weight 400.
+import "@fontsource/league-gothic"; // Defaults to weight 400.
 ```
 
 Supported variables:

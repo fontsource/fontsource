@@ -15,7 +15,7 @@ yarn add @fontsource/carrois-gothic // npm install @fontsource/carrois-gothic
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/carrois-gothic" // Defaults to weight 400.
+import "@fontsource/carrois-gothic"; // Defaults to weight 400.
 ```
 
 Supported variables:

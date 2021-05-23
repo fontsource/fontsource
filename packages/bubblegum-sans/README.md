@@ -15,7 +15,7 @@ yarn add @fontsource/bubblegum-sans // npm install @fontsource/bubblegum-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bubblegum-sans" // Defaults to weight 400.
+import "@fontsource/bubblegum-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/pathway-gothic-one // npm install @fontsource/pathway-gothi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pathway-gothic-one" // Defaults to weight 400.
+import "@fontsource/pathway-gothic-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

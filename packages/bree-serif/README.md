@@ -15,7 +15,7 @@ yarn add @fontsource/bree-serif // npm install @fontsource/bree-serif
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bree-serif" // Defaults to weight 400.
+import "@fontsource/bree-serif"; // Defaults to weight 400.
 ```
 
 Supported variables:

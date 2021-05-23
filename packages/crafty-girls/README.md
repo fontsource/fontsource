@@ -15,7 +15,7 @@ yarn add @fontsource/crafty-girls // npm install @fontsource/crafty-girls
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/crafty-girls" // Defaults to weight 400.
+import "@fontsource/crafty-girls"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/preahvihear // npm install @fontsource/preahvihear
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/preahvihear" // Defaults to weight 400.
+import "@fontsource/preahvihear"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/questrial // npm install @fontsource/questrial
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/questrial" // Defaults to weight 400.
+import "@fontsource/questrial"; // Defaults to weight 400.
 ```
 
 Supported variables:

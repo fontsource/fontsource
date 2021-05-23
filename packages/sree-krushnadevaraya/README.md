@@ -15,7 +15,7 @@ yarn add @fontsource/sree-krushnadevaraya // npm install @fontsource/sree-krushn
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sree-krushnadevaraya" // Defaults to weight 400.
+import "@fontsource/sree-krushnadevaraya"; // Defaults to weight 400.
 ```
 
 Supported variables:

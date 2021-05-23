@@ -15,7 +15,7 @@ yarn add @fontsource/loved-by-the-king // npm install @fontsource/loved-by-the-k
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/loved-by-the-king" // Defaults to weight 400.
+import "@fontsource/loved-by-the-king"; // Defaults to weight 400.
 ```
 
 Supported variables:

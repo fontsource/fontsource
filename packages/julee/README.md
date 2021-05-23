@@ -15,7 +15,7 @@ yarn add @fontsource/julee // npm install @fontsource/julee
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/julee" // Defaults to weight 400.
+import "@fontsource/julee"; // Defaults to weight 400.
 ```
 
 Supported variables:

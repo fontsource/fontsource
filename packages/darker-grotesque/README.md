@@ -15,7 +15,7 @@ yarn add @fontsource/darker-grotesque // npm install @fontsource/darker-grotesqu
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/darker-grotesque" // Defaults to weight 400.
+import "@fontsource/darker-grotesque"; // Defaults to weight 400.
 ```
 
 Supported variables:

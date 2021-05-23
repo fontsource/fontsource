@@ -15,7 +15,7 @@ yarn add @fontsource/fruktur // npm install @fontsource/fruktur
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fruktur" // Defaults to weight 400.
+import "@fontsource/fruktur"; // Defaults to weight 400.
 ```
 
 Supported variables:

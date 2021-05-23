@@ -15,7 +15,7 @@ yarn add @fontsource/paprika // npm install @fontsource/paprika
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/paprika" // Defaults to weight 400.
+import "@fontsource/paprika"; // Defaults to weight 400.
 ```
 
 Supported variables:

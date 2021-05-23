@@ -15,7 +15,7 @@ yarn add @fontsource/piedra // npm install @fontsource/piedra
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/piedra" // Defaults to weight 400.
+import "@fontsource/piedra"; // Defaults to weight 400.
 ```
 
 Supported variables:

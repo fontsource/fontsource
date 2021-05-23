@@ -15,7 +15,7 @@ yarn add @fontsource/gabriela // npm install @fontsource/gabriela
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gabriela" // Defaults to weight 400.
+import "@fontsource/gabriela"; // Defaults to weight 400.
 ```
 
 Supported variables:

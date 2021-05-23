@@ -15,7 +15,7 @@ yarn add @fontsource/laila // npm install @fontsource/laila
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/laila" // Defaults to weight 400.
+import "@fontsource/laila"; // Defaults to weight 400.
 ```
 
 Supported variables:

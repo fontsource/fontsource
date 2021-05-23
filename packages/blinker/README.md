@@ -15,7 +15,7 @@ yarn add @fontsource/blinker // npm install @fontsource/blinker
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/blinker" // Defaults to weight 400.
+import "@fontsource/blinker"; // Defaults to weight 400.
 ```
 
 Supported variables:

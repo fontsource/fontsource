@@ -15,7 +15,7 @@ yarn add @fontsource/syne-tactile // npm install @fontsource/syne-tactile
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/syne-tactile" // Defaults to weight 400.
+import "@fontsource/syne-tactile"; // Defaults to weight 400.
 ```
 
 Supported variables:

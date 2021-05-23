@@ -15,7 +15,7 @@ yarn add @fontsource/niconne // npm install @fontsource/niconne
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/niconne" // Defaults to weight 400.
+import "@fontsource/niconne"; // Defaults to weight 400.
 ```
 
 Supported variables:

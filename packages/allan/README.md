@@ -15,7 +15,7 @@ yarn add @fontsource/allan // npm install @fontsource/allan
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/allan" // Defaults to weight 400.
+import "@fontsource/allan"; // Defaults to weight 400.
 ```
 
 Supported variables:

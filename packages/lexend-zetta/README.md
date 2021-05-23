@@ -15,7 +15,7 @@ yarn add @fontsource/lexend-zetta // npm install @fontsource/lexend-zetta
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lexend-zetta" // Defaults to weight 400.
+import "@fontsource/lexend-zetta"; // Defaults to weight 400.
 ```
 
 Supported variables:

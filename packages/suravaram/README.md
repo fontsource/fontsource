@@ -15,7 +15,7 @@ yarn add @fontsource/suravaram // npm install @fontsource/suravaram
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/suravaram" // Defaults to weight 400.
+import "@fontsource/suravaram"; // Defaults to weight 400.
 ```
 
 Supported variables:

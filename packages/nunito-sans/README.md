@@ -15,7 +15,7 @@ yarn add @fontsource/nunito-sans // npm install @fontsource/nunito-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nunito-sans" // Defaults to weight 400.
+import "@fontsource/nunito-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

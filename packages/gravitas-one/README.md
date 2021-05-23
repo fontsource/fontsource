@@ -15,7 +15,7 @@ yarn add @fontsource/gravitas-one // npm install @fontsource/gravitas-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gravitas-one" // Defaults to weight 400.
+import "@fontsource/gravitas-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

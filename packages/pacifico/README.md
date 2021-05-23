@@ -15,7 +15,7 @@ yarn add @fontsource/pacifico // npm install @fontsource/pacifico
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/pacifico" // Defaults to weight 400.
+import "@fontsource/pacifico"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/yesteryear // npm install @fontsource/yesteryear
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/yesteryear" // Defaults to weight 400.
+import "@fontsource/yesteryear"; // Defaults to weight 400.
 ```
 
 Supported variables:

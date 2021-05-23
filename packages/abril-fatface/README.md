@@ -15,7 +15,7 @@ yarn add @fontsource/abril-fatface // npm install @fontsource/abril-fatface
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/abril-fatface" // Defaults to weight 400.
+import "@fontsource/abril-fatface"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/donegal-one // npm install @fontsource/donegal-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/donegal-one" // Defaults to weight 400.
+import "@fontsource/donegal-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

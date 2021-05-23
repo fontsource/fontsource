@@ -15,7 +15,7 @@ yarn add @fontsource/duru-sans // npm install @fontsource/duru-sans
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/duru-sans" // Defaults to weight 400.
+import "@fontsource/duru-sans"; // Defaults to weight 400.
 ```
 
 Supported variables:

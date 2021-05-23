@@ -15,7 +15,7 @@ yarn add @fontsource/nerko-one // npm install @fontsource/nerko-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/nerko-one" // Defaults to weight 400.
+import "@fontsource/nerko-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

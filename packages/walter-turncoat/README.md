@@ -15,7 +15,7 @@ yarn add @fontsource/walter-turncoat // npm install @fontsource/walter-turncoat
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/walter-turncoat" // Defaults to weight 400.
+import "@fontsource/walter-turncoat"; // Defaults to weight 400.
 ```
 
 Supported variables:

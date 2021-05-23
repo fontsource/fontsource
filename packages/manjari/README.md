@@ -15,7 +15,7 @@ yarn add @fontsource/manjari // npm install @fontsource/manjari
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/manjari" // Defaults to weight 400.
+import "@fontsource/manjari"; // Defaults to weight 400.
 ```
 
 Supported variables:

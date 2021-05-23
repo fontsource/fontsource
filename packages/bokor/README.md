@@ -15,7 +15,7 @@ yarn add @fontsource/bokor // npm install @fontsource/bokor
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bokor" // Defaults to weight 400.
+import "@fontsource/bokor"; // Defaults to weight 400.
 ```
 
 Supported variables:

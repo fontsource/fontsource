@@ -15,7 +15,7 @@ yarn add @fontsource/creepster // npm install @fontsource/creepster
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/creepster" // Defaults to weight 400.
+import "@fontsource/creepster"; // Defaults to weight 400.
 ```
 
 Supported variables:

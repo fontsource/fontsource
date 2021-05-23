@@ -15,7 +15,7 @@ yarn add @fontsource/lekton // npm install @fontsource/lekton
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lekton" // Defaults to weight 400.
+import "@fontsource/lekton"; // Defaults to weight 400.
 ```
 
 Supported variables:

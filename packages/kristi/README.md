@@ -15,7 +15,7 @@ yarn add @fontsource/kristi // npm install @fontsource/kristi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kristi" // Defaults to weight 400.
+import "@fontsource/kristi"; // Defaults to weight 400.
 ```
 
 Supported variables:

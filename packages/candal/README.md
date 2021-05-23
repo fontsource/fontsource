@@ -15,7 +15,7 @@ yarn add @fontsource/candal // npm install @fontsource/candal
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/candal" // Defaults to weight 400.
+import "@fontsource/candal"; // Defaults to weight 400.
 ```
 
 Supported variables:

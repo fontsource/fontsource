@@ -15,7 +15,7 @@ yarn add @fontsource/yeon-sung // npm install @fontsource/yeon-sung
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/yeon-sung" // Defaults to weight 400.
+import "@fontsource/yeon-sung"; // Defaults to weight 400.
 ```
 
 Supported variables:

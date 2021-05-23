@@ -15,7 +15,7 @@ yarn add @fontsource/actor // npm install @fontsource/actor
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/actor" // Defaults to weight 400.
+import "@fontsource/actor"; // Defaults to weight 400.
 ```
 
 Supported variables:

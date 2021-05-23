@@ -15,7 +15,7 @@ yarn add @fontsource/dm-serif-text // npm install @fontsource/dm-serif-text
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dm-serif-text" // Defaults to weight 400.
+import "@fontsource/dm-serif-text"; // Defaults to weight 400.
 ```
 
 Supported variables:

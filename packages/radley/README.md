@@ -15,7 +15,7 @@ yarn add @fontsource/radley // npm install @fontsource/radley
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/radley" // Defaults to weight 400.
+import "@fontsource/radley"; // Defaults to weight 400.
 ```
 
 Supported variables:

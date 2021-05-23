@@ -15,7 +15,7 @@ yarn add @fontsource/codystar // npm install @fontsource/codystar
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/codystar" // Defaults to weight 400.
+import "@fontsource/codystar"; // Defaults to weight 400.
 ```
 
 Supported variables:

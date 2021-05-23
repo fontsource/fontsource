@@ -15,7 +15,7 @@ yarn add @fontsource/telex // npm install @fontsource/telex
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/telex" // Defaults to weight 400.
+import "@fontsource/telex"; // Defaults to weight 400.
 ```
 
 Supported variables:

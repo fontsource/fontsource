@@ -15,7 +15,7 @@ yarn add @fontsource/englebert // npm install @fontsource/englebert
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/englebert" // Defaults to weight 400.
+import "@fontsource/englebert"; // Defaults to weight 400.
 ```
 
 Supported variables:

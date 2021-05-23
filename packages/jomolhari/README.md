@@ -15,7 +15,7 @@ yarn add @fontsource/jomolhari // npm install @fontsource/jomolhari
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/jomolhari" // Defaults to weight 400.
+import "@fontsource/jomolhari"; // Defaults to weight 400.
 ```
 
 Supported variables:

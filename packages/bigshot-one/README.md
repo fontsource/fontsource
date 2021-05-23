@@ -15,7 +15,7 @@ yarn add @fontsource/bigshot-one // npm install @fontsource/bigshot-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bigshot-one" // Defaults to weight 400.
+import "@fontsource/bigshot-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

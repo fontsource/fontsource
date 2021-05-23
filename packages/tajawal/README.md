@@ -15,7 +15,7 @@ yarn add @fontsource/tajawal // npm install @fontsource/tajawal
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/tajawal" // Defaults to weight 400.
+import "@fontsource/tajawal"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/mansalva // npm install @fontsource/mansalva
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mansalva" // Defaults to weight 400.
+import "@fontsource/mansalva"; // Defaults to weight 400.
 ```
 
 Supported variables:

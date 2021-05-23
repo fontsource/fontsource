@@ -15,7 +15,7 @@ yarn add @fontsource/copse // npm install @fontsource/copse
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/copse" // Defaults to weight 400.
+import "@fontsource/copse"; // Defaults to weight 400.
 ```
 
 Supported variables:

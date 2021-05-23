@@ -15,7 +15,7 @@ yarn add @fontsource/ultra // npm install @fontsource/ultra
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/ultra" // Defaults to weight 400.
+import "@fontsource/ultra"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/harmattan // npm install @fontsource/harmattan
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/harmattan" // Defaults to weight 400.
+import "@fontsource/harmattan"; // Defaults to weight 400.
 ```
 
 Supported variables:

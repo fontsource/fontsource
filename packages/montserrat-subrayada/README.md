@@ -15,7 +15,7 @@ yarn add @fontsource/montserrat-subrayada // npm install @fontsource/montserrat-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/montserrat-subrayada" // Defaults to weight 400.
+import "@fontsource/montserrat-subrayada"; // Defaults to weight 400.
 ```
 
 Supported variables:

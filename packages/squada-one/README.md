@@ -15,7 +15,7 @@ yarn add @fontsource/squada-one // npm install @fontsource/squada-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/squada-one" // Defaults to weight 400.
+import "@fontsource/squada-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/el-messiri // npm install @fontsource/el-messiri
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/el-messiri" // Defaults to weight 400.
+import "@fontsource/el-messiri"; // Defaults to weight 400.
 ```
 
 Supported variables:

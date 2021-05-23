@@ -15,7 +15,7 @@ yarn add @fontsource/titan-one // npm install @fontsource/titan-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/titan-one" // Defaults to weight 400.
+import "@fontsource/titan-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

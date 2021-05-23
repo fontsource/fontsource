@@ -15,7 +15,7 @@ yarn add @fontsource/gruppo // npm install @fontsource/gruppo
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gruppo" // Defaults to weight 400.
+import "@fontsource/gruppo"; // Defaults to weight 400.
 ```
 
 Supported variables:

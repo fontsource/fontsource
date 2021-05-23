@@ -15,7 +15,7 @@ yarn add @fontsource/oleo-script // npm install @fontsource/oleo-script
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/oleo-script" // Defaults to weight 400.
+import "@fontsource/oleo-script"; // Defaults to weight 400.
 ```
 
 Supported variables:

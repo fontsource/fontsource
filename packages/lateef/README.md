@@ -15,7 +15,7 @@ yarn add @fontsource/lateef // npm install @fontsource/lateef
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/lateef" // Defaults to weight 400.
+import "@fontsource/lateef"; // Defaults to weight 400.
 ```
 
 Supported variables:

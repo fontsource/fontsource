@@ -15,7 +15,7 @@ yarn add @fontsource/buenard // npm install @fontsource/buenard
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/buenard" // Defaults to weight 400.
+import "@fontsource/buenard"; // Defaults to weight 400.
 ```
 
 Supported variables:

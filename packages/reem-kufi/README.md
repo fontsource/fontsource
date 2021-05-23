@@ -15,7 +15,7 @@ yarn add @fontsource/reem-kufi // npm install @fontsource/reem-kufi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/reem-kufi" // Defaults to weight 400.
+import "@fontsource/reem-kufi"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/mallanna // npm install @fontsource/mallanna
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mallanna" // Defaults to weight 400.
+import "@fontsource/mallanna"; // Defaults to weight 400.
 ```
 
 Supported variables:

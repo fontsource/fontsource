@@ -15,7 +15,7 @@ yarn add @fontsource/dorsa // npm install @fontsource/dorsa
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/dorsa" // Defaults to weight 400.
+import "@fontsource/dorsa"; // Defaults to weight 400.
 ```
 
 Supported variables:

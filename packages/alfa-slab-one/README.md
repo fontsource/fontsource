@@ -15,7 +15,7 @@ yarn add @fontsource/alfa-slab-one // npm install @fontsource/alfa-slab-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/alfa-slab-one" // Defaults to weight 400.
+import "@fontsource/alfa-slab-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

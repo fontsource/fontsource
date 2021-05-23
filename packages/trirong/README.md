@@ -15,7 +15,7 @@ yarn add @fontsource/trirong // npm install @fontsource/trirong
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/trirong" // Defaults to weight 400.
+import "@fontsource/trirong"; // Defaults to weight 400.
 ```
 
 Supported variables:

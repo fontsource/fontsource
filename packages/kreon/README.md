@@ -15,7 +15,7 @@ yarn add @fontsource/kreon // npm install @fontsource/kreon
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kreon" // Defaults to weight 400.
+import "@fontsource/kreon"; // Defaults to weight 400.
 ```
 
 Supported variables:

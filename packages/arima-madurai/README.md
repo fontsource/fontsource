@@ -15,7 +15,7 @@ yarn add @fontsource/arima-madurai // npm install @fontsource/arima-madurai
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/arima-madurai" // Defaults to weight 400.
+import "@fontsource/arima-madurai"; // Defaults to weight 400.
 ```
 
 Supported variables:

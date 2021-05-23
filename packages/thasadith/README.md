@@ -15,7 +15,7 @@ yarn add @fontsource/thasadith // npm install @fontsource/thasadith
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/thasadith" // Defaults to weight 400.
+import "@fontsource/thasadith"; // Defaults to weight 400.
 ```
 
 Supported variables:

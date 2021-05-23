@@ -15,7 +15,7 @@ yarn add @fontsource/fascinate-inline // npm install @fontsource/fascinate-inlin
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fascinate-inline" // Defaults to weight 400.
+import "@fontsource/fascinate-inline"; // Defaults to weight 400.
 ```
 
 Supported variables:

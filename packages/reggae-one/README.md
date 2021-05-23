@@ -15,7 +15,7 @@ yarn add @fontsource/reggae-one // npm install @fontsource/reggae-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/reggae-one" // Defaults to weight 400.
+import "@fontsource/reggae-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

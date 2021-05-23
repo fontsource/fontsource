@@ -15,7 +15,7 @@ yarn add @fontsource/sarpanch // npm install @fontsource/sarpanch
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/sarpanch" // Defaults to weight 400.
+import "@fontsource/sarpanch"; // Defaults to weight 400.
 ```
 
 Supported variables:

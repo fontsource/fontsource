@@ -15,7 +15,7 @@ yarn add @fontsource/vibes // npm install @fontsource/vibes
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/vibes" // Defaults to weight 400.
+import "@fontsource/vibes"; // Defaults to weight 400.
 ```
 
 Supported variables:

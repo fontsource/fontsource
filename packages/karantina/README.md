@@ -15,7 +15,7 @@ yarn add @fontsource/karantina // npm install @fontsource/karantina
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/karantina" // Defaults to weight 400.
+import "@fontsource/karantina"; // Defaults to weight 400.
 ```
 
 Supported variables:

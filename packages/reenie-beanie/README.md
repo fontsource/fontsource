@@ -15,7 +15,7 @@ yarn add @fontsource/reenie-beanie // npm install @fontsource/reenie-beanie
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/reenie-beanie" // Defaults to weight 400.
+import "@fontsource/reenie-beanie"; // Defaults to weight 400.
 ```
 
 Supported variables:

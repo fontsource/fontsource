@@ -15,7 +15,7 @@ yarn add @fontsource/atkinson-hyperlegible // npm install @fontsource/atkinson-h
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/atkinson-hyperlegible" // Defaults to weight 400.
+import "@fontsource/atkinson-hyperlegible"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/shojumaru // npm install @fontsource/shojumaru
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/shojumaru" // Defaults to weight 400.
+import "@fontsource/shojumaru"; // Defaults to weight 400.
 ```
 
 Supported variables:

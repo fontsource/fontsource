@@ -15,7 +15,7 @@ yarn add @fontsource/hind-vadodara // npm install @fontsource/hind-vadodara
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/hind-vadodara" // Defaults to weight 400.
+import "@fontsource/hind-vadodara"; // Defaults to weight 400.
 ```
 
 Supported variables:

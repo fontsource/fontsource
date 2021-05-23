@@ -15,7 +15,7 @@ yarn add @fontsource/gaegu // npm install @fontsource/gaegu
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/gaegu" // Defaults to weight 400.
+import "@fontsource/gaegu"; // Defaults to weight 400.
 ```
 
 Supported variables:

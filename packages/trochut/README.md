@@ -15,7 +15,7 @@ yarn add @fontsource/trochut // npm install @fontsource/trochut
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/trochut" // Defaults to weight 400.
+import "@fontsource/trochut"; // Defaults to weight 400.
 ```
 
 Supported variables:

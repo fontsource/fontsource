@@ -15,7 +15,7 @@ yarn add @fontsource/fredericka-the-great // npm install @fontsource/fredericka-
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/fredericka-the-great" // Defaults to weight 400.
+import "@fontsource/fredericka-the-great"; // Defaults to weight 400.
 ```
 
 Supported variables:

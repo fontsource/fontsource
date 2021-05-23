@@ -15,7 +15,7 @@ yarn add @fontsource/noto-mono // npm install @fontsource/noto-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/noto-mono" // Defaults to weight 400.
+import "@fontsource/noto-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/adamina // npm install @fontsource/adamina
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/adamina" // Defaults to weight 400.
+import "@fontsource/adamina"; // Defaults to weight 400.
 ```
 
 Supported variables:

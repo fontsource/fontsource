@@ -15,7 +15,7 @@ yarn add @fontsource/kulim-park // npm install @fontsource/kulim-park
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kulim-park" // Defaults to weight 400.
+import "@fontsource/kulim-park"; // Defaults to weight 400.
 ```
 
 Supported variables:

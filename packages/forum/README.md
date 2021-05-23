@@ -15,7 +15,7 @@ yarn add @fontsource/forum // npm install @fontsource/forum
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/forum" // Defaults to weight 400.
+import "@fontsource/forum"; // Defaults to weight 400.
 ```
 
 Supported variables:

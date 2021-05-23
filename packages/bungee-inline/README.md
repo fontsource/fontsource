@@ -15,7 +15,7 @@ yarn add @fontsource/bungee-inline // npm install @fontsource/bungee-inline
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bungee-inline" // Defaults to weight 400.
+import "@fontsource/bungee-inline"; // Defaults to weight 400.
 ```
 
 Supported variables:

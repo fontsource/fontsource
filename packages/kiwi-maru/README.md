@@ -15,7 +15,7 @@ yarn add @fontsource/kiwi-maru // npm install @fontsource/kiwi-maru
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kiwi-maru" // Defaults to weight 400.
+import "@fontsource/kiwi-maru"; // Defaults to weight 400.
 ```
 
 Supported variables:

@@ -15,7 +15,7 @@ yarn add @fontsource/kodchasan // npm install @fontsource/kodchasan
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/kodchasan" // Defaults to weight 400.
+import "@fontsource/kodchasan"; // Defaults to weight 400.
 ```
 
 Supported variables:

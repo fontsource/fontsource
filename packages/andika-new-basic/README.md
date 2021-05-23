@@ -15,7 +15,7 @@ yarn add @fontsource/andika-new-basic // npm install @fontsource/andika-new-basi
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/andika-new-basic" // Defaults to weight 400.
+import "@fontsource/andika-new-basic"; // Defaults to weight 400.
 ```
 
 Supported variables:

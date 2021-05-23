@@ -15,7 +15,7 @@ yarn add @fontsource/mr-dafoe // npm install @fontsource/mr-dafoe
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/mr-dafoe" // Defaults to weight 400.
+import "@fontsource/mr-dafoe"; // Defaults to weight 400.
 ```
 
 Supported variables:

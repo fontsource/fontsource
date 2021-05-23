@@ -15,7 +15,7 @@ yarn add @fontsource/changa-one // npm install @fontsource/changa-one
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/changa-one" // Defaults to weight 400.
+import "@fontsource/changa-one"; // Defaults to weight 400.
 ```
 
 Supported variables:

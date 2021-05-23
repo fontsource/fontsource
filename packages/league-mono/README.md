@@ -15,7 +15,7 @@ yarn add @fontsource/league-mono // npm install @fontsource/league-mono
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/league-mono" // Defaults to weight 400.
+import "@fontsource/league-mono"; // Defaults to weight 400.
 ```
 
 Supported variables:
