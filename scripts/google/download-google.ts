@@ -12,16 +12,17 @@ fs.ensureDirSync("packages");
 fs.ensureDirSync("scripts/temp_packages");
 
 // Create an async queue object
-const processQueue = (fontId: string, cb: () => void) => {
+const processQueue = async (fontId: string, cb: () => void) => {
   console.log(`Downloading ${fontId}`);
-  run(fontId, force);
+  await run(fontId, force);
+  console.log(`Finished processing ${fontId}`);
   cb();
 };
 
 // EventEmitter listener is usually set at a default limit of 10, below chosen 12 concurrent workers
 EventEmitter.defaultMaxListeners = 0;
 
-const queue = async.queue(processQueue, 12);
+const queue = async.queue(processQueue, 3);
 
 queue.drain(() => {
   console.log(

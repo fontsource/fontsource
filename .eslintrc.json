@@ -39,6 +39,8 @@
     // Airbnb prefers forEach
     "unicorn/no-array-for-each": "off",
     // It's not accurate in the monorepo style
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    // Fontsource doesn't need to worry about heavyweight libraries
+    "no-restricted-syntax": "off"
   }
 }
