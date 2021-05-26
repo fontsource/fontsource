@@ -7,9 +7,7 @@ const fontFace = _.template(
   font-style: <%= style %>;
   font-display: swap;
   font-weight: <%= weight %>;
-  src:<% _.forEach(locals, function(localName) { %>
-    local('<%= localName %>'),<% });
-    %> url('<%= woff2Path %>') format('woff2'), url('<%= woffPath %>') format('woff');
+  src: url('<%= woff2Path %>') format('woff2'), url('<%= woffPath %>') format('woff');
   <% if (unicodeRange) { %>unicode-range: <%= unicodeRange %>;<% } %>
 }
 `
