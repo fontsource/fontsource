@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Alef Bold'),
-    local('Alef-Bold'), url('./files/alef-hebrew-700-normal.woff2') format('woff2'), url('./files/alef-hebrew-700-normal.woff') format('woff');
+  src: url('./files/alef-hebrew-700-normal.woff2') format('woff2'), url('./files/alef-hebrew-700-normal.woff') format('woff');
   
 }

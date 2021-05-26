@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Overpass Thin'),
-    local('Overpass-Thin'), url('./files/overpass-latin-ext-100-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-100-normal.woff') format('woff');
+  src: url('./files/overpass-latin-ext-100-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-100-normal.woff') format('woff');
   
 }
 /* overpass-latin-ext-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Overpass ExtraLight'),
-    local('Overpass-ExtraLight'), url('./files/overpass-latin-ext-200-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/overpass-latin-ext-200-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-200-normal.woff') format('woff');
   
 }
 /* overpass-latin-ext-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Overpass Light'),
-    local('Overpass-Light'), url('./files/overpass-latin-ext-300-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/overpass-latin-ext-300-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-300-normal.woff') format('woff');
   
 }
 /* overpass-latin-ext-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Overpass Regular'),
-    local('Overpass-Regular'), url('./files/overpass-latin-ext-400-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/overpass-latin-ext-400-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-400-normal.woff') format('woff');
   
 }
 /* overpass-latin-ext-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Overpass SemiBold'),
-    local('Overpass-SemiBold'), url('./files/overpass-latin-ext-600-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/overpass-latin-ext-600-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-600-normal.woff') format('woff');
   
 }
 /* overpass-latin-ext-700-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Overpass Bold'),
-    local('Overpass-Bold'), url('./files/overpass-latin-ext-700-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/overpass-latin-ext-700-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-700-normal.woff') format('woff');
   
 }
 /* overpass-latin-ext-800-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Overpass ExtraBold'),
-    local('Overpass-ExtraBold'), url('./files/overpass-latin-ext-800-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/overpass-latin-ext-800-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-800-normal.woff') format('woff');
   
 }
 /* overpass-latin-ext-900-normal*/
@@ -81,8 +67,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Overpass Black'),
-    local('Overpass-Black'), url('./files/overpass-latin-ext-900-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-900-normal.woff') format('woff');
+  src: url('./files/overpass-latin-ext-900-normal.woff2') format('woff2'), url('./files/overpass-latin-ext-900-normal.woff') format('woff');
   
 }

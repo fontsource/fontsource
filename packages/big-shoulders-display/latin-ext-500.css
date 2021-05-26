@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Big Shoulders Display Medium'),
-    local('BigShouldersDisplay-Medium'), url('./files/big-shoulders-display-latin-ext-500-normal.woff2') format('woff2'), url('./files/big-shoulders-display-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/big-shoulders-display-latin-ext-500-normal.woff2') format('woff2'), url('./files/big-shoulders-display-latin-ext-500-normal.woff') format('woff');
   
 }

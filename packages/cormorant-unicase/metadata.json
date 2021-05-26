@@ -2,7 +2,7 @@
   "fontId": "cormorant-unicase",
   "fontName": "Cormorant Unicase",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
-  "weights": ["300", "400", "500", "600", "700"],
+  "weights": [300, 400, 500, 600, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Bai Jamjuree SemiBold Italic'),
-    local('BaiJamjuree-SemiBoldItalic'), url('./files/bai-jamjuree-thai-600-italic.woff2') format('woff2'), url('./files/bai-jamjuree-thai-600-italic.woff') format('woff');
+  src: url('./files/bai-jamjuree-thai-600-italic.woff2') format('woff2'), url('./files/bai-jamjuree-thai-600-italic.woff') format('woff');
   
 }

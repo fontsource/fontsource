@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Noto Serif JP Medium'),
-    local('NotoSerifJP-Medium'), url('./files/noto-serif-jp-japanese-500-normal.woff2') format('woff2'), url('./files/noto-serif-jp-japanese-500-normal.woff') format('woff');
+  src: url('./files/noto-serif-jp-japanese-500-normal.woff2') format('woff2'), url('./files/noto-serif-jp-japanese-500-normal.woff') format('woff');
   
 }

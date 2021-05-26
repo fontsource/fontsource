@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Gentium Book Basic Bold Italic'),
-    local('GentiumBookBasic-BoldItalic'), url('./files/gentium-book-basic-latin-ext-700-italic.woff2') format('woff2'), url('./files/gentium-book-basic-latin-ext-700-italic.woff') format('woff');
+  src: url('./files/gentium-book-basic-latin-ext-700-italic.woff2') format('woff2'), url('./files/gentium-book-basic-latin-ext-700-italic.woff') format('woff');
   
 }

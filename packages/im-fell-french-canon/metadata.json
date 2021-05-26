@@ -2,7 +2,7 @@
   "fontId": "im-fell-french-canon",
   "fontName": "IM Fell French Canon",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "zhi-mang-xing",
   "fontName": "Zhi Mang Xing",
   "subsets": ["chinese-simplified", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

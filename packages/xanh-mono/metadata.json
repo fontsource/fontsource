@@ -2,7 +2,7 @@
   "fontId": "xanh-mono",
   "fontName": "Xanh Mono",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

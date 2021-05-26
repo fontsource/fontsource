@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Red Hat Display'),
-    local('RedHatDisplay-Regular'), url('./files/red-hat-display-latin-400-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-400-normal.woff') format('woff');
+  src: url('./files/red-hat-display-latin-400-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-400-normal.woff') format('woff');
   
 }
 /* red-hat-display-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Red Hat Display Medium'),
-    local('RedHatDisplay-Medium'), url('./files/red-hat-display-latin-500-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-500-normal.woff') format('woff');
+  src: url('./files/red-hat-display-latin-500-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-500-normal.woff') format('woff');
   
 }
 /* red-hat-display-latin-700-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Red Hat Display Bold'),
-    local('RedHatDisplay-Bold'), url('./files/red-hat-display-latin-700-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-700-normal.woff') format('woff');
+  src: url('./files/red-hat-display-latin-700-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-700-normal.woff') format('woff');
   
 }
 /* red-hat-display-latin-900-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Red Hat Display Black'),
-    local('RedHatDisplay-Black'), url('./files/red-hat-display-latin-900-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-900-normal.woff') format('woff');
+  src: url('./files/red-hat-display-latin-900-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-900-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Encode Sans Expanded Light'),
-    local('EncodeSansExpanded-Light'), url('./files/encode-sans-expanded-latin-ext-300-normal.woff2') format('woff2'), url('./files/encode-sans-expanded-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/encode-sans-expanded-latin-ext-300-normal.woff2') format('woff2'), url('./files/encode-sans-expanded-latin-ext-300-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Proza Libre SemiBold'),
-    local('ProzaLibre-SemiBold'), url('./files/proza-libre-latin-ext-600-normal.woff2') format('woff2'), url('./files/proza-libre-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/proza-libre-latin-ext-600-normal.woff2') format('woff2'), url('./files/proza-libre-latin-ext-600-normal.woff') format('woff');
   
 }

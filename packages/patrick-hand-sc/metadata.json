@@ -2,7 +2,7 @@
   "fontId": "patrick-hand-sc",
   "fontName": "Patrick Hand SC",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

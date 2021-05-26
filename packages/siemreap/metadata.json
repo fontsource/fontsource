@@ -2,7 +2,7 @@
   "fontId": "siemreap",
   "fontName": "Siemreap",
   "subsets": ["khmer"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "khmer",
   "variable": false,

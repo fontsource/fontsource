@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('K2D Light'),
-    local('K2D-Light'), url('./files/k2d-latin-300-normal.woff2') format('woff2'), url('./files/k2d-latin-300-normal.woff') format('woff');
+  src: url('./files/k2d-latin-300-normal.woff2') format('woff2'), url('./files/k2d-latin-300-normal.woff') format('woff');
   
 }

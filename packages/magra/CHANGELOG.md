@@ -12,6 +12,18 @@ These will always contain changes from Fontsource's end.
 
 # 4.x Release
 
+## 4.4.x
+
+### Features
+
+- Changed weight metadata from a string array to number array. e.g. ["400"] --> [400] [#240](https://github.com/fontsource/fontsource/pull/240)
+
+- Removed local font names in CSS selector of `src:` which should cut down on inconsistencies of OS installed fonts. [#240](https://github.com/fontsource/fontsource/pull/240)
+
+### Fixes
+
+- Stop serving variable fonts in normal packages, which should lead to smaller bundle sizes and resolve duplicated imports of certain fonts. [#240](https://github.com/fontsource/fontsource/pull/240)
+
 ## 4.3.x
 
 ### Features

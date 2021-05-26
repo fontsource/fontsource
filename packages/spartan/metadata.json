@@ -2,7 +2,7 @@
   "fontId": "spartan",
   "fontName": "Spartan",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": {

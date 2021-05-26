@@ -2,7 +2,7 @@
   "fontId": "pt-sans-caption",
   "fontName": "PT Sans Caption",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

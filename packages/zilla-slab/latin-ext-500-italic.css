@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Zilla Slab Medium Italic'),
-    local('ZillaSlab-MediumItalic'), url('./files/zilla-slab-latin-ext-500-italic.woff2') format('woff2'), url('./files/zilla-slab-latin-ext-500-italic.woff') format('woff');
+  src: url('./files/zilla-slab-latin-ext-500-italic.woff2') format('woff2'), url('./files/zilla-slab-latin-ext-500-italic.woff') format('woff');
   
 }

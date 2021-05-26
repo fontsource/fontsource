@@ -2,7 +2,7 @@
   "fontId": "spectral-sc",
   "fontName": "Spectral SC",
   "subsets": ["cyrillic", "latin", "latin-ext", "vietnamese"],
-  "weights": ["200", "300", "400", "500", "600", "700", "800"],
+  "weights": [200, 300, 400, 500, 600, 700, 800],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

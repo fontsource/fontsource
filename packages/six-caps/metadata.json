@@ -2,7 +2,7 @@
   "fontId": "six-caps",
   "fontName": "Six Caps",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

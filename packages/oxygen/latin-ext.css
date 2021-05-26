@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Oxygen Light'),
-    local('Oxygen-Light'), url('./files/oxygen-latin-ext-300-normal.woff2') format('woff2'), url('./files/oxygen-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/oxygen-latin-ext-300-normal.woff2') format('woff2'), url('./files/oxygen-latin-ext-300-normal.woff') format('woff');
   
 }
 /* oxygen-latin-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Oxygen Regular'),
-    local('Oxygen-Regular'), url('./files/oxygen-latin-ext-400-normal.woff2') format('woff2'), url('./files/oxygen-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/oxygen-latin-ext-400-normal.woff2') format('woff2'), url('./files/oxygen-latin-ext-400-normal.woff') format('woff');
   
 }
 /* oxygen-latin-ext-700-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Oxygen Bold'),
-    local('Oxygen-Bold'), url('./files/oxygen-latin-ext-700-normal.woff2') format('woff2'), url('./files/oxygen-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/oxygen-latin-ext-700-normal.woff2') format('woff2'), url('./files/oxygen-latin-ext-700-normal.woff') format('woff');
   
 }

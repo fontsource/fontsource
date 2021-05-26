@@ -2,7 +2,7 @@
   "fontId": "taprom",
   "fontName": "Taprom",
   "subsets": ["khmer"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "khmer",
   "variable": false,

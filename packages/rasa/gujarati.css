@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Rasa Light'),
-    local('Rasa-Light'), url('./files/rasa-gujarati-300-normal.woff2') format('woff2'), url('./files/rasa-gujarati-300-normal.woff') format('woff');
+  src: url('./files/rasa-gujarati-300-normal.woff2') format('woff2'), url('./files/rasa-gujarati-300-normal.woff') format('woff');
   
 }
 /* rasa-gujarati-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Rasa Regular'),
-    local('Rasa-Regular'), url('./files/rasa-gujarati-400-normal.woff2') format('woff2'), url('./files/rasa-gujarati-400-normal.woff') format('woff');
+  src: url('./files/rasa-gujarati-400-normal.woff2') format('woff2'), url('./files/rasa-gujarati-400-normal.woff') format('woff');
   
 }
 /* rasa-gujarati-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Rasa Medium'),
-    local('Rasa-Medium'), url('./files/rasa-gujarati-500-normal.woff2') format('woff2'), url('./files/rasa-gujarati-500-normal.woff') format('woff');
+  src: url('./files/rasa-gujarati-500-normal.woff2') format('woff2'), url('./files/rasa-gujarati-500-normal.woff') format('woff');
   
 }
 /* rasa-gujarati-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Rasa SemiBold'),
-    local('Rasa-SemiBold'), url('./files/rasa-gujarati-600-normal.woff2') format('woff2'), url('./files/rasa-gujarati-600-normal.woff') format('woff');
+  src: url('./files/rasa-gujarati-600-normal.woff2') format('woff2'), url('./files/rasa-gujarati-600-normal.woff') format('woff');
   
 }
 /* rasa-gujarati-700-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Rasa Bold'),
-    local('Rasa-Bold'), url('./files/rasa-gujarati-700-normal.woff2') format('woff2'), url('./files/rasa-gujarati-700-normal.woff') format('woff');
+  src: url('./files/rasa-gujarati-700-normal.woff2') format('woff2'), url('./files/rasa-gujarati-700-normal.woff') format('woff');
   
 }

@@ -4,7 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Lekton-Italic'), url('./files/lekton-latin-400-italic.woff2') format('woff2'), url('./files/lekton-latin-400-italic.woff') format('woff');
+  src: url('./files/lekton-latin-400-italic.woff2') format('woff2'), url('./files/lekton-latin-400-italic.woff') format('woff');
   
 }

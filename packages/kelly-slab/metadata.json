@@ -2,7 +2,7 @@
   "fontId": "kelly-slab",
   "fontName": "Kelly Slab",
   "subsets": ["cyrillic", "latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

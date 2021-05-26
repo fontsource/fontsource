@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Ultra Regular'),
-    local('Ultra-Regular'), url('./files/ultra-latin-400-normal.woff2') format('woff2'), url('./files/ultra-latin-400-normal.woff') format('woff');
+  src: url('./files/ultra-latin-400-normal.woff2') format('woff2'), url('./files/ultra-latin-400-normal.woff') format('woff');
   
 }

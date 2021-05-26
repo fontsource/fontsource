@@ -2,7 +2,7 @@
   "fontId": "blackout-midnight",
   "fontName": "Blackout Midnight",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

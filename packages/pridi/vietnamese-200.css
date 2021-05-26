@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Pridi ExtraLight'),
-    local('Pridi-ExtraLight'), url('./files/pridi-vietnamese-200-normal.woff2') format('woff2'), url('./files/pridi-vietnamese-200-normal.woff') format('woff');
+  src: url('./files/pridi-vietnamese-200-normal.woff2') format('woff2'), url('./files/pridi-vietnamese-200-normal.woff') format('woff');
   
 }

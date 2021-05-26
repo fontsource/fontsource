@@ -9,7 +9,7 @@
     "latin",
     "latin-ext"
   ],
-  "weights": ["400", "500", "700"],
+  "weights": [400, 500, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

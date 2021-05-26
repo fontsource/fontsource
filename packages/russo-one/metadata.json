@@ -2,7 +2,7 @@
   "fontId": "russo-one",
   "fontName": "Russo One",
   "subsets": ["cyrillic", "latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

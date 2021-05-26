@@ -9,7 +9,7 @@
     "latin-ext",
     "vietnamese"
   ],
-  "weights": ["100", "200", "300", "400", "500", "600", "700"],
+  "weights": [100, 200, 300, 400, 500, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

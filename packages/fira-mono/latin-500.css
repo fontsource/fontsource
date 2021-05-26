@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Fira Mono Medium'),
-    local('FiraMono-Medium'), url('./files/fira-mono-latin-500-normal.woff2') format('woff2'), url('./files/fira-mono-latin-500-normal.woff') format('woff');
+  src: url('./files/fira-mono-latin-500-normal.woff2') format('woff2'), url('./files/fira-mono-latin-500-normal.woff') format('woff');
   
 }

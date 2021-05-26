@@ -2,7 +2,7 @@
   "fontId": "holtwood-one-sc",
   "fontName": "Holtwood One SC",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

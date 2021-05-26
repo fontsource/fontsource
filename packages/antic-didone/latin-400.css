@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Antic Didone Regular'),
-    local('AnticDidone-Regular'), url('./files/antic-didone-latin-400-normal.woff2') format('woff2'), url('./files/antic-didone-latin-400-normal.woff') format('woff');
+  src: url('./files/antic-didone-latin-400-normal.woff2') format('woff2'), url('./files/antic-didone-latin-400-normal.woff') format('woff');
   
 }

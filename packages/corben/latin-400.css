@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Corben Regular'),
-    local('Corben-Regular'), url('./files/corben-latin-400-normal.woff2') format('woff2'), url('./files/corben-latin-400-normal.woff') format('woff');
+  src: url('./files/corben-latin-400-normal.woff2') format('woff2'), url('./files/corben-latin-400-normal.woff') format('woff');
   
 }

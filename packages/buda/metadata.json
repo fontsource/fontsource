@@ -2,7 +2,7 @@
   "fontId": "buda",
   "fontName": "Buda",
   "subsets": ["latin"],
-  "weights": ["300"],
+  "weights": [300],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

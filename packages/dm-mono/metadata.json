@@ -2,7 +2,7 @@
   "fontId": "dm-mono",
   "fontName": "DM Mono",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["300", "400", "500"],
+  "weights": [300, 400, 500],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

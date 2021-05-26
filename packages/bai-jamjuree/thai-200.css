@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Bai Jamjuree ExtraLight'),
-    local('BaiJamjuree-ExtraLight'), url('./files/bai-jamjuree-thai-200-normal.woff2') format('woff2'), url('./files/bai-jamjuree-thai-200-normal.woff') format('woff');
+  src: url('./files/bai-jamjuree-thai-200-normal.woff2') format('woff2'), url('./files/bai-jamjuree-thai-200-normal.woff') format('woff');
   
 }

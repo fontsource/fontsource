@@ -2,7 +2,7 @@
   "fontId": "ma-shan-zheng",
   "fontName": "Ma Shan Zheng",
   "subsets": ["chinese-simplified", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

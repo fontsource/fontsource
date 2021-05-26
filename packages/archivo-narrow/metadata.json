@@ -2,7 +2,7 @@
   "fontId": "archivo-narrow",
   "fontName": "Archivo Narrow",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "500", "600", "700"],
+  "weights": [400, 500, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

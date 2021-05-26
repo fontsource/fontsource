@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Vidaloka '),
-    local('Vidaloka-Regular'), url('./files/vidaloka-latin-400-normal.woff2') format('woff2'), url('./files/vidaloka-latin-400-normal.woff') format('woff');
+  src: url('./files/vidaloka-latin-400-normal.woff2') format('woff2'), url('./files/vidaloka-latin-400-normal.woff') format('woff');
   
 }

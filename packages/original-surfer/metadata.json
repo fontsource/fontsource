@@ -2,7 +2,7 @@
   "fontId": "original-surfer",
   "fontName": "Original Surfer",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

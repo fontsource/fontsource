@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('DM Sans Regular'),
-    local('DMSans-Regular'), url('./files/dm-sans-latin-400-normal.woff2') format('woff2'), url('./files/dm-sans-latin-400-normal.woff') format('woff');
+  src: url('./files/dm-sans-latin-400-normal.woff2') format('woff2'), url('./files/dm-sans-latin-400-normal.woff') format('woff');
   
 }
 /* dm-sans-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('DM Sans Medium'),
-    local('DMSans-Medium'), url('./files/dm-sans-latin-500-normal.woff2') format('woff2'), url('./files/dm-sans-latin-500-normal.woff') format('woff');
+  src: url('./files/dm-sans-latin-500-normal.woff2') format('woff2'), url('./files/dm-sans-latin-500-normal.woff') format('woff');
   
 }
 /* dm-sans-latin-700-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('DM Sans Bold'),
-    local('DMSans-Bold'), url('./files/dm-sans-latin-700-normal.woff2') format('woff2'), url('./files/dm-sans-latin-700-normal.woff') format('woff');
+  src: url('./files/dm-sans-latin-700-normal.woff2') format('woff2'), url('./files/dm-sans-latin-700-normal.woff') format('woff');
   
 }

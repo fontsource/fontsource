@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Montserrat ExtraBold'),
-    local('Montserrat-ExtraBold'), url('./files/montserrat-latin-800-normal.woff2') format('woff2'), url('./files/montserrat-latin-800-normal.woff') format('woff');
+  src: url('./files/montserrat-latin-800-normal.woff2') format('woff2'), url('./files/montserrat-latin-800-normal.woff') format('woff');
   
 }

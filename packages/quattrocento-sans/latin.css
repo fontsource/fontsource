@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Quattrocento Sans'),
-    local('QuattrocentoSans'), url('./files/quattrocento-sans-latin-400-normal.woff2') format('woff2'), url('./files/quattrocento-sans-latin-400-normal.woff') format('woff');
+  src: url('./files/quattrocento-sans-latin-400-normal.woff2') format('woff2'), url('./files/quattrocento-sans-latin-400-normal.woff') format('woff');
   
 }
 /* quattrocento-sans-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Quattrocento Sans Bold'),
-    local('QuattrocentoSans-Bold'), url('./files/quattrocento-sans-latin-700-normal.woff2') format('woff2'), url('./files/quattrocento-sans-latin-700-normal.woff') format('woff');
+  src: url('./files/quattrocento-sans-latin-700-normal.woff2') format('woff2'), url('./files/quattrocento-sans-latin-700-normal.woff') format('woff');
   
 }

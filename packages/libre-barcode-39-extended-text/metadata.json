@@ -2,7 +2,7 @@
   "fontId": "libre-barcode-39-extended-text",
   "fontName": "Libre Barcode 39 Extended Text",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

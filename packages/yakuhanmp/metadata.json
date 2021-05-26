@@ -2,7 +2,7 @@
   "fontId": "yakuhanmp",
   "fontName": "YakuHanMP",
   "subsets": ["japanese"],
-  "weights": ["100", "200", "300", "400", "500", "700", "900"],
+  "weights": [100, 200, 300, 400, 500, 700, 900],
   "styles": ["normal"],
   "defSubset": "japanese",
   "variable": false,

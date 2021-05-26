@@ -2,7 +2,7 @@
   "fontId": "sedgwick-ave",
   "fontName": "Sedgwick Ave",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

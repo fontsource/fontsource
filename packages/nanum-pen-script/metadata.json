@@ -2,7 +2,7 @@
   "fontId": "nanum-pen-script",
   "fontName": "Nanum Pen Script",
   "subsets": ["korean", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

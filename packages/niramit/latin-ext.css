@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Niramit ExtraLight'),
-    local('Niramit-ExtraLight'), url('./files/niramit-latin-ext-200-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/niramit-latin-ext-200-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-200-normal.woff') format('woff');
   
 }
 /* niramit-latin-ext-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Niramit Light'),
-    local('Niramit-Light'), url('./files/niramit-latin-ext-300-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/niramit-latin-ext-300-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-300-normal.woff') format('woff');
   
 }
 /* niramit-latin-ext-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Niramit Regular'),
-    local('Niramit-Regular'), url('./files/niramit-latin-ext-400-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/niramit-latin-ext-400-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-400-normal.woff') format('woff');
   
 }
 /* niramit-latin-ext-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Niramit Medium'),
-    local('Niramit-Medium'), url('./files/niramit-latin-ext-500-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/niramit-latin-ext-500-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-500-normal.woff') format('woff');
   
 }
 /* niramit-latin-ext-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Niramit SemiBold'),
-    local('Niramit-SemiBold'), url('./files/niramit-latin-ext-600-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/niramit-latin-ext-600-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-600-normal.woff') format('woff');
   
 }
 /* niramit-latin-ext-700-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Niramit Bold'),
-    local('Niramit-Bold'), url('./files/niramit-latin-ext-700-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/niramit-latin-ext-700-normal.woff2') format('woff2'), url('./files/niramit-latin-ext-700-normal.woff') format('woff');
   
 }

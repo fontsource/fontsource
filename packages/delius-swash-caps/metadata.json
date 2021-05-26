@@ -2,7 +2,7 @@
   "fontId": "delius-swash-caps",
   "fontName": "Delius Swash Caps",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

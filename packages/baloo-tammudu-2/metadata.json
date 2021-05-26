@@ -2,7 +2,7 @@
   "fontId": "baloo-tammudu-2",
   "fontName": "Baloo Tammudu 2",
   "subsets": ["latin", "latin-ext", "telugu", "vietnamese"],
-  "weights": ["400", "500", "600", "700", "800"],
+  "weights": [400, 500, 600, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

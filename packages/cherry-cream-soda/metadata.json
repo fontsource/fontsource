@@ -2,7 +2,7 @@
   "fontId": "cherry-cream-soda",
   "fontName": "Cherry Cream Soda",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

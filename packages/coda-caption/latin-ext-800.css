@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Coda Caption ExtraBold'),
-    local('CodaCaption-ExtraBold'), url('./files/coda-caption-latin-ext-800-normal.woff2') format('woff2'), url('./files/coda-caption-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/coda-caption-latin-ext-800-normal.woff2') format('woff2'), url('./files/coda-caption-latin-ext-800-normal.woff') format('woff');
   
 }

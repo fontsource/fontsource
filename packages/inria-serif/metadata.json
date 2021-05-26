@@ -2,7 +2,7 @@
   "fontId": "inria-serif",
   "fontName": "Inria Serif",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["300", "400", "700"],
+  "weights": [300, 400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

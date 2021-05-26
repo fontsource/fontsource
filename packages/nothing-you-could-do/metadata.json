@@ -2,7 +2,7 @@
   "fontId": "nothing-you-could-do",
   "fontName": "Nothing You Could Do",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Archivo Narrow Regular'),
-    local('ArchivoNarrow-Regular'), url('./files/archivo-narrow-latin-ext-400-normal.woff2') format('woff2'), url('./files/archivo-narrow-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/archivo-narrow-latin-ext-400-normal.woff2') format('woff2'), url('./files/archivo-narrow-latin-ext-400-normal.woff') format('woff');
   
 }
 /* archivo-narrow-latin-ext-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Archivo Narrow Medium'),
-    local('ArchivoNarrow-Medium'), url('./files/archivo-narrow-latin-ext-500-normal.woff2') format('woff2'), url('./files/archivo-narrow-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/archivo-narrow-latin-ext-500-normal.woff2') format('woff2'), url('./files/archivo-narrow-latin-ext-500-normal.woff') format('woff');
   
 }
 /* archivo-narrow-latin-ext-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Archivo Narrow SemiBold'),
-    local('ArchivoNarrow-SemiBold'), url('./files/archivo-narrow-latin-ext-600-normal.woff2') format('woff2'), url('./files/archivo-narrow-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/archivo-narrow-latin-ext-600-normal.woff2') format('woff2'), url('./files/archivo-narrow-latin-ext-600-normal.woff') format('woff');
   
 }
 /* archivo-narrow-latin-ext-700-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Archivo Narrow Bold'),
-    local('ArchivoNarrow-Bold'), url('./files/archivo-narrow-latin-ext-700-normal.woff2') format('woff2'), url('./files/archivo-narrow-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/archivo-narrow-latin-ext-700-normal.woff2') format('woff2'), url('./files/archivo-narrow-latin-ext-700-normal.woff') format('woff');
   
 }

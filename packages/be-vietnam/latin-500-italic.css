@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Be Vietnam Medium Italic'),
-    local('BeVietnam-MediumItalic'), url('./files/be-vietnam-latin-500-italic.woff2') format('woff2'), url('./files/be-vietnam-latin-500-italic.woff') format('woff');
+  src: url('./files/be-vietnam-latin-500-italic.woff2') format('woff2'), url('./files/be-vietnam-latin-500-italic.woff') format('woff');
   
 }

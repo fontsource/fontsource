@@ -2,7 +2,7 @@
   "fontId": "passion-one",
   "fontName": "Passion One",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "700", "900"],
+  "weights": [400, 700, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

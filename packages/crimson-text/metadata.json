@@ -2,7 +2,7 @@
   "fontId": "crimson-text",
   "fontName": "Crimson Text",
   "subsets": ["latin"],
-  "weights": ["400", "600", "700"],
+  "weights": [400, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

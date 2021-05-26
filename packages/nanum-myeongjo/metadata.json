@@ -2,7 +2,7 @@
   "fontId": "nanum-myeongjo",
   "fontName": "Nanum Myeongjo",
   "subsets": ["korean", "latin"],
-  "weights": ["400", "700", "800"],
+  "weights": [400, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

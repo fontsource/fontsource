@@ -2,7 +2,7 @@
   "fontId": "prata",
   "fontName": "Prata",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "vietnamese"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

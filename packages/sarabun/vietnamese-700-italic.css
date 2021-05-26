@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Sarabun Bold Italic'),
-    local('Sarabun-BoldItalic'), url('./files/sarabun-vietnamese-700-italic.woff2') format('woff2'), url('./files/sarabun-vietnamese-700-italic.woff') format('woff');
+  src: url('./files/sarabun-vietnamese-700-italic.woff2') format('woff2'), url('./files/sarabun-vietnamese-700-italic.woff') format('woff');
   
 }

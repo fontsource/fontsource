@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Chakra Petch Bold Italic'),
-    local('ChakraPetch-BoldItalic'), url('./files/chakra-petch-latin-700-italic.woff2') format('woff2'), url('./files/chakra-petch-latin-700-italic.woff') format('woff');
+  src: url('./files/chakra-petch-latin-700-italic.woff2') format('woff2'), url('./files/chakra-petch-latin-700-italic.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Advent Pro Light'),
-    local('AdventPro-Light'), url('./files/advent-pro-latin-ext-300-normal.woff2') format('woff2'), url('./files/advent-pro-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/advent-pro-latin-ext-300-normal.woff2') format('woff2'), url('./files/advent-pro-latin-ext-300-normal.woff') format('woff');
   
 }

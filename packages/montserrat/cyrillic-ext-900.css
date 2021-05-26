@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Montserrat Black'),
-    local('Montserrat-Black'), url('./files/montserrat-cyrillic-ext-900-normal.woff2') format('woff2'), url('./files/montserrat-cyrillic-ext-900-normal.woff') format('woff');
+  src: url('./files/montserrat-cyrillic-ext-900-normal.woff2') format('woff2'), url('./files/montserrat-cyrillic-ext-900-normal.woff') format('woff');
   
 }

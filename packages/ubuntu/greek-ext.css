@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Ubuntu Light'),
-    local('Ubuntu-Light'), url('./files/ubuntu-greek-ext-300-normal.woff2') format('woff2'), url('./files/ubuntu-greek-ext-300-normal.woff') format('woff');
+  src: url('./files/ubuntu-greek-ext-300-normal.woff2') format('woff2'), url('./files/ubuntu-greek-ext-300-normal.woff') format('woff');
   
 }
 /* ubuntu-greek-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Ubuntu Regular'),
-    local('Ubuntu-Regular'), url('./files/ubuntu-greek-ext-400-normal.woff2') format('woff2'), url('./files/ubuntu-greek-ext-400-normal.woff') format('woff');
+  src: url('./files/ubuntu-greek-ext-400-normal.woff2') format('woff2'), url('./files/ubuntu-greek-ext-400-normal.woff') format('woff');
   
 }
 /* ubuntu-greek-ext-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Ubuntu Medium'),
-    local('Ubuntu-Medium'), url('./files/ubuntu-greek-ext-500-normal.woff2') format('woff2'), url('./files/ubuntu-greek-ext-500-normal.woff') format('woff');
+  src: url('./files/ubuntu-greek-ext-500-normal.woff2') format('woff2'), url('./files/ubuntu-greek-ext-500-normal.woff') format('woff');
   
 }
 /* ubuntu-greek-ext-700-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Ubuntu Bold'),
-    local('Ubuntu-Bold'), url('./files/ubuntu-greek-ext-700-normal.woff2') format('woff2'), url('./files/ubuntu-greek-ext-700-normal.woff') format('woff');
+  src: url('./files/ubuntu-greek-ext-700-normal.woff2') format('woff2'), url('./files/ubuntu-greek-ext-700-normal.woff') format('woff');
   
 }

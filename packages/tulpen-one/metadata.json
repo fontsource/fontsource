@@ -2,7 +2,7 @@
   "fontId": "tulpen-one",
   "fontName": "Tulpen One",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Montserrat Alternates SemiBold'),
-    local('MontserratAlternates-SemiBold'), url('./files/montserrat-alternates-cyrillic-ext-600-normal.woff2') format('woff2'), url('./files/montserrat-alternates-cyrillic-ext-600-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-cyrillic-ext-600-normal.woff2') format('woff2'), url('./files/montserrat-alternates-cyrillic-ext-600-normal.woff') format('woff');
   
 }

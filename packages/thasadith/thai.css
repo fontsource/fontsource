@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Thasadith Regular'),
-    local('Thasadith-Regular'), url('./files/thasadith-thai-400-normal.woff2') format('woff2'), url('./files/thasadith-thai-400-normal.woff') format('woff');
+  src: url('./files/thasadith-thai-400-normal.woff2') format('woff2'), url('./files/thasadith-thai-400-normal.woff') format('woff');
   
 }
 /* thasadith-thai-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Thasadith Bold'),
-    local('Thasadith-Bold'), url('./files/thasadith-thai-700-normal.woff2') format('woff2'), url('./files/thasadith-thai-700-normal.woff') format('woff');
+  src: url('./files/thasadith-thai-700-normal.woff2') format('woff2'), url('./files/thasadith-thai-700-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "baloo-paaji-2",
   "fontName": "Baloo Paaji 2",
   "subsets": ["gurmukhi", "latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "500", "600", "700", "800"],
+  "weights": [400, 500, 600, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

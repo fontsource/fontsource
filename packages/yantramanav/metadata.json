@@ -2,7 +2,7 @@
   "fontId": "yantramanav",
   "fontName": "Yantramanav",
   "subsets": ["devanagari", "latin", "latin-ext"],
-  "weights": ["100", "300", "400", "500", "700", "900"],
+  "weights": [100, 300, 400, 500, 700, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

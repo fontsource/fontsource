@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('BenchNine Light'),
-    local('BenchNine-Light'), url('./files/benchnine-latin-ext-300-normal.woff2') format('woff2'), url('./files/benchnine-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/benchnine-latin-ext-300-normal.woff2') format('woff2'), url('./files/benchnine-latin-ext-300-normal.woff') format('woff');
   
 }

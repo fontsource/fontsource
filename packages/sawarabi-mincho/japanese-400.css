@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Sawarabi Mincho'),
-    local('SawarabiMincho-Regular'), url('./files/sawarabi-mincho-japanese-400-normal.woff2') format('woff2'), url('./files/sawarabi-mincho-japanese-400-normal.woff') format('woff');
+  src: url('./files/sawarabi-mincho-japanese-400-normal.woff2') format('woff2'), url('./files/sawarabi-mincho-japanese-400-normal.woff') format('woff');
   
 }

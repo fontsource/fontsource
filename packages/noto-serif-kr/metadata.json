@@ -2,7 +2,7 @@
   "fontId": "noto-serif-kr",
   "fontName": "Noto Serif KR",
   "subsets": ["korean", "latin"],
-  "weights": ["200", "300", "400", "500", "600", "700", "900"],
+  "weights": [200, 300, 400, 500, 600, 700, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

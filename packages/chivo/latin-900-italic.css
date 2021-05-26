@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Chivo Black Italic'),
-    local('Chivo-BlackItalic'), url('./files/chivo-latin-900-italic.woff2') format('woff2'), url('./files/chivo-latin-900-italic.woff') format('woff');
+  src: url('./files/chivo-latin-900-italic.woff2') format('woff2'), url('./files/chivo-latin-900-italic.woff') format('woff');
   
 }

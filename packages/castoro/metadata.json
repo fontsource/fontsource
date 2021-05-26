@@ -2,7 +2,7 @@
   "fontId": "castoro",
   "fontName": "Castoro",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

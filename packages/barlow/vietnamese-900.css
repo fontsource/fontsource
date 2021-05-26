@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Barlow Black'),
-    local('Barlow-Black'), url('./files/barlow-vietnamese-900-normal.woff2') format('woff2'), url('./files/barlow-vietnamese-900-normal.woff') format('woff');
+  src: url('./files/barlow-vietnamese-900-normal.woff2') format('woff2'), url('./files/barlow-vietnamese-900-normal.woff') format('woff');
   
 }

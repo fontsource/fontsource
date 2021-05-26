@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Abhaya Libre Medium'),
-    local('AbhayaLibre-Medium'), url('./files/abhaya-libre-latin-ext-500-normal.woff2') format('woff2'), url('./files/abhaya-libre-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/abhaya-libre-latin-ext-500-normal.woff2') format('woff2'), url('./files/abhaya-libre-latin-ext-500-normal.woff') format('woff');
   
 }

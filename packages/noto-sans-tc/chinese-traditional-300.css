@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Noto Sans TC Light'),
-    local('NotoSansTC-Light'), url('./files/noto-sans-tc-chinese-traditional-300-normal.woff2') format('woff2'), url('./files/noto-sans-tc-chinese-traditional-300-normal.woff') format('woff');
+  src: url('./files/noto-sans-tc-chinese-traditional-300-normal.woff2') format('woff2'), url('./files/noto-sans-tc-chinese-traditional-300-normal.woff') format('woff');
   
 }

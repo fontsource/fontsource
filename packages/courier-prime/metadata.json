@@ -2,7 +2,7 @@
   "fontId": "courier-prime",
   "fontName": "Courier Prime",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

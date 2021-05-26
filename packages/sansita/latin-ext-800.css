@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Sansita ExtraBold'),
-    local('Sansita-ExtraBold'), url('./files/sansita-latin-ext-800-normal.woff2') format('woff2'), url('./files/sansita-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/sansita-latin-ext-800-normal.woff2') format('woff2'), url('./files/sansita-latin-ext-800-normal.woff') format('woff');
   
 }

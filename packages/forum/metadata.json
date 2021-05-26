@@ -2,7 +2,7 @@
   "fontId": "forum",
   "fontName": "Forum",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

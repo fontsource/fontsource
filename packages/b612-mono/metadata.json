@@ -2,7 +2,7 @@
   "fontId": "b612-mono",
   "fontName": "B612 Mono",
   "subsets": ["latin"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

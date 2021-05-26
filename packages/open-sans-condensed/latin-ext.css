@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Open Sans Condensed Light'),
-    local('OpenSansCondensed-Light'), url('./files/open-sans-condensed-latin-ext-300-normal.woff2') format('woff2'), url('./files/open-sans-condensed-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/open-sans-condensed-latin-ext-300-normal.woff2') format('woff2'), url('./files/open-sans-condensed-latin-ext-300-normal.woff') format('woff');
   
 }
 /* open-sans-condensed-latin-ext-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Open Sans Condensed Bold'),
-    local('OpenSansCondensed-Bold'), url('./files/open-sans-condensed-latin-ext-700-normal.woff2') format('woff2'), url('./files/open-sans-condensed-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/open-sans-condensed-latin-ext-700-normal.woff2') format('woff2'), url('./files/open-sans-condensed-latin-ext-700-normal.woff') format('woff');
   
 }

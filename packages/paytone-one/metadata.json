@@ -2,7 +2,7 @@
   "fontId": "paytone-one",
   "fontName": "Paytone One",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

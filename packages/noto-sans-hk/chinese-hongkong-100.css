@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Noto Sans HK Thin'),
-    local('NotoSansHK-Thin'), url('./files/noto-sans-hk-chinese-hongkong-100-normal.woff2') format('woff2'), url('./files/noto-sans-hk-chinese-hongkong-100-normal.woff') format('woff');
+  src: url('./files/noto-sans-hk-chinese-hongkong-100-normal.woff2') format('woff2'), url('./files/noto-sans-hk-chinese-hongkong-100-normal.woff') format('woff');
   
 }

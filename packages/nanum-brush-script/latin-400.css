@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Nanum Brush Script'),
-    local('NanumBrush'), url('./files/nanum-brush-script-latin-400-normal.woff2') format('woff2'), url('./files/nanum-brush-script-latin-400-normal.woff') format('woff');
+  src: url('./files/nanum-brush-script-latin-400-normal.woff2') format('woff2'), url('./files/nanum-brush-script-latin-400-normal.woff') format('woff');
   
 }

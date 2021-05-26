@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Battambang Regular'),
-    local('Battambang-Regular'), url('./files/battambang-khmer-400-normal.woff2') format('woff2'), url('./files/battambang-khmer-400-normal.woff') format('woff');
+  src: url('./files/battambang-khmer-400-normal.woff2') format('woff2'), url('./files/battambang-khmer-400-normal.woff') format('woff');
   
 }
 /* battambang-khmer-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Battambang Bold'),
-    local('Battambang-Bold'), url('./files/battambang-khmer-700-normal.woff2') format('woff2'), url('./files/battambang-khmer-700-normal.woff') format('woff');
+  src: url('./files/battambang-khmer-700-normal.woff2') format('woff2'), url('./files/battambang-khmer-700-normal.woff') format('woff');
   
 }

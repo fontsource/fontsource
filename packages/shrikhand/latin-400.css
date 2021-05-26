@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Shrikhand Regular'),
-    local('Shrikhand-Regular'), url('./files/shrikhand-latin-400-normal.woff2') format('woff2'), url('./files/shrikhand-latin-400-normal.woff') format('woff');
+  src: url('./files/shrikhand-latin-400-normal.woff2') format('woff2'), url('./files/shrikhand-latin-400-normal.woff') format('woff');
   
 }

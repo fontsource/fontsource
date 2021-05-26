@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('BioRhyme ExtraLight'),
-    local('BioRhyme-ExtraLight'), url('./files/biorhyme-latin-200-normal.woff2') format('woff2'), url('./files/biorhyme-latin-200-normal.woff') format('woff');
+  src: url('./files/biorhyme-latin-200-normal.woff2') format('woff2'), url('./files/biorhyme-latin-200-normal.woff') format('woff');
   
 }
 /* biorhyme-latin-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('BioRhyme Light'),
-    local('BioRhyme-Light'), url('./files/biorhyme-latin-300-normal.woff2') format('woff2'), url('./files/biorhyme-latin-300-normal.woff') format('woff');
+  src: url('./files/biorhyme-latin-300-normal.woff2') format('woff2'), url('./files/biorhyme-latin-300-normal.woff') format('woff');
   
 }
 /* biorhyme-latin-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('BioRhyme'),
-    local('BioRhyme-Regular'), url('./files/biorhyme-latin-400-normal.woff2') format('woff2'), url('./files/biorhyme-latin-400-normal.woff') format('woff');
+  src: url('./files/biorhyme-latin-400-normal.woff2') format('woff2'), url('./files/biorhyme-latin-400-normal.woff') format('woff');
   
 }
 /* biorhyme-latin-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('BioRhyme Bold'),
-    local('BioRhyme-Bold'), url('./files/biorhyme-latin-700-normal.woff2') format('woff2'), url('./files/biorhyme-latin-700-normal.woff') format('woff');
+  src: url('./files/biorhyme-latin-700-normal.woff2') format('woff2'), url('./files/biorhyme-latin-700-normal.woff') format('woff');
   
 }
 /* biorhyme-latin-800-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('BioRhyme ExtraBold'),
-    local('BioRhyme-ExtraBold'), url('./files/biorhyme-latin-800-normal.woff2') format('woff2'), url('./files/biorhyme-latin-800-normal.woff') format('woff');
+  src: url('./files/biorhyme-latin-800-normal.woff2') format('woff2'), url('./files/biorhyme-latin-800-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "kulim-park",
   "fontName": "Kulim Park",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["200", "300", "400", "600", "700"],
+  "weights": [200, 300, 400, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

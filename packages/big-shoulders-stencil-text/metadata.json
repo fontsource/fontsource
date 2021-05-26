@@ -2,7 +2,7 @@
   "fontId": "big-shoulders-stencil-text",
   "fontName": "Big Shoulders Stencil Text",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["100", "300", "400", "500", "600", "700", "800", "900"],
+  "weights": [100, 300, 400, 500, 600, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

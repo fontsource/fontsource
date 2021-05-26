@@ -2,7 +2,7 @@
   "fontId": "single-day",
   "fontName": "Single Day",
   "subsets": ["korean"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "korean",
   "variable": false,

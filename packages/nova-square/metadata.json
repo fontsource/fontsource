@@ -2,7 +2,7 @@
   "fontId": "nova-square",
   "fontName": "Nova Square",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

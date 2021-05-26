@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('BioRhyme Light'),
-    local('BioRhyme-Light'), url('./files/biorhyme-latin-ext-300-normal.woff2') format('woff2'), url('./files/biorhyme-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/biorhyme-latin-ext-300-normal.woff2') format('woff2'), url('./files/biorhyme-latin-ext-300-normal.woff') format('woff');
   
 }

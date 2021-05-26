@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Nobile Medium Italic'),
-    local('Nobile-MediumItalic'), url('./files/nobile-latin-ext-500-italic.woff2') format('woff2'), url('./files/nobile-latin-ext-500-italic.woff') format('woff');
+  src: url('./files/nobile-latin-ext-500-italic.woff2') format('woff2'), url('./files/nobile-latin-ext-500-italic.woff') format('woff');
   
 }

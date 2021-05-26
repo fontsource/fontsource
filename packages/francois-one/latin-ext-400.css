@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Francois One Regular'),
-    local('FrancoisOne-Regular'), url('./files/francois-one-latin-ext-400-normal.woff2') format('woff2'), url('./files/francois-one-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/francois-one-latin-ext-400-normal.woff2') format('woff2'), url('./files/francois-one-latin-ext-400-normal.woff') format('woff');
   
 }

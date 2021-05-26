@@ -2,7 +2,7 @@
   "fontId": "sansita-swashed",
   "fontName": "Sansita Swashed",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["300", "400", "500", "600", "700", "800", "900"],
+  "weights": [300, 400, 500, 600, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": {

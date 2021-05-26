@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Lato Hairline'),
-    local('Lato-Hairline'), url('./files/lato-latin-100-normal.woff2') format('woff2'), url('./files/lato-latin-100-normal.woff') format('woff');
+  src: url('./files/lato-latin-100-normal.woff2') format('woff2'), url('./files/lato-latin-100-normal.woff') format('woff');
   
 }
 /* lato-latin-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Lato Light'),
-    local('Lato-Light'), url('./files/lato-latin-300-normal.woff2') format('woff2'), url('./files/lato-latin-300-normal.woff') format('woff');
+  src: url('./files/lato-latin-300-normal.woff2') format('woff2'), url('./files/lato-latin-300-normal.woff') format('woff');
   
 }
 /* lato-latin-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Lato Regular'),
-    local('Lato-Regular'), url('./files/lato-latin-400-normal.woff2') format('woff2'), url('./files/lato-latin-400-normal.woff') format('woff');
+  src: url('./files/lato-latin-400-normal.woff2') format('woff2'), url('./files/lato-latin-400-normal.woff') format('woff');
   
 }
 /* lato-latin-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Lato Bold'),
-    local('Lato-Bold'), url('./files/lato-latin-700-normal.woff2') format('woff2'), url('./files/lato-latin-700-normal.woff') format('woff');
+  src: url('./files/lato-latin-700-normal.woff2') format('woff2'), url('./files/lato-latin-700-normal.woff') format('woff');
   
 }
 /* lato-latin-900-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Lato Black'),
-    local('Lato-Black'), url('./files/lato-latin-900-normal.woff2') format('woff2'), url('./files/lato-latin-900-normal.woff') format('woff');
+  src: url('./files/lato-latin-900-normal.woff2') format('woff2'), url('./files/lato-latin-900-normal.woff') format('woff');
   
 }

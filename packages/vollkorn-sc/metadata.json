@@ -2,7 +2,7 @@
   "fontId": "vollkorn-sc",
   "fontName": "Vollkorn SC",
   "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "600", "700", "900"],
+  "weights": [400, 600, 700, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

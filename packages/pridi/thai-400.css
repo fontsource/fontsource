@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Pridi Regular'),
-    local('Pridi-Regular'), url('./files/pridi-thai-400-normal.woff2') format('woff2'), url('./files/pridi-thai-400-normal.woff') format('woff');
+  src: url('./files/pridi-thai-400-normal.woff2') format('woff2'), url('./files/pridi-thai-400-normal.woff') format('woff');
   
 }

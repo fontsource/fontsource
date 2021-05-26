@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('VT323 Regular'),
-    local('VT323-Regular'), url('./files/vt323-vietnamese-400-normal.woff2') format('woff2'), url('./files/vt323-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/vt323-vietnamese-400-normal.woff2') format('woff2'), url('./files/vt323-vietnamese-400-normal.woff') format('woff');
   
 }

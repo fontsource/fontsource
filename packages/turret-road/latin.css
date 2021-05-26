@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Turret Road ExtraLight'),
-    local('TurretRoad-ExtraLight'), url('./files/turret-road-latin-200-normal.woff2') format('woff2'), url('./files/turret-road-latin-200-normal.woff') format('woff');
+  src: url('./files/turret-road-latin-200-normal.woff2') format('woff2'), url('./files/turret-road-latin-200-normal.woff') format('woff');
   
 }
 /* turret-road-latin-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Turret Road Light'),
-    local('TurretRoad-Light'), url('./files/turret-road-latin-300-normal.woff2') format('woff2'), url('./files/turret-road-latin-300-normal.woff') format('woff');
+  src: url('./files/turret-road-latin-300-normal.woff2') format('woff2'), url('./files/turret-road-latin-300-normal.woff') format('woff');
   
 }
 /* turret-road-latin-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Turret Road Regular'),
-    local('TurretRoad-Regular'), url('./files/turret-road-latin-400-normal.woff2') format('woff2'), url('./files/turret-road-latin-400-normal.woff') format('woff');
+  src: url('./files/turret-road-latin-400-normal.woff2') format('woff2'), url('./files/turret-road-latin-400-normal.woff') format('woff');
   
 }
 /* turret-road-latin-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Turret Road Medium'),
-    local('TurretRoad-Medium'), url('./files/turret-road-latin-500-normal.woff2') format('woff2'), url('./files/turret-road-latin-500-normal.woff') format('woff');
+  src: url('./files/turret-road-latin-500-normal.woff2') format('woff2'), url('./files/turret-road-latin-500-normal.woff') format('woff');
   
 }
 /* turret-road-latin-700-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Turret Road Bold'),
-    local('TurretRoad-Bold'), url('./files/turret-road-latin-700-normal.woff2') format('woff2'), url('./files/turret-road-latin-700-normal.woff') format('woff');
+  src: url('./files/turret-road-latin-700-normal.woff2') format('woff2'), url('./files/turret-road-latin-700-normal.woff') format('woff');
   
 }
 /* turret-road-latin-800-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Turret Road ExtraBold'),
-    local('TurretRoad-ExtraBold'), url('./files/turret-road-latin-800-normal.woff2') format('woff2'), url('./files/turret-road-latin-800-normal.woff') format('woff');
+  src: url('./files/turret-road-latin-800-normal.woff2') format('woff2'), url('./files/turret-road-latin-800-normal.woff') format('woff');
   
 }

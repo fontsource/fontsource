@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Allura Regular'),
-    local('Allura-Regular'), url('./files/allura-latin-ext-400-normal.woff2') format('woff2'), url('./files/allura-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/allura-latin-ext-400-normal.woff2') format('woff2'), url('./files/allura-latin-ext-400-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Trirong Light'),
-    local('Trirong-Light'), url('./files/trirong-latin-300-normal.woff2') format('woff2'), url('./files/trirong-latin-300-normal.woff') format('woff');
+  src: url('./files/trirong-latin-300-normal.woff2') format('woff2'), url('./files/trirong-latin-300-normal.woff') format('woff');
   
 }

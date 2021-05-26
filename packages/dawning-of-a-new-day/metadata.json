@@ -2,7 +2,7 @@
   "fontId": "dawning-of-a-new-day",
   "fontName": "Dawning of a New Day",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

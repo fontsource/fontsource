@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Titillium Web ExtraLight'),
-    local('TitilliumWeb-ExtraLight'), url('./files/titillium-web-latin-200-normal.woff2') format('woff2'), url('./files/titillium-web-latin-200-normal.woff') format('woff');
+  src: url('./files/titillium-web-latin-200-normal.woff2') format('woff2'), url('./files/titillium-web-latin-200-normal.woff') format('woff');
   
 }

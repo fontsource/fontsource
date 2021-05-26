@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Amiko SemiBold'),
-    local('Amiko-SemiBold'), url('./files/amiko-devanagari-600-normal.woff2') format('woff2'), url('./files/amiko-devanagari-600-normal.woff') format('woff');
+  src: url('./files/amiko-devanagari-600-normal.woff2') format('woff2'), url('./files/amiko-devanagari-600-normal.woff') format('woff');
   
 }

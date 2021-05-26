@@ -2,7 +2,7 @@
   "fontId": "just-me-again-down-here",
   "fontName": "Just Me Again Down Here",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

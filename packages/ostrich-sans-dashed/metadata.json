@@ -2,7 +2,7 @@
   "fontId": "ostrich-sans-dashed",
   "fontName": "Ostrich Sans Dashed",
   "subsets": ["latin"],
-  "weights": ["500"],
+  "weights": [500],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

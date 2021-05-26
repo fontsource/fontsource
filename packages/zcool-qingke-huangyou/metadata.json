@@ -2,7 +2,7 @@
   "fontId": "zcool-qingke-huangyou",
   "fontName": "ZCOOL QingKe HuangYou",
   "subsets": ["chinese-simplified", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

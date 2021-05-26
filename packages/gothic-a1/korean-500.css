@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Gothic A1 Medium'),
-    local('GothicA1-Medium'), url('./files/gothic-a1-korean-500-normal.woff2') format('woff2'), url('./files/gothic-a1-korean-500-normal.woff') format('woff');
+  src: url('./files/gothic-a1-korean-500-normal.woff2') format('woff2'), url('./files/gothic-a1-korean-500-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "days-one",
   "fontName": "Days One",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

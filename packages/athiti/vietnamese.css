@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Athiti ExtraLight'),
-    local('Athiti-ExtraLight'), url('./files/athiti-vietnamese-200-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-200-normal.woff') format('woff');
+  src: url('./files/athiti-vietnamese-200-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-200-normal.woff') format('woff');
   
 }
 /* athiti-vietnamese-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Athiti Light'),
-    local('Athiti-Light'), url('./files/athiti-vietnamese-300-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/athiti-vietnamese-300-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-300-normal.woff') format('woff');
   
 }
 /* athiti-vietnamese-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Athiti'),
-    local('Athiti-Regular'), url('./files/athiti-vietnamese-400-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/athiti-vietnamese-400-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-400-normal.woff') format('woff');
   
 }
 /* athiti-vietnamese-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Athiti Medium'),
-    local('Athiti-Medium'), url('./files/athiti-vietnamese-500-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/athiti-vietnamese-500-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-500-normal.woff') format('woff');
   
 }
 /* athiti-vietnamese-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Athiti SemiBold'),
-    local('Athiti-SemiBold'), url('./files/athiti-vietnamese-600-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/athiti-vietnamese-600-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-600-normal.woff') format('woff');
   
 }
 /* athiti-vietnamese-700-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Athiti Bold'),
-    local('Athiti-Bold'), url('./files/athiti-vietnamese-700-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/athiti-vietnamese-700-normal.woff2') format('woff2'), url('./files/athiti-vietnamese-700-normal.woff') format('woff');
   
 }

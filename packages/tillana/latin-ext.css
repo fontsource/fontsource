@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Tillana Regular'),
-    local('Tillana-Regular'), url('./files/tillana-latin-ext-400-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/tillana-latin-ext-400-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-400-normal.woff') format('woff');
   
 }
 /* tillana-latin-ext-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Tillana Medium'),
-    local('Tillana-Medium'), url('./files/tillana-latin-ext-500-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/tillana-latin-ext-500-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-500-normal.woff') format('woff');
   
 }
 /* tillana-latin-ext-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Tillana SemiBold'),
-    local('Tillana-SemiBold'), url('./files/tillana-latin-ext-600-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/tillana-latin-ext-600-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-600-normal.woff') format('woff');
   
 }
 /* tillana-latin-ext-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Tillana Bold'),
-    local('Tillana-Bold'), url('./files/tillana-latin-ext-700-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/tillana-latin-ext-700-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-700-normal.woff') format('woff');
   
 }
 /* tillana-latin-ext-800-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Tillana ExtraBold'),
-    local('Tillana-ExtraBold'), url('./files/tillana-latin-ext-800-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/tillana-latin-ext-800-normal.woff2') format('woff2'), url('./files/tillana-latin-ext-800-normal.woff') format('woff');
   
 }

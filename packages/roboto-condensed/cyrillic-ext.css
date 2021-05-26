@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Roboto Condensed Light'),
-    local('RobotoCondensed-Light'), url('./files/roboto-condensed-cyrillic-ext-300-normal.woff2') format('woff2'), url('./files/roboto-condensed-cyrillic-ext-300-normal.woff') format('woff');
+  src: url('./files/roboto-condensed-cyrillic-ext-300-normal.woff2') format('woff2'), url('./files/roboto-condensed-cyrillic-ext-300-normal.woff') format('woff');
   
 }
 /* roboto-condensed-cyrillic-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Roboto Condensed'),
-    local('RobotoCondensed-Regular'), url('./files/roboto-condensed-cyrillic-ext-400-normal.woff2') format('woff2'), url('./files/roboto-condensed-cyrillic-ext-400-normal.woff') format('woff');
+  src: url('./files/roboto-condensed-cyrillic-ext-400-normal.woff2') format('woff2'), url('./files/roboto-condensed-cyrillic-ext-400-normal.woff') format('woff');
   
 }
 /* roboto-condensed-cyrillic-ext-700-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Roboto Condensed Bold'),
-    local('RobotoCondensed-Bold'), url('./files/roboto-condensed-cyrillic-ext-700-normal.woff2') format('woff2'), url('./files/roboto-condensed-cyrillic-ext-700-normal.woff') format('woff');
+  src: url('./files/roboto-condensed-cyrillic-ext-700-normal.woff2') format('woff2'), url('./files/roboto-condensed-cyrillic-ext-700-normal.woff') format('woff');
   
 }

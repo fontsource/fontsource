@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Palanquin Dark Regular'),
-    local('PalanquinDark-Regular'), url('./files/palanquin-dark-latin-ext-400-normal.woff2') format('woff2'), url('./files/palanquin-dark-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/palanquin-dark-latin-ext-400-normal.woff2') format('woff2'), url('./files/palanquin-dark-latin-ext-400-normal.woff') format('woff');
   
 }
 /* palanquin-dark-latin-ext-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Palanquin Dark Medium'),
-    local('PalanquinDark-Medium'), url('./files/palanquin-dark-latin-ext-500-normal.woff2') format('woff2'), url('./files/palanquin-dark-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/palanquin-dark-latin-ext-500-normal.woff2') format('woff2'), url('./files/palanquin-dark-latin-ext-500-normal.woff') format('woff');
   
 }
 /* palanquin-dark-latin-ext-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Palanquin Dark SemiBold'),
-    local('PalanquinDark-SemiBold'), url('./files/palanquin-dark-latin-ext-600-normal.woff2') format('woff2'), url('./files/palanquin-dark-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/palanquin-dark-latin-ext-600-normal.woff2') format('woff2'), url('./files/palanquin-dark-latin-ext-600-normal.woff') format('woff');
   
 }
 /* palanquin-dark-latin-ext-700-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Palanquin Dark Bold'),
-    local('PalanquinDark-Bold'), url('./files/palanquin-dark-latin-ext-700-normal.woff2') format('woff2'), url('./files/palanquin-dark-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/palanquin-dark-latin-ext-700-normal.woff2') format('woff2'), url('./files/palanquin-dark-latin-ext-700-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "share-tech-mono",
   "fontName": "Share Tech Mono",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

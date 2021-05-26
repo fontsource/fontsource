@@ -2,7 +2,7 @@
   "fontId": "chathura",
   "fontName": "Chathura",
   "subsets": ["latin", "telugu"],
-  "weights": ["100", "300", "400", "700", "800"],
+  "weights": [100, 300, 400, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

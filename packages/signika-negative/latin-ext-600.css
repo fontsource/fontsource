@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Signika Negative SemiBold'),
-    local('SignikaNegative-SemiBold'), url('./files/signika-negative-latin-ext-600-normal.woff2') format('woff2'), url('./files/signika-negative-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/signika-negative-latin-ext-600-normal.woff2') format('woff2'), url('./files/signika-negative-latin-ext-600-normal.woff') format('woff');
   
 }

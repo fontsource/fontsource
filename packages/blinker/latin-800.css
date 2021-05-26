@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Blinker ExtraBold'),
-    local('Blinker-ExtraBold'), url('./files/blinker-latin-800-normal.woff2') format('woff2'), url('./files/blinker-latin-800-normal.woff') format('woff');
+  src: url('./files/blinker-latin-800-normal.woff2') format('woff2'), url('./files/blinker-latin-800-normal.woff') format('woff');
   
 }

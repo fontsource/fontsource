@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Sarpanch Regular'),
-    local('Sarpanch-Regular'), url('./files/sarpanch-latin-ext-400-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/sarpanch-latin-ext-400-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-400-normal.woff') format('woff');
   
 }
 /* sarpanch-latin-ext-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Sarpanch Medium'),
-    local('Sarpanch-Medium'), url('./files/sarpanch-latin-ext-500-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/sarpanch-latin-ext-500-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-500-normal.woff') format('woff');
   
 }
 /* sarpanch-latin-ext-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Sarpanch SemiBold'),
-    local('Sarpanch-SemiBold'), url('./files/sarpanch-latin-ext-600-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/sarpanch-latin-ext-600-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-600-normal.woff') format('woff');
   
 }
 /* sarpanch-latin-ext-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Sarpanch Bold'),
-    local('Sarpanch-Bold'), url('./files/sarpanch-latin-ext-700-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/sarpanch-latin-ext-700-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-700-normal.woff') format('woff');
   
 }
 /* sarpanch-latin-ext-800-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Sarpanch ExtraBold'),
-    local('Sarpanch-ExtraBold'), url('./files/sarpanch-latin-ext-800-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/sarpanch-latin-ext-800-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-800-normal.woff') format('woff');
   
 }
 /* sarpanch-latin-ext-900-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Sarpanch Black'),
-    local('Sarpanch-Black'), url('./files/sarpanch-latin-ext-900-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-900-normal.woff') format('woff');
+  src: url('./files/sarpanch-latin-ext-900-normal.woff2') format('woff2'), url('./files/sarpanch-latin-ext-900-normal.woff') format('woff');
   
 }

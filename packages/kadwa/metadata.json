@@ -2,7 +2,7 @@
   "fontId": "kadwa",
   "fontName": "Kadwa",
   "subsets": ["devanagari", "latin"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

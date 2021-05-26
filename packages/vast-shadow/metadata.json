@@ -2,7 +2,7 @@
   "fontId": "vast-shadow",
   "fontName": "Vast Shadow",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Saira ExtraCondensed ExtraLight'),
-    local('SairaExtraCondensed-ExtraLight'), url('./files/saira-extra-condensed-latin-200-normal.woff2') format('woff2'), url('./files/saira-extra-condensed-latin-200-normal.woff') format('woff');
+  src: url('./files/saira-extra-condensed-latin-200-normal.woff2') format('woff2'), url('./files/saira-extra-condensed-latin-200-normal.woff') format('woff');
   
 }

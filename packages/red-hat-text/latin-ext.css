@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Red Hat Text'),
-    local('RedHatText-Regular'), url('./files/red-hat-text-latin-ext-400-normal.woff2') format('woff2'), url('./files/red-hat-text-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/red-hat-text-latin-ext-400-normal.woff2') format('woff2'), url('./files/red-hat-text-latin-ext-400-normal.woff') format('woff');
   
 }
 /* red-hat-text-latin-ext-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Red Hat Text Medium'),
-    local('RedHatText-Medium'), url('./files/red-hat-text-latin-ext-500-normal.woff2') format('woff2'), url('./files/red-hat-text-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/red-hat-text-latin-ext-500-normal.woff2') format('woff2'), url('./files/red-hat-text-latin-ext-500-normal.woff') format('woff');
   
 }
 /* red-hat-text-latin-ext-700-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Red Hat Text Bold'),
-    local('RedHatText-Bold'), url('./files/red-hat-text-latin-ext-700-normal.woff2') format('woff2'), url('./files/red-hat-text-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/red-hat-text-latin-ext-700-normal.woff2') format('woff2'), url('./files/red-hat-text-latin-ext-700-normal.woff') format('woff');
   
 }

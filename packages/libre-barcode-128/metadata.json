@@ -2,7 +2,7 @@
   "fontId": "libre-barcode-128",
   "fontName": "Libre Barcode 128",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

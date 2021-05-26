@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Kosugi Maru'),
-    local('KosugiMaru-Regular'), url('./files/kosugi-maru-japanese-400-normal.woff2') format('woff2'), url('./files/kosugi-maru-japanese-400-normal.woff') format('woff');
+  src: url('./files/kosugi-maru-japanese-400-normal.woff2') format('woff2'), url('./files/kosugi-maru-japanese-400-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "caudex",
   "fontName": "Caudex",
   "subsets": ["greek", "greek-ext", "latin", "latin-ext"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

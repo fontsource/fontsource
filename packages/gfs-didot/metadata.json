@@ -2,7 +2,7 @@
   "fontId": "gfs-didot",
   "fontName": "GFS Didot",
   "subsets": ["greek"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "greek",
   "variable": false,

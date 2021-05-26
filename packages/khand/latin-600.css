@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Khand SemiBold'),
-    local('Khand-SemiBold'), url('./files/khand-latin-600-normal.woff2') format('woff2'), url('./files/khand-latin-600-normal.woff') format('woff');
+  src: url('./files/khand-latin-600-normal.woff2') format('woff2'), url('./files/khand-latin-600-normal.woff') format('woff');
   
 }

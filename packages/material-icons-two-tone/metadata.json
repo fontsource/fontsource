@@ -2,7 +2,7 @@
   "fontId": "material-icons-two-tone",
   "fontName": "Material Icons Two Tone",
   "subsets": ["all"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "all",
   "variable": false,

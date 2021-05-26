@@ -2,7 +2,7 @@
   "fontId": "permanent-marker",
   "fontName": "Permanent Marker",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

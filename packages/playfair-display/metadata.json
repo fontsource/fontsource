@@ -2,7 +2,7 @@
   "fontId": "playfair-display",
   "fontName": "Playfair Display",
   "subsets": ["cyrillic", "latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "500", "600", "700", "800", "900"],
+  "weights": [400, 500, 600, 700, 800, 900],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": {

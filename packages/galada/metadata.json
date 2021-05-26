@@ -2,7 +2,7 @@
   "fontId": "galada",
   "fontName": "Galada",
   "subsets": ["bengali", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

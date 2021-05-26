@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Source Sans Pro Regular'),
-    local('SourceSansPro-Regular'), url('./files/source-sans-pro-greek-ext-400-normal.woff2') format('woff2'), url('./files/source-sans-pro-greek-ext-400-normal.woff') format('woff');
+  src: url('./files/source-sans-pro-greek-ext-400-normal.woff2') format('woff2'), url('./files/source-sans-pro-greek-ext-400-normal.woff') format('woff');
   
 }

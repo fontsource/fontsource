@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Kanit Light'),
-    local('Kanit-Light'), url('./files/kanit-thai-300-normal.woff2') format('woff2'), url('./files/kanit-thai-300-normal.woff') format('woff');
+  src: url('./files/kanit-thai-300-normal.woff2') format('woff2'), url('./files/kanit-thai-300-normal.woff') format('woff');
   
 }

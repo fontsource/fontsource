@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Sumana'),
-    local('Sumana-Regular'), url('./files/sumana-latin-400-normal.woff2') format('woff2'), url('./files/sumana-latin-400-normal.woff') format('woff');
+  src: url('./files/sumana-latin-400-normal.woff2') format('woff2'), url('./files/sumana-latin-400-normal.woff') format('woff');
   
 }
 /* sumana-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Sumana Bold'),
-    local('Sumana-Bold'), url('./files/sumana-latin-700-normal.woff2') format('woff2'), url('./files/sumana-latin-700-normal.woff') format('woff');
+  src: url('./files/sumana-latin-700-normal.woff2') format('woff2'), url('./files/sumana-latin-700-normal.woff') format('woff');
   
 }

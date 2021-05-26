@@ -2,7 +2,7 @@
   "fontId": "sen",
   "fontName": "Sen",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "700", "800"],
+  "weights": [400, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

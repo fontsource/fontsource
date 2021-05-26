@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('IBM Plex Mono Thin'),
-    local('IBMPlexMono-Thin'), url('./files/ibm-plex-mono-latin-ext-100-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-100-normal.woff') format('woff');
+  src: url('./files/ibm-plex-mono-latin-ext-100-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-100-normal.woff') format('woff');
   
 }
 /* ibm-plex-mono-latin-ext-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('IBM Plex Mono ExtraLight'),
-    local('IBMPlexMono-ExtraLight'), url('./files/ibm-plex-mono-latin-ext-200-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/ibm-plex-mono-latin-ext-200-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-200-normal.woff') format('woff');
   
 }
 /* ibm-plex-mono-latin-ext-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('IBM Plex Mono Light'),
-    local('IBMPlexMono-Light'), url('./files/ibm-plex-mono-latin-ext-300-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/ibm-plex-mono-latin-ext-300-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-300-normal.woff') format('woff');
   
 }
 /* ibm-plex-mono-latin-ext-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('IBM Plex Mono'),
-    local('IBMPlexMono'), url('./files/ibm-plex-mono-latin-ext-400-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/ibm-plex-mono-latin-ext-400-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-400-normal.woff') format('woff');
   
 }
 /* ibm-plex-mono-latin-ext-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('IBM Plex Mono Medium'),
-    local('IBMPlexMono-Medium'), url('./files/ibm-plex-mono-latin-ext-500-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/ibm-plex-mono-latin-ext-500-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-500-normal.woff') format('woff');
   
 }
 /* ibm-plex-mono-latin-ext-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('IBM Plex Mono SemiBold'),
-    local('IBMPlexMono-SemiBold'), url('./files/ibm-plex-mono-latin-ext-600-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/ibm-plex-mono-latin-ext-600-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-600-normal.woff') format('woff');
   
 }
 /* ibm-plex-mono-latin-ext-700-normal*/
@@ -70,8 +58,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('IBM Plex Mono Bold'),
-    local('IBMPlexMono-Bold'), url('./files/ibm-plex-mono-latin-ext-700-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/ibm-plex-mono-latin-ext-700-normal.woff2') format('woff2'), url('./files/ibm-plex-mono-latin-ext-700-normal.woff') format('woff');
   
 }

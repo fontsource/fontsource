@@ -2,7 +2,7 @@
   "fontId": "noto-sans-hk",
   "fontName": "Noto Sans HK",
   "subsets": ["chinese-hongkong", "latin"],
-  "weights": ["100", "300", "400", "500", "700", "900"],
+  "weights": [100, 300, 400, 500, 700, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "farro",
   "fontName": "Farro",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["300", "400", "500", "700"],
+  "weights": [300, 400, 500, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "sunflower",
   "fontName": "Sunflower",
   "subsets": ["korean", "latin"],
-  "weights": ["300", "500", "700"],
+  "weights": [300, 500, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "hanuman",
   "fontName": "Hanuman",
   "subsets": ["khmer"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "khmer",
   "variable": false,

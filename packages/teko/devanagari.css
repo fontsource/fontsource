@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Teko Light'),
-    local('Teko-Light'), url('./files/teko-devanagari-300-normal.woff2') format('woff2'), url('./files/teko-devanagari-300-normal.woff') format('woff');
+  src: url('./files/teko-devanagari-300-normal.woff2') format('woff2'), url('./files/teko-devanagari-300-normal.woff') format('woff');
   
 }
 /* teko-devanagari-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Teko Regular'),
-    local('Teko-Regular'), url('./files/teko-devanagari-400-normal.woff2') format('woff2'), url('./files/teko-devanagari-400-normal.woff') format('woff');
+  src: url('./files/teko-devanagari-400-normal.woff2') format('woff2'), url('./files/teko-devanagari-400-normal.woff') format('woff');
   
 }
 /* teko-devanagari-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Teko Medium'),
-    local('Teko-Medium'), url('./files/teko-devanagari-500-normal.woff2') format('woff2'), url('./files/teko-devanagari-500-normal.woff') format('woff');
+  src: url('./files/teko-devanagari-500-normal.woff2') format('woff2'), url('./files/teko-devanagari-500-normal.woff') format('woff');
   
 }
 /* teko-devanagari-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Teko SemiBold'),
-    local('Teko-SemiBold'), url('./files/teko-devanagari-600-normal.woff2') format('woff2'), url('./files/teko-devanagari-600-normal.woff') format('woff');
+  src: url('./files/teko-devanagari-600-normal.woff2') format('woff2'), url('./files/teko-devanagari-600-normal.woff') format('woff');
   
 }
 /* teko-devanagari-700-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Teko Bold'),
-    local('Teko-Bold'), url('./files/teko-devanagari-700-normal.woff2') format('woff2'), url('./files/teko-devanagari-700-normal.woff') format('woff');
+  src: url('./files/teko-devanagari-700-normal.woff2') format('woff2'), url('./files/teko-devanagari-700-normal.woff') format('woff');
   
 }

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Oleo Script'),
-    local('OleoScript-Regular'), url('./files/oleo-script-latin-400-normal.woff2') format('woff2'), url('./files/oleo-script-latin-400-normal.woff') format('woff');
+  src: url('./files/oleo-script-latin-400-normal.woff2') format('woff2'), url('./files/oleo-script-latin-400-normal.woff') format('woff');
   
 }
 /* oleo-script-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Oleo Script Bold'),
-    local('OleoScript-Bold'), url('./files/oleo-script-latin-700-normal.woff2') format('woff2'), url('./files/oleo-script-latin-700-normal.woff') format('woff');
+  src: url('./files/oleo-script-latin-700-normal.woff2') format('woff2'), url('./files/oleo-script-latin-700-normal.woff') format('woff');
   
 }

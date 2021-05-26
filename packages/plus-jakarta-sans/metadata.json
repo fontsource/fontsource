@@ -2,7 +2,7 @@
   "fontId": "plus-jakarta-sans",
   "fontName": "Plus Jakarta Sans",
   "subsets": ["latin"],
-  "weights": ["200", "300", "400", "500", "700", "800"],
+  "weights": [200, 300, 400, 500, 700, 800],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

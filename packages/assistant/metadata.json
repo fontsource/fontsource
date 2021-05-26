@@ -2,7 +2,7 @@
   "fontId": "assistant",
   "fontName": "Assistant",
   "subsets": ["hebrew", "latin", "latin-ext"],
-  "weights": ["200", "300", "400", "500", "600", "700", "800"],
+  "weights": [200, 300, 400, 500, 600, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": {

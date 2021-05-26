@@ -2,7 +2,7 @@
   "fontId": "east-sea-dokdo",
   "fontName": "East Sea Dokdo",
   "subsets": ["korean", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

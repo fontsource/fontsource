@@ -2,7 +2,7 @@
   "fontId": "sue-ellen-francisco",
   "fontName": "Sue Ellen Francisco",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

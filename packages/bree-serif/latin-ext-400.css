@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Bree Serif Regular'),
-    local('BreeSerif-Regular'), url('./files/bree-serif-latin-ext-400-normal.woff2') format('woff2'), url('./files/bree-serif-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/bree-serif-latin-ext-400-normal.woff2') format('woff2'), url('./files/bree-serif-latin-ext-400-normal.woff') format('woff');
   
 }

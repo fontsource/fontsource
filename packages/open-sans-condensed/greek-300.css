@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Open Sans Condensed Light'),
-    local('OpenSansCondensed-Light'), url('./files/open-sans-condensed-greek-300-normal.woff2') format('woff2'), url('./files/open-sans-condensed-greek-300-normal.woff') format('woff');
+  src: url('./files/open-sans-condensed-greek-300-normal.woff2') format('woff2'), url('./files/open-sans-condensed-greek-300-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Source Sans Pro SemiBold'),
-    local('SourceSansPro-SemiBold'), url('./files/source-sans-pro-cyrillic-600-normal.woff2') format('woff2'), url('./files/source-sans-pro-cyrillic-600-normal.woff') format('woff');
+  src: url('./files/source-sans-pro-cyrillic-600-normal.woff2') format('woff2'), url('./files/source-sans-pro-cyrillic-600-normal.woff') format('woff');
   
 }

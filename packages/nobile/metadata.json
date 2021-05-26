@@ -2,7 +2,7 @@
   "fontId": "nobile",
   "fontName": "Nobile",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "500", "700"],
+  "weights": [400, 500, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "joti-one",
   "fontName": "Joti One",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

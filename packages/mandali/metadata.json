@@ -2,7 +2,7 @@
   "fontId": "mandali",
   "fontName": "Mandali",
   "subsets": ["latin", "telugu"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "sniglet",
   "fontName": "Sniglet",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "800"],
+  "weights": [400, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Seaweed Script'),
-    local('SeaweedScript-Regular'), url('./files/seaweed-script-latin-ext-400-normal.woff2') format('woff2'), url('./files/seaweed-script-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/seaweed-script-latin-ext-400-normal.woff2') format('woff2'), url('./files/seaweed-script-latin-ext-400-normal.woff') format('woff');
   
 }

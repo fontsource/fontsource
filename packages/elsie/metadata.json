@@ -2,7 +2,7 @@
   "fontId": "elsie",
   "fontName": "Elsie",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "900"],
+  "weights": [400, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

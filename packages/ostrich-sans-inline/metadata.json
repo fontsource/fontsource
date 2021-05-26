@@ -2,7 +2,7 @@
   "fontId": "ostrich-sans-inline",
   "fontName": "Ostrich Sans Inline",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Montserrat Alternates Thin'),
-    local('MontserratAlternates-Thin'), url('./files/montserrat-alternates-latin-100-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-100-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-100-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-100-normal.woff') format('woff');
   
 }
 /* montserrat-alternates-latin-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Montserrat Alternates ExtraLight'),
-    local('MontserratAlternates-ExtraLight'), url('./files/montserrat-alternates-latin-200-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-200-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-200-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-200-normal.woff') format('woff');
   
 }
 /* montserrat-alternates-latin-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Montserrat Alternates Light'),
-    local('MontserratAlternates-Light'), url('./files/montserrat-alternates-latin-300-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-300-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-300-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-300-normal.woff') format('woff');
   
 }
 /* montserrat-alternates-latin-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Montserrat Alternates Regular'),
-    local('MontserratAlternates-Regular'), url('./files/montserrat-alternates-latin-400-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-400-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-400-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-400-normal.woff') format('woff');
   
 }
 /* montserrat-alternates-latin-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Montserrat Alternates Medium'),
-    local('MontserratAlternates-Medium'), url('./files/montserrat-alternates-latin-500-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-500-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-500-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-500-normal.woff') format('woff');
   
 }
 /* montserrat-alternates-latin-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Montserrat Alternates SemiBold'),
-    local('MontserratAlternates-SemiBold'), url('./files/montserrat-alternates-latin-600-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-600-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-600-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-600-normal.woff') format('woff');
   
 }
 /* montserrat-alternates-latin-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Montserrat Alternates Bold'),
-    local('MontserratAlternates-Bold'), url('./files/montserrat-alternates-latin-700-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-700-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-700-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-700-normal.woff') format('woff');
   
 }
 /* montserrat-alternates-latin-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Montserrat Alternates ExtraBold'),
-    local('MontserratAlternates-ExtraBold'), url('./files/montserrat-alternates-latin-800-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-800-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-800-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-800-normal.woff') format('woff');
   
 }
 /* montserrat-alternates-latin-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Montserrat Alternates Black'),
-    local('MontserratAlternates-Black'), url('./files/montserrat-alternates-latin-900-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-900-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-latin-900-normal.woff2') format('woff2'), url('./files/montserrat-alternates-latin-900-normal.woff') format('woff');
   
 }

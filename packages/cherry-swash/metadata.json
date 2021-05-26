@@ -2,7 +2,7 @@
   "fontId": "cherry-swash",
   "fontName": "Cherry Swash",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

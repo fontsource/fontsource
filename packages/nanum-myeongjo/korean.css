@@ -4,8 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('NanumMyeongjo'), url('./files/nanum-myeongjo-korean-400-normal.woff2') format('woff2'), url('./files/nanum-myeongjo-korean-400-normal.woff') format('woff');
+  src: url('./files/nanum-myeongjo-korean-400-normal.woff2') format('woff2'), url('./files/nanum-myeongjo-korean-400-normal.woff') format('woff');
   
 }
 /* nanum-myeongjo-korean-700-normal*/
@@ -14,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('NanumMyeongjo Bold'),
-    local('NanumMyeongjoBold'), url('./files/nanum-myeongjo-korean-700-normal.woff2') format('woff2'), url('./files/nanum-myeongjo-korean-700-normal.woff') format('woff');
+  src: url('./files/nanum-myeongjo-korean-700-normal.woff2') format('woff2'), url('./files/nanum-myeongjo-korean-700-normal.woff') format('woff');
   
 }
 /* nanum-myeongjo-korean-800-normal*/
@@ -25,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('NanumMyeongjo ExtraBold'),
-    local('NanumMyeongjoExtraBold'), url('./files/nanum-myeongjo-korean-800-normal.woff2') format('woff2'), url('./files/nanum-myeongjo-korean-800-normal.woff') format('woff');
+  src: url('./files/nanum-myeongjo-korean-800-normal.woff2') format('woff2'), url('./files/nanum-myeongjo-korean-800-normal.woff') format('woff');
   
 }

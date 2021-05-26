@@ -2,7 +2,7 @@
   "fontId": "material-icons-rounded",
   "fontName": "Material Icons Rounded",
   "subsets": ["all"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "all",
   "variable": false,

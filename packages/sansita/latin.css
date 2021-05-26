@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Sansita Regular'),
-    local('Sansita-Regular'), url('./files/sansita-latin-400-normal.woff2') format('woff2'), url('./files/sansita-latin-400-normal.woff') format('woff');
+  src: url('./files/sansita-latin-400-normal.woff2') format('woff2'), url('./files/sansita-latin-400-normal.woff') format('woff');
   
 }
 /* sansita-latin-700-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Sansita Bold'),
-    local('Sansita-Bold'), url('./files/sansita-latin-700-normal.woff2') format('woff2'), url('./files/sansita-latin-700-normal.woff') format('woff');
+  src: url('./files/sansita-latin-700-normal.woff2') format('woff2'), url('./files/sansita-latin-700-normal.woff') format('woff');
   
 }
 /* sansita-latin-800-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Sansita ExtraBold'),
-    local('Sansita-ExtraBold'), url('./files/sansita-latin-800-normal.woff2') format('woff2'), url('./files/sansita-latin-800-normal.woff') format('woff');
+  src: url('./files/sansita-latin-800-normal.woff2') format('woff2'), url('./files/sansita-latin-800-normal.woff') format('woff');
   
 }
 /* sansita-latin-900-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Sansita Black'),
-    local('Sansita-Black'), url('./files/sansita-latin-900-normal.woff2') format('woff2'), url('./files/sansita-latin-900-normal.woff') format('woff');
+  src: url('./files/sansita-latin-900-normal.woff2') format('woff2'), url('./files/sansita-latin-900-normal.woff') format('woff');
   
 }

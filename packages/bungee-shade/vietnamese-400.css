@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Bungee Shade'),
-    local('BungeeShade-Regular'), url('./files/bungee-shade-vietnamese-400-normal.woff2') format('woff2'), url('./files/bungee-shade-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/bungee-shade-vietnamese-400-normal.woff2') format('woff2'), url('./files/bungee-shade-vietnamese-400-normal.woff') format('woff');
   
 }

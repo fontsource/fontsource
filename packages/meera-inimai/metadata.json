@@ -2,7 +2,7 @@
   "fontId": "meera-inimai",
   "fontName": "Meera Inimai",
   "subsets": ["latin", "tamil"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

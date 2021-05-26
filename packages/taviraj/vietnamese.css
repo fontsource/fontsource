@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Taviraj Thin'),
-    local('Taviraj-Thin'), url('./files/taviraj-vietnamese-100-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-100-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-100-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-100-normal.woff') format('woff');
   
 }
 /* taviraj-vietnamese-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Taviraj ExtraLight'),
-    local('Taviraj-ExtraLight'), url('./files/taviraj-vietnamese-200-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-200-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-200-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-200-normal.woff') format('woff');
   
 }
 /* taviraj-vietnamese-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Taviraj Light'),
-    local('Taviraj-Light'), url('./files/taviraj-vietnamese-300-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-300-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-300-normal.woff') format('woff');
   
 }
 /* taviraj-vietnamese-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Taviraj Regular'),
-    local('Taviraj-Regular'), url('./files/taviraj-vietnamese-400-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-400-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-400-normal.woff') format('woff');
   
 }
 /* taviraj-vietnamese-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Taviraj Medium'),
-    local('Taviraj-Medium'), url('./files/taviraj-vietnamese-500-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-500-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-500-normal.woff') format('woff');
   
 }
 /* taviraj-vietnamese-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Taviraj SemiBold'),
-    local('Taviraj-SemiBold'), url('./files/taviraj-vietnamese-600-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-600-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-600-normal.woff') format('woff');
   
 }
 /* taviraj-vietnamese-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Taviraj Bold'),
-    local('Taviraj-Bold'), url('./files/taviraj-vietnamese-700-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-700-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-700-normal.woff') format('woff');
   
 }
 /* taviraj-vietnamese-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Taviraj ExtraBold'),
-    local('Taviraj-ExtraBold'), url('./files/taviraj-vietnamese-800-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-800-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-800-normal.woff') format('woff');
   
 }
 /* taviraj-vietnamese-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Taviraj Black'),
-    local('Taviraj-Black'), url('./files/taviraj-vietnamese-900-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-900-normal.woff') format('woff');
+  src: url('./files/taviraj-vietnamese-900-normal.woff2') format('woff2'), url('./files/taviraj-vietnamese-900-normal.woff') format('woff');
   
 }

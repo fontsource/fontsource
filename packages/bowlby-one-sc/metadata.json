@@ -2,7 +2,7 @@
   "fontId": "bowlby-one-sc",
   "fontName": "Bowlby One SC",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "biorhyme-expanded",
   "fontName": "BioRhyme Expanded",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["200", "300", "400", "700", "800"],
+  "weights": [200, 300, 400, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

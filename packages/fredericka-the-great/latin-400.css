@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Fredericka the Great'),
-    local('FrederickatheGreat'), url('./files/fredericka-the-great-latin-400-normal.woff2') format('woff2'), url('./files/fredericka-the-great-latin-400-normal.woff') format('woff');
+  src: url('./files/fredericka-the-great-latin-400-normal.woff2') format('woff2'), url('./files/fredericka-the-great-latin-400-normal.woff') format('woff');
   
 }

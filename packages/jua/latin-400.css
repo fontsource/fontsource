@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Jua Regular'),
-    local('Jua-Regular'), url('./files/jua-latin-400-normal.woff2') format('woff2'), url('./files/jua-latin-400-normal.woff') format('woff');
+  src: url('./files/jua-latin-400-normal.woff2') format('woff2'), url('./files/jua-latin-400-normal.woff') format('woff');
   
 }

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Sniglet Regular'),
-    local('Sniglet-Regular'), url('./files/sniglet-latin-ext-400-normal.woff2') format('woff2'), url('./files/sniglet-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/sniglet-latin-ext-400-normal.woff2') format('woff2'), url('./files/sniglet-latin-ext-400-normal.woff') format('woff');
   
 }
 /* sniglet-latin-ext-800-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Sniglet ExtraBold'),
-    local('Sniglet-ExtraBold'), url('./files/sniglet-latin-ext-800-normal.woff2') format('woff2'), url('./files/sniglet-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/sniglet-latin-ext-800-normal.woff2') format('woff2'), url('./files/sniglet-latin-ext-800-normal.woff') format('woff');
   
 }

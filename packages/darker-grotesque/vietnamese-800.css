@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Darker Grotesque ExtraBold'),
-    local('DarkerGrotesque-ExtraBold'), url('./files/darker-grotesque-vietnamese-800-normal.woff2') format('woff2'), url('./files/darker-grotesque-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/darker-grotesque-vietnamese-800-normal.woff2') format('woff2'), url('./files/darker-grotesque-vietnamese-800-normal.woff') format('woff');
   
 }

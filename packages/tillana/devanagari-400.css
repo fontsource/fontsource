@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Tillana Regular'),
-    local('Tillana-Regular'), url('./files/tillana-devanagari-400-normal.woff2') format('woff2'), url('./files/tillana-devanagari-400-normal.woff') format('woff');
+  src: url('./files/tillana-devanagari-400-normal.woff2') format('woff2'), url('./files/tillana-devanagari-400-normal.woff') format('woff');
   
 }

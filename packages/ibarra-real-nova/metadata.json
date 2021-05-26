@@ -2,7 +2,7 @@
   "fontId": "ibarra-real-nova",
   "fontName": "Ibarra Real Nova",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "500", "600", "700"],
+  "weights": [400, 500, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": {

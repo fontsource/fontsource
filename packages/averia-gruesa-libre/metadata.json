@@ -2,7 +2,7 @@
   "fontId": "averia-gruesa-libre",
   "fontName": "Averia Gruesa Libre",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

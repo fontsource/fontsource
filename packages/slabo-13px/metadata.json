@@ -2,7 +2,7 @@
   "fontId": "slabo-13px",
   "fontName": "Slabo 13px",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

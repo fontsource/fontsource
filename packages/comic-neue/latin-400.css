@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Comic Neue Regular'),
-    local('ComicNeue-Regular'), url('./files/comic-neue-latin-400-normal.woff2') format('woff2'), url('./files/comic-neue-latin-400-normal.woff') format('woff');
+  src: url('./files/comic-neue-latin-400-normal.woff2') format('woff2'), url('./files/comic-neue-latin-400-normal.woff') format('woff');
   
 }

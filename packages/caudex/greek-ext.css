@@ -4,8 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Caudex'), url('./files/caudex-greek-ext-400-normal.woff2') format('woff2'), url('./files/caudex-greek-ext-400-normal.woff') format('woff');
+  src: url('./files/caudex-greek-ext-400-normal.woff2') format('woff2'), url('./files/caudex-greek-ext-400-normal.woff') format('woff');
   
 }
 /* caudex-greek-ext-700-normal*/
@@ -14,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Caudex Bold'),
-    local('Caudex-Bold'), url('./files/caudex-greek-ext-700-normal.woff2') format('woff2'), url('./files/caudex-greek-ext-700-normal.woff') format('woff');
+  src: url('./files/caudex-greek-ext-700-normal.woff2') format('woff2'), url('./files/caudex-greek-ext-700-normal.woff') format('woff');
   
 }

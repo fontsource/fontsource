@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Fira Mono Regular'),
-    local('FiraMono-Regular'), url('./files/fira-mono-latin-ext-400-normal.woff2') format('woff2'), url('./files/fira-mono-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/fira-mono-latin-ext-400-normal.woff2') format('woff2'), url('./files/fira-mono-latin-ext-400-normal.woff') format('woff');
   
 }
 /* fira-mono-latin-ext-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Fira Mono Medium'),
-    local('FiraMono-Medium'), url('./files/fira-mono-latin-ext-500-normal.woff2') format('woff2'), url('./files/fira-mono-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/fira-mono-latin-ext-500-normal.woff2') format('woff2'), url('./files/fira-mono-latin-ext-500-normal.woff') format('woff');
   
 }
 /* fira-mono-latin-ext-700-normal*/
@@ -26,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Fira Mono Bold'),
-    local('FiraMono-Bold'), url('./files/fira-mono-latin-ext-700-normal.woff2') format('woff2'), url('./files/fira-mono-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/fira-mono-latin-ext-700-normal.woff2') format('woff2'), url('./files/fira-mono-latin-ext-700-normal.woff') format('woff');
   
 }

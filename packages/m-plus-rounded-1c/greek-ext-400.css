@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('M PLUS Rounded 1c'),
-    local('MPLUSRounded1c-Regular'), url('./files/m-plus-rounded-1c-greek-ext-400-normal.woff2') format('woff2'), url('./files/m-plus-rounded-1c-greek-ext-400-normal.woff') format('woff');
+  src: url('./files/m-plus-rounded-1c-greek-ext-400-normal.woff2') format('woff2'), url('./files/m-plus-rounded-1c-greek-ext-400-normal.woff') format('woff');
   
 }

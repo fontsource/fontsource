@@ -2,7 +2,7 @@
   "fontId": "noto-sans-tc",
   "fontName": "Noto Sans TC",
   "subsets": ["chinese-traditional", "latin"],
-  "weights": ["100", "300", "400", "500", "700", "900"],
+  "weights": [100, 300, 400, 500, 700, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

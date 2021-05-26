@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('K2D Thin Italic'),
-    local('K2D-ThinItalic'), url('./files/k2d-latin-ext-100-italic.woff2') format('woff2'), url('./files/k2d-latin-ext-100-italic.woff') format('woff');
+  src: url('./files/k2d-latin-ext-100-italic.woff2') format('woff2'), url('./files/k2d-latin-ext-100-italic.woff') format('woff');
   
 }

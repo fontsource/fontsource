@@ -2,7 +2,7 @@
   "fontId": "pavanam",
   "fontName": "Pavanam",
   "subsets": ["latin", "latin-ext", "tamil"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

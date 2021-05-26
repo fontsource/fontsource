@@ -2,7 +2,7 @@
   "fontId": "gamja-flower",
   "fontName": "Gamja Flower",
   "subsets": ["korean", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

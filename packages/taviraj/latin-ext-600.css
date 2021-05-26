@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Taviraj SemiBold'),
-    local('Taviraj-SemiBold'), url('./files/taviraj-latin-ext-600-normal.woff2') format('woff2'), url('./files/taviraj-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/taviraj-latin-ext-600-normal.woff2') format('woff2'), url('./files/taviraj-latin-ext-600-normal.woff') format('woff');
   
 }

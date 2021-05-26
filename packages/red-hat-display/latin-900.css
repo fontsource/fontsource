@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Red Hat Display Black'),
-    local('RedHatDisplay-Black'), url('./files/red-hat-display-latin-900-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-900-normal.woff') format('woff');
+  src: url('./files/red-hat-display-latin-900-normal.woff2') format('woff2'), url('./files/red-hat-display-latin-900-normal.woff') format('woff');
   
 }

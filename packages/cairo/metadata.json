@@ -2,7 +2,7 @@
   "fontId": "cairo",
   "fontName": "Cairo",
   "subsets": ["arabic", "latin", "latin-ext"],
-  "weights": ["200", "300", "400", "600", "700", "900"],
+  "weights": [200, 300, 400, 600, 700, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

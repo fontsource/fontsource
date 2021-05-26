@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('News Cycle'),
-    local('NewsCycle'), url('./files/news-cycle-latin-ext-400-normal.woff2') format('woff2'), url('./files/news-cycle-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/news-cycle-latin-ext-400-normal.woff2') format('woff2'), url('./files/news-cycle-latin-ext-400-normal.woff') format('woff');
   
 }
 /* news-cycle-latin-ext-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('News Cycle Bold'),
-    local('NewsCycle-Bold'), url('./files/news-cycle-latin-ext-700-normal.woff2') format('woff2'), url('./files/news-cycle-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/news-cycle-latin-ext-700-normal.woff2') format('woff2'), url('./files/news-cycle-latin-ext-700-normal.woff') format('woff');
   
 }

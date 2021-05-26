@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Share Regular'),
-    local('Share-Regular'), url('./files/share-latin-ext-400-normal.woff2') format('woff2'), url('./files/share-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/share-latin-ext-400-normal.woff2') format('woff2'), url('./files/share-latin-ext-400-normal.woff') format('woff');
   
 }
 /* share-latin-ext-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Share Bold'),
-    local('Share-Bold'), url('./files/share-latin-ext-700-normal.woff2') format('woff2'), url('./files/share-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/share-latin-ext-700-normal.woff2') format('woff2'), url('./files/share-latin-ext-700-normal.woff') format('woff');
   
 }

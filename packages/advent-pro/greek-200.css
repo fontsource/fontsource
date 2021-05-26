@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Advent Pro ExtraLight'),
-    local('AdventPro-ExtraLight'), url('./files/advent-pro-greek-200-normal.woff2') format('woff2'), url('./files/advent-pro-greek-200-normal.woff') format('woff');
+  src: url('./files/advent-pro-greek-200-normal.woff2') format('woff2'), url('./files/advent-pro-greek-200-normal.woff') format('woff');
   
 }

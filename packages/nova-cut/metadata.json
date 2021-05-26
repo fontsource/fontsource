@@ -2,7 +2,7 @@
   "fontId": "nova-cut",
   "fontName": "Nova Cut",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

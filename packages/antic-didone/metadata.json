@@ -2,7 +2,7 @@
   "fontId": "antic-didone",
   "fontName": "Antic Didone",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

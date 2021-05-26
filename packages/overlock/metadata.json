@@ -2,7 +2,7 @@
   "fontId": "overlock",
   "fontName": "Overlock",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "700", "900"],
+  "weights": [400, 700, 900],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

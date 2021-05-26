@@ -2,7 +2,7 @@
   "fontId": "gfs-neohellenic",
   "fontName": "GFS Neohellenic",
   "subsets": ["greek"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "greek",
   "variable": false,

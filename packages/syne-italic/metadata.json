@@ -2,7 +2,7 @@
   "fontId": "syne-italic",
   "fontName": "Syne Italic",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["italic"],
   "defSubset": "latin",
   "variable": false,

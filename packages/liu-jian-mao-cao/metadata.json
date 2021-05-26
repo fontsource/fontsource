@@ -2,7 +2,7 @@
   "fontId": "liu-jian-mao-cao",
   "fontName": "Liu Jian Mao Cao",
   "subsets": ["chinese-simplified", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

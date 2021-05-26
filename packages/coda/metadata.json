@@ -2,7 +2,7 @@
   "fontId": "coda",
   "fontName": "Coda",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400", "800"],
+  "weights": [400, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

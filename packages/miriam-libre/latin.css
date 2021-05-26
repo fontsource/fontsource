@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Miriam Libre Regular'),
-    local('MiriamLibre-Regular'), url('./files/miriam-libre-latin-400-normal.woff2') format('woff2'), url('./files/miriam-libre-latin-400-normal.woff') format('woff');
+  src: url('./files/miriam-libre-latin-400-normal.woff2') format('woff2'), url('./files/miriam-libre-latin-400-normal.woff') format('woff');
   
 }
 /* miriam-libre-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Miriam Libre Bold'),
-    local('MiriamLibre-Bold'), url('./files/miriam-libre-latin-700-normal.woff2') format('woff2'), url('./files/miriam-libre-latin-700-normal.woff') format('woff');
+  src: url('./files/miriam-libre-latin-700-normal.woff2') format('woff2'), url('./files/miriam-libre-latin-700-normal.woff') format('woff');
   
 }

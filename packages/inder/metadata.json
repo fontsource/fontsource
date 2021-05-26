@@ -2,7 +2,7 @@
   "fontId": "inder",
   "fontName": "Inder",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

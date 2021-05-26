@@ -2,7 +2,7 @@
   "fontId": "alef",
   "fontName": "Alef",
   "subsets": ["hebrew", "latin"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

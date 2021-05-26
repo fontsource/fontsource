@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('M PLUS 1p Black'),
-    local('MPLUS1p-Black'), url('./files/m-plus-1p-latin-900-normal.woff2') format('woff2'), url('./files/m-plus-1p-latin-900-normal.woff') format('woff');
+  src: url('./files/m-plus-1p-latin-900-normal.woff2') format('woff2'), url('./files/m-plus-1p-latin-900-normal.woff') format('woff');
   
 }

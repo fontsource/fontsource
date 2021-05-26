@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Hind Siliguri Bold'),
-    local('HindSiliguri-Bold'), url('./files/hind-siliguri-latin-ext-700-normal.woff2') format('woff2'), url('./files/hind-siliguri-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/hind-siliguri-latin-ext-700-normal.woff2') format('woff2'), url('./files/hind-siliguri-latin-ext-700-normal.woff') format('woff');
   
 }

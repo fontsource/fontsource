@@ -2,7 +2,7 @@
   "fontId": "kosugi-maru",
   "fontName": "Kosugi Maru",
   "subsets": ["cyrillic", "japanese", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

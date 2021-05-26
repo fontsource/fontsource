@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Yantramanav Thin'),
-    local('Yantramanav-Thin'), url('./files/yantramanav-devanagari-100-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-100-normal.woff') format('woff');
+  src: url('./files/yantramanav-devanagari-100-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-100-normal.woff') format('woff');
   
 }
 /* yantramanav-devanagari-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Yantramanav Light'),
-    local('Yantramanav-Light'), url('./files/yantramanav-devanagari-300-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-300-normal.woff') format('woff');
+  src: url('./files/yantramanav-devanagari-300-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-300-normal.woff') format('woff');
   
 }
 /* yantramanav-devanagari-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Yantramanav Regular'),
-    local('Yantramanav-Regular'), url('./files/yantramanav-devanagari-400-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-400-normal.woff') format('woff');
+  src: url('./files/yantramanav-devanagari-400-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-400-normal.woff') format('woff');
   
 }
 /* yantramanav-devanagari-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Yantramanav Medium'),
-    local('Yantramanav-Medium'), url('./files/yantramanav-devanagari-500-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-500-normal.woff') format('woff');
+  src: url('./files/yantramanav-devanagari-500-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-500-normal.woff') format('woff');
   
 }
 /* yantramanav-devanagari-700-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Yantramanav Bold'),
-    local('Yantramanav-Bold'), url('./files/yantramanav-devanagari-700-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-700-normal.woff') format('woff');
+  src: url('./files/yantramanav-devanagari-700-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-700-normal.woff') format('woff');
   
 }
 /* yantramanav-devanagari-900-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Yantramanav Black'),
-    local('Yantramanav-Black'), url('./files/yantramanav-devanagari-900-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-900-normal.woff') format('woff');
+  src: url('./files/yantramanav-devanagari-900-normal.woff2') format('woff2'), url('./files/yantramanav-devanagari-900-normal.woff') format('woff');
   
 }

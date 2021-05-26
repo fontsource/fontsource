@@ -2,7 +2,7 @@
   "fontId": "londrina-solid",
   "fontName": "Londrina Solid",
   "subsets": ["latin"],
-  "weights": ["100", "300", "400", "900"],
+  "weights": [100, 300, 400, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Norican Regular'),
-    local('Norican-Regular'), url('./files/norican-latin-400-normal.woff2') format('woff2'), url('./files/norican-latin-400-normal.woff') format('woff');
+  src: url('./files/norican-latin-400-normal.woff2') format('woff2'), url('./files/norican-latin-400-normal.woff') format('woff');
   
 }

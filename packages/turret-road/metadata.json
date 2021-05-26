@@ -2,7 +2,7 @@
   "fontId": "turret-road",
   "fontName": "Turret Road",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["200", "300", "400", "500", "700", "800"],
+  "weights": [200, 300, 400, 500, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Hind Siliguri SemiBold'),
-    local('HindSiliguri-SemiBold'), url('./files/hind-siliguri-bengali-600-normal.woff2') format('woff2'), url('./files/hind-siliguri-bengali-600-normal.woff') format('woff');
+  src: url('./files/hind-siliguri-bengali-600-normal.woff2') format('woff2'), url('./files/hind-siliguri-bengali-600-normal.woff') format('woff');
   
 }

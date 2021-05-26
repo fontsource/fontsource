@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Mali Light'),
-    local('Mali-Light'), url('./files/mali-latin-300-normal.woff2') format('woff2'), url('./files/mali-latin-300-normal.woff') format('woff');
+  src: url('./files/mali-latin-300-normal.woff2') format('woff2'), url('./files/mali-latin-300-normal.woff') format('woff');
   
 }

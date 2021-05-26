@@ -2,7 +2,7 @@
   "fontId": "gabriela",
   "fontName": "Gabriela",
   "subsets": ["cyrillic", "cyrillic-ext", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

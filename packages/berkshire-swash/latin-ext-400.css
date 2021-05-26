@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Berkshire Swash Regular'),
-    local('BerkshireSwash-Regular'), url('./files/berkshire-swash-latin-ext-400-normal.woff2') format('woff2'), url('./files/berkshire-swash-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/berkshire-swash-latin-ext-400-normal.woff2') format('woff2'), url('./files/berkshire-swash-latin-ext-400-normal.woff') format('woff');
   
 }

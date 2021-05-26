@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Montserrat Thin Italic'),
-    local('Montserrat-ThinItalic'), url('./files/montserrat-latin-ext-100-italic.woff2') format('woff2'), url('./files/montserrat-latin-ext-100-italic.woff') format('woff');
+  src: url('./files/montserrat-latin-ext-100-italic.woff2') format('woff2'), url('./files/montserrat-latin-ext-100-italic.woff') format('woff');
   
 }

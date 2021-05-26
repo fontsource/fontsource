@@ -2,7 +2,7 @@
   "fontId": "slabo-27px",
   "fontName": "Slabo 27px",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

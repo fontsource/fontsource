@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Thasadith Italic'),
-    local('Thasadith-Italic'), url('./files/thasadith-latin-ext-400-italic.woff2') format('woff2'), url('./files/thasadith-latin-ext-400-italic.woff') format('woff');
+  src: url('./files/thasadith-latin-ext-400-italic.woff2') format('woff2'), url('./files/thasadith-latin-ext-400-italic.woff') format('woff');
   
 }

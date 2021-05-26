@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('PT Sans Caption'),
-    local('PTSans-Caption'), url('./files/pt-sans-caption-cyrillic-ext-400-normal.woff2') format('woff2'), url('./files/pt-sans-caption-cyrillic-ext-400-normal.woff') format('woff');
+  src: url('./files/pt-sans-caption-cyrillic-ext-400-normal.woff2') format('woff2'), url('./files/pt-sans-caption-cyrillic-ext-400-normal.woff') format('woff');
   
 }
 /* pt-sans-caption-cyrillic-ext-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('PT Sans Caption Bold'),
-    local('PTSans-CaptionBold'), url('./files/pt-sans-caption-cyrillic-ext-700-normal.woff2') format('woff2'), url('./files/pt-sans-caption-cyrillic-ext-700-normal.woff') format('woff');
+  src: url('./files/pt-sans-caption-cyrillic-ext-700-normal.woff2') format('woff2'), url('./files/pt-sans-caption-cyrillic-ext-700-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "baloo-tamma-2",
   "fontName": "Baloo Tamma 2",
   "subsets": ["kannada", "latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "500", "600", "700", "800"],
+  "weights": [400, 500, 600, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

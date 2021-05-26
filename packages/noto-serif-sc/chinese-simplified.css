@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Noto Serif SC ExtraLight'),
-    local('NotoSerifSC-ExtraLight'), url('./files/noto-serif-sc-chinese-simplified-200-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-200-normal.woff') format('woff');
+  src: url('./files/noto-serif-sc-chinese-simplified-200-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-200-normal.woff') format('woff');
   
 }
 /* noto-serif-sc-chinese-simplified-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Noto Serif SC Light'),
-    local('NotoSerifSC-Light'), url('./files/noto-serif-sc-chinese-simplified-300-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-300-normal.woff') format('woff');
+  src: url('./files/noto-serif-sc-chinese-simplified-300-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-300-normal.woff') format('woff');
   
 }
 /* noto-serif-sc-chinese-simplified-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Noto Serif SC'),
-    local('NotoSerifSC-Regular'), url('./files/noto-serif-sc-chinese-simplified-400-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-400-normal.woff') format('woff');
+  src: url('./files/noto-serif-sc-chinese-simplified-400-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-400-normal.woff') format('woff');
   
 }
 /* noto-serif-sc-chinese-simplified-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Noto Serif SC Medium'),
-    local('NotoSerifSC-Medium'), url('./files/noto-serif-sc-chinese-simplified-500-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-500-normal.woff') format('woff');
+  src: url('./files/noto-serif-sc-chinese-simplified-500-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-500-normal.woff') format('woff');
   
 }
 /* noto-serif-sc-chinese-simplified-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Noto Serif SC SemiBold'),
-    local('NotoSerifSC-SemiBold'), url('./files/noto-serif-sc-chinese-simplified-600-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-600-normal.woff') format('woff');
+  src: url('./files/noto-serif-sc-chinese-simplified-600-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-600-normal.woff') format('woff');
   
 }
 /* noto-serif-sc-chinese-simplified-700-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Noto Serif SC Bold'),
-    local('NotoSerifSC-Bold'), url('./files/noto-serif-sc-chinese-simplified-700-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-700-normal.woff') format('woff');
+  src: url('./files/noto-serif-sc-chinese-simplified-700-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-700-normal.woff') format('woff');
   
 }
 /* noto-serif-sc-chinese-simplified-900-normal*/
@@ -70,8 +58,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Noto Serif SC Black'),
-    local('NotoSerifSC-Black'), url('./files/noto-serif-sc-chinese-simplified-900-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-900-normal.woff') format('woff');
+  src: url('./files/noto-serif-sc-chinese-simplified-900-normal.woff2') format('woff2'), url('./files/noto-serif-sc-chinese-simplified-900-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Radley Regular'),
-    local('Radley-Regular'), url('./files/radley-latin-400-normal.woff2') format('woff2'), url('./files/radley-latin-400-normal.woff') format('woff');
+  src: url('./files/radley-latin-400-normal.woff2') format('woff2'), url('./files/radley-latin-400-normal.woff') format('woff');
   
 }

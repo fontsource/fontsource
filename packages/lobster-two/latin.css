@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Lobster Two'),
-    local('LobsterTwo'), url('./files/lobster-two-latin-400-normal.woff2') format('woff2'), url('./files/lobster-two-latin-400-normal.woff') format('woff');
+  src: url('./files/lobster-two-latin-400-normal.woff2') format('woff2'), url('./files/lobster-two-latin-400-normal.woff') format('woff');
   
 }
 /* lobster-two-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Lobster Two Bold'),
-    local('LobsterTwo-Bold'), url('./files/lobster-two-latin-700-normal.woff2') format('woff2'), url('./files/lobster-two-latin-700-normal.woff') format('woff');
+  src: url('./files/lobster-two-latin-700-normal.woff2') format('woff2'), url('./files/lobster-two-latin-700-normal.woff') format('woff');
   
 }

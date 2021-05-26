@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Racing Sans One'),
-    local('RacingSansOne-Regular'), url('./files/racing-sans-one-latin-ext-400-normal.woff2') format('woff2'), url('./files/racing-sans-one-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/racing-sans-one-latin-ext-400-normal.woff2') format('woff2'), url('./files/racing-sans-one-latin-ext-400-normal.woff') format('woff');
   
 }

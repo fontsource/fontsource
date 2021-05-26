@@ -2,7 +2,7 @@
   "fontId": "amiko",
   "fontName": "Amiko",
   "subsets": ["devanagari", "latin", "latin-ext"],
-  "weights": ["400", "600", "700"],
+  "weights": [400, 600, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

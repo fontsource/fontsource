@@ -2,7 +2,7 @@
   "fontId": "flamenco",
   "fontName": "Flamenco",
   "subsets": ["latin"],
-  "weights": ["300", "400"],
+  "weights": [300, 400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

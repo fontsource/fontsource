@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Barlow Semi Condensed SemiBold'),
-    local('BarlowSemiCondensed-SemiBold'), url('./files/barlow-semi-condensed-vietnamese-600-normal.woff2') format('woff2'), url('./files/barlow-semi-condensed-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/barlow-semi-condensed-vietnamese-600-normal.woff2') format('woff2'), url('./files/barlow-semi-condensed-vietnamese-600-normal.woff') format('woff');
   
 }

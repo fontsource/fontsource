@@ -2,7 +2,7 @@
   "fontId": "pattaya",
   "fontName": "Pattaya",
   "subsets": ["cyrillic", "latin", "latin-ext", "thai", "vietnamese"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

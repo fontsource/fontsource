@@ -2,7 +2,7 @@
   "fontId": "kdam-thmor",
   "fontName": "Kdam Thmor",
   "subsets": ["khmer"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "khmer",
   "variable": false,

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Philosopher Regular'),
-    local('Philosopher-Regular'), url('./files/philosopher-latin-400-normal.woff2') format('woff2'), url('./files/philosopher-latin-400-normal.woff') format('woff');
+  src: url('./files/philosopher-latin-400-normal.woff2') format('woff2'), url('./files/philosopher-latin-400-normal.woff') format('woff');
   
 }
 /* philosopher-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Philosopher Bold'),
-    local('Philosopher-Bold'), url('./files/philosopher-latin-700-normal.woff2') format('woff2'), url('./files/philosopher-latin-700-normal.woff') format('woff');
+  src: url('./files/philosopher-latin-700-normal.woff2') format('woff2'), url('./files/philosopher-latin-700-normal.woff') format('woff');
   
 }

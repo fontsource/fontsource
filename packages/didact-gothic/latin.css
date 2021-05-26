@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Didact Gothic Regular'),
-    local('DidactGothic-Regular'), url('./files/didact-gothic-latin-400-normal.woff2') format('woff2'), url('./files/didact-gothic-latin-400-normal.woff') format('woff');
+  src: url('./files/didact-gothic-latin-400-normal.woff2') format('woff2'), url('./files/didact-gothic-latin-400-normal.woff') format('woff');
   
 }

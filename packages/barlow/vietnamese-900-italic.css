@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Barlow Black Italic'),
-    local('Barlow-BlackItalic'), url('./files/barlow-vietnamese-900-italic.woff2') format('woff2'), url('./files/barlow-vietnamese-900-italic.woff') format('woff');
+  src: url('./files/barlow-vietnamese-900-italic.woff2') format('woff2'), url('./files/barlow-vietnamese-900-italic.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Saira Condensed Light'),
-    local('SairaCondensed-Light'), url('./files/saira-condensed-vietnamese-300-normal.woff2') format('woff2'), url('./files/saira-condensed-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/saira-condensed-vietnamese-300-normal.woff2') format('woff2'), url('./files/saira-condensed-vietnamese-300-normal.woff') format('woff');
   
 }

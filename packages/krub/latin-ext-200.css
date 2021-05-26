@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Krub ExtraLight'),
-    local('Krub-ExtraLight'), url('./files/krub-latin-ext-200-normal.woff2') format('woff2'), url('./files/krub-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/krub-latin-ext-200-normal.woff2') format('woff2'), url('./files/krub-latin-ext-200-normal.woff') format('woff');
   
 }

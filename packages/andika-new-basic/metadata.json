@@ -2,7 +2,7 @@
   "fontId": "andika-new-basic",
   "fontName": "Andika New Basic",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Yrsa Light'),
-    local('Yrsa-Light'), url('./files/yrsa-latin-ext-300-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/yrsa-latin-ext-300-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-300-normal.woff') format('woff');
   
 }
 /* yrsa-latin-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Yrsa Regular'),
-    local('Yrsa-Regular'), url('./files/yrsa-latin-ext-400-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/yrsa-latin-ext-400-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-400-normal.woff') format('woff');
   
 }
 /* yrsa-latin-ext-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Yrsa Medium'),
-    local('Yrsa-Medium'), url('./files/yrsa-latin-ext-500-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/yrsa-latin-ext-500-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-500-normal.woff') format('woff');
   
 }
 /* yrsa-latin-ext-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Yrsa SemiBold'),
-    local('Yrsa-SemiBold'), url('./files/yrsa-latin-ext-600-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/yrsa-latin-ext-600-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-600-normal.woff') format('woff');
   
 }
 /* yrsa-latin-ext-700-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Yrsa Bold'),
-    local('Yrsa-Bold'), url('./files/yrsa-latin-ext-700-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/yrsa-latin-ext-700-normal.woff2') format('woff2'), url('./files/yrsa-latin-ext-700-normal.woff') format('woff');
   
 }

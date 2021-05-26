@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Jaldi'),
-    local('Jaldi-Regular'), url('./files/jaldi-devanagari-400-normal.woff2') format('woff2'), url('./files/jaldi-devanagari-400-normal.woff') format('woff');
+  src: url('./files/jaldi-devanagari-400-normal.woff2') format('woff2'), url('./files/jaldi-devanagari-400-normal.woff') format('woff');
   
 }
 /* jaldi-devanagari-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Jaldi Bold'),
-    local('Jaldi-Bold'), url('./files/jaldi-devanagari-700-normal.woff2') format('woff2'), url('./files/jaldi-devanagari-700-normal.woff') format('woff');
+  src: url('./files/jaldi-devanagari-700-normal.woff2') format('woff2'), url('./files/jaldi-devanagari-700-normal.woff') format('woff');
   
 }

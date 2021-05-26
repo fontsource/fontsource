@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Montserrat Alternates ExtraBold'),
-    local('MontserratAlternates-ExtraBold'), url('./files/montserrat-alternates-vietnamese-800-normal.woff2') format('woff2'), url('./files/montserrat-alternates-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/montserrat-alternates-vietnamese-800-normal.woff2') format('woff2'), url('./files/montserrat-alternates-vietnamese-800-normal.woff') format('woff');
   
 }

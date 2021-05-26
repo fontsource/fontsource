@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Montserrat Regular'),
-    local('Montserrat-Regular'), url('./files/montserrat-vietnamese-400-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-400-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-400-normal.woff') format('woff');
   
 }

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Mountains of Christmas Regular'),
-    local('MountainsofChristmas-Regular'), url('./files/mountains-of-christmas-latin-400-normal.woff2') format('woff2'), url('./files/mountains-of-christmas-latin-400-normal.woff') format('woff');
+  src: url('./files/mountains-of-christmas-latin-400-normal.woff2') format('woff2'), url('./files/mountains-of-christmas-latin-400-normal.woff') format('woff');
   
 }
 /* mountains-of-christmas-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Mountains of Christmas Bold'),
-    local('MountainsofChristmas-Bold'), url('./files/mountains-of-christmas-latin-700-normal.woff2') format('woff2'), url('./files/mountains-of-christmas-latin-700-normal.woff') format('woff');
+  src: url('./files/mountains-of-christmas-latin-700-normal.woff2') format('woff2'), url('./files/mountains-of-christmas-latin-700-normal.woff') format('woff');
   
 }

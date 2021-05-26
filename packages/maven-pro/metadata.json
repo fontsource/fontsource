@@ -2,7 +2,7 @@
   "fontId": "maven-pro",
   "fontName": "Maven Pro",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "500", "600", "700", "800", "900"],
+  "weights": [400, 500, 600, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": {

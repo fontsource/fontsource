@@ -2,7 +2,7 @@
   "fontId": "port-lligat-sans",
   "fontName": "Port Lligat Sans",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

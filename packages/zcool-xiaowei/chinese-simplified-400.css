@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('ZCOOL XiaoWei Regular'),
-    local('ZCOOLXiaoWei-Regular'), url('./files/zcool-xiaowei-chinese-simplified-400-normal.woff2') format('woff2'), url('./files/zcool-xiaowei-chinese-simplified-400-normal.woff') format('woff');
+  src: url('./files/zcool-xiaowei-chinese-simplified-400-normal.woff2') format('woff2'), url('./files/zcool-xiaowei-chinese-simplified-400-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "tienne",
   "fontName": "Tienne",
   "subsets": ["latin"],
-  "weights": ["400", "700", "900"],
+  "weights": [400, 700, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

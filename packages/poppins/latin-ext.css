@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Poppins Thin'),
-    local('Poppins-Thin'), url('./files/poppins-latin-ext-100-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-100-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-100-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-100-normal.woff') format('woff');
   
 }
 /* poppins-latin-ext-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Poppins ExtraLight'),
-    local('Poppins-ExtraLight'), url('./files/poppins-latin-ext-200-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-200-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-200-normal.woff') format('woff');
   
 }
 /* poppins-latin-ext-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Poppins Light'),
-    local('Poppins-Light'), url('./files/poppins-latin-ext-300-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-300-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-300-normal.woff') format('woff');
   
 }
 /* poppins-latin-ext-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Poppins Regular'),
-    local('Poppins-Regular'), url('./files/poppins-latin-ext-400-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-400-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-400-normal.woff') format('woff');
   
 }
 /* poppins-latin-ext-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Poppins Medium'),
-    local('Poppins-Medium'), url('./files/poppins-latin-ext-500-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-500-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-500-normal.woff') format('woff');
   
 }
 /* poppins-latin-ext-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Poppins SemiBold'),
-    local('Poppins-SemiBold'), url('./files/poppins-latin-ext-600-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-600-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-600-normal.woff') format('woff');
   
 }
 /* poppins-latin-ext-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Poppins Bold'),
-    local('Poppins-Bold'), url('./files/poppins-latin-ext-700-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-700-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-700-normal.woff') format('woff');
   
 }
 /* poppins-latin-ext-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Poppins ExtraBold'),
-    local('Poppins-ExtraBold'), url('./files/poppins-latin-ext-800-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-800-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-800-normal.woff') format('woff');
   
 }
 /* poppins-latin-ext-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Poppins Black'),
-    local('Poppins-Black'), url('./files/poppins-latin-ext-900-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-900-normal.woff') format('woff');
+  src: url('./files/poppins-latin-ext-900-normal.woff2') format('woff2'), url('./files/poppins-latin-ext-900-normal.woff') format('woff');
   
 }

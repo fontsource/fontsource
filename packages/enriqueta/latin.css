@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Enriqueta Regular'),
-    local('Enriqueta-Regular'), url('./files/enriqueta-latin-400-normal.woff2') format('woff2'), url('./files/enriqueta-latin-400-normal.woff') format('woff');
+  src: url('./files/enriqueta-latin-400-normal.woff2') format('woff2'), url('./files/enriqueta-latin-400-normal.woff') format('woff');
   
 }
 /* enriqueta-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Enriqueta Medium'),
-    local('Enriqueta-Medium'), url('./files/enriqueta-latin-500-normal.woff2') format('woff2'), url('./files/enriqueta-latin-500-normal.woff') format('woff');
+  src: url('./files/enriqueta-latin-500-normal.woff2') format('woff2'), url('./files/enriqueta-latin-500-normal.woff') format('woff');
   
 }
 /* enriqueta-latin-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Enriqueta SemiBold'),
-    local('Enriqueta-SemiBold'), url('./files/enriqueta-latin-600-normal.woff2') format('woff2'), url('./files/enriqueta-latin-600-normal.woff') format('woff');
+  src: url('./files/enriqueta-latin-600-normal.woff2') format('woff2'), url('./files/enriqueta-latin-600-normal.woff') format('woff');
   
 }
 /* enriqueta-latin-700-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Enriqueta Bold'),
-    local('Enriqueta-Bold'), url('./files/enriqueta-latin-700-normal.woff2') format('woff2'), url('./files/enriqueta-latin-700-normal.woff') format('woff');
+  src: url('./files/enriqueta-latin-700-normal.woff2') format('woff2'), url('./files/enriqueta-latin-700-normal.woff') format('woff');
   
 }

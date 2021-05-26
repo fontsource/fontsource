@@ -4,8 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Arvo'), url('./files/arvo-latin-400-normal.woff2') format('woff2'), url('./files/arvo-latin-400-normal.woff') format('woff');
+  src: url('./files/arvo-latin-400-normal.woff2') format('woff2'), url('./files/arvo-latin-400-normal.woff') format('woff');
   
 }
 /* arvo-latin-700-normal*/
@@ -14,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Arvo Bold'),
-    local('Arvo-Bold'), url('./files/arvo-latin-700-normal.woff2') format('woff2'), url('./files/arvo-latin-700-normal.woff') format('woff');
+  src: url('./files/arvo-latin-700-normal.woff2') format('woff2'), url('./files/arvo-latin-700-normal.woff') format('woff');
   
 }

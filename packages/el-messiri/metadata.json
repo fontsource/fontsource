@@ -2,7 +2,7 @@
   "fontId": "el-messiri",
   "fontName": "El Messiri",
   "subsets": ["arabic", "cyrillic", "latin"],
-  "weights": ["400", "500", "600", "700"],
+  "weights": [400, 500, 600, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

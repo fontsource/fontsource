@@ -2,7 +2,7 @@
   "fontId": "karla",
   "fontName": "Karla",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["200", "300", "400", "500", "600", "700", "800"],
+  "weights": [200, 300, 400, 500, 600, 700, 800],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": {

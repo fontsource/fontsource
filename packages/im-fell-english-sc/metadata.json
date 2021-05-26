@@ -2,7 +2,7 @@
   "fontId": "im-fell-english-sc",
   "fontName": "IM Fell English SC",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

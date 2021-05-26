@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Trirong Thin'),
-    local('Trirong-Thin'), url('./files/trirong-vietnamese-100-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-100-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-100-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-100-normal.woff') format('woff');
   
 }
 /* trirong-vietnamese-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Trirong ExtraLight'),
-    local('Trirong-ExtraLight'), url('./files/trirong-vietnamese-200-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-200-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-200-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-200-normal.woff') format('woff');
   
 }
 /* trirong-vietnamese-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Trirong Light'),
-    local('Trirong-Light'), url('./files/trirong-vietnamese-300-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-300-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-300-normal.woff') format('woff');
   
 }
 /* trirong-vietnamese-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Trirong Regular'),
-    local('Trirong-Regular'), url('./files/trirong-vietnamese-400-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-400-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-400-normal.woff') format('woff');
   
 }
 /* trirong-vietnamese-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Trirong Medium'),
-    local('Trirong-Medium'), url('./files/trirong-vietnamese-500-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-500-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-500-normal.woff') format('woff');
   
 }
 /* trirong-vietnamese-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Trirong SemiBold'),
-    local('Trirong-SemiBold'), url('./files/trirong-vietnamese-600-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-600-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-600-normal.woff') format('woff');
   
 }
 /* trirong-vietnamese-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Trirong Bold'),
-    local('Trirong-Bold'), url('./files/trirong-vietnamese-700-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-700-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-700-normal.woff') format('woff');
   
 }
 /* trirong-vietnamese-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Trirong ExtraBold'),
-    local('Trirong-ExtraBold'), url('./files/trirong-vietnamese-800-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-800-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-800-normal.woff') format('woff');
   
 }
 /* trirong-vietnamese-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Trirong Black'),
-    local('Trirong-Black'), url('./files/trirong-vietnamese-900-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-900-normal.woff') format('woff');
+  src: url('./files/trirong-vietnamese-900-normal.woff2') format('woff2'), url('./files/trirong-vietnamese-900-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "manjari",
   "fontName": "Manjari",
   "subsets": ["latin", "latin-ext", "malayalam"],
-  "weights": ["100", "400", "700"],
+  "weights": [100, 400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

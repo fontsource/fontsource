@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('NanumGothic ExtraBold'),
-    local('NanumGothic-ExtraBold'), url('./files/nanum-gothic-latin-800-normal.woff2') format('woff2'), url('./files/nanum-gothic-latin-800-normal.woff') format('woff');
+  src: url('./files/nanum-gothic-latin-800-normal.woff2') format('woff2'), url('./files/nanum-gothic-latin-800-normal.woff') format('woff');
   
 }

@@ -4,8 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Sintony'), url('./files/sintony-latin-ext-400-normal.woff2') format('woff2'), url('./files/sintony-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/sintony-latin-ext-400-normal.woff2') format('woff2'), url('./files/sintony-latin-ext-400-normal.woff') format('woff');
   
 }
 /* sintony-latin-ext-700-normal*/
@@ -14,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Sintony Bold'),
-    local('Sintony-Bold'), url('./files/sintony-latin-ext-700-normal.woff2') format('woff2'), url('./files/sintony-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/sintony-latin-ext-700-normal.woff2') format('woff2'), url('./files/sintony-latin-ext-700-normal.woff') format('woff');
   
 }

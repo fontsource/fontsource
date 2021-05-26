@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Eczar Regular'),
-    local('Eczar-Regular'), url('./files/eczar-latin-400-normal.woff2') format('woff2'), url('./files/eczar-latin-400-normal.woff') format('woff');
+  src: url('./files/eczar-latin-400-normal.woff2') format('woff2'), url('./files/eczar-latin-400-normal.woff') format('woff');
   
 }
 /* eczar-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Eczar Medium'),
-    local('Eczar-Medium'), url('./files/eczar-latin-500-normal.woff2') format('woff2'), url('./files/eczar-latin-500-normal.woff') format('woff');
+  src: url('./files/eczar-latin-500-normal.woff2') format('woff2'), url('./files/eczar-latin-500-normal.woff') format('woff');
   
 }
 /* eczar-latin-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Eczar SemiBold'),
-    local('Eczar-SemiBold'), url('./files/eczar-latin-600-normal.woff2') format('woff2'), url('./files/eczar-latin-600-normal.woff') format('woff');
+  src: url('./files/eczar-latin-600-normal.woff2') format('woff2'), url('./files/eczar-latin-600-normal.woff') format('woff');
   
 }
 /* eczar-latin-700-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Eczar Bold'),
-    local('Eczar-Bold'), url('./files/eczar-latin-700-normal.woff2') format('woff2'), url('./files/eczar-latin-700-normal.woff') format('woff');
+  src: url('./files/eczar-latin-700-normal.woff2') format('woff2'), url('./files/eczar-latin-700-normal.woff') format('woff');
   
 }
 /* eczar-latin-800-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Eczar ExtraBold'),
-    local('Eczar-ExtraBold'), url('./files/eczar-latin-800-normal.woff2') format('woff2'), url('./files/eczar-latin-800-normal.woff') format('woff');
+  src: url('./files/eczar-latin-800-normal.woff2') format('woff2'), url('./files/eczar-latin-800-normal.woff') format('woff');
   
 }

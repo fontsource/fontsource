@@ -2,7 +2,7 @@
   "fontId": "hind-madurai",
   "fontName": "Hind Madurai",
   "subsets": ["latin", "latin-ext", "tamil"],
-  "weights": ["300", "400", "500", "600", "700"],
+  "weights": [300, 400, 500, 600, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Abhaya Libre Regular'),
-    local('AbhayaLibre-Regular'), url('./files/abhaya-libre-sinhala-400-normal.woff2') format('woff2'), url('./files/abhaya-libre-sinhala-400-normal.woff') format('woff');
+  src: url('./files/abhaya-libre-sinhala-400-normal.woff2') format('woff2'), url('./files/abhaya-libre-sinhala-400-normal.woff') format('woff');
   
 }

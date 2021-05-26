@@ -4,7 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Arvo-Italic'), url('./files/arvo-latin-400-italic.woff2') format('woff2'), url('./files/arvo-latin-400-italic.woff') format('woff');
+  src: url('./files/arvo-latin-400-italic.woff2') format('woff2'), url('./files/arvo-latin-400-italic.woff') format('woff');
   
 }

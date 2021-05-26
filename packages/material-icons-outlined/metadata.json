@@ -2,7 +2,7 @@
   "fontId": "material-icons-outlined",
   "fontName": "Material Icons Outlined",
   "subsets": ["all"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "all",
   "variable": false,

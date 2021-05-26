@@ -2,7 +2,7 @@
   "fontId": "varela-round",
   "fontName": "Varela Round",
   "subsets": ["hebrew", "latin", "latin-ext", "vietnamese"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

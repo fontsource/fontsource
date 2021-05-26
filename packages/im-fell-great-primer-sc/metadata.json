@@ -2,7 +2,7 @@
   "fontId": "im-fell-great-primer-sc",
   "fontName": "IM Fell Great Primer SC",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

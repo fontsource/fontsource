@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Big Shoulders Display Thin'),
-    local('BigShouldersDisplay-Thin'), url('./files/big-shoulders-display-vietnamese-100-normal.woff2') format('woff2'), url('./files/big-shoulders-display-vietnamese-100-normal.woff') format('woff');
+  src: url('./files/big-shoulders-display-vietnamese-100-normal.woff2') format('woff2'), url('./files/big-shoulders-display-vietnamese-100-normal.woff') format('woff');
   
 }

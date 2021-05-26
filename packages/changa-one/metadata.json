@@ -2,7 +2,7 @@
   "fontId": "changa-one",
   "fontName": "Changa One",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

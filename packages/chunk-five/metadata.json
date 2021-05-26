@@ -2,7 +2,7 @@
   "fontId": "chunk-five",
   "fontName": "Chunk Five",
   "subsets": ["latin"],
-  "weights": ["800"],
+  "weights": [800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

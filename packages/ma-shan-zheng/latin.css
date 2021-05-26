@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Ma Shan Zheng Regular'),
-    local('MaShanZheng-Regular'), url('./files/ma-shan-zheng-latin-400-normal.woff2') format('woff2'), url('./files/ma-shan-zheng-latin-400-normal.woff') format('woff');
+  src: url('./files/ma-shan-zheng-latin-400-normal.woff2') format('woff2'), url('./files/ma-shan-zheng-latin-400-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "gothic-a1",
   "fontName": "Gothic A1",
   "subsets": ["korean", "latin"],
-  "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

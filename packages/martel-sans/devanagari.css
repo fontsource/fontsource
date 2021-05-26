@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Martel Sans ExtraLight'),
-    local('MartelSans-ExtraLight'), url('./files/martel-sans-devanagari-200-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-200-normal.woff') format('woff');
+  src: url('./files/martel-sans-devanagari-200-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-200-normal.woff') format('woff');
   
 }
 /* martel-sans-devanagari-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Martel Sans Light'),
-    local('MartelSans-Light'), url('./files/martel-sans-devanagari-300-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-300-normal.woff') format('woff');
+  src: url('./files/martel-sans-devanagari-300-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-300-normal.woff') format('woff');
   
 }
 /* martel-sans-devanagari-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Martel Sans Regular'),
-    local('MartelSans-Regular'), url('./files/martel-sans-devanagari-400-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-400-normal.woff') format('woff');
+  src: url('./files/martel-sans-devanagari-400-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-400-normal.woff') format('woff');
   
 }
 /* martel-sans-devanagari-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Martel Sans SemiBold'),
-    local('MartelSans-SemiBold'), url('./files/martel-sans-devanagari-600-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-600-normal.woff') format('woff');
+  src: url('./files/martel-sans-devanagari-600-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-600-normal.woff') format('woff');
   
 }
 /* martel-sans-devanagari-700-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Martel Sans Bold'),
-    local('MartelSans-Bold'), url('./files/martel-sans-devanagari-700-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-700-normal.woff') format('woff');
+  src: url('./files/martel-sans-devanagari-700-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-700-normal.woff') format('woff');
   
 }
 /* martel-sans-devanagari-800-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Martel Sans ExtraBold'),
-    local('MartelSans-ExtraBold'), url('./files/martel-sans-devanagari-800-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-800-normal.woff') format('woff');
+  src: url('./files/martel-sans-devanagari-800-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-800-normal.woff') format('woff');
   
 }
 /* martel-sans-devanagari-900-normal*/
@@ -70,8 +58,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Martel Sans Black'),
-    local('MartelSans-Black'), url('./files/martel-sans-devanagari-900-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-900-normal.woff') format('woff');
+  src: url('./files/martel-sans-devanagari-900-normal.woff2') format('woff2'), url('./files/martel-sans-devanagari-900-normal.woff') format('woff');
   
 }

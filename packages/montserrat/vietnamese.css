@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Montserrat Thin'),
-    local('Montserrat-Thin'), url('./files/montserrat-vietnamese-100-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-100-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-100-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-100-normal.woff') format('woff');
   
 }
 /* montserrat-vietnamese-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Montserrat ExtraLight'),
-    local('Montserrat-ExtraLight'), url('./files/montserrat-vietnamese-200-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-200-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-200-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-200-normal.woff') format('woff');
   
 }
 /* montserrat-vietnamese-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Montserrat Light'),
-    local('Montserrat-Light'), url('./files/montserrat-vietnamese-300-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-300-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-300-normal.woff') format('woff');
   
 }
 /* montserrat-vietnamese-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Montserrat Regular'),
-    local('Montserrat-Regular'), url('./files/montserrat-vietnamese-400-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-400-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-400-normal.woff') format('woff');
   
 }
 /* montserrat-vietnamese-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Montserrat Medium'),
-    local('Montserrat-Medium'), url('./files/montserrat-vietnamese-500-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-500-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-500-normal.woff') format('woff');
   
 }
 /* montserrat-vietnamese-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Montserrat SemiBold'),
-    local('Montserrat-SemiBold'), url('./files/montserrat-vietnamese-600-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-600-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-600-normal.woff') format('woff');
   
 }
 /* montserrat-vietnamese-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Montserrat Bold'),
-    local('Montserrat-Bold'), url('./files/montserrat-vietnamese-700-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-700-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-700-normal.woff') format('woff');
   
 }
 /* montserrat-vietnamese-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Montserrat ExtraBold'),
-    local('Montserrat-ExtraBold'), url('./files/montserrat-vietnamese-800-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-800-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-800-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-800-normal.woff') format('woff');
   
 }
 /* montserrat-vietnamese-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Montserrat Black'),
-    local('Montserrat-Black'), url('./files/montserrat-vietnamese-900-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-900-normal.woff') format('woff');
+  src: url('./files/montserrat-vietnamese-900-normal.woff2') format('woff2'), url('./files/montserrat-vietnamese-900-normal.woff') format('woff');
   
 }

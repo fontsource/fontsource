@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Love Ya Like A Sister Regular'),
-    local('LoveYaLikeASister-Regular'), url('./files/love-ya-like-a-sister-latin-400-normal.woff2') format('woff2'), url('./files/love-ya-like-a-sister-latin-400-normal.woff') format('woff');
+  src: url('./files/love-ya-like-a-sister-latin-400-normal.woff2') format('woff2'), url('./files/love-ya-like-a-sister-latin-400-normal.woff') format('woff');
   
 }

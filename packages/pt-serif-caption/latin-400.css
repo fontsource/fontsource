@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('PT Serif Caption'),
-    local('PTSerif-Caption'), url('./files/pt-serif-caption-latin-400-normal.woff2') format('woff2'), url('./files/pt-serif-caption-latin-400-normal.woff') format('woff');
+  src: url('./files/pt-serif-caption-latin-400-normal.woff2') format('woff2'), url('./files/pt-serif-caption-latin-400-normal.woff') format('woff');
   
 }

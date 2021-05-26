@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Expletus Sans'),
-    local('ExpletusSans'), url('./files/expletus-sans-latin-400-normal.woff2') format('woff2'), url('./files/expletus-sans-latin-400-normal.woff') format('woff');
+  src: url('./files/expletus-sans-latin-400-normal.woff2') format('woff2'), url('./files/expletus-sans-latin-400-normal.woff') format('woff');
   
 }
 /* expletus-sans-latin-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Expletus Sans Medium'),
-    local('ExpletusSans-Medium'), url('./files/expletus-sans-latin-500-normal.woff2') format('woff2'), url('./files/expletus-sans-latin-500-normal.woff') format('woff');
+  src: url('./files/expletus-sans-latin-500-normal.woff2') format('woff2'), url('./files/expletus-sans-latin-500-normal.woff') format('woff');
   
 }
 /* expletus-sans-latin-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Expletus Sans SemiBold'),
-    local('ExpletusSans-SemiBold'), url('./files/expletus-sans-latin-600-normal.woff2') format('woff2'), url('./files/expletus-sans-latin-600-normal.woff') format('woff');
+  src: url('./files/expletus-sans-latin-600-normal.woff2') format('woff2'), url('./files/expletus-sans-latin-600-normal.woff') format('woff');
   
 }
 /* expletus-sans-latin-700-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Expletus Sans Bold'),
-    local('ExpletusSans-Bold'), url('./files/expletus-sans-latin-700-normal.woff2') format('woff2'), url('./files/expletus-sans-latin-700-normal.woff') format('woff');
+  src: url('./files/expletus-sans-latin-700-normal.woff2') format('woff2'), url('./files/expletus-sans-latin-700-normal.woff') format('woff');
   
 }

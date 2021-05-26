@@ -2,7 +2,7 @@
   "fontId": "uncial-antiqua",
   "fontName": "Uncial Antiqua",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

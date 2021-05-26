@@ -2,7 +2,7 @@
   "fontId": "reenie-beanie",
   "fontName": "Reenie Beanie",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

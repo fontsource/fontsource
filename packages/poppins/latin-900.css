@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Poppins Black'),
-    local('Poppins-Black'), url('./files/poppins-latin-900-normal.woff2') format('woff2'), url('./files/poppins-latin-900-normal.woff') format('woff');
+  src: url('./files/poppins-latin-900-normal.woff2') format('woff2'), url('./files/poppins-latin-900-normal.woff') format('woff');
   
 }

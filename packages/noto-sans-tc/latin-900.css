@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Noto Sans TC Black'),
-    local('NotoSansTC-Black'), url('./files/noto-sans-tc-latin-900-normal.woff2') format('woff2'), url('./files/noto-sans-tc-latin-900-normal.woff') format('woff');
+  src: url('./files/noto-sans-tc-latin-900-normal.woff2') format('woff2'), url('./files/noto-sans-tc-latin-900-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "dm-serif-text",
   "fontName": "DM Serif Text",
   "subsets": ["latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

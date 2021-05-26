@@ -2,7 +2,7 @@
   "fontId": "montserrat-subrayada",
   "fontName": "Montserrat Subrayada",
   "subsets": ["latin"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

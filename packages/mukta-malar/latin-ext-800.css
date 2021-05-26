@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Mukta Malar ExtraBold'),
-    local('MuktaMalar-ExtraBold'), url('./files/mukta-malar-latin-ext-800-normal.woff2') format('woff2'), url('./files/mukta-malar-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/mukta-malar-latin-ext-800-normal.woff2') format('woff2'), url('./files/mukta-malar-latin-ext-800-normal.woff') format('woff');
   
 }

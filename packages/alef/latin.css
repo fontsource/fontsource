@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Alef Regular'),
-    local('Alef-Regular'), url('./files/alef-latin-400-normal.woff2') format('woff2'), url('./files/alef-latin-400-normal.woff') format('woff');
+  src: url('./files/alef-latin-400-normal.woff2') format('woff2'), url('./files/alef-latin-400-normal.woff') format('woff');
   
 }
 /* alef-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Alef Bold'),
-    local('Alef-Bold'), url('./files/alef-latin-700-normal.woff2') format('woff2'), url('./files/alef-latin-700-normal.woff') format('woff');
+  src: url('./files/alef-latin-700-normal.woff2') format('woff2'), url('./files/alef-latin-700-normal.woff') format('woff');
   
 }

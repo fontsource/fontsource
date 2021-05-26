@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Hind Light'),
-    local('Hind-Light'), url('./files/hind-devanagari-300-normal.woff2') format('woff2'), url('./files/hind-devanagari-300-normal.woff') format('woff');
+  src: url('./files/hind-devanagari-300-normal.woff2') format('woff2'), url('./files/hind-devanagari-300-normal.woff') format('woff');
   
 }

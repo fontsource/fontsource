@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Cabin Condensed'),
-    local('CabinCondensed-Regular'), url('./files/cabin-condensed-latin-ext-400-normal.woff2') format('woff2'), url('./files/cabin-condensed-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/cabin-condensed-latin-ext-400-normal.woff2') format('woff2'), url('./files/cabin-condensed-latin-ext-400-normal.woff') format('woff');
   
 }
 /* cabin-condensed-latin-ext-500-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Cabin Condensed Medium'),
-    local('CabinCondensed-Medium'), url('./files/cabin-condensed-latin-ext-500-normal.woff2') format('woff2'), url('./files/cabin-condensed-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/cabin-condensed-latin-ext-500-normal.woff2') format('woff2'), url('./files/cabin-condensed-latin-ext-500-normal.woff') format('woff');
   
 }
 /* cabin-condensed-latin-ext-600-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Cabin Condensed SemiBold'),
-    local('CabinCondensed-SemiBold'), url('./files/cabin-condensed-latin-ext-600-normal.woff2') format('woff2'), url('./files/cabin-condensed-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/cabin-condensed-latin-ext-600-normal.woff2') format('woff2'), url('./files/cabin-condensed-latin-ext-600-normal.woff') format('woff');
   
 }
 /* cabin-condensed-latin-ext-700-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Cabin Condensed Bold'),
-    local('CabinCondensed-Bold'), url('./files/cabin-condensed-latin-ext-700-normal.woff2') format('woff2'), url('./files/cabin-condensed-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/cabin-condensed-latin-ext-700-normal.woff2') format('woff2'), url('./files/cabin-condensed-latin-ext-700-normal.woff') format('woff');
   
 }

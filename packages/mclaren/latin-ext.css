@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('McLaren'),
-    local('McLaren-Regular'), url('./files/mclaren-latin-ext-400-normal.woff2') format('woff2'), url('./files/mclaren-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/mclaren-latin-ext-400-normal.woff2') format('woff2'), url('./files/mclaren-latin-ext-400-normal.woff') format('woff');
   
 }

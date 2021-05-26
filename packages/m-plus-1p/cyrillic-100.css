@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('M PLUS 1p Thin'),
-    local('MPLUS1p-Thin'), url('./files/m-plus-1p-cyrillic-100-normal.woff2') format('woff2'), url('./files/m-plus-1p-cyrillic-100-normal.woff') format('woff');
+  src: url('./files/m-plus-1p-cyrillic-100-normal.woff2') format('woff2'), url('./files/m-plus-1p-cyrillic-100-normal.woff') format('woff');
   
 }

@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Frank Ruhl Libre Light'),
-    local('FrankRuhlLibre-Light'), url('./files/frank-ruhl-libre-latin-300-normal.woff2') format('woff2'), url('./files/frank-ruhl-libre-latin-300-normal.woff') format('woff');
+  src: url('./files/frank-ruhl-libre-latin-300-normal.woff2') format('woff2'), url('./files/frank-ruhl-libre-latin-300-normal.woff') format('woff');
   
 }

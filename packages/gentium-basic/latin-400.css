@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Gentium Basic'),
-    local('GentiumBasic'), url('./files/gentium-basic-latin-400-normal.woff2') format('woff2'), url('./files/gentium-basic-latin-400-normal.woff') format('woff');
+  src: url('./files/gentium-basic-latin-400-normal.woff2') format('woff2'), url('./files/gentium-basic-latin-400-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "syncopate",
   "fontName": "Syncopate",
   "subsets": ["latin"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

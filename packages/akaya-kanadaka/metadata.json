@@ -2,7 +2,7 @@
   "fontId": "akaya-kanadaka",
   "fontName": "Akaya Kanadaka",
   "subsets": ["kannada", "latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

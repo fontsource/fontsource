@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Martel ExtraBold'),
-    local('Martel-ExtraBold'), url('./files/martel-latin-ext-800-normal.woff2') format('woff2'), url('./files/martel-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/martel-latin-ext-800-normal.woff2') format('woff2'), url('./files/martel-latin-ext-800-normal.woff') format('woff');
   
 }

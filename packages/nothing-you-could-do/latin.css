@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Nothing You Could Do'),
-    local('NothingYouCouldDo'), url('./files/nothing-you-could-do-latin-400-normal.woff2') format('woff2'), url('./files/nothing-you-could-do-latin-400-normal.woff') format('woff');
+  src: url('./files/nothing-you-could-do-latin-400-normal.woff2') format('woff2'), url('./files/nothing-you-could-do-latin-400-normal.woff') format('woff');
   
 }

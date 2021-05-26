@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Mali ExtraLight'),
-    local('Mali-ExtraLight'), url('./files/mali-latin-ext-200-normal.woff2') format('woff2'), url('./files/mali-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/mali-latin-ext-200-normal.woff2') format('woff2'), url('./files/mali-latin-ext-200-normal.woff') format('woff');
   
 }
 /* mali-latin-ext-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Mali Light'),
-    local('Mali-Light'), url('./files/mali-latin-ext-300-normal.woff2') format('woff2'), url('./files/mali-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/mali-latin-ext-300-normal.woff2') format('woff2'), url('./files/mali-latin-ext-300-normal.woff') format('woff');
   
 }
 /* mali-latin-ext-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Mali Regular'),
-    local('Mali-Regular'), url('./files/mali-latin-ext-400-normal.woff2') format('woff2'), url('./files/mali-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/mali-latin-ext-400-normal.woff2') format('woff2'), url('./files/mali-latin-ext-400-normal.woff') format('woff');
   
 }
 /* mali-latin-ext-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Mali Medium'),
-    local('Mali-Medium'), url('./files/mali-latin-ext-500-normal.woff2') format('woff2'), url('./files/mali-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/mali-latin-ext-500-normal.woff2') format('woff2'), url('./files/mali-latin-ext-500-normal.woff') format('woff');
   
 }
 /* mali-latin-ext-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Mali SemiBold'),
-    local('Mali-SemiBold'), url('./files/mali-latin-ext-600-normal.woff2') format('woff2'), url('./files/mali-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/mali-latin-ext-600-normal.woff2') format('woff2'), url('./files/mali-latin-ext-600-normal.woff') format('woff');
   
 }
 /* mali-latin-ext-700-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Mali Bold'),
-    local('Mali-Bold'), url('./files/mali-latin-ext-700-normal.woff2') format('woff2'), url('./files/mali-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/mali-latin-ext-700-normal.woff2') format('woff2'), url('./files/mali-latin-ext-700-normal.woff') format('woff');
   
 }

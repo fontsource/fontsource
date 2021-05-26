@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Barlow ExtraBold'),
-    local('Barlow-ExtraBold'), url('./files/barlow-latin-ext-800-normal.woff2') format('woff2'), url('./files/barlow-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/barlow-latin-ext-800-normal.woff2') format('woff2'), url('./files/barlow-latin-ext-800-normal.woff') format('woff');
   
 }

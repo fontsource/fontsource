@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Fanwood Text Italic'),
-    local('FanwoodText-Italic'), url('./files/fanwood-text-latin-400-italic.woff2') format('woff2'), url('./files/fanwood-text-latin-400-italic.woff') format('woff');
+  src: url('./files/fanwood-text-latin-400-italic.woff2') format('woff2'), url('./files/fanwood-text-latin-400-italic.woff') format('woff');
   
 }

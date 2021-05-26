@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Chivo Light'),
-    local('Chivo-Light'), url('./files/chivo-latin-ext-300-normal.woff2') format('woff2'), url('./files/chivo-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/chivo-latin-ext-300-normal.woff2') format('woff2'), url('./files/chivo-latin-ext-300-normal.woff') format('woff');
   
 }
 /* chivo-latin-ext-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Chivo Regular'),
-    local('Chivo-Regular'), url('./files/chivo-latin-ext-400-normal.woff2') format('woff2'), url('./files/chivo-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/chivo-latin-ext-400-normal.woff2') format('woff2'), url('./files/chivo-latin-ext-400-normal.woff') format('woff');
   
 }
 /* chivo-latin-ext-700-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Chivo Bold'),
-    local('Chivo-Bold'), url('./files/chivo-latin-ext-700-normal.woff2') format('woff2'), url('./files/chivo-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/chivo-latin-ext-700-normal.woff2') format('woff2'), url('./files/chivo-latin-ext-700-normal.woff') format('woff');
   
 }
 /* chivo-latin-ext-900-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Chivo Black'),
-    local('Chivo-Black'), url('./files/chivo-latin-ext-900-normal.woff2') format('woff2'), url('./files/chivo-latin-ext-900-normal.woff') format('woff');
+  src: url('./files/chivo-latin-ext-900-normal.woff2') format('woff2'), url('./files/chivo-latin-ext-900-normal.woff') format('woff');
   
 }

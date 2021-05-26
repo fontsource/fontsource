@@ -2,7 +2,7 @@
   "fontId": "kameron",
   "fontName": "Kameron",
   "subsets": ["latin"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

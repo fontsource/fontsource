@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Do Hyeon Regular'),
-    local('DoHyeon-Regular'), url('./files/do-hyeon-latin-400-normal.woff2') format('woff2'), url('./files/do-hyeon-latin-400-normal.woff') format('woff');
+  src: url('./files/do-hyeon-latin-400-normal.woff2') format('woff2'), url('./files/do-hyeon-latin-400-normal.woff') format('woff');
   
 }

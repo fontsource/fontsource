@@ -2,7 +2,7 @@
   "fontId": "im-fell-dw-pica-sc",
   "fontName": "IM Fell DW Pica SC",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "love-ya-like-a-sister",
   "fontName": "Love Ya Like A Sister",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

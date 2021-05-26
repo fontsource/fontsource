@@ -2,7 +2,7 @@
   "fontId": "expletus-sans",
   "fontName": "Expletus Sans",
   "subsets": ["latin"],
-  "weights": ["400", "500", "600", "700"],
+  "weights": [400, 500, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,

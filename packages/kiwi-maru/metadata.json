@@ -2,7 +2,7 @@
   "fontId": "kiwi-maru",
   "fontName": "Kiwi Maru",
   "subsets": ["cyrillic", "japanese", "latin", "latin-ext"],
-  "weights": ["300", "400", "500"],
+  "weights": [300, 400, 500],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

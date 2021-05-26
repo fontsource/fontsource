@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Clicker Script'),
-    local('ClickerScript-Regular'), url('./files/clicker-script-latin-400-normal.woff2') format('woff2'), url('./files/clicker-script-latin-400-normal.woff') format('woff');
+  src: url('./files/clicker-script-latin-400-normal.woff2') format('woff2'), url('./files/clicker-script-latin-400-normal.woff') format('woff');
   
 }

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src:
-    local('Saira SemiCondensed Thin'),
-    local('SairaSemiCondensed-Thin'), url('./files/saira-semi-condensed-latin-ext-100-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-100-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-100-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-100-normal.woff') format('woff');
   
 }
 /* saira-semi-condensed-latin-ext-200-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Saira SemiCondensed ExtraLight'),
-    local('SairaSemiCondensed-ExtraLight'), url('./files/saira-semi-condensed-latin-ext-200-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-200-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-200-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-200-normal.woff') format('woff');
   
 }
 /* saira-semi-condensed-latin-ext-300-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Saira SemiCondensed Light'),
-    local('SairaSemiCondensed-Light'), url('./files/saira-semi-condensed-latin-ext-300-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-300-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-300-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-300-normal.woff') format('woff');
   
 }
 /* saira-semi-condensed-latin-ext-400-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Saira SemiCondensed Regular'),
-    local('SairaSemiCondensed-Regular'), url('./files/saira-semi-condensed-latin-ext-400-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-400-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-400-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-400-normal.woff') format('woff');
   
 }
 /* saira-semi-condensed-latin-ext-500-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Saira SemiCondensed Medium'),
-    local('SairaSemiCondensed-Medium'), url('./files/saira-semi-condensed-latin-ext-500-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-500-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-500-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-500-normal.woff') format('woff');
   
 }
 /* saira-semi-condensed-latin-ext-600-normal*/
@@ -59,9 +49,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Saira SemiCondensed SemiBold'),
-    local('SairaSemiCondensed-SemiBold'), url('./files/saira-semi-condensed-latin-ext-600-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-600-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-600-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-600-normal.woff') format('woff');
   
 }
 /* saira-semi-condensed-latin-ext-700-normal*/
@@ -70,9 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Saira SemiCondensed Bold'),
-    local('SairaSemiCondensed-Bold'), url('./files/saira-semi-condensed-latin-ext-700-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-700-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-700-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-700-normal.woff') format('woff');
   
 }
 /* saira-semi-condensed-latin-ext-800-normal*/
@@ -81,9 +67,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('Saira SemiCondensed ExtraBold'),
-    local('SairaSemiCondensed-ExtraBold'), url('./files/saira-semi-condensed-latin-ext-800-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-800-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-800-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-800-normal.woff') format('woff');
   
 }
 /* saira-semi-condensed-latin-ext-900-normal*/
@@ -92,8 +76,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Saira SemiCondensed Black'),
-    local('SairaSemiCondensed-Black'), url('./files/saira-semi-condensed-latin-ext-900-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-900-normal.woff') format('woff');
+  src: url('./files/saira-semi-condensed-latin-ext-900-normal.woff2') format('woff2'), url('./files/saira-semi-condensed-latin-ext-900-normal.woff') format('woff');
   
 }

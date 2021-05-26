@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Merriweather Light'),
-    local('Merriweather-Light'), url('./files/merriweather-cyrillic-300-normal.woff2') format('woff2'), url('./files/merriweather-cyrillic-300-normal.woff') format('woff');
+  src: url('./files/merriweather-cyrillic-300-normal.woff2') format('woff2'), url('./files/merriweather-cyrillic-300-normal.woff') format('woff');
   
 }
 /* merriweather-cyrillic-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Merriweather Regular'),
-    local('Merriweather-Regular'), url('./files/merriweather-cyrillic-400-normal.woff2') format('woff2'), url('./files/merriweather-cyrillic-400-normal.woff') format('woff');
+  src: url('./files/merriweather-cyrillic-400-normal.woff2') format('woff2'), url('./files/merriweather-cyrillic-400-normal.woff') format('woff');
   
 }
 /* merriweather-cyrillic-700-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Merriweather Bold'),
-    local('Merriweather-Bold'), url('./files/merriweather-cyrillic-700-normal.woff2') format('woff2'), url('./files/merriweather-cyrillic-700-normal.woff') format('woff');
+  src: url('./files/merriweather-cyrillic-700-normal.woff2') format('woff2'), url('./files/merriweather-cyrillic-700-normal.woff') format('woff');
   
 }
 /* merriweather-cyrillic-900-normal*/
@@ -37,8 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Merriweather Black'),
-    local('Merriweather-Black'), url('./files/merriweather-cyrillic-900-normal.woff2') format('woff2'), url('./files/merriweather-cyrillic-900-normal.woff') format('woff');
+  src: url('./files/merriweather-cyrillic-900-normal.woff2') format('woff2'), url('./files/merriweather-cyrillic-900-normal.woff') format('woff');
   
 }

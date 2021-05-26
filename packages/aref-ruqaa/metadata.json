@@ -2,7 +2,7 @@
   "fontId": "aref-ruqaa",
   "fontName": "Aref Ruqaa",
   "subsets": ["arabic", "latin", "latin-ext"],
-  "weights": ["400", "700"],
+  "weights": [400, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -2,7 +2,7 @@
   "fontId": "solway",
   "fontName": "Solway",
   "subsets": ["latin"],
-  "weights": ["300", "400", "500", "700", "800"],
+  "weights": [300, 400, 500, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

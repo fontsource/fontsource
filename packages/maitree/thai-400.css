@@ -4,7 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Maitree'), url('./files/maitree-thai-400-normal.woff2') format('woff2'), url('./files/maitree-thai-400-normal.woff') format('woff');
+  src: url('./files/maitree-thai-400-normal.woff2') format('woff2'), url('./files/maitree-thai-400-normal.woff') format('woff');
   
 }

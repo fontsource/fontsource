@@ -2,7 +2,7 @@
   "fontId": "gupter",
   "fontName": "Gupter",
   "subsets": ["latin"],
-  "weights": ["400", "500", "700"],
+  "weights": [400, 500, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

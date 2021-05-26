@@ -2,7 +2,7 @@
   "fontId": "zcool-xiaowei",
   "fontName": "ZCOOL XiaoWei",
   "subsets": ["chinese-simplified", "latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

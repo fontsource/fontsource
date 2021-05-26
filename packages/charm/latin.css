@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Charm Regular'),
-    local('Charm-Regular'), url('./files/charm-latin-400-normal.woff2') format('woff2'), url('./files/charm-latin-400-normal.woff') format('woff');
+  src: url('./files/charm-latin-400-normal.woff2') format('woff2'), url('./files/charm-latin-400-normal.woff') format('woff');
   
 }
 /* charm-latin-700-normal*/
@@ -15,8 +13,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Charm Bold'),
-    local('Charm-Bold'), url('./files/charm-latin-700-normal.woff2') format('woff2'), url('./files/charm-latin-700-normal.woff') format('woff');
+  src: url('./files/charm-latin-700-normal.woff2') format('woff2'), url('./files/charm-latin-700-normal.woff') format('woff');
   
 }

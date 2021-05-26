@@ -2,7 +2,7 @@
   "fontId": "train-one",
   "fontName": "Train One",
   "subsets": ["cyrillic", "japanese", "latin", "latin-ext"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

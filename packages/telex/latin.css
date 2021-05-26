@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Telex Regular'),
-    local('Telex-Regular'), url('./files/telex-latin-400-normal.woff2') format('woff2'), url('./files/telex-latin-400-normal.woff') format('woff');
+  src: url('./files/telex-latin-400-normal.woff2') format('woff2'), url('./files/telex-latin-400-normal.woff') format('woff');
   
 }

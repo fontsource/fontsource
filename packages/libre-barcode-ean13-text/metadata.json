@@ -2,7 +2,7 @@
   "fontId": "libre-barcode-ean13-text",
   "fontName": "Libre Barcode EAN13 Text",
   "subsets": ["latin"],
-  "weights": ["400"],
+  "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Bai Jamjuree ExtraLight'),
-    local('BaiJamjuree-ExtraLight'), url('./files/bai-jamjuree-vietnamese-200-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-200-normal.woff') format('woff');
+  src: url('./files/bai-jamjuree-vietnamese-200-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-200-normal.woff') format('woff');
   
 }
 /* bai-jamjuree-vietnamese-300-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Bai Jamjuree Light'),
-    local('BaiJamjuree-Light'), url('./files/bai-jamjuree-vietnamese-300-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-300-normal.woff') format('woff');
+  src: url('./files/bai-jamjuree-vietnamese-300-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-300-normal.woff') format('woff');
   
 }
 /* bai-jamjuree-vietnamese-400-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Bai Jamjuree Regular'),
-    local('BaiJamjuree-Regular'), url('./files/bai-jamjuree-vietnamese-400-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-400-normal.woff') format('woff');
+  src: url('./files/bai-jamjuree-vietnamese-400-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-400-normal.woff') format('woff');
   
 }
 /* bai-jamjuree-vietnamese-500-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Bai Jamjuree Medium'),
-    local('BaiJamjuree-Medium'), url('./files/bai-jamjuree-vietnamese-500-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-500-normal.woff') format('woff');
+  src: url('./files/bai-jamjuree-vietnamese-500-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-500-normal.woff') format('woff');
   
 }
 /* bai-jamjuree-vietnamese-600-normal*/
@@ -48,9 +40,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Bai Jamjuree SemiBold'),
-    local('BaiJamjuree-SemiBold'), url('./files/bai-jamjuree-vietnamese-600-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-600-normal.woff') format('woff');
+  src: url('./files/bai-jamjuree-vietnamese-600-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-600-normal.woff') format('woff');
   
 }
 /* bai-jamjuree-vietnamese-700-normal*/
@@ -59,8 +49,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Bai Jamjuree Bold'),
-    local('BaiJamjuree-Bold'), url('./files/bai-jamjuree-vietnamese-700-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-700-normal.woff') format('woff');
+  src: url('./files/bai-jamjuree-vietnamese-700-normal.woff2') format('woff2'), url('./files/bai-jamjuree-vietnamese-700-normal.woff') format('woff');
   
 }

@@ -2,7 +2,7 @@
   "fontId": "clear-sans",
   "fontName": "Clear Sans",
   "subsets": ["all"],
-  "weights": ["100", "300", "400", "500", "700"],
+  "weights": [100, 300, 400, 500, 700],
   "styles": ["normal", "italic"],
   "defSubset": "all",
   "variable": false,

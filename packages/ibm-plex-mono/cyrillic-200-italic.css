@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('IBM Plex Mono ExtraLight Italic'),
-    local('IBMPlexMono-ExtraLightItalic'), url('./files/ibm-plex-mono-cyrillic-200-italic.woff2') format('woff2'), url('./files/ibm-plex-mono-cyrillic-200-italic.woff') format('woff');
+  src: url('./files/ibm-plex-mono-cyrillic-200-italic.woff2') format('woff2'), url('./files/ibm-plex-mono-cyrillic-200-italic.woff') format('woff');
   
 }

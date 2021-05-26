@@ -2,7 +2,7 @@
   "fontId": "arima-madurai",
   "fontName": "Arima Madurai",
   "subsets": ["latin", "latin-ext", "tamil", "vietnamese"],
-  "weights": ["100", "200", "300", "400", "500", "700", "800", "900"],
+  "weights": [100, 200, 300, 400, 500, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

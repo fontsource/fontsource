@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 200;
-  src:
-    local('Barlow Condensed ExtraLight'),
-    local('BarlowCondensed-ExtraLight'), url('./files/barlow-condensed-latin-200-normal.woff2') format('woff2'), url('./files/barlow-condensed-latin-200-normal.woff') format('woff');
+  src: url('./files/barlow-condensed-latin-200-normal.woff2') format('woff2'), url('./files/barlow-condensed-latin-200-normal.woff') format('woff');
   
 }

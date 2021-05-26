@@ -2,7 +2,7 @@
   "fontId": "dancing-script",
   "fontName": "Dancing Script",
   "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": ["400", "500", "600", "700"],
+  "weights": [400, 500, 600, 700],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": {

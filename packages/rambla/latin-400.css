@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Rambla'),
-    local('Rambla-Regular'), url('./files/rambla-latin-400-normal.woff2') format('woff2'), url('./files/rambla-latin-400-normal.woff') format('woff');
+  src: url('./files/rambla-latin-400-normal.woff2') format('woff2'), url('./files/rambla-latin-400-normal.woff') format('woff');
   
 }

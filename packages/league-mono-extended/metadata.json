@@ -2,7 +2,7 @@
   "fontId": "league-mono-extended",
   "fontName": "League Mono Extended",
   "subsets": ["latin-ext"],
-  "weights": ["100", "200", "300", "400", "500", "600", "700", "800"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin-ext",
   "variable": false,

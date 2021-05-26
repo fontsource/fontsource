@@ -2,7 +2,7 @@
   "fontId": "khula",
   "fontName": "Khula",
   "subsets": ["devanagari", "latin", "latin-ext"],
-  "weights": ["300", "400", "600", "700", "800"],
+  "weights": [300, 400, 600, 700, 800],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

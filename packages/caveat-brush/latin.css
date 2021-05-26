@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Caveat Brush'),
-    local('CaveatBrush-Regular'), url('./files/caveat-brush-latin-400-normal.woff2') format('woff2'), url('./files/caveat-brush-latin-400-normal.woff') format('woff');
+  src: url('./files/caveat-brush-latin-400-normal.woff2') format('woff2'), url('./files/caveat-brush-latin-400-normal.woff') format('woff');
   
 }

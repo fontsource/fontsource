@@ -4,8 +4,6 @@
   font-style: italic;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Trirong Light Italic'),
-    local('Trirong-LightItalic'), url('./files/trirong-latin-300-italic.woff2') format('woff2'), url('./files/trirong-latin-300-italic.woff') format('woff');
+  src: url('./files/trirong-latin-300-italic.woff2') format('woff2'), url('./files/trirong-latin-300-italic.woff') format('woff');
   
 }

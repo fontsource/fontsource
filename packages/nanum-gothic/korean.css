@@ -4,8 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('NanumGothic'), url('./files/nanum-gothic-korean-400-normal.woff2') format('woff2'), url('./files/nanum-gothic-korean-400-normal.woff') format('woff');
+  src: url('./files/nanum-gothic-korean-400-normal.woff2') format('woff2'), url('./files/nanum-gothic-korean-400-normal.woff') format('woff');
   
 }
 /* nanum-gothic-korean-700-normal*/
@@ -14,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('NanumGothic Bold'),
-    local('NanumGothic-Bold'), url('./files/nanum-gothic-korean-700-normal.woff2') format('woff2'), url('./files/nanum-gothic-korean-700-normal.woff') format('woff');
+  src: url('./files/nanum-gothic-korean-700-normal.woff2') format('woff2'), url('./files/nanum-gothic-korean-700-normal.woff') format('woff');
   
 }
 /* nanum-gothic-korean-800-normal*/
@@ -25,8 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 800;
-  src:
-    local('NanumGothic ExtraBold'),
-    local('NanumGothic-ExtraBold'), url('./files/nanum-gothic-korean-800-normal.woff2') format('woff2'), url('./files/nanum-gothic-korean-800-normal.woff') format('woff');
+  src: url('./files/nanum-gothic-korean-800-normal.woff2') format('woff2'), url('./files/nanum-gothic-korean-800-normal.woff') format('woff');
   
 }

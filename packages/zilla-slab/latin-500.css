@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Zilla Slab Medium'),
-    local('ZillaSlab-Medium'), url('./files/zilla-slab-latin-500-normal.woff2') format('woff2'), url('./files/zilla-slab-latin-500-normal.woff') format('woff');
+  src: url('./files/zilla-slab-latin-500-normal.woff2') format('woff2'), url('./files/zilla-slab-latin-500-normal.woff') format('woff');
   
 }

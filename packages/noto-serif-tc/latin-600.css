@@ -4,8 +4,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Noto Serif TC SemiBold'),
-    local('NotoSerifTC-SemiBold'), url('./files/noto-serif-tc-latin-600-normal.woff2') format('woff2'), url('./files/noto-serif-tc-latin-600-normal.woff') format('woff');
+  src: url('./files/noto-serif-tc-latin-600-normal.woff2') format('woff2'), url('./files/noto-serif-tc-latin-600-normal.woff') format('woff');
   
 }

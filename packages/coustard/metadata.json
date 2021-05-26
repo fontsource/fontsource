@@ -2,7 +2,7 @@
   "fontId": "coustard",
   "fontName": "Coustard",
   "subsets": ["latin"],
-  "weights": ["400", "900"],
+  "weights": [400, 900],
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": false,

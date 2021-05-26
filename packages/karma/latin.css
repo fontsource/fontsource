@@ -4,9 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src:
-    local('Karma Light'),
-    local('Karma-Light'), url('./files/karma-latin-300-normal.woff2') format('woff2'), url('./files/karma-latin-300-normal.woff') format('woff');
+  src: url('./files/karma-latin-300-normal.woff2') format('woff2'), url('./files/karma-latin-300-normal.woff') format('woff');
   
 }
 /* karma-latin-400-normal*/
@@ -15,9 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:
-    local('Karma Regular'),
-    local('Karma-Regular'), url('./files/karma-latin-400-normal.woff2') format('woff2'), url('./files/karma-latin-400-normal.woff') format('woff');
+  src: url('./files/karma-latin-400-normal.woff2') format('woff2'), url('./files/karma-latin-400-normal.woff') format('woff');
   
 }
 /* karma-latin-500-normal*/
@@ -26,9 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src:
-    local('Karma Medium'),
-    local('Karma-Medium'), url('./files/karma-latin-500-normal.woff2') format('woff2'), url('./files/karma-latin-500-normal.woff') format('woff');
+  src: url('./files/karma-latin-500-normal.woff2') format('woff2'), url('./files/karma-latin-500-normal.woff') format('woff');
   
 }
 /* karma-latin-600-normal*/
@@ -37,9 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src:
-    local('Karma SemiBold'),
-    local('Karma-SemiBold'), url('./files/karma-latin-600-normal.woff2') format('woff2'), url('./files/karma-latin-600-normal.woff') format('woff');
+  src: url('./files/karma-latin-600-normal.woff2') format('woff2'), url('./files/karma-latin-600-normal.woff') format('woff');
   
 }
 /* karma-latin-700-normal*/
@@ -48,8 +40,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src:
-    local('Karma Bold'),
-    local('Karma-Bold'), url('./files/karma-latin-700-normal.woff2') format('woff2'), url('./files/karma-latin-700-normal.woff') format('woff');
+  src: url('./files/karma-latin-700-normal.woff2') format('woff2'), url('./files/karma-latin-700-normal.woff') format('woff');
   
 }
