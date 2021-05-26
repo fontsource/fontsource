@@ -15,7 +15,7 @@ interface Font {
   fontName: string;
   subsets: string[];
   defSubset: string;
-  weights: string[];
+  weights: number[];
   styles: string[];
   source: string;
   license: string;
@@ -47,10 +47,7 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
   } = font;
 
   // Find the weight for index.css in the case weight 400 does not exist.
-  const indexWeight = findClosest(
-    weights.map(weight => Number(weight)),
-    400
-  );
+  const indexWeight = findClosest(weights, 400);
 
   // Generate CSS files
   subsets.forEach(subset => {
@@ -65,20 +62,8 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
           subset,
           weight,
           locals: [],
-          woffPath: makeFontFilePath(
-            fontId,
-            subset,
-            String(weight),
-            style,
-            "woff"
-          ),
-          woff2Path: makeFontFilePath(
-            fontId,
-            subset,
-            String(weight),
-            style,
-            "woff2"
-          ),
+          woffPath: makeFontFilePath(fontId, subset, weight, style, "woff"),
+          woff2Path: makeFontFilePath(fontId, subset, weight, style, "woff2"),
           unicodeRange: false,
         });
         cssSubset.push(css);
@@ -97,7 +82,7 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
             fs.writeFileSync(cssPath, cssFile);
 
             // Write index.css
-            if (weight === String(indexWeight)) {
+            if (weight === indexWeight) {
               fs.writeFileSync(`${fontDir}/index.css`, cssStyle.join(""));
             }
           }

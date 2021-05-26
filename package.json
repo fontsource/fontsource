@@ -1,6 +1,6 @@
 {
   "name": "fontsource",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -28,7 +28,7 @@
     "prettier": "^2.3.0",
     "ts-jest": "^27.0.0",
     "ts-node": "^10.0.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.2"
   },
   "dependencies": {
     "algoliasearch": "^4.9.1",
@@ -37,7 +37,7 @@
     "flat": "^5.0.2",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",
-    "google-font-metadata": "^2.0.2",
+    "google-font-metadata": "^3.0.1",
     "got": "^11.8.2",
     "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.1.0",

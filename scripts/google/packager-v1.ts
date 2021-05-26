@@ -18,7 +18,6 @@ const packagerV1 = (id: string): void => {
           const css = fontFace({
             fontId: font.id,
             fontName: font.family,
-            locals: font.variants[weight][style][subset].local,
             style,
             subset,
             weight,
