@@ -40,13 +40,13 @@ For the CSS, you should consider using the [`@supports`](https://developer.mozil
 
 ```css
 h1 {
-  font-family: Cabin;
+  font-family: "Cabin", sans-serif;
   font-weight: 400;
 }
 
 @supports (font-variation-settings: normal) {
   h1 {
-    font-family: CabinVariable;
+    font-family: "CabinVariable";
     font-variation-settings: "wght" 400;
   }
 }
@@ -54,4 +54,11 @@ h1 {
 
 > **Note:** All variable fonts have their `font-family` attribute changed to `fontNameVariable`! For example, `InterVariable` or `RalewayVariable`. This is used to differentiate between the fallback and variable fonts.
 
-Alternatively, you can choose to have the default browser fonts to act as the fallback which will only affect a very [small subset of users](https://caniuse.com/variable-fonts) in a minor way. This is something the current Fontsource website actually does.
+Alternatively, you can choose to have the default browser fonts to act as the fallback (e.g. `sans-serif`) which will only affect a very [small subset of users](https://caniuse.com/variable-fonts) in a minor way. This is something the current Fontsource website actually does and produces a leaner final bundle for users without much disruption.
+
+```css
+p {
+  font-family: "InterVariable", sans-serif;
+  font-weight: 400;
+}
+```
