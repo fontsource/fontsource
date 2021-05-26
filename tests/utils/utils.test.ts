@@ -9,7 +9,7 @@ import {
 const fontDir = "packages/noto-sans-jp";
 const fontId = "noto-sans-jp";
 const subset = "latin";
-const weight = "400";
+const weight = 400;
 const style = "normal";
 const extension = "woff2";
 

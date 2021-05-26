@@ -4,8 +4,5 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src:
-    local('Noto Sans Japanese Black'),
-    local('NotoSansJapanese-Black'), url('./files/noto-sans-jp-japanese-900-normal.woff2') format('woff2'), url('./files/noto-sans-jp-japanese-900-normal.woff') format('woff');
-  
+  src: url('./files/noto-sans-jp-japanese-900-normal.woff2') format('woff2'), url('./files/noto-sans-jp-japanese-900-normal.woff') format('woff');
 }
