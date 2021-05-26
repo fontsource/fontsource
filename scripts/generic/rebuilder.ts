@@ -4,9 +4,25 @@ import jsonfile from "jsonfile";
 import { packager } from "./generic-packager";
 import { directories } from "../utils/utils";
 
+interface Metadata {
+  fontId: string;
+  fontName: string;
+  subsets: string[];
+  weights: number[];
+  styles: string[];
+  defSubset: string;
+  variable: boolean;
+  lastModified: string;
+  version: string;
+  category: string;
+  source: string;
+  license: string;
+  type: string;
+}
+
 directories.forEach(directory => {
   const fontDir = `./packages/${directory}`;
-  const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
+  const metadata: Metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
 
   // Rebuild only non-Google fonts
   if (metadata.type !== "google") {
@@ -23,7 +39,7 @@ directories.forEach(directory => {
       fontId: metadata.fontId,
       fontName: metadata.fontName,
       subsets: metadata.subsets,
-      weights: metadata.weights,
+      weights: metadata.weights.map(weight => Number(weight)),
       styles: metadata.styles,
       defSubset: metadata.defSubset,
       variable: false,

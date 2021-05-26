@@ -9,9 +9,7 @@ const packagerV2 = (id: string): void => {
   const fontDir = `packages/${font.id}`;
 
   // Find the weight for index.css in the case weight 400 does not exist.
-  // Convert to number since google-font-metadata has weight nums in string
-  const weightArr = font.weights.map(weight => Number(weight));
-  const indexWeight = findClosest(weightArr, 400);
+  const indexWeight = findClosest(font.weights, 400);
 
   // Generate CSS
   const unicodeKeys = Object.keys(font.unicodeRange);
@@ -28,7 +26,6 @@ const packagerV2 = (id: string): void => {
             style,
             subset,
             weight,
-            locals: [],
             woff2Path: makeFontFilePath(
               font.id,
               subset.replace("[", "").replace("]", ""),
@@ -49,7 +46,7 @@ const packagerV2 = (id: string): void => {
           fs.writeFileSync(cssPath, cssStyle.join(""));
 
           // Generate index CSS
-          if (Number(weight) === indexWeight) {
+          if (weight === indexWeight) {
             fs.writeFileSync(`${fontDir}/index.css`, cssStyle.join(""));
           }
         } else {

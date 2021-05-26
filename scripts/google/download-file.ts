@@ -7,6 +7,7 @@ import { APIv1, APIv2, APIVariable } from "google-font-metadata";
 import got from "got";
 import { EventEmitter } from "events";
 
+import type { FontVariants, FontVariantsVariable } from "google-font-metadata";
 import {
   makeFontDownloadPath,
   makeVariableFontDownloadPath,
@@ -21,32 +22,8 @@ const gotDownload = async (url: string, dest: fs.PathLike): Promise<void> => {
   }
 };
 
-interface APIVariant {
-  [weight: string]: {
-    [style: string]: {
-      [subset: string]: {
-        local: string[];
-        url: {
-          woff2: string;
-          woff: string;
-          truetype?: string;
-          opentype?: string;
-        };
-      };
-    };
-  };
-}
-
-interface APIVariableVariant {
-  [type: string]: {
-    [style: string]: {
-      [subset: string]: string;
-    };
-  };
-}
-
 const pairGenerator = (
-  variants: APIVariant | APIVariableVariant
+  variants: FontVariants | FontVariantsVariable
 ): string[][] => {
   // Parse API and split into variant + link array pairs. [['weight.style.subset.url|local.extension','link to font or local name'],...]
   const flattenedPairs = _.toPairs(flatten(variants)) as string[][];
@@ -81,8 +58,8 @@ const filterLinks = (fontId: string): DownloadLinks[] => {
 
   // Parses variants into readable pairs of data
   // Temporarily force font types till fixed in google-font-metadata
-  let downloadURLPairsV1 = pairGenerator(fontV1.variants as APIVariant);
-  const downloadURLPairsV2 = pairGenerator(fontV2.variants as APIVariant);
+  let downloadURLPairsV1 = pairGenerator(fontV1.variants as FontVariants);
+  const downloadURLPairsV2 = pairGenerator(fontV2.variants as FontVariants);
 
   // Flag to check whether font has unicode subsets like [132]
   let hasUnicodeSubsets = false;
@@ -109,7 +86,7 @@ const filterLinks = (fontId: string): DownloadLinks[] => {
             fontDir,
             fontId,
             types[2].replace("[", "").replace("]", ""),
-            types[0],
+            Number(types[0]),
             types[1],
             types[4]
           )
@@ -117,7 +94,7 @@ const filterLinks = (fontId: string): DownloadLinks[] => {
             fontDir,
             fontId,
             "all",
-            types[0],
+            Number(types[0]),
             types[1],
             types[4]
           );
@@ -137,7 +114,7 @@ const filterLinks = (fontId: string): DownloadLinks[] => {
       fontDir,
       fontId,
       types[2],
-      types[0],
+      Number(types[0]),
       types[1],
       types[4]
     );

@@ -45,7 +45,6 @@ glob(`${fontFileDir}/**/*.woff2`, {}, (err, files) => {
   });
   subsets = [...new Set(subsets)];
   weights = [...new Set(weights)];
-  const stringWeights = weights.map(weight => String(weight));
   styles = [...new Set(styles)];
 
   if (err) {
@@ -59,7 +58,7 @@ glob(`${fontFileDir}/**/*.woff2`, {}, (err, files) => {
     fontId,
     fontName,
     subsets,
-    weights: stringWeights,
+    weights,
     styles,
     defSubset,
     variable: false,

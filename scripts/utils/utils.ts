@@ -5,7 +5,7 @@ const makeFontDownloadPath = (
   fontDir: string,
   fontId: string,
   subset: string,
-  weight: string,
+  weight: number,
   style: string,
   extension: string
 ): string => {
@@ -15,7 +15,7 @@ const makeFontDownloadPath = (
 const makeFontFilePath = (
   fontId: string,
   subset: string,
-  weight: string,
+  weight: number,
   style: string,
   extension: string
 ): string => {
