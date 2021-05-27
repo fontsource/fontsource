@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/kufam",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "description": "Self-host the Kufam font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
@@ -24,5 +24,6 @@
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
     "directory": "packages/kufam"
-  }
+  },
+  "gitHead": "02df19e3332ef95bfadd131ad7eec50e48b17cfc"
 }
