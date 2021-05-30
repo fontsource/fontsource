@@ -1,1 +1,25 @@
-{"name":"@fontsource/kumar-one-outline","version":"4.4.1","description":"Self-host the Kumar One Outline font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Kumar One Outline","kumar-one-outline"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/kumar-one-outline#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/kumar-one-outline"}}
+{
+  "name": "@fontsource/kumar-one-outline",
+  "version": "4.4.1",
+  "description": "Self-host the Kumar One Outline font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Kumar One Outline",
+    "kumar-one-outline"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/kumar-one-outline#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/kumar-one-outline"
+  }
+}

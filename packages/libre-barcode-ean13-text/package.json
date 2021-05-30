@@ -1,1 +1,30 @@
-{"name":"@fontsource/libre-barcode-ean13-text","version":"4.4.1","description":"Self-host the Libre Barcode EAN13 Text font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Libre Barcode EAN13 Text","libre-barcode-ean13-text","scss","css","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/libre-barcode-ean13-text#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/libre-barcode-ean13-text"}}
+{
+  "name": "@fontsource/libre-barcode-ean13-text",
+  "version": "4.4.1",
+  "description": "Self-host the Libre Barcode EAN13 Text font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Libre Barcode EAN13 Text",
+    "libre-barcode-ean13-text",
+    "scss",
+    "css",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/libre-barcode-ean13-text#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/libre-barcode-ean13-text"
+  }
+}

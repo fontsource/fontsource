@@ -1,1 +1,27 @@
-{"name":"@fontsource/syne-mono","version":"4.4.1","description":"Self-host the Syne Mono font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","Syne Mono","syne-mono","css","front-end","web"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/syne-mono#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/syne-mono"}}
+{
+  "name": "@fontsource/syne-mono",
+  "version": "4.4.1",
+  "description": "Self-host the Syne Mono font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "Syne Mono",
+    "syne-mono",
+    "css",
+    "front-end",
+    "web"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/syne-mono#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/syne-mono"
+  }
+}

@@ -1,1 +1,30 @@
-{"name":"@fontsource/new-tegomin","version":"4.4.1","description":"Self-host the New Tegomin font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","New Tegomin","new-tegomin","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/new-tegomin#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/new-tegomin"}}
+{
+  "name": "@fontsource/new-tegomin",
+  "version": "4.4.1",
+  "description": "Self-host the New Tegomin font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "New Tegomin",
+    "new-tegomin",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/new-tegomin#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/new-tegomin"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/vibes","version":"4.4.1","description":"Self-host the Vibes font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Vibes","vibes"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/vibes#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/vibes"}}
+{
+  "name": "@fontsource/vibes",
+  "version": "4.4.1",
+  "description": "Self-host the Vibes font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Vibes",
+    "vibes"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/vibes#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/vibes"
+  }
+}
