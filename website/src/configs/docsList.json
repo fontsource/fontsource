@@ -53,8 +53,7 @@
   {
     "key": "gatsby",
     "title": "Gatsby",
-    "path": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#using-google-fonts",
-
+    "path": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource",
     "isExternal": true
   },
   {
