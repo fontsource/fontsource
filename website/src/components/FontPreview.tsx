@@ -31,6 +31,7 @@ import {
   findClosestWeight,
   fontsourceDownload,
 } from "../utils/fontsourceUtils";
+import { BlockQuote } from "./Blockquote";
 import { NextChakraLink } from "./NextChakraLink";
 
 interface FontPreviewProps {
@@ -71,6 +72,9 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
   const bgSlider = useColorModeValue("gray.200", "gray.700");
   const bgSliderFilled = useColorModeValue("black", "white");
   const selectHeadingColor = useColorModeValue("gray.500", "gray.100");
+
+  // Refer to https://github.com/fontsource/fontsource/issues/243
+  const affectedVariableFonts = ["exo-2"];
 
   return (
     <>
@@ -180,6 +184,23 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
         <Heading mt={2}>Quick Installation</Heading>
         <Divider mt={1} />
       </Box>
+      {affectedVariableFonts.includes(metadata.fontId) && (
+        <BlockQuote>
+          <Text my="20px">
+            <strong>Note: </strong>
+            {metadata.fontName} is affected by a rendering bug for a small
+            subset of MacOS users and thus it is strongly urged to use the
+            variable variant of this font. More can be learnt at{" "}
+            <Link
+              href="https://github.com/fontsource/fontsource/issues/243"
+              isExternal
+            >
+              <strong>fontsource/fontsource#243</strong>
+            </Link>{" "}
+            <ExternalLinkIcon />.
+          </Text>
+        </BlockQuote>
+      )}
       <Text>
         Fontsource has a variety of methods to import CSS, such as using a
         bundler like Webpack. Full documentation can be found{" "}
@@ -226,7 +247,8 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
             >
               documentation
             </NextChakraLink>
-            .
+            . It is highly recommended to use this option when using multiple
+            weights for smaller bundle sizes.
           </Text>
         </>
       )}
