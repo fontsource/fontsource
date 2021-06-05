@@ -55,7 +55,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "next-remote-watch": "^1.0.0",
-    "next-sitemap": "^1.6.99",
+    "next-sitemap": "^1.6.102",
     "prettier": "^2.3.0",
     "typescript": "^4.3.2"
   },

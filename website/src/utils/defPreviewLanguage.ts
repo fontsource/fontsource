@@ -59,7 +59,7 @@ export const selectDefPreviewText = (id: string, subset: string) => {
     case "greek-ext":
       return "διαφυλάξτε γενικά τη ζωή σας από βαθειά ψυχικά τραύματα.";
 
-    case "gujurati":
+    case "gujarati":
       return "અમને તેની જાણ થાય તે પહેલાં જ, અમે જમીન છોડી દીધી હતી.";
 
     case "gurmukhi":
@@ -95,7 +95,7 @@ export const selectDefPreviewText = (id: string, subset: string) => {
     case "tamil":
       return "அந்திமாலையில், அலைகள் வேகமாக வீசத் தொடங்கின.";
 
-    case "telegu":
+    case "telugu":
       return "ఆ రాత్రి మొదటిసారిగా ఒక నక్షత్రం నేలరాలింది.";
 
     case "tibetan":
