@@ -74,7 +74,7 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
   const selectHeadingColor = useColorModeValue("gray.500", "gray.100");
 
   // Refer to https://github.com/fontsource/fontsource/issues/243
-  const affectedVariableFonts = ["exo-2"];
+  const affectedVariableFonts = ["exo-2", "inter"];
 
   return (
     <>

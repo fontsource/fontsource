@@ -15,6 +15,9 @@ directories.forEach(directory => {
   const fontDir = `./packages/${directory}`;
   const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
   metadata.objectID = metadata.fontId;
+  if (metadata.variable) {
+    metadata.variable = true;
+  }
   indexArray.push(metadata);
 });
 
