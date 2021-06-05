@@ -1,1 +1,30 @@
-{"name":"@fontsource/league-mono-narrow","version":"4.4.4","description":"Self-host the League Mono Narrow font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","League Mono Narrow","league-mono-narrow","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/league-mono-narrow#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/league-mono-narrow"}}
+{
+  "name": "@fontsource/league-mono-narrow",
+  "version": "4.4.4",
+  "description": "Self-host the League Mono Narrow font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "League Mono Narrow",
+    "league-mono-narrow",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/league-mono-narrow#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/league-mono-narrow"
+  }
+}

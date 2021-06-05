@@ -1,1 +1,25 @@
-{"name":"@fontsource/diplomata-sc","version":"4.4.4","description":"Self-host the Diplomata SC font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Diplomata SC","diplomata-sc"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/diplomata-sc#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/diplomata-sc"}}
+{
+  "name": "@fontsource/diplomata-sc",
+  "version": "4.4.4",
+  "description": "Self-host the Diplomata SC font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Diplomata SC",
+    "diplomata-sc"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/diplomata-sc#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/diplomata-sc"
+  }
+}

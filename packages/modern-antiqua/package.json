@@ -1,1 +1,25 @@
-{"name":"@fontsource/modern-antiqua","version":"4.4.4","description":"Self-host the Modern Antiqua font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Modern Antiqua","modern-antiqua"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/modern-antiqua#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/modern-antiqua"}}
+{
+  "name": "@fontsource/modern-antiqua",
+  "version": "4.4.4",
+  "description": "Self-host the Modern Antiqua font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Modern Antiqua",
+    "modern-antiqua"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/modern-antiqua#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/modern-antiqua"
+  }
+}

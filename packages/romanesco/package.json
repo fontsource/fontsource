@@ -1,1 +1,25 @@
-{"name":"@fontsource/romanesco","version":"4.4.4","description":"Self-host the Romanesco font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Romanesco","romanesco"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/romanesco#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/romanesco"}}
+{
+  "name": "@fontsource/romanesco",
+  "version": "4.4.4",
+  "description": "Self-host the Romanesco font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Romanesco",
+    "romanesco"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/romanesco#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/romanesco"
+  }
+}

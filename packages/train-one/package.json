@@ -1,1 +1,30 @@
-{"name":"@fontsource/train-one","version":"4.4.4","description":"Self-host the Train One font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Train One","train-one","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/train-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/train-one"}}
+{
+  "name": "@fontsource/train-one",
+  "version": "4.4.4",
+  "description": "Self-host the Train One font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Train One",
+    "train-one",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/train-one#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/train-one"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/reem-kufi","version":"4.4.4","description":"Self-host the Reem Kufi font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Reem Kufi","reem-kufi"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/reem-kufi#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/reem-kufi"}}
+{
+  "name": "@fontsource/reem-kufi",
+  "version": "4.4.4",
+  "description": "Self-host the Reem Kufi font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Reem Kufi",
+    "reem-kufi"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/reem-kufi#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/reem-kufi"
+  }
+}
