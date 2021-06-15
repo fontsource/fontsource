@@ -66,3 +66,5 @@ yarn-error.log
 
 # IntelijIDEA
 .idea
+
+api/dist
