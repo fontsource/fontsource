@@ -24,7 +24,7 @@
     "@fontsource/raleway": "^4.4.5",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@next/mdx": "^10.2.3",
+    "@next/mdx": "^11.0.0",
     "@types/css-font-loading-module": "^0.0.4",
     "algoliasearch": "^4.9.3",
     "framer-motion": "4.1.17",
