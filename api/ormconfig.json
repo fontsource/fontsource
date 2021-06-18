@@ -4,7 +4,7 @@
   "port": 27017,
   "username": "root",
   "password": "root",
-  "database": "test",
+  "database": "fontsource_db",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true
 }
