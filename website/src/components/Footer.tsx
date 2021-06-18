@@ -38,6 +38,7 @@ export const Footer = (props: FlexProps) => {
             <Box ml={-2}>
               <Image
                 src={logoURL}
+                alt="logo"
                 height="18px"
                 width="100px"
                 priority={true}
