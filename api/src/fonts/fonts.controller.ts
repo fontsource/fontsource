@@ -20,16 +20,6 @@ export class FontsController {
     return this.fontsService.create(createFontDto);
   }
 
-  @Get()
-  findAll() {
-    return this.fontsService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.fontsService.findOne(+id);
-  }
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateFontDto: UpdateFontDto) {
     return this.fontsService.update(+id, updateFontDto);
@@ -38,5 +28,15 @@ export class FontsController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.fontsService.remove(+id);
+  }
+
+  @Get()
+  findAll() {
+    return this.fontsService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.fontsService.findOne(+id);
   }
 }
