@@ -1,26 +1,29 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+
+import { QueriesAll, QueriesOne } from './interfaces/queries.interface';
+import { Font, FontDocument } from './schemas/font.schema';
 import { CreateFontDto } from './dto/create-font.dto';
-import { UpdateFontDto } from './dto/update-font.dto';
 
 @Injectable()
 export class FontsService {
-  create(createFontDto: CreateFontDto) {
-    return 'This action adds a new font';
+  constructor(
+    @InjectModel(Font.name) private readonly fontModel: Model<FontDocument>,
+  ) {}
+
+  async findAll(query: QueriesAll) {
+    console.log(query);
+    return await this.fontModel.find().exec();
   }
 
-  findAll() {
-    return `This action returns all fonts`;
+  async findOne(id: string, query: QueriesOne) {
+    console.log(query);
+    return await this.fontModel.findOne({ id }).exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} font`;
-  }
-
-  update(id: number, updateFontDto: UpdateFontDto) {
-    return `This action updates a #${id} font`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} font`;
+  async create(createFontDto: CreateFontDto) {
+    const createdFont = new this.fontModel(createFontDto);
+    return createdFont.save();
   }
 }
