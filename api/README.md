@@ -4,7 +4,7 @@
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
-  
+
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
@@ -58,6 +58,59 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## API
+
+This project features a REST API that allows developers to pull metadata and download files directly.
+
+### `GET /api/v1/fonts`
+
+This returns an array of objects with metadata for each font.
+
+Returns:
+[{ id: fontId: fontName: … }]
+
+### `GET /api/v1/fonts?category=sans-serif&subset=latin,latin-ext`
+
+You can send a list of queries to filter only what metadata matches.
+
+Returns:
+[{ id: fontId: fontName: … }]
+
+### `GET /api/v1/fonts/:id`
+
+A more detailed set of metadata with direct download links will be returned.
+
+Returns:
+{ id: fontId: fontName: … }
+
+### `GET /api/v1/fonts/:id?version=20`
+
+Pull metadata including download links from a previous version.
+
+Returns:
+{ id: fontId: fontName: … }
+
+### `GET /api/v1/fonts/:id/download`
+
+Returns a zip file version of the NPM package.
+
+Returns:
+Blob Zip
+
+### `GET /api/v1/variable`
+
+Returns an array of objects that contain the variable metadata of all supported fonts.
+
+Returns:
+[{ … }]
+
+### `GET /api/v1/variable/:id`
+
+Returns the variable metadata of a specific font.
+
+Returns:
+{ … } Variable axes info
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
@@ -70,4 +123,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
