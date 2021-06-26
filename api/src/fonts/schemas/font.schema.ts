@@ -33,6 +33,9 @@ export class Font {
   @Prop()
   category: string;
 
+  @Prop()
+  version: string;
+
   // @Prop() Upon completion of #156
   // license: string;
 
