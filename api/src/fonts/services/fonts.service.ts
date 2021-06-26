@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+
 import { Model } from 'mongoose';
 
-import { QueriesAll, QueriesOne } from './interfaces/queries.interface';
-import { Font, FontDocument } from './schemas/font.schema';
-import { CreateFontDto } from './dto/create-font.dto';
+import { QueriesAll, QueriesOne } from '../interfaces/queries.interface';
+import { Font, FontDocument } from '../schemas/font.schema';
+import { CreateFontDto } from '../dto/create-font.dto';
 
 @Injectable()
 export class FontsService {
@@ -25,5 +26,9 @@ export class FontsService {
   async create(createFontDto: CreateFontDto) {
     const createdFont = new this.fontModel(createFontDto);
     return createdFont.save();
+  }
+
+  async delete(id: string) {
+    return await this.fontModel.findOneAndDelete({ id }).exec();
   }
 }

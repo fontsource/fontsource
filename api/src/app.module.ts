@@ -4,15 +4,15 @@ import {
   RequestMethod,
   MiddlewareConsumer,
 } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { CatsModule } from './cats/cats.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { FontsModule } from './fonts/fonts.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/fontsource_db'),
-    CatsModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+    MongooseModule.forRoot(process.env.MONGO_DB),
     FontsModule,
   ],
 })

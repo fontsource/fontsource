@@ -1,16 +1,27 @@
 import { Module } from '@nestjs/common';
-import { FontsService } from './fonts.service';
-import { FontsController } from './fonts.controller';
-import { Font, FontSchema } from './schemas/font.schema';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ScheduleModule } from '@nestjs/schedule';
+
+import { Font, FontSchema } from './schemas/font.schema';
+import { Fontlist, FontlistSchema } from './schemas/fontlist.schema';
+
+import { FontsController } from './controllers/fonts.controller';
+import { FontlistController } from './controllers/fontlist.controller';
+
+import { FontsService } from './services/fonts.service';
+import { FontlistService } from './services/fontlist.service';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       { name: Font.name, schema: FontSchema, collection: 'fonts' },
     ]),
+    MongooseModule.forFeature([
+      { name: Fontlist.name, schema: FontlistSchema, collection: 'fontlist' },
+    ]),
+    ScheduleModule.forRoot(),
   ],
-  controllers: [FontsController],
-  providers: [FontsService],
+  controllers: [FontsController, FontlistController],
+  providers: [FontsService, FontlistService],
 })
 export class FontsModule {}
