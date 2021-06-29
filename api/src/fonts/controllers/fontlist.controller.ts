@@ -9,7 +9,7 @@ export class FontlistController {
   constructor(private readonly fontlistService: FontlistService) {}
 
   @Get()
-  async getList() {
+  async getList(): Promise<Record<string, any>> {
     return await this.fontlistService.getList();
   }
 }

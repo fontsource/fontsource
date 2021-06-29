@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { Variants } from './variants.schema';
+import { Variants, VariantsSchema } from './variants.schema';
 
 export type FontDocument = Font & Document;
 
@@ -45,7 +45,7 @@ export class Font {
   @Prop()
   type: string;
 
-  @Prop()
+  @Prop({ type: [VariantsSchema], default: [] })
   variants: Variants[];
 }
 

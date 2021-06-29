@@ -14,7 +14,7 @@ export class FontlistService {
     private readonly fontlistModel: Model<FontlistDocument>,
   ) {}
 
-  async getList() {
+  async getList(): Promise<Record<string, any>> {
     let list = await this.fontlistModel.find().exec();
 
     // If list empty, force update
@@ -47,7 +47,7 @@ export class FontlistService {
       });
     const newList = { list: content };
 
-    // If there is one document in collection as expected, just update.+
+    // If there is one document in collection as expected, just update.
     const existingDb = await this.fontlistModel.find().exec();
     if (existingDb.length === 1) {
       await this.fontlistModel.updateMany({}, newList);
