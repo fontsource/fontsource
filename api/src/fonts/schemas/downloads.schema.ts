@@ -1,31 +1,26 @@
-import { Prop } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-export class Downloads {
-  constructor(weight: number, style: string, url: Url) {
-    this.weight = weight;
-    this.style = style;
-    this.url = url;
-  }
-
-  @Prop()
-  weight: number;
-
-  @Prop()
-  style: string;
-
-  @Prop()
-  url: Url;
-}
-
-export class Url {
-  constructor(woff2: string, woff: string) {
-    this.woff2 = woff2;
-    this.woff = woff;
-  }
-
+@Schema()
+class Url {
   @Prop()
   woff2: string;
 
   @Prop()
   woff: string;
 }
+
+const UrlSchema = SchemaFactory.createForClass(Url);
+
+@Schema()
+export class Downloads {
+  @Prop()
+  weight: number;
+
+  @Prop()
+  style: string;
+
+  @Prop({ type: UrlSchema })
+  url: Url;
+}
+
+export const DownloadSchema = SchemaFactory.createForClass(Downloads);

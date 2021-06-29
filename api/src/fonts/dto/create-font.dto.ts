@@ -32,5 +32,5 @@ export class CreateFontDto {
   @IsString()
   type: string;
 
-  // variants: Variants[];
+  variants: Variants[];
 }
