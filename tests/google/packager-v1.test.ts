@@ -25,7 +25,7 @@ describe("Generate V1 CSS", () => {
   test("Abel CSS", () => {
     packagerV1("abel");
     const dirPath = "./packages/abel";
-    const fileNames = readDir(dirPath);
+    const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual(["latin-400.css", "latin.css"]);
 
@@ -41,7 +41,7 @@ describe("Generate V1 CSS", () => {
   test("Cabin CSS", () => {
     packagerV1("cabin");
     const dirPath = "./packages/cabin";
-    const fileNames = readDir(dirPath);
+    const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
       "latin-400-italic.css",
@@ -85,7 +85,7 @@ describe("Generate V1 CSS", () => {
   test("Noto Sans JP CSS", () => {
     packagerV1("noto-sans-jp");
     const dirPath = "./packages/noto-sans-jp";
-    const fileNames = readDir(dirPath);
+    const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
       "japanese-100.css",

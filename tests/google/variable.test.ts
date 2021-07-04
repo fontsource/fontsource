@@ -24,7 +24,7 @@ describe("Generate Variable CSS", () => {
   test("Cabin CSS - wghtOnly, full, wdth and italic", () => {
     variable("cabin");
     const dirPath = "./packages/cabin";
-    const fileNames = readDir(dirPath);
+    const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
       "variable-full-italic.css",
@@ -45,7 +45,7 @@ describe("Generate Variable CSS", () => {
   test("Changa CSS - wghtOnly", () => {
     variable("changa");
     const dirPath = "./packages/changa";
-    const fileNames = readDir(dirPath);
+    const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual(["variable.css"]);
 
@@ -62,7 +62,7 @@ describe("Generate Variable CSS", () => {
   test("Recursive CSS - wghtOnly, full", () => {
     variable("recursive");
     const dirPath = "./packages/recursive";
-    const fileNames = readDir(dirPath);
+    const fileNames = readDir(dirPath, "css");
     expect(fileNames).toEqual(["variable-full.css", "variable.css"]);
 
     const cssContent = readDirContents(dirPath, fileNames);

@@ -1,11 +1,11 @@
 import fs from "fs-extra";
 import path from "path";
 
-const readDir = (dirPath: string): string[] => {
+const readDir = (dirPath: string, extension: string): string[] => {
   const fileArr: string[] = [];
   fs.readdirSync(dirPath).forEach(file => {
-    const extension = file.split(".")[1];
-    if (extension === "css" || extension === "scss") {
+    const fileExtension = file.split(".")[1];
+    if (extension === fileExtension) {
       fileArr.push(file);
     }
   });
