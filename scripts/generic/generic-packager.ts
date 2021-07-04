@@ -17,6 +17,7 @@ interface Font {
   defSubset: string;
   weights: number[];
   styles: string[];
+  unicodeRange: { [subset: string]: string };
   source: string;
   license: string;
   version: string;
@@ -36,6 +37,7 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
     defSubset,
     weights,
     styles,
+    unicodeRange,
     source,
     license,
     version,
@@ -161,6 +163,9 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
 
   // Copy CHANGELOG.md over from main repo
   fs.copySync(`../templates/changelog.md`, `${fontDir}/CHANGELOG.md`);
+
+  // Write unicode.json
+  jsonfile.writeFileSync(`${fontDir}/unicode.json`, unicodeRange);
 
   // Write out package.json file
   let packageJSON;
