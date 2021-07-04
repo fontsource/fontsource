@@ -10,7 +10,7 @@ import { packageJson } from "../templates/package";
 import { generateSCSS } from "../templates/scss";
 import { readme } from "../templates/readme";
 
-const run = async (id: string, force: string): Promise<void> => {
+const run = async (id: string, force?: string): Promise<void> => {
   const font = APIv2[id];
 
   // Set file directories
@@ -121,6 +121,9 @@ const run = async (id: string, force: string): Promise<void> => {
       license: "https://fonts.google.com/attribution",
       type: "google",
     });
+
+    // Write unicode.json
+    await jsonfile.writeFile(`${fontDir}/unicode.json`, font.unicodeRange);
 
     // Copy CHANGELOG.md over from main repo
     await fs.copy(`../templates/changelog.md`, `${fontDir}/CHANGELOG.md`);
