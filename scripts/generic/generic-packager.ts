@@ -161,6 +161,9 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
     type,
   });
 
+  // Copy CHANGELOG.md over from main repo
+  fs.copySync(`../templates/changelog.md`, `${fontDir}/CHANGELOG.md`);
+
   // Write unicode.json
   jsonfile.writeFileSync(`${fontDir}/unicode.json`, unicodeRange);
 
