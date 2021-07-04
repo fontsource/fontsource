@@ -1,0 +1,23 @@
+{
+  "fontId": "bona-nova",
+  "fontName": "Bona Nova",
+  "subsets": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "hebrew",
+    "latin",
+    "latin-ext",
+    "vietnamese"
+  ],
+  "weights": [400, 700],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-07-01",
+  "version": "v1",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
