@@ -1,6 +1,6 @@
-import * as _ from "lodash";
+import { template } from "lodash";
 
-const fontFace = _.template(
+const fontFace = template(
   `/* <%= fontId %>-<%= subset %>-<%= weight %>-<%= style %>*/
 @font-face {
   font-family: '<%= fontName %>';
@@ -13,7 +13,7 @@ const fontFace = _.template(
 `
 );
 
-const fontFaceVariable = _.template(
+const fontFaceVariable = template(
   `/* <%= fontId %>-<%= subset %>-variable-<%= type %>-<%= style %> */
 @font-face {
   font-family: '<%= fontName %>';
@@ -26,7 +26,7 @@ const fontFaceVariable = _.template(
 `
 );
 
-const fontFaceVariableWdth = _.template(
+const fontFaceVariableWdth = template(
   `/* <%= fontId %>-<%= subset %>-variable-<%= type %>-<%= style %> */
 @font-face {
   font-family: '<%= fontName %>';
