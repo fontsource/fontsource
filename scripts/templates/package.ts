@@ -1,6 +1,6 @@
-import * as _ from "lodash";
+import { template } from "lodash";
 
-const packageJson = _.template(
+const packageJson = template(
   `{
   "name": "@fontsource/<%= fontId %>",
   "version": "<%= version %>",

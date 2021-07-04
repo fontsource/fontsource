@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
-import * as _ from "lodash";
+import { template } from "lodash";
 import { APIv2, APIVariable } from "google-font-metadata";
 
-const scssMixins = _.template(
+const scssMixins = template(
   `$fontName: "<%= fontName %>";
 $fontId: "<%= fontId %>";
 $style: normal;
@@ -122,7 +122,7 @@ $woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-variable-#{$type}-#{$style}.wo
 `
 );
 
-const scssGeneric = _.template(
+const scssGeneric = template(
   `$fontName: "<%= fontName %>";
 $fontId: "<%= fontId %>";
 $style: normal;
