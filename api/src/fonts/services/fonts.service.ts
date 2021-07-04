@@ -1,40 +1,87 @@
-import { Injectable } from '@nestjs/common';
+import {
+  HttpService,
+  Injectable,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-
+import { merge } from 'lodash';
 import { Model } from 'mongoose';
+import { lastValueFrom } from 'rxjs';
 
-import { QueriesAll, QueriesOne } from '../interfaces/queries.interface';
-import { Font, FontDocument } from '../schemas/font.schema';
+import { metadataLink } from '../utils/cdnLinks';
+
+import { example, Font, FontDocument } from '../schemas/font.schema';
+import { Fontlist, FontlistDocument } from '../schemas/fontlist.schema';
 import { CreateFontDto } from '../dto/create-font.dto';
-import { FontAllResponse, FontResponse } from '../interfaces/font.interface';
+
+import {
+  FontAllResponse,
+  FontResponse,
+  Variants,
+  UnicodeRange,
+} from '../interfaces/font.interface';
+import { QueriesAll, QueriesOne } from '../interfaces/queries.interface';
 
 @Injectable()
 export class FontsService {
   constructor(
     @InjectModel(Font.name) private readonly fontModel: Model<FontDocument>,
+    @InjectModel(Fontlist.name)
+    private readonly fontlistModel: Model<FontlistDocument>,
+    private httpService: HttpService,
   ) {}
 
   async findAll(query: QueriesAll): Promise<FontAllResponse[]> {
-    console.log(query);
-
-    const metadataArray = await this.fontModel.find().exec();
-    const cleanedArray = metadataArray.map(
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      ({ variants, ...metadata }) => metadata,
-    );
-    return cleanedArray;
+    const metadataArray = await this.fontModel
+      .find({ ...query })
+      .lean()
+      .exec();
+    // Mongoose returns an object with keys in a very different order than intended
+    // e.g. starts with subsets and weights instead of id and family
+    // Also removes unneeded properties like _id and variants
+    const reorderedKeys = metadataArray.map((metadata) => {
+      const orderedMetadata = {
+        id: metadata.id,
+        family: metadata.family,
+        subsets: metadata.subsets,
+        weights: metadata.weights,
+        styles: metadata.styles,
+        defSubset: metadata.defSubset,
+        variable: metadata.variable,
+        lastModified: metadata.lastModified,
+        category: metadata.category,
+        version: metadata.version,
+        type: metadata.type,
+      };
+      return orderedMetadata;
+    });
+    return reorderedKeys;
   }
 
   async findOne(id: string, query: QueriesOne): Promise<FontResponse> {
-    console.log(query);
-    const dbResult = await this.fontModel.findOne({ id }).exec();
+    const dbResult = await this.fontModel.findOne({ id, ...query }).exec();
 
-    const unicodeRange = {};
+    // If db doesn't contain font, check one last time if it exists
+    if (dbResult === null) {
+      await lastValueFrom(this.httpService.get(metadataLink(id)))
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch(() => {
+          throw new NotFoundException(`${id} not found`);
+        });
+    }
+
     const dbVariants = dbResult.variants;
-    let variantsNew = {};
+    const variantsNewArray: Variants[] = [];
+    const unicodeRangeArray: UnicodeRange[] = [];
 
     dbVariants.forEach((variant) => {
       const subset = variant.subset;
+      const unicodeRangeValue = variant.unicodeRange;
+      unicodeRangeArray.push({ [subset]: unicodeRangeValue });
+
       variant.downloads.forEach((download) => {
         const weight = download.weight;
         const style = download.style;
@@ -50,9 +97,12 @@ export class FontsService {
           },
         };
 
-        variantsNew = Object.assign(variantsNew, newObject);
+        variantsNewArray.push(newObject);
       });
     });
+
+    const variantsNew = merge({}, ...variantsNewArray);
+    const unicodeRange = merge({}, ...unicodeRangeArray);
 
     const metadata = {
       id: dbResult.id,
@@ -73,9 +123,19 @@ export class FontsService {
     return metadata;
   }
 
+  async updateFonts(): Promise<void> {
+    const fontlistdb = await this.fontlistModel.findOne().lean().exec();
+    console.log(fontlistdb);
+  }
+
   async create(createFontDto: CreateFontDto) {
     const createdFont = new this.fontModel(createFontDto);
     return createdFont.save();
+  }
+
+  async addExample() {
+    const font = new this.fontModel(example);
+    return font.save();
   }
 
   async delete(id: string) {

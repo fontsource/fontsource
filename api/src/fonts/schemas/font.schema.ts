@@ -6,7 +6,7 @@ export type FontDocument = Font & Document;
 
 @Schema()
 export class Font {
-  @Prop()
+  @Prop({ unique: true })
   id: string;
 
   @Prop()
@@ -45,15 +45,15 @@ export class Font {
   @Prop()
   type: string;
 
-  @Prop({ type: [VariantsSchema], default: [] })
+  @Prop({ type: [VariantsSchema], default: [], _id: false })
   variants: Variants[];
 }
 
 export const FontSchema = SchemaFactory.createForClass(Font);
 
-const example = {
+export const example = {
   id: 'abeezee',
-  fontName: 'ABeeZee',
+  family: 'ABeeZee',
   subsets: ['latin'],
   weights: [400],
   styles: ['italic', 'normal'],
