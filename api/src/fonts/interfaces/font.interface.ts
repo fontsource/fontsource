@@ -17,11 +17,11 @@ export interface FontResponse extends FontAllResponse {
   variants: Variants;
 }
 
-interface UnicodeRange {
+export interface UnicodeRange {
   [subset: string]: string;
 }
 
-interface Variants {
+export interface Variants {
   [weight: number]: {
     [style: string]: {
       [subset: string]: { url: { woff2: string; woff: string } };

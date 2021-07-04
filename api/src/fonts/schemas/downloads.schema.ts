@@ -19,7 +19,7 @@ export class Downloads {
   @Prop()
   style: string;
 
-  @Prop({ type: UrlSchema })
+  @Prop({ type: UrlSchema, _id: false })
   url: Url;
 }
 

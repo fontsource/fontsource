@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Cron } from '@nestjs/schedule';
 import { Octokit } from '@octokit/rest';
@@ -8,11 +8,12 @@ import { Model } from 'mongoose';
 import { Fontlist, FontlistDocument } from '../schemas/fontlist.schema';
 
 @Injectable()
-export class FontlistService {
+export class FontlistService implements OnModuleInit {
   constructor(
     @InjectModel(Fontlist.name)
     private readonly fontlistModel: Model<FontlistDocument>,
   ) {}
+  private readonly logger = new Logger(FontlistService.name);
 
   async getList(): Promise<Record<string, any>> {
     let list = await this.fontlistModel.find().exec();
@@ -26,7 +27,12 @@ export class FontlistService {
     return list[0].list;
   }
 
-  @Cron('* * * * *')
+  // Update the fontlist on Nest application startup
+  async onModuleInit(): Promise<void> {
+    await this.updateList();
+  }
+
+  @Cron('0 0 * * *')
   async updateList(): Promise<void> {
     const octokit = new Octokit({
       auth: process.env.GITHUB_PAT,
@@ -59,6 +65,6 @@ export class FontlistService {
       const list = new this.fontlistModel(newList);
       await list.save();
     }
-    console.log('Updated fonts');
+    this.logger.log('Updated fontlist');
   }
 }

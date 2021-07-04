@@ -9,7 +9,7 @@ export class Variants {
   @Prop()
   unicodeRange: string;
 
-  @Prop({ type: [DownloadSchema], default: [] })
+  @Prop({ type: [DownloadSchema], default: [], _id: false })
   downloads: Downloads[];
 }
 

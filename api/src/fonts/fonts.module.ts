@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, HttpModule } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ScheduleModule } from '@nestjs/schedule';
 
@@ -13,6 +13,7 @@ import { FontlistService } from './services/fontlist.service';
 
 @Module({
   imports: [
+    HttpModule,
     MongooseModule.forFeature([
       { name: Font.name, schema: FontSchema, collection: 'fonts' },
     ]),
