@@ -123,7 +123,7 @@ const run = async (id: string, force: string): Promise<void> => {
     });
 
     // Copy CHANGELOG.md over from main repo
-    await fs.copy(`./CHANGELOG.md`, `${fontDir}/CHANGELOG.md`);
+    await fs.copy(`../templates/changelog.md`, `${fontDir}/CHANGELOG.md`);
   }
 };
 
