@@ -1,3 +1,5 @@
+import "fallback-font/fallback-outline.css";
+
 import { Skeleton } from "@chakra-ui/react";
 import { promises as fs } from "fs";
 import { GetStaticPaths, GetStaticProps } from "next";
