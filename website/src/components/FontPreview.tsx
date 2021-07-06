@@ -62,7 +62,6 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
 
   const downloadLink = fontsourceDownload.fontDownload(
     metadata.fontId,
-    metadata.defSubset,
     weight,
     style
   );
@@ -158,7 +157,7 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
           onChange={(event) => setPreviewText(event.target.value)}
           variant="flushed"
           style={{
-            fontFamily: metadata.fontName,
+            fontFamily: `"${metadata.fontName}", "Fallback Outline"`,
             fontSize: `${fontSize}px`,
             fontWeight: weight,
           }}
