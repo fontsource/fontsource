@@ -13,15 +13,15 @@ const fontsourceDownload = {
     };
   },
 
-  fontDownload(
-    fontId: string,
-    defSubset: string,
-    weight: number,
-    style: string
-  ) {
+  cssDownload(fontId: string, weight: number, style: string) {
     const dir = `${baseUrlDownload}/@fontsource/${fontId}`;
 
-    return `${dir}/files/${fontId}-${defSubset}-${weight}-${style}.woff2`;
+    // If style is normal, only search for the "weight.css" file. e.g. "400.css" instead of "400-italic.css"
+    return `${dir}/${weight}${style === "normal" ? "" : `-${style}`}.css`;
+  },
+
+  fontDownload(fontId: string) {
+    return `${baseUrlDownload}/@fontsource/${fontId}`;
   },
 };
 

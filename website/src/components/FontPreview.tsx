@@ -60,9 +60,8 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
     });
   }, [events, defPreviewText, defStyle, defWeight]);
 
-  const downloadLink = fontsourceDownload.fontDownload(
+  const downloadLink = fontsourceDownload.cssDownload(
     metadata.fontId,
-    metadata.defSubset,
     weight,
     style
   );
@@ -158,9 +157,15 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
           onChange={(event) => setPreviewText(event.target.value)}
           variant="flushed"
           style={{
-            fontFamily: metadata.fontName,
+            // if the font is a material icons variant, then use the Chakra default font as a fallback
+            fontFamily: `"${metadata.fontName}", ${
+              metadata.fontId.startsWith("material-icons")
+                ? `var(--chakra-fonts-body), `
+                : ""
+            }"Fallback Outline"`,
             fontSize: `${fontSize}px`,
             fontWeight: weight,
+            fontStyle: style,
           }}
           height={`${fontSize + 12}px`}
         />

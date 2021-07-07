@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { MetadataProps } from "../@types/[font]";
+import { fontsourceDownload } from "../utils/fontsourceUtils";
 
 const useFontDownload = (metadata: MetadataProps, downloadLink: string) => {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -8,15 +9,19 @@ const useFontDownload = (metadata: MetadataProps, downloadLink: string) => {
   useEffect(() => {
     setFontLoaded(false);
 
-    // Fetch font file
-    new FontFace(metadata.fontName, `url(${downloadLink})`)
-      .load()
-      .then((result) => {
-        document.fonts.add(result);
-        setFontLoaded(true);
-      })
-      .catch((error) => console.log(error));
-  }, [metadata.fontId, metadata.fontName, downloadLink]);
+    fetch(downloadLink)
+      .then((res) => res.text())
+      .then((cssFile) => {
+        // fetch font's css, fix file sources' base url, and add updated css to the head
+        document.getElementById("font-preview-css").innerText = cssFile.replace(
+          /url\('\.\/(files\/.*?)'\)/g,
+          // match "url('./files/${woffFileName}')", then replace with "url('${baseURL}/files/${woffFileName}')"
+          `url('${fontsourceDownload.fontDownload(metadata.fontId)}/$1')`
+        );
+
+        document.fonts.ready.then(() => setFontLoaded(true));
+      });
+  }, [metadata.fontId, downloadLink]);
 
   return fontLoaded;
 };

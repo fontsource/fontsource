@@ -72,6 +72,7 @@ export default class Document extends NextDocument {
             property="og:image"
             content="https://fontsource.org/icons/apple-touch-icon.png"
           />
+          <style id="font-preview-css" />
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}
