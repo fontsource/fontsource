@@ -157,7 +157,12 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
           onChange={(event) => setPreviewText(event.target.value)}
           variant="flushed"
           style={{
-            fontFamily: `"${metadata.fontName}", "Fallback Outline"`,
+            // if the font is a material icons variant, then use the Chakra default font as a fallback
+            fontFamily: `"${metadata.fontName}", ${
+              metadata.fontId.startsWith("material-icons")
+                ? `var(--chakra-fonts-body), `
+                : ""
+            }"Fallback Outline"`,
             fontSize: `${fontSize}px`,
             fontWeight: weight,
           }}
