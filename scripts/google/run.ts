@@ -6,9 +6,11 @@ import { download } from "./download-file";
 import { packagerV1 } from "./packager-v1";
 import { packagerV2 } from "./packager-v2";
 import { variable } from "./variable";
+
 import { packageJson } from "../templates/package";
 import { generateSCSS } from "../templates/scss";
 import { readme } from "../templates/readme";
+import { changelog } from "../templates/changelog";
 
 const run = async (id: string, force?: string): Promise<void> => {
   const font = APIv2[id];
@@ -125,8 +127,8 @@ const run = async (id: string, force?: string): Promise<void> => {
     // Write unicode.json
     await jsonfile.writeFile(`${fontDir}/unicode.json`, font.unicodeRange);
 
-    // Copy CHANGELOG.md over from main repo
-    await fs.copy(`../templates/changelog.md`, `${fontDir}/CHANGELOG.md`);
+    // Write changelog
+    await fs.writeFile(`${fontDir}/CHANGELOG.md`, changelog());
   }
 };
 
