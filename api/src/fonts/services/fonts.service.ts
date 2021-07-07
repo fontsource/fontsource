@@ -1,9 +1,5 @@
-import {
-  HttpService,
-  Injectable,
-  Logger,
-  NotFoundException,
-} from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { merge } from 'lodash';
 import { Model } from 'mongoose';
