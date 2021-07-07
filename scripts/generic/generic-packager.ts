@@ -3,10 +3,12 @@ import jsonfile from "jsonfile";
 import glob from "glob";
 
 import { makeFontFilePath, findClosest } from "../utils/utils";
+
 import { fontFace } from "../templates/css";
 import { scssGeneric } from "../templates/scss";
 import { packageJson } from "../templates/package";
 import { readme } from "../templates/readme";
+import { changelog } from "../templates/changelog";
 import { materialIcons } from "../templates/icons";
 
 interface Font {
@@ -161,8 +163,8 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
     type,
   });
 
-  // Copy CHANGELOG.md over from main repo
-  fs.copySync(`../templates/changelog.md`, `${fontDir}/CHANGELOG.md`);
+  // Write CHANGELOG.md
+  fs.writeFileSync(`${fontDir}/CHANGELOG.md`, changelog());
 
   // Write unicode.json
   jsonfile.writeFileSync(`${fontDir}/unicode.json`, unicodeRange);
