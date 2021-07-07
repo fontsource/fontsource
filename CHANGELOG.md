@@ -12,6 +12,16 @@ These will always contain changes from Fontsource's end.
 
 # 4.x Release
 
+## 4.5.x
+
+### Features
+
+- Added unicode.json which contains the unicode subset data for the CSS unicode-range selector. This will be used for the upcoming API. [#271](https://github.com/fontsource/fontsource/pull/271)
+
+### Documentation
+
+- Updated package changelogs to redirect to the main repository changelog to ensure there are no inconsistences. [#269](https://github.com/fontsource/fontsource/pull/269)
+
 ## 4.4.x
 
 ### Features
