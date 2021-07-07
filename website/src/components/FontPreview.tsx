@@ -165,6 +165,7 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
             }"Fallback Outline"`,
             fontSize: `${fontSize}px`,
             fontWeight: weight,
+            fontStyle: style,
           }}
           height={`${fontSize + 12}px`}
         />
