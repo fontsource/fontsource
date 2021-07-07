@@ -16,6 +16,7 @@ const fontsourceDownload = {
   cssDownload(fontId: string, weight: number, style: string) {
     const dir = `${baseUrlDownload}/@fontsource/${fontId}`;
 
+    // If style is normal, only search for the "weight.css" file. e.g. "400.css" instead of "400-italic.css"
     return `${dir}/${weight}${style === "normal" ? "" : `-${style}`}.css`;
   },
 
