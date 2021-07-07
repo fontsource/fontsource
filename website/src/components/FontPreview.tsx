@@ -60,7 +60,7 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
     });
   }, [events, defPreviewText, defStyle, defWeight]);
 
-  const downloadLink = fontsourceDownload.fontDownload(
+  const downloadLink = fontsourceDownload.cssDownload(
     metadata.fontId,
     weight,
     style
