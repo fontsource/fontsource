@@ -13,10 +13,14 @@ const fontsourceDownload = {
     };
   },
 
-  fontDownload(fontId: string, weight: number, style: string) {
+  cssDownload(fontId: string, weight: number, style: string) {
     const dir = `${baseUrlDownload}/@fontsource/${fontId}`;
 
-    return `${dir}/files/${fontId}-all-${weight}-${style}.woff`;
+    return `${dir}/${weight}${style === "normal" ? "" : `-${style}`}.css`;
+  },
+
+  fontDownload(fontId: string) {
+    return `${baseUrlDownload}/@fontsource/${fontId}`;
   },
 };
 
