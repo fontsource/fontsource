@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/spirax",
-  "version": "4.4.4",
+  "version": "4.5.0",
   "description": "Self-host the Spirax font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
