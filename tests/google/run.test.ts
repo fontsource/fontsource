@@ -4,30 +4,33 @@ import { readDir, readDirContents } from "../helpers";
 
 import { run } from "../../scripts/google/run";
 
-describe("Generate V2 CSS", () => {
+describe("Full run function", () => {
   beforeEach(() => {
     mock({
       packages: {
         abel: {
-          "package.json": "{version: 4.0.0}",
-          "CHANGELOG.md": "",
-        },
-        cabin: {
-          /* Empty directory */
+          "package.json": "{}",
         },
         "noto-sans-jp": {
-          /* Empty directory */
+          "package.json": "{}",
         },
       },
     });
   });
 
-  test("Abel", () => {
+  test("Abel metadata and unicode generation", () => {
     return run("abel").then(() => {
       const dirPath = "./packages/abel";
       const fileNames = readDir(dirPath, "json");
 
-      expect(fileNames).toEqual(["metadata.json", "unicode.json"]);
+      expect(fileNames).toEqual([
+        "metadata.json",
+        "package.json",
+        "unicode.json",
+      ]);
+
+      // Remove package.json from array
+      fileNames.splice(1, 1);
 
       const jsonContent = readDirContents(dirPath, fileNames);
       mock.restore();
