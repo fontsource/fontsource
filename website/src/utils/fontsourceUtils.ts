@@ -25,7 +25,8 @@ const fontsourceDownload = {
   },
 };
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetchJson = (url: string) => fetch(url).then((res) => res.json());
+const fetchText = (url: string) => fetch(url).then((res) => res.text());
 
 // Rarely some fonts do not have a 400 weight
 const findClosestWeight = (weightArr: number[]) => {
@@ -48,4 +49,10 @@ const findClosestStyle = (styleArr: string[]) => {
   }
 };
 
-export { fetcher, findClosestStyle, findClosestWeight, fontsourceDownload };
+export {
+  fetchJson,
+  fetchText,
+  findClosestStyle,
+  findClosestWeight,
+  fontsourceDownload,
+};
