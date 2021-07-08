@@ -14,6 +14,8 @@ export interface MetadataProps {
   type: "google" | "icons" | "other";
 }
 
+export type FontPreviewCss = Record<number, Record<string, string>>;
+
 // Pulled from here - https://fonts.google.com/variablefonts#axis-definitions
 export interface VariableMetadataProps {
   ital?: AxesProps;
@@ -40,4 +42,5 @@ export interface AxesProps {
 export interface FontPageProps {
   metadata: MetadataProps;
   defPreviewText: string;
+  fontCss: FontPreviewCss;
 }
