@@ -6,7 +6,7 @@ const config = {
   fontId: "",
   fontName: "",
   defSubset: "latin",
-  unicoderange: {},
+  unicodeRange: {},
   version: "",
   category: "",
   sourcelink: "",
