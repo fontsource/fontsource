@@ -10,6 +10,8 @@ Thanks for supporting Fontsource!
     - [Submitting an Issue](#submitting-an-issue)
     - [Submitting a Pull Request (PR)](#submitting-a-pull-request-pr)
   - [Development](#development)
+    - [Packager Development](#packager-development)
+    - [Website Development](#website-development)
   - [Submit Documentation](#submit-documentation)
 
 ## Questions
@@ -68,8 +70,28 @@ yarn
 
 The main root, API and website directories each have separate package.json setups and scripts. Thus requiring `yarn` to be run in each directory.
 
+### Packager Development
+
+`yarn format` - Runs Prettier and ESLint across the directory.
+`yarn format:scripts` - Runs Prettier only over the `./scripts` directory.
+`yarn format:eslint` - Runs ESLint only.
+
+`yarn build:generic` - Runs the Generic Packager on `./scripts/generic/files`.
+`yarn build:generic-force` - Rebuilds ALL non-Google fonts with the Generic Packager. Useful when the generic packager is updated and makes changes that needs to be applied to all other fonts.
+
+`yarn build:google` - Runs the Google Packager. Compares metadata from Google Font Metadata parsers (see commands below) and existing metadata, only updating those that differ.
+`yarn build:google-force` Forcefully redownload and repackage all Google Font packages.
+
+Additionally, [`./scripts/google/download-google.ts`](https://github.com/fontsource/fontsource/blob/main/scripts/google/download-google.ts#L40) can be temporarily adjusted to only build a smaller dataset of fonts when testing to save on build times. Comment out `production()` and uncomment the `development()` function.
+
+`yarn parser:v1` + `yarn parser:v2` + `yarn parser:variable` - Runs [Google Font Metadata](https://github.com/fontsource/google-font-metadata) scripts that parse the Google APIs that Fontsource needs. In production, these scripts MUST be run before building.
+
+### Website Development
+
+More details can be found on the [README.md](https://github.com/fontsource/fontsource/tree/main/website#readme) of `./website`.
+
 ## Submit Documentation
 
-Submitting new or updating documentation for the Fontsource website is painless and doesn't necessarily require much setup. Navigating to `./website/docs` should contain a directory of markdown files. Editing those markdown files will reflect onto the website.
+Submitting new or updating documentation for the Fontsource website is painless and doesn't necessarily require much setup. Navigating to [`./website/docs`](https://github.com/fontsource/fontsource/tree/main/website/docs) should contain a directory of markdown files. Editing those markdown files will reflect onto the website.
 
-Please note when submitting brand new pages, it would be required to update `./website/src/configs/docsList.json` appropriately for it to reflect on the website sidebar.
+Please note when submitting brand new pages, it would be required to update [`./website/src/configs/docsList.json`](https://github.com/fontsource/fontsource/blob/main/website/src/configs/docsList.json) appropriately for it to reflect on the website sidebar.
