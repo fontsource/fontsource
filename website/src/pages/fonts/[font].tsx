@@ -7,7 +7,11 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import path from "path";
 
-import { FontPageProps, MetadataProps } from "../../@types/[font]";
+import {
+  FontPageProps,
+  FontPreviewCss,
+  MetadataProps,
+} from "../../@types/[font]";
 import { FontPreview } from "../../components/FontPreview";
 import { Main } from "../../components/Main";
 import { PageContainer } from "../../components/PageContainer";
@@ -15,9 +19,18 @@ import fontListAlgolia from "../../configs/algolia.json";
 // Import when testing and don't want to build 1000+ pages
 // import fontListAlgolia from "../../configs/fontListTemp.json";
 import { selectDefPreviewText } from "../../utils/defPreviewLanguage";
-import { fetcher, fontsourceDownload } from "../../utils/fontsourceUtils";
+import {
+  fetchJson,
+  fetchText,
+  fontsourceDownload,
+} from "../../utils/fontsourceUtils";
+import minifyCss from "../../utils/minifyCss";
 
-export default function FontPage({ metadata, defPreviewText }: FontPageProps) {
+export default function FontPage({
+  metadata,
+  defPreviewText,
+  fontCss,
+}: FontPageProps) {
   const { isFallback } = useRouter();
 
   if (isFallback) {
@@ -49,7 +62,11 @@ export default function FontPage({ metadata, defPreviewText }: FontPageProps) {
       </Head>
       <PageContainer ifDocs={false}>
         <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }} mb={12} ml={{ md: 8 }}>
-          <FontPreview defPreviewText={defPreviewText} metadata={metadata} />
+          <FontPreview
+            defPreviewText={defPreviewText}
+            metadata={metadata}
+            fontCss={fontCss}
+          />
         </Main>
       </PageContainer>
     </>
@@ -58,9 +75,11 @@ export default function FontPage({ metadata, defPreviewText }: FontPageProps) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const metadata: MetadataProps = await fetcher(
+    const metadata: MetadataProps = await fetchJson(
       fontsourceDownload.data(`${params.font}`).metadata
     );
+
+    if (!metadata) return { notFound: true };
 
     // Generates preview texts in matching languages
     const defPreviewText = selectDefPreviewText(
@@ -68,9 +87,41 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       metadata.defSubset
     );
 
-    return metadata
-      ? { props: { metadata, defPreviewText }, revalidate: 7200 }
-      : { notFound: true };
+    const fontCssNames: [number, string[]][] = [];
+    // Fetch css data
+    const fontCssData: string[][] = await Promise.all(
+      metadata.weights.map((weight) => {
+        fontCssNames.push([weight, []]);
+        return Promise.all(
+          metadata.styles.map((style) => {
+            fontCssNames[fontCssNames.length - 1][1].push(style);
+
+            return fetchText(
+              fontsourceDownload.cssDownload(metadata.fontId, weight, style)
+            );
+          })
+        );
+      })
+    );
+
+    const fontCss: FontPreviewCss = {};
+
+    // Correctly map css data to its corispoding type (weight/style), while minimizing the css.
+    fontCssNames.forEach((weight, weightIndex) => {
+      fontCss[weight[0]] = {};
+
+      weight[1].forEach((style, styleIndex) => {
+        fontCss[weight[0]][style] = minifyCss(
+          fontCssData[weightIndex][styleIndex]
+        ).replace(
+          /url\('\.\/(files\/.*?)'\)/g,
+          // match "url('./files/${woffFileName}')", then replace with "url('${baseURL}/files/${woffFileName}')"
+          `url('${fontsourceDownload.fontDownload(metadata.fontId)}/$1')`
+        );
+      });
+    });
+
+    return { props: { metadata, defPreviewText, fontCss }, revalidate: 7200 };
   } catch (error) {
     // If metadata doesn't exist
     console.error(error);
