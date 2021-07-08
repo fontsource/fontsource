@@ -27,7 +27,6 @@
     "@next/mdx": "^11.0.0",
     "@types/css-font-loading-module": "^0.0.5",
     "algoliasearch": "^4.9.3",
-    "clean-css": "^5.1.3",
     "fallback-font": "^1.0.0",
     "framer-motion": "4.1.17",
     "gray-matter": "^4.0.3",

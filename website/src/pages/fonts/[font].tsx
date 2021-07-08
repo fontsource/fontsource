@@ -1,7 +1,6 @@
 import "fallback-font/fallback-outline.css";
 
 import { Skeleton } from "@chakra-ui/react";
-import CleanCSS from "clean-css";
 import { promises as fs } from "fs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
@@ -25,6 +24,7 @@ import {
   fetchText,
   fontsourceDownload,
 } from "../../utils/fontsourceUtils";
+import minifyCss from "../../utils/minifyCss";
 
 export default function FontPage({
   metadata,
@@ -111,14 +111,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       fontCss[weight[0]] = {};
 
       weight[1].forEach((style, styleIndex) => {
-        fontCss[weight[0]][style] = new CleanCSS()
-          // minify css useing the "clean-css" package
-          .minify(fontCssData[weightIndex][styleIndex])
-          .styles.replace(
-            /url\('\.\/(files\/.*?)'\)/g,
-            // match "url('./files/${woffFileName}')", then replace with "url('${baseURL}/files/${woffFileName}')"
-            `url('${fontsourceDownload.fontDownload(metadata.fontId)}/$1')`
-          );
+        fontCss[weight[0]][style] = minifyCss(
+          fontCssData[weightIndex][styleIndex]
+        ).replace(
+          /url\('\.\/(files\/.*?)'\)/g,
+          // match "url('./files/${woffFileName}')", then replace with "url('${baseURL}/files/${woffFileName}')"
+          `url('${fontsourceDownload.fontDownload(metadata.fontId)}/$1')`
+        );
       });
     });
 
