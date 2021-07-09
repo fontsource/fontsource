@@ -54,6 +54,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - karmilla
 - metropolis
 - mononoki
+- norwester
 - noto-mono
 - plus-jakarta-sans
 - syne-italic
