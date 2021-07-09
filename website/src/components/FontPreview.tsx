@@ -230,7 +230,7 @@ export const FontPreview = ({
         .
       </Text>
       <Code>yarn add @fontsource/{metadata.fontId}</Code>
-      <Code>import &quot;@fontsource/{metadata.fontId}.css&quot;</Code>
+      <Code>import &quot;@fontsource/{metadata.fontId}&quot;</Code>
       <Code>
         body &#123; font-family: &quot;{metadata.fontName}&quot;; &#125;
       </Code>
