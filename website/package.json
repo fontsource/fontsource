@@ -25,7 +25,7 @@
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^11.0.0",
-    "@types/css-font-loading-module": "^0.0.5",
+    "@types/css-font-loading-module": "^0.0.6",
     "algoliasearch": "^4.9.3",
     "fallback-font": "^1.0.0",
     "framer-motion": "4.1.17",
