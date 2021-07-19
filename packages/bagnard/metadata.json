@@ -1,1 +1,15 @@
-{"fontId":"bagnard","fontName":"Bagnard","subsets":["latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2021-07-19","version":"v1","category":"serif","source":"https://github.com/sebsan/Bagnard","license":"https://github.com/sebsan/Bagnard/blob/master/OFL.txt","type":"other"}
+{
+  "fontId": "bagnard",
+  "fontName": "Bagnard",
+  "subsets": ["latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-07-19",
+  "version": "v1",
+  "category": "serif",
+  "source": "https://github.com/sebsan/Bagnard",
+  "license": "https://github.com/sebsan/Bagnard/blob/master/OFL.txt",
+  "type": "other"
+}
