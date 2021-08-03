@@ -68,3 +68,4 @@ yarn-error.log
 .idea
 
 api/dist
+.npmrc
