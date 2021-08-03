@@ -1,1 +1,15 @@
-{"fontId":"bravura","fontName":"Bravura","subsets":["latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2021-08-03","version":"v1.38","category":"sans-serif","source":"https://github.com/steinbergmedia/bravura/tree/master","license":"https://github.com/steinbergmedia/bravura/blob/bravura-1.380/LICENSE.txt","type":"other"}
+{
+  "fontId": "bravura",
+  "fontName": "Bravura",
+  "subsets": ["latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-08-03",
+  "version": "v1.38",
+  "category": "sans-serif",
+  "source": "https://github.com/steinbergmedia/bravura/tree/master",
+  "license": "https://github.com/steinbergmedia/bravura/blob/bravura-1.380/LICENSE.txt",
+  "type": "other"
+}
