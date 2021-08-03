@@ -38,7 +38,11 @@ const parser = (files: string[]) => {
         String(weightNum[index])
       );
 
-      fs.renameSync(file, fileNew);
+      try {
+        fs.renameSync(file, fileNew);
+      } catch {
+        // Continue
+      }
     }
   });
 };
@@ -47,14 +51,8 @@ const fontFileDir = `scripts/generic/files`;
 
 glob(`${fontFileDir}/**/*.woff2`, {}, (err, files) => {
   parser(files);
-  if (err) {
-    console.error(err);
-  }
 });
 
 glob(`${fontFileDir}/**/*.woff`, {}, (err, files) => {
   parser(files);
-  if (err) {
-    console.error(err);
-  }
 });
