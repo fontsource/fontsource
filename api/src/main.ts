@@ -5,7 +5,7 @@ import {
 } from '@nestjs/platform-fastify';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import { ValidationPipe } from '@nestjs/common';
+import { ValidationPipe, VersioningType } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -16,7 +16,7 @@ async function bootstrap() {
   // Swagger Setup
   const config = new DocumentBuilder()
     .setTitle('Fontsource')
-    .setDescription('Fontsource API Description')
+    .setDescription('Fontsource API')
     .setVersion('1.0')
     .addTag('fonts')
     .build();
@@ -25,6 +25,9 @@ async function bootstrap() {
 
   // Validation Pipes
   app.useGlobalPipes(new ValidationPipe());
+
+  // API Versioning
+  app.enableVersioning({ type: VersioningType.URI });
 
   // Start
   await app.listen(3000);

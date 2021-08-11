@@ -14,7 +14,7 @@ import { FontAllResponse, FontResponse } from '../interfaces/font.interface';
 import { QueriesAll } from '../interfaces/queries.interface';
 
 @ApiTags('fonts')
-@Controller('fonts')
+@Controller({ path: 'fonts', version: '1' })
 export class FontsController {
   constructor(private readonly fontsService: FontsService) {}
 
