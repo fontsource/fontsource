@@ -13,6 +13,9 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
 
+  // API Versioning
+  app.enableVersioning({ type: VersioningType.URI });
+
   // Swagger Setup
   const config = new DocumentBuilder()
     .setTitle('Fontsource')
@@ -25,9 +28,6 @@ async function bootstrap() {
 
   // Validation Pipes
   app.useGlobalPipes(new ValidationPipe());
-
-  // API Versioning
-  app.enableVersioning({ type: VersioningType.URI });
 
   // Start
   await app.listen(3000);

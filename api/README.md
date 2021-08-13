@@ -32,6 +32,12 @@
 $ npm install
 ```
 
+### Setup Envirnment variables
+
+```
+MONGO_DB=mongodb_url
+```
+
 ## Running the app
 
 ```bash

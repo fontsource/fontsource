@@ -1,5 +1,5 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { merge } from 'lodash';
 import { Model } from 'mongoose';
@@ -120,8 +120,9 @@ export class FontsService {
   }
 
   async updateFonts(): Promise<void> {
-    const fontlistdb = await this.fontlistModel.findOne().lean().exec();
-    console.log(fontlistdb);
+    const fontlistData = await this.fontlistModel.findOne().lean().exec();
+    const list = Object.keys(fontlistData.list);
+    const existingFontDb = await this.findAll({});
   }
 
   async create(createFontDto: CreateFontDto) {

@@ -4,7 +4,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { FontlistService } from '../services/fontlist.service';
 
 @ApiTags('fontlist')
-@Controller({ path: 'fontlist', version: `1` })
+@Controller({ path: 'fontlist' })
 export class FontlistController {
   constructor(private readonly fontlistService: FontlistService) {}
 
