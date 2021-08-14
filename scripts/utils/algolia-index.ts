@@ -23,6 +23,8 @@ directories.forEach(directory => {
 
 // Written as it is used by the website getStaticPaths
 jsonfile.writeFileSync("./website/src/configs/algolia.json", indexArray);
+// Written for API usage
+jsonfile.writeFileSync("./website/public/algolia.json", indexArray);
 
 // Initialise Algolia client
 if (process.env.NODE_ENV !== "production") {
