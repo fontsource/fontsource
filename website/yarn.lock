@@ -1312,10 +1312,10 @@
     "@types/react" "*"
     "@types/react-instantsearch-core" "*"
 
-"@types/react@*", "@types/react@^17.0.0", "@types/react@^17.0.17":
-  version "17.0.17"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.17.tgz#1772d3d5425128e0635a716f49ef57c2955df055"
-  integrity sha512-nrfi7I13cAmrd0wje8czYpf5SFbryczCtPzFc6ijqvdjKcyA3tCvGxwchOUlxb2ucBPuJ9Y3oUqKrRqZvrz0lw==
+"@types/react@*", "@types/react@^17.0.0", "@types/react@^17.0.18":
+  version "17.0.18"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.18.tgz#4109cbbd901be9582e5e39e3d77acd7b66bb7fbe"
+  integrity sha512-YTLgu7oS5zvSqq49X5Iue5oAbVGhgPc5Au29SJC4VeE17V6gASoOxVkUDy9pXFMRFxCWCD9fLeweNFizo3UzOg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -3990,10 +3990,10 @@ next-remote-watch@^1.0.0:
     commander "^5.0.0"
     express "^4.17.1"
 
-next-sitemap@^1.6.148:
-  version "1.6.148"
-  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.6.148.tgz#59ae167bd9317e8a285f586d9ceaab8bdf1817aa"
-  integrity sha512-PZhH2ftJYHjwcFYrHtHOrhmf/D/N7YJEaEAKKp6t9uIxRoMMNXoxkh9ImwgGXVBv0WEroRtx1eOT5QjJvpXdDA==
+next-sitemap@^1.6.157:
+  version "1.6.157"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.6.157.tgz#9e894188217ec94a00d4e10ddebb92393a3ea14a"
+  integrity sha512-5aIGplbGj0vRsetVla1ZW+0CaRtFnDY9ffW8qqii/nAfOyFuBgaHgKS92TsuBPNzz7O0/7vz4x8jZXEoR9tg2w==
   dependencies:
     "@corex/deepmerge" "^2.6.20"
     matcher "^4.0.0"
