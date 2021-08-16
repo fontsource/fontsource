@@ -28,3 +28,39 @@ export interface Variants {
     };
   };
 }
+
+export interface FontMetadata {
+  fontId: string;
+  fontName: string;
+  subsets: string[];
+  weights: number[];
+  styles: string[];
+  defSubset: string;
+  variable: boolean;
+  lastModified: string;
+  version: string;
+  category: string;
+  source: string;
+  license: string;
+  type: string;
+  objectID: string;
+}
+
+export interface FontCompareObj {
+  [id: string]: string;
+}
+
+export interface VariantsDocument {
+  subset: string;
+  unicodeRange: string;
+  downloads: DownloadsDocument[];
+}
+
+export interface DownloadsDocument {
+  weight: number;
+  style: string;
+  url: {
+    woff2: string;
+    woff: string;
+  };
+}
