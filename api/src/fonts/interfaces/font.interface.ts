@@ -49,18 +49,3 @@ export interface FontMetadata {
 export interface FontCompareObj {
   [id: string]: string;
 }
-
-export interface VariantsDocument {
-  subset: string;
-  unicodeRange: string;
-  downloads: DownloadsDocument[];
-}
-
-export interface DownloadsDocument {
-  weight: number;
-  style: string;
-  url: {
-    woff2: string;
-    woff: string;
-  };
-}

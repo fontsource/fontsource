@@ -8,19 +8,27 @@ import {
   Delete,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { CreateFontDto } from '../dto/create-font.dto';
-import { FontsService } from '../services/fonts.service';
-import { FontAllResponse, FontResponse } from '../interfaces/font.interface';
-import { QueriesAll } from '../interfaces/queries.interface';
+import { CreateFontDto } from './dto/create-font.dto';
+
+import { FontsService } from './services/fonts.service';
+import { FindService } from './services/find.service';
+import { UpdateService } from './services/update.service';
+
+import { FontAllResponse, FontResponse } from './interfaces/font.interface';
+import { QueriesAll } from './interfaces/queries.interface';
 
 @ApiTags('fonts')
 @Controller({ path: 'fonts', version: '1' })
 export class FontsController {
-  constructor(private readonly fontsService: FontsService) {}
+  constructor(
+    private readonly fontsService: FontsService,
+    private readonly findService: FindService,
+    private readonly updateService: UpdateService,
+  ) {}
 
   @Get()
   async findAll(@Query() query: QueriesAll): Promise<FontAllResponse[]> {
-    return await this.fontsService.findAll(query);
+    return await this.findService.findAll(query);
   }
 
   @Get(':id')
@@ -28,12 +36,12 @@ export class FontsController {
     @Param('id') id: string,
     @Query() query,
   ): Promise<FontResponse> {
-    return await this.fontsService.findOne(id, query);
+    return await this.findService.findOne(id, query);
   }
 
   @Post('update')
   async updateFonts() {
-    return await this.fontsService.updateFonts();
+    return await this.updateService.updateFonts();
   }
 
   @Post()
