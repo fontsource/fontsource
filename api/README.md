@@ -36,6 +36,7 @@ $ npm install
 
 ```
 MONGO_DB=mongodb_url
+GITHUB_PAT=token
 ```
 
 ## Running the app
