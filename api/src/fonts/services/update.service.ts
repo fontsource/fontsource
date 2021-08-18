@@ -1,6 +1,12 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, NotFoundException, Logger } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  Logger,
+  OnModuleInit,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+import { Cron } from '@nestjs/schedule';
 import { AxiosResponse } from 'axios';
 import { Model } from 'mongoose';
 import PQueue from 'p-queue';
@@ -21,7 +27,7 @@ import {
 } from '../interfaces/font.interface';
 
 @Injectable()
-export class UpdateService {
+export class UpdateService implements OnModuleInit {
   constructor(
     @InjectModel(Font.name) private readonly fontModel: Model<FontDocument>,
     private readonly httpService: HttpService,
@@ -54,7 +60,14 @@ export class UpdateService {
     return unicodeData;
   }
 
+  // Update the fontlist on Nest application startup
+  async onModuleInit(): Promise<void> {
+    await this.updateFonts();
+  }
+
+  @Cron('0 0 * * *')
   async updateFonts() {
+    this.logger.log('Checking for updates in font data...');
     // Convert existing db to key value pair of fontId:lastModified
     const existingFontDb = await this.findService.findAll({});
     let existingFontObj: FontCompareObj = {};
@@ -90,7 +103,7 @@ export class UpdateService {
 
     let count = 0;
     queue.on('active', () => {
-      this.logger.log(`Working on font #${++count}.  Size: ${queue.size}`);
+      this.logger.log(`Updating font #${++count}.  Queue size: ${queue.size}`);
     });
   }
 
