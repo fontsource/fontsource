@@ -22,6 +22,7 @@ export class FindService {
   async findAll(query: QueriesAll): Promise<FontAllResponse[]> {
     const metadataArray = await this.fontModel
       .find({ ...query })
+      .sort({ id: 'asc' })
       .lean()
       .exec();
     // Mongoose returns an object with keys in a very different order than intended
