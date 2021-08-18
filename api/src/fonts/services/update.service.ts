@@ -1,8 +1,9 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { AxiosResponse } from 'axios';
 import { Model } from 'mongoose';
+import PQueue from 'p-queue';
 import { lastValueFrom } from 'rxjs';
 
 import { FindService } from './find.service';
@@ -26,6 +27,7 @@ export class UpdateService {
     private readonly httpService: HttpService,
     private readonly findService: FindService,
   ) {}
+  private readonly logger = new Logger(UpdateService.name);
 
   // Calls metadata from jsDelivr
   private async callMetadata(id: string): Promise<FontMetadata> {
@@ -47,7 +49,7 @@ export class UpdateService {
         unicodeData = res.data;
       })
       .catch((err) => {
-        console.log(`${id} unicode download failed. ${err}`);
+        this.logger.error(`${id} unicode download failed. ${err}`);
       });
     return unicodeData;
   }
@@ -72,6 +74,9 @@ export class UpdateService {
       algoliaIndexObj = Object.assign(algoliaIndexObj, fontData);
     }
 
+    // Queue system when handling large number of fonts
+    const queue = new PQueue({ concurrency: 32 });
+
     // Iterate through algolia object and compare
     for (const font in algoliaIndexObj) {
       const algoliaDate = algoliaIndexObj[font];
@@ -79,62 +84,71 @@ export class UpdateService {
       if (font in existingFontObj && algoliaDate === existingDate) {
         // Continue
       } else {
-        // Download metadata from jsDelivr
-        const fontData = await this.callMetadata(font);
-        const unicodeData = await this.callUnicode(font);
+        queue.add(async () => await this.itemUpdate(font, existingFontObj));
+      }
+    }
 
-        // If variable is true, it returns with axes, hence we convert to boolean
-        let isVariable = false;
-        if (fontData.variable) {
-          isVariable = true;
-        }
+    let count = 0;
+    queue.on('active', () => {
+      this.logger.log(`Working on font #${++count}.  Size: ${queue.size}`);
+    });
+  }
 
-        // Convert metadata into document friendly variants
-        const fontVariants: Variants[] = [];
-        for (const subset of fontData.subsets) {
-          const downloads: Downloads[] = [];
-          for (const weight of fontData.weights) {
-            for (const style of fontData.styles) {
-              const downloadsObj: Downloads = {
-                weight,
-                style,
-                url: fontLink(fontData.fontId, subset, weight, style),
-              };
-              downloads.push(downloadsObj);
-            }
-          }
+  private async itemUpdate(font: string, existingFontObj: FontCompareObj) {
+    // Download metadata from jsDelivr
+    const fontData = await this.callMetadata(font);
+    const unicodeData = await this.callUnicode(font);
 
-          const variantObj: Variants = {
-            subset,
-            unicodeRange: unicodeData[subset],
-            downloads,
+    // If variable is true, it returns with axes, hence we convert to boolean
+    let isVariable = false;
+    if (fontData.variable) {
+      isVariable = true;
+    }
+
+    // Convert metadata into document friendly variants
+    const fontVariants: Variants[] = [];
+    for (const subset of fontData.subsets) {
+      const downloads: Downloads[] = [];
+      for (const weight of fontData.weights) {
+        for (const style of fontData.styles) {
+          const downloadsObj: Downloads = {
+            weight,
+            style,
+            url: fontLink(fontData.fontId, subset, weight, style),
           };
-          fontVariants.push(variantObj);
-        }
-
-        // Ensure match schema, but partial due to other mongo related properties
-        const fontObj: Partial<FontDocument> = {
-          id: fontData.fontId,
-          family: fontData.fontName,
-          subsets: fontData.subsets,
-          weights: fontData.weights,
-          styles: fontData.styles,
-          defSubset: fontData.defSubset,
-          variable: isVariable,
-          lastModified: fontData.lastModified,
-          version: fontData.version,
-          category: fontData.category,
-          type: fontData.type,
-          variants: fontVariants,
-        };
-
-        if (font in existingFontObj) {
-          await this.fontModel.updateOne({ id: font }, fontObj).exec();
-        } else {
-          const createdFont = new this.fontModel(fontObj);
-          await createdFont.save();
+          downloads.push(downloadsObj);
         }
       }
+
+      const variantObj: Variants = {
+        subset,
+        unicodeRange: unicodeData[subset],
+        downloads,
+      };
+      fontVariants.push(variantObj);
+    }
+
+    // Ensure match schema, but partial due to other mongo related properties
+    const fontObj: Partial<FontDocument> = {
+      id: fontData.fontId,
+      family: fontData.fontName,
+      subsets: fontData.subsets,
+      weights: fontData.weights,
+      styles: fontData.styles,
+      defSubset: fontData.defSubset,
+      variable: isVariable,
+      lastModified: fontData.lastModified,
+      version: fontData.version,
+      category: fontData.category,
+      type: fontData.type,
+      variants: fontVariants,
+    };
+
+    if (font in existingFontObj) {
+      await this.fontModel.updateOne({ id: font }, fontObj).exec();
+    } else {
+      const createdFont = new this.fontModel(fontObj);
+      await createdFont.save();
     }
   }
 }
