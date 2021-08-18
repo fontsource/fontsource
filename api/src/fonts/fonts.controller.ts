@@ -1,14 +1,5 @@
-import {
-  Controller,
-  Get,
-  Param,
-  Query,
-  Body,
-  Post,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Get, Param, Query, Post, Delete } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { CreateFontDto } from './dto/create-font.dto';
 
 import { FontsService } from './services/fonts.service';
 import { FindService } from './services/find.service';
@@ -21,8 +12,8 @@ import { QueriesAll } from './interfaces/queries.interface';
 @Controller({ path: 'fonts', version: '1' })
 export class FontsController {
   constructor(
-    private readonly fontsService: FontsService,
     private readonly findService: FindService,
+    private readonly fontsService: FontsService,
     private readonly updateService: UpdateService,
   ) {}
 
@@ -42,11 +33,6 @@ export class FontsController {
   @Post('update')
   async updateFonts() {
     return await this.updateService.updateFonts();
-  }
-
-  @Post()
-  async create(@Body() createFontDto: CreateFontDto) {
-    return await this.fontsService.create(createFontDto);
   }
 
   @Post('example')
