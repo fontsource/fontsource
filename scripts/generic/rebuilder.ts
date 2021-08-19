@@ -20,9 +20,18 @@ interface Metadata {
   type: string;
 }
 
+interface UnicodeRange {
+  [subset: string]: string;
+}
+
 directories.forEach(directory => {
   const fontDir = `./packages/${directory}`;
   const metadata: Metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
+
+  let unicodeRange: UnicodeRange = {};
+  if (fs.existsSync(`${fontDir}/unicode.json`)) {
+    unicodeRange = jsonfile.readFileSync(`${fontDir}/unicode.json`);
+  }
 
   // Rebuild only non-Google fonts
   if (metadata.type !== "google") {
@@ -42,6 +51,7 @@ directories.forEach(directory => {
       weights: metadata.weights.map(weight => Number(weight)),
       styles: metadata.styles,
       defSubset: metadata.defSubset,
+      unicodeRange,
       variable: false,
       lastModified: metadata.lastModified,
       version: metadata.version,

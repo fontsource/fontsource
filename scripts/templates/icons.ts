@@ -1,6 +1,6 @@
-import * as _ from "lodash";
+import { template } from "lodash";
 
-const materialIcons = _.template(
+const materialIcons = template(
   `.<%= fontId %> {
   font-family: '<%= fontName %>';
   font-weight: normal;

@@ -3,10 +3,12 @@ import jsonfile from "jsonfile";
 import glob from "glob";
 
 import { makeFontFilePath, findClosest } from "../utils/utils";
+
 import { fontFace } from "../templates/css";
 import { scssGeneric } from "../templates/scss";
 import { packageJson } from "../templates/package";
 import { readme } from "../templates/readme";
+import { changelog } from "../templates/changelog";
 import { materialIcons } from "../templates/icons";
 
 interface Font {
@@ -17,6 +19,7 @@ interface Font {
   defSubset: string;
   weights: number[];
   styles: string[];
+  unicodeRange: { [subset: string]: string };
   source: string;
   license: string;
   version: string;
@@ -36,6 +39,7 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
     defSubset,
     weights,
     styles,
+    unicodeRange,
     source,
     license,
     version,
@@ -158,6 +162,12 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
     license,
     type,
   });
+
+  // Write CHANGELOG.md
+  fs.writeFileSync(`${fontDir}/CHANGELOG.md`, changelog());
+
+  // Write unicode.json
+  jsonfile.writeFileSync(`${fontDir}/unicode.json`, unicodeRange);
 
   // Write out package.json file
   let packageJSON;

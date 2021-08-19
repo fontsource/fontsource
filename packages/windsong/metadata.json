@@ -1,0 +1,15 @@
+{
+  "fontId": "windsong",
+  "fontName": "WindSong",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": [400, 500],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-07-26",
+  "version": "v1",
+  "category": "handwriting",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

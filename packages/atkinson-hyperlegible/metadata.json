@@ -1,15 +1,15 @@
 {
   "fontId": "atkinson-hyperlegible",
   "fontName": "Atkinson Hyperlegible",
-  "subsets": ["latin"],
+  "subsets": ["latin", "latin-ext"],
   "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
   "variable": false,
-  "lastModified": "2021-05-07",
+  "lastModified": "2021-07-26",
   "version": "v1",
   "category": "sans-serif",
-  "source": "https://brailleinstitute.org/freefont",
-  "license": "https://www.brailleinstitute.org/wp-content/uploads/2020/11/Atkinson-Hyperlegible-Font-License-2020-1104.pdf",
-  "type": "other"
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
 }

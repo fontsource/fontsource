@@ -2,12 +2,14 @@
   "fontId": "reem-kufi",
   "fontName": "Reem Kufi",
   "subsets": ["arabic", "latin"],
-  "weights": [400],
+  "weights": [400, 500, 600, 700],
   "styles": ["normal"],
   "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2021-03-24",
-  "version": "v10",
+  "variable": {
+    "wght": { "default": "400", "min": "400", "max": "700", "step": "1" }
+  },
+  "lastModified": "2021-07-01",
+  "version": "v11",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

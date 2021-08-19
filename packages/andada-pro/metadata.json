@@ -1,0 +1,18 @@
+{
+  "fontId": "andada-pro",
+  "fontName": "Andada Pro",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": [400, 500, 600, 700, 800],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "wght": { "default": "400", "min": "400", "max": "840", "step": "1" }
+  },
+  "lastModified": "2021-07-26",
+  "version": "v1",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
