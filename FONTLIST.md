@@ -50,6 +50,10 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - clear-sans
 - comic-mono
 - cooper-hewitt
+- dejavu-math
+- dejavu-mono
+- dejavu-sans
+- dejavu-serif
 - dseg-weather
 - dseg14
 - dseg7
@@ -60,6 +64,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - mononoki
 - norwester
 - noto-mono
+- opendyslexic
 - plus-jakarta-sans
 - syne-italic
 - vazir

@@ -1,1 +1,15 @@
-{"fontId":"opendyslexic","fontName":"OpenDyslexic","subsets":["latin"],"weights":[400,700],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2021-08-19","version":"v0.910.12","category":"sans-serif","source":"https://github.com/antijingoist/opendyslexic/tree/master","license":"https://github.com/antijingoist/opendyslexic/blob/master/OFL.txt","type":"other"}
+{
+  "fontId": "opendyslexic",
+  "fontName": "OpenDyslexic",
+  "subsets": ["latin"],
+  "weights": [400, 700],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-08-19",
+  "version": "v0.910.12",
+  "category": "sans-serif",
+  "source": "https://github.com/antijingoist/opendyslexic/tree/master",
+  "license": "https://github.com/antijingoist/opendyslexic/blob/master/OFL.txt",
+  "type": "other"
+}

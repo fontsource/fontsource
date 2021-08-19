@@ -1,1 +1,15 @@
-{"fontId":"dejavu-sans","fontName":"DejaVu Sans","subsets":["latin"],"weights":[400,700],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2021-08-19","version":"v2.37","category":"sans-serif","source":"https://github.com/dejavu-fonts/dejavu-fonts/tree/master","license":"https://github.com/dejavu-fonts/dejavu-fonts/blob/master/LICENSE","type":"other"}
+{
+  "fontId": "dejavu-sans",
+  "fontName": "DejaVu Sans",
+  "subsets": ["latin"],
+  "weights": [400, 700],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-08-19",
+  "version": "v2.37",
+  "category": "sans-serif",
+  "source": "https://github.com/dejavu-fonts/dejavu-fonts/tree/master",
+  "license": "https://github.com/dejavu-fonts/dejavu-fonts/blob/master/LICENSE",
+  "type": "other"
+}
