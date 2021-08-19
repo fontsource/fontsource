@@ -11,7 +11,11 @@ import {
   Variants,
   UnicodeRange,
 } from '../interfaces/font.interface';
-import { QueriesAll, QueriesOne } from '../interfaces/queries.interface';
+import {
+  QueriesAll,
+  QueriesOne,
+  QueryMongoose,
+} from '../interfaces/queries.interface';
 
 @Injectable()
 export class FindService {
@@ -19,9 +23,28 @@ export class FindService {
     @InjectModel(Font.name) private readonly fontModel: Model<FontDocument>,
   ) {}
 
-  async findAll(query: QueriesAll): Promise<FontAllResponse[]> {
+  async findAll(queries: QueriesAll): Promise<FontAllResponse[]> {
+    // An array of query objects for mongo to AND search
+    const findArray: QueriesAll[] = [];
+
+    // Each query should be split into an array from commas, then queried with mongo individually
+    for (const queryKey in queries) {
+      const queryValue = String(queries[queryKey]).split(',');
+      queryValue.forEach((value) => {
+        if (queryKey === 'weights') {
+          findArray.push({ [queryKey]: Number(value) });
+        } else {
+          findArray.push({ [queryKey]: value });
+        }
+      });
+    }
+
+    // If findArray is empty, do NOT use $and operator as it causes a Mongo error
+    const queryMongoose: QueryMongoose =
+      findArray.length !== 0 ? { $and: findArray } : <QueryMongoose>{};
+
     const metadataArray = await this.fontModel
-      .find({ ...query })
+      .find({ ...queryMongoose })
       .sort({ id: 'asc' })
       .lean()
       .exec();

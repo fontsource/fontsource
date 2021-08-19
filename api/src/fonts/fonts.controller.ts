@@ -30,6 +30,7 @@ export class FontsController {
     return await this.findService.findOne(id, query);
   }
 
+  /* Test routes
   @Post('update')
   async updateFonts() {
     return await this.updateService.updateFonts();
@@ -43,5 +44,5 @@ export class FontsController {
   @Delete(':id')
   async delete(@Param('id') id: string) {
     return await this.fontsService.delete(id);
-  }
+  }*/
 }
