@@ -41,7 +41,10 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 ## Other
 
 - aileron
-- atkinson-hyperlegible
+- bagnard
+- bagnard-sans
+- bravura
+- bravura-text
 - carlito
 - charis-sil
 - clear-sans
@@ -51,9 +54,11 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - dseg14
 - dseg7
 - firago
+- iosevka
 - karmilla
 - metropolis
 - mononoki
+- norwester
 - noto-mono
 - plus-jakarta-sans
 - syne-italic

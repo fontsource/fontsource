@@ -19,27 +19,28 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AiFillGithub, AiOutlineFontSize } from "react-icons/ai";
 import { ImNpm } from "react-icons/im";
 
-import { MetadataProps } from "../@types/[font]";
-import useFontDownload from "../hooks/useFontDownload";
-import {
-  findClosestStyle,
-  findClosestWeight,
-  fontsourceDownload,
-} from "../utils/fontsourceUtils";
+import { FontPreviewCss, MetadataProps } from "../@types/[font]";
+import { findClosestStyle, findClosestWeight } from "../utils/fontsourceUtils";
 import { BlockQuote } from "./Blockquote";
 import { NextChakraLink } from "./NextChakraLink";
 
 interface FontPreviewProps {
   defPreviewText: string;
   metadata: MetadataProps;
+  fontCss: FontPreviewCss;
 }
 
-export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
+export const FontPreview = ({
+  defPreviewText,
+  metadata,
+  fontCss,
+}: FontPreviewProps) => {
   const { isFallback, events } = useRouter();
 
   const [fontSize, setFontSize] = useState(32);
@@ -60,14 +61,19 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
     });
   }, [events, defPreviewText, defStyle, defWeight]);
 
-  const downloadLink = fontsourceDownload.fontDownload(
-    metadata.fontId,
-    metadata.defSubset,
-    weight,
-    style
-  );
+  const [fontLoaded, setFontLoaded] = useState(false);
 
-  const fontLoaded = useFontDownload(metadata, downloadLink);
+  useEffect(() => {
+    setFontLoaded(false);
+
+    // Give browser time to unload fonts in order to not cause a flash of the "Fallback Outline" font
+    const timeout = setTimeout(
+      () => document.fonts.ready.then(() => setFontLoaded(true)),
+      500
+    );
+
+    return () => clearTimeout(timeout);
+  }, [metadata.fontId, weight, style]);
 
   const bgSlider = useColorModeValue("gray.200", "gray.700");
   const bgSliderFilled = useColorModeValue("black", "white");
@@ -78,6 +84,9 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
 
   return (
     <>
+      <Head>
+        <style>{fontCss[weight][style]}</style>
+      </Head>
       <Box>
         <SimpleGrid columns={{ base: 1, sm: 2 }}>
           <Heading size="2xl">{metadata.fontName}</Heading>
@@ -158,9 +167,15 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
           onChange={(event) => setPreviewText(event.target.value)}
           variant="flushed"
           style={{
-            fontFamily: metadata.fontName,
+            // if the font is a material icons variant, then use the Chakra default font as a fallback
+            fontFamily: `"${metadata.fontName}", ${
+              metadata.fontId.startsWith("material-icons")
+                ? `var(--chakra-fonts-body), `
+                : ""
+            }"Fallback Outline"`,
             fontSize: `${fontSize}px`,
             fontWeight: weight,
+            fontStyle: style,
           }}
           height={`${fontSize + 12}px`}
         />
@@ -215,7 +230,7 @@ export const FontPreview = ({ defPreviewText, metadata }: FontPreviewProps) => {
         .
       </Text>
       <Code>yarn add @fontsource/{metadata.fontId}</Code>
-      <Code>import &quot;@fontsource/{metadata.fontId}.css&quot;</Code>
+      <Code>import &quot;@fontsource/{metadata.fontId}&quot;</Code>
       <Code>
         body &#123; font-family: &quot;{metadata.fontName}&quot;; &#125;
       </Code>

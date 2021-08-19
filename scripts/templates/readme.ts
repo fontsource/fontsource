@@ -1,6 +1,6 @@
-import * as _ from "lodash";
+import { template } from "lodash";
 
-const readme = _.template(
+const readme = template(
   `# Fontsource <%= fontName %>
 
 [![npm (scoped)](https://img.shields.io/npm/v/@fontsource/<%= fontId %>?color=brightgreen)](https://www.npmjs.com/package/@fontsource/<%= fontId %>) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/<%= fontId %>)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/<%= fontId %>)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)

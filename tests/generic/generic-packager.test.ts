@@ -10,6 +10,7 @@ const testFont = {
   weights: [100, 300, 400, 500, 700],
   styles: ["normal", "italic"],
   defSubset: "all",
+  unicodeRange: {},
   variable: false,
   lastModified: "2020-10-15",
   version: "1.00",
@@ -29,6 +30,7 @@ const testIcon = {
   weights: [400],
   styles: ["normal"],
   defSubset: "base",
+  unicodeRange: {},
   variable: false,
   lastModified: "2021-03-31",
   version: "v4",
@@ -59,7 +61,7 @@ describe("Generate Generic CSS", () => {
   test("Clear Sans CSS", () => {
     packager(testFont, true);
     const dirPath = "./packages/clear-sans";
-    const fileNames = readDir(dirPath);
+    const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
       "100-italic.css",
@@ -98,7 +100,7 @@ describe("Generate Generic CSS", () => {
   test("Material Icons CSS", () => {
     packager(testIcon, true);
     const dirPath = "./packages/material-icons";
-    const fileNames = readDir(dirPath);
+    const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
       "400.css",

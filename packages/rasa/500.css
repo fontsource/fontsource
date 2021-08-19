@@ -7,6 +7,15 @@
   src: url('./files/rasa-gujarati-500-normal.woff2') format('woff2'), url('./files/rasa-all-500-normal.woff') format('woff');
   unicode-range: U+0964-0965, U+0A80-0AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839;
 }
+/* rasa-vietnamese-500-normal*/
+@font-face {
+  font-family: 'Rasa';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/rasa-vietnamese-500-normal.woff2') format('woff2'), url('./files/rasa-all-500-normal.woff') format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
 /* rasa-latin-ext-500-normal*/
 @font-face {
   font-family: 'Rasa';

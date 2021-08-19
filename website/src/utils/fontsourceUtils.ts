@@ -13,19 +13,20 @@ const fontsourceDownload = {
     };
   },
 
-  fontDownload(
-    fontId: string,
-    defSubset: string,
-    weight: number,
-    style: string
-  ) {
+  cssDownload(fontId: string, weight: number, style: string) {
     const dir = `${baseUrlDownload}/@fontsource/${fontId}`;
 
-    return `${dir}/files/${fontId}-${defSubset}-${weight}-${style}.woff2`;
+    // If style is normal, only search for the "weight.css" file. e.g. "400.css" instead of "400-italic.css"
+    return `${dir}/${weight}${style === "normal" ? "" : `-${style}`}.css`;
+  },
+
+  fontDownload(fontId: string) {
+    return `${baseUrlDownload}/@fontsource/${fontId}`;
   },
 };
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetchJson = (url: string) => fetch(url).then((res) => res.json());
+const fetchText = (url: string) => fetch(url).then((res) => res.text());
 
 // Rarely some fonts do not have a 400 weight
 const findClosestWeight = (weightArr: number[]) => {
@@ -48,4 +49,10 @@ const findClosestStyle = (styleArr: string[]) => {
   }
 };
 
-export { fetcher, findClosestStyle, findClosestWeight, fontsourceDownload };
+export {
+  fetchJson,
+  fetchText,
+  findClosestStyle,
+  findClosestWeight,
+  fontsourceDownload,
+};

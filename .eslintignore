@@ -3,3 +3,4 @@ jest.config.js
 tests/coverage
 api
 website
+coverage
