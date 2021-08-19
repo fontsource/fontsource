@@ -1,0 +1,30 @@
+{
+  "name": "@fontsource/opendyslexic",
+  "version": "4.5.0",
+  "description": "Self-host the OpenDyslexic font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "OpenDyslexic",
+    "opendyslexic",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/opendyslexic#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/opendyslexic"
+  }
+}
