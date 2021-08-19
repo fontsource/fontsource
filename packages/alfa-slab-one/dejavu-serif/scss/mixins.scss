@@ -1,0 +1,33 @@
+$fontName: "DejaVu Serif";
+$fontId: "dejavu-serif";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+$woff2Path: "#{$fontDir}/#{$fontId}-latin-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-latin-#{$weight}-#{$style}.woff";
+$unicodeRange: false;
+$unicodeRangeValues: null;
+
+@mixin fontFaceCustom(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $woff2Path: $woff2Path,
+  $woffPath: $woffPath,
+  $unicodeRange: $unicodeRange,
+  $unicodeRangeValues: $unicodeRangeValues
+) {
+  @font-face {
+    font-family: "#{$fontName}";
+    font-style: $style;
+    font-display: $display;
+    font-weight: $weight;
+    src: url("#{$woff2Path}") format("woff2"), url("#{$woffPath}") format("woff");
+    @if $unicodeRange {
+      unicode-range: $unicodeRangeValues;
+    }
+  }
+}
