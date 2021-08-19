@@ -10,3 +10,7 @@ export interface QueriesAll {
 export interface QueriesOne {
   version?: string;
 }
+
+export interface QueryMongoose {
+  $and: QueriesAll[];
+}
