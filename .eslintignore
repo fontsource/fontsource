@@ -1,6 +1,6 @@
 yarn.lock
-website
 jest.config.js
 tests/coverage
-coverage
 api
+website
+coverage
