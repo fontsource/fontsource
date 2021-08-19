@@ -56,3 +56,7 @@ glob(`${fontFileDir}/**/*.woff2`, {}, (err, files) => {
 glob(`${fontFileDir}/**/*.woff`, {}, (err, files) => {
   parser(files);
 });
+
+glob(`${fontFileDir}/**/*.ttf`, {}, (err, files) => {
+  parser(files);
+});
