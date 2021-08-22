@@ -1,0 +1,15 @@
+{
+  "fontId": "ibm-plex-sans-hebrew",
+  "fontName": "IBM Plex Sans Hebrew",
+  "subsets": ["cyrillic-ext", "hebrew", "latin", "latin-ext"],
+  "weights": [100, 200, 300, 400, 500, 600, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-08-18",
+  "version": "v1",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

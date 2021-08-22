@@ -2,12 +2,14 @@
   "fontId": "kumbh-sans",
   "fontName": "Kumbh Sans",
   "subsets": ["latin", "latin-ext"],
-  "weights": [300, 400, 700],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2021-03-24",
-  "version": "v5",
+  "variable": {
+    "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
+  },
+  "lastModified": "2021-08-18",
+  "version": "v6",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

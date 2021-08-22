@@ -1,0 +1,15 @@
+{
+  "fontId": "kaisei-tokumin",
+  "fontName": "Kaisei Tokumin",
+  "subsets": ["cyrillic", "japanese", "latin", "latin-ext"],
+  "weights": [400, 500, 700, 800],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-08-18",
+  "version": "v1",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

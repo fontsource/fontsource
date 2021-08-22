@@ -1,0 +1,15 @@
+{
+  "fontId": "klee-one",
+  "fontName": "Klee One",
+  "subsets": ["cyrillic", "greek-ext", "japanese", "latin", "latin-ext"],
+  "weights": [400, 600],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-08-18",
+  "version": "v1",
+  "category": "handwriting",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

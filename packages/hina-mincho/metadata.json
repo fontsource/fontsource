@@ -1,0 +1,15 @@
+{
+  "fontId": "hina-mincho",
+  "fontName": "Hina Mincho",
+  "subsets": ["cyrillic", "japanese", "latin", "latin-ext", "vietnamese"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-08-18",
+  "version": "v2",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

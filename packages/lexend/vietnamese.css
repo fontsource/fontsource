@@ -7,6 +7,15 @@
   src: url('./files/lexend-vietnamese-100-normal.woff2') format('woff2'), url('./files/lexend-vietnamese-100-normal.woff') format('woff');
   
 }
+/* lexend-vietnamese-200-normal*/
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/lexend-vietnamese-200-normal.woff2') format('woff2'), url('./files/lexend-vietnamese-200-normal.woff') format('woff');
+  
+}
 /* lexend-vietnamese-300-normal*/
 @font-face {
   font-family: 'Lexend';
@@ -59,5 +68,14 @@
   font-display: swap;
   font-weight: 800;
   src: url('./files/lexend-vietnamese-800-normal.woff2') format('woff2'), url('./files/lexend-vietnamese-800-normal.woff') format('woff');
+  
+}
+/* lexend-vietnamese-900-normal*/
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/lexend-vietnamese-900-normal.woff2') format('woff2'), url('./files/lexend-vietnamese-900-normal.woff') format('woff');
   
 }
