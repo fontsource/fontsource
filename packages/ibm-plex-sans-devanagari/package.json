@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/ibm-plex-sans-devanagari",
-  "version": "4.5.0",
+  "version": "4.5.1",
   "description": "Self-host the IBM Plex Sans Devanagari font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": {
