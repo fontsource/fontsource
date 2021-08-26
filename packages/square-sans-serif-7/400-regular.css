@@ -1,0 +1,9 @@
+/* square-sans-serif-7-latin-400-regular*/
+@font-face {
+  font-family: 'Square Sans Serif 7';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/square-sans-serif-7-latin-400-regular.woff2') format('woff2'), url('./files/square-sans-serif-7-latin-400-regular.woff') format('woff');
+  
+}

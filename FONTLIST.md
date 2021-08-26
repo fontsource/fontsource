@@ -75,3 +75,4 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - yakuhanmps
 - yakuhanrp
 - yakuhanrps
+- square-sans-serif-7
