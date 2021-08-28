@@ -5,10 +5,10 @@ services:
     container_name: fontsource-api
     build: .
     ports:
-      - '80:8080'
-    env_file:
-      - .env
+      - '443:8080'
     links:
+      - mongodb
+    depends_on:
       - mongodb
     restart: unless-stopped
   mongodb:
