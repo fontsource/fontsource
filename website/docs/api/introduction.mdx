@@ -1,0 +1,31 @@
+---
+title: Getting Started API
+---
+
+# About
+
+---
+
+The Fontsource API allows developers to query information about fonts which the repository supports.
+
+> **Note:** The API servers are kindly sponsored by our friends at [JSDelivr](https://www.jsdelivr.com/). We recommend using them as other CDNs may impose restrictions due to certain package sizes exceeding their limits.
+
+## Usage
+
+---
+
+The URL to access the API is found at [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
+
+Each route can also have additional queries included with the URL to filter the responses appropriately.
+
+For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext` as well as if it is a variable font.
+
+## Contents
+
+---
+
+- **[Fontlist](/docs/api/fontlist)**
+
+- **[Fonts](/docs/api/fonts)**
+
+- **[Font ID](/docs/api/font-id)**

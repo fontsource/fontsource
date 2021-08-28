@@ -2,6 +2,8 @@
 
 Fontsource will log all notable changes within this file.
 
+All changes to the API are shown [here](https://github.com/fontsource/fontsource/blob/main/api/CHANGELOG.md).
+
 #### Patch (0.0.x)
 
 These occur when an automatic update is pushed from a source, such as Google, or Fontsource may apply patches. Due to version mismatching and lack of accurate tracking, a specific version for a Fontsource patch cannot be logged into the changelog. Note that Google may push [breaking changes](https://github.com/google/fonts/issues/1307) on their end to individual fonts which Fontsource cannot predict for.
