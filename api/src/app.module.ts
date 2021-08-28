@@ -11,7 +11,7 @@ import { FontlistModule } from './fontlist/fontlist.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRoot(process.env.MONGO_DB),
+    MongooseModule.forRoot('mongodb://mongodb:27017'),
     ScheduleModule.forRoot(),
     ThrottlerModule.forRoot({
       ttl: 60,

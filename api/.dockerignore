@@ -1,0 +1,18 @@
+.git
+.github
+.vscode
+coverage
+*.md
+.prettierrc
+
+## Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Dependency directories
+node_modules/
+
+# Secrets
+#.env

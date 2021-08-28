@@ -397,3 +397,6 @@ Temporary Items
 .env
 dist
 .npmrc
+
+# Docker
+data
