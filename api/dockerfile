@@ -35,8 +35,6 @@ ENV NODE_ENV production
 
 # Expose API port
 EXPOSE 80
-EXPOSE 3000
-EXPOSE 8080
 
 ENTRYPOINT ["/sbin/tini", "--"]
 
