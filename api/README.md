@@ -11,7 +11,7 @@ $ yarn install
 ### Setup Envirnment variables
 
 ```
-MONGO_DB=mongodb_url
+MONGO_DB_DEV=mongodb_url
 ```
 
 ## Running the app

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: fontsource-api
+    build: .
+    ports:
+      - '80:8080'
+    env_file:
+      - .env
+    links:
+      - mongodb
+    restart: unless-stopped
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    ports:
+      - '27018:27017'
+    logging:
+      driver: 'none'
