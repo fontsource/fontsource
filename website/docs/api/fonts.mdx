@@ -1,0 +1,66 @@
+---
+title: Fonts
+---
+
+# Fonts
+
+---
+
+Found at [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
+
+Returns an array of individual font objects.
+
+```json
+[
+  {
+    "id": "abeezee",
+    "family": "ABeeZee",
+    "subsets": ["latin"],
+    "weights": [400],
+    "styles": ["italic", "normal"],
+    "defSubset": "latin",
+    "variable": false,
+    "lastModified": "2020-09-02",
+    "category": "sans-serif",
+    "version": "v14",
+    "type": "google"
+  }
+  ...
+]
+```
+
+## Queries
+
+---
+
+Queries can be sent to filter the list of fonts and can be combined together using `&`.
+
+For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext` as well as if it is a variable font.
+
+### Options
+
+---
+
+| Query        | Type     | Example                 |
+| ------------ | -------- | ----------------------- |
+| id           | string   | id=roboto               |
+| family       | string   | family=Roboto           |
+| subsets      | string   | subsets=latin,latin-ext |
+| weights      | number[] | weights=100,900         |
+| styles       | string[] | styles=normal,italic    |
+| defSubset    | string   | defSubset=arabic        |
+| variable     | boolean  | variable=true           |
+| lastModified | string   | lastModified=2020-09-02 |
+| category     | string   | category=display        |
+| version      | string   | version=v14             |
+| type         | string   | type=google             |
+
+### Known values
+
+---
+
+- subsets: `all, arabic, bengal, chinese-hongkong, chinese-simplified, chinese-traditional, cyrillic, cyrillic-ext, devanagari, greek, greek-ext, gujarati, gurmukhi, hebrew, japanese, kannada, khmer, korean, latin, latin-ext, malayalam, myanmar, oriya, sinhala, tamil, telegu, tibetan, thai, vietnamese`
+
+- weights: `100,200,300,400,500,600,700,800,900`
+
+- styles: `italic, normal`

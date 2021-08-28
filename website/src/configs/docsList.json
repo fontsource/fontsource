@@ -72,5 +72,30 @@
     "title": "Material UI",
     "path": "https://next.material-ui.com/components/typography/#install-with-npm",
     "isExternal": true
+  },
+  {
+    "key": "api",
+    "title": "API",
+    "isParent": true
+  },
+  {
+    "key": "api-getting-started",
+    "title": "Introduction",
+    "path": "/docs/api/introduction"
+  },
+  {
+    "key": "api-fontlist",
+    "title": "Fontlist",
+    "path": "/docs/api/fontlist"
+  },
+  {
+    "key": "api-fonts",
+    "title": "Fonts",
+    "path": "/docs/api/fonts"
+  },
+  {
+    "key": "api-font-id",
+    "title": "Font ID",
+    "path": "/docs/api/font-id"
   }
 ]
