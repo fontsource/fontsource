@@ -34,7 +34,7 @@ RUN yarn build
 ENV NODE_ENV production
 
 # Expose API port
-EXPOSE 443
+EXPOSE 80
 
 ENTRYPOINT ["/sbin/tini", "--"]
 

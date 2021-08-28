@@ -5,7 +5,7 @@ services:
     container_name: fontsource-api
     build: .
     ports:
-      - '443:8080'
+      - '80:8080'
     links:
       - mongodb
     depends_on:
