@@ -15,6 +15,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "airbnb-base",
     "airbnb-typescript/base",
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
