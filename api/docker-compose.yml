@@ -6,9 +6,9 @@ services:
     build: .
     ports:
       - '80:8080'
-    env_file:
-      - .env
     links:
+      - mongodb
+    depends_on:
       - mongodb
     restart: unless-stopped
   mongodb:
