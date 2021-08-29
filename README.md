@@ -22,6 +22,9 @@ Alternatively, you can see the list of supported fonts in Markdown format [here]
 
 - **Support for fonts outside the Google Font ecosystem**. This repository is constantly evolving with [other Open Source fonts](https://github.com/fontsource/fontsource/blob/main/FONTLIST.md). Feel free to contribute!
 
+## API
+
+Check out the documentation [here](https://fontsource.org/docs/api/introduction).
 ## Migrating from previous versions
 
 See [CHANGELOG.md](https://github.com/fontsource/fontsource/blob/main/CHANGELOG.md) for more details.
