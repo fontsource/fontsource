@@ -34,7 +34,7 @@
     "class-validator": "^0.13.1",
     "fastify-swagger": "^4.9.0",
     "lodash": "^4.17.21",
-    "mongodb": "^3.6.10",
+    "mongodb": "^4.1.1",
     "mongoose": "^5.13.2",
     "p-queue": "6",
     "reflect-metadata": "^0.1.13",
