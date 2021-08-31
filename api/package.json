@@ -47,7 +47,7 @@
     "@nestjs/testing": "^8.0.6",
     "@types/cron": "^1.7.3",
     "@types/jest": "^27.0.1",
-    "@types/node": "16.6.2",
+    "@types/node": "16.7.4",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
