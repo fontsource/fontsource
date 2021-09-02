@@ -1,4 +1,6 @@
 import { ColorModeScript } from "@chakra-ui/react";
+// For some reason the lint rule is broken and hopefully will be fixed post next@11.0.2
+// eslint-disable-next-line @next/next/no-document-import-in-page
 import NextDocument, { Head, Html, Main, NextScript } from "next/document";
 
 import theme from "../theme";
