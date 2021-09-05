@@ -25,6 +25,7 @@ Alternatively, you can see the list of supported fonts in Markdown format [here]
 ## API
 
 Check out the documentation [here](https://fontsource.org/docs/api/introduction).
+
 ## Migrating from previous versions
 
 See [CHANGELOG.md](https://github.com/fontsource/fontsource/blob/main/CHANGELOG.md) for more details.
