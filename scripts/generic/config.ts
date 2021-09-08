@@ -3,12 +3,12 @@
 // type helps identify the category of font, such as Google or not. Keep it "other" unless directed to do so.
 
 const config = {
-  fontId: "",
-  fontName: "",
+  fontId: "hauora",
+  fontName: "Hauora",
   defSubset: "latin",
   unicodeRange: {},
-  version: "",
-  category: "",
+  version: "v1.001",
+  category: "sans-serif",
   sourcelink: "",
   licenselink: "",
   type: "other",
