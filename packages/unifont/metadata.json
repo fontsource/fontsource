@@ -1,1 +1,15 @@
-{"fontId":"unifont","fontName":"Unifont","subsets":["latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2021-09-05","version":"v13.0.06","category":"sans-serif","source":"https://unifoundry.com/unifont/index.html","license":"https://unifoundry.com/LICENSE.txt","type":"other"}
+{
+  "fontId": "unifont",
+  "fontName": "Unifont",
+  "subsets": ["latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-09-05",
+  "version": "v13.0.06",
+  "category": "sans-serif",
+  "source": "https://unifoundry.com/unifont/index.html",
+  "license": "https://unifoundry.com/LICENSE.txt",
+  "type": "other"
+}

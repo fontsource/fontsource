@@ -67,6 +67,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - opendyslexic
 - plus-jakarta-sans
 - syne-italic
+- unifont
 - vazir
 - victor-mono
 - yakuhanjp
