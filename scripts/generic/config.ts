@@ -8,7 +8,7 @@ const config = {
   defSubset: "latin",
   unicodeRange: {},
   version: "",
-  category: "",
+  category: "sans-serif",
   sourcelink: "",
   licenselink: "",
   type: "other",
