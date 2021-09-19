@@ -1,13 +1,15 @@
 {
   "fontId": "el-messiri",
   "fontName": "El Messiri",
-  "subsets": ["arabic", "cyrillic", "latin"],
+  "subsets": ["arabic", "cyrillic", "latin", "latin-ext"],
   "weights": [400, 500, 600, 700],
   "styles": ["normal"],
   "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2021-03-24",
-  "version": "v9",
+  "variable": {
+    "wght": { "default": "400", "min": "400", "max": "700", "step": "1" }
+  },
+  "lastModified": "2021-09-16",
+  "version": "v10",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

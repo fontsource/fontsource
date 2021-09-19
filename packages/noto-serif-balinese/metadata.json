@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-serif-balinese",
+  "fontName": "Noto Serif Balinese",
+  "subsets": ["balinese"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "balinese",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

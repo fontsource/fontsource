@@ -1,0 +1,17 @@
+{
+  "fontId": "noto-sans-symbols",
+  "fontName": "Noto Sans Symbols",
+  "subsets": ["symbols"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  "styles": ["normal"],
+  "defSubset": "symbols",
+  "variable": {
+    "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
+  },
+  "lastModified": "2021-09-14",
+  "version": "v25",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-serif-dogra",
+  "fontName": "Noto Serif Dogra",
+  "subsets": ["dogra"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "dogra",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

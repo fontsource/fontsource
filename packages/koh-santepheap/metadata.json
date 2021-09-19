@@ -1,0 +1,15 @@
+{
+  "fontId": "koh-santepheap",
+  "fontName": "Koh Santepheap",
+  "subsets": ["khmer", "latin"],
+  "weights": [100, 300, 400, 700, 900],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-09-16",
+  "version": "v1",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

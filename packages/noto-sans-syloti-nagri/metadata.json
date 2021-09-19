@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-syloti-nagri",
+  "fontName": "Noto Sans Syloti Nagri",
+  "subsets": ["syloti-nagri"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "syloti-nagri",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

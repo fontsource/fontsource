@@ -1,1 +1,15 @@
-{"fontId":"hauora-sans","fontName":"Hauora Sans","subsets":["latin"],"weights":[200,300,400,500,600,700,800],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2021-09-15","version":"v1.001","category":"sans-serif","source":"https://github.com/WCYS-Co/Hauora-Sans","license":"https://github.com/WCYS-Co/Hauora-Sans/blob/master/OFL.txt","type":"other"}
+{
+  "fontId": "hauora-sans",
+  "fontName": "Hauora Sans",
+  "subsets": ["latin"],
+  "weights": [200, 300, 400, 500, 600, 700, 800],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-09-15",
+  "version": "v1.001",
+  "category": "sans-serif",
+  "source": "https://github.com/WCYS-Co/Hauora-Sans",
+  "license": "https://github.com/WCYS-Co/Hauora-Sans/blob/master/OFL.txt",
+  "type": "other"
+}

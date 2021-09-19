@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-linear-b",
+  "fontName": "Noto Sans Linear B",
+  "subsets": ["linear-b"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "linear-b",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-oriya",
+  "fontName": "Noto Sans Oriya",
+  "subsets": ["oriya"],
+  "weights": [100, 400, 700, 900],
+  "styles": ["normal"],
+  "defSubset": "oriya",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

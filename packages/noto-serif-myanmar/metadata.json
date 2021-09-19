@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-serif-myanmar",
+  "fontName": "Noto Serif Myanmar",
+  "subsets": ["myanmar"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  "styles": ["normal"],
+  "defSubset": "myanmar",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v7",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

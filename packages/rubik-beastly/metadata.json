@@ -1,0 +1,15 @@
+{
+  "fontId": "rubik-beastly",
+  "fontName": "Rubik Beastly",
+  "subsets": ["cyrillic", "cyrillic-ext", "hebrew", "latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-09-16",
+  "version": "v1",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-thai-looped",
+  "fontName": "Noto Sans Thai Looped",
+  "subsets": ["thai"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  "styles": ["normal"],
+  "defSubset": "thai",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v7",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-meroitic",
+  "fontName": "Noto Sans Meroitic",
+  "subsets": ["meroitic"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "meroitic",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v10",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

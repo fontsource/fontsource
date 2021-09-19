@@ -1,0 +1,60 @@
+$fontName: "Noto Sans Yi";
+$fontId: "noto-sans-yi";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+$unicodeMap: (yi: (U+3001-3002, U+3008-3011, U+3014-301B, U+30FB, U+A000-A48C, U+A490-A4C6, U+FF61-FF65, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD));
+
+@mixin fontFace(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $fontDir: $fontDir,
+  $unicodeMap: $unicodeMap
+) {
+  @each $subset, $unicodeRangeValues in $unicodeMap {
+    @font-face {
+      font-family: "#{$fontName}";
+      font-style: $style;
+      font-display: $display;
+      font-weight: $weight;
+      src: url("#{$fontDir}/#{$fontId}-#{$subset}-#{$weight}-#{$style}.woff2") format("woff2"),
+        url("#{$fontDir}/#{$fontId}-all-#{$weight}-#{$style}.woff") format("woff");
+      unicode-range: $unicodeRangeValues;
+    }
+  }
+}
+
+$defSubset: "yi";
+$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
+$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
+$unicodeRange: false;
+$unicodeRangeValues: (U+3001-3002, U+3008-3011, U+3014-301B, U+30FB, U+A000-A48C, U+A490-A4C6, U+FF61-FF65, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD);
+
+@mixin fontFaceCustom(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $woff2Path: $woff2Path,
+  $woffPath: $woffPath,
+  $unicodeRange: $unicodeRange,
+  $unicodeRangeValues: $unicodeRangeValues
+) {
+  @font-face {
+    font-family: "#{$fontName}";
+    font-style: $style;
+    font-display: $display;
+    font-weight: $weight;
+    src: url("#{$woff2Path}") format("woff2"), url("#{$woffPath}") format("woff");
+    @if $unicodeRange {
+      unicode-range: $unicodeRangeValues;
+    }
+  }
+}
+
+

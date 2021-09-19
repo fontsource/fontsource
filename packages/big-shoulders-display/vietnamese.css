@@ -7,6 +7,15 @@
   src: url('./files/big-shoulders-display-vietnamese-100-normal.woff2') format('woff2'), url('./files/big-shoulders-display-vietnamese-100-normal.woff') format('woff');
   
 }
+/* big-shoulders-display-vietnamese-200-normal*/
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/big-shoulders-display-vietnamese-200-normal.woff2') format('woff2'), url('./files/big-shoulders-display-vietnamese-200-normal.woff') format('woff');
+  
+}
 /* big-shoulders-display-vietnamese-300-normal*/
 @font-face {
   font-family: 'Big Shoulders Display';

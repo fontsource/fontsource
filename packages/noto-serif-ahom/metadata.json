@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-serif-ahom",
+  "fontName": "Noto Serif Ahom",
+  "subsets": ["ahom"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "ahom",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

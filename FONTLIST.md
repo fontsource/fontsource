@@ -58,6 +58,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - dseg14
 - dseg7
 - firago
+- hauora-sans
 - iosevka
 - karmilla
 - metropolis

@@ -1,0 +1,17 @@
+{
+  "fontId": "yaldevi",
+  "fontName": "Yaldevi",
+  "subsets": ["latin", "latin-ext", "sinhala"],
+  "weights": [200, 300, 400, 500, 600, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": {
+    "wght": { "default": "400", "min": "200", "max": "700", "step": "1" }
+  },
+  "lastModified": "2021-09-16",
+  "version": "v1",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

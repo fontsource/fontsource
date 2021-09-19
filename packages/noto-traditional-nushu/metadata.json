@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-traditional-nushu",
+  "fontName": "Noto Traditional Nushu",
+  "subsets": ["nushu"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "nushu",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v10",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-egyptian-hieroglyphs",
+  "fontName": "Noto Sans Egyptian Hieroglyphs",
+  "subsets": ["egyptian-hieroglyphs"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "egyptian-hieroglyphs",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v21",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

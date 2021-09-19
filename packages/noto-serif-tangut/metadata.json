@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-serif-tangut",
+  "fontName": "Noto Serif Tangut",
+  "subsets": ["tangut"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "tangut",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

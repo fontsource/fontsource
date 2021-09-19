@@ -18,8 +18,8 @@
     "opsz": { "default": "14", "min": "8", "max": "30", "step": "0.1" },
     "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
   },
-  "lastModified": "2021-03-19",
-  "version": "v11",
+  "lastModified": "2021-09-16",
+  "version": "v16",
   "category": "serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

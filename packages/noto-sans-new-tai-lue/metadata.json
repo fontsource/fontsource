@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-new-tai-lue",
+  "fontName": "Noto Sans New Tai Lue",
+  "subsets": ["new-tai-lue"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "new-tai-lue",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

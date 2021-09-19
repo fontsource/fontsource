@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-soyombo",
+  "fontName": "Noto Sans Soyombo",
+  "subsets": ["soyombo"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "soyombo",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

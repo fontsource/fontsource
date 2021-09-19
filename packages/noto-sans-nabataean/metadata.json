@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-nabataean",
+  "fontName": "Noto Sans Nabataean",
+  "subsets": ["nabataean"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "nabataean",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

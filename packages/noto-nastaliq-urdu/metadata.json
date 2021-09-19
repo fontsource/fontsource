@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-nastaliq-urdu",
+  "fontName": "Noto Nastaliq Urdu",
+  "subsets": ["arabic"],
+  "weights": [400, 700],
+  "styles": ["normal"],
+  "defSubset": "arabic",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v8",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

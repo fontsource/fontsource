@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-pau-cin-hau",
+  "fontName": "Noto Sans Pau Cin Hau",
+  "subsets": ["pau-cin-hau"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "pau-cin-hau",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v10",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

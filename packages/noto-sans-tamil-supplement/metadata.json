@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-tamil-supplement",
+  "fontName": "Noto Sans Tamil Supplement",
+  "subsets": ["tamil-supplement"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "tamil-supplement",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v13",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

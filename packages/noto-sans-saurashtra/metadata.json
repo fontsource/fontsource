@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-saurashtra",
+  "fontName": "Noto Sans Saurashtra",
+  "subsets": ["saurashtra"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "saurashtra",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v9",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

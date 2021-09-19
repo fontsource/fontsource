@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-devanagari",
+  "fontName": "Noto Sans Devanagari",
+  "subsets": ["devanagari"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  "styles": ["normal"],
+  "defSubset": "devanagari",
+  "variable": false,
+  "lastModified": "2021-09-14",
+  "version": "v10",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
