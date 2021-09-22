@@ -42,8 +42,8 @@
     "got": "^11.8.2",
     "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.1.0",
-    "lerna": "^4.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mass-publish": "^1.0.10"
   },
   "scripts": {
     "format": "yarn format:prettier && yarn format:eslint",
@@ -63,8 +63,8 @@
     "util:generic-renamer": "ts-node scripts/generic/renamer.ts",
     "util:package-json-rebuild": "ts-node scripts/utils/package-json-rebuild.ts",
     "test": "jest",
-    "deploy": "lerna publish patch --no-git-tag-version --no-push --force-publish --concurrency 2",
-    "deploy:ci": "lerna publish patch --yes --concurrency 2"
+    "deploy": "mass-publish publish patch",
+    "deploy:ci": "mass-publish publish patch --yes"
   },
   "publishConfig": {
     "access": "public"
