@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: "0"
-          
+
       - name: Install packages
         run: yarn
 
@@ -50,21 +50,14 @@ jobs:
         with:
           commit_user_name: "fontsource-bot"
           commit_user_email: "83556432+fontsource-bot@users.noreply.github.com"
-          commit_author: "fontsource-bot <83556432+fontsource-bot@users.noreply.github.com>" 
+          commit_author: "fontsource-bot <83556432+fontsource-bot@users.noreply.github.com>"
           commit_message: "chore(build): update packages [Weekly]"
         continue-on-error: true
-        
+
       - name: Configure CI Git for Lerna
         run: |
           git config --global user.email "83556432+fontsource-bot@users.noreply.github.com"
           git config --global user.name "fontsource-bot"
-
-      - name: Authenticate with Registry
-        run: |
-          yarn logout
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish package
         run: npm run deploy:ci
