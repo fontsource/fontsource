@@ -44,27 +44,20 @@ jobs:
 
       - name: Format files
         run: yarn format
-        
+
       - name: Stage, commit and push files
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_user_name: "fontsource-bot"
           commit_user_email: "83556432+fontsource-bot@users.noreply.github.com"
-          commit_author: "fontsource-bot <83556432+fontsource-bot@users.noreply.github.com>" 
+          commit_author: "fontsource-bot <83556432+fontsource-bot@users.noreply.github.com>"
           commit_message: "chore(build): update packages [Manual]"
         continue-on-error: true
-        
+
       - name: Configure CI Git for Lerna
         run: |
           git config --global user.email "83556432+fontsource-bot@users.noreply.github.com"
           git config --global user.name "fontsource-bot"
-
-      - name: Authenticate with Registry
-        run: |
-          yarn logout
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish package
         run: npm run deploy:ci
