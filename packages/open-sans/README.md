@@ -20,9 +20,9 @@ import "@fontsource/open-sans"; // Defaults to weight 400.
 
 Supported variables:
 
-- Weights: `[300,400,600,700,800]`
+- Weights: `[300,400,500,600,700,800]`
 - Styles: `[italic,normal]`
-- Supported subsets: `[cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese]`
+- Supported subsets: `[cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin,latin-ext,vietnamese]`
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
 
@@ -31,6 +31,12 @@ body {
   font-family: "Open Sans";
 }
 ```
+
+## Variable Fonts
+
+This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
+
+Variable documentation can be found [here](https://fontsource.org/docs/variable-fonts).
 
 ## Licensing
 
@@ -41,6 +47,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v23`.
+Font version (provided by source): `v26`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

@@ -1,1 +1,30 @@
-{"name":"@fontsource/noto-sans-kayah-li","version":"4.5.0","description":"Self-host the Noto Sans Kayah Li font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Noto Sans Kayah Li","noto-sans-kayah-li","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-kayah-li#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/noto-sans-kayah-li"}}
+{
+  "name": "@fontsource/noto-sans-kayah-li",
+  "version": "4.5.0",
+  "description": "Self-host the Noto Sans Kayah Li font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Noto Sans Kayah Li",
+    "noto-sans-kayah-li",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-kayah-li#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/noto-sans-kayah-li"
+  }
+}

@@ -1,1 +1,30 @@
-{"name":"@fontsource/noto-sans-mro","version":"4.5.0","description":"Self-host the Noto Sans Mro font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Noto Sans Mro","noto-sans-mro","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-mro#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/noto-sans-mro"}}
+{
+  "name": "@fontsource/noto-sans-mro",
+  "version": "4.5.0",
+  "description": "Self-host the Noto Sans Mro font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Noto Sans Mro",
+    "noto-sans-mro",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-mro#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/noto-sans-mro"
+  }
+}

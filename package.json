@@ -62,7 +62,7 @@
     "util:fontlist": "ts-node scripts/utils/fontlist-generator.ts",
     "util:generic-renamer": "ts-node scripts/generic/renamer.ts",
     "util:package-json-rebuild": "ts-node scripts/utils/package-json-rebuild.ts",
-    "util:subsets":"ts-node scripts/utils/subset-list.ts",
+    "util:subsets": "ts-node scripts/utils/subset-list.ts",
     "test": "jest",
     "deploy": "mass-publish publish patch",
     "deploy:ci": "mass-publish publish patch --yes"

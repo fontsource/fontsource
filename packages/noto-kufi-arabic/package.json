@@ -1,1 +1,30 @@
-{"name":"@fontsource/noto-kufi-arabic","version":"4.5.0","description":"Self-host the Noto Kufi Arabic font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Noto Kufi Arabic","noto-kufi-arabic","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/noto-kufi-arabic#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/noto-kufi-arabic"}}
+{
+  "name": "@fontsource/noto-kufi-arabic",
+  "version": "4.5.0",
+  "description": "Self-host the Noto Kufi Arabic font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Noto Kufi Arabic",
+    "noto-kufi-arabic",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-kufi-arabic#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/noto-kufi-arabic"
+  }
+}
