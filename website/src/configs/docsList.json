@@ -68,9 +68,9 @@
     "isExternal": true
   },
   {
-    "key": "material-ui",
-    "title": "Material UI",
-    "path": "https://next.material-ui.com/components/typography/#install-with-npm",
+    "key": "mui",
+    "title": "MUI",
+    "path": "https://mui.com/components/typography/#install-with-npm",
     "isExternal": true
   },
   {
