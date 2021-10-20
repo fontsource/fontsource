@@ -12,7 +12,7 @@ The rest of the README is for developers.
 $ yarn install
 ```
 
-### Setup Envirnment variables
+### Setup Environment variables
 
 This is only needed for local development using a `.env` file.
 
