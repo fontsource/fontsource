@@ -16,6 +16,7 @@ import {
   SliderFilledTrack,
   SliderThumb,
   SliderTrack,
+  Tag,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -91,6 +92,7 @@ export const FontPreview = ({
         <SimpleGrid columns={{ base: 1, sm: 2 }}>
           <Heading size="2xl">{metadata.fontName}</Heading>
           <HStack display={{ base: "none", sm: "flex" }} ml="auto">
+            <Tag>{metadata.category}</Tag>
             <Link
               isExternal
               href={`https://www.npmjs.com/package/@fontsource/${metadata.fontId}`}
