@@ -20,6 +20,10 @@ These will always contain changes from Fontsource's end.
 
 - Added unicode.json which contains the unicode subset data for the CSS unicode-range selector. This will be used for the upcoming API. [#271](https://github.com/fontsource/fontsource/pull/271)
 
+### Fixes
+
+- Resolve regressions ([#353](https://github.com/fontsource/fontsource/issues/353)) caused by Google API tweaks.
+
 ### Documentation
 
 - Updated package changelogs to redirect to the main repository changelog to ensure there are no inconsistences. [#269](https://github.com/fontsource/fontsource/pull/269)
