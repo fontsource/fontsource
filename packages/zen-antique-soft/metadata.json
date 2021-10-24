@@ -1,0 +1,15 @@
+{
+  "fontId": "zen-antique-soft",
+  "fontName": "Zen Antique Soft",
+  "subsets": ["cyrillic", "greek", "japanese", "latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-10-21",
+  "version": "v3",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

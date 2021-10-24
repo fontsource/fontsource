@@ -1,0 +1,15 @@
+{
+  "fontId": "zen-old-mincho",
+  "fontName": "Zen Old Mincho",
+  "subsets": ["cyrillic", "greek", "japanese", "latin"],
+  "weights": [400, 700, 900],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-10-21",
+  "version": "v3",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

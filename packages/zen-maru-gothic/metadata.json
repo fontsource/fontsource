@@ -1,0 +1,15 @@
+{
+  "fontId": "zen-maru-gothic",
+  "fontName": "Zen Maru Gothic",
+  "subsets": ["cyrillic", "greek", "japanese", "latin"],
+  "weights": [300, 400, 500, 700, 900],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-10-21",
+  "version": "v3",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
