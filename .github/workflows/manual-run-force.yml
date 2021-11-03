@@ -23,10 +23,10 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: Parse APIv1
-        run: yarn parser:v1
+        run: yarn parser:v1 --force
 
       - name: Parse APIv2
-        run: yarn parser:v2
+        run: yarn parser:v2 --force
 
       - name: Parse Variable
         run: yarn parser:variable
