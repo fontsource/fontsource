@@ -2892,10 +2892,10 @@ globby@^11.0.1, globby@^11.0.3:
     merge2 "^1.3.0"
     slash "^3.0.0"
 
-google-font-metadata@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/google-font-metadata/-/google-font-metadata-3.0.2.tgz#9963f5685b6445326f3a5900e73a6adf1c22344e"
-  integrity sha512-GdVxvNh2bFPm5sRam3vDxb7bjooW1RkevhdyoKO/wyiWlZbgmvLuHuHtkkriL0AmN49fj1tBcOpCXqCvaOM/Cw==
+google-font-metadata@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/google-font-metadata/-/google-font-metadata-3.1.0.tgz#ec21c4e25a2cac37c9349351249106cbc22b5143"
+  integrity sha512-RXvWMsRRVbZFFFj96ZbGLLQWnWEY14A5X+xO55J0c07RcSZ6b1xzUllhNiarsVjF1Iwx7XF1a+50/5bMS8e4xg==
   dependencies:
     async "^3.2.0"
     cheerio "^1.0.0-rc.9"
