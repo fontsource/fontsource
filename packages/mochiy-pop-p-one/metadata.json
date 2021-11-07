@@ -1,0 +1,15 @@
+{
+  "fontId": "mochiy-pop-p-one",
+  "fontName": "Mochiy Pop P One",
+  "subsets": ["japanese", "latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-11-04",
+  "version": "v3",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

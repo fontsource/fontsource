@@ -6,6 +6,7 @@
     "cyrillic-ext",
     "greek",
     "greek-ext",
+    "kayah-li",
     "latin",
     "latin-ext",
     "vietnamese"
@@ -16,8 +17,8 @@
   "variable": {
     "wght": { "default": "400", "min": "300", "max": "700", "step": "1" }
   },
-  "lastModified": "2021-01-30",
-  "version": "v16",
+  "lastModified": "2021-11-04",
+  "version": "v19",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
