@@ -1,0 +1,8 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Fontsource</ShortName>
+  <Description>Search Fontsource's fonts</Description>
+  <Url type="text/html" template="https://fontsource.org/fonts?search={searchTerms}"/>
+  <Image width="16" height="16" type="image/x-icon">https://fontsource.org/icons/favicon.ico</Image>
+  <Image width="64" height="64" type="image/png">https://fontsource.org/icons/icon-64x64.png</Image>
+  <Query role="example" searchTerms="roboto" />
+</OpenSearchDescription>

@@ -8,12 +8,22 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 
+import { getUrlParams } from "../../utils/getUrlParams";
 import { FontSearch } from "./InstantSearch";
 
 export const SearchModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const bgSearch = useColorModeValue("gray.50", "gray.900");
+
+  useEffect(() => {
+    if (getUrlParams().has("search")) {
+      onOpen();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Button
