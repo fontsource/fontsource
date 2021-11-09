@@ -16,11 +16,12 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineFontSize } from "react-icons/ai";
 import { Configure, connectAutoComplete } from "react-instantsearch-dom";
 
 import { MetadataProps } from "../../@types/[font]";
+import { getUrlParams } from "../../utils/getUrlParams";
 import { NextChakraLink } from "../NextChakraLink";
 
 const FilterPopoverContent = (props) => (
@@ -165,6 +166,16 @@ interface Search {
 const Search = ({ hits, currentRefinement, refine }: Search) => {
   const bgSearch = useColorModeValue("gray.50", "gray.900");
   const fontCategory = useColorModeValue("gray.500", "gray.100");
+
+  // Set refinement to search url param (used for OpenSearch)
+  useEffect(() => {
+    const urlParams = getUrlParams();
+    if (urlParams.has("search")) {
+      refine(urlParams.get("search"));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <InputGroup
