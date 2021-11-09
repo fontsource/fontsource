@@ -167,6 +167,7 @@ const Search = ({ hits, currentRefinement, refine }: Search) => {
   const bgSearch = useColorModeValue("gray.50", "gray.900");
   const fontCategory = useColorModeValue("gray.500", "gray.100");
 
+  // Set refinement to search url param (used for OpenSearch)
   useEffect(() => {
     const urlParams = getUrlParams();
     if (urlParams.has("search")) {
