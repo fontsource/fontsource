@@ -42,6 +42,12 @@ export default class Document extends NextDocument {
           />
           <link rel="manifest" href="/manifest.webmanifest" />
           <link
+            rel="search"
+            type="application/opensearchdescription+xml"
+            href="https://fontsource.org/opensearch.xml"
+            title="Fontsource"
+          />
+          <link
             rel="mask-icon"
             href="/icons/safari-pinned-tab.svg"
             color="#000000"
