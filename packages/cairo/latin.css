@@ -25,6 +25,15 @@
   src: url('./files/cairo-latin-400-normal.woff2') format('woff2'), url('./files/cairo-latin-400-normal.woff') format('woff');
   
 }
+/* cairo-latin-500-normal*/
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/cairo-latin-500-normal.woff2') format('woff2'), url('./files/cairo-latin-500-normal.woff') format('woff');
+  
+}
 /* cairo-latin-600-normal*/
 @font-face {
   font-family: 'Cairo';
@@ -41,6 +50,15 @@
   font-display: swap;
   font-weight: 700;
   src: url('./files/cairo-latin-700-normal.woff2') format('woff2'), url('./files/cairo-latin-700-normal.woff') format('woff');
+  
+}
+/* cairo-latin-800-normal*/
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/cairo-latin-800-normal.woff2') format('woff2'), url('./files/cairo-latin-800-normal.woff') format('woff');
   
 }
 /* cairo-latin-900-normal*/

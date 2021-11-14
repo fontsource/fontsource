@@ -1,0 +1,15 @@
+{
+  "fontId": "shippori-antique",
+  "fontName": "Shippori Antique",
+  "subsets": ["japanese", "latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-11-10",
+  "version": "v3",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

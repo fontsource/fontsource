@@ -1,0 +1,18 @@
+{
+  "fontId": "montagu-slab",
+  "fontName": "Montagu Slab",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": [100, 200, 300, 400, 500, 600, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": {
+    "opsz": { "default": "14", "min": "16", "max": "144", "step": "0.1" },
+    "wght": { "default": "400", "min": "100", "max": "700", "step": "1" }
+  },
+  "lastModified": "2021-11-10",
+  "version": "v1",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

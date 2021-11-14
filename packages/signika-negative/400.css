@@ -1,3 +1,12 @@
+/* signika-negative-vietnamese-400-normal*/
+@font-face {
+  font-family: 'Signika Negative';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/signika-negative-vietnamese-400-normal.woff2') format('woff2'), url('./files/signika-negative-all-400-normal.woff') format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
 /* signika-negative-latin-ext-400-normal*/
 @font-face {
   font-family: 'Signika Negative';
