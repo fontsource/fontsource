@@ -35,6 +35,7 @@ See [CHANGELOG.md](https://github.com/fontsource/fontsource/blob/main/CHANGELOG.
 For Open Source fonts that are not automatically updated by the Google ecosystem, we have a generic packager that builds CSS files for the project.
 
 Make a request by creating an [issue](https://github.com/fontsource/fontsource/issues)!
+If you wish to submit a PR yourself, check out the documentation on packaging the fonts yourself [here](https://github.com/fontsource/fontsource/blob/main/scripts/generic/README.md).
 
 ## Licensing
 
