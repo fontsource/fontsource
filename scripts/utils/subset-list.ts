@@ -12,4 +12,4 @@ directories.forEach(directory => {
 
 const noDuplicateSubsets = new Set(subsets);
 
-console.log(noDuplicateSubsets);
+console.log([...noDuplicateSubsets].join(", "));
