@@ -1,0 +1,243 @@
+/* iosevka-aile--NaN-bold*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: bold;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-bold.woff2') format('woff2'), url('./files/iosevka-aile--NaN-bold.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-bolditalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: bolditalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-bolditalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-bolditalic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-boldoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: boldoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-boldoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-boldoblique.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-extrabold*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-extrabold.woff2') format('woff2'), url('./files/iosevka-aile--NaN-extrabold.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-extrabolditalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: extrabolditalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-extrabolditalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-extrabolditalic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-extraboldoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: extraboldoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-extraboldoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-extraboldoblique.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-extralight*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-extralight.woff2') format('woff2'), url('./files/iosevka-aile--NaN-extralight.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-extralightitalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: extralightitalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-extralightitalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-extralightitalic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-extralightoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: extralightoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-extralightoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-extralightoblique.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-heavy*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: heavy;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-heavy.woff2') format('woff2'), url('./files/iosevka-aile--NaN-heavy.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-heavyitalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: heavyitalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-heavyitalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-heavyitalic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-heavyoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: heavyoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-heavyoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-heavyoblique.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-italic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: italic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-italic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-italic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-light*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: light;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-light.woff2') format('woff2'), url('./files/iosevka-aile--NaN-light.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-lightitalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: lightitalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-lightitalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-lightitalic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-lightoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: lightoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-lightoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-lightoblique.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-medium*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: medium;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-medium.woff2') format('woff2'), url('./files/iosevka-aile--NaN-medium.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-mediumitalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: mediumitalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-mediumitalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-mediumitalic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-mediumoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: mediumoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-mediumoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-mediumoblique.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-oblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: oblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-oblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-oblique.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-regular*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: regular;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-regular.woff2') format('woff2'), url('./files/iosevka-aile--NaN-regular.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-semibold*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-semibold.woff2') format('woff2'), url('./files/iosevka-aile--NaN-semibold.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-semibolditalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: semibolditalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-semibolditalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-semibolditalic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-semiboldoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: semiboldoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-semiboldoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-semiboldoblique.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-thin*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: thin;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-thin.woff2') format('woff2'), url('./files/iosevka-aile--NaN-thin.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-thinitalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: thinitalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-thinitalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-thinitalic.woff') format('woff');
+  
+}
+/* iosevka-aile--NaN-thinoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: thinoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-thinoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-thinoblique.woff') format('woff');
+  
+}

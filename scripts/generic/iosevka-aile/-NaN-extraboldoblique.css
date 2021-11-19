@@ -1,0 +1,9 @@
+/* iosevka-aile--NaN-extraboldoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: extraboldoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-extraboldoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-extraboldoblique.woff') format('woff');
+  
+}

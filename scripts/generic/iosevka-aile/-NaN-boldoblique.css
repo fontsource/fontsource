@@ -1,0 +1,9 @@
+/* iosevka-aile--NaN-boldoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: boldoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-boldoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-boldoblique.woff') format('woff');
+  
+}

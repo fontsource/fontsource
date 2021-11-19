@@ -1,0 +1,9 @@
+/* iosevka-aile--NaN-extralight*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-extralight.woff2') format('woff2'), url('./files/iosevka-aile--NaN-extralight.woff') format('woff');
+  
+}
