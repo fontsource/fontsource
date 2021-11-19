@@ -1,0 +1,9 @@
+/* iosevka-aile--NaN-thinoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: thinoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-thinoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-thinoblique.woff') format('woff');
+  
+}
