@@ -1,1 +1,25 @@
-{"name":"@fontsource/archivo-narrow","version":"4.5.1","description":"Self-host the Archivo Narrow font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Archivo Narrow","archivo-narrow"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/archivo-narrow#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/archivo-narrow"}}
+{
+  "name": "@fontsource/archivo-narrow",
+  "version": "4.5.1",
+  "description": "Self-host the Archivo Narrow font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Archivo Narrow",
+    "archivo-narrow"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/archivo-narrow#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/archivo-narrow"
+  }
+}

@@ -1,1 +1,25 @@
-{"name":"@fontsource/rosario","version":"4.5.1","description":"Self-host the Rosario font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Rosario","rosario"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/rosario#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/rosario"}}
+{
+  "name": "@fontsource/rosario",
+  "version": "4.5.1",
+  "description": "Self-host the Rosario font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Rosario",
+    "rosario"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rosario#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/rosario"
+  }
+}
