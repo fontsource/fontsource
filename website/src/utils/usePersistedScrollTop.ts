@@ -27,18 +27,21 @@ export const usePersistedScrollTop = (ref: React.RefObject<HTMLElement>) =>
       ref.current.scrollTop = scrollTop;
     }
 
+    const persist = () => {
+      try {
+        localStorage.setItem(
+          LOCAL_STORAGE_ITEM_NAME,
+          String(ref.current.scrollTop)
+        );
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
     const listener = (event: Event) => {
       if (event.type === "pagehide" || document.visibilityState === "hidden") {
         stopListening();
-
-        try {
-          localStorage.setItem(
-            LOCAL_STORAGE_ITEM_NAME,
-            String(ref.current.scrollTop)
-          );
-        } catch (err) {
-          console.error(err);
-        }
+        persist();
       }
     };
 
@@ -52,5 +55,6 @@ export const usePersistedScrollTop = (ref: React.RefObject<HTMLElement>) =>
 
     return () => {
       stopListening();
+      persist();
     };
   }, [ref]);
