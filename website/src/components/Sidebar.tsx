@@ -4,15 +4,18 @@ import {
   Button,
   ButtonProps,
   Divider,
+  forwardRef,
   Heading,
   Stack,
   StackProps,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { useRef } from "react";
 
 import docsList from "../configs/docsList.json";
 import fontList from "../configs/fontList.json";
+import { usePersistedScrollTop } from "../utils/usePersistedScrollTop";
 import { NextChakraLink } from "./NextChakraLink";
 
 const SidebarHeading = ({ title, ...props }) => {
@@ -95,17 +98,20 @@ const SidebarButton = ({
   );
 };
 
-const SidebarContainer = (props: StackProps) => (
-  <Stack
-    as="aside"
-    py={4}
-    direction="column"
-    marginTop={4}
-    height="80vh"
-    overflowY="auto"
-    sx={{ overscrollBehavior: "contain" }}
-    {...props}
-  />
+const SidebarContainer = forwardRef<StackProps, "div">(
+  (props: StackProps, ref) => (
+    <Stack
+      ref={ref}
+      as="aside"
+      py={4}
+      direction="column"
+      marginTop={4}
+      height="80vh"
+      overflowY="auto"
+      sx={{ overscrollBehavior: "contain" }}
+      {...props}
+    />
+  )
 );
 
 interface SidebarProps extends StackProps {
@@ -120,8 +126,12 @@ export const Sidebar = ({
   isOpen,
   ...rest
 }: SidebarProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  usePersistedScrollTop(ref);
+
   return (
-    <SidebarContainer {...rest}>
+    <SidebarContainer ref={ref} {...rest}>
       <SidebarHeading title={"Contents"} pt={{ base: 6, md: 2 }} />
       {ifDocs
         ? docsList.map((page) => (
