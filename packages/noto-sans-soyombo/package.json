@@ -1,1 +1,30 @@
-{"name":"@fontsource/noto-sans-soyombo","version":"4.5.1","description":"Self-host the Noto Sans Soyombo font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Noto Sans Soyombo","noto-sans-soyombo","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-soyombo#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/noto-sans-soyombo"}}
+{
+  "name": "@fontsource/noto-sans-soyombo",
+  "version": "4.5.1",
+  "description": "Self-host the Noto Sans Soyombo font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Noto Sans Soyombo",
+    "noto-sans-soyombo",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-soyombo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/noto-sans-soyombo"
+  }
+}

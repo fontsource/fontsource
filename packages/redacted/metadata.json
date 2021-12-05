@@ -1,0 +1,15 @@
+{
+  "fontId": "redacted",
+  "fontName": "Redacted",
+  "subsets": ["latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2021-12-01",
+  "version": "v1",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

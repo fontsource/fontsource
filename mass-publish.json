@@ -1,1 +1,6 @@
-{"packages":["packages/"],"ignoreExtension":[".md"],"commitMessage":"chore: release new versions","commitFrom":"2757774b7a096c0e1c2681bc11bb639f545a9e82"}
+{
+  "packages": ["packages/"],
+  "ignoreExtension": [".md"],
+  "commitMessage": "chore: release new versions",
+  "commitFrom": "2757774b7a096c0e1c2681bc11bb639f545a9e82"
+}

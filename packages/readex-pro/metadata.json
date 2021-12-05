@@ -1,0 +1,17 @@
+{
+  "fontId": "readex-pro",
+  "fontName": "Readex Pro",
+  "subsets": ["arabic", "latin", "latin-ext", "vietnamese"],
+  "weights": [200, 300, 400, 500, 600, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": {
+    "wght": { "default": "400", "min": "160", "max": "700", "step": "1" }
+  },
+  "lastModified": "2021-12-01",
+  "version": "v5",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
