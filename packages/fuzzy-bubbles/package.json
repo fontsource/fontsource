@@ -1,1 +1,30 @@
-{"name":"@fontsource/fuzzy-bubbles","version":"4.5.0","description":"Self-host the Fuzzy Bubbles font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Fuzzy Bubbles","fuzzy-bubbles","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/fuzzy-bubbles#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/fuzzy-bubbles"}}
+{
+  "name": "@fontsource/fuzzy-bubbles",
+  "version": "4.5.0",
+  "description": "Self-host the Fuzzy Bubbles font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Fuzzy Bubbles",
+    "fuzzy-bubbles",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fuzzy-bubbles#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/fuzzy-bubbles"
+  }
+}
