@@ -7,6 +7,9 @@ class Url {
 
   @Prop()
   woff: string;
+
+  @Prop()
+  ttf: string;
 }
 
 const UrlSchema = SchemaFactory.createForClass(Url);

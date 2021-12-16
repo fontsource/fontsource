@@ -30,6 +30,15 @@ export class FontsController {
     return await this.findService.findOne(id, query);
   }
 
+  @Get(':id/:file')
+  async findFile(
+    @Param('id') id: string,
+    @Param('file') file: string,
+    @Query() query,
+  ): Promise<Buffer | undefined> {
+    return await this.findService.findFile(id, file, query);
+  }
+
   /* Test routes
   @Post('update')
   async updateFonts() {

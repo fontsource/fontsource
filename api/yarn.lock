@@ -5295,6 +5295,13 @@ watchpack@^2.2.0:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
 
+wawoff2@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/wawoff2/-/wawoff2-2.0.0.tgz#df0ab96b0ef0539d7277292b9ad9884599c0e61f"
+  integrity sha512-5gjFj+fyQO9cMrg5vYaVM7+T37xSHpqUWM/S6UCEiBx8wRmfpvuhYjPM3toB2UujpmWQt1hSPKRo/jIRE/j9Eg==
+  dependencies:
+    argparse "^2.0.1"
+
 wcwidth@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/wcwidth/-/wcwidth-1.0.1.tgz#f0b0dcf915bc5ff1528afadb2c0e17b532da2fe8"
