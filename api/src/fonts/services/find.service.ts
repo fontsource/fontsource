@@ -138,11 +138,7 @@ export class FindService {
     return metadata;
   }
 
-  async findFile(
-    id: string,
-    file: string,
-    query: QueriesOne,
-  ): Promise<Buffer | undefined> {
+  async findFile(id: string, file: string, query: QueriesOne): Promise<Buffer> {
     const fontObj = await this.fontModel.findOne({ id }).exec();
 
     const parsedPath = fontFilePath(file);

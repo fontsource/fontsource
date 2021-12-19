@@ -35,7 +35,7 @@ export class FontsController {
     @Param('id') id: string,
     @Param('file') file: string,
     @Query() query,
-  ): Promise<Buffer | undefined> {
+  ): Promise<Buffer> {
     return await this.findService.findFile(id, file, query);
   }
 
