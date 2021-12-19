@@ -8,8 +8,8 @@
   "variable": {
     "wght": { "default": "400", "min": "400", "max": "700", "step": "1" }
   },
-  "lastModified": "2021-09-14",
-  "version": "v10",
+  "lastModified": "2021-12-17",
+  "version": "v13",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

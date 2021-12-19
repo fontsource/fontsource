@@ -32,6 +32,12 @@ body {
 }
 ```
 
+## Variable Fonts
+
+This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
+
+Variable documentation can be found [here](https://fontsource.org/docs/variable-fonts).
+
 ## Licensing
 
 It is important to always read the license for every font that you use.
@@ -41,6 +47,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v2`.
+Font version (provided by source): `v9`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

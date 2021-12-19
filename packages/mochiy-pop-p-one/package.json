@@ -1,1 +1,30 @@
-{"name":"@fontsource/mochiy-pop-p-one","version":"4.5.1","description":"Self-host the Mochiy Pop P One font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Mochiy Pop P One","mochiy-pop-p-one","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/mochiy-pop-p-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/mochiy-pop-p-one"}}
+{
+  "name": "@fontsource/mochiy-pop-p-one",
+  "version": "4.5.1",
+  "description": "Self-host the Mochiy Pop P One font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Mochiy Pop P One",
+    "mochiy-pop-p-one",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mochiy-pop-p-one#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/mochiy-pop-p-one"
+  }
+}

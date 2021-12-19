@@ -1,3 +1,12 @@
+/* baloo-bhaijaan-2-arabic-800-normal*/
+@font-face {
+  font-family: 'Baloo Bhaijaan 2';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/baloo-bhaijaan-2-arabic-800-normal.woff2') format('woff2'), url('./files/baloo-bhaijaan-2-all-800-normal.woff') format('woff');
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
 /* baloo-bhaijaan-2-vietnamese-800-normal*/
 @font-face {
   font-family: 'Baloo Bhaijaan 2';

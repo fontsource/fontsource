@@ -1,1 +1,30 @@
-{"name":"@fontsource/hurricane","version":"4.5.1","description":"Self-host the Hurricane font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Hurricane","hurricane","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/hurricane#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/hurricane"}}
+{
+  "name": "@fontsource/hurricane",
+  "version": "4.5.1",
+  "description": "Self-host the Hurricane font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Hurricane",
+    "hurricane",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/hurricane#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/hurricane"
+  }
+}

@@ -1,13 +1,16 @@
 {
   "fontId": "expletus-sans",
   "fontName": "Expletus Sans",
-  "subsets": ["latin"],
+  "subsets": ["latin", "latin-ext"],
   "weights": [400, 500, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2020-07-23",
-  "version": "v14",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "wght": { "default": "400", "min": "400", "max": "700", "step": "1" }
+  },
+  "lastModified": "2021-12-17",
+  "version": "v19",
   "category": "display",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

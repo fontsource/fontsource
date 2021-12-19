@@ -1,1 +1,30 @@
-{"name":"@fontsource/noto-sans-nushu","version":"4.5.2","description":"Self-host the Noto Sans Nushu font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Noto Sans Nushu","noto-sans-nushu","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-nushu#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/noto-sans-nushu"}}
+{
+  "name": "@fontsource/noto-sans-nushu",
+  "version": "4.5.2",
+  "description": "Self-host the Noto Sans Nushu font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Noto Sans Nushu",
+    "noto-sans-nushu",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-nushu#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/noto-sans-nushu"
+  }
+}

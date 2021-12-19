@@ -1,1 +1,30 @@
-{"name":"@fontsource/ibm-plex-sans-thai-looped","version":"4.5.2","description":"Self-host the IBM Plex Sans Thai Looped font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","IBM Plex Sans Thai Looped","ibm-plex-sans-thai-looped","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/ibm-plex-sans-thai-looped#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/ibm-plex-sans-thai-looped"}}
+{
+  "name": "@fontsource/ibm-plex-sans-thai-looped",
+  "version": "4.5.2",
+  "description": "Self-host the IBM Plex Sans Thai Looped font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "IBM Plex Sans Thai Looped",
+    "ibm-plex-sans-thai-looped",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ibm-plex-sans-thai-looped#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/ibm-plex-sans-thai-looped"
+  }
+}

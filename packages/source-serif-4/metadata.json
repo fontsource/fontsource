@@ -1,0 +1,26 @@
+{
+  "fontId": "source-serif-4",
+  "fontName": "Source Serif 4",
+  "subsets": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "latin",
+    "latin-ext",
+    "vietnamese"
+  ],
+  "weights": [200, 300, 400, 500, 600, 700, 800, 900],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "opsz": { "default": "14", "min": "8", "max": "60", "step": "0.1" },
+    "wght": { "default": "400", "min": "200", "max": "900", "step": "1" }
+  },
+  "lastModified": "2021-12-17",
+  "version": "v1",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
