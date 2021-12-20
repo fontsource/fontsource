@@ -57,4 +57,60 @@ $unicodeRangeValues: (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+0
   }
 }
 
+$fontName: "Baloo Paaji 2Variable";
+$weight: 400 800;
+$type: "wghtOnly";
+$stretch: null;
+  
+@mixin fontFaceVariable(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $fontDir: $fontDir,
+  $type: $type,
+  $stretch: $stretch,
+  $unicodeMap: $unicodeMap
+) {
+  @each $subset, $unicodeRangeValues in $unicodeMap {
+    @font-face {
+      font-family: "#{$fontName}";
+      font-style: $style;
+      font-display: $display;
+      font-weight: $weight;
+      @if $type == "full" {
+        font-stretch: $stretch;
+      }
+      src: url("#{$fontDir}/#{$fontId}-#{$subset}-variable-#{$type}-#{$style}.woff2") format("woff2");
+      unicode-range: $unicodeRangeValues;
+    }
+  }
+}
 
+$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-variable-#{$type}-#{$style}.woff2";
+
+@mixin fontFaceVariableCustom(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $display: $display,
+  $weight: $weight,
+  $woff2Path: $woff2Path,
+  $unicodeRange: $unicodeRange,
+  $unicodeRangeValues: $unicodeRangeValues
+) {
+  @font-face {
+    font-family: "#{$fontName}";
+    font-style: $style;
+    font-display: $display;
+    font-weight: $weight;
+    @if $type == "full" {
+      font-stretch: $stretch;
+    }
+    src: url("#{$woff2Path}") format("woff2");
+    @if $unicodeRange {
+      unicode-range: $unicodeRangeValues;
+    }
+  }
+}
