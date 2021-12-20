@@ -59,6 +59,10 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - dseg7
 - firago
 - hauora-sans
+- ia-writer-duo
+- ia-writer-duospace
+- ia-writer-mono
+- ia-writer-quattro
 - iosevka
 - karmilla
 - metropolis
