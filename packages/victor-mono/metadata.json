@@ -8,6 +8,7 @@
   "variable": false,
   "lastModified": "2020-08-02",
   "version": "v1.3.1",
+  "category": "monospace",
   "source": "https://github.com/rubjo/victor-mono",
   "license": "https://github.com/rubjo/victor-mono/blob/master/LICENSE",
   "type": "other"
