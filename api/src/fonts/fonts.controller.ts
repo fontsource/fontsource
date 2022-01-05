@@ -1,5 +1,14 @@
-import { Controller, Get, Param, Query, Post, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Query,
+  Post,
+  Delete,
+  Response,
+} from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+import { FastifyReply } from 'fastify';
 
 import { FontsService } from './services/fonts.service';
 import { FindService } from './services/find.service';
@@ -32,11 +41,14 @@ export class FontsController {
 
   @Get(':id/:file')
   async findFile(
+    @Response() res: FastifyReply,
     @Param('id') id: string,
     @Param('file') file: string,
     @Query() query,
-  ): Promise<Buffer> {
-    return await this.findService.findFile(id, file, query);
+  ): Promise<void> {
+    const fontFile = await this.findService.findFile(id, file, query);
+    res.type(fontFile.type);
+    res.send(fontFile.data);
   }
 
   /* Test routes
