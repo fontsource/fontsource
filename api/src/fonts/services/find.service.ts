@@ -27,6 +27,7 @@ import { lastValueFrom } from 'rxjs';
 import { AxiosResponse } from 'axios';
 import { latestFontVersion } from '../utils/latestFontVersion';
 import { genHash } from '../utils/genHash';
+import { mimes } from '../utils/mimes';
 
 @Injectable()
 export class FindService {
@@ -138,7 +139,11 @@ export class FindService {
     return metadata;
   }
 
-  async findFile(id: string, file: string, query: QueriesOne): Promise<Buffer> {
+  async findFile(
+    id: string,
+    file: string,
+    query: QueriesOne,
+  ): Promise<{ data: Buffer; type: string }> {
     const fontObj = await this.fontModel.findOne({ id }).exec();
 
     const parsedPath = fontFilePath(file);
@@ -158,7 +163,8 @@ export class FindService {
         file.versions.includes(version),
     );
 
-    if (fontObjFile) return fontObjFile.data;
+    if (fontObjFile)
+      return { data: fontObjFile.data, type: mimes[parsedPath.ext] };
 
     const throwNotFound = () => {
       throw new NotFoundException(`Not found: ${id}/${file}`);
@@ -228,6 +234,6 @@ export class FindService {
 
     await fontObj.save();
 
-    return fontBuffer;
+    return { data: fontBuffer, type: mimes[parsedPath.ext] };
   }
 }
