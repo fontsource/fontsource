@@ -15,7 +15,7 @@ import { useRef } from "react";
 
 import docsList from "../configs/docsList.json";
 import fontList from "../configs/fontList.json";
-import { usePersistedScrollTop } from "../utils/usePersistedScrollTop";
+import { usePersistedScrollTop } from "../hooks/usePersistedScrollTop";
 import { NextChakraLink } from "./NextChakraLink";
 
 const SidebarHeading = ({ title, ...props }) => {
