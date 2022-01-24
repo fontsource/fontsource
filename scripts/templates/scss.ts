@@ -34,8 +34,6 @@ $unicodeMap: (<%= unicodeMap %>);
 }
 
 $defSubset: "<%= defSubset %>";
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
-$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
 $unicodeRange: false;
 $unicodeRangeValues: (<%= defUnicode %>);
 
@@ -45,11 +43,18 @@ $unicodeRangeValues: (<%= defUnicode %>);
   $style: $style,
   $display: $display,
   $weight: $weight,
-  $woff2Path: $woff2Path,
-  $woffPath: $woffPath,
+  $woff2Path: null,
+  $woffPath: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
 ) {
+  @if $woffPath == null {
+    $woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
+  }
+  @if $woff2Path == null {
+    $woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
+  }
+
   @font-face {
     font-family: "#{$fontName}";
     font-style: $style;
@@ -93,18 +98,20 @@ $stretch: <%= variableWdth %>;
   }
 }
 
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-variable-#{$type}-#{$style}.woff2";
-
 @mixin fontFaceVariableCustom(
   $fontName: $fontName,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
   $weight: $weight,
-  $woff2Path: $woff2Path,
+  $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
 ) {
+  @if $woff2Path == null {
+    $woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-variable-#{$type}-#{$style}.woff2";
+  }
+
   @font-face {
     font-family: "#{$fontName}";
     font-style: $style;
@@ -129,8 +136,6 @@ $style: normal;
 $display: swap;
 $weight: 400;
 $fontDir: "~@fontsource/#{$fontId}/files";
-$woff2Path: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2";
-$woffPath: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff";
 $unicodeRange: false;
 $unicodeRangeValues: null;
 
@@ -140,11 +145,18 @@ $unicodeRangeValues: null;
   $style: $style,
   $display: $display,
   $weight: $weight,
-  $woff2Path: $woff2Path,
-  $woffPath: $woffPath,
+  $woff2Path: null,
+  $woffPath: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
 ) {
+  @if $woffPath == null {
+    $woffPath: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff";
+  }
+  @if $woff2Path == null {
+    $woff2Path: "#{$fontDir}/#{$fontId}-<%= defSubset %>-#{$weight}-#{$style}.woff2";
+  }
+
   @font-face {
     font-family: "#{$fontName}";
     font-style: $style;
