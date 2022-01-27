@@ -29,8 +29,6 @@ $unicodeMap: (khmer: (U+1780-17FF, U+200C, U+25CC, U+0000-00FF, U+0131, U+0152-0
 }
 
 $defSubset: "khmer";
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
-$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
 $unicodeRange: false;
 $unicodeRangeValues: (U+1780-17FF, U+200C, U+25CC, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD);
 
@@ -40,11 +38,18 @@ $unicodeRangeValues: (U+1780-17FF, U+200C, U+25CC, U+0000-00FF, U+0131, U+0152-0
   $style: $style,
   $display: $display,
   $weight: $weight,
-  $woff2Path: $woff2Path,
-  $woffPath: $woffPath,
+  $woff2Path: null,
+  $woffPath: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
 ) {
+  @if $woffPath == null {
+    $woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
+  }
+  @if $woff2Path == null {
+    $woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
+  }
+
   @font-face {
     font-family: "#{$fontName}";
     font-style: $style;
@@ -88,18 +93,20 @@ $stretch: 62.5% 100%;
   }
 }
 
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-variable-#{$type}-#{$style}.woff2";
-
 @mixin fontFaceVariableCustom(
   $fontName: $fontName,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
   $weight: $weight,
-  $woff2Path: $woff2Path,
+  $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
 ) {
+  @if $woff2Path == null {
+    $woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-variable-#{$type}-#{$style}.woff2";
+  }
+
   @font-face {
     font-family: "#{$fontName}";
     font-style: $style;

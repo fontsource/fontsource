@@ -29,8 +29,6 @@ $unicodeMap: (3: (U+fa10, U+fa12-fa6d, U+fb00-fb04, U+fe10-fe19, U+fe30-fe42, U+
 }
 
 $defSubset: "latin";
-$woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
-$woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
 $unicodeRange: false;
 $unicodeRangeValues: ();
 
@@ -40,11 +38,18 @@ $unicodeRangeValues: ();
   $style: $style,
   $display: $display,
   $weight: $weight,
-  $woff2Path: $woff2Path,
-  $woffPath: $woffPath,
+  $woff2Path: null,
+  $woffPath: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
 ) {
+  @if $woffPath == null {
+    $woffPath: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff";
+  }
+  @if $woff2Path == null {
+    $woff2Path: "#{$fontDir}/#{$fontId}-#{$defSubset}-#{$weight}-#{$style}.woff2";
+  }
+
   @font-face {
     font-family: "#{$fontName}";
     font-style: $style;
