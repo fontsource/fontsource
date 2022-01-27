@@ -34,6 +34,15 @@
   src: url('./files/jura-greek-600-normal.woff2') format('woff2'), url('./files/jura-all-600-normal.woff') format('woff');
   unicode-range: U+0370-03FF;
 }
+/* jura-kayah-li-600-normal*/
+@font-face {
+  font-family: 'Jura';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/jura-kayah-li-600-normal.woff2') format('woff2'), url('./files/jura-all-600-normal.woff') format('woff');
+  unicode-range: U+200C-200D, U+2010, U+25CC, U+A900-A92F;
+}
 /* jura-vietnamese-600-normal*/
 @font-face {
   font-family: 'Jura';

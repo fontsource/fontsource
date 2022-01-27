@@ -16,6 +16,15 @@
   src: url('./files/signika-negative-latin-400-normal.woff2') format('woff2'), url('./files/signika-negative-latin-400-normal.woff') format('woff');
   
 }
+/* signika-negative-latin-500-normal*/
+@font-face {
+  font-family: 'Signika Negative';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/signika-negative-latin-500-normal.woff2') format('woff2'), url('./files/signika-negative-latin-500-normal.woff') format('woff');
+  
+}
 /* signika-negative-latin-600-normal*/
 @font-face {
   font-family: 'Signika Negative';

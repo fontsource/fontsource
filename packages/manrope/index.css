@@ -1,3 +1,12 @@
+/* manrope-cyrillic-ext-400-normal*/
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/manrope-cyrillic-ext-400-normal.woff2') format('woff2'), url('./files/manrope-all-400-normal.woff') format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
 /* manrope-cyrillic-400-normal*/
 @font-face {
   font-family: 'Manrope';
@@ -15,6 +24,15 @@
   font-weight: 400;
   src: url('./files/manrope-greek-400-normal.woff2') format('woff2'), url('./files/manrope-all-400-normal.woff') format('woff');
   unicode-range: U+0370-03FF;
+}
+/* manrope-vietnamese-400-normal*/
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/manrope-vietnamese-400-normal.woff2') format('woff2'), url('./files/manrope-all-400-normal.woff') format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 /* manrope-latin-ext-400-normal*/
 @font-face {

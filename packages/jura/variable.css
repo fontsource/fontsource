@@ -34,6 +34,15 @@
   src: url('./files/jura-greek-ext-variable-wghtOnly-normal.woff2') format('woff2');
   unicode-range: U+1F00-1FFF;
 }  
+/* jura-kayah-li-variable-wghtOnly-normal */
+@font-face {
+  font-family: 'JuraVariable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url('./files/jura-kayah-li-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: U+200C-200D, U+2010, U+25CC, U+A900-A92F;
+}  
 /* jura-latin-variable-wghtOnly-normal */
 @font-face {
   font-family: 'JuraVariable';
