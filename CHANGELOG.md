@@ -23,6 +23,7 @@ These will always contain changes from Fontsource's end.
 ### Fixes
 
 - Resolve regressions ([#353](https://github.com/fontsource/fontsource/issues/353)) caused by Google API tweaks.
+- Incorrect CSS output from SCSS mixin for src urls. [#416](https://github.com/fontsource/fontsource/pull/416)
 
 ### Documentation
 
