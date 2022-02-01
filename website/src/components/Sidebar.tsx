@@ -131,7 +131,7 @@ export const Sidebar = ({
   usePersistedScrollTop(ref);
 
   return (
-    <SidebarContainer ref={ref} {...rest}>
+    <SidebarContainer ref={ref} overflowX={"hidden"} {...rest}>
       <SidebarHeading title={"Contents"} pt={{ base: 6, md: 2 }} />
       {ifDocs
         ? docsList.map((page) => (

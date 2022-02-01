@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [require("remark-slug")],
+      remarkPlugins: [],
       rehypePlugins: [],
     },
     scope: data,
