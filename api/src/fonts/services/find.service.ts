@@ -1,4 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { merge } from 'lodash';
 
@@ -16,11 +20,21 @@ import {
   QueriesOne,
   QueryMongoose,
 } from '../interfaces/queries.interface';
+import { fontFilePath } from '../utils/fontFilePath';
+import { fontLink } from '../utils/cdnLinks';
+import { HttpService } from '@nestjs/axios';
+import { lastValueFrom } from 'rxjs';
+import { AxiosResponse } from 'axios';
+import { latestFontVersion } from '../utils/latestFontVersion';
+import { genHash } from '../utils/genHash';
+import { mimes } from '../utils/mimes';
 
 @Injectable()
 export class FindService {
   constructor(
-    @InjectModel(Font.name) private readonly fontModel: Model<FontDocument>,
+    @InjectModel(Font.name)
+    private readonly fontModel: Model<FontDocument>,
+    private readonly httpService: HttpService,
   ) {}
 
   async findAll(queries: QueriesAll): Promise<FontAllResponse[]> {
@@ -123,5 +137,103 @@ export class FindService {
     };
 
     return metadata;
+  }
+
+  async findFile(
+    id: string,
+    file: string,
+    query: QueriesOne,
+  ): Promise<{ data: Buffer; type: string }> {
+    const fontObj = await this.fontModel.findOne({ id }).exec();
+
+    const parsedPath = fontFilePath(file);
+
+    if (!parsedPath) throw new BadRequestException(`Bad font path: ${file}`);
+
+    const version =
+      query.version || (await latestFontVersion(this.httpService, id));
+
+    // Search for existing file
+    const fontObjFile = fontObj.files.find(
+      (file) =>
+        file.subset === parsedPath.subset &&
+        file.weight === parsedPath.weight &&
+        file.style === parsedPath.style &&
+        file.ext === parsedPath.ext &&
+        file.versions.includes(version),
+    );
+
+    if (fontObjFile)
+      return { data: fontObjFile.data, type: mimes[parsedPath.ext] };
+
+    const throwNotFound = () => {
+      throw new NotFoundException(`Not found: ${id}/${file}`);
+    };
+
+    const fontObjVariant = fontObj.variants.find(
+      (variant) => variant.subset === parsedPath.subset,
+    );
+
+    if (!fontObjVariant) throwNotFound();
+
+    const fontObjVariantDownload = fontObjVariant.downloads.find(
+      (download) =>
+        download.weight === parsedPath.weight &&
+        download.style === parsedPath.style,
+    );
+
+    if (!fontObjVariantDownload) throwNotFound();
+
+    const fontObjUrl = fontLink(
+      id,
+      parsedPath.subset,
+      parsedPath.weight,
+      parsedPath.style,
+      version,
+    )[parsedPath.ext === 'ttf' ? 'woff2' : parsedPath.ext];
+
+    if (!fontObjUrl) throwNotFound();
+
+    let fontBuffer: Buffer;
+
+    await lastValueFrom(
+      this.httpService.get(fontObjUrl, { responseType: 'arraybuffer' }),
+    )
+      .then((res: AxiosResponse<Buffer>) => {
+        fontBuffer = res.data;
+      })
+      .catch(throwNotFound);
+
+    if (parsedPath.ext === 'ttf') {
+      fontBuffer = Buffer.from(
+        await (await import('wawoff2')).decompress(fontBuffer),
+      );
+    }
+
+    const fontBufferHash = genHash(fontBuffer);
+
+    const fontObjFileFromHash = fontObj.files.find(
+      (file) =>
+        file.subset === parsedPath.subset &&
+        file.weight === parsedPath.weight &&
+        file.style === parsedPath.style &&
+        file.ext === parsedPath.ext &&
+        file.hash === fontBufferHash,
+    );
+
+    if (fontObjFileFromHash) {
+      fontObjFileFromHash.versions.push(version);
+    } else {
+      fontObj.files.push({
+        ...parsedPath,
+        data: fontBuffer,
+        hash: fontBufferHash,
+        versions: [version],
+      });
+    }
+
+    await fontObj.save();
+
+    return { data: fontBuffer, type: mimes[parsedPath.ext] };
   }
 }

@@ -24,7 +24,13 @@ export interface UnicodeRange {
 export interface Variants {
   [weight: number]: {
     [style: string]: {
-      [subset: string]: { url: { woff2: string; woff: string } };
+      [subset: string]: {
+        url: {
+          woff2: string;
+          woff: string;
+          ttf: string;
+        };
+      };
     };
   };
 }

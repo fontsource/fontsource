@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { Files, FilesSchema } from './files.schema';
 import { Variants, VariantsSchema } from './variants.schema';
 
 export type FontDocument = Font & Document;
@@ -47,6 +48,9 @@ export class Font {
 
   @Prop({ type: [VariantsSchema], default: [], _id: false })
   variants: Variants[];
+
+  @Prop({ type: [FilesSchema], default: [], _id: false })
+  files: Files[];
 }
 
 export const FontSchema = SchemaFactory.createForClass(Font);
@@ -76,6 +80,7 @@ export const example = {
             woff2:
               'https://cdn.jsdelivr.net/npm/@fontsource/abeezee/files/abeezee-latin-400-normal.woff2',
             woff: 'https://cdn.jsdelivr.net/npm/@fontsource/abeezee/files/abeezee-latin-400-normal.woff',
+            ttf: 'https://api.fontsource.org/v1/fonts/abeezee/latin-400-normal.ttf',
           },
         },
         {
@@ -85,6 +90,7 @@ export const example = {
             woff2:
               'https://cdn.jsdelivr.net/npm/@fontsource/abeezee/files/abeezee-latin-400-italic.woff2',
             woff: 'https://cdn.jsdelivr.net/npm/@fontsource/abeezee/files/abeezee-latin-400-italic.woff',
+            ttf: 'https://api.fontsource.org/v1/fonts/abeezee/latin-400-italic.ttf',
           },
         },
       ],
