@@ -1,14 +1,7 @@
 {
   "fontId": "dseg7",
   "fontName": "DSEG7",
-  "subsets": [
-    "classic",
-    "classic-mini",
-    "modern",
-    "modern-mini",
-    "seggchan",
-    "seggchan-mini"
-  ],
+  "subsets": ["classic", "classic-mini", "modern", "modern-mini", "seggchan", "seggchan-mini"],
   "weights": [300, 400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "classic",

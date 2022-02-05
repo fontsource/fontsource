@@ -1,14 +1,7 @@
 {
   "fontId": "dela-gothic-one",
   "fontName": "Dela Gothic One",
-  "subsets": [
-    "cyrillic",
-    "greek",
-    "japanese",
-    "latin",
-    "latin-ext",
-    "vietnamese"
-  ],
+  "subsets": ["cyrillic", "greek", "japanese", "latin", "latin-ext", "vietnamese"],
   "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",

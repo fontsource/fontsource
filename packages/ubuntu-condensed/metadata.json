@@ -1,14 +1,7 @@
 {
   "fontId": "ubuntu-condensed",
   "fontName": "Ubuntu Condensed",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "greek-ext",
-    "latin",
-    "latin-ext"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "greek-ext", "latin", "latin-ext"],
   "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",

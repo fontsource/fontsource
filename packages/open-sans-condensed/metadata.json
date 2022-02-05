@@ -1,15 +1,7 @@
 {
   "fontId": "open-sans-condensed",
   "fontName": "Open Sans Condensed",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "greek-ext",
-    "latin",
-    "latin-ext",
-    "vietnamese"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "greek-ext", "latin", "latin-ext", "vietnamese"],
   "weights": [300, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",

@@ -1,14 +1,7 @@
 {
   "fontId": "source-serif-4",
   "fontName": "Source Serif 4",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "latin",
-    "latin-ext",
-    "vietnamese"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "latin", "latin-ext", "vietnamese"],
   "weights": [200, 300, 400, 500, 600, 700, 800, 900],
   "styles": ["italic", "normal"],
   "defSubset": "latin",

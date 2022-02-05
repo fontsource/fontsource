@@ -5,11 +5,9 @@
   "weights": [400, 500, 600, 700],
   "styles": ["normal"],
   "defSubset": "kayah-li",
-  "variable": {
-    "wght": { "default": "400", "min": "400", "max": "700", "step": "1" }
-  },
-  "lastModified": "2021-12-09",
-  "version": "v12",
+  "variable": { "wght": { "default": "400", "min": "400", "max": "700", "step": "1" } },
+  "lastModified": "2022-02-03",
+  "version": "v14",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

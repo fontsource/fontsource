@@ -1,15 +1,7 @@
 {
   "fontId": "alegreya-sc",
   "fontName": "Alegreya SC",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "greek-ext",
-    "latin",
-    "latin-ext",
-    "vietnamese"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "greek-ext", "latin", "latin-ext", "vietnamese"],
   "weights": [400, 500, 700, 800, 900],
   "styles": ["italic", "normal"],
   "defSubset": "latin",

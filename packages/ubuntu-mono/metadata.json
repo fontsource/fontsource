@@ -1,14 +1,7 @@
 {
   "fontId": "ubuntu-mono",
   "fontName": "Ubuntu Mono",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "greek-ext",
-    "latin",
-    "latin-ext"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "greek-ext", "latin", "latin-ext"],
   "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",

@@ -5,11 +5,9 @@
   "weights": [100, 200, 300, 400, 500, 600, 700],
   "styles": ["normal"],
   "defSubset": "latin",
-  "variable": {
-    "wght": { "default": "400", "min": "100", "max": "700", "step": "1" }
-  },
-  "lastModified": "2021-04-12",
-  "version": "v1",
+  "variable": { "wght": { "default": "400", "min": "100", "max": "700", "step": "1" } },
+  "lastModified": "2022-02-03",
+  "version": "v8",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

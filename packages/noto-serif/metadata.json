@@ -1,15 +1,7 @@
 {
   "fontId": "noto-serif",
   "fontName": "Noto Serif",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "greek-ext",
-    "latin",
-    "latin-ext",
-    "vietnamese"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "greek-ext", "latin", "latin-ext", "vietnamese"],
   "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",

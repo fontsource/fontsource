@@ -1,12 +1,7 @@
 {
   "fontId": "vazir",
   "fontName": "Vazir",
-  "subsets": [
-    "all",
-    "farsi-digits",
-    "farsi-digits-without-latin",
-    "without-latin"
-  ],
+  "subsets": ["all", "farsi-digits", "farsi-digits-without-latin", "without-latin"],
   "weights": [100, 300, 400, 500, 700, 900],
   "styles": ["normal"],
   "defSubset": "all",

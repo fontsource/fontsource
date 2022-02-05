@@ -1,15 +1,7 @@
 {
   "fontId": "oi",
   "fontName": "Oi",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "latin",
-    "latin-ext",
-    "tamil",
-    "vietnamese"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "latin", "latin-ext", "tamil", "vietnamese"],
   "weights": [400],
   "styles": ["normal"],
   "defSubset": "latin",

@@ -1,14 +1,7 @@
 {
   "fontId": "ibm-plex-sans",
   "fontName": "IBM Plex Sans",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "latin",
-    "latin-ext",
-    "vietnamese"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "latin", "latin-ext", "vietnamese"],
   "weights": [100, 200, 300, 400, 500, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",

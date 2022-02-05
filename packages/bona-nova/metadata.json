@@ -1,15 +1,7 @@
 {
   "fontId": "bona-nova",
   "fontName": "Bona Nova",
-  "subsets": [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "hebrew",
-    "latin",
-    "latin-ext",
-    "vietnamese"
-  ],
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "hebrew", "latin", "latin-ext", "vietnamese"],
   "weights": [400, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
