@@ -5211,6 +5211,11 @@ dotenv@10.0.0, dotenv@^10.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
   integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
+dprint@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/dprint/-/dprint-0.22.0.tgz#1394d9e5e2efd477763dfff2cc9f66ac7ce99b91"
+  integrity sha512-9cfntFKKJW6ulR79SBJ3aXjtRKH4UCKBYNJjPkrkA1vzCpaPU9HLLsStgiPnvItmac5TzNFetG6gGJWMZEZNcA==
+
 duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
