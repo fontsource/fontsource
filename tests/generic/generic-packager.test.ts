@@ -1,7 +1,7 @@
 import mock from "mock-fs";
 import { readDir, readDirContents } from "../helpers";
 
-import { packager } from "../../generic/generic-packager";
+import { packager } from "../../scripts/generic/generic-packager";
 
 const testFont = {
   fontId: "clear-sans",
