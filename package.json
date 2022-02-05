@@ -10,9 +10,26 @@
     "website"
   ],
   "scripts": {
+    "build:generic": "ts-node scripts/generic/build.ts",
+    "build:generic-force": "ts-node scripts/generic/rebuilder.ts",
+    "build:google": "ts-node scripts/google/download-google.ts",
+    "build:google-force": "ts-node scripts/google/download-google.ts force",
+    "parser:v1": "npm explore google-font-metadata -- yarn parser:v1",
+    "parser:v2": "npm explore google-font-metadata -- yarn parser:v2",
+    "parser:variable": "npm explore google-font-metadata -- yarn variable:gen && npm explore google-font-metadata -- yarn variable:parse",
     "deploy": "mass-publish publish patch",
     "deploy:ci": "mass-publish publish patch --yes",
+    "format": "yarn format:prettier && yarn format:eslint",
+    "format:scripts": "prettier --write ./scripts/**/*.{js,jsx,ts,tsx,json,md} && prettier --write ./tests/**/*.{js,jsx,ts,tsx,json,md}",
+    "format:prettier": "prettier --write **/*.{js,jsx,ts,tsx,json,md}",
+    "lint": "manypkg run scripts lint",
     "postinstall": "manypkg check",
+    "readme-update:google": "ts-node scripts/google/google-readme-updater.ts",
+    "util:algolia": "ts-node scripts/utils/algolia-index.ts",
+    "util:fontlist": "ts-node scripts/utils/fontlist-generator.ts",
+    "util:generic-renamer": "ts-node scripts/generic/renamer.ts",
+    "util:package-json-rebuild": "ts-node scripts/utils/package-json-rebuild.ts",
+    "util:subsets": "ts-node scripts/utils/subset-list.ts",
     "test": "jest"
   },
   "dependencies": {
