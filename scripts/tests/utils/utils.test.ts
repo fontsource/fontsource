@@ -4,7 +4,7 @@ import {
   makeFontFilePath,
   makeVariableFontDownloadPath,
   makeVariableFontFilePath,
-} from "../../scripts/utils/utils";
+} from "../../utils/utils";
 
 const fontDir = "packages/noto-sans-jp";
 const fontId = "noto-sans-jp";
