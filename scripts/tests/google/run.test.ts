@@ -2,7 +2,7 @@
 import mock from "mock-fs";
 import { readDir, readDirContents } from "../helpers";
 
-import { run } from "../../scripts/google/run";
+import { run } from "../../google/run";
 
 describe("Full run function", () => {
   beforeEach(() => {
