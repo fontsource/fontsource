@@ -20,7 +20,7 @@
     "deploy": "mass-publish publish patch",
     "deploy:ci": "mass-publish publish patch --yes",
     "format": "yarn format:scripts && yarn format:packages",
-    "format:scripts": "prettier --write ./scripts/**/*.{js,jsx,ts,tsx,json,md} && prettier --write ./tests/**/*.{js,jsx,ts,tsx,json,md}",
+    "format:scripts": "prettier --write ./scripts/**/*.{js,jsx,ts,tsx,json,md} && prettier --write ./tests/**/*.{js,jsx,ts,tsx}",
     "format:packages": "dprint fmt",
     "lint": "manypkg run scripts lint",
     "postinstall": "manypkg check",
