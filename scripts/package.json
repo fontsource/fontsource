@@ -1,0 +1,51 @@
+{
+  "name": "scripts",
+  "version": "4.5.0",
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/async": "^3.2.12",
+    "@types/flat": "^5.0.2",
+    "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^7.2.0",
+    "@types/jest": "^27.4.0",
+    "@types/jsonfile": "^6.0.1",
+    "@types/lodash": "^4.14.178",
+    "@types/mock-fs": "^4.13.1",
+    "@types/node": "^17.0.15",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-unicorn": "^40.1.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.12.1",
+    "async": "^3.2.3",
+    "dotenv": "^10.0.0",
+    "flat": "^5.0.2",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.1.7",
+    "google-font-metadata": "^3.1.0",
+    "got": "^11.8.2",
+    "is-absolute-url": "^3.0.3",
+    "jsonfile": "^6.1.0",
+    "lodash": "^4.17.21"
+  },
+  "scripts": {
+    "lint": "yarn lint:code && yarn lint:types",
+    "lint:types": "tsc --noEmit",
+    "lint:code": "eslint **/*.{js,jsx,ts,tsx}"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": true
+}
