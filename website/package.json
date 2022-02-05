@@ -37,7 +37,7 @@
     "rehype-slug": "^5.0.1"
   },
   "devDependencies": {
-    "@types/node": "^17.0.13",
+    "@types/node": "^17.0.15",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@types/react-instantsearch-dom": "^6.12.2",
