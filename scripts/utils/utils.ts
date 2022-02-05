@@ -55,7 +55,7 @@ const findClosest = (arr: number[], num: number): number => {
 // Find names of all packages.
 const getDirectories = () =>
   fs
-    .readdirSync("../packages", { withFileTypes: true })
+    .readdirSync("./packages", { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name);
 

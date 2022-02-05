@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import { APIv2 } from "google-font-metadata";
-import { unicodeMapGen, generateSCSS } from "../../templates/scss";
+import { unicodeMapGen, generateSCSS } from "../../scripts/templates/scss";
 
 jest.mock("google-font-metadata");
 

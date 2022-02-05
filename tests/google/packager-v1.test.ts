@@ -1,7 +1,7 @@
 import mock from "mock-fs";
 
 import { readDir, readDirContents } from "../helpers";
-import { packagerV1 } from "../../google/packager-v1";
+import { packagerV1 } from "../../scripts/google/packager-v1";
 
 jest.mock("google-font-metadata");
 
