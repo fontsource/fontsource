@@ -3,9 +3,19 @@
   "version": "4.5.0",
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "api",
+    "scripts",
+    "website"
+  ],
+  "scripts": {
+    "pkg-check": "manypkg check"
+  },
+  "dependencies": {
+    "@manypkg/cli": "^0.19.1"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "private": true,
-  "workspaces":["api", "scripts", "website"]
+  }
 }
