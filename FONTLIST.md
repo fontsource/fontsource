@@ -41,6 +41,7 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 ## Other
 
 - aileron
+- apfel-grotezk
 - bagnard
 - bagnard-sans
 - bravura
@@ -82,3 +83,4 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - yakuhanmps
 - yakuhanrp
 - yakuhanrps
+- youngserif
