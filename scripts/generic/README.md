@@ -12,6 +12,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
    2. We do not support anything other than woff and woff2. We expect both file formats.
    3. The packager will infer how many subsets, weights and styles are in the font depending on how many files there are with different names.
    4. [Example](https://github.com/fontsource/fontsource/tree/main/packages/open-sans/files)
+   5. A very useful tool is PowerRename from the [PowerToys](https://github.com/microsoft/PowerToys) kit for Windows.
 
 3. Open `config.js` located in this directory and enter the relevant details.
 
