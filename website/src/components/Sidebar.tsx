@@ -66,7 +66,7 @@ const SidebarButton = ({
   }
 
   return (
-    <Box align="center">
+    <Box>
       <NextChakraLink
         href={path}
         prefetch={false}
