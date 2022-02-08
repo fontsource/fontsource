@@ -1,6 +1,6 @@
 import mock from "mock-fs";
 import { readDir, readDirContents } from "../helpers";
-import { variable } from "../../scripts/google/variable";
+import { variable } from "../../google/variable";
 
 jest.mock("google-font-metadata");
 
@@ -36,7 +36,7 @@ describe("Generate Variable CSS", () => {
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
     const expectedCSSContent = readDirContents(
-      "./tests/google/data/cabin",
+      "./scripts/tests/google/data/cabin",
       fileNames
     );
     expect(cssContent).toEqual(expectedCSSContent);
@@ -52,7 +52,7 @@ describe("Generate Variable CSS", () => {
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
     const expectedCSSContent = readDirContents(
-      "./tests/google/data/changa",
+      "./scripts/tests/google/data/changa",
       fileNames
     );
 
@@ -68,7 +68,7 @@ describe("Generate Variable CSS", () => {
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
     const expectedCSSContent = readDirContents(
-      "./tests/google/data/recursive",
+      "./scripts/tests/google/data/recursive",
       fileNames
     );
 

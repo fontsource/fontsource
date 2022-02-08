@@ -1,7 +1,7 @@
 import mock from "mock-fs";
 
 import { readDir, readDirContents } from "../helpers";
-import { packagerV1 } from "../../scripts/google/packager-v1";
+import { packagerV1 } from "../../google/packager-v1";
 
 jest.mock("google-font-metadata");
 
@@ -32,7 +32,7 @@ describe("Generate V1 CSS", () => {
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
     const expectedCSSContent = readDirContents(
-      "./tests/google/data/abel",
+      "./scripts/tests/google/data/abel",
       fileNames
     );
     expect(cssContent).toEqual(expectedCSSContent);
@@ -76,7 +76,7 @@ describe("Generate V1 CSS", () => {
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
     const expectedCSSContent = readDirContents(
-      "./tests/google/data/cabin",
+      "./scripts/tests/google/data/cabin",
       fileNames
     );
     expect(cssContent).toEqual(expectedCSSContent);
@@ -107,7 +107,7 @@ describe("Generate V1 CSS", () => {
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
     const expectedCSSContent = readDirContents(
-      "./tests/google/data/noto-sans-jp",
+      "./scripts/tests/google/data/noto-sans-jp",
       fileNames
     );
     expect(cssContent).toEqual(expectedCSSContent);

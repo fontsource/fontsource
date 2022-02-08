@@ -2,7 +2,7 @@
 import mock from "mock-fs";
 import { readDir, readDirContents } from "../helpers";
 
-import { run } from "../../scripts/google/run";
+import { run } from "../../google/run";
 
 describe("Full run function", () => {
   beforeEach(() => {
@@ -35,7 +35,7 @@ describe("Full run function", () => {
       const jsonContent = readDirContents(dirPath, fileNames);
       mock.restore();
       const expectedJsonContent = readDirContents(
-        "./tests/google/data/abel",
+        "./scripts/tests/google/data/abel",
         fileNames
       );
       expect(jsonContent).toEqual(expectedJsonContent);
