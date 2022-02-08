@@ -2,3 +2,6 @@ yarn.lock
 jest.config.js
 tests/coverage
 coverage
+api
+website
+packages
