@@ -67,17 +67,17 @@ $unicodeRangeValues: (<%= defUnicode %>);
   }
 }
 
-<% if (variableFlag) { %>$fontName: "<%= fontName %>Variable";
-$weight: <%= variableWeight %>;
+<% if (variableFlag) { %>$fontNameVariable: "<%= fontName %>Variable";
+$weightVariable: <%= variableWeight %>;
 $type: "wghtOnly";
 $stretch: <%= variableWdth %>;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -99,11 +99,11 @@ $stretch: <%= variableWdth %>;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
