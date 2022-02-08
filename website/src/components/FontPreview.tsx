@@ -81,7 +81,7 @@ export const FontPreview = ({
   const selectHeadingColor = useColorModeValue("gray.500", "gray.100");
 
   // Refer to https://github.com/fontsource/fontsource/issues/243
-  const affectedVariableFonts = ["exo-2", "inter"];
+  const affectedVariableFonts = ["exo-2", "inter", "jost", "montserrat"];
 
   return (
     <>
