@@ -11,7 +11,7 @@ module.exports = {
   coverageDirectory: "./coverage/",
 
   // A list of paths to directories that Jest should use to search for files in
-  roots: ["<rootDir>/tests"],
+  roots: ["<rootDir>/scripts/tests"],
 
   // The test environment that will be used for testing
   testEnvironment: "node",
