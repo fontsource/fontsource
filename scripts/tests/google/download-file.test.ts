@@ -7,7 +7,7 @@ import {
   variableLinks,
   pairGenerator,
   gotDownload,
-} from "../../scripts/google/download-file";
+} from "../../google/download-file";
 
 jest.mock("google-font-metadata");
 

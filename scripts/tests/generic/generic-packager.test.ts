@@ -1,7 +1,7 @@
 import mock from "mock-fs";
 import { readDir, readDirContents } from "../helpers";
 
-import { packager } from "../../scripts/generic/generic-packager";
+import { packager } from "../../generic/generic-packager";
 
 const testFont = {
   fontId: "clear-sans",
@@ -91,7 +91,7 @@ describe("Generate Generic CSS", () => {
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
     const expectedCSSContent = readDirContents(
-      "./tests/generic/data/clear-sans",
+      "./scripts/tests/generic/data/clear-sans",
       fileNames
     );
     expect(cssContent).toEqual(expectedCSSContent);
@@ -112,7 +112,7 @@ describe("Generate Generic CSS", () => {
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
     const expectedCSSContent = readDirContents(
-      "./tests/generic/data/material-icons",
+      "./scripts/tests/generic/data/material-icons",
       fileNames
     );
     expect(cssContent).toEqual(expectedCSSContent);

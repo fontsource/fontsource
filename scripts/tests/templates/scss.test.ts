@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import { APIv2 } from "google-font-metadata";
-import { unicodeMapGen, generateSCSS } from "../../scripts/templates/scss";
+import { unicodeMapGen, generateSCSS } from "../../templates/scss";
 
 jest.mock("google-font-metadata");
 
@@ -15,7 +15,7 @@ describe("SCSS Generation", () => {
   test("Abel SCSS - No variable", () => {
     const scss = generateSCSS("abel", false);
     const expectedScss = fs
-      .readFileSync("./tests/google/data/abel/scss/mixins.scss")
+      .readFileSync("./scripts/tests/google/data/abel/scss/mixins.scss")
       .toString();
 
     expect(scss).toEqual(expectedScss);
@@ -24,7 +24,7 @@ describe("SCSS Generation", () => {
   test("Cabin SCSS - Variable with wdth", () => {
     const scss = generateSCSS("cabin", true);
     const expectedScss = fs
-      .readFileSync("./tests/google/data/cabin/scss/mixins.scss")
+      .readFileSync("./scripts/tests/google/data/cabin/scss/mixins.scss")
       .toString();
 
     expect(scss).toEqual(expectedScss);
@@ -33,7 +33,7 @@ describe("SCSS Generation", () => {
   test("Changa SCSS - Variable without wdth", () => {
     const scss = generateSCSS("changa", true);
     const expectedScss = fs
-      .readFileSync("./tests/google/data/changa/scss/mixins.scss")
+      .readFileSync("./scripts/tests/google/data/changa/scss/mixins.scss")
       .toString();
 
     expect(scss).toEqual(expectedScss);
@@ -42,7 +42,7 @@ describe("SCSS Generation", () => {
   test("Noto Sans JP SCSS - Number subsets", () => {
     const scss = generateSCSS("noto-sans-jp", false);
     const expectedScss = fs
-      .readFileSync("./tests/google/data/noto-sans-jp/scss/mixins.scss")
+      .readFileSync("./scripts/tests/google/data/noto-sans-jp/scss/mixins.scss")
       .toString();
 
     expect(scss).toEqual(expectedScss);
