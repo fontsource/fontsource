@@ -29,10 +29,10 @@
   "dependencies": {
     "algoliasearch": "^4.12.1",
     "async": "^3.2.3",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.0",
     "flat": "^5.0.2",
     "fs-extra": "^10.0.0",
-    "glob": "^7.1.7",
+    "glob": "^7.2.0",
     "google-font-metadata": "^3.1.0",
     "got": "^11.8.2",
     "is-absolute-url": "^3.0.3",
