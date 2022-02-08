@@ -57,7 +57,7 @@ You can file issues by filling out an [issue form](https://github.com/fontsource
 Fontsource is built completely with Typescript which extends to both the API and website.
 
 - [Google Font Metadata](https://github.com/fontsource/google-font-metadata) as the upstream source of Google Fonts data.
-- [Lerna](https://github.com/lerna/lerna) for publishing packages.
+- [mass-publish](https://github.com/fontsource/mass-publish) for publishing packages.
 - [Jest](https://jestjs.io/) for testing.
 - [Fastify NestJS](https://nestjs.com/) for the API architecture.
 - [Next.js](https://nextjs.org/) and [Chakra UI](https://chakra-ui.com/) for the website.
@@ -68,13 +68,14 @@ After cloning the repo, run:
 yarn
 ```
 
-The main root, API and website directories each have separate package.json setups and scripts. Thus requiring `yarn` to be run in each directory.
+The project uses Yarn Workspaces, thus the packager, API and website should install in one command.
 
 ### Packager Development
 
-`yarn format` - Runs Prettier and ESLint across the directory.
+`yarn format` - Runs Prettier and dprint across the directory.
 `yarn format:scripts` - Runs Prettier only over the `./scripts` directory.
-`yarn format:eslint` - Runs ESLint only.
+`yarn format:packages` - Runs dprint on the `./packages` directory.
+`yarn lint` - Runs ESLint over the `./scripts` directory.
 
 `yarn build:generic` - Runs the Generic Packager on `./scripts/generic/files`.
 `yarn build:generic-force` - Rebuilds ALL non-Google fonts with the Generic Packager. Useful when the generic packager is updated and makes changes that needs to be applied to all other fonts.
