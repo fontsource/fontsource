@@ -69,3 +69,4 @@ yarn-error.log
 
 api/dist
 .npmrc
+*.tsbuildinfo
