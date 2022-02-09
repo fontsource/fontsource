@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import { Button, IconButton, Stack } from "@chakra-ui/react";
+import { Button, IconButton, Link, Stack } from "@chakra-ui/react";
 import { connectPagination } from "react-instantsearch-dom";
 
 interface PaginationButtonProps {
@@ -14,6 +14,7 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
   refine,
 }) => (
   <Button
+    as={Link}
     href={createURL(page)}
     rounded="md"
     onClick={(event) => {

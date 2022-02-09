@@ -36,7 +36,6 @@ export const FontSearch = () => {
         <Box
           position={{ base: "inherit", md: "absolute" }}
           transform={{ base: "scale(0.7)", md: "scale(0.7) translateY(-155%)" }}
-          align="center"
           mt={2}
           ml={{
             md: "65%",
