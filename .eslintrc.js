@@ -1,18 +1,20 @@
-{
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 2021,
-    "project": "./tsconfig.json"
+const path = require("path");
+
+module.exports = {
+  root: true,
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 2021,
+    project: path.join(__dirname, "./scripts/tsconfig.json"),
   },
-  "env": {
-    "commonjs": true,
-    "es2021": true,
-    "node": true,
-    "jest": true
+  env: {
+    commonjs: true,
+    es2021: true,
+    node: true,
+    jest: true,
   },
-  "plugins": ["@typescript-eslint", "jest", "promise", "unicorn"],
-  "extends": [
+  plugins: ["@typescript-eslint", "jest", "promise", "unicorn"],
+  extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "airbnb-base",
@@ -20,9 +22,9 @@
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
     "plugin:jest/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
   ],
-  "rules": {
+  rules: {
     "prettier/prettier": "warn",
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
     "no-prototype-builtins": "off",
@@ -42,6 +44,6 @@
     // It's not accurate in the monorepo style
     "import/no-extraneous-dependencies": "off",
     // Fontsource doesn't need to worry about heavyweight libraries
-    "no-restricted-syntax": "off"
-  }
-}
+    "no-restricted-syntax": "off",
+  },
+};

@@ -9,6 +9,5 @@
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "allowJs": false
-  },
-  "include": ["**/*.ts", "**/*.json"]
+  }
 }
