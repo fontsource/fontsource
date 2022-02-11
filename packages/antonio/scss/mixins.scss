@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+0
   }
 }
 
-$fontName: "AntonioVariable";
-$weight: 100 700;
+$fontNameVariable: "AntonioVariable";
+$weightVariable: 100 700;
 $type: "wghtOnly";
 $stretch: null;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: null;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

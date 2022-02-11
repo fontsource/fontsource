@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+200C-200D, U+25CC, U+AAE0-AAF6, U+ABC0-ABFF, U+0000-00FF
   }
 }
 
-$fontName: "Noto Sans Meetei MayekVariable";
-$weight: 100 900;
+$fontNameVariable: "Noto Sans Meetei MayekVariable";
+$weightVariable: 100 900;
 $type: "wghtOnly";
 $stretch: null;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: null;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

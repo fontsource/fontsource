@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+0964-0965, U+0981-09FB, U+200C-200D, U+20B9, U+25CC, U+0
   }
 }
 
-$fontName: "Noto Sans BengaliVariable";
-$weight: 100 900;
+$fontNameVariable: "Noto Sans BengaliVariable";
+$weightVariable: 100 900;
 $type: "wghtOnly";
 $stretch: 62.5% 100%;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: 62.5% 100%;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

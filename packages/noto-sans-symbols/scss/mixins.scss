@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2
   }
 }
 
-$fontName: "Noto Sans SymbolsVariable";
-$weight: 100 900;
+$fontNameVariable: "Noto Sans SymbolsVariable";
+$weightVariable: 100 900;
 $type: "wghtOnly";
 $stretch: null;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: null;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

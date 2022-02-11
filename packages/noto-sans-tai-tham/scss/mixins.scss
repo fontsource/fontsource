@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+1A20-1AAF, U+200C-200D, U+2219, U+0000-00FF, U+0131, U+0
   }
 }
 
-$fontName: "Noto Sans Tai ThamVariable";
-$weight: 400 700;
+$fontNameVariable: "Noto Sans Tai ThamVariable";
+$weightVariable: 400 700;
 $type: "wghtOnly";
 $stretch: null;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: null;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

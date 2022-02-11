@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+F
   }
 }
 
-$fontName: "Noto Naskh ArabicVariable";
-$weight: 400 700;
+$fontNameVariable: "Noto Naskh ArabicVariable";
+$weightVariable: 400 700;
 $type: "wghtOnly";
 $stretch: null;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: null;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

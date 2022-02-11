@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+060C, U+061B, U+061F, U+0640, U+0660, U+06D4, U+200C-200
   }
 }
 
-$fontName: "Noto Sans Hanifi RohingyaVariable";
-$weight: 400 700;
+$fontNameVariable: "Noto Sans Hanifi RohingyaVariable";
+$weightVariable: 400 700;
 $type: "wghtOnly";
 $stretch: null;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: null;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

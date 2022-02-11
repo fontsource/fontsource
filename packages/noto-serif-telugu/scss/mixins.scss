@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+0951-0952, U+0964-0965, U+0C00-0C7F, U+1CDA, U+200C-200D
   }
 }
 
-$fontName: "Noto Serif TeluguVariable";
-$weight: 100 900;
+$fontNameVariable: "Noto Serif TeluguVariable";
+$weightVariable: 100 900;
 $type: "wghtOnly";
 $stretch: null;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: null;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

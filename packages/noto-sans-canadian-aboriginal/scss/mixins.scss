@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+02C7, U+02D8-02D9, U+02DB, U+0307, U+1400-167F, U+18B0-1
   }
 }
 
-$fontName: "Noto Sans Canadian AboriginalVariable";
-$weight: 100 900;
+$fontNameVariable: "Noto Sans Canadian AboriginalVariable";
+$weightVariable: 100 900;
 $type: "wghtOnly";
 $stretch: null;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: null;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

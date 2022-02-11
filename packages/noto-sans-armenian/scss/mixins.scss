@@ -62,17 +62,17 @@ $unicodeRangeValues: (U+0308, U+0530-058F, U+2010, U+25CC, U+FB13-FB17, U+0000-0
   }
 }
 
-$fontName: "Noto Sans ArmenianVariable";
-$weight: 100 900;
+$fontNameVariable: "Noto Sans ArmenianVariable";
+$weightVariable: 100 900;
 $type: "wghtOnly";
 $stretch: 62.5% 100%;
-  
+
 @mixin fontFaceVariable(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $fontDir: $fontDir,
   $type: $type,
   $stretch: $stretch,
@@ -94,11 +94,11 @@ $stretch: 62.5% 100%;
 }
 
 @mixin fontFaceVariableCustom(
-  $fontName: $fontName,
+  $fontName: $fontNameVariable,
   $fontId: $fontId,
   $style: $style,
   $display: $display,
-  $weight: $weight,
+  $weight: $weightVariable,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues
