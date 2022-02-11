@@ -73,11 +73,11 @@ The project uses Yarn Workspaces, thus the packager, API and website should inst
 
 ### Useful Scripts
 
-`yarn test` - Runs tests.
-`yarn format` - Runs Prettier and dprint across the repository.
-`yarn format:scripts` - Runs Prettier only over the `scripts` directory.
-`yarn format:packages` - Runs dprint on the `packages` directory.
-`yarn lint` - Runs ESLint over the `scripts` directory.
+- `yarn test` - Runs tests.
+- `yarn format` - Runs Prettier and dprint across the repository.
+- `yarn format:scripts` - Runs Prettier only over the `scripts` directory.
+- `yarn format:packages` - Runs dprint on the `packages` directory.
+- `yarn lint` - Runs ESLint over the `scripts` directory.
 
 ### Packager Development
 
