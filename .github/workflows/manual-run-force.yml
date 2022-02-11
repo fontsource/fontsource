@@ -17,30 +17,30 @@ jobs:
       - name: Install packages
         run: yarn
 
-      - name: Fetch API
+      - name: Fetch API # Calls Google Font Metadata to fetch the latest data from Google's Developer API
         run: npm explore google-font-metadata -- yarn parser:gen $GOOGLE_API_KEY
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - name: Parse APIv1
+      - name: Parse APIv1 # Processes ALL API data into APIv1 format (check google-font-metadata documentation)
         run: yarn parser:v1 --force
 
-      - name: Parse APIv2
+      - name: Parse APIv2 # Processes ALL API data into APIv2 format
         run: yarn parser:v2 --force
 
-      - name: Parse Variable
+      - name: Parse Variable # Scrapes variable page on Google Fonts and parse into JSON format
         run: yarn parser:variable
 
-      - name: Build fonts (Google)
+      - name: Build fonts (Google) # Forcefully rebuild all Google Fonts in repository without skipping any fonts
         run: yarn build:google-force
 
-      - name: Rebuild non-Google fonts
+      - name: Rebuild non-Google fonts # Forcefully rebuild all non-Google fonts in repository with generic packager
         run: yarn build:generic-force
 
-      - name: Generate fontlist
+      - name: Generate fontlist # Generate FONTLIST.json and FONTLIST.md
         run: yarn util:fontlist
 
-      - name: Generate Algolia index
+      - name: Generate Algolia index # Generate Algolia search index for website
         run: yarn util:algolia
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
