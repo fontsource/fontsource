@@ -17,7 +17,7 @@ More details on how to use the generic packager can be found in [`scripts/generi
 `scripts/google` contains all the files relevant to download and package all Google Fonts.
 
 - `yarn build:google` - Runs `download-google.ts`. Compares metadata from [Google Font Metadata](https://github.com/fontsource/google-font-metadata) parsers and existing metadata, only updating those that differ.
-- `yarn build:google-force` Forcefully redownload and repackage all Google Font packages.
+- `yarn build:google-force` - Forcefully redownload and repackage all Google Font packages.
 
 Please note it is generally not recommended for you to run these commands locally and you would be better off relying on `yarn test` to ensure everything is in working order. If you wish to properly build the repo locally, check out our Github Actions workflows `manual-run.yml` and `manual-run-force.yml` which shows the necessary precursor steps to generate current metadata using Google Font Metadata before actually generating the packages.
 
