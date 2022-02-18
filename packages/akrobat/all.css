@@ -1,0 +1,72 @@
+/* akrobat-all-100-normal*/
+@font-face {
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/akrobat-all-100-normal.woff2') format('woff2'), url('./files/akrobat-all-100-normal.woff') format('woff');
+  
+}
+/* akrobat-all-200-normal*/
+@font-face {
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/akrobat-all-200-normal.woff2') format('woff2'), url('./files/akrobat-all-200-normal.woff') format('woff');
+  
+}
+/* akrobat-all-300-normal*/
+@font-face {
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/akrobat-all-300-normal.woff2') format('woff2'), url('./files/akrobat-all-300-normal.woff') format('woff');
+  
+}
+/* akrobat-all-400-normal*/
+@font-face {
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/akrobat-all-400-normal.woff2') format('woff2'), url('./files/akrobat-all-400-normal.woff') format('woff');
+  
+}
+/* akrobat-all-600-normal*/
+@font-face {
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/akrobat-all-600-normal.woff2') format('woff2'), url('./files/akrobat-all-600-normal.woff') format('woff');
+  
+}
+/* akrobat-all-700-normal*/
+@font-face {
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/akrobat-all-700-normal.woff2') format('woff2'), url('./files/akrobat-all-700-normal.woff') format('woff');
+  
+}
+/* akrobat-all-800-normal*/
+@font-face {
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/akrobat-all-800-normal.woff2') format('woff2'), url('./files/akrobat-all-800-normal.woff') format('woff');
+  
+}
+/* akrobat-all-900-normal*/
+@font-face {
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/akrobat-all-900-normal.woff2') format('woff2'), url('./files/akrobat-all-900-normal.woff') format('woff');
+  
+}
