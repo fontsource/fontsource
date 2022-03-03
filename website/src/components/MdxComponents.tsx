@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 
 import { BlockQuote } from "./Blockquote";
+import { CarbonAd } from "./CarbonAd";
 import { Code } from "./Code";
 import { NextChakraLink } from "./NextChakraLink";
 
@@ -61,6 +62,7 @@ const CustomMdxComponents = {
   // Misc
   hr: (props) => <Divider mt={2} {...props} />,
   blockquote: (props) => <BlockQuote {...props} />,
+  CarbonAd: () => <CarbonAd />,
 };
 
 export default CustomMdxComponents;
