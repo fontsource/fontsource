@@ -1,5 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import Head from "next/head";
+import { CarbonAd } from "website/src/components/CarbonAd";
 
 import { Container } from "../../components/Container";
 import { Main } from "../../components/Main";
@@ -18,6 +19,7 @@ const Index = () => (
       <Container py={2}>
         <SearchModal />
       </Container>
+      <CarbonAd />
     </Main>
   </PageContainer>
 );
