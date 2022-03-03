@@ -13,7 +13,11 @@ const Index = () => (
       <title>Preview | Fontsource</title>
     </Head>
     <Main mx="auto">
-      <Heading fontSize={{ base: "10vw", md: "6vw", xl: "75px" }} mt="22vh">
+      <Heading
+        fontSize={{ base: "10vw", md: "6vw", xl: "75px" }}
+        mt="22vh"
+        mx="auto"
+      >
         Fontsource
       </Heading>
       <Container py={2}>
