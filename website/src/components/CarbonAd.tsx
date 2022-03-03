@@ -22,9 +22,6 @@ export const CarbonAd = () => {
     borderRadius: "4px",
     bgColor,
     color: "inherit",
-    "@media (max-width: 480px)": {
-      fontSize: "0.875em",
-    },
     a: {
       textDecoration: "none",
       color: "inherit",
@@ -57,6 +54,22 @@ export const CarbonAd = () => {
       textTransform: "uppercase",
       lineHeight: 1,
       letterSpacing: "0.2px",
+    },
+    "@media (max-width: 480px)": {
+      textAlign: "center",
+      ".carbon-text": {
+        fontSize: "0.8rem",
+      },
+      ".carbon-poweredby": {
+        position: "inherit",
+        bottom: "0px",
+        right: "0px",
+        paddingLeft: "12px",
+        paddingBottom: "12px",
+      },
+    },
+    "@media (max-width: 370px)": {
+      display: "none",
     },
   };
 
