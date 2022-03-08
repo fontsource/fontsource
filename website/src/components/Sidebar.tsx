@@ -116,7 +116,7 @@ const SidebarContainer = forwardRef<StackProps, "div">(
         py={4}
         direction="column"
         marginTop={4}
-        height="85vh"
+        height={{ base: "100%", md: "85vh" }}
         overflowY="auto"
         {...props}
       />
