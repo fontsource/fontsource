@@ -163,17 +163,21 @@ export const Sidebar = ({
           ))}
         </>
       )}
-      {ifMobileFont &&
-        fontList.map((page) => (
-          <SidebarButton
-            key={page.key}
-            isParent={false}
-            isExternal={false}
-            isOpen={isOpen}
-            onToggle={onToggle}
-            {...page}
-          />
-        ))}
+      {ifMobileFont && (
+        <>
+          <SidebarHeading title={"Fonts"} pt={{ base: 6, md: 2 }} />
+          {fontList.map((page) => (
+            <SidebarButton
+              key={page.key}
+              isParent={false}
+              isExternal={false}
+              isOpen={isOpen}
+              onToggle={onToggle}
+              {...page}
+            />
+          ))}
+        </>
+      )}
     </SidebarContainer>
   );
 };
