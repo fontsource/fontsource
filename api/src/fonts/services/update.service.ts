@@ -37,7 +37,7 @@ export class UpdateService implements OnModuleInit {
 
   // Calls metadata from jsDelivr
   private async callMetadata(id: string): Promise<FontMetadata> {
-    let fontData: FontMetadata;
+    let fontData: FontMetadata = {} as FontMetadata;
     await lastValueFrom(this.httpService.get(metadataLink(id)))
       .then((res: AxiosResponse<FontMetadata>) => {
         fontData = res.data;
