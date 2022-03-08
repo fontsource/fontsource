@@ -21,6 +21,9 @@ import fontList from "../configs/fontList.json";
 import { usePersistedScrollTop } from "../hooks/usePersistedScrollTop";
 import { NextChakraLink } from "./NextChakraLink";
 
+// https://github.com/codecks-io/react-sticky-box/issues/74
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const StickyChakra = chakra(StickyBox);
 
 const SidebarHeading = ({ title, ...props }) => {
