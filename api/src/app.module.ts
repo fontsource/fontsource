@@ -14,7 +14,7 @@ import { FontlistModule } from './fontlist/fontlist.module';
     MongooseModule.forRoot(
       process.env.NODE_ENV === 'production'
         ? 'mongodb://mongodb:27017'
-        : process.env.MONGO_DB_DEV,
+        : process.env.MONGO_DB_DEV!,
     ),
     ScheduleModule.forRoot(),
     ThrottlerModule.forRoot({

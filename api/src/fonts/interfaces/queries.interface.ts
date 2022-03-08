@@ -7,6 +7,14 @@ export interface QueriesAll {
   type?: string;
 }
 
+export type QueriesAllIndex =
+  | 'weights'
+  | 'styles'
+  | 'subsets'
+  | 'defSubset'
+  | 'category'
+  | 'type';
+
 export interface QueriesOne {
   version?: string;
 }

@@ -16,7 +16,8 @@ export const fontLink = (
 ) => {
   const linkVersion = version ? `@${version}` : '';
 
-  const url = {
+  // URL object
+  return {
     woff2: `https://cdn.jsdelivr.net/npm/@fontsource/${
       id + linkVersion
     }/files/${id}-${subset}-${weight}-${style}.woff2`,
@@ -27,5 +28,4 @@ export const fontLink = (
       id + linkVersion
     }/${subset}-${weight}-${style}.ttf`,
   };
-  return url;
 };
