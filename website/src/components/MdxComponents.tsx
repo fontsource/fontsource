@@ -1,7 +1,6 @@
 /* eslint-disable react/display-name */
 import {
   Box,
-  Code as InlineCode,
   Divider,
   Heading,
   ListItem,
@@ -39,12 +38,8 @@ const CustomMdxComponents = {
   li: (props) => <ListItem mb={4} {...props} />,
 
   // Code
-  code: (props) => (
-    <Box>
-      <Code {...props} />
-    </Box>
-  ),
-  inlineCode: (props) => <InlineCode {...props} />,
+  pre: (props) => <Box {...props} />,
+  code: (props) => <Code {...props} />,
 
   // Table
   table: (props) => (
