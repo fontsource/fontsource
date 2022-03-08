@@ -3,20 +3,25 @@ import {
   Box,
   Button,
   ButtonProps,
+  chakra,
   Divider,
   forwardRef,
   Heading,
   Stack,
   StackProps,
   useColorModeValue,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useRef } from "react";
+import StickyBox from "react-sticky-box";
 
 import docsList from "../configs/docsList.json";
 import fontList from "../configs/fontList.json";
 import { usePersistedScrollTop } from "../hooks/usePersistedScrollTop";
 import { NextChakraLink } from "./NextChakraLink";
+
+const StickyChakra = chakra(StickyBox);
 
 const SidebarHeading = ({ title, ...props }) => {
   const headingColor = useColorModeValue("gray.600", "gray.200");
@@ -100,17 +105,19 @@ const SidebarButton = ({
 
 const SidebarContainer = forwardRef<StackProps, "div">(
   (props: StackProps, ref) => (
-    <Stack
-      ref={ref}
-      as="aside"
-      py={4}
-      direction="column"
-      marginTop={4}
-      height="80vh"
-      overflowY="auto"
-      sx={{ overscrollBehavior: "contain" }}
-      {...props}
-    />
+    <StickyChakra overflowY="hidden">
+      <Stack
+        ref={ref}
+        as="aside"
+        overscrollBehavior="contain"
+        py={4}
+        direction="column"
+        marginTop={4}
+        height="85vh"
+        overflowY="auto"
+        {...props}
+      />
+    </StickyChakra>
   )
 );
 
@@ -127,14 +134,22 @@ export const Sidebar = ({
   ...rest
 }: SidebarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-
   usePersistedScrollTop(ref);
 
+  const [ifMobile] = useMediaQuery("(min-width: 832px)");
+  const ifMobileFont = !ifDocs && ifMobile; // Just don't load all font list on mobile due to lag
+
   return (
-    <SidebarContainer ref={ref} overflowX={"hidden"} {...rest}>
-      <SidebarHeading title={"Contents"} pt={{ base: 6, md: 2 }} />
-      {ifDocs
-        ? docsList.map((page) => (
+    <SidebarContainer
+      ref={ref}
+      overflowX="hidden"
+      textAlign={{ base: "center", md: "inherit" }}
+      {...rest}
+    >
+      {ifDocs && (
+        <>
+          <SidebarHeading title={"Contents"} pt={{ base: 6, md: 2 }} />
+          {docsList.map((page) => (
             <SidebarButton
               key={page.key}
               my={0.5}
@@ -142,17 +157,20 @@ export const Sidebar = ({
               onToggle={onToggle}
               {...page}
             />
-          ))
-        : fontList.map((page) => (
-            <SidebarButton
-              key={page.key}
-              isParent={false}
-              isExternal={false}
-              isOpen={isOpen}
-              onToggle={onToggle}
-              {...page}
-            />
           ))}
+        </>
+      )}
+      {ifMobileFont &&
+        fontList.map((page) => (
+          <SidebarButton
+            key={page.key}
+            isParent={false}
+            isExternal={false}
+            isOpen={isOpen}
+            onToggle={onToggle}
+            {...page}
+          />
+        ))}
     </SidebarContainer>
   );
 };

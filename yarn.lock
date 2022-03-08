@@ -9357,6 +9357,13 @@ react-remove-scroll@^2.4.4:
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
 
+react-sticky-box@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-sticky-box/-/react-sticky-box-1.0.0.tgz#40a1384a733f93874acbcef76f6fded214c9fc4a"
+  integrity sha512-OdCo44RRSDUlvyYx3IcIh/Y5d1sE2+Ixm8KlJKNZTWjBPTFPVczbLPGveOD/CVQxnIf+oOPJKX53mocr15CH8w==
+  dependencies:
+    resize-observer-polyfill "^1.5.1"
+
 react-style-singleton@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-style-singleton/-/react-style-singleton-2.1.1.tgz#ce7f90b67618be2b6b94902a30aaea152ce52e66"
@@ -9640,6 +9647,11 @@ require-from-string@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
   integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
+
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve-alpn@^1.0.0:
   version "1.2.1"

@@ -34,7 +34,7 @@ export const PageContainer = ({
     sidebar = (
       <Sidebar
         ifDocs={ifDocs}
-        minWidth="25%"
+        minWidth="260px"
         display={{ base: "none", md: "block" }}
         pl={4}
       />
@@ -47,7 +47,7 @@ export const PageContainer = ({
     <Box bg={bgColor} color={color}>
       <Container minHeight="100vh" maxWidth="72rem" mx="auto" {...props}>
         <Navbar ifDocs={ifDocs} />
-        <Container px={8} flexDirection="row" alignItems="start">
+        <Container px={8} flexDirection="row" alignItems="flex-start">
           {ifSidebar && sidebar}
           {children}
         </Container>
