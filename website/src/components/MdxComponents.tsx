@@ -1,7 +1,6 @@
 /* eslint-disable react/display-name */
 import {
   Box,
-  Code as InlineCode,
   Divider,
   Heading,
   ListItem,
