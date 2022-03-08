@@ -19,6 +19,7 @@ import {
   QueriesAll,
   QueriesOne,
   QueryMongoose,
+  QueriesAllIndex,
 } from '../interfaces/queries.interface';
 import { fontFilePath } from '../utils/fontFilePath';
 import { fontLink } from '../utils/cdnLinks';
@@ -43,7 +44,9 @@ export class FindService {
 
     // Each query should be split into an array from commas, then queried with mongo individually
     for (const queryKey in queries) {
-      const queryValue = String(queries[queryKey]).split(',');
+      const queryValue = String(queries[queryKey as QueriesAllIndex]).split(
+        ',',
+      );
       queryValue.forEach((value) => {
         if (queryKey === 'weights') {
           findArray.push({ [queryKey]: Number(value) });
@@ -81,11 +84,16 @@ export class FindService {
       };
       return orderedMetadata;
     });
+
     return reorderedKeys;
   }
 
   async findOne(id: string, query: QueriesOne): Promise<FontResponse> {
     const dbResult = await this.fontModel.findOne({ id, ...query }).exec();
+
+    if (dbResult == null) {
+      throw new NotFoundException();
+    }
 
     const dbVariants = dbResult.variants;
     const variantsNewArray: Variants[] = [];
@@ -120,7 +128,8 @@ export class FindService {
     const variantsNew: Variants = merge({}, ...variantsNewArray);
     const unicodeRange: UnicodeRange = merge({}, ...unicodeRangeArray);
 
-    const metadata = {
+    // Metadata object
+    return {
       id: dbResult.id,
       family: dbResult.family,
       subsets: dbResult.subsets,
@@ -135,8 +144,6 @@ export class FindService {
       type: dbResult.type,
       variants: variantsNew,
     };
-
-    return metadata;
   }
 
   async findFile(
@@ -145,6 +152,10 @@ export class FindService {
     query: QueriesOne,
   ): Promise<{ data: Buffer; type: string }> {
     const fontObj = await this.fontModel.findOne({ id }).exec();
+
+    if (fontObj == null) {
+      throw new NotFoundException();
+    }
 
     const parsedPath = fontFilePath(file);
 
@@ -166,35 +177,37 @@ export class FindService {
     if (fontObjFile)
       return { data: fontObjFile.data, type: mimes[parsedPath.ext] };
 
-    const throwNotFound = () => {
-      throw new NotFoundException(`Not found: ${id}/${file}`);
-    };
-
     const fontObjVariant = fontObj.variants.find(
       (variant) => variant.subset === parsedPath.subset,
     );
-
-    if (!fontObjVariant) throwNotFound();
+    if (!fontObjVariant) {
+      throw new NotFoundException(`Not found: ${id}/${file}`);
+    }
 
     const fontObjVariantDownload = fontObjVariant.downloads.find(
       (download) =>
         download.weight === parsedPath.weight &&
         download.style === parsedPath.style,
     );
+    if (!fontObjVariantDownload) {
+      throw new NotFoundException(`Not found: ${id}/${file}`);
+    }
 
-    if (!fontObjVariantDownload) throwNotFound();
-
+    const parsedPathType: string =
+      parsedPath.ext === 'ttf' ? 'woff2' : parsedPath.ext;
     const fontObjUrl = fontLink(
       id,
       parsedPath.subset,
       parsedPath.weight,
       parsedPath.style,
       version,
-    )[parsedPath.ext === 'ttf' ? 'woff2' : parsedPath.ext];
+    )[parsedPathType as 'ttf' | 'woff' | 'woff2'];
 
-    if (!fontObjUrl) throwNotFound();
+    if (!fontObjUrl) {
+      throw new NotFoundException(`Not found: ${id}/${file}`);
+    }
 
-    let fontBuffer: Buffer;
+    let fontBuffer: Buffer = Buffer.alloc(0);
 
     await lastValueFrom(
       this.httpService.get(fontObjUrl, { responseType: 'arraybuffer' }),
@@ -202,7 +215,9 @@ export class FindService {
       .then((res: AxiosResponse<Buffer>) => {
         fontBuffer = res.data;
       })
-      .catch(throwNotFound);
+      .catch(() => {
+        throw new NotFoundException(`Not found: ${id}/${file}`);
+      });
 
     if (parsedPath.ext === 'ttf') {
       fontBuffer = Buffer.from(

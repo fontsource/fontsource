@@ -15,7 +15,7 @@ import { FindService } from './services/find.service';
 import { UpdateService } from './services/update.service';
 
 import { FontAllResponse, FontResponse } from './interfaces/font.interface';
-import { QueriesAll } from './interfaces/queries.interface';
+import { QueriesAll, QueriesOne } from './interfaces/queries.interface';
 
 @ApiTags('fonts')
 @Controller({ path: 'fonts', version: '1' })
@@ -28,15 +28,15 @@ export class FontsController {
 
   @Get()
   async findAll(@Query() query: QueriesAll): Promise<FontAllResponse[]> {
-    return await this.findService.findAll(query);
+    return this.findService.findAll(query);
   }
 
   @Get(':id')
   async findOne(
     @Param('id') id: string,
-    @Query() query,
+    @Query() query: QueriesOne,
   ): Promise<FontResponse> {
-    return await this.findService.findOne(id, query);
+    return this.findService.findOne(id, query);
   }
 
   @Get(':id/:file')
@@ -44,7 +44,7 @@ export class FontsController {
     @Response() res: FastifyReply,
     @Param('id') id: string,
     @Param('file') file: string,
-    @Query() query,
+    @Query() query: QueriesOne,
   ): Promise<void> {
     const fontFile = await this.findService.findFile(id, file, query);
     res.type(fontFile.type);
