@@ -24,6 +24,6 @@
   ],
   "exclude": ["node_modules"],
   "ts-node": {
-    "swc": false
+    "swc": true
   }
 }
