@@ -5,6 +5,7 @@ import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
+import remarkGfm from "remark-gfm";
 
 import { Main } from "../../components/Main";
 import CustomMdxComponents from "../../components/MdxComponents";
@@ -52,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [remarkGfm],
       rehypePlugins: [],
     },
     scope: data,
