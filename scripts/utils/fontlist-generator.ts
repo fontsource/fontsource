@@ -1,6 +1,7 @@
 import * as _ from "lodash";
 import fs from "fs-extra";
 import jsonfile from "jsonfile";
+import { loadJsonFileSync } from "load-json-file";
 
 import { directories } from "./utils";
 
@@ -20,7 +21,7 @@ interface Metadata {
 
 directories.forEach(directory => {
   const fontDir = `./packages/${directory}`;
-  const metadata: Metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
+  const metadata: Metadata = loadJsonFileSync(`${fontDir}/metadata.json`);
   const object = { [metadata.fontId]: metadata.type };
   fontlist.push(object);
 
