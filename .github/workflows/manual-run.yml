@@ -10,9 +10,9 @@ jobs:
 
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          fetch-depth: "0"
+          fetch-depth: "50"
 
       - name: Install packages
         run: yarn
