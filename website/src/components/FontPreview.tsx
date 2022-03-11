@@ -89,7 +89,7 @@ export const FontPreview = ({
     display: ", cursive",
     handwriting: ", cursive",
     monospace: ", monospace",
-    other: ""
+    other: "",
   };
 
   return (
@@ -243,7 +243,8 @@ export const FontPreview = ({
       <Code>yarn add @fontsource/{metadata.fontId}</Code>
       <Code>import &quot;@fontsource/{metadata.fontId}&quot;</Code>
       <Code>
-        body &#123; font-family: &quot;{metadata.fontName}&quot;{fallbacks[metadata.category]}; &#125;
+        body &#123; font-family: &quot;{metadata.fontName}&quot;
+        {fallbacks[metadata.category]}; &#125;
       </Code>
       {metadata.variable && (
         <>
