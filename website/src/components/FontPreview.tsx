@@ -83,6 +83,15 @@ export const FontPreview = ({
   // Refer to https://github.com/fontsource/fontsource/issues/243
   const affectedVariableFonts = ["exo-2", "inter", "jost", "montserrat"];
 
+  const fallbacks = {
+    "sans-serif": ", sans-serif",
+    serif: ", serif",
+    display: ", cursive",
+    handwriting: ", cursive",
+    monospace: ", monospace",
+    other: "",
+  };
+
   return (
     <>
       <Head>
@@ -234,7 +243,8 @@ export const FontPreview = ({
       <Code>yarn add @fontsource/{metadata.fontId}</Code>
       <Code>import &quot;@fontsource/{metadata.fontId}&quot;</Code>
       <Code>
-        body &#123; font-family: &quot;{metadata.fontName}&quot;; &#125;
+        body &#123; font-family: &quot;{metadata.fontName}&quot;
+        {fallbacks[metadata.category]}; &#125;
       </Code>
       {metadata.variable && (
         <>
