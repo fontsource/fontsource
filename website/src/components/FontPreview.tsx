@@ -181,7 +181,7 @@ export const FontPreview = ({
             // if the font is a material icons variant, then use the Chakra default font as a fallback
             fontFamily: `"${metadata.fontName}", ${
               metadata.fontId.startsWith("material-icons")
-                ? `var(--chakra-fonts-body), `
+                ? "var(--chakra-fonts-body), "
                 : ""
             }"Fallback Outline"`,
             fontSize: `${fontSize}px`,
