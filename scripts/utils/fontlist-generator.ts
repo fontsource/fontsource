@@ -20,34 +20,37 @@ interface Metadata {
 
 directories.forEach(directory => {
   const fontDir = `./packages/${directory}`;
-  const metadata: Metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
-  const object = { [metadata.fontId]: metadata.type };
-  fontlist.push(object);
 
-  switch (metadata.type) {
-    case "league": {
-      league.push(metadata.fontId);
+  try {
+    const metadata: Metadata = jsonfile.readFileSync(
+      `${fontDir}/metadata.json`
+    );
+    const object = { [metadata.fontId]: metadata.type };
+    fontlist.push(object);
 
-      break;
+    switch (metadata.type) {
+      case "league": {
+        league.push(metadata.fontId);
+        break;
+      }
+      case "icons": {
+        icons.push(metadata.fontId);
+        break;
+      }
+      case "other": {
+        other.push(metadata.fontId);
+        break;
+      }
+      case "google": {
+        // Empty to prevent calling unknown type catch
+        break;
+      }
+      default: {
+        console.log(`${metadata.fontId} has unknown type ${metadata.type}.`);
+      }
     }
-    case "icons": {
-      icons.push(metadata.fontId);
-
-      break;
-    }
-    case "other": {
-      other.push(metadata.fontId);
-
-      break;
-    }
-    case "google": {
-      // Empty to prevent calling unknown type catch
-
-      break;
-    }
-    default: {
-      console.log(`${metadata.fontId} has unknown type ${metadata.type}.`);
-    }
+  } catch (error) {
+    console.error(error);
   }
 });
 

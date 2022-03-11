@@ -13,12 +13,16 @@ const indexArray: Metadata[] = [];
 // Copy all metadatas into one array
 directories.forEach(directory => {
   const fontDir = `./packages/${directory}`;
-  const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
-  metadata.objectID = metadata.fontId;
-  if (metadata.variable) {
-    metadata.variable = true;
+  try {
+    const metadata = jsonfile.readFileSync(`${fontDir}/metadata.json`);
+    metadata.objectID = metadata.fontId;
+    if (metadata.variable) {
+      metadata.variable = true;
+    }
+    indexArray.push(metadata);
+  } catch (error) {
+    console.error(error);
   }
-  indexArray.push(metadata);
 });
 
 // Written as it is used by the website getStaticPaths
