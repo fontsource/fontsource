@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/bungee-inline",
-  "version": "4.5.3",
-  "description": "Self-host the Bungee Inline font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Bungee Inline", "bungee-inline"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bungee-inline#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bungee-inline"
-  }
-}
+{"name":"@fontsource/bungee-inline","version":"4.5.4","description":"Self-host the Bungee Inline font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Bungee Inline","bungee-inline"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/bungee-inline#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/bungee-inline"}}

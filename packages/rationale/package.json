@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/rationale",
-  "version": "4.5.3",
-  "description": "Self-host the Rationale font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Rationale", "rationale"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rationale#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/rationale"
-  }
-}
+{"name":"@fontsource/rationale","version":"4.5.4","description":"Self-host the Rationale font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Rationale","rationale"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/rationale#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/rationale"}}

@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/port-lligat-sans",
-  "version": "4.5.3",
-  "description": "Self-host the Port Lligat Sans font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Port Lligat Sans", "port-lligat-sans"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/port-lligat-sans#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/port-lligat-sans"
-  }
-}
+{"name":"@fontsource/port-lligat-sans","version":"4.5.4","description":"Self-host the Port Lligat Sans font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Port Lligat Sans","port-lligat-sans"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/port-lligat-sans#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/port-lligat-sans"}}

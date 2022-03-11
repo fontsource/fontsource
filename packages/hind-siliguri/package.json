@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/hind-siliguri",
-  "version": "4.5.2",
-  "description": "Self-host the Hind Siliguri font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Hind Siliguri", "hind-siliguri"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/hind-siliguri#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/hind-siliguri"
-  }
-}
+{"name":"@fontsource/hind-siliguri","version":"4.5.3","description":"Self-host the Hind Siliguri font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Hind Siliguri","hind-siliguri"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/hind-siliguri#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/hind-siliguri"}}

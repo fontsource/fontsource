@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/happy-monkey",
-  "version": "4.5.3",
-  "description": "Self-host the Happy Monkey font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Happy Monkey", "happy-monkey"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/happy-monkey#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/happy-monkey"
-  }
-}
+{"name":"@fontsource/happy-monkey","version":"4.5.4","description":"Self-host the Happy Monkey font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Happy Monkey","happy-monkey"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/happy-monkey#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/happy-monkey"}}

@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/noto-serif-kr",
-  "version": "4.5.5",
-  "description": "Self-host the Noto Serif KR font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Noto Serif KR", "noto-serif-kr"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-serif-kr#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/noto-serif-kr"
-  }
-}
+{"name":"@fontsource/noto-serif-kr","version":"4.5.6","description":"Self-host the Noto Serif KR font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Noto Serif KR","noto-serif-kr"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/noto-serif-kr#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/noto-serif-kr"}}

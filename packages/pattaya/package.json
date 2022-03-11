@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/pattaya",
-  "version": "4.5.3",
-  "description": "Self-host the Pattaya font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Pattaya", "pattaya"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/pattaya#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/pattaya"
-  }
-}
+{"name":"@fontsource/pattaya","version":"4.5.4","description":"Self-host the Pattaya font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Pattaya","pattaya"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/pattaya#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/pattaya"}}

@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/mr-de-haviland",
-  "version": "4.5.3",
-  "description": "Self-host the Mr De Haviland font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Mr De Haviland", "mr-de-haviland"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mr-de-haviland#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/mr-de-haviland"
-  }
-}
+{"name":"@fontsource/mr-de-haviland","version":"4.5.4","description":"Self-host the Mr De Haviland font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Mr De Haviland","mr-de-haviland"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/mr-de-haviland#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/mr-de-haviland"}}

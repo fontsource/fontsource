@@ -1,12 +1,1 @@
-{
-  "name": "@fontsource/kadwa",
-  "version": "4.5.3",
-  "description": "Self-host the Kadwa font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Kadwa", "kadwa"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/kadwa#readme",
-  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/kadwa" }
-}
+{"name":"@fontsource/kadwa","version":"4.5.4","description":"Self-host the Kadwa font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Kadwa","kadwa"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/kadwa#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/kadwa"}}

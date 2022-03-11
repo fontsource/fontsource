@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/pt-sans-narrow",
-  "version": "4.5.2",
-  "description": "Self-host the PT Sans Narrow font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "PT Sans Narrow", "pt-sans-narrow"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/pt-sans-narrow#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/pt-sans-narrow"
-  }
-}
+{"name":"@fontsource/pt-sans-narrow","version":"4.5.3","description":"Self-host the PT Sans Narrow font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","PT Sans Narrow","pt-sans-narrow"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/pt-sans-narrow#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/pt-sans-narrow"}}

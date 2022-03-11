@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/dm-serif-display",
-  "version": "4.5.2",
-  "description": "Self-host the DM Serif Display font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "DM Serif Display", "dm-serif-display"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/dm-serif-display#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/dm-serif-display"
-  }
-}
+{"name":"@fontsource/dm-serif-display","version":"4.5.3","description":"Self-host the DM Serif Display font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","DM Serif Display","dm-serif-display"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/dm-serif-display#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/dm-serif-display"}}

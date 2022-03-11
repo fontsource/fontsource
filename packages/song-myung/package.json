@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/song-myung",
-  "version": "4.5.3",
-  "description": "Self-host the Song Myung font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Song Myung", "song-myung"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/song-myung#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/song-myung"
-  }
-}
+{"name":"@fontsource/song-myung","version":"4.5.4","description":"Self-host the Song Myung font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Song Myung","song-myung"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/song-myung#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/song-myung"}}

@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/playball",
-  "version": "4.5.3",
-  "description": "Self-host the Playball font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Playball", "playball"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/playball#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/playball"
-  }
-}
+{"name":"@fontsource/playball","version":"4.5.4","description":"Self-host the Playball font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Playball","playball"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/playball#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/playball"}}

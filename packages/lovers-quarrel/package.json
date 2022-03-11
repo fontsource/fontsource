@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/lovers-quarrel",
-  "version": "4.5.4",
-  "description": "Self-host the Lovers Quarrel font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Lovers Quarrel", "lovers-quarrel"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lovers-quarrel#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/lovers-quarrel"
-  }
-}
+{"name":"@fontsource/lovers-quarrel","version":"4.5.5","description":"Self-host the Lovers Quarrel font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Lovers Quarrel","lovers-quarrel"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/lovers-quarrel#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/lovers-quarrel"}}

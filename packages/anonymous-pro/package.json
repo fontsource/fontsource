@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/anonymous-pro",
-  "version": "4.5.2",
-  "description": "Self-host the Anonymous Pro font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Anonymous Pro", "anonymous-pro"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/anonymous-pro#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/anonymous-pro"
-  }
-}
+{"name":"@fontsource/anonymous-pro","version":"4.5.3","description":"Self-host the Anonymous Pro font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Anonymous Pro","anonymous-pro"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/anonymous-pro#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/anonymous-pro"}}

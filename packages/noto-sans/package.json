@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/noto-sans",
-  "version": "4.5.4",
-  "description": "Self-host the Noto Sans font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Noto Sans", "noto-sans"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-sans#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/noto-sans"
-  }
-}
+{"name":"@fontsource/noto-sans","version":"4.5.5","description":"Self-host the Noto Sans font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Noto Sans","noto-sans"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/noto-sans#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/noto-sans"}}

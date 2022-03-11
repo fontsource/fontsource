@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/rubik-mono-one",
-  "version": "4.5.2",
-  "description": "Self-host the Rubik Mono One font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Rubik Mono One", "rubik-mono-one"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rubik-mono-one#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/rubik-mono-one"
-  }
-}
+{"name":"@fontsource/rubik-mono-one","version":"4.5.3","description":"Self-host the Rubik Mono One font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Rubik Mono One","rubik-mono-one"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/rubik-mono-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/rubik-mono-one"}}

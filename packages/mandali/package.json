@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/mandali",
-  "version": "4.5.2",
-  "description": "Self-host the Mandali font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Mandali", "mandali"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mandali#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/mandali"
-  }
-}
+{"name":"@fontsource/mandali","version":"4.5.3","description":"Self-host the Mandali font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Mandali","mandali"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/mandali#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/mandali"}}

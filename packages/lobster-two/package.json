@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/lobster-two",
-  "version": "4.5.2",
-  "description": "Self-host the Lobster Two font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Lobster Two", "lobster-two"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lobster-two#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/lobster-two"
-  }
-}
+{"name":"@fontsource/lobster-two","version":"4.5.3","description":"Self-host the Lobster Two font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Lobster Two","lobster-two"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/lobster-two#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/lobster-two"}}

@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/staatliches",
-  "version": "4.5.2",
-  "description": "Self-host the Staatliches font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Staatliches", "staatliches"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/staatliches#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/staatliches"
-  }
-}
+{"name":"@fontsource/staatliches","version":"4.5.3","description":"Self-host the Staatliches font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Staatliches","staatliches"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/staatliches#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/staatliches"}}

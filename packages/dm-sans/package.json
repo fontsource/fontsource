@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/dm-sans",
-  "version": "4.5.2",
-  "description": "Self-host the DM Sans font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "DM Sans", "dm-sans"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/dm-sans#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/dm-sans"
-  }
-}
+{"name":"@fontsource/dm-sans","version":"4.5.3","description":"Self-host the DM Sans font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","DM Sans","dm-sans"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/dm-sans#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/dm-sans"}}

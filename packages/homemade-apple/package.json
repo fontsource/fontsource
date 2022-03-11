@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/homemade-apple",
-  "version": "4.5.2",
-  "description": "Self-host the Homemade Apple font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Homemade Apple", "homemade-apple"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/homemade-apple#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/homemade-apple"
-  }
-}
+{"name":"@fontsource/homemade-apple","version":"4.5.3","description":"Self-host the Homemade Apple font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Homemade Apple","homemade-apple"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/homemade-apple#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/homemade-apple"}}

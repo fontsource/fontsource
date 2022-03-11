@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/racing-sans-one",
-  "version": "4.5.2",
-  "description": "Self-host the Racing Sans One font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Racing Sans One", "racing-sans-one"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/racing-sans-one#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/racing-sans-one"
-  }
-}
+{"name":"@fontsource/racing-sans-one","version":"4.5.3","description":"Self-host the Racing Sans One font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Racing Sans One","racing-sans-one"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/racing-sans-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/racing-sans-one"}}

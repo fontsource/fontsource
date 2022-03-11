@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/m-plus-1p",
-  "version": "4.5.2",
-  "description": "Self-host the M PLUS 1p font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "M PLUS 1p", "m-plus-1p"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/m-plus-1p#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/m-plus-1p"
-  }
-}
+{"name":"@fontsource/m-plus-1p","version":"4.5.3","description":"Self-host the M PLUS 1p font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","M PLUS 1p","m-plus-1p"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/m-plus-1p#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/m-plus-1p"}}

@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/goblin-one",
-  "version": "4.5.3",
-  "description": "Self-host the Goblin One font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Goblin One", "goblin-one"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/goblin-one#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/goblin-one"
-  }
-}
+{"name":"@fontsource/goblin-one","version":"4.5.4","description":"Self-host the Goblin One font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Goblin One","goblin-one"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/goblin-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/goblin-one"}}
