@@ -1,1 +1,16 @@
-{"name":"@fontsource/holtwood-one-sc","version":"4.5.2","description":"Self-host the Holtwood One SC font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Holtwood One SC","holtwood-one-sc"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/holtwood-one-sc#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/holtwood-one-sc"}}
+{
+  "name": "@fontsource/holtwood-one-sc",
+  "version": "4.5.2",
+  "description": "Self-host the Holtwood One SC font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Holtwood One SC", "holtwood-one-sc"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/holtwood-one-sc#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/holtwood-one-sc"
+  }
+}

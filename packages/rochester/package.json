@@ -1,1 +1,16 @@
-{"name":"@fontsource/rochester","version":"4.5.3","description":"Self-host the Rochester font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Rochester","rochester"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/rochester#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/rochester"}}
+{
+  "name": "@fontsource/rochester",
+  "version": "4.5.3",
+  "description": "Self-host the Rochester font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Rochester", "rochester"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rochester#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/rochester"
+  }
+}

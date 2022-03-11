@@ -1,1 +1,16 @@
-{"name":"@fontsource/sintony","version":"4.5.2","description":"Self-host the Sintony font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Sintony","sintony"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/sintony#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/sintony"}}
+{
+  "name": "@fontsource/sintony",
+  "version": "4.5.2",
+  "description": "Self-host the Sintony font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Sintony", "sintony"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sintony#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/sintony"
+  }
+}

@@ -1,1 +1,12 @@
-{"name":"@fontsource/hind","version":"4.5.2","description":"Self-host the Hind font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Hind","hind"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/hind#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/hind"}}
+{
+  "name": "@fontsource/hind",
+  "version": "4.5.2",
+  "description": "Self-host the Hind font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Hind", "hind"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/hind#readme",
+  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/hind" }
+}

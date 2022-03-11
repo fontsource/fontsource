@@ -5,7 +5,7 @@
   font-display: swap;
   font-weight: 100 900;
   src: url('./files/heebo-hebrew-variable-wghtOnly-normal.woff2') format('woff2');
-  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
 }  
 /* heebo-latin-variable-wghtOnly-normal */
 @font-face {

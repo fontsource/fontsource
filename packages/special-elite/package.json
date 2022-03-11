@@ -1,1 +1,16 @@
-{"name":"@fontsource/special-elite","version":"4.5.2","description":"Self-host the Special Elite font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Special Elite","special-elite"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/special-elite#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/special-elite"}}
+{
+  "name": "@fontsource/special-elite",
+  "version": "4.5.2",
+  "description": "Self-host the Special Elite font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Special Elite", "special-elite"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/special-elite#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/special-elite"
+  }
+}

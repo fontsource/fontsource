@@ -1,1 +1,16 @@
-{"name":"@fontsource/bellota-text","version":"4.5.3","description":"Self-host the Bellota Text font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Bellota Text","bellota-text"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/bellota-text#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/bellota-text"}}
+{
+  "name": "@fontsource/bellota-text",
+  "version": "4.5.3",
+  "description": "Self-host the Bellota Text font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Bellota Text", "bellota-text"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bellota-text#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/bellota-text"
+  }
+}

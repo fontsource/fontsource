@@ -1,1 +1,12 @@
-{"name":"@fontsource/meddon","version":"4.5.3","description":"Self-host the Meddon font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Meddon","meddon"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/meddon#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/meddon"}}
+{
+  "name": "@fontsource/meddon",
+  "version": "4.5.3",
+  "description": "Self-host the Meddon font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Meddon", "meddon"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/meddon#readme",
+  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/meddon" }
+}

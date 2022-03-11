@@ -22,7 +22,7 @@ Supported variables:
 
 - Weights: `[400]`
 - Styles: `[normal]`
-- Supported subsets: `[latin,latin-ext]`
+- Supported subsets: `[devanagari,latin,latin-ext]`
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
 
@@ -41,6 +41,6 @@ Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fo
 
 ## Other Notes
 
-Font version (provided by source): `v3`.
+Font version (provided by source): `v5`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).

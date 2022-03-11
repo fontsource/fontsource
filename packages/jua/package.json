@@ -1,1 +1,12 @@
-{"name":"@fontsource/jua","version":"4.5.3","description":"Self-host the Jua font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Jua","jua"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/jua#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/jua"}}
+{
+  "name": "@fontsource/jua",
+  "version": "4.5.3",
+  "description": "Self-host the Jua font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Jua", "jua"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/jua#readme",
+  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/jua" }
+}

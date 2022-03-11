@@ -1,1 +1,24 @@
-{"name":"@fontsource/smooch","version":"4.5.3","description":"Self-host the Smooch font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Smooch","smooch","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/smooch#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/smooch"}}
+{
+  "name": "@fontsource/smooch",
+  "version": "4.5.3",
+  "description": "Self-host the Smooch font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Smooch",
+    "smooch",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/smooch#readme",
+  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/smooch" }
+}

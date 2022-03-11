@@ -1,1 +1,16 @@
-{"name":"@fontsource/suwannaphum","version":"4.5.5","description":"Self-host the Suwannaphum font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Suwannaphum","suwannaphum"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/suwannaphum#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/suwannaphum"}}
+{
+  "name": "@fontsource/suwannaphum",
+  "version": "4.5.5",
+  "description": "Self-host the Suwannaphum font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Suwannaphum", "suwannaphum"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/suwannaphum#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/suwannaphum"
+  }
+}

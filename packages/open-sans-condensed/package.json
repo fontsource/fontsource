@@ -1,1 +1,16 @@
-{"name":"@fontsource/open-sans-condensed","version":"4.5.3","description":"Self-host the Open Sans Condensed font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Open Sans Condensed","open-sans-condensed"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/open-sans-condensed#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/open-sans-condensed"}}
+{
+  "name": "@fontsource/open-sans-condensed",
+  "version": "4.5.3",
+  "description": "Self-host the Open Sans Condensed font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Open Sans Condensed", "open-sans-condensed"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/open-sans-condensed#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/open-sans-condensed"
+  }
+}

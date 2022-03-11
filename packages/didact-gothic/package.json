@@ -1,1 +1,16 @@
-{"name":"@fontsource/didact-gothic","version":"4.5.3","description":"Self-host the Didact Gothic font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Didact Gothic","didact-gothic"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/didact-gothic#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/didact-gothic"}}
+{
+  "name": "@fontsource/didact-gothic",
+  "version": "4.5.3",
+  "description": "Self-host the Didact Gothic font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Didact Gothic", "didact-gothic"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/didact-gothic#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/didact-gothic"
+  }
+}

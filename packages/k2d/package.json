@@ -1,1 +1,12 @@
-{"name":"@fontsource/k2d","version":"4.5.3","description":"Self-host the K2D font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","K2D","k2d"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/k2d#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/k2d"}}
+{
+  "name": "@fontsource/k2d",
+  "version": "4.5.3",
+  "description": "Self-host the K2D font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "K2D", "k2d"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/k2d#readme",
+  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/k2d" }
+}

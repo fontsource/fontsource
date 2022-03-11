@@ -1,1 +1,16 @@
-{"name":"@fontsource/mrs-saint-delafield","version":"4.5.2","description":"Self-host the Mrs Saint Delafield font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Mrs Saint Delafield","mrs-saint-delafield"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/mrs-saint-delafield#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/mrs-saint-delafield"}}
+{
+  "name": "@fontsource/mrs-saint-delafield",
+  "version": "4.5.2",
+  "description": "Self-host the Mrs Saint Delafield font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Mrs Saint Delafield", "mrs-saint-delafield"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mrs-saint-delafield#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/mrs-saint-delafield"
+  }
+}

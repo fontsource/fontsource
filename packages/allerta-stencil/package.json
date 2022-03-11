@@ -1,1 +1,16 @@
-{"name":"@fontsource/allerta-stencil","version":"4.5.3","description":"Self-host the Allerta Stencil font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Allerta Stencil","allerta-stencil"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/allerta-stencil#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/allerta-stencil"}}
+{
+  "name": "@fontsource/allerta-stencil",
+  "version": "4.5.3",
+  "description": "Self-host the Allerta Stencil font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Allerta Stencil", "allerta-stencil"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/allerta-stencil#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/allerta-stencil"
+  }
+}

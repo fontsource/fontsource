@@ -1,1 +1,28 @@
-{"name":"@fontsource/palette-mosaic","version":"4.5.5","description":"Self-host the Palette Mosaic font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Palette Mosaic","palette-mosaic","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/palette-mosaic#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/palette-mosaic"}}
+{
+  "name": "@fontsource/palette-mosaic",
+  "version": "4.5.5",
+  "description": "Self-host the Palette Mosaic font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Palette Mosaic",
+    "palette-mosaic",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/palette-mosaic#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/palette-mosaic"
+  }
+}

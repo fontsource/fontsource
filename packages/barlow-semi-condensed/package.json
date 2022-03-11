@@ -1,1 +1,16 @@
-{"name":"@fontsource/barlow-semi-condensed","version":"4.5.3","description":"Self-host the Barlow Semi Condensed font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Barlow Semi Condensed","barlow-semi-condensed"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/barlow-semi-condensed#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/barlow-semi-condensed"}}
+{
+  "name": "@fontsource/barlow-semi-condensed",
+  "version": "4.5.3",
+  "description": "Self-host the Barlow Semi Condensed font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Barlow Semi Condensed", "barlow-semi-condensed"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/barlow-semi-condensed#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/barlow-semi-condensed"
+  }
+}

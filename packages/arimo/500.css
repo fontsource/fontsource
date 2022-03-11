@@ -41,7 +41,7 @@
   font-display: swap;
   font-weight: 500;
   src: url('./files/arimo-hebrew-500-normal.woff2') format('woff2'), url('./files/arimo-all-500-normal.woff') format('woff');
-  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
 }
 /* arimo-vietnamese-500-normal*/
 @font-face {

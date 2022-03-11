@@ -1,1 +1,12 @@
-{"name":"@fontsource/chango","version":"4.5.3","description":"Self-host the Chango font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Chango","chango"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/chango#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/chango"}}
+{
+  "name": "@fontsource/chango",
+  "version": "4.5.3",
+  "description": "Self-host the Chango font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Chango", "chango"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/chango#readme",
+  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/chango" }
+}

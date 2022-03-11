@@ -41,7 +41,7 @@
   font-display: swap;
   font-weight: 700;
   src: url('./files/open-sans-hebrew-700-italic.woff2') format('woff2'), url('./files/open-sans-all-700-italic.woff') format('woff');
-  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
 }
 /* open-sans-vietnamese-700-italic*/
 @font-face {

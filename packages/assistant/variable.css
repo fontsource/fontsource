@@ -5,7 +5,7 @@
   font-display: swap;
   font-weight: 200 800;
   src: url('./files/assistant-hebrew-variable-wghtOnly-normal.woff2') format('woff2');
-  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
 }  
 /* assistant-latin-variable-wghtOnly-normal */
 @font-face {

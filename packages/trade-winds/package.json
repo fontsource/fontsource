@@ -1,1 +1,16 @@
-{"name":"@fontsource/trade-winds","version":"4.5.3","description":"Self-host the Trade Winds font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Trade Winds","trade-winds"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/trade-winds#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/trade-winds"}}
+{
+  "name": "@fontsource/trade-winds",
+  "version": "4.5.3",
+  "description": "Self-host the Trade Winds font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Trade Winds", "trade-winds"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/trade-winds#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/trade-winds"
+  }
+}

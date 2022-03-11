@@ -1,1 +1,16 @@
-{"name":"@fontsource/ropa-sans","version":"4.5.2","description":"Self-host the Ropa Sans font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Ropa Sans","ropa-sans"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/ropa-sans#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/ropa-sans"}}
+{
+  "name": "@fontsource/ropa-sans",
+  "version": "4.5.2",
+  "description": "Self-host the Ropa Sans font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Ropa Sans", "ropa-sans"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ropa-sans#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/ropa-sans"
+  }
+}

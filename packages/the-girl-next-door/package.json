@@ -1,1 +1,16 @@
-{"name":"@fontsource/the-girl-next-door","version":"4.5.3","description":"Self-host the The Girl Next Door font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","The Girl Next Door","the-girl-next-door"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/the-girl-next-door#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/the-girl-next-door"}}
+{
+  "name": "@fontsource/the-girl-next-door",
+  "version": "4.5.3",
+  "description": "Self-host the The Girl Next Door font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "The Girl Next Door", "the-girl-next-door"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/the-girl-next-door#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/the-girl-next-door"
+  }
+}

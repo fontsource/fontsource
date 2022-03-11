@@ -1,1 +1,16 @@
-{"name":"@fontsource/fredericka-the-great","version":"4.5.2","description":"Self-host the Fredericka the Great font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Fredericka the Great","fredericka-the-great"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/fredericka-the-great#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/fredericka-the-great"}}
+{
+  "name": "@fontsource/fredericka-the-great",
+  "version": "4.5.2",
+  "description": "Self-host the Fredericka the Great font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Fredericka the Great", "fredericka-the-great"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fredericka-the-great#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/fredericka-the-great"
+  }
+}

@@ -1,1 +1,16 @@
-{"name":"@fontsource/lakki-reddy","version":"4.5.3","description":"Self-host the Lakki Reddy font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Lakki Reddy","lakki-reddy"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/lakki-reddy#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/lakki-reddy"}}
+{
+  "name": "@fontsource/lakki-reddy",
+  "version": "4.5.3",
+  "description": "Self-host the Lakki Reddy font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Lakki Reddy", "lakki-reddy"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lakki-reddy#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/lakki-reddy"
+  }
+}

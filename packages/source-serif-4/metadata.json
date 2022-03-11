@@ -10,7 +10,7 @@
     "opsz": { "default": "14", "min": "8", "max": "60", "step": "0.1" },
     "wght": { "default": "400", "min": "200", "max": "900", "step": "1" }
   },
-  "lastModified": "2021-12-15",
+  "lastModified": "2021-12-17",
   "version": "v1",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",

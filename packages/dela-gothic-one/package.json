@@ -1,1 +1,28 @@
-{"name":"@fontsource/dela-gothic-one","version":"4.5.4","description":"Self-host the Dela Gothic One font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Dela Gothic One","dela-gothic-one","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/dela-gothic-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/dela-gothic-one"}}
+{
+  "name": "@fontsource/dela-gothic-one",
+  "version": "4.5.4",
+  "description": "Self-host the Dela Gothic One font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Dela Gothic One",
+    "dela-gothic-one",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/dela-gothic-one#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/dela-gothic-one"
+  }
+}

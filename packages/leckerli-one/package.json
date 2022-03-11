@@ -1,1 +1,16 @@
-{"name":"@fontsource/leckerli-one","version":"4.5.3","description":"Self-host the Leckerli One font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Leckerli One","leckerli-one"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/leckerli-one#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/leckerli-one"}}
+{
+  "name": "@fontsource/leckerli-one",
+  "version": "4.5.3",
+  "description": "Self-host the Leckerli One font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Leckerli One", "leckerli-one"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/leckerli-one#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/leckerli-one"
+  }
+}

@@ -1,1 +1,12 @@
-{"name":"@fontsource/metal","version":"4.5.5","description":"Self-host the Metal font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Metal","metal"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/metal#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/metal"}}
+{
+  "name": "@fontsource/metal",
+  "version": "4.5.5",
+  "description": "Self-host the Metal font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Metal", "metal"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/metal#readme",
+  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/metal" }
+}

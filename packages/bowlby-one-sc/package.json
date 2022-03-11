@@ -1,1 +1,16 @@
-{"name":"@fontsource/bowlby-one-sc","version":"4.5.2","description":"Self-host the Bowlby One SC font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Bowlby One SC","bowlby-one-sc"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/bowlby-one-sc#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/bowlby-one-sc"}}
+{
+  "name": "@fontsource/bowlby-one-sc",
+  "version": "4.5.2",
+  "description": "Self-host the Bowlby One SC font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Bowlby One SC", "bowlby-one-sc"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bowlby-one-sc#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/bowlby-one-sc"
+  }
+}

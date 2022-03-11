@@ -23,7 +23,7 @@
   font-display: swap;
   font-weight: 800;
   src: url('./files/rubik-hebrew-800-italic.woff2') format('woff2'), url('./files/rubik-all-800-italic.woff') format('woff');
-  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
 }
 /* rubik-latin-ext-800-italic*/
 @font-face {

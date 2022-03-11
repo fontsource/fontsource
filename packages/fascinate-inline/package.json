@@ -1,1 +1,16 @@
-{"name":"@fontsource/fascinate-inline","version":"4.5.3","description":"Self-host the Fascinate Inline font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Fascinate Inline","fascinate-inline"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/fascinate-inline#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/fascinate-inline"}}
+{
+  "name": "@fontsource/fascinate-inline",
+  "version": "4.5.3",
+  "description": "Self-host the Fascinate Inline font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Fascinate Inline", "fascinate-inline"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fascinate-inline#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/fascinate-inline"
+  }
+}

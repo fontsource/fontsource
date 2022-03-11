@@ -46,7 +46,7 @@
   font-weight: 300 800;
   font-stretch: 75% 100%;
   src: url('./files/open-sans-hebrew-variable-full-normal.woff2') format('woff2');
-  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
 }  
 /* open-sans-latin-variable-full-normal */
 @font-face {

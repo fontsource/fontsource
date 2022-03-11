@@ -1,1 +1,16 @@
-{"name":"@fontsource/nothing-you-could-do","version":"4.5.2","description":"Self-host the Nothing You Could Do font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Nothing You Could Do","nothing-you-could-do"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/nothing-you-could-do#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/nothing-you-could-do"}}
+{
+  "name": "@fontsource/nothing-you-could-do",
+  "version": "4.5.2",
+  "description": "Self-host the Nothing You Could Do font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Nothing You Could Do", "nothing-you-could-do"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/nothing-you-could-do#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/nothing-you-could-do"
+  }
+}

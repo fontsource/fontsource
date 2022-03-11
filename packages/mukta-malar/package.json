@@ -1,1 +1,16 @@
-{"name":"@fontsource/mukta-malar","version":"4.5.2","description":"Self-host the Mukta Malar font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Mukta Malar","mukta-malar"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/mukta-malar#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/mukta-malar"}}
+{
+  "name": "@fontsource/mukta-malar",
+  "version": "4.5.2",
+  "description": "Self-host the Mukta Malar font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Mukta Malar", "mukta-malar"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mukta-malar#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/mukta-malar"
+  }
+}

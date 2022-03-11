@@ -9,8 +9,8 @@
     "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
     "wght": { "default": "400", "min": "300", "max": "900", "step": "1" }
   },
-  "lastModified": "2022-02-03",
-  "version": "v18",
+  "lastModified": "2022-03-02",
+  "version": "v19",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

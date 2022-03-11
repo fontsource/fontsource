@@ -1,1 +1,16 @@
-{"name":"@fontsource/pacifico","version":"4.5.2","description":"Self-host the Pacifico font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Pacifico","pacifico"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/pacifico#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/pacifico"}}
+{
+  "name": "@fontsource/pacifico",
+  "version": "4.5.2",
+  "description": "Self-host the Pacifico font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Pacifico", "pacifico"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/pacifico#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/pacifico"
+  }
+}

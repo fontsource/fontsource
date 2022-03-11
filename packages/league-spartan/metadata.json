@@ -1,15 +1,15 @@
 {
   "fontId": "league-spartan",
   "fontName": "League Spartan",
-  "subsets": ["latin"],
-  "weights": [200, 300, 400, 500, 600, 700, 800, 900],
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2020-08-02",
-  "version": "v2.201",
+  "variable": { "wght": { "default": "400", "min": "100", "max": "900", "step": "1" } },
+  "lastModified": "2022-02-25",
+  "version": "v4",
   "category": "sans-serif",
-  "source": "https://github.com/theleagueof/league-spartan",
-  "license": "https://github.com/theleagueof/league-spartan/blob/master/ofl.markdown",
-  "type": "league"
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
 }

@@ -1,1 +1,16 @@
-{"name":"@fontsource/carrois-gothic","version":"4.5.3","description":"Self-host the Carrois Gothic font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Carrois Gothic","carrois-gothic"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/carrois-gothic#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/carrois-gothic"}}
+{
+  "name": "@fontsource/carrois-gothic",
+  "version": "4.5.3",
+  "description": "Self-host the Carrois Gothic font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Carrois Gothic", "carrois-gothic"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/carrois-gothic#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/carrois-gothic"
+  }
+}

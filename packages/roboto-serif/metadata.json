@@ -12,9 +12,9 @@
     "wght": { "default": "400", "min": "100", "max": "900", "step": "1" },
     "GRAD": { "default": "0", "min": "-50", "max": "100", "step": "1" }
   },
-  "lastModified": "2022-02-12",
+  "lastModified": "2022-03-04",
   "version": "v5",
-  "category": "sans-serif",
+  "category": "serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

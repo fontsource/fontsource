@@ -1,1 +1,16 @@
-{"name":"@fontsource/enriqueta","version":"4.5.2","description":"Self-host the Enriqueta font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Enriqueta","enriqueta"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/enriqueta#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/enriqueta"}}
+{
+  "name": "@fontsource/enriqueta",
+  "version": "4.5.2",
+  "description": "Self-host the Enriqueta font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Enriqueta", "enriqueta"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/enriqueta#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/enriqueta"
+  }
+}

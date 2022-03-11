@@ -1,0 +1,18 @@
+{
+  "fontId": "fredoka",
+  "fontName": "Fredoka",
+  "subsets": ["hebrew", "latin", "latin-ext"],
+  "weights": [300, 400, 500, 600, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": {
+    "wdth": { "default": "100", "min": "75", "max": "125", "step": "0.1" },
+    "wght": { "default": "400", "min": "300", "max": "700", "step": "1" }
+  },
+  "lastModified": "2022-03-02",
+  "version": "v6",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

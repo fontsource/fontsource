@@ -1,1 +1,16 @@
-{"name":"@fontsource/press-start-2p","version":"4.5.2","description":"Self-host the Press Start 2P font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Press Start 2P","press-start-2p"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/press-start-2p#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/press-start-2p"}}
+{
+  "name": "@fontsource/press-start-2p",
+  "version": "4.5.2",
+  "description": "Self-host the Press Start 2P font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Press Start 2P", "press-start-2p"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/press-start-2p#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/press-start-2p"
+  }
+}

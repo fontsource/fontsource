@@ -9,8 +9,8 @@
     "slnt": { "default": "0", "min": "-10", "max": "0", "step": "1" },
     "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
   },
-  "lastModified": "2021-11-10",
-  "version": "v7",
+  "lastModified": "2022-02-23",
+  "version": "v8",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

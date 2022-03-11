@@ -1,1 +1,16 @@
-{"name":"@fontsource/saira-condensed","version":"4.5.2","description":"Self-host the Saira Condensed font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Saira Condensed","saira-condensed"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/saira-condensed#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/saira-condensed"}}
+{
+  "name": "@fontsource/saira-condensed",
+  "version": "4.5.2",
+  "description": "Self-host the Saira Condensed font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Saira Condensed", "saira-condensed"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/saira-condensed#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/saira-condensed"
+  }
+}

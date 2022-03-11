@@ -1,1 +1,16 @@
-{"name":"@fontsource/blinker","version":"4.5.2","description":"Self-host the Blinker font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Blinker","blinker"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/blinker#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/blinker"}}
+{
+  "name": "@fontsource/blinker",
+  "version": "4.5.2",
+  "description": "Self-host the Blinker font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Blinker", "blinker"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/blinker#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/blinker"
+  }
+}

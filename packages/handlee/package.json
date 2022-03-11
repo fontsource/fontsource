@@ -1,1 +1,16 @@
-{"name":"@fontsource/handlee","version":"4.5.2","description":"Self-host the Handlee font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Handlee","handlee"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/master/packages/handlee#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"packages/handlee"}}
+{
+  "name": "@fontsource/handlee",
+  "version": "4.5.2",
+  "description": "Self-host the Handlee font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Handlee", "handlee"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/handlee#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "packages/handlee"
+  }
+}
