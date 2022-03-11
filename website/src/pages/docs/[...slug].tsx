@@ -30,7 +30,7 @@ export default function DocsPage({ source, frontMatter }) {
         minHeight="80vh"
         spacing="none"
         maxWidth="49rem"
-        width="100%"
+        width={{ base: "100%", md: "calc(96% - 270px)" }}
       >
         <MDXRemote {...source} components={components} />
       </Main>

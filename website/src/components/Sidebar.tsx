@@ -118,6 +118,7 @@ const SidebarContainer = forwardRef<StackProps, "div">(
         marginTop={4}
         height={{ base: "100%", md: "85vh" }}
         overflowY="auto"
+        overflowX="hidden"
         {...props}
       />
     </StickyChakra>
