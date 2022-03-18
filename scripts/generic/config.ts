@@ -9,14 +9,14 @@
 // type is fontsource-specific e.g. google, league, other. It should be left as "other" unless otherwise specified.
 
 const config = {
-  fontId: "",
-  fontName: "",
-  defSubset: "latin",
+  fontId: "iosevka-aile",
+  fontName: "Iosevka Aile Web",
+  defSubset: "latin-ext",
   unicodeRange: {},
-  version: "",
+  version: "11.0.1",
   category: "sans-serif",
-  sourcelink: "",
-  licenselink: "",
+  sourcelink: "https://github.com/be5invis/Iosevka",
+  licenselink: "https://github.com/be5invis/Iosevka/blob/master/LICENSE.md",
   type: "other",
 };
 

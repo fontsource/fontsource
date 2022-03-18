@@ -1,0 +1,9 @@
+/* iosevka-aile--NaN-heavyoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: heavyoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-heavyoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-heavyoblique.woff') format('woff');
+  
+}

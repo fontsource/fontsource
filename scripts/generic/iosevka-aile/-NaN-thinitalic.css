@@ -1,0 +1,9 @@
+/* iosevka-aile--NaN-thinitalic*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: thinitalic;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-thinitalic.woff2') format('woff2'), url('./files/iosevka-aile--NaN-thinitalic.woff') format('woff');
+  
+}

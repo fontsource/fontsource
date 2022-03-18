@@ -1,0 +1,9 @@
+/* iosevka-aile--NaN-semiboldoblique*/
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: semiboldoblique;
+  font-display: swap;
+  font-weight: NaN;
+  src: url('./files/iosevka-aile--NaN-semiboldoblique.woff2') format('woff2'), url('./files/iosevka-aile--NaN-semiboldoblique.woff') format('woff');
+  
+}
