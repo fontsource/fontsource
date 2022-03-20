@@ -45,7 +45,6 @@ export const SearchModal = () => {
   return (
     <>
       <Button
-        // leftIcon={<SearchIcon ml="-5px" mr="10px" />}
         onClick={onOpen}
         display="flex"
         alignItems="center"
