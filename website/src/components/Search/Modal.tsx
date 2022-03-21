@@ -9,7 +9,7 @@ import {
   useDisclosure,
   Kbd,
   Box,
-  useEventListener
+  useEventListener,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
@@ -20,7 +20,7 @@ export const SearchModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const bgSearch = useColorModeValue("gray.50", "gray.900");
 
-  const [onMacEnv, setOnMacEnv] = useState<boolean>(false)
+  const [onMacEnv, setOnMacEnv] = useState<boolean>(false);
 
   // Open modal if search url param exists (used for OpenSearch)
   useEffect(() => {
@@ -29,12 +29,12 @@ export const SearchModal = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   useEffect(() => {
     setOnMacEnv(/(Mac|iPhone|iPad|iPod)/i.test(navigator.userAgent));
   }, [onMacEnv]);
 
-  useEventListener("keydown", e => {
+  useEventListener("keydown", (e) => {
     const hotkey = onMacEnv ? "metaKey" : "ctrlKey";
     if (e.key.toLowerCase() === "k" && e[hotkey]) {
       e.preventDefault();
@@ -58,8 +58,10 @@ export const SearchModal = () => {
         aria-label="Search fonts"
         role="search"
       >
-        <Box><SearchIcon ml="-5px" mr="10px" />
-        Search</Box>
+        <Box>
+          <SearchIcon ml="-5px" mr="10px" />
+          Search
+        </Box>
 
         <Box>
           <Kbd>Ctrl</Kbd>
