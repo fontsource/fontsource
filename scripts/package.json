@@ -42,7 +42,7 @@
   "scripts": {
     "lint": "yarn lint:code && yarn lint:types",
     "lint:types": "tsc --noEmit",
-    "lint:code": "eslint **/*.{js,jsx,ts,tsx}"
+    "lint:code": "eslint **/*.{js,jsx,ts,tsx} --fix"
   },
   "publishConfig": {
     "access": "public"
