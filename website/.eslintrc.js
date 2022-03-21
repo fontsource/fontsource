@@ -26,10 +26,15 @@ module.exports = {
     "plugin:import/errors",
     "plugin:import/typescript",
     "plugin:import/warnings",
-    "plugin:mdx/recommended",
     "next",
     "next/core-web-vitals",
     "plugin:prettier/recommended",
+  ],
+  overrides: [
+    {
+      files: "*.mdx",
+      extends: "plugin:mdx/recommended", // ESLint Parser/Plugin for MDX
+    },
   ],
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",
