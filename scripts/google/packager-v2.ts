@@ -6,7 +6,7 @@ import { makeFontFilePath, findClosest } from "../utils/utils";
 
 const packagerV2 = (id: string): void => {
   const font = APIv2[id];
-  const fontDir = `packages/${font.id}`;
+  const fontDir = `fonts/google/${font.id}`;
 
   // Find the weight for index.css in the case weight 400 does not exist.
   const indexWeight = findClosest(font.weights, 400);

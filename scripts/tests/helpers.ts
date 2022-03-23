@@ -1,6 +1,7 @@
 import fs from "fs-extra";
 import path from "path";
 
+// Return file names
 const readDir = (dirPath: string, extension: string): string[] => {
   const fileArr: string[] = [];
   fs.readdirSync(dirPath).forEach(file => {
@@ -13,6 +14,7 @@ const readDir = (dirPath: string, extension: string): string[] => {
   return fileArr;
 };
 
+// Return string of all contentss
 const readDirContents = (dirPath: string, fileNames: string[]): string[] => {
   const fileContents: string[] = [];
 

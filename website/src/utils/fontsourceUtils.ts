@@ -9,7 +9,6 @@ const fontsourceDownload = {
     return {
       metadata: `${dir}/metadata.json`,
       npm: `https://www.npmjs.com/package/@fontsource/${fontId}`,
-      repo: `https://github.com/fontsource/fontsource/tree/master/packages/${fontId}`,
     };
   },
 

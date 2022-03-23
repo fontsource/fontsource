@@ -7,15 +7,17 @@ jest.mock("google-font-metadata");
 describe("Generate Variable CSS", () => {
   beforeEach(() => {
     mock({
-      packages: {
-        cabin: {
-          /* Empty directory */
-        },
-        changa: {
-          /* Empty directory */
-        },
-        recursive: {
-          /* Empty directory */
+      fonts: {
+        google: {
+          cabin: {
+            /* Empty directory */
+          },
+          changa: {
+            /* Empty directory */
+          },
+          recursive: {
+            /* Empty directory */
+          },
         },
       },
     });
@@ -23,7 +25,7 @@ describe("Generate Variable CSS", () => {
 
   test("Cabin CSS - wghtOnly, full, wdth and italic", () => {
     variable("cabin");
-    const dirPath = "./packages/cabin";
+    const dirPath = "./fonts/google/cabin";
     const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
@@ -44,7 +46,7 @@ describe("Generate Variable CSS", () => {
 
   test("Changa CSS - wghtOnly", () => {
     variable("changa");
-    const dirPath = "./packages/changa";
+    const dirPath = "./fonts/google/changa";
     const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual(["variable.css"]);
@@ -61,7 +63,7 @@ describe("Generate Variable CSS", () => {
 
   test("Recursive CSS - wghtOnly, full", () => {
     variable("recursive");
-    const dirPath = "./packages/recursive";
+    const dirPath = "./fonts/google/recursive";
     const fileNames = readDir(dirPath, "css");
     expect(fileNames).toEqual(["variable-full.css", "variable.css"]);
 

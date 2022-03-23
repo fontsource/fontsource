@@ -16,7 +16,7 @@ const run = async (id: string, force?: string): Promise<void> => {
   const font = APIv2[id];
 
   // Set file directories
-  const fontDir = `packages/${font.id}`;
+  const fontDir = `fonts/google/${font.id}`;
   await fs.ensureDir(fontDir);
 
   // Update checking
@@ -102,6 +102,7 @@ const run = async (id: string, force?: string): Promise<void> => {
         fontId: font.id,
         fontName: font.family,
         version: mainRepoPackageJson.version,
+        type: "google",
       });
 
       await fs.writeFile(`${fontDir}/package.json`, packageJSON);

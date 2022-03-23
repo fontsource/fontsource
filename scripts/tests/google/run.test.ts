@@ -7,12 +7,14 @@ import { run } from "../../google/run";
 describe("Full run function", () => {
   beforeEach(() => {
     mock({
-      packages: {
-        abel: {
-          "package.json": "{}",
-        },
-        "noto-sans-jp": {
-          "package.json": "{}",
+      fonts: {
+        google: {
+          abel: {
+            "package.json": "{}",
+          },
+          "noto-sans-jp": {
+            "package.json": "{}",
+          },
         },
       },
     });
@@ -20,7 +22,7 @@ describe("Full run function", () => {
 
   test("Abel metadata and unicode generation", () => {
     return run("abel").then(() => {
-      const dirPath = "./packages/abel";
+      const dirPath = "./fonts/google/abel";
       const fileNames = readDir(dirPath, "json");
 
       expect(fileNames).toEqual([

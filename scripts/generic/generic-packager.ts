@@ -177,6 +177,7 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
       fontId,
       fontName,
       version: packageVersion,
+      type,
     });
   } else {
     const mainRepoPackageJson = jsonfile.readFileSync("./package.json");
@@ -184,6 +185,7 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
       fontId,
       fontName,
       version: mainRepoPackageJson.version,
+      type,
     });
   }
   fs.writeFileSync(`${fontDir}/package.json`, packageJSON);

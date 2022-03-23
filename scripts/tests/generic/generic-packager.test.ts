@@ -19,7 +19,7 @@ const testFont = {
   license: "http://www.apache.org/licenses/LICENSE-2.0",
   type: "other",
 
-  fontDir: "packages/clear-sans",
+  fontDir: "fonts/other/clear-sans",
   packageVersion: "4.3.0",
 };
 
@@ -40,19 +40,23 @@ const testIcon = {
     "https://github.com/google/material-design-icons/blob/master/LICENSE",
   type: "icons",
 
-  fontDir: "packages/material-icons",
+  fontDir: "fonts/icons/material-icons",
   packageVersion: "4.3.0",
 };
 
 describe("Generate Generic CSS", () => {
   beforeEach(() => {
     mock({
-      packages: {
-        "clear-sans": {
-          /* Empty directory */
+      fonts: {
+        other: {
+          "clear-sans": {
+            /* Empty directory */
+          },
         },
-        "material-icons": {
-          /* Empty directory */
+        icons: {
+          "material-icons": {
+            /* Empty directory */
+          },
         },
       },
     });
@@ -60,7 +64,7 @@ describe("Generate Generic CSS", () => {
 
   test("Clear Sans CSS", () => {
     packager(testFont, true);
-    const dirPath = "./packages/clear-sans";
+    const dirPath = "./fonts/other/clear-sans";
     const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
@@ -99,7 +103,7 @@ describe("Generate Generic CSS", () => {
 
   test("Material Icons CSS", () => {
     packager(testIcon, true);
-    const dirPath = "./packages/material-icons";
+    const dirPath = "./fonts/icons/material-icons";
     const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([

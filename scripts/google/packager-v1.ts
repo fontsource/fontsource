@@ -6,7 +6,7 @@ import { makeFontFilePath } from "../utils/utils";
 
 const packagerV1 = (id: string): void => {
   const font = APIv1[id];
-  const fontDir = `packages/${font.id}`;
+  const fontDir = `fonts/google/${font.id}`;
 
   // Generate CSS
   font.subsets.forEach(subset => {

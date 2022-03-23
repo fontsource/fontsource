@@ -54,12 +54,12 @@ interface DownloadLinks {
 const filterLinks = (fontId: string): DownloadLinks[] => {
   const fontV1 = APIv1[fontId];
   const fontV2 = APIv2[fontId];
-  const fontDir = `packages/${fontId}`;
+  const fontDir = `fonts/google/${fontId}`;
 
   // Parses variants into readable pairs of data
   // Temporarily force font types till fixed in google-font-metadata
-  let downloadURLPairsV1 = pairGenerator(fontV1.variants as FontVariants);
-  const downloadURLPairsV2 = pairGenerator(fontV2.variants as FontVariants);
+  let downloadURLPairsV1 = pairGenerator(fontV1.variants);
+  const downloadURLPairsV2 = pairGenerator(fontV2.variants);
 
   // Flag to check whether font has unicode subsets like [132]
   let hasUnicodeSubsets = false;
@@ -73,7 +73,7 @@ const filterLinks = (fontId: string): DownloadLinks[] => {
   // If true, we need to download the woff2 files from V1. Else remove all woff2 files
   if (!hasUnicodeSubsets) {
     downloadURLPairsV1 = downloadURLPairsV1.filter(
-      pair => !(pair[0][4] === "woff2")
+      pair => pair[0][4] !== "woff2"
     );
   }
 
@@ -131,7 +131,7 @@ const filterLinks = (fontId: string): DownloadLinks[] => {
 
 const variableLinks = (fontId: string): DownloadLinks[] => {
   const fontVariable = APIVariable[fontId];
-  const fontDir = `packages/${fontId}`;
+  const fontDir = `fonts/google/${fontId}`;
 
   const downloadURLPairsVariable = pairGenerator(fontVariable.variants);
 
@@ -166,14 +166,14 @@ EventEmitter.defaultMaxListeners = 0;
 const queue = async.queue(downloadQueue, 60);
 
 const download = async (fontId: string, isVariable: boolean): Promise<void> => {
-  const fontDir = `packages/${fontId}`;
+  const fontDir = `fonts/google/${fontId}`;
 
   await fs.ensureDir(`./${fontDir}/files`);
 
-  const links = await filterLinks(fontId);
+  const links = filterLinks(fontId);
   // Add variable font URLs to the links array
   if (isVariable) {
-    const variable = await variableLinks(fontId);
+    const variable = variableLinks(fontId);
     variable.forEach(link => links.push(link));
   }
 

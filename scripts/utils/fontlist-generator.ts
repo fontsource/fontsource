@@ -2,7 +2,7 @@ import * as _ from "lodash";
 import fs from "fs-extra";
 import jsonfile from "jsonfile";
 
-import { directories } from "./utils";
+import { getDirectories } from "./utils";
 
 interface FontList {
   [x: string]: string;
@@ -18,41 +18,50 @@ interface Metadata {
   type: string;
 }
 
-directories.forEach(directory => {
-  const fontDir = `./packages/${directory}`;
+// Iterate through directories and push to relevant arrays
+const pushFonts = (type: string) => {
+  const directories = getDirectories(type);
+  directories.forEach(directory => {
+    const fontDir = `./fonts/${type}/${directory}`;
 
-  try {
-    const metadata: Metadata = jsonfile.readFileSync(
-      `${fontDir}/metadata.json`
-    );
-    const object = { [metadata.fontId]: metadata.type };
-    fontlist.push(object);
+    try {
+      const metadata: Metadata = jsonfile.readFileSync(
+        `${fontDir}/metadata.json`
+      );
+      const object = { [metadata.fontId]: metadata.type };
+      fontlist.push(object);
 
-    switch (metadata.type) {
-      case "league": {
-        league.push(metadata.fontId);
-        break;
+      switch (metadata.type) {
+        case "league": {
+          league.push(metadata.fontId);
+          break;
+        }
+        case "icons": {
+          icons.push(metadata.fontId);
+          break;
+        }
+        case "other": {
+          other.push(metadata.fontId);
+          break;
+        }
+        case "google": {
+          // Empty to prevent calling unknown type catch
+          break;
+        }
+        default: {
+          console.log(`${metadata.fontId} has unknown type ${metadata.type}.`);
+        }
       }
-      case "icons": {
-        icons.push(metadata.fontId);
-        break;
-      }
-      case "other": {
-        other.push(metadata.fontId);
-        break;
-      }
-      case "google": {
-        // Empty to prevent calling unknown type catch
-        break;
-      }
-      default: {
-        console.log(`${metadata.fontId} has unknown type ${metadata.type}.`);
-      }
+    } catch (error) {
+      console.error(error);
     }
-  } catch (error) {
-    console.error(error);
-  }
-});
+  });
+};
+
+pushFonts("google");
+pushFonts("league");
+pushFonts("icons");
+pushFonts("other");
 
 // Write JSON list to be pulled externally.
 jsonfile.writeFile("FONTLIST.json", Object.assign({}, ...fontlist));

@@ -27,7 +27,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
 
 7. Review `README.md` to ensure everything is correct and linked appropriately.
 
-8. Once ready, copy over the new package folder found in `./scripts/generic` over to the main packages directory, `./packages/`. Make sure to delete the generated files in `./scripts/generic`. Create a pull request, it'll be reviewed and added to the repository!
+8. Once ready, copy over the new package folder found in `./scripts/generic` over to the main packages directory, `./fonts/generic`. Make sure to delete the generated files in `./scripts/generic`. Create a pull request, it'll be reviewed and added to the repository!
 
 ## Tools
 

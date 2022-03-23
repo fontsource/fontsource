@@ -1,12 +1,14 @@
+import mock from "mock-fs";
 import {
   findClosest,
   makeFontDownloadPath,
   makeFontFilePath,
   makeVariableFontDownloadPath,
   makeVariableFontFilePath,
+  getDirectories,
 } from "../../utils/utils";
 
-const fontDir = "packages/noto-sans-jp";
+const fontDir = "fonts/google/noto-sans-jp";
 const fontId = "noto-sans-jp";
 const subset = "latin";
 const weight = 400;
@@ -19,12 +21,14 @@ describe("Font paths", () => {
   test("Generate download paths", () => {
     expect(
       makeFontDownloadPath(fontDir, fontId, subset, weight, style, extension)
-    ).toBe("./packages/noto-sans-jp/files/noto-sans-jp-latin-400-normal.woff2");
+    ).toBe(
+      "./fonts/google/noto-sans-jp/files/noto-sans-jp-latin-400-normal.woff2"
+    );
 
     expect(
       makeVariableFontDownloadPath(fontDir, fontId, subset, type, style)
     ).toBe(
-      "./packages/noto-sans-jp/files/noto-sans-jp-latin-variable-full-normal.woff2"
+      "./fonts/google/noto-sans-jp/files/noto-sans-jp-latin-variable-full-normal.woff2"
     );
   });
 
@@ -49,5 +53,49 @@ describe("Find closest available weights", () => {
     expect(findClosest([200, 300, 500, 600], 400)).toBe(300);
     expect(findClosest([200], 400)).toBe(200);
     expect(findClosest([200, 500], 400)).toBe(500);
+  });
+});
+
+describe("Get directories", () => {
+  beforeEach(() => {
+    mock({
+      fonts: {
+        google: {
+          abel: {
+            "package.json": "{}",
+          },
+          "noto-sans-jp": {
+            "package.json": "{}",
+          },
+          cabin: {
+            "package.json": "{}",
+          },
+        },
+        generic: {
+          abel: {
+            "package.json": "{}",
+          },
+          "noto-sans-jp": {
+            "package.json": "{}",
+          },
+          "not-cabin": {
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+  });
+
+  test("Find directories", () => {
+    expect(getDirectories("google")).toEqual(["abel", "cabin", "noto-sans-jp"]);
+    expect(getDirectories("generic")).toEqual([
+      "abel",
+      "not-cabin",
+      "noto-sans-jp",
+    ]);
+  });
+
+  afterEach(() => {
+    mock.restore();
   });
 });
