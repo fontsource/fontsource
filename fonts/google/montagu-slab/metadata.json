@@ -6,7 +6,7 @@
   "styles": ["normal"],
   "defSubset": "latin",
   "variable": {
-    "opsz": { "default": "14", "min": "16", "max": "144", "step": "0.1" },
+    "opsz": { "default": "16", "min": "16", "max": "144", "step": "0.1" },
     "wght": { "default": "400", "min": "100", "max": "700", "step": "1" }
   },
   "lastModified": "2021-12-09",

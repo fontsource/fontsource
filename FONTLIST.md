@@ -17,16 +17,17 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - blackout-two-am
 - chunk-five
 - junction
+- league-gothic
 - league-gothic-condensed
 - league-mono
 - league-mono-condensed
 - league-mono-extended
-- league-mono-narrow
 - league-mono-wide
 - ostrich-sans
 - ostrich-sans-dashed
 - ostrich-sans-inline
 - ostrich-sans-rounded
+- league-mono-narrow
 
 ## Icons
 
