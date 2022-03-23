@@ -1,0 +1,70 @@
+name: Build and Release [Force Bump Publish]
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    if: github.actor == 'DecliningLotus'
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+
+      - name: Install packages
+        run: yarn
+
+      - name: Fetch API # Calls Google Font Metadata to fetch the latest data from Google's Developer API
+        run: npm explore google-font-metadata -- yarn parser:gen $GOOGLE_API_KEY
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: Parse APIv1 # Processes new API data into APIv1 format (check google-font-metadata documentation)
+        run: yarn parser:v1
+
+      - name: Parse APIv2 # Processes new API data into APIv2 format
+        run: yarn parser:v2
+
+      - name: Parse Variable # Scrapes variable page on Google Fonts and parse into JSON format
+        run: yarn parser:variable
+
+      - name: Build fonts # Build all updated Google Fonts in repository
+        run: yarn build:google-force
+
+      - name: Generate fontlist # Generate FONTLIST.json and FONTLIST.md
+        run: yarn util:fontlist
+
+      - name: Generate Algolia index # Generate Algolia search index for website
+        run: yarn util:algolia
+        env:
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+
+      - name: Lint files
+        run: yarn lint
+
+      - name: Format files
+        run: yarn format
+
+      - name: Stage, commit and push files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_user_name: "fontsource-bot"
+          commit_user_email: "83556432+fontsource-bot@users.noreply.github.com"
+          commit_author: "fontsource-bot <83556432+fontsource-bot@users.noreply.github.com>"
+          commit_message: "chore(build): update packages [Manual]"
+        continue-on-error: true
+
+      - name: Configure CI Git
+        run: |
+          git config --global user.email "83556432+fontsource-bot@users.noreply.github.com"
+          git config --global user.name "fontsource-bot"
+
+      - name: Publish package # Call mass-publish
+        run: npx mass-publish publish patch --yes --force-publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
