@@ -32,7 +32,7 @@ jobs:
         run: yarn parser:variable
 
       - name: Build fonts
-        run: yarn build:google
+        run: yarn build:google-force
 
       - name: Generate fontlist
         run: yarn util:fontlist
