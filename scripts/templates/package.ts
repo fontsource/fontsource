@@ -24,11 +24,11 @@ const packageJson = template(
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/<%= fontId %>#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/<%= fontId %>#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/<%= fontId %>"
+    "directory": "fonts/google/<%= fontId %>"
   }
 }
 `
