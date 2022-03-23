@@ -6,7 +6,7 @@ import {
   makeVariableFontFilePath,
 } from "../../utils/utils";
 
-const fontDir = "packages/noto-sans-jp";
+const fontDir = "fonts/google/noto-sans-jp";
 const fontId = "noto-sans-jp";
 const subset = "latin";
 const weight = 400;
@@ -19,12 +19,14 @@ describe("Font paths", () => {
   test("Generate download paths", () => {
     expect(
       makeFontDownloadPath(fontDir, fontId, subset, weight, style, extension)
-    ).toBe("./packages/noto-sans-jp/files/noto-sans-jp-latin-400-normal.woff2");
+    ).toBe(
+      "./fonts/google/noto-sans-jp/files/noto-sans-jp-latin-400-normal.woff2"
+    );
 
     expect(
       makeVariableFontDownloadPath(fontDir, fontId, subset, type, style)
     ).toBe(
-      "./packages/noto-sans-jp/files/noto-sans-jp-latin-variable-full-normal.woff2"
+      "./fonts/google/noto-sans-jp/files/noto-sans-jp-latin-variable-full-normal.woff2"
     );
   });
 

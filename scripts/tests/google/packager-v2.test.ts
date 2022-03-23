@@ -8,15 +8,17 @@ jest.mock("google-font-metadata");
 describe("Generate V2 CSS", () => {
   beforeEach(() => {
     mock({
-      packages: {
-        abel: {
-          /* Empty directory */
-        },
-        cabin: {
-          /* Empty directory */
-        },
-        "noto-sans-jp": {
-          /* Empty directory */
+      fonts: {
+        google: {
+          abel: {
+            /* Empty directory */
+          },
+          cabin: {
+            /* Empty directory */
+          },
+          "noto-sans-jp": {
+            /* Empty directory */
+          },
         },
       },
     });
@@ -24,7 +26,7 @@ describe("Generate V2 CSS", () => {
 
   test("Abel CSS", () => {
     packagerV2("abel");
-    const dirPath = "./packages/abel";
+    const dirPath = "./fonts/google/abel";
     const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual(["400.css", "index.css"]);
@@ -40,7 +42,7 @@ describe("Generate V2 CSS", () => {
 
   test("Cabin CSS", () => {
     packagerV2("cabin");
-    const dirPath = "./packages/cabin";
+    const dirPath = "./fonts/google/cabin";
     const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
@@ -66,7 +68,7 @@ describe("Generate V2 CSS", () => {
 
   test("Noto Sans JP CSS", () => {
     packagerV2("noto-sans-jp");
-    const dirPath = "./packages/noto-sans-jp";
+    const dirPath = "./fonts/google/noto-sans-jp";
     const fileNames = readDir(dirPath, "css");
 
     expect(fileNames).toEqual([
