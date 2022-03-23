@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Literata", "literata"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/literata#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/literata#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/literata"
+    "directory": "fonts/google/literata"
   }
 }

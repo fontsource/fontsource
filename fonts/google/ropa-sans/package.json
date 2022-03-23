@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Ropa Sans", "ropa-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ropa-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/ropa-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/ropa-sans"
+    "directory": "fonts/google/ropa-sans"
   }
 }

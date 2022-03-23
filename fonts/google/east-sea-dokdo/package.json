@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "East Sea Dokdo", "east-sea-dokdo"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/east-sea-dokdo#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/east-sea-dokdo#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/east-sea-dokdo"
+    "directory": "fonts/google/east-sea-dokdo"
   }
 }

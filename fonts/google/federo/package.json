@@ -7,6 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Federo", "federo"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/federo#readme",
-  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/federo" }
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/federo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/federo"
+  }
 }

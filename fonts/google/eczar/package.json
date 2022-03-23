@@ -7,6 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Eczar", "eczar"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/eczar#readme",
-  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/eczar" }
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/eczar#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/eczar"
+  }
 }

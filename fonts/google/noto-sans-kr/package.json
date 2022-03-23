@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Noto Sans KR", "noto-sans-kr"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-kr#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/noto-sans-kr#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/noto-sans-kr"
+    "directory": "fonts/google/noto-sans-kr"
   }
 }

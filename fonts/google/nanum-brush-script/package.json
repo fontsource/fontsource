@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Nanum Brush Script", "nanum-brush-script"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/nanum-brush-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/nanum-brush-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/nanum-brush-script"
+    "directory": "fonts/google/nanum-brush-script"
   }
 }

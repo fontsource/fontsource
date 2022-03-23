@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Encode Sans", "encode-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/encode-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/encode-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/encode-sans"
+    "directory": "fonts/google/encode-sans"
   }
 }

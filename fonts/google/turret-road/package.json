@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Turret Road", "turret-road"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/turret-road#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/turret-road#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/turret-road"
+    "directory": "fonts/google/turret-road"
   }
 }

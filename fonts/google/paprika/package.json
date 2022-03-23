@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Paprika", "paprika"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/paprika#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/paprika#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/paprika"
+    "directory": "fonts/google/paprika"
   }
 }

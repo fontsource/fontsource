@@ -7,6 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Numans", "numans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/numans#readme",
-  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/numans" }
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/numans#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/numans"
+  }
 }

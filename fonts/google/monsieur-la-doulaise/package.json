@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Monsieur La Doulaise", "monsieur-la-doulaise"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/monsieur-la-doulaise#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/monsieur-la-doulaise#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/monsieur-la-doulaise"
+    "directory": "fonts/google/monsieur-la-doulaise"
   }
 }

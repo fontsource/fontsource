@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Ceviche One", "ceviche-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ceviche-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/ceviche-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/ceviche-one"
+    "directory": "fonts/google/ceviche-one"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Maitree", "maitree"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/maitree#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/maitree#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/maitree"
+    "directory": "fonts/google/maitree"
   }
 }

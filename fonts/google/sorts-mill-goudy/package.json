@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Sorts Mill Goudy", "sorts-mill-goudy"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sorts-mill-goudy#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/sorts-mill-goudy#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/sorts-mill-goudy"
+    "directory": "fonts/google/sorts-mill-goudy"
   }
 }

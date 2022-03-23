@@ -19,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/baloo-bhaijaan-2#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/baloo-bhaijaan-2#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/baloo-bhaijaan-2"
+    "directory": "fonts/google/baloo-bhaijaan-2"
   }
 }

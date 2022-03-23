@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Lilita One", "lilita-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lilita-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/lilita-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/lilita-one"
+    "directory": "fonts/google/lilita-one"
   }
 }

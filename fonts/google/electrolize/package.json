@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Electrolize", "electrolize"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/electrolize#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/electrolize#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/electrolize"
+    "directory": "fonts/google/electrolize"
   }
 }

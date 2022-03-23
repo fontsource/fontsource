@@ -7,6 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Coiny", "coiny"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/coiny#readme",
-  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/coiny" }
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/coiny#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/coiny"
+  }
 }

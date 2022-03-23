@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Thasadith", "thasadith"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/thasadith#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/thasadith#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/thasadith"
+    "directory": "fonts/google/thasadith"
   }
 }

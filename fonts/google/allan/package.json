@@ -7,6 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Allan", "allan"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/allan#readme",
-  "repository": { "type": "git", "url": "https://github.com/fontsource/fontsource.git", "directory": "packages/allan" }
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/allan#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/allan"
+  }
 }

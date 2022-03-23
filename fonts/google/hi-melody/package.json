@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Hi Melody", "hi-melody"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/hi-melody#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/hi-melody#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/hi-melody"
+    "directory": "fonts/google/hi-melody"
   }
 }

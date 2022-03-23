@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Gilda Display", "gilda-display"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/gilda-display#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/gilda-display#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/gilda-display"
+    "directory": "fonts/google/gilda-display"
   }
 }

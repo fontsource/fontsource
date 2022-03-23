@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Trykker", "trykker"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/trykker#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/trykker#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/trykker"
+    "directory": "fonts/google/trykker"
   }
 }

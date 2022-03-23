@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Tenor Sans", "tenor-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/tenor-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/tenor-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/tenor-sans"
+    "directory": "fonts/google/tenor-sans"
   }
 }

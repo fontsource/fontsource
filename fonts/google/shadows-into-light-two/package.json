@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Shadows Into Light Two", "shadows-into-light-two"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/shadows-into-light-two#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/shadows-into-light-two#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/shadows-into-light-two"
+    "directory": "fonts/google/shadows-into-light-two"
   }
 }

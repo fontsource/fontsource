@@ -3,9 +3,7 @@
   "version": "4.5.1",
   "description": "Self-host the League Mono Extended font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "keywords": [
     "fontsource",
     "font",
@@ -21,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/league-mono-extended#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/league/league-mono-extended#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/league-mono-extended"
+    "directory": "fonts/league/league-mono-extended"
   }
 }

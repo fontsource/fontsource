@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Inconsolata", "inconsolata"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/inconsolata#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/inconsolata#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/inconsolata"
+    "directory": "fonts/google/inconsolata"
   }
 }

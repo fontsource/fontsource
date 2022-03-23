@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Baloo Bhaina 2", "baloo-bhaina-2"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/baloo-bhaina-2#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/baloo-bhaina-2#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/baloo-bhaina-2"
+    "directory": "fonts/google/baloo-bhaina-2"
   }
 }

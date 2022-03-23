@@ -18,10 +18,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/trispace#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/trispace#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/trispace"
+    "directory": "fonts/google/trispace"
   }
 }

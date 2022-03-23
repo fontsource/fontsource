@@ -3,9 +3,7 @@
   "version": "4.5.2",
   "description": "Self-host the Noto Sans Egyptian Hieroglyphs font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "keywords": [
     "fontsource",
     "font",
@@ -21,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-sans-egyptian-hieroglyphs#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/noto-sans-egyptian-hieroglyphs#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/noto-sans-egyptian-hieroglyphs"
+    "directory": "fonts/google/noto-sans-egyptian-hieroglyphs"
   }
 }

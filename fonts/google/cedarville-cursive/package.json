@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Cedarville Cursive", "cedarville-cursive"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/cedarville-cursive#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/cedarville-cursive#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/cedarville-cursive"
+    "directory": "fonts/google/cedarville-cursive"
   }
 }

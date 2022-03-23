@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Prosto One", "prosto-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/prosto-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/prosto-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/prosto-one"
+    "directory": "fonts/google/prosto-one"
   }
 }

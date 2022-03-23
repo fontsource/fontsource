@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Clicker Script", "clicker-script"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/clicker-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/clicker-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/clicker-script"
+    "directory": "fonts/google/clicker-script"
   }
 }

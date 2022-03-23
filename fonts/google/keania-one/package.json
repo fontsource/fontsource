@@ -3,23 +3,14 @@
   "version": "4.5.2",
   "description": "Self-host the Keania One font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Keania One",
-    "keania-one"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Keania One", "keania-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/keania-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/keania-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/keania-one"
+    "directory": "fonts/google/keania-one"
   }
 }

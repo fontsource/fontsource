@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Spectral SC", "spectral-sc"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/spectral-sc#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/spectral-sc#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/spectral-sc"
+    "directory": "fonts/google/spectral-sc"
   }
 }

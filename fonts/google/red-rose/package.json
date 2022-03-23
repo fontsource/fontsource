@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Red Rose", "red-rose", "css", "front-end", "web"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/red-rose#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/red-rose#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/red-rose"
+    "directory": "fonts/google/red-rose"
   }
 }

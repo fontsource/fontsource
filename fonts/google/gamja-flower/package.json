@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Gamja Flower", "gamja-flower"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/gamja-flower#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/gamja-flower#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/gamja-flower"
+    "directory": "fonts/google/gamja-flower"
   }
 }

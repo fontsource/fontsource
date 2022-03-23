@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "ZCOOL XiaoWei", "zcool-xiaowei"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/zcool-xiaowei#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/zcool-xiaowei#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/zcool-xiaowei"
+    "directory": "fonts/google/zcool-xiaowei"
   }
 }

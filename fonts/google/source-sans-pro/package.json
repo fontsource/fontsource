@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Source Sans Pro", "source-sans-pro"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/source-sans-pro#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/source-sans-pro#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/source-sans-pro"
+    "directory": "fonts/google/source-sans-pro"
   }
 }

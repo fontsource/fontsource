@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Fredoka One", "fredoka-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fredoka-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/fredoka-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/fredoka-one"
+    "directory": "fonts/google/fredoka-one"
   }
 }

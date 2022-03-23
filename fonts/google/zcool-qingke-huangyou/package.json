@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "ZCOOL QingKe HuangYou", "zcool-qingke-huangyou"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/zcool-qingke-huangyou#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/zcool-qingke-huangyou#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/zcool-qingke-huangyou"
+    "directory": "fonts/google/zcool-qingke-huangyou"
   }
 }

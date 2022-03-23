@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Kaushan Script", "kaushan-script"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/kaushan-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/kaushan-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/kaushan-script"
+    "directory": "fonts/google/kaushan-script"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Nothing You Could Do", "nothing-you-could-do"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/nothing-you-could-do#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/nothing-you-could-do#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/nothing-you-could-do"
+    "directory": "fonts/google/nothing-you-could-do"
   }
 }

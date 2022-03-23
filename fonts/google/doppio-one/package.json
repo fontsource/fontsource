@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Doppio One", "doppio-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/doppio-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/doppio-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/doppio-one"
+    "directory": "fonts/google/doppio-one"
   }
 }

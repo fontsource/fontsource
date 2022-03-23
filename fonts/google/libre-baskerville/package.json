@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Libre Baskerville", "libre-baskerville"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/libre-baskerville#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/libre-baskerville#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/libre-baskerville"
+    "directory": "fonts/google/libre-baskerville"
   }
 }

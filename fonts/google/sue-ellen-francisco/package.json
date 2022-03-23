@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Sue Ellen Francisco", "sue-ellen-francisco"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sue-ellen-francisco#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/sue-ellen-francisco#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/sue-ellen-francisco"
+    "directory": "fonts/google/sue-ellen-francisco"
   }
 }

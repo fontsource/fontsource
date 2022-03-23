@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Fasthand", "fasthand"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fasthand#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/fasthand#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/fasthand"
+    "directory": "fonts/google/fasthand"
   }
 }

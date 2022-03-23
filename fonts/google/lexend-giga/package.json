@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Lexend Giga", "lexend-giga"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lexend-giga#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/lexend-giga#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/lexend-giga"
+    "directory": "fonts/google/lexend-giga"
   }
 }

@@ -3,23 +3,14 @@
   "version": "4.5.2",
   "description": "Self-host the Single Day font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Single Day",
-    "single-day"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Single Day", "single-day"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/single-day#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/single-day#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/single-day"
+    "directory": "fonts/google/single-day"
   }
 }

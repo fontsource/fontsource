@@ -3,23 +3,14 @@
   "version": "4.5.2",
   "description": "Self-host the Unlock font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Unlock",
-    "unlock"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Unlock", "unlock"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/unlock#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/unlock#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/unlock"
+    "directory": "fonts/google/unlock"
   }
 }

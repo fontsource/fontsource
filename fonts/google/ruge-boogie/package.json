@@ -3,23 +3,14 @@
   "version": "4.5.3",
   "description": "Self-host the Ruge Boogie font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Ruge Boogie",
-    "ruge-boogie"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Ruge Boogie", "ruge-boogie"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ruge-boogie#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/ruge-boogie#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/ruge-boogie"
+    "directory": "fonts/google/ruge-boogie"
   }
 }

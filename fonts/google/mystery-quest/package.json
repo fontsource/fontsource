@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Mystery Quest", "mystery-quest"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mystery-quest#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/mystery-quest#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/mystery-quest"
+    "directory": "fonts/google/mystery-quest"
   }
 }

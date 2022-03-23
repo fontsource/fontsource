@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Courgette", "courgette"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/courgette#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/courgette#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/courgette"
+    "directory": "fonts/google/courgette"
   }
 }

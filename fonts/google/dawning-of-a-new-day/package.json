@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Dawning of a New Day", "dawning-of-a-new-day"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/dawning-of-a-new-day#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/dawning-of-a-new-day#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/dawning-of-a-new-day"
+    "directory": "fonts/google/dawning-of-a-new-day"
   }
 }

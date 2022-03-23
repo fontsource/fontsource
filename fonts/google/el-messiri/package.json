@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "El Messiri", "el-messiri"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/el-messiri#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/el-messiri#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/el-messiri"
+    "directory": "fonts/google/el-messiri"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Overpass", "overpass"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/overpass#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/overpass#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/overpass"
+    "directory": "fonts/google/overpass"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Merienda", "merienda"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/merienda#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/merienda#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/merienda"
+    "directory": "fonts/google/merienda"
   }
 }

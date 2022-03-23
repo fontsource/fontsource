@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Ma Shan Zheng", "ma-shan-zheng"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ma-shan-zheng#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/ma-shan-zheng#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/ma-shan-zheng"
+    "directory": "fonts/google/ma-shan-zheng"
   }
 }

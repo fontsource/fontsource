@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Rammetto One", "rammetto-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rammetto-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/rammetto-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/rammetto-one"
+    "directory": "fonts/google/rammetto-one"
   }
 }

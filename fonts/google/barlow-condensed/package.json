@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Barlow Condensed", "barlow-condensed"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/barlow-condensed#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/barlow-condensed#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/barlow-condensed"
+    "directory": "fonts/google/barlow-condensed"
   }
 }

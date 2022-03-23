@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Do Hyeon", "do-hyeon"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/do-hyeon#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/do-hyeon#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/do-hyeon"
+    "directory": "fonts/google/do-hyeon"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Autour One", "autour-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/autour-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/autour-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/autour-one"
+    "directory": "fonts/google/autour-one"
   }
 }

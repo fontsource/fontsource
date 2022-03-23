@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Song Myung", "song-myung"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/song-myung#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/song-myung#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/song-myung"
+    "directory": "fonts/google/song-myung"
   }
 }

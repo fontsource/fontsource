@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Alex Brush", "alex-brush"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/alex-brush#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/alex-brush#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/alex-brush"
+    "directory": "fonts/google/alex-brush"
   }
 }

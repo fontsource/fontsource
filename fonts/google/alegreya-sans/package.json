@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Alegreya Sans", "alegreya-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/alegreya-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/alegreya-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/alegreya-sans"
+    "directory": "fonts/google/alegreya-sans"
   }
 }

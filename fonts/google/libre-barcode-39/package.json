@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Libre Barcode 39", "libre-barcode-39"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/libre-barcode-39#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/libre-barcode-39#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/libre-barcode-39"
+    "directory": "fonts/google/libre-barcode-39"
   }
 }

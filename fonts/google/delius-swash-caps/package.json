@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Delius Swash Caps", "delius-swash-caps"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/delius-swash-caps#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/delius-swash-caps#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/delius-swash-caps"
+    "directory": "fonts/google/delius-swash-caps"
   }
 }

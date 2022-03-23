@@ -18,10 +18,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bodoni-moda#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/bodoni-moda#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bodoni-moda"
+    "directory": "fonts/google/bodoni-moda"
   }
 }

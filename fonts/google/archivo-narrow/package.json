@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Archivo Narrow", "archivo-narrow"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/archivo-narrow#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/archivo-narrow#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/archivo-narrow"
+    "directory": "fonts/google/archivo-narrow"
   }
 }

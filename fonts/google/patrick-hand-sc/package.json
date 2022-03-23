@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Patrick Hand SC", "patrick-hand-sc"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/patrick-hand-sc#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/patrick-hand-sc#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/patrick-hand-sc"
+    "directory": "fonts/google/patrick-hand-sc"
   }
 }

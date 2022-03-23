@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "UnifrakturCook", "unifrakturcook"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/unifrakturcook#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/unifrakturcook#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/unifrakturcook"
+    "directory": "fonts/google/unifrakturcook"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Yeon Sung", "yeon-sung"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/yeon-sung#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/yeon-sung#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/yeon-sung"
+    "directory": "fonts/google/yeon-sung"
   }
 }

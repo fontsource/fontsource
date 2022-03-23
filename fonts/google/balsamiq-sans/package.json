@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Balsamiq Sans", "balsamiq-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/balsamiq-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/balsamiq-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/balsamiq-sans"
+    "directory": "fonts/google/balsamiq-sans"
   }
 }

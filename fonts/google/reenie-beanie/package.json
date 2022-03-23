@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Reenie Beanie", "reenie-beanie"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/reenie-beanie#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/reenie-beanie#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/reenie-beanie"
+    "directory": "fonts/google/reenie-beanie"
   }
 }

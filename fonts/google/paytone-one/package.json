@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Paytone One", "paytone-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/paytone-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/paytone-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/paytone-one"
+    "directory": "fonts/google/paytone-one"
   }
 }

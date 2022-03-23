@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Gothic A1", "gothic-a1"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/gothic-a1#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/gothic-a1#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/gothic-a1"
+    "directory": "fonts/google/gothic-a1"
   }
 }

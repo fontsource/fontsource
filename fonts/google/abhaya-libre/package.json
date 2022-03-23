@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Abhaya Libre", "abhaya-libre"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/abhaya-libre#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/abhaya-libre#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/abhaya-libre"
+    "directory": "fonts/google/abhaya-libre"
   }
 }

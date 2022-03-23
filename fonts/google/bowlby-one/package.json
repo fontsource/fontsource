@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Bowlby One", "bowlby-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bowlby-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/bowlby-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bowlby-one"
+    "directory": "fonts/google/bowlby-one"
   }
 }

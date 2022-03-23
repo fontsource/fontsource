@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Bebas Neue", "bebas-neue"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bebas-neue#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/bebas-neue#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bebas-neue"
+    "directory": "fonts/google/bebas-neue"
   }
 }

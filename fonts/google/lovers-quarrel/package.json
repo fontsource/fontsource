@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Lovers Quarrel", "lovers-quarrel"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lovers-quarrel#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/lovers-quarrel#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/lovers-quarrel"
+    "directory": "fonts/google/lovers-quarrel"
   }
 }

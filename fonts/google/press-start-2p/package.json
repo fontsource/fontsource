@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Press Start 2P", "press-start-2p"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/press-start-2p#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/press-start-2p#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/press-start-2p"
+    "directory": "fonts/google/press-start-2p"
   }
 }

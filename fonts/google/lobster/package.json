@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Lobster", "lobster"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lobster#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/lobster#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/lobster"
+    "directory": "fonts/google/lobster"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Yanone Kaffeesatz", "yanone-kaffeesatz"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/yanone-kaffeesatz#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/yanone-kaffeesatz#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/yanone-kaffeesatz"
+    "directory": "fonts/google/yanone-kaffeesatz"
   }
 }

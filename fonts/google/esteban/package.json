@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Esteban", "esteban"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/esteban#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/esteban#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/esteban"
+    "directory": "fonts/google/esteban"
   }
 }

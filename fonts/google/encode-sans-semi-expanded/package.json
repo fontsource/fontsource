@@ -14,10 +14,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/encode-sans-semi-expanded#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/encode-sans-semi-expanded#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/encode-sans-semi-expanded"
+    "directory": "fonts/google/encode-sans-semi-expanded"
   }
 }

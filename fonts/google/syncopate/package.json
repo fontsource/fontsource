@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Syncopate", "syncopate"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/syncopate#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/syncopate#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/syncopate"
+    "directory": "fonts/google/syncopate"
   }
 }

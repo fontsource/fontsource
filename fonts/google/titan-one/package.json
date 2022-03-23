@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Titan One", "titan-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/titan-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/titan-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/titan-one"
+    "directory": "fonts/google/titan-one"
   }
 }

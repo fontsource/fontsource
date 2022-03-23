@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Hind Siliguri", "hind-siliguri"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/hind-siliguri#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/hind-siliguri#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/hind-siliguri"
+    "directory": "fonts/google/hind-siliguri"
   }
 }

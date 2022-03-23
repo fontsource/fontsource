@@ -3,9 +3,7 @@
   "version": "4.5.2",
   "description": "Self-host the Jacques Francois Shadow font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "keywords": [
     "fontsource",
     "font",
@@ -16,10 +14,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/jacques-francois-shadow#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/jacques-francois-shadow#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/jacques-francois-shadow"
+    "directory": "fonts/google/jacques-francois-shadow"
   }
 }

@@ -18,10 +18,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/space-grotesk#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/space-grotesk#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/space-grotesk"
+    "directory": "fonts/google/space-grotesk"
   }
 }

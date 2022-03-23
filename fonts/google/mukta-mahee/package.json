@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Mukta Mahee", "mukta-mahee"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mukta-mahee#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/mukta-mahee#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/mukta-mahee"
+    "directory": "fonts/google/mukta-mahee"
   }
 }

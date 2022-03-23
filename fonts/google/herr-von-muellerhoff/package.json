@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Herr Von Muellerhoff", "herr-von-muellerhoff"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/herr-von-muellerhoff#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/herr-von-muellerhoff#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/herr-von-muellerhoff"
+    "directory": "fonts/google/herr-von-muellerhoff"
   }
 }

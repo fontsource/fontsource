@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Bellota", "bellota"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bellota#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/bellota#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bellota"
+    "directory": "fonts/google/bellota"
   }
 }

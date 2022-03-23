@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Qwigley", "qwigley"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/qwigley#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/qwigley#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/qwigley"
+    "directory": "fonts/google/qwigley"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Vesper Libre", "vesper-libre"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/vesper-libre#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/vesper-libre#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/vesper-libre"
+    "directory": "fonts/google/vesper-libre"
   }
 }

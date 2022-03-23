@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Martel Sans", "martel-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/martel-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/martel-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/martel-sans"
+    "directory": "fonts/google/martel-sans"
   }
 }

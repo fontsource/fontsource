@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Macondo Swash Caps", "macondo-swash-caps"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/macondo-swash-caps#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/macondo-swash-caps#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/macondo-swash-caps"
+    "directory": "fonts/google/macondo-swash-caps"
   }
 }

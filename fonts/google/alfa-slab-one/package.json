@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Alfa Slab One", "alfa-slab-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/alfa-slab-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/alfa-slab-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/alfa-slab-one"
+    "directory": "fonts/google/alfa-slab-one"
   }
 }

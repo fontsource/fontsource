@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Boogaloo", "boogaloo"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/boogaloo#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/boogaloo#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/boogaloo"
+    "directory": "fonts/google/boogaloo"
   }
 }

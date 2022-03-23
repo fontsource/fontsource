@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Josefin Sans", "josefin-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/josefin-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/josefin-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/josefin-sans"
+    "directory": "fonts/google/josefin-sans"
   }
 }

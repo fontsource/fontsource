@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Miriam Libre", "miriam-libre"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/miriam-libre#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/miriam-libre#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/miriam-libre"
+    "directory": "fonts/google/miriam-libre"
   }
 }

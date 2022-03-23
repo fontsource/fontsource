@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Montserrat", "montserrat"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/montserrat#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/montserrat#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/montserrat"
+    "directory": "fonts/google/montserrat"
   }
 }

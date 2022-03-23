@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Wire One", "wire-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/wire-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/wire-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/wire-one"
+    "directory": "fonts/google/wire-one"
   }
 }

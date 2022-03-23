@@ -3,23 +3,14 @@
   "version": "4.5.1",
   "description": "Self-host the Days One font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Days One",
-    "days-one"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Days One", "days-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/days-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/days-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/days-one"
+    "directory": "fonts/google/days-one"
   }
 }

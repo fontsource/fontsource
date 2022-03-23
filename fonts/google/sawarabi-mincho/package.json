@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Sawarabi Mincho", "sawarabi-mincho"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sawarabi-mincho#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/sawarabi-mincho#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/sawarabi-mincho"
+    "directory": "fonts/google/sawarabi-mincho"
   }
 }

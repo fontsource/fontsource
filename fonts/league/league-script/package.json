@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "League Script", "league-script"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/league-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/league/league-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/league-script"
+    "directory": "fonts/league/league-script"
   }
 }

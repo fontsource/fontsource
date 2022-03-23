@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Orienta", "orienta"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/orienta#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/orienta#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/orienta"
+    "directory": "fonts/google/orienta"
   }
 }

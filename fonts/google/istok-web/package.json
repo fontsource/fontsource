@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Istok Web", "istok-web"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/istok-web#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/istok-web#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/istok-web"
+    "directory": "fonts/google/istok-web"
   }
 }

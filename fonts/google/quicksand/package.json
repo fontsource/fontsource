@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Quicksand", "quicksand"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/quicksand#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/quicksand#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/quicksand"
+    "directory": "fonts/google/quicksand"
   }
 }

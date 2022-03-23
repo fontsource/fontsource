@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "La Belle Aurore", "la-belle-aurore"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/la-belle-aurore#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/la-belle-aurore#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/la-belle-aurore"
+    "directory": "fonts/google/la-belle-aurore"
   }
 }

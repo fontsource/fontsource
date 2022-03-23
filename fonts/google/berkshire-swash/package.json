@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Berkshire Swash", "berkshire-swash"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/berkshire-swash#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/berkshire-swash#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/berkshire-swash"
+    "directory": "fonts/google/berkshire-swash"
   }
 }

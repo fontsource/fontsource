@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Give You Glory", "give-you-glory"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/give-you-glory#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/give-you-glory#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/give-you-glory"
+    "directory": "fonts/google/give-you-glory"
   }
 }

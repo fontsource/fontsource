@@ -3,23 +3,14 @@
   "version": "4.5.1",
   "description": "Self-host the Glegoo font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Glegoo",
-    "glegoo"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Glegoo", "glegoo"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/glegoo#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/glegoo#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/glegoo"
+    "directory": "fonts/google/glegoo"
   }
 }

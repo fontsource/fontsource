@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Raleway", "raleway"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/raleway#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/raleway#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/raleway"
+    "directory": "fonts/google/raleway"
   }
 }

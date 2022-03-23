@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Mrs Saint Delafield", "mrs-saint-delafield"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mrs-saint-delafield#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/mrs-saint-delafield#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/mrs-saint-delafield"
+    "directory": "fonts/google/mrs-saint-delafield"
   }
 }

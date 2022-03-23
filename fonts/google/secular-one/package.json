@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Secular One", "secular-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/secular-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/secular-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/secular-one"
+    "directory": "fonts/google/secular-one"
   }
 }

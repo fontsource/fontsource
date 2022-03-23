@@ -14,10 +14,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/annie-use-your-telescope#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/annie-use-your-telescope#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/annie-use-your-telescope"
+    "directory": "fonts/google/annie-use-your-telescope"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Economica", "economica"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/economica#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/economica#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/economica"
+    "directory": "fonts/google/economica"
   }
 }

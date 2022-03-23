@@ -3,23 +3,14 @@
   "version": "4.5.2",
   "description": "Self-host the Flavors font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Flavors",
-    "flavors"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Flavors", "flavors"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/flavors#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/flavors#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/flavors"
+    "directory": "fonts/google/flavors"
   }
 }

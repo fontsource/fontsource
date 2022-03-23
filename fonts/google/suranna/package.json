@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Suranna", "suranna"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/suranna#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/suranna#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/suranna"
+    "directory": "fonts/google/suranna"
   }
 }

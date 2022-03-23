@@ -3,23 +3,14 @@
   "version": "4.5.2",
   "description": "Self-host the Felipa font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Felipa",
-    "felipa"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Felipa", "felipa"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/felipa#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/felipa#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/felipa"
+    "directory": "fonts/google/felipa"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Architects Daughter", "architects-daughter"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/architects-daughter#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/architects-daughter#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/architects-daughter"
+    "directory": "fonts/google/architects-daughter"
   }
 }

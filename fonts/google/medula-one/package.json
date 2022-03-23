@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Medula One", "medula-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/medula-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/medula-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/medula-one"
+    "directory": "fonts/google/medula-one"
   }
 }

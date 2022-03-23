@@ -3,9 +3,7 @@
   "version": "4.5.1",
   "description": "Self-host the Ostrich Sans Inline font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "keywords": [
     "fontsource",
     "font",
@@ -21,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ostrich-sans-inline#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/league/ostrich-sans-inline#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/ostrich-sans-inline"
+    "directory": "fonts/league/ostrich-sans-inline"
   }
 }

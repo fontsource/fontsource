@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Odor Mean Chey", "odor-mean-chey"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/odor-mean-chey#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/odor-mean-chey#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/odor-mean-chey"
+    "directory": "fonts/google/odor-mean-chey"
   }
 }

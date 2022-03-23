@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Raleway Dots", "raleway-dots"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/raleway-dots#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/raleway-dots#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/raleway-dots"
+    "directory": "fonts/google/raleway-dots"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Kulim Park", "kulim-park"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/kulim-park#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/kulim-park#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/kulim-park"
+    "directory": "fonts/google/kulim-park"
   }
 }

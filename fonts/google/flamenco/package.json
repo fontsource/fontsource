@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Flamenco", "flamenco"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/flamenco#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/flamenco#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/flamenco"
+    "directory": "fonts/google/flamenco"
   }
 }

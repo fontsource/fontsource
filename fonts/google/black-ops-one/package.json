@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Black Ops One", "black-ops-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/black-ops-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/black-ops-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/black-ops-one"
+    "directory": "fonts/google/black-ops-one"
   }
 }

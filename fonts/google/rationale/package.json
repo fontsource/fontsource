@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Rationale", "rationale"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rationale#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/rationale#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/rationale"
+    "directory": "fonts/google/rationale"
   }
 }

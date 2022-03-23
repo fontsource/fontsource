@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Public Sans", "public-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/public-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/public-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/public-sans"
+    "directory": "fonts/google/public-sans"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Concert One", "concert-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/concert-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/concert-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/concert-one"
+    "directory": "fonts/google/concert-one"
   }
 }

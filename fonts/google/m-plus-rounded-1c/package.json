@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "M PLUS Rounded 1c", "m-plus-rounded-1c"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/m-plus-rounded-1c#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/m-plus-rounded-1c#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/m-plus-rounded-1c"
+    "directory": "fonts/google/m-plus-rounded-1c"
   }
 }

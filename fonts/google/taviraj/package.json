@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Taviraj", "taviraj"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/taviraj#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/taviraj#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/taviraj"
+    "directory": "fonts/google/taviraj"
   }
 }

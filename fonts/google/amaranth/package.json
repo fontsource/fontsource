@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Amaranth", "amaranth"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/amaranth#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/amaranth#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/amaranth"
+    "directory": "fonts/google/amaranth"
   }
 }

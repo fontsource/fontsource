@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Almarai", "almarai"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/almarai#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/almarai#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/almarai"
+    "directory": "fonts/google/almarai"
   }
 }

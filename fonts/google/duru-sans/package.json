@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Duru Sans", "duru-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/duru-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/duru-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/duru-sans"
+    "directory": "fonts/google/duru-sans"
   }
 }

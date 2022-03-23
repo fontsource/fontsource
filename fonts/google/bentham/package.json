@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Bentham", "bentham"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bentham#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/bentham#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bentham"
+    "directory": "fonts/google/bentham"
   }
 }

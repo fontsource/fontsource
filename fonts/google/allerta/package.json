@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Allerta", "allerta"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/allerta#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/allerta#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/allerta"
+    "directory": "fonts/google/allerta"
   }
 }

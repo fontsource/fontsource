@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Liu Jian Mao Cao", "liu-jian-mao-cao"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/liu-jian-mao-cao#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/liu-jian-mao-cao#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/liu-jian-mao-cao"
+    "directory": "fonts/google/liu-jian-mao-cao"
   }
 }

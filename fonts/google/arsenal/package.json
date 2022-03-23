@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Arsenal", "arsenal"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/arsenal#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/arsenal#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/arsenal"
+    "directory": "fonts/google/arsenal"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Racing Sans One", "racing-sans-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/racing-sans-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/racing-sans-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/racing-sans-one"
+    "directory": "fonts/google/racing-sans-one"
   }
 }

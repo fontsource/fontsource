@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Reem Kufi", "reem-kufi"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/reem-kufi#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/reem-kufi#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/reem-kufi"
+    "directory": "fonts/google/reem-kufi"
   }
 }

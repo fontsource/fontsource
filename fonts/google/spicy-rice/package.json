@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Spicy Rice", "spicy-rice"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/spicy-rice#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/spicy-rice#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/spicy-rice"
+    "directory": "fonts/google/spicy-rice"
   }
 }

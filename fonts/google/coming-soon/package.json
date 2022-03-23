@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Coming Soon", "coming-soon"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/coming-soon#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/coming-soon#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/coming-soon"
+    "directory": "fonts/google/coming-soon"
   }
 }

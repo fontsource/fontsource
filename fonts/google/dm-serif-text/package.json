@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "DM Serif Text", "dm-serif-text"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/dm-serif-text#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/dm-serif-text#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/dm-serif-text"
+    "directory": "fonts/google/dm-serif-text"
   }
 }

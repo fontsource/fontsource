@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Sunflower", "sunflower"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sunflower#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/sunflower#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/sunflower"
+    "directory": "fonts/google/sunflower"
   }
 }

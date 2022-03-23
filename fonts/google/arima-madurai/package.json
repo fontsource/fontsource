@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Arima Madurai", "arima-madurai"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/arima-madurai#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/arima-madurai#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/arima-madurai"
+    "directory": "fonts/google/arima-madurai"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Philosopher", "philosopher"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/philosopher#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/philosopher#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/philosopher"
+    "directory": "fonts/google/philosopher"
   }
 }

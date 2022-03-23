@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Alegreya Sans SC", "alegreya-sans-sc"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/alegreya-sans-sc#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/alegreya-sans-sc#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/alegreya-sans-sc"
+    "directory": "fonts/google/alegreya-sans-sc"
   }
 }

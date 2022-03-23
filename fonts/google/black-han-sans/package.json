@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Black Han Sans", "black-han-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/black-han-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/black-han-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/black-han-sans"
+    "directory": "fonts/google/black-han-sans"
   }
 }

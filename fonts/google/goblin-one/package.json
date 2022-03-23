@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Goblin One", "goblin-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/goblin-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/goblin-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/goblin-one"
+    "directory": "fonts/google/goblin-one"
   }
 }

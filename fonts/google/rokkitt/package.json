@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Rokkitt", "rokkitt"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rokkitt#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/rokkitt#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/rokkitt"
+    "directory": "fonts/google/rokkitt"
   }
 }

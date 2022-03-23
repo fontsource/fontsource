@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Timmana", "timmana"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/timmana#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/timmana#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/timmana"
+    "directory": "fonts/google/timmana"
   }
 }

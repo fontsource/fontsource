@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Gloria Hallelujah", "gloria-hallelujah"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/gloria-hallelujah#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/gloria-hallelujah#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/gloria-hallelujah"
+    "directory": "fonts/google/gloria-hallelujah"
   }
 }

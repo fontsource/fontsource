@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Chelsea Market", "chelsea-market"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/chelsea-market#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/chelsea-market#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/chelsea-market"
+    "directory": "fonts/google/chelsea-market"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Over the Rainbow", "over-the-rainbow"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/over-the-rainbow#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/over-the-rainbow#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/over-the-rainbow"
+    "directory": "fonts/google/over-the-rainbow"
   }
 }

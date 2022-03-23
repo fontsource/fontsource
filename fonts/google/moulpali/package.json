@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Moulpali", "moulpali"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/moulpali#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/moulpali#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/moulpali"
+    "directory": "fonts/google/moulpali"
   }
 }

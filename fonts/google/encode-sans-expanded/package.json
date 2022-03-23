@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Encode Sans Expanded", "encode-sans-expanded"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/encode-sans-expanded#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/encode-sans-expanded#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/encode-sans-expanded"
+    "directory": "fonts/google/encode-sans-expanded"
   }
 }

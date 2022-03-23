@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Ramabhadra", "ramabhadra"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/ramabhadra#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/ramabhadra#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/ramabhadra"
+    "directory": "fonts/google/ramabhadra"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Source Code Pro", "source-code-pro"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/source-code-pro#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/source-code-pro#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/source-code-pro"
+    "directory": "fonts/google/source-code-pro"
   }
 }

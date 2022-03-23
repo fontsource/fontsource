@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Sarpanch", "sarpanch"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sarpanch#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/sarpanch#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/sarpanch"
+    "directory": "fonts/google/sarpanch"
   }
 }

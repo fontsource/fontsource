@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Zilla Slab", "zilla-slab"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/zilla-slab#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/zilla-slab#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/zilla-slab"
+    "directory": "fonts/google/zilla-slab"
   }
 }

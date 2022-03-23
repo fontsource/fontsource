@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Crimson Pro", "crimson-pro"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/crimson-pro#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/crimson-pro#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/crimson-pro"
+    "directory": "fonts/google/crimson-pro"
   }
 }

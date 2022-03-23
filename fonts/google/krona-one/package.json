@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Krona One", "krona-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/krona-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/krona-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/krona-one"
+    "directory": "fonts/google/krona-one"
   }
 }

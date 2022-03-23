@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Sacramento", "sacramento"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/sacramento#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/sacramento#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/sacramento"
+    "directory": "fonts/google/sacramento"
   }
 }

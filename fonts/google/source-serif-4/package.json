@@ -19,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/source-serif-4#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/source-serif-4#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/source-serif-4"
+    "directory": "fonts/google/source-serif-4"
   }
 }

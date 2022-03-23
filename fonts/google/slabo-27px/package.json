@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Slabo 27px", "slabo-27px"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/slabo-27px#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/slabo-27px#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/slabo-27px"
+    "directory": "fonts/google/slabo-27px"
   }
 }

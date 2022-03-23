@@ -3,23 +3,14 @@
   "version": "4.5.1",
   "description": "Self-host the Chewy font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Chewy",
-    "chewy"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Chewy", "chewy"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/chewy#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/chewy#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/chewy"
+    "directory": "fonts/google/chewy"
   }
 }

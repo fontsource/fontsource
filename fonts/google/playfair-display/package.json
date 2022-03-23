@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Playfair Display", "playfair-display"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/playfair-display#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/playfair-display#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/playfair-display"
+    "directory": "fonts/google/playfair-display"
   }
 }

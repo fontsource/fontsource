@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Oleo Script Swash Caps", "oleo-script-swash-caps"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/oleo-script-swash-caps#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/oleo-script-swash-caps#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/oleo-script-swash-caps"
+    "directory": "fonts/google/oleo-script-swash-caps"
   }
 }

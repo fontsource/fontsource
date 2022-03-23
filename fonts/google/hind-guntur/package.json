@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Hind Guntur", "hind-guntur"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/hind-guntur#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/hind-guntur#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/hind-guntur"
+    "directory": "fonts/google/hind-guntur"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Squada One", "squada-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/squada-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/squada-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/squada-one"
+    "directory": "fonts/google/squada-one"
   }
 }

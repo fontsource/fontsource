@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Shadows Into Light", "shadows-into-light"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/shadows-into-light#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/shadows-into-light#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/shadows-into-light"
+    "directory": "fonts/google/shadows-into-light"
   }
 }

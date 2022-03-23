@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Saira Extra Condensed", "saira-extra-condensed"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/saira-extra-condensed#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/saira-extra-condensed#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/saira-extra-condensed"
+    "directory": "fonts/google/saira-extra-condensed"
   }
 }

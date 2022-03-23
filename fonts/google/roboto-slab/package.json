@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Roboto Slab", "roboto-slab"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/roboto-slab#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/roboto-slab#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/roboto-slab"
+    "directory": "fonts/google/roboto-slab"
   }
 }

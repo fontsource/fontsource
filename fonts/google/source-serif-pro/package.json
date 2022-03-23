@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Source Serif Pro", "source-serif-pro"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/source-serif-pro#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/source-serif-pro#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/source-serif-pro"
+    "directory": "fonts/google/source-serif-pro"
   }
 }

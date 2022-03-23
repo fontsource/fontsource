@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Chau Philomene One", "chau-philomene-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/chau-philomene-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/chau-philomene-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/chau-philomene-one"
+    "directory": "fonts/google/chau-philomene-one"
   }
 }

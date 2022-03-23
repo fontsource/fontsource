@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Yellowtail", "yellowtail"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/yellowtail#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/yellowtail#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/yellowtail"
+    "directory": "fonts/google/yellowtail"
   }
 }

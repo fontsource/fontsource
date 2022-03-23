@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Carrois Gothic SC", "carrois-gothic-sc"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/carrois-gothic-sc#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/carrois-gothic-sc#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/carrois-gothic-sc"
+    "directory": "fonts/google/carrois-gothic-sc"
   }
 }

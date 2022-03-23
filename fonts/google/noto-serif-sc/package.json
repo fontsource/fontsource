@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Noto Serif SC", "noto-serif-sc"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-serif-sc#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/noto-serif-sc#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/noto-serif-sc"
+    "directory": "fonts/google/noto-serif-sc"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Bubbler One", "bubbler-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bubbler-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/bubbler-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bubbler-one"
+    "directory": "fonts/google/bubbler-one"
   }
 }

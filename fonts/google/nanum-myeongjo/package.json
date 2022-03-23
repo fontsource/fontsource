@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Nanum Myeongjo", "nanum-myeongjo"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/nanum-myeongjo#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/nanum-myeongjo#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/nanum-myeongjo"
+    "directory": "fonts/google/nanum-myeongjo"
   }
 }

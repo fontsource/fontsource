@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Cabin Sketch", "cabin-sketch"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/cabin-sketch#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/cabin-sketch#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/cabin-sketch"
+    "directory": "fonts/google/cabin-sketch"
   }
 }

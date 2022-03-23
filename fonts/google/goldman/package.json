@@ -18,10 +18,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/goldman#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/goldman#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/goldman"
+    "directory": "fonts/google/goldman"
   }
 }

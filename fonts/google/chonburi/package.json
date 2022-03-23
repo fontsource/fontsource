@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Chonburi", "chonburi"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/chonburi#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/chonburi#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/chonburi"
+    "directory": "fonts/google/chonburi"
   }
 }

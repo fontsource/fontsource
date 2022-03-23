@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Just Another Hand", "just-another-hand"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/just-another-hand#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/just-another-hand#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/just-another-hand"
+    "directory": "fonts/google/just-another-hand"
   }
 }

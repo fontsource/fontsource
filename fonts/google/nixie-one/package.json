@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Nixie One", "nixie-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/nixie-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/nixie-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/nixie-one"
+    "directory": "fonts/google/nixie-one"
   }
 }

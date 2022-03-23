@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Della Respira", "della-respira"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/della-respira#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/della-respira#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/della-respira"
+    "directory": "fonts/google/della-respira"
   }
 }

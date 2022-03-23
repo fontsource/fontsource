@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Prociono", "prociono"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/prociono#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/prociono#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/prociono"
+    "directory": "fonts/google/prociono"
   }
 }

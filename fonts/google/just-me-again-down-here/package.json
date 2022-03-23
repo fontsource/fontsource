@@ -14,10 +14,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/just-me-again-down-here#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/just-me-again-down-here#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/just-me-again-down-here"
+    "directory": "fonts/google/just-me-again-down-here"
   }
 }

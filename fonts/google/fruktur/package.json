@@ -3,23 +3,14 @@
   "version": "4.5.2",
   "description": "Self-host the Fruktur font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Fruktur",
-    "fruktur"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Fruktur", "fruktur"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fruktur#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/fruktur#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/fruktur"
+    "directory": "fonts/google/fruktur"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Work Sans", "work-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/work-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/work-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/work-sans"
+    "directory": "fonts/google/work-sans"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Faster One", "faster-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/faster-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/faster-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/faster-one"
+    "directory": "fonts/google/faster-one"
   }
 }

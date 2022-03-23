@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Meera Inimai", "meera-inimai"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/meera-inimai#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/meera-inimai#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/meera-inimai"
+    "directory": "fonts/google/meera-inimai"
   }
 }

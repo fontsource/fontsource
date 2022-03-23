@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Fira Code", "fira-code"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fira-code#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/fira-code#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/fira-code"
+    "directory": "fonts/google/fira-code"
   }
 }

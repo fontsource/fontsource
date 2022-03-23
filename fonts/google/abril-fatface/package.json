@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Abril Fatface", "abril-fatface"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/abril-fatface#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/abril-fatface#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/abril-fatface"
+    "directory": "fonts/google/abril-fatface"
   }
 }

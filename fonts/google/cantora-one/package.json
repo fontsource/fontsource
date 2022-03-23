@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Cantora One", "cantora-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/cantora-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/cantora-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/cantora-one"
+    "directory": "fonts/google/cantora-one"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Rouge Script", "rouge-script"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/rouge-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/rouge-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/rouge-script"
+    "directory": "fonts/google/rouge-script"
   }
 }

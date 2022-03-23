@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Arbutus Slab", "arbutus-slab"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/arbutus-slab#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/arbutus-slab#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/arbutus-slab"
+    "directory": "fonts/google/arbutus-slab"
   }
 }

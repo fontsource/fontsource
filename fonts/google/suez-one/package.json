@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Suez One", "suez-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/suez-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/suez-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/suez-one"
+    "directory": "fonts/google/suez-one"
   }
 }

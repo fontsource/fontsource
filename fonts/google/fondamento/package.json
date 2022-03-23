@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Fondamento", "fondamento"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fondamento#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/fondamento#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/fondamento"
+    "directory": "fonts/google/fondamento"
   }
 }

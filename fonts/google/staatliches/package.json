@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Staatliches", "staatliches"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/staatliches#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/staatliches#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/staatliches"
+    "directory": "fonts/google/staatliches"
   }
 }

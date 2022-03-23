@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Freehand", "freehand"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/freehand#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/freehand#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/freehand"
+    "directory": "fonts/google/freehand"
   }
 }

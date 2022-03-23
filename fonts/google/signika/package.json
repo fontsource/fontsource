@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Signika", "signika"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/signika#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/signika#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/signika"
+    "directory": "fonts/google/signika"
   }
 }

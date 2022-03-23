@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Short Stack", "short-stack"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/short-stack#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/short-stack#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/short-stack"
+    "directory": "fonts/google/short-stack"
   }
 }

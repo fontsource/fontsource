@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "PT Sans", "pt-sans"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/pt-sans#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/pt-sans#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/pt-sans"
+    "directory": "fonts/google/pt-sans"
   }
 }

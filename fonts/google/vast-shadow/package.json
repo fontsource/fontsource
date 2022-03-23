@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Vast Shadow", "vast-shadow"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/vast-shadow#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/vast-shadow#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/vast-shadow"
+    "directory": "fonts/google/vast-shadow"
   }
 }

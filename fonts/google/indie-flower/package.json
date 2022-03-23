@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Indie Flower", "indie-flower"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/indie-flower#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/indie-flower#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/indie-flower"
+    "directory": "fonts/google/indie-flower"
   }
 }

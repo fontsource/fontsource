@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Advent Pro", "advent-pro"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/advent-pro#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/advent-pro#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/advent-pro"
+    "directory": "fonts/google/advent-pro"
   }
 }

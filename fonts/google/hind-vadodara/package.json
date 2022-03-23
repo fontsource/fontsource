@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Hind Vadodara", "hind-vadodara"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/hind-vadodara#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/hind-vadodara#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/hind-vadodara"
+    "directory": "fonts/google/hind-vadodara"
   }
 }

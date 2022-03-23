@@ -18,10 +18,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/big-shoulders-stencil-display#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/big-shoulders-stencil-display#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/big-shoulders-stencil-display"
+    "directory": "fonts/google/big-shoulders-stencil-display"
   }
 }

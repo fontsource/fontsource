@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Lexend Deca", "lexend-deca"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lexend-deca#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/lexend-deca#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/lexend-deca"
+    "directory": "fonts/google/lexend-deca"
   }
 }

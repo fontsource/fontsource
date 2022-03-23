@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Goudy Bookletter 1911", "goudy-bookletter-1911"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/goudy-bookletter-1911#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/goudy-bookletter-1911#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/goudy-bookletter-1911"
+    "directory": "fonts/google/goudy-bookletter-1911"
   }
 }

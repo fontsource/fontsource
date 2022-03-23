@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Covered By Your Grace", "covered-by-your-grace"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/covered-by-your-grace#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/covered-by-your-grace#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/covered-by-your-grace"
+    "directory": "fonts/google/covered-by-your-grace"
   }
 }

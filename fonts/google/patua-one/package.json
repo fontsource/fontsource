@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Patua One", "patua-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/patua-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/patua-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/patua-one"
+    "directory": "fonts/google/patua-one"
   }
 }

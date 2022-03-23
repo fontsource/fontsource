@@ -3,23 +3,14 @@
   "version": "4.5.1",
   "description": "Self-host the Jomhuria font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fontsource",
-    "font",
-    "font family",
-    "google fonts",
-    "Jomhuria",
-    "jomhuria"
-  ],
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Jomhuria", "jomhuria"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/jomhuria#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/jomhuria#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/jomhuria"
+    "directory": "fonts/google/jomhuria"
   }
 }

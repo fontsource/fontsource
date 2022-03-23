@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Podkova", "podkova"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/podkova#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/podkova#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/podkova"
+    "directory": "fonts/google/podkova"
   }
 }

@@ -19,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/style-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/style-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/style-script"
+    "directory": "fonts/google/style-script"
   }
 }

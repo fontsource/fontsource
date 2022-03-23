@@ -19,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/shippori-mincho#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/shippori-mincho#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/shippori-mincho"
+    "directory": "fonts/google/shippori-mincho"
   }
 }

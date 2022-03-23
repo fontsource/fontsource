@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Lalezar", "lalezar"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/lalezar#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/lalezar#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/lalezar"
+    "directory": "fonts/google/lalezar"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Cherry Swash", "cherry-swash"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/cherry-swash#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/cherry-swash#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/cherry-swash"
+    "directory": "fonts/google/cherry-swash"
   }
 }

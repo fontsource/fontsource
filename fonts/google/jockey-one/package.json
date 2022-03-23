@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Jockey One", "jockey-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/jockey-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/jockey-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/jockey-one"
+    "directory": "fonts/google/jockey-one"
   }
 }

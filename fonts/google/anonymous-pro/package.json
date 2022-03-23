@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Anonymous Pro", "anonymous-pro"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/anonymous-pro#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/anonymous-pro#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/anonymous-pro"
+    "directory": "fonts/google/anonymous-pro"
   }
 }

@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Noto Serif TC", "noto-serif-tc"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-serif-tc#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/noto-serif-tc#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/noto-serif-tc"
+    "directory": "fonts/google/noto-serif-tc"
   }
 }

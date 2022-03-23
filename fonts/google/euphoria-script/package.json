@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Euphoria Script", "euphoria-script"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/euphoria-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/euphoria-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/euphoria-script"
+    "directory": "fonts/google/euphoria-script"
   }
 }

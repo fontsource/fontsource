@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Inknut Antiqua", "inknut-antiqua"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/inknut-antiqua#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/inknut-antiqua#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/inknut-antiqua"
+    "directory": "fonts/google/inknut-antiqua"
   }
 }

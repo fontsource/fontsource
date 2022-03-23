@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Signika Negative", "signika-negative"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/signika-negative#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/signika-negative#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/signika-negative"
+    "directory": "fonts/google/signika-negative"
   }
 }

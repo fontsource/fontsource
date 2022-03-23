@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Asap Condensed", "asap-condensed"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/asap-condensed#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/asap-condensed#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/asap-condensed"
+    "directory": "fonts/google/asap-condensed"
   }
 }

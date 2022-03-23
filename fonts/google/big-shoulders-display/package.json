@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Big Shoulders Display", "big-shoulders-display"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/big-shoulders-display#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/big-shoulders-display#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/big-shoulders-display"
+    "directory": "fonts/google/big-shoulders-display"
   }
 }

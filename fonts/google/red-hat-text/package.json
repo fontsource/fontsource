@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Red Hat Text", "red-hat-text"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/red-hat-text#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/red-hat-text#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/red-hat-text"
+    "directory": "fonts/google/red-hat-text"
   }
 }

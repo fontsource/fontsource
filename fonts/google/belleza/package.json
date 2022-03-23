@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Belleza", "belleza"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/belleza#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/belleza#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/belleza"
+    "directory": "fonts/google/belleza"
   }
 }

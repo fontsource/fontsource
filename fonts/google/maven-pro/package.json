@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Maven Pro", "maven-pro"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/maven-pro#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/maven-pro#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/maven-pro"
+    "directory": "fonts/google/maven-pro"
   }
 }

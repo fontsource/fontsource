@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Aref Ruqaa", "aref-ruqaa"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/aref-ruqaa#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/aref-ruqaa#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/aref-ruqaa"
+    "directory": "fonts/google/aref-ruqaa"
   }
 }

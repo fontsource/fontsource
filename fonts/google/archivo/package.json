@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Archivo", "archivo"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/archivo#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/archivo#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/archivo"
+    "directory": "fonts/google/archivo"
   }
 }

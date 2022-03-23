@@ -14,10 +14,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/fira-sans-extra-condensed#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/fira-sans-extra-condensed#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/fira-sans-extra-condensed"
+    "directory": "fonts/google/fira-sans-extra-condensed"
   }
 }

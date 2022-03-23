@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Libre Franklin", "libre-franklin"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/libre-franklin#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/libre-franklin#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/libre-franklin"
+    "directory": "fonts/google/libre-franklin"
   }
 }

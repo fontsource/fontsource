@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Frank Ruhl Libre", "frank-ruhl-libre"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/frank-ruhl-libre#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/frank-ruhl-libre#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/frank-ruhl-libre"
+    "directory": "fonts/google/frank-ruhl-libre"
   }
 }

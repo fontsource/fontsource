@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Biryani", "biryani"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/biryani#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/biryani#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/biryani"
+    "directory": "fonts/google/biryani"
   }
 }

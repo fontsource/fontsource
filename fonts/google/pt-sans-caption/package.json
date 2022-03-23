@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "PT Sans Caption", "pt-sans-caption"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/pt-sans-caption#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/pt-sans-caption#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/pt-sans-caption"
+    "directory": "fonts/google/pt-sans-caption"
   }
 }

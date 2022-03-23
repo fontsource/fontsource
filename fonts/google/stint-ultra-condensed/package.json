@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Stint Ultra Condensed", "stint-ultra-condensed"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/stint-ultra-condensed#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/stint-ultra-condensed#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/stint-ultra-condensed"
+    "directory": "fonts/google/stint-ultra-condensed"
   }
 }

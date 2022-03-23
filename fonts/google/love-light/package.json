@@ -19,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/love-light#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/love-light#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/love-light"
+    "directory": "fonts/google/love-light"
   }
 }

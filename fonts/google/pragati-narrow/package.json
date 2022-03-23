@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Pragati Narrow", "pragati-narrow"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/pragati-narrow#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/pragati-narrow#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/pragati-narrow"
+    "directory": "fonts/google/pragati-narrow"
   }
 }

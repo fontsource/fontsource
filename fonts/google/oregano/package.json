@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Oregano", "oregano"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/oregano#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/oregano#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/oregano"
+    "directory": "fonts/google/oregano"
   }
 }

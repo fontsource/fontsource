@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Bai Jamjuree", "bai-jamjuree"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bai-jamjuree#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/bai-jamjuree#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bai-jamjuree"
+    "directory": "fonts/google/bai-jamjuree"
   }
 }

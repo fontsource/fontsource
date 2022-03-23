@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Dancing Script", "dancing-script"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/dancing-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/dancing-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/dancing-script"
+    "directory": "fonts/google/dancing-script"
   }
 }

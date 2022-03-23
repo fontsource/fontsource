@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Capriola", "capriola"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/capriola#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/capriola#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/capriola"
+    "directory": "fonts/google/capriola"
   }
 }

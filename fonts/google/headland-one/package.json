@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Headland One", "headland-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/headland-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/headland-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/headland-one"
+    "directory": "fonts/google/headland-one"
   }
 }

@@ -19,10 +19,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/noto-serif-georgian#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/noto-serif-georgian#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/noto-serif-georgian"
+    "directory": "fonts/google/noto-serif-georgian"
   }
 }

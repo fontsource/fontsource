@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Bad Script", "bad-script"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/bad-script#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/bad-script#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/bad-script"
+    "directory": "fonts/google/bad-script"
   }
 }

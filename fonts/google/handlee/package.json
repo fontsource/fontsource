@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Handlee", "handlee"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/handlee#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/handlee#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/handlee"
+    "directory": "fonts/google/handlee"
   }
 }

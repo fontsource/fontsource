@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Knewave", "knewave"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/knewave#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/knewave#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/knewave"
+    "directory": "fonts/google/knewave"
   }
 }

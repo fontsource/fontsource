@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Scope One", "scope-one"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/scope-one#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/scope-one#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/scope-one"
+    "directory": "fonts/google/scope-one"
   }
 }

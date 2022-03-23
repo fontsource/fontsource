@@ -7,10 +7,10 @@
   "keywords": ["fontsource", "font", "font family", "google fonts", "Mountains of Christmas", "mountains-of-christmas"],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/mountains-of-christmas#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/mountains-of-christmas#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/mountains-of-christmas"
+    "directory": "fonts/google/mountains-of-christmas"
   }
 }

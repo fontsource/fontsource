@@ -14,10 +14,10 @@
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/master/packages/waiting-for-the-sunrise#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/waiting-for-the-sunrise#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "packages/waiting-for-the-sunrise"
+    "directory": "fonts/google/waiting-for-the-sunrise"
   }
 }
