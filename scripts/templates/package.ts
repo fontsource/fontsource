@@ -28,7 +28,7 @@ const packageJson = template(
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "fonts/google/<%= fontId %>"
+    "directory": "fonts/<%= type %>/<%= fontId %>"
   }
 }
 `

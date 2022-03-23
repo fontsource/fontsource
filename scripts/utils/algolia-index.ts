@@ -30,7 +30,9 @@ const pushMetadata = (type: string) => {
 };
 
 pushMetadata("google");
-pushMetadata("generic");
+pushMetadata("league");
+pushMetadata("icons");
+pushMetadata("other");
 
 // Written as it is used by the website getStaticPaths
 jsonfile.writeFileSync("./website/src/configs/algolia.json", indexArray);

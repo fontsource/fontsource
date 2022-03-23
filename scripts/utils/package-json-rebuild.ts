@@ -31,4 +31,6 @@ const packageRewrite = (type: string) => {
 };
 
 packageRewrite("google");
-packageRewrite("generic");
+packageRewrite("league");
+packageRewrite("icons");
+packageRewrite("other");

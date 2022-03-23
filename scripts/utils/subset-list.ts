@@ -15,7 +15,9 @@ const pushSubsets = (type: string) => {
 };
 
 pushSubsets("google");
-pushSubsets("generic");
+pushSubsets("league");
+pushSubsets("icons");
+pushSubsets("other");
 
 const noDuplicateSubsets = new Set(subsets);
 

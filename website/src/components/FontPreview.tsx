@@ -114,9 +114,7 @@ export const FontPreview = ({
             </Link>
             <Link
               isExternal
-              href={`https://github.com/fontsource/fontsource/tree/main/fonts/${
-                metadata.type == "google" ? "google" : "generic"
-              }/${metadata.fontId}#readme`}
+              href={`https://github.com/fontsource/fontsource/tree/main/fonts/${metadata.type}/${metadata.fontId}#readme`}
             >
               <IconButton
                 aria-label="Link to Github"

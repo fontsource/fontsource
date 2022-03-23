@@ -59,7 +59,9 @@ const pushFonts = (type: string) => {
 };
 
 pushFonts("google");
-pushFonts("generic");
+pushFonts("league");
+pushFonts("icons");
+pushFonts("other");
 
 // Write JSON list to be pulled externally.
 jsonfile.writeFile("FONTLIST.json", Object.assign({}, ...fontlist));

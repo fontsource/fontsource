@@ -102,6 +102,7 @@ const run = async (id: string, force?: string): Promise<void> => {
         fontId: font.id,
         fontName: font.family,
         version: mainRepoPackageJson.version,
+        type: "google",
       });
 
       await fs.writeFile(`${fontDir}/package.json`, packageJSON);

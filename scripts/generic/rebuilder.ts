@@ -85,4 +85,6 @@ const rebuild = (type: string) => {
   });
 };
 
-rebuild("generic");
+rebuild("league");
+rebuild("icons");
+rebuild("other");

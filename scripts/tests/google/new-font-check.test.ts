@@ -18,7 +18,7 @@ describe("New font check", () => {
             "package.json": "{}",
           },
         },
-        generic: {
+        other: {
           abel: {
             "package.json": "{}",
           },
@@ -52,7 +52,7 @@ describe("New font check", () => {
       "noto-sans-jp",
     ]);
     expect(getDirectories("google")).toEqual(["abel", "cabin", "noto-sans-jp"]);
-    expect(getDirectories("generic")).toEqual(["not-cabin"]);
+    expect(getDirectories("other")).toEqual(["not-cabin"]);
   });
 
   afterEach(() => {
