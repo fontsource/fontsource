@@ -1,6 +1,7 @@
 import fs from "fs-extra";
 
 // Generate filenames and paths
+// Used by the downloader into repo
 const makeFontDownloadPath = (
   fontDir: string,
   fontId: string,
@@ -12,16 +13,6 @@ const makeFontDownloadPath = (
   return `./${fontDir}/files/${fontId}-${subset}-${weight}-${style}.${extension}`;
 };
 
-const makeFontFilePath = (
-  fontId: string,
-  subset: string,
-  weight: number,
-  style: string,
-  extension: string
-): string => {
-  return `./files/${fontId}-${subset}-${weight}-${style}.${extension}`;
-};
-
 const makeVariableFontDownloadPath = (
   fontDir: string,
   fontId: string,
@@ -30,6 +21,17 @@ const makeVariableFontDownloadPath = (
   style: string
 ): string => {
   return `./${fontDir}/files/${fontId}-${subset}-variable-${type}-${style}.woff2`;
+};
+
+// Used for the CSS filepaths
+const makeFontFilePath = (
+  fontId: string,
+  subset: string,
+  weight: number,
+  style: string,
+  extension: string
+): string => {
+  return `./files/${fontId}-${subset}-${weight}-${style}.${extension}`;
 };
 
 const makeVariableFontFilePath = (
@@ -53,13 +55,11 @@ const findClosest = (arr: number[], num: number): number => {
 };
 
 // Find names of all packages.
-const getDirectories = () =>
+const getDirectories = (type: string) =>
   fs
-    .readdirSync("./packages", { withFileTypes: true })
+    .readdirSync(`./fonts/${type}`, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name);
-
-const directories = getDirectories();
 
 export {
   makeFontDownloadPath,
@@ -67,5 +67,5 @@ export {
   makeVariableFontDownloadPath,
   makeVariableFontFilePath,
   findClosest,
-  directories,
+  getDirectories,
 };

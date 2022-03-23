@@ -1,14 +1,21 @@
 import jsonfile from "jsonfile";
 import path from "path";
 
-import { directories } from "./utils";
+import { getDirectories } from "./utils";
 
 const subsets: string[] = [];
-directories.forEach(directory => {
-  const metadataPath = path.join("./packages", directory, "metadata.json");
-  const metadata = jsonfile.readFileSync(metadataPath);
-  subsets.push(...metadata.subsets);
-});
+
+const pushSubsets = (type: string) => {
+  const directories = getDirectories(type);
+  directories.forEach(directory => {
+    const metadataPath = path.join("./fonts", type, directory, "metadata.json");
+    const metadata = jsonfile.readFileSync(metadataPath);
+    subsets.push(...metadata.subsets);
+  });
+};
+
+pushSubsets("google");
+pushSubsets("generic");
 
 const noDuplicateSubsets = new Set(subsets);
 

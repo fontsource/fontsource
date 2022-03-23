@@ -7,7 +7,7 @@ import { makeVariableFontFilePath } from "../utils/utils";
 const variable = (id: string): void => {
   const font = APIv2[id];
   const fontVariable = APIVariable[id];
-  const fontDir = `packages/${font.id}`;
+  const fontDir = `fonts/google/${font.id}`;
 
   // Generate CSS
   const variableName = `${font.family}Variable`;

@@ -8,7 +8,8 @@ import { run } from "./run";
 
 const force = process.argv[2];
 
-fs.ensureDirSync("packages");
+fs.ensureDirSync("fonts");
+fs.ensureDirSync("fonts/google");
 fs.ensureDirSync("scripts/temp_packages");
 
 // Create an async queue object
