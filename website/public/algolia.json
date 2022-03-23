@@ -22509,38 +22509,6 @@
     "objectID": "league-mono-wide"
   },
   {
-    "fontId": "league-script",
-    "fontName": "League Script",
-    "subsets": ["latin"],
-    "weights": [400],
-    "styles": ["normal"],
-    "defSubset": "latin",
-    "variable": false,
-    "lastModified": "2022-01-11",
-    "version": "v22",
-    "category": "handwriting",
-    "source": "https://fonts.google.com/",
-    "license": "https://fonts.google.com/attribution",
-    "type": "google",
-    "objectID": "league-script"
-  },
-  {
-    "fontId": "league-spartan",
-    "fontName": "League Spartan",
-    "subsets": ["latin", "latin-ext", "vietnamese"],
-    "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
-    "styles": ["normal"],
-    "defSubset": "latin",
-    "variable": true,
-    "lastModified": "2022-02-25",
-    "version": "v4",
-    "category": "sans-serif",
-    "source": "https://fonts.google.com/",
-    "license": "https://fonts.google.com/attribution",
-    "type": "google",
-    "objectID": "league-spartan"
-  },
-  {
     "fontId": "ostrich-sans",
     "fontName": "Ostrich Sans",
     "subsets": ["latin"],
