@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/"],
+  "packages": ["packages/google/", "packages/generic/"],
   "ignoreExtension": [".md"],
   "commitMessage": "chore: release new versions",
   "commitFrom": "df6b371acc3e86a9c5b9a4e38d4bdaa6ebdf5e0d"
