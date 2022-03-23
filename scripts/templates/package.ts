@@ -6,9 +6,7 @@ const packageJson = template(
   "version": "<%= version %>",
   "description": "Self-host the <%= fontName %> font in a neatly bundled NPM package.",
   "main": "index.css",
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "keywords": [
     "fontsource",
     "font",
@@ -24,7 +22,7 @@ const packageJson = template(
   ],
   "author": "Lotus <declininglotus@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/<%= fontId %>#readme",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/<%= type %>/<%= fontId %>#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/fontsource/fontsource.git",
