@@ -21,7 +21,7 @@ A basic implementation into your typical project that compiles with Sass/SCSS is
 
 For more advanced setups, you can use our highly customizable Sass mixins that can modify many of the existing [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) variables.
 
-You can view what the full SCSS file looks like [here](https://github.com/fontsource/fontsource/tree/master/packages/open-sans/scss/mixins.scss).
+You can view what the full SCSS file looks like [here](https://github.com/fontsource/fontsource/tree/main/fonts/google/open-sans/scss/mixins.scss).
 
 ```scss
 @use "@fontsource/open-sans/scss/mixins" as OpenSans;
@@ -33,7 +33,7 @@ You can view what the full SCSS file looks like [here](https://github.com/fontso
 
 ---
 
-Generates a CSS file similar to [this](https://github.com/fontsource/fontsource/blob/main/packages/open-sans/400.css) where all unicode-range subsets are generated using the [`@each`](https://sass-lang.com/documentation/at-rules/control/each) Sass function.
+Generates a CSS file similar to [this](https://github.com/fontsource/fontsource/blob/main/fonts/google/open-sans/400.css) where all unicode-range subsets are generated using the [`@each`](https://sass-lang.com/documentation/at-rules/control/each) Sass function.
 
 ```scss
 @include OpenSans.fontFace(
