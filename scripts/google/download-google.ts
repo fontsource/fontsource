@@ -5,6 +5,7 @@ import { APIv2, APIVariable } from "google-font-metadata";
 import { EventEmitter } from "events";
 
 import { run } from "./run";
+import { deleteDuplicates, duplicates } from "./new-font-check";
 
 const force = process.argv[2];
 
@@ -28,6 +29,10 @@ EventEmitter.defaultMaxListeners = 0;
 const queue = async.queue(processQueue, 3);
 
 queue.drain(() => {
+  const deletedDuplicates = deleteDuplicates(duplicates);
+  if (deletedDuplicates.length > 0)
+    console.log(`Deleted duplicate fonts ${deletedDuplicates}`);
+
   console.log(
     `All ${Object.keys(APIv2).length} Google Fonts have been processed.`
   );

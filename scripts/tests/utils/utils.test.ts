@@ -1,9 +1,11 @@
+import mock from "mock-fs";
 import {
   findClosest,
   makeFontDownloadPath,
   makeFontFilePath,
   makeVariableFontDownloadPath,
   makeVariableFontFilePath,
+  getDirectories,
 } from "../../utils/utils";
 
 const fontDir = "fonts/google/noto-sans-jp";
@@ -51,5 +53,49 @@ describe("Find closest available weights", () => {
     expect(findClosest([200, 300, 500, 600], 400)).toBe(300);
     expect(findClosest([200], 400)).toBe(200);
     expect(findClosest([200, 500], 400)).toBe(500);
+  });
+});
+
+describe("Get directories", () => {
+  beforeEach(() => {
+    mock({
+      fonts: {
+        google: {
+          abel: {
+            "package.json": "{}",
+          },
+          "noto-sans-jp": {
+            "package.json": "{}",
+          },
+          cabin: {
+            "package.json": "{}",
+          },
+        },
+        generic: {
+          abel: {
+            "package.json": "{}",
+          },
+          "noto-sans-jp": {
+            "package.json": "{}",
+          },
+          "not-cabin": {
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+  });
+
+  test("Find directories", () => {
+    expect(getDirectories("google")).toEqual(["abel", "cabin", "noto-sans-jp"]);
+    expect(getDirectories("generic")).toEqual([
+      "abel",
+      "not-cabin",
+      "noto-sans-jp",
+    ]);
+  });
+
+  afterEach(() => {
+    mock.restore();
   });
 });
