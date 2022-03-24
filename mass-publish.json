@@ -1,11 +1,1 @@
-{
-  "packages": [
-    "fonts/google/",
-    "fonts/league/",
-    "fonts/icons/",
-    "fonts/other/"
-  ],
-  "ignoreExtension": [".md"],
-  "commitMessage": "chore: release new versions",
-  "commitFrom": "164d0417dc2c3a8bfc52cf0a6d3fd55a500149d2"
-}
+{"packages":["fonts/google/","fonts/league/","fonts/icons/","fonts/other/"],"ignoreExtension":[".md"],"commitMessage":"chore: release new versions","commitFrom":"bab02590db786d48013e9a18eaa149d7a06839d6"}
