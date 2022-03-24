@@ -26,7 +26,7 @@ const processQueue = async (fontId: string) => {
 // EventEmitter listener is usually set at a default limit of 10, below chosen 12 concurrent workers
 EventEmitter.defaultMaxListeners = 0;
 
-const queue = async.queue(processQueue, 3);
+const queue = async.queue(processQueue, 1);
 
 queue.drain(() => {
   const deletedDuplicates = deleteDuplicates(duplicates);
