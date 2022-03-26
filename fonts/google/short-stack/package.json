@@ -1,1 +1,16 @@
-{"name":"@fontsource/short-stack","version":"4.5.6","description":"Self-host the Short Stack font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Short Stack","short-stack"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/short-stack#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/short-stack"}}
+{
+  "name": "@fontsource/short-stack",
+  "version": "4.5.6",
+  "description": "Self-host the Short Stack font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Short Stack", "short-stack"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/short-stack#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/short-stack"
+  }
+}

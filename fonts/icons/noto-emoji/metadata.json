@@ -1,1 +1,15 @@
-{"fontId":"noto-emoji","fontName":"Noto Emoji","subsets":["all"],"weights":[400],"styles":["normal"],"defSubset":"all","variable":false,"lastModified":"2022-03-26","version":"v14","category":"other","source":"https://github.com/googlefonts/noto-emoji","license":"https://github.com/googlefonts/noto-emoji/blob/main/LICENSE","type":"icons"}
+{
+  "fontId": "noto-emoji",
+  "fontName": "Noto Emoji",
+  "subsets": ["all"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "all",
+  "variable": false,
+  "lastModified": "2022-03-26",
+  "version": "v14",
+  "category": "other",
+  "source": "https://github.com/googlefonts/noto-emoji",
+  "license": "https://github.com/googlefonts/noto-emoji/blob/main/LICENSE",
+  "type": "icons"
+}

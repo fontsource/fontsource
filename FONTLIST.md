@@ -17,7 +17,6 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - blackout-two-am
 - chunk-five
 - junction
-- league-gothic
 - league-gothic-condensed
 - league-mono
 - league-mono-condensed
@@ -36,6 +35,8 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - material-icons-rounded
 - material-icons-sharp
 - material-icons-two-tone
+- noto-color-emoji
+- noto-emoji
 
 ## Other
 

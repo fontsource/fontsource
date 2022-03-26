@@ -22413,22 +22413,6 @@
     "objectID": "junction"
   },
   {
-    "fontId": "league-gothic",
-    "fontName": "League Gothic",
-    "subsets": ["latin"],
-    "weights": [400],
-    "styles": ["italic", "normal"],
-    "defSubset": "latin",
-    "variable": false,
-    "lastModified": "2020-08-02",
-    "version": "v34",
-    "category": "sans-serif",
-    "source": "https://github.com/theleagueof/league-gothic",
-    "license": "https://github.com/theleagueof/league-gothic/blob/master/Open%20Font%20License.markdown",
-    "type": "league",
-    "objectID": "league-gothic"
-  },
-  {
     "fontId": "league-gothic-condensed",
     "fontName": "League Gothic Condensed",
     "subsets": ["latin"],
@@ -22651,6 +22635,38 @@
     "license": "https://github.com/google/material-design-icons/blob/master/LICENSE",
     "type": "icons",
     "objectID": "material-icons-two-tone"
+  },
+  {
+    "fontId": "noto-color-emoji",
+    "fontName": "Noto Color Emoji",
+    "subsets": ["all"],
+    "weights": [400],
+    "styles": ["normal"],
+    "defSubset": "all",
+    "variable": false,
+    "lastModified": "2022-03-26",
+    "version": "v14",
+    "category": "other",
+    "source": "https://github.com/googlefonts/noto-emoji",
+    "license": "https://github.com/googlefonts/noto-emoji/blob/main/LICENSE",
+    "type": "icons",
+    "objectID": "noto-color-emoji"
+  },
+  {
+    "fontId": "noto-emoji",
+    "fontName": "Noto Emoji",
+    "subsets": ["all"],
+    "weights": [400],
+    "styles": ["normal"],
+    "defSubset": "all",
+    "variable": false,
+    "lastModified": "2022-03-26",
+    "version": "v14",
+    "category": "other",
+    "source": "https://github.com/googlefonts/noto-emoji",
+    "license": "https://github.com/googlefonts/noto-emoji/blob/main/LICENSE",
+    "type": "icons",
+    "objectID": "noto-emoji"
   },
   {
     "fontId": "aileron",

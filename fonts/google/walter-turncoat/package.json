@@ -1,1 +1,16 @@
-{"name":"@fontsource/walter-turncoat","version":"4.5.3","description":"Self-host the Walter Turncoat font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Walter Turncoat","walter-turncoat"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/walter-turncoat#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/walter-turncoat"}}
+{
+  "name": "@fontsource/walter-turncoat",
+  "version": "4.5.3",
+  "description": "Self-host the Walter Turncoat font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Walter Turncoat", "walter-turncoat"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/walter-turncoat#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/walter-turncoat"
+  }
+}
