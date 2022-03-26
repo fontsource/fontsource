@@ -134,7 +134,7 @@ const packager = (font: Font, rebuildFlag: boolean): void => {
   // Write file-list.json
   const fileList: string[] = [];
   fs.readdirSync(`${fontDir}/files`).forEach(file => {
-    fileList.push(`fonts/${type}/${fontId}/${file}`);
+    fileList.push(`./fonts/${type}/${fontId}/files/${file}`);
   });
   jsonfile.writeFileSync(`${fontDir}/files/file-list.json`, fileList);
 
