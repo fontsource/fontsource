@@ -1,12 +1,9 @@
 /* eslint-disable unicorn/prefer-module */
 import mock from "mock-fs";
 import path from "node:path";
-import testData from "./data/find-diff.json";
+import testData from "../google/data/find-diff.json";
 
-import {
-  downloadFileCheck,
-  findChangedPackages,
-} from "../../google/download-check";
+import { downloadFileCheck, findChangedPackages } from "../../utils/file-check";
 
 describe("Download font check", () => {
   beforeEach(() => {
