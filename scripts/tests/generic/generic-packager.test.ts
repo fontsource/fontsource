@@ -1,4 +1,5 @@
 import mock from "mock-fs";
+import jsonfile from "jsonfile";
 import { readDir, readDirContents } from "../helpers";
 
 import { packager } from "../../generic/generic-packager";
@@ -50,12 +51,32 @@ describe("Generate Generic CSS", () => {
       fonts: {
         other: {
           "clear-sans": {
-            /* Empty directory */
+            files: {
+              "clear-sans-all-100-normal.woff": "",
+              "clear-sans-all-100-normal.woff2": "",
+              "clear-sans-all-300-normal.woff": "",
+              "clear-sans-all-300-normal.woff2": "",
+              "clear-sans-all-400-normal.woff": "",
+              "clear-sans-all-400-normal.woff2": "",
+              "clear-sans-all-400-italic.woff": "",
+              "clear-sans-all-400-italic.woff2": "",
+              "clear-sans-all-500-normal.woff": "",
+              "clear-sans-all-500-normal.woff2": "",
+              "clear-sans-all-500-italic.woff": "",
+              "clear-sans-all-500-italic.woff2": "",
+              "clear-sans-all-700-normal.woff": "",
+              "clear-sans-all-700-normal.woff2": "",
+              "clear-sans-all-700-italic.woff": "",
+              "clear-sans-all-700-italic.woff2": "",
+            },
           },
         },
         icons: {
           "material-icons": {
-            /* Empty directory */
+            files: {
+              "material-icons-base-400-normal.woff": "",
+              "material-icons-base-400-normal.woff2": "",
+            },
           },
         },
       },
@@ -93,12 +114,19 @@ describe("Generate Generic CSS", () => {
     ]);
 
     const cssContent = readDirContents(dirPath, fileNames);
+    const fileList = jsonfile.readFileSync(`${dirPath}/files/file-list.json`);
     mock.restore();
     const expectedCSSContent = readDirContents(
       "./scripts/tests/generic/data/clear-sans",
       fileNames
     );
+
+    const expectedFileList = jsonfile.readFileSync(
+      "./scripts/tests/generic/data/clear-sans/files/file-list.json"
+    );
+
     expect(cssContent).toEqual(expectedCSSContent);
+    expect(fileList).toEqual(expectedFileList);
   });
 
   test("Material Icons CSS", () => {
@@ -114,12 +142,19 @@ describe("Generate Generic CSS", () => {
     ]);
 
     const cssContent = readDirContents(dirPath, fileNames);
+    const fileList = jsonfile.readFileSync(`${dirPath}/files/file-list.json`);
     mock.restore();
     const expectedCSSContent = readDirContents(
       "./scripts/tests/generic/data/material-icons",
       fileNames
     );
+
+    const expectedFileList = jsonfile.readFileSync(
+      "./scripts/tests/generic/data/material-icons/files/file-list.json"
+    );
+
     expect(cssContent).toEqual(expectedCSSContent);
+    expect(fileList).toEqual(expectedFileList);
   });
 
   afterEach(() => {

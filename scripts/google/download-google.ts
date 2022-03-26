@@ -28,7 +28,9 @@ EventEmitter.defaultMaxListeners = 0;
 
 const queue = async.queue(processQueue, 1);
 
-queue.drain(() => {
+queue.drain(async () => {
+  // If Google adds an existing generic font, there will be duplicates in two directories
+  // This deletes the duplicate font
   const deletedDuplicates = deleteDuplicates(duplicates);
   if (deletedDuplicates.length > 0)
     console.log(`Deleted duplicate fonts ${deletedDuplicates}`);

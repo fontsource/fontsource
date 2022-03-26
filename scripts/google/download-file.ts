@@ -8,6 +8,7 @@ import got from "got";
 import { EventEmitter } from "events";
 
 import type { FontVariants, FontVariantsVariable } from "google-font-metadata";
+import jsonfile from "jsonfile";
 import {
   makeFontDownloadPath,
   makeVariableFontDownloadPath,
@@ -178,11 +179,15 @@ const download = async (fontId: string, isVariable: boolean): Promise<void> => {
   }
 
   // Download all font files
+  // Keep a list of all dests for download-check.ts
+  const destArr: string[] = [];
   for (const d of links) {
     queue.push(d);
+    destArr.push(d.dest);
   }
 
   await queue.drain();
+  await jsonfile.writeFile(`./${fontDir}/files/file-list.json`, destArr);
 };
 
 export { download, gotDownload, pairGenerator, filterLinks, variableLinks };
