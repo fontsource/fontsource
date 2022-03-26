@@ -74,6 +74,12 @@
     "isExternal": true
   },
   {
+    "key": "flutter",
+    "title": "Flutter",
+    "path": "https://pub.dev/packages/fontsource",
+    "isExternal": true
+  },
+  {
     "key": "api",
     "title": "API",
     "isParent": true
