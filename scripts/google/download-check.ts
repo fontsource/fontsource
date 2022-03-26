@@ -18,7 +18,7 @@ const findChangedPackages = async (
   // Only used to pass custom testing SHAs
   if (typeof commitFrom !== "undefined" && typeof commitTo !== "undefined") {
     config.commitFrom = commitFrom;
-    config.commitFrom = commitTo;
+    config.commitTo = commitTo;
   }
 
   const changedPackages = await findDiff(config);
