@@ -50,12 +50,16 @@ describe("Generate Generic CSS", () => {
       fonts: {
         other: {
           "clear-sans": {
-            /* Empty directory */
+            files: {
+              /* Empty directory */
+            },
           },
         },
         icons: {
           "material-icons": {
-            /* Empty directory */
+            files: {
+              /* Empty directory */
+            },
           },
         },
       },

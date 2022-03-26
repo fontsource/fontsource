@@ -1,33 +1,19 @@
 /* eslint-disable unicorn/prefer-module */
 import mock from "mock-fs";
 import path from "node:path";
-import testData from "../google/data/find-diff.json";
 
 import { downloadFileCheck, findChangedPackages } from "../../utils/file-check";
 
-describe("Download font check", () => {
-  beforeEach(() => {
+describe("File check", () => {
+  test("Find changed packages", () => {
     mock({
       fonts: {
-        google: {
-          abel: {
+        icons: {
+          // Changed packages checks for a package json
+          "noto-color-emoji": {
             "package.json": "{}",
           },
-          cabin: {
-            "package.json": "{}",
-          },
-          "noto-sans-jp": {
-            "package.json": "{}",
-          },
-        },
-        other: {
-          abel: {
-            "package.json": "{}",
-          },
-          "not-cabin": {
-            "package.json": "{}",
-          },
-          "noto-sans-jp": {
+          "noto-emoji": {
             "package.json": "{}",
           },
         },
@@ -37,26 +23,116 @@ describe("Download font check", () => {
         { lazy: false }
       ),
     });
-  });
 
-  test("Find changed packages", () => {
-    mock.restore();
     return expect(
       findChangedPackages(
-        "972ff87da50b276d4e42d3e4a3f5289fab65e28f",
-        "fb5520d3bb12a8c1eeb0dc3ec02a3022e7313f36"
+        "e87132f950524299fd89d2254e74e08743f5f0ae",
+        "10a65fce06bdf6651cd8a133dc52a978b6cd5055"
       )
-    ).resolves.toEqual(testData);
+    ).resolves.toEqual([
+      "fonts/icons/noto-color-emoji",
+      "fonts/icons/noto-emoji",
+    ]);
   });
 
-  test("Check for download files", async () => {
-    return expect(
-      downloadFileCheck(
-        await findChangedPackages(
-          "972ff87da50b276d4e42d3e4a3f5289fab65e28f",
-          "fb5520d3bb12a8c1eeb0dc3ec02a3022e7313f36"
-        )
-      )
+  test("Check for files directory", () => {
+    mock({
+      fonts: {
+        icons: {
+          "noto-emoji": {
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+
+    return expect(() => downloadFileCheck(["fonts/icons/noto-emoji"])).toThrow(
+      "fonts/icons/noto-emoji/files does not exist"
+    );
+  });
+
+  test("Check for file list", () => {
+    mock({
+      fonts: {
+        icons: {
+          "noto-emoji": {
+            files: {
+              /* Empty directory */
+            },
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+
+    return expect(() => downloadFileCheck(["fonts/icons/noto-emoji"])).toThrow(
+      "fonts/icons/noto-emoji/files/file-list.json: ENOENT"
+    );
+  });
+
+  test("Check if first font file does not exist", () => {
+    mock({
+      fonts: {
+        icons: {
+          "noto-emoji": {
+            files: {
+              "file-list.json": mock.load(
+                path.resolve(__dirname, "data/file-list-noto.json")
+              ),
+            },
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+
+    return expect(() => downloadFileCheck(["fonts/icons/noto-emoji"])).toThrow(
+      "./fonts/icons/noto-emoji/files/noto-emoji-all-400-normal.woff does not exist"
+    );
+  });
+
+  test("Check if second font file does not exist", () => {
+    mock({
+      fonts: {
+        icons: {
+          "noto-emoji": {
+            files: {
+              "file-list.json": mock.load(
+                path.resolve(__dirname, "data/file-list-noto.json")
+              ),
+              "noto-emoji-all-400-normal.woff": "{}",
+            },
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+
+    return expect(() => downloadFileCheck(["fonts/icons/noto-emoji"])).toThrow(
+      "./fonts/icons/noto-emoji/files/noto-emoji-all-400-normal.woff2 does not exist"
+    );
+  });
+
+  test("Success for download file check", () => {
+    mock({
+      fonts: {
+        icons: {
+          "noto-emoji": {
+            files: {
+              "file-list.json": mock.load(
+                path.resolve(__dirname, "data/file-list-noto.json")
+              ),
+              "noto-emoji-all-400-normal.woff": "{}",
+              "noto-emoji-all-400-normal.woff2": "{}",
+            },
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+
+    return expect(() =>
+      downloadFileCheck(["fonts/icons/noto-emoji"])
     ).not.toThrow();
   });
 
