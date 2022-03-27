@@ -18,8 +18,8 @@ import {
 const gotDownload = async (url: string, dest: fs.PathLike): Promise<void> => {
   try {
     axiosRetry(axios, { retryDelay: axiosRetry.exponentialDelay });
-    const response = await axios.get(url);
-    fs.writeFileSync(dest, response.data as Buffer);
+    const response = await axios.get(url, { responseType: "arraybuffer" });
+    fs.writeFileSync(dest, response.data);
   } catch (error) {
     console.log(error);
   }
