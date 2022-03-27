@@ -1,10 +1,11 @@
 import _ from "lodash";
 import async from "async";
+import axios from "axios";
+import axiosRetry from "axios-retry";
 import flatten from "flat";
 import fs from "fs-extra";
 import isAbsoluteUrl from "is-absolute-url";
 import { APIv1, APIv2, APIVariable } from "google-font-metadata";
-import got from "got";
 import { EventEmitter } from "events";
 
 import type { FontVariants, FontVariantsVariable } from "google-font-metadata";
@@ -16,8 +17,9 @@ import {
 
 const gotDownload = async (url: string, dest: fs.PathLike): Promise<void> => {
   try {
-    const response = await got(url).buffer();
-    fs.writeFileSync(dest, response);
+    axiosRetry(axios, { retryDelay: axiosRetry.exponentialDelay });
+    const response = await axios.get(url, { responseType: "arraybuffer" });
+    fs.writeFileSync(dest, response.data);
   } catch (error) {
     console.log(error);
   }
