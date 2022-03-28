@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/expletus-sans",
-  "version": "4.5.6",
-  "description": "Self-host the Expletus Sans font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Expletus Sans", "expletus-sans"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/expletus-sans#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "fonts/google/expletus-sans"
-  }
-}
+{"name":"@fontsource/expletus-sans","version":"4.5.7","description":"Self-host the Expletus Sans font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Expletus Sans","expletus-sans"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/expletus-sans#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/expletus-sans"}}

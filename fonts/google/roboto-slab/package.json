@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/roboto-slab",
-  "version": "4.5.6",
-  "description": "Self-host the Roboto Slab font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Roboto Slab", "roboto-slab"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/roboto-slab#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "fonts/google/roboto-slab"
-  }
-}
+{"name":"@fontsource/roboto-slab","version":"4.5.7","description":"Self-host the Roboto Slab font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Roboto Slab","roboto-slab"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/roboto-slab#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/roboto-slab"}}
