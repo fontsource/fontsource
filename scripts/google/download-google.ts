@@ -17,7 +17,11 @@ fs.ensureDirSync("fonts");
 fs.ensureDirSync("fonts/google");
 fs.ensureDirSync("scripts/temp_packages");
 
-// Create an async queue object
+/**
+ * Function to run everytime a queue item is added.
+ *
+ * @param fontId font to be processed
+ */
 const processQueue = async (fontId: string) => {
   console.log(`Downloading ${fontId}`);
   await run(fontId, force);
@@ -27,11 +31,25 @@ const processQueue = async (fontId: string) => {
   });
 };
 
+/**
+ * Function that force downloads the font as it comes from a failing font file check.
+ *
+ * @param fontId font to be processed
+ */
+const processQueueCheck = async (fontId: string) => {
+  console.log(`Downloading ${fontId} [QUEUECHECK]`);
+  await run(fontId, "force");
+  console.log(`Finished processing ${fontId} [QUEUECHECK]`);
+  Promise.resolve().catch(error => {
+    throw error;
+  });
+};
+
 // EventEmitter listener is usually set at a default limit of 10, below chosen 12 concurrent workers
 EventEmitter.defaultMaxListeners = 0;
 
 const queue = async.queue(processQueue, 3);
-const queueCheck = async.queue(processQueue, 3);
+const queueCheck = async.queue(processQueueCheck, 3);
 
 queue.drain(async () => {
   const changedPackages = downloadFileCheck(await findChangedPackages());
