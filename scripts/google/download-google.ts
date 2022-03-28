@@ -4,6 +4,10 @@ import fs from "fs-extra";
 import { APIv2, APIVariable } from "google-font-metadata";
 import { EventEmitter } from "events";
 
+import {
+  downloadFileCheck,
+  findChangedPackages,
+} from "scripts/utils/file-check";
 import { run } from "./run";
 import { deleteDuplicates, duplicates } from "./new-font-check";
 
@@ -26,14 +30,20 @@ const processQueue = async (fontId: string) => {
 // EventEmitter listener is usually set at a default limit of 10, below chosen 12 concurrent workers
 EventEmitter.defaultMaxListeners = 0;
 
-const queue = async.queue(processQueue, 1);
+const queue = async.queue(processQueue, 3);
+const queueCheck = async.queue(processQueue, 3);
 
 queue.drain(async () => {
+  const changedPackages = downloadFileCheck(await findChangedPackages());
+  for (const changedPackage of changedPackages) {
+    queueCheck.push(changedPackage);
+  }
+
   // If Google adds an existing generic font, there will be duplicates in two directories
   // This deletes the duplicate font
   const deletedDuplicates = deleteDuplicates(duplicates);
   if (deletedDuplicates.length > 0)
-    console.log(`Deleted duplicate fonts ${deletedDuplicates}`);
+    console.log(`Deleted duplicate fonts ${deletedDuplicates}.`);
 
   console.log(
     `All ${Object.keys(APIv2).length} Google Fonts have been processed.`
@@ -45,6 +55,16 @@ queue.drain(async () => {
 
 queue.error((err, fontid) => {
   console.error(`${fontid} experienced an error.`, err);
+});
+
+queueCheck.drain(async () => {
+  console.log("Checking all fonts successfully downloaded.");
+  downloadFileCheck(await findChangedPackages(), true);
+  console.log("Success.");
+});
+
+queueCheck.error((err, fontid) => {
+  console.error(`${fontid} experienced an error. [QUEUECHECK]`, err);
 });
 
 // Testing

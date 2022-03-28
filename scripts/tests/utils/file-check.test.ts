@@ -30,8 +30,8 @@ describe("File check", () => {
         "10a65fce06bdf6651cd8a133dc52a978b6cd5055"
       )
     ).resolves.toEqual([
-      "fonts/icons/noto-color-emoji",
-      "fonts/icons/noto-emoji",
+      path.join("fonts", "icons", "noto-color-emoji"),
+      path.join("fonts", "icons", "noto-emoji"),
     ]);
   });
 

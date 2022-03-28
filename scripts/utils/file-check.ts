@@ -29,15 +29,24 @@ const findChangedPackages = async (
  * This checks each package to have all of its necessary binary font files before publishing, else throw an error
  *
  * @param changedPackages A list of dirpaths to a changed package
+ * @param throwError If it should throw an error
  */
-const downloadFileCheck = (changedPackages: string[]) => {
+const downloadFileCheck = (
+  changedPackages: string[],
+  throwError?: boolean
+): string[] => {
+  const fontIds: string[] = [];
   for (const changedPackage of changedPackages) {
     // A changed package could be the removal of an entire package
     // Only count existing packages
     if (fs.existsSync(path.join(changedPackage, "package.json"))) {
       // Check if files directory exists
       if (!fs.existsSync(path.join(changedPackage, "files"))) {
-        throw new Error(`${changedPackages}/files does not exist`);
+        if (throwError) {
+          throw new Error(`${changedPackages}/files does not exist`);
+        } else {
+          fontIds.push(path.basename(changedPackage));
+        }
       }
 
       // Read file that compares
@@ -48,11 +57,17 @@ const downloadFileCheck = (changedPackages: string[]) => {
       // Check binary files
       for (const file of files) {
         if (!fs.existsSync(file)) {
-          throw new Error(`${file} does not exist`);
+          if (throwError) {
+            throw new Error(`${file} does not exist`);
+          } else {
+            fontIds.push(path.basename(changedPackage));
+          }
         }
       }
     }
   }
+  // Remove duplicates
+  return [...new Set(fontIds)];
 };
 
 export { downloadFileCheck, findChangedPackages };
