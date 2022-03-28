@@ -37,9 +37,13 @@ const processQueue = async (fontId: string) => {
  * @param fontId font to be processed
  */
 const processQueueCheck = async (fontId: string) => {
-  console.log(`Downloading ${fontId} [QUEUECHECK]`);
-  await run(fontId, "force");
-  console.log(`Finished processing ${fontId} [QUEUECHECK]`);
+  if (fontId in APIv2) {
+    console.log(`Downloading ${fontId} [QUEUECHECK]`);
+    await run(fontId, "force");
+    console.log(`Finished processing ${fontId} [QUEUECHECK]`);
+  } else {
+    throw new Error(`${fontId} not a Google Font! [QUEUECHECK]`);
+  }
   Promise.resolve().catch(error => {
     throw error;
   });
@@ -52,7 +56,9 @@ const queue = async.queue(processQueue, 3);
 const queueCheck = async.queue(processQueueCheck, 3);
 
 queue.drain(async () => {
+  console.log("\nChecking font files...");
   const changedPackages = downloadFileCheck(await findChangedPackages());
+  console.log(changedPackages);
   for (const changedPackage of changedPackages) {
     queueCheck.push(changedPackage);
   }
@@ -76,9 +82,9 @@ queue.error((err, fontid) => {
 });
 
 queueCheck.drain(async () => {
-  console.log("Checking all fonts successfully downloaded.");
-  downloadFileCheck(await findChangedPackages(), true);
-  console.log("Success.");
+  console.log("Re-checking all fonts... [QUEUECHECK]");
+  downloadFileCheck(await findChangedPackages(), true); // This time will throw and fail build if fails
+  console.log("Success. [QUEUECHECK]");
 });
 
 queueCheck.error((err, fontid) => {
