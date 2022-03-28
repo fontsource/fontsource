@@ -32,7 +32,7 @@ jobs:
         run: yarn parser:variable
 
       - name: Build fonts # Build all updated Google Fonts in repository
-        run: yarn build:google-force
+        run: yarn build:google
 
       - name: Generate fontlist # Generate FONTLIST.json and FONTLIST.md
         run: yarn util:fontlist

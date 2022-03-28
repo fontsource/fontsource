@@ -30,11 +30,12 @@ describe("File check", () => {
         "10a65fce06bdf6651cd8a133dc52a978b6cd5055"
       )
     ).resolves.toEqual([
-      "fonts/icons/noto-color-emoji",
-      "fonts/icons/noto-emoji",
+      path.join("fonts", "icons", "noto-color-emoji"),
+      path.join("fonts", "icons", "noto-emoji"),
     ]);
   });
 
+  // Throw tests
   test("Check for files directory", () => {
     mock({
       fonts: {
@@ -46,9 +47,9 @@ describe("File check", () => {
       },
     });
 
-    return expect(() => downloadFileCheck(["fonts/icons/noto-emoji"])).toThrow(
-      "fonts/icons/noto-emoji/files does not exist"
-    );
+    return expect(() =>
+      downloadFileCheck(["fonts/icons/noto-emoji"], true)
+    ).toThrow("fonts/icons/noto-emoji/files does not exist");
   });
 
   test("Check for file list", () => {
@@ -65,9 +66,9 @@ describe("File check", () => {
       },
     });
 
-    return expect(() => downloadFileCheck(["fonts/icons/noto-emoji"])).toThrow(
-      "fonts/icons/noto-emoji/files/file-list.json: ENOENT"
-    );
+    return expect(() =>
+      downloadFileCheck(["fonts/icons/noto-emoji"], true)
+    ).toThrow("fonts/icons/noto-emoji/files/file-list.json: ENOENT");
   });
 
   test("Check if first font file does not exist", () => {
@@ -86,7 +87,9 @@ describe("File check", () => {
       },
     });
 
-    return expect(() => downloadFileCheck(["fonts/icons/noto-emoji"])).toThrow(
+    return expect(() =>
+      downloadFileCheck(["fonts/icons/noto-emoji"], true)
+    ).toThrow(
       "./fonts/icons/noto-emoji/files/noto-emoji-all-400-normal.woff does not exist"
     );
   });
@@ -108,7 +111,9 @@ describe("File check", () => {
       },
     });
 
-    return expect(() => downloadFileCheck(["fonts/icons/noto-emoji"])).toThrow(
+    return expect(() =>
+      downloadFileCheck(["fonts/icons/noto-emoji"], true)
+    ).toThrow(
       "./fonts/icons/noto-emoji/files/noto-emoji-all-400-normal.woff2 does not exist"
     );
   });
@@ -132,8 +137,51 @@ describe("File check", () => {
     });
 
     return expect(() =>
-      downloadFileCheck(["fonts/icons/noto-emoji"])
+      downloadFileCheck(["fonts/icons/noto-emoji"], true)
     ).not.toThrow();
+  });
+
+  // Return font id tests
+  test("Return font ids that need updating", () => {
+    mock({
+      fonts: {
+        icons: {
+          "noto-emoji": {
+            files: {
+              "file-list.json": mock.load(
+                path.resolve(__dirname, "data/file-list-noto.json")
+              ),
+            },
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+
+    expect(downloadFileCheck(["fonts/icons/noto-emoji"])).toEqual([
+      "noto-emoji",
+    ]);
+  });
+
+  test("Return no font ids to update", () => {
+    mock({
+      fonts: {
+        icons: {
+          "noto-emoji": {
+            files: {
+              "file-list.json": mock.load(
+                path.resolve(__dirname, "data/file-list-noto.json")
+              ),
+              "noto-emoji-all-400-normal.woff": "{}",
+              "noto-emoji-all-400-normal.woff2": "{}",
+            },
+            "package.json": "{}",
+          },
+        },
+      },
+    });
+
+    expect(downloadFileCheck(["fonts/icons/noto-emoji"])).toEqual([]);
   });
 
   afterEach(() => {
