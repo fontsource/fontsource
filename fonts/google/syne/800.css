@@ -1,3 +1,12 @@
+/* syne-greek-800-normal*/
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/syne-greek-800-normal.woff2') format('woff2'), url('./files/syne-all-800-normal.woff') format('woff');
+  unicode-range: U+0370-03FF;
+}
 /* syne-latin-ext-800-normal*/
 @font-face {
   font-family: 'Syne';

@@ -1,0 +1,15 @@
+{
+  "fontId": "biz-udgothic",
+  "fontName": "BIZ UDGothic",
+  "subsets": ["cyrillic", "greek-ext", "japanese", "latin", "latin-ext"],
+  "weights": [400, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-03-31",
+  "version": "v3",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

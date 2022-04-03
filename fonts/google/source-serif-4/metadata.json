@@ -10,9 +10,9 @@
     "opsz": { "default": "14", "min": "8", "max": "60", "step": "0.1" },
     "wght": { "default": "400", "min": "200", "max": "900", "step": "1" }
   },
-  "lastModified": "2021-12-17",
-  "version": "v1",
-  "category": "sans-serif",
+  "lastModified": "2022-03-31",
+  "version": "v5",
+  "category": "serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
   "type": "google"

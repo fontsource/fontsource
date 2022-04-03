@@ -1,3 +1,12 @@
+/* syne-greek-variable-wghtOnly-normal */
+@font-face {
+  font-family: 'SyneVariable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 800;
+  src: url('./files/syne-greek-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: U+0370-03FF;
+}  
 /* syne-latin-variable-wghtOnly-normal */
 @font-face {
   font-family: 'SyneVariable';

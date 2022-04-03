@@ -1,0 +1,15 @@
+{
+  "fontId": "alumni-sans-inline-one",
+  "fontName": "Alumni Sans Inline One",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": [400],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-03-31",
+  "version": "v1",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
