@@ -42,9 +42,11 @@ const downloadFileCheck = (
     if (fs.existsSync(path.join(changedPackage, "package.json"))) {
       // Check if files directory exists
       if (!fs.existsSync(path.join(changedPackage, "files"))) {
+        const message = `${changedPackage}/files does not exist`;
         if (throwError) {
-          throw new Error(`${changedPackages}/files does not exist`);
+          throw new Error(message);
         } else {
+          console.log(message);
           fontIds.push(path.basename(changedPackage));
         }
       }
@@ -57,9 +59,11 @@ const downloadFileCheck = (
       // Check binary files
       for (const file of files) {
         if (!fs.existsSync(file)) {
+          const message = `${file} does not exist`;
           if (throwError) {
-            throw new Error(`${file} does not exist`);
+            throw new Error(message);
           } else {
+            console.log(`${file} does not exist`);
             fontIds.push(path.basename(changedPackage));
           }
         }
