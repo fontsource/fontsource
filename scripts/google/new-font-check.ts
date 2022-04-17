@@ -2,6 +2,7 @@ import fs from "node:fs";
 
 import _ from "lodash";
 import path from "node:path";
+import jsonfile from "jsonfile";
 import { getDirectories } from "scripts/utils/utils";
 
 /**
@@ -38,15 +39,26 @@ const duplicates = findDuplicates(directories);
  */
 const deleteDuplicates = (duplicateDirs: string[]): string[] => {
   duplicateDirs.forEach(dir => {
+    let packageJson;
     try {
       // Check other directory
       if (fs.existsSync(path.join("fonts", "other", dir))) {
+        packageJson = jsonfile.readFileSync(
+          path.join("fonts", "other", dir, "package.json")
+        );
         fs.rmSync(path.join("fonts", "other", dir), { recursive: true });
+
         // Check icons directory
       } else if (fs.existsSync(path.join("fonts", "icons", dir))) {
+        packageJson = jsonfile.readFileSync(
+          path.join("fonts", "icons", dir, "package.json")
+        );
         fs.rmSync(path.join("fonts", "icons", dir), { recursive: true });
         // Check league directory
       } else if (fs.existsSync(path.join("fonts", "league", dir))) {
+        packageJson = jsonfile.readFileSync(
+          path.join("fonts", "league", dir, "package.json")
+        );
         fs.rmSync(path.join("fonts", "league", dir), { recursive: true });
       } else {
         throw new Error(`Unable to find dir ${dir}`);
@@ -54,6 +66,16 @@ const deleteDuplicates = (duplicateDirs: string[]): string[] => {
     } catch {
       console.error(`Error while deleting ${dir}.`);
     }
+
+    // This is necessary as the newly generated Google package version will not match the existing NPM version
+    const packageJsonGoogle = jsonfile.readFileSync(
+      path.join("fonts", "google", dir, "package.json")
+    );
+    packageJsonGoogle.version = packageJson.version;
+    jsonfile.writeFileSync(
+      path.join("fonts", "google", dir, "package.json"),
+      packageJsonGoogle
+    );
   });
   return duplicateDirs;
 };
