@@ -29,7 +29,7 @@ const processQueueCheck = async (fontId: string) => {
 /**
  * Async queue to run all checks.
  */
-const queueCheck = async.queue(processQueueCheck, 3);
+const queueCheck = async.queue(processQueueCheck, 1);
 
 // When queue is finished
 queueCheck.drain(async () => {
