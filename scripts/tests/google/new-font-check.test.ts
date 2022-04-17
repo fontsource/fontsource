@@ -9,24 +9,24 @@ describe("New font check", () => {
       fonts: {
         google: {
           abel: {
-            "package.json": "{}",
+            "package.json": '{"version": "1.0.0"}',
           },
           cabin: {
-            "package.json": "{}",
+            "package.json": '{"version": "1.0.0"}',
           },
           "noto-sans-jp": {
-            "package.json": "{}",
+            "package.json": '{"version": "1.0.0"}',
           },
         },
         other: {
           abel: {
-            "package.json": "{}",
+            "package.json": '{"version": "1.0.0"}',
           },
           "not-cabin": {
-            "package.json": "{}",
+            "package.json": '{"version": "1.0.0"}',
           },
           "noto-sans-jp": {
-            "package.json": "{}",
+            "package.json": '{"version": "1.0.0"}',
           },
         },
       },
