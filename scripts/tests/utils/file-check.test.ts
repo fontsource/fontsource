@@ -5,6 +5,10 @@ import path from "node:path";
 import { downloadFileCheck, findChangedPackages } from "../../utils/file-check";
 
 describe("File check", () => {
+  // Suppress extra console logging
+  beforeEach(() => {
+    jest.spyOn(console, "log").mockImplementation(() => {});
+  });
   test("Find changed packages", () => {
     mock({
       fonts: {
@@ -66,9 +70,17 @@ describe("File check", () => {
       },
     });
 
+    const filepath = path.join(
+      "fonts",
+      "icons",
+      "noto-emoji",
+      "files",
+      "file-list.json"
+    );
+
     return expect(() =>
       downloadFileCheck(["fonts/icons/noto-emoji"], true)
-    ).toThrow("fonts/icons/noto-emoji/files/file-list.json: ENOENT");
+    ).toThrow(`${filepath}: ENOENT`);
   });
 
   test("Check if first font file does not exist", () => {
