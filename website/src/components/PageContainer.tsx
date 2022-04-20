@@ -1,4 +1,5 @@
 import { Box, FlexProps, useColorModeValue } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { PropsWithChildren, useEffect, useState } from "react";
 
 import { Container } from "./Container";
@@ -6,19 +7,9 @@ import { Footer } from "./Footer";
 import { Navbar } from "./Navbar/Navbar";
 import { Sidebar } from "./Sidebar";
 
-interface SidebarProp {
-  ifSidebar?: boolean;
-  ifDocs: boolean;
-}
+export type PageContainerProps = PropsWithChildren<FlexProps>;
 
-export type PageContainerProps = PropsWithChildren<FlexProps> & SidebarProp;
-
-export const PageContainer = ({
-  ifSidebar = true,
-  ifDocs,
-  children,
-  ...props
-}: PageContainerProps) => {
+export const PageContainer = ({ children, ...props }: PageContainerProps) => {
   const bgColor = useColorModeValue("white", "gray.900");
   const color = useColorModeValue("black", "white");
 
@@ -28,6 +19,15 @@ export const PageContainer = ({
   useEffect(() => {
     setShowSidebar(true);
   }, []);
+
+  const { pathname } = useRouter();
+
+  if (pathname === "/_error") return <>{children}</>;
+
+  const ifDocs = pathname.startsWith("/docs");
+  const ifFonts = pathname.startsWith("/fonts");
+
+  const ifSidebar = ifDocs || ifFonts;
 
   let sidebar;
   if (showSidebar) {

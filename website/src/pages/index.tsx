@@ -3,10 +3,9 @@ import Head from "next/head";
 
 import { Main } from "../components/Main";
 import { NextChakraLink } from "../components/NextChakraLink";
-import { PageContainer } from "../components/PageContainer";
 
 const Index = () => (
-  <PageContainer ifDocs={false} ifSidebar={false}>
+  <>
     <Head>
       <title>Fontsource</title>
     </Head>
@@ -33,7 +32,7 @@ const Index = () => (
         </NextChakraLink>
       </SimpleGrid>
     </Main>
-  </PageContainer>
+  </>
 );
 
 export default Index;

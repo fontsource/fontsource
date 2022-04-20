@@ -6,6 +6,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
+import { PageContainer } from "../components/PageContainer";
 import theme from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -17,7 +18,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Component {...pageProps} key={asPath} />
+      <PageContainer>
+        <Component {...pageProps} key={asPath} />
+      </PageContainer>
     </ChakraProvider>
   );
 }
