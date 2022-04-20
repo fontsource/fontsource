@@ -4,11 +4,10 @@ import { CarbonAd } from "website/src/components/CarbonAd";
 
 import { Container } from "../../components/Container";
 import { Main } from "../../components/Main";
-import { PageContainer } from "../../components/PageContainer";
 import { SearchModal } from "../../components/Search/Modal";
 
 const Index = () => (
-  <PageContainer ifDocs={false} ifSidebar={true}>
+  <>
     <Head>
       <title>Preview | Fontsource</title>
     </Head>
@@ -25,7 +24,7 @@ const Index = () => (
       </Container>
       <CarbonAd />
     </Main>
-  </PageContainer>
+  </>
 );
 
 export default Index;

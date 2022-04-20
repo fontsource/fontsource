@@ -9,7 +9,6 @@ import remarkGfm from "remark-gfm";
 
 import { Main } from "../../components/Main";
 import CustomMdxComponents from "../../components/MdxComponents";
-import { PageContainer } from "../../components/PageContainer";
 import { DOCS_PATH, docsFilePaths } from "../../utils/mdxUtils";
 
 // MDX components since Webpack isn't importing them
@@ -19,7 +18,7 @@ const components = {
 
 export default function DocsPage({ source, frontMatter }) {
   return (
-    <PageContainer ifDocs={true}>
+    <>
       <Head>
         <title>Fontsource | {frontMatter.title}</title>
       </Head>
@@ -34,7 +33,7 @@ export default function DocsPage({ source, frontMatter }) {
       >
         <MDXRemote {...source} components={components} />
       </Main>
-    </PageContainer>
+    </>
   );
 }
 

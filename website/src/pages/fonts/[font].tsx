@@ -14,7 +14,6 @@ import {
 } from "../../@types/[font]";
 import { FontPreview } from "../../components/FontPreview";
 import { Main } from "../../components/Main";
-import { PageContainer } from "../../components/PageContainer";
 import fontListAlgolia from "../../configs/algolia.json";
 // Import when testing and don't want to build 1000+ pages
 // import fontListAlgolia from "../../configs/fontListTemp.json";
@@ -40,17 +39,9 @@ export default function FontPage({
           <meta name="robots" content="noindex" />
           <title>Loading... | Fontsource</title>
         </Head>
-        <PageContainer ifDocs={false}>
-          <Main
-            width="100%"
-            mr={{ md: 0 }}
-            pr={{ md: 0 }}
-            mb={12}
-            ml={{ md: 8 }}
-          >
-            <Skeleton height="50px" />
-          </Main>
-        </PageContainer>
+        <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }} mb={12} ml={{ md: 8 }}>
+          <Skeleton height="50px" />
+        </Main>
       </>
     );
   }
@@ -60,15 +51,13 @@ export default function FontPage({
       <Head>
         <title>{metadata.fontName} | Fontsource</title>
       </Head>
-      <PageContainer ifDocs={false}>
-        <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }} mb={12} ml={{ md: 8 }}>
-          <FontPreview
-            defPreviewText={defPreviewText}
-            metadata={metadata}
-            fontCss={fontCss}
-          />
-        </Main>
-      </PageContainer>
+      <Main width="100%" mr={{ md: 0 }} pr={{ md: 0 }} mb={12} ml={{ md: 8 }}>
+        <FontPreview
+          defPreviewText={defPreviewText}
+          metadata={metadata}
+          fontCss={fontCss}
+        />
+      </Main>
     </>
   );
 }
