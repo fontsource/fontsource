@@ -72,7 +72,6 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - norwester
 - noto-mono
 - opendyslexic
-- plus-jakarta-sans
 - syne-italic
 - unifont
 - vazir

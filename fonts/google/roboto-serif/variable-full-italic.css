@@ -1,3 +1,13 @@
+/* roboto-serif-cyrillic-ext-variable-full-italic */
+@font-face {
+  font-family: 'Roboto SerifVariable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 50% 150%;
+  src: url('./files/roboto-serif-cyrillic-ext-variable-full-italic.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}  
 /* roboto-serif-latin-variable-full-italic */
 @font-face {
   font-family: 'Roboto SerifVariable';

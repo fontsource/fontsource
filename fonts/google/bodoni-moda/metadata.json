@@ -7,11 +7,11 @@
   "defSubset": "latin",
   "variable": {
     "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
-    "opsz": { "default": "14", "min": "6", "max": "96", "step": "0.1" },
+    "opsz": { "default": "11", "min": "6", "max": "96", "step": "0.1" },
     "wght": { "default": "400", "min": "400", "max": "900", "step": "1" }
   },
-  "lastModified": "2021-03-19",
-  "version": "v7",
+  "lastModified": "2022-04-20",
+  "version": "v17",
   "category": "serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
