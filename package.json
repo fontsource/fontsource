@@ -46,7 +46,7 @@
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.7",
-    "mass-publish": "^1.1.1",
+    "mass-publish": "^1.1.2",
     "mock-fs": "^5.1.2",
     "prettier": "^2.6.0",
     "ts-node": "^10.7.0",

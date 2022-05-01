@@ -7624,10 +7624,10 @@ markdown-table@^3.0.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-3.0.2.tgz#9b59eb2c1b22fe71954a65ff512887065a7bb57c"
   integrity sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA==
 
-mass-publish@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/mass-publish/-/mass-publish-1.1.1.tgz#0d5ccde92f6f2171494f71ca9905b61f2bad289e"
-  integrity sha512-LQ0Bfs1oOtJwU4NCktngTYxGKjA88lU+GWfOOoPNmYcbnRj1JuaP+jdUyjO04U9a5xiBeBMt1FYlLXDl0gQYmw==
+mass-publish@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/mass-publish/-/mass-publish-1.1.2.tgz#33edb581b5e7b0550216378d8678d02e9d7ee6d0"
+  integrity sha512-jV+EFPn6ArRKY7AUACU31xykDG70QSG/lHNfPRSd9skUH55t9v3VluO7X9nrNvNLvUOG/L3r6kb1NFH1nm9X9w==
   dependencies:
     "@npmcli/package-json" "^1.0.1"
     "@oclif/command" "^1.8.0"
