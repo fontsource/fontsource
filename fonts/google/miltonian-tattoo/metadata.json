@@ -1,15 +1,1 @@
-{
-  "fontId": "miltonian-tattoo",
-  "fontName": "Miltonian Tattoo",
-  "subsets": ["latin"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-26",
-  "version": "v28",
-  "category": "display",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"miltonian-tattoo","fontName":"Miltonian Tattoo","subsets":["latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v28","category":"display","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
