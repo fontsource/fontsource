@@ -36,7 +36,6 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - material-icons-sharp
 - material-icons-two-tone
 - noto-color-emoji
-- noto-emoji
 
 ## Other
 
