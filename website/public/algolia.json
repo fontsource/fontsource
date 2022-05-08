@@ -12955,8 +12955,8 @@
     "styles": ["normal"],
     "defSubset": "emoji",
     "variable": true,
-    "lastModified": "2022-04-28",
-    "version": "v23",
+    "lastModified": "2022-05-02",
+    "version": "v24",
     "category": "sans-serif",
     "source": "https://fonts.google.com/",
     "license": "https://fonts.google.com/attribution",
@@ -18531,6 +18531,29 @@
     "license": "https://fonts.google.com/attribution",
     "type": "google",
     "objectID": "roboto-condensed"
+  },
+  {
+    "fontId": "roboto-flex",
+    "fontName": "Roboto Flex",
+    "subsets": [
+      "cyrillic",
+      "cyrillic-ext",
+      "greek",
+      "latin",
+      "latin-ext",
+      "vietnamese"
+    ],
+    "weights": [400],
+    "styles": ["normal"],
+    "defSubset": "latin",
+    "variable": true,
+    "lastModified": "2022-05-05",
+    "version": "v8",
+    "category": "sans-serif",
+    "source": "https://fonts.google.com/",
+    "license": "https://fonts.google.com/attribution",
+    "type": "google",
+    "objectID": "roboto-flex"
   },
   {
     "fontId": "roboto-mono",

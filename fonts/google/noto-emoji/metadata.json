@@ -1,1 +1,15 @@
-{"fontId":"noto-emoji","fontName":"Noto Emoji","subsets":["emoji"],"weights":[300,400,500,600,700],"styles":["normal"],"defSubset":"emoji","variable":{"wght":{"default":"400","min":"300","max":"700","step":"1"}},"lastModified":"2022-04-28","version":"v23","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "noto-emoji",
+  "fontName": "Noto Emoji",
+  "subsets": ["emoji"],
+  "weights": [300, 400, 500, 600, 700],
+  "styles": ["normal"],
+  "defSubset": "emoji",
+  "variable": { "wght": { "default": "400", "min": "300", "max": "700", "step": "1" } },
+  "lastModified": "2022-05-02",
+  "version": "v24",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
