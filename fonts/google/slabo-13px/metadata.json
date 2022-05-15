@@ -1,1 +1,15 @@
-{"fontId":"slabo-13px","fontName":"Slabo 13px","subsets":["latin","latin-ext"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-27","version":"v13","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "slabo-13px",
+  "fontName": "Slabo 13px",
+  "subsets": ["latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-27",
+  "version": "v13",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
