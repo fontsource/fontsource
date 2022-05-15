@@ -1,9 +1,1 @@
-[
-  "./fonts/google/underdog/files/underdog-cyrillic-400-normal.woff",
-  "./fonts/google/underdog/files/underdog-latin-400-normal.woff",
-  "./fonts/google/underdog/files/underdog-latin-ext-400-normal.woff",
-  "./fonts/google/underdog/files/underdog-cyrillic-400-normal.woff2",
-  "./fonts/google/underdog/files/underdog-all-400-normal.woff",
-  "./fonts/google/underdog/files/underdog-latin-ext-400-normal.woff2",
-  "./fonts/google/underdog/files/underdog-latin-400-normal.woff2"
-]
+["./fonts/google/underdog/files/underdog-cyrillic-400-normal.woff","./fonts/google/underdog/files/underdog-latin-400-normal.woff","./fonts/google/underdog/files/underdog-latin-ext-400-normal.woff","./fonts/google/underdog/files/underdog-cyrillic-400-normal.woff2","./fonts/google/underdog/files/underdog-all-400-normal.woff","./fonts/google/underdog/files/underdog-latin-ext-400-normal.woff2","./fonts/google/underdog/files/underdog-latin-400-normal.woff2"]
