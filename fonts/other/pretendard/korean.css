@@ -1,0 +1,729 @@
+/* pretendard-korean-100-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-thin.woff2') format('woff2'), url('./files/pretendard-korean-100-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-100-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-light.woff2') format('woff2'), url('./files/pretendard-korean-100-light.woff') format('woff');
+  
+}
+/* pretendard-korean-100-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-extralight.woff2') format('woff2'), url('./files/pretendard-korean-100-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-100-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-regular.woff2') format('woff2'), url('./files/pretendard-korean-100-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-100-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-medium.woff2') format('woff2'), url('./files/pretendard-korean-100-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-100-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-semibold.woff2') format('woff2'), url('./files/pretendard-korean-100-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-100-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-bold.woff2') format('woff2'), url('./files/pretendard-korean-100-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-100-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-100-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-100-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-black.woff2') format('woff2'), url('./files/pretendard-korean-100-black.woff') format('woff');
+  
+}
+/* pretendard-korean-200-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-thin.woff2') format('woff2'), url('./files/pretendard-korean-200-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-200-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-light.woff2') format('woff2'), url('./files/pretendard-korean-200-light.woff') format('woff');
+  
+}
+/* pretendard-korean-200-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-extralight.woff2') format('woff2'), url('./files/pretendard-korean-200-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-200-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-regular.woff2') format('woff2'), url('./files/pretendard-korean-200-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-200-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-medium.woff2') format('woff2'), url('./files/pretendard-korean-200-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-200-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-semibold.woff2') format('woff2'), url('./files/pretendard-korean-200-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-200-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-bold.woff2') format('woff2'), url('./files/pretendard-korean-200-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-200-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-200-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-200-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/pretendard-korean-200-black.woff2') format('woff2'), url('./files/pretendard-korean-200-black.woff') format('woff');
+  
+}
+/* pretendard-korean-300-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-thin.woff2') format('woff2'), url('./files/pretendard-korean-300-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-300-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-light.woff2') format('woff2'), url('./files/pretendard-korean-300-light.woff') format('woff');
+  
+}
+/* pretendard-korean-300-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-extralight.woff2') format('woff2'), url('./files/pretendard-korean-300-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-300-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-regular.woff2') format('woff2'), url('./files/pretendard-korean-300-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-300-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-medium.woff2') format('woff2'), url('./files/pretendard-korean-300-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-300-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-semibold.woff2') format('woff2'), url('./files/pretendard-korean-300-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-300-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-bold.woff2') format('woff2'), url('./files/pretendard-korean-300-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-300-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-300-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-300-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-black.woff2') format('woff2'), url('./files/pretendard-korean-300-black.woff') format('woff');
+  
+}
+/* pretendard-korean-400-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-thin.woff2') format('woff2'), url('./files/pretendard-korean-400-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-400-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-light.woff2') format('woff2'), url('./files/pretendard-korean-400-light.woff') format('woff');
+  
+}
+/* pretendard-korean-400-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-extralight.woff2') format('woff2'), url('./files/pretendard-korean-400-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-400-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-regular.woff2') format('woff2'), url('./files/pretendard-korean-400-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-400-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-medium.woff2') format('woff2'), url('./files/pretendard-korean-400-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-400-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-semibold.woff2') format('woff2'), url('./files/pretendard-korean-400-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-400-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-bold.woff2') format('woff2'), url('./files/pretendard-korean-400-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-400-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-400-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-400-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-black.woff2') format('woff2'), url('./files/pretendard-korean-400-black.woff') format('woff');
+  
+}
+/* pretendard-korean-500-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-thin.woff2') format('woff2'), url('./files/pretendard-korean-500-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-500-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-light.woff2') format('woff2'), url('./files/pretendard-korean-500-light.woff') format('woff');
+  
+}
+/* pretendard-korean-500-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-extralight.woff2') format('woff2'), url('./files/pretendard-korean-500-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-500-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-regular.woff2') format('woff2'), url('./files/pretendard-korean-500-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-500-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-medium.woff2') format('woff2'), url('./files/pretendard-korean-500-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-500-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-semibold.woff2') format('woff2'), url('./files/pretendard-korean-500-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-500-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-bold.woff2') format('woff2'), url('./files/pretendard-korean-500-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-500-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-500-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-500-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./files/pretendard-korean-500-black.woff2') format('woff2'), url('./files/pretendard-korean-500-black.woff') format('woff');
+  
+}
+/* pretendard-korean-600-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-thin.woff2') format('woff2'), url('./files/pretendard-korean-600-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-600-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-light.woff2') format('woff2'), url('./files/pretendard-korean-600-light.woff') format('woff');
+  
+}
+/* pretendard-korean-600-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-extralight.woff2') format('woff2'), url('./files/pretendard-korean-600-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-600-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-regular.woff2') format('woff2'), url('./files/pretendard-korean-600-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-600-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-medium.woff2') format('woff2'), url('./files/pretendard-korean-600-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-600-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-semibold.woff2') format('woff2'), url('./files/pretendard-korean-600-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-600-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-bold.woff2') format('woff2'), url('./files/pretendard-korean-600-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-600-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-600-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-600-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./files/pretendard-korean-600-black.woff2') format('woff2'), url('./files/pretendard-korean-600-black.woff') format('woff');
+  
+}
+/* pretendard-korean-700-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-thin.woff2') format('woff2'), url('./files/pretendard-korean-700-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-700-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-light.woff2') format('woff2'), url('./files/pretendard-korean-700-light.woff') format('woff');
+  
+}
+/* pretendard-korean-700-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-extralight.woff2') format('woff2'), url('./files/pretendard-korean-700-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-700-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-regular.woff2') format('woff2'), url('./files/pretendard-korean-700-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-700-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-medium.woff2') format('woff2'), url('./files/pretendard-korean-700-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-700-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-semibold.woff2') format('woff2'), url('./files/pretendard-korean-700-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-700-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-bold.woff2') format('woff2'), url('./files/pretendard-korean-700-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-700-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-700-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-700-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./files/pretendard-korean-700-black.woff2') format('woff2'), url('./files/pretendard-korean-700-black.woff') format('woff');
+  
+}
+/* pretendard-korean-800-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-thin.woff2') format('woff2'), url('./files/pretendard-korean-800-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-800-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-light.woff2') format('woff2'), url('./files/pretendard-korean-800-light.woff') format('woff');
+  
+}
+/* pretendard-korean-800-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-extralight.woff2') format('woff2'), url('./files/pretendard-korean-800-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-800-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-regular.woff2') format('woff2'), url('./files/pretendard-korean-800-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-800-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-medium.woff2') format('woff2'), url('./files/pretendard-korean-800-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-800-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-semibold.woff2') format('woff2'), url('./files/pretendard-korean-800-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-800-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-bold.woff2') format('woff2'), url('./files/pretendard-korean-800-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-800-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-800-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-800-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-black.woff2') format('woff2'), url('./files/pretendard-korean-800-black.woff') format('woff');
+  
+}
+/* pretendard-korean-900-thin*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: thin;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-thin.woff2') format('woff2'), url('./files/pretendard-korean-900-thin.woff') format('woff');
+  
+}
+/* pretendard-korean-900-light*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: light;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-light.woff2') format('woff2'), url('./files/pretendard-korean-900-light.woff') format('woff');
+  
+}
+/* pretendard-korean-900-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-extralight.woff2') format('woff2'), url('./files/pretendard-korean-900-extralight.woff') format('woff');
+  
+}
+/* pretendard-korean-900-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-regular.woff2') format('woff2'), url('./files/pretendard-korean-900-regular.woff') format('woff');
+  
+}
+/* pretendard-korean-900-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-medium.woff2') format('woff2'), url('./files/pretendard-korean-900-medium.woff') format('woff');
+  
+}
+/* pretendard-korean-900-semibold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: semibold;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-semibold.woff2') format('woff2'), url('./files/pretendard-korean-900-semibold.woff') format('woff');
+  
+}
+/* pretendard-korean-900-bold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: bold;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-bold.woff2') format('woff2'), url('./files/pretendard-korean-900-bold.woff') format('woff');
+  
+}
+/* pretendard-korean-900-extrabold*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extrabold;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-extrabold.woff2') format('woff2'), url('./files/pretendard-korean-900-extrabold.woff') format('woff');
+  
+}
+/* pretendard-korean-900-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 900;
+  src: url('./files/pretendard-korean-900-black.woff2') format('woff2'), url('./files/pretendard-korean-900-black.woff') format('woff');
+  
+}

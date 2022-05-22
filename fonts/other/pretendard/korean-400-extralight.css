@@ -1,0 +1,9 @@
+/* pretendard-korean-400-extralight*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: extralight;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./files/pretendard-korean-400-extralight.woff2') format('woff2'), url('./files/pretendard-korean-400-extralight.woff') format('woff');
+  
+}

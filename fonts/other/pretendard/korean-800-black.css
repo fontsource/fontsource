@@ -1,0 +1,9 @@
+/* pretendard-korean-800-black*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: black;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./files/pretendard-korean-800-black.woff2') format('woff2'), url('./files/pretendard-korean-800-black.woff') format('woff');
+  
+}

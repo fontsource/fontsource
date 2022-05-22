@@ -1,0 +1,9 @@
+/* pretendard-korean-300-regular*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: regular;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./files/pretendard-korean-300-regular.woff2') format('woff2'), url('./files/pretendard-korean-300-regular.woff') format('woff');
+  
+}

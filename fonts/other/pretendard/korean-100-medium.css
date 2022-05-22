@@ -1,0 +1,9 @@
+/* pretendard-korean-100-medium*/
+@font-face {
+  font-family: 'Pretendard';
+  font-style: medium;
+  font-display: swap;
+  font-weight: 100;
+  src: url('./files/pretendard-korean-100-medium.woff2') format('woff2'), url('./files/pretendard-korean-100-medium.woff') format('woff');
+  
+}
