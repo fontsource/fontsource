@@ -1,15 +1,1 @@
-{
-  "fontId": "manjari",
-  "fontName": "Manjari",
-  "subsets": ["latin", "latin-ext", "malayalam"],
-  "weights": [100, 400, 700],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-26",
-  "version": "v9",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"manjari","fontName":"Manjari","subsets":["latin","latin-ext","malayalam"],"weights":[100,400,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v9","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

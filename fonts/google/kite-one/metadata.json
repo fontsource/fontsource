@@ -1,15 +1,1 @@
-{
-  "fontId": "kite-one",
-  "fontName": "Kite One",
-  "subsets": ["latin"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-26",
-  "version": "v20",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"kite-one","fontName":"Kite One","subsets":["latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v20","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

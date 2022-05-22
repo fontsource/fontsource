@@ -1,16 +1,1 @@
-[
-  "./fonts/google/sura/files/sura-devanagari-400-normal.woff",
-  "./fonts/google/sura/files/sura-latin-400-normal.woff",
-  "./fonts/google/sura/files/sura-latin-ext-400-normal.woff",
-  "./fonts/google/sura/files/sura-devanagari-700-normal.woff",
-  "./fonts/google/sura/files/sura-latin-700-normal.woff",
-  "./fonts/google/sura/files/sura-latin-ext-700-normal.woff",
-  "./fonts/google/sura/files/sura-devanagari-400-normal.woff2",
-  "./fonts/google/sura/files/sura-all-400-normal.woff",
-  "./fonts/google/sura/files/sura-latin-ext-400-normal.woff2",
-  "./fonts/google/sura/files/sura-latin-400-normal.woff2",
-  "./fonts/google/sura/files/sura-devanagari-700-normal.woff2",
-  "./fonts/google/sura/files/sura-all-700-normal.woff",
-  "./fonts/google/sura/files/sura-latin-ext-700-normal.woff2",
-  "./fonts/google/sura/files/sura-latin-700-normal.woff2"
-]
+["./fonts/google/sura/files/sura-devanagari-400-normal.woff","./fonts/google/sura/files/sura-latin-400-normal.woff","./fonts/google/sura/files/sura-latin-ext-400-normal.woff","./fonts/google/sura/files/sura-devanagari-700-normal.woff","./fonts/google/sura/files/sura-latin-700-normal.woff","./fonts/google/sura/files/sura-latin-ext-700-normal.woff","./fonts/google/sura/files/sura-devanagari-400-normal.woff2","./fonts/google/sura/files/sura-all-400-normal.woff","./fonts/google/sura/files/sura-latin-ext-400-normal.woff2","./fonts/google/sura/files/sura-latin-400-normal.woff2","./fonts/google/sura/files/sura-devanagari-700-normal.woff2","./fonts/google/sura/files/sura-all-700-normal.woff","./fonts/google/sura/files/sura-latin-ext-700-normal.woff2","./fonts/google/sura/files/sura-latin-700-normal.woff2"]

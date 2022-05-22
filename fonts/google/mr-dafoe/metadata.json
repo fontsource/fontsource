@@ -1,15 +1,1 @@
-{
-  "fontId": "mr-dafoe",
-  "fontName": "Mr Dafoe",
-  "subsets": ["latin", "latin-ext"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-26",
-  "version": "v14",
-  "category": "handwriting",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"mr-dafoe","fontName":"Mr Dafoe","subsets":["latin","latin-ext"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v14","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
