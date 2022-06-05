@@ -1,5 +1,7 @@
 [
   "./fonts/google/paprika/files/paprika-latin-400-normal.woff",
-  "./fonts/google/paprika/files/paprika-latin-400-normal.woff2",
-  "./fonts/google/paprika/files/paprika-all-400-normal.woff"
+  "./fonts/google/paprika/files/paprika-latin-ext-400-normal.woff",
+  "./fonts/google/paprika/files/paprika-latin-ext-400-normal.woff2",
+  "./fonts/google/paprika/files/paprika-all-400-normal.woff",
+  "./fonts/google/paprika/files/paprika-latin-400-normal.woff2"
 ]

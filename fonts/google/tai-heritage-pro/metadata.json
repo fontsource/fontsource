@@ -1,0 +1,15 @@
+{
+  "fontId": "tai-heritage-pro",
+  "fontName": "Tai Heritage Pro",
+  "subsets": ["latin", "latin-ext", "tai-viet", "vietnamese"],
+  "weights": [400, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-05-31",
+  "version": "v1",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
