@@ -1,15 +1,1 @@
-{
-  "fontId": "montserrat-alternates",
-  "fontName": "Montserrat Alternates",
-  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
-  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
-  "styles": ["italic", "normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-26",
-  "version": "v17",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"montserrat-alternates","fontName":"Montserrat Alternates","subsets":["cyrillic","cyrillic-ext","latin","latin-ext","vietnamese"],"weights":[100,200,300,400,500,600,700,800,900],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v17","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

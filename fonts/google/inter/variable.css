@@ -5,7 +5,7 @@
   font-display: swap;
   font-weight: 100 900;
   src: url('./files/inter-cyrillic-variable-wghtOnly-normal.woff2') format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }  
 /* inter-cyrillic-ext-variable-wghtOnly-normal */
 @font-face {
