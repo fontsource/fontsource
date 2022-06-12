@@ -1,15 +1,1 @@
-{
-  "fontId": "libre-barcode-39",
-  "fontName": "Libre Barcode 39",
-  "subsets": ["latin"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-26",
-  "version": "v19",
-  "category": "display",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"libre-barcode-39","fontName":"Libre Barcode 39","subsets":["latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v19","category":"display","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
