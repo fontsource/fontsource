@@ -1,1 +1,28 @@
-{"name":"@fontsource/biz-udpgothic","version":"4.5.2","description":"Self-host the BIZ UDPGothic font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","BIZ UDPGothic","biz-udpgothic","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/biz-udpgothic#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/biz-udpgothic"}}
+{
+  "name": "@fontsource/biz-udpgothic",
+  "version": "4.5.2",
+  "description": "Self-host the BIZ UDPGothic font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "BIZ UDPGothic",
+    "biz-udpgothic",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/biz-udpgothic#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/biz-udpgothic"
+  }
+}
