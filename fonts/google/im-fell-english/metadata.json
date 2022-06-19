@@ -1,1 +1,15 @@
-{"fontId":"im-fell-english","fontName":"IM Fell English","subsets":["latin"],"weights":[400],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v14","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "im-fell-english",
+  "fontName": "IM Fell English",
+  "subsets": ["latin"],
+  "weights": [400],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-26",
+  "version": "v14",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
