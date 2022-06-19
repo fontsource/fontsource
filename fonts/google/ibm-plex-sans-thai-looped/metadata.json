@@ -1,15 +1,1 @@
-{
-  "fontId": "ibm-plex-sans-thai-looped",
-  "fontName": "IBM Plex Sans Thai Looped",
-  "subsets": ["cyrillic-ext", "latin", "latin-ext", "thai"],
-  "weights": [100, 200, 300, 400, 500, 600, 700],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-26",
-  "version": "v7",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"ibm-plex-sans-thai-looped","fontName":"IBM Plex Sans Thai Looped","subsets":["cyrillic-ext","latin","latin-ext","thai"],"weights":[100,200,300,400,500,600,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v7","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
