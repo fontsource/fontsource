@@ -34,7 +34,7 @@
     "fs-extra": "^10.0.1",
     "glob": "^7.2.0",
     "google-font-metadata": "^3.1.1",
-    "got": "^11.8.2",
+    "got": "^11.8.5",
     "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.1.0",
     "lodash": "^4.17.21"
