@@ -1,1 +1,15 @@
-{"fontId":"tajawal","fontName":"Tajawal","subsets":["arabic","latin"],"weights":[200,300,400,500,700,800,900],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-27","version":"v9","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "tajawal",
+  "fontName": "Tajawal",
+  "subsets": ["arabic", "latin"],
+  "weights": [200, 300, 400, 500, 700, 800, 900],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-27",
+  "version": "v9",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
