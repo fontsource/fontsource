@@ -16,6 +16,7 @@ import { UpdateService } from './services/update.service';
 
 import { FontAllResponse, FontResponse } from './interfaces/font.interface';
 import { QueriesAll, QueriesOne } from './interfaces/queries.interface';
+import { mimes } from './utils/mimes';
 
 @ApiTags('fonts')
 @Controller({ path: 'fonts', version: '1' })
@@ -37,6 +38,17 @@ export class FontsController {
     @Query() query: QueriesOne,
   ): Promise<FontResponse> {
     return this.findService.findOne(id, query);
+  }
+
+  @Get(':id/download')
+  async findZip(
+    @Response() res: FastifyReply,
+    @Param('id') id: string,
+    @Query() query: QueriesOne,
+  ): Promise<void> {
+    const zipFile = await this.findService.findZip(id, query);
+    res.type(mimes.zip);
+    res.send(zipFile);
   }
 
   @Get(':id/:file')

@@ -36,6 +36,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.1",
     "fastify-swagger": "^4.17.1",
+    "jszip": "^3.10.0",
     "lodash": "^4.17.21",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.4",

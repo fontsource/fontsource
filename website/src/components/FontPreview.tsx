@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { DownloadIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -102,6 +102,15 @@ export const FontPreview = ({
           <Heading size="2xl">{metadata.fontName}</Heading>
           <HStack display={{ base: "none", sm: "flex" }} ml="auto">
             <Tag>{metadata.category}</Tag>
+            <Link
+              href={`https://api.fontsource.org/v1/fonts/${metadata.fontId}/download`}
+            >
+              <IconButton
+                aria-label="Font zip download"
+                variant="ghost"
+                icon={<DownloadIcon />}
+              />
+            </Link>
             <Link
               isExternal
               href={`https://www.npmjs.com/package/@fontsource/${metadata.fontId}`}

@@ -15,9 +15,6 @@ export class Files {
   ext: string;
 
   @Prop()
-  data: Buffer;
-
-  @Prop()
   hash: string;
 
   @Prop([String])
