@@ -1,6 +1,6 @@
 import { Inject } from '@nestjs/common';
 
-export const chunkSizeBytes = 1000;
+export const chunkSizeBytes = 16000000;
 
 export function InjectGridFS() {
   return Inject('GridFS');
