@@ -1,1 +1,15 @@
-{"fontId":"mukta-malar","fontName":"Mukta Malar","subsets":["latin","latin-ext","tamil"],"weights":[200,300,400,500,600,700,800],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v12","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "mukta-malar",
+  "fontName": "Mukta Malar",
+  "subsets": ["latin", "latin-ext", "tamil"],
+  "weights": [200, 300, 400, 500, 600, 700, 800],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-26",
+  "version": "v12",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
