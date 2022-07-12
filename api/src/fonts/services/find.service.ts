@@ -5,6 +5,7 @@ import {
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { merge } from 'lodash';
+import JSZip from 'jszip';
 
 import { Model } from 'mongoose';
 import { Font, FontDocument } from '../schemas/font.schema';
@@ -14,6 +15,7 @@ import {
   FontResponse,
   Variants,
   UnicodeRange,
+  FontFilePath,
 } from '../interfaces/font.interface';
 import {
   QueriesAll,
@@ -29,12 +31,21 @@ import { AxiosResponse } from 'axios';
 import { latestFontVersion } from '../utils/latestFontVersion';
 import { genHash } from '../utils/genHash';
 import { mimes } from '../utils/mimes';
+import {
+  chunkSizeBytes,
+  InjectGridFS,
+  GridFSBucket,
+  gridFSWrite,
+  gridFSRead,
+} from '../../gridfs';
 
 @Injectable()
 export class FindService {
   constructor(
     @InjectModel(Font.name)
     private readonly fontModel: Model<FontDocument>,
+    @InjectGridFS()
+    private readonly gridFS: GridFSBucket,
     private readonly httpService: HttpService,
   ) {}
 
@@ -146,18 +157,105 @@ export class FindService {
     };
   }
 
-  async findFile(
-    id: string,
-    file: string,
-    query: QueriesOne,
-  ): Promise<{ data: Buffer; type: string }> {
+  async findZip(id: string, query: QueriesOne): Promise<Buffer> {
+    const NotFound = () => new NotFoundException(`Not found: ${id}/download`);
+
     const fontObj = await this.fontModel.findOne({ id }).exec();
 
-    if (fontObj == null) {
-      throw new NotFoundException();
+    if (fontObj == null) throw NotFound();
+
+    const version =
+      query.version || (await latestFontVersion(this.httpService, id));
+
+    // Search for existing zip
+    const fontObjZip = fontObj.zips.find((zip) =>
+      zip.versions.includes(version),
+    );
+
+    if (fontObjZip) {
+      return await gridFSRead(
+        this.gridFS.openDownloadStreamByName(
+          `v1/fonts/${id}/${fontObjZip.hash}`,
+        ),
+      );
     }
 
-    const parsedPath = fontFilePath(file);
+    const fileTypes = [
+      { ext: 'ttf', dir: 'ttf' },
+      { ext: 'woff', dir: 'webfonts' },
+      { ext: 'woff2', dir: 'webfonts' },
+    ];
+
+    const zip = new JSZip();
+
+    const fontPaths: string[] = [];
+    const fontPromises: Array<
+      Promise<{
+        data: Buffer;
+        type: string;
+      }>
+    > = [];
+
+    for (const { ext, dir } of fileTypes) {
+      for (const subset of fontObj.subsets) {
+        for (const weight of fontObj.weights) {
+          for (const style of fontObj.styles) {
+            fontPaths.push(`${dir}/${id}-${subset}-${weight}-${style}.${ext}`);
+            fontPromises.push(
+              this.findFile(id, { subset, weight, style, ext }, query),
+            );
+          }
+        }
+      }
+    }
+
+    const fontFiles = await Promise.all(fontPromises);
+
+    for (let i = 0; i < fontPaths.length; i++) {
+      zip.file(fontPaths[i], fontFiles[i].data);
+    }
+
+    const zipBuffer = await zip.generateAsync({ type: 'nodebuffer' });
+
+    const zipBufferHash = genHash(zipBuffer);
+
+    const zipObjFileFromHash = fontObj.files.find(
+      (zip) => zip.hash === zipBufferHash,
+    );
+
+    if (zipObjFileFromHash) {
+      zipObjFileFromHash.versions.push(version);
+    } else {
+      fontObj.zips.push({
+        hash: zipBufferHash,
+        versions: [version],
+      });
+    }
+
+    await fontObj.save();
+
+    await gridFSWrite(
+      this.gridFS.openUploadStream(`v1/fonts/${id}/${zipBufferHash}`, {
+        chunkSizeBytes,
+      }),
+      zipBuffer,
+    );
+
+    return zipBuffer;
+  }
+
+  async findFile(
+    id: string,
+    file: string | FontFilePath,
+    query: QueriesOne,
+  ): Promise<{ data: Buffer; type: string }> {
+    const NotFound = () => new NotFoundException(`Not found: ${id}/${file}`);
+
+    let fontObj = await this.fontModel.findOne({ id }).exec();
+
+    if (fontObj == null) throw NotFound();
+
+    const parsedPath = typeof file === 'string' ? fontFilePath(file) : file;
 
     if (!parsedPath) throw new BadRequestException(`Bad font path: ${file}`);
 
@@ -174,55 +272,74 @@ export class FindService {
         file.versions.includes(version),
     );
 
-    if (fontObjFile)
-      return { data: fontObjFile.data, type: mimes[parsedPath.ext] };
-
-    const fontObjVariant = fontObj.variants.find(
-      (variant) => variant.subset === parsedPath.subset,
-    );
-    if (!fontObjVariant) {
-      throw new NotFoundException(`Not found: ${id}/${file}`);
+    if (fontObjFile) {
+      return {
+        data: await gridFSRead(
+          this.gridFS.openDownloadStreamByName(
+            `v1/fonts/${id}/${fontObjFile.hash}`,
+          ),
+        ),
+        type: mimes[parsedPath.ext],
+      };
     }
 
-    const fontObjVariantDownload = fontObjVariant.downloads.find(
-      (download) =>
-        download.weight === parsedPath.weight &&
-        download.style === parsedPath.style,
-    );
-    if (!fontObjVariantDownload) {
-      throw new NotFoundException(`Not found: ${id}/${file}`);
-    }
-
-    const parsedPathType: string =
-      parsedPath.ext === 'ttf' ? 'woff2' : parsedPath.ext;
-    const fontObjUrl = fontLink(
-      id,
-      parsedPath.subset,
-      parsedPath.weight,
-      parsedPath.style,
-      version,
-    )[parsedPathType as 'ttf' | 'woff' | 'woff2'];
-
-    if (!fontObjUrl) {
-      throw new NotFoundException(`Not found: ${id}/${file}`);
-    }
-
-    let fontBuffer: Buffer = Buffer.alloc(0);
-
-    await lastValueFrom(
-      this.httpService.get(fontObjUrl, { responseType: 'arraybuffer' }),
-    )
-      .then((res: AxiosResponse<Buffer>) => {
-        fontBuffer = res.data;
-      })
-      .catch(() => {
-        throw new NotFoundException(`Not found: ${id}/${file}`);
-      });
+    let fontBuffer = Buffer.alloc(0);
 
     if (parsedPath.ext === 'ttf') {
       fontBuffer = Buffer.from(
-        await (await import('wawoff2')).decompress(fontBuffer),
+        await (
+          await import('wawoff2')
+        ).decompress(
+          (
+            await this.findFile(
+              id,
+              {
+                ...parsedPath,
+                ext: 'woff2',
+              },
+              query,
+            )
+          ).data,
+        ),
       );
+
+      fontObj = await this.fontModel.findOne({ _id: fontObj._id }).exec();
+
+      if (fontObj == null) throw NotFound();
+    } else {
+      const fontObjVariant = fontObj.variants.find(
+        (variant) => variant.subset === parsedPath.subset,
+      );
+      if (!fontObjVariant) throw NotFound();
+
+      const fontObjVariantDownload = fontObjVariant.downloads.find(
+        (download) =>
+          download.weight === parsedPath.weight &&
+          download.style === parsedPath.style,
+      );
+      if (!fontObjVariantDownload) throw NotFound();
+
+      const parsedPathType: string =
+        parsedPath.ext === 'ttf' ? 'woff2' : parsedPath.ext;
+      const fontObjUrl = fontLink(
+        id,
+        parsedPath.subset,
+        parsedPath.weight,
+        parsedPath.style,
+        version,
+      )[parsedPathType as 'woff' | 'woff2'];
+
+      if (!fontObjUrl) throw NotFound();
+
+      await lastValueFrom(
+        this.httpService.get(fontObjUrl, { responseType: 'arraybuffer' }),
+      )
+        .then((res: AxiosResponse<Buffer>) => {
+          fontBuffer = res.data;
+        })
+        .catch(() => {
+          throw NotFound();
+        });
     }
 
     const fontBufferHash = genHash(fontBuffer);
@@ -241,13 +358,19 @@ export class FindService {
     } else {
       fontObj.files.push({
         ...parsedPath,
-        data: fontBuffer,
         hash: fontBufferHash,
         versions: [version],
       });
     }
 
     await fontObj.save();
+
+    await gridFSWrite(
+      this.gridFS.openUploadStream(`v1/fonts/${id}/${fontBufferHash}`, {
+        chunkSizeBytes,
+      }),
+      fontBuffer,
+    );
 
     return { data: fontBuffer, type: mimes[parsedPath.ext] };
   }

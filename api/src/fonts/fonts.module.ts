@@ -9,6 +9,7 @@ import { FontsController } from './fonts.controller';
 import { FindService } from './services/find.service';
 import { FontsService } from './services/fonts.service';
 import { UpdateService } from './services/update.service';
+import { GridFSModule } from '../gridfs';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { UpdateService } from './services/update.service';
     MongooseModule.forFeature([
       { name: Font.name, schema: FontSchema, collection: 'fonts' },
     ]),
+    GridFSModule,
   ],
   controllers: [FontsController],
   providers: [FontsService, FindService, UpdateService],

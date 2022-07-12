@@ -2,6 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { Files, FilesSchema } from './files.schema';
 import { Variants, VariantsSchema } from './variants.schema';
+import { Zips, ZipsSchema } from './zips.schema';
 
 export type FontDocument = Font & Document;
 
@@ -48,6 +49,9 @@ export class Font {
 
   @Prop({ type: [VariantsSchema], default: [], _id: false })
   variants: Variants[];
+
+  @Prop({ type: [ZipsSchema], default: [], _id: false })
+  zips: Zips[];
 
   @Prop({ type: [FilesSchema], default: [], _id: false })
   files: Files[];
