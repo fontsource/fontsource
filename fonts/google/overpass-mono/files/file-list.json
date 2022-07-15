@@ -58,5 +58,10 @@
   "./fonts/google/overpass-mono/files/overpass-mono-cyrillic-variable-wghtOnly-normal.woff2",
   "./fonts/google/overpass-mono/files/overpass-mono-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/overpass-mono/files/overpass-mono-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/overpass-mono/files/overpass-mono-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/overpass-mono/files/overpass-mono-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/overpass-mono/files/overpass-mono-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/overpass-mono/files/overpass-mono-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/overpass-mono/files/overpass-mono-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/overpass-mono/files/overpass-mono-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/overpass-mono/files/overpass-mono-latin-variable-full-normal.woff2"
 ]

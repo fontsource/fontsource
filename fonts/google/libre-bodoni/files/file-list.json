@@ -60,5 +60,11 @@
   "./fonts/google/libre-bodoni/files/libre-bodoni-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/libre-bodoni/files/libre-bodoni-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/libre-bodoni/files/libre-bodoni-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/libre-bodoni/files/libre-bodoni-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/libre-bodoni/files/libre-bodoni-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/libre-bodoni/files/libre-bodoni-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/libre-bodoni/files/libre-bodoni-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/libre-bodoni/files/libre-bodoni-latin-variable-full-normal.woff2",
+  "./fonts/google/libre-bodoni/files/libre-bodoni-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/libre-bodoni/files/libre-bodoni-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/libre-bodoni/files/libre-bodoni-latin-variable-full-italic.woff2"
 ]

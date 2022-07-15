@@ -64,5 +64,8 @@
   "./fonts/google/lexend-tera/files/lexend-tera-latin-900-normal.woff2",
   "./fonts/google/lexend-tera/files/lexend-tera-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/lexend-tera/files/lexend-tera-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/lexend-tera/files/lexend-tera-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/lexend-tera/files/lexend-tera-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/lexend-tera/files/lexend-tera-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/lexend-tera/files/lexend-tera-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/lexend-tera/files/lexend-tera-latin-variable-full-normal.woff2"
 ]

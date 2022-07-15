@@ -55,10 +55,10 @@
   "./fonts/google/inconsolata/files/inconsolata-all-900-normal.woff",
   "./fonts/google/inconsolata/files/inconsolata-latin-ext-900-normal.woff2",
   "./fonts/google/inconsolata/files/inconsolata-latin-900-normal.woff2",
-  "./fonts/google/inconsolata/files/inconsolata-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/inconsolata/files/inconsolata-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/inconsolata/files/inconsolata-latin-variable-full-normal.woff2",
   "./fonts/google/inconsolata/files/inconsolata-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/inconsolata/files/inconsolata-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/inconsolata/files/inconsolata-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/inconsolata/files/inconsolata-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/inconsolata/files/inconsolata-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/inconsolata/files/inconsolata-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/inconsolata/files/inconsolata-latin-variable-full-normal.woff2"
 ]

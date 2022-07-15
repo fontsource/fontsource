@@ -114,5 +114,13 @@
   "./fonts/google/merriweather-sans/files/merriweather-sans-cyrillic-ext-variable-wghtOnly-italic.woff2",
   "./fonts/google/merriweather-sans/files/merriweather-sans-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/merriweather-sans/files/merriweather-sans-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/merriweather-sans/files/merriweather-sans-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/merriweather-sans/files/merriweather-sans-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/merriweather-sans/files/merriweather-sans-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/merriweather-sans/files/merriweather-sans-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/merriweather-sans/files/merriweather-sans-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/merriweather-sans/files/merriweather-sans-latin-variable-full-normal.woff2",
+  "./fonts/google/merriweather-sans/files/merriweather-sans-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/merriweather-sans/files/merriweather-sans-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/merriweather-sans/files/merriweather-sans-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/merriweather-sans/files/merriweather-sans-latin-variable-full-italic.woff2"
 ]

@@ -72,5 +72,9 @@
   "./fonts/google/karla/files/karla-latin-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/karla/files/karla-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/karla/files/karla-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/karla/files/karla-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/karla/files/karla-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/karla/files/karla-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/karla/files/karla-latin-variable-full-normal.woff2",
+  "./fonts/google/karla/files/karla-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/karla/files/karla-latin-variable-full-italic.woff2"
 ]

@@ -36,5 +36,8 @@
   "./fonts/google/quicksand/files/quicksand-latin-700-normal.woff2",
   "./fonts/google/quicksand/files/quicksand-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/quicksand/files/quicksand-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/quicksand/files/quicksand-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/quicksand/files/quicksand-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/quicksand/files/quicksand-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/quicksand/files/quicksand-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/quicksand/files/quicksand-latin-variable-full-normal.woff2"
 ]

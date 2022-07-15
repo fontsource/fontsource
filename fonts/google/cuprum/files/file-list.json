@@ -96,5 +96,15 @@
   "./fonts/google/cuprum/files/cuprum-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/cuprum/files/cuprum-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/cuprum/files/cuprum-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/cuprum/files/cuprum-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/cuprum/files/cuprum-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/cuprum/files/cuprum-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/cuprum/files/cuprum-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/cuprum/files/cuprum-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/cuprum/files/cuprum-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/cuprum/files/cuprum-latin-variable-full-normal.woff2",
+  "./fonts/google/cuprum/files/cuprum-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/cuprum/files/cuprum-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/cuprum/files/cuprum-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/cuprum/files/cuprum-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/cuprum/files/cuprum-latin-variable-full-italic.woff2"
 ]

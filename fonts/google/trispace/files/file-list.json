@@ -55,10 +55,10 @@
   "./fonts/google/trispace/files/trispace-all-800-normal.woff",
   "./fonts/google/trispace/files/trispace-latin-ext-800-normal.woff2",
   "./fonts/google/trispace/files/trispace-latin-800-normal.woff2",
-  "./fonts/google/trispace/files/trispace-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/trispace/files/trispace-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/trispace/files/trispace-latin-variable-full-normal.woff2",
   "./fonts/google/trispace/files/trispace-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/trispace/files/trispace-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/trispace/files/trispace-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/trispace/files/trispace-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/trispace/files/trispace-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/trispace/files/trispace-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/trispace/files/trispace-latin-variable-full-normal.woff2"
 ]

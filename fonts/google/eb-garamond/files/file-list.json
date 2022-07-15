@@ -162,5 +162,19 @@
   "./fonts/google/eb-garamond/files/eb-garamond-greek-variable-wghtOnly-italic.woff2",
   "./fonts/google/eb-garamond/files/eb-garamond-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/eb-garamond/files/eb-garamond-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/eb-garamond/files/eb-garamond-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/eb-garamond/files/eb-garamond-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-greek-ext-variable-full-normal.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-greek-variable-full-normal.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-latin-variable-full-normal.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-greek-ext-variable-full-italic.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-greek-variable-full-italic.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/eb-garamond/files/eb-garamond-latin-variable-full-italic.woff2"
 ]

@@ -56,5 +56,9 @@
   "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-cyrillic-variable-wghtOnly-normal.woff2",
   "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/yanone-kaffeesatz/files/yanone-kaffeesatz-latin-variable-full-normal.woff2"
 ]

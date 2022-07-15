@@ -102,5 +102,11 @@
   "./fonts/google/josefin-sans/files/josefin-sans-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/josefin-sans/files/josefin-sans-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/josefin-sans/files/josefin-sans-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/josefin-sans/files/josefin-sans-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/josefin-sans/files/josefin-sans-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/josefin-sans/files/josefin-sans-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/josefin-sans/files/josefin-sans-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/josefin-sans/files/josefin-sans-latin-variable-full-normal.woff2",
+  "./fonts/google/josefin-sans/files/josefin-sans-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/josefin-sans/files/josefin-sans-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/josefin-sans/files/josefin-sans-latin-variable-full-italic.woff2"
 ]

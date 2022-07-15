@@ -92,5 +92,9 @@
   "./fonts/google/azeret-mono/files/azeret-mono-latin-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/azeret-mono/files/azeret-mono-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/azeret-mono/files/azeret-mono-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/azeret-mono/files/azeret-mono-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/azeret-mono/files/azeret-mono-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/azeret-mono/files/azeret-mono-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/azeret-mono/files/azeret-mono-latin-variable-full-normal.woff2",
+  "./fonts/google/azeret-mono/files/azeret-mono-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/azeret-mono/files/azeret-mono-latin-variable-full-italic.woff2"
 ]

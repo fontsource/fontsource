@@ -130,5 +130,11 @@
   "./fonts/google/petrona/files/petrona-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/petrona/files/petrona-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/petrona/files/petrona-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/petrona/files/petrona-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/petrona/files/petrona-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/petrona/files/petrona-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/petrona/files/petrona-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/petrona/files/petrona-latin-variable-full-normal.woff2",
+  "./fonts/google/petrona/files/petrona-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/petrona/files/petrona-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/petrona/files/petrona-latin-variable-full-italic.woff2"
 ]

@@ -62,12 +62,12 @@
   "./fonts/google/recursive/files/recursive-vietnamese-900-normal.woff2",
   "./fonts/google/recursive/files/recursive-latin-ext-900-normal.woff2",
   "./fonts/google/recursive/files/recursive-latin-900-normal.woff2",
-  "./fonts/google/recursive/files/recursive-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/recursive/files/recursive-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/recursive/files/recursive-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/recursive/files/recursive-latin-variable-full-normal.woff2",
   "./fonts/google/recursive/files/recursive-cyrillic-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/recursive/files/recursive-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/recursive/files/recursive-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/recursive/files/recursive-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/recursive/files/recursive-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/recursive/files/recursive-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/recursive/files/recursive-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/recursive/files/recursive-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/recursive/files/recursive-latin-variable-full-normal.woff2"
 ]

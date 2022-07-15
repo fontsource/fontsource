@@ -52,5 +52,9 @@
   "./fonts/google/mohave/files/mohave-latin-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/mohave/files/mohave-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/mohave/files/mohave-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/mohave/files/mohave-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/mohave/files/mohave-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/mohave/files/mohave-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/mohave/files/mohave-latin-variable-full-normal.woff2",
+  "./fonts/google/mohave/files/mohave-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/mohave/files/mohave-latin-variable-full-italic.woff2"
 ]

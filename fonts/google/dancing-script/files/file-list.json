@@ -29,5 +29,8 @@
   "./fonts/google/dancing-script/files/dancing-script-latin-700-normal.woff2",
   "./fonts/google/dancing-script/files/dancing-script-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/dancing-script/files/dancing-script-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/dancing-script/files/dancing-script-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/dancing-script/files/dancing-script-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/dancing-script/files/dancing-script-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/dancing-script/files/dancing-script-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/dancing-script/files/dancing-script-latin-variable-full-normal.woff2"
 ]

@@ -34,10 +34,10 @@
   "./fonts/google/fredoka/files/fredoka-all-700-normal.woff",
   "./fonts/google/fredoka/files/fredoka-latin-ext-700-normal.woff2",
   "./fonts/google/fredoka/files/fredoka-latin-700-normal.woff2",
-  "./fonts/google/fredoka/files/fredoka-hebrew-variable-full-normal.woff2",
-  "./fonts/google/fredoka/files/fredoka-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/fredoka/files/fredoka-latin-variable-full-normal.woff2",
   "./fonts/google/fredoka/files/fredoka-hebrew-variable-wghtOnly-normal.woff2",
   "./fonts/google/fredoka/files/fredoka-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/fredoka/files/fredoka-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/fredoka/files/fredoka-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/fredoka/files/fredoka-hebrew-variable-full-normal.woff2",
+  "./fonts/google/fredoka/files/fredoka-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/fredoka/files/fredoka-latin-variable-full-normal.woff2"
 ]

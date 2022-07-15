@@ -38,5 +38,9 @@
   "./fonts/google/caveat/files/caveat-cyrillic-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/caveat/files/caveat-cyrillic-variable-wghtOnly-normal.woff2",
   "./fonts/google/caveat/files/caveat-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/caveat/files/caveat-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/caveat/files/caveat-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/caveat/files/caveat-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/caveat/files/caveat-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/caveat/files/caveat-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/caveat/files/caveat-latin-variable-full-normal.woff2"
 ]

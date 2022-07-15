@@ -42,5 +42,7 @@
   "./fonts/google/josefin-slab/files/josefin-slab-latin-700-normal.woff2",
   "./fonts/google/josefin-slab/files/josefin-slab-all-700-normal.woff",
   "./fonts/google/josefin-slab/files/josefin-slab-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/josefin-slab/files/josefin-slab-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/josefin-slab/files/josefin-slab-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/josefin-slab/files/josefin-slab-latin-variable-full-normal.woff2",
+  "./fonts/google/josefin-slab/files/josefin-slab-latin-variable-full-italic.woff2"
 ]

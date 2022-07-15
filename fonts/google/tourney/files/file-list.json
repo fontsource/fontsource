@@ -125,16 +125,16 @@
   "./fonts/google/tourney/files/tourney-all-900-normal.woff",
   "./fonts/google/tourney/files/tourney-latin-ext-900-normal.woff2",
   "./fonts/google/tourney/files/tourney-latin-900-normal.woff2",
-  "./fonts/google/tourney/files/tourney-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/tourney/files/tourney-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/tourney/files/tourney-latin-variable-full-normal.woff2",
-  "./fonts/google/tourney/files/tourney-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/tourney/files/tourney-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/tourney/files/tourney-latin-variable-full-italic.woff2",
   "./fonts/google/tourney/files/tourney-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/tourney/files/tourney-latin-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/tourney/files/tourney-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/tourney/files/tourney-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/tourney/files/tourney-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/tourney/files/tourney-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/tourney/files/tourney-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/tourney/files/tourney-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/tourney/files/tourney-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/tourney/files/tourney-latin-variable-full-normal.woff2",
+  "./fonts/google/tourney/files/tourney-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/tourney/files/tourney-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/tourney/files/tourney-latin-variable-full-italic.woff2"
 ]

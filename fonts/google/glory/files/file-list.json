@@ -116,5 +116,11 @@
   "./fonts/google/glory/files/glory-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/glory/files/glory-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/glory/files/glory-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/glory/files/glory-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/glory/files/glory-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/glory/files/glory-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/glory/files/glory-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/glory/files/glory-latin-variable-full-normal.woff2",
+  "./fonts/google/glory/files/glory-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/glory/files/glory-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/glory/files/glory-latin-variable-full-italic.woff2"
 ]

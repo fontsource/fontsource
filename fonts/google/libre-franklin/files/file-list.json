@@ -130,5 +130,11 @@
   "./fonts/google/libre-franklin/files/libre-franklin-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/libre-franklin/files/libre-franklin-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/libre-franklin/files/libre-franklin-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/libre-franklin/files/libre-franklin-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/libre-franklin/files/libre-franklin-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/libre-franklin/files/libre-franklin-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/libre-franklin/files/libre-franklin-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/libre-franklin/files/libre-franklin-latin-variable-full-normal.woff2",
+  "./fonts/google/libre-franklin/files/libre-franklin-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/libre-franklin/files/libre-franklin-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/libre-franklin/files/libre-franklin-latin-variable-full-italic.woff2"
 ]

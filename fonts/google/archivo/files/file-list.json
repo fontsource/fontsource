@@ -125,16 +125,16 @@
   "./fonts/google/archivo/files/archivo-all-900-normal.woff",
   "./fonts/google/archivo/files/archivo-latin-ext-900-normal.woff2",
   "./fonts/google/archivo/files/archivo-latin-900-normal.woff2",
-  "./fonts/google/archivo/files/archivo-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/archivo/files/archivo-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/archivo/files/archivo-latin-variable-full-normal.woff2",
-  "./fonts/google/archivo/files/archivo-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/archivo/files/archivo-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/archivo/files/archivo-latin-variable-full-italic.woff2",
   "./fonts/google/archivo/files/archivo-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/archivo/files/archivo-latin-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/archivo/files/archivo-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/archivo/files/archivo-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/archivo/files/archivo-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/archivo/files/archivo-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/archivo/files/archivo-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/archivo/files/archivo-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/archivo/files/archivo-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/archivo/files/archivo-latin-variable-full-normal.woff2",
+  "./fonts/google/archivo/files/archivo-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/archivo/files/archivo-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/archivo/files/archivo-latin-variable-full-italic.woff2"
 ]

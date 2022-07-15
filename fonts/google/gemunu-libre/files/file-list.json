@@ -50,5 +50,8 @@
   "./fonts/google/gemunu-libre/files/gemunu-libre-latin-800-normal.woff2",
   "./fonts/google/gemunu-libre/files/gemunu-libre-sinhala-variable-wghtOnly-normal.woff2",
   "./fonts/google/gemunu-libre/files/gemunu-libre-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/gemunu-libre/files/gemunu-libre-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/gemunu-libre/files/gemunu-libre-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/gemunu-libre/files/gemunu-libre-sinhala-variable-full-normal.woff2",
+  "./fonts/google/gemunu-libre/files/gemunu-libre-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/gemunu-libre/files/gemunu-libre-latin-variable-full-normal.woff2"
 ]

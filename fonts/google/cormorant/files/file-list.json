@@ -118,5 +118,15 @@
   "./fonts/google/cormorant/files/cormorant-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/cormorant/files/cormorant-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/cormorant/files/cormorant-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/cormorant/files/cormorant-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/cormorant/files/cormorant-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/cormorant/files/cormorant-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/cormorant/files/cormorant-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/cormorant/files/cormorant-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/cormorant/files/cormorant-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/cormorant/files/cormorant-latin-variable-full-normal.woff2",
+  "./fonts/google/cormorant/files/cormorant-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/cormorant/files/cormorant-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/cormorant/files/cormorant-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/cormorant/files/cormorant-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/cormorant/files/cormorant-latin-variable-full-italic.woff2"
 ]

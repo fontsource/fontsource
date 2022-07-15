@@ -48,10 +48,10 @@
   "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-all-700-normal.woff",
   "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-ext-700-normal.woff2",
   "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-700-normal.woff2",
-  "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-variable-full-normal.woff2",
   "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/m-plus-code-latin/files/m-plus-code-latin-latin-variable-full-normal.woff2"
 ]

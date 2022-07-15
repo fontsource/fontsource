@@ -252,5 +252,19 @@
   "./fonts/google/source-code-pro/files/source-code-pro-greek-variable-wghtOnly-italic.woff2",
   "./fonts/google/source-code-pro/files/source-code-pro-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/source-code-pro/files/source-code-pro-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/source-code-pro/files/source-code-pro-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/source-code-pro/files/source-code-pro-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-greek-ext-variable-full-normal.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-greek-variable-full-normal.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-latin-variable-full-normal.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-greek-ext-variable-full-italic.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-greek-variable-full-italic.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/source-code-pro/files/source-code-pro-latin-variable-full-italic.woff2"
 ]

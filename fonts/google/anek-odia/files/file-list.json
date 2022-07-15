@@ -55,10 +55,10 @@
   "./fonts/google/anek-odia/files/anek-odia-all-800-normal.woff",
   "./fonts/google/anek-odia/files/anek-odia-latin-ext-800-normal.woff2",
   "./fonts/google/anek-odia/files/anek-odia-latin-800-normal.woff2",
-  "./fonts/google/anek-odia/files/anek-odia-oriya-variable-full-normal.woff2",
-  "./fonts/google/anek-odia/files/anek-odia-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/anek-odia/files/anek-odia-latin-variable-full-normal.woff2",
   "./fonts/google/anek-odia/files/anek-odia-oriya-variable-wghtOnly-normal.woff2",
   "./fonts/google/anek-odia/files/anek-odia-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/anek-odia/files/anek-odia-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/anek-odia/files/anek-odia-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/anek-odia/files/anek-odia-oriya-variable-full-normal.woff2",
+  "./fonts/google/anek-odia/files/anek-odia-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/anek-odia/files/anek-odia-latin-variable-full-normal.woff2"
 ]

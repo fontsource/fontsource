@@ -47,5 +47,9 @@
   "./fonts/google/lemonada/files/lemonada-arabic-variable-wghtOnly-normal.woff2",
   "./fonts/google/lemonada/files/lemonada-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/lemonada/files/lemonada-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/lemonada/files/lemonada-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/lemonada/files/lemonada-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/lemonada/files/lemonada-arabic-variable-full-normal.woff2",
+  "./fonts/google/lemonada/files/lemonada-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/lemonada/files/lemonada-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/lemonada/files/lemonada-latin-variable-full-normal.woff2"
 ]

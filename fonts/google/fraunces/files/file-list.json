@@ -125,16 +125,16 @@
   "./fonts/google/fraunces/files/fraunces-all-900-normal.woff",
   "./fonts/google/fraunces/files/fraunces-latin-ext-900-normal.woff2",
   "./fonts/google/fraunces/files/fraunces-latin-900-normal.woff2",
-  "./fonts/google/fraunces/files/fraunces-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/fraunces/files/fraunces-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/fraunces/files/fraunces-latin-variable-full-normal.woff2",
-  "./fonts/google/fraunces/files/fraunces-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/fraunces/files/fraunces-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/fraunces/files/fraunces-latin-variable-full-italic.woff2",
   "./fonts/google/fraunces/files/fraunces-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/fraunces/files/fraunces-latin-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/fraunces/files/fraunces-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/fraunces/files/fraunces-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/fraunces/files/fraunces-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/fraunces/files/fraunces-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/fraunces/files/fraunces-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/fraunces/files/fraunces-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/fraunces/files/fraunces-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/fraunces/files/fraunces-latin-variable-full-normal.woff2",
+  "./fonts/google/fraunces/files/fraunces-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/fraunces/files/fraunces-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/fraunces/files/fraunces-latin-variable-full-italic.woff2"
 ]

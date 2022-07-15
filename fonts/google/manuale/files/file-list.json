@@ -88,5 +88,11 @@
   "./fonts/google/manuale/files/manuale-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/manuale/files/manuale-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/manuale/files/manuale-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/manuale/files/manuale-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/manuale/files/manuale-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/manuale/files/manuale-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/manuale/files/manuale-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/manuale/files/manuale-latin-variable-full-normal.woff2",
+  "./fonts/google/manuale/files/manuale-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/manuale/files/manuale-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/manuale/files/manuale-latin-variable-full-italic.woff2"
 ]

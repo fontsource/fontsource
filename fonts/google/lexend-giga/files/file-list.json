@@ -64,5 +64,8 @@
   "./fonts/google/lexend-giga/files/lexend-giga-latin-900-normal.woff2",
   "./fonts/google/lexend-giga/files/lexend-giga-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/lexend-giga/files/lexend-giga-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/lexend-giga/files/lexend-giga-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/lexend-giga/files/lexend-giga-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/lexend-giga/files/lexend-giga-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/lexend-giga/files/lexend-giga-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/lexend-giga/files/lexend-giga-latin-variable-full-normal.woff2"
 ]

@@ -43,5 +43,8 @@
   "./fonts/google/maven-pro/files/maven-pro-latin-900-normal.woff2",
   "./fonts/google/maven-pro/files/maven-pro-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/maven-pro/files/maven-pro-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/maven-pro/files/maven-pro-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/maven-pro/files/maven-pro-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/maven-pro/files/maven-pro-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/maven-pro/files/maven-pro-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/maven-pro/files/maven-pro-latin-variable-full-normal.woff2"
 ]

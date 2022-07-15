@@ -92,5 +92,9 @@
   "./fonts/google/gantari/files/gantari-latin-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/gantari/files/gantari-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/gantari/files/gantari-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/gantari/files/gantari-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/gantari/files/gantari-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/gantari/files/gantari-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/gantari/files/gantari-latin-variable-full-normal.woff2",
+  "./fonts/google/gantari/files/gantari-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/gantari/files/gantari-latin-variable-full-italic.woff2"
 ]

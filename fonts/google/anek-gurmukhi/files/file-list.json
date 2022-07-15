@@ -55,10 +55,10 @@
   "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-all-800-normal.woff",
   "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-ext-800-normal.woff2",
   "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-800-normal.woff2",
-  "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-gurmukhi-variable-full-normal.woff2",
-  "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-variable-full-normal.woff2",
   "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-gurmukhi-variable-wghtOnly-normal.woff2",
   "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-gurmukhi-variable-full-normal.woff2",
+  "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/anek-gurmukhi/files/anek-gurmukhi-latin-variable-full-normal.woff2"
 ]

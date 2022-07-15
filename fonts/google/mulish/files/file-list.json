@@ -184,5 +184,15 @@
   "./fonts/google/mulish/files/mulish-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/mulish/files/mulish-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/mulish/files/mulish-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/mulish/files/mulish-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/mulish/files/mulish-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/mulish/files/mulish-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/mulish/files/mulish-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/mulish/files/mulish-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/mulish/files/mulish-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/mulish/files/mulish-latin-variable-full-normal.woff2",
+  "./fonts/google/mulish/files/mulish-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/mulish/files/mulish-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/mulish/files/mulish-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/mulish/files/mulish-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/mulish/files/mulish-latin-variable-full-italic.woff2"
 ]

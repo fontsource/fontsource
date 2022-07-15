@@ -116,5 +116,11 @@
   "./fonts/google/crimson-pro/files/crimson-pro-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/crimson-pro/files/crimson-pro-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/crimson-pro/files/crimson-pro-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/crimson-pro/files/crimson-pro-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/crimson-pro/files/crimson-pro-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/crimson-pro/files/crimson-pro-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/crimson-pro/files/crimson-pro-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/crimson-pro/files/crimson-pro-latin-variable-full-normal.woff2",
+  "./fonts/google/crimson-pro/files/crimson-pro-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/crimson-pro/files/crimson-pro-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/crimson-pro/files/crimson-pro-latin-variable-full-italic.woff2"
 ]

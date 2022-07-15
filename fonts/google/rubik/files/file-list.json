@@ -162,5 +162,15 @@
   "./fonts/google/rubik/files/rubik-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/rubik/files/rubik-hebrew-variable-wghtOnly-italic.woff2",
   "./fonts/google/rubik/files/rubik-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/rubik/files/rubik-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/rubik/files/rubik-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/rubik/files/rubik-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/rubik/files/rubik-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/rubik/files/rubik-hebrew-variable-full-normal.woff2",
+  "./fonts/google/rubik/files/rubik-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/rubik/files/rubik-latin-variable-full-normal.woff2",
+  "./fonts/google/rubik/files/rubik-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/rubik/files/rubik-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/rubik/files/rubik-hebrew-variable-full-italic.woff2",
+  "./fonts/google/rubik/files/rubik-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/rubik/files/rubik-latin-variable-full-italic.woff2"
 ]

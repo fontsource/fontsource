@@ -102,5 +102,11 @@
   "./fonts/google/kantumruy-pro/files/kantumruy-pro-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/kantumruy-pro/files/kantumruy-pro-khmer-variable-wghtOnly-italic.woff2",
   "./fonts/google/kantumruy-pro/files/kantumruy-pro-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/kantumruy-pro/files/kantumruy-pro-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/kantumruy-pro/files/kantumruy-pro-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/kantumruy-pro/files/kantumruy-pro-khmer-variable-full-normal.woff2",
+  "./fonts/google/kantumruy-pro/files/kantumruy-pro-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/kantumruy-pro/files/kantumruy-pro-latin-variable-full-normal.woff2",
+  "./fonts/google/kantumruy-pro/files/kantumruy-pro-khmer-variable-full-italic.woff2",
+  "./fonts/google/kantumruy-pro/files/kantumruy-pro-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/kantumruy-pro/files/kantumruy-pro-latin-variable-full-italic.woff2"
 ]

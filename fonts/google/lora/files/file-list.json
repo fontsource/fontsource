@@ -96,5 +96,15 @@
   "./fonts/google/lora/files/lora-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/lora/files/lora-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/lora/files/lora-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/lora/files/lora-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/lora/files/lora-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/lora/files/lora-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/lora/files/lora-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/lora/files/lora-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/lora/files/lora-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/lora/files/lora-latin-variable-full-normal.woff2",
+  "./fonts/google/lora/files/lora-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/lora/files/lora-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/lora/files/lora-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/lora/files/lora-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/lora/files/lora-latin-variable-full-italic.woff2"
 ]

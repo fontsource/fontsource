@@ -166,5 +166,17 @@
   "./fonts/google/vollkorn/files/vollkorn-greek-variable-wghtOnly-italic.woff2",
   "./fonts/google/vollkorn/files/vollkorn-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/vollkorn/files/vollkorn-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/vollkorn/files/vollkorn-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/vollkorn/files/vollkorn-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-greek-variable-full-normal.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-latin-variable-full-normal.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-greek-variable-full-italic.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/vollkorn/files/vollkorn-latin-variable-full-italic.woff2"
 ]

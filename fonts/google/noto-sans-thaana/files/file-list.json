@@ -26,5 +26,6 @@
   "./fonts/google/noto-sans-thaana/files/noto-sans-thaana-all-800-normal.woff",
   "./fonts/google/noto-sans-thaana/files/noto-sans-thaana-thaana-900-normal.woff2",
   "./fonts/google/noto-sans-thaana/files/noto-sans-thaana-all-900-normal.woff",
-  "./fonts/google/noto-sans-thaana/files/noto-sans-thaana-thaana-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-thaana/files/noto-sans-thaana-thaana-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-thaana/files/noto-sans-thaana-thaana-variable-full-normal.woff2"
 ]

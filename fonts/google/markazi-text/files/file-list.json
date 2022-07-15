@@ -38,5 +38,9 @@
   "./fonts/google/markazi-text/files/markazi-text-arabic-variable-wghtOnly-normal.woff2",
   "./fonts/google/markazi-text/files/markazi-text-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/markazi-text/files/markazi-text-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/markazi-text/files/markazi-text-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/markazi-text/files/markazi-text-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/markazi-text/files/markazi-text-arabic-variable-full-normal.woff2",
+  "./fonts/google/markazi-text/files/markazi-text-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/markazi-text/files/markazi-text-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/markazi-text/files/markazi-text-latin-variable-full-normal.woff2"
 ]

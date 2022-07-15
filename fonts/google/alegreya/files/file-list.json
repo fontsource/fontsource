@@ -192,5 +192,19 @@
   "./fonts/google/alegreya/files/alegreya-greek-variable-wghtOnly-italic.woff2",
   "./fonts/google/alegreya/files/alegreya-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/alegreya/files/alegreya-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/alegreya/files/alegreya-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/alegreya/files/alegreya-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/alegreya/files/alegreya-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/alegreya/files/alegreya-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/alegreya/files/alegreya-greek-ext-variable-full-normal.woff2",
+  "./fonts/google/alegreya/files/alegreya-greek-variable-full-normal.woff2",
+  "./fonts/google/alegreya/files/alegreya-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/alegreya/files/alegreya-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/alegreya/files/alegreya-latin-variable-full-normal.woff2",
+  "./fonts/google/alegreya/files/alegreya-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/alegreya/files/alegreya-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/alegreya/files/alegreya-greek-ext-variable-full-italic.woff2",
+  "./fonts/google/alegreya/files/alegreya-greek-variable-full-italic.woff2",
+  "./fonts/google/alegreya/files/alegreya-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/alegreya/files/alegreya-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/alegreya/files/alegreya-latin-variable-full-italic.woff2"
 ]

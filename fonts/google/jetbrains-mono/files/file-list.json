@@ -218,5 +218,17 @@
   "./fonts/google/jetbrains-mono/files/jetbrains-mono-greek-variable-wghtOnly-italic.woff2",
   "./fonts/google/jetbrains-mono/files/jetbrains-mono-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/jetbrains-mono/files/jetbrains-mono-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/jetbrains-mono/files/jetbrains-mono-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-greek-variable-full-normal.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-latin-variable-full-normal.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-greek-variable-full-italic.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/jetbrains-mono/files/jetbrains-mono-latin-variable-full-italic.woff2"
 ]

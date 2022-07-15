@@ -64,5 +64,8 @@
   "./fonts/google/grenze-gotisch/files/grenze-gotisch-latin-900-normal.woff2",
   "./fonts/google/grenze-gotisch/files/grenze-gotisch-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/grenze-gotisch/files/grenze-gotisch-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/grenze-gotisch/files/grenze-gotisch-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/grenze-gotisch/files/grenze-gotisch-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/grenze-gotisch/files/grenze-gotisch-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/grenze-gotisch/files/grenze-gotisch-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/grenze-gotisch/files/grenze-gotisch-latin-variable-full-normal.woff2"
 ]

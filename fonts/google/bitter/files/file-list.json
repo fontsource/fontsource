@@ -206,5 +206,15 @@
   "./fonts/google/bitter/files/bitter-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/bitter/files/bitter-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/bitter/files/bitter-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/bitter/files/bitter-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/bitter/files/bitter-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/bitter/files/bitter-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/bitter/files/bitter-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/bitter/files/bitter-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/bitter/files/bitter-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/bitter/files/bitter-latin-variable-full-normal.woff2",
+  "./fonts/google/bitter/files/bitter-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/bitter/files/bitter-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/bitter/files/bitter-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/bitter/files/bitter-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/bitter/files/bitter-latin-variable-full-italic.woff2"
 ]

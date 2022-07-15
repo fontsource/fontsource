@@ -114,5 +114,13 @@
   "./fonts/google/kufam/files/kufam-arabic-variable-wghtOnly-italic.woff2",
   "./fonts/google/kufam/files/kufam-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/kufam/files/kufam-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/kufam/files/kufam-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/kufam/files/kufam-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/kufam/files/kufam-arabic-variable-full-normal.woff2",
+  "./fonts/google/kufam/files/kufam-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/kufam/files/kufam-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/kufam/files/kufam-latin-variable-full-normal.woff2",
+  "./fonts/google/kufam/files/kufam-arabic-variable-full-italic.woff2",
+  "./fonts/google/kufam/files/kufam-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/kufam/files/kufam-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/kufam/files/kufam-latin-variable-full-italic.woff2"
 ]

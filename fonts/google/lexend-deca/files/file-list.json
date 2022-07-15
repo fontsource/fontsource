@@ -64,5 +64,8 @@
   "./fonts/google/lexend-deca/files/lexend-deca-latin-900-normal.woff2",
   "./fonts/google/lexend-deca/files/lexend-deca-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/lexend-deca/files/lexend-deca-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/lexend-deca/files/lexend-deca-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/lexend-deca/files/lexend-deca-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/lexend-deca/files/lexend-deca-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/lexend-deca/files/lexend-deca-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/lexend-deca/files/lexend-deca-latin-variable-full-normal.woff2"
 ]
