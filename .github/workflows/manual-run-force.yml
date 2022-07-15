@@ -18,18 +18,12 @@ jobs:
         run: yarn
 
       - name: Fetch API # Calls Google Font Metadata to fetch the latest data from Google's Developer API
-        run: npm explore google-font-metadata -- yarn parser:gen $GOOGLE_API_KEY
+        run: npx gfm generate $GOOGLE_API_KEY
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - name: Parse APIv1 # Processes ALL API data into APIv1 format (check google-font-metadata documentation)
-        run: yarn parser:v1 --force
-
-      - name: Parse APIv2 # Processes ALL API data into APIv2 format
-        run: yarn parser:v2 --force
-
-      - name: Parse Variable # Scrapes variable page on Google Fonts and parse into JSON format
-        run: yarn parser:variable
+      - name: Parse API # Process ALL generated API data
+        run: npx gfm parse --force
 
       - name: Build fonts (Google) # Forcefully rebuild all Google Fonts in repository without skipping any fonts
         run: yarn build:google-force

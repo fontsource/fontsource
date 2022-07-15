@@ -17,19 +17,13 @@ jobs:
       - name: Install packages
         run: yarn
 
-      - name: Fetch API
-        run: npm explore google-font-metadata -- yarn parser:gen $GOOGLE_API_KEY
+      - name: Fetch API # Calls Google Font Metadata to fetch the latest data from Google's Developer API
+        run: npx gfm generate $GOOGLE_API_KEY
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - name: Parse APIv1
-        run: yarn parser:v1
-
-      - name: Parse APIv2
-        run: yarn parser:v2
-
-      - name: Parse Variable
-        run: yarn parser:variable
+      - name: Parse API # Process generated API data
+        run: npx gfm parse
 
       - name: Build fonts
         run: yarn build:google
