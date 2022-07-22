@@ -49,14 +49,14 @@ const parser = (files: string[]) => {
 
 const fontFileDir = `scripts/generic/files`;
 
-glob(`${fontFileDir}/**/*.woff2`, {}, (err, files) => {
+glob(`${fontFileDir}/**/*.woff2`, {}, (_err, files) => {
   parser(files);
 });
 
-glob(`${fontFileDir}/**/*.woff`, {}, (err, files) => {
+glob(`${fontFileDir}/**/*.woff`, {}, (_err, files) => {
   parser(files);
 });
 
-glob(`${fontFileDir}/**/*.ttf`, {}, (err, files) => {
+glob(`${fontFileDir}/**/*.ttf`, {}, (_err, files) => {
   parser(files);
 });

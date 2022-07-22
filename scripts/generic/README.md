@@ -4,7 +4,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
 
 ## Usage
 
-1. Fork this repo, run `yarn` in the main directory to install dependencies and create a new `files` folder matching this filepath `./scripts/generic/files`.
+1. Fork this repo, run `pnpm i` in the main directory to install dependencies and create a new `files` folder matching this filepath `./scripts/generic/files`.
 
 2. Place all woff and woff2 files of the chosen font within this files directory and it **must** be in the filename format as specified:
 

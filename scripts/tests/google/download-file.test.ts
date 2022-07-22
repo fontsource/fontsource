@@ -2,11 +2,11 @@
 import testData from "./data/download-file-data.json";
 
 import {
-  download,
+  // download,
   filterLinks,
   variableLinks,
   pairGenerator,
-  gotDownload,
+  // gotDownload,
 } from "../../google/download-file";
 
 jest.mock("google-font-metadata");

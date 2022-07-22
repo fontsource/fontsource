@@ -3,7 +3,7 @@ import fs from "node:fs";
 import _ from "lodash";
 import path from "node:path";
 import jsonfile from "jsonfile";
-import { getDirectories } from "scripts/utils/utils";
+import { getDirectories } from "../utils/utils";
 
 /**
  * Google may sometimes push a new font that already exists in the generic folder

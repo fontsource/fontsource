@@ -1,10 +1,7 @@
 import async from "async";
 import { APIv2 } from "google-font-metadata";
 
-import {
-  downloadFileCheck,
-  findChangedPackages,
-} from "scripts/utils/file-check";
+import { downloadFileCheck, findChangedPackages } from "../utils/file-check";
 import { deleteDuplicates, duplicates } from "./new-font-check";
 import { run } from "./run";
 
