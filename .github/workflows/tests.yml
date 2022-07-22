@@ -15,21 +15,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: "0"
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14"
+      - uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: yarn
+      - name: Set node version to 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Enable PNPM
+        run: corepack enable
 
       - name: Run lints
-        run: yarn lint
+        run: pnpm run lint
 
       - name: Run tests
-        run: yarn test
+        run: pnpm run test
 
       - uses: codecov/codecov-action@v1
         with:

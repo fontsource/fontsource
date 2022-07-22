@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "exclude": ["node_modules", "fonts"],
+  "references": [
+    { "path": "scripts" },
+    { "path": "website" },
+    { "path": "api" }
+  ]
+}
