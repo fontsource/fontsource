@@ -10,7 +10,7 @@
     "build": "next build",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint",
     "lint:fix": "eslint --fix",
     "lint:types": "tsc --noEmit",
     "format": "prettier --write **/*.{js,jsx,ts,tsx,css,md,json}"

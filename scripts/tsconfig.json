@@ -15,8 +15,6 @@
     "resolveJsonModule": true,
 
     /* Emit */
-    "declaration": true,
-    "emitDeclarationOnly": true,
     "outDir": "./types",
 
     /* Interop Constraints */
