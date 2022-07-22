@@ -1,6 +1,6 @@
 {
   "files": [],
-  "exclude": ["node_modules", "fonts"],
+  "exclude": ["node_modules"],
   "references": [
     { "path": "scripts" },
     { "path": "website" },

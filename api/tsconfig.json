@@ -12,5 +12,6 @@
     "baseUrl": "./",
     "incremental": true,
     "strictPropertyInitialization": false // For schemas
-  }
+  },
+  "exclude": ["node_modules"] 
 }
