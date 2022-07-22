@@ -65,19 +65,30 @@ Fontsource is built completely with Typescript which extends to both the API and
 
 After cloning the repo, run:
 
-```shell
-yarn
+Ensure you have Corepack enabled:
+```js
+// Node <16
+npm i corepack -g
+corepack enable
+
+// Node >16 (comes installed already)
+corepack enable
 ```
 
-The project uses Yarn Workspaces, thus the packager, API and website should install in one command.
+Install packages:
+```shell
+pnpm i
+```
+
+The project uses PNPM Workspaces, thus the packager, API and website should install in one command.
 
 ### Useful Scripts
 
-- `yarn test` - Runs tests.
-- `yarn format` - Runs Prettier and dprint across the repository.
-- `yarn format:scripts` - Runs Prettier only over the `scripts` directory.
-- `yarn format:fonts` - Runs dprint on the `fonts` directory.
-- `yarn lint` - Runs ESLint over the `scripts` directory.
+- `pnpm run test` - Runs tests.
+- `pnpm run format` - Runs Prettier and dprint across the repository.
+- `pnpm run format:scripts` - Runs Prettier only over the `scripts` directory.
+- `pnpm run format:fonts` - Runs dprint on the `fonts` directory.
+- `pnpm run lint` - Runs ESLint over the `scripts` directory.
 
 ### Packager Development
 

@@ -9,7 +9,7 @@ The rest of the README is for developers.
 ## Installation
 
 ```bash
-$ yarn install
+$ pnpm run install
 ```
 
 ### Setup Environment variables
@@ -24,10 +24,10 @@ MONGO_DB_DEV=mongodb_url
 
 ```bash
 # development
-$ yarn start`
+$ pnpm run start`
 
 # watch mode
-$ yarn start:dev
+$ pnpm run start:dev
 
 ```
 
@@ -37,8 +37,8 @@ TODO: Still need to write all the tests necessary
 
 ```bash
 # unit tests
-$ yarn test
+$ pnpm run test
 
 # e2e tests
-$ yarn test:e2e
+$ pnpm run test:e2e
 ```
