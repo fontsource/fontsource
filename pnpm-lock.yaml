@@ -13,8 +13,6 @@ importers:
       mass-publish: ^1.1.2
       mock-fs: ^5.1.2
       prettier: ^2.6.0
-      ts-node: ^10.7.0
-      tslib: ^2.4.0
       tsx: ^3.8.0
       typescript: ^4.6.2
     dependencies:
@@ -23,12 +21,10 @@ importers:
       '@types/node': 18.0.6
       dprint: 0.30.3
       eslint: 8.20.0
-      jest: 28.1.3_7lulc3uqqocn7i7ojfqdhpfvui
+      jest: 28.1.3_@types+node@18.0.6
       mass-publish: 1.1.2
       mock-fs: 5.1.2
       prettier: 2.7.1
-      ts-node: 10.9.1_fwk6lvizpdya2vyvpfn446odli
-      tslib: 2.4.0
       tsx: 3.8.0
       typescript: 4.7.4
 
@@ -1929,7 +1925,7 @@ packages:
       slash: 3.0.0
     dev: false
 
-  /@jest/core/28.1.3_ts-node@10.9.1:
+  /@jest/core/28.1.3:
     resolution: {integrity: sha512-CIKBrlaKOzA7YG19BEqCw3SLIsEwjZkeJzf5bdooVnW4bH5cktqe3JX+G2YV1aK5vP8N9na1IGWFzYaTp6k6NA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     peerDependencies:
@@ -1950,7 +1946,7 @@ packages:
       exit: 0.1.2
       graceful-fs: 4.2.10
       jest-changed-files: 28.1.3
-      jest-config: 28.1.3_7lulc3uqqocn7i7ojfqdhpfvui
+      jest-config: 28.1.3_@types+node@18.0.6
       jest-haste-map: 28.1.3
       jest-message-util: 28.1.3
       jest-regex-util: 28.0.2
@@ -7692,7 +7688,7 @@ packages:
       - supports-color
     dev: false
 
-  /jest-cli/28.1.3_7lulc3uqqocn7i7ojfqdhpfvui:
+  /jest-cli/28.1.3_@types+node@18.0.6:
     resolution: {integrity: sha512-roY3kvrv57Azn1yPgdTebPAXvdR2xfezaKKYzVxZ6It/5NCxzJym6tUI5P1zkdWhfUYkxEI9uZWcQdaFLo8mJQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -7702,14 +7698,14 @@ packages:
       node-notifier:
         optional: true
     dependencies:
-      '@jest/core': 28.1.3_ts-node@10.9.1
+      '@jest/core': 28.1.3
       '@jest/test-result': 28.1.3
       '@jest/types': 28.1.3
       chalk: 4.1.2
       exit: 0.1.2
       graceful-fs: 4.2.10
       import-local: 3.1.0
-      jest-config: 28.1.3_7lulc3uqqocn7i7ojfqdhpfvui
+      jest-config: 28.1.3_@types+node@18.0.6
       jest-util: 28.1.3
       jest-validate: 28.1.3
       prompts: 2.4.2
@@ -7720,7 +7716,7 @@ packages:
       - ts-node
     dev: false
 
-  /jest-config/28.1.3_7lulc3uqqocn7i7ojfqdhpfvui:
+  /jest-config/28.1.3_@types+node@18.0.6:
     resolution: {integrity: sha512-MG3INjByJ0J4AsNBm7T3hsuxKQqFIiRo/AUqb1q9LRKI5UU6Aar9JHbr9Ivn1TVwfUD9KirRoM/T6u8XlcQPHQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     peerDependencies:
@@ -7755,7 +7751,6 @@ packages:
       pretty-format: 28.1.3
       slash: 3.0.0
       strip-json-comments: 3.1.1
-      ts-node: 10.9.1_fwk6lvizpdya2vyvpfn446odli
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -8090,7 +8085,7 @@ packages:
       supports-color: 8.1.1
     dev: false
 
-  /jest/28.1.3_7lulc3uqqocn7i7ojfqdhpfvui:
+  /jest/28.1.3_@types+node@18.0.6:
     resolution: {integrity: sha512-N4GT5on8UkZgH0O5LUavMRV1EDEhNTL0KEfRmDIeZHSV7p2XgLoY9t9VDUgL6o+yfdgYHVxuz81G8oB9VG5uyA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -8100,10 +8095,10 @@ packages:
       node-notifier:
         optional: true
     dependencies:
-      '@jest/core': 28.1.3_ts-node@10.9.1
+      '@jest/core': 28.1.3
       '@jest/types': 28.1.3
       import-local: 3.1.0
-      jest-cli: 28.1.3_7lulc3uqqocn7i7ojfqdhpfvui
+      jest-cli: 28.1.3_@types+node@18.0.6
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -11753,38 +11748,6 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
       '@types/node': 17.0.45
-      acorn: 8.8.0
-      acorn-walk: 8.2.0
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 4.7.4
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    dev: false
-
-  /ts-node/10.9.1_fwk6lvizpdya2vyvpfn446odli:
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
-    hasBin: true
-    peerDependencies:
-      '@swc/core': '>=1.2.50'
-      '@swc/wasm': '>=1.2.50'
-      '@types/node': '*'
-      typescript: '>=2.7'
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      '@swc/wasm':
-        optional: true
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@swc/core': 1.2.218
-      '@tsconfig/node10': 1.0.9
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.3
-      '@types/node': 18.0.6
       acorn: 8.8.0
       acorn-walk: 8.2.0
       arg: 4.1.3

@@ -40,8 +40,6 @@
     "mass-publish": "^1.1.2",
     "mock-fs": "^5.1.2",
     "prettier": "^2.6.0",
-    "ts-node": "^10.7.0",
-    "tslib": "^2.4.0",
     "tsx": "^3.8.0",
     "typescript": "^4.6.2"
   },

@@ -49,7 +49,7 @@ describe("Generate Variable CSS", () => {
     const dirPath = "./fonts/google/changa";
     const fileNames = readDir(dirPath, "css");
 
-    expect(fileNames).toEqual(["variable.css"]);
+    expect(fileNames).toEqual(["variable-full.css", "variable.css"]);
 
     const cssContent = readDirContents(dirPath, fileNames);
     mock.restore();
