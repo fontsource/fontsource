@@ -1,6 +1,6 @@
 {
   "include": ["**/*.ts", "**/*.json"],
-  "exclude": [".eslintrc.cjs", "node_modules"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     /* Projects */
     "incremental": true,
