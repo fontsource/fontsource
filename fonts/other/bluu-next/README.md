@@ -1,21 +1,21 @@
 # Fontsource Bluu Next
 
-[![npm (scoped)](https://img.shields.io/npm/v/@fontsource/bluunext?color=brightgreen)](https://www.npmjs.com/package/@fontsource/bluunext) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/bluunext)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/bluunext)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
+[![npm (scoped)](https://img.shields.io/npm/v/@fontsource/bluu-next?color=brightgreen)](https://www.npmjs.com/package/@fontsource/bluu-next) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/bluu-next)](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/bluu-next)](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
-The CSS and web font files to easily self-host the “Bluu Next” font. Please visit the main [Fontsource website](https://fontsource.org/fonts/bluunext) to view more details on this package.
+The CSS and web font files to easily self-host the “Bluu Next” font. Please visit the main [Fontsource website](https://fontsource.org/fonts/bluu-next) to view more details on this package.
 
 ## Quick Installation
 
 Fontsource has a variety of methods to import CSS, such as using a bundler like Webpack. Alternatively, it supports SASS. Full documentation can be found [here](https://fontsource.org/docs/introduction).
 
 ```javascript
-yarn add @fontsource/bluunext // npm install @fontsource/bluunext
+yarn add @fontsource/bluu-next // npm install @fontsource/bluu-next
 ```
 
 Within your app entry file or site component, import it in.
 
 ```javascript
-import "@fontsource/bluunext"; // Defaults to weight 400.
+import "@fontsource/bluu-next"; // Defaults to weight 400.
 ```
 
 Supported variables:
@@ -39,7 +39,7 @@ body {
 It is important to always read the license for every font that you use.
 Most of the fonts in the collection use the SIL Open Font License, v1.1. Some fonts use the Apache 2 license. The Ubuntu fonts use the Ubuntu Font License v1.0.
 
-Font [Source](https://github.com/jbmorizot/BluuNext/) and [License](https://github.com/jbmorizot/BluuNext/blob/master/OFL_BluuNext.txt).
+Font [Source](https://github.com/jbmorizot/BluuNext) and [License](https://github.com/jbmorizot/BluuNext/blob/master/OFL_BluuNext.txt).
 
 ## Other Notes
 

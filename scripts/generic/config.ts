@@ -9,14 +9,14 @@
 // type is fontsource-specific e.g. google, league, other. It should be left as "other" unless otherwise specified.
 
 const config = {
-  fontId: "",
-  fontName: "",
+  fontId: "bluu-next",
+  fontName: "Bluu Next",
   defSubset: "latin",
   unicodeRange: {},
-  version: "",
+  version: "1.0",
   category: "sans-serif",
-  sourcelink: "",
-  licenselink: "",
+  sourcelink: "https://github.com/jbmorizot/BluuNext",
+  licenselink: "https://github.com/jbmorizot/BluuNext/blob/master/OFL_BluuNext.txt",
   type: "other",
 };
 
