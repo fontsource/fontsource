@@ -1,6 +1,6 @@
 # Fontsource Scripts
 
-This is the foundation of the project that generates the font packages in the `packages` directory.
+This is the foundation of the project that generates the font packages in the `fonts` directory.
 
 ## Generic
 
