@@ -1,1 +1,15 @@
-{"fontId":"noto-sans-linear-a","fontName":"Noto Sans Linear A","subsets":["linear-a"],"weights":[400],"styles":["normal"],"defSubset":"linear-a","variable":false,"lastModified":"2022-05-10","version":"v16","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "noto-sans-linear-a",
+  "fontName": "Noto Sans Linear A",
+  "subsets": ["linear-a"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "linear-a",
+  "variable": false,
+  "lastModified": "2022-05-10",
+  "version": "v16",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

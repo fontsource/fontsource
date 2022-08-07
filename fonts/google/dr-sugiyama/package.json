@@ -1,1 +1,16 @@
-{"name":"@fontsource/dr-sugiyama","version":"4.5.7","description":"Self-host the Dr Sugiyama font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Dr Sugiyama","dr-sugiyama"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/dr-sugiyama#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/dr-sugiyama"}}
+{
+  "name": "@fontsource/dr-sugiyama",
+  "version": "4.5.7",
+  "description": "Self-host the Dr Sugiyama font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Dr Sugiyama", "dr-sugiyama"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/dr-sugiyama#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/dr-sugiyama"
+  }
+}

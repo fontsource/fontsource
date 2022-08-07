@@ -1,1 +1,15 @@
-{"fontId":"nanum-myeongjo","fontName":"Nanum Myeongjo","subsets":["korean","latin"],"weights":[400,700,800],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-05-10","version":"v20","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "nanum-myeongjo",
+  "fontName": "Nanum Myeongjo",
+  "subsets": ["korean", "latin"],
+  "weights": [400, 700, 800],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-05-10",
+  "version": "v20",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

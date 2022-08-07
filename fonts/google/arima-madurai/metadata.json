@@ -1,1 +1,15 @@
-{"fontId":"arima-madurai","fontName":"Arima Madurai","subsets":["latin","latin-ext","tamil","vietnamese"],"weights":[100,200,300,400,500,700,800,900],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-20","version":"v14","category":"display","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "arima-madurai",
+  "fontName": "Arima Madurai",
+  "subsets": ["latin", "latin-ext", "tamil", "vietnamese"],
+  "weights": [100, 200, 300, 400, 500, 700, 800, 900],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-20",
+  "version": "v14",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

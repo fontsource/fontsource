@@ -1,1 +1,16 @@
-{"name":"@fontsource/kavivanar","version":"4.5.8","description":"Self-host the Kavivanar font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Kavivanar","kavivanar"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/kavivanar#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/kavivanar"}}
+{
+  "name": "@fontsource/kavivanar",
+  "version": "4.5.8",
+  "description": "Self-host the Kavivanar font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Kavivanar", "kavivanar"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/kavivanar#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/kavivanar"
+  }
+}

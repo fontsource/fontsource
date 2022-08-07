@@ -1,1 +1,15 @@
-{"fontId":"hanuman","fontName":"Hanuman","subsets":["khmer","latin"],"weights":[100,300,400,700,900],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-21","version":"v22","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "hanuman",
+  "fontName": "Hanuman",
+  "subsets": ["khmer", "latin"],
+  "weights": [100, 300, 400, 700, 900],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-21",
+  "version": "v22",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

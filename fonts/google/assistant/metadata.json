@@ -1,1 +1,15 @@
-{"fontId":"assistant","fontName":"Assistant","subsets":["hebrew","latin","latin-ext"],"weights":[200,300,400,500,600,700,800],"styles":["normal"],"defSubset":"latin","variable":{"wght":{"default":"400","min":"200","max":"800","step":"1"}},"lastModified":"2022-06-27","version":"v18","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "assistant",
+  "fontName": "Assistant",
+  "subsets": ["hebrew", "latin", "latin-ext"],
+  "weights": [200, 300, 400, 500, 600, 700, 800],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": { "wght": { "default": "400", "min": "200", "max": "800", "step": "1" } },
+  "lastModified": "2022-06-27",
+  "version": "v18",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

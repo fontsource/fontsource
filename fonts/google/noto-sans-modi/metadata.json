@@ -1,1 +1,15 @@
-{"fontId":"noto-sans-modi","fontName":"Noto Sans Modi","subsets":["modi"],"weights":[400],"styles":["normal"],"defSubset":"modi","variable":false,"lastModified":"2022-05-10","version":"v15","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "noto-sans-modi",
+  "fontName": "Noto Sans Modi",
+  "subsets": ["modi"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "modi",
+  "variable": false,
+  "lastModified": "2022-05-10",
+  "version": "v15",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,1 +1,15 @@
-{"fontId":"enriqueta","fontName":"Enriqueta","subsets":["latin","latin-ext"],"weights":[400,500,600,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-21","version":"v15","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "enriqueta",
+  "fontName": "Enriqueta",
+  "subsets": ["latin", "latin-ext"],
+  "weights": [400, 500, 600, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-21",
+  "version": "v15",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

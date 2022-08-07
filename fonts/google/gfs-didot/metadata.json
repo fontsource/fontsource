@@ -1,1 +1,15 @@
-{"fontId":"gfs-didot","fontName":"GFS Didot","subsets":["greek"],"weights":[400],"styles":["normal"],"defSubset":"greek","variable":false,"lastModified":"2022-04-21","version":"v15","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "gfs-didot",
+  "fontName": "GFS Didot",
+  "subsets": ["greek"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "greek",
+  "variable": false,
+  "lastModified": "2022-04-21",
+  "version": "v15",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

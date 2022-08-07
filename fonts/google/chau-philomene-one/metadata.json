@@ -1,1 +1,15 @@
-{"fontId":"chau-philomene-one","fontName":"Chau Philomene One","subsets":["latin","latin-ext"],"weights":[400],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-21","version":"v15","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "chau-philomene-one",
+  "fontName": "Chau Philomene One",
+  "subsets": ["latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-21",
+  "version": "v15",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
