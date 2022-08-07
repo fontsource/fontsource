@@ -30,12 +30,12 @@ jobs:
         run: pnpm i
 
       - name: Fetch API # Calls Google Font Metadata to fetch the latest data from Google's Developer API
-        run: npx gfm generate $GOOGLE_API_KEY
+        run: pnpm --filter scripts exec gfm generate $GOOGLE_API_KEY
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: Parse API # Process generated API data
-        run: npx gfm parse
+        run: pnpm --filter scripts exec gfm parse
 
       - name: Build fonts # Build all updated Google Fonts in repository
         run: pnpm run build:google
