@@ -1,8 +1,20 @@
 import fs from "fs-extra";
-import { APIv2, APIVariable } from "google-font-metadata";
+import {
+  APIv2,
+  APIVariable,
+  FontObjectVariableDirect,
+} from "google-font-metadata";
 
 import { fontFaceVariable, fontFaceVariableWdth } from "../templates/css";
 import { makeVariableFontFilePath } from "../utils/utils";
+
+const getWght = (font: FontObjectVariableDirect) => {
+  if (!font.axes.wght) return `400`;
+
+  if (font.axes.wght.min === font.axes.wght.max) return `${font.axes.wght.min}`;
+
+  return `${font.axes.wght.min} ${font.axes.wght.max}`;
+};
 
 const variable = (id: string): void => {
   const font = APIv2[id];
@@ -23,7 +35,7 @@ const variable = (id: string): void => {
         style,
         subset,
         type,
-        weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
+        weight: getWght(fontVariable),
         woff2Path: makeVariableFontFilePath(font.id, subset, type, style),
         unicodeRange: font.unicodeRange[subset],
       });
@@ -51,9 +63,8 @@ const variable = (id: string): void => {
         let newStyle = style;
         if ("slnt" in fontVariable.axes && style === "normal") {
           // SLNT has a different style linked to it.
-          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${
-            Number(fontVariable.axes.slnt.min) * -1
-          }deg`;
+          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${Number(fontVariable.axes.slnt.min) * -1
+            }deg`;
         }
         const cssStyle: string[] = [];
         font.subsets.forEach(subset => {
@@ -65,7 +76,7 @@ const variable = (id: string): void => {
             subset,
             type,
             wdth: `${fontVariable.axes.wdth.min}% ${fontVariable.axes.wdth.max}%`,
-            weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
+            weight: getWght(fontVariable),
             woff2Path: makeVariableFontFilePath(
               font.id,
               subset,
@@ -93,9 +104,8 @@ const variable = (id: string): void => {
         let newStyle = style;
         if ("slnt" in fontVariable.axes && style === "normal") {
           // SLNT has a different style linked to it.
-          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${
-            Number(fontVariable.axes.slnt.min) * -1
-          }deg`;
+          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${Number(fontVariable.axes.slnt.min) * -1
+            }deg`;
         }
         const cssStyle: string[] = [];
         font.subsets.forEach(subset => {
@@ -106,7 +116,7 @@ const variable = (id: string): void => {
             style: newStyle,
             subset,
             type,
-            weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
+            weight: getWght(fontVariable),
             woff2Path: makeVariableFontFilePath(
               font.id,
               subset,
