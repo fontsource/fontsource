@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/abhaya-libre",
-  "version": "4.5.7",
-  "description": "Self-host the Abhaya Libre font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Abhaya Libre", "abhaya-libre"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/abhaya-libre#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "fonts/google/abhaya-libre"
-  }
-}
+{"name":"@fontsource/abhaya-libre","version":"4.5.8","description":"Self-host the Abhaya Libre font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Abhaya Libre","abhaya-libre"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/abhaya-libre#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/abhaya-libre"}}
