@@ -17,6 +17,7 @@
     "build:google-force": "tsx scripts/google/download-google.ts force",
     "deploy": "mass-publish publish patch",
     "deploy:ci": "mass-publish publish patch --yes",
+    "deploy:republish": "mass-publish publish from-package --yes --force-publish",
     "format": "pnpm run format:scripts && pnpm run format:fonts",
     "format:scripts": "prettier --write ./scripts/**/*.{js,jsx,ts,tsx,json,md}",
     "format:fonts": "dprint fmt",
