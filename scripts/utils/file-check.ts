@@ -36,6 +36,7 @@ const downloadFileCheck = (
   throwError?: boolean
 ): string[] => {
   const fontIds: string[] = [];
+  const errors: string[] = [];
   for (const changedPackage of changedPackages) {
     // A changed package could be the removal of an entire package
     // Only count existing packages
@@ -44,7 +45,7 @@ const downloadFileCheck = (
       if (!fs.existsSync(path.join(changedPackage, "files"))) {
         const message = `${changedPackage}/files does not exist`;
         if (throwError) {
-          throw new Error(message);
+          errors.push(message);
         } else {
           console.log(message);
           fontIds.push(path.basename(changedPackage));
@@ -70,6 +71,7 @@ const downloadFileCheck = (
       }
     }
   }
+  if (errors.length > 0) throw new Error(errors.join("\n"));
   // Remove duplicates
   return [...new Set(fontIds)];
 };
