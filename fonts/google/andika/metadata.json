@@ -1,15 +1,1 @@
-{
-  "fontId": "andika",
-  "fontName": "Andika",
-  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
-  "weights": [400, 700],
-  "styles": ["italic", "normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-05-24",
-  "version": "v22",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"andika","fontName":"Andika","subsets":["cyrillic","cyrillic-ext","latin","latin-ext","vietnamese"],"weights":[400,700],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-05-24","version":"v22","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

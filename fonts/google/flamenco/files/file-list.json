@@ -1,8 +1,1 @@
-[
-  "./fonts/google/flamenco/files/flamenco-latin-300-normal.woff",
-  "./fonts/google/flamenco/files/flamenco-latin-400-normal.woff",
-  "./fonts/google/flamenco/files/flamenco-latin-300-normal.woff2",
-  "./fonts/google/flamenco/files/flamenco-all-300-normal.woff",
-  "./fonts/google/flamenco/files/flamenco-latin-400-normal.woff2",
-  "./fonts/google/flamenco/files/flamenco-all-400-normal.woff"
-]
+["./fonts/google/flamenco/files/flamenco-latin-300-normal.woff","./fonts/google/flamenco/files/flamenco-latin-400-normal.woff","./fonts/google/flamenco/files/flamenco-latin-300-normal.woff2","./fonts/google/flamenco/files/flamenco-all-300-normal.woff","./fonts/google/flamenco/files/flamenco-latin-400-normal.woff2","./fonts/google/flamenco/files/flamenco-all-400-normal.woff"]

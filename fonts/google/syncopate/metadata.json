@@ -1,15 +1,1 @@
-{
-  "fontId": "syncopate",
-  "fontName": "Syncopate",
-  "subsets": ["latin"],
-  "weights": [400, 700],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-20",
-  "version": "v19",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"syncopate","fontName":"Syncopate","subsets":["latin"],"weights":[400,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-20","version":"v19","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

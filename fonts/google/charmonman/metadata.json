@@ -1,15 +1,1 @@
-{
-  "fontId": "charmonman",
-  "fontName": "Charmonman",
-  "subsets": ["latin", "latin-ext", "thai", "vietnamese"],
-  "weights": [400, 700],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-21",
-  "version": "v18",
-  "category": "handwriting",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"charmonman","fontName":"Charmonman","subsets":["latin","latin-ext","thai","vietnamese"],"weights":[400,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-21","version":"v18","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

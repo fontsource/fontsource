@@ -1,15 +1,1 @@
-{
-  "fontId": "noto-music",
-  "fontName": "Noto Music",
-  "subsets": ["music"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "music",
-  "variable": false,
-  "lastModified": "2022-05-10",
-  "version": "v14",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"noto-music","fontName":"Noto Music","subsets":["music"],"weights":[400],"styles":["normal"],"defSubset":"music","variable":false,"lastModified":"2022-05-10","version":"v14","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

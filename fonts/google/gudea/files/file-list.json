@@ -1,17 +1,1 @@
-[
-  "./fonts/google/gudea/files/gudea-latin-400-italic.woff",
-  "./fonts/google/gudea/files/gudea-latin-ext-400-italic.woff",
-  "./fonts/google/gudea/files/gudea-latin-400-normal.woff",
-  "./fonts/google/gudea/files/gudea-latin-ext-400-normal.woff",
-  "./fonts/google/gudea/files/gudea-latin-700-normal.woff",
-  "./fonts/google/gudea/files/gudea-latin-ext-700-normal.woff",
-  "./fonts/google/gudea/files/gudea-latin-ext-400-italic.woff2",
-  "./fonts/google/gudea/files/gudea-all-400-italic.woff",
-  "./fonts/google/gudea/files/gudea-latin-400-italic.woff2",
-  "./fonts/google/gudea/files/gudea-latin-ext-400-normal.woff2",
-  "./fonts/google/gudea/files/gudea-all-400-normal.woff",
-  "./fonts/google/gudea/files/gudea-latin-400-normal.woff2",
-  "./fonts/google/gudea/files/gudea-latin-ext-700-normal.woff2",
-  "./fonts/google/gudea/files/gudea-all-700-normal.woff",
-  "./fonts/google/gudea/files/gudea-latin-700-normal.woff2"
-]
+["./fonts/google/gudea/files/gudea-latin-400-italic.woff","./fonts/google/gudea/files/gudea-latin-ext-400-italic.woff","./fonts/google/gudea/files/gudea-latin-400-normal.woff","./fonts/google/gudea/files/gudea-latin-ext-400-normal.woff","./fonts/google/gudea/files/gudea-latin-700-normal.woff","./fonts/google/gudea/files/gudea-latin-ext-700-normal.woff","./fonts/google/gudea/files/gudea-latin-ext-400-italic.woff2","./fonts/google/gudea/files/gudea-all-400-italic.woff","./fonts/google/gudea/files/gudea-latin-400-italic.woff2","./fonts/google/gudea/files/gudea-latin-ext-400-normal.woff2","./fonts/google/gudea/files/gudea-all-400-normal.woff","./fonts/google/gudea/files/gudea-latin-400-normal.woff2","./fonts/google/gudea/files/gudea-latin-ext-700-normal.woff2","./fonts/google/gudea/files/gudea-all-700-normal.woff","./fonts/google/gudea/files/gudea-latin-700-normal.woff2"]

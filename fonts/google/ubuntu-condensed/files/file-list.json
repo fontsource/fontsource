@@ -1,15 +1,1 @@
-[
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-cyrillic-400-normal.woff",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-cyrillic-ext-400-normal.woff",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-greek-400-normal.woff",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-greek-ext-400-normal.woff",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-latin-400-normal.woff",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-latin-ext-400-normal.woff",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-cyrillic-ext-400-normal.woff2",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-all-400-normal.woff",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-cyrillic-400-normal.woff2",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-greek-ext-400-normal.woff2",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-greek-400-normal.woff2",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-latin-ext-400-normal.woff2",
-  "./fonts/google/ubuntu-condensed/files/ubuntu-condensed-latin-400-normal.woff2"
-]
+["./fonts/google/ubuntu-condensed/files/ubuntu-condensed-cyrillic-400-normal.woff","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-cyrillic-ext-400-normal.woff","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-greek-400-normal.woff","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-greek-ext-400-normal.woff","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-latin-400-normal.woff","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-latin-ext-400-normal.woff","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-cyrillic-ext-400-normal.woff2","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-all-400-normal.woff","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-cyrillic-400-normal.woff2","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-greek-ext-400-normal.woff2","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-greek-400-normal.woff2","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-latin-ext-400-normal.woff2","./fonts/google/ubuntu-condensed/files/ubuntu-condensed-latin-400-normal.woff2"]

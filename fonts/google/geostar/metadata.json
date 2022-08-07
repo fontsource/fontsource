@@ -1,15 +1,1 @@
-{
-  "fontId": "geostar",
-  "fontName": "Geostar",
-  "subsets": ["latin"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-21",
-  "version": "v22",
-  "category": "display",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"geostar","fontName":"Geostar","subsets":["latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-21","version":"v22","category":"display","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

@@ -1,15 +1,1 @@
-{
-  "fontId": "festive",
-  "fontName": "Festive",
-  "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-21",
-  "version": "v7",
-  "category": "handwriting",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"festive","fontName":"Festive","subsets":["latin","latin-ext","vietnamese"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-21","version":"v7","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

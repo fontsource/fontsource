@@ -1,15 +1,1 @@
-{
-  "fontId": "almarai",
-  "fontName": "Almarai",
-  "subsets": ["arabic"],
-  "weights": [300, 400, 700, 800],
-  "styles": ["normal"],
-  "defSubset": "arabic",
-  "variable": false,
-  "lastModified": "2022-04-20",
-  "version": "v12",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"almarai","fontName":"Almarai","subsets":["arabic"],"weights":[300,400,700,800],"styles":["normal"],"defSubset":"arabic","variable":false,"lastModified":"2022-04-20","version":"v12","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

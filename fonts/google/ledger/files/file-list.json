@@ -1,9 +1,1 @@
-[
-  "./fonts/google/ledger/files/ledger-cyrillic-400-normal.woff",
-  "./fonts/google/ledger/files/ledger-latin-400-normal.woff",
-  "./fonts/google/ledger/files/ledger-latin-ext-400-normal.woff",
-  "./fonts/google/ledger/files/ledger-cyrillic-400-normal.woff2",
-  "./fonts/google/ledger/files/ledger-all-400-normal.woff",
-  "./fonts/google/ledger/files/ledger-latin-ext-400-normal.woff2",
-  "./fonts/google/ledger/files/ledger-latin-400-normal.woff2"
-]
+["./fonts/google/ledger/files/ledger-cyrillic-400-normal.woff","./fonts/google/ledger/files/ledger-latin-400-normal.woff","./fonts/google/ledger/files/ledger-latin-ext-400-normal.woff","./fonts/google/ledger/files/ledger-cyrillic-400-normal.woff2","./fonts/google/ledger/files/ledger-all-400-normal.woff","./fonts/google/ledger/files/ledger-latin-ext-400-normal.woff2","./fonts/google/ledger/files/ledger-latin-400-normal.woff2"]

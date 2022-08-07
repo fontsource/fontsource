@@ -1,15 +1,1 @@
-{
-  "fontId": "flow-block",
-  "fontName": "Flow Block",
-  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-21",
-  "version": "v6",
-  "category": "display",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"flow-block","fontName":"Flow Block","subsets":["cyrillic","cyrillic-ext","latin","latin-ext","vietnamese"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-21","version":"v6","category":"display","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

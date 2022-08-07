@@ -1,15 +1,1 @@
-{
-  "fontId": "berkshire-swash",
-  "fontName": "Berkshire Swash",
-  "subsets": ["latin", "latin-ext"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-20",
-  "version": "v16",
-  "category": "handwriting",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"berkshire-swash","fontName":"Berkshire Swash","subsets":["latin","latin-ext"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-20","version":"v16","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
