@@ -84,21 +84,21 @@ const filterLinks = (fontId: string): DownloadLinks[] => {
     const dest =
       types[4] === "woff2"
         ? makeFontDownloadPath(
-            fontDir,
-            fontId,
-            types[2].replace("[", "").replace("]", ""),
-            Number(types[0]),
-            types[1],
-            types[4]
-          )
+          fontDir,
+          fontId,
+          types[2].replace("[", "").replace("]", ""),
+          Number(types[0]),
+          types[1],
+          types[4]
+        )
         : makeFontDownloadPath(
-            fontDir,
-            fontId,
-            "all",
-            Number(types[0]),
-            types[1],
-            types[4]
-          );
+          fontDir,
+          fontId,
+          "all",
+          Number(types[0]),
+          types[1],
+          types[4]
+        );
     const url = pair[1];
     return { url, dest };
   });
@@ -136,7 +136,10 @@ const variableLinks = (fontId: string): DownloadLinks[] => {
 
   // Temporary change until v5 is released
   const newVariants: FontVariantsVariable = {};
-  newVariants.wghtOnly = fontVariable.variants.wght;
+  // Fonts like ballet or league-gothic don't have a wght axis
+  if (fontVariable.variants.wght)
+    newVariants.wghtOnly = fontVariable.variants.wght;
+
   newVariants.full = fontVariable.variants.full;
 
   const downloadURLPairsVariable = pairGenerator(newVariants);
