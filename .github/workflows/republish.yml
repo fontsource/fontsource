@@ -1,4 +1,4 @@
-name: Build and Release [Manual Republish] # When publish fails mid action
+name: Build and Release [Force Rebuild] [Manual Republish] # Rebuilds and republishes
 
 on: [workflow_dispatch]
 
@@ -26,19 +26,19 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
-      - name: Install
-        run: pnpm i
-
       - name: Fetch API # Calls Google Font Metadata to fetch the latest data from Google's Developer API
         run: pnpm --filter scripts exec gfm generate $GOOGLE_API_KEY
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - name: Parse API # Process generated API data
-        run: pnpm --filter scripts exec gfm parse
+      - name: Parse API # Process ALL generated API data
+        run: pnpm --filter scripts exec gfm parse --force
 
-      - name: Build fonts # Build all updated Google Fonts in repository
-        run: pnpm run build:google
+      - name: Build fonts (Google) # Forcefully rebuild all Google Fonts in repository without skipping any fonts
+        run: pnpm run build:google-force
+
+      - name: Rebuild non-Google fonts # Forcefully rebuild all non-Google fonts in repository with generic packager
+        run: pnpm run build:generic-force
 
       - name: Generate fontlist # Generate FONTLIST.json and FONTLIST.md
         run: pnpm run util:fontlist
@@ -47,9 +47,6 @@ jobs:
         run: pnpm run util:algolia
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-
-      - name: Lint files
-        run: pnpm run lint
 
       - name: Format files
         run: pnpm run format
@@ -60,7 +57,7 @@ jobs:
           commit_user_name: "fontsource-bot"
           commit_user_email: "83556432+fontsource-bot@users.noreply.github.com"
           commit_author: "fontsource-bot <83556432+fontsource-bot@users.noreply.github.com>"
-          commit_message: "chore(build): update packages [Manual]"
+          commit_message: "chore(build): update packages [Force Rebuild]"
         continue-on-error: true
 
       - name: Check font files # Detects if all binaries are downloaded successfully and in the right place
@@ -72,7 +69,7 @@ jobs:
           commit_user_name: "fontsource-bot"
           commit_user_email: "83556432+fontsource-bot@users.noreply.github.com"
           commit_author: "fontsource-bot <83556432+fontsource-bot@users.noreply.github.com>"
-          commit_message: "chore(build): resolve file check errors [Manual]"
+          commit_message: "chore(build): resolve file check errors [Force Rebuild]"
         continue-on-error: true
 
       - name: Configure CI Git
