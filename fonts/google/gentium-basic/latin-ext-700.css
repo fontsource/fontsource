@@ -1,9 +1,0 @@
-/* gentium-basic-latin-ext-700-normal*/
-@font-face {
-  font-family: 'Gentium Basic';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url('./files/gentium-basic-latin-ext-700-normal.woff2') format('woff2'), url('./files/gentium-basic-latin-ext-700-normal.woff') format('woff');
-  
-}
