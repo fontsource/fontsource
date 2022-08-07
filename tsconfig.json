@@ -1,5 +1,4 @@
 {
-  "files": [],
   "exclude": ["node_modules", "fonts"],
   "references": [
     { "path": "scripts" },
