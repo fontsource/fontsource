@@ -62,7 +62,7 @@ const downloadFileCheck = (
         if (!fs.existsSync(file)) {
           const message = `${file} does not exist`;
           if (throwError) {
-            throw new Error(message);
+            errors.push(message);
           } else {
             console.log(`${file} does not exist`);
             fontIds.push(path.basename(changedPackage));
