@@ -14,13 +14,17 @@ jobs:
         with:
           fetch-depth: "0"
 
+      - name: Enable PNPM
+        uses: pnpm/action-setup@v2
+
       - name: Set node version to 16
         uses: actions/setup-node@v3
         with:
           node-version: "16"
+          cache: "pnpm"
 
-      - name: Enable PNPM
-        run: corepack enable
+      - name: Install
+        run: pnpm install --frozen-lockfile
 
       - name: Install
         run: pnpm i
