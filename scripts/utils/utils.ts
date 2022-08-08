@@ -61,6 +61,22 @@ const getDirectories = (type: string) =>
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name);
 
+interface AxesData {
+  [axes: string]: {
+    default: string;
+    min: string;
+    max: string;
+    step: string;
+  };
+}
+const getVariableWght = (axes: AxesData) => {
+  if (!axes.wght) return `400`;
+
+  if (axes.wght.min === axes.wght.max) return `${axes.wght.min}`;
+
+  return `${axes.wght.min} ${axes.wght.max}`;
+};
+
 export {
   makeFontDownloadPath,
   makeFontFilePath,
@@ -68,4 +84,5 @@ export {
   makeVariableFontFilePath,
   findClosest,
   getDirectories,
+  getVariableWght,
 };
