@@ -2,6 +2,8 @@
 import { template } from "lodash";
 import { APIv2, APIVariable } from "google-font-metadata";
 
+import { getVariableWght } from "../utils/utils";
+
 const scssMixins = template(
   `$fontName: "<%= fontName %>";
 $fontId: "<%= fontId %>";
@@ -191,7 +193,7 @@ const generateSCSS = (id: string, variableFlag: boolean): string => {
   // Include variable mixins if needed
   if (variableFlag) {
     const variableMeta = APIVariable[font.id].axes;
-    const variableWeight = `${variableMeta.wght.min} ${variableMeta.wght.max}`;
+    const variableWeight = getVariableWght(variableMeta);
     const variableWdth =
       "wdth" in variableMeta
         ? `${variableMeta.wdth.min}% ${variableMeta.wdth.max}%`
