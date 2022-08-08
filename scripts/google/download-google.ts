@@ -41,7 +41,7 @@ queue.drain(async () => {
 });
 
 queue.error((err, fontid) => {
-  console.error(`${fontid} experienced an error.`, err);
+  throw new Error(`Error processing ${fontid}: ${err}`);
 });
 
 // Testing
