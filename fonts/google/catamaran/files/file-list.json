@@ -64,5 +64,8 @@
   "./fonts/google/catamaran/files/catamaran-latin-900-normal.woff2",
   "./fonts/google/catamaran/files/catamaran-tamil-variable-wghtOnly-normal.woff2",
   "./fonts/google/catamaran/files/catamaran-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/catamaran/files/catamaran-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/catamaran/files/catamaran-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/catamaran/files/catamaran-tamil-variable-full-normal.woff2",
+  "./fonts/google/catamaran/files/catamaran-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/catamaran/files/catamaran-latin-variable-full-normal.woff2"
 ]

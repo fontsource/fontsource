@@ -47,5 +47,9 @@
   "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-oriya-variable-wghtOnly-normal.woff2",
   "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-oriya-variable-full-normal.woff2",
+  "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/baloo-bhaina-2/files/baloo-bhaina-2-latin-variable-full-normal.woff2"
 ]

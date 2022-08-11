@@ -64,5 +64,8 @@
   "./fonts/google/vazirmatn/files/vazirmatn-latin-900-normal.woff2",
   "./fonts/google/vazirmatn/files/vazirmatn-arabic-variable-wghtOnly-normal.woff2",
   "./fonts/google/vazirmatn/files/vazirmatn-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/vazirmatn/files/vazirmatn-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/vazirmatn/files/vazirmatn-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/vazirmatn/files/vazirmatn-arabic-variable-full-normal.woff2",
+  "./fonts/google/vazirmatn/files/vazirmatn-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/vazirmatn/files/vazirmatn-latin-variable-full-normal.woff2"
 ]

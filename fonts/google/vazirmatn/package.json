@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/vazirmatn",
-  "version": "4.5.1",
+  "version": "4.5.2",
   "description": "Self-host the Vazirmatn font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": { "access": "public" },

@@ -20,5 +20,7 @@
   "./fonts/google/domine/files/domine-all-700-normal.woff",
   "./fonts/google/domine/files/domine-latin-700-normal.woff2",
   "./fonts/google/domine/files/domine-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/domine/files/domine-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/domine/files/domine-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/domine/files/domine-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/domine/files/domine-latin-variable-full-normal.woff2"
 ]

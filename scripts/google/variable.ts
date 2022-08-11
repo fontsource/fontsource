@@ -2,7 +2,7 @@ import fs from "fs-extra";
 import { APIv2, APIVariable } from "google-font-metadata";
 
 import { fontFaceVariable, fontFaceVariableWdth } from "../templates/css";
-import { makeVariableFontFilePath } from "../utils/utils";
+import { makeVariableFontFilePath, getVariableWght } from "../utils/utils";
 
 const variable = (id: string): void => {
   const font = APIv2[id];
@@ -23,7 +23,7 @@ const variable = (id: string): void => {
         style,
         subset,
         type,
-        weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
+        weight: getVariableWght(fontVariable.axes),
         woff2Path: makeVariableFontFilePath(font.id, subset, type, style),
         unicodeRange: font.unicodeRange[subset],
       });
@@ -65,7 +65,7 @@ const variable = (id: string): void => {
             subset,
             type,
             wdth: `${fontVariable.axes.wdth.min}% ${fontVariable.axes.wdth.max}%`,
-            weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
+            weight: getVariableWght(fontVariable.axes),
             woff2Path: makeVariableFontFilePath(
               font.id,
               subset,
@@ -106,7 +106,7 @@ const variable = (id: string): void => {
             style: newStyle,
             subset,
             type,
-            weight: `${fontVariable.axes.wght.min} ${fontVariable.axes.wght.max}`,
+            weight: getVariableWght(fontVariable.axes),
             woff2Path: makeVariableFontFilePath(
               font.id,
               subset,

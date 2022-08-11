@@ -1,5 +1,4 @@
 {
-  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
@@ -13,5 +12,6 @@
     "baseUrl": "./",
     "incremental": true,
     "strictPropertyInitialization": false // For schemas
-  }
+  },
+  "exclude": ["node_modules"] 
 }

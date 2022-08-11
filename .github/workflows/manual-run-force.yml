@@ -10,43 +10,46 @@ jobs:
 
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: "0"
 
-      - name: Install packages
-        run: yarn
+      - name: Enable PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Set node version to 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
 
       - name: Fetch API # Calls Google Font Metadata to fetch the latest data from Google's Developer API
-        run: npm explore google-font-metadata -- yarn parser:gen $GOOGLE_API_KEY
+        run: pnpm --filter scripts exec gfm generate $GOOGLE_API_KEY
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - name: Parse APIv1 # Processes ALL API data into APIv1 format (check google-font-metadata documentation)
-        run: yarn parser:v1 --force
-
-      - name: Parse APIv2 # Processes ALL API data into APIv2 format
-        run: yarn parser:v2 --force
-
-      - name: Parse Variable # Scrapes variable page on Google Fonts and parse into JSON format
-        run: yarn parser:variable
+      - name: Parse API # Process ALL generated API data
+        run: pnpm --filter scripts exec gfm parse --force
 
       - name: Build fonts (Google) # Forcefully rebuild all Google Fonts in repository without skipping any fonts
-        run: yarn build:google-force
+        run: pnpm run build:google-force
 
       - name: Rebuild non-Google fonts # Forcefully rebuild all non-Google fonts in repository with generic packager
-        run: yarn build:generic-force
+        run: pnpm run build:generic-force
 
       - name: Generate fontlist # Generate FONTLIST.json and FONTLIST.md
-        run: yarn util:fontlist
+        run: pnpm run util:fontlist
 
       - name: Generate Algolia index # Generate Algolia search index for website
-        run: yarn util:algolia
+        run: pnpm run util:algolia
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
 
       - name: Format files
-        run: yarn format
+        run: pnpm run format
 
       - name: Stage, commit and push files
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -58,7 +61,7 @@ jobs:
         continue-on-error: true
 
       - name: Check font files # Detects if all binaries are downloaded successfully and in the right place
-        run: yarn util:run-check
+        run: pnpm run util:run-check
 
       - name: If error, commit again before publishing
         uses: stefanzweifel/git-auto-commit-action@v4

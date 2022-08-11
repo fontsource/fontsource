@@ -1,1 +1,16 @@
-{"name":"@fontsource/jost","version":"4.5.10","description":"Self-host the Jost font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Jost","jost"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/jost#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/jost"}}
+{
+  "name": "@fontsource/jost",
+  "version": "4.5.11",
+  "description": "Self-host the Jost font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": ["fontsource", "font", "font family", "google fonts", "Jost", "jost"],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/jost#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/jost"
+  }
+}

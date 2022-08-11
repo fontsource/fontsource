@@ -60,5 +60,11 @@
   "./fonts/google/asap/files/asap-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/asap/files/asap-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/asap/files/asap-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/asap/files/asap-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/asap/files/asap-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/asap/files/asap-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/asap/files/asap-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/asap/files/asap-latin-variable-full-normal.woff2",
+  "./fonts/google/asap/files/asap-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/asap/files/asap-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/asap/files/asap-latin-variable-full-italic.woff2"
 ]

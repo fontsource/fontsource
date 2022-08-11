@@ -5,9 +5,12 @@
   "weights": [300, 400, 500, 600, 700],
   "styles": ["italic", "normal"],
   "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-04-21",
-  "version": "v16",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "wght": { "default": "400", "min": "300", "max": "700", "step": "1" }
+  },
+  "lastModified": "2022-06-28",
+  "version": "v18",
   "category": "serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

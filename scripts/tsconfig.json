@@ -1,13 +1,38 @@
 {
-  "extends": "../tsconfig.base.json",
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "rootDir": ".",
-    "composite": false,
-    "noEmit": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
+    /* Projects */
+    "incremental": true,
+
+    /* Language and Environment */
+    "target": "esnext",
+    "useDefineForClassFields": true,
+
+    /* Modules */
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "downlevelIteration": true,
-    "allowJs": false
-  }
+
+    /* Emit */
+    "outDir": "./types",
+
+    /* Interop Constraints */
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    // "types": ["vitest/importMeta"],
+    // "isolatedModules": true, // Uncomment if you're running into an esbuild transform error
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Completeness */
+    "skipLibCheck": true // Skip type checking all .d.ts files.
+  },
+  "$schema": "https://json.schemastore.org/tsconfig"
 }

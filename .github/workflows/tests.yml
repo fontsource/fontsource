@@ -15,21 +15,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: "0"
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14"
 
-      - name: Install dependencies
-        run: yarn
+      - name: Enable PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Set node version to 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
 
       - name: Run lints
-        run: yarn lint
+        run: pnpm run lint
 
       - name: Run tests
-        run: yarn test
+        run: pnpm run test
 
       - uses: codecov/codecov-action@v1
         with:

@@ -10,43 +10,46 @@ jobs:
 
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: "0"
 
-      - name: Install packages
-        run: yarn
+      - name: Enable PNPM
+        uses: pnpm/action-setup@v2
 
-      - name: Fetch API
-        run: npm explore google-font-metadata -- yarn parser:gen $GOOGLE_API_KEY
+      - name: Set node version to 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Fetch API # Calls Google Font Metadata to fetch the latest data from Google's Developer API
+        run: pnpm --filter scripts exec gfm generate $GOOGLE_API_KEY
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - name: Parse APIv1
-        run: yarn parser:v1
-
-      - name: Parse APIv2
-        run: yarn parser:v2
-
-      - name: Parse Variable
-        run: yarn parser:variable
+      - name: Parse API # Process generated API data
+        run: pnpm --filter scripts exec gfm parse
 
       - name: Build fonts
-        run: yarn build:google
+        run: pnpm run build:google
 
       - name: Generate fontlist
-        run: yarn util:fontlist
+        run: pnpm run util:fontlist
 
       - name: Generate Algolia index
-        run: yarn util:algolia
+        run: pnpm run util:algolia
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
 
       - name: Lint files
-        run: yarn lint
+        run: pnpm run lint
 
       - name: Format files
-        run: yarn format
+        run: pnpm run format
 
       - name: Stage, commit and push files
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -58,7 +61,7 @@ jobs:
         continue-on-error: true
 
       - name: Check font files # Detects if all binaries are downloaded successfully and in the right place
-        run: yarn util:run-check
+        run: pnpm run util:run-check
 
       - name: If error, commit again before publishing
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -75,7 +78,7 @@ jobs:
           git config --global user.name "fontsource-bot"
 
       - name: Publish package
-        run: npm run deploy:ci
+        run: pnpm run deploy:ci
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -26,5 +26,6 @@
   "./fonts/google/noto-sans-symbols/files/noto-sans-symbols-all-800-normal.woff",
   "./fonts/google/noto-sans-symbols/files/noto-sans-symbols-symbols-900-normal.woff2",
   "./fonts/google/noto-sans-symbols/files/noto-sans-symbols-all-900-normal.woff",
-  "./fonts/google/noto-sans-symbols/files/noto-sans-symbols-symbols-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-symbols/files/noto-sans-symbols-symbols-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-symbols/files/noto-sans-symbols-symbols-variable-full-normal.woff2"
 ]

@@ -48,4 +48,14 @@ You can find their specific licenses on each package `README.md`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).
 
-[![Vercel Banner](https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg)](https://vercel.com/?utm_source=fontsource&utm_campaign=oss)
+## Community Sponsors
+
+<p align="center" width="100%">
+  <a href="https://vercel.com/?utm_source=fontsource&utm_campaign=oss">
+    <img width="33%" src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg">
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://www.jsdelivr.com/">
+    <img width="33%" src="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg">
+  </a>
+</p>

@@ -1,1 +1,18 @@
-{"fontId":"red-hat-mono","fontName":"Red Hat Mono","subsets":["latin","latin-ext"],"weights":[300,400,500,600,700],"styles":["italic","normal"],"defSubset":"latin","variable":{"ital":{"default":"0","min":"0","max":"1","step":"1"},"wght":{"default":"400","min":"300","max":"700","step":"1"}},"lastModified":"2022-04-27","version":"v8","category":"monospace","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "red-hat-mono",
+  "fontName": "Red Hat Mono",
+  "subsets": ["latin", "latin-ext"],
+  "weights": [300, 400, 500, 600, 700],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "wght": { "default": "400", "min": "300", "max": "700", "step": "1" }
+  },
+  "lastModified": "2022-07-19",
+  "version": "v9",
+  "category": "monospace",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

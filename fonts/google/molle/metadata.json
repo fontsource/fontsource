@@ -1,1 +1,15 @@
-{"fontId":"molle","fontName":"Molle","subsets":["latin","latin-ext"],"weights":[400],"styles":["italic"],"defSubset":"latin","variable":false,"lastModified":"2022-04-26","version":"v21","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "molle",
+  "fontName": "Molle",
+  "subsets": ["latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["italic"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-26",
+  "version": "v21",
+  "category": "handwriting",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

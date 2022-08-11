@@ -206,5 +206,15 @@
   "./fonts/google/overpass/files/overpass-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/overpass/files/overpass-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/overpass/files/overpass-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/overpass/files/overpass-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/overpass/files/overpass-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/overpass/files/overpass-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/overpass/files/overpass-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/overpass/files/overpass-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/overpass/files/overpass-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/overpass/files/overpass-latin-variable-full-normal.woff2",
+  "./fonts/google/overpass/files/overpass-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/overpass/files/overpass-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/overpass/files/overpass-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/overpass/files/overpass-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/overpass/files/overpass-latin-variable-full-italic.woff2"
 ]

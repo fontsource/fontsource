@@ -50,5 +50,8 @@
   "./fonts/google/dosis/files/dosis-latin-800-normal.woff2",
   "./fonts/google/dosis/files/dosis-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/dosis/files/dosis-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/dosis/files/dosis-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/dosis/files/dosis-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/dosis/files/dosis-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/dosis/files/dosis-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/dosis/files/dosis-latin-variable-full-normal.woff2"
 ]

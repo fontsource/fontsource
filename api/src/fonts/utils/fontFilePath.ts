@@ -1,15 +1,8 @@
+import { FontFilePath } from '../interfaces/font.interface';
+
 const fontFilePathRegex = /(.+)-(.+)-(.+)\.(.+)$/;
 
-export const fontFilePath = (
-  path: string,
-):
-  | {
-      subset: string;
-      weight: number;
-      style: string;
-      ext: string;
-    }
-  | undefined => {
+export const fontFilePath = (path: string): FontFilePath | undefined => {
   const regexResults = fontFilePathRegex.exec(path);
 
   return regexResults

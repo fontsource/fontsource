@@ -3091,52 +3091,52 @@
   "variableFilter": {
     "cabin": [
       {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4x0qWljRw-Pd8___1amg.woff2",
-        "dest": "./fonts/google/cabin/files/cabin-vietnamese-variable-full-normal.woff2"
-      },
-      {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4x0qWljRw-Pd8-__1amg.woff2",
-        "dest": "./fonts/google/cabin/files/cabin-latin-ext-variable-full-normal.woff2"
-      },
-      {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4x0qWljRw-Pd8w__0.woff2",
-        "dest": "./fonts/google/cabin/files/cabin-latin-variable-full-normal.woff2"
-      },
-      {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_BCnhRv.woff2",
-        "dest": "./fonts/google/cabin/files/cabin-vietnamese-variable-full-italic.woff2"
-      },
-      {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_FCnhRv.woff2",
-        "dest": "./fonts/google/cabin/files/cabin-latin-ext-variable-full-italic.woff2"
-      },
-      {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_9Cng.woff2",
-        "dest": "./fonts/google/cabin/files/cabin-latin-variable-full-italic.woff2"
-      },
-      {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4i0qWljRw-PfU81xCKCpdpbgZJl6XvptnsBXw.woff2",
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4i0qWljRw-PfU81xCKCpdpbgZJl6XvptnsBXw.woff2",
         "dest": "./fonts/google/cabin/files/cabin-vietnamese-variable-wghtOnly-normal.woff2"
       },
       {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvp9nsBXw.woff2",
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvp9nsBXw.woff2",
         "dest": "./fonts/google/cabin/files/cabin-latin-ext-variable-wghtOnly-normal.woff2"
       },
       {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvqdns.woff2",
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvqdns.woff2",
         "dest": "./fonts/google/cabin/files/cabin-latin-variable-wghtOnly-normal.woff2"
       },
       {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnhHXi-Ag.woff2",
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnhHXi-Ag.woff2",
         "dest": "./fonts/google/cabin/files/cabin-vietnamese-variable-wghtOnly-italic.woff2"
       },
       {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OngHXi-Ag.woff2",
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OngHXi-Ag.woff2",
         "dest": "./fonts/google/cabin/files/cabin-latin-ext-variable-wghtOnly-italic.woff2"
       },
       {
-        "url": "https://fonts.gstatic.com/s/cabin/v18/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnuHXg.woff2",
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnuHXg.woff2",
         "dest": "./fonts/google/cabin/files/cabin-latin-variable-wghtOnly-italic.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8___1amg.woff2",
+        "dest": "./fonts/google/cabin/files/cabin-vietnamese-variable-full-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8-__1amg.woff2",
+        "dest": "./fonts/google/cabin/files/cabin-latin-ext-variable-full-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8w__0.woff2",
+        "dest": "./fonts/google/cabin/files/cabin-latin-variable-full-normal.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_BCnhRv.woff2",
+        "dest": "./fonts/google/cabin/files/cabin-vietnamese-variable-full-italic.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_FCnhRv.woff2",
+        "dest": "./fonts/google/cabin/files/cabin-latin-ext-variable-full-italic.woff2"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_9Cng.woff2",
+        "dest": "./fonts/google/cabin/files/cabin-latin-variable-full-italic.woff2"
       }
     ]
   }

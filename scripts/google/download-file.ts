@@ -134,7 +134,15 @@ const variableLinks = (fontId: string): DownloadLinks[] => {
   const fontVariable = APIVariable[fontId];
   const fontDir = `fonts/google/${fontId}`;
 
-  const downloadURLPairsVariable = pairGenerator(fontVariable.variants);
+  // Temporary change until v5 is released
+  const newVariants: FontVariantsVariable = {};
+  // Fonts like ballet or league-gothic don't have a wght axis
+  if (fontVariable.variants.wght)
+    newVariants.wghtOnly = fontVariable.variants.wght;
+
+  newVariants.full = fontVariable.variants.full;
+
+  const downloadURLPairsVariable = pairGenerator(newVariants);
 
   // Variable { url, dest } pairs
   // Types [type, style, subset]

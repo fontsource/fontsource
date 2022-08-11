@@ -35,5 +35,7 @@
   "./fonts/google/oxanium/files/oxanium-all-800-normal.woff",
   "./fonts/google/oxanium/files/oxanium-latin-800-normal.woff2",
   "./fonts/google/oxanium/files/oxanium-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/oxanium/files/oxanium-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/oxanium/files/oxanium-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/oxanium/files/oxanium-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/oxanium/files/oxanium-latin-variable-full-normal.woff2"
 ]

@@ -1,1 +1,15 @@
-{"fontId":"press-start-2p","fontName":"Press Start 2P","subsets":["cyrillic","cyrillic-ext","greek","latin","latin-ext"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-04-27","version":"v14","category":"display","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "press-start-2p",
+  "fontName": "Press Start 2P",
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-04-27",
+  "version": "v14",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

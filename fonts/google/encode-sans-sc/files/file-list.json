@@ -62,10 +62,10 @@
   "./fonts/google/encode-sans-sc/files/encode-sans-sc-all-900-normal.woff",
   "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-ext-900-normal.woff2",
   "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-900-normal.woff2",
-  "./fonts/google/encode-sans-sc/files/encode-sans-sc-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-variable-full-normal.woff2",
   "./fonts/google/encode-sans-sc/files/encode-sans-sc-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/encode-sans-sc/files/encode-sans-sc-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/encode-sans-sc/files/encode-sans-sc-latin-variable-full-normal.woff2"
 ]

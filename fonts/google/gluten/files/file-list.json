@@ -64,5 +64,8 @@
   "./fonts/google/gluten/files/gluten-latin-900-normal.woff2",
   "./fonts/google/gluten/files/gluten-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/gluten/files/gluten-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/gluten/files/gluten-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/gluten/files/gluten-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/gluten/files/gluten-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/gluten/files/gluten-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/gluten/files/gluten-latin-variable-full-normal.woff2"
 ]

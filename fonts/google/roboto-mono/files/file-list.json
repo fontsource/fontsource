@@ -192,5 +192,17 @@
   "./fonts/google/roboto-mono/files/roboto-mono-greek-variable-wghtOnly-italic.woff2",
   "./fonts/google/roboto-mono/files/roboto-mono-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/roboto-mono/files/roboto-mono-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/roboto-mono/files/roboto-mono-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/roboto-mono/files/roboto-mono-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-greek-variable-full-normal.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-latin-variable-full-normal.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-greek-variable-full-italic.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/roboto-mono/files/roboto-mono-latin-variable-full-italic.woff2"
 ]

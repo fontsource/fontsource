@@ -26,5 +26,6 @@
   "./fonts/google/outfit/files/outfit-all-800-normal.woff",
   "./fonts/google/outfit/files/outfit-latin-900-normal.woff2",
   "./fonts/google/outfit/files/outfit-all-900-normal.woff",
-  "./fonts/google/outfit/files/outfit-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/outfit/files/outfit-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/outfit/files/outfit-latin-variable-full-normal.woff2"
 ]

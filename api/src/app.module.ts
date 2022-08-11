@@ -15,6 +15,7 @@ import { FontlistModule } from './fontlist/fontlist.module';
       process.env.NODE_ENV === 'production'
         ? 'mongodb://mongodb:27017'
         : process.env.MONGO_DB_DEV!,
+      { dbName: 'fontsource' },
     ),
     ScheduleModule.forRoot(),
     ThrottlerModule.forRoot({

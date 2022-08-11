@@ -69,5 +69,11 @@
   "./fonts/google/comfortaa/files/comfortaa-greek-variable-wghtOnly-normal.woff2",
   "./fonts/google/comfortaa/files/comfortaa-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/comfortaa/files/comfortaa-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/comfortaa/files/comfortaa-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/comfortaa/files/comfortaa-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/comfortaa/files/comfortaa-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/comfortaa/files/comfortaa-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/comfortaa/files/comfortaa-greek-variable-full-normal.woff2",
+  "./fonts/google/comfortaa/files/comfortaa-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/comfortaa/files/comfortaa-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/comfortaa/files/comfortaa-latin-variable-full-normal.woff2"
 ]

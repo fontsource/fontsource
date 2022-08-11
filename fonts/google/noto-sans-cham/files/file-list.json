@@ -26,5 +26,6 @@
   "./fonts/google/noto-sans-cham/files/noto-sans-cham-all-800-normal.woff",
   "./fonts/google/noto-sans-cham/files/noto-sans-cham-cham-900-normal.woff2",
   "./fonts/google/noto-sans-cham/files/noto-sans-cham-all-900-normal.woff",
-  "./fonts/google/noto-sans-cham/files/noto-sans-cham-cham-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-cham/files/noto-sans-cham-cham-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-cham/files/noto-sans-cham-cham-variable-full-normal.woff2"
 ]

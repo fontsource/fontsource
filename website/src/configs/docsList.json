@@ -51,20 +51,26 @@
     "isParent": true
   },
   {
-    "key": "gatsby",
-    "title": "Gatsby",
-    "path": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource",
-    "isExternal": true
-  },
-  {
-    "key": "nextjs",
-    "title": "Next.js",
-    "path": "/docs/guides/nextjs"
+    "key": "angular",
+    "title": "Angular",
+    "path": "/docs/guides/angular"
   },
   {
     "key": "chakra-ui",
     "title": "Chakra UI",
-    "path": "https://chakra-ui.com/guides/using-fonts",
+    "path": "https://chakra-ui.com/community/recipes/using-fonts",
+    "isExternal": true
+  },
+  {
+    "key": "flutter",
+    "title": "Flutter",
+    "path": "https://pub.dev/packages/fontsource",
+    "isExternal": true
+  },
+  {
+    "key": "gatsby",
+    "title": "Gatsby",
+    "path": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource",
     "isExternal": true
   },
   {
@@ -74,10 +80,14 @@
     "isExternal": true
   },
   {
-    "key": "flutter",
-    "title": "Flutter",
-    "path": "https://pub.dev/packages/fontsource",
-    "isExternal": true
+    "key": "nextjs",
+    "title": "Next.js",
+    "path": "/docs/guides/nextjs"
+  },
+  {
+    "key": "vuejs",
+    "title": "Vue.js",
+    "path": "/docs/guides/vuejs"
   },
   {
     "key": "api",

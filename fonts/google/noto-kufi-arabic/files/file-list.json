@@ -26,5 +26,6 @@
   "./fonts/google/noto-kufi-arabic/files/noto-kufi-arabic-all-800-normal.woff",
   "./fonts/google/noto-kufi-arabic/files/noto-kufi-arabic-arabic-900-normal.woff2",
   "./fonts/google/noto-kufi-arabic/files/noto-kufi-arabic-all-900-normal.woff",
-  "./fonts/google/noto-kufi-arabic/files/noto-kufi-arabic-arabic-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-kufi-arabic/files/noto-kufi-arabic-arabic-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-kufi-arabic/files/noto-kufi-arabic-arabic-variable-full-normal.woff2"
 ]

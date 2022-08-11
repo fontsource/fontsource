@@ -55,3 +55,10 @@ export interface FontMetadata {
 export interface FontCompareObj {
   [id: string]: string;
 }
+
+export interface FontFilePath {
+  subset: string;
+  weight: number;
+  style: string;
+  ext: string;
+}

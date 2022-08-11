@@ -5,9 +5,12 @@
   "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
   "styles": ["normal"],
   "defSubset": "latin",
-  "variable": { "wght": { "default": "400", "min": "100", "max": "900", "step": "1" } },
-  "lastModified": "2022-04-21",
-  "version": "v7",
+  "variable": {
+    "slnt": { "default": "0", "min": "-13", "max": "13", "step": "1" },
+    "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
+  },
+  "lastModified": "2022-06-28",
+  "version": "v9",
   "category": "display",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

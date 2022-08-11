@@ -150,5 +150,21 @@
   "./fonts/google/arimo/files/arimo-hebrew-variable-wghtOnly-italic.woff2",
   "./fonts/google/arimo/files/arimo-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/arimo/files/arimo-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/arimo/files/arimo-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/arimo/files/arimo-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/arimo/files/arimo-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/arimo/files/arimo-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/arimo/files/arimo-greek-ext-variable-full-normal.woff2",
+  "./fonts/google/arimo/files/arimo-greek-variable-full-normal.woff2",
+  "./fonts/google/arimo/files/arimo-hebrew-variable-full-normal.woff2",
+  "./fonts/google/arimo/files/arimo-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/arimo/files/arimo-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/arimo/files/arimo-latin-variable-full-normal.woff2",
+  "./fonts/google/arimo/files/arimo-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/arimo/files/arimo-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/arimo/files/arimo-greek-ext-variable-full-italic.woff2",
+  "./fonts/google/arimo/files/arimo-greek-variable-full-italic.woff2",
+  "./fonts/google/arimo/files/arimo-hebrew-variable-full-italic.woff2",
+  "./fonts/google/arimo/files/arimo-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/arimo/files/arimo-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/arimo/files/arimo-latin-variable-full-italic.woff2"
 ]
