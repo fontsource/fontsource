@@ -1,0 +1,45 @@
+$fontName: "Material Symbols Rounded";
+$fontId: "material-symbols-rounded";
+$style: normal;
+$weight: 100 400;
+$fontDir: "~@fontsource/#{$fontId}/files";
+
+@mixin fontFace(
+  $fontName: $fontName,
+  $fontId: $fontId,
+  $style: $style,
+  $weight: $weight,
+  $woff2Path: null,
+  $woffPath: null,
+) {
+  @if $woffPath == null {
+    $woffPath: "#{$fontDir}/#{$fontId}.woff";
+  }
+  @if $woff2Path == null {
+    $woff2Path: "#{$fontDir}/#{$fontId}.woff2";
+  }
+
+  @font-face {
+    font-family: "#{$fontName}";
+    font-style: $style;
+    font-weight: $weight;
+    src: url("#{$woff2Path}") format("woff2"), url("#{$woffPath}") format("woff");
+  }
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
