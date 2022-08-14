@@ -1,0 +1,45 @@
+/* noto-serif-hk-chinese-hongkong-variable-wghtOnly-normal */
+@font-face {
+  font-family: 'Noto Serif HKVariable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url('./files/noto-serif-hk-chinese-hongkong-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: ;
+}  
+/* noto-serif-hk-cyrillic-variable-wghtOnly-normal */
+@font-face {
+  font-family: 'Noto Serif HKVariable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url('./files/noto-serif-hk-cyrillic-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: ;
+}  
+/* noto-serif-hk-latin-variable-wghtOnly-normal */
+@font-face {
+  font-family: 'Noto Serif HKVariable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url('./files/noto-serif-hk-latin-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: ;
+}  
+/* noto-serif-hk-latin-ext-variable-wghtOnly-normal */
+@font-face {
+  font-family: 'Noto Serif HKVariable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url('./files/noto-serif-hk-latin-ext-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: ;
+}  
+/* noto-serif-hk-vietnamese-variable-wghtOnly-normal */
+@font-face {
+  font-family: 'Noto Serif HKVariable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url('./files/noto-serif-hk-vietnamese-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: ;
+}  
