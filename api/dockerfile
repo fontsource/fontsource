@@ -17,12 +17,15 @@ USER node
 # Set the default working directory for the app
 WORKDIR /usr/src/app
 
-# Copy package.json, yarn.lock
+# Copy package.json
 # Copying this separately prevents re-running npm install on every code change.
-COPY --chown=node:node package.json yarn.lock ./
+COPY --chown=node:node package.json ./
 
 # Install dependencies
 RUN yarn
+
+# Install dependencies for mongoose to prevent type errors
+RUN yarn --cwd node_modules/mongoose
 
 # Bundle app source
 COPY --chown=node:node . ./

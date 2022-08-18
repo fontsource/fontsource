@@ -18,3 +18,4 @@ services:
       - '27018:27017'
     logging:
       driver: 'none'
+    restart: unless-stopped

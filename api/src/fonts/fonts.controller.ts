@@ -48,6 +48,7 @@ export class FontsController {
   ): Promise<void> {
     const zipFile = await this.findService.findZip(id, query);
     res.type(mimes.zip);
+    res.header('Content-Disposition', `attachment; filename=${id}.zip`);
     res.send(zipFile);
   }
 

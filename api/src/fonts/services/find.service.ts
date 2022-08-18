@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { merge } from 'lodash';
-import JSZip from 'jszip';
+import * as JSZip from 'jszip';
 
 import { Model } from 'mongoose';
 import { Font, FontDocument } from '../schemas/font.schema';
