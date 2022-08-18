@@ -63,9 +63,12 @@ queue.error((err, fontid) => {
 development(); */
 
 // Production
+const blacklist = new Set(["noto-serif-hk"]);
 const production = () => {
   _.forOwn(APIv2, font => {
-    queue.push(`${font.id}`);
+    if (!blacklist.has(font.id)) {
+      queue.push(font.id);
+    }
   });
 };
 production();
