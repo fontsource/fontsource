@@ -6,7 +6,7 @@
   "publishConfig": { "access": "public" },
   "keywords": ["fontsource", "font", "font family", "google fonts", "Montserrat", "montserrat"],
   "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
+  "license": "OFL-1.1",
   "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/montserrat#readme",
   "repository": {
     "type": "git",
