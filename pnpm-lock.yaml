@@ -192,11 +192,14 @@ importers:
 
   website:
     specifiers:
+      '@fontsource/source-code-pro': ^4.5.12
+      '@radix-ui/colors': ^0.1.8
       '@remix-run/dev': ^1.7.0
       '@remix-run/eslint-config': ^1.7.0
       '@remix-run/node': ^1.7.0
       '@remix-run/react': ^1.7.0
       '@remix-run/serve': ^1.7.0
+      '@stitches/react': ^1.2.8
       '@types/react': ^18.0.15
       '@types/react-dom': ^18.0.6
       eslint: ^8.20.0
@@ -204,9 +207,12 @@ importers:
       react-dom: ^18.2.0
       typescript: ^4.7.4
     dependencies:
+      '@fontsource/source-code-pro': 4.5.12
+      '@radix-ui/colors': 0.1.8
       '@remix-run/node': 1.7.0_biqbaboplfbrettd7655fr4n2y
       '@remix-run/react': 1.7.0_biqbaboplfbrettd7655fr4n2y
       '@remix-run/serve': 1.7.0_biqbaboplfbrettd7655fr4n2y
+      '@stitches/react': 1.2.8_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -1848,6 +1854,10 @@ packages:
     resolution: {integrity: sha512-wI3fpfDT0t7p8E6dA2eTECzzOd+bZsZCJ2Hcv+Onn2b7ZwK3RwD27uW2QDaMtQhAfWQQP+WNK7nKf0twLsBf9w==}
     dev: false
 
+  /@fontsource/source-code-pro/4.5.12:
+    resolution: {integrity: sha512-6r1dykX7SH1Orm7xUh4sA8pjM1uNPKo9fV+y9/wxS+y/fwN+sMf6b1jHDUTmfEtw1OxlTaHGrr2I7dGeNqxdPA==}
+    dev: false
+
   /@gar/promisify/1.1.3:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
 
@@ -2832,6 +2842,10 @@ packages:
       '@octokit/openapi-types': 12.10.1
     dev: false
 
+  /@radix-ui/colors/0.1.8:
+    resolution: {integrity: sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==}
+    dev: false
+
   /@remix-run/dev/1.7.0_p6bz3zlyof7hasoqeidkhkiywu:
     resolution: {integrity: sha512-2CBe6A+MqiFPN8aeeF1bq+T4HqtaQexn8VBCyrmEch1NVqsTn7nCDot3dDKkpwC729/hOi+mx20WXKCzd22HQQ==}
     engines: {node: '>=14'}
@@ -3070,6 +3084,14 @@ packages:
     resolution: {integrity: sha512-BPS4ynJW/o92PUR4wgriz2Ud5gpST5vz6GQfMixEDK0Z8ZCUv2M7SkBLykH56T++Xs+8ln9zTGbOvNGIe02/jw==}
     dependencies:
       '@sinonjs/commons': 1.8.3
+    dev: false
+
+  /@stitches/react/1.2.8_react@18.2.0:
+    resolution: {integrity: sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==}
+    peerDependencies:
+      react: '>= 16.3.0'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@swc/core-android-arm-eabi/1.2.218:
