@@ -1,8 +1,8 @@
 import * as React from "react";
 import { RemixBrowser } from "@remix-run/react";
 import { hydrateRoot } from "react-dom/client";
-import { getCssText } from "./styles/stitches.config";
-import ClientStyleContext from "./styles/client.context";
+import { getCssText } from "@styles/theme";
+import ClientStyleContext from "@styles/client.context";
 
 interface ClientCacheProviderProps {
   children: React.ReactNode;

@@ -1,10 +1,5 @@
 import { Link } from "@remix-run/react";
-
-import { styled } from "../styles/stitches.config";
-
-const Container = styled("div", {
-  backgroundColor: "#d6d6d6",
-});
+import { Container } from "@components";
 
 export default function Page2() {
   return (

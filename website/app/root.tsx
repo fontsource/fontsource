@@ -10,8 +10,8 @@ import {
 } from "@remix-run/react";
 import { useContext, useEffect } from "react";
 
-import ClientStyleContext from "./styles/client.context";
-import { styled } from "./styles/stitches.config";
+import ClientStyleContext from "@styles/client.context";
+import { styled } from "@styles/theme";
 
 const Container = styled("div", {
   backgroundColor: "#ff0000",
