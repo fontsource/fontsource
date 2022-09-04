@@ -12,8 +12,8 @@
     "wght": { "default": "400", "min": "100", "max": "900", "step": "1" },
     "GRAD": { "default": "0", "min": "-50", "max": "100", "step": "1" }
   },
-  "lastModified": "2022-04-18",
-  "version": "v7",
+  "lastModified": "2022-08-31",
+  "version": "v8",
   "category": "serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",
