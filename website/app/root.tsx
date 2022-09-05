@@ -1,4 +1,8 @@
-import type { MetaFunction } from "@remix-run/node";
+import type {
+  MetaFunction,
+  HeadersFunction,
+  LoaderFunction,
+} from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -7,62 +11,82 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
+  useLoaderData,
 } from "@remix-run/react";
-import { useContext, useEffect } from "react";
-
-import ClientStyleContext from "@styles/client.context";
-import { styled } from "@styles/theme";
-
-const Container = styled("div", {
-  backgroundColor: "#ff0000",
-  padding: "1em",
-});
+import { useState } from "react";
+import {
+  MantineProvider,
+  Container,
+  ColorSchemeProvider,
+  ColorScheme,
+} from "@mantine/core";
+import { StylesPlaceholder } from "@mantine/remix";
+import { useHotkeys } from "@mantine/hooks";
+import { theme } from "./theme";
+import { getColorScheme } from "./cookies";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Remix with Stitches",
+  title: "Fontsource",
   viewport: "width=device-width,initial-scale=1",
+});
+
+export const headers: HeadersFunction = () => ({
+  "Accept-CH": "Sec-CH-Prefers-Color-Scheme",
 });
 
 interface DocumentProps {
   children: React.ReactNode;
   title?: string;
+  preferredColorScheme?: ColorScheme;
 }
 
-const Document = ({ children, title }: DocumentProps) => {
-  const clientStyleData = useContext(ClientStyleContext);
+export const loader: LoaderFunction = async ({ request }) => ({
+  colorScheme: await getColorScheme(request),
+});
 
-  // Only executed on client
-  useEffect(() => {
-    // reset cache to re-apply global styles
-    clientStyleData.reset();
-  }, [clientStyleData]);
+const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
+  const [colorScheme, setColorScheme] = useState<ColorScheme>(
+    preferredColorScheme ?? "light"
+  );
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+
+  useHotkeys([["mod+J", () => toggleColorScheme()]]);
 
   return (
-    <html lang="en">
-      <head>
-        {title ? <title>{title}</title> : null}
-        <Meta />
-        <Links />
-        <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: clientStyleData.sheet }}
-          suppressHydrationWarning
-        />
-      </head>
-      <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider
+        theme={{ colorScheme, ...theme }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+        <html lang="en">
+          <head>
+            <Meta />
+            <Links />
+            <StylesPlaceholder />
+          </head>
+          <body>
+            {children}
+            <ScrollRestoration />
+            <Scripts />
+            <LiveReload />
+          </body>
+        </html>
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 };
 
 export default function App() {
+  const { colorScheme } = useLoaderData();
+
   return (
-    <Document>
+    <Document preferredColorScheme={colorScheme}>
       <Outlet />
     </Document>
   );

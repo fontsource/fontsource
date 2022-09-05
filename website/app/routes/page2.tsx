@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { Container } from "@components";
+import { Container } from "@mantine/core";
 
 export default function Page2() {
   return (
