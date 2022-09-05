@@ -2,6 +2,8 @@
 
 - [Remix Docs](https://remix.run/docs)
 
+You can visit the test website at: https://fontsource.fly.dev/
+
 ## Fly Setup
 
 1. [Install `flyctl`](https://fly.io/docs/getting-started/installing-flyctl/)
