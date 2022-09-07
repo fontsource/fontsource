@@ -194,6 +194,7 @@ importers:
     specifiers:
       '@emotion/react': ^11.10.4
       '@emotion/server': ^11.10.0
+      '@fontsource/inter': ^4.5.12
       '@fontsource/source-code-pro': ^4.5.12
       '@mantine/core': ^5.2.5
       '@mantine/hooks': ^5.2.5
@@ -216,6 +217,7 @@ importers:
     dependencies:
       '@emotion/react': 11.10.4_7v64pk2mkrohwh22gx7lrz5ive
       '@emotion/server': 11.10.0
+      '@fontsource/inter': 4.5.12
       '@fontsource/source-code-pro': 4.5.12
       '@mantine/core': 5.2.5_2fzd5ndmsav6akanjxusvf2mry
       '@mantine/hooks': 5.2.5_react@18.2.0
@@ -2055,6 +2057,10 @@ packages:
       use-isomorphic-layout-effect: 1.1.2_7v64pk2mkrohwh22gx7lrz5ive
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /@fontsource/inter/4.5.12:
+    resolution: {integrity: sha512-bGKk4/8tube/nCk8hav0ZDBVbzJzc7m0Vt4xF5p15IN4YImwGdtKG38Oq5bU8xHNS+VfvbFFCepgQNj7Pr/Lvg==}
     dev: false
 
   /@fontsource/source-code-pro/4.5.12:

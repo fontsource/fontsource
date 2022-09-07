@@ -1,9 +1,4 @@
-import {
-  AppShell as MantineAppShell,
-  Navbar,
-  Footer,
-  Text,
-} from "@mantine/core";
+import { AppShell as MantineAppShell, Footer, Box } from "@mantine/core";
 import { Header } from "./Header";
 
 interface AppShellProps {
@@ -13,14 +8,23 @@ interface AppShellProps {
 export const AppShell = ({ children }: AppShellProps) => {
   return (
     <MantineAppShell
+      header={<Header />}
       footer={
         <Footer height={60} p="md">
           Application footer
         </Footer>
       }
-      header={<Header />}
     >
-      {children}
+      <Box
+        sx={{
+          maxWidth: "1440px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          padding: "0px 64px",
+        }}
+      >
+        {children}
+      </Box>
     </MantineAppShell>
   );
 };

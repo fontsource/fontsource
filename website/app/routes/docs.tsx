@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { Container } from "@mantine/core";
 
-export default function Page2() {
+export default function Docs() {
   return (
     <Container>
       <h1>Page 2</h1>

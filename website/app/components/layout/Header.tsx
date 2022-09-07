@@ -1,19 +1,18 @@
-import { NavLink } from "@remix-run/react";
+import { NavLink, Link } from "@remix-run/react";
 import {
   createStyles,
-  Header as MantineHeader,
-  Container,
-  Text,
+  Box,
+  Anchor,
   Group,
   Burger,
-  Image,
-  useMantineColorScheme,
   ActionIcon,
   Tooltip,
   ActionIconProps,
+  ContainerProps,
+  Container,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ThemeButton } from "@components";
+import { ThemeButton, LogoText, IconDiscord, IconGithub } from "@components";
 
 const HEADER_HEIGHT = 72;
 
@@ -23,6 +22,11 @@ const useStyles = createStyles(theme => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    maxWidth: "1440px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    padding: "0px 64px",
+    border: `1px solid ${theme.colorScheme === "dark" ? "#151E34" : "#EDF0F3"}`,
   },
 
   burger: {
@@ -44,59 +48,40 @@ const useStyles = createStyles(theme => ({
   },
 
   link: {
-    textTransform: "uppercase",
-    fontSize: 13,
+    fontSize: 15,
     color:
       theme.colorScheme === "dark"
-        ? theme.colors.dark[1]
-        : theme.colors.gray[6],
-    padding: `7px ${theme.spacing.sm}px`,
-    fontWeight: 700,
+        ? theme.colors.text[0]
+        : theme.colors.text[1],
+    padding: `27px ${theme.spacing.sm}px`,
     borderBottom: "2px solid transparent",
     transition: "border-color 100ms ease, color 100ms ease",
+    textDecoration: "none",
 
     "&:hover": {
-      color: theme.colorScheme === "dark" ? theme.white : theme.black,
       textDecoration: "none",
     },
   },
 
   active: {
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    borderBottomColor:
-      theme.colors[theme.primaryColor][theme.colorScheme === "dark" ? 5 : 6],
+    color: theme.colors.purple,
+    borderBottomColor: theme.colors.purple,
+    fontWeight: 700,
   },
 }));
 
-const Logo = () => (
-  <Image
-    src="./logo.svg"
-    alt="Fontsource logo"
-    height={31}
-    fit="contain"
-    width="auto"
-  />
-);
-
 interface IconProps extends ActionIconProps {
   label: string;
-  src: string;
+  icon: React.ReactNode;
   href: string;
 }
 
-const Icon = ({ label, src, href, ...others }: IconProps) => {
-  const { colorScheme } = useMantineColorScheme();
-  const dark = colorScheme === "dark";
-
+const Icon = ({ label, icon, href, ...others }: IconProps) => {
   return (
     <Tooltip label={label}>
-      <ActionIcon
-        variant="outline"
-        color={dark ? "yellow" : "blue"}
-        {...others}
-      >
+      <ActionIcon variant="subtle" {...others}>
         <a href={href} target="_blank">
-          <Image src={src} alt={label} width={20} fit="contain" />
+          {icon}
         </a>
       </ActionIcon>
     </Tooltip>
@@ -109,43 +94,47 @@ interface HeaderNavLinkProps {
 }
 
 const HeaderNavLink = ({ label, to, ...others }: HeaderNavLinkProps) => {
-  const { classes } = useStyles();
+  const { classes, cx } = useStyles();
 
   return (
-    <Text className={classes.link} {...others}>
+    <Anchor component="text" {...others}>
       <NavLink
         to={to}
-        className={({ isActive }) => (isActive ? classes.active : undefined)}
+        className={({ isActive }) =>
+          cx(classes.link, isActive ? classes.active : undefined)
+        }
       >
         {label}
       </NavLink>
-    </Text>
+    </Anchor>
   );
 };
 
-export const Header = () => {
+export const Header = ({ ...other }: ContainerProps) => {
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
 
   return (
-    <MantineHeader height={HEADER_HEIGHT} mb={120}>
-      <Container className={classes.inner}>
-        <Logo />
+    <Box component="header">
+      <Container className={classes.inner} {...other}>
+        <Link to="/">
+          <LogoText height={31} />
+        </Link>
         <div className={classes.links}>
           <Tooltip.Group openDelay={600} closeDelay={100}>
-            <Group spacing="xs" position="right">
+            <Group spacing="md" position="right">
               <HeaderNavLink label="Fonts" to="/" />
               <HeaderNavLink label="Documentation" to="/docs" />
               <ThemeButton />
               <Icon
                 label="GitHub"
-                src="./icons/github.svg"
                 href="https://github.com/fontsource/fontsource"
+                icon={<IconGithub />}
               />
               <Icon
                 label="Discord"
-                src="./icons/discord.svg"
                 href="https://discord.gg/UpHW6ZEyde"
+                icon={<IconDiscord />}
               />
             </Group>
           </Tooltip.Group>
@@ -157,6 +146,6 @@ export const Header = () => {
           size="sm"
         />
       </Container>
-    </MantineHeader>
+    </Box>
   );
 };

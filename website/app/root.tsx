@@ -22,9 +22,10 @@ import {
 } from "@mantine/core";
 import { StylesPlaceholder } from "@mantine/remix";
 import { useHotkeys } from "@mantine/hooks";
-import { theme } from "./theme";
+import { theme } from "./styles/theme";
 import { getColorScheme } from "./cookies";
 import { AppShell } from "@components";
+import { GlobalStyles } from "./styles/global";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -53,6 +54,7 @@ const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 
+  // CTRL + J to toggle color scheme
   useHotkeys([["mod+J", () => toggleColorScheme()]]);
 
   return (
@@ -72,6 +74,7 @@ const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
             <StylesPlaceholder />
           </head>
           <body>
+            <GlobalStyles />
             <AppShell>{children}</AppShell>
             <ScrollRestoration />
             <Scripts />
