@@ -19,6 +19,7 @@ import {
   Container,
   ColorSchemeProvider,
   ColorScheme,
+  createEmotionCache,
 } from "@mantine/core";
 import { StylesPlaceholder } from "@mantine/remix";
 import { useHotkeys } from "@mantine/hooks";
@@ -37,15 +38,16 @@ export const headers: HeadersFunction = () => ({
   "Accept-CH": "Sec-CH-Prefers-Color-Scheme",
 });
 
+createEmotionCache({ key: "mantine" });
+
+export const loader: LoaderFunction = async ({ request }) => ({
+  colorScheme: await getColorScheme(request),
+});
 interface DocumentProps {
   children: React.ReactNode;
   title?: string;
   preferredColorScheme?: ColorScheme;
 }
-
-export const loader: LoaderFunction = async ({ request }) => ({
-  colorScheme: await getColorScheme(request),
-});
 
 const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
