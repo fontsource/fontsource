@@ -5,7 +5,7 @@ export const theme: MantineThemeOverride = {
 		purple: ["#625BF8"],
 		// Light Dark
 		'text': ["#fff", "#01112C"],
-		'background': ["#fff", "#F5F7F9", "#121B31", "#0F1626"]
+		'background': ["#fff", "#F5F7F9", "#121B31", "#0F1626"],
 	},
 
 	fontSizes: {
