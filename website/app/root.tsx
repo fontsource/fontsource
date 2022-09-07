@@ -24,6 +24,7 @@ import { StylesPlaceholder } from "@mantine/remix";
 import { useHotkeys } from "@mantine/hooks";
 import { theme } from "./theme";
 import { getColorScheme } from "./cookies";
+import { AppShell } from "@components";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -71,7 +72,7 @@ const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
             <StylesPlaceholder />
           </head>
           <body>
-            {children}
+            <AppShell>{children}</AppShell>
             <ScrollRestoration />
             <Scripts />
             <LiveReload />
