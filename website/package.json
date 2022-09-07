@@ -10,6 +10,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/server": "^11.10.0",
+    "@fontsource/inter": "^4.5.12",
     "@fontsource/source-code-pro": "^4.5.12",
     "@mantine/core": "^5.2.5",
     "@mantine/hooks": "^5.2.5",
@@ -18,8 +19,11 @@
     "@remix-run/node": "^1.7.0",
     "@remix-run/react": "^1.7.0",
     "@remix-run/serve": "^1.7.0",
+    "algoliasearch": "^4.12.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-instantsearch-hooks-server": "^6.32.1",
+    "react-instantsearch-hooks-web": "^6.32.1"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.7.0",

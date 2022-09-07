@@ -1,15 +1,18 @@
 name: Website Deploy
 on:
   push:
-    paths:
-      - website/**
+    branches:
+      - website
+
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
-    working-directory: ./website
+    defaults:
+      run:
+        working-directory: website
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
