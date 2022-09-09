@@ -1,14 +1,19 @@
 import { useMantineTheme } from "@mantine/core";
 import { IconProps } from "./types";
 
-const IconSearch = ({ height, ...others }: IconProps) => {
+const IconSearch = ({ height, active, ...others }: IconProps) => {
   const theme = useMantineTheme();
-  const stroke =
-    theme.colorScheme === "dark" ? theme.colors.text[0] : theme.colors.text[1];
+  let stroke;
+  if (active) stroke = theme.colors.purple[0];
+  else
+    stroke =
+      theme.colorScheme === "dark"
+        ? theme.colors.text[0]
+        : theme.colors.text[1];
 
   return (
     <svg
-      height={height ?? 11}
+      height={height ?? 20}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -2,14 +2,7 @@ import {
   UseRefinementListProps,
   useRefinementList,
 } from "react-instantsearch-hooks-web";
-import {
-  Checkbox,
-  createStyles,
-  Box,
-  SimpleGrid,
-  useStyles,
-  Group,
-} from "@mantine/core";
+import { Checkbox, createStyles, Box, SimpleGrid, Group } from "@mantine/core";
 import { useState } from "react";
 import { PreviewSelector, SearchBar } from "./TextInput";
 import { SizeSlider } from "./SizeSlider";
@@ -27,6 +20,7 @@ const useStyles = createStyles(theme => ({
 
   wrapper: {
     display: "flex",
+    height: 64,
     alignItems: "center",
     justifyContent: "space-between",
     padding: "0px 24px",
@@ -67,7 +61,7 @@ const Filters = () => {
         <SizeSlider value={fontSize} onChange={setFontSize} />
       </SimpleGrid>
       <div className={classes.wrapper}>
-        <Group>
+        <Group position="center">
           <CategoriesDropdown />
           <LanguagesDropdown />
         </Group>

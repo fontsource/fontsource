@@ -1,13 +1,28 @@
 import { TextInput, TextInputProps, Select, createStyles } from "@mantine/core";
 import { IconSearch } from "@components";
+import { useFocusWithin } from "@mantine/hooks";
 
 const SearchBar = ({ value, onChange, ...others }: TextInputProps) => {
+  const { ref, focused } = useFocusWithin();
   return (
     <TextInput
       value={value}
       onChange={onChange}
       placeholder="Search fonts"
       variant="unstyled"
+      sx={theme => ({
+        paddingLeft: 24,
+        borderRadius: "4px 0px 0px 0px",
+        borderBottom: `1px solid ${
+          theme.colorScheme === "dark"
+            ? theme.colors.border[1]
+            : theme.colors.border[0]
+        }`,
+
+        "&:focus-within": {
+          borderColor: theme.colors.purple[0],
+        },
+      })}
       styles={theme => ({
         input: {
           padding: "24px",
@@ -15,18 +30,16 @@ const SearchBar = ({ value, onChange, ...others }: TextInputProps) => {
             theme.colorScheme === "dark"
               ? theme.colors.background[2]
               : theme.colors.background[0],
-          borderBottom: `1px solid ${
-            theme.colorScheme === "dark" ? "#2C3651" : "#E1E3EC"
-          }`,
-          borderRadius: "4px 0px 0px 0px",
+
           height: "64px",
 
           "&:focus-within": {
-            borderColor: theme.colors.purple[0],
+            color: theme.colors.purple[0],
           },
         },
       })}
-      icon={<IconSearch />}
+      ref={ref}
+      icon={<IconSearch active={focused} />}
       {...others}
     />
   );
