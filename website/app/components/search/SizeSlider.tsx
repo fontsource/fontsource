@@ -39,7 +39,8 @@ const SizeSlider = ({ value, onChange, ...others }: SliderProps) => {
       </Grid.Col>
       <Grid.Col span={8}>
         <MantineSlider
-          color="indigo"
+          color="purple"
+          size="sm"
           value={value}
           onChange={onChange}
           {...others}

@@ -2,11 +2,20 @@ import {
   UseRefinementListProps,
   useRefinementList,
 } from "react-instantsearch-hooks-web";
-import { Checkbox, createStyles, Box, SimpleGrid, Group } from "@mantine/core";
+import {
+  Checkbox,
+  createStyles,
+  Box,
+  SimpleGrid,
+  Group,
+  Button,
+  useMantineTheme,
+} from "@mantine/core";
 import { useState } from "react";
 import { PreviewSelector, SearchBar } from "./TextInput";
 import { SizeSlider } from "./SizeSlider";
 import { CategoriesDropdown, LanguagesDropdown } from "./Dropdowns";
+import { IconTrash } from "@components";
 
 const useStyles = createStyles(theme => ({
   container: {
@@ -33,14 +42,29 @@ const useStyles = createStyles(theme => ({
       borderBottomColor: theme.colors.purple[0],
     },
   },
+
+  button: {
+    padding: "2px 16px",
+    height: "40px",
+
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.background[2]
+        : theme.colors.background[0],
+
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.text[0]
+        : theme.colors.text[1],
+
+    fontWeight: 400,
+  },
 }));
 
 const Filters = () => {
   const { classes } = useStyles();
   const [searchValue, setSearchValue] = useState("");
-  const [exampleValue, setExampleValue] = useState(
-    "The quick fox jumps over the lazy dog"
-  );
+  const [exampleValue, setExampleValue] = useState("");
   const [fontSize, setFontSize] = useState(32);
 
   return (
@@ -65,7 +89,16 @@ const Filters = () => {
           <CategoriesDropdown />
           <LanguagesDropdown />
         </Group>
-        <Checkbox label="I agree to sell my privacy" />
+        <Group>
+          <Checkbox color="purple" label="I agree to sell my privacy" />
+          <Button
+            leftIcon={<IconTrash />}
+            variant="subtle"
+            className={classes.button}
+          >
+            Clear all filters
+          </Button>
+        </Group>
       </div>
     </Box>
   );

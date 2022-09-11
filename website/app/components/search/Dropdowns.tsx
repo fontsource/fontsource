@@ -1,19 +1,8 @@
-import {
-  MultiSelect,
-  MultiSelectProps,
-  createStyles,
-  Box,
-  SelectItemProps,
-  Checkbox,
-  Button,
-  Text,
-  Popover,
-  CheckboxProps,
-} from "@mantine/core";
-import React, { forwardRef } from "react";
+import { createStyles, Checkbox, Button, Menu } from "@mantine/core";
+import { IconCaret } from "@components";
 
 const useStyles = createStyles(theme => ({
-  dropdown: {
+  button: {
     padding: "2px 16px",
     height: "40px",
     width: "240px",
@@ -23,6 +12,18 @@ const useStyles = createStyles(theme => ({
         : theme.colors.border[0]
     }`,
     borderRadius: "4px",
+
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.background[2]
+        : theme.colors.background[0],
+
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.text[0]
+        : theme.colors.text[1],
+
+    fontWeight: 400,
   },
 }));
 
@@ -34,18 +35,28 @@ interface DropdownProps {
 const Dropdown = ({ data, placeholder }: DropdownProps) => {
   const { classes } = useStyles();
   return (
-    <Popover width={200} trapFocus position="bottom" shadow="md">
-      <Popover.Target>
-        <Button variant="subtle" className={classes.dropdown}>
+    <Menu shadow="md" width={240} closeOnItemClick={false}>
+      <Menu.Target>
+        <Button
+          className={classes.button}
+          rightIcon={<IconCaret />}
+          styles={{
+            inner: {
+              justifyContent: "space-between",
+            },
+          }}
+        >
           {placeholder}
         </Button>
-      </Popover.Target>
-      <Popover.Dropdown>
+      </Menu.Target>
+      <Menu.Dropdown>
         {data.map(label => (
-          <Checkbox label={label} />
+          <Menu.Item key={label}>
+            <Checkbox label={label} />
+          </Menu.Item>
         ))}
-      </Popover.Dropdown>
-    </Popover>
+      </Menu.Dropdown>
+    </Menu>
   );
 };
 
