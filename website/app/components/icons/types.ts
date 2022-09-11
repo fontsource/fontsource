@@ -1,1 +1,3 @@
-export type IconProps = React.ComponentPropsWithoutRef<"svg">;
+export interface IconProps extends React.ComponentPropsWithoutRef<"svg"> {
+	active?: boolean;
+}

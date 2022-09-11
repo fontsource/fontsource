@@ -13,7 +13,6 @@ import {
   useCatch,
   useLoaderData,
 } from "@remix-run/react";
-import { useState } from "react";
 import {
   MantineProvider,
   Container,
@@ -22,9 +21,8 @@ import {
   createEmotionCache,
 } from "@mantine/core";
 import { StylesPlaceholder } from "@mantine/remix";
-import { useHotkeys } from "@mantine/hooks";
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import { theme } from "./styles/theme";
-import { getColorScheme } from "./cookies";
 import { AppShell } from "@components";
 import { GlobalStyles } from "./styles/global";
 
@@ -41,7 +39,7 @@ export const headers: HeadersFunction = () => ({
 createEmotionCache({ key: "mantine" });
 
 export const loader: LoaderFunction = async ({ request }) => ({
-  colorScheme: await getColorScheme(request),
+  colorScheme: await request.headers.get("Sec-CH-Prefers-Color-Scheme"),
 });
 interface DocumentProps {
   children: React.ReactNode;
@@ -50,11 +48,17 @@ interface DocumentProps {
 }
 
 const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(
-    preferredColorScheme ?? "light"
-  );
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+  // TODO use cookies to set color scheme to get around theme flashing on load
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: "color-scheme",
+    defaultValue: preferredColorScheme ?? "light",
+    getInitialValueInEffect: true,
+  });
+  const toggleColorScheme = (value?: ColorScheme) => {
+    const nextColorScheme =
+      value || (colorScheme === "dark" ? "light" : "dark");
+    setColorScheme(nextColorScheme);
+  };
 
   // CTRL + J to toggle color scheme
   useHotkeys([["mod+J", () => toggleColorScheme()]]);

@@ -17,16 +17,21 @@ import { ThemeButton, LogoText, IconDiscord, IconGithub } from "@components";
 const HEADER_HEIGHT = 72;
 
 const useStyles = createStyles(theme => ({
+  header: {
+    borderBottom: `1px solid ${
+      theme.colorScheme === "dark" ? "#151E34" : "#EDF0F3"
+    }`,
+  },
+
   inner: {
+    maxWidth: "1440px",
+    marginLeft: "auto",
+    marginRight: "auto",
     height: HEADER_HEIGHT,
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    maxWidth: "1440px",
-    marginLeft: "auto",
-    marginRight: "auto",
     padding: "0px 64px",
-    border: `1px solid ${theme.colorScheme === "dark" ? "#151E34" : "#EDF0F3"}`,
   },
 
   burger: {
@@ -115,7 +120,7 @@ export const Header = ({ ...other }: ContainerProps) => {
   const { classes } = useStyles();
 
   return (
-    <Box component="header">
+    <Box component="header" className={classes.header}>
       <Container className={classes.inner} {...other}>
         <Link to="/">
           <LogoText height={31} />

@@ -8,6 +8,7 @@ interface AppShellProps {
 export const AppShell = ({ children }: AppShellProps) => {
   return (
     <MantineAppShell
+      padding={0}
       header={<Header />}
       footer={
         <Footer height={60} p="md">
@@ -15,16 +16,7 @@ export const AppShell = ({ children }: AppShellProps) => {
         </Footer>
       }
     >
-      <Box
-        sx={{
-          maxWidth: "1440px",
-          marginLeft: "auto",
-          marginRight: "auto",
-          padding: "0px 64px",
-        }}
-      >
-        {children}
-      </Box>
+      {children}
     </MantineAppShell>
   );
 };
