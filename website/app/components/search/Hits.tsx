@@ -1,12 +1,49 @@
 import { useEffect, useRef } from "react";
-import { useInfiniteHits } from "react-instantsearch-hooks-web";
+import {
+  useInfiniteHits,
+  UseInfiniteHitsProps,
+  useInstantSearch,
+} from "react-instantsearch-hooks-web";
+import { Container, Group, SimpleGrid, Text } from "@mantine/core";
 
-interface Hits {
-  hitComponent: React.ReactNode;
+interface Hit {
+  hit: {
+    objectID: string;
+    fontName: string;
+    fontId: string;
+    category: string;
+    styles: string[];
+    subsets: string[];
+    type: string;
+    variable: boolean;
+    weights: number[];
+    defSubset: string;
+    lastModified: string;
+    version: string;
+    source: string;
+    license: string;
+  };
 }
 
-const InfiniteHits = ({ hitComponent, ...props }: Hits) => {
-  const { hits, isLastPage, showMore } = useInfiniteHits(props);
+const HitComponent = ({ hit, ...others }: Hit) => {
+  return (
+    <Container
+      sx={{ height: 332, justifyContent: "space-between" }}
+      {...others}
+    >
+      <Text>The quick brown fox jumps off a cliff.</Text>
+      <Group sx={{ justifyContent: "space-between" }}>
+        <Text weight={700}>{hit.fontName}</Text>
+        <Text weight={700}>{hit.variable ? "Variable" : ""}</Text>
+      </Group>
+    </Container>
+  );
+};
+
+const InfiniteHits = ({ ...others }: UseInfiniteHitsProps) => {
+  const { results, indexUiState } = useInstantSearch();
+
+  const { hits, isLastPage, showMore } = useInfiniteHits(others);
   const sentinelRef = useRef(null);
 
   useEffect(() => {
@@ -27,20 +64,26 @@ const InfiniteHits = ({ hitComponent, ...props }: Hits) => {
     }
   }, [isLastPage, showMore]);
 
+  // The `__isArtificial` flag makes sure to not display the No Results message
+  // when no hits have been returned yet.
+  if (!results.__isArtificial && results.nbHits === 0) {
+    return (
+      <Container>
+        <Text>No results found for "{indexUiState.query}"</Text>
+      </Container>
+    );
+  }
+
   return (
-    <div className="ais-InfiniteHits">
-      <ul className="ais-InfiniteHits-list">
+    <Container>
+      <SimpleGrid cols={3}>
         {hits.map(hit => (
-          <li key={hit.objectID} className="ais-InfiniteHits-item">
-            <HitComponent hit={hit} />
-          </li>
+          <HitComponent key={hit.objectID} hit={hit} />
         ))}
-        <li
-          className="ais-InfiniteHits-sentinel"
-          ref={sentinelRef}
-          aria-hidden="true"
-        />
-      </ul>
-    </div>
+        <div ref={sentinelRef} aria-hidden="true" key="sentinel" />
+      </SimpleGrid>
+    </Container>
   );
 };
+
+export { InfiniteHits };

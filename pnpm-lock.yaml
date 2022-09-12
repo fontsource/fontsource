@@ -209,6 +209,7 @@ importers:
       '@types/react-dom': ^18.0.6
       algoliasearch: ^4.12.2
       eslint: ^8.23.0
+      instantsearch.js: ^4.45.1
       react: ^18.2.0
       react-dom: ^18.2.0
       react-instantsearch-hooks-server: ^6.32.1
@@ -227,6 +228,7 @@ importers:
       '@remix-run/react': 1.7.0_biqbaboplfbrettd7655fr4n2y
       '@remix-run/serve': 1.7.0_biqbaboplfbrettd7655fr4n2y
       algoliasearch: 4.14.1
+      instantsearch.js: 4.45.1_algoliasearch@4.14.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-instantsearch-hooks-server: 6.32.1_6a2c7viirly62osxndozsmviba
@@ -8611,8 +8613,8 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /instantsearch.js/4.45.0_algoliasearch@4.14.1:
-    resolution: {integrity: sha512-gjJDnFJO2yfkmOb0X1mZumqMGHlZIxAVNusnKfNh8s4u6SsRCM9p8S3eJi5aYo3mbS9NrePR8B44/gXh4YGcQQ==}
+  /instantsearch.js/4.45.1_algoliasearch@4.14.1:
+    resolution: {integrity: sha512-QS39KabJ2+7t//hUcyYGq7L4oe4D7HlCX9KltnLKJtYeAFlVvaF31RLPveyqY13KjbInTEgfjTBwififuiuKMQ==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
     dependencies:
@@ -11751,7 +11753,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       algoliasearch: 4.14.1
-      instantsearch.js: 4.45.0_algoliasearch@4.14.1
+      instantsearch.js: 4.45.1_algoliasearch@4.14.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-instantsearch-hooks: 6.32.1_4h2gcdp6pe3cdszv5mh3mlmavu
@@ -11766,7 +11768,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       algoliasearch: 4.14.1
-      instantsearch.js: 4.45.0_algoliasearch@4.14.1
+      instantsearch.js: 4.45.1_algoliasearch@4.14.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-instantsearch-hooks: 6.32.1_4h2gcdp6pe3cdszv5mh3mlmavu
@@ -11781,7 +11783,7 @@ packages:
       '@babel/runtime': 7.18.9
       algoliasearch: 4.14.1
       algoliasearch-helper: 3.11.0_algoliasearch@4.14.1
-      instantsearch.js: 4.45.0_algoliasearch@4.14.1
+      instantsearch.js: 4.45.1_algoliasearch@4.14.1
       react: 18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false

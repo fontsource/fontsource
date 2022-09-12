@@ -1,18 +1,14 @@
 import {
-  UseRefinementListProps,
-  useRefinementList,
-} from "react-instantsearch-hooks-web";
-import {
   Checkbox,
   createStyles,
   Box,
   SimpleGrid,
   Group,
   Button,
-  useMantineTheme,
 } from "@mantine/core";
 import { useState } from "react";
-import { PreviewSelector, SearchBar } from "./TextInput";
+import { SearchBar } from "./SearchTextInput";
+import { PreviewSelector } from "./PreviewTextInput";
 import { SizeSlider } from "./SizeSlider";
 import { CategoriesDropdown, LanguagesDropdown } from "./Dropdowns";
 import { IconTrash } from "@components";
@@ -63,7 +59,6 @@ const useStyles = createStyles(theme => ({
 
 const Filters = () => {
   const { classes } = useStyles();
-  const [searchValue, setSearchValue] = useState("");
   const [exampleValue, setExampleValue] = useState("");
   const [fontSize, setFontSize] = useState(32);
 
@@ -74,10 +69,7 @@ const Filters = () => {
         spacing={0}
         breakpoints={[{ maxWidth: 980, cols: 2 }]}
       >
-        <SearchBar
-          value={searchValue}
-          onChange={event => setSearchValue(event.currentTarget.value)}
-        />
+        <SearchBar />
         <PreviewSelector
           value={exampleValue}
           onChange={event => setExampleValue(event.currentTarget.value)}

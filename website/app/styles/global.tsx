@@ -15,6 +15,11 @@ export const GlobalStyles = () => (
             ? theme.colors.text[0]
             : theme.colors.text[1],
 
+        backgroundColor:
+          theme.colorScheme === "dark"
+            ? theme.colors.background[2]
+            : theme.colors.background[0],
+
         fontSize: theme.fontSizes.md,
         lineHeight: "160%",
       },

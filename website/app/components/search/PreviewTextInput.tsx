@@ -7,51 +7,7 @@ import {
   Divider as MantineDivider,
   DividerProps,
 } from "@mantine/core";
-import { IconCaret, IconSearch } from "@components";
-import { useFocusWithin } from "@mantine/hooks";
-
-const SearchBar = ({ value, onChange, ...others }: TextInputProps) => {
-  const { ref, focused } = useFocusWithin();
-  return (
-    <TextInput
-      value={value}
-      onChange={onChange}
-      placeholder="Search fonts"
-      variant="unstyled"
-      sx={theme => ({
-        paddingLeft: 24,
-        borderRadius: "4px 0px 0px 0px",
-        borderBottom: `1px solid ${
-          theme.colorScheme === "dark"
-            ? theme.colors.border[1]
-            : theme.colors.border[0]
-        }`,
-
-        "&:focus-within": {
-          borderColor: theme.colors.purple[0],
-        },
-      })}
-      styles={theme => ({
-        input: {
-          padding: "24px",
-          backgroundColor:
-            theme.colorScheme === "dark"
-              ? theme.colors.background[2]
-              : theme.colors.background[0],
-
-          height: "64px",
-
-          "&:focus-within": {
-            color: theme.colors.purple[0],
-          },
-        },
-      })}
-      ref={ref}
-      icon={<IconSearch active={focused} />}
-      {...others}
-    />
-  );
-};
+import { IconCaret } from "@components";
 
 const useStyles = createStyles(theme => ({
   wrapper: {
@@ -188,4 +144,4 @@ const PreviewSelector = ({ value, onChange, ...others }: TextInputProps) => {
   );
 };
 
-export { SearchBar, PreviewSelector };
+export { PreviewSelector };
