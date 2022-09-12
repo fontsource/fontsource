@@ -1,1 +1,15 @@
-{"fontId":"open-sauce-one","fontName":"Open Sauce One","subsets":["all"],"weights":[300,400,500,600,700,800,900],"styles":["italic","normal"],"defSubset":"all","variable":false,"lastModified":"2022-09-12","version":"1.477","category":"sans-serif","source":"https://github.com/marcologous/Open-Sauce-Fonts","license":"https://github.com/marcologous/Open-Sauce-Fonts/blob/master/Open%20Sauce%20One%20OFL.txt","type":"other"}
+{
+  "fontId": "open-sauce-one",
+  "fontName": "Open Sauce One",
+  "subsets": ["all"],
+  "weights": [300, 400, 500, 600, 700, 800, 900],
+  "styles": ["italic", "normal"],
+  "defSubset": "all",
+  "variable": false,
+  "lastModified": "2022-09-12",
+  "version": "1.477",
+  "category": "sans-serif",
+  "source": "https://github.com/marcologous/Open-Sauce-Fonts",
+  "license": "https://github.com/marcologous/Open-Sauce-Fonts/blob/master/Open%20Sauce%20One%20OFL.txt",
+  "type": "other"
+}

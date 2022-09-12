@@ -71,6 +71,9 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - mononoki
 - norwester
 - noto-mono
+- open-sauce-one
+- open-sauce-sans
+- open-sauce-two
 - opendyslexic
 - peace-sans
 - syne-italic
