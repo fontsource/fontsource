@@ -1,4 +1,10 @@
-import { createStyles, Checkbox, Button, Menu } from "@mantine/core";
+import {
+  createStyles,
+  Checkbox,
+  Button,
+  Menu,
+  ScrollArea,
+} from "@mantine/core";
 import { IconCaret } from "@components";
 
 const useStyles = createStyles(theme => ({
@@ -24,15 +30,21 @@ const useStyles = createStyles(theme => ({
         : theme.colors.text[1],
 
     fontWeight: 400,
+
+    "&:hover": {
+      backgroundColor: theme.colors.purpleHover[0],
+    },
   },
 }));
 
 interface DropdownProps {
-  data: string[];
+  data: string[][];
   placeholder: string;
+  // Algolia filter prefixes
+  valuePrefix: string;
 }
 
-const Dropdown = ({ data, placeholder }: DropdownProps) => {
+const Dropdown = ({ data, placeholder, valuePrefix }: DropdownProps) => {
   const { classes } = useStyles();
   return (
     <Menu shadow="md" width={240} closeOnItemClick={false}>
@@ -50,11 +62,17 @@ const Dropdown = ({ data, placeholder }: DropdownProps) => {
         </Button>
       </Menu.Target>
       <Menu.Dropdown>
-        {data.map(label => (
-          <Menu.Item key={label}>
-            <Checkbox label={label} />
-          </Menu.Item>
-        ))}
+        <ScrollArea style={{ height: "240px" }}>
+          {data.map(([label, value]) => (
+            <Menu.Item key={value}>
+              <Checkbox
+                label={label}
+                value={`${valuePrefix}${value}`}
+                onChange={() => {}}
+              />
+            </Menu.Item>
+          ))}
+        </ScrollArea>
       </Menu.Dropdown>
     </Menu>
   );
@@ -64,14 +82,37 @@ const LanguagesDropdown = () => {
   return (
     <Dropdown
       data={[
-        "Arabic",
-        "Japanese",
-        "Chinese (Hong Kong)",
-        "Chinese (Simplified)",
-        "Chinese (Traditional)",
-        "Latin",
+        ["Arabic", "arabic"],
+        ["Bengali", "bengali"],
+        ["Chinese (Hong Kong)", "chinese-hongkong"],
+        ["Chinese (Simplified)", "chinese-simplified"],
+        ["Chinese (Traditional)", "chinese-traditional"],
+        ["Cyrillic", "cyrillic"],
+        ["Cyrillic Extended", "cyrillic-ext"],
+        ["Devanagari", "devanagari"],
+        ["Greek", "greek"],
+        ["Greek Extended", "greek-ext"],
+        ["Gujarati", "gujarati"],
+        ["Gurmukhi", "gurmukhi"],
+        ["Hebrew", "hebrew"],
+        ["Japanese", "japanese"],
+        ["Kannada", "kannada"],
+        ["Khmer", "khmer"],
+        ["Korean", "korean"],
+        ["Latin", "latin"],
+        ["Latin Extended", "latin-ext"],
+        ["Malayalam", "malayalam"],
+        ["Myanmar", "myanmar"],
+        ["Oriya", "oriya"],
+        ["Sinhala", "sinhala"],
+        ["Tamil", "tamil"],
+        ["Telugu", "telugu"],
+        ["Thai", "thai"],
+        ["Tibetan", "tibetan"],
+        ["Vietnamese", "vietnamese"],
       ]}
       placeholder="All languages"
+      valuePrefix="subsets:"
     />
   );
 };
@@ -80,14 +121,15 @@ const CategoriesDropdown = () => {
   return (
     <Dropdown
       data={[
-        "Serif",
-        "Sans Serif",
-        "Display",
-        "Handwriting",
-        "Monospace",
-        "Other",
+        ["Serif", "serif"],
+        ["Sans Serif", "sans-serif"],
+        ["Display", "display"],
+        ["Handwriting", "handwriting"],
+        ["Monospace", "monospace"],
+        ["Other", "other"],
       ]}
       placeholder="All categories"
+      valuePrefix="category:"
     />
   );
 };

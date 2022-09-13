@@ -1,6 +1,5 @@
 import {
   TextInput,
-  TextInputProps,
   Menu,
   createStyles,
   Button,
@@ -8,6 +7,7 @@ import {
   DividerProps,
 } from "@mantine/core";
 import { IconCaret } from "@components";
+import { PreviewProps } from "./types";
 
 const useStyles = createStyles(theme => ({
   wrapper: {
@@ -49,6 +49,10 @@ const useStyles = createStyles(theme => ({
         : theme.colors.text[1],
 
     fontWeight: 400,
+
+    "&:hover": {
+      backgroundColor: theme.colors.purpleHover[0],
+    },
   },
 
   separator: {
@@ -69,18 +73,46 @@ const useStyles = createStyles(theme => ({
 const Divider = ({ label, ...others }: DividerProps) => {
   const { classes } = useStyles();
   return (
-    <div className={classes.separator}>
-      <MantineDivider
-        classNames={{ label: classes.separatorLabel }}
-        label={label}
-        {...others}
-      />
-    </div>
+    <Menu.Item disabled>
+      <div className={classes.separator}>
+        <MantineDivider
+          classNames={{ label: classes.separatorLabel }}
+          label={label}
+          {...others}
+        />
+      </div>
+    </Menu.Item>
   );
 };
 
-const PreviewSelector = ({ value, onChange, ...others }: TextInputProps) => {
+const ItemButton = ({
+  labelChange,
+  label,
+  onChangeValue,
+  value,
+}: Omit<PreviewProps, "onChangeEvent" | "inputView">) => {
+  return (
+    <Menu.Item
+      component="button"
+      onClick={() => {
+        labelChange(label);
+        onChangeValue(value);
+      }}
+    >
+      {value}
+    </Menu.Item>
+  );
+};
+
+const PreviewSelector = ({
+  label,
+  labelChange,
+  inputView,
+  onChangeEvent,
+  onChangeValue,
+}: Omit<PreviewProps, "value">) => {
   const { classes } = useStyles();
+
   return (
     <div className={classes.wrapper}>
       <Menu shadow="md">
@@ -94,37 +126,55 @@ const PreviewSelector = ({ value, onChange, ...others }: TextInputProps) => {
               },
             }}
           >
-            Custom
+            {label}
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>
-            <Divider label="Sentences" />
-          </Menu.Item>
-          <Menu.Item>The quick brown fox jumps over the lazy dog.</Menu.Item>
-          <Menu.Item>Sphinx of black quartz, judge my vow.</Menu.Item>
-          <Menu.Item>
-            <Divider label="Custom" />
-          </Menu.Item>
-          <Menu.Item>Custom</Menu.Item>
-          <Menu.Item>
-            <Divider label="Alphabets" />
-          </Menu.Item>
-          <Menu.Item>ABCDEFGHIJKLMNOPQRSTUVWXYZ</Menu.Item>
-          <Menu.Item>abcdefghijklmnopqrstuvwxyz</Menu.Item>
-          <Menu.Item>
-            <Divider label="Numbers" />
-          </Menu.Item>
-          <Menu.Item>0123456789</Menu.Item>
-          <Menu.Item>
-            <Divider label="Symbols" />
-          </Menu.Item>
-          <Menu.Item>!@#$%^&amp;*()_+-=[]{}|;':,./&lt;&gt;?</Menu.Item>
+          <Divider label="Sentences" />
+          <ItemButton
+            label="Sentence"
+            value="The quick brown fox jumps over the lazy dog."
+            labelChange={labelChange}
+            onChangeValue={onChangeValue}
+          />
+          <ItemButton
+            label="Sentence"
+            value="Sphinx of black quartz, judge my vow."
+            labelChange={labelChange}
+            onChangeValue={onChangeValue}
+          />
+          <Divider label="Alphabets" />
+          <ItemButton
+            label="Alphabet"
+            value="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            labelChange={labelChange}
+            onChangeValue={onChangeValue}
+          />
+          <ItemButton
+            label="Alphabet"
+            value="abcdefghijklmnopqrstuvwxyz"
+            labelChange={labelChange}
+            onChangeValue={onChangeValue}
+          />
+          <Divider label="Numbers" />
+          <ItemButton
+            label="Number"
+            value="0123456789"
+            labelChange={labelChange}
+            onChangeValue={onChangeValue}
+          />
+          <Divider label="Symbols" />
+          <ItemButton
+            label="Symbol"
+            value="!@#$%^&*()_+-=[]{}|;':,./<>?"
+            labelChange={labelChange}
+            onChangeValue={onChangeValue}
+          />
         </Menu.Dropdown>
       </Menu>
       <TextInput
-        value={value}
-        onChange={onChange}
+        value={inputView}
+        onChange={onChangeEvent}
         placeholder="Type something"
         variant="unstyled"
         styles={theme => ({
@@ -138,7 +188,6 @@ const PreviewSelector = ({ value, onChange, ...others }: TextInputProps) => {
                 : theme.colors.background[0],
           },
         })}
-        {...others}
       />
     </div>
   );

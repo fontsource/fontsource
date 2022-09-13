@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
+import { FilterProps } from "./types";
 import {
   useInfiniteHits,
-  UseInfiniteHitsProps,
   useInstantSearch,
 } from "react-instantsearch-hooks-web";
-import { Container, Group, SimpleGrid, Text } from "@mantine/core";
+import { Group, SimpleGrid, Text, createStyles, Box } from "@mantine/core";
 
 interface Hit {
   hit: {
@@ -25,25 +25,58 @@ interface Hit {
   };
 }
 
-const HitComponent = ({ hit, ...others }: Hit) => {
+interface HitComponentProps extends Hit {
+  fontSize: number;
+  previewText: string;
+}
+
+const useStyles = createStyles(theme => ({
+  wrapper: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    padding: "24px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    overflowWrap: "anywhere",
+
+    height: "332px",
+    width: "316px",
+    border: `1px solid ${
+      theme.colorScheme === "dark"
+        ? theme.colors.border[1]
+        : theme.colors.border[0]
+    }`,
+    borderRadius: "4px",
+  },
+
+  textGroup: {
+    width: "100%",
+  },
+}));
+
+const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
+  const { classes } = useStyles();
   return (
-    <Container
-      sx={{ height: 332, justifyContent: "space-between" }}
-      {...others}
-    >
-      <Text>The quick brown fox jumps off a cliff.</Text>
-      <Group sx={{ justifyContent: "space-between" }}>
-        <Text weight={700}>{hit.fontName}</Text>
-        <Text weight={700}>{hit.variable ? "Variable" : ""}</Text>
+    <Box className={classes.wrapper}>
+      <Text size={fontSize}>{previewText}</Text>
+      <Group className={classes.textGroup} position="apart">
+        <Text size={18} weight={700} component="span">
+          {hit.fontName}
+        </Text>
+        <Text size={15} weight={700} component="span">
+          {hit.variable ? "Variable" : ""}
+        </Text>
       </Group>
-    </Container>
+    </Box>
   );
 };
 
-const InfiniteHits = ({ ...others }: UseInfiniteHitsProps) => {
+const InfiniteHits = ({ preview, size, ...others }: FilterProps) => {
   const { results, indexUiState } = useInstantSearch();
 
-  const { hits, isLastPage, showMore } = useInfiniteHits(others);
+  const { hits, isLastPage, showMore } = useInfiniteHits();
   const sentinelRef = useRef(null);
 
   useEffect(() => {
@@ -68,21 +101,34 @@ const InfiniteHits = ({ ...others }: UseInfiniteHitsProps) => {
   // when no hits have been returned yet.
   if (!results.__isArtificial && results.nbHits === 0) {
     return (
-      <Container>
+      <Box>
         <Text>No results found for "{indexUiState.query}"</Text>
-      </Container>
+      </Box>
     );
   }
 
   return (
-    <Container>
-      <SimpleGrid cols={3}>
+    <Box>
+      <SimpleGrid
+        breakpoints={[
+          // e.g. 316px * 4 + 16px gap * 3
+          { minWidth: 1312, cols: 4, spacing: 16 },
+          { minWidth: 980, cols: 3, spacing: 16 },
+          { minWidth: 648, cols: 2, spacing: 16 },
+          { minWidth: 0, cols: 1, spacing: 16 },
+        ]}
+      >
         {hits.map(hit => (
-          <HitComponent key={hit.objectID} hit={hit} />
+          <HitComponent
+            key={hit.objectID}
+            hit={hit}
+            fontSize={size.value}
+            previewText={preview.value}
+          />
         ))}
         <div ref={sentinelRef} aria-hidden="true" key="sentinel" />
       </SimpleGrid>
-    </Container>
+    </Box>
   );
 };
 

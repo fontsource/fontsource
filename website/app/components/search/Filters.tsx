@@ -6,12 +6,13 @@ import {
   Group,
   Button,
 } from "@mantine/core";
-import { useState } from "react";
 import { SearchBar } from "./SearchTextInput";
 import { PreviewSelector } from "./PreviewTextInput";
 import { SizeSlider } from "./SizeSlider";
 import { CategoriesDropdown, LanguagesDropdown } from "./Dropdowns";
 import { IconTrash } from "@components";
+import { FilterProps } from "./types";
+import { useState } from "react";
 
 const useStyles = createStyles(theme => ({
   container: {
@@ -54,27 +55,46 @@ const useStyles = createStyles(theme => ({
         : theme.colors.text[1],
 
     fontWeight: 400,
+
+    "&:hover": {
+      backgroundColor: theme.colors.purpleHover[0],
+    },
   },
 }));
 
-const Filters = () => {
+const Filters = ({ size, preview }: FilterProps) => {
   const { classes } = useStyles();
-  const [exampleValue, setExampleValue] = useState("");
-  const [fontSize, setFontSize] = useState(32);
+
+  const [filterItems, setFilterItems] = useState<string[]>([]);
+
+  const handleFilterChange = (filterValue: string) => {
+    if (filterItems.includes(filterValue)) {
+      const filteredArray = filterItems.filter(item => item !== filterValue);
+      setFilterItems(filteredArray);
+    } else {
+      setFilterItems([...filterItems, filterValue]);
+    }
+  };
 
   return (
     <Box className={classes.container}>
       <SimpleGrid
         cols={3}
         spacing={0}
-        breakpoints={[{ maxWidth: 980, cols: 2 }]}
+        breakpoints={[
+          { maxWidth: 980, cols: 2 },
+          { maxWidth: 680, cols: 1 },
+        ]}
       >
         <SearchBar />
         <PreviewSelector
-          value={exampleValue}
-          onChange={event => setExampleValue(event.currentTarget.value)}
+          label={preview.label}
+          labelChange={preview.labelChange}
+          inputView={preview.inputView}
+          onChangeEvent={preview.onChangeEvent}
+          onChangeValue={preview.onChangeValue}
         />
-        <SizeSlider value={fontSize} onChange={setFontSize} />
+        <SizeSlider value={size.value} onChange={size.onChange} />
       </SimpleGrid>
       <div className={classes.wrapper}>
         <Group position="center">
@@ -82,7 +102,7 @@ const Filters = () => {
           <LanguagesDropdown />
         </Group>
         <Group>
-          <Checkbox color="purple" label="I agree to sell my privacy" />
+          <Checkbox color="purple" label="Show only variable fonts" />
           <Button
             leftIcon={<IconTrash />}
             variant="subtle"

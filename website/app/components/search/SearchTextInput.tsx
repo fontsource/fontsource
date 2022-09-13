@@ -1,14 +1,27 @@
-import { TextInput, TextInputProps } from "@mantine/core";
+import { createStyles, TextInput, TextInputProps } from "@mantine/core";
 import { IconSearch } from "@components";
 import { useFocusWithin } from "@mantine/hooks";
 import { useSearchBox } from "react-instantsearch-hooks-web";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
-interface SearchProps extends TextInputProps {
-  queryHook?: (query: string, hook: (value: string) => void) => void;
-}
+const useStyles = createStyles(theme => ({
+  wrapper: {
+    paddingLeft: "24px",
+    borderRadius: "4px 0px 0px 0px",
+    borderBottom: `1px solid ${
+      theme.colorScheme === "dark"
+        ? theme.colors.border[1]
+        : theme.colors.border[0]
+    }`,
 
-const SearchBar = ({ queryHook, ...others }: SearchProps) => {
+    "&:focus-within": {
+      borderColor: theme.colors.purple[0],
+    },
+  },
+}));
+
+const SearchBar = ({ ...others }: TextInputProps) => {
+  const { classes } = useStyles();
   const { ref, focused } = useFocusWithin();
   const { query, refine } = useSearchBox();
   const [inputValue, setInputValue] = useState(query);
@@ -36,19 +49,8 @@ const SearchBar = ({ queryHook, ...others }: SearchProps) => {
       onChange={onChange}
       placeholder="Search fonts"
       variant="unstyled"
-      sx={theme => ({
-        paddingLeft: 24,
-        borderRadius: "4px 0px 0px 0px",
-        borderBottom: `1px solid ${
-          theme.colorScheme === "dark"
-            ? theme.colors.border[1]
-            : theme.colors.border[0]
-        }`,
-
-        "&:focus-within": {
-          borderColor: theme.colors.purple[0],
-        },
-      })}
+      className={classes.wrapper}
+      autoComplete="off"
       styles={theme => ({
         input: {
           padding: "24px",
