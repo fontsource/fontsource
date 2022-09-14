@@ -1,4 +1,5 @@
-import { AppShell as MantineAppShell, Footer, Box } from "@mantine/core";
+import { AppShell as MantineAppShell, Footer } from "@mantine/core";
+
 import { Header } from "./Header";
 
 interface AppShellProps {

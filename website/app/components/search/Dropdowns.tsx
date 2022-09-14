@@ -1,13 +1,16 @@
+import { IconCaret } from "@components";
 import {
-  createStyles,
-  Checkbox,
   Button,
+  Checkbox,
+  createStyles,
   Menu,
   ScrollArea,
 } from "@mantine/core";
-import { IconCaret } from "@components";
-import { atom, PrimitiveAtom, useAtom } from "jotai";
-import { dropdownAtomArr, filterAtom, DropdownState } from "./atoms";
+import type { PrimitiveAtom } from "jotai";
+import { atom, useAtom } from "jotai";
+
+import type { DropdownState } from "./atoms";
+import { dropdownAtomArr, filterAtom } from "./atoms";
 
 const useStyles = createStyles(theme => ({
   button: {
@@ -189,8 +192,8 @@ const CategoriesDropdown = () => {
 };
 
 export {
-  LanguagesDropdown,
   CategoriesDropdown,
-  languageAtomArr,
   categoryAtomArr,
+  languageAtomArr,
+  LanguagesDropdown,
 };

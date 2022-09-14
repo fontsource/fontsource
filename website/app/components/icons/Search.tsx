@@ -1,5 +1,6 @@
 import { useMantineTheme } from "@mantine/core";
-import { IconProps } from "./types";
+
+import type { IconProps } from "./types";
 
 const IconSearch = ({ height, active, ...others }: IconProps) => {
   const theme = useMantineTheme();

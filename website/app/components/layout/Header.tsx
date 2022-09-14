@@ -1,18 +1,17 @@
-import { NavLink, Link } from "@remix-run/react";
+import { IconDiscord, IconGithub, LogoText, ThemeButton } from "@components";
+import type { ActionIconProps, ContainerProps } from "@mantine/core";
 import {
-  createStyles,
-  Box,
-  Anchor,
-  Group,
-  Burger,
   ActionIcon,
-  Tooltip,
-  ActionIconProps,
-  ContainerProps,
+  Anchor,
+  Box,
+  Burger,
   Container,
+  createStyles,
+  Group,
+  Tooltip,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ThemeButton, LogoText, IconDiscord, IconGithub } from "@components";
+import { Link, NavLink } from "@remix-run/react";
 
 const HEADER_HEIGHT = 72;
 
@@ -85,7 +84,7 @@ const Icon = ({ label, icon, href, ...others }: IconProps) => {
   return (
     <Tooltip label={label}>
       <ActionIcon variant="subtle" {...others}>
-        <a href={href} target="_blank">
+        <a href={href} target="_blank" rel="noreferrer">
           {icon}
         </a>
       </ActionIcon>

@@ -1,11 +1,11 @@
 import {
-  Slider as MantineSlider,
   createStyles,
-  Text,
   Grid,
+  Slider as MantineSlider,
+  Text,
 } from "@mantine/core";
-
 import { useAtom } from "jotai";
+
 import { sizeAtom } from "./atoms";
 
 const useStyles = createStyles(theme => ({

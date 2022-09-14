@@ -5,7 +5,8 @@
     "build": "remix build",
     "deploy": "fly deploy --remote-only",
     "dev": "remix dev",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "lint": "eslint **/*.{js,jsx,ts,tsx}"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -32,6 +33,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "eslint": "^8.23.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
     "typescript": "^4.8.2"
   },
   "engines": {

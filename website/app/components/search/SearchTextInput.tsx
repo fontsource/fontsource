@@ -1,8 +1,9 @@
-import { createStyles, TextInput, TextInputProps } from "@mantine/core";
 import { IconSearch } from "@components";
+import type { TextInputProps } from "@mantine/core";
+import { createStyles, TextInput } from "@mantine/core";
 import { useFocusWithin } from "@mantine/hooks";
-import { useSearchBox } from "react-instantsearch-hooks-web";
 import { useState } from "react";
+import { useSearchBox } from "react-instantsearch-hooks-web";
 
 const useStyles = createStyles(theme => ({
   wrapper: {

@@ -1,21 +1,21 @@
-import {
-  TextInput,
-  Menu,
-  createStyles,
-  Button,
-  Divider as MantineDivider,
-  DividerProps,
-} from "@mantine/core";
 import { IconCaret } from "@components";
-import { PreviewProps } from "./types";
+import type { DividerProps } from "@mantine/core";
+import {
+  Button,
+  createStyles,
+  Divider as MantineDivider,
+  Menu,
+  TextInput,
+} from "@mantine/core";
 import { useAtom } from "jotai";
+import { useEffect } from "react";
+
 import {
   previewInputViewAtom,
   previewLabelAtom,
   previewTypingAtom,
   previewValueAtom,
 } from "./atoms";
-import { useEffect } from "react";
 
 const useStyles = createStyles(theme => ({
   wrapper: {
@@ -116,15 +116,15 @@ const ItemButton = ({ label, setLabel, value, setValue }: ItemButtonProps) => {
 const PreviewSelector = () => {
   const { classes } = useStyles();
   const [label, setLabel] = useAtom(previewLabelAtom);
-  const [_value, setValue] = useAtom(previewValueAtom);
+  const [, setValue] = useAtom(previewValueAtom);
   const [inputView, setInputView] = useAtom(previewInputViewAtom);
-  const [_, setInputViewTyping] = useAtom(previewTypingAtom);
+  const [, setInputViewTyping] = useAtom(previewTypingAtom);
 
   useEffect(() => {
     if (label !== "Custom") {
       setInputView("");
     }
-  }, [label]);
+  }, [label, setInputView]);
 
   return (
     <div className={classes.wrapper}>

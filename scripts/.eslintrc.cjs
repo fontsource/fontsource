@@ -5,7 +5,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2021,
-    project: path.join(__dirname, "./scripts/tsconfig.json"),
+    project: path.join(__dirname, "./tsconfig.json"),
   },
   env: {
     commonjs: true,

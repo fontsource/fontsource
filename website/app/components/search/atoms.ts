@@ -32,6 +32,6 @@ const filterAtom = atom(
 	}
 )
 
-export { sizeAtom, previewLabelAtom, previewValueAtom, previewInputViewAtom, previewTypingAtom, dropdownAtomArr, filterAtom, filterBaseAtom }
+export { dropdownAtomArr, filterAtom, filterBaseAtom, previewInputViewAtom, previewLabelAtom, previewTypingAtom, previewValueAtom, sizeAtom }
 export type { DropdownState }
 

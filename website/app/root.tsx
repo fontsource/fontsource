@@ -1,7 +1,17 @@
+import { AppShell } from "@components";
+import type { ColorScheme } from "@mantine/core";
+import {
+  ColorSchemeProvider,
+  Container,
+  createEmotionCache,
+  MantineProvider,
+} from "@mantine/core";
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import { StylesPlaceholder } from "@mantine/remix";
 import type {
-  MetaFunction,
   HeadersFunction,
   LoaderFunction,
+  MetaFunction,
 } from "@remix-run/node";
 import {
   Links,
@@ -13,18 +23,9 @@ import {
   useCatch,
   useLoaderData,
 } from "@remix-run/react";
-import {
-  MantineProvider,
-  Container,
-  ColorSchemeProvider,
-  ColorScheme,
-  createEmotionCache,
-} from "@mantine/core";
-import { StylesPlaceholder } from "@mantine/remix";
-import { useHotkeys, useLocalStorage } from "@mantine/hooks";
-import { theme } from "./styles/theme";
-import { AppShell } from "@components";
+
 import { GlobalStyles } from "./styles/global";
+import { theme } from "./styles/theme";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",

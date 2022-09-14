@@ -1,21 +1,26 @@
+import { IconTrash } from "@components";
 import {
+  Box,
+  Button,
   Checkbox,
   createStyles,
-  Box,
-  SimpleGrid,
   Group,
-  Button,
+  SimpleGrid,
 } from "@mantine/core";
-import { SearchBar } from "./SearchTextInput";
-import { PreviewSelector } from "./PreviewTextInput";
-import { SizeSlider } from "./SizeSlider";
-import { CategoriesDropdown, LanguagesDropdown } from "./Dropdowns";
-import { IconTrash } from "@components";
-import { useConfigure } from "react-instantsearch-hooks-web";
-import { dropdownAtomArr, filterAtom, filterBaseAtom } from "./atoms";
 import { useAtom } from "jotai";
 import { useState } from "react";
-import { languageAtomArr, categoryAtomArr } from "./Dropdowns";
+import { useConfigure } from "react-instantsearch-hooks-web";
+
+import { dropdownAtomArr, filterAtom, filterBaseAtom } from "./atoms";
+import {
+  CategoriesDropdown,
+  categoryAtomArr,
+  languageAtomArr,
+  LanguagesDropdown,
+} from "./Dropdowns";
+import { PreviewSelector } from "./PreviewTextInput";
+import { SearchBar } from "./SearchTextInput";
+import { SizeSlider } from "./SizeSlider";
 
 const useStyles = createStyles(theme => ({
   container: {
@@ -69,7 +74,7 @@ const Filters = () => {
   const { classes } = useStyles();
   const [variable, setVariable] = useState(false);
 
-  const [_, setBaseFilter] = useAtom(filterBaseAtom);
+  const [, setBaseFilter] = useAtom(filterBaseAtom);
   const [filterItems, setFilterItems] = useAtom(filterAtom);
 
   const [languageItems, setLanguageItems] = useAtom(languageAtomArr);

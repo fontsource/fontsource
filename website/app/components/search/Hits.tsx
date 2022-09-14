@@ -1,10 +1,11 @@
+import { Box, createStyles, Group, SimpleGrid, Text } from "@mantine/core";
+import { useAtom } from "jotai";
 import { useEffect, useRef } from "react";
 import {
   useInfiniteHits,
   useInstantSearch,
 } from "react-instantsearch-hooks-web";
-import { Group, SimpleGrid, Text, createStyles, Box } from "@mantine/core";
-import { useAtom } from "jotai";
+
 import { previewValueAtom, sizeAtom } from "./atoms";
 
 interface Hit {

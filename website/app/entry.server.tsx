@@ -1,7 +1,7 @@
-import { renderToString } from "react-dom/server";
-import { RemixServer } from "@remix-run/react";
+import { createStylesServer, injectStyles } from "@mantine/remix";
 import type { EntryContext } from "@remix-run/node";
-import { injectStyles, createStylesServer } from "@mantine/remix";
+import { RemixServer } from "@remix-run/react";
+import { renderToString } from "react-dom/server";
 
 const server = createStylesServer();
 
