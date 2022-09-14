@@ -11,8 +11,11 @@ import { PreviewSelector } from "./PreviewTextInput";
 import { SizeSlider } from "./SizeSlider";
 import { CategoriesDropdown, LanguagesDropdown } from "./Dropdowns";
 import { IconTrash } from "@components";
-import { FilterProps } from "./types";
+import { useConfigure } from "react-instantsearch-hooks-web";
+import { dropdownAtomArr, filterAtom, filterBaseAtom } from "./atoms";
+import { useAtom } from "jotai";
 import { useState } from "react";
+import { languageAtomArr, categoryAtomArr } from "./Dropdowns";
 
 const useStyles = createStyles(theme => ({
   container: {
@@ -62,19 +65,17 @@ const useStyles = createStyles(theme => ({
   },
 }));
 
-const Filters = ({ size, preview }: FilterProps) => {
+const Filters = () => {
   const { classes } = useStyles();
+  const [variable, setVariable] = useState(false);
 
-  const [filterItems, setFilterItems] = useState<string[]>([]);
+  const [_, setBaseFilter] = useAtom(filterBaseAtom);
+  const [filterItems, setFilterItems] = useAtom(filterAtom);
 
-  const handleFilterChange = (filterValue: string) => {
-    if (filterItems.includes(filterValue)) {
-      const filteredArray = filterItems.filter(item => item !== filterValue);
-      setFilterItems(filteredArray);
-    } else {
-      setFilterItems([...filterItems, filterValue]);
-    }
-  };
+  const [languageItems, setLanguageItems] = useAtom(languageAtomArr);
+  const [categoryItems, setCategoryItems] = useAtom(categoryAtomArr);
+
+  useConfigure({ facetFilters: filterItems });
 
   return (
     <Box className={classes.container}>
@@ -87,14 +88,8 @@ const Filters = ({ size, preview }: FilterProps) => {
         ]}
       >
         <SearchBar />
-        <PreviewSelector
-          label={preview.label}
-          labelChange={preview.labelChange}
-          inputView={preview.inputView}
-          onChangeEvent={preview.onChangeEvent}
-          onChangeValue={preview.onChangeValue}
-        />
-        <SizeSlider value={size.value} onChange={size.onChange} />
+        <PreviewSelector />
+        <SizeSlider />
       </SimpleGrid>
       <div className={classes.wrapper}>
         <Group position="center">
@@ -102,11 +97,26 @@ const Filters = ({ size, preview }: FilterProps) => {
           <LanguagesDropdown />
         </Group>
         <Group>
-          <Checkbox color="purple" label="Show only variable fonts" />
+          <Checkbox
+            color="purple"
+            label="Show only variable fonts"
+            value="variable:true"
+            checked={variable}
+            onChange={event => {
+              setVariable(!variable);
+              setFilterItems(event.target.value);
+            }}
+          />
           <Button
             leftIcon={<IconTrash />}
             variant="subtle"
             className={classes.button}
+            onClick={() => {
+              setVariable(false);
+              setLanguageItems(dropdownAtomArr(languageItems.length));
+              setCategoryItems(dropdownAtomArr(categoryItems.length));
+              setBaseFilter([]);
+            }}
           >
             Clear all filters
           </Button>

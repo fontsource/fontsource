@@ -210,6 +210,7 @@ importers:
       algoliasearch: ^4.12.2
       eslint: ^8.23.0
       instantsearch.js: ^4.45.1
+      jotai: ^1.8.3
       react: ^18.2.0
       react-dom: ^18.2.0
       react-instantsearch-hooks-server: ^6.32.1
@@ -229,6 +230,7 @@ importers:
       '@remix-run/serve': 1.7.0_biqbaboplfbrettd7655fr4n2y
       algoliasearch: 4.14.1
       instantsearch.js: 4.45.1_algoliasearch@4.14.1
+      jotai: 1.8.3_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-instantsearch-hooks-server: 6.32.1_6a2c7viirly62osxndozsmviba
@@ -9506,6 +9508,43 @@ packages:
       - '@types/node'
       - supports-color
       - ts-node
+    dev: false
+
+  /jotai/1.8.3_react@18.2.0:
+    resolution: {integrity: sha512-bNAs/DMD6BEB4xxVku33CI+ZIFyCWG82Ms6JnvYunEvGCnviTTDBl+m0HKgijoHmcNM3fxQ5MARdG+wwokNxog==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      '@babel/template': '*'
+      '@tanstack/query-core': '*'
+      '@urql/core': '*'
+      immer: '*'
+      optics-ts: '*'
+      react: '>=16.8'
+      valtio: '*'
+      wonka: '*'
+      xstate: '*'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
+      '@tanstack/query-core':
+        optional: true
+      '@urql/core':
+        optional: true
+      immer:
+        optional: true
+      optics-ts:
+        optional: true
+      valtio:
+        optional: true
+      wonka:
+        optional: true
+      xstate:
+        optional: true
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /js-tokens/4.0.0:

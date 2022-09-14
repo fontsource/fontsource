@@ -8,6 +8,14 @@ import {
 } from "@mantine/core";
 import { IconCaret } from "@components";
 import { PreviewProps } from "./types";
+import { useAtom } from "jotai";
+import {
+  previewInputViewAtom,
+  previewLabelAtom,
+  previewTypingAtom,
+  previewValueAtom,
+} from "./atoms";
+import { useEffect } from "react";
 
 const useStyles = createStyles(theme => ({
   wrapper: {
@@ -85,18 +93,19 @@ const Divider = ({ label, ...others }: DividerProps) => {
   );
 };
 
-const ItemButton = ({
-  labelChange,
-  label,
-  onChangeValue,
-  value,
-}: Omit<PreviewProps, "onChangeEvent" | "inputView">) => {
+interface ItemButtonProps {
+  label: string;
+  setLabel: (label: React.SetStateAction<string>) => void;
+  value: string;
+  setValue: (value: React.SetStateAction<string>) => void;
+}
+const ItemButton = ({ label, setLabel, value, setValue }: ItemButtonProps) => {
   return (
     <Menu.Item
       component="button"
       onClick={() => {
-        labelChange(label);
-        onChangeValue(value);
+        setLabel(label);
+        setValue(value);
       }}
     >
       {value}
@@ -104,14 +113,18 @@ const ItemButton = ({
   );
 };
 
-const PreviewSelector = ({
-  label,
-  labelChange,
-  inputView,
-  onChangeEvent,
-  onChangeValue,
-}: Omit<PreviewProps, "value">) => {
+const PreviewSelector = () => {
   const { classes } = useStyles();
+  const [label, setLabel] = useAtom(previewLabelAtom);
+  const [_value, setValue] = useAtom(previewValueAtom);
+  const [inputView, setInputView] = useAtom(previewInputViewAtom);
+  const [_, setInputViewTyping] = useAtom(previewTypingAtom);
+
+  useEffect(() => {
+    if (label !== "Custom") {
+      setInputView("");
+    }
+  }, [label]);
 
   return (
     <div className={classes.wrapper}>
@@ -134,47 +147,47 @@ const PreviewSelector = ({
           <ItemButton
             label="Sentence"
             value="The quick brown fox jumps over the lazy dog."
-            labelChange={labelChange}
-            onChangeValue={onChangeValue}
+            setLabel={setLabel}
+            setValue={setValue}
           />
           <ItemButton
             label="Sentence"
             value="Sphinx of black quartz, judge my vow."
-            labelChange={labelChange}
-            onChangeValue={onChangeValue}
+            setLabel={setLabel}
+            setValue={setValue}
           />
           <Divider label="Alphabets" />
           <ItemButton
             label="Alphabet"
             value="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            labelChange={labelChange}
-            onChangeValue={onChangeValue}
+            setLabel={setLabel}
+            setValue={setValue}
           />
           <ItemButton
             label="Alphabet"
             value="abcdefghijklmnopqrstuvwxyz"
-            labelChange={labelChange}
-            onChangeValue={onChangeValue}
+            setLabel={setLabel}
+            setValue={setValue}
           />
           <Divider label="Numbers" />
           <ItemButton
             label="Number"
             value="0123456789"
-            labelChange={labelChange}
-            onChangeValue={onChangeValue}
+            setLabel={setLabel}
+            setValue={setValue}
           />
           <Divider label="Symbols" />
           <ItemButton
             label="Symbol"
             value="!@#$%^&*()_+-=[]{}|;':,./<>?"
-            labelChange={labelChange}
-            onChangeValue={onChangeValue}
+            setLabel={setLabel}
+            setValue={setValue}
           />
         </Menu.Dropdown>
       </Menu>
       <TextInput
         value={inputView}
-        onChange={onChangeEvent}
+        onChange={setInputViewTyping}
         placeholder="Type something"
         variant="unstyled"
         styles={theme => ({

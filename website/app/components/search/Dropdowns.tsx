@@ -6,6 +6,8 @@ import {
   ScrollArea,
 } from "@mantine/core";
 import { IconCaret } from "@components";
+import { atom, PrimitiveAtom, useAtom } from "jotai";
+import { dropdownAtomArr, filterAtom, DropdownState } from "./atoms";
 
 const useStyles = createStyles(theme => ({
   button: {
@@ -37,15 +39,58 @@ const useStyles = createStyles(theme => ({
   },
 }));
 
+interface FilterChange {
+  filter: (event: string) => void;
+}
+interface DropdownItemProps extends FilterChange {
+  label: string;
+  value: string;
+  valuePrefix: string;
+  state: PrimitiveAtom<boolean>;
+}
+
+const DropdownItem = ({
+  label,
+  value,
+  valuePrefix,
+  filter,
+  state,
+}: DropdownItemProps) => {
+  const [checked, setChecked] = useAtom(state);
+  return (
+    <Menu.Item>
+      <Checkbox
+        label={label}
+        value={`${valuePrefix}${value}`}
+        checked={checked}
+        onChange={event => {
+          setChecked(!checked);
+          filter(event.target.value);
+        }}
+      />
+    </Menu.Item>
+  );
+};
+
 interface DropdownProps {
   data: string[][];
   placeholder: string;
   // Algolia filter prefixes
   valuePrefix: string;
+  checkboxAtom: PrimitiveAtom<DropdownState>;
 }
 
-const Dropdown = ({ data, placeholder, valuePrefix }: DropdownProps) => {
+const Dropdown = ({
+  data,
+  placeholder,
+  valuePrefix,
+  checkboxAtom,
+}: DropdownProps) => {
   const { classes } = useStyles();
+  // We have to persist dropdown state across re-renders
+  const [checkboxState] = useAtom(checkboxAtom);
+  const [, setFilterItems] = useAtom(filterAtom);
+
   return (
     <Menu shadow="md" width={240} closeOnItemClick={false}>
       <Menu.Target>
@@ -63,14 +108,15 @@ const Dropdown = ({ data, placeholder, valuePrefix }: DropdownProps) => {
       </Menu.Target>
       <Menu.Dropdown>
         <ScrollArea style={{ height: "240px" }}>
-          {data.map(([label, value]) => (
-            <Menu.Item key={value}>
-              <Checkbox
-                label={label}
-                value={`${valuePrefix}${value}`}
-                onChange={() => {}}
-              />
-            </Menu.Item>
+          {data.map(([label, value], index) => (
+            <DropdownItem
+              label={label}
+              value={value}
+              valuePrefix={valuePrefix}
+              filter={setFilterItems}
+              key={value}
+              state={checkboxState[index]}
+            />
           ))}
         </ScrollArea>
       </Menu.Dropdown>
@@ -78,60 +124,73 @@ const Dropdown = ({ data, placeholder, valuePrefix }: DropdownProps) => {
   );
 };
 
+const languageData: [string, string][] = [
+  ["Arabic", "arabic"],
+  ["Bengali", "bengali"],
+  ["Chinese (Hong Kong)", "chinese-hongkong"],
+  ["Chinese (Simplified)", "chinese-simplified"],
+  ["Chinese (Traditional)", "chinese-traditional"],
+  ["Cyrillic", "cyrillic"],
+  ["Cyrillic Extended", "cyrillic-ext"],
+  ["Devanagari", "devanagari"],
+  ["Greek", "greek"],
+  ["Greek Extended", "greek-ext"],
+  ["Gujarati", "gujarati"],
+  ["Gurmukhi", "gurmukhi"],
+  ["Hebrew", "hebrew"],
+  ["Japanese", "japanese"],
+  ["Kannada", "kannada"],
+  ["Khmer", "khmer"],
+  ["Korean", "korean"],
+  ["Latin", "latin"],
+  ["Latin Extended", "latin-ext"],
+  ["Malayalam", "malayalam"],
+  ["Myanmar", "myanmar"],
+  ["Oriya", "oriya"],
+  ["Sinhala", "sinhala"],
+  ["Tamil", "tamil"],
+  ["Telugu", "telugu"],
+  ["Thai", "thai"],
+  ["Tibetan", "tibetan"],
+  ["Vietnamese", "vietnamese"],
+];
+const languageAtomArr = atom(dropdownAtomArr(languageData.length));
+
 const LanguagesDropdown = () => {
   return (
     <Dropdown
-      data={[
-        ["Arabic", "arabic"],
-        ["Bengali", "bengali"],
-        ["Chinese (Hong Kong)", "chinese-hongkong"],
-        ["Chinese (Simplified)", "chinese-simplified"],
-        ["Chinese (Traditional)", "chinese-traditional"],
-        ["Cyrillic", "cyrillic"],
-        ["Cyrillic Extended", "cyrillic-ext"],
-        ["Devanagari", "devanagari"],
-        ["Greek", "greek"],
-        ["Greek Extended", "greek-ext"],
-        ["Gujarati", "gujarati"],
-        ["Gurmukhi", "gurmukhi"],
-        ["Hebrew", "hebrew"],
-        ["Japanese", "japanese"],
-        ["Kannada", "kannada"],
-        ["Khmer", "khmer"],
-        ["Korean", "korean"],
-        ["Latin", "latin"],
-        ["Latin Extended", "latin-ext"],
-        ["Malayalam", "malayalam"],
-        ["Myanmar", "myanmar"],
-        ["Oriya", "oriya"],
-        ["Sinhala", "sinhala"],
-        ["Tamil", "tamil"],
-        ["Telugu", "telugu"],
-        ["Thai", "thai"],
-        ["Tibetan", "tibetan"],
-        ["Vietnamese", "vietnamese"],
-      ]}
+      checkboxAtom={languageAtomArr}
+      data={languageData}
       placeholder="All languages"
       valuePrefix="subsets:"
     />
   );
 };
 
+const categoryData: [string, string][] = [
+  ["Serif", "serif"],
+  ["Sans Serif", "sans-serif"],
+  ["Display", "display"],
+  ["Handwriting", "handwriting"],
+  ["Monospace", "monospace"],
+  ["Other", "other"],
+];
+const categoryAtomArr = atom(dropdownAtomArr(categoryData.length));
+
 const CategoriesDropdown = () => {
   return (
     <Dropdown
-      data={[
-        ["Serif", "serif"],
-        ["Sans Serif", "sans-serif"],
-        ["Display", "display"],
-        ["Handwriting", "handwriting"],
-        ["Monospace", "monospace"],
-        ["Other", "other"],
-      ]}
+      checkboxAtom={categoryAtomArr}
+      data={categoryData}
       placeholder="All categories"
       valuePrefix="category:"
     />
   );
 };
 
-export { LanguagesDropdown, CategoriesDropdown };
+export {
+  LanguagesDropdown,
+  CategoriesDropdown,
+  languageAtomArr,
+  categoryAtomArr,
+};

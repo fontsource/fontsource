@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
-import { FilterProps } from "./types";
 import {
   useInfiniteHits,
   useInstantSearch,
 } from "react-instantsearch-hooks-web";
 import { Group, SimpleGrid, Text, createStyles, Box } from "@mantine/core";
+import { useAtom } from "jotai";
+import { previewValueAtom, sizeAtom } from "./atoms";
 
 interface Hit {
   hit: {
@@ -23,11 +24,6 @@ interface Hit {
     source: string;
     license: string;
   };
-}
-
-interface HitComponentProps extends Hit {
-  fontSize: number;
-  previewText: string;
 }
 
 const useStyles = createStyles(theme => ({
@@ -56,8 +52,13 @@ const useStyles = createStyles(theme => ({
   },
 }));
 
+interface HitComponentProps extends Hit {
+  fontSize: number;
+  previewText: string;
+}
 const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
   const { classes } = useStyles();
+
   return (
     <Box className={classes.wrapper}>
       <Text size={fontSize}>{previewText}</Text>
@@ -73,9 +74,12 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
   );
 };
 
-const InfiniteHits = ({ preview, size, ...others }: FilterProps) => {
-  const { results, indexUiState } = useInstantSearch();
+const InfiniteHits = () => {
+  const [previewValue] = useAtom(previewValueAtom);
+  const [size] = useAtom(sizeAtom);
 
+  // Infinite Scrolling
+  const { results, indexUiState } = useInstantSearch();
   const { hits, isLastPage, showMore } = useInfiniteHits();
   const sentinelRef = useRef(null);
 
@@ -122,8 +126,8 @@ const InfiniteHits = ({ preview, size, ...others }: FilterProps) => {
           <HitComponent
             key={hit.objectID}
             hit={hit}
-            fontSize={size.value}
-            previewText={preview.value}
+            previewText={previewValue}
+            fontSize={size}
           />
         ))}
         <div ref={sentinelRef} aria-hidden="true" key="sentinel" />
