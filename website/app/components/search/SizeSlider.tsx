@@ -1,10 +1,12 @@
 import {
   Slider as MantineSlider,
-  SliderProps,
   createStyles,
   Text,
   Grid,
 } from "@mantine/core";
+
+import { useAtom } from "jotai";
+import { sizeAtom } from "./atoms";
 
 const useStyles = createStyles(theme => ({
   wrapper: {
@@ -24,8 +26,10 @@ const useStyles = createStyles(theme => ({
   },
 }));
 
-const SizeSlider = ({ value, onChange, ...others }: SliderProps) => {
+const SizeSlider = () => {
   const { classes } = useStyles();
+  const [size, setSize] = useAtom(sizeAtom);
+
   return (
     <Grid
       grow
@@ -35,15 +39,15 @@ const SizeSlider = ({ value, onChange, ...others }: SliderProps) => {
       className={classes.wrapper}
     >
       <Grid.Col span={2}>
-        <Text>{value} px</Text>
+        <Text>{size} px</Text>
       </Grid.Col>
       <Grid.Col span={8}>
         <MantineSlider
           color="purple"
           size="sm"
-          value={value}
-          onChange={onChange}
-          {...others}
+          label={null}
+          value={size}
+          onChange={setSize}
         />
       </Grid.Col>
     </Grid>

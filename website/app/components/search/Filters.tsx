@@ -1,21 +1,21 @@
 import {
-  UseRefinementListProps,
-  useRefinementList,
-} from "react-instantsearch-hooks-web";
-import {
   Checkbox,
   createStyles,
   Box,
   SimpleGrid,
   Group,
   Button,
-  useMantineTheme,
 } from "@mantine/core";
-import { useState } from "react";
-import { PreviewSelector, SearchBar } from "./TextInput";
+import { SearchBar } from "./SearchTextInput";
+import { PreviewSelector } from "./PreviewTextInput";
 import { SizeSlider } from "./SizeSlider";
 import { CategoriesDropdown, LanguagesDropdown } from "./Dropdowns";
 import { IconTrash } from "@components";
+import { useConfigure } from "react-instantsearch-hooks-web";
+import { dropdownAtomArr, filterAtom, filterBaseAtom } from "./atoms";
+import { useAtom } from "jotai";
+import { useState } from "react";
+import { languageAtomArr, categoryAtomArr } from "./Dropdowns";
 
 const useStyles = createStyles(theme => ({
   container: {
@@ -58,31 +58,38 @@ const useStyles = createStyles(theme => ({
         : theme.colors.text[1],
 
     fontWeight: 400,
+
+    "&:hover": {
+      backgroundColor: theme.colors.purpleHover[0],
+    },
   },
 }));
 
 const Filters = () => {
   const { classes } = useStyles();
-  const [searchValue, setSearchValue] = useState("");
-  const [exampleValue, setExampleValue] = useState("");
-  const [fontSize, setFontSize] = useState(32);
+  const [variable, setVariable] = useState(false);
+
+  const [_, setBaseFilter] = useAtom(filterBaseAtom);
+  const [filterItems, setFilterItems] = useAtom(filterAtom);
+
+  const [languageItems, setLanguageItems] = useAtom(languageAtomArr);
+  const [categoryItems, setCategoryItems] = useAtom(categoryAtomArr);
+
+  useConfigure({ facetFilters: filterItems });
 
   return (
     <Box className={classes.container}>
       <SimpleGrid
         cols={3}
         spacing={0}
-        breakpoints={[{ maxWidth: 980, cols: 2 }]}
+        breakpoints={[
+          { maxWidth: 980, cols: 2 },
+          { maxWidth: 680, cols: 1 },
+        ]}
       >
-        <SearchBar
-          value={searchValue}
-          onChange={event => setSearchValue(event.currentTarget.value)}
-        />
-        <PreviewSelector
-          value={exampleValue}
-          onChange={event => setExampleValue(event.currentTarget.value)}
-        />
-        <SizeSlider value={fontSize} onChange={setFontSize} />
+        <SearchBar />
+        <PreviewSelector />
+        <SizeSlider />
       </SimpleGrid>
       <div className={classes.wrapper}>
         <Group position="center">
@@ -90,11 +97,26 @@ const Filters = () => {
           <LanguagesDropdown />
         </Group>
         <Group>
-          <Checkbox color="purple" label="I agree to sell my privacy" />
+          <Checkbox
+            color="purple"
+            label="Show only variable fonts"
+            value="variable:true"
+            checked={variable}
+            onChange={event => {
+              setVariable(!variable);
+              setFilterItems(event.target.value);
+            }}
+          />
           <Button
             leftIcon={<IconTrash />}
             variant="subtle"
             className={classes.button}
+            onClick={() => {
+              setVariable(false);
+              setLanguageItems(dropdownAtomArr(languageItems.length));
+              setCategoryItems(dropdownAtomArr(categoryItems.length));
+              setBaseFilter([]);
+            }}
           >
             Clear all filters
           </Button>
