@@ -90,6 +90,11 @@
     "path": "/docs/guides/vuejs"
   },
   {
+    "key": "sveltejs",
+    "title": "Svelte / SvelteKit",
+    "path": "/docs/guides/sveltejs"
+  },
+  {
     "key": "api",
     "title": "API",
     "isParent": true

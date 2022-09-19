@@ -1,0 +1,47 @@
+---
+title: Svelte.js
+---
+
+# Svelte.js / Svelte Kit
+
+---
+
+
+To include Fontsource into your Svelte / SvelteKit  project with Tailwind CSS, it is required to add the font you are gonna use (besides tailwind styles) in your +layout.
+
+<CarbonAd />
+
+## Installation
+
+---
+
+First you should install the font you want to use. For example let's use open sans:
+
+```js
+  yarn add @fontsource/open-sans // npm install @fontsource/open-sans
+```
+
+Then to include Fontsource into your Svelte / SvelteKit  project, it is required to add the font you are gonna use  in your +layout file.
+
+```html
+<script>
+	import '@fontsource/open-sans'; // The font we are gonna serve with fontsource
+</script>
+```
+
+After adding the import to +layout file, we are gonna add an `style` in the same `+layout` page the `body` selector, using the `global()` utility from Svelte:
+
+```html
+<style>
+  :global(body){
+     font-family: "Open Sans", sans-serif
+  }
+</style>
+```
+
+And we are done 👍. 
+
+
+> **Note:** This will modify all the font-family for all the elements. 
+
+
