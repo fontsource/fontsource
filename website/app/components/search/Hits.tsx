@@ -1,10 +1,19 @@
-import { Box, createStyles, Group, SimpleGrid, Text } from "@mantine/core";
+import {
+  Box,
+  createStyles,
+  Group,
+  SimpleGrid,
+  Text,
+  Transition,
+} from "@mantine/core";
 import { useAtom } from "jotai";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   useInfiniteHits,
   useInstantSearch,
 } from "react-instantsearch-hooks-web";
+
+import { generateFontFaces, loadFonts } from "~/utils/fontFace";
 
 import { previewValueAtom, sizeAtom } from "./atoms";
 
@@ -59,10 +68,31 @@ interface HitComponentProps extends Hit {
 }
 const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
   const { classes } = useStyles();
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const fonts = generateFontFaces(
+      hit.fontName,
+      hit.fontId,
+      hit.subsets,
+      hit.weights,
+      hit.styles
+    );
+
+    loadFonts(hit.fontName, previewText, fonts).then(() => {
+      setLoaded(true);
+    });
+  }, [hit]);
 
   return (
     <Box className={classes.wrapper}>
-      <Text size={fontSize}>{previewText}</Text>
+      {loaded ? (
+        <Text size={fontSize} style={{ fontFamily: hit.fontName }}>
+          {previewText}
+        </Text>
+      ) : (
+        <Box /> // Placeholder for styling
+      )}
       <Group className={classes.textGroup} position="apart">
         <Text size={18} weight={700} component="span">
           {hit.fontName}
