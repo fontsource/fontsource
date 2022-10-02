@@ -1,1 +1,28 @@
-{"name":"@fontsource/rubik-burned","version":"4.5.1","description":"Self-host the Rubik Burned font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Rubik Burned","rubik-burned","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/rubik-burned#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/rubik-burned"}}
+{
+  "name": "@fontsource/rubik-burned",
+  "version": "4.5.1",
+  "description": "Self-host the Rubik Burned font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Rubik Burned",
+    "rubik-burned",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/rubik-burned#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/rubik-burned"
+  }
+}
