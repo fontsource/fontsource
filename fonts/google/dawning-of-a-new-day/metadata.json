@@ -1,1 +1,15 @@
-{"fontId":"dawning-of-a-new-day","fontName":"Dawning of a New Day","subsets":["latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v16","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "dawning-of-a-new-day",
+  "fontName": "Dawning of a New Day",
+  "subsets": ["latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v16",
+  "category": "handwriting",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

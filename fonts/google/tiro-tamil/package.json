@@ -1,1 +1,28 @@
-{"name":"@fontsource/tiro-tamil","version":"4.5.3","description":"Self-host the Tiro Tamil font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Tiro Tamil","tiro-tamil","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/tiro-tamil#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/tiro-tamil"}}
+{
+  "name": "@fontsource/tiro-tamil",
+  "version": "4.5.3",
+  "description": "Self-host the Tiro Tamil font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Tiro Tamil",
+    "tiro-tamil",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/tiro-tamil#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/tiro-tamil"
+  }
+}

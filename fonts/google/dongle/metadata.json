@@ -1,1 +1,15 @@
-{"fontId":"dongle","fontName":"Dongle","subsets":["korean","latin","latin-ext","vietnamese"],"weights":[300,400,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-27","version":"v8","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "dongle",
+  "fontName": "Dongle",
+  "subsets": ["korean", "latin", "latin-ext", "vietnamese"],
+  "weights": [300, 400, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-27",
+  "version": "v8",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

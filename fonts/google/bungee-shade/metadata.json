@@ -1,1 +1,15 @@
-{"fontId":"bungee-shade","fontName":"Bungee Shade","subsets":["latin","latin-ext","vietnamese"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v11","category":"display","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "bungee-shade",
+  "fontName": "Bungee Shade",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v11",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

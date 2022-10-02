@@ -1,1 +1,15 @@
-{"fontId":"alegreya-sc","fontName":"Alegreya SC","subsets":["cyrillic","cyrillic-ext","greek","greek-ext","latin","latin-ext","vietnamese"],"weights":[400,500,700,800,900],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v22","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "alegreya-sc",
+  "fontName": "Alegreya SC",
+  "subsets": ["cyrillic", "cyrillic-ext", "greek", "greek-ext", "latin", "latin-ext", "vietnamese"],
+  "weights": [400, 500, 700, 800, 900],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v22",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

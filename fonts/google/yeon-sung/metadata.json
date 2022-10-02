@@ -1,1 +1,15 @@
-{"fontId":"yeon-sung","fontName":"Yeon Sung","subsets":["korean","latin"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-27","version":"v20","category":"display","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "yeon-sung",
+  "fontName": "Yeon Sung",
+  "subsets": ["korean", "latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-27",
+  "version": "v20",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

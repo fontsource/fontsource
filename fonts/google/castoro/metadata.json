@@ -1,1 +1,15 @@
-{"fontId":"castoro","fontName":"Castoro","subsets":["latin","latin-ext"],"weights":[400],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v18","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "castoro",
+  "fontName": "Castoro",
+  "subsets": ["latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v18",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,1 +1,15 @@
-{"fontId":"parisienne","fontName":"Parisienne","subsets":["latin","latin-ext"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v13","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "parisienne",
+  "fontName": "Parisienne",
+  "subsets": ["latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v13",
+  "category": "handwriting",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

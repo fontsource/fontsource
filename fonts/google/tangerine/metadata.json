@@ -1,1 +1,15 @@
-{"fontId":"tangerine","fontName":"Tangerine","subsets":["latin"],"weights":[400,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v17","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "tangerine",
+  "fontName": "Tangerine",
+  "subsets": ["latin"],
+  "weights": [400, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v17",
+  "category": "handwriting",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

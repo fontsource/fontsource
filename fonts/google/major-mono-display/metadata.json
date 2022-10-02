@@ -1,1 +1,15 @@
-{"fontId":"major-mono-display","fontName":"Major Mono Display","subsets":["latin","latin-ext","vietnamese"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v12","category":"monospace","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "major-mono-display",
+  "fontName": "Major Mono Display",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v12",
+  "category": "monospace",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

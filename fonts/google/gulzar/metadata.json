@@ -1,1 +1,15 @@
-{"fontId":"gulzar","fontName":"Gulzar","subsets":["arabic","latin","latin-ext"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-28","version":"v5","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "gulzar",
+  "fontName": "Gulzar",
+  "subsets": ["arabic", "latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-28",
+  "version": "v5",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

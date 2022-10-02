@@ -1,1 +1,15 @@
-{"fontId":"alef","fontName":"Alef","subsets":["hebrew","latin"],"weights":[400,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v21","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "alef",
+  "fontName": "Alef",
+  "subsets": ["hebrew", "latin"],
+  "weights": [400, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v21",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

@@ -1,1 +1,15 @@
-{"fontId":"ibm-plex-mono","fontName":"IBM Plex Mono","subsets":["cyrillic","cyrillic-ext","latin","latin-ext","vietnamese"],"weights":[100,200,300,400,500,600,700],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v12","category":"monospace","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "ibm-plex-mono",
+  "fontName": "IBM Plex Mono",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+  "weights": [100, 200, 300, 400, 500, 600, 700],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-22",
+  "version": "v12",
+  "category": "monospace",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

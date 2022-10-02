@@ -1,1 +1,22 @@
-["./fonts/google/almendra/files/almendra-latin-400-italic.woff","./fonts/google/almendra/files/almendra-latin-ext-400-italic.woff","./fonts/google/almendra/files/almendra-latin-400-normal.woff","./fonts/google/almendra/files/almendra-latin-ext-400-normal.woff","./fonts/google/almendra/files/almendra-latin-700-italic.woff","./fonts/google/almendra/files/almendra-latin-ext-700-italic.woff","./fonts/google/almendra/files/almendra-latin-700-normal.woff","./fonts/google/almendra/files/almendra-latin-ext-700-normal.woff","./fonts/google/almendra/files/almendra-latin-ext-400-italic.woff2","./fonts/google/almendra/files/almendra-all-400-italic.woff","./fonts/google/almendra/files/almendra-latin-400-italic.woff2","./fonts/google/almendra/files/almendra-latin-ext-400-normal.woff2","./fonts/google/almendra/files/almendra-all-400-normal.woff","./fonts/google/almendra/files/almendra-latin-400-normal.woff2","./fonts/google/almendra/files/almendra-latin-ext-700-italic.woff2","./fonts/google/almendra/files/almendra-all-700-italic.woff","./fonts/google/almendra/files/almendra-latin-700-italic.woff2","./fonts/google/almendra/files/almendra-latin-ext-700-normal.woff2","./fonts/google/almendra/files/almendra-all-700-normal.woff","./fonts/google/almendra/files/almendra-latin-700-normal.woff2"]
+[
+  "./fonts/google/almendra/files/almendra-latin-400-italic.woff",
+  "./fonts/google/almendra/files/almendra-latin-ext-400-italic.woff",
+  "./fonts/google/almendra/files/almendra-latin-400-normal.woff",
+  "./fonts/google/almendra/files/almendra-latin-ext-400-normal.woff",
+  "./fonts/google/almendra/files/almendra-latin-700-italic.woff",
+  "./fonts/google/almendra/files/almendra-latin-ext-700-italic.woff",
+  "./fonts/google/almendra/files/almendra-latin-700-normal.woff",
+  "./fonts/google/almendra/files/almendra-latin-ext-700-normal.woff",
+  "./fonts/google/almendra/files/almendra-latin-ext-400-italic.woff2",
+  "./fonts/google/almendra/files/almendra-all-400-italic.woff",
+  "./fonts/google/almendra/files/almendra-latin-400-italic.woff2",
+  "./fonts/google/almendra/files/almendra-latin-ext-400-normal.woff2",
+  "./fonts/google/almendra/files/almendra-all-400-normal.woff",
+  "./fonts/google/almendra/files/almendra-latin-400-normal.woff2",
+  "./fonts/google/almendra/files/almendra-latin-ext-700-italic.woff2",
+  "./fonts/google/almendra/files/almendra-all-700-italic.woff",
+  "./fonts/google/almendra/files/almendra-latin-700-italic.woff2",
+  "./fonts/google/almendra/files/almendra-latin-ext-700-normal.woff2",
+  "./fonts/google/almendra/files/almendra-all-700-normal.woff",
+  "./fonts/google/almendra/files/almendra-latin-700-normal.woff2"
+]
