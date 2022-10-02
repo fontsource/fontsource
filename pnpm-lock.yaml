@@ -149,7 +149,7 @@ importers:
       flat: ^5.0.2
       fs-extra: ^10.0.1
       glob: ^7.2.0
-      google-font-metadata: ^4.1.1
+      google-font-metadata: ^4.1.2
       got: ^11.8.2
       is-absolute-url: ^3.0.3
       jsonfile: ^6.1.0
@@ -162,7 +162,7 @@ importers:
       flat: 5.0.2
       fs-extra: 10.1.0
       glob: 7.2.3
-      google-font-metadata: 4.1.1
+      google-font-metadata: 4.1.2
       got: 11.8.5
       is-absolute-url: 3.0.3
       jsonfile: 6.1.0
@@ -7512,8 +7512,8 @@ packages:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
-  /google-font-metadata/4.1.1:
-    resolution: {integrity: sha512-vP/AmLvTsTlzDvR7UjK03vRG+lIyzNTLtDGEZedqwesFRLqmgvoR9GZN6KdvMm6n8UvyY8hZjevK6ZrERf1PSA==}
+  /google-font-metadata/4.1.2:
+    resolution: {integrity: sha512-B4MrTl17DxzgH01+fxoPjjjjn9b7kkoGCL2XbXdwLqTWuhCpPI0u6In8jTLY2TOVojNMt4ts6a5AbhaTA7ptPg==}
     hasBin: true
     dependencies:
       cac: 6.7.14
