@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-array-for-each */
 import type { FontMetadata, FontObject } from './types';
 import { findBoundaries } from './utils';
 
@@ -34,9 +33,9 @@ const generateMulti = (metadata: FontMetadata) => {
 	const { family, styles, display, weights, variable, path = '', subsets, unicodeRange, formats } = metadata;
 	const id = metadata.id ?? family.toLowerCase().replace(/\s/g, '-');
 	let result = '';
-	styles.forEach(style => {
-		weights.forEach(weight => {
-			subsets.forEach(subset => {
+	for (const style of styles) {
+		for (const weight of weights) {
+			for (const subset of subsets) {
 				const fontObject: FontObject = {
 					family,
 					style,
@@ -51,9 +50,9 @@ const generateMulti = (metadata: FontMetadata) => {
 					fontObject.unicodeRange = unicodeRange[subset];
 
 				result += `${generateSingle(fontObject)}\n\n`;
-			});
-		});
-	});
+			}
+		}
+	}
 	// Slice last 2 \n if no minify
 	return result.slice(0, -2);
 };
