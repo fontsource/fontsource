@@ -1,0 +1,15 @@
+{
+  "fontId": "reem-kufi-ink",
+  "fontName": "Reem Kufi Ink",
+  "subsets": ["arabic", "latin", "latin-ext", "vietnamese"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-14",
+  "version": "v4",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

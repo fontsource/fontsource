@@ -58,10 +58,5 @@
   "./fonts/google/podkova/files/podkova-cyrillic-variable-wghtOnly-normal.woff2",
   "./fonts/google/podkova/files/podkova-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/podkova/files/podkova-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/podkova/files/podkova-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/podkova/files/podkova-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/podkova/files/podkova-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/podkova/files/podkova-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/podkova/files/podkova-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/podkova/files/podkova-latin-variable-full-normal.woff2"
+  "./fonts/google/podkova/files/podkova-latin-variable-wghtOnly-normal.woff2"
 ]

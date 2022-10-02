@@ -58,10 +58,5 @@
   "./fonts/google/eczar/files/eczar-greek-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/eczar/files/eczar-greek-variable-wghtOnly-normal.woff2",
   "./fonts/google/eczar/files/eczar-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/eczar/files/eczar-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/eczar/files/eczar-devanagari-variable-full-normal.woff2",
-  "./fonts/google/eczar/files/eczar-greek-ext-variable-full-normal.woff2",
-  "./fonts/google/eczar/files/eczar-greek-variable-full-normal.woff2",
-  "./fonts/google/eczar/files/eczar-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/eczar/files/eczar-latin-variable-full-normal.woff2"
+  "./fonts/google/eczar/files/eczar-latin-variable-wghtOnly-normal.woff2"
 ]

@@ -43,8 +43,5 @@
   "./fonts/google/yaldevi/files/yaldevi-latin-700-normal.woff2",
   "./fonts/google/yaldevi/files/yaldevi-sinhala-variable-wghtOnly-normal.woff2",
   "./fonts/google/yaldevi/files/yaldevi-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/yaldevi/files/yaldevi-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/yaldevi/files/yaldevi-sinhala-variable-full-normal.woff2",
-  "./fonts/google/yaldevi/files/yaldevi-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/yaldevi/files/yaldevi-latin-variable-full-normal.woff2"
+  "./fonts/google/yaldevi/files/yaldevi-latin-variable-wghtOnly-normal.woff2"
 ]

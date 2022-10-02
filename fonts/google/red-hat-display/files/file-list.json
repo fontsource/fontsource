@@ -72,9 +72,5 @@
   "./fonts/google/red-hat-display/files/red-hat-display-latin-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/red-hat-display/files/red-hat-display-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/red-hat-display/files/red-hat-display-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/red-hat-display/files/red-hat-display-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/red-hat-display/files/red-hat-display-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/red-hat-display/files/red-hat-display-latin-variable-full-normal.woff2",
-  "./fonts/google/red-hat-display/files/red-hat-display-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/red-hat-display/files/red-hat-display-latin-variable-full-italic.woff2"
+  "./fonts/google/red-hat-display/files/red-hat-display-latin-variable-wghtOnly-italic.woff2"
 ]

@@ -29,8 +29,5 @@
   "./fonts/google/dynapuff/files/dynapuff-latin-700-normal.woff2",
   "./fonts/google/dynapuff/files/dynapuff-cyrillic-ext-variable-wghtOnly-normal.woff2",
   "./fonts/google/dynapuff/files/dynapuff-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/dynapuff/files/dynapuff-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/dynapuff/files/dynapuff-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/dynapuff/files/dynapuff-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/dynapuff/files/dynapuff-latin-variable-full-normal.woff2"
+  "./fonts/google/dynapuff/files/dynapuff-latin-variable-wghtOnly-normal.woff2"
 ]

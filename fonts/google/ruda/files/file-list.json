@@ -56,9 +56,5 @@
   "./fonts/google/ruda/files/ruda-cyrillic-variable-wghtOnly-normal.woff2",
   "./fonts/google/ruda/files/ruda-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/ruda/files/ruda-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/ruda/files/ruda-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/ruda/files/ruda-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/ruda/files/ruda-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/ruda/files/ruda-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/ruda/files/ruda-latin-variable-full-normal.woff2"
+  "./fonts/google/ruda/files/ruda-latin-variable-wghtOnly-normal.woff2"
 ]

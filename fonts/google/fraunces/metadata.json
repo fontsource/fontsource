@@ -12,7 +12,7 @@
     "SOFT": { "default": "0", "min": "0", "max": "100", "step": "0.1" },
     "WONK": { "default": "0", "min": "0", "max": "1", "step": "1" }
   },
-  "lastModified": "2022-08-31",
+  "lastModified": "2022-09-22",
   "version": "v24",
   "category": "serif",
   "source": "https://fonts.google.com/",

@@ -36,8 +36,5 @@
   "./fonts/google/syne/files/syne-latin-800-normal.woff2",
   "./fonts/google/syne/files/syne-greek-variable-wghtOnly-normal.woff2",
   "./fonts/google/syne/files/syne-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/syne/files/syne-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/syne/files/syne-greek-variable-full-normal.woff2",
-  "./fonts/google/syne/files/syne-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/syne/files/syne-latin-variable-full-normal.woff2"
+  "./fonts/google/syne/files/syne-latin-variable-wghtOnly-normal.woff2"
 ]

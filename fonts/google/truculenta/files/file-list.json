@@ -64,8 +64,5 @@
   "./fonts/google/truculenta/files/truculenta-latin-900-normal.woff2",
   "./fonts/google/truculenta/files/truculenta-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/truculenta/files/truculenta-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/truculenta/files/truculenta-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/truculenta/files/truculenta-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/truculenta/files/truculenta-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/truculenta/files/truculenta-latin-variable-full-normal.woff2"
+  "./fonts/google/truculenta/files/truculenta-latin-variable-wghtOnly-normal.woff2"
 ]

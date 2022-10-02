@@ -74,11 +74,5 @@
   "./fonts/google/rosario/files/rosario-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/rosario/files/rosario-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/rosario/files/rosario-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/rosario/files/rosario-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/rosario/files/rosario-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/rosario/files/rosario-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/rosario/files/rosario-latin-variable-full-normal.woff2",
-  "./fonts/google/rosario/files/rosario-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/rosario/files/rosario-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/rosario/files/rosario-latin-variable-full-italic.woff2"
+  "./fonts/google/rosario/files/rosario-latin-variable-wghtOnly-italic.woff2"
 ]

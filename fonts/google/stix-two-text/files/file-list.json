@@ -114,17 +114,5 @@
   "./fonts/google/stix-two-text/files/stix-two-text-greek-variable-wghtOnly-italic.woff2",
   "./fonts/google/stix-two-text/files/stix-two-text-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/stix-two-text/files/stix-two-text-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-greek-variable-full-normal.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-latin-variable-full-normal.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-cyrillic-ext-variable-full-italic.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-cyrillic-variable-full-italic.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-greek-variable-full-italic.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/stix-two-text/files/stix-two-text-latin-variable-full-italic.woff2"
+  "./fonts/google/stix-two-text/files/stix-two-text-latin-variable-wghtOnly-italic.woff2"
 ]

@@ -64,8 +64,5 @@
   "./fonts/google/noto-sans-hebrew/files/noto-sans-hebrew-latin-900-normal.woff2",
   "./fonts/google/noto-sans-hebrew/files/noto-sans-hebrew-hebrew-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-hebrew/files/noto-sans-hebrew-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-hebrew/files/noto-sans-hebrew-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-hebrew/files/noto-sans-hebrew-hebrew-variable-full-normal.woff2",
-  "./fonts/google/noto-sans-hebrew/files/noto-sans-hebrew-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/noto-sans-hebrew/files/noto-sans-hebrew-latin-variable-full-normal.woff2"
+  "./fonts/google/noto-sans-hebrew/files/noto-sans-hebrew-latin-variable-wghtOnly-normal.woff2"
 ]

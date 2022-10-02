@@ -121,11 +121,5 @@
   "./fonts/google/commissioner/files/commissioner-greek-variable-wghtOnly-normal.woff2",
   "./fonts/google/commissioner/files/commissioner-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/commissioner/files/commissioner-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/commissioner/files/commissioner-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/commissioner/files/commissioner-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/commissioner/files/commissioner-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/commissioner/files/commissioner-greek-variable-full-normal.woff2",
-  "./fonts/google/commissioner/files/commissioner-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/commissioner/files/commissioner-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/commissioner/files/commissioner-latin-variable-full-normal.woff2"
+  "./fonts/google/commissioner/files/commissioner-latin-variable-wghtOnly-normal.woff2"
 ]

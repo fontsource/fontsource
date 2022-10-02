@@ -84,21 +84,21 @@ const filterLinks = (fontId: string): DownloadLinks[] => {
     const dest =
       types[4] === "woff2"
         ? makeFontDownloadPath(
-          fontDir,
-          fontId,
-          types[2].replace("[", "").replace("]", ""),
-          Number(types[0]),
-          types[1],
-          types[4]
-        )
+            fontDir,
+            fontId,
+            types[2].replace("[", "").replace("]", ""),
+            Number(types[0]),
+            types[1],
+            types[4]
+          )
         : makeFontDownloadPath(
-          fontDir,
-          fontId,
-          "all",
-          Number(types[0]),
-          types[1],
-          types[4]
-        );
+            fontDir,
+            fontId,
+            "all",
+            Number(types[0]),
+            types[1],
+            types[4]
+          );
     const url = pair[1];
     return { url, dest };
   });
@@ -140,8 +140,7 @@ const variableLinks = (fontId: string): DownloadLinks[] => {
   if (fontVariable.variants.wght)
     newVariants.wghtOnly = fontVariable.variants.wght;
 
-  if (fontVariable.variants.full)
-    newVariants.full = fontVariable.variants.full;
+  if (fontVariable.variants.full) newVariants.full = fontVariable.variants.full;
 
   const downloadURLPairsVariable = pairGenerator(newVariants);
 

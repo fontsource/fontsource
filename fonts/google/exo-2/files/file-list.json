@@ -206,15 +206,5 @@
   "./fonts/google/exo-2/files/exo-2-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/exo-2/files/exo-2-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/exo-2/files/exo-2-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/exo-2/files/exo-2-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/exo-2/files/exo-2-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/exo-2/files/exo-2-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/exo-2/files/exo-2-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/exo-2/files/exo-2-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/exo-2/files/exo-2-latin-variable-full-normal.woff2",
-  "./fonts/google/exo-2/files/exo-2-cyrillic-ext-variable-full-italic.woff2",
-  "./fonts/google/exo-2/files/exo-2-cyrillic-variable-full-italic.woff2",
-  "./fonts/google/exo-2/files/exo-2-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/exo-2/files/exo-2-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/exo-2/files/exo-2-latin-variable-full-italic.woff2"
+  "./fonts/google/exo-2/files/exo-2-latin-variable-wghtOnly-italic.woff2"
 ]

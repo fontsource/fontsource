@@ -36,8 +36,5 @@
   "./fonts/google/akshar/files/akshar-latin-700-normal.woff2",
   "./fonts/google/akshar/files/akshar-devanagari-variable-wghtOnly-normal.woff2",
   "./fonts/google/akshar/files/akshar-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/akshar/files/akshar-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/akshar/files/akshar-devanagari-variable-full-normal.woff2",
-  "./fonts/google/akshar/files/akshar-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/akshar/files/akshar-latin-variable-full-normal.woff2"
+  "./fonts/google/akshar/files/akshar-latin-variable-wghtOnly-normal.woff2"
 ]

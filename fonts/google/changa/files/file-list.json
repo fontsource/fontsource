@@ -50,8 +50,5 @@
   "./fonts/google/changa/files/changa-latin-800-normal.woff2",
   "./fonts/google/changa/files/changa-arabic-variable-wghtOnly-normal.woff2",
   "./fonts/google/changa/files/changa-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/changa/files/changa-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/changa/files/changa-arabic-variable-full-normal.woff2",
-  "./fonts/google/changa/files/changa-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/changa/files/changa-latin-variable-full-normal.woff2"
+  "./fonts/google/changa/files/changa-latin-variable-wghtOnly-normal.woff2"
 ]

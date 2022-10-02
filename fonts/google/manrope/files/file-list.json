@@ -95,11 +95,5 @@
   "./fonts/google/manrope/files/manrope-greek-variable-wghtOnly-normal.woff2",
   "./fonts/google/manrope/files/manrope-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/manrope/files/manrope-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/manrope/files/manrope-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/manrope/files/manrope-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/manrope/files/manrope-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/manrope/files/manrope-greek-variable-full-normal.woff2",
-  "./fonts/google/manrope/files/manrope-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/manrope/files/manrope-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/manrope/files/manrope-latin-variable-full-normal.woff2"
+  "./fonts/google/manrope/files/manrope-latin-variable-wghtOnly-normal.woff2"
 ]

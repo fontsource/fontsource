@@ -30,7 +30,5 @@
   "./fonts/google/cinzel/files/cinzel-all-900-normal.woff",
   "./fonts/google/cinzel/files/cinzel-latin-900-normal.woff2",
   "./fonts/google/cinzel/files/cinzel-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/cinzel/files/cinzel-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/cinzel/files/cinzel-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/cinzel/files/cinzel-latin-variable-full-normal.woff2"
+  "./fonts/google/cinzel/files/cinzel-latin-variable-wghtOnly-normal.woff2"
 ]

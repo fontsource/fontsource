@@ -40,7 +40,5 @@
   "./fonts/google/sora/files/sora-all-800-normal.woff",
   "./fonts/google/sora/files/sora-latin-800-normal.woff2",
   "./fonts/google/sora/files/sora-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/sora/files/sora-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/sora/files/sora-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/sora/files/sora-latin-variable-full-normal.woff2"
+  "./fonts/google/sora/files/sora-latin-variable-wghtOnly-normal.woff2"
 ]

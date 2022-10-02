@@ -57,8 +57,5 @@
   "./fonts/google/cairo/files/cairo-latin-900-normal.woff2",
   "./fonts/google/cairo/files/cairo-arabic-variable-wghtOnly-normal.woff2",
   "./fonts/google/cairo/files/cairo-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/cairo/files/cairo-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/cairo/files/cairo-arabic-variable-full-normal.woff2",
-  "./fonts/google/cairo/files/cairo-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/cairo/files/cairo-latin-variable-full-normal.woff2"
+  "./fonts/google/cairo/files/cairo-latin-variable-wghtOnly-normal.woff2"
 ]

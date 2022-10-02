@@ -36,8 +36,5 @@
   "./fonts/google/red-rose/files/red-rose-latin-700-normal.woff2",
   "./fonts/google/red-rose/files/red-rose-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/red-rose/files/red-rose-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/red-rose/files/red-rose-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/red-rose/files/red-rose-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/red-rose/files/red-rose-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/red-rose/files/red-rose-latin-variable-full-normal.woff2"
+  "./fonts/google/red-rose/files/red-rose-latin-variable-wghtOnly-normal.woff2"
 ]

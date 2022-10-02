@@ -38,9 +38,5 @@
   "./fonts/google/el-messiri/files/el-messiri-arabic-variable-wghtOnly-normal.woff2",
   "./fonts/google/el-messiri/files/el-messiri-cyrillic-variable-wghtOnly-normal.woff2",
   "./fonts/google/el-messiri/files/el-messiri-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/el-messiri/files/el-messiri-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/el-messiri/files/el-messiri-arabic-variable-full-normal.woff2",
-  "./fonts/google/el-messiri/files/el-messiri-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/el-messiri/files/el-messiri-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/el-messiri/files/el-messiri-latin-variable-full-normal.woff2"
+  "./fonts/google/el-messiri/files/el-messiri-latin-variable-wghtOnly-normal.woff2"
 ]

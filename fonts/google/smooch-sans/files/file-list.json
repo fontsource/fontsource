@@ -64,8 +64,5 @@
   "./fonts/google/smooch-sans/files/smooch-sans-latin-900-normal.woff2",
   "./fonts/google/smooch-sans/files/smooch-sans-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/smooch-sans/files/smooch-sans-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/smooch-sans/files/smooch-sans-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/smooch-sans/files/smooch-sans-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/smooch-sans/files/smooch-sans-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/smooch-sans/files/smooch-sans-latin-variable-full-normal.woff2"
+  "./fonts/google/smooch-sans/files/smooch-sans-latin-variable-wghtOnly-normal.woff2"
 ]
