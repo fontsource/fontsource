@@ -1,15 +1,1 @@
-{
-  "fontId": "ole",
-  "fontName": "Ole",
-  "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v3",
-  "category": "handwriting",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"ole","fontName":"Ole","subsets":["latin","latin-ext","vietnamese"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v3","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

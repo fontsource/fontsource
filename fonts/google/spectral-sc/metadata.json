@@ -1,15 +1,1 @@
-{
-  "fontId": "spectral-sc",
-  "fontName": "Spectral SC",
-  "subsets": ["cyrillic", "latin", "latin-ext", "vietnamese"],
-  "weights": [200, 300, 400, 500, 600, 700, 800],
-  "styles": ["italic", "normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v11",
-  "category": "serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"spectral-sc","fontName":"Spectral SC","subsets":["cyrillic","latin","latin-ext","vietnamese"],"weights":[200,300,400,500,600,700,800],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v11","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

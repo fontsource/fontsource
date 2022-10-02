@@ -1,15 +1,1 @@
-{
-  "fontId": "noto-sans-myanmar",
-  "fontName": "Noto Sans Myanmar",
-  "subsets": ["myanmar"],
-  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
-  "styles": ["normal"],
-  "defSubset": "myanmar",
-  "variable": false,
-  "lastModified": "2022-09-28",
-  "version": "v20",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"noto-sans-myanmar","fontName":"Noto Sans Myanmar","subsets":["myanmar"],"weights":[100,200,300,400,500,600,700,800,900],"styles":["normal"],"defSubset":"myanmar","variable":false,"lastModified":"2022-09-28","version":"v20","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

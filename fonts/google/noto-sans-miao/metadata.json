@@ -1,15 +1,1 @@
-{
-  "fontId": "noto-sans-miao",
-  "fontName": "Noto Sans Miao",
-  "subsets": ["latin", "latin-ext", "miao"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-28",
-  "version": "v17",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"noto-sans-miao","fontName":"Noto Sans Miao","subsets":["latin","latin-ext","miao"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-28","version":"v17","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

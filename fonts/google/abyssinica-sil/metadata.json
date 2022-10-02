@@ -1,15 +1,1 @@
-{
-  "fontId": "abyssinica-sil",
-  "fontName": "Abyssinica SIL",
-  "subsets": ["ethiopic", "latin", "latin-ext"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v1",
-  "category": "serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"abyssinica-sil","fontName":"Abyssinica SIL","subsets":["ethiopic","latin","latin-ext"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v1","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

@@ -1,15 +1,1 @@
-{
-  "fontId": "noto-color-emoji",
-  "fontName": "Noto Color Emoji",
-  "subsets": ["emoji"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "emoji",
-  "variable": false,
-  "lastModified": "2022-09-26",
-  "version": "v24",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"noto-color-emoji","fontName":"Noto Color Emoji","subsets":["emoji"],"weights":[400],"styles":["normal"],"defSubset":"emoji","variable":false,"lastModified":"2022-09-26","version":"v24","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

@@ -1,15 +1,1 @@
-{
-  "fontId": "niramit",
-  "fontName": "Niramit",
-  "subsets": ["latin", "latin-ext", "thai", "vietnamese"],
-  "weights": [200, 300, 400, 500, 600, 700],
-  "styles": ["italic", "normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v10",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"niramit","fontName":"Niramit","subsets":["latin","latin-ext","thai","vietnamese"],"weights":[200,300,400,500,600,700],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v10","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

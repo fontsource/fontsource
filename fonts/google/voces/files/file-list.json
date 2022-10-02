@@ -1,7 +1,1 @@
-[
-  "./fonts/google/voces/files/voces-latin-400-normal.woff",
-  "./fonts/google/voces/files/voces-latin-ext-400-normal.woff",
-  "./fonts/google/voces/files/voces-latin-ext-400-normal.woff2",
-  "./fonts/google/voces/files/voces-all-400-normal.woff",
-  "./fonts/google/voces/files/voces-latin-400-normal.woff2"
-]
+["./fonts/google/voces/files/voces-latin-400-normal.woff","./fonts/google/voces/files/voces-latin-ext-400-normal.woff","./fonts/google/voces/files/voces-latin-ext-400-normal.woff2","./fonts/google/voces/files/voces-all-400-normal.woff","./fonts/google/voces/files/voces-latin-400-normal.woff2"]

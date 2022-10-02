@@ -1,15 +1,1 @@
-{
-  "fontId": "blinker",
-  "fontName": "Blinker",
-  "subsets": ["latin", "latin-ext"],
-  "weights": [100, 200, 300, 400, 600, 700, 800, 900],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v12",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"blinker","fontName":"Blinker","subsets":["latin","latin-ext"],"weights":[100,200,300,400,600,700,800,900],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v12","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

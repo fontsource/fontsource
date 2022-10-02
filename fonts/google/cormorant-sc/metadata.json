@@ -1,15 +1,1 @@
-{
-  "fontId": "cormorant-sc",
-  "fontName": "Cormorant SC",
-  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
-  "weights": [300, 400, 500, 600, 700],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v17",
-  "category": "serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"cormorant-sc","fontName":"Cormorant SC","subsets":["cyrillic","cyrillic-ext","latin","latin-ext","vietnamese"],"weights":[300,400,500,600,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v17","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

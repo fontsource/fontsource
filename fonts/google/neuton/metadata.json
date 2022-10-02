@@ -1,15 +1,1 @@
-{
-  "fontId": "neuton",
-  "fontName": "Neuton",
-  "subsets": ["latin", "latin-ext"],
-  "weights": [200, 300, 400, 700, 800],
-  "styles": ["italic", "normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v18",
-  "category": "serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"neuton","fontName":"Neuton","subsets":["latin","latin-ext"],"weights":[200,300,400,700,800],"styles":["italic","normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v18","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

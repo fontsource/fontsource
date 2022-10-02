@@ -1,15 +1,1 @@
-{
-  "fontId": "comforter-brush",
-  "fontName": "Comforter Brush",
-  "subsets": ["cyrillic", "latin", "latin-ext", "vietnamese"],
-  "weights": [400],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v5",
-  "category": "handwriting",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"comforter-brush","fontName":"Comforter Brush","subsets":["cyrillic","latin","latin-ext","vietnamese"],"weights":[400],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v5","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

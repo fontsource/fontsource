@@ -1,15 +1,1 @@
-{
-  "fontId": "cabin-condensed",
-  "fontName": "Cabin Condensed",
-  "subsets": ["latin", "latin-ext", "vietnamese"],
-  "weights": [400, 500, 600, 700],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": false,
-  "lastModified": "2022-09-22",
-  "version": "v19",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"cabin-condensed","fontName":"Cabin Condensed","subsets":["latin","latin-ext","vietnamese"],"weights":[400,500,600,700],"styles":["normal"],"defSubset":"latin","variable":false,"lastModified":"2022-09-22","version":"v19","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

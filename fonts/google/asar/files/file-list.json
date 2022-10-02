@@ -1,9 +1,1 @@
-[
-  "./fonts/google/asar/files/asar-devanagari-400-normal.woff",
-  "./fonts/google/asar/files/asar-latin-400-normal.woff",
-  "./fonts/google/asar/files/asar-latin-ext-400-normal.woff",
-  "./fonts/google/asar/files/asar-devanagari-400-normal.woff2",
-  "./fonts/google/asar/files/asar-all-400-normal.woff",
-  "./fonts/google/asar/files/asar-latin-ext-400-normal.woff2",
-  "./fonts/google/asar/files/asar-latin-400-normal.woff2"
-]
+["./fonts/google/asar/files/asar-devanagari-400-normal.woff","./fonts/google/asar/files/asar-latin-400-normal.woff","./fonts/google/asar/files/asar-latin-ext-400-normal.woff","./fonts/google/asar/files/asar-devanagari-400-normal.woff2","./fonts/google/asar/files/asar-all-400-normal.woff","./fonts/google/asar/files/asar-latin-ext-400-normal.woff2","./fonts/google/asar/files/asar-latin-400-normal.woff2"]
