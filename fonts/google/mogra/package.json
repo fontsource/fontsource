@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/mogra",
-  "version": "4.5.8",
-  "description": "Self-host the Mogra font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Mogra", "mogra"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/mogra#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "fonts/google/mogra"
-  }
-}
+{"name":"@fontsource/mogra","version":"4.5.9","description":"Self-host the Mogra font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Mogra","mogra"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/mogra#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/mogra"}}

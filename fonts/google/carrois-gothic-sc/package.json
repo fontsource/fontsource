@@ -1,16 +1,1 @@
-{
-  "name": "@fontsource/carrois-gothic-sc",
-  "version": "4.5.9",
-  "description": "Self-host the Carrois Gothic SC font in a neatly bundled NPM package.",
-  "main": "index.css",
-  "publishConfig": { "access": "public" },
-  "keywords": ["fontsource", "font", "font family", "google fonts", "Carrois Gothic SC", "carrois-gothic-sc"],
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/carrois-gothic-sc#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fontsource/fontsource.git",
-    "directory": "fonts/google/carrois-gothic-sc"
-  }
-}
+{"name":"@fontsource/carrois-gothic-sc","version":"4.5.10","description":"Self-host the Carrois Gothic SC font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Carrois Gothic SC","carrois-gothic-sc"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/carrois-gothic-sc#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/carrois-gothic-sc"}}
