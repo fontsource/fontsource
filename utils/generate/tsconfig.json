@@ -1,8 +1,16 @@
 {
-  "exclude": ["node_modules"],
+  /* Visit https://aka.ms/tsconfig.json to read more about this file */
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.json",
+    "tests/**/*.ts",
+    "tests/**/*.json",
+    "vitest.config.ts"
+  ],
+  "exclude": [".eslintrc.cjs"],
   "compilerOptions": {
     /* Projects */
-    // "incremental": true,
+    //"incremental": true,
 
     /* Language and Environment */
     "target": "esnext",
@@ -13,19 +21,15 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
 
-    /* Emit */
-    "outDir": "./types",
-
     /* Interop Constraints */
-    "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
     /* Type Checking */
     "strict": true,
-    // "types": ["vitest/importMeta"],
-    // "isolatedModules": true, // Uncomment if you're running into an esbuild transform error
+    "types": ["vitest/importMeta"],
+    "isolatedModules": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

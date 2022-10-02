@@ -1,0 +1,367 @@
+// Vitest Snapshot v1
+
+exports[`generateMulti > should generate a multi font-face 1`] = `
+"/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(open-sans-latin-400-normal.woff2) format('woff2'), url(open-sans-latin-400-normal.woff) format('woff'), url(open-sans-latin-400-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(open-sans-latin-ext-400-normal.woff2) format('woff2'), url(open-sans-latin-ext-400-normal.woff) format('woff'), url(open-sans-latin-ext-400-normal.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(open-sans-latin-700-normal.woff2) format('woff2'), url(open-sans-latin-700-normal.woff) format('woff'), url(open-sans-latin-700-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(open-sans-latin-ext-700-normal.woff2) format('woff2'), url(open-sans-latin-ext-700-normal.woff) format('woff'), url(open-sans-latin-ext-700-normal.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(open-sans-latin-400-italic.woff2) format('woff2'), url(open-sans-latin-400-italic.woff) format('woff'), url(open-sans-latin-400-italic.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(open-sans-latin-ext-400-italic.woff2) format('woff2'), url(open-sans-latin-ext-400-italic.woff) format('woff'), url(open-sans-latin-ext-400-italic.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(open-sans-latin-700-italic.woff2) format('woff2'), url(open-sans-latin-700-italic.woff) format('woff'), url(open-sans-latin-700-italic.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(open-sans-latin-ext-700-italic.woff2) format('woff2'), url(open-sans-latin-ext-700-italic.woff) format('woff'), url(open-sans-latin-ext-700-italic.ttf) format('ttf');
+}"
+`;
+
+exports[`generateMulti > should generate a multi font-face with additional path 1`] = `
+"/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-latin-400-normal.woff2) format('woff2'), url(./fonts/open-sans-latin-400-normal.woff) format('woff'), url(./fonts/open-sans-latin-400-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-latin-ext-400-normal.woff2) format('woff2'), url(./fonts/open-sans-latin-ext-400-normal.woff) format('woff'), url(./fonts/open-sans-latin-ext-400-normal.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./fonts/open-sans-latin-700-normal.woff2) format('woff2'), url(./fonts/open-sans-latin-700-normal.woff) format('woff'), url(./fonts/open-sans-latin-700-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./fonts/open-sans-latin-ext-700-normal.woff2) format('woff2'), url(./fonts/open-sans-latin-ext-700-normal.woff) format('woff'), url(./fonts/open-sans-latin-ext-700-normal.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-latin-400-italic.woff2) format('woff2'), url(./fonts/open-sans-latin-400-italic.woff) format('woff'), url(./fonts/open-sans-latin-400-italic.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-latin-ext-400-italic.woff2) format('woff2'), url(./fonts/open-sans-latin-ext-400-italic.woff) format('woff'), url(./fonts/open-sans-latin-ext-400-italic.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./fonts/open-sans-latin-700-italic.woff2) format('woff2'), url(./fonts/open-sans-latin-700-italic.woff) format('woff'), url(./fonts/open-sans-latin-700-italic.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./fonts/open-sans-latin-ext-700-italic.woff2) format('woff2'), url(./fonts/open-sans-latin-ext-700-italic.woff) format('woff'), url(./fonts/open-sans-latin-ext-700-italic.ttf) format('ttf');
+}"
+`;
+
+exports[`generateMulti > should generate a multi font-face with all variable 1`] = `
+"/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: oblique -20deg 10deg;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  src: url(open-sans-latin-100-normal.woff2) format('woff2'), url(open-sans-latin-100-normal.woff) format('woff'), url(open-sans-latin-100-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: oblique -20deg 10deg;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  src: url(open-sans-latin-ext-100-normal.woff2) format('woff2'), url(open-sans-latin-ext-100-normal.woff) format('woff'), url(open-sans-latin-ext-100-normal.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: oblique -20deg 10deg;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  src: url(open-sans-latin-700-normal.woff2) format('woff2'), url(open-sans-latin-700-normal.woff) format('woff'), url(open-sans-latin-700-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: oblique -20deg 10deg;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  src: url(open-sans-latin-ext-700-normal.woff2) format('woff2'), url(open-sans-latin-ext-700-normal.woff) format('woff'), url(open-sans-latin-ext-700-normal.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: oblique -20deg 10deg;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  src: url(open-sans-latin-900-normal.woff2) format('woff2'), url(open-sans-latin-900-normal.woff) format('woff'), url(open-sans-latin-900-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: oblique -20deg 10deg;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  src: url(open-sans-latin-ext-900-normal.woff2) format('woff2'), url(open-sans-latin-ext-900-normal.woff) format('woff'), url(open-sans-latin-ext-900-normal.ttf) format('ttf');
+}"
+`;
+
+exports[`generateMulti > should generate a multi font-face with different display 1`] = `
+"/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 400;
+  src: url(open-sans-latin-400-normal.woff2) format('woff2'), url(open-sans-latin-400-normal.woff) format('woff'), url(open-sans-latin-400-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 400;
+  src: url(open-sans-latin-ext-400-normal.woff2) format('woff2'), url(open-sans-latin-ext-400-normal.woff) format('woff'), url(open-sans-latin-ext-400-normal.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 700;
+  src: url(open-sans-latin-700-normal.woff2) format('woff2'), url(open-sans-latin-700-normal.woff) format('woff'), url(open-sans-latin-700-normal.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 700;
+  src: url(open-sans-latin-ext-700-normal.woff2) format('woff2'), url(open-sans-latin-ext-700-normal.woff) format('woff'), url(open-sans-latin-ext-700-normal.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: optional;
+  font-weight: 400;
+  src: url(open-sans-latin-400-italic.woff2) format('woff2'), url(open-sans-latin-400-italic.woff) format('woff'), url(open-sans-latin-400-italic.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: optional;
+  font-weight: 400;
+  src: url(open-sans-latin-ext-400-italic.woff2) format('woff2'), url(open-sans-latin-ext-400-italic.woff) format('woff'), url(open-sans-latin-ext-400-italic.ttf) format('ttf');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: optional;
+  font-weight: 700;
+  src: url(open-sans-latin-700-italic.woff2) format('woff2'), url(open-sans-latin-700-italic.woff) format('woff'), url(open-sans-latin-700-italic.ttf) format('ttf');
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: optional;
+  font-weight: 700;
+  src: url(open-sans-latin-ext-700-italic.woff2) format('woff2'), url(open-sans-latin-ext-700-italic.woff) format('woff'), url(open-sans-latin-ext-700-italic.ttf) format('ttf');
+}"
+`;
+
+exports[`generateMulti > should generate with unicode range 1`] = `
+"/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(open-sans-latin-400-normal.woff2) format('woff2'), url(open-sans-latin-400-normal.woff) format('woff'), url(open-sans-latin-400-normal.ttf) format('ttf');
+  unicode-range: U+000-5FF;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(open-sans-latin-ext-400-normal.woff2) format('woff2'), url(open-sans-latin-ext-400-normal.woff) format('woff'), url(open-sans-latin-ext-400-normal.ttf) format('ttf');
+  unicode-range: U+000-5FF2;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(open-sans-latin-700-normal.woff2) format('woff2'), url(open-sans-latin-700-normal.woff) format('woff'), url(open-sans-latin-700-normal.ttf) format('ttf');
+  unicode-range: U+000-5FF;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(open-sans-latin-ext-700-normal.woff2) format('woff2'), url(open-sans-latin-ext-700-normal.woff) format('woff'), url(open-sans-latin-ext-700-normal.ttf) format('ttf');
+  unicode-range: U+000-5FF2;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(open-sans-latin-400-italic.woff2) format('woff2'), url(open-sans-latin-400-italic.woff) format('woff'), url(open-sans-latin-400-italic.ttf) format('ttf');
+  unicode-range: U+000-5FF;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(open-sans-latin-ext-400-italic.woff2) format('woff2'), url(open-sans-latin-ext-400-italic.woff) format('woff'), url(open-sans-latin-ext-400-italic.ttf) format('ttf');
+  unicode-range: U+000-5FF2;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(open-sans-latin-700-italic.woff2) format('woff2'), url(open-sans-latin-700-italic.woff) format('woff'), url(open-sans-latin-700-italic.ttf) format('ttf');
+  unicode-range: U+000-5FF;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(open-sans-latin-ext-700-italic.woff2) format('woff2'), url(open-sans-latin-ext-700-italic.woff) format('woff'), url(open-sans-latin-ext-700-italic.ttf) format('ttf');
+  unicode-range: U+000-5FF2;
+}"
+`;

@@ -1,0 +1,87 @@
+// Vitest Snapshot v1
+
+exports[`generateSingle > should generate a single font face with all variable axis 1`] = `
+"/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: oblique -25deg 15deg;
+  font-display: swap;
+  font-weight: 400 700;
+  font-stretch: 55% 250%;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+  unicode-range: U+000-5FF;
+}"
+`;
+
+exports[`generateSingle > should generate a single font face with different display 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 400;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+}"
+`;
+
+exports[`generateSingle > should generate a single font face with font stretch 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  font-stretch: 50% 200%;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+}"
+`;
+
+exports[`generateSingle > should generate a single font face with multiple formats 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2'), url(./fonts/open-sans-v17-latin-regular.woff) format('woff');
+}"
+`;
+
+exports[`generateSingle > should generate a single font face with slnt axis 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: oblique -20deg 10deg;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+}"
+`;
+
+exports[`generateSingle > should generate a single font face with unicode range 1`] = `
+"/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+  unicode-range: U+000-5FF;
+}"
+`;
+
+exports[`generateSingle > should generate a single font face with variable wght 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+}"
+`;
+
+exports[`generateSingle > should generate a single font-face 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+}"
+`;
