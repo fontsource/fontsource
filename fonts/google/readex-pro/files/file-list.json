@@ -56,9 +56,5 @@
   "./fonts/google/readex-pro/files/readex-pro-arabic-variable-wghtOnly-normal.woff2",
   "./fonts/google/readex-pro/files/readex-pro-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/readex-pro/files/readex-pro-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/readex-pro/files/readex-pro-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/readex-pro/files/readex-pro-arabic-variable-full-normal.woff2",
-  "./fonts/google/readex-pro/files/readex-pro-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/readex-pro/files/readex-pro-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/readex-pro/files/readex-pro-latin-variable-full-normal.woff2"
+  "./fonts/google/readex-pro/files/readex-pro-latin-variable-wghtOnly-normal.woff2"
 ]

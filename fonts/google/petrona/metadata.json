@@ -9,7 +9,7 @@
     "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
     "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
   },
-  "lastModified": "2022-07-19",
+  "lastModified": "2022-09-22",
   "version": "v28",
   "category": "serif",
   "source": "https://fonts.google.com/",

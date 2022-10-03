@@ -35,7 +35,5 @@
   "./fonts/google/figtree/files/figtree-all-900-normal.woff",
   "./fonts/google/figtree/files/figtree-latin-900-normal.woff2",
   "./fonts/google/figtree/files/figtree-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/figtree/files/figtree-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/figtree/files/figtree-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/figtree/files/figtree-latin-variable-full-normal.woff2"
+  "./fonts/google/figtree/files/figtree-latin-variable-wghtOnly-normal.woff2"
 ]

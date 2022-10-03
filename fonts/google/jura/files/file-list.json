@@ -91,13 +91,5 @@
   "./fonts/google/jura/files/jura-kayah-li-variable-wghtOnly-normal.woff2",
   "./fonts/google/jura/files/jura-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/jura/files/jura-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/jura/files/jura-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/jura/files/jura-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/jura/files/jura-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/jura/files/jura-greek-ext-variable-full-normal.woff2",
-  "./fonts/google/jura/files/jura-greek-variable-full-normal.woff2",
-  "./fonts/google/jura/files/jura-kayah-li-variable-full-normal.woff2",
-  "./fonts/google/jura/files/jura-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/jura/files/jura-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/jura/files/jura-latin-variable-full-normal.woff2"
+  "./fonts/google/jura/files/jura-latin-variable-wghtOnly-normal.woff2"
 ]

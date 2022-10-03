@@ -50,8 +50,5 @@
   "./fonts/google/assistant/files/assistant-latin-800-normal.woff2",
   "./fonts/google/assistant/files/assistant-hebrew-variable-wghtOnly-normal.woff2",
   "./fonts/google/assistant/files/assistant-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/assistant/files/assistant-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/assistant/files/assistant-hebrew-variable-full-normal.woff2",
-  "./fonts/google/assistant/files/assistant-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/assistant/files/assistant-latin-variable-full-normal.woff2"
+  "./fonts/google/assistant/files/assistant-latin-variable-wghtOnly-normal.woff2"
 ]

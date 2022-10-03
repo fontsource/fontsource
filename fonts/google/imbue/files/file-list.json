@@ -64,8 +64,5 @@
   "./fonts/google/imbue/files/imbue-latin-900-normal.woff2",
   "./fonts/google/imbue/files/imbue-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/imbue/files/imbue-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/imbue/files/imbue-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/imbue/files/imbue-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/imbue/files/imbue-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/imbue/files/imbue-latin-variable-full-normal.woff2"
+  "./fonts/google/imbue/files/imbue-latin-variable-wghtOnly-normal.woff2"
 ]

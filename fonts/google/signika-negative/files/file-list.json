@@ -36,8 +36,5 @@
   "./fonts/google/signika-negative/files/signika-negative-latin-700-normal.woff2",
   "./fonts/google/signika-negative/files/signika-negative-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/signika-negative/files/signika-negative-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/signika-negative/files/signika-negative-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/signika-negative/files/signika-negative-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/signika-negative/files/signika-negative-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/signika-negative/files/signika-negative-latin-variable-full-normal.woff2"
+  "./fonts/google/signika-negative/files/signika-negative-latin-variable-wghtOnly-normal.woff2"
 ]

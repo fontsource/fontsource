@@ -25,7 +25,5 @@
   "./fonts/google/spline-sans/files/spline-sans-all-700-normal.woff",
   "./fonts/google/spline-sans/files/spline-sans-latin-700-normal.woff2",
   "./fonts/google/spline-sans/files/spline-sans-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/spline-sans/files/spline-sans-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/spline-sans/files/spline-sans-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/spline-sans/files/spline-sans-latin-variable-full-normal.woff2"
+  "./fonts/google/spline-sans/files/spline-sans-latin-variable-wghtOnly-normal.woff2"
 ]

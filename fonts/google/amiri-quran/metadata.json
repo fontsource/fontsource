@@ -1,0 +1,15 @@
+{
+  "fontId": "amiri-quran",
+  "fontName": "Amiri Quran",
+  "subsets": ["arabic", "latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-09-14",
+  "version": "v7",
+  "category": "serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

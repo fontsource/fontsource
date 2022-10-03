@@ -9,7 +9,7 @@
     "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
     "wght": { "default": "400", "min": "200", "max": "900", "step": "1" }
   },
-  "lastModified": "2022-08-24",
+  "lastModified": "2022-09-22",
   "version": "v22",
   "category": "monospace",
   "source": "https://fonts.google.com/",

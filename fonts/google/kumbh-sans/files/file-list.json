@@ -45,7 +45,5 @@
   "./fonts/google/kumbh-sans/files/kumbh-sans-all-900-normal.woff",
   "./fonts/google/kumbh-sans/files/kumbh-sans-latin-900-normal.woff2",
   "./fonts/google/kumbh-sans/files/kumbh-sans-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/kumbh-sans/files/kumbh-sans-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/kumbh-sans/files/kumbh-sans-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/kumbh-sans/files/kumbh-sans-latin-variable-full-normal.woff2"
+  "./fonts/google/kumbh-sans/files/kumbh-sans-latin-variable-wghtOnly-normal.woff2"
 ]

@@ -130,11 +130,5 @@
   "./fonts/google/jost/files/jost-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/jost/files/jost-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/jost/files/jost-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/jost/files/jost-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/jost/files/jost-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/jost/files/jost-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/jost/files/jost-latin-variable-full-normal.woff2",
-  "./fonts/google/jost/files/jost-cyrillic-variable-full-italic.woff2",
-  "./fonts/google/jost/files/jost-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/jost/files/jost-latin-variable-full-italic.woff2"
+  "./fonts/google/jost/files/jost-latin-variable-wghtOnly-italic.woff2"
 ]

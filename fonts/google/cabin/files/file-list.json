@@ -60,11 +60,5 @@
   "./fonts/google/cabin/files/cabin-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/cabin/files/cabin-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/cabin/files/cabin-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/cabin/files/cabin-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/cabin/files/cabin-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/cabin/files/cabin-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/cabin/files/cabin-latin-variable-full-normal.woff2",
-  "./fonts/google/cabin/files/cabin-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/cabin/files/cabin-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/cabin/files/cabin-latin-variable-full-italic.woff2"
+  "./fonts/google/cabin/files/cabin-latin-variable-wghtOnly-italic.woff2"
 ]

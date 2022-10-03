@@ -50,8 +50,5 @@
   "./fonts/google/sansita-swashed/files/sansita-swashed-latin-900-normal.woff2",
   "./fonts/google/sansita-swashed/files/sansita-swashed-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/sansita-swashed/files/sansita-swashed-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/sansita-swashed/files/sansita-swashed-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/sansita-swashed/files/sansita-swashed-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/sansita-swashed/files/sansita-swashed-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/sansita-swashed/files/sansita-swashed-latin-variable-full-normal.woff2"
+  "./fonts/google/sansita-swashed/files/sansita-swashed-latin-variable-wghtOnly-normal.woff2"
 ]
