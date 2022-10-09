@@ -42,6 +42,15 @@ const variable = (id: string): void => {
   });
 
   // full CSS Generation
+  // Temporary fix for standard fonts that don't have a full variant until v5
+  if (
+    "standard" in fontVariable.variants &&
+    !("full" in fontVariable.variants)
+  ) {
+    fontVariable.variants.full = fontVariable.variants.standard;
+    delete fontVariable.variants.standard;
+  }
+
   if ("full" in fontVariable.variants) {
     // Wdth requires a different CSS template (font-stretch)
     if ("wdth" in fontVariable.axes) {
@@ -51,9 +60,8 @@ const variable = (id: string): void => {
         let newStyle = style;
         if ("slnt" in fontVariable.axes && style === "normal") {
           // SLNT has a different style linked to it.
-          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${
-            Number(fontVariable.axes.slnt.min) * -1
-          }deg`;
+          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${Number(fontVariable.axes.slnt.min) * -1
+            }deg`;
         }
         const cssStyle: string[] = [];
         font.subsets.forEach(subset => {
@@ -93,9 +101,8 @@ const variable = (id: string): void => {
         let newStyle = style;
         if ("slnt" in fontVariable.axes && style === "normal") {
           // SLNT has a different style linked to it.
-          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${
-            Number(fontVariable.axes.slnt.min) * -1
-          }deg`;
+          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${Number(fontVariable.axes.slnt.min) * -1
+            }deg`;
         }
         const cssStyle: string[] = [];
         font.subsets.forEach(subset => {
