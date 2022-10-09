@@ -60,8 +60,9 @@ const variable = (id: string): void => {
         let newStyle = style;
         if ("slnt" in fontVariable.axes && style === "normal") {
           // SLNT has a different style linked to it.
-          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${Number(fontVariable.axes.slnt.min) * -1
-            }deg`;
+          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${
+            Number(fontVariable.axes.slnt.min) * -1
+          }deg`;
         }
         const cssStyle: string[] = [];
         font.subsets.forEach(subset => {
@@ -101,8 +102,9 @@ const variable = (id: string): void => {
         let newStyle = style;
         if ("slnt" in fontVariable.axes && style === "normal") {
           // SLNT has a different style linked to it.
-          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${Number(fontVariable.axes.slnt.min) * -1
-            }deg`;
+          newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${
+            Number(fontVariable.axes.slnt.min) * -1
+          }deg`;
         }
         const cssStyle: string[] = [];
         font.subsets.forEach(subset => {
