@@ -44,8 +44,8 @@ const variable = (id: string): void => {
   // full CSS Generation
   // Temporary fix for standard fonts that don't have a full variant until v5
   if (
-    "standard" in fontVariable.variants &&
-    !("full" in fontVariable.variants)
+    fontVariable.variants.standard !== undefined &&
+    fontVariable.variants.full === undefined
   ) {
     fontVariable.variants.full = fontVariable.variants.standard;
     delete fontVariable.variants.standard;
