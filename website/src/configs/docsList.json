@@ -95,6 +95,12 @@
     "path": "/docs/guides/sveltejs"
   },
   {
+    "key": "astro",
+    "title": "Astro",
+    "path": "https://docs.astro.build/en/guides/fonts/#using-fontsource",
+    "isExternal": "true"
+  },
+  {
     "key": "api",
     "title": "API",
     "isParent": true
