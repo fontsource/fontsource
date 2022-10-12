@@ -98,7 +98,7 @@
     "key": "astro",
     "title": "Astro",
     "path": "https://docs.astro.build/en/guides/fonts/#using-fontsource",
-    "isExternal": "true"
+    "isExternal": true
   },
   {
     "key": "api",
