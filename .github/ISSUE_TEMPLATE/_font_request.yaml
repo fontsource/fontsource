@@ -1,0 +1,36 @@
+name: ➕ Font request
+description: Request a new Open Source font
+labels: ["font request"]
+title: "Font Request: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this issue 🙏.
+        Before you submit, please search the issue tracker to prevent duplicates as a similar issue might already exist.
+  - type: textarea
+    id: name
+    attributes:
+      label: Font Name
+      description: Ensure it is an Open Source downloadable font.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Link to font source
+      description: Preferably Github, however, main website is also acceptable.
+    validations:
+      required: true
+  - type: textarea
+    id: license
+    attributes:
+      label: Link to font license
+      description: Accepted licenses are SIL OFL, Apache 2, MIT and Ubuntu Font License 1.0.
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add any other context about the font request here.
