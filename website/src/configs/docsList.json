@@ -56,6 +56,12 @@
     "path": "/docs/guides/angular"
   },
   {
+    "key": "astro",
+    "title": "Astro",
+    "path": "https://docs.astro.build/en/guides/fonts/#using-fontsource",
+    "isExternal": true
+  },
+  {
     "key": "chakra-ui",
     "title": "Chakra UI",
     "path": "https://chakra-ui.com/community/recipes/using-fonts",
