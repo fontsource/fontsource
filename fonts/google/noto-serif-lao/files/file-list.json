@@ -64,5 +64,8 @@
   "./fonts/google/noto-serif-lao/files/noto-serif-lao-latin-900-normal.woff2",
   "./fonts/google/noto-serif-lao/files/noto-serif-lao-lao-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-serif-lao/files/noto-serif-lao-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-serif-lao/files/noto-serif-lao-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-serif-lao/files/noto-serif-lao-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-serif-lao/files/noto-serif-lao-lao-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-lao/files/noto-serif-lao-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-lao/files/noto-serif-lao-latin-variable-full-normal.woff2"
 ]

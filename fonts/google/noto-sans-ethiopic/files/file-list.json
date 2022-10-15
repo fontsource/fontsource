@@ -64,5 +64,8 @@
   "./fonts/google/noto-sans-ethiopic/files/noto-sans-ethiopic-latin-900-normal.woff2",
   "./fonts/google/noto-sans-ethiopic/files/noto-sans-ethiopic-ethiopic-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-ethiopic/files/noto-sans-ethiopic-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-ethiopic/files/noto-sans-ethiopic-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-ethiopic/files/noto-sans-ethiopic-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-ethiopic/files/noto-sans-ethiopic-ethiopic-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-ethiopic/files/noto-sans-ethiopic-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-ethiopic/files/noto-sans-ethiopic-latin-variable-full-normal.woff2"
 ]

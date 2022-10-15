@@ -64,5 +64,8 @@
   "./fonts/google/noto-serif-hebrew/files/noto-serif-hebrew-latin-900-normal.woff2",
   "./fonts/google/noto-serif-hebrew/files/noto-serif-hebrew-hebrew-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-serif-hebrew/files/noto-serif-hebrew-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-serif-hebrew/files/noto-serif-hebrew-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-serif-hebrew/files/noto-serif-hebrew-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-serif-hebrew/files/noto-serif-hebrew-hebrew-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-hebrew/files/noto-serif-hebrew-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-hebrew/files/noto-serif-hebrew-latin-variable-full-normal.woff2"
 ]

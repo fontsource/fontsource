@@ -64,5 +64,8 @@
   "./fonts/google/noto-serif-khmer/files/noto-serif-khmer-latin-900-normal.woff2",
   "./fonts/google/noto-serif-khmer/files/noto-serif-khmer-khmer-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-serif-khmer/files/noto-serif-khmer-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-serif-khmer/files/noto-serif-khmer-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-serif-khmer/files/noto-serif-khmer-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-serif-khmer/files/noto-serif-khmer-khmer-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-khmer/files/noto-serif-khmer-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-khmer/files/noto-serif-khmer-latin-variable-full-normal.woff2"
 ]

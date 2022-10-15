@@ -64,5 +64,8 @@
   "./fonts/google/noto-serif-bengali/files/noto-serif-bengali-latin-900-normal.woff2",
   "./fonts/google/noto-serif-bengali/files/noto-serif-bengali-bengali-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-serif-bengali/files/noto-serif-bengali-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-serif-bengali/files/noto-serif-bengali-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-serif-bengali/files/noto-serif-bengali-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-serif-bengali/files/noto-serif-bengali-bengali-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-bengali/files/noto-serif-bengali-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-bengali/files/noto-serif-bengali-latin-variable-full-normal.woff2"
 ]

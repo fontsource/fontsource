@@ -64,5 +64,8 @@
   "./fonts/google/noto-sans-oriya/files/noto-sans-oriya-latin-900-normal.woff2",
   "./fonts/google/noto-sans-oriya/files/noto-sans-oriya-oriya-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-oriya/files/noto-sans-oriya-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-oriya/files/noto-sans-oriya-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-oriya/files/noto-sans-oriya-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-oriya/files/noto-sans-oriya-oriya-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-oriya/files/noto-sans-oriya-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-oriya/files/noto-sans-oriya-latin-variable-full-normal.woff2"
 ]

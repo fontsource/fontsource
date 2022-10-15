@@ -64,5 +64,8 @@
   "./fonts/google/noto-sans-gujarati/files/noto-sans-gujarati-latin-900-normal.woff2",
   "./fonts/google/noto-sans-gujarati/files/noto-sans-gujarati-gujarati-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-gujarati/files/noto-sans-gujarati-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-gujarati/files/noto-sans-gujarati-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-gujarati/files/noto-sans-gujarati-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-gujarati/files/noto-sans-gujarati-gujarati-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-gujarati/files/noto-sans-gujarati-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-gujarati/files/noto-sans-gujarati-latin-variable-full-normal.woff2"
 ]

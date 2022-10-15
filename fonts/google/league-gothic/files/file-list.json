@@ -5,5 +5,8 @@
   "./fonts/google/league-gothic/files/league-gothic-vietnamese-400-normal.woff2",
   "./fonts/google/league-gothic/files/league-gothic-all-400-normal.woff",
   "./fonts/google/league-gothic/files/league-gothic-latin-ext-400-normal.woff2",
-  "./fonts/google/league-gothic/files/league-gothic-latin-400-normal.woff2"
+  "./fonts/google/league-gothic/files/league-gothic-latin-400-normal.woff2",
+  "./fonts/google/league-gothic/files/league-gothic-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/league-gothic/files/league-gothic-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/league-gothic/files/league-gothic-latin-variable-full-normal.woff2"
 ]

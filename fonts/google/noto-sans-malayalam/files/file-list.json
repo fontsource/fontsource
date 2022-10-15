@@ -64,5 +64,8 @@
   "./fonts/google/noto-sans-malayalam/files/noto-sans-malayalam-latin-900-normal.woff2",
   "./fonts/google/noto-sans-malayalam/files/noto-sans-malayalam-malayalam-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-malayalam/files/noto-sans-malayalam-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-malayalam/files/noto-sans-malayalam-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-malayalam/files/noto-sans-malayalam-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-malayalam/files/noto-sans-malayalam-malayalam-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-malayalam/files/noto-sans-malayalam-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-malayalam/files/noto-sans-malayalam-latin-variable-full-normal.woff2"
 ]

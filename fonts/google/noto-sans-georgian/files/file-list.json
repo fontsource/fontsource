@@ -64,5 +64,8 @@
   "./fonts/google/noto-sans-georgian/files/noto-sans-georgian-latin-900-normal.woff2",
   "./fonts/google/noto-sans-georgian/files/noto-sans-georgian-georgian-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-georgian/files/noto-sans-georgian-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-georgian/files/noto-sans-georgian-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-georgian/files/noto-sans-georgian-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-georgian/files/noto-sans-georgian-georgian-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-georgian/files/noto-sans-georgian-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-georgian/files/noto-sans-georgian-latin-variable-full-normal.woff2"
 ]

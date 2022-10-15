@@ -64,5 +64,8 @@
   "./fonts/google/noto-serif-sinhala/files/noto-serif-sinhala-latin-900-normal.woff2",
   "./fonts/google/noto-serif-sinhala/files/noto-serif-sinhala-sinhala-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-serif-sinhala/files/noto-serif-sinhala-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-serif-sinhala/files/noto-serif-sinhala-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-serif-sinhala/files/noto-serif-sinhala-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-serif-sinhala/files/noto-serif-sinhala-sinhala-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-sinhala/files/noto-serif-sinhala-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-serif-sinhala/files/noto-serif-sinhala-latin-variable-full-normal.woff2"
 ]

@@ -102,5 +102,11 @@
   "./fonts/google/newsreader/files/newsreader-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/newsreader/files/newsreader-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/newsreader/files/newsreader-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/newsreader/files/newsreader-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/newsreader/files/newsreader-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/newsreader/files/newsreader-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/newsreader/files/newsreader-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/newsreader/files/newsreader-latin-variable-full-normal.woff2",
+  "./fonts/google/newsreader/files/newsreader-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/newsreader/files/newsreader-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/newsreader/files/newsreader-latin-variable-full-italic.woff2"
 ]

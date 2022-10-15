@@ -130,5 +130,11 @@
   "./fonts/google/anybody/files/anybody-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/anybody/files/anybody-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/anybody/files/anybody-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/anybody/files/anybody-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/anybody/files/anybody-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/anybody/files/anybody-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/anybody/files/anybody-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/anybody/files/anybody-latin-variable-full-normal.woff2",
+  "./fonts/google/anybody/files/anybody-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/anybody/files/anybody-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/anybody/files/anybody-latin-variable-full-italic.woff2"
 ]

@@ -140,5 +140,12 @@
   "./fonts/google/inter/files/inter-greek-variable-wghtOnly-normal.woff2",
   "./fonts/google/inter/files/inter-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/inter/files/inter-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/inter/files/inter-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/inter/files/inter-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/inter/files/inter-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/inter/files/inter-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/inter/files/inter-greek-ext-variable-full-normal.woff2",
+  "./fonts/google/inter/files/inter-greek-variable-full-normal.woff2",
+  "./fonts/google/inter/files/inter-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/inter/files/inter-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/inter/files/inter-latin-variable-full-normal.woff2"
 ]

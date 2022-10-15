@@ -140,5 +140,12 @@
   "./fonts/google/noto-sans-mono/files/noto-sans-mono-greek-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-mono/files/noto-sans-mono-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-mono/files/noto-sans-mono-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-mono/files/noto-sans-mono-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-mono/files/noto-sans-mono-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-mono/files/noto-sans-mono-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-mono/files/noto-sans-mono-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-mono/files/noto-sans-mono-greek-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-mono/files/noto-sans-mono-greek-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-mono/files/noto-sans-mono-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-mono/files/noto-sans-mono-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-mono/files/noto-sans-mono-latin-variable-full-normal.woff2"
 ]

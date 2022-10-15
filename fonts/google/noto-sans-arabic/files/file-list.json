@@ -26,5 +26,6 @@
   "./fonts/google/noto-sans-arabic/files/noto-sans-arabic-all-800-normal.woff",
   "./fonts/google/noto-sans-arabic/files/noto-sans-arabic-arabic-900-normal.woff2",
   "./fonts/google/noto-sans-arabic/files/noto-sans-arabic-all-900-normal.woff",
-  "./fonts/google/noto-sans-arabic/files/noto-sans-arabic-arabic-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-arabic/files/noto-sans-arabic-arabic-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-arabic/files/noto-sans-arabic-arabic-variable-full-normal.woff2"
 ]

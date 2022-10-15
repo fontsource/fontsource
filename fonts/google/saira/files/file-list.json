@@ -130,5 +130,11 @@
   "./fonts/google/saira/files/saira-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/saira/files/saira-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/saira/files/saira-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/saira/files/saira-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/saira/files/saira-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/saira/files/saira-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/saira/files/saira-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/saira/files/saira-latin-variable-full-normal.woff2",
+  "./fonts/google/saira/files/saira-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/saira/files/saira-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/saira/files/saira-latin-variable-full-italic.woff2"
 ]

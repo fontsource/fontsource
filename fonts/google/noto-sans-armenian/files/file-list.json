@@ -64,5 +64,8 @@
   "./fonts/google/noto-sans-armenian/files/noto-sans-armenian-latin-900-normal.woff2",
   "./fonts/google/noto-sans-armenian/files/noto-sans-armenian-armenian-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-armenian/files/noto-sans-armenian-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-armenian/files/noto-sans-armenian-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-armenian/files/noto-sans-armenian-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-armenian/files/noto-sans-armenian-armenian-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-armenian/files/noto-sans-armenian-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-armenian/files/noto-sans-armenian-latin-variable-full-normal.woff2"
 ]

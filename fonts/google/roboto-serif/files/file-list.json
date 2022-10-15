@@ -168,5 +168,13 @@
   "./fonts/google/roboto-serif/files/roboto-serif-cyrillic-ext-variable-wghtOnly-italic.woff2",
   "./fonts/google/roboto-serif/files/roboto-serif-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/roboto-serif/files/roboto-serif-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/roboto-serif/files/roboto-serif-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/roboto-serif/files/roboto-serif-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/roboto-serif/files/roboto-serif-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/roboto-serif/files/roboto-serif-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/roboto-serif/files/roboto-serif-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/roboto-serif/files/roboto-serif-latin-variable-full-normal.woff2",
+  "./fonts/google/roboto-serif/files/roboto-serif-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/roboto-serif/files/roboto-serif-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/roboto-serif/files/roboto-serif-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/roboto-serif/files/roboto-serif-latin-variable-full-italic.woff2"
 ]

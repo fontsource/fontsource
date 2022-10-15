@@ -252,5 +252,19 @@
   "./fonts/google/literata/files/literata-greek-variable-wghtOnly-italic.woff2",
   "./fonts/google/literata/files/literata-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/literata/files/literata-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/literata/files/literata-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/literata/files/literata-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/literata/files/literata-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/literata/files/literata-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/literata/files/literata-greek-ext-variable-full-normal.woff2",
+  "./fonts/google/literata/files/literata-greek-variable-full-normal.woff2",
+  "./fonts/google/literata/files/literata-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/literata/files/literata-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/literata/files/literata-latin-variable-full-normal.woff2",
+  "./fonts/google/literata/files/literata-cyrillic-ext-variable-full-italic.woff2",
+  "./fonts/google/literata/files/literata-cyrillic-variable-full-italic.woff2",
+  "./fonts/google/literata/files/literata-greek-ext-variable-full-italic.woff2",
+  "./fonts/google/literata/files/literata-greek-variable-full-italic.woff2",
+  "./fonts/google/literata/files/literata-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/literata/files/literata-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/literata/files/literata-latin-variable-full-italic.woff2"
 ]

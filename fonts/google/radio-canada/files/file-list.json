@@ -74,5 +74,11 @@
   "./fonts/google/radio-canada/files/radio-canada-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/radio-canada/files/radio-canada-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/radio-canada/files/radio-canada-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/radio-canada/files/radio-canada-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/radio-canada/files/radio-canada-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/radio-canada/files/radio-canada-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/radio-canada/files/radio-canada-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/radio-canada/files/radio-canada-latin-variable-full-normal.woff2",
+  "./fonts/google/radio-canada/files/radio-canada-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/radio-canada/files/radio-canada-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/radio-canada/files/radio-canada-latin-variable-full-italic.woff2"
 ]

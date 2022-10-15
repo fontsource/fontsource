@@ -64,5 +64,8 @@
   "./fonts/google/noto-sans-gurmukhi/files/noto-sans-gurmukhi-latin-900-normal.woff2",
   "./fonts/google/noto-sans-gurmukhi/files/noto-sans-gurmukhi-gurmukhi-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-gurmukhi/files/noto-sans-gurmukhi-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-gurmukhi/files/noto-sans-gurmukhi-latin-variable-wghtOnly-normal.woff2"
+  "./fonts/google/noto-sans-gurmukhi/files/noto-sans-gurmukhi-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/noto-sans-gurmukhi/files/noto-sans-gurmukhi-gurmukhi-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-gurmukhi/files/noto-sans-gurmukhi-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/noto-sans-gurmukhi/files/noto-sans-gurmukhi-latin-variable-full-normal.woff2"
 ]

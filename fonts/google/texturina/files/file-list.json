@@ -130,5 +130,11 @@
   "./fonts/google/texturina/files/texturina-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/texturina/files/texturina-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/texturina/files/texturina-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/texturina/files/texturina-latin-variable-wghtOnly-italic.woff2"
+  "./fonts/google/texturina/files/texturina-latin-variable-wghtOnly-italic.woff2",
+  "./fonts/google/texturina/files/texturina-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/texturina/files/texturina-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/texturina/files/texturina-latin-variable-full-normal.woff2",
+  "./fonts/google/texturina/files/texturina-vietnamese-variable-full-italic.woff2",
+  "./fonts/google/texturina/files/texturina-latin-ext-variable-full-italic.woff2",
+  "./fonts/google/texturina/files/texturina-latin-variable-full-italic.woff2"
 ]
