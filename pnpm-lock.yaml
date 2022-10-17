@@ -190,6 +190,39 @@ importers:
       eslint-plugin-unicorn: 41.0.1_eslint@8.20.0
       typescript: 4.7.4
 
+  utils/cli:
+    specifiers:
+      '@ayuhito/eslint-config': ^0.2.4
+      '@types/node': ^18.7.20
+      c8: ^7.12.0
+      cac: ^6.7.14
+      consola: ^2.15.3
+      dotenv: ^16.0.0
+      eslint: ^8.11.0
+      google-font-metadata: ^4.1.2
+      got: ^11.8.2
+      picocolors: ^1.0.0
+      pkgroll: ^1.4.0
+      tsx: ^3.8.0
+      typescript: ^4.6.2
+      vitest: ^0.23.4
+    dependencies:
+      cac: 6.7.14
+      consola: 2.15.3
+      dotenv: 16.0.3
+      google-font-metadata: 4.1.2
+      got: 11.8.5
+      picocolors: 1.0.0
+    devDependencies:
+      '@ayuhito/eslint-config': 0.2.4_he2ccbldppg44uulnyq4rwocfa
+      '@types/node': 18.7.23
+      c8: 7.12.0
+      eslint: 8.20.0
+      pkgroll: 1.4.0_typescript@4.7.4
+      tsx: 3.8.0
+      typescript: 4.7.4
+      vitest: 0.23.4
+
   utils/generate:
     specifiers:
       '@ayuhito/eslint-config': ^0.2.4
@@ -3610,10 +3643,6 @@ packages:
     resolution: {integrity: sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA==}
     dev: false
 
-  /@types/json-buffer/3.0.0:
-    resolution: {integrity: sha512-3YP80IxxFJB4b5tYC2SUPwkg0XQLiu0nWvhRgEatgjf+29IcWO9X1k8xRv5DGssJ/lCrjYTjQPcobJr2yWIVuQ==}
-    dev: false
-
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
@@ -4692,7 +4721,7 @@ packages:
       clone-response: 1.0.3
       get-stream: 5.2.0
       http-cache-semantics: 4.1.0
-      keyv: 4.3.3
+      keyv: 4.5.0
       lowercase-keys: 2.0.0
       normalize-url: 6.1.0
       responselike: 2.0.1
@@ -5045,14 +5074,6 @@ packages:
   /component-emitter/1.3.0:
     resolution: {integrity: sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==}
     dev: true
-
-  /compress-brotli/1.3.8:
-    resolution: {integrity: sha512-lVcQsjhxhIXsuupfy9fmZUFtAIdBmXA7EGY6GBdgZ++qkM9zG4YFT8iU7FoBxzryNDMOpD1HIFHUSX4D87oqhQ==}
-    engines: {node: '>= 12'}
-    dependencies:
-      '@types/json-buffer': 3.0.0
-      json-buffer: 3.0.1
-    dev: false
 
   /compute-scroll-into-view/1.0.14:
     resolution: {integrity: sha512-mKDjINe3tc6hGelUMNDzuhorIUZ7kS7BwyY0r2wQd2HOH2tRuJykiC06iSEX8y1TuhNzvz4GcJnK16mM2J1NMQ==}
@@ -6057,7 +6078,7 @@ packages:
     dependencies:
       confusing-browser-globals: 1.0.11
       eslint: 8.20.0
-      eslint-plugin-import: 2.26.0_xconv27bia2733zao6ipggqv2i
+      eslint-plugin-import: 2.26.0_4r3x2atfohc3zw6c4bther6n2m
       object.assign: 4.1.2
       object.entries: 1.1.5
       semver: 6.3.0
@@ -8960,13 +8981,6 @@ packages:
     resolution: {integrity: sha512-9ykJ/46SN/9KPM/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYnThq8X2RZgCg74RPxgcVA==}
     dependencies:
       json-buffer: 3.0.0
-    dev: false
-
-  /keyv/4.3.3:
-    resolution: {integrity: sha512-AcysI17RvakTh8ir03+a3zJr5r0ovnAH/XTXei/4HIv3bL2K/jzvgivLK9UuI/JbU1aJjM3NSAnVvVVd3n+4DQ==}
-    dependencies:
-      compress-brotli: 1.3.8
-      json-buffer: 3.0.1
     dev: false
 
   /keyv/4.5.0:

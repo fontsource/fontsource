@@ -1,0 +1,51 @@
+{
+  "name": "@fontsource-utils/cli",
+  "version": "1.0.0",
+  "description": "Fontsource CLI",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
+  "scripts": {
+    "build": "pkgroll --target=node14",
+    "lint": "eslint --fix",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "Ayuhito <hello@ayuhito.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cac": "^6.7.14",
+    "consola": "^2.15.3",
+    "dotenv": "^16.0.0",
+    "google-font-metadata": "^4.1.2",
+    "got": "^11.8.2",
+    "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "@ayuhito/eslint-config": "^0.2.4",
+    "@types/node": "^18.7.20",
+    "c8": "^7.12.0",
+    "eslint": "^8.11.0",
+    "pkgroll": "^1.4.0",
+    "tsx": "^3.8.0",
+    "typescript": "^4.6.2",
+    "vitest": "^0.23.4"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/utils/cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "utils/cli"
+  }
+}

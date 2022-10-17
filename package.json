@@ -2,14 +2,9 @@
   "name": "fontsource",
   "version": "4.5.0",
   "packageManager": "pnpm@7.5.2",
-  "author": "Lotus <declininglotus@gmail.com>",
+  "author": "Ayuhito <hello@ayuhito.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "api",
-    "scripts",
-    "website"
-  ],
   "scripts": {
     "build:generic": "tsx scripts/generic/build.ts",
     "build:generic-force": "tsx scripts/generic/rebuilder.ts",
