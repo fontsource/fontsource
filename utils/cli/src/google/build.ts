@@ -4,6 +4,7 @@ import * as path from 'pathe';
 
 import { BuildOptions } from '../types';
 import { download } from './download';
+import { packagerV1 } from './packager-v1';
 
 const build = async (id: string, opts: BuildOptions) => {
 	const font = APIv2[id];
@@ -16,11 +17,13 @@ const build = async (id: string, opts: BuildOptions) => {
 	let changed = false;
 
 	try {
-    await fs.access(`${fontDir}/metadata.json`);
-    const metadata = JSON.parse(await fs.readFile(`${fontDir}/metadata.json`, 'utf8'));
-    changed = metadata.lastModified !== font.lastModified;
-  } catch {
-    changed = true;
+		await fs.access(`${fontDir}/metadata.json`);
+		const metadata = JSON.parse(
+			await fs.readFile(`${fontDir}/metadata.json`, 'utf8')
+		);
+		changed = metadata.lastModified !== font.lastModified;
+	} catch {
+		changed = true;
 	}
 
 	// If needs updating, preserve package.json in temporary folder till later
@@ -42,7 +45,10 @@ const build = async (id: string, opts: BuildOptions) => {
 	const isVariable = Boolean(APIVariable[id]);
 
 	// Download all font files
-	await download(id, isVariable);
+	await download(id, isVariable, opts);
+
+	// Generate CSS files
+	await packagerV1(id, opts);
 };
 
 export { build };

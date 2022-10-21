@@ -193,6 +193,7 @@ importers:
   utils/cli:
     specifiers:
       '@ayuhito/eslint-config': ^0.2.4
+      '@fontsource-utils/generate': workspace:*
       '@types/flat': ^5.0.2
       '@types/fs-extra': ^9.0.13
       '@types/node': ^18.11.3
@@ -214,6 +215,7 @@ importers:
       typescript: ^4.8.4
       vitest: ^0.24.3
     dependencies:
+      '@fontsource-utils/generate': link:../generate
       cac: 6.7.14
       consola: 2.15.3
       dotenv: 16.0.3
@@ -6528,7 +6530,7 @@ packages:
     dependencies:
       confusing-browser-globals: 1.0.11
       eslint: 8.20.0
-      eslint-plugin-import: 2.26.0_4r3x2atfohc3zw6c4bther6n2m
+      eslint-plugin-import: 2.26.0_xconv27bia2733zao6ipggqv2i
       object.assign: 4.1.2
       object.entries: 1.1.5
       semver: 6.3.0
