@@ -1,0 +1,49 @@
+{
+	"cabin": {
+		"family": "Cabin",
+		"id": "cabin",
+		"axes": {
+			"ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+			"wdth": { "default": "100", "min": "75", "max": "100", "step": "0.1" },
+			"wght": { "default": "400", "min": "400", "max": "700", "step": "1" }
+		},
+		"variants": {
+			"wdth": {
+				"normal": {
+					"vietnamese": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8___1amg.woff2",
+					"latin-ext": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8-__1amg.woff2",
+					"latin": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8w__0.woff2"
+				},
+				"italic": {
+					"vietnamese": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_BCnhRv.woff2",
+					"latin-ext": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_FCnhRv.woff2",
+					"latin": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_9Cng.woff2"
+				}
+			},
+			"wght": {
+				"normal": {
+					"vietnamese": "https://fonts.gstatic.com/s/cabin/v26/u-4i0qWljRw-PfU81xCKCpdpbgZJl6XvptnsBXw.woff2",
+					"latin-ext": "https://fonts.gstatic.com/s/cabin/v26/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvp9nsBXw.woff2",
+					"latin": "https://fonts.gstatic.com/s/cabin/v26/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvqdns.woff2"
+				},
+				"italic": {
+					"vietnamese": "https://fonts.gstatic.com/s/cabin/v26/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnhHXi-Ag.woff2",
+					"latin-ext": "https://fonts.gstatic.com/s/cabin/v26/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OngHXi-Ag.woff2",
+					"latin": "https://fonts.gstatic.com/s/cabin/v26/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnuHXg.woff2"
+				}
+			},
+			"standard": {
+				"normal": {
+					"vietnamese": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8___1amg.woff2",
+					"latin-ext": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8-__1amg.woff2",
+					"latin": "https://fonts.gstatic.com/s/cabin/v26/u-4x0qWljRw-Pd8w__0.woff2"
+				},
+				"italic": {
+					"vietnamese": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_BCnhRv.woff2",
+					"latin-ext": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_FCnhRv.woff2",
+					"latin": "https://fonts.gstatic.com/s/cabin/v26/u-4_0qWljRw-Pd81z_9Cng.woff2"
+				}
+			}
+		}
+	}
+}

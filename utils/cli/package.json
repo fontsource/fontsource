@@ -22,19 +22,26 @@
     "cac": "^6.7.14",
     "consola": "^2.15.3",
     "dotenv": "^16.0.0",
-    "google-font-metadata": "^4.1.2",
-    "got": "^11.8.2",
+    "flat": "^5.0.2",
+    "fs-extra": "^10.0.1",
+    "google-font-metadata": "^4.1.4",
+    "got": "^12.5.2",
+    "json-stringify-pretty-compact": "^4.0.0",
+    "p-queue": "^7.3.0",
+    "pathe": "^0.3.9",
     "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "@ayuhito/eslint-config": "^0.2.4",
-    "@types/node": "^18.7.20",
+    "@types/flat": "^5.0.2",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.11.3",
     "c8": "^7.12.0",
-    "eslint": "^8.11.0",
+    "eslint": "^8.25.0",
     "pkgroll": "^1.4.0",
-    "tsx": "^3.8.0",
-    "typescript": "^4.6.2",
-    "vitest": "^0.23.4"
+    "tsx": "^3.10.4",
+    "typescript": "^4.8.4",
+    "vitest": "^0.24.3"
   },
   "files": [
     "dist/*"

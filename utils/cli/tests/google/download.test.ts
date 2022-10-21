@@ -1,0 +1,162 @@
+import fs from 'fs-extra';
+import * as gfm from 'google-font-metadata';
+import stringify from 'json-stringify-pretty-compact';
+import { describe, expect, it, vi } from 'vitest';
+
+import {
+	download,
+	generateLinks,
+	pairGenerator,
+	variableLinks,
+} from '../../src/google/download';
+import testData from './fixtures/download-file-data.json';
+import APIv1Mock from './fixtures/google-fonts-v1.json';
+import APIv2Mock from './fixtures/google-fonts-v2.json';
+import APIVariableMock from './fixtures/variable.json';
+
+vi.mock('google-font-metadata');
+vi.mock('fs-extra');
+vi.mock('got');
+
+describe('download google', () => {
+	describe('pair generator', () => {
+		it('should generate APIv1 pairs and strip TTF links', () => {
+			const { APIv1Variant, APIv1Result } = testData;
+			expect(pairGenerator(APIv1Variant)).toEqual(APIv1Result);
+		});
+
+		it('should generate APIv2 pairs and strip OTF links', () => {
+			const { APIv2Variant, APIv2Result } = testData;
+			expect(pairGenerator(APIv2Variant)).toEqual(APIv2Result);
+		});
+
+		it('should generate APIVariable pairs', () => {
+			const { APIVariableVariant, APIVariableResult } = testData;
+			expect(pairGenerator(APIVariableVariant)).toEqual(APIVariableResult);
+		});
+	});
+
+	describe('download links', () => {
+		vi.spyOn(gfm, 'APIv1', 'get').mockReturnValue(APIv1Mock);
+		vi.spyOn(gfm, 'APIv2', 'get').mockReturnValue(APIv2Mock);
+		vi.spyOn(gfm, 'APIVariable', 'get').mockReturnValue(APIVariableMock);
+
+		it('should generate links for base font (abel)', () => {
+			const { links } = testData;
+			expect(generateLinks('abel')).toEqual(links.abel);
+		});
+
+		it('should generate links for unicode subset font (noto-sans-jp)', () => {
+			const { links } = testData;
+			expect(generateLinks('noto-sans-jp')).toEqual(links['noto-sans-jp']);
+		});
+
+		it('should generate links for variable fonts (cabin)', () => {
+			const { variableLinksMock } = testData;
+			expect(variableLinks('cabin')).toEqual(variableLinksMock.cabin);
+		});
+	});
+
+	describe('download queue', () => {
+		const buildOpts = {
+			dir: 'test',
+			tmpDir: 'tmpTest',
+			force: false,
+		};
+
+		it('downloads normal font successfully (abel)', async () => {
+			await download('abel', false, buildOpts);
+			expect(vi.mocked(fs.writeFile)).toHaveBeenCalledWith(
+				'test/abel/files/file-list.json',
+				stringify([
+					'./fonts/google/abel/files/abel-latin-400-normal.woff',
+					'./fonts/google/abel/files/abel-latin-400-normal.woff2',
+					'./fonts/google/abel/files/abel-all-400-normal.woff',
+				])
+			);
+		});
+
+		it('downloads variable font successfully (cabin)', async () => {
+			await download('cabin', true, buildOpts);
+			expect(vi.mocked(fs.writeFile)).toHaveBeenCalledWith(
+				'test/cabin/files/file-list.json',
+				stringify([
+					'./fonts/google/cabin/files/cabin-latin-400-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-400-italic.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-400-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-400-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-400-normal.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-400-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-500-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-500-italic.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-500-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-500-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-500-normal.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-500-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-600-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-600-italic.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-600-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-600-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-600-normal.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-600-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-700-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-700-italic.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-700-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-700-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-700-normal.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-700-normal.woff',
+					'./fonts/google/cabin/files/cabin-vietnamese-400-italic.woff2',
+					'./fonts/google/cabin/files/cabin-all-400-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-400-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-400-italic.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-400-normal.woff2',
+					'./fonts/google/cabin/files/cabin-all-400-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-400-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-400-normal.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-500-italic.woff2',
+					'./fonts/google/cabin/files/cabin-all-500-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-500-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-500-italic.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-500-normal.woff2',
+					'./fonts/google/cabin/files/cabin-all-500-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-500-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-500-normal.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-600-italic.woff2',
+					'./fonts/google/cabin/files/cabin-all-600-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-600-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-600-italic.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-600-normal.woff2',
+					'./fonts/google/cabin/files/cabin-all-600-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-600-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-600-normal.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-700-italic.woff2',
+					'./fonts/google/cabin/files/cabin-all-700-italic.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-700-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-700-italic.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-700-normal.woff2',
+					'./fonts/google/cabin/files/cabin-all-700-normal.woff',
+					'./fonts/google/cabin/files/cabin-latin-ext-700-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-700-normal.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-variable-wdth-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-ext-variable-wdth-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-variable-wdth-normal.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-variable-wdth-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-ext-variable-wdth-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-variable-wdth-italic.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-variable-wght-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-ext-variable-wght-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-variable-wght-normal.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-variable-wght-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-ext-variable-wght-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-variable-wght-italic.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-variable-standard-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-ext-variable-standard-normal.woff2',
+					'./fonts/google/cabin/files/cabin-latin-variable-standard-normal.woff2',
+					'./fonts/google/cabin/files/cabin-vietnamese-variable-standard-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-ext-variable-standard-italic.woff2',
+					'./fonts/google/cabin/files/cabin-latin-variable-standard-italic.woff2',
+				])
+			);
+		});
+	});
+});
