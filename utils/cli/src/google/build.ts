@@ -1,13 +1,20 @@
 import fs from 'fs-extra';
-import { APIv2, APIVariable } from 'google-font-metadata';
+import { APILicense, APIv2, APIVariable } from 'google-font-metadata';
+import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
 
-import { BuildOptions } from '../types';
+import { changelog } from '../templates/changelog';
+import { packageJson } from '../templates/package';
+import { readme } from '../templates/readme';
+import { BuildOptions, Metadata } from '../types';
 import { download } from './download';
 import { packagerV1 } from './packager-v1';
+import { packagerV2 } from './packager-v2';
 
 const build = async (id: string, opts: BuildOptions) => {
 	const font = APIv2[id];
+	const fontVariable = APIVariable[id];
+	const fontLicense = APILicense[id];
 
 	// Set file directories
 	const fontDir = path.join(opts.dir, id);
@@ -17,9 +24,9 @@ const build = async (id: string, opts: BuildOptions) => {
 	let changed = false;
 
 	try {
-		await fs.access(`${fontDir}/metadata.json`);
+		await fs.access(path.join(fontDir, 'metadata.json'));
 		const metadata = JSON.parse(
-			await fs.readFile(`${fontDir}/metadata.json`, 'utf8')
+			await fs.readFile(path.join(fontDir, 'metadata.json'), 'utf8')
 		);
 		changed = metadata.lastModified !== font.lastModified;
 	} catch {
@@ -30,12 +37,15 @@ const build = async (id: string, opts: BuildOptions) => {
 	if (changed || opts.force) {
 		try {
 			// Copy to temp folder
-			await fs.access(`${fontDir}/package.json`);
-			await fs.copy(`${fontDir}/package.json`, `${opts.tmpDir}/${id}.json`);
+			const pkgJsonPath = path.join(fontDir, 'package.json');
+			const tempPath = path.join(opts.tmpDir, `${id}.json`);
+
+			await fs.access(pkgJsonPath);
+			await fs.copy(pkgJsonPath, tempPath);
 			await fs.emptyDir(fontDir);
 			// Copy back to original folder
-			await fs.copy(`${opts.tmpDir}/${id}.json`, `${fontDir}/package.json`);
-			await fs.remove(`${opts.tmpDir}/${id}.json`);
+			await fs.copy(tempPath, pkgJsonPath);
+			await fs.remove(tempPath);
 		} catch {
 			// Continue regardless of error
 		}
@@ -49,6 +59,48 @@ const build = async (id: string, opts: BuildOptions) => {
 
 	// Generate CSS files
 	await packagerV1(id, opts);
+	await packagerV2(id, opts);
+
+	// TODO: Generate SCSS
+
+	// Generate metadata
+	const metadata: Metadata = {
+		id,
+		family: font.family,
+		subsets: font.subsets,
+		weights: font.weights,
+		styles: font.styles,
+		defSubset: font.defSubset,
+		variable: fontVariable.axes ?? false,
+		lastModified: font.lastModified,
+		version: font.version,
+		category: font.category as Metadata['category'],
+		license: {
+			type: fontLicense.license.type,
+			url: fontLicense.license.url,
+			attribution: fontLicense.original,
+		},
+		source: 'https://github.com/google/fonts',
+		type: 'google',
+	};
+
+	// Write README.md
+	await fs.writeFile(path.join(fontDir, 'README.md'), readme(metadata));
+
+	// Write metadata.json
+	await fs.writeFile(path.join(fontDir, 'metadata.json'), stringify(metadata));
+
+	// Write unicode.json
+	await fs.writeFile(
+		path.join(fontDir, 'unicode.json'),
+		stringify(font.unicodeRange)
+	);
+
+	// Write CHANGELOG.md
+	await fs.writeFile(path.join(fontDir, 'CHANGELOG.md'), changelog);
+
+	// Write package.json
+	await packageJson(metadata, fontDir);
 };
 
 export { build };
