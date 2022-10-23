@@ -51,10 +51,9 @@ interface DownloadLinks {
 }
 
 // Generates pairs of URLs and destinations filtering unsupported formats
-const generateLinks = (fontId: string): DownloadLinks[] => {
+const generateLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
 	const fontV1 = APIv1[fontId];
 	const fontV2 = APIv2[fontId];
-	const fontDir = `fonts/google/${fontId}`;
 
 	// Parses variants into readable pairs of data
 	let downloadURLPairsV1 = pairGenerator(fontV1.variants);
@@ -80,7 +79,7 @@ const generateLinks = (fontId: string): DownloadLinks[] => {
 	const linksV1 = downloadURLPairsV1.map(pair => {
 		const types = pair[0];
 		const dest = makeFontDownloadPath(
-			fontDir,
+			opts.dir,
 			fontId,
 			types[2],
 			Number(types[0]),
@@ -100,7 +99,7 @@ const generateLinks = (fontId: string): DownloadLinks[] => {
 		const dest =
 			types[4] === 'woff2'
 				? makeFontDownloadPath(
-						fontDir,
+						opts.dir,
 						fontId,
 						types[2].replace('[', '').replace(']', ''),
 						Number(types[0]),
@@ -108,7 +107,7 @@ const generateLinks = (fontId: string): DownloadLinks[] => {
 						types[4]
 				  )
 				: makeFontDownloadPath(
-						fontDir,
+						opts.dir,
 						fontId,
 						'all',
 						Number(types[0]),
@@ -129,9 +128,8 @@ const generateLinks = (fontId: string): DownloadLinks[] => {
 	return links;
 };
 
-const variableLinks = (fontId: string): DownloadLinks[] => {
+const variableLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
 	const fontVariable = APIVariable[fontId];
-	const fontDir = `fonts/google/${fontId}`;
 
 	const downloadURLPairsVariable = pairGenerator(fontVariable.variants);
 
@@ -140,7 +138,7 @@ const variableLinks = (fontId: string): DownloadLinks[] => {
 	const links = downloadURLPairsVariable.map(pair => {
 		const types = pair[0];
 		const dest = makeVariableFontDownloadPath(
-			fontDir,
+			opts.dir,
 			fontId,
 			types[2],
 			types[0],
@@ -158,19 +156,13 @@ const variableLinks = (fontId: string): DownloadLinks[] => {
 
 const queue = new PQueue({ concurrency: 60 });
 
-const download = async (
-	id: string,
-	isVariable: boolean,
-	opts: BuildOptions
-) => {
-	const fontDir = path.join(opts.dir, id);
-	await fs.ensureDir(path.join(fontDir, 'files'));
+const download = async (id: string, opts: BuildOptions) => {
+	await fs.ensureDir(path.join(opts.dir, 'files'));
 
-	// Get download URLs of all font files
-	const links = generateLinks(id);
-	if (isVariable) {
-		links.push(...variableLinks(id));
-	}
+	// Get download URLs of font files
+	const links = opts.isVariable
+		? variableLinks(id, opts)
+		: generateLinks(id, opts);
 
 	// Download all font files
 	// Keep a list of all dests for checking successful downloads later
@@ -182,7 +174,7 @@ const download = async (
 
 	await queue.onIdle();
 	await fs.writeFile(
-		path.join(fontDir, 'files', 'file-list.json'),
+		path.join(opts.dir, 'files', 'file-list.json'),
 		stringify(destArr)
 	);
 };

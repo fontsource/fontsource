@@ -1,0 +1,143 @@
+import fs from 'fs-extra';
+import { APIv2, APIVariable } from 'google-font-metadata';
+
+import { getVariableWght, makeVariableFontFilePath } from '../utils';
+
+const variable = (id: string): void => {
+	const font = APIv2[id];
+	const fontVariable = APIVariable[id];
+	const fontDir = `fonts/google/${font.id}`;
+
+	// Generate CSS
+	const variableName = `${font.family} Variable`;
+
+	// wghtOnly CSS Generation
+	for (const style of font.styles) {
+		const cssStyle: string[] = [];
+		for (const subset of font.subsets) {
+			const type = 'wghtOnly';
+			const cssWght = fontFaceVariable({
+				fontId: font.id,
+				fontName: variableName,
+				style,
+				subset,
+				type,
+				weight: getVariableWght(fontVariable.axes),
+				woff2Path: makeVariableFontFilePath(font.id, subset, type, style),
+				unicodeRange: font.unicodeRange[subset],
+			});
+			cssStyle.push(cssWght);
+		}
+
+		// Write down CSS
+		if (style === 'normal') {
+			const cssPath = `${fontDir}/variable.css`;
+			fs.writeFileSync(cssPath, cssStyle.join(''));
+		} else {
+			// If italic or else, define specific style CSS file
+			const cssStylePath = `${fontDir}/variable-${style}.css`;
+			fs.writeFileSync(cssStylePath, cssStyle.join(''));
+		}
+	}
+
+	// full CSS Generation
+	// Temporary fix for standard fonts that don't have a full variant until v5
+	if (
+		'standard' in fontVariable.variants &&
+		fontVariable.variants.full === undefined
+	) {
+		fontVariable.variants.full = fontVariable.variants.standard;
+		delete fontVariable.variants.standard;
+	}
+
+	if ('full' in fontVariable.variants) {
+		// Wdth requires a different CSS template (font-stretch)
+		if ('wdth' in fontVariable.axes) {
+			for (const style of font.styles) {
+				// Preserve the 'normal' style as a flag
+				const origStyle = style;
+				let newStyle = style;
+				if ('slnt' in fontVariable.axes && style === 'normal') {
+					// SLNT has a different style linked to it.
+					newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${
+						Number(fontVariable.axes.slnt.min) * -1
+					}deg`;
+				}
+				const cssStyle: string[] = [];
+				for (const subset of font.subsets) {
+					const type = 'full';
+					const cssWght = fontFaceVariableWdth({
+						fontId: font.id,
+						fontName: variableName,
+						style: newStyle,
+						subset,
+						type,
+						wdth: `${fontVariable.axes.wdth.min}% ${fontVariable.axes.wdth.max}%`,
+						weight: getVariableWght(fontVariable.axes),
+						woff2Path: makeVariableFontFilePath(
+							font.id,
+							subset,
+							type,
+							origStyle
+						),
+						unicodeRange: font.unicodeRange[subset],
+					});
+					cssStyle.push(cssWght);
+				}
+
+				// Write down CSS
+				if (origStyle === 'normal') {
+					const cssPath = `${fontDir}/variable-full.css`;
+					fs.writeFileSync(cssPath, cssStyle.join(''));
+				} else {
+					// If italic or else, define specific style CSS file
+					const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`;
+					fs.writeFileSync(cssStylePath, cssStyle.join(''));
+				}
+			}
+		} else {
+			for (const style of font.styles) {
+				const origStyle = style;
+				let newStyle = style;
+				if ('slnt' in fontVariable.axes && style === 'normal') {
+					// SLNT has a different style linked to it.
+					newStyle = `oblique ${Number(fontVariable.axes.slnt.max) * -1}deg ${
+						Number(fontVariable.axes.slnt.min) * -1
+					}deg`;
+				}
+				const cssStyle: string[] = [];
+				for (const subset of font.subsets) {
+					const type = 'full';
+					const cssWght = fontFaceVariable({
+						fontId: font.id,
+						fontName: variableName,
+						style: newStyle,
+						subset,
+						type,
+						weight: getVariableWght(fontVariable.axes),
+						woff2Path: makeVariableFontFilePath(
+							font.id,
+							subset,
+							type,
+							origStyle
+						),
+						unicodeRange: font.unicodeRange[subset],
+					});
+					cssStyle.push(cssWght);
+				}
+
+				// Write down CSS
+				if (origStyle === 'normal') {
+					const cssPath = `${fontDir}/variable-full.css`;
+					fs.writeFileSync(cssPath, cssStyle.join(''));
+				} else {
+					// If italic or else, define specific style CSS file
+					const cssStylePath = `${fontDir}/variable-full-${origStyle}.css`;
+					fs.writeFileSync(cssStylePath, cssStyle.join(''));
+				}
+			}
+		}
+	}
+};
+
+export { variable };

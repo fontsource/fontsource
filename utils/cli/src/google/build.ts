@@ -17,16 +17,15 @@ const build = async (id: string, opts: BuildOptions) => {
 	const fontLicense = APILicense[id];
 
 	// Set file directories
-	const fontDir = path.join(opts.dir, id);
-	await fs.mkdir(fontDir, { recursive: true });
+	await fs.mkdir(opts.dir, { recursive: true });
 
 	// Check if updated
 	let changed = false;
 
 	try {
-		await fs.access(path.join(fontDir, 'metadata.json'));
+		await fs.access(path.join(opts.dir, 'metadata.json'));
 		const metadata = JSON.parse(
-			await fs.readFile(path.join(fontDir, 'metadata.json'), 'utf8')
+			await fs.readFile(path.join(opts.dir, 'metadata.json'), 'utf8')
 		);
 		changed = metadata.lastModified !== font.lastModified;
 	} catch {
@@ -37,12 +36,15 @@ const build = async (id: string, opts: BuildOptions) => {
 	if (changed || opts.force) {
 		try {
 			// Copy to temp folder
-			const pkgJsonPath = path.join(fontDir, 'package.json');
-			const tempPath = path.join(opts.tmpDir, `${id}.json`);
+			const pkgJsonPath = path.join(opts.dir, 'package.json');
+			const tempPath = path.join(
+				opts.tmpDir,
+				opts.isVariable ? `${id}-variable.json` : `${id}.json`
+			);
 
 			await fs.access(pkgJsonPath);
 			await fs.copy(pkgJsonPath, tempPath);
-			await fs.emptyDir(fontDir);
+			await fs.emptyDir(opts.dir);
 			// Copy back to original folder
 			await fs.copy(tempPath, pkgJsonPath);
 			await fs.remove(tempPath);
@@ -51,15 +53,16 @@ const build = async (id: string, opts: BuildOptions) => {
 		}
 	}
 
-	// Check if variable font
-	const isVariable = Boolean(APIVariable[id]);
-
 	// Download all font files
-	await download(id, isVariable, opts);
+	await download(id, opts);
 
 	// Generate CSS files
-	await packagerV1(id, opts);
-	await packagerV2(id, opts);
+	if (opts.isVariable) {
+		await packagerVariable(id, opts);
+	} else {
+		await packagerV1(id, opts);
+		await packagerV2(id, opts);
+	}
 
 	// TODO: Generate SCSS
 
@@ -85,22 +88,22 @@ const build = async (id: string, opts: BuildOptions) => {
 	};
 
 	// Write README.md
-	await fs.writeFile(path.join(fontDir, 'README.md'), readme(metadata));
+	await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata));
 
 	// Write metadata.json
-	await fs.writeFile(path.join(fontDir, 'metadata.json'), stringify(metadata));
+	await fs.writeFile(path.join(opts.dir, 'metadata.json'), stringify(metadata));
 
 	// Write unicode.json
 	await fs.writeFile(
-		path.join(fontDir, 'unicode.json'),
+		path.join(opts.dir, 'unicode.json'),
 		stringify(font.unicodeRange)
 	);
 
 	// Write CHANGELOG.md
-	await fs.writeFile(path.join(fontDir, 'CHANGELOG.md'), changelog);
+	await fs.writeFile(path.join(opts.dir, 'CHANGELOG.md'), changelog);
 
 	// Write package.json
-	await packageJson(metadata, fontDir);
+	await packageJson(metadata, opts.dir);
 };
 
 export { build };

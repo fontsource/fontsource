@@ -42,32 +42,58 @@ describe('download google', () => {
 		vi.spyOn(gfm, 'APIVariable', 'get').mockReturnValue(APIVariableMock);
 
 		it('should generate links for base font (abel)', () => {
+			const buildOpts = {
+				dir: 'fonts/google/abel',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: false,
+			};
+
 			const { links } = testData;
-			expect(generateLinks('abel')).toEqual(links.abel);
+			expect(generateLinks('abel', buildOpts)).toEqual(links.abel);
 		});
 
 		it('should generate links for unicode subset font (noto-sans-jp)', () => {
+			const buildOpts = {
+				dir: 'fonts/google/noto-sans-jp',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: false,
+			};
+
 			const { links } = testData;
-			expect(generateLinks('noto-sans-jp')).toEqual(links['noto-sans-jp']);
+			expect(generateLinks('noto-sans-jp', buildOpts)).toEqual(
+				links['noto-sans-jp']
+			);
 		});
 
 		it('should generate links for variable fonts (cabin)', () => {
+			const buildOpts = {
+				dir: 'fonts/google/cabin',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: true,
+			};
+
 			const { variableLinksMock } = testData;
-			expect(variableLinks('cabin')).toEqual(variableLinksMock.cabin);
+			expect(variableLinks('cabin', buildOpts)).toEqual(
+				variableLinksMock.cabin
+			);
 		});
 	});
 
 	describe('download queue', () => {
-		const buildOpts = {
-			dir: 'test',
-			tmpDir: 'tmpTest',
-			force: false,
-		};
-
 		it('downloads normal font successfully (abel)', async () => {
-			await download('abel', false, buildOpts);
+			const buildOpts = {
+				dir: 'fonts/google/abel',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: false,
+			};
+
+			await download('abel', buildOpts);
 			expect(vi.mocked(fs.writeFile)).toHaveBeenCalledWith(
-				'test/abel/files/file-list.json',
+				'fonts/google/abel/files/file-list.json',
 				stringify([
 					'./fonts/google/abel/files/abel-latin-400-normal.woff',
 					'./fonts/google/abel/files/abel-latin-400-normal.woff2',
@@ -76,10 +102,17 @@ describe('download google', () => {
 			);
 		});
 
-		it('downloads variable font successfully (cabin)', async () => {
-			await download('cabin', true, buildOpts);
+		it('downloads normal font successfully (cabin)', async () => {
+			const buildOpts = {
+				dir: 'fonts/google/cabin',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: false,
+			};
+
+			await download('cabin', buildOpts);
 			expect(vi.mocked(fs.writeFile)).toHaveBeenCalledWith(
-				'test/cabin/files/file-list.json',
+				'fonts/google/cabin/files/file-list.json',
 				stringify([
 					'./fonts/google/cabin/files/cabin-latin-400-italic.woff',
 					'./fonts/google/cabin/files/cabin-latin-ext-400-italic.woff',
@@ -137,6 +170,22 @@ describe('download google', () => {
 					'./fonts/google/cabin/files/cabin-all-700-normal.woff',
 					'./fonts/google/cabin/files/cabin-latin-ext-700-normal.woff2',
 					'./fonts/google/cabin/files/cabin-latin-700-normal.woff2',
+				])
+			);
+		});
+
+		it('downloads variable font successfully (cabin)', async () => {
+			const buildOpts = {
+				dir: 'fonts/google/cabin',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: true,
+			};
+
+			await download('cabin', buildOpts);
+			expect(vi.mocked(fs.writeFile)).toHaveBeenCalledWith(
+				'fonts/google/cabin/files/file-list.json',
+				stringify([
 					'./fonts/google/cabin/files/cabin-vietnamese-variable-wdth-normal.woff2',
 					'./fonts/google/cabin/files/cabin-latin-ext-variable-wdth-normal.woff2',
 					'./fonts/google/cabin/files/cabin-latin-variable-wdth-normal.woff2',

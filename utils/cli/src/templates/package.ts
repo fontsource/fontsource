@@ -14,7 +14,7 @@ const licenseMap = {
 };
 
 const template = (
-	{ id, family, license, type }: Metadata,
+	{ id, family, license, type, variable }: Metadata,
 	oldVersion?: string
 ) => {
 	const licenseShort =
@@ -24,7 +24,7 @@ const template = (
 	}
 
 	return {
-		name: `@fontsource/${id}`,
+		name: variable ? `@fontsource/${id}/variable` : `@fontsource/${id}`,
 		version: oldVersion ?? mainPkgRepoVersion,
 		description: `Self-host the ${family} font in a neatly bundled NPM package.`,
 		main: 'index.css',

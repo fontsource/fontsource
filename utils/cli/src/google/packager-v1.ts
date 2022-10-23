@@ -9,7 +9,6 @@ import { makeFontFilePath } from '../utils';
 
 const packagerV1 = async (id: string, opts: BuildOptions) => {
 	const { family, styles, weights, subsets, variants } = APIv1[id];
-	const fontDir = path.join(opts.dir, id);
 
 	for (const subset of subsets) {
 		// Arrays of CSS blocks to be concatenated
@@ -42,13 +41,13 @@ const packagerV1 = async (id: string, opts: BuildOptions) => {
 
 					// Needed to differentiate filenames
 					if (style === 'normal') {
-						const cssPath = path.join(fontDir, `${subset}-${weight}.css`);
+						const cssPath = path.join(opts.dir, `${subset}-${weight}.css`);
 						await fs.writeFile(cssPath, css);
 
 						cssSubset.push(css);
 					} else {
 						const cssStylePath = path.join(
-							fontDir,
+							opts.dir,
 							`${subset}-${weight}-${style}.css`
 						);
 						await fs.writeFile(cssStylePath, css);
@@ -58,12 +57,12 @@ const packagerV1 = async (id: string, opts: BuildOptions) => {
 				}
 			}
 		}
-		const cssSubsetPath = path.join(fontDir, `${subset}.css`);
+		const cssSubsetPath = path.join(opts.dir, `${subset}.css`);
 		await fs.writeFile(cssSubsetPath, cssSubset.join('\n\n'));
 
 		// If there are italic styles for a subset
 		if (cssSubsetItalic.length > 0) {
-			const cssSubsetItalicPath = path.join(fontDir, `${subset}-italic.css`);
+			const cssSubsetItalicPath = path.join(opts.dir, `${subset}-italic.css`);
 			await fs.writeFile(cssSubsetItalicPath, cssSubsetItalic.join('\n\n'));
 		}
 	}

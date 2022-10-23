@@ -9,7 +9,6 @@ import { findClosest, makeFontFilePath } from '../utils';
 
 const packagerV2 = async (id: string, opts: BuildOptions) => {
 	const { family, styles, weights, variants, unicodeRange } = APIv2[id];
-	const fontDir = path.join(opts.dir, id);
 
 	// Find the weight for index.css in the case weight 400 does not exist.
 	const indexWeight = findClosest(weights, 400);
@@ -57,16 +56,19 @@ const packagerV2 = async (id: string, opts: BuildOptions) => {
 			// Write down CSS
 			if (style in variants[weight]) {
 				if (style === 'normal') {
-					const cssPath = `${fontDir}/${weight}.css`;
+					const cssPath = path.join(opts.dir, `${weight}.css`);
 					await fs.writeFile(cssPath, cssStyle.join('\n\n'));
 
 					// Generate index CSS
 					if (weight === indexWeight) {
-						await fs.writeFile(`${fontDir}/index.css`, cssStyle.join('\n\n'));
+						await fs.writeFile(
+							path.join(opts.dir, 'index.css'),
+							cssStyle.join('\n\n')
+						);
 					}
 				} else {
 					// If italic or else, define specific style CSS file
-					const cssStylePath = `${fontDir}/${weight}-${style}.css`;
+					const cssStylePath = path.join(opts.dir, `${weight}-${style}.css`);
 					await fs.writeFile(cssStylePath, cssStyle.join('\n\n'));
 				}
 			}
