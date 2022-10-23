@@ -51,9 +51,9 @@ interface DownloadLinks {
 }
 
 // Generates pairs of URLs and destinations filtering unsupported formats
-const generateLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
-	const fontV1 = APIv1[fontId];
-	const fontV2 = APIv2[fontId];
+const generateLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
+	const fontV1 = APIv1[id];
+	const fontV2 = APIv2[id];
 
 	// Parses variants into readable pairs of data
 	let downloadURLPairsV1 = pairGenerator(fontV1.variants);
@@ -80,7 +80,7 @@ const generateLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
 		const types = pair[0];
 		const dest = makeFontDownloadPath(
 			opts.dir,
-			fontId,
+			id,
 			types[2],
 			Number(types[0]),
 			types[1],
@@ -100,7 +100,7 @@ const generateLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
 			types[4] === 'woff2'
 				? makeFontDownloadPath(
 						opts.dir,
-						fontId,
+						id,
 						types[2].replace('[', '').replace(']', ''),
 						Number(types[0]),
 						types[1],
@@ -108,7 +108,7 @@ const generateLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
 				  )
 				: makeFontDownloadPath(
 						opts.dir,
-						fontId,
+						id,
 						'all',
 						Number(types[0]),
 						types[1],
@@ -128,8 +128,8 @@ const generateLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
 	return links;
 };
 
-const variableLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
-	const fontVariable = APIVariable[fontId];
+const variableLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
+	const fontVariable = APIVariable[id];
 
 	const downloadURLPairsVariable = pairGenerator(fontVariable.variants);
 
@@ -139,8 +139,8 @@ const variableLinks = (fontId: string, opts: BuildOptions): DownloadLinks[] => {
 		const types = pair[0];
 		const dest = makeVariableFontDownloadPath(
 			opts.dir,
-			fontId,
-			types[2],
+			id,
+			types[2].replace('[', '').replace(']', ''),
 			types[0],
 			types[1]
 		);

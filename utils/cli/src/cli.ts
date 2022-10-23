@@ -2,7 +2,14 @@ import 'dotenv/config';
 
 import { cac } from 'cac';
 import consola from 'consola';
-import { fetchAPI, fetchVariable, parseLicenses, parsev1, parsev2, parseVariable } from 'google-font-metadata';
+import {
+	fetchAPI,
+	fetchVariable,
+	parseLicenses,
+	parsev1,
+	parsev2,
+	parseVariable,
+} from 'google-font-metadata';
 import colors from 'picocolors';
 
 import { version } from '../package.json';
@@ -19,12 +26,12 @@ cli
 				throw new Error('No API key provided.');
 			}
 			if (options.force) {
-					consola.info(
-						`Parsing all metadata... ${colors.bold(colors.red('[FORCE]'))}`
-					);
-				} else {
-					consola.info('Parsing all metadata...');
-				}
+				consola.info(
+					`Parsing all metadata... ${colors.bold(colors.red('[FORCE]'))}`
+				);
+			} else {
+				consola.info('Parsing all metadata...');
+			}
 			await Promise.all([fetchAPI(finalKey), fetchVariable()]);
 			await parsev1(options.force, false);
 			await parsev2(options.force, false);
@@ -39,6 +46,7 @@ cli
 	.command('build [...fonts]', 'Build font packages')
 	.option('--google', 'Only build Google Fonts')
 	.option('--generic', 'Only build Generic Fonts')
+	.option('-v, --variable', 'Only build variable fonts')
 	.option('-f, --force', 'Force rebuild all packages')
 	.action(async (fonts: string[], options) => {
 		try {

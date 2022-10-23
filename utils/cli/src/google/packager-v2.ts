@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-import { generateSingle } from '@fontsource-utils/generate';
+import { generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
 import { APIv2 } from 'google-font-metadata';
 import * as path from 'pathe';
@@ -48,7 +48,7 @@ const packagerV2 = async (id: string, opts: BuildOptions) => {
 						comment: `${id}-${subset}-${weight}-${style}`,
 					};
 					// This takes in a font object and returns an @font-face block
-					const css = generateSingle(fontObj);
+					const css = generateFontFace(fontObj);
 					cssStyle.push(css);
 				}
 			}

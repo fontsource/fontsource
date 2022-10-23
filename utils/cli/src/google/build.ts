@@ -10,6 +10,7 @@ import { BuildOptions, Metadata } from '../types';
 import { download } from './download';
 import { packagerV1 } from './packager-v1';
 import { packagerV2 } from './packager-v2';
+import { packagerVariable } from './packager-variable';
 
 const build = async (id: string, opts: BuildOptions) => {
 	const font = APIv2[id];

@@ -1,5 +1,4 @@
-// Generate filenames and paths
-// Used by the downloader into repo
+// Used to determine where the downloader should save the files
 const makeFontDownloadPath = (
 	fontDir: string,
 	fontId: string,
@@ -14,12 +13,11 @@ const makeVariableFontDownloadPath = (
 	fontDir: string,
 	fontId: string,
 	subset: string,
-	type: string,
+	axes: string,
 	style: string
-): string =>
-	`./${fontDir}/files/${fontId}-${subset}-variable-${type}-${style}.woff2`;
+): string => `./${fontDir}/files/${fontId}-${subset}-${axes}-${style}.woff2`;
 
-// Used for the CSS filepaths
+// Used for the src urls in CSS files
 const makeFontFilePath = (
 	fontId: string,
 	subset: string,
@@ -31,9 +29,9 @@ const makeFontFilePath = (
 const makeVariableFontFilePath = (
 	fontId: string,
 	subset: string,
-	type: string,
+	axes: string,
 	style: string
-): string => `./files/${fontId}-${subset}-variable-${type}-${style}.woff2`;
+): string => `./files/${fontId}-${subset}-${axes}-${style}.woff2`;
 
 // Insert a weight array to find the closest number given num - used for index.css gen
 const findClosest = (arr: number[], num: number): number => {
