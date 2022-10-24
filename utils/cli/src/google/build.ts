@@ -8,6 +8,7 @@ import { packageJson } from '../templates/package';
 import { readme } from '../templates/readme';
 import { BuildOptions, Metadata } from '../types';
 import { download } from './download';
+import { generateLicense } from './license';
 import { packagerV1 } from './packager-v1';
 import { packagerV2 } from './packager-v2';
 import { packagerVariable } from './packager-variable';
@@ -102,6 +103,9 @@ const build = async (id: string, opts: BuildOptions) => {
 
 	// Write CHANGELOG.md
 	await fs.writeFile(path.join(opts.dir, 'CHANGELOG.md'), changelog);
+
+	// Write LICENSE file
+	await generateLicense(id, fontLicense.license.type, opts);
 
 	// Write package.json
 	await packageJson(metadata, opts.dir);
