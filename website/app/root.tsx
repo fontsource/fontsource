@@ -1,8 +1,4 @@
 import { AppShell } from "@components";
-import inter400Styles from "@fontsource/inter/400.css";
-import inter500Styles from "@fontsource/inter/500.css";
-import inter700Styles from "@fontsource/inter/700.css";
-import sourceCodePro400Styles from "@fontsource/source-code-pro/400.css";
 import type { ColorScheme } from "@mantine/core";
 import {
   ColorSchemeProvider,
@@ -29,6 +25,7 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 
+import fonts from "./styles/fonts.css";
 import { GlobalStyles } from "./styles/global";
 import { theme } from "./styles/theme";
 
@@ -42,12 +39,7 @@ export const headers: HeadersFunction = () => ({
   "Accept-CH": "Sec-CH-Prefers-Color-Scheme",
 });
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: inter400Styles },
-  { rel: "stylesheet", href: inter500Styles },
-  { rel: "stylesheet", href: inter700Styles },
-  { rel: "stylesheet", href: sourceCodePro400Styles },
-];
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: fonts }];
 
 createEmotionCache({ key: "mantine" });
 
