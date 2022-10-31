@@ -216,6 +216,7 @@ importers:
       react-instantsearch-hooks-server: ^6.32.1
       react-instantsearch-hooks-web: ^6.32.1
       typescript: ^4.8.2
+      use-font-face-observer: ^1.2.1
     dependencies:
       '@emotion/react': 11.10.4_7v64pk2mkrohwh22gx7lrz5ive
       '@emotion/server': 11.10.0
@@ -234,6 +235,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       react-instantsearch-hooks-server: 6.32.1_6a2c7viirly62osxndozsmviba
       react-instantsearch-hooks-web: 6.32.1_6a2c7viirly62osxndozsmviba
+      use-font-face-observer: 1.2.1_react@18.2.0
     devDependencies:
       '@remix-run/dev': 1.7.4_uroeops6y5plvzrhwx7fnuiija
       '@remix-run/eslint-config': 1.7.4_jkdcuk45ol77rqfqfyhtpiipdu
@@ -8176,6 +8178,10 @@ packages:
       debug:
         optional: true
 
+  /fontfaceobserver/2.1.0:
+    resolution: {integrity: sha512-ReOsO2F66jUa0jmv2nlM/s1MiutJx/srhAe2+TE8dJCMi02ZZOcCTxTCQFr3Yet+uODUtnr4Mewg+tNQ+4V1Ng==}
+    dev: false
+
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -14118,6 +14124,15 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
+      react: 18.2.0
+    dev: false
+
+  /use-font-face-observer/1.2.1_react@18.2.0:
+    resolution: {integrity: sha512-5ieKTMvtUux0l7YoOEz842djfgMH3oVg+tO13E/kyS+gGRLDyfAMmRv0D3fzM7UdFag1kz+3AQIFLkkfEF3TUg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      fontfaceobserver: 2.1.0
       react: 18.2.0
     dev: false
 
