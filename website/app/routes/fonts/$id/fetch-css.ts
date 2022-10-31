@@ -14,6 +14,6 @@ export const loader: LoaderFunction = async ({ params }) => {
     // match "url('./files/${woffFileName}')", then replace with "url('${baseURL}/files/${woffFileName}')"
     `url('${baseUrl}/@fontsource/${params.id}/$1')`
     // Replace all whitespace to minify css
-  ).replace(/\s/g, '');;
+  ).replace(/\s/g, '');
   return json({ css });
 };
