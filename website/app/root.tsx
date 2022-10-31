@@ -10,6 +10,7 @@ import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import { StylesPlaceholder } from "@mantine/remix";
 import type {
   HeadersFunction,
+  LinksFunction,
   LoaderFunction,
   MetaFunction,
 } from "@remix-run/node";
@@ -24,6 +25,7 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 
+import fonts from "./styles/fonts.css";
 import { GlobalStyles } from "./styles/global";
 import { theme } from "./styles/theme";
 
@@ -36,6 +38,8 @@ export const meta: MetaFunction = () => ({
 export const headers: HeadersFunction = () => ({
   "Accept-CH": "Sec-CH-Prefers-Color-Scheme",
 });
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: fonts }];
 
 createEmotionCache({ key: "mantine" });
 

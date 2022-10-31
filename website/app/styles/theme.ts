@@ -11,6 +11,9 @@ export const theme: MantineThemeOverride = {
 	},
 	primaryColor: 'purple',
 
+	fontFamily: 'InterVariable, sans-serif',
+	fontFamilyMonospace: "'Source Code ProVariable', monospace",
+
 	fontSizes: {
 		md: 15,
 		lg: 32
