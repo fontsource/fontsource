@@ -10,8 +10,8 @@ import { build } from './build';
 const queue = new PQueue({ concurrency: 3 });
 
 // @ts-ignore - rollup-plugin-dts being too strict
-queue.on('error', (error: Error) => {
-	consola.error(error);
+queue.on('error', error => {
+	throw new Error(error);
 });
 
 queue.on('idle', async () => {
@@ -77,7 +77,7 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 			if (APIVariable[id]) {
 				// Change build options to use separate variable package name
 				buildOpts.isVariable = true;
-				buildOpts.dir = path.join(outDir, id, 'variable');
+				buildOpts.dir = path.join(outDir, 'variable', id);
 
 				queue.add(() => buildVariablePackage(id, buildOpts));
 			}

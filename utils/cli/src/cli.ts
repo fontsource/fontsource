@@ -44,10 +44,9 @@ cli
 
 cli
 	.command('build [...fonts]', 'Build font packages')
-	.option('--google', 'Only build Google Fonts')
-	.option('--generic', 'Only build Generic Fonts')
 	.option('-v, --variable', 'Only build variable fonts')
 	.option('-f, --force', 'Force rebuild all packages')
+	.option('-t, --test', 'Build test fonts only')
 	.action(async (fonts: string[], options) => {
 		try {
 			if (fonts) {
@@ -59,6 +58,14 @@ cli
 			consola.error(error);
 		}
 	});
+
+cli.command('create <name>').action(async (name: string) => {
+	try {
+		console.log(name);
+	} catch (error) {
+		consola.error(error);
+	}
+});
 
 cli.help();
 cli.version(version);
