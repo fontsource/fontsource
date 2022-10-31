@@ -1,10 +1,18 @@
-import { Box, createStyles, Group, SimpleGrid, Text } from "@mantine/core";
+import {
+  Box,
+  createStyles,
+  Group,
+  SimpleGrid,
+  Skeleton,
+  Text } from "@mantine/core";
+import { useFetcher } from "@remix-run/react";
 import { useAtom } from "jotai";
 import { useEffect, useRef } from "react";
 import {
   useInfiniteHits,
   useInstantSearch,
 } from "react-instantsearch-hooks-web";
+import useFontFaceObserver from 'use-font-face-observer';
 
 import { previewValueAtom, sizeAtom } from "./atoms";
 
@@ -59,10 +67,35 @@ interface HitComponentProps extends Hit {
 }
 const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
   const { classes } = useStyles();
+  const fontCss = useFetcher()
+  // useFetcher only knows when the CSS is loaded, but not the font files themselves
+  const isFontLoaded = useFontFaceObserver([
+    {
+      family: hit.fontName,
+    },
+  ]);
+  
+  useEffect(() => {
+    if (fontCss.type === 'init') {
+      fontCss.load(`/fonts/${hit.fontId}/fetch-css`);
+    }
+
+    if (fontCss.type === 'done') {
+      const style = document.createElement("style")
+      style.textContent = fontCss.data.css
+      document.head.appendChild(style)
+    }
+  }, [fontCss, hit.fontId, hit.fontName]);
+
+  const loading = fontCss.type !== 'done' && !isFontLoaded;
 
   return (
     <Box className={classes.wrapper}>
-      <Text size={fontSize}>{previewText}</Text>
+      <Skeleton visible={loading}>
+        <Text size={fontSize} style={{ fontFamily: hit.fontName }}>
+          {previewText}
+        </Text>
+      </Skeleton>
       <Group className={classes.textGroup} position="apart">
         <Text size={18} weight={700} component="span">
           {hit.fontName}
@@ -126,6 +159,7 @@ const InfiniteHits = () => {
         {hits.map(hit => (
           <HitComponent
             key={hit.objectID}
+            // @ts-ignore - hit prop is messed up cause of Algolia
             hit={hit}
             previewText={previewValue}
             fontSize={size}
