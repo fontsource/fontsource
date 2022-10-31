@@ -7,7 +7,7 @@ import {
   Text } from "@mantine/core";
 import { useFetcher } from "@remix-run/react";
 import { useAtom } from "jotai";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   useInfiniteHits,
   useInstantSearch,
@@ -73,7 +73,8 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
     {
       family: hit.fontName,
     },
-  ]);
+  ], {timeout: 7500});
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     if (fontCss.type === 'init') {
@@ -85,9 +86,15 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
       style.textContent = fontCss.data.css
       document.head.appendChild(style)
     }
-  }, [fontCss, hit.fontId, hit.fontName]);
 
-  const loading = fontCss.type !== 'done' && !isFontLoaded;
+    if (fontCss.type === 'done' && isFontLoaded) {
+      // Give browser time to load fonts in order to not cause a flash of the unstyled font
+      setTimeout(
+        () => setLoading(false),
+        500
+      );
+    }
+  }, [fontCss, hit.fontId, isFontLoaded]);
 
   return (
     <Box className={classes.wrapper}>
