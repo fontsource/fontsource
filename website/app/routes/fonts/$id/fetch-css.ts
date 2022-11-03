@@ -1,8 +1,8 @@
-import type { LoaderFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import type { LoaderFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
 
 // Resource route to fetch CSS for font
-const baseUrl = "https://cdn.jsdelivr.net/npm";
+const baseUrl = 'https://cdn.jsdelivr.net/npm';
 const cssUrl = (fontId: string) => `${baseUrl}/@fontsource/${fontId}/index.css`;
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -18,13 +18,13 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   const minifiedCss = cssRewrite
     // remove comments, newlines, and tabs
-    .replace(/\/\*[\s\S]*?\*\/|[\r\n\t]+/g, "")
+    .replace(/\/\*[\s\S]*?\*\/|[\r\n\t]+/g, '')
     // limit number of adjacent spaces to 1
-    .replace(/ {2,}/g, " ")
+    .replace(/ {2,}/g, ' ')
     // remove spaces around the following: ,:;{}
-    .replace(/ ?([,:;{}]) ?/g, "$1")
+    .replace(/ ?([,:;{}]) ?/g, '$1')
     // remove last semicolon in block
-    .replace(/;}/g, "}");
+    .replace(/;}/g, '}');
 
   return json({ css: minifiedCss });
 };

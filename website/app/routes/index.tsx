@@ -1,32 +1,32 @@
-import { Box, createStyles } from "@mantine/core";
-import algoliasearch from "algoliasearch/lite";
-import { Provider } from "jotai";
-import { InstantSearch } from "react-instantsearch-hooks-web";
+import { Box, createStyles } from '@mantine/core';
+import algoliasearch from 'algoliasearch/lite';
+import { Provider } from 'jotai';
+import { InstantSearch } from 'react-instantsearch-hooks-web';
 
-import { Filters } from "~/components/search/Filters";
-import { InfiniteHits } from "~/components/search/Hits";
+import { Filters } from '~/components/search/Filters';
+import { InfiniteHits } from '~/components/search/Hits';
 
 const searchClient = algoliasearch(
-  "WNATE69PVR",
-  "8b36fe56fca654afaeab5e6f822c14bd"
+  'WNATE69PVR',
+  '8b36fe56fca654afaeab5e6f822c14bd'
 );
 
 const useStyles = createStyles(theme => ({
   background: {
     backgroundColor:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.background[3]
         : theme.colors.background[1],
   },
 
   container: {
-    maxWidth: "1440px",
-    marginLeft: "auto",
-    marginRight: "auto",
-    padding: "40px 64px",
+    maxWidth: '1440px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    padding: '40px 64px',
 
-    [theme.fn.smallerThan("lg")]: {
-      padding: "40px 40px",
+    [theme.fn.smallerThan('lg')]: {
+      padding: '40px 40px',
     },
   },
 }));

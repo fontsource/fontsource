@@ -1,6 +1,6 @@
-import { useMantineTheme } from "@mantine/core";
+import { useMantineTheme } from '@mantine/core';
 
-import type { IconProps } from "./types";
+import type { IconProps } from './types';
 
 const IconSearch = ({ height, active, ...others }: IconProps) => {
   const theme = useMantineTheme();
@@ -8,7 +8,7 @@ const IconSearch = ({ height, active, ...others }: IconProps) => {
   if (active) stroke = theme.colors.purple[0];
   else
     stroke =
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.text[0]
         : theme.colors.text[1];
 

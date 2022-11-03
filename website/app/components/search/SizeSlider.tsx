@@ -3,24 +3,24 @@ import {
   Grid,
   Slider as MantineSlider,
   Text,
-} from "@mantine/core";
-import { useAtom } from "jotai";
+} from '@mantine/core';
+import { useAtom } from 'jotai';
 
-import { sizeAtom } from "./atoms";
+import { sizeAtom } from './atoms';
 
 const useStyles = createStyles(theme => ({
   wrapper: {
-    padding: "0px 24px",
+    padding: '0px 24px',
     backgroundColor:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.background[2]
         : theme.colors.background[0],
     borderBottom: `1px solid ${
-      theme.colorScheme === "dark" ? "#2C3651" : "#E1E3EC"
+      theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
     }`,
-    borderRadius: "0px 4px 0px 0px",
+    borderRadius: '0px 4px 0px 0px',
 
-    "&:focus-within": {
+    '&:focus-within': {
       borderColor: theme.colors.purple[0],
     },
   },

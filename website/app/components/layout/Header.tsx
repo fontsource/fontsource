@@ -1,5 +1,5 @@
-import { IconDiscord, IconGithub, LogoText, ThemeButton } from "@components";
-import type { ActionIconProps, ContainerProps } from "@mantine/core";
+import { IconDiscord, IconGithub, LogoText, ThemeButton } from '@components';
+import type { ActionIconProps, ContainerProps } from '@mantine/core';
 import {
   ActionIcon,
   Anchor,
@@ -9,61 +9,61 @@ import {
   createStyles,
   Group,
   Tooltip,
-} from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { Link, NavLink } from "@remix-run/react";
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { Link, NavLink } from '@remix-run/react';
 
 const HEADER_HEIGHT = 72;
 
 const useStyles = createStyles(theme => ({
   header: {
     borderBottom: `1px solid ${
-      theme.colorScheme === "dark" ? "#151E34" : "#EDF0F3"
+      theme.colorScheme === 'dark' ? '#151E34' : '#EDF0F3'
     }`,
   },
 
   inner: {
-    maxWidth: "1440px",
-    marginLeft: "auto",
-    marginRight: "auto",
+    maxWidth: '1440px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     height: HEADER_HEIGHT,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "0px 64px",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '0px 64px',
   },
 
   burger: {
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
+    [theme.fn.largerThan('sm')]: {
+      display: 'none',
     },
   },
 
   links: {
     paddingTop: theme.spacing.lg,
     height: HEADER_HEIGHT,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
 
-    [theme.fn.smallerThan("sm")]: {
-      display: "none",
+    [theme.fn.smallerThan('sm')]: {
+      display: 'none',
     },
   },
 
   link: {
     fontSize: 15,
     color:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.text[0]
         : theme.colors.text[1],
     padding: `27px ${theme.spacing.sm}px`,
-    borderBottom: "2px solid transparent",
-    transition: "border-color 100ms ease, color 100ms ease",
-    textDecoration: "none",
+    borderBottom: '2px solid transparent',
+    transition: 'border-color 100ms ease, color 100ms ease',
+    textDecoration: 'none',
 
-    "&:hover": {
-      textDecoration: "none",
+    '&:hover': {
+      textDecoration: 'none',
     },
   },
 

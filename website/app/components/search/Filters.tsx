@@ -1,4 +1,4 @@
-import { IconTrash } from "@components";
+import { IconTrash } from '@components';
 import {
   Box,
   Button,
@@ -6,65 +6,65 @@ import {
   createStyles,
   Group,
   SimpleGrid,
-} from "@mantine/core";
-import { useAtom } from "jotai";
-import { useState } from "react";
-import { useConfigure } from "react-instantsearch-hooks-web";
+} from '@mantine/core';
+import { useAtom } from 'jotai';
+import { useState } from 'react';
+import { useConfigure } from 'react-instantsearch-hooks-web';
 
-import { dropdownAtomArr, filterAtom, filterBaseAtom } from "./atoms";
+import { dropdownAtomArr, filterAtom, filterBaseAtom } from './atoms';
 import {
   CategoriesDropdown,
   categoryAtomArr,
   languageAtomArr,
   LanguagesDropdown,
-} from "./Dropdowns";
-import { PreviewSelector } from "./PreviewTextInput";
-import { SearchBar } from "./SearchTextInput";
-import { SizeSlider } from "./SizeSlider";
+} from './Dropdowns';
+import { PreviewSelector } from './PreviewTextInput';
+import { SearchBar } from './SearchTextInput';
+import { SizeSlider } from './SizeSlider';
 
 const useStyles = createStyles(theme => ({
   container: {
     backgroundColor:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.background[2]
         : theme.colors.background[0],
-    borderRadius: "4px",
+    borderRadius: '4px',
     height: 128,
   },
 
   wrapper: {
-    display: "flex",
+    display: 'flex',
     height: 64,
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "0px 24px",
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '0px 24px',
     backgroundColor:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.background[2]
         : theme.colors.background[0],
 
-    "&:focus-within": {
+    '&:focus-within': {
       borderBottomColor: theme.colors.purple[0],
     },
   },
 
   button: {
-    padding: "2px 16px",
-    height: "40px",
+    padding: '2px 16px',
+    height: '40px',
 
     backgroundColor:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.background[2]
         : theme.colors.background[0],
 
     color:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.text[0]
         : theme.colors.text[1],
 
     fontWeight: 400,
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor: theme.colors.purpleHover[0],
     },
   },

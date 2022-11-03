@@ -5,17 +5,17 @@ import {
   SimpleGrid,
   Skeleton,
   Text,
-} from "@mantine/core";
-import { useFetcher } from "@remix-run/react";
-import { useAtom } from "jotai";
-import { useEffect, useRef, useState } from "react";
+} from '@mantine/core';
+import { useFetcher } from '@remix-run/react';
+import { useAtom } from 'jotai';
+import { useEffect, useRef, useState } from 'react';
 import {
   useInfiniteHits,
   useInstantSearch,
-} from "react-instantsearch-hooks-web";
-import useFontFaceObserver from "use-font-face-observer";
+} from 'react-instantsearch-hooks-web';
+import useFontFaceObserver from 'use-font-face-observer';
 
-import { previewValueAtom, sizeAtom } from "./atoms";
+import { previewValueAtom, sizeAtom } from './atoms';
 
 interface Hit {
   hit: {
@@ -38,27 +38,27 @@ interface Hit {
 
 const useStyles = createStyles(theme => ({
   wrapper: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    padding: "24px",
-    marginLeft: "auto",
-    marginRight: "auto",
-    overflowWrap: "anywhere",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    padding: '24px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    overflowWrap: 'anywhere',
 
-    height: "332px",
-    width: "316px",
+    height: '332px',
+    width: '316px',
     border: `1px solid ${
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.border[1]
         : theme.colors.border[0]
     }`,
-    borderRadius: "4px",
+    borderRadius: '4px',
   },
 
   textGroup: {
-    width: "100%",
+    width: '100%',
   },
 }));
 
@@ -81,17 +81,17 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (fontCss.type === "init") {
+    if (fontCss.type === 'init') {
       fontCss.load(`/fonts/${hit.fontId}/fetch-css`);
     }
 
-    if (fontCss.type === "done") {
-      const style = document.createElement("style");
+    if (fontCss.type === 'done') {
+      const style = document.createElement('style');
       style.textContent = fontCss.data.css;
       document.head.appendChild(style);
     }
 
-    if (fontCss.type === "done" && isFontLoaded) {
+    if (fontCss.type === 'done' && isFontLoaded) {
       // Give browser time to load fonts in order to not cause a flash of the unstyled font
       setTimeout(() => setLoading(false), 100);
     }
@@ -109,7 +109,7 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
           {hit.fontName}
         </Text>
         <Text size={15} weight={700} component="span">
-          {hit.variable ? "Variable" : ""}
+          {hit.variable ? 'Variable' : ''}
         </Text>
       </Group>
     </Box>

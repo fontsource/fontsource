@@ -1,19 +1,19 @@
-import { AppShell } from "@components";
-import type { ColorScheme } from "@mantine/core";
+import { AppShell } from '@components';
+import type { ColorScheme } from '@mantine/core';
 import {
   ColorSchemeProvider,
   Container,
   createEmotionCache,
   MantineProvider,
-} from "@mantine/core";
-import { useHotkeys, useLocalStorage } from "@mantine/hooks";
-import { StylesPlaceholder } from "@mantine/remix";
+} from '@mantine/core';
+import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+import { StylesPlaceholder } from '@mantine/remix';
 import type {
   HeadersFunction,
   LinksFunction,
   LoaderFunction,
   MetaFunction,
-} from "@remix-run/node";
+} from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -23,28 +23,28 @@ import {
   ScrollRestoration,
   useCatch,
   useLoaderData,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
-import fonts from "./styles/fonts.css";
-import { GlobalStyles } from "./styles/global";
-import { theme } from "./styles/theme";
+import fonts from './styles/fonts.css';
+import { GlobalStyles } from './styles/global';
+import { theme } from './styles/theme';
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "Fontsource",
-  viewport: "width=device-width,initial-scale=1",
+  charset: 'utf-8',
+  title: 'Fontsource',
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 export const headers: HeadersFunction = () => ({
-  "Accept-CH": "Sec-CH-Prefers-Color-Scheme",
+  'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
 });
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: fonts }];
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: fonts }];
 
-createEmotionCache({ key: "mantine" });
+createEmotionCache({ key: 'mantine' });
 
 export const loader: LoaderFunction = async ({ request }) => ({
-  colorScheme: await request.headers.get("Sec-CH-Prefers-Color-Scheme"),
+  colorScheme: await request.headers.get('Sec-CH-Prefers-Color-Scheme'),
 });
 interface DocumentProps {
   children: React.ReactNode;
@@ -55,18 +55,18 @@ interface DocumentProps {
 const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
   // TODO use cookies to set color scheme to get around theme flashing on load
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: "color-scheme",
-    defaultValue: preferredColorScheme ?? "light",
+    key: 'color-scheme',
+    defaultValue: preferredColorScheme ?? 'light',
     getInitialValueInEffect: true,
   });
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme =
-      value || (colorScheme === "dark" ? "light" : "dark");
+      value || (colorScheme === 'dark' ? 'light' : 'dark');
     setColorScheme(nextColorScheme);
   };
 
   // CTRL + J to toggle color scheme
-  useHotkeys([["mod+J", () => toggleColorScheme()]]);
+  useHotkeys([['mod+J', () => toggleColorScheme()]]);
 
   return (
     <ColorSchemeProvider

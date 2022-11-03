@@ -1,11 +1,11 @@
-import { useMantineTheme } from "@mantine/core";
+import { useMantineTheme } from '@mantine/core';
 
-import type { IconProps } from "./types";
+import type { IconProps } from './types';
 
 const IconSun = ({ height, ...others }: IconProps) => {
   const theme = useMantineTheme();
   const stroke =
-    theme.colorScheme === "dark" ? theme.colors.text[0] : theme.colors.text[1];
+    theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1];
 
   return (
     <svg

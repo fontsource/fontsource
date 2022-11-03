@@ -1,11 +1,11 @@
-import { useMantineTheme } from "@mantine/core";
+import { useMantineTheme } from '@mantine/core';
 
-type LogoProps = React.ComponentPropsWithoutRef<"svg">;
+type LogoProps = React.ComponentPropsWithoutRef<'svg'>;
 
 const LogoText = ({ height, ...others }: LogoProps) => {
   const theme = useMantineTheme();
   const fill =
-    theme.colorScheme === "dark" ? theme.colors.text[0] : theme.colors.text[1];
+    theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1];
 
   return (
     <svg

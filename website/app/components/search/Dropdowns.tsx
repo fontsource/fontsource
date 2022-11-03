@@ -1,42 +1,42 @@
-import { IconCaret } from "@components";
+import { IconCaret } from '@components';
 import {
   Button,
   Checkbox,
   createStyles,
   Menu,
   ScrollArea,
-} from "@mantine/core";
-import type { PrimitiveAtom } from "jotai";
-import { atom, useAtom } from "jotai";
+} from '@mantine/core';
+import type { PrimitiveAtom } from 'jotai';
+import { atom, useAtom } from 'jotai';
 
-import type { DropdownState } from "./atoms";
-import { dropdownAtomArr, filterAtom } from "./atoms";
+import type { DropdownState } from './atoms';
+import { dropdownAtomArr, filterAtom } from './atoms';
 
 const useStyles = createStyles(theme => ({
   button: {
-    padding: "2px 16px",
-    height: "40px",
-    width: "240px",
+    padding: '2px 16px',
+    height: '40px',
+    width: '240px',
     border: `1px solid ${
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.border[1]
         : theme.colors.border[0]
     }`,
-    borderRadius: "4px",
+    borderRadius: '4px',
 
     backgroundColor:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.background[2]
         : theme.colors.background[0],
 
     color:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.text[0]
         : theme.colors.text[1],
 
     fontWeight: 400,
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor: theme.colors.purpleHover[0],
     },
   },
@@ -102,7 +102,7 @@ const Dropdown = ({
           rightIcon={<IconCaret />}
           styles={{
             inner: {
-              justifyContent: "space-between",
+              justifyContent: 'space-between',
             },
           }}
         >
@@ -110,7 +110,7 @@ const Dropdown = ({
         </Button>
       </Menu.Target>
       <Menu.Dropdown>
-        <ScrollArea style={{ height: "240px" }}>
+        <ScrollArea style={{ height: '240px' }}>
           {data.map(([label, value], index) => (
             <DropdownItem
               label={label}
@@ -128,34 +128,34 @@ const Dropdown = ({
 };
 
 const languageData: [string, string][] = [
-  ["Arabic", "arabic"],
-  ["Bengali", "bengali"],
-  ["Chinese (Hong Kong)", "chinese-hongkong"],
-  ["Chinese (Simplified)", "chinese-simplified"],
-  ["Chinese (Traditional)", "chinese-traditional"],
-  ["Cyrillic", "cyrillic"],
-  ["Cyrillic Extended", "cyrillic-ext"],
-  ["Devanagari", "devanagari"],
-  ["Greek", "greek"],
-  ["Greek Extended", "greek-ext"],
-  ["Gujarati", "gujarati"],
-  ["Gurmukhi", "gurmukhi"],
-  ["Hebrew", "hebrew"],
-  ["Japanese", "japanese"],
-  ["Kannada", "kannada"],
-  ["Khmer", "khmer"],
-  ["Korean", "korean"],
-  ["Latin", "latin"],
-  ["Latin Extended", "latin-ext"],
-  ["Malayalam", "malayalam"],
-  ["Myanmar", "myanmar"],
-  ["Oriya", "oriya"],
-  ["Sinhala", "sinhala"],
-  ["Tamil", "tamil"],
-  ["Telugu", "telugu"],
-  ["Thai", "thai"],
-  ["Tibetan", "tibetan"],
-  ["Vietnamese", "vietnamese"],
+  ['Arabic', 'arabic'],
+  ['Bengali', 'bengali'],
+  ['Chinese (Hong Kong)', 'chinese-hongkong'],
+  ['Chinese (Simplified)', 'chinese-simplified'],
+  ['Chinese (Traditional)', 'chinese-traditional'],
+  ['Cyrillic', 'cyrillic'],
+  ['Cyrillic Extended', 'cyrillic-ext'],
+  ['Devanagari', 'devanagari'],
+  ['Greek', 'greek'],
+  ['Greek Extended', 'greek-ext'],
+  ['Gujarati', 'gujarati'],
+  ['Gurmukhi', 'gurmukhi'],
+  ['Hebrew', 'hebrew'],
+  ['Japanese', 'japanese'],
+  ['Kannada', 'kannada'],
+  ['Khmer', 'khmer'],
+  ['Korean', 'korean'],
+  ['Latin', 'latin'],
+  ['Latin Extended', 'latin-ext'],
+  ['Malayalam', 'malayalam'],
+  ['Myanmar', 'myanmar'],
+  ['Oriya', 'oriya'],
+  ['Sinhala', 'sinhala'],
+  ['Tamil', 'tamil'],
+  ['Telugu', 'telugu'],
+  ['Thai', 'thai'],
+  ['Tibetan', 'tibetan'],
+  ['Vietnamese', 'vietnamese'],
 ];
 const languageAtomArr = atom(dropdownAtomArr(languageData.length));
 
@@ -171,12 +171,12 @@ const LanguagesDropdown = () => {
 };
 
 const categoryData: [string, string][] = [
-  ["Serif", "serif"],
-  ["Sans Serif", "sans-serif"],
-  ["Display", "display"],
-  ["Handwriting", "handwriting"],
-  ["Monospace", "monospace"],
-  ["Other", "other"],
+  ['Serif', 'serif'],
+  ['Sans Serif', 'sans-serif'],
+  ['Display', 'display'],
+  ['Handwriting', 'handwriting'],
+  ['Monospace', 'monospace'],
+  ['Other', 'other'],
 ];
 const categoryAtomArr = atom(dropdownAtomArr(categoryData.length));
 

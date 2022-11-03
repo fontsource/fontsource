@@ -1,21 +1,21 @@
-import { IconSearch } from "@components";
-import type { TextInputProps } from "@mantine/core";
-import { createStyles, TextInput } from "@mantine/core";
-import { useFocusWithin } from "@mantine/hooks";
-import { useState } from "react";
-import { useSearchBox } from "react-instantsearch-hooks-web";
+import { IconSearch } from '@components';
+import type { TextInputProps } from '@mantine/core';
+import { createStyles, TextInput } from '@mantine/core';
+import { useFocusWithin } from '@mantine/hooks';
+import { useState } from 'react';
+import { useSearchBox } from 'react-instantsearch-hooks-web';
 
 const useStyles = createStyles(theme => ({
   wrapper: {
-    paddingLeft: "24px",
-    borderRadius: "4px 0px 0px 0px",
+    paddingLeft: '24px',
+    borderRadius: '4px 0px 0px 0px',
     borderBottom: `1px solid ${
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.border[1]
         : theme.colors.border[0]
     }`,
 
-    "&:focus-within": {
+    '&:focus-within': {
       borderColor: theme.colors.purple[0],
     },
   },
@@ -54,15 +54,15 @@ const SearchBar = ({ ...others }: TextInputProps) => {
       autoComplete="off"
       styles={theme => ({
         input: {
-          padding: "24px",
+          padding: '24px',
           backgroundColor:
-            theme.colorScheme === "dark"
+            theme.colorScheme === 'dark'
               ? theme.colors.background[2]
               : theme.colors.background[0],
 
-          height: "64px",
+          height: '64px',
 
-          "&:focus-within": {
+          '&:focus-within': {
             color: theme.colors.purple[0],
           },
         },

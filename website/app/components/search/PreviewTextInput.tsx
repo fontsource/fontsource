@@ -1,78 +1,78 @@
-import { IconCaret } from "@components";
-import type { DividerProps } from "@mantine/core";
+import { IconCaret } from '@components';
+import type { DividerProps } from '@mantine/core';
 import {
   Button,
   createStyles,
   Divider as MantineDivider,
   Menu,
   TextInput,
-} from "@mantine/core";
-import { useAtom } from "jotai";
-import { useEffect } from "react";
+} from '@mantine/core';
+import { useAtom } from 'jotai';
+import { useEffect } from 'react';
 
 import {
   previewInputViewAtom,
   previewLabelAtom,
   previewTypingAtom,
   previewValueAtom,
-} from "./atoms";
+} from './atoms';
 
 const useStyles = createStyles(theme => ({
   wrapper: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "0px 24px",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '0px 24px',
     backgroundColor:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.background[2]
         : theme.colors.background[0],
     borderBottom: `1px solid ${
-      theme.colorScheme === "dark" ? "#2C3651" : "#E1E3EC"
+      theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
     }`,
     borderLeft: `1px solid ${
-      theme.colorScheme === "dark" ? "#2C3651" : "#E1E3EC"
+      theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
     }`,
     borderRight: `1px solid ${
-      theme.colorScheme === "dark" ? "#2C3651" : "#E1E3EC"
+      theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
     }`,
 
-    "&:focus-within": {
+    '&:focus-within': {
       borderBottomColor: theme.colors.purple[0],
     },
   },
 
   button: {
-    padding: "2px 16px",
-    height: "40px",
+    padding: '2px 16px',
+    height: '40px',
 
     backgroundColor:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.background[2]
         : theme.colors.background[0],
 
     color:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.text[0]
         : theme.colors.text[1],
 
     fontWeight: 400,
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor: theme.colors.purpleHover[0],
     },
   },
 
   separator: {
-    boxSizing: "border-box",
-    textAlign: "left",
-    width: "100%",
-    padding: "0px 2px",
+    boxSizing: 'border-box',
+    textAlign: 'left',
+    width: '100%',
+    padding: '0px 2px',
   },
 
   separatorLabel: {
     color:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.dark[3]
         : theme.colors.gray[5],
   },
@@ -121,8 +121,8 @@ const PreviewSelector = () => {
   const [, setInputViewTyping] = useAtom(previewTypingAtom);
 
   useEffect(() => {
-    if (label !== "Custom") {
-      setInputView("");
+    if (label !== 'Custom') {
+      setInputView('');
     }
   }, [label, setInputView]);
 
@@ -135,7 +135,7 @@ const PreviewSelector = () => {
             rightIcon={<IconCaret />}
             styles={{
               inner: {
-                justifyContent: "space-between",
+                justifyContent: 'space-between',
               },
             }}
           >
@@ -192,11 +192,11 @@ const PreviewSelector = () => {
         variant="unstyled"
         styles={theme => ({
           root: {
-            width: "60%",
+            width: '60%',
           },
           input: {
             backgroundColor:
-              theme.colorScheme === "dark"
+              theme.colorScheme === 'dark'
                 ? theme.colors.background[2]
                 : theme.colors.background[0],
           },
