@@ -184,15 +184,5 @@
   "./fonts/google/nunito/files/nunito-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/nunito/files/nunito-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/nunito/files/nunito-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/nunito/files/nunito-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/nunito/files/nunito-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/nunito/files/nunito-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/nunito/files/nunito-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/nunito/files/nunito-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/nunito/files/nunito-latin-variable-full-normal.woff2",
-  "./fonts/google/nunito/files/nunito-cyrillic-ext-variable-full-italic.woff2",
-  "./fonts/google/nunito/files/nunito-cyrillic-variable-full-italic.woff2",
-  "./fonts/google/nunito/files/nunito-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/nunito/files/nunito-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/nunito/files/nunito-latin-variable-full-italic.woff2"
+  "./fonts/google/nunito/files/nunito-latin-variable-wghtOnly-italic.woff2"
 ]

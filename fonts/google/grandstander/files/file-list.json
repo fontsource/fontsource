@@ -130,11 +130,5 @@
   "./fonts/google/grandstander/files/grandstander-latin-variable-wghtOnly-normal.woff2",
   "./fonts/google/grandstander/files/grandstander-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/grandstander/files/grandstander-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/grandstander/files/grandstander-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/grandstander/files/grandstander-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/grandstander/files/grandstander-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/grandstander/files/grandstander-latin-variable-full-normal.woff2",
-  "./fonts/google/grandstander/files/grandstander-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/grandstander/files/grandstander-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/grandstander/files/grandstander-latin-variable-full-italic.woff2"
+  "./fonts/google/grandstander/files/grandstander-latin-variable-wghtOnly-italic.woff2"
 ]

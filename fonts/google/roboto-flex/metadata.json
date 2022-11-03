@@ -19,8 +19,8 @@
     "YTLC": { "default": "514", "min": "416", "max": "570", "step": "1" },
     "YTUC": { "default": "712", "min": "528", "max": "760", "step": "1" }
   },
-  "lastModified": "2022-05-05",
-  "version": "v8",
+  "lastModified": "2022-09-22",
+  "version": "v9",
   "category": "sans-serif",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

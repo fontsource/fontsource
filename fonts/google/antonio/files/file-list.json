@@ -35,7 +35,5 @@
   "./fonts/google/antonio/files/antonio-all-700-normal.woff",
   "./fonts/google/antonio/files/antonio-latin-700-normal.woff2",
   "./fonts/google/antonio/files/antonio-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/antonio/files/antonio-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/antonio/files/antonio-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/antonio/files/antonio-latin-variable-full-normal.woff2"
+  "./fonts/google/antonio/files/antonio-latin-variable-wghtOnly-normal.woff2"
 ]

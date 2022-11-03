@@ -29,8 +29,5 @@
   "./fonts/google/noto-sans-lisu/files/noto-sans-lisu-latin-700-normal.woff2",
   "./fonts/google/noto-sans-lisu/files/noto-sans-lisu-lisu-variable-wghtOnly-normal.woff2",
   "./fonts/google/noto-sans-lisu/files/noto-sans-lisu-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-lisu/files/noto-sans-lisu-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/noto-sans-lisu/files/noto-sans-lisu-lisu-variable-full-normal.woff2",
-  "./fonts/google/noto-sans-lisu/files/noto-sans-lisu-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/noto-sans-lisu/files/noto-sans-lisu-latin-variable-full-normal.woff2"
+  "./fonts/google/noto-sans-lisu/files/noto-sans-lisu-latin-variable-wghtOnly-normal.woff2"
 ]

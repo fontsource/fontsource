@@ -36,8 +36,5 @@
   "./fonts/google/space-grotesk/files/space-grotesk-latin-700-normal.woff2",
   "./fonts/google/space-grotesk/files/space-grotesk-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/space-grotesk/files/space-grotesk-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/space-grotesk/files/space-grotesk-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/space-grotesk/files/space-grotesk-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/space-grotesk/files/space-grotesk-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/space-grotesk/files/space-grotesk-latin-variable-full-normal.woff2"
+  "./fonts/google/space-grotesk/files/space-grotesk-latin-variable-wghtOnly-normal.woff2"
 ]

@@ -69,10 +69,5 @@
   "./fonts/google/oswald/files/oswald-cyrillic-variable-wghtOnly-normal.woff2",
   "./fonts/google/oswald/files/oswald-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/oswald/files/oswald-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/oswald/files/oswald-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/oswald/files/oswald-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/oswald/files/oswald-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/oswald/files/oswald-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/oswald/files/oswald-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/oswald/files/oswald-latin-variable-full-normal.woff2"
+  "./fonts/google/oswald/files/oswald-latin-variable-wghtOnly-normal.woff2"
 ]

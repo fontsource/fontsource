@@ -35,7 +35,6 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - material-icons-rounded
 - material-icons-sharp
 - material-icons-two-tone
-- noto-color-emoji
 
 ## Other
 
@@ -71,7 +70,11 @@ Variable fonts from Google are included. Supported list [here](https://fonts.goo
 - mononoki
 - norwester
 - noto-mono
+- open-sauce-one
+- open-sauce-sans
+- open-sauce-two
 - opendyslexic
+- peace-sans
 - syne-italic
 - unifont
 - vazir

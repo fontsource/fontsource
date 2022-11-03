@@ -140,7 +140,7 @@ const variableLinks = (fontId: string): DownloadLinks[] => {
   if (fontVariable.variants.wght)
     newVariants.wghtOnly = fontVariable.variants.wght;
 
-  newVariants.full = fontVariable.variants.full;
+  if (fontVariable.variants.full) newVariants.full = fontVariable.variants.full;
 
   const downloadURLPairsVariable = pairGenerator(newVariants);
 

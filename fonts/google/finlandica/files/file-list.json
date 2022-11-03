@@ -78,13 +78,5 @@
   "./fonts/google/finlandica/files/finlandica-cyrillic-ext-variable-wghtOnly-italic.woff2",
   "./fonts/google/finlandica/files/finlandica-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/finlandica/files/finlandica-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/finlandica/files/finlandica-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/finlandica/files/finlandica-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/finlandica/files/finlandica-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/finlandica/files/finlandica-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/finlandica/files/finlandica-latin-variable-full-normal.woff2",
-  "./fonts/google/finlandica/files/finlandica-cyrillic-ext-variable-full-italic.woff2",
-  "./fonts/google/finlandica/files/finlandica-cyrillic-variable-full-italic.woff2",
-  "./fonts/google/finlandica/files/finlandica-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/finlandica/files/finlandica-latin-variable-full-italic.woff2"
+  "./fonts/google/finlandica/files/finlandica-latin-variable-wghtOnly-italic.woff2"
 ]

@@ -68,5 +68,6 @@ yarn-error.log
 .idea
 
 api/dist
+dist
 .npmrc
 *.tsbuildinfo

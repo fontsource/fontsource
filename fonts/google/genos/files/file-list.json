@@ -168,13 +168,5 @@
   "./fonts/google/genos/files/genos-cherokee-variable-wghtOnly-italic.woff2",
   "./fonts/google/genos/files/genos-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/genos/files/genos-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/genos/files/genos-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/genos/files/genos-cherokee-variable-full-normal.woff2",
-  "./fonts/google/genos/files/genos-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/genos/files/genos-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/genos/files/genos-latin-variable-full-normal.woff2",
-  "./fonts/google/genos/files/genos-cherokee-variable-full-italic.woff2",
-  "./fonts/google/genos/files/genos-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/genos/files/genos-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/genos/files/genos-latin-variable-full-italic.woff2"
+  "./fonts/google/genos/files/genos-latin-variable-wghtOnly-italic.woff2"
 ]

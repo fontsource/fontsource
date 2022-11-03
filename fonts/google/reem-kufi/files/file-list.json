@@ -20,7 +20,5 @@
   "./fonts/google/reem-kufi/files/reem-kufi-all-700-normal.woff",
   "./fonts/google/reem-kufi/files/reem-kufi-latin-700-normal.woff2",
   "./fonts/google/reem-kufi/files/reem-kufi-arabic-variable-wghtOnly-normal.woff2",
-  "./fonts/google/reem-kufi/files/reem-kufi-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/reem-kufi/files/reem-kufi-arabic-variable-full-normal.woff2",
-  "./fonts/google/reem-kufi/files/reem-kufi-latin-variable-full-normal.woff2"
+  "./fonts/google/reem-kufi/files/reem-kufi-latin-variable-wghtOnly-normal.woff2"
 ]

@@ -110,12 +110,5 @@
   "./fonts/google/arima/files/arima-tamil-variable-wghtOnly-normal.woff2",
   "./fonts/google/arima/files/arima-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/arima/files/arima-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/arima/files/arima-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/arima/files/arima-greek-ext-variable-full-normal.woff2",
-  "./fonts/google/arima/files/arima-greek-variable-full-normal.woff2",
-  "./fonts/google/arima/files/arima-malayalam-variable-full-normal.woff2",
-  "./fonts/google/arima/files/arima-tamil-variable-full-normal.woff2",
-  "./fonts/google/arima/files/arima-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/arima/files/arima-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/arima/files/arima-latin-variable-full-normal.woff2"
+  "./fonts/google/arima/files/arima-latin-variable-wghtOnly-normal.woff2"
 ]

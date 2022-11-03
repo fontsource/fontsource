@@ -42,6 +42,15 @@ const variable = (id: string): void => {
   });
 
   // full CSS Generation
+  // Temporary fix for standard fonts that don't have a full variant until v5
+  if (
+    "standard" in fontVariable.variants &&
+    fontVariable.variants.full === undefined
+  ) {
+    fontVariable.variants.full = fontVariable.variants.standard;
+    delete fontVariable.variants.standard;
+  }
+
   if ("full" in fontVariable.variants) {
     // Wdth requires a different CSS template (font-stretch)
     if ("wdth" in fontVariable.axes) {

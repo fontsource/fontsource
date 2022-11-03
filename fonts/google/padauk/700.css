@@ -5,7 +5,7 @@
   font-display: swap;
   font-weight: 700;
   src: url('./files/padauk-myanmar-700-normal.woff2') format('woff2'), url('./files/padauk-all-700-normal.woff') format('woff');
-  unicode-range: U+1000-109F,U+200C-200D,U+25CC;
+  unicode-range: U+1000-109F,U+200C-200D,U+25CC,U+A9E0-A9FE,U+AA60-AA7E;
 }
 /* padauk-latin-ext-700-normal*/
 @font-face {

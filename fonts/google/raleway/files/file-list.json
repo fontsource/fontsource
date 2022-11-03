@@ -206,15 +206,5 @@
   "./fonts/google/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2",
   "./fonts/google/raleway/files/raleway-vietnamese-variable-wghtOnly-italic.woff2",
   "./fonts/google/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2",
-  "./fonts/google/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2",
-  "./fonts/google/raleway/files/raleway-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/raleway/files/raleway-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/raleway/files/raleway-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/raleway/files/raleway-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/raleway/files/raleway-latin-variable-full-normal.woff2",
-  "./fonts/google/raleway/files/raleway-cyrillic-ext-variable-full-italic.woff2",
-  "./fonts/google/raleway/files/raleway-cyrillic-variable-full-italic.woff2",
-  "./fonts/google/raleway/files/raleway-vietnamese-variable-full-italic.woff2",
-  "./fonts/google/raleway/files/raleway-latin-ext-variable-full-italic.woff2",
-  "./fonts/google/raleway/files/raleway-latin-variable-full-italic.woff2"
+  "./fonts/google/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2"
 ]

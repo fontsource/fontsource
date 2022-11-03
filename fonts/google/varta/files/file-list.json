@@ -36,8 +36,5 @@
   "./fonts/google/varta/files/varta-latin-700-normal.woff2",
   "./fonts/google/varta/files/varta-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/varta/files/varta-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/varta/files/varta-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/varta/files/varta-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/varta/files/varta-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/varta/files/varta-latin-variable-full-normal.woff2"
+  "./fonts/google/varta/files/varta-latin-variable-wghtOnly-normal.woff2"
 ]

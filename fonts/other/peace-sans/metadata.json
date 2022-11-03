@@ -1,0 +1,15 @@
+{
+  "fontId": "peace-sans",
+  "fontName": "Peace Sans",
+  "subsets": ["latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-08-28",
+  "version": "1.0.0",
+  "category": "sans-serif",
+  "source": "https://www.fontsquirrel.com/fonts/peace-sans",
+  "license": "https://www.fontsquirrel.com/license/peace-sans",
+  "type": "other"
+}

@@ -33,7 +33,7 @@
     "flat": "^5.0.2",
     "fs-extra": "^10.0.1",
     "glob": "^7.2.0",
-    "google-font-metadata": "^4.0.2",
+    "google-font-metadata": "^4.1.2",
     "got": "^11.8.2",
     "is-absolute-url": "^3.0.3",
     "jsonfile": "^6.1.0",

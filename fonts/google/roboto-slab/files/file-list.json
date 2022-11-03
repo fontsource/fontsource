@@ -140,12 +140,5 @@
   "./fonts/google/roboto-slab/files/roboto-slab-greek-variable-wghtOnly-normal.woff2",
   "./fonts/google/roboto-slab/files/roboto-slab-vietnamese-variable-wghtOnly-normal.woff2",
   "./fonts/google/roboto-slab/files/roboto-slab-latin-ext-variable-wghtOnly-normal.woff2",
-  "./fonts/google/roboto-slab/files/roboto-slab-latin-variable-wghtOnly-normal.woff2",
-  "./fonts/google/roboto-slab/files/roboto-slab-cyrillic-ext-variable-full-normal.woff2",
-  "./fonts/google/roboto-slab/files/roboto-slab-cyrillic-variable-full-normal.woff2",
-  "./fonts/google/roboto-slab/files/roboto-slab-greek-ext-variable-full-normal.woff2",
-  "./fonts/google/roboto-slab/files/roboto-slab-greek-variable-full-normal.woff2",
-  "./fonts/google/roboto-slab/files/roboto-slab-vietnamese-variable-full-normal.woff2",
-  "./fonts/google/roboto-slab/files/roboto-slab-latin-ext-variable-full-normal.woff2",
-  "./fonts/google/roboto-slab/files/roboto-slab-latin-variable-full-normal.woff2"
+  "./fonts/google/roboto-slab/files/roboto-slab-latin-variable-wghtOnly-normal.woff2"
 ]
