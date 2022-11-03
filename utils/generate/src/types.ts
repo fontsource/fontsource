@@ -1,6 +1,6 @@
 export interface Axes {
-	min: number;
-	max: number;
+	min: number | string;
+	max: number | string;
 }
 
 export interface Source {
@@ -9,8 +9,8 @@ export interface Source {
 }
 
 export interface Variable {
-	wght?: number[];
-	stretch?: Axes;
+	wght?: Axes;
+	stretch?: Axes; // wdth
 	slnt?: Axes;
 }
 
@@ -24,21 +24,4 @@ export interface FontObject {
 	unicodeRange?: string;
 	comment?: string;
 	spacer?: string;
-}
-
-export interface UnicodeRange {
-	[subset: string]: string;
-}
-
-export interface FontMetadata {
-	family: string;
-	id?: string;
-	styles: string[];
-	display: string;
-	weights: number[];
-	formats: string[];
-	subsets: string[];
-	variable?: Variable;
-	path?: string;
-	unicodeRange?: UnicodeRange;
 }

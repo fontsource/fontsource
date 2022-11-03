@@ -1,6 +1,6 @@
 {
   "name": "@fontsource-utils/generate",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A CSS font-face generator",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
