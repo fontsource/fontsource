@@ -1,0 +1,9 @@
+/* klima-latin-200-normal*/
+@font-face {
+  font-family: 'Klima';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url('./files/klima-latin-200-normal.woff2') format('woff2'), url('./files/klima-latin-200-normal.woff') format('woff');
+  
+}
