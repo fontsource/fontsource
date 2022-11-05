@@ -2,11 +2,11 @@ import { Global } from '@mantine/core';
 
 export const GlobalStyles = () => (
   <Global
-    styles={theme => ({
+    styles={(theme) => ({
       header: {
         backgroundColor:
           theme.colorScheme === 'dark'
-            ? theme.colors.background[3]
+            ? theme.colors.background[5]
             : theme.colors.background[1],
       },
       body: {
@@ -17,7 +17,7 @@ export const GlobalStyles = () => (
 
         backgroundColor:
           theme.colorScheme === 'dark'
-            ? theme.colors.background[2]
+            ? theme.colors.background[4]
             : theme.colors.background[0],
 
         fontSize: theme.fontSizes.md,

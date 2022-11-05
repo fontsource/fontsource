@@ -8,14 +8,14 @@ import { InfiniteHits } from '~/components/search/Hits';
 
 const searchClient = algoliasearch(
   'WNATE69PVR',
-  '8b36fe56fca654afaeab5e6f822c14bd'
+  '8b36fe56fca654afaeab5e6f822c14bd',
 );
 
-const useStyles = createStyles(theme => ({
+const useStyles = createStyles((theme) => ({
   background: {
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[3]
+        ? theme.colors.background[5]
         : theme.colors.background[1],
   },
 

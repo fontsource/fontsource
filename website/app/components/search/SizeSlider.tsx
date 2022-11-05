@@ -8,12 +8,12 @@ import { useAtom } from 'jotai';
 
 import { sizeAtom } from './atoms';
 
-const useStyles = createStyles(theme => ({
+const useStyles = createStyles((theme) => ({
   wrapper: {
     padding: '0px 24px',
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[2]
+        ? theme.colors.background[4]
         : theme.colors.background[0],
     borderBottom: `1px solid ${
       theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'

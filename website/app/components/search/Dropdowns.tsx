@@ -12,7 +12,7 @@ import { atom, useAtom } from 'jotai';
 import type { DropdownState } from './atoms';
 import { dropdownAtomArr, filterAtom } from './atoms';
 
-const useStyles = createStyles(theme => ({
+const useStyles = createStyles((theme) => ({
   button: {
     padding: '2px 16px',
     height: '40px',
@@ -26,7 +26,7 @@ const useStyles = createStyles(theme => ({
 
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[2]
+        ? theme.colors.background[4]
         : theme.colors.background[0],
 
     color:
@@ -66,7 +66,7 @@ const DropdownItem = ({
         label={label}
         value={`${valuePrefix}${value}`}
         checked={checked}
-        onChange={event => {
+        onChange={(event) => {
           setChecked(!checked);
           filter(event.target.value);
         }}

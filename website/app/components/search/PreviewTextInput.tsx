@@ -17,7 +17,7 @@ import {
   previewValueAtom,
 } from './atoms';
 
-const useStyles = createStyles(theme => ({
+const useStyles = createStyles((theme) => ({
   wrapper: {
     display: 'flex',
     alignItems: 'center',
@@ -25,7 +25,7 @@ const useStyles = createStyles(theme => ({
     padding: '0px 24px',
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[2]
+        ? theme.colors.background[4]
         : theme.colors.background[0],
     borderBottom: `1px solid ${
       theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
@@ -48,7 +48,7 @@ const useStyles = createStyles(theme => ({
 
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[2]
+        ? theme.colors.background[4]
         : theme.colors.background[0],
 
     color:
@@ -190,14 +190,14 @@ const PreviewSelector = () => {
         onChange={setInputViewTyping}
         placeholder="Type something"
         variant="unstyled"
-        styles={theme => ({
+        styles={(theme) => ({
           root: {
             width: '60%',
           },
           input: {
             backgroundColor:
               theme.colorScheme === 'dark'
-                ? theme.colors.background[2]
+                ? theme.colors.background[4]
                 : theme.colors.background[0],
           },
         })}

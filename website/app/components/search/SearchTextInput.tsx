@@ -5,7 +5,7 @@ import { useFocusWithin } from '@mantine/hooks';
 import { useState } from 'react';
 import { useSearchBox } from 'react-instantsearch-hooks-web';
 
-const useStyles = createStyles(theme => ({
+const useStyles = createStyles((theme) => ({
   wrapper: {
     paddingLeft: '24px',
     borderRadius: '4px 0px 0px 0px',
@@ -52,12 +52,12 @@ const SearchBar = ({ ...others }: TextInputProps) => {
       variant="unstyled"
       className={classes.wrapper}
       autoComplete="off"
-      styles={theme => ({
+      styles={(theme) => ({
         input: {
           padding: '24px',
           backgroundColor:
             theme.colorScheme === 'dark'
-              ? theme.colors.background[2]
+              ? theme.colors.background[4]
               : theme.colors.background[0],
 
           height: '64px',

@@ -22,11 +22,11 @@ import { PreviewSelector } from './PreviewTextInput';
 import { SearchBar } from './SearchTextInput';
 import { SizeSlider } from './SizeSlider';
 
-const useStyles = createStyles(theme => ({
+const useStyles = createStyles((theme) => ({
   container: {
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[2]
+        ? theme.colors.background[4]
         : theme.colors.background[0],
     borderRadius: '4px',
     height: 128,
@@ -40,7 +40,7 @@ const useStyles = createStyles(theme => ({
     padding: '0px 24px',
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[2]
+        ? theme.colors.background[4]
         : theme.colors.background[0],
 
     '&:focus-within': {
@@ -54,7 +54,7 @@ const useStyles = createStyles(theme => ({
 
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[2]
+        ? theme.colors.background[4]
         : theme.colors.background[0],
 
     color:
@@ -107,7 +107,7 @@ const Filters = () => {
             label="Show only variable fonts"
             value="variable:true"
             checked={variable}
-            onChange={event => {
+            onChange={(event) => {
               setVariable(!variable);
               setFilterItems(event.target.value);
             }}
