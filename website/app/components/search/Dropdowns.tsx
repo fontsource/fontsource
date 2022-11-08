@@ -7,8 +7,22 @@ import {
 import type { PrimitiveAtom } from 'jotai';
 import { atom, useAtom } from 'jotai';
 
-import type { DropdownState } from './atoms';
 import { dropdownAtomArr, filterAtom } from './atoms';
+
+// Gives a truncated label for multiple selected items
+const getLabel = (data: string[][], state: PrimitiveAtom<boolean>[], placeholder: string) => {
+  const checked = data.filter((_, i) => {
+    const [checked] = useAtom(state[i])
+    return checked
+  });
+  if (checked.length === 0) 
+    return placeholder;
+  
+  if (checked.length === 1) 
+    return checked[0][0];
+  
+  return `${checked[0][0]} + ${checked.length - 1}`;
+ }
 
 interface FilterChange {
   filter: (event: string) => void;
@@ -40,39 +54,6 @@ const DropdownItem = ({
         }}
       />
     </Menu.Item>
-  );
-};
-
-interface DropdownProps {
-  data: string[][];
-  placeholder: string;
-  // Algolia filter prefixes
-  valuePrefix: string;
-  checkboxAtom: PrimitiveAtom<DropdownState>;
-}
-
-const DropdownWrapper = ({
-  data,
-  placeholder,
-  valuePrefix,
-  checkboxAtom,
-}: DropdownProps) => {
-  // We have to persist dropdown state across re-renders
-  const [checkboxState] = useAtom(checkboxAtom);
-  const [, setFilterItems] = useAtom(filterAtom); 
-  return (
-    <Dropdown label={placeholder}>
-          {data.map(([label, value], index) => (
-            <DropdownItem
-              label={label}
-              value={value}
-              valuePrefix={valuePrefix}
-              filter={setFilterItems}
-              key={value}
-              state={checkboxState[index]}
-            />
-          ))}
-    </Dropdown>
   );
 };
 
@@ -109,13 +90,24 @@ const languageData: [string, string][] = [
 const languageAtomArr = atom(dropdownAtomArr(languageData.length));
 
 const LanguagesDropdown = () => {
+    // We have to persist dropdown state across re-renders
+  const [checkboxState] = useAtom(languageAtomArr);
+  const [, setFilterItems] = useAtom(filterAtom); 
+  const placeholder = 'All languages';
+  const valuePrefix = 'subsets:';
   return (
-    <DropdownWrapper
-      checkboxAtom={languageAtomArr}
-      data={languageData}
-      placeholder="All languages"
-      valuePrefix="subsets:"
-    />
+    <Dropdown label={getLabel(languageData, checkboxState, placeholder)}>
+          {languageData.map(([label, value], index) => (
+            <DropdownItem
+              label={label}
+              value={value}
+              valuePrefix={valuePrefix}
+              filter={setFilterItems}
+              key={value}
+              state={checkboxState[index]}
+            />
+          ))}
+    </Dropdown>
   );
 };
 
@@ -130,13 +122,24 @@ const categoryData: [string, string][] = [
 const categoryAtomArr = atom(dropdownAtomArr(categoryData.length));
 
 const CategoriesDropdown = () => {
+  // We have to persist dropdown state across re-renders
+  const [checkboxState] = useAtom(categoryAtomArr);
+  const [, setFilterItems] = useAtom(filterAtom); 
+  const placeholder = 'All categories';
+  const valuePrefix = 'category:';
   return (
-    <DropdownWrapper
-      checkboxAtom={categoryAtomArr}
-      data={categoryData}
-      placeholder="All categories"
-      valuePrefix="category:"
-    />
+    <Dropdown label={getLabel(categoryData, checkboxState, placeholder)}>
+          {categoryData.map(([label, value], index) => (
+            <DropdownItem
+              label={label}
+              value={value}
+              valuePrefix={valuePrefix}
+              filter={setFilterItems}
+              key={value}
+              state={checkboxState[index]}
+            />
+          ))}
+    </Dropdown>
   );
 };
 

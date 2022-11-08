@@ -24,6 +24,7 @@ const filterAtom = atom(
 	(get) => get(filterBaseAtom),
 	(get, set, facet: string) => {
 		const filterItems = get(filterBaseAtom)
+		// If already includes, remove from array
 		if (filterItems.includes(facet)) {
 			set(filterBaseAtom, filterItems.filter((f) => f !== facet))
 		} else {
