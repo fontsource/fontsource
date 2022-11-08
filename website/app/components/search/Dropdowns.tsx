@@ -1,46 +1,14 @@
-import { IconCaret } from '@components';
+
+import { Dropdown } from '@components';
 import {
-  Button,
   Checkbox,
-  createStyles,
   Menu,
-  ScrollArea,
 } from '@mantine/core';
 import type { PrimitiveAtom } from 'jotai';
 import { atom, useAtom } from 'jotai';
 
 import type { DropdownState } from './atoms';
 import { dropdownAtomArr, filterAtom } from './atoms';
-
-const useStyles = createStyles((theme) => ({
-  button: {
-    padding: '2px 16px',
-    height: '40px',
-    width: '240px',
-    border: `1px solid ${
-      theme.colorScheme === 'dark'
-        ? theme.colors.border[1]
-        : theme.colors.border[0]
-    }`,
-    borderRadius: '4px',
-
-    backgroundColor:
-      theme.colorScheme === 'dark'
-        ? theme.colors.background[4]
-        : theme.colors.background[0],
-
-    color:
-      theme.colorScheme === 'dark'
-        ? theme.colors.text[0]
-        : theme.colors.text[1],
-
-    fontWeight: 400,
-
-    '&:hover': {
-      backgroundColor: theme.colors.purpleHover[0],
-    },
-  },
-}));
 
 interface FilterChange {
   filter: (event: string) => void;
@@ -83,34 +51,17 @@ interface DropdownProps {
   checkboxAtom: PrimitiveAtom<DropdownState>;
 }
 
-const Dropdown = ({
+const DropdownWrapper = ({
   data,
   placeholder,
   valuePrefix,
   checkboxAtom,
 }: DropdownProps) => {
-  const { classes } = useStyles();
   // We have to persist dropdown state across re-renders
   const [checkboxState] = useAtom(checkboxAtom);
-  const [, setFilterItems] = useAtom(filterAtom);
-
+  const [, setFilterItems] = useAtom(filterAtom); 
   return (
-    <Menu shadow="md" width={240} closeOnItemClick={false}>
-      <Menu.Target>
-        <Button
-          className={classes.button}
-          rightIcon={<IconCaret />}
-          styles={{
-            inner: {
-              justifyContent: 'space-between',
-            },
-          }}
-        >
-          {placeholder}
-        </Button>
-      </Menu.Target>
-      <Menu.Dropdown>
-        <ScrollArea style={{ height: '240px' }}>
+    <Dropdown label={placeholder}>
           {data.map(([label, value], index) => (
             <DropdownItem
               label={label}
@@ -121,9 +72,7 @@ const Dropdown = ({
               state={checkboxState[index]}
             />
           ))}
-        </ScrollArea>
-      </Menu.Dropdown>
-    </Menu>
+    </Dropdown>
   );
 };
 
@@ -161,7 +110,7 @@ const languageAtomArr = atom(dropdownAtomArr(languageData.length));
 
 const LanguagesDropdown = () => {
   return (
-    <Dropdown
+    <DropdownWrapper
       checkboxAtom={languageAtomArr}
       data={languageData}
       placeholder="All languages"
@@ -182,7 +131,7 @@ const categoryAtomArr = atom(dropdownAtomArr(categoryData.length));
 
 const CategoriesDropdown = () => {
   return (
-    <Dropdown
+    <DropdownWrapper
       checkboxAtom={categoryAtomArr}
       data={categoryData}
       placeholder="All categories"

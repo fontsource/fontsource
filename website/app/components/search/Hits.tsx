@@ -16,6 +16,7 @@ import {
 import useFontFaceObserver from 'use-font-face-observer';
 
 import { previewValueAtom, sizeAtom } from './atoms';
+import { Sort } from './Sort';
 
 interface Hit {
   hit: {
@@ -155,6 +156,7 @@ const InfiniteHits = () => {
 
   return (
     <Box>
+      <Sort count={results.nbHits} />
       <SimpleGrid
         breakpoints={[
           // e.g. 316px * 4 + 16px gap * 3
