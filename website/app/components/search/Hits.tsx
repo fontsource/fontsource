@@ -15,7 +15,7 @@ import {
 } from 'react-instantsearch-hooks-web';
 import useFontFaceObserver from 'use-font-face-observer';
 
-import { previewValueAtom, sizeAtom } from './atoms';
+import { displayAtom, previewValueAtom, sizeAtom } from './atoms';
 import { Sort } from './Sort';
 
 interface Hit {
@@ -48,8 +48,6 @@ const useStyles = createStyles(theme => ({
     marginRight: 'auto',
     overflowWrap: 'anywhere',
 
-    height: '332px',
-    width: '316px',
     border: `1px solid ${
       theme.colorScheme === 'dark'
         ? theme.colors.border[1]
@@ -70,6 +68,7 @@ interface HitComponentProps extends Hit {
 const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
   const { classes } = useStyles();
   const fontCss = useFetcher();
+  const [display] = useAtom(displayAtom);
   // useFetcher only knows when the CSS is loaded, but not the font files themselves
   const isFontLoaded = useFontFaceObserver(
     [
@@ -99,7 +98,10 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
   }, [fontCss, hit.fontId, isFontLoaded]);
 
   return (
-    <Box className={classes.wrapper}>
+    <Box className={classes.wrapper} style={{
+      height: display == 'grid' ? '332px' : '150px',
+      width: '100%',
+    }}>
       <Skeleton visible={loading}>
         <Text size={fontSize} style={{ fontFamily: hit.fontName }}>
           {previewText}
@@ -120,6 +122,7 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
 const InfiniteHits = () => {
   const [previewValue] = useAtom(previewValueAtom);
   const [size] = useAtom(sizeAtom);
+  const [display] = useAtom(displayAtom);
 
   // Infinite Scrolling
   const { results, indexUiState } = useInstantSearch();
@@ -154,17 +157,20 @@ const InfiniteHits = () => {
     );
   }
 
-  return (
-    <Box>
-      <Sort count={results.nbHits} />
-      <SimpleGrid
-        breakpoints={[
+  // Grid view breakpoints
+  const breakpointArr = display == 'grid' ? [
           // e.g. 316px * 4 + 16px gap * 3
           { minWidth: 1312, cols: 4, spacing: 16 },
           { minWidth: 980, cols: 3, spacing: 16 },
           { minWidth: 648, cols: 2, spacing: 16 },
           { minWidth: 0, cols: 1, spacing: 16 },
-        ]}
+        ] : [{ minWidth: 0, cols: 1, spacing: 16 }];
+
+  return (
+    <Box>
+      <Sort count={results.nbHits} />
+      <SimpleGrid
+        breakpoints={breakpointArr}
       >
         {hits.map(hit => (
           <HitComponent

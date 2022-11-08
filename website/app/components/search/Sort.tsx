@@ -1,6 +1,8 @@
-import { Dropdown, IconCaret } from '@components';
-import { Button, createStyles, Group, Menu, ScrollArea,Text } from '@mantine/core';
-import { useState } from 'react';
+import { Dropdown, IconGrid, IconList } from '@components';
+import { Center, createStyles, Group, SegmentedControl, Text } from '@mantine/core';
+import { useAtom } from 'jotai';
+
+import { displayAtom, sortAtom } from './atoms';
 
 const useStyles = createStyles((theme) => ({
   container: {
@@ -56,14 +58,22 @@ interface SortProps {
 
 const Sort = ({ count }: SortProps) => {
   const { classes } = useStyles();
-  const [currentItem, setCurrentItem] = useState('Popular first');
+  const [currentItem, setCurrentItem] = useAtom(sortAtom);
+  const [display, setDisplay] = useAtom(displayAtom);
   return (
     <div className={classes.wrapper}>
       <Text>{count} families loaded</Text>
       <Group>
-        <Dropdown label={currentItem} width={120}>
+        <Dropdown label={currentItem} width={120}> 
           Wow
         </Dropdown>
+        <Group>
+          <Text>Display</Text>
+          <SegmentedControl value={display} onChange={setDisplay} data={[
+            { label: (<Center><IconGrid height={20}/></Center>), value: 'grid' },
+            { label: (<Center><IconList height={20} /></Center>), value: 'list' },
+          ]} />
+        </Group>
       </Group>
     </div>
   );

@@ -33,6 +33,10 @@ const filterAtom = atom(
 	}
 )
 
-export { dropdownAtomArr, filterAtom, filterBaseAtom, previewInputViewAtom, previewLabelAtom, previewTypingAtom, previewValueAtom, sizeAtom }
+// Sorting atoms
+const sortAtom = atom('popularity')
+const displayAtom = atom('grid')
+
+export { displayAtom, dropdownAtomArr, filterAtom, filterBaseAtom, previewInputViewAtom, previewLabelAtom, previewTypingAtom, previewValueAtom, sizeAtom,sortAtom }
 export type { DropdownState }
 
