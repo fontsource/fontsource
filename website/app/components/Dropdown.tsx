@@ -58,7 +58,7 @@ const Dropdown = ({ label, icon, width, children }: DropdownProps) => {
         </Button>
       </Menu.Target>
       <Menu.Dropdown>
-        <ScrollArea style={{ height: '240px' }}>
+        <ScrollArea style={{ maxHeight: '240px' }}>
           {children}
         </ScrollArea>
       </Menu.Dropdown>

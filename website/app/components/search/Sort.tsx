@@ -1,5 +1,5 @@
 import { Dropdown, IconGrid, IconList } from '@components';
-import { Center, createStyles, Group, SegmentedControl, Text } from '@mantine/core';
+import { Center, createStyles, Group, Menu, SegmentedControl, Text } from '@mantine/core';
 import { useAtom } from 'jotai';
 
 import { displayAtom, sortAtom } from './atoms';
@@ -19,7 +19,7 @@ const useStyles = createStyles((theme) => ({
     height: 64,
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0px 24px',
+    paddingBottom: '10px',
     backgroundColor:
       theme.colorScheme === 'dark'
         ? theme.colors.background[4]
@@ -52,26 +52,39 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+
+interface SortItemProps {
+  value: string
+  setState: (value: any) => void
+}
+
+const SortItem = ({ value, setState }: SortItemProps) => (
+  <Menu.Item style={{width: '100%'}} onClick={() => setState(value)}>{value}</Menu.Item>
+)
+
 interface SortProps {
   count: number;
 }
 
 const Sort = ({ count }: SortProps) => {
   const { classes } = useStyles();
-  const [currentItem, setCurrentItem] = useAtom(sortAtom);
+  const [sortOrder, setSortOrder] = useAtom(sortAtom);
   const [display, setDisplay] = useAtom(displayAtom);
   return (
     <div className={classes.wrapper}>
       <Text>{count} families loaded</Text>
       <Group>
-        <Dropdown label={currentItem} width={120}> 
-          Wow
+        <Dropdown label={sortOrder} width={150}> 
+          <SortItem value="Most Popular" setState={setSortOrder} />
+          <SortItem value="Newest" setState={setSortOrder} />
+          <SortItem value="Name" setState={setSortOrder} />
+          <SortItem value="Random" setState={setSortOrder} />
         </Dropdown>
         <Group>
-          <Text>Display</Text>
-          <SegmentedControl value={display} onChange={setDisplay} data={[
-            { label: (<Center><IconGrid height={20}/></Center>), value: 'grid' },
-            { label: (<Center><IconList height={20} /></Center>), value: 'list' },
+          <Text size={15}>Display</Text>
+          <SegmentedControl value={display} onChange={setDisplay as (value: string) => void} data={[
+            { label: (<Center><IconGrid height={20} active={display === 'grid'} /></Center>), value: 'grid' },
+            { label: (<Center><IconList height={20} active={display === 'list'} /></Center>), value: 'list' },
           ]} />
         </Group>
       </Group>

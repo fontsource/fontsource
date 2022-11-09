@@ -34,8 +34,11 @@ const filterAtom = atom(
 )
 
 // Sorting atoms
-const sortAtom = atom('popularity')
-const displayAtom = atom('grid')
+// TODO: Add updater to create Algolia replicas for popular (download-stat-aggregator), latest and random
+type SortValues = 'Most Popular' | 'Newest' | 'Name' | 'Random' 
+const sortAtom = atom<SortValues>('Most Popular')
+type DisplayValues = 'list' | 'grid'
+const displayAtom = atom<DisplayValues>('grid')
 
 export { displayAtom, dropdownAtomArr, filterAtom, filterBaseAtom, previewInputViewAtom, previewLabelAtom, previewTypingAtom, previewValueAtom, sizeAtom,sortAtom }
 export type { DropdownState }
