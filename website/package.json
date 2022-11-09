@@ -11,9 +11,9 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/server": "^11.10.0",
+    "@fontsource-utils/generate": "workspace:0.1.0",
     "@fontsource/inter": "^4.5.12",
     "@fontsource/source-code-pro": "^4.5.12",
-    "@fontsource-utils/generate": "workspace:*",
     "@mantine/core": "^5.2.5",
     "@mantine/hooks": "^5.2.5",
     "@mantine/nprogress": "^5.2.5",
