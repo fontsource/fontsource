@@ -5,15 +5,6 @@ import { useAtom } from 'jotai';
 import { displayAtom, sortAtom } from './atoms';
 
 const useStyles = createStyles((theme) => ({
-  container: {
-    backgroundColor:
-      theme.colorScheme === 'dark'
-        ? theme.colors.background[4]
-        : theme.colors.background[0],
-    borderRadius: '4px',
-    height: 128,
-  },
-
   wrapper: {
     display: 'flex',
     height: 64,
@@ -30,25 +21,16 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  button: {
-    padding: '2px 16px',
-    height: '40px',
-
+  control: {
     backgroundColor:
       theme.colorScheme === 'dark'
-        ? theme.colors.background[4]
-        : theme.colors.background[0],
+        ? theme.colors.button[1]
+        : theme.colors.button[0],
+    borderRadius: '6px',
 
-    color:
-      theme.colorScheme === 'dark'
-        ? theme.colors.text[0]
-        : theme.colors.text[1],
-
-    fontWeight: 400,
-
-    '&:hover': {
-      backgroundColor: theme.colors.purpleHover[0],
-    },
+    label: {
+      padding: '5px'
+    }
   },
 }));
 
@@ -58,9 +40,11 @@ interface SortItemProps {
   setState: (value: any) => void
 }
 
-const SortItem = ({ value, setState }: SortItemProps) => (
-  <Menu.Item style={{width: '100%'}} onClick={() => setState(value)}>{value}</Menu.Item>
-)
+const SortItem = ({ value, setState }: SortItemProps) => {
+  return (
+    <Menu.Item style={{ width: '100%' }} onClick={() => setState(value)}>{value}</Menu.Item>
+  )
+}
 
 interface SortProps {
   count: number;
@@ -82,7 +66,8 @@ const Sort = ({ count }: SortProps) => {
         </Dropdown>
         <Group>
           <Text size={15}>Display</Text>
-          <SegmentedControl value={display} onChange={setDisplay as (value: string) => void} data={[
+          <SegmentedControl
+            className={classes.control} value={display} onChange={setDisplay as (value: string) => void} data={[
             { label: (<Center><IconGrid height={20} active={display === 'grid'} /></Center>), value: 'grid' },
             { label: (<Center><IconList height={20} active={display === 'list'} /></Center>), value: 'list' },
           ]} />
