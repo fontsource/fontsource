@@ -24,6 +24,7 @@ const filterAtom = atom(
 	(get) => get(filterBaseAtom),
 	(get, set, facet: string) => {
 		const filterItems = get(filterBaseAtom)
+		// If already includes, remove from array
 		if (filterItems.includes(facet)) {
 			set(filterBaseAtom, filterItems.filter((f) => f !== facet))
 		} else {
@@ -32,6 +33,13 @@ const filterAtom = atom(
 	}
 )
 
-export { dropdownAtomArr, filterAtom, filterBaseAtom, previewInputViewAtom, previewLabelAtom, previewTypingAtom, previewValueAtom, sizeAtom }
+// Sorting atoms
+// TODO: Add updater to create Algolia replicas for popular (download-stat-aggregator), latest and random
+type SortValues = 'Most Popular' | 'Newest' | 'Name' | 'Random' 
+const sortAtom = atom<SortValues>('Most Popular')
+type DisplayValues = 'list' | 'grid'
+const displayAtom = atom<DisplayValues>('grid')
+
+export { displayAtom, dropdownAtomArr, filterAtom, filterBaseAtom, previewInputViewAtom, previewLabelAtom, previewTypingAtom, previewValueAtom, sizeAtom,sortAtom }
 export type { DropdownState }
 

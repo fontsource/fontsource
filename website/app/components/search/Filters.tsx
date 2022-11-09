@@ -80,7 +80,7 @@ const Filters = () => {
   const [languageItems, setLanguageItems] = useAtom(languageAtomArr);
   const [categoryItems, setCategoryItems] = useAtom(categoryAtomArr);
 
-  useConfigure({ facetFilters: filterItems });
+  useConfigure({ filters: filterItems.join(' AND ') });
 
   return (
     <Box className={classes.container}>

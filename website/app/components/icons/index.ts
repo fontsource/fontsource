@@ -1,6 +1,8 @@
 export { IconCaret } from './Caret'
 export { IconDiscord } from './Discord';
 export { IconGithub } from './Github';
+export { IconGrid } from './Grid'
+export { IconList } from './List'
 export { IconMoon } from './Moon';
 export { IconSearch } from './Search'
 export { IconSun } from './Sun';
