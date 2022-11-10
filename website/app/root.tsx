@@ -2,7 +2,6 @@ import { AppShell } from '@components';
 import type { ColorScheme } from '@mantine/core';
 import {
   ColorSchemeProvider,
-  Container,
   createEmotionCache,
   MantineProvider,
 } from '@mantine/core';
@@ -21,7 +20,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useCatch,
   useLoaderData,
 } from '@remix-run/react';
 
@@ -52,7 +50,7 @@ interface DocumentProps {
   preferredColorScheme?: ColorScheme;
 }
 
-const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
+export const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
   // TODO use cookies to set color scheme to get around theme flashing on load
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'color-scheme',
@@ -107,26 +105,5 @@ export default function App() {
   );
 }
 
-export function CatchBoundary() {
-  const caught = useCatch();
 
-  return (
-    <Document title={`${caught.status} ${caught.statusText}`}>
-      <Container>
-        <p>
-          [CatchBoundary]: {caught.status} {caught.statusText}
-        </p>
-      </Container>
-    </Document>
-  );
-}
-
-export function ErrorBoundary({ error }: { error: Error }) {
-  return (
-    <Document title="Error!">
-      <Container>
-        <p>[ErrorBoundary]: There was an error: {error.message}</p>
-      </Container>
-    </Document>
-  );
-}
+export const unstable_shouldReload = () => false;
