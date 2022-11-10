@@ -60,7 +60,7 @@ const useStyles = createStyles((theme) => ({
     color: 'inherit',
     textDecoration: 'inherit',
 
-    transition: 'all 150ms ease-in-out',
+    transition: 'transform 150ms ease-in-out',
     '&:hover': {
       color:
         theme.colorScheme === 'dark'
