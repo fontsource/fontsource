@@ -7,7 +7,8 @@ import {
   Group,
   ScrollArea,
   SimpleGrid,
-  UnstyledButton} from '@mantine/core';
+  UnstyledButton,
+} from '@mantine/core';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { useConfigure } from 'react-instantsearch-hooks-web';
@@ -101,7 +102,6 @@ const Filters = () => {
         <PreviewSelector />
         <SizeSlider />
       </SimpleGrid>
-      <ScrollArea scrollbarSize={6} type="scroll">
       <Box className={classes.filters}>
         <Group position="center" noWrap>
           <CategoriesDropdown />
@@ -139,8 +139,7 @@ const Filters = () => {
             Clear all filters
           </Button>
         </Group>
-        </Box>
-        </ScrollArea>
+      </Box>
     </Box>
   );
 };
