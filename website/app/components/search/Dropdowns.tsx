@@ -50,7 +50,10 @@ const DropdownItem = ({
       <Checkbox
         label={label}
         checked={checked}
-        style={{ pointerEvents: 'none' }}
+        style={{
+          pointerEvents: 'none',
+          display: 'flex',
+        }}
       />
     </Menu.Item>
   );

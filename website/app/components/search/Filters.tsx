@@ -112,12 +112,16 @@ const Filters = () => {
             onClick={() => {
               setVariable(!variable);
               setFilterItems('variable:true');
-            }}>
-          <Checkbox
-            color="purple"
-            label="Show only variable fonts"
+            }}
+          >
+            <Checkbox
+              color="purple"
+              label="Show only variable fonts"
               checked={variable}
-              style={{pointerEvents: 'none'}}
+              style={{
+                pointerEvents: 'none',
+                display: 'flex',
+              }}
             />
           </UnstyledButton>
           <Button
