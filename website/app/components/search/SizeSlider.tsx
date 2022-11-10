@@ -23,6 +23,10 @@ const useStyles = createStyles((theme) => ({
     '&:focus-within': {
       borderColor: theme.colors.purple[0],
     },
+
+    [`@media (max-width: ${theme.breakpoints.md}px)`]: {
+      display: 'none'
+    },
   },
 }));
 

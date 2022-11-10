@@ -3,7 +3,7 @@ import { Button, createStyles, Menu, ScrollArea } from '@mantine/core';
 
 interface DropdownProps {
   label: string
-  width?: number
+  width?: number | string
   children: React.ReactNode
   icon?: React.ReactNode
 }

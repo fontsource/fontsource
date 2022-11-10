@@ -28,6 +28,10 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan('lg')]: {
       padding: '40px 40px',
     },
+
+    [theme.fn.smallerThan('xs')]: {
+      padding: '40px 24px',
+    }
   },
 }));
 
