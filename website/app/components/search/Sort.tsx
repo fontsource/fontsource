@@ -6,6 +6,7 @@ import {
   Menu,
   SegmentedControl,
   Text,
+  Tooltip,
 } from '@mantine/core';
 import { useAtom } from 'jotai';
 
@@ -33,7 +34,7 @@ const useStyles = createStyles((theme) => ({
 
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       display: 'none',
-    }
+    },
   },
 
   control: {
@@ -82,29 +83,31 @@ const Sort = ({ count }: SortProps) => {
         </Dropdown>
         <Group className={classes.displayGroup}>
           <Text size={15}>Display</Text>
-          <SegmentedControl
-            className={classes.control}
-            value={display}
-            onChange={setDisplay as (value: string) => void}
-            data={[
-              {
-                label: (
-                  <Center>
-                    <IconGrid height={20} active={display === 'grid'} />
-                  </Center>
-                ),
-                value: 'grid',
-              },
-              {
-                label: (
-                  <Center>
-                    <IconList height={20} active={display === 'list'} />
-                  </Center>
-                ),
-                value: 'list',
-              },
-            ]}
-          />
+          <Tooltip label={display === 'grid' ? 'Grid' : 'List'} openDelay={600} closeDelay={100}>
+            <SegmentedControl
+              className={classes.control}
+              value={display}
+              onChange={setDisplay as (value: string) => void}
+              data={[
+                {
+                  label: (
+                    <Center>
+                      <IconGrid height={20} active={display === 'grid'} />
+                    </Center>
+                  ),
+                  value: 'grid',
+                },
+                {
+                  label: (
+                    <Center>
+                      <IconList height={20} active={display === 'list'} />
+                    </Center>
+                  ),
+                  value: 'list',
+                },
+              ]}
+            />
+          </Tooltip>
         </Group>
       </Group>
     </div>
