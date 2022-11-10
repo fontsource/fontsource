@@ -41,15 +41,16 @@ const DropdownItem = ({
 }: DropdownItemProps) => {
   const [checked, setChecked] = useAtom(state);
   return (
-    <Menu.Item>
+    <Menu.Item
+      onClick={() => {
+        setChecked(!checked);
+        filter(`${valuePrefix}${value}`);
+      }}
+    >
       <Checkbox
         label={label}
-        value={`${valuePrefix}${value}`}
         checked={checked}
-        onChange={(event) => {
-          setChecked(!checked);
-          filter(event.target.value);
-        }}
+        style={{ pointerEvents: 'none' }}
       />
     </Menu.Item>
   );
@@ -92,14 +93,14 @@ const LanguagesDropdown = () => {
   const [checkboxState] = useAtom(languageAtomArr);
   const [, setFilterItems] = useAtom(filterAtom);
   const placeholder = 'All languages';
-  
+
   return (
     <Dropdown label={getLabel(languageData, checkboxState, placeholder)}>
       {languageData.map(([label, value], index) => (
         <DropdownItem
           label={label}
           value={value}
-          valuePrefix='subsets:'
+          valuePrefix="subsets:"
           filter={setFilterItems}
           key={value}
           state={checkboxState[index]}
@@ -124,14 +125,14 @@ const CategoriesDropdown = () => {
   const [checkboxState] = useAtom(categoryAtomArr);
   const [, setFilterItems] = useAtom(filterAtom);
   const placeholder = 'All categories';
-  
+
   return (
     <Dropdown label={getLabel(categoryData, checkboxState, placeholder)}>
       {categoryData.map(([label, value], index) => (
         <DropdownItem
           label={label}
           value={value}
-          valuePrefix='category:'
+          valuePrefix="category:"
           filter={setFilterItems}
           key={value}
           state={checkboxState[index]}

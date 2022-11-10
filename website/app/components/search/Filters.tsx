@@ -6,6 +6,7 @@ import {
   createStyles,
   Group,
   SimpleGrid,
+  UnstyledButton,
 } from '@mantine/core';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
@@ -36,7 +37,7 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     height: 64,
     alignItems: 'center',
-    gap: '16px',
+    gap: '24px',
     justifyContent: 'space-between',
     padding: '0px 24px',
     backgroundColor:
@@ -106,17 +107,19 @@ const Filters = () => {
           <LanguagesDropdown />
         </Group>
         <Group position="center" noWrap>
-          <Checkbox
+          <UnstyledButton
             w={200}
+            onClick={() => {
+              setVariable(!variable);
+              setFilterItems('variable:true');
+            }}>
+          <Checkbox
             color="purple"
             label="Show only variable fonts"
-            value="variable:true"
-            checked={variable}
-            onChange={(event) => {
-              setVariable(!variable);
-              setFilterItems(event.target.value);
-            }}
-          />
+              checked={variable}
+              style={{pointerEvents: 'none'}}
+            />
+          </UnstyledButton>
           <Button
             leftIcon={<IconTrash />}
             variant="subtle"
