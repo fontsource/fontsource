@@ -37,9 +37,10 @@ interface Hit {
   };
 }
 
-const useStyles = createStyles(theme => ({
+const useStyles = createStyles((theme) => ({
   wrapper: {
     display: 'flex',
+    width: '100%',
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
@@ -54,9 +55,30 @@ const useStyles = createStyles(theme => ({
         : theme.colors.border[0]
     }`,
     borderRadius: '4px',
+
+    // Remove a tag hyperlink styles
+    color: 'inherit',
+    textDecoration: 'inherit',
+
+    transition: 'all 150ms ease-in-out',
+    '&:hover': {
+      color:
+        theme.colorScheme === 'dark'
+          ? theme.colors.purple[1]
+          : theme.colors.purple[0],
+      border: `1px solid ${
+        theme.colorScheme === 'dark'
+          ? theme.colors.purple[1]
+          : theme.colors.purple[0]
+      }`,
+
+      boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.10)',
+      transform: 'scale(1.005)',
+    },
   },
 
   textGroup: {
+    paddingTop: '16px',
     width: '100%',
   },
 }));
@@ -92,16 +114,18 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
     }
 
     if (fontCss.type === 'done' && isFontLoaded) {
-      // Give browser time to load fonts in order to not cause a flash of the unstyled font
-      setTimeout(() => setLoading(false), 100);
+      // Give browser time to load fonts in order to not cause a flash of unstyled font
+      setTimeout(() => setLoading(false), 25);
     }
   }, [fontCss, hit.fontId, isFontLoaded]);
 
   return (
-    <Box className={classes.wrapper} style={{
-      height: display == 'grid' ? '332px' : '150px',
-      width: '100%',
-    }}>
+    <Box
+      component="a"
+      href={`/fonts/${hit.fontId}`}
+      className={classes.wrapper}
+      mih={{ base: '150px', sm: display == 'grid' ? '332px' : '150px' }}
+    >
       <Skeleton visible={loading}>
         <Text size={fontSize} style={{ fontFamily: hit.fontName }}>
           {previewText}
@@ -111,9 +135,11 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
         <Text size={18} weight={700} component="span">
           {hit.fontName}
         </Text>
-        <Text size={15} weight={700} component="span">
-          {hit.variable ? 'Variable' : ''}
-        </Text>
+        {hit.variable && (
+          <Text size={15} weight={700} component="span">
+            Variable
+          </Text>
+        )}
       </Group>
     </Box>
   );
@@ -131,8 +157,8 @@ const InfiniteHits = () => {
 
   useEffect(() => {
     if (sentinelRef.current !== null) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting && !isLastPage) {
             showMore();
           }
@@ -157,22 +183,22 @@ const InfiniteHits = () => {
     );
   }
 
-  // Grid view breakpoints
-  const breakpointArr = display == 'grid' ? [
-          // e.g. 316px * 4 + 16px gap * 3
-          { minWidth: 1312, cols: 4, spacing: 16 },
-          { minWidth: 980, cols: 3, spacing: 16 },
-          { minWidth: 648, cols: 2, spacing: 16 },
-          { minWidth: 0, cols: 1, spacing: 16 },
-        ] : [{ minWidth: 0, cols: 1, spacing: 16 }];
-
   return (
     <Box>
       <Sort count={results.nbHits} />
       <SimpleGrid
-        breakpoints={breakpointArr}
+        breakpoints={
+          display == 'grid'
+            ? [
+                { minWidth: 'xl', cols: 4, spacing: 16 },
+                { minWidth: 'md', cols: 3, spacing: 16 },
+                { minWidth: 'sm', cols: 2, spacing: 16 },
+                { minWidth: 0, cols: 1, spacing: 16 },
+              ]
+            : [{ minWidth: 0, cols: 1, spacing: 16 }]
+        }
       >
-        {hits.map(hit => (
+        {hits.map((hit) => (
           <HitComponent
             key={hit.objectID}
             // @ts-ignore - hit prop is messed up cause of Algolia

@@ -40,6 +40,14 @@ const useStyles = createStyles((theme) => ({
     '&:focus-within': {
       borderBottomColor: theme.colors.purple[0],
     },
+
+    [`@media (max-width: ${theme.breakpoints.md}px)`]: {
+      borderRight: 'none',
+    },
+
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      display: 'none'
+    },
   },
 
   button: {

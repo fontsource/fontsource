@@ -1,5 +1,13 @@
 import { Dropdown, IconGrid, IconList } from '@components';
-import { Center, createStyles, Group, Menu, SegmentedControl, Text } from '@mantine/core';
+import {
+  Center,
+  createStyles,
+  Group,
+  Menu,
+  SegmentedControl,
+  Text,
+  Tooltip,
+} from '@mantine/core';
 import { useAtom } from 'jotai';
 
 import { displayAtom, sortAtom } from './atoms';
@@ -21,6 +29,14 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  displayGroup: {
+    display: 'flex',
+
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      display: 'none',
+    },
+  },
+
   control: {
     backgroundColor:
       theme.colorScheme === 'dark'
@@ -29,22 +45,23 @@ const useStyles = createStyles((theme) => ({
     borderRadius: '6px',
 
     label: {
-      padding: '5px'
-    }
+      padding: '5px',
+    },
   },
 }));
 
-
 interface SortItemProps {
-  value: string
-  setState: (value: any) => void
+  value: string;
+  setState: (value: any) => void;
 }
 
 const SortItem = ({ value, setState }: SortItemProps) => {
   return (
-    <Menu.Item style={{ width: '100%' }} onClick={() => setState(value)}>{value}</Menu.Item>
-  )
-}
+    <Menu.Item style={{ width: '100%' }} onClick={() => setState(value)}>
+      {value}
+    </Menu.Item>
+  );
+};
 
 interface SortProps {
   count: number;
@@ -58,19 +75,39 @@ const Sort = ({ count }: SortProps) => {
     <div className={classes.wrapper}>
       <Text>{count} families loaded</Text>
       <Group>
-        <Dropdown label={sortOrder} width={150}> 
+        <Dropdown label={sortOrder} width={150}>
           <SortItem value="Most Popular" setState={setSortOrder} />
           <SortItem value="Newest" setState={setSortOrder} />
           <SortItem value="Name" setState={setSortOrder} />
           <SortItem value="Random" setState={setSortOrder} />
         </Dropdown>
-        <Group>
+        <Group className={classes.displayGroup}>
           <Text size={15}>Display</Text>
-          <SegmentedControl
-            className={classes.control} value={display} onChange={setDisplay as (value: string) => void} data={[
-            { label: (<Center><IconGrid height={20} active={display === 'grid'} /></Center>), value: 'grid' },
-            { label: (<Center><IconList height={20} active={display === 'list'} /></Center>), value: 'list' },
-          ]} />
+          <Tooltip label={display === 'grid' ? 'Grid' : 'List'} openDelay={600} closeDelay={100}>
+            <SegmentedControl
+              className={classes.control}
+              value={display}
+              onChange={setDisplay as (value: string) => void}
+              data={[
+                {
+                  label: (
+                    <Center>
+                      <IconGrid height={20} active={display === 'grid'} />
+                    </Center>
+                  ),
+                  value: 'grid',
+                },
+                {
+                  label: (
+                    <Center>
+                      <IconList height={20} active={display === 'list'} />
+                    </Center>
+                  ),
+                  value: 'list',
+                },
+              ]}
+            />
+          </Tooltip>
         </Group>
       </Group>
     </div>

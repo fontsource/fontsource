@@ -6,6 +6,7 @@ import {
   createStyles,
   Group,
   SimpleGrid,
+  UnstyledButton,
 } from '@mantine/core';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
@@ -32,16 +33,20 @@ const useStyles = createStyles((theme) => ({
     height: 128,
   },
 
-  wrapper: {
+  filters: {
     display: 'flex',
     height: 64,
     alignItems: 'center',
+    gap: '24px',
     justifyContent: 'space-between',
     padding: '0px 24px',
     backgroundColor:
       theme.colorScheme === 'dark'
         ? theme.colors.background[4]
         : theme.colors.background[0],
+
+    overflowY: 'hidden',
+    overflowX: 'auto',
 
     '&:focus-within': {
       borderBottomColor: theme.colors.purple[0],
@@ -88,30 +93,37 @@ const Filters = () => {
         cols={3}
         spacing={0}
         breakpoints={[
-          { maxWidth: 980, cols: 2 },
-          { maxWidth: 680, cols: 1 },
+          { maxWidth: 'md', cols: 2 },
+          { maxWidth: 'sm', cols: 1 },
         ]}
       >
         <SearchBar />
         <PreviewSelector />
         <SizeSlider />
       </SimpleGrid>
-      <div className={classes.wrapper}>
-        <Group position="center">
+      <div className={classes.filters}>
+        <Group position="center" noWrap>
           <CategoriesDropdown />
           <LanguagesDropdown />
         </Group>
-        <Group>
-          <Checkbox
-            color="purple"
-            label="Show only variable fonts"
-            value="variable:true"
-            checked={variable}
-            onChange={(event) => {
+        <Group position="center" noWrap>
+          <UnstyledButton
+            w={200}
+            onClick={() => {
               setVariable(!variable);
-              setFilterItems(event.target.value);
+              setFilterItems('variable:true');
             }}
-          />
+          >
+            <Checkbox
+              color="purple"
+              label="Show only variable fonts"
+              checked={variable}
+              style={{
+                pointerEvents: 'none',
+                display: 'flex',
+              }}
+            />
+          </UnstyledButton>
           <Button
             leftIcon={<IconTrash />}
             variant="subtle"
