@@ -1,8 +1,9 @@
-import type { Knex } from 'knex';
-
-// First init migration
-export async function up(knex: Knex): Promise<void> {
-    return knex.schema.createTable('fonts', t => {
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
+exports.up = function(knex) {
+  return knex.schema.createTable('fonts', t => {
         t.string('id').primary();
         t.string('family').notNullable();
         t.string('subsets').notNullable();
@@ -17,10 +18,12 @@ export async function up(knex: Knex): Promise<void> {
         t.string('license').notNullable();
         t.string('type').notNullable();
     })
-}
+};
 
-
-export async function down(knex: Knex): Promise<void> {
-    return knex.schema.dropTable('fonts');
-}
-
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
+exports.down = function(knex) {
+  return knex.schema.dropTable('fonts');
+};
