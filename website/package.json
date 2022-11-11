@@ -21,7 +21,9 @@
     "@remix-run/react": "^1.7.5",
     "@remix-run/serve": "^1.7.5",
     "algoliasearch": "^4.14.2",
+    "better-sqlite3": "^7.6.2",
     "jotai": "^1.9.1",
+    "knex": "^2.3.0",
     "react": "17",
     "react-dom": "17",
     "react-instantsearch-hooks-server": "^6.38.0",
@@ -36,10 +38,11 @@
     "@types/react-dom": "^18.0.6",
     "eslint": "^8.27.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
+    "ts-node": "^10.7.0",
     "typescript": "^4.8.4"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "pnpm": {
     "peerDependencyRules": {

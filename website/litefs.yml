@@ -1,0 +1,11 @@
+# The path to where the SQLite database will be accessed by the app
+mount-dir: '/litefs/data'
+
+# The path to where the underlying volume mount is.
+data-dir: '/data'
+
+# These environment variables will be available in your Fly.io application.
+# You must specify "experiement.enable_consul" for FLY_CONSUL_URL to be available.
+consul:
+  url: '${FLY_CONSUL_URL}'
+  advertise-url: 'http://${HOSTNAME}.vm.${FLY_APP_NAME}.internal:20202'
