@@ -254,6 +254,7 @@ importers:
       '@remix-run/node': 1.7.5_sfoxds7t5ydpegc3knd667wn6m
       '@remix-run/react': 1.7.5_sfoxds7t5ydpegc3knd667wn6m
       '@remix-run/serve': 1.7.5_sfoxds7t5ydpegc3knd667wn6m
+      '@types/node': 18.11.9
       algoliasearch: 4.14.2
       better-sqlite3: 7.6.2
       jotai: 1.9.1_react@17.0.2
@@ -268,7 +269,6 @@ importers:
     devDependencies:
       '@remix-run/dev': 1.7.5_eeahpycm5e6orraz2s54jlxxca
       '@remix-run/eslint-config': 1.7.5_cwmxxlfdlp32t4dk37uia2qbqu
-      '@types/node': 18.11.9
       '@types/react': 18.0.18
       '@types/react-dom': 18.0.6
       eslint: 8.27.0

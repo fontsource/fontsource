@@ -20,6 +20,7 @@
     "@remix-run/node": "^1.7.5",
     "@remix-run/react": "^1.7.5",
     "@remix-run/serve": "^1.7.5",
+    "@types/node": "^18.11.9",
     "algoliasearch": "^4.14.2",
     "better-sqlite3": "^7.6.2",
     "jotai": "^1.9.1",
@@ -35,7 +36,6 @@
   "devDependencies": {
     "@remix-run/dev": "^1.7.5",
     "@remix-run/eslint-config": "^1.7.5",
-    "@types/node": "^18.11.9",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "eslint": "^8.27.0",
