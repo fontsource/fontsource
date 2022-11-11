@@ -1,4 +1,5 @@
 import { knex } from './db.server';
+import { ensurePrimaryInstance } from './fly.server';
 
 interface DownloadMetadata {
   fontId: string;
@@ -17,6 +18,9 @@ interface DownloadMetadata {
 }
 
 const fetchMetadata = async (id: string) => {
+  // We can only write to DB in primary instance
+  ensurePrimaryInstance();
+
   const BASE_URL = 'https://cdn.jsdelivr.net/npm';
   const METADATA_URL = `${BASE_URL}/@fontsource/${id}/metadata.json`;
   const data: DownloadMetadata = await fetch(METADATA_URL).then((res) =>
