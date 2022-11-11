@@ -4,7 +4,7 @@ import type { Knex } from 'knex';
 export async function up(knex: Knex): Promise<void> {
     return knex.schema.createTable('fonts', t => {
         t.string('id').primary();
-        t.string('name').notNullable();
+        t.string('family').notNullable();
         t.string('subsets').notNullable();
         t.string('weights').notNullable();
         t.string('styles').notNullable();

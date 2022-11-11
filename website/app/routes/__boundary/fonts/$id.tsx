@@ -17,7 +17,8 @@ export default function Font() {
     const params = useParams();
     const metadata = useLoaderData();
     const id = params.id;
+    
     return (
-        <div>{id} {metadata.metadata.lastModified}</div>
+        <div>{id} {metadata.family}</div>
     )
 }
