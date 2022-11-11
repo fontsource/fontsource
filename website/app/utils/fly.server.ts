@@ -1,3 +1,5 @@
+// LiteFS only lets db writes happen to the primary instance
+// Thus we need to replay the request to the new region
 const getFlyReplayResponse = () => {
   const { PRIMARY_INSTANCE } = process.env;
   if (!PRIMARY_INSTANCE) {
