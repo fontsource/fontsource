@@ -8,6 +8,7 @@ processes = []
 [env]
 
 [experimental]
+  enable_consul = true
   allowed_public_ports = []
   auto_rollback = true
 
@@ -18,8 +19,8 @@ processes = []
   protocol = "tcp"
   script_checks = []
   [services.concurrency]
-    hard_limit = 25
-    soft_limit = 20
+    hard_limit = 40
+    soft_limit = 35
     type = "connections"
 
   [[services.ports]]
@@ -34,5 +35,5 @@ processes = []
   [[services.tcp_checks]]
     grace_period = "1s"
     interval = "15s"
-    restart_limit = 0
+    restart_limit = 6
     timeout = "2s"

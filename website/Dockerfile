@@ -1,8 +1,11 @@
-# base node image
-FROM node:16-bullseye-slim as base
+# Fetch the LiteFS binary using a multi-stage build.
+FROM flyio/litefs:sha-f40cf36 AS litefs
 
-# Install openssl for Prisma
-RUN apt-get update && apt-get install -y openssl
+# base node image
+FROM node:18-bullseye-slim as base
+
+# Install fuse and ca-certificates for lite-fs
+RUN apt-get update && apt-get install -y fuse ca-certificates 
 ## Add PNPM
 RUN npm install -g pnpm
 RUN pnpm --version
@@ -39,10 +42,11 @@ COPY --from=deps /app/node_modules /app/node_modules
 ADD . .
 RUN pnpm run build
 
-# Finally, build the production image with minimal footprint
+# Build the production image with minimal footprint
 FROM base
 
 ENV NODE_ENV=production
+ENV DATABASE_URL=/litefs/data/sqlite.db
 
 RUN mkdir /app
 WORKDIR /app
@@ -51,7 +55,13 @@ COPY --from=production-deps /app/node_modules /app/node_modules
 
 COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
+
+# Setup LiteFS
+COPY --from=litefs /usr/local/bin/litefs /usr/local/bin/litefs
+ADD litefs.yml /etc/litefs.yml
+RUN mkdir -p /data /litefs/data
+
 ADD . .
 
 EXPOSE 3000
-CMD ["npm", "run", "start"]
+CMD ["litefs", "--", "node", "./start.js"]
