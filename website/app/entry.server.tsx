@@ -3,7 +3,7 @@ import type { EntryContext, HandleDataRequestFunction } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { renderToString } from 'react-dom/server';
 
-import { getInstanceInfo } from '@/utils/fly.server';
+import { getFlyReplayResponse, getInstanceInfo } from '@/utils/fly.server';
 
 const server = createStylesServer();
 
@@ -14,7 +14,13 @@ export default async function handleRequest(
   remixContext: EntryContext
 ) {
   if (process.env.FLY) {
-    const { currentInstance, primaryInstance } = await getInstanceInfo();
+    const { currentInstance, currentIsPrimary, primaryInstance } =
+      await getInstanceInfo();
+
+    // 409 indicates db writes, which should only be done on primary
+    if (responseStatusCode === 409 && !currentIsPrimary) {
+      return getFlyReplayResponse(primaryInstance);
+    }
 
     responseHeaders.set('fly-region', process.env.FLY_REGION ?? 'unknown');
     responseHeaders.set('fly-primary-instance', primaryInstance ?? 'unknown');
@@ -32,13 +38,20 @@ export default async function handleRequest(
   });
 }
 
-export const handleDataRequest: HandleDataRequestFunction = async (response: Response) => {
+export const handleDataRequest: HandleDataRequestFunction = async (
+  response: Response
+) => {
   if (process.env.FLY) {
-    const { currentInstance, primaryInstance } = await getInstanceInfo();
+    const { currentInstance, primaryInstance, currentIsPrimary } =
+      await getInstanceInfo();
+
+    if (response.status === 409 && !currentIsPrimary) {
+      return getFlyReplayResponse(primaryInstance);
+    }
 
     response.headers.set('fly-region', process.env.FLY_REGION ?? 'unknown');
     response.headers.set('fly-primary-instance', primaryInstance ?? 'unknown');
     response.headers.set('fly-instance', currentInstance);
   }
   return response;
-}
+};
