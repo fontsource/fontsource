@@ -1,17 +1,17 @@
-import { IconTrash } from '@components';
 import {
   Box,
   Button,
   Checkbox,
   createStyles,
   Group,
-  ScrollArea,
   SimpleGrid,
   UnstyledButton,
 } from '@mantine/core';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { useConfigure } from 'react-instantsearch-hooks-web';
+
+import { IconTrash } from '@/components';
 
 import { dropdownAtomArr, filterAtom, filterBaseAtom } from './atoms';
 import {

@@ -1,12 +1,10 @@
-import { IconSearch } from '@components';
 import type { TextInputProps } from '@mantine/core';
-import { Title } from '@mantine/core';
-import { createStyles, TextInput } from '@mantine/core';
+import { createStyles, TextInput, Title } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
 import { Outlet } from '@remix-run/react';
 import { useState } from 'react';
 
-import { ContentHeader } from '~/components';
+import { ContentHeader, IconSearch } from '@/components';
 
 const useSearchStyles = createStyles((theme) => ({
   wrapper: {

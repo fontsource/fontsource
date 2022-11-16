@@ -1,5 +1,5 @@
 # Fetch the LiteFS binary using a multi-stage build.
-FROM flyio/litefs:sha-f40cf36 AS litefs
+FROM flyio/litefs:sha-ab81cb2 AS litefs
 
 # base node image
 FROM node:18-bullseye-slim as base
@@ -45,10 +45,11 @@ RUN pnpm run build
 # Build the production image with minimal footprint
 FROM base
 
-ENV NODE_ENV=production
+ENV FLY="true"
+ENV FLY_LITEFS_DIR="/litefs/data"
 ENV DATABASE_URL=/litefs/data/sqlite.db
+ENV NODE_ENV=production
 
-RUN mkdir /app
 WORKDIR /app
 
 COPY --from=production-deps /app/node_modules /app/node_modules
@@ -64,4 +65,4 @@ RUN mkdir -p /data /litefs/data
 ADD . .
 
 EXPOSE 3000
-CMD ["litefs", "--", "node", "./start.js"]
+CMD ["litefs", "mount", "--", "node", "./start.js"]

@@ -1,4 +1,3 @@
-import { Dropdown, IconGrid, IconList } from '@components';
 import {
   Center,
   createStyles,
@@ -9,6 +8,8 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useAtom } from 'jotai';
+
+import { Dropdown, IconGrid, IconList } from '@/components';
 
 import { displayAtom, sortAtom } from './atoms';
 

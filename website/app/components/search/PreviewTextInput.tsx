@@ -1,4 +1,3 @@
-import { IconCaret } from '@components';
 import type { DividerProps } from '@mantine/core';
 import {
   Button,
@@ -9,6 +8,8 @@ import {
 } from '@mantine/core';
 import { useAtom } from 'jotai';
 import { useEffect } from 'react';
+
+import { IconCaret } from '@/components';
 
 import {
   previewInputViewAtom,

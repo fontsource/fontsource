@@ -1,5 +1,11 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "knexfile.js", "migrations/*.js"],
+  "include": [
+    "remix.env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "knexfile.js",
+    "migrations/*.js"
+  ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "isolatedModules": true,
@@ -13,10 +19,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"],
-      "@components": ["./app/components/index.ts"],
-      "@routes/*": ["./app/routes/*"],
-      "@styles/*": ["./app/styles/*"]
+      "@/*": ["./app/*"]
     },
 
     // Remix takes care of building everything in `remix build`.

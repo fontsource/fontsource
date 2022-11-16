@@ -1,4 +1,3 @@
-import { IconDiscord, IconGithub, LogoText, ThemeButton } from '@components';
 import type { ActionIconProps, ContainerProps } from '@mantine/core';
 import {
   ActionIcon,
@@ -12,6 +11,8 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Link, NavLink } from '@remix-run/react';
+
+import { IconDiscord, IconGithub, LogoText, ThemeButton } from '@/components';
 
 const HEADER_HEIGHT = 72;
 

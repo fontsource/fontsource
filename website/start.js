@@ -1,50 +1,57 @@
 const fs = require('fs');
 const { spawn } = require('child_process');
 const os = require('os');
+const invariant = require('tiny-invariant');
+const path = require('path');
 
-const go = async () => {
-  process.env.FLY_INSTANCE = os.hostname();
+async function go() {
+  const currentInstance = os.hostname();
+  const primaryInstance = await getPrimaryInstanceHostname();
 
+  if (primaryInstance === os.hostname()) {
+    console.log(
+      `Instance (${currentInstance}) in ${process.env.FLY_REGION} is primary. Deploying migrations.`
+    );
+    await deployMigrations();
+  } else {
+    console.log(
+      `Instance (${currentInstance}) in ${process.env.FLY_REGION} is not primary (the primary instance is ${primaryInstance}). Skipping migrations.`
+    );
+  }
+
+  console.log('Starting app...');
+  await startApp();
+}
+go();
+
+async function getPrimaryInstanceHostname() {
   try {
-    const primary = await fs.promises.readFile('/litefs/data/.primary', 'utf8');
+    const { FLY_LITEFS_DIR } = process.env;
+    invariant(FLY_LITEFS_DIR, 'FLY_LITEFS_DIR is not defined');
 
-    process.env.PRIMARY_INSTANCE = primary.trim();
+    const primary = await fs.promises.readFile(
+      path.join(FLY_LITEFS_DIR, '.primary'),
+      'utf8'
+    );
     console.log(`Found primary instance in .primary file: ${primary}`);
+    return primary.trim();
   } catch (error) {
-    // If there is an error reading, this is the primary instance
-    process.env.IS_PRIMARY_FLY_INSTANCE = 'true'; 
-
     if (error?.code === 'ENOENT') {
       console.log('No .primary file found.');
     } else {
       console.log('Error getting primary from .primary file:', error);
     }
-
+    const currentInstance = os.hostname();
     console.log(
-      `Using current instance (${process.env.FLY_INSTANCE}) as primary (in ${process.env.FLY_REGION})`
+      `Using current instance (${currentInstance}) as primary (in ${process.env.FLY_REGION})`
     );
+    return currentInstance;
   }
+}
 
-  if (process.env.IS_PRIMARY_FLY_INSTANCE) {
-    console.log(
-      `Instance (${process.env.FLY_INSTANCE}) in ${process.env.FLY_REGION} is primary. Deploying migrations.`
-    );
-
-    await migrations();
-  } else {
-    console.log(
-      `Instance (${process.env.FLY_INSTANCE}) in ${process.env.FLY_REGION} is not primary (the primary instance is ${process.env.PRIMARY_INSTANCE}). Skipping migrations.`
-    );
-  }
-
-  console.log('Starting app...');
-  await start();
-};
-
-const migrations = async () => {
+async function deployMigrations() {
   const command = 'npx knex migrate:latest';
   const child = spawn(command, { shell: true, stdio: 'inherit' });
-
   await new Promise((res, rej) => {
     child.on('exit', (code) => {
       if (code === 0) {
@@ -54,12 +61,11 @@ const migrations = async () => {
       }
     });
   });
-};
+}
 
-const start = async () => {
-  const command = 'npx remix-serve build';
+async function startApp() {
+  const command = 'npm start';
   const child = spawn(command, { shell: true, stdio: 'inherit' });
-
   await new Promise((res, rej) => {
     child.on('exit', (code) => {
       if (code === 0) {
@@ -69,6 +75,4 @@ const start = async () => {
       }
     });
   });
-};
-
-go();
+}

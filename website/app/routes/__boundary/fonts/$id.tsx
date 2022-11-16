@@ -3,7 +3,7 @@ import { json } from '@remix-run/node'
 import { useLoaderData,useParams } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
-import { getMetadata } from '~/utils/metadata.server';
+import { getMetadata } from '@/utils/metadata.server';
 
 export const loader: LoaderFunction = async ({ params }) => {
     const { id } = params;

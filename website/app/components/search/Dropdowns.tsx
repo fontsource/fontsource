@@ -1,7 +1,8 @@
-import { Dropdown } from '@components';
 import { Checkbox, Menu } from '@mantine/core';
 import type { PrimitiveAtom } from 'jotai';
 import { atom, useAtom } from 'jotai';
+
+import { Dropdown } from '@/components';
 
 import { dropdownAtomArr, filterAtom } from './atoms';
 

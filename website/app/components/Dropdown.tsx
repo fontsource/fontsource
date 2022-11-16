@@ -1,5 +1,6 @@
-import { IconCaret } from '@components'
 import { Button, createStyles, Menu, ScrollArea } from '@mantine/core';
+
+import { IconCaret } from '@/components'
 
 interface DropdownProps {
   label: string

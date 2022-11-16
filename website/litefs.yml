@@ -1,5 +1,6 @@
 # The path to where the SQLite database will be accessed by the app
-mount-dir: '/litefs/data'
+mount-dir: '${FLY_LITEFS_DIR}'
+
 
 # The path to where the underlying volume mount is.
 data-dir: '/data'

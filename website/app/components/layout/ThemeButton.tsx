@@ -1,5 +1,6 @@
-import { IconMoon, IconSun } from '@components';
 import { ActionIcon, Tooltip, useMantineColorScheme } from '@mantine/core';
+
+import { IconMoon, IconSun } from '@/components';
 
 export const ThemeButton = ({ ...others }) => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();

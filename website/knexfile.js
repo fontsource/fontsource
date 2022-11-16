@@ -17,7 +17,7 @@ const config = {
   production: {
     client: 'better-sqlite3',
     connection: {
-      filename: process.env.DATABASE_URL ?? '',
+      filename: process.env.DATABASE_URL,
     },
     migrations: {
       tableName: 'knex_migrations',

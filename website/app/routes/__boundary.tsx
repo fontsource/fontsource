@@ -10,13 +10,18 @@ export default function Boundary() {
 
 export function CatchBoundary() {
   const caught = useCatch();
-  return (
+
+  if (caught.status === 404) {
+    return (
       <Container>
         <p>
-          [CatchBoundary]: {caught.status} {caught.statusText}
+          404 Font Not Found
         </p>
       </Container>
-  );
+    );
+  }
+
+  throw new Error(`Unexpected caught response with status: ${caught.status}`);
 }
 
 export function ErrorBoundary({ error }: { error: Error }) {

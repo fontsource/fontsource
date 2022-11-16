@@ -3,8 +3,8 @@ import algoliasearch from 'algoliasearch/lite';
 import { Provider } from 'jotai';
 import { InstantSearch } from 'react-instantsearch-hooks-web';
 
-import { Filters } from '~/components/search/Filters';
-import { InfiniteHits } from '~/components/search/Hits';
+import { Filters } from '@/components/search/Filters';
+import { InfiniteHits } from '@/components/search/Hits';
 
 const searchClient = algoliasearch(
   'WNATE69PVR',

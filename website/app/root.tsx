@@ -1,4 +1,3 @@
-import { AppShell } from '@components';
 import type { ColorScheme } from '@mantine/core';
 import {
   ColorSchemeProvider,
@@ -22,6 +21,8 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from '@remix-run/react';
+
+import { AppShell } from '@/components';
 
 import fonts from './styles/fonts.css';
 import { GlobalStyles } from './styles/global';
