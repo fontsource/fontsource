@@ -91,7 +91,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   );
 
   return json({
-    serverState: JSON.parse(JSON.stringify(serverState)),
+    serverState: serverState,
     serverUrl,
   });
 };
