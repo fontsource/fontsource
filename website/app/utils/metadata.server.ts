@@ -1,21 +1,22 @@
+import invariant from 'tiny-invariant';
+
+import { addCss } from './css.server';
 import { knex } from './db.server';
 import { ensurePrimary } from './fly.server';
+import type {
+  DownloadMetadata,
+  FontList,
+  PackageJson,
+  UnicodeData,
+} from './types';
 
-interface DownloadMetadata {
-  fontId: string;
-  fontName: string;
-  subsets: string[];
-  weights: number[];
-  styles: string[];
-  defSubset: string;
-  variable: boolean;
-  lastModified: string;
-  version: string;
-  category: string;
-  source: string;
-  license: string;
-  type: string;
-}
+const getFontList = async () => {
+  return (
+    await fetch(
+      'https://raw.githubusercontent.com/fontsource/fontsource/main/FONTLIST.json'
+    )
+  ).json() as Promise<FontList>;
+};
 
 const fetchMetadata = async (id: string) => {
   // We can only write to DB in primary instance
@@ -23,55 +24,82 @@ const fetchMetadata = async (id: string) => {
 
   const BASE_URL = 'https://cdn.jsdelivr.net/npm';
   const METADATA_URL = `${BASE_URL}/@fontsource/${id}/metadata.json`;
-  const data: DownloadMetadata = await fetch(METADATA_URL).then((res) =>
+  const UNICODE_URL = `${BASE_URL}/@fontsource/${id}/unicode.json`;
+  const PACKAGE_URL = `${BASE_URL}/@fontsource/${id}/package.json`;
+
+  const metadata: DownloadMetadata = await fetch(METADATA_URL).then((res) =>
     res.json()
   );
-  if (!data) return undefined;
+  invariant(metadata, `Could not fetch metadata for ${id}`);
+
+  const unicode: UnicodeData = await fetch(UNICODE_URL).then((res) =>
+    res.json()
+  );
+  invariant(unicode, `Could not fetch unicode data for ${id}`);
+
+  const packageJson: PackageJson = await fetch(PACKAGE_URL).then((res) =>
+    res.json()
+  );
+  invariant(packageJson, `Could not fetch package.json for ${id}`);
 
   // Save metadata to DB
   await knex('fonts')
     .insert({
-      id: data.fontId,
-      family: data.fontName,
-      subsets: data.subsets.join(','),
-      weights: data.weights.join(','),
-      styles: data.styles.join(','),
-      defSubset: data.defSubset,
-      variable: Boolean(data.variable),
-      lastModified: data.lastModified,
-      version: data.version,
-      category: data.category,
-      source: data.source,
-      license: data.license,
-      type: data.type,
+      id: metadata.fontId,
+      family: metadata.fontName,
+      subsets: metadata.subsets.join(','),
+      weights: metadata.weights.join(','),
+      styles: metadata.styles.join(','),
+      defSubset: metadata.defSubset,
+      variable: metadata.variable ? 1 : 0,
+      lastModified: metadata.lastModified,
+      version: metadata.version,
+      npmVersion: packageJson.version,
+      category: metadata.category,
+      source: metadata.source,
+      license: metadata.license,
+      type: metadata.type,
     })
     .onConflict('id')
     .merge();
 
-  return data;
+  await knex('unicode')
+    .insert({
+      id: metadata.fontId,
+      data: JSON.stringify(unicode),
+    })
+    .onConflict('id')
+    .merge();
+
+  if (metadata.variable) {
+    await knex('variable')
+      .insert({
+        id: metadata.fontId,
+        axes: JSON.stringify(metadata.variable),
+      })
+      .onConflict('id')
+      .merge();
+  }
+
+  await addCss(metadata);
+
 };
 
 const getMetadata = async (id: string) => {
   // Check if metadata already exists in DB
   let metadata = await knex('fonts').where({ id }).first();
   if (!metadata) {
-    metadata = await fetchMetadata(id);
-    // Rewrite objects to match DB schema
-    metadata.id = metadata.fontId;
-    delete metadata.fontId;
-    metadata.family = metadata.fontName;
-    delete metadata.fontName;
-  } else {
-    // Convert metadata from DB to JSON friendly
-    metadata.subsets = metadata.subsets.split(',');
-    metadata.weights = metadata.weights
-      .split(',')
-      .map((w: string) => Number(w));
-    metadata.styles = metadata.styles.split(',');
-    metadata.variable = Boolean(metadata.variable);
+    await fetchMetadata(id);
+    metadata = await knex('fonts').where({ id }).first();
   }
+
+  // Convert metadata from DB to JSON friendly
+  metadata.subsets = metadata.subsets.split(',');
+  metadata.weights = metadata.weights.split(',').map((w: string) => Number(w));
+  metadata.styles = metadata.styles.split(',');
+  metadata.variable = Boolean(metadata.variable);
 
   return metadata;
 };
 
-export { getMetadata };
+export { fetchMetadata, getFontList, getMetadata };

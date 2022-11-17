@@ -214,6 +214,7 @@ importers:
     specifiers:
       '@emotion/react': ^11.10.5
       '@emotion/server': ^11.10.0
+      '@fontsource-utils/generate': workspace:^0.1.0
       '@fontsource/inter': ^4.5.14
       '@fontsource/source-code-pro': ^4.5.12
       '@mantine/core': ^5.7.1
@@ -244,6 +245,7 @@ importers:
     dependencies:
       '@emotion/react': 11.10.5_d25jxjobwgtz6luclwkw6pvxim
       '@emotion/server': 11.10.0
+      '@fontsource-utils/generate': link:../utils/generate
       '@fontsource/inter': 4.5.14
       '@fontsource/source-code-pro': 4.5.12
       '@mantine/core': 5.7.1_zwb5ibucngfcyx66ccqj4y3ifq
@@ -6109,7 +6111,7 @@ packages:
       '@types/http-cache-semantics': 4.0.1
       get-stream: 6.0.1
       http-cache-semantics: 4.1.0
-      keyv: 4.5.0
+      keyv: 4.5.2
       mimic-response: 4.0.0
       normalize-url: 7.2.0
       responselike: 3.0.0
@@ -11545,12 +11547,6 @@ packages:
     resolution: {integrity: sha512-9ykJ/46SN/9KPM/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYnThq8X2RZgCg74RPxgcVA==}
     dependencies:
       json-buffer: 3.0.0
-    dev: false
-
-  /keyv/4.5.0:
-    resolution: {integrity: sha512-2YvuMsA+jnFGtBareKqgANOEKe1mk3HKiXu2fRmAfyxG0MJAywNhi5ttWA3PMjl4NmpyjZNbFifR2vNjW1znfA==}
-    dependencies:
-      json-buffer: 3.0.1
     dev: false
 
   /keyv/4.5.2:

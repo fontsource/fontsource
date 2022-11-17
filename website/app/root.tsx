@@ -38,7 +38,13 @@ export const headers: HeadersFunction = () => ({
   'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
 });
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: fonts }];
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: fonts },
+  {
+    rel: 'preconnect',
+    href: 'https://cdn.jsdelivr.net/',
+  },
+];
 
 createEmotionCache({ key: 'mantine' });
 
@@ -51,7 +57,11 @@ interface DocumentProps {
   preferredColorScheme?: ColorScheme;
 }
 
-export const Document = ({ children, title, preferredColorScheme }: DocumentProps) => {
+export const Document = ({
+  children,
+  title,
+  preferredColorScheme,
+}: DocumentProps) => {
   // TODO use cookies to set color scheme to get around theme flashing on load
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'color-scheme',
@@ -105,6 +115,5 @@ export default function App() {
     </Document>
   );
 }
-
 
 export const unstable_shouldReload = () => false;
