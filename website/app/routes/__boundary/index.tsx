@@ -1,7 +1,14 @@
 import { Box, createStyles } from '@mantine/core';
+import type { LoaderFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 import algoliasearch from 'algoliasearch/lite';
+// @ts-ignore
+import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
 import { Provider } from 'jotai';
-import { InstantSearch } from 'react-instantsearch-hooks-web';
+import { renderToString } from 'react-dom/server';
+import { getServerState } from 'react-instantsearch-hooks-server';
+import { InstantSearch, InstantSearchSSRProvider, } from 'react-instantsearch-hooks-web';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
@@ -35,12 +42,28 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function Index() {
+
+
+const Search = ({ serverState, serverUrl }: Partial<any>) => {
   const { classes } = useStyles();
 
   return (
-    <Provider>
-      <InstantSearch searchClient={searchClient} indexName="prod_FONTS">
+    <InstantSearchSSRProvider {...serverState}>
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="prod_FONTS"
+        routing={{
+          router: history({
+            getLocation() {
+              if (typeof window === 'undefined') {
+                return new URL(serverUrl);
+              }
+
+              return window.location;
+            },
+          }),
+        }}
+      >
         <Box className={classes.background}>
           <Box className={classes.container}>
             <Filters />
@@ -50,6 +73,32 @@ export default function Index() {
           <InfiniteHits />
         </Box>
       </InstantSearch>
+    </InstantSearchSSRProvider>
+  )
+}
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const serverUrl = request.url;
+  console.log(serverUrl);
+
+  const serverState = await getServerState(
+    <Search serverUrl={serverUrl} />,
+    { renderToString }
+  );
+  console.log(JSON.stringify(serverState));
+  
+  return json({
+    serverState: JSON.parse(JSON.stringify(serverState)),
+    serverUrl,
+  });
+}
+
+export default function Index() {
+  const { serverState, serverUrl } = useLoaderData();
+
+  return (
+    <Provider>
+      <Search serverState={serverState} serverUrl={serverUrl} />
     </Provider>
   );
 }
