@@ -1,4 +1,4 @@
-import { Box, createStyles, MantineProvider } from '@mantine/core';
+import { Box, createStyles } from '@mantine/core';
 import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
@@ -15,7 +15,6 @@ import {
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
-import { theme } from '@/styles/theme';
 
 const searchClient = algoliasearch(
   'WNATE69PVR',
@@ -46,9 +45,10 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const Search = ({ serverState, serverUrl }: Partial<any>) => {
-  return (
-    <InstantSearchSSRProvider {...serverState}>
+export const loader: LoaderFunction = async ({ request }) => {
+  const serverUrl = request.url;
+
+  const serverState = await getServerState(
       <InstantSearch
         searchClient={searchClient}
         indexName="prod_FONTS"
@@ -63,19 +63,7 @@ const Search = ({ serverState, serverUrl }: Partial<any>) => {
             },
           }),
         }}
-      />
-    </InstantSearchSSRProvider>
-  );
-};
-
-export const loader: LoaderFunction = async ({ request }) => {
-  const serverUrl = request.url;
-
-  const serverState = await getServerState(
-    // We need the provider to render the results, since the provider up the tree is cut off
-    <MantineProvider theme={{ ...theme }} withGlobalStyles withNormalizeCSS>
-      <Search serverUrl={serverUrl} />
-    </MantineProvider>,
+      />,
     { renderToString }
   );
 
