@@ -1,4 +1,4 @@
-import { Box, createStyles } from '@mantine/core';
+import { Box, createStyles, MantineProvider } from '@mantine/core';
 import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
@@ -12,6 +12,7 @@ import { InstantSearch, InstantSearchSSRProvider, } from 'react-instantsearch-ho
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
+import { theme } from '@/styles/theme';
 
 const searchClient = algoliasearch(
   'WNATE69PVR',
@@ -82,7 +83,13 @@ export const loader: LoaderFunction = async ({ request }) => {
   console.log(serverUrl);
 
   const serverState = await getServerState(
-    <Search serverUrl={serverUrl} />,
+    <MantineProvider
+        theme={{ ...theme }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+      <Search serverUrl={serverUrl} />
+    </MantineProvider >,
     { renderToString }
   );
   console.log(JSON.stringify(serverState));
