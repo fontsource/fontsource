@@ -83,6 +83,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   const serverUrl = request.url;
 
   const serverState = await getServerState(
+    // We need the provider to render the results, since the provider up the tree is cut off
     <MantineProvider theme={{ ...theme }} withGlobalStyles withNormalizeCSS>
       <Search serverUrl={serverUrl} />
     </MantineProvider>,
