@@ -86,7 +86,7 @@ const Filters = () => {
   const [languageItems, setLanguageItems] = useAtom(languageAtomArr);
   const [categoryItems, setCategoryItems] = useAtom(categoryAtomArr);
 
-  useConfigure({ filters: filterItems.join(' AND ') });
+  useConfigure({ filters: filterItems.join(' AND '), attributesToHighlight: [] });
 
   return (
     <Box className={classes.container}>
