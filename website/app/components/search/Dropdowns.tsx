@@ -51,6 +51,7 @@ const DropdownItem = ({
       <Checkbox
         label={label}
         checked={checked}
+        readOnly
         style={{
           pointerEvents: 'none',
           display: 'flex',

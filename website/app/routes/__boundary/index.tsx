@@ -8,7 +8,10 @@ import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
 import { Provider } from 'jotai';
 import { renderToString } from 'react-dom/server';
 import { getServerState } from 'react-instantsearch-hooks-server';
-import { InstantSearch, InstantSearchSSRProvider, } from 'react-instantsearch-hooks-web';
+import {
+  InstantSearch,
+  InstantSearchSSRProvider,
+} from 'react-instantsearch-hooks-web';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
@@ -16,7 +19,7 @@ import { theme } from '@/styles/theme';
 
 const searchClient = algoliasearch(
   'WNATE69PVR',
-  '8b36fe56fca654afaeab5e6f822c14bd',
+  '8b36fe56fca654afaeab5e6f822c14bd'
 );
 
 const useStyles = createStyles((theme) => ({
@@ -39,11 +42,9 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan('xs')]: {
       padding: '40px 24px',
-    }
+    },
   },
 }));
-
-
 
 const Search = ({ serverState, serverUrl }: Partial<any>) => {
   const { classes } = useStyles();
@@ -75,30 +76,24 @@ const Search = ({ serverState, serverUrl }: Partial<any>) => {
         </Box>
       </InstantSearch>
     </InstantSearchSSRProvider>
-  )
-}
+  );
+};
 
 export const loader: LoaderFunction = async ({ request }) => {
   const serverUrl = request.url;
-  console.log(serverUrl);
 
   const serverState = await getServerState(
-    <MantineProvider
-        theme={{ ...theme }}
-        withGlobalStyles
-        withNormalizeCSS
-      >
+    <MantineProvider theme={{ ...theme }} withGlobalStyles withNormalizeCSS>
       <Search serverUrl={serverUrl} />
-    </MantineProvider >,
+    </MantineProvider>,
     { renderToString }
   );
-  console.log(JSON.stringify(serverState));
-  
+
   return json({
     serverState: JSON.parse(JSON.stringify(serverState)),
     serverUrl,
   });
-}
+};
 
 export default function Index() {
   const { serverState, serverUrl } = useLoaderData();

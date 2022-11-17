@@ -119,6 +119,7 @@ const Filters = () => {
               color="purple"
               label="Show only variable fonts"
               checked={variable}
+              readOnly
               style={{
                 pointerEvents: 'none',
                 display: 'flex',

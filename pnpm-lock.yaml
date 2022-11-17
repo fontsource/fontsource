@@ -30,9 +30,6 @@ importers:
 
   api:
     specifiers:
-      '@emotion/cache': ^11.10.5
-      '@emotion/serialize': ^1.1.1
-      '@emotion/utils': ^1.2.0
       '@nestjs/axios': ^0.0.7
       '@nestjs/cli': ^8.2.2
       '@nestjs/common': ^8.4.0
@@ -78,9 +75,6 @@ importers:
       typescript: ^4.6.2
       wawoff2: ^2.0.0
     dependencies:
-      '@emotion/cache': 11.10.5
-      '@emotion/serialize': 1.1.1
-      '@emotion/utils': 1.2.0
       '@nestjs/axios': 0.0.7_zyw32gfu5yv6lfoz64j5eiekme
       '@nestjs/common': 8.4.7_allg6cauirbqzgqcmexy2wdnoq
       '@nestjs/config': 1.2.1_zyw32gfu5yv6lfoz64j5eiekme
@@ -129,9 +123,6 @@ importers:
 
   scripts:
     specifiers:
-      '@emotion/cache': ^11.10.5
-      '@emotion/serialize': ^1.1.1
-      '@emotion/utils': ^1.2.0
       '@types/async': ^3.2.12
       '@types/flat': ^5.0.2
       '@types/fs-extra': ^9.0.13
@@ -165,9 +156,6 @@ importers:
       lodash: ^4.17.21
       typescript: ^4.6.2
     dependencies:
-      '@emotion/cache': 11.10.5
-      '@emotion/serialize': 1.1.1
-      '@emotion/utils': 1.2.0
       algoliasearch: 4.14.1
       async: 3.2.4
       dotenv: 16.0.1
@@ -205,9 +193,6 @@ importers:
   utils/generate:
     specifiers:
       '@ayuhito/eslint-config': ^0.2.4
-      '@emotion/cache': ^11.10.5
-      '@emotion/serialize': ^1.1.1
-      '@emotion/utils': ^1.2.0
       '@types/node': ^18.7.20
       c8: ^7.12.0
       eslint: ^8.11.0
@@ -215,10 +200,6 @@ importers:
       tsx: ^3.8.0
       typescript: ^4.6.2
       vitest: ^0.23.4
-    dependencies:
-      '@emotion/cache': 11.10.5
-      '@emotion/serialize': 1.1.1
-      '@emotion/utils': 1.2.0
     devDependencies:
       '@ayuhito/eslint-config': 0.2.4_yqf6kl63nyoq5megxukfnom5rm
       '@types/node': 18.11.9
@@ -1287,7 +1268,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-async-generators/7.8.4_@babel+core@7.20.2:
@@ -1314,7 +1295,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-class-properties/7.12.13_@babel+core@7.20.2:
@@ -1389,7 +1370,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-json-strings/7.8.3_@babel+core@7.20.2:
@@ -1426,7 +1407,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-logical-assignment-operators/7.10.4_@babel+core@7.20.2:
@@ -1444,7 +1425,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-nullish-coalescing-operator/7.8.3_@babel+core@7.20.2:
@@ -1462,7 +1443,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-numeric-separator/7.10.4_@babel+core@7.20.2:
@@ -1480,7 +1461,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-object-rest-spread/7.8.3_@babel+core@7.20.2:
@@ -1498,7 +1479,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-optional-catch-binding/7.8.3_@babel+core@7.20.2:
@@ -1516,7 +1497,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-optional-chaining/7.8.3_@babel+core@7.20.2:
@@ -1545,7 +1526,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.9
-      '@babel/helper-plugin-utils': 7.18.9
+      '@babel/helper-plugin-utils': 7.20.2
     dev: false
 
   /@babel/plugin-syntax-top-level-await/7.14.5_@babel+core@7.20.2:
