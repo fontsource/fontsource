@@ -47,8 +47,6 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const Search = ({ serverState, serverUrl }: Partial<any>) => {
-  const { classes } = useStyles();
-
   return (
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
@@ -65,16 +63,7 @@ const Search = ({ serverState, serverUrl }: Partial<any>) => {
             },
           }),
         }}
-      >
-        <Box className={classes.background}>
-          <Box className={classes.container}>
-            <Filters />
-          </Box>
-        </Box>
-        <Box className={classes.container}>
-          <InfiniteHits />
-        </Box>
-      </InstantSearch>
+      />
     </InstantSearchSSRProvider>
   );
 };
@@ -91,17 +80,43 @@ export const loader: LoaderFunction = async ({ request }) => {
   );
 
   return json({
-    serverState: serverState,
+    serverState,
     serverUrl,
   });
 };
 
 export default function Index() {
   const { serverState, serverUrl } = useLoaderData();
+  const { classes } = useStyles();
 
   return (
     <Provider>
-      <Search serverState={serverState} serverUrl={serverUrl} />
+      <InstantSearchSSRProvider {...serverState}>
+        <InstantSearch
+          searchClient={searchClient}
+          indexName="prod_FONTS"
+          routing={{
+            router: history({
+              getLocation() {
+                if (typeof window === 'undefined') {
+                  return new URL(serverUrl);
+                }
+
+                return window.location;
+              },
+            }),
+          }}
+        >
+          <Box className={classes.background}>
+            <Box className={classes.container}>
+              <Filters />
+            </Box>
+          </Box>
+          <Box className={classes.container}>
+            <InfiniteHits />
+          </Box>
+        </InstantSearch>
+      </InstantSearchSSRProvider>
     </Provider>
   );
 }
