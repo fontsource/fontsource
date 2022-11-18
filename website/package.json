@@ -23,6 +23,7 @@
     "@remix-run/serve": "^1.7.5",
     "algoliasearch": "^4.14.2",
     "better-sqlite3": "^7.6.2",
+    "instantsearch.js": "^4.49.1",
     "jotai": "^1.9.1",
     "knex": "^2.3.0",
     "react": "17",
