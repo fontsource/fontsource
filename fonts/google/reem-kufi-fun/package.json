@@ -1,1 +1,28 @@
-{"name":"@fontsource/reem-kufi-fun","version":"4.5.0","description":"Self-host the Reem Kufi Fun font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Reem Kufi Fun","reem-kufi-fun","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/reem-kufi-fun#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/reem-kufi-fun"}}
+{
+  "name": "@fontsource/reem-kufi-fun",
+  "version": "4.5.0",
+  "description": "Self-host the Reem Kufi Fun font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Reem Kufi Fun",
+    "reem-kufi-fun",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/reem-kufi-fun#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/reem-kufi-fun"
+  }
+}

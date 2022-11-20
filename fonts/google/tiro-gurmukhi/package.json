@@ -1,1 +1,28 @@
-{"name":"@fontsource/tiro-gurmukhi","version":"4.5.4","description":"Self-host the Tiro Gurmukhi font in a neatly bundled NPM package.","main":"index.css","publishConfig":{"access":"public"},"keywords":["fontsource","font","font family","google fonts","Tiro Gurmukhi","tiro-gurmukhi","css","sass","front-end","web","typeface"],"author":"Lotus <declininglotus@gmail.com>","license":"MIT","homepage":"https://github.com/fontsource/fontsource/tree/main/fonts/google/tiro-gurmukhi#readme","repository":{"type":"git","url":"https://github.com/fontsource/fontsource.git","directory":"fonts/google/tiro-gurmukhi"}}
+{
+  "name": "@fontsource/tiro-gurmukhi",
+  "version": "4.5.4",
+  "description": "Self-host the Tiro Gurmukhi font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Tiro Gurmukhi",
+    "tiro-gurmukhi",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/google/tiro-gurmukhi#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/google/tiro-gurmukhi"
+  }
+}

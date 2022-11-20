@@ -1,9 +1,11 @@
 [
+  "./fonts/google/alatsi/files/alatsi-cyrillic-ext-400-normal.woff",
   "./fonts/google/alatsi/files/alatsi-latin-400-normal.woff",
   "./fonts/google/alatsi/files/alatsi-latin-ext-400-normal.woff",
   "./fonts/google/alatsi/files/alatsi-vietnamese-400-normal.woff",
-  "./fonts/google/alatsi/files/alatsi-vietnamese-400-normal.woff2",
+  "./fonts/google/alatsi/files/alatsi-cyrillic-ext-400-normal.woff2",
   "./fonts/google/alatsi/files/alatsi-all-400-normal.woff",
+  "./fonts/google/alatsi/files/alatsi-vietnamese-400-normal.woff2",
   "./fonts/google/alatsi/files/alatsi-latin-ext-400-normal.woff2",
   "./fonts/google/alatsi/files/alatsi-latin-400-normal.woff2"
 ]
