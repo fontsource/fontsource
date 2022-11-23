@@ -86,7 +86,8 @@ const Filters = () => {
   const [languageItems, setLanguageItems] = useAtom(languageAtomArr);
   const [categoryItems, setCategoryItems] = useAtom(categoryAtomArr);
 
-  useConfigure({ filters: filterItems.join(' AND '), attributesToHighlight: [] });
+	// 24 is divisible by 2, 3 and 4 for the hits grid
+  useConfigure({ filters: filterItems.join(' AND '), attributesToHighlight: [], hitsPerPage: 24 });
 
   return (
     <Box className={classes.container}>
