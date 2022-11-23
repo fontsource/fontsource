@@ -1,27 +1,19 @@
 import type { ActionFunction } from '@remix-run/node';
 import invariant from 'tiny-invariant';
 
+import { updateAlgoliaIndex } from '@/utils/algolia.server';
 import { ensurePrimary } from '@/utils/fly.server';
-import { fetchMetadata,getFontList } from '@/utils/metadata.server';
+import { fetchMetadata,getFontList, updateDownloadCount } from '@/utils/metadata.server';
 
 interface UpdateData {
     token: string;
-    fonts: boolean | string[];
+	fonts?: boolean | string[];
+	algolia?: boolean;
+	download?: boolean;
 }
 
-export const action: ActionFunction = async ({ request }) => {
-    await ensurePrimary();
-    
-    const data: UpdateData = await request.json();
-    invariant(data, 'No data was sent with the request');
-    invariant(data.fonts, 'No fonts were sent with the request');
-    invariant(data.token, 'No update token was sent with the request');
-
-    if (data.token !== process.env.UPDATE_TOKEN) {
-        return new Response('Invalid update token', { status: 401 });
-    }
-
-    const list = await getFontList();
+const updateFonts = async (data: UpdateData, fonts: string[] | boolean) => {
+	const list = await getFontList();
 
     let updateList: string[] = [];
     if (Array.isArray(data.fonts)) {
@@ -39,4 +31,30 @@ export const action: ActionFunction = async ({ request }) => {
         console.log(`Updating ${id}`);
         await fetchMetadata(id);
     }
+}
+
+export const action: ActionFunction = async ({ request }) => {
+	await ensurePrimary();
+
+	const data: UpdateData = await request.json();
+	invariant(data, 'No data was sent with the request');
+	invariant(data.token, 'No update token was sent with the request');
+
+	if (data.token !== process.env.UPDATE_TOKEN) {
+		return new Response('Invalid update token', { status: 401 });
+	}
+
+	if (data.fonts) {
+		await updateFonts(data, data.fonts);
+	}
+
+	if (data.algolia) {
+		await updateAlgoliaIndex();
+	}
+
+	if (data.download) {
+		await updateDownloadCount();
+	}
+
+	return new Response('Success!');
 }
