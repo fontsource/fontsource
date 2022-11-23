@@ -235,6 +235,7 @@ importers:
       instantsearch.js: ^4.49.1
       jotai: ^1.9.1
       knex: ^2.3.0
+      ky: ^0.32.2
       react: '17'
       react-dom: '17'
       react-instantsearch-hooks-server: ^6.38.0
@@ -259,6 +260,7 @@ importers:
       instantsearch.js: 4.49.1_algoliasearch@4.14.2
       jotai: 1.9.1_react@17.0.2
       knex: 2.3.0_better-sqlite3@7.6.2
+      ky: 0.32.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-instantsearch-hooks-server: 6.38.0_kr5x6cjikajrhwznglqptdxk4q
@@ -6075,7 +6077,7 @@ packages:
       '@types/http-cache-semantics': 4.0.1
       get-stream: 6.0.1
       http-cache-semantics: 4.1.0
-      keyv: 4.5.0
+      keyv: 4.5.2
       mimic-response: 4.0.0
       normalize-url: 7.2.0
       responselike: 3.0.0
@@ -11502,12 +11504,6 @@ packages:
       json-buffer: 3.0.0
     dev: false
 
-  /keyv/4.5.0:
-    resolution: {integrity: sha512-2YvuMsA+jnFGtBareKqgANOEKe1mk3HKiXu2fRmAfyxG0MJAywNhi5ttWA3PMjl4NmpyjZNbFifR2vNjW1znfA==}
-    dependencies:
-      json-buffer: 3.0.1
-    dev: false
-
   /keyv/4.5.2:
     resolution: {integrity: sha512-5MHbFaKn8cNSmVW7BYnijeAVlE4cYA/SVkifVgrh7yotnfhKmjuXpDKjrABLnT0SfHWV21P8ow07OGfRrNDg8g==}
     dependencies:
@@ -11592,6 +11588,11 @@ packages:
       tildify: 2.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /ky/0.32.2:
+    resolution: {integrity: sha512-eBJeF6IXNwX5rksdwBrE2rIJrU2d84GoTvdM7OmmTIwUVXEMd72wIwvT+nyhrqtv7AzbSNsWz7yRsHgVhj1uog==}
+    engines: {node: '>=14.16'}
     dev: false
 
   /language-subtag-registry/0.3.22:

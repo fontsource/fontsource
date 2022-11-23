@@ -5,6 +5,7 @@
     "build": "remix build",
     "deploy": "fly deploy --remote-only",
     "dev": "remix dev",
+    "migrations": "knex migrate:latest",
     "start": "remix-serve build",
     "lint": "eslint **/*.{js,jsx,ts,tsx}"
   },
@@ -25,6 +26,7 @@
     "instantsearch.js": "^4.49.1",
     "jotai": "^1.9.1",
     "knex": "^2.3.0",
+    "ky": "^0.32.2",
     "react": "17",
     "react-dom": "17",
     "react-instantsearch-hooks-server": "^6.38.0",

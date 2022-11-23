@@ -4,27 +4,7 @@ const os = require('os');
 const invariant = require('tiny-invariant');
 const path = require('path');
 
-async function go() {
-  const currentInstance = os.hostname();
-  const primaryInstance = await getPrimaryInstanceHostname();
-
-  if (primaryInstance === os.hostname()) {
-    console.log(
-      `Instance (${currentInstance}) in ${process.env.FLY_REGION} is primary. Deploying migrations.`
-    );
-    await deployMigrations();
-  } else {
-    console.log(
-      `Instance (${currentInstance}) in ${process.env.FLY_REGION} is not primary (the primary instance is ${primaryInstance}). Skipping migrations.`
-    );
-  }
-
-  console.log('Starting app...');
-  await startApp();
-}
-go();
-
-async function getPrimaryInstanceHostname() {
+const getPrimaryInstanceHostname = async () => {
   try {
     const { FLY_LITEFS_DIR } = process.env;
     invariant(FLY_LITEFS_DIR, 'FLY_LITEFS_DIR is not defined');
@@ -49,7 +29,7 @@ async function getPrimaryInstanceHostname() {
   }
 }
 
-async function deployMigrations() {
+const deployMigrations = async () => {
   const command = 'npx knex migrate:latest';
   const child = spawn(command, { shell: true, stdio: 'inherit' });
   await new Promise((res, rej) => {
@@ -63,7 +43,7 @@ async function deployMigrations() {
   });
 }
 
-async function startApp() {
+const startApp = async () => {
   const command = 'npm start';
   const child = spawn(command, { shell: true, stdio: 'inherit' });
   await new Promise((res, rej) => {
@@ -76,3 +56,27 @@ async function startApp() {
     });
   });
 }
+
+const go = async () => {
+  const currentInstance = os.hostname();
+  const primaryInstance = await getPrimaryInstanceHostname();
+
+  if (primaryInstance === os.hostname()) {
+    console.log(
+      `Instance (${currentInstance}) in ${process.env.FLY_REGION} is primary. Deploying migrations.`
+    );
+    await deployMigrations();
+  } else {
+    console.log(
+      `Instance (${currentInstance}) in ${process.env.FLY_REGION} is not primary (the primary instance is ${primaryInstance}). Skipping migrations.`
+    );
+  }
+
+  invariant(process.env.GITHUB_TOKEN, 'GITHUB_TOKEN is not defined');
+  invariant(process.env.UPDATE_TOKEN, 'UPDATE_TOKEN is not defined');
+
+  console.log('Starting app...');
+  await startApp();
+}
+
+go();

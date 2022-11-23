@@ -43,7 +43,13 @@ export const headers: HeadersFunction = () => ({
   'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
 });
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: fonts }];
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: fonts },
+  {
+    rel: 'preconnect',
+    href: 'https://cdn.jsdelivr.net/',
+  },
+];
 
 createEmotionCache({ key: 'mantine' });
 
