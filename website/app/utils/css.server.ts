@@ -77,21 +77,59 @@ const addCss = async (metadata: DownloadMetadata) => {
 	}
 
 	// Add index CSS
-	const indexCss = cssRewrite(
-		await kya(`${BASE_URL}/@fontsource/${fontId}/index.css`, { text: true }),
-		fontId
-	);
-	await knex('css')
-		.insert({
-			id: fontId,
-			weight: String(findClosest(weights, 400)), // A font may not have a default 400 weight
-			css: indexCss,
-			isItalic: false,
-			isVariable: false,
-			isIndex: true,
-		})
-		.onConflict(['id', 'weight', 'isItalic', 'isVariable'])
-		.merge();
+	try {
+		const indexCss = cssRewrite(
+			await kya(`${BASE_URL}/@fontsource/${fontId}/index.css`, { text: true }),
+			fontId
+		);
+
+		await knex('css')
+			.insert({
+				id: fontId,
+				weight: String(findClosest(weights, 400)), // A font may not have a default 400 weight
+				css: indexCss,
+				isItalic: false,
+				isVariable: false,
+				isIndex: true,
+			})
+			.onConflict(['id', 'weight', 'isItalic', 'isVariable'])
+			.merge();
+	} catch (err) {
+		if (err instanceof HTTPError && err.response.status === 404) {
+			// In the rare case a font has no index.css due to a bug upstream, we can just use a find closest value
+			let css;
+			let weight = findClosest(weights, 400);
+			if (styles.length === 1 && styles.includes('italic')) {
+				// If only italic, then use 400italic
+				css = cssRewrite(
+					await kya(`${BASE_URL}/@fontsource/${fontId}/${weight}-italic.css`, {
+						text: true,
+					}),
+					fontId
+				);
+			} else {
+				// Otherwise use 400
+				css = cssRewrite(
+					await kya(`${BASE_URL}/@fontsource/${fontId}/${weight}.css`, {
+						text: true,
+					}),
+					fontId
+				);
+			}
+
+			await knex('css')
+				.insert({
+					id: fontId,
+					weight,
+					css,
+					isItalic: true,
+					isVariable: false,
+					isIndex: true,
+				})
+				.onConflict(['id', 'weight', 'isItalic', 'isVariable'])
+				.merge();
+		}
+	}
 
 	// Add variable CSS
 	if (variable) {
