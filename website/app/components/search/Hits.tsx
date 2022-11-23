@@ -108,7 +108,7 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
     }
 
     if (fontCss.type === 'done') {
-      const style = document.createElement('style');
+			const style = document.createElement('style');
       style.textContent = fontCss.data.css;
       document.head.appendChild(style);
     }

@@ -1,6 +1,7 @@
 import ky from 'ky';
 
 import { knex } from './db.server';
+import { fetchMetadata } from './metadata.server';
 import type { DownloadMetadata } from './types';
 
 const BASE_URL = 'https://cdn.jsdelivr.net/npm';
@@ -16,6 +17,20 @@ const findClosest = (arr: number[], num: number): number => {
 	return closest;
 };
 
+const cssRewrite = (css: string, id: string) =>
+	css.replace(
+		/url\('\.\/(files\/.*?)'\)/g,
+		// match "url('./files/${woffFileName}')", then replace with "url('${baseURL}/files/${woffFileName}')"
+		`url('${BASE_URL}/@fontsource/${id}/$1')`
+			.replace(/\/\*[\s\S]*?\*\/|[\r\n\t]+/g, '')
+			// limit number of adjacent spaces to 1
+			.replace(/ {2,}/g, ' ')
+			// remove spaces around the following: ,:;{}
+			.replace(/ ?([,:;{}]) ?/g, '$1')
+			// remove last semicolon in block
+			.replace(/;}/g, '}')
+	);
+
 // const STANDARD_AXES = ['opsz', 'slnt', 'wdth', 'wght'] as const;
 
 const addCss = async (metadata: DownloadMetadata) => {
@@ -30,7 +45,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 				url = `${BASE_URL}/@fontsource/${fontId}/${weight}.css`;
 			}
 
-			const css = await ky(url).text();
+			const css = cssRewrite(await ky(url).text(), fontId);
 			await knex('css')
 				.insert({
 					id: fontId,
@@ -46,13 +61,14 @@ const addCss = async (metadata: DownloadMetadata) => {
 	}
 
 	// Add index CSS
-	const indexCss = await ky(
-		`${BASE_URL}/@fontsource/${fontId}/index.css`
-	).text();
+	const indexCss = cssRewrite(
+		await ky(`${BASE_URL}/@fontsource/${fontId}/index.css`).text(),
+		fontId
+	);
 	await knex('css')
 		.insert({
 			id: fontId,
-			weight: String(findClosest(weights, 400)),
+			weight: String(findClosest(weights, 400)), // A font may not have a default 400 weight
 			css: indexCss,
 			isItalic: false,
 			isVariable: false,
@@ -63,17 +79,11 @@ const addCss = async (metadata: DownloadMetadata) => {
 
 	// Add variable CSS
 	if (variable) {
-		const keys = Object.keys(variable);
+		// Remove ital key to make other keys easier to check
+		const keys = Object.keys(variable).filter(
+			(item) => !['ital'].includes(item)
+		);
 		let css;
-		/* Not used until v5 is released
-        if (keys.length === 1 && keys.includes('wght')) {
-            css = await fetch(`${BASE_URL}/@fontsource/${fontId}/variable.css`).then((res) => res.text());
-            // If it includes any non-standard axes, skip
-        } else if (!keys.some((key) => !STANDARD_AXES.includes(key as any))) {
-            css = await fetch(`${BASE_URL}/@fontsource/${fontId}/variable-standard.css`).then((res) => res.text());
-        } else {
-            css = await fetch(`${BASE_URL}/@fontsource/${fontId}/variable-full.css`).then((res) => res.text());
-        } */
 
 		if (keys.length === 1 && keys.includes('wght')) {
 			css = await ky(`${BASE_URL}/@fontsource/${fontId}/variable.css`).text();
@@ -82,6 +92,8 @@ const addCss = async (metadata: DownloadMetadata) => {
 				`${BASE_URL}/@fontsource/${fontId}/variable-full.css`
 			).text();
 		}
+
+		css = cssRewrite(css, fontId);
 
 		const wght = variable.wght;
 		await knex('css')
@@ -107,6 +119,9 @@ const addCss = async (metadata: DownloadMetadata) => {
 					`${BASE_URL}/@fontsource/${fontId}/variable-full-italic.css`
 				).text();
 			}
+
+			css = cssRewrite(css, fontId);
+
 			await knex('css')
 				.insert({
 					id: fontId,
@@ -122,4 +137,42 @@ const addCss = async (metadata: DownloadMetadata) => {
 	}
 };
 
-export { addCss };
+interface CssOptions {
+	index?: boolean;
+	variable?: boolean;
+	italic?: boolean;
+	weights?: number[] | false;
+}
+
+const getCss = async (id: string, opts: CssOptions) => {
+	let css;
+	if (opts.index) {
+		css = await knex('css').select('css').where({ id, isIndex: true }).first();
+		if (!css) {
+			await fetchMetadata(id);
+			css = await knex('css')
+				.select('css')
+				.where({ id, isIndex: true })
+				.first();
+		}
+	}
+
+	if (opts.variable) {
+		css = await knex('css')
+			.select('css')
+			.where({ id, isVariable: true, isItalic: opts.italic })
+			.first();
+		if (!css) {
+			await fetchMetadata(id);
+			css = await knex('css')
+				.select('css')
+				.where({ id, isVariable: true, isItalic: opts.italic })
+				.first();
+		}
+	}
+
+	// Returns a weird object
+	return css.css;
+};
+
+export { addCss, getCss };
