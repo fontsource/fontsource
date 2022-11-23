@@ -1,4 +1,4 @@
-import ky from 'ky';
+import ky, { HTTPError } from 'ky';
 
 import { knex } from './db.server';
 import { fetchMetadata } from './metadata.server';
@@ -45,18 +45,31 @@ const addCss = async (metadata: DownloadMetadata) => {
 				url = `${BASE_URL}/@fontsource/${fontId}/${weight}.css`;
 			}
 
-			const css = cssRewrite(await ky(url).text(), fontId);
-			await knex('css')
-				.insert({
-					id: fontId,
-					weight: String(weight),
-					css,
-					isItalic: style === 'italic',
-					isVariable: false,
-					isIndex: false,
-				})
-				.onConflict(['id', 'weight', 'isItalic', 'isVariable'])
-				.merge();
+			try {
+				const css = cssRewrite(await ky(url).text(), fontId);
+
+				await knex('css')
+					.insert({
+						id: fontId,
+						weight: String(weight),
+						css,
+						isItalic: style === 'italic',
+						isVariable: false,
+						isIndex: false,
+					})
+					.onConflict(['id', 'weight', 'isItalic', 'isVariable'])
+					.merge();
+			} catch (err) {
+				// There is a rare instance where a font has 400, 400italic, 700 but no 700italic
+				// If it is not 404 and not italic, then throw error. Otherwise suppress
+				if (
+					err instanceof HTTPError &&
+					err.response.status !== 404 &&
+					style !== 'italic'
+				) {
+					throw err;
+				}
+			}
 		}
 	}
 
