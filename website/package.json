@@ -5,13 +5,13 @@
     "build": "remix build",
     "deploy": "fly deploy --remote-only",
     "dev": "remix dev",
+    "migrations": "knex migrate:latest",
     "start": "remix-serve build",
     "lint": "eslint **/*.{js,jsx,ts,tsx}"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
-    "@fontsource-utils/generate": "workspace:^0.1.0",
     "@fontsource/inter": "^4.5.14",
     "@fontsource/source-code-pro": "^4.5.12",
     "@mantine/core": "^5.7.1",
@@ -26,6 +26,7 @@
     "instantsearch.js": "^4.49.1",
     "jotai": "^1.9.1",
     "knex": "^2.3.0",
+    "ky": "^0.32.2",
     "react": "17",
     "react-dom": "17",
     "react-instantsearch-hooks-server": "^6.38.0",

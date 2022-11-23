@@ -4,12 +4,13 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable('css', (t) => {
-    t.string('id').primary();
+    t.string('id').notNullable();
     t.string('weight').notNullable();
     t.string('css').notNullable();
     t.boolean('isItalic').notNullable();
     t.boolean('isVariable').notNullable();
     t.boolean('isIndex').notNullable();
+    t.primary(['id', 'weight', 'isItalic', 'isVariable']);
   });
 };
 
