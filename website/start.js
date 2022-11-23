@@ -72,8 +72,8 @@ const go = async () => {
     );
   }
 
-  invariant(process.env.GITHUB_TOKEN, 'GITHUB_TOKEN is not defined');
-  invariant(process.env.UPDATE_TOKEN, 'UPDATE_TOKEN is not defined');
+	invariant(process.env.UPDATE_TOKEN, 'UPDATE_TOKEN is not defined');
+	invariant(process.env.COOKIE_SECRET, 'COOKIE_SECRET is not defined');
 
   console.log('Starting app...');
   await startApp();
