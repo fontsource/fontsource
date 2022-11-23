@@ -1,4 +1,4 @@
-import { Box, createStyles } from '@mantine/core';
+import { Box, createStyles, MantineProvider } from '@mantine/core';
 import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
@@ -7,13 +7,13 @@ import { Provider } from 'jotai';
 import { renderToString } from 'react-dom/server';
 import { getServerState } from 'react-instantsearch-hooks-server';
 import {
-	Configure,
 	InstantSearch,
 	InstantSearchSSRProvider,
 } from 'react-instantsearch-hooks-web';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
+import { theme } from '@/styles/theme';
 
 const searchClient = algoliasearch(
 	'WNATE69PVR',
@@ -48,9 +48,12 @@ export const loader: LoaderFunction = async ({ request }) => {
 	const serverUrl = request.url;
 
 	const serverState = await getServerState(
-		<InstantSearch searchClient={searchClient} indexName="prod_FONTS">
-			<Configure hitsPerPage={24} attributesToHighlight={[]} />
-		</InstantSearch>,
+		<MantineProvider theme={theme}>
+			<InstantSearch searchClient={searchClient} indexName="prod_FONTS">
+				<Filters />
+				<InfiniteHits />
+			</InstantSearch>
+		</MantineProvider>,
 		{ renderToString }
 	);
 
