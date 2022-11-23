@@ -54,54 +54,58 @@ const downloadCount = async (id: string) =>
 	await knex.select('month').from('downloads').where({ id }).first();
 
 const updateAlgoliaIndex = async () => {
-	await ensurePrimary();
+	try {
+		await ensurePrimary();
 
-	// Get font list
-	const list = Object.keys(await getFontList());
-	const indexArray: AlgoliaMetadata[] = [];
+		// Get font list
+		const list = Object.keys(await getFontList());
+		const indexArray: AlgoliaMetadata[] = [];
 
-	// For the random shuffle, we need a presorted index
-	// as Algolia does not support random sorting natively
-	const randomIndexArr = shuffleArray(list.length);
+		// For the random shuffle, we need a presorted index
+		// as Algolia does not support random sorting natively
+		const randomIndexArr = shuffleArray(list.length);
 
-	// Since getting a new download count isn't expensive,
-	// we can just update it everytime we update the index
-	await updateDownloadCount();
+		// Since getting a new download count isn't expensive,
+		// we can just update it everytime we update the index
+		await updateDownloadCount();
 
-	let index = 0;
-	for (const id of list) {
-		let metadata = await getMetadata(id);
+		let index = 0;
+		for (const id of list) {
+			let metadata = await getMetadata(id);
 
-		if (!metadata) {
-			await fetchMetadata(id);
-			metadata = await getMetadata(id);
+			if (!metadata) {
+				await fetchMetadata(id);
+				metadata = await getMetadata(id);
+			}
+
+			const downloadCountMonthly = await downloadCount(id);
+
+			const obj = {
+				objectID: id,
+				family: metadata.family,
+				subsets: metadata.subsets.split(','),
+				weights: metadata.weights.split(',').map((w: string) => Number(w)),
+				styles: metadata.styles.split(','),
+				category: metadata.category,
+				variable: Boolean(metadata.variable),
+				// Algolia sorts date using a unix timestamp instead
+				lastModified: Math.floor(
+					new Date(metadata.lastModified).getTime() / 1000
+				),
+				downloadMonth: downloadCountMonthly ?? 0,
+				randomIndex: randomIndexArr[index],
+			};
+
+			indexArray.push(obj);
+			index++;
 		}
 
-		const downloadCountMonthly = await downloadCount(id);
-
-		const obj = {
-			objectID: id,
-			family: metadata.family,
-			subsets: metadata.subsets.split(','),
-			weights: metadata.weights.split(',').map((w: string) => Number(w)),
-			styles: metadata.styles.split(','),
-			category: metadata.category,
-			variable: Boolean(metadata.variable),
-			// Algolia sorts date using a unix timestamp instead
-			lastModified: Math.floor(
-				new Date(metadata.lastModified).getTime() / 1000
-			),
-			downloadMonth: downloadCountMonthly ?? 0,
-			randomIndex: randomIndexArr[index],
-		};
-
-		indexArray.push(obj);
-		index++;
+		const searchIndex = client.initIndex('prod_NAME');
+		await searchIndex.saveObjects(indexArray);
+		console.log('Updated Algolia index');
+	} catch (err) {
+		console.error(err);
 	}
-
-	const searchIndex = client.initIndex('prod_NAME');
-	await searchIndex.saveObjects(indexArray);
-	console.log('Updated Algolia index');
 };
 
 export { updateAlgoliaIndex };

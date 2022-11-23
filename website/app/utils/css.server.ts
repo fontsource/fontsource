@@ -1,8 +1,10 @@
-import ky, { HTTPError } from 'ky';
+import { HTTPError } from 'ky';
 
 import { knex } from './db.server';
+import { ensurePrimary } from './fly.server';
 import { fetchMetadata } from './metadata.server';
 import type { DownloadMetadata } from './types';
+import { kya } from './utils.server';
 
 const BASE_URL = 'https://cdn.jsdelivr.net/npm';
 
@@ -34,6 +36,7 @@ const cssRewrite = (css: string, id: string) =>
 // const STANDARD_AXES = ['opsz', 'slnt', 'wdth', 'wght'] as const;
 
 const addCss = async (metadata: DownloadMetadata) => {
+	await ensurePrimary();
 	// Add general CSS
 	const { fontId, weights, styles, variable } = metadata;
 	for (const weight of weights) {
@@ -46,7 +49,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 			}
 
 			try {
-				const css = cssRewrite(await ky(url).text(), fontId);
+				const css = cssRewrite(await kya(url, { text: true }), fontId);
 
 				await knex('css')
 					.insert({
@@ -75,7 +78,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 
 	// Add index CSS
 	const indexCss = cssRewrite(
-		await ky(`${BASE_URL}/@fontsource/${fontId}/index.css`).text(),
+		await kya(`${BASE_URL}/@fontsource/${fontId}/index.css`, { text: true }),
 		fontId
 	);
 	await knex('css')
@@ -99,11 +102,13 @@ const addCss = async (metadata: DownloadMetadata) => {
 		let css;
 
 		if (keys.length === 1 && keys.includes('wght')) {
-			css = await ky(`${BASE_URL}/@fontsource/${fontId}/variable.css`).text();
+			css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable.css`, {
+				text: true,
+			});
 		} else {
-			css = await ky(
-				`${BASE_URL}/@fontsource/${fontId}/variable-full.css`
-			).text();
+			css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable-full.css`, {
+				text: true,
+			});
 		}
 
 		css = cssRewrite(css, fontId);
@@ -124,13 +129,15 @@ const addCss = async (metadata: DownloadMetadata) => {
 		// If it has italic variant
 		if ('ital' in variable) {
 			if (keys.length === 1 && keys.includes('wght')) {
-				css = await ky(
-					`${BASE_URL}/@fontsource/${fontId}/variable-italic.css`
-				).text();
+				css = await kya(
+					`${BASE_URL}/@fontsource/${fontId}/variable-italic.css`,
+					{ text: true }
+				);
 			} else {
-				css = await ky(
-					`${BASE_URL}/@fontsource/${fontId}/variable-full-italic.css`
-				).text();
+				css = await kya(
+					`${BASE_URL}/@fontsource/${fontId}/variable-full-italic.css`,
+					{ text: true }
+				);
 			}
 
 			css = cssRewrite(css, fontId);

@@ -236,6 +236,7 @@ importers:
       jotai: ^1.9.1
       knex: ^2.3.0
       ky: ^0.32.2
+      p-queue: ^6.6.2
       react: '17'
       react-dom: '17'
       react-instantsearch-hooks-server: ^6.38.0
@@ -261,6 +262,7 @@ importers:
       jotai: 1.9.1_react@17.0.2
       knex: 2.3.0_better-sqlite3@7.6.2
       ky: 0.32.2
+      p-queue: 6.6.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-instantsearch-hooks-server: 6.38.0_kr5x6cjikajrhwznglqptdxk4q
