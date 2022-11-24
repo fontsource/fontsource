@@ -8,6 +8,7 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useAtom } from 'jotai';
+import { useSortBy } from 'react-instantsearch-hooks-web';
 
 import { Dropdown, IconGrid, IconList } from '@/components';
 
@@ -68,19 +69,40 @@ interface SortProps {
   count: number;
 }
 
+const indexMap = {
+		'Most Popular': 'prod_POPULAR',
+		'Last Updated': 'prod_NEWEST',
+		'Name': 'prod_NAME',
+		'Random': 'prod_RANDOM'
+}
+
 const Sort = ({ count }: SortProps) => {
   const { classes } = useStyles();
   const [sortOrder, setSortOrder] = useAtom(sortAtom);
-  const [display, setDisplay] = useAtom(displayAtom);
+	const [display, setDisplay] = useAtom(displayAtom);
+	const { refine } = useSortBy({
+		items: [
+			{ value: 'prod_POPULAR', label: 'Most Popular' },
+			{ value: 'prod_NEWEST', label: 'Last Updated' },
+			{ value: 'prod_NAME', label: 'Name' },
+			{ value: 'prod_RANDOM', label: 'Random' }
+		]
+	});
+
+	const updateOrder = (value: keyof typeof indexMap) => {
+		refine(indexMap[value]);
+		setSortOrder(value);
+	}
+
   return (
     <div className={classes.wrapper}>
       <Text>{count} families loaded</Text>
       <Group>
         <Dropdown label={sortOrder} width={150}>
-          <SortItem value="Most Popular" setState={setSortOrder} />
-          <SortItem value="Newest" setState={setSortOrder} />
-          <SortItem value="Name" setState={setSortOrder} />
-          <SortItem value="Random" setState={setSortOrder} />
+          <SortItem value="Most Popular" setState={updateOrder} />
+          <SortItem value="Last Updated" setState={updateOrder} />
+          <SortItem value="Name" setState={updateOrder} />
+          <SortItem value="Random" setState={updateOrder} />
         </Dropdown>
         <Group className={classes.displayGroup}>
           <Text size={15}>Display</Text>

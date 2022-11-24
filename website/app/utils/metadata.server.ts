@@ -1,5 +1,3 @@
-import ky from 'ky';
-
 import { addCss } from './css.server';
 import { knex } from './db.server';
 import { ensurePrimary } from './fly.server';
@@ -9,11 +7,12 @@ import type {
 	PackageJson,
 	UnicodeData,
 } from './types';
+import { kya } from './utils.server';
 
 const getFontList = async (): Promise<FontList> => {
-	return ky(
+	return kya(
 		'https://raw.githubusercontent.com/fontsource/fontsource/main/FONTLIST.json'
-	).json();
+	);
 };
 
 const fetchMetadata = async (id: string) => {
@@ -25,9 +24,9 @@ const fetchMetadata = async (id: string) => {
 	const UNICODE_URL = `${BASE_URL}/@fontsource/${id}/unicode.json`;
 	const PACKAGE_URL = `${BASE_URL}/@fontsource/${id}/package.json`;
 
-	const metadata: DownloadMetadata = await ky(METADATA_URL).json();
-	const unicode: UnicodeData = await ky(UNICODE_URL).json();
-	const packageJson: PackageJson = await ky(PACKAGE_URL).json();
+	const metadata: DownloadMetadata = await kya(METADATA_URL);
+	const unicode: UnicodeData = await kya(UNICODE_URL);
+	const packageJson: PackageJson = await kya(PACKAGE_URL);
 
 	// Save metadata to DB
 	await knex('fonts')
@@ -69,6 +68,7 @@ const fetchMetadata = async (id: string) => {
 	}
 
 	await addCss(metadata);
+	console.log(`Fetched metadata for ${id}`);
 };
 
 const getMetadata = async (id: string) => {
@@ -88,4 +88,54 @@ const getMetadata = async (id: string) => {
 	return metadata;
 };
 
-export { fetchMetadata, getFontList, getMetadata };
+interface DownloadCount {
+	[name: string]: number;
+}
+
+const cleanCounts = (counts: DownloadCount) => {
+	for (const key of Object.keys(counts)) {
+		if (key.startsWith('fontsource-')) delete counts[key];
+	}
+
+	for (const key of Object.keys(counts)) {
+		counts[key.replace('@fontsource/', '')] = counts[key];
+		delete counts[key];
+	}
+	return counts;
+};
+
+const getDownloadCountList = async () => {
+	const dataMonth: DownloadCount = await kya(
+		'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/lastMonthPopular.json'
+	);
+	const dataTotal: DownloadCount = await kya(
+		'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/totalPopular.json'
+	);
+
+	return { month: cleanCounts(dataMonth), total: cleanCounts(dataTotal) };
+};
+
+const updateDownloadCount = async () => {
+	await ensurePrimary();
+
+	const { month, total } = await getDownloadCountList();
+	const insertData = [];
+	for (const id of Object.keys(month)) {
+		insertData.push({ id, month: month[id], total: total[id] });
+	}
+
+	// Refer for chunk behaviour - https://github.com/knex/knex/issues/5231
+	const chunkSize = 499;
+	for (let i = 0; i < insertData.length; i += chunkSize) {
+		const chunk = insertData.slice(i, i + chunkSize);
+		await knex('downloads').insert(chunk).onConflict('id').merge();
+	}
+};
+
+export {
+	fetchMetadata,
+	getDownloadCountList,
+	getFontList,
+	getMetadata,
+	updateDownloadCount,
+};
