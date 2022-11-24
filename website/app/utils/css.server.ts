@@ -139,12 +139,19 @@ const addCss = async (metadata: DownloadMetadata) => {
 		);
 		let css;
 
-		if (keys.length === 1 && keys.includes('wght')) {
+		try {
+			if (keys.length === 1 && keys.includes('wght')) {
+				css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable.css`, {
+					text: true,
+				});
+			} else {
+				css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable-full.css`, {
+					text: true,
+				});
+			}
+		} catch {
+			// If variable-full.css doesn't exist, use variable.css
 			css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable.css`, {
-				text: true,
-			});
-		} else {
-			css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable-full.css`, {
 				text: true,
 			});
 		}

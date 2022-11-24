@@ -1,36 +1,49 @@
 export interface FontList {
-  [key: string]: string;
+	[key: string]: string;
 }
 
 export interface DownloadMetadata {
-  fontId: string;
-  fontName: string;
-  subsets: string[];
-  weights: number[];
-  styles: string[];
-  defSubset: string;
-  variable: false | VariableData;
-  lastModified: string;
-  version: string;
-  category: string;
-  source: string;
-  license: string;
-  type: string;
+	fontId: string;
+	fontName: string;
+	subsets: string[];
+	weights: number[];
+	styles: string[];
+	defSubset: string;
+	variable: false | VariableData;
+	lastModified: string;
+	version: string;
+	category: string;
+	source: string;
+	license: string;
+	type: string;
 }
 
 export interface UnicodeData {
-  [key: string]: string;
+	[key: string]: string;
 }
 
 export interface VariableData {
-  [key: string]: {
-    default: string;
-    min: string;
-    max: string;
-    step: string;
-  }
+	[key: string]: {
+		default: string;
+		min: string;
+		max: string;
+		step: string;
+	};
 }
 
 export interface PackageJson {
-  version: string;
+	version: string;
+}
+
+export interface AlgoliaMetadata {
+	objectID: string;
+	family: string;
+	subsets: string[];
+	weights: number[];
+	styles: string[];
+	category: string;
+	variable: boolean;
+	lastModified: number;
+	downloadMonth: number;
+	randomIndex: number;
 }

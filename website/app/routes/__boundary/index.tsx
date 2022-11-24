@@ -49,7 +49,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 	const serverState = await getServerState(
 		<MantineProvider theme={theme}>
-			<InstantSearch searchClient={searchClient} indexName="prod_FONTS">
+			<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
 				<Filters />
 				<InfiniteHits />
 			</InstantSearch>
@@ -70,7 +70,7 @@ export default function Index() {
 	return (
 		<Provider>
 			<InstantSearchSSRProvider {...serverState}>
-				<InstantSearch searchClient={searchClient} indexName="prod_FONTS">
+				<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
 					<Box className={classes.background}>
 						<Box className={classes.container}>
 							<Filters />

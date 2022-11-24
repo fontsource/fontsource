@@ -15,25 +15,12 @@ import {
 } from 'react-instantsearch-hooks-web';
 import useFontFaceObserver from 'use-font-face-observer';
 
+import type { AlgoliaMetadata } from '@/utils/types';
+
 import { displayAtom, previewValueAtom, sizeAtom } from './atoms';
 import { Sort } from './Sort';
 interface Hit {
-	hit: {
-		objectID: string;
-		fontName: string;
-		fontId: string;
-		category: string;
-		styles: string[];
-		subsets: string[];
-		type: string;
-		variable: boolean;
-		weights: number[];
-		defSubset: string;
-		lastModified: string;
-		version: string;
-		source: string;
-		license: string;
-	};
+	hit: AlgoliaMetadata
 }
 
 const useStyles = createStyles((theme) => ({
@@ -94,7 +81,7 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
 	const isFontLoaded = useFontFaceObserver(
 		[
 			{
-				family: hit.fontName,
+				family: hit.family,
 			},
 		],
 		{ timeout: 7500 }
@@ -103,7 +90,7 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
 
 	useEffect(() => {
 		if (fontCss.type === 'init') {
-			fontCss.load(`/fonts/${hit.fontId}/fetch-css`);
+			fontCss.load(`/fonts/${hit.objectID}/fetch-css`);
 		}
 
 		if (fontCss.type === 'done') {
@@ -116,23 +103,23 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
 			// Give browser time to load fonts in order to not cause a flash of unstyled font
 			setLoading(false);
 		}
-	}, [fontCss, hit.fontId, isFontLoaded]);
+	}, [fontCss, hit.objectID, isFontLoaded]);
 
 	return (
 		<Box
 			component="a"
-			href={`/fonts/${hit.fontId}`}
+			href={`/fonts/${hit.objectID}`}
 			className={classes.wrapper}
 			mih={{ base: '150px', sm: display == 'grid' ? '332px' : '150px' }}
 		>
 			<Skeleton visible={loading}>
-				<Text size={fontSize} style={{ fontFamily: hit.fontName }}>
+				<Text size={fontSize} style={{ fontFamily: hit.family }}>
 					{previewText}
 				</Text>
 			</Skeleton>
 			<Group className={classes.textGroup} position="apart">
 				<Text size={18} weight={700} component="span">
-					{hit.fontName}
+					{hit.family}
 				</Text>
 				{hit.variable && (
 					<Text size={15} weight={700} component="span">

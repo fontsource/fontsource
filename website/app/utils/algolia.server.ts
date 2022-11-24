@@ -7,19 +7,7 @@ import {
 	getFontList,
 	updateDownloadCount,
 } from './metadata.server';
-
-interface AlgoliaMetadata {
-	objectID: string;
-	family: string;
-	subsets: string[];
-	weights: number[];
-	styles: string[];
-	category: string;
-	variable: boolean;
-	lastModified: number;
-	downloadMonth: number;
-	randomIndex: number;
-}
+import type { AlgoliaMetadata } from './types';
 
 const shuffleArray = (size: number) => {
 	// Generate array of numbers from 0 to size
@@ -92,7 +80,7 @@ const updateAlgoliaIndex = async () => {
 				lastModified: Math.floor(
 					new Date(metadata.lastModified).getTime() / 1000
 				),
-				downloadMonth: downloadCountMonthly ?? 0,
+				downloadMonth: downloadCountMonthly.month ?? 0,
 				randomIndex: randomIndexArr[index],
 			};
 
