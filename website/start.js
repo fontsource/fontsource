@@ -74,6 +74,7 @@ const go = async () => {
 
 	invariant(process.env.UPDATE_TOKEN, 'UPDATE_TOKEN is not defined');
 	invariant(process.env.COOKIE_SECRET, 'COOKIE_SECRET is not defined');
+	invariant(process.env.ALGOLIA_ADMIN_KEY, 'ALGOLIA_ADMIN_KEY is not defined');
 
   console.log('Starting app...');
   await startApp();
