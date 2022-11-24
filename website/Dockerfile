@@ -5,7 +5,7 @@ FROM flyio/litefs:sha-ab81cb2 AS litefs
 FROM node:18-bullseye-slim as base
 
 # Install fuse and ca-certificates for lite-fs
-RUN apt-get update && apt-get install -y fuse ca-certificates 
+RUN apt-get update && apt-get install -y fuse ca-certificates
 ## Add PNPM
 RUN npm install -g pnpm
 RUN pnpm --version
@@ -56,6 +56,7 @@ COPY --from=production-deps /app/node_modules /app/node_modules
 
 COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
+COPY --from=build /app/scripts /app/scripts
 
 # Setup LiteFS
 COPY --from=litefs /usr/local/bin/litefs /usr/local/bin/litefs
@@ -65,4 +66,4 @@ RUN mkdir -p /data /litefs/data
 ADD . .
 
 EXPOSE 3000
-CMD ["litefs", "mount", "--", "node", "./start.js"]
+CMD ["litefs", "mount", "--", "node", "./scripts/start.js"]
