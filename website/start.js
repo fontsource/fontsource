@@ -4,6 +4,8 @@ const os = require('os');
 const invariant = require('tiny-invariant');
 const path = require('path');
 
+const deployMigrations = require('./migrations');
+
 const getPrimaryInstanceHostname = async () => {
   try {
     const { FLY_LITEFS_DIR } = process.env;
@@ -29,20 +31,6 @@ const getPrimaryInstanceHostname = async () => {
   }
 }
 
-const deployMigrations = async () => {
-  const command = 'npx knex migrate:latest';
-  const child = spawn(command, { shell: true, stdio: 'inherit' });
-  await new Promise((res, rej) => {
-    child.on('exit', (code) => {
-      if (code === 0) {
-        res();
-      } else {
-        rej();
-      }
-    });
-  });
-}
-
 const startApp = async () => {
   const command = 'npm start';
   const child = spawn(command, { shell: true, stdio: 'inherit' });
@@ -63,7 +51,7 @@ const go = async () => {
 
   if (primaryInstance === os.hostname()) {
     console.log(
-      `Instance (${currentInstance}) in ${process.env.FLY_REGION} is primary. Deploying migrations.`
+      `Instance (${currentInstance}) in ${process.env.FLY_REGION} is primary.`
     );
     await deployMigrations();
   } else {

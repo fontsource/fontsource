@@ -10,16 +10,20 @@ import {
 	updateDownloadCount,
 } from '@/utils/metadata.server';
 
+import deployMigrations from '../../../scripts/migrations.js';
+
 interface UpdateData {
 	token: string;
 	fonts?: boolean | string[];
 	algolia?: boolean;
 	download?: boolean;
+	migrations?: boolean;
 }
 
 // Speed things up by running these in parallel
 const queue = new PQueue({ concurrency: 32 });
 
+// @ts-ignore - for some reason error is not an accepted type
 queue.on('error', (error) => {
 	console.error(error);
 });
@@ -69,6 +73,10 @@ export const action: ActionFunction = async ({ request }) => {
 
 	if (data.download) {
 		await updateDownloadCount();
+	}
+
+	if (data.migrations) {
+		await deployMigrations();
 	}
 
 	return new Response('Success!');
