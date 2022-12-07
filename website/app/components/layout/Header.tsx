@@ -138,7 +138,7 @@ export const Header = ({ ...other }: ContainerProps) => {
               />
               <Icon
                 label="Discord"
-                href="https://discord.gg/UpHW6ZEyde"
+                href="/discord"
                 icon={<IconDiscord />}
               />
             </Group>
