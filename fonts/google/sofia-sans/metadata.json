@@ -1,0 +1,18 @@
+{
+  "fontId": "sofia-sans",
+  "fontName": "Sofia Sans",
+  "subsets": ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
+  "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  "styles": ["italic", "normal"],
+  "defSubset": "latin",
+  "variable": {
+    "ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+    "wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
+  },
+  "lastModified": "2023-01-06",
+  "version": "v10",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
