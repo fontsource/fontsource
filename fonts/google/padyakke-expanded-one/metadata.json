@@ -1,0 +1,15 @@
+{
+  "fontId": "padyakke-expanded-one",
+  "fontName": "Padyakke Expanded One",
+  "subsets": ["kannada", "latin", "latin-ext"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2023-01-10",
+  "version": "v1",
+  "category": "display",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
