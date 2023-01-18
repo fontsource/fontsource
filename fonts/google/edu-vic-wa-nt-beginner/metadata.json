@@ -1,15 +1,1 @@
-{
-  "fontId": "edu-vic-wa-nt-beginner",
-  "fontName": "Edu VIC WA NT Beginner",
-  "subsets": ["latin"],
-  "weights": [400, 500, 600, 700],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": { "wght": { "default": "400", "min": "400", "max": "700", "step": "1" } },
-  "lastModified": "2023-01-06",
-  "version": "v2",
-  "category": "handwriting",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"edu-vic-wa-nt-beginner","fontName":"Edu VIC WA NT Beginner","subsets":["latin"],"weights":[400,500,600,700],"styles":["normal"],"defSubset":"latin","variable":{"wght":{"default":"400","min":"400","max":"700","step":"1"}},"lastModified":"2023-01-06","version":"v2","category":"handwriting","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

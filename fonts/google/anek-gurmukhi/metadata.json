@@ -1,18 +1,1 @@
-{
-  "fontId": "anek-gurmukhi",
-  "fontName": "Anek Gurmukhi",
-  "subsets": ["gurmukhi", "latin", "latin-ext"],
-  "weights": [100, 200, 300, 400, 500, 600, 700, 800],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": {
-    "wdth": { "default": "100", "min": "75", "max": "125", "step": "0.1" },
-    "wght": { "default": "400", "min": "100", "max": "800", "step": "1" }
-  },
-  "lastModified": "2023-01-06",
-  "version": "v4",
-  "category": "sans-serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"anek-gurmukhi","fontName":"Anek Gurmukhi","subsets":["gurmukhi","latin","latin-ext"],"weights":[100,200,300,400,500,600,700,800],"styles":["normal"],"defSubset":"latin","variable":{"wdth":{"default":"100","min":"75","max":"125","step":"0.1"},"wght":{"default":"400","min":"100","max":"800","step":"1"}},"lastModified":"2023-01-06","version":"v4","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
