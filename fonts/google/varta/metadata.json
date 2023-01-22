@@ -1,1 +1,15 @@
-{"fontId":"varta","fontName":"Varta","subsets":["latin","latin-ext","vietnamese"],"weights":[300,400,500,600,700],"styles":["normal"],"defSubset":"latin","variable":{"wght":{"default":"400","min":"300","max":"700","step":"1"}},"lastModified":"2022-09-22","version":"v17","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "varta",
+  "fontName": "Varta",
+  "subsets": ["latin", "latin-ext", "vietnamese"],
+  "weights": [300, 400, 500, 600, 700],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": { "wght": { "default": "400", "min": "300", "max": "700", "step": "1" } },
+  "lastModified": "2022-09-22",
+  "version": "v17",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

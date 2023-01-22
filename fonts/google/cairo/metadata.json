@@ -1,1 +1,18 @@
-{"fontId":"cairo","fontName":"Cairo","subsets":["arabic","latin","latin-ext"],"weights":[200,300,400,500,600,700,800,900],"styles":["normal"],"defSubset":"latin","variable":{"slnt":{"default":"0","min":"-11","max":"11","step":"1"},"wght":{"default":"400","min":"200","max":"1000","step":"1"}},"lastModified":"2022-11-09","version":"v22","category":"sans-serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
+{
+  "fontId": "cairo",
+  "fontName": "Cairo",
+  "subsets": ["arabic", "latin", "latin-ext"],
+  "weights": [200, 300, 400, 500, 600, 700, 800, 900],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": {
+    "slnt": { "default": "0", "min": "-11", "max": "11", "step": "1" },
+    "wght": { "default": "400", "min": "200", "max": "1000", "step": "1" }
+  },
+  "lastModified": "2022-11-09",
+  "version": "v22",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}
