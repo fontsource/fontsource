@@ -1,15 +1,1 @@
-{
-  "fontId": "noto-serif-np-hmong",
-  "fontName": "Noto Serif NP Hmong",
-  "subsets": ["latin", "nyiakeng-puachue-hmong"],
-  "weights": [400, 500, 600, 700],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": { "wght": { "default": "400", "min": "400", "max": "700", "step": "1" } },
-  "lastModified": "2022-12-08",
-  "version": "v1",
-  "category": "serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"noto-serif-np-hmong","fontName":"Noto Serif NP Hmong","subsets":["latin","nyiakeng-puachue-hmong"],"weights":[400,500,600,700],"styles":["normal"],"defSubset":"latin","variable":{"wght":{"default":"400","min":"400","max":"700","step":"1"}},"lastModified":"2022-12-08","version":"v1","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}

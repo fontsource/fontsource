@@ -1,15 +1,1 @@
-{
-  "fontId": "frank-ruhl-libre",
-  "fontName": "Frank Ruhl Libre",
-  "subsets": ["hebrew", "latin", "latin-ext"],
-  "weights": [300, 400, 500, 600, 700, 800, 900],
-  "styles": ["normal"],
-  "defSubset": "latin",
-  "variable": { "wght": { "default": "400", "min": "300", "max": "900", "step": "1" } },
-  "lastModified": "2022-12-08",
-  "version": "v15",
-  "category": "serif",
-  "source": "https://fonts.google.com/",
-  "license": "https://fonts.google.com/attribution",
-  "type": "google"
-}
+{"fontId":"frank-ruhl-libre","fontName":"Frank Ruhl Libre","subsets":["hebrew","latin","latin-ext"],"weights":[300,400,500,600,700,800,900],"styles":["normal"],"defSubset":"latin","variable":{"wght":{"default":"400","min":"300","max":"900","step":"1"}},"lastModified":"2022-12-08","version":"v15","category":"serif","source":"https://fonts.google.com/","license":"https://fonts.google.com/attribution","type":"google"}
