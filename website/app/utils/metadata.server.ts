@@ -88,6 +88,12 @@ const getMetadata = async (id: string) => {
 	return metadata;
 };
 
+const getVariable = async (id: string) => {
+	const variable = await knex('variable').where({ id }).first();
+	if (!variable) return null;
+	return JSON.parse(variable.axes);
+};
+
 interface DownloadCount {
 	[name: string]: number;
 }
@@ -137,5 +143,6 @@ export {
 	getDownloadCountList,
 	getFontList,
 	getMetadata,
+	getVariable,
 	updateDownloadCount,
 };
