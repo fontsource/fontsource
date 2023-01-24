@@ -47,3 +47,19 @@ export interface AlgoliaMetadata {
 	downloadMonth: number;
 	randomIndex: number;
 }
+
+export interface Metadata {
+	id: string;
+	family: string;
+	subsets: string[];
+	weights: number[];
+	styles: string[];
+	defSubset: string;
+	variable: boolean;
+	lastModified: string;
+	version: string;
+	category: string;
+	source: string;
+	license: string;
+	type: string;
+}
