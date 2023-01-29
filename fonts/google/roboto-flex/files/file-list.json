@@ -1,1 +1,27 @@
-["./fonts/google/roboto-flex/files/roboto-flex-cyrillic-400-normal.woff","./fonts/google/roboto-flex/files/roboto-flex-cyrillic-ext-400-normal.woff","./fonts/google/roboto-flex/files/roboto-flex-greek-400-normal.woff","./fonts/google/roboto-flex/files/roboto-flex-latin-400-normal.woff","./fonts/google/roboto-flex/files/roboto-flex-latin-ext-400-normal.woff","./fonts/google/roboto-flex/files/roboto-flex-vietnamese-400-normal.woff","./fonts/google/roboto-flex/files/roboto-flex-cyrillic-ext-400-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-all-400-normal.woff","./fonts/google/roboto-flex/files/roboto-flex-cyrillic-400-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-greek-400-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-vietnamese-400-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-latin-ext-400-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-latin-400-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-cyrillic-ext-variable-wghtOnly-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-cyrillic-variable-wghtOnly-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-greek-variable-wghtOnly-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-vietnamese-variable-wghtOnly-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-latin-ext-variable-wghtOnly-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-latin-variable-wghtOnly-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-cyrillic-ext-variable-full-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-cyrillic-variable-full-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-greek-variable-full-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-vietnamese-variable-full-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-latin-ext-variable-full-normal.woff2","./fonts/google/roboto-flex/files/roboto-flex-latin-variable-full-normal.woff2"]
+[
+  "./fonts/google/roboto-flex/files/roboto-flex-cyrillic-400-normal.woff",
+  "./fonts/google/roboto-flex/files/roboto-flex-cyrillic-ext-400-normal.woff",
+  "./fonts/google/roboto-flex/files/roboto-flex-greek-400-normal.woff",
+  "./fonts/google/roboto-flex/files/roboto-flex-latin-400-normal.woff",
+  "./fonts/google/roboto-flex/files/roboto-flex-latin-ext-400-normal.woff",
+  "./fonts/google/roboto-flex/files/roboto-flex-vietnamese-400-normal.woff",
+  "./fonts/google/roboto-flex/files/roboto-flex-cyrillic-ext-400-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-all-400-normal.woff",
+  "./fonts/google/roboto-flex/files/roboto-flex-cyrillic-400-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-greek-400-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-vietnamese-400-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-latin-ext-400-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-latin-400-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-cyrillic-ext-variable-wghtOnly-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-cyrillic-variable-wghtOnly-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-greek-variable-wghtOnly-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-vietnamese-variable-wghtOnly-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-latin-ext-variable-wghtOnly-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-latin-variable-wghtOnly-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-cyrillic-ext-variable-full-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-cyrillic-variable-full-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-greek-variable-full-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-vietnamese-variable-full-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-latin-ext-variable-full-normal.woff2",
+  "./fonts/google/roboto-flex/files/roboto-flex-latin-variable-full-normal.woff2"
+]
