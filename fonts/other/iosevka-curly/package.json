@@ -1,0 +1,28 @@
+{
+  "name": "@fontsource/iosevka-curly",
+  "version": "4.5.0",
+  "description": "Self-host the Iosevka Curly  font in a neatly bundled NPM package.",
+  "main": "index.css",
+  "publishConfig": { "access": "public" },
+  "keywords": [
+    "fontsource",
+    "font",
+    "font family",
+    "google fonts",
+    "Iosevka Curly ",
+    "iosevka-curly",
+    "css",
+    "sass",
+    "front-end",
+    "web",
+    "typeface"
+  ],
+  "author": "Lotus <declininglotus@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fontsource/fontsource/tree/main/fonts/other/iosevka-curly#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fontsource/fontsource.git",
+    "directory": "fonts/other/iosevka-curly"
+  }
+}

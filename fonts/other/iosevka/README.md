@@ -32,6 +32,8 @@ body {
 }
 ```
 
+
+
 ## Licensing
 
 It is important to always read the license for every font that you use.
@@ -41,6 +43,6 @@ Font [Source](https://github.com/be5invis/Iosevka) and [License](https://github.
 
 ## Other Notes
 
-Font version (provided by source): `v9.0.1`.
+Font version (provided by source): `19.0.0`.
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).
