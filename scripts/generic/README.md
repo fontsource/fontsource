@@ -23,7 +23,7 @@ This is a basic explanation on how to utilize this section of the repo to easily
 
 5. On the other hand, `<font name>` is what will be publicly described on the top of readme files and can use uppercase/titlecase as well as have spaces in between.
 
-6. Within the main directory, run `yarn build:generic`. This will generate a folder in `scripts/generic` using the fontid as the folder name.
+6. Within the main directory, run `pnpm build:generic`. This will generate a folder in `scripts/generic` using the fontid as the folder name.
 
 7. Review `README.md` to ensure everything is correct and linked appropriately.
 
@@ -31,4 +31,4 @@ This is a basic explanation on how to utilize this section of the repo to easily
 
 ## Tools
 
-You are also able to run `yarn util:renamer` to rename all files in the `files` directory to lowercase, as well as replace any font weights in word format, to numbers. Note that this isn't stable and is prone to accidental replacements. Use with caution.
+You are also able to run `pnpm util:renamer` to rename all files in the `files` directory to lowercase, as well as replace any font weights in word format, to numbers. Note that this isn't stable and is prone to accidental replacements. Use with caution.
