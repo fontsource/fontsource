@@ -1,7 +1,7 @@
 {
   "name": "@fontsource/iosevka-aile",
   "version": "4.5.0",
-  "description": "Self-host the Iosevka Aile  font in a neatly bundled NPM package.",
+  "description": "Self-host the Iosevka Aile font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": { "access": "public" },
   "keywords": [
@@ -9,7 +9,7 @@
     "font",
     "font family",
     "google fonts",
-    "Iosevka Aile ",
+    "Iosevka Aile",
     "iosevka-aile",
     "css",
     "sass",
