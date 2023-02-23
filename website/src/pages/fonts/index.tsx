@@ -1,7 +1,7 @@
 import { Heading } from "@chakra-ui/react";
 import Head from "next/head";
-import { CarbonAd } from "website/src/components/CarbonAd";
 
+import { CarbonAd } from "../../components/CarbonAd";
 import { Container } from "../../components/Container";
 import { Main } from "../../components/Main";
 import { SearchModal } from "../../components/Search/Modal";
