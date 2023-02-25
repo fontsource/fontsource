@@ -13,6 +13,7 @@ import {
 import colors from 'picocolors';
 
 import { version } from '../package.json';
+import { create } from './custom/create';
 
 const cli = cac('fontsource');
 
@@ -59,9 +60,9 @@ cli
 		}
 	});
 
-cli.command('create <name>').action(async (name: string) => {
+cli.command('create').action(async () => {
 	try {
-		console.log(name);
+		await create();
 	} catch (error) {
 		consola.error(error);
 	}

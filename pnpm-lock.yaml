@@ -193,6 +193,7 @@ importers:
   utils/cli:
     specifiers:
       '@ayuhito/eslint-config': ^0.2.4
+      '@clack/prompts': ^0.6.0
       '@fontsource-utils/generate': workspace:*
       '@types/flat': ^5.0.2
       '@types/fs-extra': ^9.0.13
@@ -215,6 +216,7 @@ importers:
       typescript: ^4.8.4
       vitest: ^0.24.3
     dependencies:
+      '@clack/prompts': 0.6.0
       '@fontsource-utils/generate': link:../generate
       cac: 6.7.14
       consola: 2.15.3
@@ -1799,6 +1801,23 @@ packages:
       '@chakra-ui/utils': 1.10.4
       react: 17.0.2
     dev: false
+
+  /@clack/core/0.3.0:
+    resolution: {integrity: sha512-ujw1888RciTArxUvwLOf24XSygRX7F4qiCPI7WLH3zCTZJuqKPMcTS7Wqjz0x/AuMpwGPlzhKln4+sCuQqYxzA==}
+    dependencies:
+      picocolors: 1.0.0
+      sisteransi: 1.0.5
+    dev: false
+
+  /@clack/prompts/0.6.0:
+    resolution: {integrity: sha512-lNg3MFPLA2rrMAZ6R2QFg+jGo2Pt3ACJERDbPgxjPU9QJwVFB3D2v3x7SzzVoS6schggcMN0tDJ4zSdcI+kqJg==}
+    dependencies:
+      '@clack/core': 0.3.0
+      picocolors: 1.0.0
+      sisteransi: 1.0.5
+    dev: false
+    bundledDependencies:
+      - is-unicode-supported
 
   /@colors/colors/1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}

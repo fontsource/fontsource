@@ -2,13 +2,13 @@
 	"name": "@fontsource-utils/cli",
 	"version": "0.1.0",
 	"description": "Fontsource CLI",
-	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
+	"main": "./dist/cli.js",
+	"module": "./dist/cli.mjs",
+	"types": "./dist/cli.d.ts",
 	"exports": {
-		"types": "./dist/index.d.ts",
-		"require": "./dist/index.js",
-		"import": "./dist/index.mjs"
+		"types": "./dist/cli.d.ts",
+		"require": "./dist/cli.js",
+		"import": "./dist/cli.mjs"
 	},
 	"scripts": {
 		"build": "pkgroll --target=node14",
@@ -20,6 +20,7 @@
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
+		"@clack/prompts": "^0.6.0",
 		"@fontsource-utils/generate": "workspace:*",
 		"cac": "^6.7.14",
 		"consola": "^2.15.3",
