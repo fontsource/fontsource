@@ -41,3 +41,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+/.cache
+/build
+/public/build
+.env
+
+sqlite.dev.db
