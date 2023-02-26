@@ -10,6 +10,7 @@ describe('init command', () => {
 	it('writes config file', async () => {
 		await init();
 		expect(vi.mocked(fs.writeFile)).toHaveBeenCalledWith(
+			expect.anything(),
 			stringify({
 				packages: ['packages/'],
 				commitMessage: 'chore: release new versions',

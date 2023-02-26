@@ -6,16 +6,15 @@ export interface Git {
 export interface PackageJson {
 	name: string;
 	version: string;
+	publishHash?: string;
 }
 
-export interface Config {
+export interface Context {
 	packages: string[];
 	ignoreExtension?: string[];
 	commitMessage: string;
 	updateMessage?: string;
 	git?: Git;
-	commitFrom: string;
-	commitTo?: string;
 	noVerify?: boolean;
 	forcePublish?: boolean;
 	yes?: boolean;
@@ -25,8 +24,6 @@ export interface ChangedFlags {
 	packages?: string
 	ignoreExtension?: string
 	commitMessage?: string
-	commitFrom?: string
-	commitTo?: string
 }
 
 export interface BumpFlags extends ChangedFlags {

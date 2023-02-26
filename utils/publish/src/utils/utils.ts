@@ -1,34 +1,25 @@
 import defu from 'defu';
-import stringify from 'json-stringify-pretty-compact';
-import * as fs from 'node:fs/promises';
-import * as path from 'pathe';
+import fs from 'fs-extra';
 
-import type { Config, Flags } from '../types';
-import { getHeadCommit } from './git';
+import type { Context, Flags } from '../types';
 
-const readConfig = async (): Promise<Config> => {
-	const configPath = path.join(process.cwd(), 'mass-publish.json');
-	return JSON.parse(await fs.readFile(configPath, 'utf8'));
+const getPackages = async (dir: string): Promise<string[]> => {
+	const packages = await fs.readdir(dir, {
+		withFileTypes: true,
+	});
+	return packages
+		.filter(dirent => dirent.isDirectory())
+		.map(dirent => dirent.name);
 };
 
-const updateConfig = async (config: Config): Promise<void> => {
-	const headCommit = await getHeadCommit();
-
-	// Update commitFrom with HEAD commit
-	const newConfig = config;
-	newConfig.commitFrom = headCommit;
-
-	const configPath = path.join(process.cwd(), 'mass-publish.json');
-	await fs.writeFile(configPath, stringify(newConfig));
-};
-
-const mergeFlags = async (options: Flags): Promise<Config> => {
-	const flags = {} as Config;
+const mergeFlags = async (options: Flags): Promise<Context> => {
+	const flags = {} as Context;
 	// CLI args come in string format
 	if (options.packages) flags.packages = options.packages.split(',');
-	if (options.ignoreExtension) flags.ignoreExtension = options.ignoreExtension.split(',');
+	if (options.ignoreExtension)
+		flags.ignoreExtension = options.ignoreExtension.split(',');
 
-	return defu(flags, await readConfig());
+	return defu(flags, await fs.readJson('font-publish.json'));
 };
 
-export { mergeFlags, readConfig, updateConfig };
+export { getPackages,mergeFlags };

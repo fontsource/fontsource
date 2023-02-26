@@ -18,13 +18,11 @@ cli.command('init', 'Add config file with default variables in root')
 	.action(async () => {
 		try {
 			await init();
-			consola.success(colors.green('mass-publish.json has been created.'));
+			consola.success(colors.green('font-publish.json has been created.'));
 		} catch (error) { consola.error(error); }
 	});
 
-cli.command('changed', 'Runs git diff and lists all packages that have changes made to them')
-	.option('--commit-from', 'Commit SHA to compare differences from')
-	.option('--commit-to', 'Commit SHA to compare differences to')
+cli.command('changed', 'Calculates hashes and lists all packages that have changes made to them')
 	.option('--commit-message', 'Change commit message')
 	.option('--ignore-extension', 'Ignore extensions')
 	.option('--packages', 'Package directory')
