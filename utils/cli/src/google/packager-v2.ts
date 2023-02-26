@@ -46,6 +46,7 @@ const packagerV2 = async (id: string, opts: BuildOptions) => {
 							},
 						],
 						comment: `${id}-${subset}-${weight}-${style}`,
+						displayVar: true,
 					};
 					// This takes in a font object and returns an @font-face block
 					const css = generateFontFace(fontObj);

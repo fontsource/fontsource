@@ -9,7 +9,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-400-normal.woff) format('woff');
 }",
@@ -20,7 +20,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-400-italic.woff) format('woff');
 }",
@@ -31,7 +31,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-400-normal.woff) format('woff');
 }",
@@ -42,7 +42,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-400-normal.woff) format('woff');
 }",
@@ -53,7 +53,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-400-italic.woff) format('woff');
 }",
@@ -64,7 +64,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 500;
   src: url(./files/custom-font-latin-500-normal.woff2) format('woff2'), url(./files/custom-font-latin-500-normal.woff) format('woff');
 }",
@@ -75,7 +75,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 500;
   src: url(./files/custom-font-latin-500-italic.woff2) format('woff2'), url(./files/custom-font-latin-500-italic.woff) format('woff');
 }",
@@ -86,7 +86,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-400-normal.woff) format('woff');
 }
@@ -95,7 +95,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 500;
   src: url(./files/custom-font-latin-500-normal.woff2) format('woff2'), url(./files/custom-font-latin-500-normal.woff) format('woff');
 }",
@@ -106,7 +106,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-400-italic.woff) format('woff');
 }
@@ -115,7 +115,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 500;
   src: url(./files/custom-font-latin-500-italic.woff2) format('woff2'), url(./files/custom-font-latin-500-italic.woff) format('woff');
 }",
@@ -126,7 +126,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-ext-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-normal.woff) format('woff');
 }",
@@ -137,7 +137,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-ext-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-italic.woff) format('woff');
 }",
@@ -148,7 +148,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-ext-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-normal.woff) format('woff');
 }",
@@ -159,7 +159,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-ext-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-normal.woff) format('woff');
 }",
@@ -170,7 +170,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-ext-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-italic.woff) format('woff');
 }",
@@ -181,7 +181,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 500;
   src: url(./files/custom-font-latin-ext-500-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-500-normal.woff) format('woff');
 }",
@@ -192,7 +192,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 500;
   src: url(./files/custom-font-latin-ext-500-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-500-italic.woff) format('woff');
 }",
@@ -203,7 +203,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-ext-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-normal.woff) format('woff');
 }
@@ -212,7 +212,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: normal;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 500;
   src: url(./files/custom-font-latin-ext-500-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-500-normal.woff) format('woff');
 }",
@@ -223,7 +223,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 400;
   src: url(./files/custom-font-latin-ext-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-italic.woff) format('woff');
 }
@@ -232,7 +232,7 @@ exports[`packager custom > should generate custom CSS successfully 1`] = `
 @font-face {
   font-family: 'Custom Font';
   font-style: italic;
-  font-display: swap;
+  font-display: var(--fontsource-display, swap);
   font-weight: 500;
   src: url(./files/custom-font-latin-ext-500-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-500-italic.woff) format('woff');
 }",

@@ -24,4 +24,5 @@ export interface FontObject {
 	unicodeRange?: string;
 	comment?: string;
 	spacer?: string;
+	displayVar?: boolean;
 }
