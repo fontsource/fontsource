@@ -2,7 +2,9 @@
 	"name": "@fontsource-utils/cli",
 	"version": "0.1.0",
 	"description": "Fontsource CLI",
-	"bin": "./dist/cli.mjs",
+	"bin": {
+		"fontsource": "./dist/cli.mjs"
+	},
 	"scripts": {
 		"build": "pkgroll --target=node14",
 		"dev": "pnpm run build && node ./dist/cli.mjs",
