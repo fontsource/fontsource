@@ -30,6 +30,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"@npmcli/package-json": "^3.0.0",
+		"@types/folder-hash": "^4.0.2",
+		"@types/fs-extra": "^11.0.1",
 		"@types/libnpmpublish": "^4.0.3",
 		"@types/node": "^18.14.1",
 		"@types/semver": "^7.3.13",
@@ -38,6 +40,8 @@
 		"defu": "^6.1.2",
 		"dotenv": "^16.0.3",
 		"execa": "^7.0.0",
+		"folder-hash": "^4.0.4",
+		"fs-extra": "^11.1.0",
 		"json-stringify-pretty-compact": "^4.0.0",
 		"latest-version": "^7.0.0",
 		"libnpmpublish": "^7.1.0",

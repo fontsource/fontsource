@@ -1,18 +1,15 @@
+import fs from 'fs-extra';
 import stringify from 'json-stringify-pretty-compact';
-import * as fs from 'node:fs/promises';
-import * as path from 'pathe';
+import path from 'pathe';
 
-import type { Config } from './types';
-import { getHeadCommit } from './utils/git';
+import type { Context } from './types';
 
 const init = async (): Promise<void> => {
-	const configPath = path.join(process.cwd(), 'mass-publish.json');
+	const configPath = path.join(process.cwd(), 'font-publish.json');
 
-	const defaultConfig: Config = {
+	const defaultConfig: Context = {
 		packages: ['packages/'],
-		ignoreExtension: [],
 		commitMessage: 'chore: release new versions',
-		commitFrom: await getHeadCommit(),
 	};
 
 	await fs.writeFile(configPath, stringify(defaultConfig));

@@ -265,6 +265,8 @@ importers:
     specifiers:
       '@ayuhito/eslint-config': ^0.2.4
       '@npmcli/package-json': ^3.0.0
+      '@types/folder-hash': ^4.0.2
+      '@types/fs-extra': ^11.0.1
       '@types/libnpmpublish': ^4.0.3
       '@types/node': ^18.14.1
       '@types/semver': ^7.3.13
@@ -275,6 +277,8 @@ importers:
       dotenv: ^16.0.3
       eslint: ^8.35.0
       execa: ^7.0.0
+      folder-hash: ^4.0.4
+      fs-extra: ^11.1.0
       json-stringify-pretty-compact: ^4.0.0
       latest-version: ^7.0.0
       libnpmpublish: ^7.1.0
@@ -290,6 +294,8 @@ importers:
       vitest: ^0.29.1
     dependencies:
       '@npmcli/package-json': 3.0.0
+      '@types/folder-hash': 4.0.2
+      '@types/fs-extra': 11.0.1
       '@types/libnpmpublish': 4.0.3
       '@types/node': 18.14.1
       '@types/semver': 7.3.13
@@ -298,6 +304,8 @@ importers:
       defu: 6.1.2
       dotenv: 16.0.3
       execa: 7.0.0
+      folder-hash: 4.0.4
+      fs-extra: 11.1.0
       json-stringify-pretty-compact: 4.0.0
       latest-version: 7.0.0
       libnpmpublish: 7.1.0
@@ -4312,6 +4320,17 @@ packages:
   /@types/flat/5.0.2:
     resolution: {integrity: sha512-3zsplnP2djeps5P9OyarTxwRpMLoe5Ash8aL9iprw0JxB+FAHjY+ifn4yZUuW4/9hqtnmor6uvjSRzJhiVbrEQ==}
 
+  /@types/folder-hash/4.0.2:
+    resolution: {integrity: sha512-vMVeAUKl8EmDiTLj8XJQL4gJd8UYQfxRUWiv8cZpI/iQcVkS4GHlwVdInH/4iVIzLjlc/+ejcGEhKt92bkWesQ==}
+    dev: false
+
+  /@types/fs-extra/11.0.1:
+    resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==}
+    dependencies:
+      '@types/jsonfile': 6.1.1
+      '@types/node': 18.14.1
+    dev: false
+
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
@@ -4377,6 +4396,12 @@ packages:
     dependencies:
       '@types/node': 18.0.6
     dev: true
+
+  /@types/jsonfile/6.1.1:
+    resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
+    dependencies:
+      '@types/node': 18.14.1
+    dev: false
 
   /@types/keyv/3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
@@ -8920,6 +8945,17 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       tslib: 2.4.0
+    dev: false
+
+  /folder-hash/4.0.4:
+    resolution: {integrity: sha512-zEyYH+UsHEfJJcCRSf9ai5I4CTZwZ8ObONRuEI5hcEmJY5pS0FUWKruX9mMnYJrgC7MlPFDYnGsK1R+WFYjLlQ==}
+    engines: {node: '>=10.10.0'}
+    hasBin: true
+    dependencies:
+      debug: 4.3.4
+      minimatch: 5.1.6
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /follow-redirects/1.15.1:
