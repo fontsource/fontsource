@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`generateSingle > should generate a single font face with all variable axis 1`] = `
+exports[`generate font face > should generate a single font face with all variable axis 1`] = `
 "/* latin */
 @font-face {
   font-family: 'Open Sans';
@@ -13,7 +13,7 @@ exports[`generateSingle > should generate a single font face with all variable a
 }"
 `;
 
-exports[`generateSingle > should generate a single font face with different display 1`] = `
+exports[`generate font face > should generate a single font face with different display 1`] = `
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -23,7 +23,17 @@ exports[`generateSingle > should generate a single font face with different disp
 }"
 `;
 
-exports[`generateSingle > should generate a single font face with font stretch 1`] = `
+exports[`generate font face > should generate a single font face with different variable font display fallback 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: var(--fontsource-display, optional);
+  font-weight: 400;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+}"
+`;
+
+exports[`generate font face > should generate a single font face with font stretch 1`] = `
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -34,7 +44,7 @@ exports[`generateSingle > should generate a single font face with font stretch 1
 }"
 `;
 
-exports[`generateSingle > should generate a single font face with multiple formats 1`] = `
+exports[`generate font face > should generate a single font face with multiple formats 1`] = `
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -44,7 +54,7 @@ exports[`generateSingle > should generate a single font face with multiple forma
 }"
 `;
 
-exports[`generateSingle > should generate a single font face with slnt axis 1`] = `
+exports[`generate font face > should generate a single font face with slnt axis 1`] = `
 "@font-face {
   font-family: 'Open Sans';
   font-style: oblique -20deg 10deg;
@@ -54,7 +64,7 @@ exports[`generateSingle > should generate a single font face with slnt axis 1`] 
 }"
 `;
 
-exports[`generateSingle > should generate a single font face with unicode range 1`] = `
+exports[`generate font face > should generate a single font face with unicode range 1`] = `
 "/* latin */
 @font-face {
   font-family: 'Open Sans';
@@ -66,7 +76,17 @@ exports[`generateSingle > should generate a single font face with unicode range 
 }"
 `;
 
-exports[`generateSingle > should generate a single font face with variable wght 1`] = `
+exports[`generate font face > should generate a single font face with variable font display 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
+}"
+`;
+
+exports[`generate font face > should generate a single font face with variable wght 1`] = `
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -76,7 +96,7 @@ exports[`generateSingle > should generate a single font face with variable wght 
 }"
 `;
 
-exports[`generateSingle > should generate a single font-face 1`] = `
+exports[`generate font face > should generate a single font-face 1`] = `
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
