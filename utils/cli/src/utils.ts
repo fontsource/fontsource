@@ -44,6 +44,17 @@ const findClosest = (arr: number[], num: number): number => {
 	return closest;
 };
 
+const licenseMap = {
+	'apache license, version 2.0': 'Apache-2.0',
+	'sil open font license, 1.1': 'OFL-1.1',
+	'ubuntu font license, 1.0': 'UFL-1.0',
+	'mit license': 'MIT',
+};
+
+export const licenseShort = (license: string): string | undefined =>
+	licenseMap[license.toLowerCase() as keyof typeof licenseMap];
+
+
 export {
 	findClosest,
 	makeFontDownloadPath,
