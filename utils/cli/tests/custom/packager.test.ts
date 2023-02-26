@@ -4,9 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { packagerCustom } from '../../src/custom/packager';
 import { Metadata } from '../../src/types';
 
-
 vi.mock('fs-extra');
-
 
 describe('packager custom', () => {
 	it('should generate custom CSS successfully', async () => {

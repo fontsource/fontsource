@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
-import { cancel, confirm,group, intro, multiselect, outro, select, text } from '@clack/prompts';
+import { cancel, confirm, group, intro, multiselect, outro, select, text } from '@clack/prompts';
+import consola from 'consola';
 import colors from 'picocolors';
 
 import type { Metadata } from '../types';
@@ -28,6 +29,9 @@ export const create = async () => {
 			placeholder: '100, 200, 300, 400, 500, 600, 700, 800, 900',
 			validate(value) {
 				if (!value) return 'Please enter at least one weight';
+				// Split array and check if all values are numbers
+				const weights = value.split(',').map(Number);
+				if (weights.some((weight) => Number.isNaN(weight))) return 'Please enter only numbers';
 			}
 		}),
 		styles: () => multiselect({
@@ -80,7 +84,7 @@ export const create = async () => {
 			}
 		}),
 		sourceUrl: () => text({
-			message: colors.bold('What is the URL of the source files? GitHub repositories are preferred.'),
+			message: colors.bold('What is the URL of the source files? GitHub repositories are preferred'),
 			validate(value) {
 				if (!value) return 'Please enter a URL';
 			}
@@ -88,7 +92,7 @@ export const create = async () => {
 	},
 	{
     onCancel: () => {
-      cancel('Package creation cancelled.');
+      cancel('Package creation cancelled');
       // eslint-disable-next-line unicorn/no-process-exit
       process.exit(0);
     },
@@ -124,7 +128,13 @@ export const create = async () => {
 		process.exit(0);
 	}
 
-	await buildCustom(metadata);
+	try {
+		await buildCustom(metadata);
+	} catch (error) {
+		cancel('Package creation failed.');
+		consola.error(error);
+		return;
+	}
 
-	outro(colors.green(`You're all set!\n\n\tNow copy all the font files into the files directory and run "fontsource create-verify" to verify your package.\n\n\tPlease ensure the file names match the format "${metadata.id}-subset-weight-style.extension"\n\tExample: ${metadata.id}-latin-400-normal.woff2" or "${metadata.id}-latin-ext-700-italic"\n\n\tPlease also copy the appropriate LICENSE file from your license URL to the root directory of the package.`));
+	outro(colors.green(`You're all set!\n\n\tNow copy all the font files into the files directory and run "fontsource create-verify" to verify your package.\n\n\tPlease ensure the file names match the format "${metadata.id}-subset-weight-style.extension"\n\tExample: "${metadata.id}-latin-400-normal.woff2" or "${metadata.id}-latin-ext-700-italic.woff"\n\n\tPlease also copy the appropriate LICENSE file from your license URL to the root directory of the package.`));
 };

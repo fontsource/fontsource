@@ -14,6 +14,7 @@ import colors from 'picocolors';
 
 import { version } from '../package.json';
 import { create } from './custom/create';
+import { verify } from './custom/verify';
 
 const cli = cac('fontsource');
 
@@ -63,6 +64,14 @@ cli
 cli.command('create').action(async () => {
 	try {
 		await create();
+	} catch (error) {
+		consola.error(error);
+	}
+});
+
+cli.command('create-verify').action(async () => {
+	try {
+		await verify();
 	} catch (error) {
 		consola.error(error);
 	}
