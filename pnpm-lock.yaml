@@ -267,6 +267,7 @@ importers:
       '@npmcli/package-json': ^2.0.0
       '@types/libnpmpublish': ^4.0.3
       '@types/node': ^18.6.4
+      '@types/semver': ^7.3.13
       '@vitest/coverage-c8': ^0.29.1
       cac: ^6.7.12
       consola: ^2.15.3
@@ -292,6 +293,7 @@ importers:
       '@npmcli/package-json': 2.0.0
       '@types/libnpmpublish': 4.0.3
       '@types/node': 18.14.1
+      '@types/semver': 7.3.13
       cac: 6.7.14
       consola: 2.15.3
       defu: 6.1.2
@@ -4452,7 +4454,6 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
-    dev: true
 
   /@types/ssri/7.1.1:
     resolution: {integrity: sha512-DPP/jkDaqGiyU75MyMURxLWyYLwKSjnAuGe9ZCsLp9QZOpXmDfuevk769F0BS86TmRuD5krnp06qw9nSoNO+0g==}
