@@ -2,13 +2,18 @@
 	"name": "@fontsource-utils/generate",
 	"version": "0.1.0",
 	"description": "A CSS font-face generator",
-	"main": "./dist/index.js",
+	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/index.d.cts",
 	"exports": {
-		"types": "./dist/index.d.ts",
-		"require": "./dist/index.js",
-		"import": "./dist/index.mjs"
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
 	},
 	"scripts": {
 		"build": "pkgroll --target=node14",
@@ -20,13 +25,13 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.2.4",
-		"@types/node": "^18.7.20",
-		"c8": "^7.12.0",
-		"eslint": "^8.11.0",
-		"pkgroll": "^1.4.0",
-		"tsx": "^3.8.0",
-		"typescript": "^4.6.2",
-		"vitest": "^0.23.4"
+		"@types/node": "^18.14.1",
+		"c8": "^7.13.0",
+		"eslint": "^8.34.0",
+		"pkgroll": "^1.9.0",
+		"tsx": "^3.12.3",
+		"typescript": "^4.9.5",
+		"vitest": "^0.29.1"
 	},
 	"files": [
 		"dist/*"
