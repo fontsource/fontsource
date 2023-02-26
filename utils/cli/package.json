@@ -5,6 +5,7 @@
 	"bin": "./dist/cli.mjs",
 	"scripts": {
 		"build": "pkgroll --target=node14",
+		"dev": "pnpm run build && node ./dist/cli.mjs",
 		"lint": "eslint --fix",
 		"coverage": "vitest run --coverage",
 		"test": "vitest"

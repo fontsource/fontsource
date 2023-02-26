@@ -7,6 +7,7 @@ import { changelog } from '../templates/changelog';
 import { packageJson } from '../templates/package';
 import { readme } from '../templates/readme';
 import { BuildOptions, Metadata } from '../types';
+import { licenseShort } from '../utils';
 import { download } from './download';
 import { generateLicense } from './license';
 import { packagerV1 } from './packager-v1';
@@ -81,7 +82,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		version: font.version,
 		category: font.category as Metadata['category'],
 		license: {
-			type: fontLicense.license.type,
+			type: licenseShort(fontLicense.license.type) ?? fontLicense.license.type,
 			url: fontLicense.license.url,
 			attribution: fontLicense.original,
 		},

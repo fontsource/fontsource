@@ -27,6 +27,7 @@ export type CategoryNames =
 	| 'display'
 	| 'handwriting'
 	| 'monospace'
+	| 'icons'
 	| 'other';
 
 export type TypeNames = 'google' | 'league' | 'icons' | 'other';
