@@ -9,13 +9,8 @@ import colors from 'picocolors';
 import semver from 'semver';
 
 import { getChanged } from './changed';
-import type { BumpFlags, ChangedObj, PackageJson } from './types';
+import type { BumpFlags, BumpObject, ChangedList, Context, PackageJson } from './types';
 import { mergeFlags } from './utils';
-
-interface BumpObject extends ChangedObj {
-	bumpVersion: string;
-	noPublish?: boolean;
-}
 
 export const isValidBumpArg = (bumpArg: string): boolean => {
 	const validBumpArgs = new Set(['patch', 'minor', 'major', 'from-package']);
@@ -98,24 +93,14 @@ export const writeUpdate = async (pkg: BumpObject): Promise<void> => {
 	const pkgPath = path.join(pkg.path, 'package.json');
 	const pkgJson: PackageJson = await fs.readJson(pkgPath);
 	pkgJson.version = pkg.bumpVersion;
+	pkgJson.publishHash = pkg.hash;
 	await fs.writeFile(pkgPath, stringify(pkgJson));
 };
 
 const queue = new PQueue({ concurrency: 12 });
 
-export const bump = async (version: string, options: BumpFlags) => {
-	if (!isValidBumpArg(version)) {
-		throw new Error('Incorrect bump argument.');
-	}
-	consola.info(
-		`${colors.bold(colors.blue('Verifying packages...'))} ${
-			options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''
-		}`
-	);
-	const config = await mergeFlags(options);
-	const diff = await getChanged(config);
-
-	// Create bump objects with bumped version
+export const bumpPackages = async (diff: ChangedList, config: Context, version: string) => {
+// Create bump objects with bumped version
 	const bumpObjects: BumpObject[] = [];
 	for (const pkg of diff) {
 		const newVersion = bumpValue(pkg.version, version);
@@ -153,7 +138,7 @@ export const bump = async (version: string, options: BumpFlags) => {
 		count += 1;
 	}
 
-	if (!options.yes) {
+	if (!config.yes) {
 		const yes = await confirm({ message: `Bump ${count} packages?` });
 		if (!yes) {
 			throw new Error('Bump cancelled.');
@@ -173,4 +158,20 @@ export const bump = async (version: string, options: BumpFlags) => {
 			await writeUpdate(pkg);
 		}
 	}
+
+	return verifiedObjects as unknown as BumpObject[];
+};
+
+export const bump = async (version: string, options: BumpFlags) => {
+	if (!isValidBumpArg(version)) {
+		throw new Error('Incorrect bump argument.');
+	}
+	consola.info(
+		`${colors.bold(colors.blue('Verifying packages...'))} ${
+			options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''
+		}`
+	);
+	const config = await mergeFlags(options);
+	const diff = await getChanged(config);
+	await bumpPackages(diff, config, version);
 };

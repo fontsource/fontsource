@@ -42,9 +42,7 @@ export type PublishFlags = BumpFlags;
 
 export type Flags = ChangedFlags | BumpFlags | PublishFlags;
 
-export interface BumpObject {
-	packageFile: PackageJson;
-	packagePath: string;
-	bumpedVersion: string | false;
+export interface BumpObject extends ChangedObj {
+	bumpVersion: string;
 	noPublish?: boolean;
 }

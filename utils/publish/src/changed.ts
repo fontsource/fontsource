@@ -28,12 +28,12 @@ const getChanged = async (ctx: Context) => {
 
 			// Check if package.json exists
 			const packageJson: PackageJson = await fs.readJson(
-				path.join(packagePath, 'package.json')
+				path.join(process.cwd(), packagePath, 'package.json')
 			);
 
 			// Get hash of current package and compare with old hash
 			const hash = await getHash(packagePath);
-			if (packageJson.publishHash !== hash) {
+			if (packageJson.publishHash !== hash || ctx.forcePublish) {
 				changedList.push({
 					name: packageJson.name,
 					hash,
