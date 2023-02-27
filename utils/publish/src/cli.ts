@@ -32,7 +32,6 @@ cli.command('changed', 'Calculates hashes and lists all packages that have chang
 	.action(async (opts: ChangedFlags) => {
 		try {
 			await changed(opts);
-			consola.success(colors.green(colors.bold('Success')));
 		} catch (error) {
 			consola.error(error);
 			process.exit(1);
