@@ -15,6 +15,7 @@ import colors from 'picocolors';
 import { version } from '../package.json';
 import { create } from './custom/create';
 import { verify } from './custom/verify';
+import { processGoogle } from './google/queue';
 
 const cli = cac('fontsource');
 
@@ -51,11 +52,7 @@ cli
 	.option('-t, --test', 'Build test fonts only')
 	.action(async (fonts: string[], options) => {
 		try {
-			if (fonts) {
-				console.log('build');
-			} else {
-				console.log(options);
-			}
+			await processGoogle(options, fonts);
 		} catch (error) {
 			consola.error(error);
 		}
