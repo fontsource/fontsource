@@ -61,23 +61,3 @@ export const purgeDuplicates = async () => {
 		}
 	}
 };
-
-/**
-	* When changes are made to the packages without Google pushing an update, the
-	* packages will not have any font files to publish due to font files not being
-	* committed to the repository.
-	*
-	* This aims to detect packages about to be published and download their relevant
-	* font files to be published again.
-*/
-
-
-/**
-	* Google may deprecate a font removing it from Google Font Metadata datasets.
-	* This causes a fail in downloading font files as the URLs are unknown, which
-	* leads to a "change" detected by the publisher leading to a ghost package with
-	* no font files to be published.
-	*
-	* This should handle deprecrations gracefully and move deprecated fonts into the
-	* other directory. Font files should be redownloaded and committed.
-*/
