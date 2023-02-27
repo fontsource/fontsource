@@ -194,7 +194,7 @@ importers:
     specifiers:
       '@ayuhito/eslint-config': ^0.2.4
       '@clack/prompts': ^0.6.0
-      '@fontsource-utils/generate': workspace:0.1.0
+      '@fontsource-utils/generate': workspace:*
       '@types/flat': ^5.0.2
       '@types/fs-extra': ^9.0.13
       '@types/node': ^18.14.1
@@ -218,8 +218,6 @@ importers:
     dependencies:
       '@clack/prompts': 0.6.0
       '@fontsource-utils/generate': link:../generate
-      '@types/flat': 5.0.2
-      '@types/fs-extra': 9.0.13
       cac: 6.7.14
       consola: 2.15.3
       dotenv: 16.0.3
@@ -233,6 +231,8 @@ importers:
       picocolors: 1.0.0
     devDependencies:
       '@ayuhito/eslint-config': 0.2.4_7kw3g6rralp5ps6mg3uyzz6azm
+      '@types/flat': 5.0.2
+      '@types/fs-extra': 9.0.13
       '@types/node': 18.14.1
       '@vitest/coverage-c8': 0.29.1_vitest@0.29.1
       eslint: 8.34.0
@@ -298,12 +298,6 @@ importers:
     dependencies:
       '@clack/prompts': 0.6.0
       '@npmcli/package-json': 3.0.0
-      '@types/folder-hash': 4.0.2
-      '@types/fs-extra': 11.0.1
-      '@types/libnpmpublish': 4.0.3
-      '@types/node': 18.14.1
-      '@types/parse-git-config': 3.0.1
-      '@types/semver': 7.3.13
       cac: 6.7.14
       consola: 2.15.3
       defu: 6.1.2
@@ -322,7 +316,13 @@ importers:
       semver: 7.3.8
     devDependencies:
       '@ayuhito/eslint-config': 0.2.4_ycpbpc6yetojsgtrx3mwntkhsu
+      '@types/folder-hash': 4.0.2
+      '@types/fs-extra': 11.0.1
+      '@types/libnpmpublish': 4.0.3
+      '@types/node': 18.14.1
       '@types/pacote': 11.1.5
+      '@types/parse-git-config': 3.0.1
+      '@types/semver': 7.3.13
       '@vitest/coverage-c8': 0.29.1_vitest@0.29.1
       eslint: 8.35.0
       pkgroll: 1.9.0_typescript@4.9.5
@@ -3359,7 +3359,7 @@ packages:
 
   /@npm/types/1.0.2:
     resolution: {integrity: sha512-KXZccTDEnWqNrrx6JjpJKU/wJvNeg9BDgjS0XhmlZab7br921HtyVbsYzJr4L+xIvjdJ20Wh9dgxgCI2a5CEQw==}
-    dev: false
+    dev: true
 
   /@npmcli/ci-detect/1.4.0:
     resolution: {integrity: sha512-3BGrt6FLjqM6br5AhWRKTr3u5GIVkjRYeAFrMp3HjnfICrg4xOrVRwFavKT6tsp++bq5dluL5t8ME/Nha/6c1Q==}
@@ -4325,22 +4325,24 @@ packages:
 
   /@types/flat/5.0.2:
     resolution: {integrity: sha512-3zsplnP2djeps5P9OyarTxwRpMLoe5Ash8aL9iprw0JxB+FAHjY+ifn4yZUuW4/9hqtnmor6uvjSRzJhiVbrEQ==}
+    dev: true
 
   /@types/folder-hash/4.0.2:
     resolution: {integrity: sha512-vMVeAUKl8EmDiTLj8XJQL4gJd8UYQfxRUWiv8cZpI/iQcVkS4GHlwVdInH/4iVIzLjlc/+ejcGEhKt92bkWesQ==}
-    dev: false
+    dev: true
 
   /@types/fs-extra/11.0.1:
     resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==}
     dependencies:
       '@types/jsonfile': 6.1.1
       '@types/node': 18.14.1
-    dev: false
+    dev: true
 
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
       '@types/node': 18.14.1
+    dev: true
 
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
@@ -4407,7 +4409,7 @@ packages:
     resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
     dependencies:
       '@types/node': 18.14.1
-    dev: false
+    dev: true
 
   /@types/keyv/3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
@@ -4421,7 +4423,7 @@ packages:
       '@npm/types': 1.0.2
       '@types/node-fetch': 2.6.2
       '@types/npm-registry-fetch': 8.0.4
-    dev: false
+    dev: true
 
   /@types/lodash.mergewith/4.6.6:
     resolution: {integrity: sha512-RY/8IaVENjG19rxTZu9Nukqh0W2UrYgmBj5sdns4hWRZaV8PqR7wIKHFKzvOTjo4zVRV7sVI+yFhAJql12Kfqg==}
@@ -4464,6 +4466,7 @@ packages:
     dependencies:
       '@types/node': 18.14.1
       form-data: 3.0.1
+    dev: true
 
   /@types/node/17.0.45:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
@@ -4480,6 +4483,7 @@ packages:
 
   /@types/npm-package-arg/6.1.1:
     resolution: {integrity: sha512-452/1Kp9IdM/oR10AyqAgZOxUt7eLbm+EMJ194L6oarMYdZNiFIFAOJ7IIr0OrZXTySgfHjJezh2oiyk2kc3ag==}
+    dev: true
 
   /@types/npm-registry-fetch/8.0.4:
     resolution: {integrity: sha512-R9yEj6+NDmXLpKNS19cIaMyaHfV0aHjy/1qbo8K9jiHyjyaYg0CEmuOV/L0Q91DZDi3SuxlYY+2XYwh9TbB+eQ==}
@@ -4489,9 +4493,11 @@ packages:
       '@types/npm-package-arg': 6.1.1
       '@types/npmlog': 4.1.4
       '@types/ssri': 7.1.1
+    dev: true
 
   /@types/npmlog/4.1.4:
     resolution: {integrity: sha512-WKG4gTr8przEZBiJ5r3s8ZIAoMXNbOgQ+j/d5O4X3x6kZJRLNvyUJuUK/KoG3+8BaOHPhp2m7WC6JKKeovDSzQ==}
+    dev: true
 
   /@types/pacote/11.1.5:
     resolution: {integrity: sha512-kMsfmhP2G45ngnpvH0LKd1celWnjgdiws1FHu3vMmYuoElGdqnd0ydf1ucZzeXamYnLe0NvSzGP2gYiETOEiQA==}
@@ -4504,7 +4510,7 @@ packages:
 
   /@types/parse-git-config/3.0.1:
     resolution: {integrity: sha512-cBVLXlpIpP23p+jQm8d2TrTfxyub3aiqfqgd0TWRnMqwCJMskYiveNJT11YwN+gbo3+0ZFFmtaepKzN7pxExlA==}
-    dev: false
+    dev: true
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -4559,11 +4565,13 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+    dev: true
 
   /@types/ssri/7.1.1:
     resolution: {integrity: sha512-DPP/jkDaqGiyU75MyMURxLWyYLwKSjnAuGe9ZCsLp9QZOpXmDfuevk769F0BS86TmRuD5krnp06qw9nSoNO+0g==}
     dependencies:
       '@types/node': 18.14.1
+    dev: true
 
   /@types/stack-utils/2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
@@ -7371,8 +7379,8 @@ packages:
       confusing-browser-globals: 1.0.11
       eslint: 8.35.0
       eslint-plugin-import: 2.27.5_z4t62rwba3aha3c5ltpvvca4q4
-      object.assign: 4.1.4
-      object.entries: 1.1.6
+      object.assign: 4.1.2
+      object.entries: 1.1.5
       semver: 6.3.0
     dev: true
 
@@ -9051,6 +9059,7 @@ packages:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
+    dev: true
 
   /form-data/4.0.0:
     resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}

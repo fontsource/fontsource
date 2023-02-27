@@ -1,7 +1,7 @@
 import consola from 'consola';
 import * as dotenv from 'dotenv';
 import { publish } from 'libnpmpublish';
-import { manifest, tarball } from 'pacote';
+import pacote from 'pacote';
 import colors from 'picocolors';
 
 import { bumpPackages } from './bump';
@@ -29,8 +29,8 @@ interface PublishObject extends BumpObject {
 
 const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
-  const packageManifest = await manifest(pkg.path);
-  const tarData = await tarball(pkg.path);
+  const packageManifest = await pacote.manifest(pkg.path);
+  const tarData = await pacote.tarball(pkg.path);
   const token = process.env.NPM_TOKEN;
 
 	try {
@@ -87,11 +87,11 @@ export const publishPackages = async (version: string, options: PublishFlags) =>
 		await gitRemoteAdd(name);
 		await gitPush();
 	}
-	consola.success('All packages published!');
 	if (errArray.length > 0) {
 		consola.error('The following packages failed to publish:');
 		for (const pkg of errArray) {
 			consola.error(`${pkg.name}@${pkg.bumpVersion}: ${pkg.error}`);
 		}
+		throw new Error('Failed to publish packages!');
 	}
 };
