@@ -1,6 +1,7 @@
 import consola from 'consola';
 import * as dotenv from 'dotenv';
 import { publish } from 'libnpmpublish';
+import PQueue from 'p-queue';
 import pacote from 'pacote';
 import path from 'pathe';
 import colors from 'picocolors';
@@ -50,7 +51,7 @@ const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 			npmVersion,
 			token,
 		});
-		consola.success(`Successfully published ${npmVersion}!`);
+		consola.success(`Successfully published ${colors.green(npmVersion)}!`);
 	} catch (error) {
 		const newPkg = { ...pkg, error };
 		return newPkg;
@@ -58,6 +59,8 @@ const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 
 	return undefined;
 };
+
+const queue = new PQueue({ concurrency: 6 });
 
 export const publishPackages = async (
 	version: string,
@@ -77,15 +80,20 @@ export const publishPackages = async (
 	const bumped = await bumpPackages(diff, config, version);
 
 	// Collect errored out packages
-	const errArray = [];
+	const publishArr = [];
+
 	for (const pkg of bumped) {
 		if (pkg && !pkg.noPublish) {
-			const newPkg = await packPublish(pkg);
-			if (newPkg) {
-				errArray.push(newPkg);
-			}
+			const newPkg = queue.add(() => packPublish(pkg));
+			publishArr.push(newPkg);
 		}
 	}
+
+	const finishedPublish = await Promise.all(publishArr);
+	const errArray = (finishedPublish).filter(
+		(pkg) => pkg !== undefined
+	) as PublishObject[];
+
 
 	// Write updated package.json files
 	if (version !== 'from-package') {
