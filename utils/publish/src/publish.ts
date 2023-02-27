@@ -2,43 +2,53 @@ import consola from 'consola';
 import * as dotenv from 'dotenv';
 import { publish } from 'libnpmpublish';
 import pacote from 'pacote';
+import path from 'pathe';
 import colors from 'picocolors';
 
 import { bumpPackages } from './bump';
 import { getChanged } from './changed';
-import { getCommitMessage,getGitConfig, gitAdd, gitCommit, gitPush, gitRemoteAdd } from './git';
+import {
+	getCommitMessage,
+	getGitConfig,
+	gitAdd,
+	gitCommit,
+	gitPush,
+	gitRemoteAdd,
+} from './git';
 import type { BumpObject, PublishFlags } from './types';
 import { mergeFlags } from './utils';
 
 const checkEnv = async () => {
 	dotenv.config();
-  // Ensure all env variables are loaded
-  if (!process.env.GITHUB_TOKEN) {
-    throw new Error(
-      'Missing Github Personal Access Token (GITHUB_TOKEN) in environment! '
-    );
-  }
-  if (!process.env.NPM_TOKEN) {
-    throw new Error('Missing NPM access token! (NPM_TOKEN)');
+	// Ensure all env variables are loaded
+	if (!process.env.GITHUB_TOKEN) {
+		throw new Error(
+			'Missing Github Personal Access Token (GITHUB_TOKEN) in environment! '
+		);
+	}
+	if (!process.env.NPM_TOKEN) {
+		throw new Error('Missing NPM access token! (NPM_TOKEN)');
 	}
 };
 
 interface PublishObject extends BumpObject {
-	error?: unknown
+	error?: unknown;
 }
 
 const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
-  const packageManifest = await pacote.manifest(pkg.path);
-  const tarData = await pacote.tarball(pkg.path);
-  const token = process.env.NPM_TOKEN;
+	const packageManifest = await pacote.manifest(
+		path.join(process.cwd(), pkg.path)
+	);
+	const tarData = await pacote.tarball(path.join(process.cwd(), pkg.path));
+	const token = process.env.NPM_TOKEN;
 
 	try {
 		// @ts-ignore - libnpmpublish types are incorrect (probably)
-    await publish(packageManifest, tarData, {
-      access: 'public',
-      npmVersion,
-      token,
+		await publish(packageManifest, tarData, {
+			access: 'public',
+			npmVersion,
+			token,
 		});
 		consola.success(`Successfully published ${npmVersion}!`);
 	} catch (error) {
@@ -49,7 +59,10 @@ const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 	return undefined;
 };
 
-export const publishPackages = async (version: string, options: PublishFlags) => {
+export const publishPackages = async (
+	version: string,
+	options: PublishFlags
+) => {
 	consola.info(
 		`${colors.bold(colors.blue('Publishing packages...'))} ${
 			options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''

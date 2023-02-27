@@ -56,7 +56,7 @@ const changed = async (options: ChangedFlags) => {
 	if (Object.keys(diff).length > 0) {
 		consola.info(colors.bold(colors.blue('Packages changed:')));
 		for (const item of diff) {
-			consola.info(colors.bold(item.name));
+			consola.info(item.name);
 		}
 	} else {
 		consola.info(colors.bold(colors.red('No packages changed.')));

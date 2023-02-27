@@ -1,4 +1,4 @@
-import { confirm } from '@clack/prompts';
+import { confirm, isCancel } from '@clack/prompts';
 import consola from 'consola';
 import fs from 'fs-extra';
 import stringify from 'json-stringify-pretty-compact';
@@ -140,9 +140,10 @@ export const bumpPackages = async (diff: ChangedList, config: Context, version: 
 
 	if (!config.yes) {
 		const yes = await confirm({ message: `Bump ${count} packages?` });
-		if (!yes) {
+		if (!yes || isCancel(yes)) {
 			throw new Error('Bump cancelled.');
 		}
+
 	} else {
 		consola.info(colors.bold(colors.blue(`Bumping ${count} packages...`)));
 	}
@@ -156,6 +157,12 @@ export const bumpPackages = async (diff: ChangedList, config: Context, version: 
 		// Skip if noPublish flag is set
 		if (!pkg.noPublish) {
 			await writeUpdate(pkg);
+		} else {
+			consola.info(
+				colors.yellow(
+					`Skipping ${pkg.name} as it is set to not publish.`
+				)
+			);
 		}
 	}
 
