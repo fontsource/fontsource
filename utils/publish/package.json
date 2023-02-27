@@ -29,6 +29,7 @@
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
+		"@clack/prompts": "^0.6.0",
 		"@npmcli/package-json": "^3.0.0",
 		"@types/folder-hash": "^4.0.2",
 		"@types/fs-extra": "^11.0.1",
@@ -39,7 +40,6 @@
 		"consola": "^2.15.3",
 		"defu": "^6.1.2",
 		"dotenv": "^16.0.3",
-		"execa": "^7.0.0",
 		"folder-hash": "^4.0.4",
 		"fs-extra": "^11.1.0",
 		"json-stringify-pretty-compact": "^4.0.0",

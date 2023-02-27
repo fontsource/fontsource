@@ -11,7 +11,6 @@ export interface PackageJson {
 
 export interface Context {
 	packages: string[];
-	ignoreExtension?: string[];
 	commitMessage: string;
 	updateMessage?: string;
 	git?: Git;
@@ -21,20 +20,27 @@ export interface Context {
 }
 
 export interface ChangedFlags {
-	packages?: string
-	ignoreExtension?: string
-	commitMessage?: string
+	packages?: string;
+	ignoreExtension?: string;
+	commitMessage?: string;
+}
+export interface ChangedObj {
+	name: string;
+	path: string;
+	hash: string;
+	version: string;
 }
 
+export type ChangedList = ChangedObj[];
 export interface BumpFlags extends ChangedFlags {
-	noVerify?: string
-	forcePublish?: boolean
-	yes?: boolean
+	noVerify?: string;
+	forcePublish?: boolean;
+	yes?: boolean;
 }
 
-export type PublishFlags = BumpFlags
+export type PublishFlags = BumpFlags;
 
-export type Flags = ChangedFlags | BumpFlags | PublishFlags
+export type Flags = ChangedFlags | BumpFlags | PublishFlags;
 
 export interface BumpObject {
 	packageFile: PackageJson;

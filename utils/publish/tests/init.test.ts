@@ -12,7 +12,7 @@ describe('init command', () => {
 		expect(vi.mocked(fs.writeFile)).toHaveBeenCalledWith(
 			expect.anything(),
 			stringify({
-				packages: ['packages/'],
+				packages: ['./packages/'],
 				commitMessage: 'chore: release new versions',
 			})
 		);

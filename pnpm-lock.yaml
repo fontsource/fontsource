@@ -264,6 +264,7 @@ importers:
   utils/publish:
     specifiers:
       '@ayuhito/eslint-config': ^0.2.4
+      '@clack/prompts': ^0.6.0
       '@npmcli/package-json': ^3.0.0
       '@types/folder-hash': ^4.0.2
       '@types/fs-extra': ^11.0.1
@@ -276,7 +277,6 @@ importers:
       defu: ^6.1.2
       dotenv: ^16.0.3
       eslint: ^8.35.0
-      execa: ^7.0.0
       folder-hash: ^4.0.4
       fs-extra: ^11.1.0
       json-stringify-pretty-compact: ^4.0.0
@@ -293,6 +293,7 @@ importers:
       typescript: ^4.9.5
       vitest: ^0.29.1
     dependencies:
+      '@clack/prompts': 0.6.0
       '@npmcli/package-json': 3.0.0
       '@types/folder-hash': 4.0.2
       '@types/fs-extra': 11.0.1
@@ -303,7 +304,6 @@ importers:
       consola: 2.15.3
       defu: 6.1.2
       dotenv: 16.0.3
-      execa: 7.0.0
       folder-hash: 4.0.4
       fs-extra: 11.1.0
       json-stringify-pretty-compact: 4.0.0
@@ -8578,21 +8578,6 @@ packages:
       strip-final-newline: 3.0.0
     dev: false
 
-  /execa/7.0.0:
-    resolution: {integrity: sha512-tQbH0pH/8LHTnwTrsKWideqi6rFB/QNUawEwrn+WHyz7PX1Tuz2u7wfTvbaNBdP5JD5LVWxNo8/A8CHNZ3bV6g==}
-    engines: {node: ^14.18.0 || ^16.14.0 || >=18.0.0}
-    dependencies:
-      cross-spawn: 7.0.3
-      get-stream: 6.0.1
-      human-signals: 4.3.0
-      is-stream: 3.0.0
-      merge-stream: 2.0.0
-      npm-run-path: 5.1.0
-      onetime: 6.0.0
-      signal-exit: 3.0.7
-      strip-final-newline: 3.0.0
-    dev: false
-
   /exit/0.1.2:
     resolution: {integrity: sha512-Zk/eNKV2zbjpKzrsQ+n1G6poVbErQxJ0LBOJXaKZ1EViLzH+hrLu9cdXI4zw9dBQJslwBEpbQ2P1oS7nDxs6jQ==}
     engines: {node: '>= 0.8.0'}
@@ -9811,11 +9796,6 @@ packages:
   /human-signals/3.0.1:
     resolution: {integrity: sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==}
     engines: {node: '>=12.20.0'}
-    dev: false
-
-  /human-signals/4.3.0:
-    resolution: {integrity: sha512-zyzVyMjpGBX2+6cDVZeFPCdtOtdsxOeseRhB9tkQ6xXmGUNrcnBzdEKPy3VPNYz+4gy1oukVOXcrJCunSyc6QQ==}
-    engines: {node: '>=14.18.0'}
     dev: false
 
   /humanize-ms/1.2.1:

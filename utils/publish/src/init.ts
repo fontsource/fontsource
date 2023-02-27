@@ -8,7 +8,7 @@ const init = async (): Promise<void> => {
 	const configPath = path.join(process.cwd(), 'font-publish.json');
 
 	const defaultConfig: Context = {
-		packages: ['packages/'],
+		packages: ['./packages/'],
 		commitMessage: 'chore: release new versions',
 	};
 

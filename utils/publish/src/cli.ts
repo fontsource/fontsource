@@ -24,7 +24,6 @@ cli.command('init', 'Add config file with default variables in root')
 
 cli.command('changed', 'Calculates hashes and lists all packages that have changes made to them')
 	.option('--commit-message', 'Change commit message')
-	.option('--ignore-extension', 'Ignore extensions')
 	.option('--packages', 'Package directory')
 	.action(async (opts: ChangedFlags) => {
 		try {
@@ -37,19 +36,14 @@ cli.command('changed', 'Calculates hashes and lists all packages that have chang
 
 
 cli.command('bump <version>', 'Bumps the version of all changed packages.')
-	.option('--no-verify', 'Skips verifying with NPM registry whether the package version isn\'t taken')
-	.option('--force-publish', 'Force bump ALL packages regardless if changed or not')
+	.option('--force', 'Force bump ALL packages regardless if changed or not')
 	.option('--yes', 'Skips confirmation to write the bump changes to package.json. Useful in CI')
-	// Carry over changed command options
-	.option('--commit-from', 'Commit SHA to compare differences from')
-	.option('--commit-to', 'Commit SHA to compare differences to')
 	.option('--commit-message', 'Change commit message')
-	.option('--ignore-extension', 'Ignore extensions')
 	.option('--packages', 'Package directory')
 	.action(async (version: string, opts: BumpFlags) => {
 		try {
 			await bump(version, opts);
-			consola.success(colors.green(colors.bold('Successfully bumped x packages.')));
+			consola.success(colors.green(colors.bold('Successfully bumped packages.')));
 		} catch (error) {
 			consola.error(error);
 		}

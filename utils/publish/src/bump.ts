@@ -1,12 +1,23 @@
+import { confirm } from '@clack/prompts';
 import consola from 'consola';
+import fs from 'fs-extra';
+import stringify from 'json-stringify-pretty-compact';
+import latestVersion from 'latest-version';
+import PQueue from 'p-queue';
+import path from 'pathe';
 import colors from 'picocolors';
-import prompts from 'prompts';
 import semver from 'semver';
 
-import type { BumpFlags, BumpObject } from './types';
-import { bumpCheck, findDiff, mergeFlags, pathToPackage } from './utils';
+import { getChanged } from './changed';
+import type { BumpFlags, ChangedObj, PackageJson } from './types';
+import { mergeFlags } from './utils';
 
-const isValidBumpArg = (bumpArg: string): boolean => {
+interface BumpObject extends ChangedObj {
+	bumpVersion: string;
+	noPublish?: boolean;
+}
+
+export const isValidBumpArg = (bumpArg: string): boolean => {
 	const validBumpArgs = new Set(['patch', 'minor', 'major', 'from-package']);
 
 	// If it isn't a bumpArg in the set and isn't a semver version number
@@ -16,7 +27,7 @@ const isValidBumpArg = (bumpArg: string): boolean => {
 	return true;
 };
 
-const bumpValue = (oldVersion: string, bumpArg: string): string | false => {
+export const bumpValue = (oldVersion: string, bumpArg: string): string | false => {
 	// Check if valid semver version and if invalid return false
 	const arr = semver.valid(oldVersion)?.split('.');
 	if (arr) {
@@ -48,95 +59,118 @@ const bumpValue = (oldVersion: string, bumpArg: string): string | false => {
 	return false;
 };
 
-const createBumpObject = async (diff: string[], bumpArg: string): BumpObject[] => {
-	const bumpObjectArr: BumpObject[] = [];
-	const packageJsons = await pathToPackage(diff);
-
-	let index = 0;
-	for (const filePath of diff) {
-		const packageJson = packageJsons[index];
-		const bumpedVersion = bumpValue(packageJson.version, bumpArg);
-
-		// If bumped version returns false, set failedValidation to true
-		const bumpObject: BumpObject = bumpedVersion
-			? {
-				packageFile: packageJson,
-				packagePath: filePath,
-				bumpedVersion,
-			}
-			: {
-				packageFile: packageJson,
-				packagePath: filePath,
-				bumpedVersion,
-				noPublish: true,
-			};
-
-		bumpObjectArr.push(bumpObject);
-		index += 1;
-	}
-
-	return bumpObjectArr;
-};
-
-const bumpVerify = async (
-	bumpFlagVar: FlagsBumpReturn,
-	bumpObjects: BumpObject[],
+export const verifyVersion = async (
+	pkg: BumpObject,
 	bumpArg: string
-): Promise<BumpObject[]> => {
-	// Skip checking if no verify flag
-	let checkedObjects: BumpObject[];
-	if (bumpFlagVar.noVerify) {
-		consola.info(colors.red('Skipping version verification due to noVerify flag...'));
-		checkedObjects = bumpObjects;
-	} else {
-		checkedObjects = await bumpCheck(bumpObjects, bumpArg);
-	}
+): Promise<BumpObject> => {
+	let npmVersion: string | boolean;
+	const newPkg = pkg;
 
-	if (checkedObjects.length === 0) {
-		throw new Error(colors.bold(colors.red('No packages to update found.')));
-	}
-
-	consola.info(colors.bold(colors.blue(('Changed packages:'))));
-	for (const bumpObject of checkedObjects) {
-		consola.info(
-			colors.magenta(
-				`${bumpObject.packageFile.name}: ${bumpObject.packageFile.version} --> ${bumpObject.bumpedVersion}`
-			)
-		);
-	}
-
-	if (!bumpFlagVar.skipPrompt) {
-		// Filter out any objects with the noPublish flag attached to them
-		checkedObjects = checkedObjects.filter(
-			bumpObject => !bumpObject.noPublish
-		);
-		const input = await prompts({
-			type: 'confirm',
-			name: 'value',
-			message: 'Bump packages?',
-			initial: true
-		});
-		if (!input.value) {
-			throw new Error(colors.bold(colors.red('Bump cancelled.')));
+	try {
+		// Get latest version from NPM registry and compare if bumped version is greater than NPM
+		npmVersion = await latestVersion(pkg.name);
+		if (semver.gt(pkg.bumpVersion as string, npmVersion)) {
+			return pkg;
 		}
+	} catch (error: any) {
+		// If package isn't published on NPM yet, revert bump
+		if (error.name === 'PackageNotFoundError') {
+			newPkg.bumpVersion = newPkg.version;
+		}
+
+		return newPkg;
 	}
 
-	return checkedObjects;
-};
-
-const bump = async (version: string, options: BumpFlags) => {
-	if (!isValidBumpArg(version)) {
-		throw new Error('Incorrect bump argument.');
+	// If failed, do not publish
+	newPkg.noPublish = true;
+	if (bumpArg === 'from-package') {
+		return newPkg;
 	}
-	consola.info(`${colors.bold(colors.blue('Bumping packages...'))} ${options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''}`);
-	const config = await mergeFlags(options);
-	const diff = await findDiff(config);
-	const bumpObjects = await createBumpObject(diff, version);
-	const checkedObjects = await bumpCliPrint(
-		bumpFlagVars,
-		bumpObjects,
-		bumpArg
+
+	throw new Error(
+		colors.red(
+			`${newPkg.name} version mismatch. Not publishing.\n- NPM: ${npmVersion}\n- Bumped version: ${pkg.bumpVersion}`
+		)
 	);
 };
 
-export { bump };
+export const writeUpdate = async (pkg: BumpObject): Promise<void> => {
+	const pkgPath = path.join(pkg.path, 'package.json');
+	const pkgJson: PackageJson = await fs.readJson(pkgPath);
+	pkgJson.version = pkg.bumpVersion;
+	await fs.writeFile(pkgPath, stringify(pkgJson));
+};
+
+const queue = new PQueue({ concurrency: 12 });
+
+export const bump = async (version: string, options: BumpFlags) => {
+	if (!isValidBumpArg(version)) {
+		throw new Error('Incorrect bump argument.');
+	}
+	consola.info(
+		`${colors.bold(colors.blue('Verifying packages...'))} ${
+			options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''
+		}`
+	);
+	const config = await mergeFlags(options);
+	const diff = await getChanged(config);
+
+	// Create bump objects with bumped version
+	const bumpObjects: BumpObject[] = [];
+	for (const pkg of diff) {
+		const newVersion = bumpValue(pkg.version, version);
+		if (!newVersion) {
+			throw new Error(
+				`Failed to bump version for ${pkg.name} for ${pkg.version}`
+			);
+		}
+		const bumpObject: BumpObject = {
+			...pkg,
+			bumpVersion: newVersion,
+		};
+		bumpObjects.push(bumpObject);
+	}
+
+	// Check if package versions are free of conflicts on NPM
+	const pendingObjects = [];
+	for (const pkg of bumpObjects) {
+		const newPkg = queue.add(() => verifyVersion(pkg, version));
+		pendingObjects.push(newPkg);
+	}
+	// Wait for queue to finish
+	const verifiedObjects = await Promise.all(pendingObjects);
+	consola.info(colors.bold(colors.blue('All packages verified.')));
+
+	// Print out all new versions and prompt user to continue
+	let count = 0;
+	for (const pkg of verifiedObjects) {
+		if (!pkg) {
+			throw new Error('Package object is undefined.');
+		}
+		consola.info(
+			colors.magenta(`${pkg.name}: ${pkg.version} --> ${pkg.bumpVersion}`)
+		);
+		count += 1;
+	}
+
+	if (!options.yes) {
+		const yes = await confirm({ message: `Bump ${count} packages?` });
+		if (!yes) {
+			throw new Error('Bump cancelled.');
+		}
+	} else {
+		consola.info(colors.bold(colors.blue(`Bumping ${count} packages...`)));
+	}
+
+	// Update all padkage.json files
+	for (const pkg of verifiedObjects) {
+		if (!pkg) {
+			throw new Error('Package object is undefined.');
+		}
+
+		// Skip if noPublish flag is set
+		if (!pkg.noPublish) {
+			await writeUpdate(pkg);
+		}
+	}
+};
