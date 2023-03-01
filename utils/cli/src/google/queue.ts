@@ -24,15 +24,25 @@ queue.on('idle', async () => {
 	);
 });
 
+// Modify opts to output in correct folders
 const buildPackage = async (id: string, opts: BuildOptions) => {
 	consola.info(`Downloading ${id}`);
-	await build(id, opts);
+	const optsNew = {
+		...opts,
+		dir: path.join(opts.dir, 'google', id),
+	};
+	await build(id, optsNew);
 	consola.success(`Finished processing ${id}`);
 };
 
 const buildVariablePackage = async (id: string, opts: BuildOptions) => {
 	consola.info(`Downloading ${id} ${colors.bold(colors.yellow('[VARIABLE]'))}`);
-	await build(id, opts);
+	const optsNew = {
+		...opts,
+		isVariable: true,
+		dir: path.join(opts.dir, 'variable', id),
+	};
+	await build(id, optsNew);
 	consola.success(`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE]'))}`);
 };
 
@@ -49,7 +59,7 @@ const testIds = [
 
 export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 	// Ensure all chosen dirs are created
-	const outDir = path.resolve(process.cwd(), 'fonts/google');
+	const outDir = path.resolve(process.cwd(), 'fonts');
 	await fs.ensureDir(outDir);
 	// Make tempdir for storing metadata in rebuilds
 	const tmpDir = path.join(outDir, 'fontsource_temp_packages');
@@ -65,7 +75,7 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 	for (const id of fontIds) {
 		// Create default options
 		const buildOpts: BuildOptions = {
-			dir: path.join(outDir, id),
+			dir: outDir,
 			tmpDir,
 			isVariable: false,
 			force: opts.force ?? false,
@@ -78,10 +88,6 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 
 				// Build separate package for variable fonts
 				if (APIVariable[id]) {
-					// Change build options to use separate variable package name
-					buildOpts.isVariable = true;
-					buildOpts.dir = path.join(outDir, 'variable', id);
-
 					queue.add(() => buildVariablePackage(id, buildOpts));
 				}
 			} else {
