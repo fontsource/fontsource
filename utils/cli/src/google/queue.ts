@@ -16,11 +16,6 @@ queue.on('error', error => {
 });
 
 queue.on('idle', async () => {
-	// Clean up directory
-	await fs.rm(path.resolve(process.cwd(), 'fontsource_temp_packages'), {
-		recursive: true,
-	});
-
 	consola.success(
 		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`
 	);
@@ -93,5 +88,7 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 		}
 	}
 
+	// Clean up
 	await queue.onIdle();
+	await fs.rm(tmpDir, { recursive: true });
 };

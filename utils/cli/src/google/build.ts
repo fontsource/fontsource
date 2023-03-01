@@ -77,7 +77,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		weights: font.weights,
 		styles: font.styles,
 		defSubset: font.defSubset,
-		variable: fontVariable.axes ?? false,
+		variable: fontVariable ? fontVariable.axes : false,
 		lastModified: font.lastModified,
 		version: font.version,
 		category: font.category as Metadata['category'],
