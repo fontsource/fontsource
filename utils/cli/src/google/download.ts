@@ -93,35 +93,20 @@ const generateLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 	});
 
 	// V2 { url, dest } pairs
-	const linksV2Duplicates = downloadURLPairsV2.map(pair => {
+	const linksV2 = downloadURLPairsV2.map(pair => {
 		const types = pair[0];
-		const dest =
-			types[4] === 'woff2'
-				? makeFontDownloadPath(
-						opts.dir,
-						id,
-						types[2].replace('[', '').replace(']', ''),
-						Number(types[0]),
-						types[1],
-						types[4]
-				  )
-				: makeFontDownloadPath(
-						opts.dir,
-						id,
-						'all',
-						Number(types[0]),
-						types[1],
-						types[4]
-				  );
+		const dest = makeFontDownloadPath(
+			opts.dir,
+			id,
+			types[2].replace('[', '').replace(']', ''),
+			Number(types[0]),
+			types[1],
+			types[4]
+		);
+
 		const url = pair[1];
 		return { url, dest };
 	});
-
-	// The "all" subset generates duplicates which need to be removed
-	// Filters by removing duplicates with the same dest
-	const linksV2 = [
-		...new Map(linksV2Duplicates.map(item => [item.dest, item])).values(),
-	];
 
 	const links = [...linksV1, ...linksV2];
 	return links;
