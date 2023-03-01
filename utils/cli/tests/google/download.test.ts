@@ -43,9 +43,7 @@ describe('download google', () => {
 				force: false,
 				isVariable: false,
 			};
-
-			const { links } = testData;
-			expect(generateLinks('abel', buildOpts)).toEqual(links.abel);
+			expect(generateLinks('abel', buildOpts)).toMatchSnapshot();
 		});
 
 		it('should generate links for unicode subset font (noto-sans-jp)', () => {
@@ -55,11 +53,7 @@ describe('download google', () => {
 				force: false,
 				isVariable: false,
 			};
-
-			const { links } = testData;
-			expect(generateLinks('noto-sans-jp', buildOpts)).toEqual(
-				links['noto-sans-jp']
-			);
+			expect(generateLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
 		});
 
 		it('should generate links for variable fonts (cabin)', () => {
@@ -69,11 +63,7 @@ describe('download google', () => {
 				force: false,
 				isVariable: true,
 			};
-
-			const { variableLinksMock } = testData;
-			expect(variableLinks('cabin', buildOpts)).toEqual(
-				variableLinksMock.cabin
-			);
+			expect(variableLinks('cabin', buildOpts)).toMatchSnapshot();
 		});
 	});
 });

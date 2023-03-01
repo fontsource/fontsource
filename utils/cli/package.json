@@ -23,7 +23,7 @@
 		"dotenv": "^16.0.3",
 		"flat": "^5.0.2",
 		"fs-extra": "^11.1.0",
-		"google-font-metadata": "^4.2.1",
+		"google-font-metadata": "^5.0.0",
 		"got": "^12.5.3",
 		"json-stringify-pretty-compact": "^4.0.0",
 		"p-queue": "^7.3.4",
