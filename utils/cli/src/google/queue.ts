@@ -51,7 +51,7 @@ const testIds = [
 	'roboto-flex',
 ];
 
-export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
+export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 	// Ensure all chosen dirs are created
 	const outDir = path.resolve(process.cwd(), opts.out ?? 'fonts/google');
 	await fs.ensureDir(outDir);
@@ -59,7 +59,14 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 	const tmpDir = path.join(outDir, 'fontsource_temp_packages');
 	await fs.ensureDir(tmpDir);
 
-	const fontIds = fonts ?? (opts.test ? testIds : Object.keys(APIv2));
+	let fontIds = fonts;
+	if (opts.test) {
+		fontIds = testIds;
+	} else if (!fonts || fonts.length === 0) {
+		fontIds = Object.keys(APIv2);
+	}
+
+	const queueArr = [];
 	for (const id of fontIds) {
 		// Create default options
 		const buildOpts: BuildOptions = {
@@ -71,7 +78,7 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 
 		try {
 			// Create base font package
-			queue.add(() => buildPackage(id, buildOpts));
+			queueArr.push(queue.add(() => buildPackage(id, buildOpts)));
 
 			// Build separate package for variable fonts
 			if (APIVariable[id]) {
@@ -79,10 +86,15 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 				buildOpts.isVariable = true;
 				buildOpts.dir = path.join(outDir, 'variable', id);
 
-				queue.add(() => buildVariablePackage(id, buildOpts));
+				queueArr.push(queue.add(() => buildVariablePackage(id, buildOpts)));
 			}
 		} catch (error) {
 			throw new Error(`${id} experienced an error. ${error}`);
 		}
 	}
+
+	await Promise.all(queueArr);
+
+	// Clean up
+	await fs.rm(tmpDir, { recursive: true });
 };

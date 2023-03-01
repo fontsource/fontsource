@@ -205,7 +205,7 @@ importers:
       eslint: ^8.35.0
       flat: ^5.0.2
       fs-extra: ^11.1.0
-      google-font-metadata: ^4.2.0
+      google-font-metadata: ^4.2.1
       got: ^12.5.3
       json-stringify-pretty-compact: ^4.0.0
       p-queue: ^7.3.4
@@ -223,7 +223,7 @@ importers:
       dotenv: 16.0.3
       flat: 5.0.2
       fs-extra: 11.1.0
-      google-font-metadata: 4.2.0_typescript@4.9.5
+      google-font-metadata: 4.2.1_typescript@4.9.5
       got: 12.5.3
       json-stringify-pretty-compact: 4.0.0
       p-queue: 7.3.4
@@ -9409,8 +9409,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /google-font-metadata/4.2.0_typescript@4.9.5:
-    resolution: {integrity: sha512-TEwhcT1GPvQmRiqcOUWKsFvEIApxB66Bf7SXFQgN/Jk3skAJTYHur4ps8SkjpEp9nLi/FCDlVPbk7fte/ziW3g==}
+  /google-font-metadata/4.2.1_typescript@4.9.5:
+    resolution: {integrity: sha512-MVlF4KmpDD6IxrvRImSOB3diZvzgqI+havG0QL/LlueW561d3z+f/G+BA59XYMLhRpIKvRukJ40Vm9A73SlVRA==}
     hasBin: true
     dependencies:
       '@octokit/core': 4.2.0
