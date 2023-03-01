@@ -7,10 +7,10 @@ import { version as mainPkgRepoVersion } from '../../../../package.json';
 import { BuildOptions,Metadata } from '../types';
 
 const template = (
-	{ id, family, license, type, variable }: Metadata,
+	{ id, family, license, type }: Metadata, isVariable: boolean,
 	oldVersion?: string
 ) => ({
-		name: variable ? `@fontsource-variable/${id}` : `@fontsource/${id}`,
+		name: isVariable ? `@fontsource-variable/${id}` : `@fontsource/${id}`,
 		version: oldVersion ?? mainPkgRepoVersion,
 		description: `Self-host the ${family} font in a neatly bundled NPM package.`,
 		main: 'index.css',
@@ -27,14 +27,15 @@ const template = (
 			'front-end',
 			'web',
 			'typeface',
+			'variable'
 		],
 	author: type === 'other' ? license.attribution : 'Google Inc.',
 		license: license.type,
 		homepage: `https://fontsource.org/fonts/${id}`,
 		repository: {
 			type: 'git',
-			url: 'https://github.com/fontsource/fontsource.git',
-			directory: `fonts/${type}/${id}`,
+			url: 'https://github.com/fontsource/font-files.git',
+			directory: `fonts/${isVariable ? 'variable' : type}/${id}`,
 		},
 	});
 
@@ -49,7 +50,7 @@ const packageJson = async (metadata: Metadata, opts: BuildOptions) => {
 		// Continue
 	}
 
-	const file = template(metadata, oldVersion);
+	const file = template(metadata, opts.isVariable, oldVersion);
 	await fs.writeFile(path.join(opts.dir, 'package.json'), stringify(file));
 };
 
