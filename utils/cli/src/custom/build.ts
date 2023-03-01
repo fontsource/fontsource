@@ -2,6 +2,8 @@ import fs from 'fs-extra';
 import stringify from 'json-stringify-pretty-compact';
 import path from 'pathe';
 
+import { sassMetadata } from '../sass/metadata';
+import { sassMixins } from '../sass/mixins';
 import { changelog } from '../templates/changelog';
 import { packageJson } from '../templates/package';
 import { readme } from '../templates/readme';
@@ -33,4 +35,13 @@ export const buildCustom = async (metadata: Metadata) => {
 
 	// Write package.json
 	await packageJson(metadata, dir);
+
+	// Write metadata.scss
+	await fs.writeFile(
+		path.join(dir, 'metadata.scss'),
+		sassMetadata(metadata, {})
+	);
+
+	// Write utils.scss
+	await fs.writeFile(path.join(dir, 'mixins.scss'), sassMixins);
 };

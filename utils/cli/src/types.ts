@@ -10,7 +10,7 @@ export interface BuildOptions {
 	isVariable: boolean;
 }
 
-interface Axes {
+export interface Axes {
 	[axesType: string]: {
 		default: string;
 		min: string;
@@ -51,3 +51,7 @@ export interface Metadata {
 	source: string;
 	type: TypeNames;
 }
+
+export type UnicodeRange = {
+	[subset: string]: string;
+};
