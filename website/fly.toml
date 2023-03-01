@@ -13,8 +13,8 @@ processes = []
   auto_rollback = true
 
 [[services]]
-  http_checks = []
-  internal_port = 3000
+  # This is set to the INTERNAL_PORT env variable in the Dockerfile
+  internal_port = 8080
   processes = ["app"]
   protocol = "tcp"
   script_checks = []

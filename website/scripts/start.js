@@ -8,11 +8,11 @@ const deployMigrations = require('./migrations');
 
 const getPrimaryInstanceHostname = async () => {
   try {
-    const { FLY_LITEFS_DIR } = process.env;
-    invariant(FLY_LITEFS_DIR, 'FLY_LITEFS_DIR is not defined');
+    const { LITEFS_DIR } = process.env;
+    invariant(LITEFS_DIR, 'FLY_LITEFS_DIR is not defined');
 
     const primary = await fs.promises.readFile(
-      path.join(FLY_LITEFS_DIR, '.primary'),
+      path.join(LITEFS_DIR, '.primary'),
       'utf8'
     );
     console.log(`Found primary instance in .primary file: ${primary}`);

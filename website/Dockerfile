@@ -1,11 +1,11 @@
 # Fetch the LiteFS binary using a multi-stage build.
-FROM flyio/litefs:sha-ab81cb2 AS litefs
+FROM flyio/litefs:sha-404e00f AS litefs
 
 # base node image
 FROM node:18-bullseye-slim as base
 
 # Install fuse and ca-certificates for lite-fs
-RUN apt-get update && apt-get install -y fuse ca-certificates
+RUN apt-get update && apt-get install -y fuse3 ca-certificates
 ## Add PNPM
 RUN npm install -g pnpm
 RUN pnpm --version
@@ -46,8 +46,11 @@ RUN pnpm run build
 FROM base
 
 ENV FLY="true"
-ENV FLY_LITEFS_DIR="/litefs/data"
-ENV DATABASE_URL=/litefs/data/sqlite.db
+ENV LITEFS_DIR="/litefs"
+ENV DATABASE_FILENAME="sqlite.db"
+ENV DATABASE_URL="$LITEFS_DIR/$DATABASE_FILENAME"
+ENV INTERNAL_PORT="8080"
+ENV PORT="8081"
 ENV NODE_ENV=production
 
 WORKDIR /app
@@ -61,7 +64,7 @@ COPY --from=build /app/scripts /app/scripts
 # Setup LiteFS
 COPY --from=litefs /usr/local/bin/litefs /usr/local/bin/litefs
 ADD litefs.yml /etc/litefs.yml
-RUN mkdir -p /data /litefs/data
+RUN mkdir -p /data ${LITEFS_DIR}
 
 ADD . .
 

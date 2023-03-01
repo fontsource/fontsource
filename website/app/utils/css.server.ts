@@ -1,7 +1,6 @@
 import { HTTPError } from 'ky';
 
 import { knex } from './db.server';
-import { ensurePrimary } from './fly.server';
 import { fetchMetadata } from './metadata.server';
 import type { DownloadMetadata } from './types';
 import { kya } from './utils.server';
@@ -36,7 +35,6 @@ const cssRewrite = (css: string, id: string) =>
 // const STANDARD_AXES = ['opsz', 'slnt', 'wdth', 'wght'] as const;
 
 const addCss = async (metadata: DownloadMetadata) => {
-	await ensurePrimary();
 	// Add general CSS
 	const { fontId, weights, styles, variable } = metadata;
 	for (const weight of weights) {
