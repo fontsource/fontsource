@@ -12,7 +12,7 @@ describe('utils', () => {
 		it('should generate font download paths', () => {
 			expect(
 				makeFontDownloadPath('fonts', 'font', 'subset', 400, 'normal', 'woff2')
-			).toBe('./fonts/files/font-subset-400-normal.woff2');
+			).toBe('fonts/files/font-subset-400-normal.woff2');
 		});
 
 		it('should generate font file paths', () => {
@@ -30,7 +30,7 @@ describe('utils', () => {
 					'subset',
 					'style'
 				)
-			).toBe('./fontDir/files/font-axes-subset-style.woff2');
+			).toBe('fontDir/files/font-axes-subset-style.woff2');
 		});
 
 		it('should generate variable font file paths', () => {

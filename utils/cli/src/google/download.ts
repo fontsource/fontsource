@@ -3,7 +3,6 @@ import fs from 'fs-extra';
 import type { FontVariants, FontVariantsVariable } from 'google-font-metadata';
 import { APIv1, APIv2, APIVariable } from 'google-font-metadata';
 import got from 'got';
-import stringify from 'json-stringify-pretty-compact';
 import PQueue from 'p-queue';
 import * as path from 'pathe';
 
@@ -165,18 +164,11 @@ const download = async (id: string, opts: BuildOptions) => {
 		: generateLinks(id, opts);
 
 	// Download all font files
-	// Keep a list of all dests for checking successful downloads later
-	const destArr: string[] = [];
 	for (const link of links) {
 		queue.add(() => gotDownload(link.url, link.dest));
-		destArr.push(link.dest);
 	}
 
 	await queue.onIdle();
-	await fs.writeFile(
-		path.join(opts.dir, 'files', 'file-list.json'),
-		stringify(destArr)
-	);
 };
 
 export { download, generateLinks, gotDownload, pairGenerator, variableLinks };

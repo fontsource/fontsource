@@ -7,7 +7,7 @@ exports[`packager variable > should generate standard variable font successfully
       "test/cabin/wdth.css",
       "/* cabin-vietnamese-wdth-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -17,7 +17,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-ext-wdth-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -27,7 +27,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-wdth-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -39,7 +39,7 @@ exports[`packager variable > should generate standard variable font successfully
       "test/cabin/wdth-italic.css",
       "/* cabin-vietnamese-wdth-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -49,7 +49,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-ext-wdth-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -59,7 +59,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-wdth-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -71,7 +71,7 @@ exports[`packager variable > should generate standard variable font successfully
       "test/cabin/wght.css",
       "/* cabin-vietnamese-wght-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -80,7 +80,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-ext-wght-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -89,7 +89,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-wght-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -100,7 +100,7 @@ exports[`packager variable > should generate standard variable font successfully
       "test/cabin/wght-italic.css",
       "/* cabin-vietnamese-wght-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -109,7 +109,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-ext-wght-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -118,7 +118,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-wght-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -129,7 +129,7 @@ exports[`packager variable > should generate standard variable font successfully
       "test/cabin/standard.css",
       "/* cabin-vietnamese-standard-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -139,7 +139,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-ext-standard-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -149,7 +149,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-standard-normal */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -161,7 +161,7 @@ exports[`packager variable > should generate standard variable font successfully
       "test/cabin/standard-italic.css",
       "/* cabin-vietnamese-standard-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -171,7 +171,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-ext-standard-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -181,7 +181,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-standard-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -193,7 +193,7 @@ exports[`packager variable > should generate standard variable font successfully
       "test/cabin/index.css",
       "/* cabin-vietnamese-wght-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -202,7 +202,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-ext-wght-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -211,7 +211,7 @@ exports[`packager variable > should generate standard variable font successfully
 
 /* cabin-latin-wght-italic */
 @font-face {
-  font-family: 'Cabin Variable';
+  font-family: 'Cabin';
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
@@ -259,7 +259,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/opsz.css",
       "/* roboto-flex-cyrillic-ext-opsz-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -268,7 +268,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-opsz-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -277,7 +277,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-opsz-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -286,7 +286,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-opsz-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -295,7 +295,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-opsz-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -304,7 +304,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-opsz-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -315,7 +315,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/slnt.css",
       "/* roboto-flex-cyrillic-ext-slnt-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -324,7 +324,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-slnt-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -333,7 +333,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-slnt-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -342,7 +342,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-slnt-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -351,7 +351,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-slnt-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -360,7 +360,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-slnt-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -371,7 +371,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/wdth.css",
       "/* roboto-flex-cyrillic-ext-wdth-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -381,7 +381,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-wdth-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -391,7 +391,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-wdth-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -401,7 +401,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-wdth-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -411,7 +411,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-wdth-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -421,7 +421,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-wdth-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -433,7 +433,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/GRAD.css",
       "/* roboto-flex-cyrillic-ext-GRAD-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -442,7 +442,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-GRAD-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -451,7 +451,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-GRAD-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -460,7 +460,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-GRAD-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -469,7 +469,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-GRAD-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -478,7 +478,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-GRAD-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -489,7 +489,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/XTRA.css",
       "/* roboto-flex-cyrillic-ext-XTRA-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -498,7 +498,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-XTRA-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -507,7 +507,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-XTRA-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -516,7 +516,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-XTRA-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -525,7 +525,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-XTRA-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -534,7 +534,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-XTRA-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -545,7 +545,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/YOPQ.css",
       "/* roboto-flex-cyrillic-ext-YOPQ-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -554,7 +554,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-YOPQ-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -563,7 +563,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-YOPQ-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -572,7 +572,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-YOPQ-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -581,7 +581,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-YOPQ-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -590,7 +590,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-YOPQ-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -601,7 +601,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/YTAS.css",
       "/* roboto-flex-cyrillic-ext-YTAS-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -610,7 +610,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-YTAS-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -619,7 +619,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-YTAS-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -628,7 +628,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-YTAS-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -637,7 +637,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-YTAS-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -646,7 +646,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-YTAS-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -657,7 +657,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/YTDE.css",
       "/* roboto-flex-cyrillic-ext-YTDE-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -666,7 +666,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-YTDE-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -675,7 +675,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-YTDE-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -684,7 +684,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-YTDE-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -693,7 +693,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-YTDE-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -702,7 +702,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-YTDE-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -713,7 +713,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/YTFI.css",
       "/* roboto-flex-cyrillic-ext-YTFI-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -722,7 +722,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-YTFI-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -731,7 +731,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-YTFI-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -740,7 +740,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-YTFI-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -749,7 +749,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-YTFI-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -758,7 +758,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-YTFI-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -769,7 +769,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/YTLC.css",
       "/* roboto-flex-cyrillic-ext-YTLC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -778,7 +778,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-YTLC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -787,7 +787,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-YTLC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -796,7 +796,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-YTLC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -805,7 +805,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-YTLC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -814,7 +814,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-YTLC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -825,7 +825,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/YTUC.css",
       "/* roboto-flex-cyrillic-ext-YTUC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -834,7 +834,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-YTUC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -843,7 +843,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-YTUC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -852,7 +852,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-YTUC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -861,7 +861,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-YTUC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -870,7 +870,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-YTUC-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -881,7 +881,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/wght.css",
       "/* roboto-flex-cyrillic-ext-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -890,7 +890,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -899,7 +899,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -908,7 +908,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -917,7 +917,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -926,7 +926,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -937,7 +937,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/full.css",
       "/* roboto-flex-cyrillic-ext-full-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -947,7 +947,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-full-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -957,7 +957,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-full-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -967,7 +967,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-full-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -977,7 +977,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-full-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -987,7 +987,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-full-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -999,7 +999,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/standard.css",
       "/* roboto-flex-cyrillic-ext-standard-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1009,7 +1009,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-standard-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1019,7 +1019,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-standard-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1029,7 +1029,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-standard-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1039,7 +1039,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-standard-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1049,7 +1049,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-standard-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1061,7 +1061,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
       "test/roboto-flex/index.css",
       "/* roboto-flex-cyrillic-ext-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1070,7 +1070,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-cyrillic-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1079,7 +1079,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-greek-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1088,7 +1088,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-vietnamese-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1097,7 +1097,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-ext-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1106,7 +1106,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 
 /* roboto-flex-latin-wght-normal */
 @font-face {
-  font-family: 'Roboto Flex Variable';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
@@ -1186,7 +1186,7 @@ exports[`packager variable > should generate variable font without wght successf
       "test/ballet/opsz.css",
       "/* ballet-vietnamese-opsz-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
@@ -1195,7 +1195,7 @@ exports[`packager variable > should generate variable font without wght successf
 
 /* ballet-latin-ext-opsz-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
@@ -1204,7 +1204,7 @@ exports[`packager variable > should generate variable font without wght successf
 
 /* ballet-latin-opsz-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
@@ -1215,7 +1215,7 @@ exports[`packager variable > should generate variable font without wght successf
       "test/ballet/standard.css",
       "/* ballet-vietnamese-standard-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
@@ -1224,7 +1224,7 @@ exports[`packager variable > should generate variable font without wght successf
 
 /* ballet-latin-ext-standard-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
@@ -1233,7 +1233,7 @@ exports[`packager variable > should generate variable font without wght successf
 
 /* ballet-latin-standard-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
@@ -1244,7 +1244,7 @@ exports[`packager variable > should generate variable font without wght successf
       "test/ballet/index.css",
       "/* ballet-vietnamese-opsz-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
@@ -1253,7 +1253,7 @@ exports[`packager variable > should generate variable font without wght successf
 
 /* ballet-latin-ext-opsz-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
@@ -1262,7 +1262,7 @@ exports[`packager variable > should generate variable font without wght successf
 
 /* ballet-latin-opsz-normal */
 @font-face {
-  font-family: 'Ballet Variable';
+  font-family: 'Ballet';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
