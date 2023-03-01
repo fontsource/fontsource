@@ -2,8 +2,6 @@ import fs from 'fs-extra';
 import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
 
-// eslint-disable-next-line import/no-relative-packages
-import { version as mainPkgRepoVersion } from '../../../../package.json';
 import { BuildOptions,Metadata } from '../types';
 
 const template = (
@@ -11,7 +9,7 @@ const template = (
 	oldVersion?: string
 ) => ({
 		name: isVariable ? `@fontsource-variable/${id}` : `@fontsource/${id}`,
-		version: oldVersion ?? mainPkgRepoVersion,
+		version: oldVersion ?? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8')).version,
 		description: `Self-host the ${family} font in a neatly bundled NPM package.`,
 		main: 'index.css',
 		publishConfig: { access: 'public' },
