@@ -4,13 +4,13 @@ import * as path from 'pathe';
 
 // eslint-disable-next-line import/no-relative-packages
 import { version as mainPkgRepoVersion } from '../../../../package.json';
-import { Metadata } from '../types';
+import { BuildOptions,Metadata } from '../types';
 
 const template = (
 	{ id, family, license, type, variable }: Metadata,
 	oldVersion?: string
 ) => ({
-		name: variable ? `@fontsource/${id}/variable` : `@fontsource/${id}`,
+		name: variable ? `@fontsource-variable/${id}` : `@fontsource/${id}`,
 		version: oldVersion ?? mainPkgRepoVersion,
 		description: `Self-host the ${family} font in a neatly bundled NPM package.`,
 		main: 'index.css',
@@ -38,19 +38,19 @@ const template = (
 		},
 	});
 
-const packageJson = async (metadata: Metadata, fontDir: string) => {
+const packageJson = async (metadata: Metadata, opts: BuildOptions) => {
 	let oldVersion;
 	try {
-		await fs.access(path.join(fontDir, 'package.json'));
+		await fs.access(path.join(opts.dir, 'package.json'));
 		oldVersion = JSON.parse(
-			await fs.readFile(path.join(fontDir, 'package.json'), 'utf8')
+			await fs.readFile(path.join(opts.dir, 'package.json'), 'utf8')
 		).version;
 	} catch {
 		// Continue
 	}
 
 	const file = template(metadata, oldVersion);
-	await fs.writeFile(path.join(fontDir, 'package.json'), stringify(file));
+	await fs.writeFile(path.join(opts.dir, 'package.json'), stringify(file));
 };
 
 export { packageJson };

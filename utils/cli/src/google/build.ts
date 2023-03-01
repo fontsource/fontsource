@@ -112,7 +112,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		await generateLicense(id, fontLicense.license.type, opts);
 
 		// Write package.json
-		await packageJson(metadata, opts.dir);
+		await packageJson(metadata, opts);
 	}
 };
 
