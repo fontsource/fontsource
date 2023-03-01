@@ -44,7 +44,7 @@ const testIds = [
 	'fraunces',
 	'noto-sans-jp',
 	'recursive',
-	'roboto-flex',
+	'roboto-flex'
 ];
 
 export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
@@ -72,16 +72,22 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 		};
 
 		try {
-			// Create base font package
-			queue.add(() => buildPackage(id, buildOpts));
+			if (id in APIv2) {
+				// Create base font package
+				queue.add(() => buildPackage(id, buildOpts));
 
-			// Build separate package for variable fonts
-			if (APIVariable[id]) {
-				// Change build options to use separate variable package name
-				buildOpts.isVariable = true;
-				buildOpts.dir = path.join(outDir, 'variable', id);
+				// Build separate package for variable fonts
+				if (APIVariable[id]) {
+					// Change build options to use separate variable package name
+					buildOpts.isVariable = true;
+					buildOpts.dir = path.join(outDir, 'variable', id);
 
-				queue.add(() => buildVariablePackage(id, buildOpts));
+					queue.add(() => buildVariablePackage(id, buildOpts));
+				}
+			} else {
+				consola.warn(
+					`Skipping ${id} as it is not a Google Font.`
+				);
 			}
 		} catch (error) {
 			throw new Error(`${id} experienced an error. ${error}`);

@@ -12,8 +12,7 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 	const fontVariable = APIVariable[id];
 
 	// Generate CSS
-	const variableName = `${font.family} Variable`;
-	let indexCSS;
+	let indexCSS = '';
 
 	for (const axes of Object.keys(fontVariable.variants)) {
 		const variant = fontVariable.variants[axes];
@@ -35,7 +34,7 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 
 			for (const subset of Object.keys(variant[style])) {
 				const fontObj: FontObject = {
-					family: variableName,
+					family: font.family,
 					style,
 					display: 'swap',
 					weight: findClosest(font.weights, 400),
