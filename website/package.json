@@ -1,58 +1,58 @@
 {
-  "private": true,
-  "sideEffects": false,
-  "scripts": {
-    "build": "remix build",
-    "deploy": "fly deploy --remote-only",
-    "dev": "remix dev",
-    "migrations": "knex migrate:latest",
-    "start": "remix-serve build",
-    "lint": "eslint **/*.{js,jsx,ts,tsx}"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/server": "^11.10.0",
-    "@fontsource/inter": "^4.5.14",
-    "@fontsource/source-code-pro": "^4.5.12",
-    "@mantine/core": "^5.9.5",
-    "@mantine/hooks": "^5.9.5",
-    "@mantine/nprogress": "^5.9.5",
-    "@mantine/remix": "^5.9.5",
-    "@remix-run/node": "^1.9.0",
-    "@remix-run/react": "^1.9.0",
-    "@remix-run/serve": "^1.9.0",
-    "algoliasearch": "^4.14.3",
-    "better-sqlite3": "^8.0.1",
-    "instantsearch.js": "^4.49.2",
-    "jotai": "^1.12.0",
-    "knex": "^2.3.0",
-    "ky": "^0.33.0",
-    "p-queue": "6",
-    "react": "17",
-    "react-dom": "17",
-    "react-instantsearch-hooks-server": "^6.38.1",
-    "react-instantsearch-hooks-web": "^6.38.1",
-    "tiny-invariant": "^1.3.1",
-    "use-font-face-observer": "^1.2.1"
-  },
-  "devDependencies": {
-    "@remix-run/dev": "^1.9.0",
-    "@remix-run/eslint-config": "^1.9.0",
-    "@types/node": "^18.11.18",
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.10",
-    "eslint": "^8.30.0",
-    "eslint-plugin-simple-import-sort": "^8.0.0",
-    "typescript": "^4.9.4"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@babel/*"
-      ]
-    }
-  }
+	"private": true,
+	"sideEffects": false,
+	"scripts": {
+		"build": "remix build",
+		"deploy": "fly deploy --remote-only",
+		"dev": "remix dev",
+		"migrations": "knex migrate:latest",
+		"start": "remix-serve build",
+		"lint": "eslint **/*.{js,jsx,ts,tsx}"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.10.6",
+		"@emotion/server": "^11.10.0",
+		"@fontsource/inter": "^4.5.15",
+		"@fontsource/source-code-pro": "^4.5.14",
+		"@mantine/core": "^5.10.5",
+		"@mantine/hooks": "^5.10.5",
+		"@mantine/nprogress": "^5.10.5",
+		"@mantine/remix": "^5.10.5",
+		"@remix-run/node": "^1.13.0",
+		"@remix-run/react": "^1.13.0",
+		"@remix-run/serve": "^1.13.0",
+		"algoliasearch": "^4.14.3",
+		"better-sqlite3": "^8.1.0",
+		"instantsearch.js": "^4.51.1",
+		"jotai": "^2.0.2",
+		"knex": "^2.4.2",
+		"ky": "^0.33.2",
+		"p-queue": "6",
+		"react": "17",
+		"react-dom": "17",
+		"react-instantsearch-hooks-server": "^6.40.1",
+		"react-instantsearch-hooks-web": "^6.40.1",
+		"tiny-invariant": "^1.3.1",
+		"use-font-face-observer": "^1.2.1"
+	},
+	"devDependencies": {
+		"@remix-run/dev": "^1.13.0",
+		"@remix-run/eslint-config": "^1.13.0",
+		"@types/node": "^18.14.2",
+		"@types/react": "^18.0.28",
+		"@types/react-dom": "^18.0.11",
+		"eslint": "^8.35.0",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"typescript": "^4.9.5"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": [
+				"@babel/*"
+			]
+		}
+	}
 }
