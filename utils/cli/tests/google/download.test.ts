@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import * as gfm from 'google-font-metadata';
+import got from 'got';
 import stringify from 'json-stringify-pretty-compact';
 import { describe, expect, it, vi } from 'vitest';
 
@@ -40,6 +41,8 @@ describe('download google', () => {
 		vi.spyOn(gfm, 'APIv1', 'get').mockReturnValue(APIv1Mock);
 		vi.spyOn(gfm, 'APIv2', 'get').mockReturnValue(APIv2Mock);
 		vi.spyOn(gfm, 'APIVariable', 'get').mockReturnValue(APIVariableMock);
+		// @ts-ignore - doesn't matter
+		vi.mocked(got).mockReturnValue({ buffer: () => 'buffer' });
 
 		it('should generate links for base font (abel)', () => {
 			const buildOpts = {

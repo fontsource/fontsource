@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import { APIv2, APIVariable } from 'google-font-metadata';
 import PQueue from 'p-queue';
 import * as path from 'pathe';
+import colors from 'picocolors';
 
 import { BuildOptions, CLIOptions } from '../types';
 import { build } from './build';
@@ -16,7 +17,7 @@ queue.on('error', error => {
 
 queue.on('idle', async () => {
 	// Clean up directory
-	await fs.rmdir(path.resolve(process.cwd(), 'fontsource_temp_packages'), {
+	await fs.rm(path.resolve(process.cwd(), 'fontsource_temp_packages'), {
 		recursive: true,
 	});
 
@@ -35,9 +36,9 @@ const buildPackage = async (id: string, opts: BuildOptions) => {
 };
 
 const buildVariablePackage = async (id: string, opts: BuildOptions) => {
-	consola.info(`Downloading ${id} variable font`);
+	consola.info(`Downloading ${id} ${colors.bold(colors.yellow('[VARIABLE]'))}`);
 	await build(id, opts);
-	consola.success(`Finished processing ${id} variable`);
+	consola.success(`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE]'))}`);
 };
 
 const testIds = [
@@ -66,7 +67,6 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 		fontIds = Object.keys(APIv2);
 	}
 
-	const queueArr = [];
 	for (const id of fontIds) {
 		// Create default options
 		const buildOpts: BuildOptions = {
@@ -78,7 +78,7 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 
 		try {
 			// Create base font package
-			queueArr.push(queue.add(() => buildPackage(id, buildOpts)));
+			queue.add(() => buildPackage(id, buildOpts));
 
 			// Build separate package for variable fonts
 			if (APIVariable[id]) {
@@ -86,15 +86,12 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 				buildOpts.isVariable = true;
 				buildOpts.dir = path.join(outDir, 'variable', id);
 
-				queueArr.push(queue.add(() => buildVariablePackage(id, buildOpts)));
+				queue.add(() => buildVariablePackage(id, buildOpts));
 			}
 		} catch (error) {
 			throw new Error(`${id} experienced an error. ${error}`);
 		}
 	}
 
-	await Promise.all(queueArr);
-
-	// Clean up
-	await fs.rm(tmpDir, { recursive: true });
+	await queue.onIdle();
 };

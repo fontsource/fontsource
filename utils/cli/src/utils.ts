@@ -7,7 +7,7 @@ const makeFontDownloadPath = (
 	style: string,
 	extension: string
 ): string =>
-	`./${fontDir}/files/${fontId}-${subset}-${weight}-${style}.${extension}`;
+	`${fontDir}/files/${fontId}-${subset}-${weight}-${style}.${extension}`;
 
 const makeVariableFontDownloadPath = (
 	fontDir: string,
@@ -15,7 +15,7 @@ const makeVariableFontDownloadPath = (
 	subset: string,
 	axes: string,
 	style: string
-): string => `./${fontDir}/files/${fontId}-${subset}-${axes}-${style}.woff2`;
+): string => `${fontDir}/files/${fontId}-${subset}-${axes}-${style}.woff2`;
 
 // Used for the src urls in CSS files
 const makeFontFilePath = (

@@ -11,7 +11,7 @@ import { BuildOptions } from '../types';
 import { makeFontDownloadPath, makeVariableFontDownloadPath } from '../utils';
 
 const gotDownload = async (url: string, dest: fs.PathLike) => {
-	const response = await got(url);
+	const response = await got(url).buffer();
 	await fs.writeFile(dest, response);
 };
 
@@ -115,6 +115,7 @@ const generateLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 						types[4]
 				  );
 		const url = pair[1];
+		console.log({ url, dest });
 		return { url, dest };
 	});
 
@@ -158,6 +159,7 @@ const queue = new PQueue({ concurrency: 60 });
 
 const download = async (id: string, opts: BuildOptions) => {
 	await fs.ensureDir(path.join(opts.dir, 'files'));
+	console.log(opts.dir);
 
 	// Get download URLs of font files
 	const links = opts.isVariable
@@ -172,11 +174,14 @@ const download = async (id: string, opts: BuildOptions) => {
 		destArr.push(link.dest);
 	}
 
+	console.log('queue push');
 	await queue.onIdle();
+	console.log('queue idle');
 	await fs.writeFile(
 		path.join(opts.dir, 'files', 'file-list.json'),
 		stringify(destArr)
 	);
+	console.log('file list');
 };
 
 export { download, generateLinks, gotDownload, pairGenerator, variableLinks };
