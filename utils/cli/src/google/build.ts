@@ -91,7 +91,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		};
 
 		// Write README.md
-		await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata));
+		await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata, opts.isVariable));
 
 		// Write metadata.json
 		await fs.writeFile(

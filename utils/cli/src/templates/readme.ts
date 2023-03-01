@@ -3,19 +3,21 @@ import type { Metadata } from '../types';
 const variableText = () => `## Variable Fonts
 
 This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
-Variable documentation can be found [here](https://fontsource.org/docs/variable-fonts).
-`;
+Variable documentation can be found [here](https://fontsource.org/docs/variable-fonts).\n\n`;
 
-const readme = ({
-	id,
-	family,
-	version,
-	weights,
-	styles,
-	subsets,
-	variable,
-	license,
-}: Metadata) => `# Fontsource ${family}
+const readme = (
+	{
+		id,
+		family,
+		version,
+		weights,
+		styles,
+		subsets,
+		variable,
+		license,
+	}: Metadata,
+	isVariable: boolean
+) => `# Fontsource ${family}
 
 [![npm (scoped)](https://img.shields.io/npm/v/@fontsource/${id}?color=brightgreen)](https://www.npmjs.com/package/@fontsource/${id}) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/${id})](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/${id})](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
@@ -26,19 +28,30 @@ The CSS and web font files to easily self-host the “${family}” font. Please 
 Fontsource has a variety of methods to import CSS, such as using a bundler like Webpack. Alternatively, it supports SASS. Full documentation can be found [here](https://fontsource.org/docs/introduction).
 
 \`\`\`javascript
-npm install @fontsource/${id}
+npm install ${isVariable ? `@fontsource-variable/${id}` : `@fontsource/${id}`}
 \`\`\`
 
 Within your app entry file or site component, import it in.
 
 \`\`\`javascript
-import "@fontsource/${id}"; // Defaults to weight 400.
+${
+	isVariable
+		? `import "@fontsource-variable/${id}"; // Defaults to wght axis
+import "@fontsource-variable/${id}/wght.css"; // Specify axis
+import "@fontsource-variable/${id}/wght-italic.css"; // Specify axis and style`
+		: `import "@fontsource/${id}"; // Defaults to weight 400
+import "@fontsource/${id}/400.css"; // Specify weight
+import "@fontsource/${id}/400-italic.css"; // Specify weight and style`
+}
+
 \`\`\`
 
 Supported variables:
 - Weights: \`[${weights}]\`
 - Styles: \`[${styles}]\`
-- Supported subsets: \`[${subsets}]\`
+- Subsets: \`[${subsets}]\`${
+	isVariable ? `\n- Axes: \`[${Object.keys(variable).filter(axis => axis !== 'ital')}]\`` : ''
+}
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
 
