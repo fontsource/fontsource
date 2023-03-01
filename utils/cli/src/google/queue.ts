@@ -7,6 +7,7 @@ import colors from 'picocolors';
 
 import { BuildOptions, CLIOptions } from '../types';
 import { build } from './build';
+import { purgeDuplicates } from './check';
 
 const queue = new PQueue({ concurrency: 3 });
 
@@ -103,4 +104,5 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 	// Clean up
 	await queue.onIdle();
 	await fs.rm(tmpDir, { recursive: true });
+	// TODO: enable await purgeDuplicates();
 };

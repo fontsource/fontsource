@@ -93,12 +93,6 @@ const build = async (id: string, opts: BuildOptions) => {
 		// Write README.md
 		await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata, opts.isVariable));
 
-		// Write metadata.json
-		await fs.writeFile(
-			path.join(opts.dir, 'metadata.json'),
-			stringify(metadata)
-		);
-
 		// Write unicode.json
 		await fs.writeFile(
 			path.join(opts.dir, 'unicode.json'),
@@ -110,6 +104,12 @@ const build = async (id: string, opts: BuildOptions) => {
 
 		// Write LICENSE file
 		await generateLicense(id, fontLicense.license.type, opts);
+
+		// Write metadata.json
+		await fs.writeFile(
+			path.join(opts.dir, 'metadata.json'),
+			stringify(metadata)
+		);
 
 		// Write package.json
 		await packageJson(metadata, opts);
