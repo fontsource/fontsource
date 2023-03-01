@@ -1,6 +1,6 @@
 export interface CLIOptions {
 	test?: boolean;
-	out?: string;
+	force?: boolean;
 }
 
 export interface BuildOptions {

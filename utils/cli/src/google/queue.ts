@@ -49,7 +49,7 @@ const testIds = [
 
 export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 	// Ensure all chosen dirs are created
-	const outDir = path.resolve(process.cwd(), opts.out ?? 'fonts/google');
+	const outDir = path.resolve(process.cwd(), 'fonts/google');
 	await fs.ensureDir(outDir);
 	// Make tempdir for storing metadata in rebuilds
 	const tmpDir = path.join(outDir, 'fontsource_temp_packages');
@@ -68,7 +68,7 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 			dir: path.join(outDir, id),
 			tmpDir,
 			isVariable: false,
-			force: false,
+			force: opts.force ?? false,
 		};
 
 		try {
