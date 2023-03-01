@@ -20,7 +20,7 @@ export const buildCustom = async (metadata: Metadata) => {
 	// TODO: Generate SCSS
 
 	// Write README.md
-	await fs.writeFile(path.join(dir, 'README.md'), readme(metadata));
+	await fs.writeFile(path.join(dir, 'README.md'), readme(metadata, false));
 
 	// Write metadata.json
 	await fs.writeFile(path.join(dir, 'metadata.json'), stringify(metadata));
@@ -32,5 +32,10 @@ export const buildCustom = async (metadata: Metadata) => {
 	await fs.writeFile(path.join(dir, 'CHANGELOG.md'), changelog);
 
 	// Write package.json
-	await packageJson(metadata, dir);
+	await packageJson(metadata, {
+		dir,
+		isVariable: false,
+		tmpDir: '',
+		force: false,
+	});
 };

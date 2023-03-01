@@ -24,7 +24,7 @@ cli
 	.option('-f, --force', 'Force parse all metadata')
 	.action(async (key: string, options) => {
 		try {
-			const finalKey = key ?? process.env.GOOGLE_FONT_API_KEY;
+			const finalKey = key ?? process.env.GOOGLE_API_KEY;
 			if (!finalKey) {
 				throw new Error('No API key provided.');
 			}
