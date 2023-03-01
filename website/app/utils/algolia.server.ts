@@ -1,7 +1,6 @@
 import algoliasearch from 'algoliasearch';
 
 import { knex } from './db.server';
-import { ensurePrimary } from './fly.server';
 import {
 	fetchMetadata,
 	getFontList,
@@ -43,8 +42,6 @@ const downloadCount = async (id: string) =>
 
 const updateAlgoliaIndex = async () => {
 	try {
-		await ensurePrimary();
-
 		// Get font list
 		const list = Object.keys(await getFontList());
 		const indexArray: AlgoliaMetadata[] = [];

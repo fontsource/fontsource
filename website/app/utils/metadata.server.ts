@@ -1,6 +1,5 @@
 import { addCss } from './css.server';
 import { knex } from './db.server';
-import { ensurePrimary } from './fly.server';
 import type {
 	DownloadMetadata,
 	FontList,
@@ -16,9 +15,6 @@ const getFontList = async (): Promise<FontList> => {
 };
 
 const fetchMetadata = async (id: string) => {
-	// We can only write to DB in primary instance
-	await ensurePrimary();
-
 	const BASE_URL = 'https://cdn.jsdelivr.net/npm';
 	const METADATA_URL = `${BASE_URL}/@fontsource/${id}/metadata.json`;
 	const UNICODE_URL = `${BASE_URL}/@fontsource/${id}/unicode.json`;
@@ -122,8 +118,6 @@ const getDownloadCountList = async () => {
 };
 
 const updateDownloadCount = async () => {
-	await ensurePrimary();
-
 	const { month, total } = await getDownloadCountList();
 	const insertData = [];
 	for (const id of Object.keys(month)) {

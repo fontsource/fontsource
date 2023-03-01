@@ -1,12 +1,47 @@
-# The path to where the SQLite database will be accessed by the app
-mount-dir: '${FLY_LITEFS_DIR}'
+# The FUSE section handles settings on the FUSE file system. FUSE
+# provides a layer for intercepting SQLite transactions on the
+# primary node so they can be shipped to replica nodes
+# transparently.
+fuse:
+  # Required. This is the mount directory that applications will
+  # use to access their SQLite databases.
+  dir: '${LITEFS_DIR}'
 
+# The data section specifies where internal LiteFS data is stored
+# and how long to retain the transaction files.
+#
+# Transaction files are used to ship changes to replica nodes so
+# they should persist long enough for replicas to retrieve them,
+# even in the face of a short network interruption or a redeploy.
+# Under high load, these files can grow large so it's not advised
+# to extend retention too long.
+data:
+  # Path to internal data storage.
+  dir: '/data/litefs'
 
-# The path to where the underlying volume mount is.
-data-dir: '/data'
+proxy:
+  # matches the internal_port in fly.toml
+  addr: ':${INTERNAL_PORT}'
 
+  # PORT is set in the Dockerfile
+  target: 'localhost:${PORT}'
+  db: '${DATABASE_FILENAME}'
+
+# This flag ensure that LiteFS continues to run if there is an issue on starup.
+# It makes it easy to ssh in and debug any issues you might be having rather
+# than continually restarting on initialization failure.
+exit-on-error: false
+
+# The lease section specifies how the cluster will be managed. We're using the
+# "consul" lease type so that our application can dynamically change the primary.
+#
 # These environment variables will be available in your Fly.io application.
 # You must specify "experiement.enable_consul" for FLY_CONSUL_URL to be available.
-consul:
-  url: '${FLY_CONSUL_URL}'
+lease:
+  type: 'consul'
+  # candidate: ${FLY_REGION == 'den'}
   advertise-url: 'http://${HOSTNAME}.vm.${FLY_APP_NAME}.internal:20202'
+
+  consul:
+    url: '${FLY_CONSUL_URL}'
+    key: 'litefs/${FLY_APP_NAME}'

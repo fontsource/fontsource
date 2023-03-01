@@ -3,7 +3,6 @@ import PQueue from 'p-queue';
 import invariant from 'tiny-invariant';
 
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
-import { ensurePrimary } from '@/utils/fly.server';
 import {
 	fetchMetadata,
 	getFontList,
@@ -53,8 +52,6 @@ const updateFonts = async (data: UpdateData) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-	await ensurePrimary();
-
 	const data: UpdateData = await request.json();
 	invariant(data, 'No data was sent with the request');
 	invariant(data.token, 'No update token was sent with the request');
