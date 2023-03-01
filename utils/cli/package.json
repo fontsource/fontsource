@@ -16,14 +16,14 @@
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@clack/prompts": "^0.6.0",
+		"@clack/prompts": "^0.6.1",
 		"@fontsource-utils/generate": "workspace:*",
 		"cac": "^6.7.14",
 		"consola": "^2.15.3",
 		"dotenv": "^16.0.3",
 		"flat": "^5.0.2",
 		"fs-extra": "^11.1.0",
-		"google-font-metadata": "^4.1.4",
+		"google-font-metadata": "^4.2.0",
 		"got": "^12.5.3",
 		"json-stringify-pretty-compact": "^4.0.0",
 		"p-queue": "^7.3.4",
@@ -33,14 +33,14 @@
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.2.4",
 		"@types/flat": "^5.0.2",
-		"@types/fs-extra": "^9.0.13",
-		"@types/node": "^18.14.1",
-		"@vitest/coverage-c8": "^0.29.1",
-		"eslint": "^8.34.0",
+		"@types/fs-extra": "^11.0.1",
+		"@types/node": "^18.14.2",
+		"@vitest/coverage-c8": "^0.29.2",
+		"eslint": "^8.35.0",
 		"pkgroll": "^1.9.0",
 		"tsx": "^3.12.3",
 		"typescript": "^4.9.5",
-		"vitest": "^0.29.1"
+		"vitest": "^0.29.2"
 	},
 	"files": [
 		"dist/*"
