@@ -1,14 +1,11 @@
 import fs from 'fs-extra';
-import got from 'got';
+import { APILicense } from 'google-font-metadata';
 import * as path from 'pathe';
 
+import { apache } from '../templates/apache';
+import { ofl } from '../templates/ofl';
+import { ufl } from '../templates/ufl';
 import type { BuildOptions } from '../types';
-
-const BASE_URL = 'https://cdn.jsdelivr.net/gh/google/fonts@main/';
-
-const apache = (id: string) => `apache/${id}/LICENSE.txt`;
-const ofl = (id: string) => `ofl/${id}/OFL.txt`;
-const ufl = (id: string) => `ufl/${id}/UFL.txt`;
 
 // Download license from Google Fonts Github repo and save to package
 const generateLicense = async (
@@ -17,20 +14,20 @@ const generateLicense = async (
 	opts: BuildOptions
 ) => {
 	const licensePath = path.join(opts.dir, 'LICENSE');
-	const googleId = id.replace(/-/g, '');
+	const copyright = APILicense[id].original;
 
-	let licenseUrl;
+	let txt;
 	switch (licenseType.toLowerCase()) {
 		case 'apache license, version 2.0': {
-			licenseUrl = `${BASE_URL}${apache(googleId)}`;
+			txt = apache(copyright);
 			break;
 		}
 		case 'sil open font license, 1.1': {
-			licenseUrl = `${BASE_URL}${ofl(googleId)}`;
+			txt = ofl(copyright);
 			break;
 		}
 		case 'ubuntu font license, 1.0': {
-			licenseUrl = `${BASE_URL}${ufl(googleId)}`;
+			txt = ufl();
 			break;
 		}
 		default: {
@@ -39,12 +36,7 @@ const generateLicense = async (
 	}
 
 	// Download file and write to package
-	try {
-		const { body } = await got.get(licenseUrl);
-		await fs.writeFile(licensePath, body);
-	} catch (error) {
-		throw new Error(`Unable to download license for ${id}\n${error}`);
-	}
+	await fs.writeFile(licensePath, txt);
 };
 
 export { generateLicense };
