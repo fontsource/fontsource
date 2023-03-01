@@ -39,6 +39,7 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 					style,
 					display: 'swap',
 					weight: findClosest(font.weights, 400),
+					unicodeRange: font.unicodeRange[subset],
 					variable: variableOpts,
 					src: [
 						{
