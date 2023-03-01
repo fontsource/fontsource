@@ -17,6 +17,7 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 	for (const axes of Object.keys(fontVariable.variants)) {
 		const variant = fontVariable.variants[axes];
 		const styles = Object.keys(variant);
+		const axesLower = axes.toLowerCase();
 
 		// These are variable modifiers to change specific CSS selectors
 		// for variable fonts.
@@ -41,11 +42,11 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 					variable: variableOpts,
 					src: [
 						{
-							url: makeVariableFontFilePath(id, subset, axes, style),
+							url: makeVariableFontFilePath(id, subset, axesLower, style),
 							format: 'woff2',
 						},
 					],
-					comment: `${id}-${subset}-${axes}-${style}`,
+					comment: `${id}-${subset}-${axesLower}-${style}`,
 					displayVar: true,
 				};
 
@@ -56,7 +57,7 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 
 			// Write down CSS
 			const filename =
-				style === 'normal' ? `${axes}.css` : `${axes}-${style}.css`;
+				style === 'normal' ? `${axesLower}.css` : `${axesLower}-${style}.css`;
 			const cssPath = path.join(opts.dir, filename);
 			const css = cssStyle.join('\n\n');
 			await fs.writeFile(cssPath, css);

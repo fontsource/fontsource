@@ -430,451 +430,451 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 }",
     ],
     [
-      "test/roboto-flex/GRAD.css",
-      "/* roboto-flex-cyrillic-ext-GRAD-normal */
+      "test/roboto-flex/grad.css",
+      "/* roboto-flex-cyrillic-ext-grad-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-grad-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-cyrillic-GRAD-normal */
+/* roboto-flex-cyrillic-grad-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-grad-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-greek-GRAD-normal */
+/* roboto-flex-greek-grad-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-grad-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-vietnamese-GRAD-normal */
+/* roboto-flex-vietnamese-grad-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-grad-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-ext-GRAD-normal */
+/* roboto-flex-latin-ext-grad-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-grad-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-GRAD-normal */
+/* roboto-flex-latin-grad-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-grad-normal.woff2) format('woff2');
 }",
     ],
     [
-      "test/roboto-flex/XTRA.css",
-      "/* roboto-flex-cyrillic-ext-XTRA-normal */
+      "test/roboto-flex/xtra.css",
+      "/* roboto-flex-cyrillic-ext-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-xtra-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-cyrillic-XTRA-normal */
+/* roboto-flex-cyrillic-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-xtra-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-greek-XTRA-normal */
+/* roboto-flex-greek-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-xtra-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-vietnamese-XTRA-normal */
+/* roboto-flex-vietnamese-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-xtra-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-ext-XTRA-normal */
+/* roboto-flex-latin-ext-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-xtra-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-XTRA-normal */
+/* roboto-flex-latin-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-xtra-normal.woff2) format('woff2');
 }",
     ],
     [
-      "test/roboto-flex/YOPQ.css",
-      "/* roboto-flex-cyrillic-ext-YOPQ-normal */
+      "test/roboto-flex/yopq.css",
+      "/* roboto-flex-cyrillic-ext-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-yopq-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-cyrillic-YOPQ-normal */
+/* roboto-flex-cyrillic-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-yopq-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-greek-YOPQ-normal */
+/* roboto-flex-greek-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-yopq-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-vietnamese-YOPQ-normal */
+/* roboto-flex-vietnamese-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-yopq-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-ext-YOPQ-normal */
+/* roboto-flex-latin-ext-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-yopq-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-YOPQ-normal */
+/* roboto-flex-latin-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-yopq-normal.woff2) format('woff2');
 }",
     ],
     [
-      "test/roboto-flex/YTAS.css",
-      "/* roboto-flex-cyrillic-ext-YTAS-normal */
+      "test/roboto-flex/ytas.css",
+      "/* roboto-flex-cyrillic-ext-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytas-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-cyrillic-YTAS-normal */
+/* roboto-flex-cyrillic-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytas-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-greek-YTAS-normal */
+/* roboto-flex-greek-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytas-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-vietnamese-YTAS-normal */
+/* roboto-flex-vietnamese-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytas-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-ext-YTAS-normal */
+/* roboto-flex-latin-ext-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytas-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-YTAS-normal */
+/* roboto-flex-latin-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytas-normal.woff2) format('woff2');
 }",
     ],
     [
-      "test/roboto-flex/YTDE.css",
-      "/* roboto-flex-cyrillic-ext-YTDE-normal */
+      "test/roboto-flex/ytde.css",
+      "/* roboto-flex-cyrillic-ext-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytde-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-cyrillic-YTDE-normal */
+/* roboto-flex-cyrillic-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytde-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-greek-YTDE-normal */
+/* roboto-flex-greek-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytde-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-vietnamese-YTDE-normal */
+/* roboto-flex-vietnamese-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytde-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-ext-YTDE-normal */
+/* roboto-flex-latin-ext-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytde-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-YTDE-normal */
+/* roboto-flex-latin-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytde-normal.woff2) format('woff2');
 }",
     ],
     [
-      "test/roboto-flex/YTFI.css",
-      "/* roboto-flex-cyrillic-ext-YTFI-normal */
+      "test/roboto-flex/ytfi.css",
+      "/* roboto-flex-cyrillic-ext-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytfi-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-cyrillic-YTFI-normal */
+/* roboto-flex-cyrillic-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytfi-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-greek-YTFI-normal */
+/* roboto-flex-greek-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytfi-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-vietnamese-YTFI-normal */
+/* roboto-flex-vietnamese-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytfi-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-ext-YTFI-normal */
+/* roboto-flex-latin-ext-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytfi-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-YTFI-normal */
+/* roboto-flex-latin-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytfi-normal.woff2) format('woff2');
 }",
     ],
     [
-      "test/roboto-flex/YTLC.css",
-      "/* roboto-flex-cyrillic-ext-YTLC-normal */
+      "test/roboto-flex/ytlc.css",
+      "/* roboto-flex-cyrillic-ext-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytlc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-cyrillic-YTLC-normal */
+/* roboto-flex-cyrillic-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytlc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-greek-YTLC-normal */
+/* roboto-flex-greek-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytlc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-vietnamese-YTLC-normal */
+/* roboto-flex-vietnamese-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytlc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-ext-YTLC-normal */
+/* roboto-flex-latin-ext-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytlc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-YTLC-normal */
+/* roboto-flex-latin-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytlc-normal.woff2) format('woff2');
 }",
     ],
     [
-      "test/roboto-flex/YTUC.css",
-      "/* roboto-flex-cyrillic-ext-YTUC-normal */
+      "test/roboto-flex/ytuc.css",
+      "/* roboto-flex-cyrillic-ext-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytuc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-cyrillic-YTUC-normal */
+/* roboto-flex-cyrillic-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytuc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-greek-YTUC-normal */
+/* roboto-flex-greek-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytuc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-vietnamese-YTUC-normal */
+/* roboto-flex-vietnamese-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytuc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-ext-YTUC-normal */
+/* roboto-flex-latin-ext-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytuc-normal.woff2) format('woff2');
 }
 
-/* roboto-flex-latin-YTUC-normal */
+/* roboto-flex-latin-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytuc-normal.woff2) format('woff2');
 }",
     ],
     [
