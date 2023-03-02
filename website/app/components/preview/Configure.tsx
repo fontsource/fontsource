@@ -1,10 +1,4 @@
-import {
-	Box,
-	Checkbox,
-	createStyles,
-	Divider,
-	Text,
-} from '@mantine/core';
+import { Box, Checkbox, createStyles, Divider, rem, Text } from '@mantine/core';
 import { atom, useAtom } from 'jotai';
 
 import type { Metadata, VariableData } from '@/utils/types';
@@ -15,9 +9,9 @@ const useStyles = createStyles((theme) => ({
 	wrapper: {
 		display: 'flex',
 		flexDirection: 'column',
-		width: '332px',
+		width: rem(332),
 		height: '50vh',
-		padding: '24px',
+		padding: rem(24),
 		border: `1px solid ${
 			theme.colorScheme === 'dark'
 				? theme.colors.border[1]
@@ -27,13 +21,13 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	title: {
-		fontSize: '15px',
+		fontSize: theme.fontSizes.sm,
 		fontWeight: 700,
 		color:
 			theme.colorScheme === 'dark'
 				? theme.colors.text[0]
 				: theme.colors.text[1],
-		lineHeight: '18px',
+		lineHeight: rem(18),
 	},
 }));
 
@@ -49,8 +43,7 @@ const Configure = ({ metadata, variable }: ConfigureProps) => {
 			<Box>
 				<Text className={classes.title}>Settings</Text>
 				<Text>Language</Text>
-					<SizeSlider />
-
+				<SizeSlider />
 				<Box>
 					<Text>Line Height</Text>
 					<Text>Letter Spacing</Text>

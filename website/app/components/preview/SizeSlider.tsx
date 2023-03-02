@@ -1,6 +1,5 @@
 import {
 	ActionIcon,
-	Button,
 	clsx,
 	createStyles,
 	Group,
@@ -32,10 +31,6 @@ const useStyles = createStyles((theme) => ({
 		'&:focus-within': {
 			borderColor: theme.colors.purple[0],
 		},
-
-		[`@media (max-width: ${theme.breakpoints.md})`]: {
-			display: 'none',
-		},
 	},
 
 	button: {
@@ -54,9 +49,9 @@ const useStyles = createStyles((theme) => ({
 
 		fontWeight: 400,
 
-		'&:hover': {
+		'&:not([data-disabled])': theme.fn.hover({
 			backgroundColor: '#FFF',
-		},
+		}),
 	},
 
 	slider: {
@@ -65,8 +60,8 @@ const useStyles = createStyles((theme) => ({
 
 	italic: {
 		width: '40px',
-		padding: '0px'
-	}
+		padding: '0px',
+	},
 }));
 
 interface ItemButtonProps {
@@ -90,13 +85,15 @@ const ItemButton = ({ value, setSize }: ItemButtonProps) => {
 const SizeSlider = () => {
 	const { classes } = useStyles();
 	const [size, setSize] = useAtom(sizeAtom);
-	const sizes = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64]
+	const sizes = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64];
 
 	return (
 		<Group position="apart" spacing="xs">
 			<Group className={classes.wrapper}>
 				<Dropdown label={`${size} px`} width={68} className={classes.button}>
-					{sizes.map((size) => <ItemButton key={`size-${size}`} value={size} setSize={setSize} />)}
+					{sizes.map((size) => (
+						<ItemButton key={`size-${size}`} value={size} setSize={setSize} />
+					))}
 				</Dropdown>
 				<MantineSlider
 					color="purple"
