@@ -20,14 +20,14 @@ const IconItalic = ({ height, ...others }: IconProps) => {
 				stroke={stroke}
 				strokeWidth="1.5"
 				strokeLinecap="round"
-				stroke-linejoin="round"
+				strokeLinejoin="round"
 			/>
 			<path
 				d="M9 5L14 5"
 				stroke={stroke}
 				strokeWidth="1.5"
 				strokeLinecap="round"
-				stroke-linejoin="round"
+				strokeLinejoin="round"
 			/>
 			<path
 				d="M11.5596 5.27681L7.08935 15.2232"
