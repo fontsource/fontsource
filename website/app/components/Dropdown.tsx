@@ -11,15 +11,19 @@ interface DropdownProps {
 	icon?: React.ReactNode;
 }
 
+interface DropdownItemProps {
+	value: any;
+	setValue: (value: React.SetStateAction<any>) => void;
+}
+
 const useStyles = createStyles((theme) => ({
 	button: {
 		padding: `${rem(2)} ${rem(16)}`,
 		height: rem(40),
-		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
+		border: `${rem(1)} solid ${theme.colorScheme === 'dark'
 				? theme.colors.border[1]
 				: theme.colors.border[0]
-		}`,
+			}`,
 		borderRadius: '4px',
 
 		backgroundColor:
@@ -39,6 +43,19 @@ const useStyles = createStyles((theme) => ({
 		}),
 	},
 }));
+
+const DropdownItem = ({ value, setValue }: DropdownItemProps) => {
+	return (
+		<Menu.Item
+			component="button"
+			onClick={() => {
+				setValue(value);
+			}}
+		>
+			{value}
+		</Menu.Item>
+	);
+};
 
 const Dropdown = ({
 	label,
@@ -74,4 +91,4 @@ const Dropdown = ({
 	);
 };
 
-export { Dropdown };
+export { Dropdown, DropdownItem };

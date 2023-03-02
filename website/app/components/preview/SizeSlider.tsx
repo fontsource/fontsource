@@ -3,25 +3,24 @@ import {
 	clsx,
 	createStyles,
 	Group,
-	Menu,
-	Slider as MantineSlider,
-} from '@mantine/core';
+	rem,
+	Slider as MantineSlider} from '@mantine/core';
 import { useAtom } from 'jotai';
 
-import { Dropdown } from '@/components';
+import { Dropdown, DropdownItem } from '@/components';
 
 import { IconItalic } from '../icons/Italic';
 import { sizeAtom } from './atoms';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
-		height: '40px',
-		padding: '2px 14px',
+		height: rem(40),
+		padding: `${rem(2)} ${rem(14)}`,
 		backgroundColor:
 			theme.colorScheme === 'dark'
 				? theme.colors.background[4]
 				: theme.colors.background[0],
-		border: `1px solid ${
+		border: `${rem(1)} solid ${
 			theme.colorScheme === 'dark'
 				? theme.colors.border[1]
 				: theme.colors.border[0]
@@ -34,8 +33,8 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	button: {
-		padding: '2px 2px',
-		height: '20px',
+		padding: rem(2),
+		height: rem(20),
 
 		backgroundColor:
 			theme.colorScheme === 'dark'
@@ -55,32 +54,14 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	slider: {
-		width: '115px',
+		width: rem(115),
 	},
 
 	italic: {
-		width: '40px',
-		padding: '0px',
+		width: rem(40),
+		padding: 0,
 	},
 }));
-
-interface ItemButtonProps {
-	value: number;
-	setSize: (value: React.SetStateAction<number>) => void;
-}
-
-const ItemButton = ({ value, setSize }: ItemButtonProps) => {
-	return (
-		<Menu.Item
-			component="button"
-			onClick={() => {
-				setSize(value);
-			}}
-		>
-			{value}px
-		</Menu.Item>
-	);
-};
 
 const SizeSlider = () => {
 	const { classes } = useStyles();
@@ -90,9 +71,9 @@ const SizeSlider = () => {
 	return (
 		<Group position="apart" spacing="xs">
 			<Group className={classes.wrapper}>
-				<Dropdown label={`${size} px`} width={68} className={classes.button}>
+				<Dropdown label={`${size} px`} width={70} className={classes.button}>
 					{sizes.map((size) => (
-						<ItemButton key={`size-${size}`} value={size} setSize={setSize} />
+						<DropdownItem key={size} value={size} setValue={setSize} />
 					))}
 				</Dropdown>
 				<MantineSlider
