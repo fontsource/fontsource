@@ -3,6 +3,7 @@ import {
   createStyles,
   Group,
   Menu,
+  rem,
   SegmentedControl,
   Text,
   Tooltip,
@@ -17,10 +18,10 @@ import { displayAtom, sortAtom } from './atoms';
 const useStyles = createStyles((theme) => ({
   wrapper: {
     display: 'flex',
-    height: 64,
+    height: rem(64),
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingBottom: '10px',
+    paddingBottom: rem(10),
     backgroundColor:
       theme.colorScheme === 'dark'
         ? theme.colors.background[4]
@@ -34,7 +35,7 @@ const useStyles = createStyles((theme) => ({
   displayGroup: {
     display: 'flex',
 
-    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+    [`@media (max-width: ${theme.breakpoints.sm})`]: {
       display: 'none',
     },
   },
@@ -47,7 +48,7 @@ const useStyles = createStyles((theme) => ({
     borderRadius: '6px',
 
     label: {
-      padding: '5px',
+      padding: rem(5),
     },
   },
 }));

@@ -1,5 +1,4 @@
 import {
-	ActionIcon,
 	Box,
 	Checkbox,
 	createStyles,
@@ -10,7 +9,6 @@ import { atom, useAtom } from 'jotai';
 
 import type { Metadata, VariableData } from '@/utils/types';
 
-import { IconItalic } from '../icons/Italic';
 import { SizeSlider } from './SizeSlider';
 
 const useStyles = createStyles((theme) => ({
