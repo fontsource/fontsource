@@ -9,7 +9,7 @@ import {
 } from '@mantine/core';
 import { useAtom } from 'jotai';
 
-import { Dropdown, IconCaret } from '@/components';
+import { Dropdown } from '@/components';
 
 import { IconItalic } from '../icons/Italic';
 import { sizeAtom } from './atoms';
@@ -33,7 +33,7 @@ const useStyles = createStyles((theme) => ({
 			borderColor: theme.colors.purple[0],
 		},
 
-		[`@media (max-width: ${theme.breakpoints.md}px)`]: {
+		[`@media (max-width: ${theme.breakpoints.md})`]: {
 			display: 'none',
 		},
 	},

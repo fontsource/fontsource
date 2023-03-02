@@ -2,6 +2,7 @@ import {
 	Box,
 	createStyles,
 	Group,
+	rem,
 	SimpleGrid,
 	Skeleton,
 	Text,
@@ -20,7 +21,7 @@ import type { AlgoliaMetadata } from '@/utils/types';
 import { displayAtom, previewValueAtom, sizeAtom } from './atoms';
 import { Sort } from './Sort';
 interface Hit {
-	hit: AlgoliaMetadata
+	hit: AlgoliaMetadata;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -30,12 +31,12 @@ const useStyles = createStyles((theme) => ({
 		flexDirection: 'column',
 		alignItems: 'flex-start',
 		justifyContent: 'space-between',
-		padding: '24px',
+		padding: rem(24),
 		marginLeft: 'auto',
 		marginRight: 'auto',
 		overflowWrap: 'anywhere',
 
-		border: `1px solid ${
+		border: `${rem(1)} solid ${
 			theme.colorScheme === 'dark'
 				? theme.colors.border[1]
 				: theme.colors.border[0]
@@ -52,7 +53,7 @@ const useStyles = createStyles((theme) => ({
 				theme.colorScheme === 'dark'
 					? theme.colors.purple[1]
 					: theme.colors.purple[0],
-			border: `1px solid ${
+			border: `${rem(1)} solid ${
 				theme.colorScheme === 'dark'
 					? theme.colors.purple[1]
 					: theme.colors.purple[0]
@@ -64,7 +65,7 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	textGroup: {
-		paddingTop: '16px',
+		paddingTop: rem(16),
 		width: '100%',
 	},
 }));
