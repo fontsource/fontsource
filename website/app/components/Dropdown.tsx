@@ -1,3 +1,4 @@
+import type { DefaultProps } from '@mantine/core';
 import { Button, createStyles, Menu, ScrollArea } from '@mantine/core';
 
 import { IconCaret } from '@/components'
@@ -5,7 +6,8 @@ import { IconCaret } from '@/components'
 interface DropdownProps {
   label: string
   width?: number | string
-  children: React.ReactNode
+	children: React.ReactNode
+	className?: DefaultProps['className']
   icon?: React.ReactNode
 }
 
@@ -38,13 +40,13 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const Dropdown = ({ label, icon, width, children }: DropdownProps) => {
+const Dropdown = ({ label, icon, width, className, children }: DropdownProps) => {
   const { classes } = useStyles();
   return (
     <Menu shadow="md" width={width ?? 240} closeOnItemClick={false}>
       <Menu.Target>
         <Button
-          className={classes.button}
+          className={className ?? classes.button}
           rightIcon={icon ?? <IconCaret />}
           styles={{
             root: {

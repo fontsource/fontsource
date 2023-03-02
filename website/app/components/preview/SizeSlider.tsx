@@ -1,26 +1,33 @@
 import {
+	ActionIcon,
+	Button,
+	clsx,
 	createStyles,
-	Grid,
+	Group,
+	Menu,
 	Slider as MantineSlider,
 } from '@mantine/core';
-import { Button, Menu } from '@mantine/core';
 import { useAtom } from 'jotai';
 
-import { IconCaret } from '@/components';
+import { Dropdown, IconCaret } from '@/components';
 
+import { IconItalic } from '../icons/Italic';
 import { sizeAtom } from './atoms';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
-		padding: '0px 24px',
+		height: '40px',
+		padding: '2px 14px',
 		backgroundColor:
 			theme.colorScheme === 'dark'
 				? theme.colors.background[4]
 				: theme.colors.background[0],
-		borderBottom: `1px solid ${
-			theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
+		border: `1px solid ${
+			theme.colorScheme === 'dark'
+				? theme.colors.border[1]
+				: theme.colors.border[0]
 		}`,
-		borderRadius: '0px 4px 0px 0px',
+		borderRadius: '4px',
 
 		'&:focus-within': {
 			borderColor: theme.colors.purple[0],
@@ -32,8 +39,8 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	button: {
-		padding: '2px 16px',
-		height: '40px',
+		padding: '2px 2px',
+		height: '20px',
 
 		backgroundColor:
 			theme.colorScheme === 'dark'
@@ -48,9 +55,18 @@ const useStyles = createStyles((theme) => ({
 		fontWeight: 400,
 
 		'&:hover': {
-			backgroundColor: theme.colors.purpleHover[0],
+			backgroundColor: '#FFF',
 		},
 	},
+
+	slider: {
+		width: '115px',
+	},
+
+	italic: {
+		width: '40px',
+		padding: '0px'
+	}
 }));
 
 interface ItemButtonProps {
@@ -74,48 +90,27 @@ const ItemButton = ({ value, setSize }: ItemButtonProps) => {
 const SizeSlider = () => {
 	const { classes } = useStyles();
 	const [size, setSize] = useAtom(sizeAtom);
+	const sizes = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64]
 
 	return (
-		<Grid
-			grow
-			gutter={0}
-			justify="center"
-			align="center"
-			className={classes.wrapper}
-		>
-			<Grid.Col span={2}>
-				<Menu shadow="md">
-					<Menu.Target>
-						<Button
-							className={classes.button}
-							rightIcon={<IconCaret />}
-							styles={{
-								inner: {
-									justifyContent: 'space-between',
-								},
-							}}
-						>
-							{size} px
-						</Button>
-					</Menu.Target>
-					<Menu.Dropdown>
-						<ItemButton value={8} setSize={setSize} />
-						<ItemButton value={10} setSize={setSize} />
-						<ItemButton value={12} setSize={setSize} />
-						<ItemButton value={14} setSize={setSize} />
-					</Menu.Dropdown>
-				</Menu>
-			</Grid.Col>
-			<Grid.Col span={8}>
+		<Group position="apart" spacing="xs">
+			<Group className={classes.wrapper}>
+				<Dropdown label={`${size} px`} width={68} className={classes.button}>
+					{sizes.map((size) => <ItemButton key={`size-${size}`} value={size} setSize={setSize} />)}
+				</Dropdown>
 				<MantineSlider
 					color="purple"
 					size="sm"
 					label={null}
 					value={size}
 					onChange={setSize}
+					className={classes.slider}
 				/>
-			</Grid.Col>
-		</Grid>
+			</Group>
+			<ActionIcon className={clsx(classes.wrapper, classes.italic)}>
+				<IconItalic />
+			</ActionIcon>
+		</Group>
 	);
 };
 
