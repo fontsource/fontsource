@@ -1,8 +1,9 @@
-import { Box, Checkbox, createStyles, Divider, rem, Text } from '@mantine/core';
+import { Box, Checkbox, createStyles, Divider, Flex, rem, Text } from '@mantine/core';
 import { atom, useAtom } from 'jotai';
 
 import type { Metadata, VariableData } from '@/utils/types';
 
+import { LanguageSelector } from './Language';
 import { SizeSlider } from './SizeSlider';
 
 const useStyles = createStyles((theme) => ({
@@ -39,33 +40,31 @@ interface ConfigureProps {
 const Configure = ({ metadata, variable }: ConfigureProps) => {
 	const { classes } = useStyles();
 	return (
-		<Box className={classes.wrapper}>
+		<Flex gap="xs" className={classes.wrapper}>
+			<Text className={classes.title}>Settings</Text>
+			<LanguageSelector />
+			<SizeSlider />
 			<Box>
-				<Text className={classes.title}>Settings</Text>
-				<Text>Language</Text>
-				<SizeSlider />
-				<Box>
-					<Text>Line Height</Text>
-					<Text>Letter Spacing</Text>
-				</Box>
-				<Box>
-					<Text>Colour</Text>
-					<Text>Transparency</Text>
-				</Box>
-				{metadata.variable && (
-					<>
-						<Divider />
-						<Text className={classes.title}>
-							Variable Axes {JSON.stringify(variable)}
-						</Text>
-						{Object.keys(variable).map((key) => (
-							<Box key={key}>{key}</Box>
-						))}
-					</>
-				)}
+				<Text>Line Height</Text>
+				<Text>Letter Spacing</Text>
 			</Box>
+			<Box>
+				<Text>Colour</Text>
+				<Text>Transparency</Text>
+			</Box>
+			{metadata.variable && (
+				<>
+					<Divider />
+					<Text className={classes.title}>
+						Variable Axes {JSON.stringify(variable)}
+					</Text>
+					{Object.keys(variable).map((key) => (
+						<Box key={key}>{key}</Box>
+					))}
+				</>
+			)}
 			<Checkbox label="Apply to all variants" />
-		</Box>
+		</Flex>
 	);
 };
 
