@@ -39,7 +39,7 @@ const useStyles = createStyles((theme) => ({
 		fontWeight: 400,
 
 		'&:not([data-disabled])': theme.fn.hover({
-			backgroundColor: theme.fn.lighten(theme.colors.purple[0], 0.99),
+			backgroundColor: theme.fn.lighten(theme.colors.purple[0], 0.95),
 		}),
 	},
 }));

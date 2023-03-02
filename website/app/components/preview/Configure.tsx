@@ -1,8 +1,20 @@
-import { Box, Checkbox, createStyles, Divider, Flex, rem, Text } from '@mantine/core';
-import { atom, useAtom } from 'jotai';
+import {
+	Box,
+	Checkbox,
+	createStyles,
+	Divider,
+	Flex,
+	Group,
+	rem,
+	Text,
+} from '@mantine/core';
+import { useAtom } from 'jotai';
 
 import type { Metadata, VariableData } from '@/utils/types';
 
+import { IconEye, IconHorizontal, IconVertical } from '../icons';
+import { colorAtom, letterSpacingAtom, lineHeightAtom, transparencyAtom } from './atoms';
+import { ColorButton, SliderButton } from './Buttons';
 import { LanguageSelector } from './Language';
 import { SizeSlider } from './SizeSlider';
 
@@ -39,19 +51,40 @@ interface ConfigureProps {
 
 const Configure = ({ metadata, variable }: ConfigureProps) => {
 	const { classes } = useStyles();
+	const [lineHeight, setLineHeight] = useAtom(lineHeightAtom);
+	const [letterSpacing, setLetterSpacing] = useAtom(letterSpacingAtom);
+	const [color, setColor] = useAtom(colorAtom);
+	const [transparency, setTransparency] = useAtom(transparencyAtom);
+
 	return (
 		<Flex gap="xs" className={classes.wrapper}>
 			<Text className={classes.title}>Settings</Text>
 			<LanguageSelector />
 			<SizeSlider />
-			<Box>
-				<Text>Line Height</Text>
-				<Text>Letter Spacing</Text>
-			</Box>
-			<Box>
-				<Text>Colour</Text>
-				<Text>Transparency</Text>
-			</Box>
+			<Group grow>
+				<SliderButton
+					label="Line Height"
+					icon={<IconVertical />}
+					value={lineHeight}
+					setValue={setLineHeight}
+				/>
+				<SliderButton
+					label="Letter Spacing"
+					icon={<IconHorizontal />}
+					value={letterSpacing}
+					setValue={setLetterSpacing}
+				/>
+			</Group>
+			<Group grow>
+				<ColorButton label={''} value={color} setValue={setColor}  />
+				<SliderButton
+					label="Transparency"
+					icon={<IconEye />}
+					value={transparency}
+					setValue={setTransparency}
+					suffix="%"
+				/>
+			</Group>
 			{metadata.variable && (
 				<>
 					<Divider />
