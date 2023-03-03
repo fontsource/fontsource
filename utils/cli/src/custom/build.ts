@@ -19,8 +19,6 @@ export const buildCustom = async (metadata: Metadata) => {
 	// Generate CSS files
 	await packagerCustom(metadata);
 
-	// TODO: Generate SCSS
-
 	// Write README.md
 	await fs.writeFile(path.join(dir, 'README.md'), readme(metadata));
 

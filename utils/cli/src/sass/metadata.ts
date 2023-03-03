@@ -1,52 +1,12 @@
 import { Axes, Metadata, UnicodeRange } from '../types';
 import { findClosest, sassVar } from '../utils';
 
-const subsetValue = (metadata: Metadata, unicodeRange: UnicodeRange) => {
-	// Merge metadata subsets and unicode range
-	const subsets: Record<string, string[]> = {};
-	for (const subset of metadata.subsets) {
-		subsets[subset] = [];
-	}
-	for (const range of Object.keys(unicodeRange)) {
-		const rangeNumMatch = range.match(/\[d+]/);
-		if (rangeNumMatch && rangeNumMatch.length > 0) {
-			// Cover numeric unicode ranges
-			subsets[metadata.defSubset] ??= [];
-			subsets[metadata.defSubset][Number.parseInt(rangeNumMatch[0], 10)] =
-				unicodeRange[range];
-		} else {
-			subsets[range] = [unicodeRange[range]];
-		}
-	}
-
-	// Generate sass map from subsets
-	let subsetsValue = '(\n';
-	for (const subset of Object.keys(subsets)) {
-		subsetsValue += `  ${subset}: `;
-
-		if (subsets[subset].length > 0) {
-			subsetsValue += '(\n';
-			for (const range of subsets[subset]) {
-				subsetsValue += `    (${range}),\n`;
-			}
-			subsetsValue += '  ),\n';
-		} else {
-			subsetsValue += 'null';
-		}
-
-		subsetsValue += ',\n';
-	}
-	subsetsValue += ')';
-
-	return subsetsValue;
-};
-
 const axesValue = (metadata: Metadata) => {
 	if (metadata.variable && Object.keys(metadata.variable).length > 0) {
-		let subsetsValue = '(\n';
+		let out = '(\n';
 		for (const variable of Object.keys(metadata.variable)) {
 			const axis = (metadata.variable as Axes)[variable];
-			subsetsValue += `  ${variable}: (
+			out += `  ${variable}: (
     default: ${axis.default},
     min: ${axis.min},
     max: ${axis.max},
@@ -54,34 +14,66 @@ const axesValue = (metadata: Metadata) => {
   ),
 `;
 		}
-		subsetsValue += ')';
+		out += ')';
 
-		return subsetsValue;
+		return out;
 	}
 
-	return '()';
+	return 'null';
 };
 
-export const sassMetadata = (
-	metadata: Metadata,
-	unicodeRange: UnicodeRange
-) => {
+const unicodeValue = (unicode: UnicodeRange) => {
+	if (Object.keys(unicode).length > 0) {
+		let out = '(\n';
+
+		for (const unicodeKey of Object.keys(unicode)) {
+			const unicodeVal = unicode[unicodeKey];
+
+			out += `  ${unicodeKey
+				.replace('[', '')
+				.replace(']', '')}: (${unicodeVal}),\n`;
+		}
+
+		out += ')';
+
+		return out;
+	}
+
+	return 'null';
+};
+
+const defaultAxis = (metadata: Metadata) => {
+	const axes = Object.keys(metadata.variable);
+
+	if (axes.length > 0) {
+		if (axes.includes('wght')) return 'wght';
+		if (axes.includes('full')) return 'full';
+		return axes[0];
+	}
+
+	return 'null';
+};
+
+export const sassMetadata = (metadata: Metadata, unicode: UnicodeRange) => {
 	let out = '';
+
 	out += sassVar('id', `'${metadata.id}'`);
 	out += sassVar('family', `'${metadata.family}'`);
 	out += sassVar('category', `${metadata.category}`);
+	out += sassVar('subsets', `(${metadata.subsets.join(', ')})`);
 	out += sassVar('weights', `(${metadata.weights.join(', ')})`);
 	out += sassVar('styles', `(${metadata.styles.join(', ')})`);
+	out += sassVar('axes', axesValue(metadata));
 	out += sassVar(
 		'defaults',
 		`(
   subset: ${metadata.defSubset},
   weight: ${findClosest(metadata.weights, 400)},
   style: normal,
+  axis: ${defaultAxis(metadata)},
 )`
 	);
-	out += sassVar('subsets', subsetValue(metadata, unicodeRange));
-	out += sassVar('axes', axesValue(metadata));
+	out += sassVar('unicode', unicodeValue(unicode));
 
 	return out;
 };
