@@ -6,6 +6,7 @@ import invariant from 'tiny-invariant';
 
 import { ContentHeader } from '@/components';
 import { Configure } from '@/components/preview/Configure';
+import { TextArea } from '@/components/preview/TextArea';
 import { getMetadata, getVariable } from '@/utils/metadata.server';
 import type { Metadata, VariableData } from '@/utils/types';
 
@@ -49,7 +50,7 @@ export default function Font() {
 			{metadata.category} {metadata.type}
 			</ContentHeader>
 			<Box className={classes.wrapperPreview}>
-				Preview
+				<TextArea metadata={metadata}/>
 				<Configure metadata={metadata} variable={variable} />
 			</Box>
 		</>
