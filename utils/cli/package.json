@@ -1,9 +1,22 @@
 {
 	"name": "@fontsource-utils/cli",
-	"version": "0.2.0-beta.4",
+	"version": "0.2.0-beta.6",
 	"description": "Fontsource CLI",
 	"bin": {
 		"fontsource": "./dist/cli.mjs"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
 	},
 	"scripts": {
 		"build": "pkgroll --target=node14",
@@ -12,7 +25,11 @@
 		"coverage": "vitest run --coverage",
 		"test": "vitest"
 	},
-	"keywords": [],
+	"keywords": [
+		"fontsource",
+		"fonts",
+		"google fonts"
+	],
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
