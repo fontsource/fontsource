@@ -93,7 +93,6 @@ $directory: null !default;
       ) {
         @each $weight in if($axes, null, $weights) {
           @each $axis in $axes {
-            $metrics: if($axes, map.get($metadata, axes, $axis), null);
             @each $style in $styles {
               $variant: '#{map.get($metadata, id)}-#{$unicodeSubset}-#{if($axis, $axis, $weight)}-#{$style}';
 
@@ -112,7 +111,6 @@ $directory: null !default;
                 unicodeRange: $unicodeRange,
                 weight: $weight,
                 axis: $axis,
-                metrics: $metrics,
                 style: $style,
 
                 font-family: string.quote($family),
@@ -126,6 +124,11 @@ $directory: null !default;
                   ($axis == full or $axis == wght) and map.has-key($metadata, axes, wght), 
                   map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max),
                   $weight
+                ),
+                font-stretch: if(
+                  ($axis == full or $axis == wdth) and map.has-key($metadata, axes, wdth), 
+                  '#{map.get($metadata, axes, wdth, min)}% #{map.get($metadata, axes, wdth, max)}%',
+                  null
                 ),
                 src: src($directory, $variant, $formats),
                 unicode-range: $unicodeRange,
@@ -169,6 +172,8 @@ $directory: null !default;
       font-weight: map.get($data, font-weight);
       unicode-range: map.get($data, unicode-range);
       src: map.get($data, src);
+
+      @content();
     }
   }
 }
