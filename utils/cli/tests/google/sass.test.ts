@@ -5,7 +5,7 @@ import { Metadata } from '../../src/types';
 import mockSassMetadata from './fixtures/sass-metadata.json';
 
 describe('sass', () => {
-	it('should generate Carlito sass metadata successfully', async () => {
+	it('should generate sass metadata for non unicode range font successfully', async () => {
 		expect(
 			sassMetadata(
 				mockSassMetadata.carlito.metadata as Metadata,
@@ -14,7 +14,7 @@ describe('sass', () => {
 		).toMatchSnapshot();
 	});
 
-	it('should generate Noto Sans JP sass metadata successfully', async () => {
+	it('should generate sass metadata for numeric subset font successfully', async () => {
 		expect(
 			sassMetadata(
 				mockSassMetadata.notoSansJp.metadata as Metadata,
@@ -23,7 +23,7 @@ describe('sass', () => {
 		).toMatchSnapshot();
 	});
 
-	it('should generate Recursive sass metadata successfully', async () => {
+	it('should generate sass metadata for variable font successfully', async () => {
 		expect(
 			sassMetadata(
 				mockSassMetadata.recursive.metadata as Metadata,

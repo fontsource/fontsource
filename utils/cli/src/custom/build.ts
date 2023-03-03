@@ -19,6 +19,15 @@ export const buildCustom = async (metadata: Metadata) => {
 	// Generate CSS files
 	await packagerCustom(metadata);
 
+	// Write metadata.scss
+	await fs.writeFile(
+		path.join(dir, 'metadata.scss'),
+		sassMetadata(metadata, {})
+	);
+
+	// Write mixins.scss
+	await fs.writeFile(path.join(dir, 'mixins.scss'), sassMixins);
+
 	// Write README.md
 	await fs.writeFile(path.join(dir, 'README.md'), readme(metadata));
 
@@ -33,13 +42,4 @@ export const buildCustom = async (metadata: Metadata) => {
 
 	// Write package.json
 	await packageJson(metadata, dir);
-
-	// Write metadata.scss
-	await fs.writeFile(
-		path.join(dir, 'metadata.scss'),
-		sassMetadata(metadata, {})
-	);
-
-	// Write utils.scss
-	await fs.writeFile(path.join(dir, 'mixins.scss'), sassMixins);
 };

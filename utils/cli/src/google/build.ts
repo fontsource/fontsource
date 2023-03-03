@@ -90,6 +90,15 @@ const build = async (id: string, opts: BuildOptions) => {
 		type: 'google',
 	};
 
+	// Write metadata.scss
+	await fs.writeFile(
+		path.join(opts.dir, 'metadata.scss'),
+		sassMetadata(metadata, font.unicodeRange)
+	);
+
+	// Write mixins.scss
+	await fs.writeFile(path.join(opts.dir, 'mixins.scss'), sassMixins);
+
 	// Write README.md
 	await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata));
 
@@ -110,15 +119,6 @@ const build = async (id: string, opts: BuildOptions) => {
 
 	// Write package.json
 	await packageJson(metadata, opts.dir);
-
-	// Write metadata.scss
-	await fs.writeFile(
-		path.join(opts.dir, 'metadata.scss'),
-		sassMetadata(metadata, font.unicodeRange)
-	);
-
-	// Write utils.scss
-	await fs.writeFile(path.join(opts.dir, 'mixins.scss'), sassMixins);
 };
 
 export { build };
