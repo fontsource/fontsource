@@ -7,6 +7,7 @@ export const sassMixins = `@use 'sass:list';
 @use 'metadata';
 
 $metadata: meta.module-variables(metadata) !default;
+$directory: null !default;
 
 $family: null !default;
 $display: null !default;
@@ -17,24 +18,9 @@ $weights: null !default;
 $styles: null !default;
 $axes: null !default;
 
-$directory: null !default;
-
-@function src($directory, $variant, $formats) {
-  $source: ();
-
-  @each $format in $formats {
-    $source: append(
-      $source,
-      url('#{$directory}/#{$variant}.#{$format}') format('#{format}'),
-      comma
-    );
-  }
-
-  @return $source;
-}
-
 @mixin generator(
   $metadata: $metadata,
+  $directory: $directory,
   $family: $family,
   $display: $display,
   $displayVar: $displayVar,
@@ -96,10 +82,23 @@ $directory: null !default;
             @each $style in $styles {
               $variant: '#{map.get($metadata, id)}-#{$unicodeSubset}-#{if($axis, $axis, $weight)}-#{$style}';
 
+              $src: ();
+              @each $format in $formats {
+                $src: append(
+                  $src,
+                  url('#{$directory}/#{$variant}.#{$format}')
+                    format('#{$format}'),
+                  comma
+                );
+              }
+
               @content ((
                 metadata: $metadata,
+                directory: $directory,
                 family: $family,
                 display: $display,
+                displayVar: $displayVar,
+                formats: $formats,
                 subsets: $subsets,
                 weights: $weights,
                 styles: $styles,
@@ -130,7 +129,7 @@ $directory: null !default;
                   '#{map.get($metadata, axes, wdth, min)}% #{map.get($metadata, axes, wdth, max)}%',
                   null
                 ),
-                src: src($directory, $variant, $formats),
+                src: $src,
                 unicode-range: $unicodeRange,
               ));
             }
@@ -143,6 +142,7 @@ $directory: null !default;
 
 @mixin faces(
   $metadata: $metadata,
+  $directory: $directory,
   $family: $family,
   $display: $display,
   $displayVar: $displayVar,
@@ -154,6 +154,7 @@ $directory: null !default;
 ) {
   @include generator(
       $metadata: $metadata,
+      $directory: $directory,
       $family: $family,
       $display: $display,
       $displayVar: $displayVar,
@@ -170,6 +171,7 @@ $directory: null !default;
       font-style: map.get($data, font-style);
       font-display: map.get($data, font-display);
       font-weight: map.get($data, font-weight);
+      font-stretch: map.get($data, font-stretch);
       unicode-range: map.get($data, unicode-range);
       src: map.get($data, src);
 
