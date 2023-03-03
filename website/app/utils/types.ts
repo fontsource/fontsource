@@ -23,12 +23,14 @@ export interface UnicodeData {
 }
 
 export interface VariableData {
-	[key: string]: {
-		default: string;
-		min: string;
-		max: string;
-		step: string;
-	};
+	[key: string]: AxesData;
+}
+
+export interface AxesData {
+	default: string;
+	min: string;
+	max: string;
+	step: string;
 }
 
 export interface PackageJson {

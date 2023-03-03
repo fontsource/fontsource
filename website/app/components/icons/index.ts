@@ -6,6 +6,7 @@ export { IconGrid } from './Grid';
 export { IconHorizontal } from './Horizontal';
 export { IconList } from './List';
 export { IconMoon } from './Moon';
+export { IconRotate } from './Rotate';
 export { IconSearch } from './Search';
 export { IconSun } from './Sun';
 export { IconTrash } from './Trash';

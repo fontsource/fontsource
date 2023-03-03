@@ -1,5 +1,5 @@
 import {
-	Box,
+	ActionIcon,
 	Checkbox,
 	createStyles,
 	Divider,
@@ -8,15 +8,12 @@ import {
 	rem,
 	Text,
 } from '@mantine/core';
-import { useAtom } from 'jotai';
 
+import { IconRotate } from '@/components/icons';
 import type { Metadata, VariableData } from '@/utils/types';
 
-import { IconEye, IconHorizontal, IconVertical } from '../icons';
-import { colorAtom, letterSpacingAtom, lineHeightAtom, transparencyAtom } from './atoms';
-import { ColorButton, SliderButton } from './Buttons';
-import { LanguageSelector } from './Language';
-import { SizeSlider } from './SizeSlider';
+import { NormalButtonsGroup } from './Buttons';
+import { VariableButtonsGroup } from './VariableButtons';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -51,49 +48,23 @@ interface ConfigureProps {
 
 const Configure = ({ metadata, variable }: ConfigureProps) => {
 	const { classes } = useStyles();
-	const [lineHeight, setLineHeight] = useAtom(lineHeightAtom);
-	const [letterSpacing, setLetterSpacing] = useAtom(letterSpacingAtom);
-	const [color, setColor] = useAtom(colorAtom);
-	const [transparency, setTransparency] = useAtom(transparencyAtom);
 
 	return (
 		<Flex gap="xs" className={classes.wrapper}>
 			<Text className={classes.title}>Settings</Text>
-			<LanguageSelector />
-			<SizeSlider />
-			<Group grow>
-				<SliderButton
-					label="Line Height"
-					icon={<IconVertical />}
-					value={lineHeight}
-					setValue={setLineHeight}
-				/>
-				<SliderButton
-					label="Letter Spacing"
-					icon={<IconHorizontal />}
-					value={letterSpacing}
-					setValue={setLetterSpacing}
-				/>
-			</Group>
-			<Group grow>
-				<ColorButton label={''} value={color} setValue={setColor}  />
-				<SliderButton
-					label="Transparency"
-					icon={<IconEye />}
-					value={transparency}
-					setValue={setTransparency}
-					suffix="%"
-				/>
-			</Group>
+			<NormalButtonsGroup />
 			{metadata.variable && (
 				<>
 					<Divider />
-					<Text className={classes.title}>
-						Variable Axes {JSON.stringify(variable)}
-					</Text>
-					{Object.keys(variable).map((key) => (
-						<Box key={key}>{key}</Box>
-					))}
+					<Group position='apart'>
+						<Text className={classes.title}>
+							Variable Axes
+						</Text>
+						<ActionIcon>
+							<IconRotate />
+						</ActionIcon>
+					</Group>
+					<VariableButtonsGroup variable={variable} />
 				</>
 			)}
 			<Checkbox label="Apply to all variants" />
