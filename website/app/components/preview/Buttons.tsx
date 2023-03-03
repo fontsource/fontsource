@@ -19,6 +19,11 @@ interface SliderButtonProps {
 	suffix?: string;
 }
 
+interface ColorButtonProps {
+	value: any;
+	setValue: (value: React.SetStateAction<any>) => void;
+}
+
 const useStyles = createStyles((theme) => ({
 	button: {
 		padding: `${rem(2)} ${rem(2)}`,
@@ -89,7 +94,7 @@ const SliderButton = ({
 	);
 };
 
-const ColorButton = ({ value, setValue }: SliderButtonProps) => {
+const ColorButton = ({ value, setValue }: ColorButtonProps) => {
 	const { classes } = useStyles();
 
 	return (

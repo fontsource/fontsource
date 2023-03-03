@@ -26,6 +26,16 @@ proxy:
   # PORT is set in the Dockerfile
   target: 'localhost:${PORT}'
   db: '${DATABASE_FILENAME}'
+  passthrough:
+    - '/build/*'
+    - '/favicons/*'
+    - '/images/*'
+    - '/fonts/*'
+    - '/*.png'
+    - '/*.ico'
+    - '/*.txt'
+    - '/*.svg'
+    - '/*.webmanifest'
 
 # This flag ensure that LiteFS continues to run if there is an issue on starup.
 # It makes it easy to ssh in and debug any issues you might be having rather
