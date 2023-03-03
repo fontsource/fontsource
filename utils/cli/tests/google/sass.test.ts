@@ -5,6 +5,15 @@ import { Metadata } from '../../src/types';
 import mockSassMetadata from './fixtures/sass-metadata.json';
 
 describe('sass', () => {
+	it('should generate Carlito sass metadata successfully', async () => {
+		expect(
+			sassMetadata(
+				mockSassMetadata.carlito.metadata as Metadata,
+				mockSassMetadata.carlito.unicode
+			)
+		).toMatchSnapshot();
+	});
+
 	it('should generate Noto Sans JP sass metadata successfully', async () => {
 		expect(
 			sassMetadata(

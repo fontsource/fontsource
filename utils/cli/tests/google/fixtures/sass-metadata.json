@@ -1,4 +1,26 @@
 {
+	"carlito": {
+		"metadata": {
+			"id": "carlito",
+			"family": "Carlito",
+			"subsets": ["latin"],
+			"weights": [400, 700],
+			"styles": ["italic", "normal"],
+			"defSubset": "latin",
+			"variable": false,
+			"lastModified": "2021-02-13",
+			"version": "v1.0",
+			"category": "sans-serif",
+			"license": {
+				"type": "OFL-1.1",
+				"url": "http://scripts.sil.org/OFL",
+				"attribution": ""
+			},
+			"source": "https://github.com/google/fonts/issues/1441",
+			"type": "other"
+		},
+		"unicode": {}
+	},
 	"notoSansJp": {
 		"metadata": {
 			"id": "noto-sans-jp",

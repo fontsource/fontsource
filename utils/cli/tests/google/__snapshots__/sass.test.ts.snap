@@ -1,5 +1,23 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`sass > should generate Carlito sass metadata successfully 1`] = `
+"$id: 'carlito' !default;
+$family: 'Carlito' !default;
+$category: sans-serif !default;
+$subsets: (latin) !default;
+$weights: (400, 700) !default;
+$styles: (italic, normal) !default;
+$axes: null !default;
+$defaults: (
+  subset: latin,
+  weight: 400,
+  style: normal,
+  axis: null,
+) !default;
+$unicode: null !default;
+"
+`;
+
 exports[`sass > should generate Noto Sans JP sass metadata successfully 1`] = `
 "$id: 'noto-sans-jp' !default;
 $family: 'Noto Sans JP' !default;
