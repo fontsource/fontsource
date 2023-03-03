@@ -6,6 +6,7 @@ import {
 	Flex,
 	Group,
 	rem,
+	ScrollArea,
 	Text,
 } from '@mantine/core';
 
@@ -20,8 +21,10 @@ const useStyles = createStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		width: rem(332),
-		height: '50vh',
 		padding: rem(24),
+	},
+
+	scrollWrapper: {
 		border: `1px solid ${
 			theme.colorScheme === 'dark'
 				? theme.colors.border[1]
@@ -50,25 +53,25 @@ const Configure = ({ metadata, variable }: ConfigureProps) => {
 	const { classes } = useStyles();
 
 	return (
-		<Flex gap="xs" className={classes.wrapper}>
-			<Text className={classes.title}>Settings</Text>
-			<NormalButtonsGroup />
-			{metadata.variable && (
-				<>
-					<Divider />
-					<Group position='apart'>
-						<Text className={classes.title}>
-							Variable Axes
-						</Text>
-						<ActionIcon>
-							<IconRotate />
-						</ActionIcon>
-					</Group>
-					<VariableButtonsGroup variable={variable} />
-				</>
-			)}
-			<Checkbox label="Apply to all variants" />
-		</Flex>
+		<ScrollArea.Autosize mah="50vh" className={classes.scrollWrapper}>
+			<Flex gap="xs" className={classes.wrapper}>
+				<Text className={classes.title}>Settings</Text>
+				<NormalButtonsGroup />
+				{metadata.variable && (
+					<>
+						<Divider />
+						<Group position="apart">
+							<Text className={classes.title}>Variable Axes</Text>
+							<ActionIcon>
+								<IconRotate />
+							</ActionIcon>
+						</Group>
+						<VariableButtonsGroup variable={variable} />
+					</>
+				)}
+				<Checkbox label="Apply to all variants" />
+			</Flex>
+		</ScrollArea.Autosize>
 	);
 };
 
