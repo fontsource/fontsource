@@ -1,6 +1,5 @@
 import {
 	ActionIcon,
-	clsx,
 	createStyles,
 	Group,
 	rem,
@@ -65,7 +64,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const SizeSlider = () => {
-	const { classes } = useStyles();
+	const { classes, cx } = useStyles();
 	const [italic, setItalic] = useAtom(italicAtom);
 	const [size, setSize] = useAtom(sizeAtom);
 	const sizes = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64];
@@ -88,7 +87,7 @@ const SizeSlider = () => {
 				/>
 			</Group>
 			<ActionIcon
-				className={clsx(classes.wrapper, classes.italic)}
+				className={cx(classes.wrapper, classes.italic)}
 				sx={(theme) => ({
 					backgroundColor: italic
 						? theme.fn.lighten(theme.colors.purple[0], 0.95)

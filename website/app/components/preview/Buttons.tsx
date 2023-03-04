@@ -1,6 +1,5 @@
 import {
 	Button,
-	clsx,
 	ColorInput,
 	createStyles,
 	Group,
@@ -106,11 +105,11 @@ const SliderButton = ({
 };
 
 const ColorButton = ({ value, setValue }: ColorButtonProps) => {
-	const { classes } = useStyles();
+	const { classes, cx } = useStyles();
 
 	return (
 		<ColorInput
-			className={clsx(classes.button, classes.colorButton)}
+			className={cx(classes.button, classes.colorButton)}
 			variant="unstyled"
 			value={value}
 			onChange={setValue}

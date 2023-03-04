@@ -13,6 +13,9 @@ import type { Metadata } from '@/utils/types';
 
 import { sizeAtom } from './atoms';
 
+interface TagProps {
+	weight: number;
+}
 interface TextBoxProps {
 	weight: number;
 }
@@ -31,27 +34,74 @@ const useStyles = createStyles((theme) => ({
 		fontWeight: 700,
 		fontSize: rem(24),
 		lineHeight: rem(30),
+		marginBottom: rem(20),
 	},
 
 	textWrapper: {
-		padding: `${rem(20)} 0`,
+		padding: `${rem(24)} 0 ${rem(10)} 0`,
 	},
+
+	horizontal: {
+		borderBottom: `${rem(1)} solid ${
+			theme.colorScheme === 'dark'
+				? theme.colors.border[1]
+				: theme.colors.border[0]
+		}`,
+		width: '100%',
+	},
+
+	tag: {
+		fontSize: rem(13),
+		color: theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1],
+		backgroundColor: theme.colorScheme === 'dark'
+				? theme.colors.border[1]
+			: theme.colors.border[0],
+		padding: `${rem(4)} ${rem(8)}`,
+		borderRadius: '4px 4px 0 0',
+		marginLeft: 'auto',
+		lineHeight: rem(12),
+	}
 }));
+
+const Tag = ({weight}: TagProps) => {
+	const { classes } = useStyles();
+
+	const weightMap: Record<number, string> = {
+		100: 'Thin',
+		200: 'Extra Light',
+		300: 'Light',
+		400: 'Regular',
+		500: 'Medium',
+		600: 'Semi Bold',
+		700: 'Bold',
+		800: 'Extra Bold',
+		900: 'Black',
+	}
+
+	return (
+		<>
+			<Box className={classes.tag}>{weightMap[weight]} {weight}</Box>
+			<Box className={classes.horizontal} />
+		</>
+	);
+};
 
 const TextBox = ({ weight }: TextBoxProps) => {
 	const { classes } = useStyles();
 	const [size] = useAtom(sizeAtom);
 
 	return (
-		<Box className={classes.textWrapper}>
-			<Input
-				variant="unstyled"
-				sx={{ input: { fontWeight: weight, fontSize: size } }}
-				value="The quick brown fox jumps over the lazy dog"
-				readOnly
-			/>
-			<Divider />
-		</Box>
+		<>
+			<Box className={classes.textWrapper}>
+				<Input
+					variant="unstyled"
+					sx={{ input: { fontWeight: weight, fontSize: size } }}
+					value="The quick brown fox jumps over the lazy dog"
+					readOnly
+				/>
+			</Box>
+			<Tag weight={weight} />
+		</>
 	);
 };
 
