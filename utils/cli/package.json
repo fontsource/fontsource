@@ -23,7 +23,8 @@
 		"dev": "pnpm run build && node ./dist/cli.mjs",
 		"lint": "eslint --fix",
 		"coverage": "vitest run --coverage",
-		"test": "vitest"
+		"test": "vitest",
+		"prepublish": "pnpm run build"
 	},
 	"keywords": [
 		"fontsource",
