@@ -20,13 +20,14 @@ export const buildCustom = async (metadata: Metadata) => {
 	await packagerCustom(metadata);
 
 	// Write metadata.scss
+	await fs.mkdir(path.join(dir, 'scss'));
 	await fs.writeFile(
-		path.join(dir, 'metadata.scss'),
+		path.join(dir, 'scss/metadata.scss'),
 		sassMetadata(metadata, {})
 	);
 
 	// Write mixins.scss
-	await fs.writeFile(path.join(dir, 'mixins.scss'), sassMixins);
+	await fs.writeFile(path.join(dir, 'scss/mixins.scss'), sassMixins);
 
 	// Write README.md
 	await fs.writeFile(path.join(dir, 'README.md'), readme(metadata));

@@ -91,13 +91,14 @@ const build = async (id: string, opts: BuildOptions) => {
 	};
 
 	// Write metadata.scss
+	await fs.mkdir(path.join(opts.dir, 'scss'));
 	await fs.writeFile(
-		path.join(opts.dir, 'metadata.scss'),
+		path.join(opts.dir, 'scss/metadata.scss'),
 		sassMetadata(metadata, font.unicodeRange)
 	);
 
 	// Write mixins.scss
-	await fs.writeFile(path.join(opts.dir, 'mixins.scss'), sassMixins);
+	await fs.writeFile(path.join(opts.dir, 'scss/mixins.scss'), sassMixins);
 
 	// Write README.md
 	await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata));
