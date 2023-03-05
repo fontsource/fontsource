@@ -21,6 +21,10 @@ import {
 import { LanguageSelector } from './Language';
 import { SizeSlider } from './SizeSlider';
 
+interface ButtonsProps {
+	hasItalic: boolean;
+}
+
 interface SliderButtonProps {
 	label: string;
 	icon: React.ReactNode;
@@ -117,7 +121,7 @@ const ColorButton = ({ value, setValue }: ColorButtonProps) => {
 	);
 };
 
-const NormalButtonsGroup = () => {
+const NormalButtonsGroup = ({ hasItalic }: ButtonsProps) => {
 	const [lineHeight, setLineHeight] = useAtom(lineHeightAtom);
 	const [letterSpacing, setLetterSpacing] = useAtom(letterSpacingAtom);
 	const [color, setColor] = useAtom(colorAtom);
@@ -126,7 +130,7 @@ const NormalButtonsGroup = () => {
 	return (
 		<>
 			<LanguageSelector />
-			<SizeSlider />
+			<SizeSlider hasItalic={hasItalic} />
 			<Group grow>
 				<SliderButton
 					label="Line Height"

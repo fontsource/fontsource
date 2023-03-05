@@ -12,6 +12,10 @@ import { Dropdown, DropdownItem } from '@/components';
 import { IconItalic } from '../icons/Italic';
 import { italicAtom, sizeAtom } from './atoms';
 
+interface SizeSliderProps {
+	hasItalic: boolean;
+}
+
 const useStyles = createStyles((theme) => ({
 	wrapper: {
 		height: rem(40),
@@ -63,7 +67,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const SizeSlider = () => {
+const SizeSlider = ({hasItalic}: SizeSliderProps) => {
 	const { classes, cx } = useStyles();
 	const [italic, setItalic] = useAtom(italicAtom);
 	const [size, setSize] = useAtom(sizeAtom);
@@ -94,6 +98,7 @@ const SizeSlider = () => {
 						: '#FFF',
 				})}
 				onClick={() => setItalic(!italic)}
+				disabled={!hasItalic}
 			>
 				<IconItalic />
 			</ActionIcon>

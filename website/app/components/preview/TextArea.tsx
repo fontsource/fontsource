@@ -1,18 +1,30 @@
-import { Box, createStyles, Flex, rem, Text, TextInput } from '@mantine/core';
+import {
+	Box,
+	createStyles,
+	Flex,
+	rem,
+	Skeleton,
+	Text,
+	TextInput,
+} from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
+import { useFetcher } from '@remix-run/react';
 import { useAtom } from 'jotai';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
+import { useFontLoaded } from '@/hooks/useFontLoaded';
 import type { Metadata } from '@/utils/types';
 
-import { sizeAtom } from './atoms';
+import { italicAtom, sizeAtom } from './atoms';
 
 interface TagProps {
 	weight: number;
 	active: boolean;
 }
 interface TextBoxProps {
+	family: string;
 	weight: number;
+	loaded: boolean;
 }
 
 interface TextAreaProps {
@@ -98,26 +110,31 @@ const Tag = ({ weight, active }: TagProps) => {
 	);
 };
 
-const TextBox = ({ weight }: TextBoxProps) => {
+const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 	const { classes } = useStyles();
 	const { ref, focused } = useFocusWithin();
 	const [previewText, setPreviewText] = useState(
-		'The quick brown fox jumps over the lazy dog'
+		'Sphinx of black quartz, judge my vow.'
 	);
 	const [size] = useAtom(sizeAtom);
+	const [italic] = useAtom(italicAtom);
 
 	return (
 		<>
-			<Box className={classes.textWrapper}>
-				<TextInput
-					variant="unstyled"
-					sx={{ input: { fontWeight: weight, fontSize: size } }}
-					value={previewText}
-					onChange={(event) => setPreviewText(event.currentTarget.value)}
-					autoComplete="off"
-					ref={ref}
-				/>
-			</Box>
+			<Skeleton visible={loaded}>
+				<Box className={classes.textWrapper}>
+					<TextInput
+						variant="unstyled"
+						sx={{
+							input: { fontFamily: family, fontWeight: weight, fontSize: size },
+						}}
+						value={previewText}
+						onChange={(event) => setPreviewText(event.currentTarget.value)}
+						autoComplete="off"
+						ref={ref}
+					/>
+				</Box>
+			</Skeleton>
 			<Tag weight={weight} active={focused} />
 		</>
 	);
@@ -125,12 +142,49 @@ const TextBox = ({ weight }: TextBoxProps) => {
 
 const TextArea = ({ metadata }: TextAreaProps) => {
 	const { classes } = useStyles();
+	const fontCss = useFetcher();
+	// useFetcher only knows when the CSS is loaded, but not the font files themselves
+	const isFontLoaded = useFontLoaded(
+		metadata.variable ? `${metadata.family}Variable` : metadata.family,
+		metadata.weights
+	);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		if (fontCss.type === 'init') {
+			let url = '';
+			if (metadata.variable) {
+				url = `/fonts/${metadata.id}/fetch-css/?variable=true&all=true`;
+			} else {
+				url = `/fonts/${metadata.id}/fetch-css/?all=true`;
+			}
+			fontCss.load(url);
+		}
+
+		if (fontCss.type === 'done') {
+			const style = document.createElement('style');
+			style.textContent = fontCss.data.css;
+			document.head.appendChild(style);
+		}
+
+		if (fontCss.type === 'done' && isFontLoaded) {
+			// Give browser time to load fonts in order to not cause a flash of unstyled font
+			setLoading(false);
+		}
+	}, [fontCss, isFontLoaded, metadata.id, metadata.variable]);
 
 	return (
 		<Flex direction="column" className={classes.wrapper}>
 			<Text className={classes.header}>Font Preview</Text>
 			{metadata.weights.map((weight) => (
-				<TextBox key={weight} weight={weight} />
+				<TextBox
+					key={weight}
+					weight={weight}
+					family={
+						metadata.variable ? `${metadata.family}Variable` : metadata.family
+					}
+					loaded={loading}
+				/>
 			))}
 		</Flex>
 	);

@@ -130,6 +130,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 	}
 
 	// Add variable CSS
+	// TODO: Rewrite this to use the new package names when V5 is released
 	if (variable) {
 		// Remove ital key to make other keys easier to check
 		const keys = Object.keys(variable).filter(
@@ -201,41 +202,66 @@ const addCss = async (metadata: DownloadMetadata) => {
 };
 
 interface CssOptions {
+	all?: boolean;
 	index?: boolean;
 	variable?: boolean;
-	italic?: boolean;
-	weights?: number[] | false;
 }
 
-const getCss = async (id: string, opts: CssOptions) => {
+const getIndexCss = async (id: string) => {
+	const css = await knex('css')
+		.select('css')
+		.where({ id, isIndex: true })
+		.first();
+	return css.css;
+};
+
+const getAllCss = async (id: string, variable?: boolean) => {
+	let css;
+	if (variable) {
+		css = await knex('css').select('css').where({ id, isVariable: true });
+		css.push(
+			await knex('css')
+				.select('css')
+				.where({ id, isVariable: true, isItalic: true })
+		);
+	} else {
+		css = await knex('css').select('css').where({ id, isVariable: false });
+		css.push(
+			await knex('css')
+				.select('css')
+				.where({ id, isVariable: false, isItalic: true })
+		);
+	}
+	if (css.length === 0) {
+		throw new Error('No CSS found');
+	}
+	return css.map((item) => item.css).join('\n');
+};
+
+const getCss = async (id: string, opts: CssOptions): Promise<string> => {
 	let css;
 	if (opts.index) {
-		css = await knex('css').select('css').where({ id, isIndex: true }).first();
-		if (!css) {
+		try {
+			css = await getIndexCss(id);
+		} catch {
+			// Maybe the font isn't in the db yet, try again
 			await fetchMetadata(id);
-			css = await knex('css')
-				.select('css')
-				.where({ id, isIndex: true })
-				.first();
+			css = getIndexCss(id);
 		}
+		return css;
 	}
 
-	if (opts.variable) {
-		css = await knex('css')
-			.select('css')
-			.where({ id, isVariable: true, isItalic: opts.italic })
-			.first();
-		if (!css) {
+	if (opts.all) {
+		try {
+			css = await getAllCss(id, opts.variable);
+		} catch {
 			await fetchMetadata(id);
-			css = await knex('css')
-				.select('css')
-				.where({ id, isVariable: true, isItalic: opts.italic })
-				.first();
+			css = getAllCss(id, opts.variable);
 		}
+		return css;
 	}
 
-	// Returns a weird object
-	return css.css;
+	throw new Error('Invalid options');
 };
 
 export { addCss, getCss };
