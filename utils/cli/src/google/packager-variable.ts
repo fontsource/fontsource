@@ -44,7 +44,7 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 					src: [
 						{
 							url: makeVariableFontFilePath(id, subset, axesLower, style),
-							format: 'woff2',
+							format: 'woff2-variations',
 						},
 					],
 					comment: `${id}-${subset}-${axesLower}-${style}`,
