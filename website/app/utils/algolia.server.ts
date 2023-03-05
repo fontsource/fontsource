@@ -40,7 +40,7 @@ const getMetadata = async (id: string) =>
 const downloadCount = async (id: string) =>
 	await knex.select('month').from('downloads').where({ id }).first();
 
-const updateAlgoliaIndex = async () => {
+const updateAlgoliaIndex = async (force?: boolean) => {
 	try {
 		// Get font list
 		const list = Object.keys(await getFontList());
@@ -77,7 +77,7 @@ const updateAlgoliaIndex = async () => {
 				lastModified: Math.floor(
 					new Date(metadata.lastModified).getTime() / 1000
 				),
-				downloadMonth: downloadCountMonthly.month ?? 0,
+				downloadMonth: downloadCountMonthly?.month ?? 0,
 				randomIndex: randomIndexArr[index],
 			};
 
@@ -86,8 +86,13 @@ const updateAlgoliaIndex = async () => {
 		}
 
 		const searchIndex = client.initIndex('prod_NAME');
-		await searchIndex.saveObjects(indexArray);
-		console.log('Updated Algolia index');
+		if (force) {
+			await searchIndex.replaceAllObjects(indexArray);
+			console.log('Replaced Algolia index')
+		} else {
+			await searchIndex.saveObjects(indexArray);
+			console.log('Updated Algolia index');
+		}
 	} catch (err) {
 		console.error(err);
 	}

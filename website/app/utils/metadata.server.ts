@@ -3,22 +3,33 @@ import { knex } from './db.server';
 import type {
 	DownloadMetadata,
 	FontList,
+	MetadataType,
 	PackageJson,
 	UnicodeData,
 } from './types';
+import { isMetadataType } from './types';
 import { kya } from './utils.server';
 
 const getFontList = async (): Promise<FontList> => {
 	return kya(
-		'https://raw.githubusercontent.com/fontsource/fontsource/main/FONTLIST.json'
+		'https://raw.githubusercontent.com/fontsource/font-files/main/FONTLIST.json'
 	);
 };
 
-const fetchMetadata = async (id: string) => {
-	const BASE_URL = 'https://cdn.jsdelivr.net/npm';
-	const METADATA_URL = `${BASE_URL}/@fontsource/${id}/metadata.json`;
-	const UNICODE_URL = `${BASE_URL}/@fontsource/${id}/unicode.json`;
-	const PACKAGE_URL = `${BASE_URL}/@fontsource/${id}/package.json`;
+const BASE_URL = (type: MetadataType) =>
+	`https://raw.githubusercontent.com/fontsource/font-files/main/fonts/${type}`;
+
+const fetchMetadata = async (id: string, type?: MetadataType) => {
+	if (!type) {
+		const fontList = await getFontList();
+		type = fontList[id] as MetadataType;
+		if (!isMetadataType(type))
+			throw new Error(`Font ID ${id} does not have a valid metadata type (${type}).`);
+	}
+
+	const METADATA_URL = `${BASE_URL(type)}/${id}/metadata.json`;
+	const UNICODE_URL = `${BASE_URL(type)}/${id}/unicode.json`;
+	const PACKAGE_URL = `${BASE_URL(type)}/${id}/package.json`;
 
 	const metadata: DownloadMetadata = await kya(METADATA_URL);
 	const unicode: UnicodeData = await kya(UNICODE_URL);
@@ -27,8 +38,8 @@ const fetchMetadata = async (id: string) => {
 	// Save metadata to DB
 	await knex('fonts')
 		.insert({
-			id: metadata.fontId,
-			family: metadata.fontName,
+			id: metadata.id,
+			family: metadata.family,
 			subsets: metadata.subsets.join(','),
 			weights: metadata.weights.join(','),
 			styles: metadata.styles.join(','),
@@ -39,7 +50,7 @@ const fetchMetadata = async (id: string) => {
 			npmVersion: packageJson.version,
 			category: metadata.category,
 			source: metadata.source,
-			license: metadata.license,
+			license: JSON.stringify(metadata.license),
 			type: metadata.type,
 		})
 		.onConflict('id')
@@ -47,7 +58,7 @@ const fetchMetadata = async (id: string) => {
 
 	await knex('unicode')
 		.insert({
-			id: metadata.fontId,
+			id: metadata.id,
 			data: JSON.stringify(unicode),
 		})
 		.onConflict('id')
@@ -56,7 +67,7 @@ const fetchMetadata = async (id: string) => {
 	if (metadata.variable) {
 		await knex('variable')
 			.insert({
-				id: metadata.fontId,
+				id: metadata.id,
 				axes: JSON.stringify(metadata.variable),
 			})
 			.onConflict('id')
@@ -80,6 +91,7 @@ const getMetadata = async (id: string) => {
 	metadata.weights = metadata.weights.split(',').map((w: string) => Number(w));
 	metadata.styles = metadata.styles.split(',');
 	metadata.variable = Boolean(metadata.variable);
+	metadata.license = JSON.parse(metadata.license);
 
 	return metadata;
 };
@@ -108,10 +120,10 @@ const cleanCounts = (counts: DownloadCount) => {
 
 const getDownloadCountList = async () => {
 	const dataMonth: DownloadCount = await kya(
-		'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/lastMonthPopular.json'
+		'https://cdn.jsdelivr.net/gh/fontsource/download-stat-aggregator@main/data/lastMonthPopular.json'
 	);
 	const dataTotal: DownloadCount = await kya(
-		'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/totalPopular.json'
+		'https://cdn.jsdelivr.net/gh/fontsource/download-stat-aggregator@main/data/totalPopular.json'
 	);
 
 	return { month: cleanCounts(dataMonth), total: cleanCounts(dataTotal) };

@@ -8,6 +8,7 @@ import {
 	getFontList,
 	updateDownloadCount,
 } from '@/utils/metadata.server';
+import type { MetadataType } from '@/utils/types';
 
 import deployMigrations from '../../../scripts/migrations.js';
 
@@ -17,6 +18,7 @@ interface UpdateData {
 	algolia?: boolean;
 	download?: boolean;
 	migrations?: boolean;
+	force?: boolean;
 }
 
 // Speed things up by running these in parallel
@@ -47,7 +49,7 @@ const updateFonts = async (data: UpdateData) => {
 	}
 
 	for (const id of updateList) {
-		queue.add(async () => await fetchMetadata(id));
+		queue.add(async () => await fetchMetadata(id, list[id] as MetadataType));
 	}
 };
 
@@ -60,12 +62,13 @@ export const action: ActionFunction = async ({ request }) => {
 		return new Response('Invalid update token', { status: 401 });
 	}
 
-	if (data.fonts) {
+	// Algolia already runs fetch metadata if that is active
+	if (data.fonts && !data.algolia) {
 		await updateFonts(data);
 	}
 
 	if (data.algolia) {
-		await updateAlgoliaIndex();
+		await updateAlgoliaIndex(data.force);
 	}
 
 	if (data.download) {

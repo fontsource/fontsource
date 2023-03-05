@@ -2,10 +2,11 @@ import { HTTPError } from 'ky';
 
 import { knex } from './db.server';
 import { fetchMetadata } from './metadata.server';
-import type { DownloadMetadata } from './types';
-import { kya } from './utils.server';
+import type { DownloadMetadata, MetadataType } from './types';
+import { isStandardAxesKey, kya } from './utils.server';
 
-const BASE_URL = 'https://cdn.jsdelivr.net/npm';
+const BASE_URL = (type: MetadataType) =>
+	`https://raw.githubusercontent.com/fontsource/font-files/main/fonts/${type}`;
 
 // Insert a weight array to find the closest number given num - used for index.css gen
 const findClosest = (arr: number[], num: number): number => {
@@ -18,11 +19,11 @@ const findClosest = (arr: number[], num: number): number => {
 	return closest;
 };
 
-const cssRewrite = (css: string, id: string) =>
+const cssRewrite = (css: string, id: string, type: MetadataType) =>
 	css.replace(
-		/url\('\.\/(files\/.*?)'\)/g,
-		// match "url('./files/${woffFileName}')", then replace with "url('${baseURL}/files/${woffFileName}')"
-		`url('${BASE_URL}/@fontsource/${id}/$1')`
+		/url\(\.\/(files\/.*?)\)/g,
+		// match "url(./files/${woffFileName})", then replace with "url(${baseURL}/files/${woffFileName})"
+		`url('${BASE_URL(type)}/${id}/$1')`
 			.replace(/\/\*[\s\S]*?\*\/|[\r\n\t]+/g, '')
 			// limit number of adjacent spaces to 1
 			.replace(/ {2,}/g, ' ')
@@ -36,22 +37,22 @@ const cssRewrite = (css: string, id: string) =>
 
 const addCss = async (metadata: DownloadMetadata) => {
 	// Add general CSS
-	const { fontId, weights, styles, variable } = metadata;
+	const { id, weights, styles, variable, type } = metadata;
 	for (const weight of weights) {
 		for (const style of styles) {
 			let url;
 			if (style === 'italic') {
-				url = `${BASE_URL}/@fontsource/${fontId}/${weight}-italic.css`;
+				url = `${BASE_URL(metadata.type)}/${id}/${weight}-italic.css`;
 			} else {
-				url = `${BASE_URL}/@fontsource/${fontId}/${weight}.css`;
+				url = `${BASE_URL(metadata.type)}/${id}/${weight}.css`;
 			}
 
 			try {
-				const css = cssRewrite(await kya(url, { text: true }), fontId);
+				const css = cssRewrite(await kya(url, { text: true }), id, type);
 
 				await knex('css')
 					.insert({
-						id: fontId,
+						id,
 						weight: String(weight),
 						css,
 						isItalic: style === 'italic',
@@ -77,13 +78,16 @@ const addCss = async (metadata: DownloadMetadata) => {
 	// Add index CSS
 	try {
 		const indexCss = cssRewrite(
-			await kya(`${BASE_URL}/@fontsource/${fontId}/index.css`, { text: true }),
-			fontId
+			await kya(`${BASE_URL(metadata.type)}/${id}/index.css`, {
+				text: true,
+			}),
+			id,
+			type
 		);
 
 		await knex('css')
 			.insert({
-				id: fontId,
+				id,
 				weight: String(findClosest(weights, 400)), // A font may not have a default 400 weight
 				css: indexCss,
 				isItalic: false,
@@ -100,24 +104,26 @@ const addCss = async (metadata: DownloadMetadata) => {
 			if (styles.length === 1 && styles.includes('italic')) {
 				// If only italic, then use 400italic
 				css = cssRewrite(
-					await kya(`${BASE_URL}/@fontsource/${fontId}/${weight}-italic.css`, {
+					await kya(`${BASE_URL(metadata.type)}/${id}/${weight}-italic.css`, {
 						text: true,
 					}),
-					fontId
+					id,
+					type
 				);
 			} else {
 				// Otherwise use 400
 				css = cssRewrite(
-					await kya(`${BASE_URL}/@fontsource/${fontId}/${weight}.css`, {
+					await kya(`${BASE_URL(metadata.type)}/${id}/${weight}.css`, {
 						text: true,
 					}),
-					fontId
+					id,
+					type
 				);
 			}
 
 			await knex('css')
 				.insert({
-					id: fontId,
+					id,
 					weight,
 					css,
 					isItalic: true,
@@ -130,7 +136,6 @@ const addCss = async (metadata: DownloadMetadata) => {
 	}
 
 	// Add variable CSS
-	// TODO: Rewrite this to use the new package names when V5 is released
 	if (variable) {
 		// Remove ital key to make other keys easier to check
 		const keys = Object.keys(variable).filter(
@@ -140,27 +145,37 @@ const addCss = async (metadata: DownloadMetadata) => {
 
 		try {
 			if (keys.length === 1 && keys.includes('wght')) {
-				css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable.css`, {
+				css = await kya(`${BASE_URL('variable')}/${id}/wght.css`, {
+					text: true,
+				});
+			} else if (keys.length === 1) {
+				// Some fonts have a single axis that is not wght
+				css = await kya(`${BASE_URL('variable')}/${id}/${keys[0].toLowerCase()}.css`, {
+					text: true,
+				});
+			} else if (keys.every((key) => isStandardAxesKey(key))) {
+				css = await kya(`${BASE_URL('variable')}/${id}/standard.css`, {
 					text: true,
 				});
 			} else {
-				css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable-full.css`, {
+				css = await kya(`${BASE_URL('variable')}/${id}/full.css`, {
 					text: true,
 				});
 			}
 		} catch {
-			// If variable-full.css doesn't exist, use variable.css
-			css = await kya(`${BASE_URL}/@fontsource/${fontId}/variable.css`, {
+			// If all else fails, try index.css
+			console.error(`Unable to retrieve variable CSS ${id}`);
+			css = await kya(`${BASE_URL('variable')}/${id}/index.css`, {
 				text: true,
 			});
 		}
 
-		css = cssRewrite(css, fontId);
+		css = cssRewrite(css, id, 'variable');
 
 		const wght = variable.wght;
 		await knex('css')
 			.insert({
-				id: fontId,
+				id,
 				weight: wght ? `${wght.min}-${wght.max}` : '400',
 				css,
 				isItalic: false,
@@ -172,23 +187,41 @@ const addCss = async (metadata: DownloadMetadata) => {
 
 		// If it has italic variant
 		if ('ital' in variable) {
-			if (keys.length === 1 && keys.includes('wght')) {
-				css = await kya(
-					`${BASE_URL}/@fontsource/${fontId}/variable-italic.css`,
-					{ text: true }
-				);
-			} else {
-				css = await kya(
-					`${BASE_URL}/@fontsource/${fontId}/variable-full-italic.css`,
-					{ text: true }
-				);
+			try {
+				if (keys.length === 1 && keys.includes('wght')) {
+					css = await kya(`${BASE_URL('variable')}/${id}/wght-italic.css`, {
+						text: true,
+					});
+				} else if (keys.length === 1) {
+					// Some fonts have a single axis that is not wght
+					css = await kya(
+						`${BASE_URL('variable')}/${id}/${keys[0].toLowerCase()}-italic.css`,
+						{
+							text: true,
+						}
+					);
+				} else if (keys.every((key) => isStandardAxesKey(key))) {
+					css = await kya(`${BASE_URL('variable')}/${id}/standard-italic.css`, {
+						text: true,
+					});
+				} else {
+					css = await kya(`${BASE_URL('variable')}/${id}/full-italic.css`, {
+						text: true,
+					});
+				}
+			} catch {
+				// If all else fails, try index.css
+				console.error(`Unable to retrieve italic variable CSS ${id}`);
+				css = await kya(`${BASE_URL('variable')}/${id}/index.css`, {
+					text: true,
+				});
 			}
 
-			css = cssRewrite(css, fontId);
+			css = cssRewrite(css, id, 'variable');
 
 			await knex('css')
 				.insert({
-					id: fontId,
+					id,
 					weight: wght ? `${wght.min}-${wght.max}` : '400',
 					css,
 					isItalic: true,

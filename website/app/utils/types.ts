@@ -2,9 +2,13 @@ export interface FontList {
 	[key: string]: string;
 }
 
+export const METADATA_TYPES = ['google', 'variable', 'icons', 'other'] as const;
+export type MetadataType = typeof METADATA_TYPES[number];
+export const isMetadataType = (type: string): type is MetadataType =>
+	METADATA_TYPES.includes(type as MetadataType);
 export interface DownloadMetadata {
-	fontId: string;
-	fontName: string;
+	id: string;
+	family: string;
 	subsets: string[];
 	weights: number[];
 	styles: string[];
@@ -15,7 +19,7 @@ export interface DownloadMetadata {
 	category: string;
 	source: string;
 	license: string;
-	type: string;
+	type: MetadataType;
 }
 
 export interface UnicodeData {
