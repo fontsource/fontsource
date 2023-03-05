@@ -144,9 +144,8 @@ const TextArea = ({ metadata }: TextAreaProps) => {
 	const { classes } = useStyles();
 	const fontCss = useFetcher();
 	// useFetcher only knows when the CSS is loaded, but not the font files themselves
-	// TODO: RENAME METADATA.FAMILY TO METADATA.FAMILY VARIABLE when variable font names are changed
 	const isFontLoaded = useFontLoaded(
-		metadata.variable ? `${metadata.family}` : metadata.family,
+		metadata.variable ? `${metadata.family} Variable` : metadata.family,
 		metadata.weights
 	);
 	const [loading, setLoading] = useState(true);
@@ -182,7 +181,7 @@ const TextArea = ({ metadata }: TextAreaProps) => {
 					key={weight}
 					weight={weight}
 					family={
-						metadata.variable ? `${metadata.family}` : metadata.family
+						metadata.variable ? `${metadata.family} Variable` : metadata.family
 					}
 					loaded={loading}
 				/>

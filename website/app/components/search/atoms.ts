@@ -39,7 +39,6 @@ const filterAtom = atom(
 );
 
 // Sorting atoms
-// TODO: Add updater to create Algolia replicas for popular (download-stat-aggregator), latest and random
 type SortValues = 'Most Popular' | 'Last Updated' | 'Name' | 'Random';
 const sortAtom = atom<SortValues>('Most Popular');
 type DisplayValues = 'list' | 'grid';
