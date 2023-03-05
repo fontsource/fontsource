@@ -1,13 +1,7 @@
-import {
-	Box,
-	createStyles,
-	Divider,
-	Flex,
-	Input,
-	rem,
-	Text,
-} from '@mantine/core';
+import { Box, createStyles, Flex, rem, Text, TextInput } from '@mantine/core';
+import { useFocusWithin } from '@mantine/hooks';
 import { useAtom } from 'jotai';
+import { useState } from 'react';
 
 import type { Metadata } from '@/utils/types';
 
@@ -15,6 +9,7 @@ import { sizeAtom } from './atoms';
 
 interface TagProps {
 	weight: number;
+	active: boolean;
 }
 interface TextBoxProps {
 	weight: number;
@@ -52,18 +47,22 @@ const useStyles = createStyles((theme) => ({
 
 	tag: {
 		fontSize: rem(13),
-		color: theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1],
-		backgroundColor: theme.colorScheme === 'dark'
+		color:
+			theme.colorScheme === 'dark'
+				? theme.colors.text[0]
+				: theme.colors.text[1],
+		backgroundColor:
+			theme.colorScheme === 'dark'
 				? theme.colors.border[1]
-			: theme.colors.border[0],
+				: theme.colors.border[0],
 		padding: `${rem(4)} ${rem(8)}`,
 		borderRadius: '4px 4px 0 0',
 		marginLeft: 'auto',
 		lineHeight: rem(12),
-	}
+	},
 }));
 
-const Tag = ({weight}: TagProps) => {
+const Tag = ({ weight, active }: TagProps) => {
 	const { classes } = useStyles();
 
 	const weightMap: Record<number, string> = {
@@ -76,31 +75,50 @@ const Tag = ({weight}: TagProps) => {
 		700: 'Bold',
 		800: 'Extra Bold',
 		900: 'Black',
-	}
+	};
 
 	return (
 		<>
-			<Box className={classes.tag}>{weightMap[weight]} {weight}</Box>
-			<Box className={classes.horizontal} />
+			<Box
+				className={classes.tag}
+				sx={(theme) => ({
+					backgroundColor: active ? theme.colors.purple[0] : 'auto',
+					color: active ? theme.colors.text[0] : 'auto',
+				})}
+			>
+				{weightMap[weight]} {weight}
+			</Box>
+			<Box
+				className={classes.horizontal}
+				sx={(theme) => ({
+					borderColor: active ? theme.colors.purple[0] : 'auto',
+				})}
+			/>
 		</>
 	);
 };
 
 const TextBox = ({ weight }: TextBoxProps) => {
 	const { classes } = useStyles();
+	const { ref, focused } = useFocusWithin();
+	const [previewText, setPreviewText] = useState(
+		'The quick brown fox jumps over the lazy dog'
+	);
 	const [size] = useAtom(sizeAtom);
 
 	return (
 		<>
 			<Box className={classes.textWrapper}>
-				<Input
+				<TextInput
 					variant="unstyled"
 					sx={{ input: { fontWeight: weight, fontSize: size } }}
-					value="The quick brown fox jumps over the lazy dog"
-					readOnly
+					value={previewText}
+					onChange={(event) => setPreviewText(event.currentTarget.value)}
+					autoComplete="off"
+					ref={ref}
 				/>
 			</Box>
-			<Tag weight={weight} />
+			<Tag weight={weight} active={focused} />
 		</>
 	);
 };
