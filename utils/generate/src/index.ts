@@ -17,7 +17,7 @@ const generateFontFace = (font: FontObject) => {
   // If variable, modify output
   const { wght, stretch, slnt } = variable ?? {};
   let result = '@font-face {';
-  result += `${spacer}font-family: '${family}';`;
+  result += `${spacer}font-family: '${family}${variable ? ' Variable' : ''}';`;
 
   // If slnt is present, switch to oblique style
   result += `${spacer}font-style: ${
