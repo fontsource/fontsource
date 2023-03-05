@@ -33,7 +33,7 @@ $axes: null !default;
   $directory: if(
     $directory,
     $directory,
-    '~@fontsource/#{map.get($metadata, id)}/files'
+    '~@fontsource#{if(map.get($metadata, axes), '-variable', '')}/#{map.get($metadata, id)}/files'
   );
 
   $family: if($family, $family, map.get($metadata, family));
@@ -87,7 +87,7 @@ $axes: null !default;
                 $src: append(
                   $src,
                   url('#{$directory}/#{$variant}.#{$format}')
-                    format('#{$format}'),
+                    format('#{$format}#{if($axis, '-variations', '')}'),
                   comma
                 );
               }
