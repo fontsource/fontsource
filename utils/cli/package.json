@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/cli",
-	"version": "0.2.0-beta.6",
+	"version": "0.2.0-beta.7",
 	"description": "Fontsource CLI",
 	"bin": {
 		"fontsource": "./dist/cli.mjs"
@@ -40,8 +40,8 @@
 		"dotenv": "^16.0.3",
 		"flat": "^5.0.2",
 		"fs-extra": "^11.1.0",
-		"google-font-metadata": "^5.0.0",
-		"got": "^12.5.3",
+		"google-font-metadata": "^5.0.1",
+		"got": "^12.6.0",
 		"json-stringify-pretty-compact": "^4.0.0",
 		"p-queue": "^7.3.4",
 		"pathe": "^1.1.0",
@@ -51,7 +51,7 @@
 		"@ayuhito/eslint-config": "^0.2.4",
 		"@types/flat": "^5.0.2",
 		"@types/fs-extra": "^11.0.1",
-		"@types/node": "^18.14.2",
+		"@types/node": "^18.14.6",
 		"@vitest/coverage-c8": "^0.29.2",
 		"eslint": "^8.35.0",
 		"pkgroll": "^1.9.0",

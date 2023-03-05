@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/generate",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "A CSS font-face generator",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
@@ -18,7 +18,8 @@
 	"scripts": {
 		"build": "pkgroll --target=node14",
 		"lint": "eslint --fix",
-		"test": "vitest"
+		"test": "vitest",
+		"prepublish": "pnpm run build"
 	},
 	"keywords": [],
 	"author": "Ayuhito <hello@ayuhito.com>",
