@@ -36,7 +36,7 @@ $axes: null !default;
     '~@fontsource#{if(map.get($metadata, axes), '-variable', '')}/#{map.get($metadata, id)}/files'
   );
 
-  $family: if($family, $family, map.get($metadata, family));
+  $family: if($family, $family, map.get($metadata, family) + if(map.get($metadata, axes), ' Variable', ''));
   $display: if($display, $display, swap);
   $displayVar: if($displayVar != null, $displayVar, true);
   $formats: if(not $formats or $formats == all, (woff2, woff), $formats);
