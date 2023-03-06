@@ -5,25 +5,26 @@ import consola from 'consola';
 import {
 	fetchAPI,
 	fetchVariable,
+	generateAxis,
 	parseLicenses,
 	parsev1,
 	parsev2,
-	parseVariable,
-} from 'google-font-metadata';
+	parseVariable } from 'google-font-metadata';
 import colors from 'picocolors';
 
 import { version } from '../package.json';
 import { create } from './custom/create';
 import { verify } from './custom/verify';
+import { processGoogle } from './google/queue';
 
 const cli = cac('fontsource');
 
 cli
 	.command('fetch [key]', 'Fetch parsing metadata for all fonts')
-	.option('-f, --force', 'Force rebuild all packages')
+	.option('-f, --force', 'Force parse all metadata')
 	.action(async (key: string, options) => {
 		try {
-			const finalKey = key ?? process.env.GOOGLE_FONT_API_KEY;
+			const finalKey = key ?? process.env.GOOGLE_API_KEY;
 			if (!finalKey) {
 				throw new Error('No API key provided.');
 			}
@@ -37,6 +38,7 @@ cli
 			await Promise.all([fetchAPI(finalKey), fetchVariable()]);
 			await parsev1(options.force, false);
 			await parsev2(options.force, false);
+			await generateAxis();
 			await parseVariable(false);
 			await parseLicenses();
 		} catch (error) {
@@ -51,11 +53,8 @@ cli
 	.option('-t, --test', 'Build test fonts only')
 	.action(async (fonts: string[], options) => {
 		try {
-			if (fonts) {
-				console.log('build');
-			} else {
-				console.log(options);
-			}
+			consola.info(`Building packages... ${options.force ? colors.bold(colors.red('[FORCE]')) : ''}`);
+			await processGoogle(options, fonts);
 		} catch (error) {
 			consola.error(error);
 		}

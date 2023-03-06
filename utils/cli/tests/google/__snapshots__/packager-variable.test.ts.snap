@@ -12,7 +12,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-vietnamese-wdth-normal.woff2) format('woff2');
+  src: url(./files/cabin-vietnamese-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* cabin-latin-ext-wdth-normal */
@@ -22,7 +23,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-latin-ext-wdth-normal.woff2) format('woff2');
+  src: url(./files/cabin-latin-ext-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* cabin-latin-wdth-normal */
@@ -32,7 +34,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-latin-wdth-normal.woff2) format('woff2');
+  src: url(./files/cabin-latin-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -44,7 +47,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-vietnamese-wdth-italic.woff2) format('woff2');
+  src: url(./files/cabin-vietnamese-wdth-italic.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* cabin-latin-ext-wdth-italic */
@@ -54,7 +58,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-latin-ext-wdth-italic.woff2) format('woff2');
+  src: url(./files/cabin-latin-ext-wdth-italic.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* cabin-latin-wdth-italic */
@@ -64,7 +69,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-latin-wdth-italic.woff2) format('woff2');
+  src: url(./files/cabin-latin-wdth-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -75,7 +81,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-vietnamese-wght-normal.woff2) format('woff2');
+  src: url(./files/cabin-vietnamese-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* cabin-latin-ext-wght-normal */
@@ -84,7 +91,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-latin-ext-wght-normal.woff2) format('woff2');
+  src: url(./files/cabin-latin-ext-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* cabin-latin-wght-normal */
@@ -93,7 +101,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-latin-wght-normal.woff2) format('woff2');
+  src: url(./files/cabin-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -104,7 +113,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-vietnamese-wght-italic.woff2) format('woff2');
+  src: url(./files/cabin-vietnamese-wght-italic.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* cabin-latin-ext-wght-italic */
@@ -113,7 +123,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-latin-ext-wght-italic.woff2) format('woff2');
+  src: url(./files/cabin-latin-ext-wght-italic.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* cabin-latin-wght-italic */
@@ -122,7 +133,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-latin-wght-italic.woff2) format('woff2');
+  src: url(./files/cabin-latin-wght-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -134,7 +146,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-vietnamese-standard-normal.woff2) format('woff2');
+  src: url(./files/cabin-vietnamese-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* cabin-latin-ext-standard-normal */
@@ -144,7 +157,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-latin-ext-standard-normal.woff2) format('woff2');
+  src: url(./files/cabin-latin-ext-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* cabin-latin-standard-normal */
@@ -154,7 +168,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-latin-standard-normal.woff2) format('woff2');
+  src: url(./files/cabin-latin-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -166,7 +181,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-vietnamese-standard-italic.woff2) format('woff2');
+  src: url(./files/cabin-vietnamese-standard-italic.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* cabin-latin-ext-standard-italic */
@@ -176,7 +192,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-latin-ext-standard-italic.woff2) format('woff2');
+  src: url(./files/cabin-latin-ext-standard-italic.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* cabin-latin-standard-italic */
@@ -186,7 +203,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
   font-stretch: 75% 100%;
-  src: url(./files/cabin-latin-standard-italic.woff2) format('woff2');
+  src: url(./files/cabin-latin-standard-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -197,7 +215,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-vietnamese-wght-italic.woff2) format('woff2');
+  src: url(./files/cabin-vietnamese-wght-italic.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* cabin-latin-ext-wght-italic */
@@ -206,7 +225,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-latin-ext-wght-italic.woff2) format('woff2');
+  src: url(./files/cabin-latin-ext-wght-italic.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* cabin-latin-wght-italic */
@@ -215,7 +235,8 @@ exports[`packager variable > should generate standard variable font successfully
   font-style: italic;
   font-display: var(--fontsource-display, swap);
   font-weight: 400 700;
-  src: url(./files/cabin-latin-wght-italic.woff2) format('woff2');
+  src: url(./files/cabin-latin-wght-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
   ],
@@ -263,7 +284,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-opsz-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
 /* roboto-flex-cyrillic-opsz-normal */
@@ -272,7 +294,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-opsz-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
 /* roboto-flex-greek-opsz-normal */
@@ -281,7 +304,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-opsz-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
 /* roboto-flex-vietnamese-opsz-normal */
@@ -290,7 +314,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-opsz-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* roboto-flex-latin-ext-opsz-normal */
@@ -299,7 +324,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-opsz-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* roboto-flex-latin-opsz-normal */
@@ -308,7 +334,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-opsz-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -319,7 +346,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-slnt-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-slnt-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
 /* roboto-flex-cyrillic-slnt-normal */
@@ -328,7 +356,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-slnt-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-slnt-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
 /* roboto-flex-greek-slnt-normal */
@@ -337,7 +366,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-slnt-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-slnt-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
 /* roboto-flex-vietnamese-slnt-normal */
@@ -346,7 +376,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-slnt-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-slnt-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* roboto-flex-latin-ext-slnt-normal */
@@ -355,7 +386,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-slnt-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-slnt-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* roboto-flex-latin-slnt-normal */
@@ -364,7 +396,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: oblique 0deg 10deg;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-slnt-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-slnt-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -376,7 +409,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-cyrillic-ext-wdth-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
 /* roboto-flex-cyrillic-wdth-normal */
@@ -386,7 +420,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-cyrillic-wdth-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
 /* roboto-flex-greek-wdth-normal */
@@ -396,7 +431,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-greek-wdth-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
 /* roboto-flex-vietnamese-wdth-normal */
@@ -406,7 +442,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-vietnamese-wdth-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* roboto-flex-latin-ext-wdth-normal */
@@ -416,7 +453,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-latin-ext-wdth-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* roboto-flex-latin-wdth-normal */
@@ -426,455 +464,504 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-latin-wdth-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
-      "test/roboto-flex/GRAD.css",
-      "/* roboto-flex-cyrillic-ext-GRAD-normal */
+      "test/roboto-flex/grad.css",
+      "/* roboto-flex-cyrillic-ext-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-grad-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-GRAD-normal */
+/* roboto-flex-cyrillic-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-grad-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-GRAD-normal */
+/* roboto-flex-greek-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-grad-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-GRAD-normal */
+/* roboto-flex-vietnamese-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-grad-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-GRAD-normal */
+/* roboto-flex-latin-ext-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-grad-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-GRAD-normal */
+/* roboto-flex-latin-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-GRAD-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-grad-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
-      "test/roboto-flex/XTRA.css",
-      "/* roboto-flex-cyrillic-ext-XTRA-normal */
+      "test/roboto-flex/xtra.css",
+      "/* roboto-flex-cyrillic-ext-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-xtra-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-XTRA-normal */
+/* roboto-flex-cyrillic-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-xtra-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-XTRA-normal */
+/* roboto-flex-greek-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-xtra-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-XTRA-normal */
+/* roboto-flex-vietnamese-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-xtra-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-XTRA-normal */
+/* roboto-flex-latin-ext-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-xtra-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-XTRA-normal */
+/* roboto-flex-latin-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-XTRA-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-xtra-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
-      "test/roboto-flex/YOPQ.css",
-      "/* roboto-flex-cyrillic-ext-YOPQ-normal */
+      "test/roboto-flex/yopq.css",
+      "/* roboto-flex-cyrillic-ext-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-yopq-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-YOPQ-normal */
+/* roboto-flex-cyrillic-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-yopq-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-YOPQ-normal */
+/* roboto-flex-greek-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-yopq-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-YOPQ-normal */
+/* roboto-flex-vietnamese-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-yopq-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-YOPQ-normal */
+/* roboto-flex-latin-ext-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-yopq-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-YOPQ-normal */
+/* roboto-flex-latin-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YOPQ-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-yopq-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
-      "test/roboto-flex/YTAS.css",
-      "/* roboto-flex-cyrillic-ext-YTAS-normal */
+      "test/roboto-flex/ytas.css",
+      "/* roboto-flex-cyrillic-ext-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytas-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-YTAS-normal */
+/* roboto-flex-cyrillic-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytas-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-YTAS-normal */
+/* roboto-flex-greek-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytas-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-YTAS-normal */
+/* roboto-flex-vietnamese-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytas-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-YTAS-normal */
+/* roboto-flex-latin-ext-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytas-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-YTAS-normal */
+/* roboto-flex-latin-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTAS-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytas-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
-      "test/roboto-flex/YTDE.css",
-      "/* roboto-flex-cyrillic-ext-YTDE-normal */
+      "test/roboto-flex/ytde.css",
+      "/* roboto-flex-cyrillic-ext-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytde-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-YTDE-normal */
+/* roboto-flex-cyrillic-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytde-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-YTDE-normal */
+/* roboto-flex-greek-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytde-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-YTDE-normal */
+/* roboto-flex-vietnamese-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytde-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-YTDE-normal */
+/* roboto-flex-latin-ext-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytde-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-YTDE-normal */
+/* roboto-flex-latin-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTDE-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytde-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
-      "test/roboto-flex/YTFI.css",
-      "/* roboto-flex-cyrillic-ext-YTFI-normal */
+      "test/roboto-flex/ytfi.css",
+      "/* roboto-flex-cyrillic-ext-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytfi-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-YTFI-normal */
+/* roboto-flex-cyrillic-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytfi-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-YTFI-normal */
+/* roboto-flex-greek-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytfi-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-YTFI-normal */
+/* roboto-flex-vietnamese-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytfi-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-YTFI-normal */
+/* roboto-flex-latin-ext-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytfi-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-YTFI-normal */
+/* roboto-flex-latin-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTFI-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytfi-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
-      "test/roboto-flex/YTLC.css",
-      "/* roboto-flex-cyrillic-ext-YTLC-normal */
+      "test/roboto-flex/ytlc.css",
+      "/* roboto-flex-cyrillic-ext-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytlc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-YTLC-normal */
+/* roboto-flex-cyrillic-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytlc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-YTLC-normal */
+/* roboto-flex-greek-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytlc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-YTLC-normal */
+/* roboto-flex-vietnamese-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytlc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-YTLC-normal */
+/* roboto-flex-latin-ext-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytlc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-YTLC-normal */
+/* roboto-flex-latin-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTLC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytlc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
-      "test/roboto-flex/YTUC.css",
-      "/* roboto-flex-cyrillic-ext-YTUC-normal */
+      "test/roboto-flex/ytuc.css",
+      "/* roboto-flex-cyrillic-ext-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-ytuc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-YTUC-normal */
+/* roboto-flex-cyrillic-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ytuc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-YTUC-normal */
+/* roboto-flex-greek-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-ytuc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-YTUC-normal */
+/* roboto-flex-vietnamese-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-ytuc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-YTUC-normal */
+/* roboto-flex-latin-ext-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-ytuc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-YTUC-normal */
+/* roboto-flex-latin-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-YTUC-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ytuc-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -885,7 +972,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
 /* roboto-flex-cyrillic-wght-normal */
@@ -894,7 +982,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
 /* roboto-flex-greek-wght-normal */
@@ -903,7 +992,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
 /* roboto-flex-vietnamese-wght-normal */
@@ -912,7 +1002,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* roboto-flex-latin-ext-wght-normal */
@@ -921,7 +1012,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* roboto-flex-latin-wght-normal */
@@ -930,7 +1022,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -942,7 +1035,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-cyrillic-ext-full-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
 /* roboto-flex-cyrillic-full-normal */
@@ -952,7 +1046,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-cyrillic-full-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
 /* roboto-flex-greek-full-normal */
@@ -962,7 +1057,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-greek-full-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
 /* roboto-flex-vietnamese-full-normal */
@@ -972,7 +1068,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-vietnamese-full-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* roboto-flex-latin-ext-full-normal */
@@ -982,7 +1079,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-latin-ext-full-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* roboto-flex-latin-full-normal */
@@ -992,7 +1090,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-latin-full-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -1004,7 +1103,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-cyrillic-ext-standard-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
 /* roboto-flex-cyrillic-standard-normal */
@@ -1014,7 +1114,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-cyrillic-standard-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
 /* roboto-flex-greek-standard-normal */
@@ -1024,7 +1125,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-greek-standard-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
 /* roboto-flex-vietnamese-standard-normal */
@@ -1034,7 +1136,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-vietnamese-standard-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* roboto-flex-latin-ext-standard-normal */
@@ -1044,7 +1147,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-latin-ext-standard-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* roboto-flex-latin-standard-normal */
@@ -1054,7 +1158,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
   font-stretch: 25% 151%;
-  src: url(./files/roboto-flex-latin-standard-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -1065,7 +1170,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-ext-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-ext-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
 /* roboto-flex-cyrillic-wght-normal */
@@ -1074,7 +1180,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-cyrillic-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-cyrillic-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
 /* roboto-flex-greek-wght-normal */
@@ -1083,7 +1190,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-greek-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-greek-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0370-03FF;
 }
 
 /* roboto-flex-vietnamese-wght-normal */
@@ -1092,7 +1200,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-vietnamese-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-vietnamese-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* roboto-flex-latin-ext-wght-normal */
@@ -1101,7 +1210,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-ext-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-ext-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* roboto-flex-latin-wght-normal */
@@ -1110,7 +1220,8 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 100 1000;
-  src: url(./files/roboto-flex-latin-wght-normal.woff2) format('woff2');
+  src: url(./files/roboto-flex-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
   ],
@@ -1190,7 +1301,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-vietnamese-opsz-normal.woff2) format('woff2');
+  src: url(./files/ballet-vietnamese-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* ballet-latin-ext-opsz-normal */
@@ -1199,7 +1311,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-latin-ext-opsz-normal.woff2) format('woff2');
+  src: url(./files/ballet-latin-ext-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* ballet-latin-opsz-normal */
@@ -1208,7 +1321,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-latin-opsz-normal.woff2) format('woff2');
+  src: url(./files/ballet-latin-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -1219,7 +1333,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-vietnamese-standard-normal.woff2) format('woff2');
+  src: url(./files/ballet-vietnamese-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* ballet-latin-ext-standard-normal */
@@ -1228,7 +1343,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-latin-ext-standard-normal.woff2) format('woff2');
+  src: url(./files/ballet-latin-ext-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* ballet-latin-standard-normal */
@@ -1237,7 +1353,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-latin-standard-normal.woff2) format('woff2');
+  src: url(./files/ballet-latin-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
     [
@@ -1248,7 +1365,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-vietnamese-opsz-normal.woff2) format('woff2');
+  src: url(./files/ballet-vietnamese-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
 /* ballet-latin-ext-opsz-normal */
@@ -1257,7 +1375,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-latin-ext-opsz-normal.woff2) format('woff2');
+  src: url(./files/ballet-latin-ext-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 /* ballet-latin-opsz-normal */
@@ -1266,7 +1385,8 @@ exports[`packager variable > should generate variable font without wght successf
   font-style: normal;
   font-display: var(--fontsource-display, swap);
   font-weight: 400;
-  src: url(./files/ballet-latin-opsz-normal.woff2) format('woff2');
+  src: url(./files/ballet-latin-opsz-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }",
     ],
   ],

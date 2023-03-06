@@ -3,7 +3,6 @@ import fs from 'fs-extra';
 import type { FontVariants, FontVariantsVariable } from 'google-font-metadata';
 import { APIv1, APIv2, APIVariable } from 'google-font-metadata';
 import got from 'got';
-import stringify from 'json-stringify-pretty-compact';
 import PQueue from 'p-queue';
 import * as path from 'pathe';
 
@@ -11,7 +10,7 @@ import { BuildOptions } from '../types';
 import { makeFontDownloadPath, makeVariableFontDownloadPath } from '../utils';
 
 const gotDownload = async (url: string, dest: fs.PathLike) => {
-	const response = await got(url);
+	const response = await got(url).buffer();
 	await fs.writeFile(dest, response);
 };
 
@@ -94,35 +93,20 @@ const generateLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 	});
 
 	// V2 { url, dest } pairs
-	const linksV2Duplicates = downloadURLPairsV2.map(pair => {
+	const linksV2 = downloadURLPairsV2.map(pair => {
 		const types = pair[0];
-		const dest =
-			types[4] === 'woff2'
-				? makeFontDownloadPath(
-						opts.dir,
-						id,
-						types[2].replace('[', '').replace(']', ''),
-						Number(types[0]),
-						types[1],
-						types[4]
-				  )
-				: makeFontDownloadPath(
-						opts.dir,
-						id,
-						'all',
-						Number(types[0]),
-						types[1],
-						types[4]
-				  );
+		const dest = makeFontDownloadPath(
+			opts.dir,
+			id,
+			types[2].replace('[', '').replace(']', ''),
+			Number(types[0]),
+			types[1],
+			types[4]
+		);
+
 		const url = pair[1];
 		return { url, dest };
 	});
-
-	// The "all" subset generates duplicates which need to be removed
-	// Filters by removing duplicates with the same dest
-	const linksV2 = [
-		...new Map(linksV2Duplicates.map(item => [item.dest, item])).values(),
-	];
 
 	const links = [...linksV1, ...linksV2];
 	return links;
@@ -165,18 +149,11 @@ const download = async (id: string, opts: BuildOptions) => {
 		: generateLinks(id, opts);
 
 	// Download all font files
-	// Keep a list of all dests for checking successful downloads later
-	const destArr: string[] = [];
 	for (const link of links) {
 		queue.add(() => gotDownload(link.url, link.dest));
-		destArr.push(link.dest);
 	}
 
 	await queue.onIdle();
-	await fs.writeFile(
-		path.join(opts.dir, 'files', 'file-list.json'),
-		stringify(destArr)
-	);
 };
 
 export { download, generateLinks, gotDownload, pairGenerator, variableLinks };

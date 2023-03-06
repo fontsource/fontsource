@@ -3,8 +3,6 @@ import { APILicense, APIv2, APIVariable } from 'google-font-metadata';
 import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
 
-import { sassMetadata } from '../sass/metadata';
-import { sassMixins } from '../sass/mixins';
 import { changelog } from '../templates/changelog';
 import { packageJson } from '../templates/package';
 import { readme } from '../templates/readme';
@@ -54,72 +52,76 @@ const build = async (id: string, opts: BuildOptions) => {
 			await fs.copy(tempPath, pkgJsonPath);
 			await fs.remove(tempPath);
 		} catch {
-			// Continue regardless of error
+			// Continue regardless of error since package.json may not exist
 		}
+
+		// Download all font files
+		await download(id, opts);
+
+		// Generate CSS files
+		if (opts.isVariable) {
+			await packagerVariable(id, opts);
+		} else {
+			await packagerV1(id, opts);
+			await packagerV2(id, opts);
+		}
+
+		// Generate metadata
+		const metadata: Metadata = {
+			id,
+			family: font.family,
+			subsets: font.subsets,
+			weights: font.weights,
+			styles: font.styles,
+			defSubset: font.defSubset,
+			variable: fontVariable ? fontVariable.axes : false,
+			lastModified: font.lastModified,
+			version: font.version,
+			category: font.category as Metadata['category'],
+			license: {
+				type:
+					licenseShort(fontLicense.license.type) ?? fontLicense.license.type,
+				url: fontLicense.license.url,
+				attribution: fontLicense.original,
+			},
+			source: 'https://github.com/google/fonts',
+			type: 'google',
+		};
+    
+    // Write metadata.scss
+    await fs.mkdir(path.join(opts.dir, 'scss'));
+    await fs.writeFile(
+      path.join(opts.dir, 'scss/metadata.scss'),
+      sassMetadata(metadata, font.unicodeRange)
+    );
+
+    // Write mixins.scss
+    await fs.writeFile(path.join(opts.dir, 'scss/mixins.scss'), sassMixins);
+
+		// Write README.md
+		await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata, opts.isVariable));
+
+		// Write unicode.json
+		await fs.writeFile(
+			path.join(opts.dir, 'unicode.json'),
+			stringify(font.unicodeRange)
+		);
+
+		// Write CHANGELOG.md
+		await fs.writeFile(path.join(opts.dir, 'CHANGELOG.md'), changelog);
+
+		// Write LICENSE file
+		await generateLicense(id, fontLicense.license.type, opts);
+
+		// Write metadata.json
+		await fs.writeFile(
+			path.join(opts.dir, 'metadata.json'),
+			stringify(metadata)
+		);
+
+		// Write package.json
+		await packageJson(metadata, opts);
 	}
-
-	// Download all font files
-	await download(id, opts);
-
-	// Generate CSS files
-	if (opts.isVariable) {
-		await packagerVariable(id, opts);
-	} else {
-		await packagerV1(id, opts);
-		await packagerV2(id, opts);
-	}
-
-	// Generate metadata
-	const metadata: Metadata = {
-		id,
-		family: font.family,
-		subsets: font.subsets,
-		weights: font.weights,
-		styles: font.styles,
-		defSubset: font.defSubset,
-		variable: fontVariable.axes ?? false,
-		lastModified: font.lastModified,
-		version: font.version,
-		category: font.category as Metadata['category'],
-		license: {
-			type: licenseShort(fontLicense.license.type) ?? fontLicense.license.type,
-			url: fontLicense.license.url,
-			attribution: fontLicense.original,
-		},
-		source: 'https://github.com/google/fonts',
-		type: 'google',
-	};
-
-	// Write metadata.scss
-	await fs.mkdir(path.join(opts.dir, 'scss'));
-	await fs.writeFile(
-		path.join(opts.dir, 'scss/metadata.scss'),
-		sassMetadata(metadata, font.unicodeRange)
-	);
-
-	// Write mixins.scss
-	await fs.writeFile(path.join(opts.dir, 'scss/mixins.scss'), sassMixins);
-
-	// Write README.md
-	await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata));
-
-	// Write metadata.json
-	await fs.writeFile(path.join(opts.dir, 'metadata.json'), stringify(metadata));
-
-	// Write unicode.json
-	await fs.writeFile(
-		path.join(opts.dir, 'unicode.json'),
-		stringify(font.unicodeRange)
-	);
-
-	// Write CHANGELOG.md
-	await fs.writeFile(path.join(opts.dir, 'CHANGELOG.md'), changelog);
-
-	// Write LICENSE file
-	await generateLicense(id, fontLicense.license.type, opts);
-
-	// Write package.json
-	await packageJson(metadata, opts.dir);
 };
 
 export { build };

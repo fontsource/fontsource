@@ -3,7 +3,7 @@
 exports[`generate font face > should generate a single font face with all variable axis 1`] = `
 "/* latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans Variable';
   font-style: oblique -25deg 15deg;
   font-display: swap;
   font-weight: 400 700;
@@ -35,7 +35,7 @@ exports[`generate font face > should generate a single font face with different 
 
 exports[`generate font face > should generate a single font face with font stretch 1`] = `
 "@font-face {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
@@ -56,7 +56,7 @@ exports[`generate font face > should generate a single font face with multiple f
 
 exports[`generate font face > should generate a single font face with slnt axis 1`] = `
 "@font-face {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans Variable';
   font-style: oblique -20deg 10deg;
   font-display: swap;
   font-weight: 400;
@@ -88,7 +88,7 @@ exports[`generate font face > should generate a single font face with variable f
 
 exports[`generate font face > should generate a single font face with variable wght 1`] = `
 "@font-face {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 400 700;

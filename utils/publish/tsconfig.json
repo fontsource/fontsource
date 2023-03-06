@@ -28,7 +28,7 @@
 
 		/* Type Checking */
 		"strict": true,
-		"types": ["vitest/importMeta"],
+		"types": ["vitest/importMeta", "node"],
 		"isolatedModules": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,

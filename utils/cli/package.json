@@ -1,30 +1,48 @@
 {
 	"name": "@fontsource-utils/cli",
-	"version": "0.1.0",
+	"version": "0.2.0-beta.8",
 	"description": "Fontsource CLI",
-	"bin": "./dist/cli.mjs",
+	"bin": {
+		"fontsource": "./dist/cli.mjs"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
 	"scripts": {
 		"build": "pkgroll --target=node14",
 		"dev": "pnpm run build && node ./dist/cli.mjs",
 		"lint": "eslint --fix",
 		"coverage": "vitest run --coverage",
-		"test": "vitest"
+		"test": "vitest",
+		"prepublish": "pnpm run build"
 	},
-	"keywords": [],
+	"keywords": [
+		"fontsource",
+		"fonts",
+		"google fonts"
+	],
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@clack/prompts": "^0.6.0",
-		"@fontsource-utils/generate": "workspace:0.1.0",
-		"@types/flat": "^5.0.2",
-		"@types/fs-extra": "^9.0.13",
+		"@clack/prompts": "^0.6.1",
+		"@fontsource-utils/generate": "workspace:*",
 		"cac": "^6.7.14",
 		"consola": "^2.15.3",
 		"dotenv": "^16.0.3",
 		"flat": "^5.0.2",
 		"fs-extra": "^11.1.0",
-		"google-font-metadata": "^4.1.4",
-		"got": "^12.5.3",
+		"google-font-metadata": "^5.0.1",
+		"got": "^12.6.0",
 		"json-stringify-pretty-compact": "^4.0.0",
 		"p-queue": "^7.3.4",
 		"pathe": "^1.1.0",
@@ -32,13 +50,15 @@
 	},
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.2.4",
-		"@types/node": "^18.14.1",
-		"@vitest/coverage-c8": "^0.29.1",
-		"eslint": "^8.34.0",
+		"@types/flat": "^5.0.2",
+		"@types/fs-extra": "^11.0.1",
+		"@types/node": "^18.14.6",
+		"@vitest/coverage-c8": "^0.29.2",
+		"eslint": "^8.35.0",
 		"pkgroll": "^1.9.0",
 		"tsx": "^3.12.3",
 		"typescript": "^4.9.5",
-		"vitest": "^0.29.1"
+		"vitest": "^0.29.2"
 	},
 	"files": [
 		"dist/*"
