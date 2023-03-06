@@ -2,6 +2,8 @@ import fs from 'fs-extra';
 import stringify from 'json-stringify-pretty-compact';
 import path from 'pathe';
 
+import { sassMetadata } from '../sass/metadata';
+import { sassMixins } from '../sass/mixins';
 import { changelog } from '../templates/changelog';
 import { packageJson } from '../templates/package';
 import { readme } from '../templates/readme';
@@ -17,7 +19,15 @@ export const buildCustom = async (metadata: Metadata) => {
 	// Generate CSS files
 	await packagerCustom(metadata);
 
-	// TODO: Generate SCSS
+	// Write metadata.scss
+	await fs.mkdir(path.join(dir, 'scss'));
+	await fs.writeFile(
+		path.join(dir, 'scss/metadata.scss'),
+		sassMetadata(metadata, {})
+	);
+
+	// Write mixins.scss
+	await fs.writeFile(path.join(dir, 'scss/mixins.scss'), sassMixins);
 
 	// Write README.md
 	await fs.writeFile(path.join(dir, 'README.md'), readme(metadata, false));

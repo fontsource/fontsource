@@ -55,6 +55,8 @@ const licenseMap = {
 export const licenseShort = (license: string): string | undefined =>
 	licenseMap[license.toLowerCase() as keyof typeof licenseMap];
 
+export const sassVar = (key: string, value: string) =>
+	`$${key}: ${value} !default;\n`;
 
 export {
 	findClosest,

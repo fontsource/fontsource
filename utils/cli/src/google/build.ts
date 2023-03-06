@@ -3,6 +3,8 @@ import { APILicense, APIv2, APIVariable } from 'google-font-metadata';
 import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
 
+import { sassMetadata } from '../sass/metadata';
+import { sassMixins } from '../sass/mixins';
 import { changelog } from '../templates/changelog';
 import { packageJson } from '../templates/package';
 import { readme } from '../templates/readme';
@@ -66,8 +68,6 @@ const build = async (id: string, opts: BuildOptions) => {
 			await packagerV2(id, opts);
 		}
 
-		// TODO: Generate SCSS
-
 		// Generate metadata
 		const metadata: Metadata = {
 			id,
@@ -89,6 +89,16 @@ const build = async (id: string, opts: BuildOptions) => {
 			source: 'https://github.com/google/fonts',
 			type: 'google',
 		};
+
+		// Write metadata.scss
+		await fs.mkdir(path.join(opts.dir, 'scss'));
+		await fs.writeFile(
+			path.join(opts.dir, 'scss/metadata.scss'),
+			sassMetadata(metadata, font.unicodeRange)
+		);
+
+		// Write mixins.scss
+		await fs.writeFile(path.join(opts.dir, 'scss/mixins.scss'), sassMixins);
 
 		// Write README.md
 		await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata, opts.isVariable));
