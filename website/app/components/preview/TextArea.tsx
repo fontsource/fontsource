@@ -15,7 +15,7 @@ import { useEffect, useState } from 'react';
 import { useFontLoaded } from '@/hooks/useFontLoaded';
 import type { Metadata } from '@/utils/types';
 
-import { italicAtom, sizeAtom } from './atoms';
+import { italicAtom, sizeAtom, variationAtom } from './atoms';
 
 interface TagProps {
 	weight: number;
@@ -118,6 +118,7 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 	);
 	const [size] = useAtom(sizeAtom);
 	const [italic] = useAtom(italicAtom);
+	const [fontVariation] = useAtom(variationAtom);
 
 	return (
 		<>
@@ -126,10 +127,20 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 					<TextInput
 						variant="unstyled"
 						sx={{
-							input: { fontFamily: family, fontWeight: weight, fontSize: size, lineHeight: 1, height: 'auto', fontStyle: italic ? 'italic' : 'normal' },
+							input: {
+								fontFamily: family,
+								fontWeight: weight,
+								fontSize: size,
+								lineHeight: 1,
+								height: 'auto',
+								fontStyle: italic ? 'italic' : 'normal',
+								fontVariationSettings: fontVariation,
+							},
 						}}
 						value={previewText}
-						onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPreviewText(event.currentTarget.value)}
+						onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+							setPreviewText(event.currentTarget.value)
+						}
 						autoComplete="off"
 						ref={ref}
 					/>
