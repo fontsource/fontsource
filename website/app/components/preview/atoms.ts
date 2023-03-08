@@ -8,13 +8,12 @@ const letterSpacingAtom = atom(2);
 const colorAtom = atom('#000000');
 const transparencyAtom = atom(100);
 
-// Generate font-variation-settings string from axes object
+// Generate font-variation-settings string from axes object e.g. "wght" 400, "wdth" 100
 const createFontVariation = (axes: Record<string, number>) => {
 	let fontVariation = '';
 	for (const [key, value] of Object.entries(axes)) {
 		fontVariation += `"${key}" ${value}, `;
 	}
-	console.log(fontVariation)
 	// Remove trailing comma and space
 	return fontVariation.slice(0, -2);
 };

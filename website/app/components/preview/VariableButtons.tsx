@@ -17,6 +17,7 @@ interface VariableButtonProps {
 }
 
 const VariableSlider = ({ axes }: VariableButtonProps) => {
+	// if ital slider, also modify italicatom to fetch italic font
 	return (
 		<Group position="apart">
 			<Text>Optical Size {JSON.stringify(axes)}</Text>
