@@ -17,7 +17,7 @@ const getFontList = async (): Promise<FontList> => {
 };
 
 const BASE_URL = (type: MetadataType) =>
-	`https://raw.githubusercontent.com/fontsource/font-files/main/fonts/${type}`;
+	`https://cdn.jsdelivr.net/gh/fontsource/font-files@main/fonts/${type}`;
 
 const fetchMetadata = async (id: string, type?: MetadataType) => {
 	if (!type) {

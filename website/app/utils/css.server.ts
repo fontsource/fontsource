@@ -6,7 +6,7 @@ import type { DownloadMetadata, MetadataType } from './types';
 import { isStandardAxesKey, kya } from './utils.server';
 
 const BASE_URL = (type: MetadataType) =>
-	`https://raw.githubusercontent.com/fontsource/font-files/main/fonts/${type}`;
+	`https://cdn.jsdelivr.net/gh/fontsource/font-files@main/fonts/${type}`;
 
 // Insert a weight array to find the closest number given num - used for index.css gen
 const findClosest = (arr: number[], num: number): number => {
