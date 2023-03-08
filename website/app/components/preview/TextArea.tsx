@@ -126,10 +126,10 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 					<TextInput
 						variant="unstyled"
 						sx={{
-							input: { fontFamily: family, fontWeight: weight, fontSize: size },
+							input: { fontFamily: family, fontWeight: weight, fontSize: size, lineHeight: 1, height: 'auto', fontStyle: italic ? 'italic' : 'normal' },
 						}}
 						value={previewText}
-						onChange={(event) => setPreviewText(event.currentTarget.value)}
+						onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPreviewText(event.currentTarget.value)}
 						autoComplete="off"
 						ref={ref}
 					/>
