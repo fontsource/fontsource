@@ -2,24 +2,19 @@ import { Axes, Metadata, UnicodeRange } from '../types';
 import { findClosest, sassVar } from '../utils';
 
 const axesValue = (metadata: Metadata) => {
-	if (metadata.variable && Object.keys(metadata.variable).length > 0) {
-		let out = '(\n';
-		for (const variable of Object.keys(metadata.variable)) {
-			const axis = (metadata.variable as Axes)[variable];
-			out += `  ${variable}: (
+	let out = '(\n';
+	for (const variable of Object.keys(metadata.variable)) {
+		const axis = (metadata.variable as Axes)[variable];
+		out += `  ${variable}: (
     default: ${axis.default},
     min: ${axis.min},
     max: ${axis.max},
     step: ${axis.step},
   ),
 `;
-		}
-		out += ')';
-
-		return out;
 	}
-
-	return 'null';
+	out += ')';
+	return out;
 };
 
 const unicodeValue = (unicode: UnicodeRange) => {
@@ -44,17 +39,16 @@ const unicodeValue = (unicode: UnicodeRange) => {
 
 const defaultAxis = (metadata: Metadata) => {
 	const axes = Object.keys(metadata.variable);
-
-	if (axes.length > 0) {
-		if (axes.includes('wght')) return 'wght';
-		if (axes.includes('full')) return 'full';
-		return axes[0];
-	}
-
-	return 'null';
+	if (axes.includes('wght')) return 'wght';
+	if (axes.includes('full')) return 'full';
+	return axes[0];
 };
 
-export const sassMetadata = (metadata: Metadata, unicode: UnicodeRange) => {
+export const sassMetadata = (
+	metadata: Metadata,
+	unicode: UnicodeRange,
+	isVariable: boolean
+) => {
 	let out = '';
 
 	out += sassVar('id', `'${metadata.id}'`);
@@ -63,14 +57,14 @@ export const sassMetadata = (metadata: Metadata, unicode: UnicodeRange) => {
 	out += sassVar('subsets', `(${metadata.subsets.join(', ')})`);
 	out += sassVar('weights', `(${metadata.weights.join(', ')})`);
 	out += sassVar('styles', `(${metadata.styles.join(', ')})`);
-	out += sassVar('axes', axesValue(metadata));
+	out += sassVar('axes', isVariable ? axesValue(metadata) : 'null');
 	out += sassVar(
 		'defaults',
 		`(
   subset: ${metadata.defSubset},
   weight: ${findClosest(metadata.weights, 400)},
   style: normal,
-  axis: ${defaultAxis(metadata)},
+  axis: ${isVariable ? defaultAxis(metadata) : 'null'},
 )`
 	);
 	out += sassVar('unicode', unicodeValue(unicode));

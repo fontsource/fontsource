@@ -94,7 +94,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		await fs.mkdir(path.join(opts.dir, 'scss'));
 		await fs.writeFile(
 			path.join(opts.dir, 'scss/metadata.scss'),
-			sassMetadata(metadata, font.unicodeRange)
+			sassMetadata(metadata, font.unicodeRange, opts.isVariable)
 		);
 
 		// Write mixins.scss
