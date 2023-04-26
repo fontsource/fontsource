@@ -31,7 +31,7 @@ lease:
 
   consul:
     url: '${FLY_CONSUL_URL}'
-    key: 'litefs/${FLY_APP_NAME}'
+    key: '${FLY_APP_NAME}/primary'
 
 exec:
   - cmd: 'npm run migrations'
