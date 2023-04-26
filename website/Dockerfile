@@ -20,7 +20,7 @@ COPY package.json ./
 RUN pnpm install
 
 # Setup production node_modules
-FROM base as production-deps
+FROM base AS production-deps
 
 RUN mkdir /app
 WORKDIR /app
@@ -30,7 +30,7 @@ COPY package.json ./
 RUN pnpm prune --prod
 
 # Build the app
-FROM base as build
+FROM base AS build
 
 ENV NODE_ENV=production
 
@@ -59,7 +59,6 @@ COPY --from=production-deps /app/node_modules /app/node_modules
 
 COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
-COPY --from=build /app/scripts /app/scripts
 
 # Setup LiteFS
 COPY --from=litefs /usr/local/bin/litefs /usr/local/bin/litefs
