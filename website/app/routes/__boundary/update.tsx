@@ -10,14 +10,11 @@ import {
 } from '@/utils/metadata.server';
 import type { MetadataType } from '@/utils/types';
 
-import deployMigrations from '../../../scripts/migrations.js';
-
 interface UpdateData {
 	token: string;
 	fonts?: boolean | string[];
 	algolia?: boolean;
 	download?: boolean;
-	migrations?: boolean;
 	force?: boolean;
 }
 
@@ -73,10 +70,6 @@ export const action: ActionFunction = async ({ request }) => {
 
 	if (data.download) {
 		await updateDownloadCount();
-	}
-
-	if (data.migrations) {
-		await deployMigrations();
 	}
 
 	return new Response('Success!');

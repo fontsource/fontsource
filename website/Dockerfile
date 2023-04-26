@@ -69,4 +69,4 @@ RUN mkdir -p /data ${LITEFS_DIR}
 ADD . .
 
 EXPOSE 3000
-CMD ["litefs", "mount", "--", "node", "./scripts/start.js"]
+CMD ["litefs", "mount"]
