@@ -11,7 +11,7 @@ RUN npm install -g pnpm
 RUN pnpm --version
 
 # Install all node_modules, including dev dependencies
-FROM base as deps
+FROM base AS deps
 
 RUN mkdir /app
 WORKDIR /app

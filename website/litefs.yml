@@ -18,7 +18,7 @@ proxy:
     - '/*.txt'
     - '/*.svg'
 
-# This flag ensure that LiteFS continues to run if there is an issue on starup.
+# This flag ensure that LiteFS continues to run if there is an issue on startup.
 # It makes it easy to ssh in and debug any issues you might be having rather
 # than continually restarting on initialization failure.
 exit-on-error: false
@@ -27,7 +27,6 @@ lease:
   candidate: ${FLY_REGION == PRIMARY_REGION}
   promote: true
   type: 'consul'
-  # candidate: ${FLY_REGION == 'den'}
   advertise-url: 'http://${HOSTNAME}.vm.${FLY_APP_NAME}.internal:20202'
 
   consul:
