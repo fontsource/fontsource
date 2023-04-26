@@ -24,10 +24,10 @@ proxy:
 exit-on-error: false
 
 lease:
+	type: 'consul'
   candidate: ${FLY_REGION == PRIMARY_REGION}
   promote: true
-  type: 'consul'
-  advertise-url: 'http://${HOSTNAME}.vm.${FLY_APP_NAME}.internal:20202'
+  advertise-url: 'http://${FLY_ALLOC_ID}.vm.${FLY_APP_NAME}.internal:20202'
 
   consul:
     url: '${FLY_CONSUL_URL}'
