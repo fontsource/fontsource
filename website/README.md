@@ -7,3 +7,7 @@
 - `pnpm install`
 - `pnpm migrations`
 - `pnpm dev`
+
+## Deploy
+
+- `fly deploy --remote-only`
