@@ -11,3 +11,7 @@
 ## Deploy
 
 - `fly deploy --remote-only`
+
+#### Production Settings
+
+- `fly scale count 3 --region lhr,sjc,nrt --max-per-region 1`
