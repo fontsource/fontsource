@@ -1,10 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-<<<<<<<< HEAD:utils/generate/tests/__snapshots__/generate-font-face.test.ts.snap
-exports[`generateFontFace > should generate a single font face with all variable axis 1`] = `
-========
 exports[`generate font face > should generate a single font face with all variable axis 1`] = `
->>>>>>>> feat/cli:utils/generate/tests/__snapshots__/generate.test.ts.snap
 "/* latin */
 @font-face {
   font-family: 'Open Sans Variable';
@@ -17,11 +13,7 @@ exports[`generate font face > should generate a single font face with all variab
 }"
 `;
 
-<<<<<<<< HEAD:utils/generate/tests/__snapshots__/generate-font-face.test.ts.snap
-exports[`generateFontFace > should generate a single font face with different display 1`] = `
-========
 exports[`generate font face > should generate a single font face with different display 1`] = `
->>>>>>>> feat/cli:utils/generate/tests/__snapshots__/generate.test.ts.snap
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -31,11 +23,7 @@ exports[`generate font face > should generate a single font face with different 
 }"
 `;
 
-<<<<<<<< HEAD:utils/generate/tests/__snapshots__/generate-font-face.test.ts.snap
-exports[`generateFontFace > should generate a single font face with font stretch 1`] = `
-========
 exports[`generate font face > should generate a single font face with different variable font display fallback 1`] = `
->>>>>>>> feat/cli:utils/generate/tests/__snapshots__/generate.test.ts.snap
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -56,11 +44,7 @@ exports[`generate font face > should generate a single font face with font stret
 }"
 `;
 
-<<<<<<<< HEAD:utils/generate/tests/__snapshots__/generate-font-face.test.ts.snap
-exports[`generateFontFace > should generate a single font face with multiple formats 1`] = `
-========
 exports[`generate font face > should generate a single font face with multiple formats 1`] = `
->>>>>>>> feat/cli:utils/generate/tests/__snapshots__/generate.test.ts.snap
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -70,11 +54,7 @@ exports[`generate font face > should generate a single font face with multiple f
 }"
 `;
 
-<<<<<<<< HEAD:utils/generate/tests/__snapshots__/generate-font-face.test.ts.snap
-exports[`generateFontFace > should generate a single font face with slnt axis 1`] = `
-========
 exports[`generate font face > should generate a single font face with slnt axis 1`] = `
->>>>>>>> feat/cli:utils/generate/tests/__snapshots__/generate.test.ts.snap
 "@font-face {
   font-family: 'Open Sans Variable';
   font-style: oblique -20deg 10deg;
@@ -84,11 +64,7 @@ exports[`generate font face > should generate a single font face with slnt axis 
 }"
 `;
 
-<<<<<<<< HEAD:utils/generate/tests/__snapshots__/generate-font-face.test.ts.snap
-exports[`generateFontFace > should generate a single font face with unicode range 1`] = `
-========
 exports[`generate font face > should generate a single font face with unicode range 1`] = `
->>>>>>>> feat/cli:utils/generate/tests/__snapshots__/generate.test.ts.snap
 "/* latin */
 @font-face {
   font-family: 'Open Sans';
@@ -100,11 +76,7 @@ exports[`generate font face > should generate a single font face with unicode ra
 }"
 `;
 
-<<<<<<<< HEAD:utils/generate/tests/__snapshots__/generate-font-face.test.ts.snap
-exports[`generateFontFace > should generate a single font face with variable wght 1`] = `
-========
 exports[`generate font face > should generate a single font face with variable font display 1`] = `
->>>>>>>> feat/cli:utils/generate/tests/__snapshots__/generate.test.ts.snap
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -124,11 +96,7 @@ exports[`generate font face > should generate a single font face with variable w
 }"
 `;
 
-<<<<<<<< HEAD:utils/generate/tests/__snapshots__/generate-font-face.test.ts.snap
-exports[`generateFontFace > should generate a single font-face 1`] = `
-========
 exports[`generate font face > should generate a single font-face 1`] = `
->>>>>>>> feat/cli:utils/generate/tests/__snapshots__/generate.test.ts.snap
 "@font-face {
   font-family: 'Open Sans';
   font-style: normal;
