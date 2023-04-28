@@ -12,6 +12,7 @@ import { BuildOptions, Metadata } from '../types';
 import { licenseShort } from '../utils';
 import { download } from './download';
 import { generateLicense } from './license';
+import { packagerIconsStatic, packagerIconsVariable } from './packager-icons';
 import { packagerV1 } from './packager-v1';
 import { packagerV2 } from './packager-v2';
 import { packagerVariable } from './packager-variable';
@@ -61,7 +62,11 @@ const build = async (id: string, opts: BuildOptions) => {
 		await download(id, opts);
 
 		// Generate CSS files
-		if (opts.isVariable) {
+		if (opts.isIcon) {
+			await (opts.isVariable
+				? packagerIconsVariable(id, opts)
+				: packagerIconsStatic(id, opts));
+		} else if (opts.isVariable) {
 			await packagerVariable(id, opts);
 		} else {
 			await packagerV1(id, opts);
