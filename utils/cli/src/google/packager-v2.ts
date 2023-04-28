@@ -21,6 +21,9 @@ const packagerV2 = async (id: string, opts: BuildOptions) => {
 			const cssStyle: string[] = [];
 
 			for (const subset of unicodeKeys) {
+				// Remove brackets from unicode subset
+				const cleanedSubset = subset.replace('[', '').replace(']', '');
+
 				// Some fonts may have variants 400, 400i, 700 but not 700i.
 				if (style in variants[weight]) {
 					const fontObj = {
@@ -33,16 +36,16 @@ const packagerV2 = async (id: string, opts: BuildOptions) => {
 							{
 								url: makeFontFilePath(
 									id,
-									subset.replace('[', '').replace(']', ''), // Remove brackets from unicode subset
+									cleanedSubset,
 									weight,
 									style,
 									'woff2'
 								),
-								format: 'woff2',
+								format: 'woff2' as const,
 							},
 							{
-								url: makeFontFilePath(id, 'all', weight, style, 'woff'),
-								format: 'woff',
+								url: makeFontFilePath(id, cleanedSubset, weight, style, 'woff'),
+								format: 'woff' as const,
 							},
 						],
 						comment: `${id}-${subset}-${weight}-${style}`,

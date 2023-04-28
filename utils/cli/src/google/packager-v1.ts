@@ -27,11 +27,11 @@ const packagerV1 = async (id: string, opts: BuildOptions) => {
 						src: [
 							{
 								url: makeFontFilePath(id, subset, weight, style, 'woff2'),
-								format: 'woff2',
+								format: 'woff2' as const,
 							},
 							{
 								url: makeFontFilePath(id, subset, weight, style, 'woff'),
-								format: 'woff',
+								format: 'woff' as const,
 							},
 						],
 						comment: `${id}-${subset}-${weight}-${style}`,
