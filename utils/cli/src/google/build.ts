@@ -101,7 +101,10 @@ const build = async (id: string, opts: BuildOptions) => {
 		await fs.writeFile(path.join(opts.dir, 'scss/mixins.scss'), sassMixins);
 
 		// Write README.md
-		await fs.writeFile(path.join(opts.dir, 'README.md'), readme(metadata, opts.isVariable));
+		await fs.writeFile(
+			path.join(opts.dir, 'README.md'),
+			readme(metadata, opts.isVariable)
+		);
 
 		// Write unicode.json
 		await fs.writeFile(

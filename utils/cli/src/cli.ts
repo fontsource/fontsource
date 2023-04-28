@@ -6,10 +6,12 @@ import {
 	fetchAPI,
 	fetchVariable,
 	generateAxis,
+	parseIcons,
 	parseLicenses,
 	parsev1,
 	parsev2,
-	parseVariable } from 'google-font-metadata';
+	parseVariable,
+} from 'google-font-metadata';
 import colors from 'picocolors';
 
 import { version } from '../package.json';
@@ -36,10 +38,11 @@ cli
 				consola.info('Parsing all metadata...');
 			}
 			await Promise.all([fetchAPI(finalKey), fetchVariable()]);
-			await parsev1(options.force, false);
-			await parsev2(options.force, false);
+			await parsev1(options.force, true);
+			await parsev2(options.force, true);
 			await generateAxis();
-			await parseVariable(false);
+			await parseVariable(true);
+			await parseIcons(options.force);
 			await parseLicenses();
 		} catch (error) {
 			consola.error(error);
@@ -48,12 +51,15 @@ cli
 
 cli
 	.command('build [...fonts]', 'Build font packages')
-	.option('-v, --variable', 'Only build variable fonts')
 	.option('-f, --force', 'Force rebuild all packages')
 	.option('-t, --test', 'Build test fonts only')
 	.action(async (fonts: string[], options) => {
 		try {
-			consola.info(`Building packages... ${options.force ? colors.bold(colors.red('[FORCE]')) : ''}`);
+			consola.info(
+				`Building packages... ${
+					options.force ? colors.bold(colors.red('[FORCE]')) : ''
+				}`
+			);
 			await processGoogle(options, fonts);
 		} catch (error) {
 			consola.error(error);

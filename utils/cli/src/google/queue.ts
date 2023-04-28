@@ -1,6 +1,11 @@
 import consola from 'consola';
 import fs from 'fs-extra';
-import { APIv2, APIVariable } from 'google-font-metadata';
+import {
+	APIIconStatic,
+	APIIconVariable,
+	APIv2,
+	APIVariable,
+} from 'google-font-metadata';
 import PQueue from 'p-queue';
 import * as path from 'pathe';
 import colors from 'picocolors';
@@ -43,7 +48,36 @@ const buildVariablePackage = async (id: string, opts: BuildOptions) => {
 		dir: path.join(opts.dir, 'variable', id),
 	};
 	await build(id, optsNew);
-	consola.success(`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE]'))}`);
+	consola.success(
+		`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE]'))}`
+	);
+};
+
+const buildIconPackage = async (id: string, opts: BuildOptions) => {
+	consola.info(`Downloading ${id} ${colors.bold(colors.green('[ICON]'))}`);
+	const optsNew = {
+		...opts,
+		dir: path.join(opts.dir, 'icons', id),
+	};
+	await build(id, optsNew);
+	consola.success(
+		`Finished processing ${id} ${colors.bold(colors.green('[ICON]'))}`
+	);
+};
+
+const buildVariableIconPackage = async (id: string, opts: BuildOptions) => {
+	consola.info(
+		`Downloading ${id} ${colors.bold(colors.yellow('[VARIABLE ICON]'))}`
+	);
+	const optsNew = {
+		...opts,
+		isVariable: true,
+		dir: path.join(opts.dir, 'variable-icons', id),
+	};
+	await build(id, optsNew);
+	consola.success(
+		`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE ICON]'))}`
+	);
 };
 
 const testIds = [
@@ -54,7 +88,7 @@ const testIds = [
 	'fraunces',
 	'noto-sans-jp',
 	'recursive',
-	'roboto-flex'
+	'roboto-flex',
 ];
 
 export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
@@ -72,12 +106,14 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 		fontIds = Object.keys(APIv2);
 	}
 
+	// Normal fonts
 	for (const id of fontIds) {
 		// Create default options
 		const buildOpts: BuildOptions = {
 			dir: outDir,
 			tmpDir,
 			isVariable: false,
+			isIcon: false,
 			force: opts.force ?? false,
 		};
 
@@ -91,9 +127,38 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 					queue.add(() => buildVariablePackage(id, buildOpts));
 				}
 			} else {
-				consola.warn(
-					`Skipping ${id} as it is not a Google Font.`
-				);
+				consola.warn(`Skipping ${id} as it is not a Google Font.`);
+			}
+		} catch (error) {
+			throw new Error(`${id} experienced an error. ${error}`);
+		}
+	}
+
+	// Icons
+	if (!fonts || fonts.length === 0) {
+		fontIds = Object.keys(APIIconStatic);
+	}
+
+	for (const id of fontIds) {
+		// Create default options
+		const buildOpts: BuildOptions = {
+			dir: outDir,
+			tmpDir,
+			isVariable: false,
+			isIcon: true,
+			force: opts.force ?? false,
+		};
+
+		try {
+			if (id in APIIconStatic) {
+				// Create base font package
+				queue.add(() => buildIconPackage(id, buildOpts));
+
+				if (APIIconVariable[id]) {
+					queue.add(() => buildVariableIconPackage(id, buildOpts));
+				}
+			} else {
+				consola.warn(`Skipping ${id} as it is not a Google Font.`);
 			}
 		} catch (error) {
 			throw new Error(`${id} experienced an error. ${error}`);

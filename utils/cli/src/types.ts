@@ -7,7 +7,8 @@ export interface BuildOptions {
 	dir: string;
 	tmpDir: string;
 	force: boolean;
-	isVariable: boolean;
+	isVariable?: boolean;
+	isIcon?: boolean;
 }
 
 export interface Axes {

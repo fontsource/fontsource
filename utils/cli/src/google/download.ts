@@ -1,7 +1,13 @@
 import flatten from 'flat';
 import fs from 'fs-extra';
 import type { FontVariants, FontVariantsVariable } from 'google-font-metadata';
-import { APIv1, APIv2, APIVariable } from 'google-font-metadata';
+import {
+	APIIconStatic,
+	APIIconVariable,
+	APIv1,
+	APIv2,
+	APIVariable,
+} from 'google-font-metadata';
 import got from 'got';
 import PQueue from 'p-queue';
 import * as path from 'pathe';
@@ -138,15 +144,71 @@ const variableLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 	return links;
 };
 
+const iconStaticLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
+	const iconStatic = APIIconStatic[id];
+
+	const downloadURLPairsIconStatic = pairGenerator(iconStatic.variants);
+
+	// Icon Static { url, dest } pairs
+	// Types [type, style, subset]
+	const links = downloadURLPairsIconStatic.map(pair => {
+		const types = pair[0];
+		const dest = makeFontDownloadPath(
+			opts.dir,
+			id,
+			types[2].replace('[', '').replace(']', ''),
+			Number(types[0]),
+			types[1],
+			types[4]
+		);
+		const url = pair[1];
+		return {
+			url,
+			dest,
+		};
+	});
+
+	return links;
+};
+
+const iconVariableLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
+	const iconVariable = APIIconVariable[id];
+
+	const downloadURLPairsIconVariable = pairGenerator(iconVariable.variants);
+
+	// Icon Variable { url, dest } pairs
+	// Types [type, style, subset]
+	const links = downloadURLPairsIconVariable.map(pair => {
+		const types = pair[0];
+		const dest = makeVariableFontDownloadPath(
+			opts.dir,
+			id,
+			types[2].replace('[', '').replace(']', ''),
+			types[0],
+			types[1]
+		);
+
+		const url = pair[1];
+		return { url, dest };
+	});
+
+	return links;
+};
+
 const queue = new PQueue({ concurrency: 60 });
 
 const download = async (id: string, opts: BuildOptions) => {
 	await fs.ensureDir(path.join(opts.dir, 'files'));
 
 	// Get download URLs of font files
-	const links = opts.isVariable
-		? variableLinks(id, opts)
-		: generateLinks(id, opts);
+	let links: DownloadLinks[];
+	if (opts.isIcon) {
+		links = opts.isVariable
+			? iconVariableLinks(id, opts)
+			: iconStaticLinks(id, opts);
+	} else {
+		links = opts.isVariable ? variableLinks(id, opts) : generateLinks(id, opts);
+	}
 
 	// Download all font files
 	for (const link of links) {
