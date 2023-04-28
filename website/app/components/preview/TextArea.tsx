@@ -15,7 +15,7 @@ import { useEffect, useState } from 'react';
 import { useFontLoaded } from '@/hooks/useFontLoaded';
 import type { Metadata } from '@/utils/types';
 
-import { italicAtom, sizeAtom, variationAtom } from './atoms';
+import { colorAtom, italicAtom, letterSpacingAtom, lineHeightAtom, sizeAtom, transparencyAtom, variationAtom } from './atoms';
 
 interface TagProps {
 	weight: number;
@@ -118,7 +118,11 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 	);
 	const [size] = useAtom(sizeAtom);
 	const [italic] = useAtom(italicAtom);
+	const [letterSpacing] = useAtom(letterSpacingAtom);
+	const [lineHeight] = useAtom(lineHeightAtom);
 	const [fontVariation] = useAtom(variationAtom);
+	const [color] = useAtom(colorAtom);
+	const [transparency] = useAtom(transparencyAtom);
 
 	return (
 		<>
@@ -131,7 +135,10 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 								fontFamily: family,
 								fontWeight: weight,
 								fontSize: size,
-								lineHeight: 1,
+								color,
+								letterSpacing,
+								lineHeight,
+								opacity: transparency / 100,
 								height: 'auto',
 								fontStyle: italic ? 'italic' : 'normal',
 								fontVariationSettings: fontVariation,

@@ -31,6 +31,9 @@ interface SliderButtonProps {
 	value: any;
 	setValue: (value: React.SetStateAction<any>) => void;
 	suffix?: string;
+	defaultValue?: number;
+	min?: number;
+	max?: number;
 }
 
 interface ColorButtonProps {
@@ -77,6 +80,9 @@ const SliderButton = ({
 	value,
 	setValue,
 	suffix,
+	defaultValue,
+	min,
+	max,
 }: SliderButtonProps) => {
 	const { classes } = useStyles();
 
@@ -102,6 +108,9 @@ const SliderButton = ({
 					label={null}
 					value={value}
 					onChange={setValue}
+					defaultValue={defaultValue}
+					min={min}
+					max={max}
 				/>
 			</Popover.Dropdown>
 		</Popover>
@@ -137,12 +146,15 @@ const NormalButtonsGroup = ({ hasItalic }: ButtonsProps) => {
 					icon={<IconVertical />}
 					value={lineHeight}
 					setValue={setLineHeight}
+					max={10}
 				/>
 				<SliderButton
 					label="Letter Spacing"
 					icon={<IconHorizontal />}
 					value={letterSpacing}
 					setValue={setLetterSpacing}
+					min={-20}
+					max={80}
 				/>
 			</Group>
 			<Group grow>
