@@ -1,5 +1,11 @@
 import fs from 'fs-extra';
-import { APILicense, APIv2, APIVariable } from 'google-font-metadata';
+import {
+	APIIconStatic,
+	APIIconVariable,
+	APILicense,
+	APIv2,
+	APIVariable,
+} from 'google-font-metadata';
 import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
 
@@ -18,8 +24,8 @@ import { packagerV2 } from './packager-v2';
 import { packagerVariable } from './packager-variable';
 
 const build = async (id: string, opts: BuildOptions) => {
-	const font = APIv2[id];
-	const fontVariable = APIVariable[id];
+	const font = opts.isIcon ? APIIconStatic[id] : APIv2[id];
+	const fontVariable = opts.isIcon ? APIIconVariable[id] : APIVariable[id];
 	const fontLicense = APILicense[id];
 
 	// Set file directories
