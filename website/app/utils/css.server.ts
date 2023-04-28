@@ -1,6 +1,7 @@
 import { HTTPError } from 'ky';
 
 import { knex } from './db.server';
+import { ensurePrimary } from './fly.server';
 import { fetchMetadata } from './metadata.server';
 import type { DownloadMetadata, MetadataType } from './types';
 import { isStandardAxesKey, kya } from './utils.server';
@@ -36,6 +37,7 @@ const cssRewrite = (css: string, id: string, type: MetadataType) =>
 // const STANDARD_AXES = ['opsz', 'slnt', 'wdth', 'wght'] as const;
 
 const addCss = async (metadata: DownloadMetadata) => {
+	await ensurePrimary();
 	// Add general CSS
 	const { id, weights, styles, variable, type } = metadata;
 	for (const weight of weights) {
@@ -150,9 +152,12 @@ const addCss = async (metadata: DownloadMetadata) => {
 				});
 			} else if (keys.length === 1) {
 				// Some fonts have a single axis that is not wght
-				css = await kya(`${BASE_URL('variable')}/${id}/${keys[0].toLowerCase()}.css`, {
-					text: true,
-				});
+				css = await kya(
+					`${BASE_URL('variable')}/${id}/${keys[0].toLowerCase()}.css`,
+					{
+						text: true,
+					}
+				);
 			} else if (keys.every((key) => isStandardAxesKey(key))) {
 				css = await kya(`${BASE_URL('variable')}/${id}/standard.css`, {
 					text: true,

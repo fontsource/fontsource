@@ -1,5 +1,6 @@
 import { addCss } from './css.server';
 import { knex } from './db.server';
+import { ensurePrimary } from './fly.server';
 import type {
 	DownloadMetadata,
 	FontList,
@@ -20,11 +21,15 @@ const BASE_URL = (type: MetadataType) =>
 	`https://cdn.jsdelivr.net/gh/fontsource/font-files@main/fonts/${type}`;
 
 const fetchMetadata = async (id: string, type?: MetadataType) => {
+	await ensurePrimary();
+
 	if (!type) {
 		const fontList = await getFontList();
 		type = fontList[id] as MetadataType;
 		if (!isMetadataType(type))
-			throw new Error(`Font ID ${id} does not have a valid metadata type (${type}).`);
+			throw new Error(
+				`Font ID ${id} does not have a valid metadata type (${type}).`
+			);
 	}
 
 	const METADATA_URL = `${BASE_URL(type)}/${id}/metadata.json`;
@@ -130,6 +135,8 @@ const getDownloadCountList = async () => {
 };
 
 const updateDownloadCount = async () => {
+	await ensurePrimary();
+
 	const { month, total } = await getDownloadCountList();
 	const insertData = [];
 	for (const id of Object.keys(month)) {
