@@ -1,4 +1,6 @@
 export {
+	APIIconStatic,
+	APIIconVariable,
 	APILicense,
 	APIRegistry,
 	APIv1,
