@@ -1,0 +1,316 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`packager custom > should generate custom CSS successfully 1`] = `
+[MockFunction writeFile] {
+  "calls": [
+    [
+      "custom-font/latin-400.css",
+      "/* custom-font-latin-400-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-400-italic.css",
+      "/* custom-font-latin-400-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-400-italic.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/index.css",
+      "/* custom-font-latin-400-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin.css",
+      "/* custom-font-latin-400-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-italic.css",
+      "/* custom-font-latin-400-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-400-italic.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-500.css",
+      "/* custom-font-latin-500-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 500;
+  src: url(./files/custom-font-latin-500-normal.woff2) format('woff2'), url(./files/custom-font-latin-500-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-500-italic.css",
+      "/* custom-font-latin-500-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 500;
+  src: url(./files/custom-font-latin-500-italic.woff2) format('woff2'), url(./files/custom-font-latin-500-italic.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin.css",
+      "/* custom-font-latin-400-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-400-normal.woff) format('woff');
+}
+
+/* custom-font-latin-500-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 500;
+  src: url(./files/custom-font-latin-500-normal.woff2) format('woff2'), url(./files/custom-font-latin-500-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-italic.css",
+      "/* custom-font-latin-400-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-400-italic.woff) format('woff');
+}
+
+/* custom-font-latin-500-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 500;
+  src: url(./files/custom-font-latin-500-italic.woff2) format('woff2'), url(./files/custom-font-latin-500-italic.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-ext-400.css",
+      "/* custom-font-latin-ext-400-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-ext-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-ext-400-italic.css",
+      "/* custom-font-latin-ext-400-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-ext-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-italic.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/index.css",
+      "/* custom-font-latin-ext-400-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-ext-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-ext.css",
+      "/* custom-font-latin-ext-400-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-ext-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-ext-italic.css",
+      "/* custom-font-latin-ext-400-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-ext-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-italic.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-ext-500.css",
+      "/* custom-font-latin-ext-500-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 500;
+  src: url(./files/custom-font-latin-ext-500-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-500-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-ext-500-italic.css",
+      "/* custom-font-latin-ext-500-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 500;
+  src: url(./files/custom-font-latin-ext-500-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-500-italic.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-ext.css",
+      "/* custom-font-latin-ext-400-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-ext-400-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-normal.woff) format('woff');
+}
+
+/* custom-font-latin-ext-500-normal CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 500;
+  src: url(./files/custom-font-latin-ext-500-normal.woff2) format('woff2'), url(./files/custom-font-latin-ext-500-normal.woff) format('woff');
+}",
+    ],
+    [
+      "custom-font/latin-ext-italic.css",
+      "/* custom-font-latin-ext-400-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/custom-font-latin-ext-400-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-400-italic.woff) format('woff');
+}
+
+/* custom-font-latin-ext-500-italic CUSTOM */
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 500;
+  src: url(./files/custom-font-latin-ext-500-italic.woff2) format('woff2'), url(./files/custom-font-latin-ext-500-italic.woff) format('woff');
+}",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

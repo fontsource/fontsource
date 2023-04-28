@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`sass > should generate sass metadata for non unicode range font successfully 1`] = `
+"$id: 'carlito' !default;
+$family: 'Carlito' !default;
+$category: sans-serif !default;
+$subsets: (latin) !default;
+$weights: (400, 700) !default;
+$styles: (italic, normal) !default;
+$axes: null !default;
+$defaults: (
+  subset: latin,
+  weight: 400,
+  style: normal,
+  axis: null,
+) !default;
+$unicode: null !default;
+"
+`;
+
+exports[`sass > should generate sass metadata for numeric subset font successfully 1`] = `
+"$id: 'noto-sans-jp' !default;
+$family: 'Noto Sans JP' !default;
+$category: sans-serif !default;
+$subsets: (japanese, latin) !default;
+$weights: (100, 300, 400, 500, 700, 900) !default;
+$styles: (normal) !default;
+$axes: null !default;
+$defaults: (
+  subset: latin,
+  weight: 400,
+  style: normal,
+  axis: null,
+) !default;
+$unicode: (
+  0: (U+25ee8,U+25f23,U+25f5c,U+25fd4,U+25fe0,U+25ffb,U+2600c,U+26017,U+26060,U+260ed,U+26222,U+2626a,U+26270,U+26286,U+2634c,U+26402,U+2667e,U+266b0,U+2671d,U+268dd,U+268ea,U+26951,U+2696f,U+26999,U+269dd,U+26a1e,U+26a58,U+26a8c,U+26ab7,U+26aff,U+26c29,U+26c73,U+26c9e,U+26cdd,U+26e40,U+26e65,U+26f94,U+26ff6-26ff8,U+270f4,U+2710d,U+27139,U+273da-273db,U+273fe,U+27410,U+27449,U+27614-27615,U+27631,U+27684,U+27693,U+2770e,U+27723,U+27752,U+278b2,U+27985,U+279b4,U+27a84,U+27bb3,U+27bbe,U+27bc7,U+27c3c,U+27cb8,U+27d73,U+27da0,U+27e10,U+27eaf,U+27fb7,U+2808a,U+280bb,U+28277,U+28282,U+282f3,U+283cd,U+2840c,U+28455,U+284dc,U+2856b,U+285c8-285c9,U+286d7,U+286fa,U+28946,U+28949,U+2896b,U+28987-28988,U+289ba-289bb,U+28a1e,U+28a29,U+28a43,U+28a71,U+28a99,U+28acd,U+28add,U+28ae4,U+28bc1,U+28bef,U+28cdd,U+28d10,U+28d71,U+28dfb,U+28e0f,U+28e17,U+28e1f,U+28e36,U+28e89,U+28eeb,U+28ef6,U+28f32,U+28ff8,U+292a0,U+292b1,U+29490,U+295cf,U+2967f,U+296f0,U+29719,U+29750,U+29810,U+298c6,U+29a72,U+29d4b,U+29ddb,U+29e15,U+29e3d,U+29e49,U+29e8a,U+29ec4,U+29edb,U+29ee9,U+29fce,U+29fd7,U+2a01a,U+2a02f,U+2a082,U+2a0f9,U+2a190,U+2a2b2,U+2a38c,U+2a437,U+2a5f1,U+2a602,U+2a61a,U+2a6b2,U+2a9e6,U+2b746,U+2b751,U+2b753,U+2b75a,U+2b75c,U+2b765,U+2b776-2b777,U+2b77c,U+2b782,U+2b789,U+2b78b,U+2b78e,U+2b794,U+2b7ac,U+2b7af,U+2b7bd,U+2b7c9,U+2b7cf,U+2b7d2,U+2b7d8,U+2b7f0,U+2b80d,U+2b817,U+2b81a,U+2d544,U+2e278,U+2e569,U+2e6ea,U+2f804,U+2f80f,U+2f815,U+2f818,U+2f81a,U+2f822,U+2f828,U+2f82c,U+2f833,U+2f83f,U+2f846,U+2f852,U+2f862,U+2f86d,U+2f873,U+2f877,U+2f884,U+2f899-2f89a,U+2f8a6,U+2f8ac,U+2f8b2,U+2f8b6,U+2f8d3,U+2f8db-2f8dc,U+2f8e1,U+2f8e5,U+2f8ea,U+2f8ed,U+2f8fc,U+2f903,U+2f90b,U+2f90f,U+2f91a,U+2f920-2f921,U+2f945,U+2f947,U+2f96c,U+2f995,U+2f9d0,U+2f9de-2f9df,U+2f9f4),
+  1: (U+1f235-1f23b,U+1f240-1f248,U+1f250-1f251,U+2000b,U+20089-2008a,U+200a2,U+200a4,U+200b0,U+200f5,U+20158,U+201a2,U+20213,U+2032b,U+20371,U+20381,U+203f9,U+2044a,U+20509,U+2053f,U+205b1,U+205d6,U+20611,U+20628,U+206ec,U+2074f,U+207c8,U+20807,U+2083a,U+208b9,U+2090e,U+2097c,U+20984,U+2099d,U+20a64,U+20ad3,U+20b1d,U+20b9f,U+20bb7,U+20d45,U+20d58,U+20de1,U+20e64,U+20e6d,U+20e95,U+20f5f,U+21201,U+2123d,U+21255,U+21274,U+2127b,U+212d7,U+212e4,U+212fd,U+2131b,U+21336,U+21344,U+213c4,U+2146d-2146e,U+215d7,U+21647,U+216b4,U+21706,U+21742,U+218bd,U+219c3,U+21a1a,U+21c56,U+21d2d,U+21d45,U+21d62,U+21d78,U+21d92,U+21d9c,U+21da1,U+21db7,U+21de0,U+21e33-21e34,U+21f1e,U+21f76,U+21ffa,U+2217b,U+22218,U+2231e,U+223ad,U+22609,U+226f3,U+2285b,U+228ab,U+2298f,U+22ab8,U+22b46,U+22b4f-22b50,U+22ba6,U+22c1d,U+22c24,U+22de1,U+22e42,U+22feb,U+231b6,U+231c3-231c4,U+231f5,U+23372,U+233cc,U+233d0,U+233d2-233d3,U+233d5,U+233da,U+233df,U+233e4,U+233fe,U+2344a-2344b,U+23451,U+23465,U+234e4,U+2355a,U+23594,U+235c4,U+23638-2363a,U+23647,U+2370c,U+2371c,U+2373f,U+23763-23764,U+237e7,U+237f1,U+237ff,U+23824,U+2383d,U+23a98,U+23c7f,U+23cbe,U+23cfe,U+23d00,U+23d0e,U+23d40,U+23dd3,U+23df9-23dfa,U+23f7e,U+2404b,U+24096,U+24103,U+241c6,U+241fe,U+242ee,U+243bc,U+243d0,U+24629,U+246a5,U+247f1,U+24896,U+248e9,U+24a4d,U+24b56,U+24b6f,U+24c16,U+24d14,U+24e04,U+24e0e,U+24e37,U+24e6a,U+24e8b,U+24ff2,U+2504a,U+25055,U+25122,U+251a9,U+251cd,U+251e5,U+2521e,U+2524c,U+2542e,U+2548e,U+254d9,U+2550e,U+255a7,U+2567f,U+25771,U+257a9,U+257b4,U+25874,U+259c4,U+259cc,U+259d4,U+25ad7,U+25ae3-25ae4,U+25af1,U+25bb2,U+25c4b,U+25c64,U+25da1,U+25e2e,U+25e56,U+25e62,U+25e65,U+25ec2,U+25ed8),
+  2: (U+ffd7,U+ffda-ffdc,U+ffe0-ffe2,U+ffe4,U+ffe6,U+ffe8-ffee,U+1f100-1f10c,U+1f110-1f16c,U+1f170-1f1ac,U+1f200-1f202,U+1f210-1f234),
+  3: (U+fa10,U+fa12-fa6d,U+fb00-fb04,U+fe10-fe19,U+fe30-fe42,U+fe44-fe52,U+fe54-fe66,U+fe68-fe6b,U+ff02,U+ff04,U+ff07,U+ff51,U+ff5b,U+ff5d,U+ff5f-ff60,U+ff66,U+ff69,U+ff87,U+ffa1-ffbe,U+ffc2-ffc7,U+ffca-ffcf,U+ffd2-ffd6),
+  4: (U+f92d-f959,U+f95b-f9f2,U+f9f4-fa0b,U+fa0e-fa0f),
+  5: (U+9e8b-9e8c,U+9e8e-9e8f,U+9e91-9e92,U+9e95-9e96,U+9e98,U+9e9b,U+9e9d-9e9e,U+9ea4-9ea5,U+9ea8-9eaa,U+9eac-9eb0,U+9eb3-9eb5,U+9eb8,U+9ebc-9ebf,U+9ec3,U+9ec6,U+9ec8,U+9ecb-9ecd,U+9ecf-9ed1,U+9ed4-9ed5,U+9ed8,U+9edb-9ee0,U+9ee4-9ee5,U+9ee7-9ee8,U+9eec-9ef2,U+9ef4-9ef9,U+9efb-9eff,U+9f02-9f03,U+9f07-9f09,U+9f0e-9f12,U+9f14-9f17,U+9f19-9f1b,U+9f1f-9f22,U+9f26,U+9f2a-9f2c,U+9f2f,U+9f31-9f32,U+9f34,U+9f37,U+9f39-9f3a,U+9f3c-9f3f,U+9f41,U+9f43-9f47,U+9f4a,U+9f4e-9f50,U+9f52-9f58,U+9f5a,U+9f5d-9f61,U+9f63,U+9f66-9f6a,U+9f6c-9f73,U+9f75-9f77,U+9f7a,U+9f7d,U+9f7f,U+9f8f-9f92,U+9f94-9f97,U+9f99,U+9f9c-9fa3,U+9fa5,U+9fb4,U+9fbc-9fc2,U+9fc4,U+9fc6,U+9fcc,U+f900-f92c),
+  6: (U+9c3e,U+9c41,U+9c43-9c4a,U+9c4e-9c50,U+9c52-9c54,U+9c56,U+9c58,U+9c5a-9c61,U+9c63,U+9c65,U+9c67-9c6b,U+9c6d-9c6e,U+9c70,U+9c72,U+9c75-9c78,U+9c7a-9c7c,U+9ce6-9ce7,U+9ceb-9cec,U+9cf0,U+9cf2,U+9cf6-9cf7,U+9cf9,U+9d02-9d03,U+9d06-9d09,U+9d0b,U+9d0e,U+9d11-9d12,U+9d15,U+9d17-9d18,U+9d1b-9d1f,U+9d23,U+9d26,U+9d2a-9d2c,U+9d2f-9d30,U+9d32-9d34,U+9d3a,U+9d3c-9d3f,U+9d41-9d48,U+9d4a,U+9d50-9d54,U+9d59,U+9d5d-9d65,U+9d69-9d6c,U+9d6f-9d70,U+9d72-9d73,U+9d76-9d77,U+9d7a-9d7c,U+9d7e,U+9d83-9d84,U+9d86-9d87,U+9d89-9d8a,U+9d8d-9d8e,U+9d92-9d93,U+9d95-9d9a,U+9da1,U+9da4,U+9da9-9dac,U+9dae,U+9db1-9db2,U+9db5,U+9db8-9dbd,U+9dbf-9dc4,U+9dc6-9dc7,U+9dc9-9dca,U+9dcf,U+9dd3-9dd7,U+9dd9-9dda,U+9dde-9de0,U+9de3,U+9de5-9de7,U+9de9,U+9deb,U+9ded-9df0,U+9df3-9df4,U+9df8,U+9dfd-9dfe,U+9e02,U+9e07,U+9e0a,U+9e0d-9e0e,U+9e10-9e12,U+9e15-9e16,U+9e19-9e1f,U+9e75,U+9e79-9e7d,U+9e80-9e85,U+9e87-9e88),
+  7: (U+9ae5-9ae7,U+9ae9,U+9aeb-9aec,U+9aee-9aef,U+9af1-9af5,U+9af7,U+9af9-9afb,U+9afd,U+9aff-9b06,U+9b08-9b09,U+9b0b-9b0e,U+9b10,U+9b12,U+9b16,U+9b18-9b1d,U+9b1f-9b20,U+9b22-9b23,U+9b25-9b2f,U+9b32-9b35,U+9b37,U+9b39-9b3b,U+9b3d,U+9b43-9b44,U+9b48,U+9b4b-9b4f,U+9b51,U+9b55-9b58,U+9b5b,U+9b5e,U+9b61,U+9b63,U+9b65-9b66,U+9b68,U+9b6a-9b6f,U+9b72-9b79,U+9b7f-9b80,U+9b83-9b87,U+9b89-9b8b,U+9b8d,U+9b8f-9b94,U+9b96-9b97,U+9b9a,U+9b9d-9ba0,U+9ba6-9ba7,U+9ba9-9baa,U+9bac,U+9bb0-9bb2,U+9bb4,U+9bb7-9bb9,U+9bbb-9bbc,U+9bbe-9bc1,U+9bc6-9bc8,U+9bca,U+9bce-9bd2,U+9bd4,U+9bd7-9bd8,U+9bdd,U+9bdf,U+9be1-9be5,U+9be7,U+9bea-9beb,U+9bee-9bf3,U+9bf5,U+9bf7-9bfa,U+9bfd,U+9bff-9c00,U+9c02,U+9c04,U+9c06,U+9c08-9c0d,U+9c0f-9c16,U+9c18-9c1e,U+9c21-9c2a,U+9c2d-9c32,U+9c35-9c37,U+9c39-9c3a,U+9c3d),
+  8: (U+98eb,U+98ed-98ee,U+98f0-98f1,U+98f3,U+98f6,U+9902,U+9907-9909,U+9911-9912,U+9914-9918,U+991a-9922,U+9924,U+9926-9927,U+992b-992c,U+992e,U+9931-9935,U+9939-993e,U+9940-9942,U+9945-9949,U+994b-994e,U+9950-9952,U+9954-9955,U+9958-9959,U+995b-995c,U+995e-9960,U+9963,U+9997-9998,U+999b,U+999d-999f,U+99a3,U+99a5-99a6,U+99a8,U+99ad-99ae,U+99b0-99b2,U+99b5,U+99b9-99ba,U+99bc-99bd,U+99bf,U+99c1,U+99c3,U+99c8-99c9,U+99d1,U+99d3-99d5,U+99d8-99df,U+99e1-99e2,U+99e7,U+99ea-99ee,U+99f0-99f2,U+99f4-99f5,U+99f8-99f9,U+99fb-99fe,U+9a01-9a05,U+9a08,U+9a0a-9a0c,U+9a0f-9a11,U+9a16,U+9a1a,U+9a1e,U+9a20,U+9a22-9a24,U+9a27,U+9a2b,U+9a2d-9a2e,U+9a31,U+9a33,U+9a35-9a38,U+9a3e,U+9a40-9a45,U+9a47,U+9a4a-9a4e,U+9a51-9a52,U+9a54-9a58,U+9a5b,U+9a5d,U+9a5f,U+9a62,U+9a64-9a65,U+9a69-9a6c,U+9aaa,U+9aac-9ab0,U+9ab2,U+9ab4-9ab7,U+9ab9,U+9abb-9ac1,U+9ac3,U+9ac6,U+9ac8,U+9ace-9ad3,U+9ad5-9ad7,U+9adb-9adc,U+9ade-9ae0,U+9ae2-9ae4),
+  9: (U+971d,U+9721-9724,U+9728,U+972a,U+9730-9731,U+9733,U+9736,U+9738-9739,U+973b,U+973d-973e,U+9741-9744,U+9746-974a,U+974d-974f,U+9751,U+9755,U+9757-9758,U+975a-975c,U+9760-9761,U+9763-9764,U+9766-9768,U+976a-976b,U+976e,U+9771,U+9773,U+9776-977d,U+977f-9781,U+9785-9786,U+9789,U+978b,U+978f-9790,U+9795-9797,U+9799-979a,U+979c,U+979e-97a0,U+97a2-97a3,U+97a6,U+97a8,U+97ab-97ac,U+97ae,U+97b1-97b6,U+97b8-97ba,U+97bc,U+97be-97bf,U+97c1,U+97c3-97ce,U+97d0-97d1,U+97d4,U+97d7-97d9,U+97db-97de,U+97e0-97e1,U+97e4,U+97e6,U+97ed-97ef,U+97f1-97f2,U+97f4-97f8,U+97fa,U+9804,U+9807,U+980a,U+980c-980f,U+9814,U+9816-9817,U+9819-981a,U+981c,U+981e,U+9820-9821,U+9823-9826,U+982b,U+982e-9830,U+9832-9835,U+9837,U+9839,U+983d-983e,U+9844,U+9846-9847,U+984a-984b,U+984f,U+9851-9853,U+9856-9857,U+9859-985b,U+9862-9863,U+9865-9866,U+986a-986c,U+986f-9871,U+9873-9875,U+98aa-98ab,U+98ad-98ae,U+98b0-98b1,U+98b4,U+98b6-98b8,U+98ba-98bc,U+98bf,U+98c2-98c8,U+98cb-98cc,U+98ce,U+98dc,U+98de,U+98e0-98e1,U+98e3,U+98e5-98e7,U+98e9-98ea),
+  10: (U+944a,U+944c,U+9452-9453,U+9455,U+9459-945c,U+945e-9463,U+9468,U+946a-946b,U+946d-9472,U+9475,U+9477,U+947c-947f,U+9481,U+9483-9485,U+9578-9579,U+957e-957f,U+9582,U+9584,U+9586-9588,U+958a,U+958c-958f,U+9592,U+9594,U+9596,U+9598-9599,U+959d-95a1,U+95a4,U+95a6-95a9,U+95ab-95ad,U+95b1,U+95b4,U+95b6,U+95b9-95bf,U+95c3,U+95c6,U+95c8-95cd,U+95d0-95d6,U+95d9-95da,U+95dc-95e2,U+95e4-95e6,U+95e8,U+961d-961e,U+9621-9622,U+9624-9626,U+9628,U+962c,U+962e-962f,U+9631,U+9633-9634,U+9637-963a,U+963c-963d,U+9641-9642,U+964b-964c,U+964f,U+9652,U+9654,U+9656-9658,U+965c-965f,U+9661,U+9666,U+966a,U+966c,U+966e,U+9672,U+9674,U+9677,U+967b-967c,U+967e-967f,U+9681-9684,U+9689,U+968b,U+968d,U+9691,U+9695-9698,U+969a,U+969d,U+969f,U+96a4-96aa,U+96ae-96b4,U+96b6,U+96b8-96bb,U+96bd,U+96c1,U+96c9-96cb,U+96cd-96ce,U+96d2,U+96d5-96d6,U+96d8-96da,U+96dc-96df,U+96e9,U+96ef,U+96f1,U+96f9-96fa,U+9702-9706,U+9708-9709,U+970d-970f,U+9711,U+9713-9714,U+9716,U+9719-971b),
+) !default;
+"
+`;
+
+exports[`sass > should generate sass metadata for variable font successfully 1`] = `
+"$id: 'recursive' !default;
+$family: 'Recursive' !default;
+$category: sans-serif !default;
+$subsets: (cyrillic-ext, latin, latin-ext, vietnamese) !default;
+$weights: (300, 400, 500, 600, 700, 800, 900) !default;
+$styles: (normal) !default;
+$axes: null !default;
+$defaults: (
+  subset: latin,
+  weight: 400,
+  style: normal,
+  axis: null,
+) !default;
+$unicode: (
+  cyrillic-ext: (U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F),
+  vietnamese: (U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB),
+  latin-ext: (U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF),
+  latin: (U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD),
+) !default;
+"
+`;

@@ -1,0 +1,70 @@
+{
+	"APIv1Variant": {
+		"400": {
+			"italic": {
+				"latin": {
+					"local": ["ABeeZee Italic", "ABeeZee-Italic"],
+					"url": {
+						"woff2": "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8D.woff2",
+						"woff": "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8F.woff",
+						"truetype": "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8G.ttf"
+					}
+				}
+			}
+		}
+	},
+	"APIv1Result": [
+		[
+			["400", "italic", "latin", "url", "woff2"],
+			"https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8D.woff2"
+		],
+		[
+			["400", "italic", "latin", "url", "woff"],
+			"https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8F.woff"
+		]
+	],
+
+	"APIv2Variant": {
+		"100": {
+			"normal": {
+				"[0]": {
+					"local": ["Noto Sans HK Thin", "NotoSansHK-Thin"],
+					"url": {
+						"woff2": "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHp2WPP0IMAVxt9WteveoOOkzD_1Iv4Hrzhqj9DSTKYk.0.woff2",
+						"woff": "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHpw.woff",
+						"opentype": "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHp1.otf"
+					}
+				}
+			}
+		}
+	},
+	"APIv2Result": [
+		[
+			["100", "normal", "[0]", "url", "woff2"],
+			"https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHp2WPP0IMAVxt9WteveoOOkzD_1Iv4Hrzhqj9DSTKYk.0.woff2"
+		],
+		[
+			["100", "normal", "[0]", "url", "woff"],
+			"https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHpw.woff"
+		]
+	],
+
+	"APIVariableVariant": {
+		"full": {
+			"italic": {
+				"vietnamese": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_BCnhRv.woff2",
+				"latin-ext": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_FCnhRv.woff2"
+			}
+		}
+	},
+	"APIVariableResult": [
+		[
+			["full", "italic", "vietnamese"],
+			"https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_BCnhRv.woff2"
+		],
+		[
+			["full", "italic", "latin-ext"],
+			"https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_FCnhRv.woff2"
+		]
+	]
+}
