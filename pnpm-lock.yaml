@@ -298,8 +298,8 @@ importers:
         specifier: ^11.1.1
         version: 11.1.1
       google-font-metadata:
-        specifier: ^5.1.0
-        version: 5.1.0(typescript@5.0.4)
+        specifier: ^5.1.1
+        version: 5.1.1(typescript@5.0.4)
       got:
         specifier: ^12.6.0
         version: 12.6.0
@@ -862,6 +862,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/highlight': 7.18.6
+    dev: true
 
   /@babel/code-frame@7.21.4:
     resolution: {integrity: sha512-LYvhNKfwWSPpocw8GI7gpK2nq3HSDuEPC/uSYaALSJu9xjsalaaYFOq0Pwt5KmVqwEbZlDu81aLXwBOmD/Fv9g==}
@@ -1091,6 +1092,7 @@ packages:
   /@babel/helper-validator-identifier@7.18.6:
     resolution: {integrity: sha512-MmetCkz9ej86nJQV+sFCxoGGrUbU3q02kgLciwkrt9QqEB7cP39oKEY0PakknEO0Gu20SskMRi+AYZ3b1TpN9g==}
     engines: {node: '>=6.9.0'}
+    dev: true
 
   /@babel/helper-validator-identifier@7.19.1:
     resolution: {integrity: sha512-awrNfaMtnHUr653GgGEs++LlAvW6w+DcPrOliSMXWCKo597CwL5Acf/wWdNkf/tfEQE3mjkeD1YOVZOUV/od1w==}
@@ -1495,7 +1497,7 @@ packages:
     resolution: {integrity: sha512-WwMLAg2MvJmt/rKEVQBBhIVffMmnilX4oe0sRe7iPOHIGsqpruFHHdrfj4O1CMMtgMtCU4oPafZjDPCRgO57Wg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/helper-validator-identifier': 7.18.6
+      '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
 
   /@babel/types@7.21.4:
@@ -4721,7 +4723,7 @@ packages:
       '@octokit/request-error': 2.1.0
       '@octokit/types': 6.40.0
       is-plain-object: 5.0.0
-      node-fetch: 2.6.7
+      node-fetch: 2.6.9
       universal-user-agent: 6.0.0
     transitivePeerDependencies:
       - encoding
@@ -10595,7 +10597,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dependencies:
       ajv: 6.12.6
-      deepmerge: 4.2.2
+      deepmerge: 4.3.1
       rfdc: 1.3.0
       string-similarity: 4.0.4
     dev: false
@@ -11290,8 +11292,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /google-font-metadata@5.1.0(typescript@5.0.4):
-    resolution: {integrity: sha512-TEaDSO/ot4AXw272jbUmdTLyEKHgmV4zhKckw+glzEJ7olUixIfEQ/6W4tjBW9FINJ1hmzgtaXx+2U9RX2De6g==}
+  /google-font-metadata@5.1.1(typescript@5.0.4):
+    resolution: {integrity: sha512-TOlA6bquYrNiSOiaVJgb62/5nwKRGMIibIljsSgx5amCDnrT4PTCKkD9pMokHNNnU4hkj5FZXHlLUPcJzYH32A==}
     hasBin: true
     dependencies:
       '@octokit/core': 4.2.0
@@ -11569,15 +11571,6 @@ packages:
 
   /html-escaper@3.0.3:
     resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
-    dev: false
-
-  /htmlparser2@8.0.1:
-    resolution: {integrity: sha512-4lVbmc1diZC7GUJQtRQ5yBAeUCL1exyMwmForWkRLnwyzWBFxN633SALPMGYaWZvKe9j1pRZJpauvmxENSp/EA==}
-    dependencies:
-      domelementtype: 2.3.0
-      domhandler: 5.0.3
-      domutils: 3.0.1
-      entities: 4.5.0
     dev: false
 
   /htmlparser2@8.0.2:
@@ -12491,7 +12484,7 @@ packages:
       babel-jest: 28.1.3(@babel/core@7.18.9)
       chalk: 4.1.2
       ci-info: 3.3.2
-      deepmerge: 4.2.2
+      deepmerge: 4.3.1
       glob: 7.2.3
       graceful-fs: 4.2.10
       jest-circus: 28.1.3
@@ -12729,7 +12722,7 @@ packages:
     resolution: {integrity: sha512-PFdn9Iewbt575zKPf1286Ht9EPoJmYT7P0kY+RibeYZ2XtOr53pDLEFoTWXbd1h4JiGiWpTBC84fc8xMXQMb7g==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
-      '@babel/code-frame': 7.18.6
+      '@babel/code-frame': 7.21.4
       '@jest/types': 28.1.3
       '@types/stack-utils': 2.0.1
       chalk: 4.1.2
@@ -13498,7 +13491,7 @@ packages:
       css-select: 5.1.0
       cssom: 0.5.0
       html-escaper: 3.0.3
-      htmlparser2: 8.0.1
+      htmlparser2: 8.0.2
       uhyphen: 0.1.0
     dev: false
 
