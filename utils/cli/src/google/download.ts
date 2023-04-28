@@ -195,7 +195,7 @@ const iconVariableLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 	return links;
 };
 
-const queue = new PQueue({ concurrency: 60 });
+const queue = new PQueue({ concurrency: 30 });
 
 const download = async (id: string, opts: BuildOptions) => {
 	await fs.ensureDir(path.join(opts.dir, 'files'));
