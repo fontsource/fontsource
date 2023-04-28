@@ -298,8 +298,8 @@ importers:
         specifier: ^11.1.1
         version: 11.1.1
       google-font-metadata:
-        specifier: ^5.1.1
-        version: 5.1.1(typescript@5.0.4)
+        specifier: ^5.1.2
+        version: 5.1.2(typescript@5.0.4)
       got:
         specifier: ^12.6.0
         version: 12.6.0
@@ -11292,8 +11292,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /google-font-metadata@5.1.1(typescript@5.0.4):
-    resolution: {integrity: sha512-TOlA6bquYrNiSOiaVJgb62/5nwKRGMIibIljsSgx5amCDnrT4PTCKkD9pMokHNNnU4hkj5FZXHlLUPcJzYH32A==}
+  /google-font-metadata@5.1.2(typescript@5.0.4):
+    resolution: {integrity: sha512-X9L4hbBZJIUFVtSVu2NLAQCVdE4RyN967lz5QaQG32gpQIOdqKrS1SEZAjJlWTKodFsSLFeszpxLAnkLkk+6Zg==}
     hasBin: true
     dependencies:
       '@octokit/core': 4.2.0
