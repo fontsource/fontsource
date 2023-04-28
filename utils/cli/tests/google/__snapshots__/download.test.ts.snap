@@ -17,6 +17,48 @@ exports[`download google > download links > should generate links for base font 
 ]
 `;
 
+exports[`download google > download links > should generate links for icon fonts (material-icons) 1`] = `
+[
+  {
+    "dest": "fonts/icons/material-icons/files/material-icons-latin-400-normal.woff2",
+    "url": "https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2",
+  },
+  {
+    "dest": "fonts/icons/material-icons/files/material-icons-latin-400-normal.woff",
+    "url": "https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNaIhQ8tQ.woff",
+  },
+]
+`;
+
+exports[`download google > download links > should generate links for icon variable fonts (material-symbols) 1`] = `
+[
+  {
+    "dest": "fonts/variable-icons/material-symbols/files/material-symbols-sharp-latin-opsz-normal.woff2",
+    "url": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1r3w.woff2",
+  },
+  {
+    "dest": "fonts/variable-icons/material-symbols/files/material-symbols-sharp-latin-fill-normal.woff2",
+    "url": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_wjOOEa9ruReaU4bHmz4BC2dgEH-VBoaxr3w.woff2",
+  },
+  {
+    "dest": "fonts/variable-icons/material-symbols/files/material-symbols-sharp-latin-grad-normal.woff2",
+    "url": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz4BC2dgEH-VBoaxr3w.woff2",
+  },
+  {
+    "dest": "fonts/variable-icons/material-symbols/files/material-symbols-sharp-latin-wght-normal.woff2",
+    "url": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNMyW2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1x0TV6x4yFH8F-H5Od1kw.woff2",
+  },
+  {
+    "dest": "fonts/variable-icons/material-symbols/files/material-symbols-sharp-latin-full-normal.woff2",
+    "url": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNMVW2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4aWE.woff2",
+  },
+  {
+    "dest": "fonts/variable-icons/material-symbols/files/material-symbols-sharp-latin-standard-normal.woff2",
+    "url": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1r3w.woff2",
+  },
+]
+`;
+
 exports[`download google > download links > should generate links for unicode subset font (noto-sans-jp) 1`] = `
 [
   {

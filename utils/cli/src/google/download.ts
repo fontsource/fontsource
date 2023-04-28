@@ -218,4 +218,12 @@ const download = async (id: string, opts: BuildOptions) => {
 	await queue.onIdle();
 };
 
-export { download, generateLinks, gotDownload, pairGenerator, variableLinks };
+export {
+	download,
+	generateLinks,
+	gotDownload,
+	iconStaticLinks,
+	iconVariableLinks,
+	pairGenerator,
+	variableLinks,
+};

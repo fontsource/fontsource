@@ -3,12 +3,16 @@ import { describe, expect, it, vi } from 'vitest';
 
 import {
 	generateLinks,
+	iconStaticLinks,
+	iconVariableLinks,
 	pairGenerator,
 	variableLinks,
 } from '../../src/google/download';
 import testData from './fixtures/download-file-data.json';
 import APIv1Mock from './fixtures/google-fonts-v1.json';
 import APIv2Mock from './fixtures/google-fonts-v2.json';
+import APIIconStaticMock from './fixtures/icons-static.json';
+import APIIconVariableMock from './fixtures/icons-variable.json';
 import APIVariableMock from './fixtures/variable.json';
 
 vi.mock('google-font-metadata');
@@ -35,6 +39,10 @@ describe('download google', () => {
 		vi.spyOn(gfm, 'APIv1', 'get').mockReturnValue(APIv1Mock);
 		vi.spyOn(gfm, 'APIv2', 'get').mockReturnValue(APIv2Mock);
 		vi.spyOn(gfm, 'APIVariable', 'get').mockReturnValue(APIVariableMock);
+		vi.spyOn(gfm, 'APIIconStatic', 'get').mockReturnValue(APIIconStaticMock);
+		vi.spyOn(gfm, 'APIIconVariable', 'get').mockReturnValue(
+			APIIconVariableMock
+		);
 
 		it('should generate links for base font (abel)', () => {
 			const buildOpts = {
@@ -64,6 +72,30 @@ describe('download google', () => {
 				isVariable: true,
 			};
 			expect(variableLinks('cabin', buildOpts)).toMatchSnapshot();
+		});
+
+		it('should generate links for icon fonts (material-icons)', () => {
+			const buildOpts = {
+				dir: 'fonts/icons/material-icons',
+				tmpDir: 'fonts/icons/temp',
+				force: false,
+				isVariable: false,
+				isIcon: true,
+			};
+			expect(iconStaticLinks('material-icons', buildOpts)).toMatchSnapshot();
+		});
+
+		it('should generate links for icon variable fonts (material-symbols)', () => {
+			const buildOpts = {
+				dir: 'fonts/variable-icons/material-symbols',
+				tmpDir: 'fonts/variable-icons/temp',
+				force: false,
+				isVariable: true,
+				isIcon: true,
+			};
+			expect(
+				iconVariableLinks('material-symbols-sharp', buildOpts)
+			).toMatchSnapshot();
 		});
 	});
 });
