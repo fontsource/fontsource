@@ -1,11 +1,10 @@
 /* eslint-disable no-await-in-loop */
-import { generateFontFace } from '@fontsource-utils/generate';
+import { FontObject, generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
 import {
 	APIIconResponse,
 	APIIconStatic,
 	APIIconVariable,
-	FontObject,
 } from 'google-font-metadata';
 import * as path from 'pathe';
 
@@ -101,7 +100,7 @@ const packagerIconsVariable = async (id: string, opts: BuildOptions) => {
 					family: icon.family,
 					style,
 					display: 'swap',
-					weight: findClosest(icon.weights, 400),
+					weight: Number(icon.axes.wght.default),
 					variable: variableOpts,
 					src: [
 						{
