@@ -1,3 +1,5 @@
+import PQueue from 'p-queue';
+
 import { addCss } from '@/utils/css.server';
 import { knex } from '@/utils/db.server';
 import { ensurePrimary } from '@/utils/fly.server';
@@ -12,6 +14,7 @@ const getFontList = async (): Promise<FontList> => {
 
 const updateMetadata = async (metadata: DownloadMetadata) => {
 	await ensurePrimary();
+	console.log(`Updating metadata for ${metadata.id}`);
 
 	// Save metadata to DB
 	await knex('fonts')
@@ -82,7 +85,28 @@ const getMetadataDate = async (id: string) => {
 	return date?.lastModified;
 };
 
+// Prevent multiple metadata updates from running at once
+let isUpdating = false;
+
+const queue = new PQueue({ concurrency: 4 });
+// @ts-ignore - for some reason error is not an accepted type
+queue.on('error', (error) => {
+	console.error(error);
+});
+
+queue.on('idle', async () => {
+	isUpdating = false;
+	console.log('Metadata update complete!');
+});
+
 const updateAllMetadata = async (fonts?: string[]) => {
+	// If update is already running, return
+	if (!isUpdating) {
+		isUpdating = true;
+	} else {
+		return;
+	}
+
 	const fontList = await getFontList();
 
 	const updateArr = fonts ?? [];
@@ -104,11 +128,8 @@ const updateAllMetadata = async (fonts?: string[]) => {
 
 	const manifest: Record<string, DownloadMetadata> = await kya(MANIFEST_URL);
 	for (const id of updateArr) {
-		console.log(`Updating metadata for ${id}`);
-		await updateMetadata(manifest[id]);
+		queue.add(async () => await updateMetadata(manifest[id]));
 	}
-
-	console.log(`Updated metadata for ${updateArr.length} fonts`);
 };
 
 export { getFontList, getMetadata, updateAllMetadata, updateMetadata };
