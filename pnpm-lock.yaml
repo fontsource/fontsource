@@ -298,8 +298,8 @@ importers:
         specifier: ^11.1.1
         version: 11.1.1
       google-font-metadata:
-        specifier: ^5.1.5
-        version: 5.1.5(typescript@5.0.4)
+        specifier: ^5.2.0
+        version: 5.2.0(typescript@5.0.4)
       got:
         specifier: ^12.6.0
         version: 12.6.0
@@ -874,8 +874,8 @@ packages:
     resolution: {integrity: sha512-HSmX4WZPPK3FUxYp7g2T6EyO8j96HlZJlxmKPSh6KAcqwyDrfx7hKjXpAW/0FhFfTJsR0Yt4lAjLI2coMptIHQ==}
     engines: {node: '>=6.9.0'}
 
-  /@babel/compat-data@7.21.5:
-    resolution: {integrity: sha512-M+XAiQ7GzQ3FDPf0KOLkugzptnIypt0X0ma0wmlTKPR3IchgNFdx2JXxZdvd18JY5s7QkaFD/qyX0dsMpog/Ug==}
+  /@babel/compat-data@7.21.7:
+    resolution: {integrity: sha512-KYMqFYTaenzMK4yUtf4EW9wc4N9ef80FsbMtkwool5zpwl4YrT1SdWYSTRcT94KO4hannogdS+LxY7L+arP3gA==}
     engines: {node: '>=6.9.0'}
 
   /@babel/core@7.12.9:
@@ -981,7 +981,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/compat-data': 7.21.5
+      '@babel/compat-data': 7.21.7
       '@babel/core': 7.21.5
       '@babel/helper-validator-option': 7.21.0
       browserslist: 4.21.5
@@ -11308,8 +11308,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /google-font-metadata@5.1.5(typescript@5.0.4):
-    resolution: {integrity: sha512-18MtbyD9BLdy5sqU/9V6cWGcYHVzXVrox96EBC0qosR0Cz7yP49/vvMVX5Sl7XiTfd3VhezzKatqDze64jEFYQ==}
+  /google-font-metadata@5.2.0(typescript@5.0.4):
+    resolution: {integrity: sha512-JXg49zDVpmZecYYt0yAkiQIrraFfjkE3oSjFQD+ZFLkwpNdacDy9yWk+J06/sSmosnQJHNSy9AR2udOWrZ+W6g==}
     hasBin: true
     dependencies:
       '@octokit/core': 4.2.0
