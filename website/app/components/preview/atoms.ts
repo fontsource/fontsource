@@ -1,4 +1,5 @@
 import { atom } from 'jotai';
+import { atomWithReset } from 'jotai/utils';
 
 const languageAtom = atom('Latin');
 const sizeAtom = atom(32);
@@ -26,7 +27,7 @@ const createFontVariation = (axes: Record<string, number>) => {
 	return fontVariation.slice(0, -2);
 };
 
-const variableAtom = atom<Record<string, number>>({});
+const variableAtom = atomWithReset<Record<string, number>>({});
 const variationAtom = atom(
 	(get) => createFontVariation(get(variableAtom)),
 	(get, set, axes: Record<string, number>) => {

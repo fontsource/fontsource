@@ -1,6 +1,5 @@
 import {
 	ActionIcon,
-	Checkbox,
 	createStyles,
 	Divider,
 	Flex,
@@ -9,10 +8,12 @@ import {
 	ScrollArea,
 	Text,
 } from '@mantine/core';
+import { useAtom } from 'jotai';
 
 import { IconRotate } from '@/components/icons';
 import type { Metadata, VariableData } from '@/utils/types';
 
+import { variationAtom } from './atoms';
 import { NormalButtonsGroup } from './Buttons';
 import { VariableButtonsGroup } from './VariableButtons';
 
@@ -51,6 +52,14 @@ interface ConfigureProps {
 
 const Configure = ({ metadata, variable }: ConfigureProps) => {
 	const { classes } = useStyles();
+	const [_, setVariation] = useAtom(variationAtom);
+	const resetVariationAtom = () => {
+		// Iterate through the axes and set the variation to the default value
+		// for each axis.
+		for (const axes of Object.keys(variable)) {
+			setVariation({ [axes]: Number(variable[axes].default) });
+		}
+	};
 
 	return (
 		<ScrollArea.Autosize mah="50vh" className={classes.scrollWrapper}>
@@ -59,17 +68,16 @@ const Configure = ({ metadata, variable }: ConfigureProps) => {
 				<NormalButtonsGroup hasItalic={metadata.styles.includes('italic')} />
 				{metadata.variable && (
 					<>
-						<Divider mt='sm' />
+						<Divider mt="sm" />
 						<Group position="apart">
 							<Text className={classes.title}>Variable Axes</Text>
-							<ActionIcon>
+							<ActionIcon onClick={resetVariationAtom}>
 								<IconRotate />
 							</ActionIcon>
 						</Group>
 						<VariableButtonsGroup variable={variable} />
 					</>
 				)}
-				<Checkbox label="Apply to all variants" />
 			</Flex>
 		</ScrollArea.Autosize>
 	);
