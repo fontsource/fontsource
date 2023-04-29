@@ -2,6 +2,7 @@ import { addCss } from './css.server';
 import { knex } from './db.server';
 import { ensurePrimary } from './fly.server';
 import type {
+	AxisRegistry,
 	DownloadMetadata,
 	FontList,
 	MetadataType,
@@ -151,11 +152,35 @@ const updateDownloadCount = async () => {
 	}
 };
 
+const updateAxisRegistry = async () => {
+	await ensurePrimary();
+
+	const AXIS_URL =
+		'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/axis-registry.json';
+
+	const axisRegistry = (await kya(AXIS_URL)) as AxisRegistry[];
+	for (const axis of axisRegistry) {
+		await knex('axis_registry')
+			.insert({
+				tag: axis.tag,
+				name: axis.name,
+				description: axis.description,
+				min: axis.min,
+				max: axis.max,
+				default: axis.default,
+				precision: axis.precision,
+			})
+			.onConflict('tag')
+			.merge();
+	}
+};
+
 export {
 	fetchMetadata,
 	getDownloadCountList,
 	getFontList,
 	getMetadata,
 	getVariable,
+	updateAxisRegistry,
 	updateDownloadCount,
 };

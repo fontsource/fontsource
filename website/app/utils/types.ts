@@ -37,6 +37,16 @@ export interface AxesData {
 	step: string;
 }
 
+export interface AxisRegistry {
+	name: string;
+	tag: string;
+	description: string;
+	default: number;
+	min: number;
+	max: number;
+	precision: number;
+}
+
 export interface PackageJson {
 	version: string;
 }

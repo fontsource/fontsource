@@ -1,4 +1,5 @@
-import type { ActionFunction } from '@remix-run/node';
+import type { ActionFunction, LoaderFunction } from '@remix-run/node';
+import { redirect } from '@remix-run/node';
 import PQueue from 'p-queue';
 import invariant from 'tiny-invariant';
 
@@ -6,15 +7,16 @@ import { updateAlgoliaIndex } from '@/utils/algolia.server';
 import {
 	fetchMetadata,
 	getFontList,
+	updateAxisRegistry,
 	updateDownloadCount,
 } from '@/utils/metadata.server';
 import type { MetadataType } from '@/utils/types';
 
 interface UpdateData {
-	token: string;
 	fonts?: boolean | string[];
 	algolia?: boolean;
 	download?: boolean;
+	axisRegistry?: boolean;
 	force?: boolean;
 }
 
@@ -50,26 +52,40 @@ const updateFonts = async (data: UpdateData) => {
 	}
 };
 
+export const loader: LoaderFunction = async () => {
+	return redirect('/');
+};
+
 export const action: ActionFunction = async ({ request }) => {
 	const data: UpdateData = await request.json();
-	invariant(data, 'No data was sent with the request');
-	invariant(data.token, 'No update token was sent with the request');
+	const header = await request.headers.get('Authorization');
+	invariant(header, 'No authorization header was sent with the request');
 
-	if (data.token !== process.env.UPDATE_TOKEN) {
-		return new Response('Invalid update token', { status: 401 });
+	invariant(data, 'No data was sent with the request');
+
+	if (header !== `Bearer ${process.env.UPDATE_TOKEN}`) {
+		return new Response('Invalid update bearer token', { status: 401 });
 	}
 
 	// Algolia already runs fetch metadata if that is active
 	if (data.fonts && !data.algolia) {
+		console.log('Updating fonts');
 		await updateFonts(data);
 	}
 
 	if (data.algolia) {
+		console.log('Updating algolia index');
 		await updateAlgoliaIndex(data.force);
 	}
 
 	if (data.download) {
+		console.log('Updating download count');
 		await updateDownloadCount();
+	}
+
+	if (data.axisRegistry) {
+		console.log('Updating axis registry');
+		await updateAxisRegistry();
 	}
 
 	return new Response('Success!');

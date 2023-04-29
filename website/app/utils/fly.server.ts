@@ -4,10 +4,12 @@ import path from 'path';
 import invariant from 'tiny-invariant';
 
 const ensurePrimary = async () => {
-	const { primaryInstance, currentIsPrimary } = await getInstanceInfo();
+	if (process.env.FLY) {
+		const { primaryInstance, currentIsPrimary } = await getInstanceInfo();
 
-	if (process.env.FLY && !currentIsPrimary) {
-		throw await getFlyReplayResponse(primaryInstance);
+		if (!currentIsPrimary) {
+			throw await getFlyReplayResponse(primaryInstance);
+		}
 	}
 };
 
