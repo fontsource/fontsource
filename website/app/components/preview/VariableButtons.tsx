@@ -56,7 +56,7 @@ const VariableButton = ({ label, axes }: VariableButtonProps) => {
 		setVariation({ [label]: value });
 	};
 	const resetVariationAtom = () => {
-		setVariation({ [label]: Number(axes.default) });
+		setVariation({ [label]: undefined });
 	}
 
 	return (
@@ -74,7 +74,7 @@ const VariableButton = ({ label, axes }: VariableButtonProps) => {
 				step={Number(axes.step)}
 				precision={1}
 				onChange={handleVariationAtom}
-				value={variableValue[label]}
+				value={variableValue[label] ?? Number(axes.default)}
 			/>
 			<Group position="apart" px={3} mt={4}>
 				<Text>{axes.min}</Text>

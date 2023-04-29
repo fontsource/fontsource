@@ -18,20 +18,24 @@ const colorAtom = atom(
 );
 
 // Generate font-variation-settings string from axes object e.g. "wght" 400, "wdth" 100
-const createFontVariation = (axes: Record<string, number>) => {
+const createFontVariation = (axes: Record<string, number | undefined>) => {
 	let fontVariation = '';
 	for (const [key, value] of Object.entries(axes)) {
-		fontVariation += `"${key}" ${value}, `;
+		if (value !== undefined) fontVariation += `"${key}" ${value}, `;
 	}
 	// Remove trailing comma and space
 	return fontVariation.slice(0, -2);
 };
 
-const variableAtom = atomWithReset<Record<string, number>>({});
+const variableAtom = atomWithReset<Record<string, number | undefined>>({});
 const variationAtom = atom(
 	(get) => createFontVariation(get(variableAtom)),
-	(get, set, axes: Record<string, number>) => {
-		set(variableAtom, { ...get(variableAtom), ...axes });
+	(get, set, axes: Record<string, number | undefined>) => {
+		if (Object.keys(axes).length === 0) {
+			set(variableAtom, {});
+		} else {
+			set(variableAtom, { ...get(variableAtom), ...axes });
+		}
 	}
 );
 
