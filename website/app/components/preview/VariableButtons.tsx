@@ -1,17 +1,26 @@
-import { ActionIcon, Box, createStyles, Group, rem,Slider,Text } from '@mantine/core';
+import {
+	ActionIcon,
+	Box,
+	createStyles,
+	Group,
+	rem,
+	Slider,
+	Text,
+} from '@mantine/core';
 import { useAtom } from 'jotai';
-import { useState } from 'react';
 
 import { IconRotate } from '@/components/icons';
-import type { AxesData, VariableData } from '@/utils/types';
+import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
 
-import {  variableAtom, variationAtom } from './atoms';
+import { variableAtom, variationAtom } from './atoms';
 
 interface VariableButtonGroupProps {
 	variable: VariableData;
+	axisRegistry: AxisRegistryAll;
 }
 
 interface VariableButtonProps {
+	tag: string;
 	label: string;
 	axes: AxesData;
 }
@@ -39,31 +48,29 @@ const useStyles = createStyles((theme) => ({
 				? theme.colors.text[0]
 				: theme.colors.text[1],
 
-
-
 		'&:not([data-disabled])': theme.fn.hover({
 			backgroundColor: theme.fn.lighten(theme.colors.purple[0], 0.95),
 		}),
 	},
 }));
 
-const VariableButton = ({ label, axes }: VariableButtonProps) => {
+const VariableButton = ({ tag, label, axes }: VariableButtonProps) => {
 	const { classes } = useStyles();
 	const [_, setVariation] = useAtom(variationAtom);
 	const [variableValue] = useAtom(variableAtom);
 
 	const handleVariationAtom = (value: number) => {
-		setVariation({ [label]: value });
+		setVariation({ [tag]: value });
 	};
 	const resetVariationAtom = () => {
-		setVariation({ [label]: undefined });
-	}
+		setVariation({ [tag]: undefined });
+	};
 
 	return (
 		<Box className={classes.button}>
 			<Group position="apart" mb={3}>
-				<Text>{label}</Text>
-				<ActionIcon onClick={resetVariationAtom} variant='transparent' mr={-4}>
+				<Text fz='sm' fw={400}>{label}</Text>
+				<ActionIcon onClick={resetVariationAtom} variant="transparent" mr={-4}>
 					<IconRotate height={16} />
 				</ActionIcon>
 			</Group>
@@ -74,21 +81,24 @@ const VariableButton = ({ label, axes }: VariableButtonProps) => {
 				step={Number(axes.step)}
 				precision={1}
 				onChange={handleVariationAtom}
-				value={variableValue[label] ?? Number(axes.default)}
+				value={variableValue[tag] ?? Number(axes.default)}
 			/>
 			<Group position="apart" px={3} mt={4}>
-				<Text>{axes.min}</Text>
-				<Text>{axes.max}</Text>
+				<Text fz='sm'>{axes.min}</Text>
+				<Text fz='sm'>{axes.max}</Text>
 			</Group>
 		</Box>
 	);
 };
 
-const VariableButtonsGroup = ({ variable }: VariableButtonGroupProps) => {
+const VariableButtonsGroup = ({
+	variable,
+	axisRegistry,
+}: VariableButtonGroupProps) => {
 	return (
 		<>
 			{Object.keys(variable).map((key) => (
-				<VariableButton key={key} label={key} axes={variable[key]}  />
+				<VariableButton key={key} tag={key} label={axisRegistry[key].name} axes={variable[key]} />
 			))}
 		</>
 	);

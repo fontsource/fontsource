@@ -11,7 +11,7 @@ import {
 import { useAtom } from 'jotai';
 
 import { IconRotate } from '@/components/icons';
-import type { Metadata, VariableData } from '@/utils/types';
+import type { AxisRegistry, Metadata, VariableData } from '@/utils/types';
 
 import { variationAtom } from './atoms';
 import { NormalButtonsGroup } from './Buttons';
@@ -48,9 +48,10 @@ const useStyles = createStyles((theme) => ({
 interface ConfigureProps {
 	metadata: Metadata;
 	variable: VariableData;
+	axisRegistry: Record<string, AxisRegistry>;
 }
 
-const Configure = ({ metadata, variable }: ConfigureProps) => {
+const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 	const { classes } = useStyles();
 	const [_, setVariation] = useAtom(variationAtom);
 	const resetVariationAtom = () => {
@@ -71,7 +72,7 @@ const Configure = ({ metadata, variable }: ConfigureProps) => {
 								<IconRotate />
 							</ActionIcon>
 						</Group>
-						<VariableButtonsGroup variable={variable} />
+						<VariableButtonsGroup variable={variable} axisRegistry={axisRegistry} />
 					</>
 				)}
 			</Flex>

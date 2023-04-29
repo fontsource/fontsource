@@ -3,6 +3,7 @@ import { knex } from './db.server';
 import { ensurePrimary } from './fly.server';
 import type {
 	AxisRegistry,
+	AxisRegistryAll,
 	DownloadMetadata,
 	FontList,
 	MetadataType,
@@ -152,6 +153,22 @@ const updateDownloadCount = async () => {
 	}
 };
 
+const getAxisRegistry = async (): Promise<AxisRegistryAll> => {
+	const axisRegistry = await knex('axis_registry').select('*');
+	const registry: AxisRegistryAll = {};
+	for (const axis of axisRegistry) {
+		registry[axis.tag] = {
+			name: axis.name,
+			description: axis.description,
+			min: axis.min,
+			max: axis.max,
+			default: axis.default,
+			precision: axis.precision,
+		};
+	}
+	return registry;
+};
+
 const updateAxisRegistry = async () => {
 	await ensurePrimary();
 
@@ -177,6 +194,7 @@ const updateAxisRegistry = async () => {
 
 export {
 	fetchMetadata,
+	getAxisRegistry,
 	getDownloadCountList,
 	getFontList,
 	getMetadata,

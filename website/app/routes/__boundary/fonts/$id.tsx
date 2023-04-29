@@ -7,24 +7,27 @@ import invariant from 'tiny-invariant';
 import { ContentHeader } from '@/components';
 import { Configure } from '@/components/preview/Configure';
 import { TextArea } from '@/components/preview/TextArea';
-import { getMetadata, getVariable } from '@/utils/metadata.server';
-import type { Metadata, VariableData } from '@/utils/types';
+import { getAxisRegistry, getMetadata, getVariable } from '@/utils/metadata.server';
+import type { AxisRegistry, Metadata, VariableData } from '@/utils/types';
 
 export const loader: LoaderFunction = async ({ params }) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const metadata = await getMetadata(id);
-	let variable = undefined;
+	let variable;
+	let axisRegistry;
 	if (metadata.variable) {
 		variable = await getVariable(id);
+		axisRegistry = await getAxisRegistry();
 	}
 
-	return json({ metadata, variable });
+	return json({ metadata, variable, axisRegistry });
 }
 
 interface FontMetadata {
 	metadata: Metadata
 	variable: VariableData
+	axisRegistry: Record<string, AxisRegistry>
 }
 
 const useStyles = createStyles((theme) => ({
@@ -38,7 +41,7 @@ const useStyles = createStyles((theme) => ({
 
 export default function Font() {
 	const data: FontMetadata = useLoaderData();
-	const { metadata, variable } = data;
+	const { metadata, variable, axisRegistry } = data;
 	const {classes} = useStyles();
 
 	return (
@@ -51,9 +54,8 @@ export default function Font() {
 			</ContentHeader>
 			<Box className={classes.wrapperPreview}>
 				<TextArea metadata={metadata}/>
-				<Configure metadata={metadata} variable={variable} />
+				<Configure metadata={metadata} variable={variable} axisRegistry={axisRegistry} />
 			</Box>
 		</>
-
-    )
+  )
 }

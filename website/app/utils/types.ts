@@ -47,6 +47,8 @@ export interface AxisRegistry {
 	precision: number;
 }
 
+export type AxisRegistryAll = Record<string, Omit<AxisRegistry, 'tag'>>;
+
 export interface PackageJson {
 	version: string;
 }
