@@ -1,14 +1,7 @@
 import { addCss } from '@/utils/css.server';
 import { knex } from '@/utils/db.server';
 import { ensurePrimary } from '@/utils/fly.server';
-import type {
-	DownloadMetadata,
-	FontList,
-	MetadataType,
-	PackageJson,
-	UnicodeData,
-} from '@/utils/types';
-import { isMetadataType } from '@/utils/types';
+import type { DownloadMetadata, FontList } from '@/utils/types';
 import { kya } from '@/utils/utils.server';
 
 const getFontList = async (): Promise<FontList> => {
@@ -17,28 +10,8 @@ const getFontList = async (): Promise<FontList> => {
 	);
 };
 
-const BASE_URL = (type: MetadataType) =>
-	`https://cdn.jsdelivr.net/gh/fontsource/font-files@main/fonts/${type}`;
-
-const fetchMetadata = async (id: string, type?: MetadataType) => {
+const updateMetadata = async (metadata: DownloadMetadata) => {
 	await ensurePrimary();
-
-	if (!type) {
-		const fontList = await getFontList();
-		type = fontList[id] as MetadataType;
-		if (!isMetadataType(type))
-			throw new Error(
-				`Font ID ${id} does not have a valid metadata type (${type}).`
-			);
-	}
-
-	const METADATA_URL = `${BASE_URL(type)}/${id}/metadata.json`;
-	const UNICODE_URL = `${BASE_URL(type)}/${id}/unicode.json`;
-	const PACKAGE_URL = `${BASE_URL(type)}/${id}/package.json`;
-
-	const metadata: DownloadMetadata = await kya(METADATA_URL);
-	const unicode: UnicodeData = await kya(UNICODE_URL);
-	const packageJson: PackageJson = await kya(PACKAGE_URL);
 
 	// Save metadata to DB
 	await knex('fonts')
@@ -52,7 +25,7 @@ const fetchMetadata = async (id: string, type?: MetadataType) => {
 			variable: Boolean(metadata.variable),
 			lastModified: metadata.lastModified,
 			version: metadata.version,
-			npmVersion: packageJson.version,
+			npmVersion: metadata.npmVersion,
 			category: metadata.category,
 			source: metadata.source,
 			license: JSON.stringify(metadata.license),
@@ -64,7 +37,7 @@ const fetchMetadata = async (id: string, type?: MetadataType) => {
 	await knex('unicode')
 		.insert({
 			id: metadata.id,
-			data: JSON.stringify(unicode),
+			data: JSON.stringify(metadata.unicodeRange),
 		})
 		.onConflict('id')
 		.merge();
@@ -80,14 +53,14 @@ const fetchMetadata = async (id: string, type?: MetadataType) => {
 	}
 
 	await addCss(metadata);
-	console.log(`Fetched metadata for ${id}`);
+	console.log(`Fetched metadata for ${metadata.id}`);
 };
 
 const getMetadata = async (id: string) => {
 	// Check if metadata already exists in DB
 	let metadata = await knex('fonts').where({ id }).first();
 	if (!metadata) {
-		await fetchMetadata(id);
+		await updateAllMetadata([id]);
 		metadata = await knex('fonts').where({ id }).first();
 	}
 
@@ -101,4 +74,41 @@ const getMetadata = async (id: string) => {
 	return metadata;
 };
 
-export { fetchMetadata, getFontList, getMetadata };
+const MANIFEST_URL =
+	'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/fontsource.json';
+
+const getMetadataDate = async (id: string) => {
+	const date = await knex('fonts').select('lastModified').where({ id }).first();
+	return date?.lastModified;
+};
+
+const updateAllMetadata = async (fonts?: string[]) => {
+	const fontList = await getFontList();
+
+	const updateArr = fonts ?? [];
+	// If no fonts are specified, check all fonts
+	if (!fonts) {
+		for (const id of Object.keys(fontList)) {
+			if ((await getMetadataDate(id)) !== fontList[id]) {
+				updateArr.push(id);
+			}
+		}
+	}
+
+	// Verify that fonts exist in manifest
+	for (const id of updateArr) {
+		if (!fontList[id]) {
+			throw new Error(`Font ${id} does not exist in manifest`);
+		}
+	}
+
+	const manifest: Record<string, DownloadMetadata> = await kya(MANIFEST_URL);
+	for (const id of updateArr) {
+		console.log(`Updating metadata for ${id}`);
+		await updateMetadata(manifest[id]);
+	}
+
+	console.log(`Updated metadata for ${updateArr.length} fonts`);
+};
+
+export { getFontList, getMetadata, updateAllMetadata, updateMetadata };

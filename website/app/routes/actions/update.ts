@@ -1,13 +1,11 @@
 import type { ActionFunction, LoaderFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
-import PQueue from 'p-queue';
 import invariant from 'tiny-invariant';
 
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
 import { updateDownloadCount } from '@/utils/metadata/download.server';
-import { fetchMetadata, getFontList } from '@/utils/metadata/metadata.server';
+import { updateAllMetadata } from '@/utils/metadata/metadata.server';
 import { updateAxisRegistry } from '@/utils/metadata/variable.server';
-import type { MetadataType } from '@/utils/types';
 
 interface UpdateData {
 	fonts?: boolean | string[];
@@ -16,38 +14,6 @@ interface UpdateData {
 	axisRegistry?: boolean;
 	force?: boolean;
 }
-
-// Speed things up by running these in parallel
-const queue = new PQueue({ concurrency: 32 });
-
-// @ts-ignore - for some reason error is not an accepted type
-queue.on('error', (error) => {
-	console.error(error);
-});
-
-queue.on('idle', async () => {
-	console.log('Metadata update complete!');
-});
-
-const updateFonts = async (data: UpdateData) => {
-	const list = await getFontList();
-
-	let updateList: string[] = [];
-	if (Array.isArray(data.fonts)) {
-		// Verify that the fonts sent are valid
-		for (const id of data.fonts) {
-			invariant(Object.keys(list).includes(id), `Font ${id} does not exist`);
-		}
-
-		updateList = data.fonts;
-	} else {
-		updateList = Object.keys(list);
-	}
-
-	for (const id of updateList) {
-		queue.add(async () => await fetchMetadata(id, list[id] as MetadataType));
-	}
-};
 
 export const loader: LoaderFunction = async () => {
 	return redirect('/');
@@ -67,7 +33,13 @@ export const action: ActionFunction = async ({ request }) => {
 	// Algolia already runs fetch metadata if that is active
 	if (data.fonts && !data.algolia) {
 		console.log('Updating fonts');
-		await updateFonts(data);
+		if (Array.isArray(data.fonts)) {
+			console.log(`Updating ${data.fonts.length} fonts`);
+			await updateAllMetadata(data.fonts);
+		} else {
+			console.log('Updating all fonts');
+			await updateAllMetadata();
+		}
 	}
 
 	if (data.algolia) {

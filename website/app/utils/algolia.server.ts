@@ -2,7 +2,10 @@ import algoliasearch from 'algoliasearch';
 
 import { knex } from '@/utils/db.server';
 import { updateDownloadCount } from '@/utils/metadata/download.server';
-import { fetchMetadata, getFontList } from '@/utils/metadata/metadata.server';
+import {
+	getFontList,
+	updateAllMetadata,
+} from '@/utils/metadata/metadata.server';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 const shuffleArray = (size: number) => {
@@ -56,7 +59,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 			let metadata = await getMetadata(id);
 
 			if (!metadata) {
-				await fetchMetadata(id);
+				await updateAllMetadata([id]);
 				metadata = await getMetadata(id);
 			}
 
