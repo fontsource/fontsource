@@ -109,15 +109,19 @@ const VariableButtonsGroup = ({
 }: VariableButtonGroupProps) => {
 	return (
 		<>
-			{Object.keys(variable).map((key) => (
-				<VariableButton
-					key={key}
-					tag={key}
-					label={axisRegistry[key].name}
-					description={axisRegistry[key].description}
-					axes={variable[key]}
-				/>
-			))}
+			{Object.keys(variable).map((key) => {
+				const label = axisRegistry[key]?.name ?? key;
+				const description = axisRegistry[key]?.description ?? key;
+				return (
+					<VariableButton
+						key={key}
+						tag={key}
+						label={label}
+						description={description}
+						axes={variable[key]}
+					/>
+				)
+			})}
 		</>
 	);
 };
