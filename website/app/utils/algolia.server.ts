@@ -1,12 +1,9 @@
 import algoliasearch from 'algoliasearch';
 
-import { knex } from './db.server';
-import {
-	fetchMetadata,
-	getFontList,
-	updateDownloadCount,
-} from './metadata.server';
-import type { AlgoliaMetadata } from './types';
+import { knex } from '@/utils/db.server';
+import { updateDownloadCount } from '@/utils/metadata/download.server';
+import { fetchMetadata, getFontList } from '@/utils/metadata/metadata.server';
+import type { AlgoliaMetadata } from '@/utils/types';
 
 const shuffleArray = (size: number) => {
 	// Generate array of numbers from 0 to size
@@ -88,7 +85,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 		const searchIndex = client.initIndex('prod_NAME');
 		if (force) {
 			await searchIndex.replaceAllObjects(indexArray);
-			console.log('Replaced Algolia index')
+			console.log('Replaced Algolia index');
 		} else {
 			await searchIndex.saveObjects(indexArray);
 			console.log('Updated Algolia index');

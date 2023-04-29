@@ -4,12 +4,9 @@ import PQueue from 'p-queue';
 import invariant from 'tiny-invariant';
 
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
-import {
-	fetchMetadata,
-	getFontList,
-	updateAxisRegistry,
-	updateDownloadCount,
-} from '@/utils/metadata.server';
+import { updateDownloadCount } from '@/utils/metadata/download.server';
+import { fetchMetadata, getFontList } from '@/utils/metadata/metadata.server';
+import { updateAxisRegistry } from '@/utils/metadata/variable.server';
 import type { MetadataType } from '@/utils/types';
 
 interface UpdateData {

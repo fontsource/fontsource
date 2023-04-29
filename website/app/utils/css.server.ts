@@ -1,10 +1,10 @@
 import { HTTPError } from 'ky';
 
-import { knex } from './db.server';
-import { ensurePrimary } from './fly.server';
-import { fetchMetadata } from './metadata.server';
-import type { DownloadMetadata, MetadataType } from './types';
-import { isStandardAxesKey, kya } from './utils.server';
+import { knex } from '@/utils/db.server';
+import { ensurePrimary } from '@/utils/fly.server';
+import { fetchMetadata } from '@/utils/metadata/metadata.server';
+import type { DownloadMetadata, MetadataType } from '@/utils/types';
+import { isStandardAxesKey, kya } from '@/utils/utils.server';
 
 const BASE_URL = (type: MetadataType) =>
 	`https://cdn.jsdelivr.net/gh/fontsource/font-files@main/fonts/${type}`;
