@@ -4,6 +4,7 @@ export { IconEye } from './Eye';
 export { IconGithub } from './Github';
 export { IconGrid } from './Grid';
 export { IconHorizontal } from './Horizontal';
+export { IconInfo } from './Info';
 export { IconList } from './List';
 export { IconMoon } from './Moon';
 export { IconRotate } from './Rotate';

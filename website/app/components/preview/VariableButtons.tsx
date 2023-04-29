@@ -12,6 +12,7 @@ import { useAtom } from 'jotai';
 import { IconRotate } from '@/components/icons';
 import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
 
+import { InfoTooltip } from '../InfoTooltip';
 import { variableAtom, variationAtom } from './atoms';
 
 interface VariableButtonGroupProps {
@@ -23,6 +24,7 @@ interface VariableButtonProps {
 	tag: string;
 	label: string;
 	axes: AxesData;
+	description: string;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -54,7 +56,12 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const VariableButton = ({ tag, label, axes }: VariableButtonProps) => {
+const VariableButton = ({
+	tag,
+	label,
+	axes,
+	description,
+}: VariableButtonProps) => {
 	const { classes } = useStyles();
 	const [_, setVariation] = useAtom(variationAtom);
 	const [variableValue] = useAtom(variableAtom);
@@ -69,7 +76,12 @@ const VariableButton = ({ tag, label, axes }: VariableButtonProps) => {
 	return (
 		<Box className={classes.button}>
 			<Group position="apart" mb={3}>
-				<Text fz='sm' fw={400}>{label}</Text>
+				<Group align='center' spacing={2}>
+					<Text fz="sm" fw={400}>
+						{label} <span>({tag})</span>
+					</Text>
+					<InfoTooltip label={description} />
+				</Group>
 				<ActionIcon onClick={resetVariationAtom} variant="transparent" mr={-4}>
 					<IconRotate height={16} />
 				</ActionIcon>
@@ -84,8 +96,8 @@ const VariableButton = ({ tag, label, axes }: VariableButtonProps) => {
 				value={variableValue[tag] ?? Number(axes.default)}
 			/>
 			<Group position="apart" px={3} mt={4}>
-				<Text fz='sm'>{axes.min}</Text>
-				<Text fz='sm'>{axes.max}</Text>
+				<Text fz="sm">{axes.min}</Text>
+				<Text fz="sm">{axes.max}</Text>
 			</Group>
 		</Box>
 	);
@@ -98,7 +110,13 @@ const VariableButtonsGroup = ({
 	return (
 		<>
 			{Object.keys(variable).map((key) => (
-				<VariableButton key={key} tag={key} label={axisRegistry[key].name} axes={variable[key]} />
+				<VariableButton
+					key={key}
+					tag={key}
+					label={axisRegistry[key].name}
+					description={axisRegistry[key].description}
+					axes={variable[key]}
+				/>
 			))}
 		</>
 	);
