@@ -5,8 +5,16 @@ const sizeAtom = atom(32);
 const italicAtom = atom(false);
 const lineHeightAtom = atom(2);
 const letterSpacingAtom = atom(2);
-const colorAtom = atom('#000000');
 const transparencyAtom = atom(100);
+
+const COLOR_REGEX = /^#[a-fA-F0-9]{0,6}$/;
+const colorBaseAtom = atom('#000000');
+const colorAtom = atom(
+	(get) => get(colorBaseAtom),
+	(_, set, color: string) => {
+		if (COLOR_REGEX.test(color)) set(colorBaseAtom, color);
+	}
+);
 
 // Generate font-variation-settings string from axes object e.g. "wght" 400, "wdth" 100
 const createFontVariation = (axes: Record<string, number>) => {

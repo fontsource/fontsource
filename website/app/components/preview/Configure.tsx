@@ -59,7 +59,7 @@ const Configure = ({ metadata, variable }: ConfigureProps) => {
 				<NormalButtonsGroup hasItalic={metadata.styles.includes('italic')} />
 				{metadata.variable && (
 					<>
-						<Divider />
+						<Divider mt='sm' />
 						<Group position="apart">
 							<Text className={classes.title}>Variable Axes</Text>
 							<ActionIcon>
