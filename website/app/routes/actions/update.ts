@@ -4,7 +4,11 @@ import invariant from 'tiny-invariant';
 
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
 import { updateDownloadCount } from '@/utils/metadata/download.server';
-import { updateAllMetadata } from '@/utils/metadata/metadata.server';
+import {
+	metadataQueue,
+	updateAllMetadata,
+	updateSingleMetadata,
+} from '@/utils/metadata/metadata.server';
 import { updateAxisRegistry } from '@/utils/metadata/variable.server';
 
 interface UpdateData {
@@ -35,7 +39,9 @@ export const action: ActionFunction = async ({ request }) => {
 		console.log('Updating fonts');
 		if (Array.isArray(data.fonts)) {
 			console.log(`Updating ${data.fonts.length} fonts`);
-			await updateAllMetadata(data.fonts);
+			for (const id of data.fonts) {
+				metadataQueue.add(async () => await updateSingleMetadata(id));
+			}
 		} else {
 			console.log('Updating all fonts');
 			await updateAllMetadata();

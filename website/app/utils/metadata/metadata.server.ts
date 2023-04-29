@@ -63,7 +63,7 @@ const getMetadata = async (id: string) => {
 	// Check if metadata already exists in DB
 	let metadata = await knex('fonts').where({ id }).first();
 	if (!metadata) {
-		await updateAllMetadata([id]);
+		await updateSingleMetadata('id');
 		metadata = await knex('fonts').where({ id }).first();
 	}
 
@@ -85,51 +85,66 @@ const getMetadataDate = async (id: string) => {
 	return date?.lastModified;
 };
 
-// Prevent multiple metadata updates from running at once
-let isUpdating = false;
+// We can cache these results
+let manifestCache: Record<string, DownloadMetadata> = {};
+let fontlistCache: FontList = {};
 
-const queue = new PQueue({ concurrency: 4 });
+const updateMetadataCaches = async () => {
+	fontlistCache = await getFontList();
+	manifestCache = await kya(MANIFEST_URL);
+};
+
+export const metadataQueue = new PQueue({ concurrency: 4 });
 // @ts-ignore - for some reason error is not an accepted type
-queue.on('error', (error) => {
+metadataQueue.on('error', async (error) => {
 	console.error(error);
 });
 
-queue.on('idle', async () => {
-	isUpdating = false;
+metadataQueue.on('idle', async () => {
 	console.log('Metadata update complete!');
 });
 
-const updateAllMetadata = async (fonts?: string[]) => {
-	// If update is already running, return
-	if (!isUpdating) {
-		isUpdating = true;
-	} else {
-		return;
+const updateSingleMetadata = async (id: string) => {
+	let metadata = manifestCache[id];
+	if (!metadata) {
+		await updateMetadataCaches();
+		metadata = manifestCache[id];
+		if (!metadata) {
+			throw new Error(`Font ${id} does not exist in manifest`);
+		}
 	}
 
-	const fontList = await getFontList();
+	await updateMetadata(metadata);
+};
 
-	const updateArr = fonts ?? [];
+const updateAllMetadata = async () => {
+	await updateMetadataCaches();
+
+	const updateArr = [];
 	// If no fonts are specified, check all fonts
-	if (!fonts) {
-		for (const id of Object.keys(fontList)) {
-			if ((await getMetadataDate(id)) !== fontList[id]) {
-				updateArr.push(id);
-			}
+	for (const id of Object.keys(fontlistCache)) {
+		if ((await getMetadataDate(id)) !== fontlistCache[id]) {
+			updateArr.push(id);
 		}
 	}
 
 	// Verify that fonts exist in manifest
 	for (const id of updateArr) {
-		if (!fontList[id]) {
+		if (!manifestCache[id]) {
 			throw new Error(`Font ${id} does not exist in manifest`);
 		}
 	}
 
-	const manifest: Record<string, DownloadMetadata> = await kya(MANIFEST_URL);
 	for (const id of updateArr) {
-		queue.add(async () => await updateMetadata(manifest[id]));
+		// eslint-disable-next-line no-loop-func
+		metadataQueue.add(async () => await updateMetadata(manifestCache[id]));
 	}
 };
 
-export { getFontList, getMetadata, updateAllMetadata, updateMetadata };
+export {
+	getFontList,
+	getMetadata,
+	updateAllMetadata,
+	updateMetadata,
+	updateSingleMetadata,
+};

@@ -59,7 +59,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 			let metadata = await getMetadata(id);
 
 			if (!metadata) {
-				await updateAllMetadata([id]);
+				await updateAllMetadata();
 				metadata = await getMetadata(id);
 			}
 

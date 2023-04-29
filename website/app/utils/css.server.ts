@@ -2,7 +2,10 @@ import { HTTPError } from 'ky';
 
 import { knex } from '@/utils/db.server';
 import { ensurePrimary } from '@/utils/fly.server';
-import { updateAllMetadata } from '@/utils/metadata/metadata.server';
+import {
+	metadataQueue,
+	updateSingleMetadata,
+} from '@/utils/metadata/metadata.server';
 import type { DownloadMetadata, FontDirectory } from '@/utils/types';
 import { isStandardAxesKey, kya } from '@/utils/utils.server';
 
@@ -51,7 +54,7 @@ const getFontDirectory = (
 const addCss = async (metadata: DownloadMetadata) => {
 	await ensurePrimary();
 	// Add general CSS
-	const { id, weights, styles, variable, type } = metadata;
+	const { id, weights, styles, variable } = metadata;
 	let fontDir = getFontDirectory(metadata, false);
 	for (const weight of weights) {
 		for (const style of styles) {
@@ -297,8 +300,9 @@ const getCss = async (id: string, opts: CssOptions): Promise<string> => {
 		try {
 			css = await getIndexCss(id);
 		} catch {
+			await metadataQueue.onIdle();
 			// Maybe the font isn't in the db yet, try again
-			await updateAllMetadata([id]);
+			await updateSingleMetadata(id);
 			css = getIndexCss(id);
 		}
 		return css;
@@ -308,7 +312,8 @@ const getCss = async (id: string, opts: CssOptions): Promise<string> => {
 		try {
 			css = await getAllCss(id, opts.variable);
 		} catch {
-			await updateAllMetadata([id]);
+			await metadataQueue.onIdle();
+			await updateSingleMetadata(id);
 			css = getAllCss(id, opts.variable);
 		}
 		return css;
