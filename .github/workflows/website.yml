@@ -25,7 +25,5 @@ jobs:
         with:
           url: "https://beta.fontsource.org/actions/update"
           method: "POST"
-          bearerToken: ${{ secrets.WESBITE_UPDATE_TOKEN }}
+          bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
           data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true}'
-          retry: 1
-          retryWait: 15000
