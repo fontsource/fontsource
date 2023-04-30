@@ -7,14 +7,12 @@ import { useMemo } from 'react';
 import { getMDXComponent } from '@/utils/mdx/getMdxComponent';
 import { fetchMdx } from '@/utils/mdx/mdx.server';
 
-export const loader: LoaderFunction = async ({ params }) => {
-	const { id } = params;
+export const loader: LoaderFunction = async () => {
 	const { code, frontmatter } = await fetchMdx('getting-started/overview');
-
 	return json({ code, frontmatter });
 };
 
-export default function Docs() {
+export default function Index() {
 	const data = useLoaderData();
 	const { code, frontmatter } = data;
 

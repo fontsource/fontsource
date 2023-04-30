@@ -39,6 +39,8 @@ const esbuildOptions = async (
 		define['process.env.NODE_ENV'] = JSON.stringify(process.env.NODE_ENV);
 	}
 
+	// Import any imported components into esbuild resolver
+
 	const inMemoryPlugin: Plugin = {
 		name: 'inMemory',
 		setup(build) {
