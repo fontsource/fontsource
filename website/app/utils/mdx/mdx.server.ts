@@ -1,12 +1,21 @@
 import * as fs from 'fs/promises';
 import * as path from 'pathe';
-import remarkAutolinkHeadings from 'remark-autolink-headings';
-import remarkGfm from 'remark-gfm';
-import remarkSlug from 'remark-slug';
 
 import { serialise } from './esbuild.server';
 
-const globals = {};
+// We need to add the globals to the esbuild config so that it doesn't try to bundle them.
+const globals: Record<string, string> = {
+	react: 'React',
+	'react-dom': 'ReactDOM',
+};
+
+process.env.NODE_ENV === 'production'
+	? Object.assign(globals, {
+			'react/jsx-runtime': '_jsx_runtime',
+	  })
+	: Object.assign(globals, {
+			'react/jsx-dev-runtime': '_jsx_runtime',
+	  });
 
 const getSource = async (slug: string) => {
 	const filepath = path.join(__dirname, '../docs', slug + '.mdx');
@@ -15,7 +24,7 @@ const getSource = async (slug: string) => {
 
 const fetchMdx = async (slug: string) => {
 	const source = await getSource(slug);
-	const { code, frontmatter } = await serialise(source);
+	const { code, frontmatter } = await serialise(source, globals);
 
 	return { code, frontmatter, globals };
 };

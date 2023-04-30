@@ -12,7 +12,7 @@ import { matter } from 'vfile-matter';
 
 /**
  * Mostly derived from MDX Bundler, but strips out a lot of the stuff we don't need as
- * well as fix some incomparabilities with esbuild resolution with pnpm and esm plugins.
+ * well as fix some incompatabilities with esbuild resolution with pnpm and esm plugins.
  */
 
 interface SerialiseOutput {
@@ -20,7 +20,10 @@ interface SerialiseOutput {
 	frontmatter: Record<string, unknown>;
 }
 
-const esbuildOptions = async (source: VFile): Promise<BuildOptions> => {
+const esbuildOptions = async (
+	source: VFile,
+	globals: Record<string, string>
+): Promise<BuildOptions> => {
 	const absoluteFiles: Record<string, string> = {};
 
 	const entryPath = source.path
@@ -111,45 +114,31 @@ const esbuildOptions = async (source: VFile): Promise<BuildOptions> => {
 	const mdxPlugin = (await import('@mdx-js/esbuild')).default;
 
 	// This helps reduce bundles from having duplicated packages
-	const globals: Record<string, ModuleInfo> = {
-		react: {
-			varName: 'React',
+	const newGlobals: Record<string, ModuleInfo> = {};
+	for (const [key, value] of Object.entries(globals)) {
+		newGlobals[key] = {
+			varName: value,
 			type: 'cjs',
-		},
-		'react-dom': {
-			varName: 'ReactDOM',
-			type: 'cjs',
-		},
-	};
-
-	// JSX global runtime
-	const devRuntime = {
-		'react/jsx-dev-runtime': {
-			varName: '_jsx_runtime',
-			type: 'cjs',
-		},
-	};
-	const prodRuntime = {
-		'react/jsx-runtime': {
-			varName: '_jsx_runtime',
-			type: 'cjs',
-		},
-	};
-	process.env.NODE_ENV === 'production'
-		? Object.assign(globals, prodRuntime)
-		: Object.assign(globals, devRuntime);
+		};
+	}
 
 	return {
 		entryPoints: [entryPath],
 		write: false,
 		define,
 		plugins: [
-			globalExternals(globals),
+			globalExternals(newGlobals),
 			NodeResolvePlugin({
 				extensions: ['.js', '.jsx', '.ts', '.tsx'],
 			}),
 			inMemoryPlugin,
-			mdxPlugin({}),
+			mdxPlugin({
+				remarkPlugins: [(await import('remark-gfm')).default],
+				rehypePlugins: [
+					(await import('rehype-slug')).default,
+					(await import('rehype-autolink-headings')).default,
+				],
+			}),
 		],
 		bundle: true,
 		format: 'iife',
@@ -158,11 +147,14 @@ const esbuildOptions = async (source: VFile): Promise<BuildOptions> => {
 	};
 };
 
-const serialise = async (source: VFileCompatible): Promise<SerialiseOutput> => {
+const serialise = async (
+	source: VFileCompatible,
+	globals: Record<string, string>
+): Promise<SerialiseOutput> => {
 	const file = new VFile(source);
 	matter(file, { strip: true });
 
-	const bundled = await esbuild.build(await esbuildOptions(file));
+	const bundled = await esbuild.build(await esbuildOptions(file, globals));
 	const decoder = new StringDecoder('utf8');
 
 	if (bundled.outputFiles === undefined || bundled.outputFiles.length === 0) {
