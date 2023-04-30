@@ -27,3 +27,5 @@ jobs:
           method: "POST"
           bearerToken: ${{ secrets.WESBITE_UPDATE_TOKEN }}
           data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true}'
+					retry: 1
+					retryDelay: 30000

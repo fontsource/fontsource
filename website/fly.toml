@@ -29,13 +29,23 @@ kill_timeout = "5s"
   [[services.ports]]
     port = 443
     handlers = ["tls", "http"]
+
   [services.concurrency]
     type = "connections"
-    hard_limit = 40
-    soft_limit = 35
+    hard_limit = 60
+    soft_limit = 45
 
   [[services.tcp_checks]]
     interval = "15s"
     timeout = "2s"
-    grace_period = "5s"
+    grace_period = "15s"
     restart_limit = 5
+
+  [[services.http_checks]]
+    interval = 15000
+    grace_period = "15s"
+    method = "get"
+    path = "/"
+    protocol = "http"
+    timeout = 2000
+    tls_skip_verify = false
