@@ -5,6 +5,9 @@ module.exports = {
 		'ky',
 		'@fontsource/inter',
 		'@fontsource/source-code-pro',
+		'nanoid',
+		/^unist.*/,
+		/^vfile.*/,
 	],
 	future: {
 		unstable_cssSideEffectImports: true,

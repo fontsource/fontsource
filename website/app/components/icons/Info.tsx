@@ -15,7 +15,7 @@ const IconInfo = ({ height, ...others }: IconProps) => {
 			xmlns="http://www.w3.org/2000/svg"
 			{...others}
 		>
-			<g clip-path="url(#clip0_211_1023)">
+			<g clipPath="url(#clip0_211_1023)">
 				<path
 					d="M10 18.3333C14.6024 18.3333 18.3333 14.6024 18.3333 9.99999C18.3333 5.39762 14.6024 1.66666 10 1.66666C5.39763 1.66666 1.66667 5.39762 1.66667 9.99999C1.66667 14.6024 5.39763 18.3333 10 18.3333Z"
 					stroke={stroke}
