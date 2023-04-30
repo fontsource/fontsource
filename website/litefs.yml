@@ -3,7 +3,7 @@ fuse:
 
 data:
   # Path to internal data storage.
-  dir: '/data/litefs'
+  dir: '/var/lib/litefs'
 
 proxy:
   # matches the internal_port in fly.toml

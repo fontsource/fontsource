@@ -8,6 +8,10 @@ primary_region = "nrt"
 kill_signal = "SIGINT"
 kill_timeout = "5s"
 
+[mounts]
+  source = "litefs"
+  destination = "/var/lib/litefs"
+
 [experimental]
   auto_rollback = true
   enable_consul = true
