@@ -1,6 +1,6 @@
-import { Box,createStyles,Title } from '@mantine/core';
+import { Badge, createStyles, Group, rem, Tabs, Title } from '@mantine/core';
 import type { LoaderFunction } from '@remix-run/node';
-import { json } from '@remix-run/node'
+import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
@@ -23,12 +23,12 @@ export const loader: LoaderFunction = async ({ params }) => {
 	}
 
 	return json({ metadata, variable, axisRegistry });
-}
+};
 
 interface FontMetadata {
-	metadata: Metadata
-	variable: VariableData
-	axisRegistry: Record<string, AxisRegistry>
+	metadata: Metadata;
+	variable: VariableData;
+	axisRegistry: Record<string, AxisRegistry>;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -38,25 +38,52 @@ const useStyles = createStyles((theme) => ({
 		justifyContent: 'space-between',
 		padding: '24px',
 	},
+
+	badge: {
+		padding: `${rem(4)} ${rem(8)}`,
+		gap: rem(10),
+		backgroundColor: theme.colors.background[2],
+		borderRadius: rem(4),
+		fontFamily: theme.fontFamilyMonospace,
+		textTransform: 'lowercase'
+	}
 }));
 
 export default function Font() {
 	const data: FontMetadata = useLoaderData();
 	const { metadata, variable, axisRegistry } = data;
-	const {classes} = useStyles();
+	const { classes } = useStyles();
 
 	return (
-		<>
+		<Tabs defaultValue="preview" variant="pills">
 			<ContentHeader>
-			<Title order={1} color="purple">
-          {metadata.family}
-			</Title>
-			{metadata.category} {metadata.type}
+				<Group align='center'>
+					<Title order={1} color="purple" pr='lg'>
+						{metadata.family}
+					</Title>
+					<Badge color="gray" variant="light" className={classes.badge}>
+						{metadata.category}
+					</Badge>
+					<Badge color="gray" variant="light" className={classes.badge}>
+						{metadata.type}
+					</Badge>
+				</Group>
+				<Tabs.List>
+					<Tabs.Tab value="preview">Preview</Tabs.Tab>
+					<Tabs.Tab value="install">Install</Tabs.Tab>
+					<Tabs.Tab value="download">Download</Tabs.Tab>
+				</Tabs.List>
 			</ContentHeader>
-			<Box className={classes.wrapperPreview}>
-				<TextArea metadata={metadata}/>
-				<Configure metadata={metadata} variable={variable} axisRegistry={axisRegistry} />
-			</Box>
-		</>
-  )
+			<Tabs.Panel value="preview" className={classes.wrapperPreview}>
+				<TextArea metadata={metadata} />
+				<Configure
+					metadata={metadata}
+					variable={variable}
+					axisRegistry={axisRegistry}
+				/>
+			</Tabs.Panel>
+			<Tabs.Panel value="install">Install</Tabs.Panel>
+			<Tabs.Panel value="download">Download</Tabs.Panel>
+		</Tabs>
+	);
 }
