@@ -34,8 +34,7 @@ export const action: ActionFunction = async ({ request }) => {
 		return new Response('Invalid update bearer token', { status: 401 });
 	}
 
-	// Algolia already runs fetch metadata if that is active
-	if (data.fonts && !data.algolia) {
+	if (data.fonts) {
 		console.log('Updating fonts');
 		if (Array.isArray(data.fonts)) {
 			console.log(`Updating ${data.fonts.length} fonts`);
@@ -43,13 +42,14 @@ export const action: ActionFunction = async ({ request }) => {
 				metadataQueue.add(async () => await updateSingleMetadata(id));
 			}
 		} else {
-			console.log('Updating all fonts');
 			await updateAllMetadata();
+			console.log('Updating all fonts');
 		}
 	}
 
 	if (data.algolia) {
 		console.log('Updating algolia index');
+		await metadataQueue.onIdle(); // Wait for all metadata to be updated if fonts is called
 		await updateAlgoliaIndex(data.force);
 	}
 

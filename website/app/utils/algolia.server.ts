@@ -4,7 +4,7 @@ import { knex } from '@/utils/db.server';
 import { updateDownloadCount } from '@/utils/metadata/download.server';
 import {
 	getFontList,
-	updateAllMetadata,
+	updateSingleMetadata,
 } from '@/utils/metadata/metadata.server';
 import type { AlgoliaMetadata } from '@/utils/types';
 
@@ -59,7 +59,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 			let metadata = await getMetadata(id);
 
 			if (!metadata) {
-				await updateAllMetadata();
+				await updateSingleMetadata(id);
 				metadata = await getMetadata(id);
 			}
 
