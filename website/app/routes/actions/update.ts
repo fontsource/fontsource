@@ -26,12 +26,11 @@ export const loader: LoaderFunction = async () => {
 export const action: ActionFunction = async ({ request }) => {
 	const data: UpdateData = await request.json();
 	const header = await request.headers.get('Authorization');
-	invariant(header, 'No authorization header was sent with the request');
-
-	invariant(data, 'No data was sent with the request');
-
-	if (header !== `Bearer ${process.env.UPDATE_TOKEN}`) {
+	if (!header || header !== `Bearer ${process.env.UPDATE_TOKEN}`) {
 		return new Response('Invalid update bearer token', { status: 401 });
+	}
+	if (!data) {
+		return new Response('Invalid update data', { status: 400 });
 	}
 
 	if (data.fonts) {
