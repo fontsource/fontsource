@@ -27,3 +27,4 @@ jobs:
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
           data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true}'
+          preventFailureOnNoResponse: true
