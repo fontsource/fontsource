@@ -2,11 +2,7 @@ import { useMantineTheme } from '@mantine/core';
 
 import type { IconProps } from './types';
 
-interface IconCopyProps extends IconProps {
-	copied?: boolean;
-}
-
-export const IconCopy = ({ height, stroke, ...others }: IconCopyProps) => {
+export const IconCopy = ({ height, stroke, ...others }: IconProps) => {
 	const theme = useMantineTheme();
   const strokeNew = stroke ??
 		theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1];

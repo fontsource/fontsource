@@ -117,7 +117,7 @@ export const Code = (props: CodeProps) => {
 						aria-label={clipboard.copied ? copiedLabel : copyLabel}
 						onClick={() => clipboard.copy(code)}
 					>
-						<IconCopy stroke="white" copied={clipboard.copied} />
+						<IconCopy stroke="white" />
 					</ActionIcon>
 				</Tooltip>
 			</Group>

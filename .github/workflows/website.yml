@@ -26,5 +26,5 @@ jobs:
           url: "https://beta.fontsource.org/actions/update"
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
-          data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true}'
+          data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true, "docs": true}'
           preventFailureOnNoResponse: true

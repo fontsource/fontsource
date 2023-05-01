@@ -15,14 +15,21 @@ import { matter } from 'vfile-matter';
  * well as fix some incompatabilities with esbuild resolution with pnpm and esm plugins.
  */
 
-interface SerialiseOutput {
-	code: string;
-	frontmatter: Record<string, unknown>;
+export interface FrontMatter {
+	title: string;
+	section: string;
+	description?: string;
 }
+export interface SerialiseOutput {
+	code: string;
+	frontmatter: FrontMatter;
+}
+
+export type Globals = Record<string, string>;
 
 const esbuildOptions = async (
 	source: VFile,
-	globals: Record<string, string>
+	globals: Globals
 ): Promise<BuildOptions> => {
 	const absoluteFiles: Record<string, string> = {};
 
@@ -154,7 +161,7 @@ const esbuildOptions = async (
 
 const serialise = async (
 	source: VFileCompatible,
-	globals: Record<string, string>
+	globals: Globals
 ): Promise<SerialiseOutput> => {
 	const file = new VFile(source);
 	matter(file, { strip: true });
@@ -171,7 +178,7 @@ const serialise = async (
 
 	return {
 		code: `${code};return Component`,
-		frontmatter: file.data.matter as Record<string, unknown>,
+		frontmatter: file.data.matter as unknown as FrontMatter,
 	};
 };
 

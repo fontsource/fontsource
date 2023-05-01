@@ -1,8 +1,8 @@
 import type { ActionFunction, LoaderFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
-import invariant from 'tiny-invariant';
 
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
+import { resetDocsCache } from '@/utils/mdx/mdx.server';
 import { updateDownloadCount } from '@/utils/metadata/download.server';
 import {
 	metadataQueue,
@@ -16,6 +16,7 @@ interface UpdateData {
 	algolia?: boolean;
 	download?: boolean;
 	axisRegistry?: boolean;
+	docs?: boolean;
 	force?: boolean;
 }
 
@@ -27,10 +28,10 @@ export const action: ActionFunction = async ({ request }) => {
 	const data: UpdateData = await request.json();
 	const header = await request.headers.get('Authorization');
 	if (!header || header !== `Bearer ${process.env.UPDATE_TOKEN}`) {
-		return new Response('Invalid update bearer token', { status: 401 });
+		throw new Response('Invalid update bearer token', { status: 401 });
 	}
 	if (!data) {
-		return new Response('Invalid update data', { status: 400 });
+		throw new Response('Invalid update data', { status: 400 });
 	}
 
 	if (data.fonts) {
@@ -46,6 +47,16 @@ export const action: ActionFunction = async ({ request }) => {
 		}
 	}
 
+	if (data.docs) {
+		console.log('Resetting cache for docs');
+		await resetDocsCache();
+	}
+
+	if (data.axisRegistry) {
+		console.log('Updating axis registry');
+		await updateAxisRegistry();
+	}
+
 	if (data.algolia) {
 		console.log('Updating algolia index');
 		await metadataQueue.onIdle(); // Wait for all metadata to be updated if fonts is called
@@ -55,11 +66,6 @@ export const action: ActionFunction = async ({ request }) => {
 	if (data.download) {
 		console.log('Updating download count');
 		await updateDownloadCount();
-	}
-
-	if (data.axisRegistry) {
-		console.log('Updating axis registry');
-		await updateAxisRegistry();
 	}
 
 	return new Response('Success!');
