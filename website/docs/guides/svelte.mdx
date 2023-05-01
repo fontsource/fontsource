@@ -1,0 +1,38 @@
+---
+title: Svelte.js
+section: guides
+---
+
+# Svelte.js / Svelte Kit
+
+---
+
+To include Fontsource into your Svelte / SvelteKit project, it is required to add the `style` and the `elements in your `+layout.svelte` file.
+
+<CarbonAd />
+
+## Installation
+
+---
+
+To include Fontsource into your Svelte / SvelteKit project, it is required to import the font you are gonna use in your `+layout.svelte` file.
+
+```html
+<!--We are modifying the +layout.svelte file. -->
+<script>
+	import "@fontsource/open-sans"; // The font we are gonna serve with fontsource
+</script>
+```
+
+After adding the import to +layout file, we are gonna add an `style` in the same `+layout.svelte` file the `body` selector, using the `global()` utility from Svelte:
+
+```html
+<!--We are modifying the +layout.svelte file. -->
+<style>
+	<!-- We use the global selector because Svelte.-- > :global(body) {
+		font-family: "Open Sans", sans-serif;
+	}
+</style>
+```
+
+> **Note:** This will modify all the font-family for all the elements.

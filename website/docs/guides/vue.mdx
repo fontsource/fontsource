@@ -1,0 +1,29 @@
+---
+title: Vue.js
+section: guides
+---
+
+# Vue.js
+
+---
+
+To include Fontsource into your Vue.js project, you can import the Fontsource files into your entry point.
+
+<CarbonAd />
+
+## Installation
+
+---
+
+_main.js_
+
+```js
+import { createApp } from "vue";
+
+import "@fontsource/open-sans/400.css";
+import "@fontsource/open-sans/700.css";
+
+import App from "./App.vue";
+
+createApp(App).mount("#app");
+```

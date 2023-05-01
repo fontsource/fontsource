@@ -8,7 +8,7 @@ import { fetchMdx } from '@/utils/mdx/mdx.server';
 
 export const loader: LoaderFunction = async ({ params }) => {
 	const { id } = params;
-	const { code, frontmatter } = await fetchMdx('getting-started/overview');
+	const { code, frontmatter } = await fetchMdx('general/overview');
 
 	return json({ code, frontmatter });
 };
