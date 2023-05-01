@@ -1,4 +1,5 @@
 export { IconCaret } from './Caret';
+export { IconCopy } from './Copy';
 export { IconDiscord } from './Discord';
 export { IconEye } from './Eye';
 export { IconGithub } from './Github';
