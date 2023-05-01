@@ -1,6 +1,8 @@
-import { rem,Text, Title } from '@mantine/core';
+import { rem, Text, Title } from '@mantine/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+
+import { Code } from '@/components/code/Code';
 
 let _jsx_runtime: any;
 if (process.env.NODE_ENV === 'development') {
@@ -10,9 +12,18 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const mdxComponents = {
-	h1: (props: any) => <Title fw={700} size={24} sx={{ lineHeight: rem(50) }} {...props} />,
-	h2: (props: any) => <Title fw={700} size={18} sx={{ lineHeight: rem(40) }} {...props} />,
-	p: (props: any) => <Text fw={400} size={15} sx={{lineHeight: rem(24)}}{...props} />,
+	h1: (props: any) => (
+		<Title fw={700} size={24} sx={{ lineHeight: rem(50) }} {...props} />
+	),
+	h2: (props: any) => (
+		<Title fw={700} size={18} sx={{ lineHeight: rem(40) }} {...props} />
+	),
+	p: (props: any) => (
+		<Text fw={400} size={15} sx={{ lineHeight: rem(24) }} {...props} />
+	),
+
+	pre: (props: any) => <div {...props} />, // Unnecessary pre as we use Code component
+	code: (props: any) => <Code {...props} />,
 };
 
 const getMDXComponent = (code: string, globals?: Record<string, string>) => {

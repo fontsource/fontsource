@@ -135,7 +135,10 @@ const esbuildOptions = async (
 			}),
 			inMemoryPlugin,
 			mdxPlugin({
-				remarkPlugins: [(await import('remark-gfm')).default],
+				remarkPlugins: [
+					(await import('remark-gfm')).default,
+					(await import('remark-smartypants')).default,
+				],
 				rehypePlugins: [
 					(await import('rehype-slug')).default,
 					(await import('rehype-autolink-headings')).default,
@@ -164,6 +167,7 @@ const serialise = async (
 	}
 
 	const code = decoder.write(Buffer.from(bundled.outputFiles[0].contents));
+	console.log(code.length);
 
 	return {
 		code: `${code};return Component`,
