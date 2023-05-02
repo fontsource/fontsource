@@ -118,7 +118,6 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 };
 
 interface SectionItemProps {
-	section: string;
 	slug: string;
 	title: string;
 }
@@ -162,8 +161,7 @@ const LeftSidebar = () => {
 							([slug, title]) => (
 								<SectionItem
 									key={slug}
-									section={section}
-									slug={slug}
+									slug={`${routeSection}/${slug}`}
 									title={title}
 								/>
 							)
