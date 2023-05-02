@@ -1,45 +1,25 @@
 ---
-title: Overview
+title: Home
 section: contents
 ---
 
-# Getting Started
+# Fontsource
 
 ---
 
-Fontsource supports a variety of import methods. It either assumes you are using a bundler, such as Webpack, to load in CSS, or using Sass mixins which is explained [here](/docs/sass/mixins).
+An updating monorepo full of self-hostable Open Source fonts bundled into individual NPM packages!
 
-## Quick Installation
+### Advantages
 
 ---
 
-This is an installation example using Open Sans, applicable to all other fonts searchable via the [directory](/fonts).
+- Self-hosting brings **significant performance gains** as loading fonts from hosted services, such as Google Fonts, lead to an extra (render blocking) network request. To provide perspective, for simple websites it has been seen to _double_ visual load times.
+  Benchmarks can be found [here](https://github.com/HTTPArchive/almanac.httparchive.org/pull/607) and [here](https://github.com/reactiflux/reactiflux.com/pull/21).
 
-```js
-  yarn add @fontsource/open-sans // npm install @fontsource/open-sans
-```
+- Fonts remain **version locked**. Google often pushes updates to their fonts [without notice](https://github.com/google/fonts/issues/1307), which may interfere with your live production projects. Manage your fonts like any other NPM dependency.
 
-Then within your app entry file, page or site component, import it in. E.g. `_app.jsx` or `index.jsx` etc.
+- Commit to **privacy**. Google does track the usage of their fonts and for those who are extremely privacy concerned, self-hosting is an alternative.
 
-```jsx
-import "@fontsource/open-sans"; // Defaults to weight 400 with normal variant.
-```
+- Your **fonts load offline**. On top of benefiting PWAs, often there may be situations, like working in an airplane or train, leaving you stranded without access to your online hosted fonts. Have the ability to keep working under any circumstance.
 
-Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range) selector, all language subsets are accounted for.
-
-```jsx
-import "@fontsource/open-sans/500.css"; // Weight 500.
-import "@fontsource/open-sans/900-italic.css"; // Italic variant.
-```
-
-> **Note:** The range of supported weights and styles a font may support is shown in each directory listing or package README.
-
-Once imported, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
-
-```css
-body {
-	font-family: "Open Sans", sans-serif;
-}
-```
-
-If your chosen font supports variable fonts, it is highly recommended to use it when working with multiple weights for smaller bundle sizes. Learn more [here](/docs/variable-fonts).
+- **Support for fonts outside the Google Font ecosystem**. This repository is constantly evolving with [other Open Source fonts](https://github.com/fontsource/fontsource/blob/master/FONTLIST.md). Feel free to contribute!

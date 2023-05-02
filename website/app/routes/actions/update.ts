@@ -2,7 +2,7 @@ import type { ActionFunction, LoaderFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
 
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
-import { resetDocsCache } from '@/utils/mdx/mdx.server';
+import { populateDocsCache, resetDocsCache } from '@/utils/mdx/mdx.server';
 import { updateDownloadCount } from '@/utils/metadata/download.server';
 import {
 	metadataQueue,
@@ -50,6 +50,7 @@ export const action: ActionFunction = async ({ request }) => {
 	if (data.docs) {
 		console.log('Resetting cache for docs');
 		await resetDocsCache();
+		await populateDocsCache();
 	}
 
 	if (data.axisRegistry) {

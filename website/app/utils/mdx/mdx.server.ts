@@ -3,6 +3,7 @@ import * as path from 'pathe';
 
 import { knex } from '@/utils/db.server';
 import { ensurePrimary } from '@/utils/fly.server';
+import { getAllSlugsInDir } from '@/utils/utils.server';
 
 import type { Globals, SerialiseOutput } from './esbuild.server';
 import { serialise } from './esbuild.server';
@@ -71,9 +72,21 @@ const fetchMdx = async (slug: string): Promise<MdxResult | null> => {
 	return { code, frontmatter, globals };
 };
 
+const populateDocsCache = async () => {
+	await ensurePrimary();
+
+	// Get all mdx files in nested directories in the docs folder
+	const slugs = await getAllSlugsInDir(path.join(__dirname, '../docs'));
+
+	// Run fetchMdx for each slug to put it in the db cache
+	for (const slug of slugs) {
+		await fetchMdx(slug);
+	}
+};
+
 const resetDocsCache = async () => {
 	await ensurePrimary();
 	await knex('docs').del();
 };
 
-export { fetchMdx, resetDocsCache };
+export { fetchMdx, populateDocsCache, resetDocsCache };
