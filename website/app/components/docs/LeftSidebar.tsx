@@ -1,5 +1,7 @@
 import {
+	Button,
 	createStyles,
+	Divider,
 	Flex,
 	Group,
 	rem,
@@ -10,6 +12,7 @@ import {
 } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link, useParams } from '@remix-run/react';
+import { useAtom } from 'jotai';
 
 import type { IconProps } from '@/components/icons';
 import {
@@ -18,6 +21,8 @@ import {
 	IconGuide,
 	IconTool,
 } from '@/components/icons';
+
+import { sidebarAtom } from './atoms';
 
 interface SectionsData {
 	[slug: string]: {
@@ -59,26 +64,26 @@ const useStyles = createStyles((theme) => ({
 		borderRadius: rem(4),
 	},
 
-	sectionItem: {
+	routeItem: {
 		borderRadius: 0,
 		padding: `${rem(10)} ${rem(24)}`,
 	},
 }));
 
-interface SectionItemProps {
+interface RouteItemProps {
 	slug: string;
 	title: string;
 	Icon: React.FC<IconProps>;
 	active?: boolean;
 }
 
-const SectionItem = ({ slug, title, Icon, active }: SectionItemProps) => {
+const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 	const { classes } = useStyles();
 	const { hovered, ref } = useHover<HTMLAnchorElement>();
 	const theme = useMantineTheme();
 	return (
 		<UnstyledButton
-			className={classes.sectionItem}
+			className={classes.routeItem}
 			sx={{
 				color: active ? theme.colors.purple[0] : 'inherit',
 				borderLeft: active
@@ -105,22 +110,51 @@ const SectionItem = ({ slug, title, Icon, active }: SectionItemProps) => {
 	);
 };
 
+interface SectionItemProps {
+	slug: string;
+	title: string;
+}
+
+const SectionItem = ({ slug, title }: SectionItemProps) => {
+	const { classes } = useStyles();
+	const theme = useMantineTheme();
+
+	return (
+		<Button className={classes.routeItem} variant='subtle' component={Link} to={`/docs/${slug}`}>
+			<Text fw={700} color={theme.colors.purple[0]}>
+				{title}
+			</Text>
+		</Button>
+	);
+};
+
+
 const LeftSidebar = () => {
 	const { classes } = useStyles();
 	const params = useParams();
 	const route = params['*']?.split('/');
+	const [content] = useAtom(sidebarAtom);
 
 	return (
 		<ScrollArea.Autosize mah="100vh">
 			<Flex className={classes.wrapper}>
 				{Object.entries(sections).map(([slug, { title, icon }]) => (
-					<SectionItem
+					<RouteItem
 						key={slug}
 						slug={slug}
 						title={title}
 						Icon={icon}
 						active={route?.[0] === slug}
 					/>
+				))}
+				<Divider />
+				{Object.keys(content).map((section) => (
+					<>
+						<Text key={section}>{section}</Text>
+						{Object.entries(content[section]).map(([slug, title]) => (
+							<SectionItem key={slug} slug={slug} title={title} />
+						))}
+					</>
 				))}
 			</Flex>
 		</ScrollArea.Autosize>

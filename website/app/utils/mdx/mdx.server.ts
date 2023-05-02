@@ -36,20 +36,17 @@ interface MdxResult extends SerialiseOutput {
 }
 
 const fetchMdx = async (slug: string): Promise<MdxResult | null> => {
-	// Only use the db cache in production since it's not needed in development.
-	if (process.env.NODE_ENV === 'production') {
-		const result = await knex('docs').where({ route: slug }).first();
-		if (result) {
-			return {
-				code: result.content,
-				frontmatter: {
-					description: result.description,
-					title: result.title,
-					section: result.section,
-				},
-				globals,
-			};
-		}
+	const result = await knex('docs').where({ route: slug }).first();
+	if (result) {
+		return {
+			code: result.content,
+			frontmatter: {
+				description: result.description,
+				title: result.title,
+				section: result.section,
+			},
+			globals,
+		};
 	}
 
 	// If the doc doesn't exist in the db, we need to create it.
@@ -59,17 +56,44 @@ const fetchMdx = async (slug: string): Promise<MdxResult | null> => {
 
 	const { code, frontmatter } = await serialise(source, globals);
 
-	if (process.env.NODE_ENV === 'production') {
-		await knex('docs').insert({
+	await knex('docs')
+		.insert({
 			route: slug,
 			content: code,
 			title: frontmatter.title,
 			description: frontmatter.description,
 			section: frontmatter.section,
-		});
-	}
+		})
+		.onConflict('route')
+		.merge();
 
 	return { code, frontmatter, globals };
+};
+
+interface MdxListResult {
+	route: string;
+	section: string;
+	title: string;
+}
+export interface FetchMdxListResult {
+	[section: string]: {
+		[route: string]: string; // title
+	};
+}
+
+const fetchMdxList = async (dir: string): Promise<FetchMdxListResult> => {
+	const results: MdxListResult[] = await knex('docs')
+		.select('route', 'section', 'title')
+		.whereLike('route', `${dir}%`);
+
+	// We want a list of routes in sections for the left sidebar
+	const list: FetchMdxListResult = {};
+	for (const { route, section, title } of results) {
+		if (!list[section]) list[section] = {};
+		list[section][route] = title;
+	}
+
+	return list;
 };
 
 const populateDocsCache = async () => {
@@ -89,4 +113,4 @@ const resetDocsCache = async () => {
 	await knex('docs').del();
 };
 
-export { fetchMdx, populateDocsCache, resetDocsCache };
+export { fetchMdx, fetchMdxList, populateDocsCache, resetDocsCache };

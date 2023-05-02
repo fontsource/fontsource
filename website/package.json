@@ -6,6 +6,7 @@
 		"deploy": "fly deploy --remote-only",
 		"dev": "remix dev",
 		"migrations": "knex migrate:latest",
+		"reset-db": "knex migrate:rollback --all && knex migrate:latest",
 		"start": "remix-serve build",
 		"lint": "eslint **/*.{js,jsx,ts,tsx}"
 	},
