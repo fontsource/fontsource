@@ -1,0 +1,36 @@
+{
+	"getting-started": {
+		"Contents": {
+			"introduction": "Introduction",
+			"install": "Install"
+		},
+		"Icons": {
+			"material-icons": "Material Icons",
+			"material-symbols": "Material Symbols"
+		},
+		"Sass": {
+			"mixins": "Mixins",
+			"variable-mixins": "Variable Mixins"
+		}
+	},
+	"guides": {
+		"Frameworks": {
+			"nextjs": "Next.js"
+		},
+		"Libraries": {
+			"angular": "Angular",
+			"svelte": "Svelte",
+			"vue": "Vue"
+		}
+	},
+	"api": {
+		"Setup": {
+			"introduction": "Introduction"
+		},
+		"Reference": {
+			"fontlist": "Fontlist",
+			"font-id": "Font ID",
+			"fonts": "Fonts"
+		}
+	}
+}

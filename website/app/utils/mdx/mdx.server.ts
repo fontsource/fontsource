@@ -81,21 +81,6 @@ export interface FetchMdxListResult {
 	};
 }
 
-const fetchMdxList = async (dir: string): Promise<FetchMdxListResult> => {
-	const results: MdxListResult[] = await knex('docs')
-		.select('route', 'section', 'title')
-		.whereLike('route', `${dir}%`);
-
-	// We want a list of routes in sections for the left sidebar
-	const list: FetchMdxListResult = {};
-	for (const { route, section, title } of results) {
-		if (!list[section]) list[section] = {};
-		list[section][route] = title;
-	}
-
-	return list;
-};
-
 const populateDocsCache = async () => {
 	await ensurePrimary();
 

@@ -1,3 +1,4 @@
+import sidebarConfigImport from '@docs/sidebar.json'
 import {
 	Button,
 	createStyles,
@@ -12,7 +13,6 @@ import {
 } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link, useParams } from '@remix-run/react';
-import { useAtom } from 'jotai';
 
 import type { IconProps } from '@/components/icons';
 import {
@@ -22,7 +22,14 @@ import {
 	IconTool,
 } from '@/components/icons';
 
-import { sidebarAtom } from './atoms';
+interface SidebarConfig {
+	[slug: string]: {
+		[section: string]: {
+			[slug: string]: string; // title
+		};
+	};
+}
+const sidebarConfig = sidebarConfigImport as SidebarConfig;
 
 interface SectionsData {
 	[slug: string]: {
@@ -111,6 +118,7 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 };
 
 interface SectionItemProps {
+	section: string;
 	slug: string;
 	title: string;
 }
@@ -128,12 +136,11 @@ const SectionItem = ({ slug, title }: SectionItemProps) => {
 	);
 };
 
-
 const LeftSidebar = () => {
 	const { classes } = useStyles();
 	const params = useParams();
 	const route = params['*']?.split('/');
-	const [content] = useAtom(sidebarAtom);
+	const routeSection = route?.[0] as keyof SidebarConfig;
 
 	return (
 		<ScrollArea.Autosize mah="100vh">
@@ -148,12 +155,19 @@ const LeftSidebar = () => {
 					/>
 				))}
 				<Divider />
-				{Object.keys(content).map((section) => (
+				{Object.keys(sidebarConfig[routeSection]).map((section) => (
 					<>
 						<Text key={section}>{section}</Text>
-						{Object.entries(content[section]).map(([slug, title]) => (
-							<SectionItem key={slug} slug={slug} title={title} />
-						))}
+						{Object.entries(sidebarConfig[routeSection][section]).map(
+							([slug, title]) => (
+								<SectionItem
+									key={slug}
+									section={section}
+									slug={slug}
+									title={title}
+								/>
+							)
+						)}
 					</>
 				))}
 			</Flex>

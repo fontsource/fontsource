@@ -53,7 +53,10 @@ export const getAllSlugsInDir = async (dir: string) => {
 			if ((await fs.stat(absolute)).isDirectory()) {
 				await getFilesRecursively(absolute, newSlug);
 			} else {
-				files.push(newSlug.replace(/\.mdx$/, ''));
+				// We only want to add mdx files
+				if (file.endsWith('.mdx')) {
+					files.push(newSlug.replace(/\.mdx$/, ''));
+				}
 			}
 		}
 	};
