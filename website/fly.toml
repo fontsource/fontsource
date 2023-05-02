@@ -42,10 +42,10 @@ kill_timeout = "5s"
     restart_limit = 5
 
   [[services.http_checks]]
-    interval = 15000
+    interval = 30000
     grace_period = "15s"
     method = "get"
-    path = "/docs" # Don't hit main route as that burns algolia quota
+    path = "/docs/getting-started/introduction" # Don't hit main route as that burns algolia quota
     protocol = "http"
     timeout = 2000
     tls_skip_verify = false
