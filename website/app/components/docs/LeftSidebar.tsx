@@ -1,5 +1,6 @@
-import sidebarConfigImport from '@docs/sidebar.json'
+import sidebarConfigImport from '@docs/sidebar.json';
 import {
+	Box,
 	Button,
 	createStyles,
 	Divider,
@@ -13,6 +14,7 @@ import {
 } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link, useParams } from '@remix-run/react';
+import { Fragment } from 'react';
 
 import type { IconProps } from '@/components/icons';
 import {
@@ -72,8 +74,31 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	routeItem: {
+		display: 'flex',
 		borderRadius: 0,
 		padding: `${rem(10)} ${rem(24)}`,
+
+		'&:hover': {
+			color: theme.colors.purple[0],
+			borderLeft: `${rem(1)} solid ${theme.colors.purple[0]}`,
+		},
+	},
+
+	sections: {
+		display: 'flex',
+		flexDirection: 'column',
+		padding: rem(24),
+	},
+
+	sectionItem: {
+		alignItems: 'center',
+		padding: `${rem(8)} ${rem(16)}`,
+		marginBottom: rem(4),
+		borderRadius: rem(4),
+
+		'&:hover': {
+			backgroundColor: 'rgba(98, 91, 248, 0.1)',
+		},
 	},
 }));
 
@@ -96,11 +121,6 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 				borderLeft: active
 					? `${rem(1)} solid ${theme.colors.purple[0]}`
 					: `${rem(1)} solid transparent`,
-
-				'&:hover': {
-					color: theme.colors.purple[0],
-					borderLeft: `${rem(1)} solid ${theme.colors.purple[0]}`,
-				},
 			}}
 			component={Link}
 			to={`/docs/${slug}`}
@@ -120,18 +140,26 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 interface SectionItemProps {
 	slug: string;
 	title: string;
+	active?: boolean;
 }
 
-const SectionItem = ({ slug, title }: SectionItemProps) => {
+const SectionItem = ({ slug, title, active }: SectionItemProps) => {
 	const { classes } = useStyles();
 	const theme = useMantineTheme();
 
 	return (
-		<Button className={classes.routeItem} variant='subtle' component={Link} to={`/docs/${slug}`}>
-			<Text fw={700} color={theme.colors.purple[0]}>
+		<UnstyledButton
+			className={classes.sectionItem}
+			sx={{
+				backgroundColor: active ? 'rgba(98, 91, 248, 0.1)' : 'inherit',
+			}}
+			component={Link}
+			to={`/docs/${slug}`}
+		>
+			<Text fw={active ? 700 : 400} color={active ? theme.colors.purple[0] : 'inherit'}>
 				{title}
 			</Text>
-		</Button>
+		</UnstyledButton>
 	);
 };
 
@@ -140,6 +168,7 @@ const LeftSidebar = () => {
 	const params = useParams();
 	const route = params['*']?.split('/');
 	const routeSection = route?.[0] as keyof SidebarConfig;
+	const sectionSlug = route?.[1] as keyof SidebarConfig[typeof routeSection];
 
 	return (
 		<ScrollArea.Autosize mah="100vh">
@@ -153,21 +182,25 @@ const LeftSidebar = () => {
 						active={route?.[0] === slug}
 					/>
 				))}
-				<Divider />
-				{Object.keys(sidebarConfig[routeSection]).map((section) => (
-					<>
-						<Text key={section}>{section}</Text>
-						{Object.entries(sidebarConfig[routeSection][section]).map(
-							([slug, title]) => (
-								<SectionItem
-									key={slug}
-									slug={`${routeSection}/${slug}`}
-									title={title}
-								/>
-							)
-						)}
-					</>
-				))}
+				<Flex className={classes.sections}>
+					{Object.keys(sidebarConfig[routeSection]).map((section) => (
+						<Fragment key={section}>
+							<Text key={section} fw={700} fz={13} transform="uppercase" mb='sm'>
+								{section}
+							</Text>
+							{Object.entries(sidebarConfig[routeSection][section]).map(
+								([slug, title]) => (
+									<SectionItem
+										key={slug}
+										slug={`${routeSection}/${slug}`}
+										title={title}
+										active={sectionSlug === slug}
+									/>
+								)
+							)}
+						</Fragment>
+					))}
+				</Flex>
 			</Flex>
 		</ScrollArea.Autosize>
 	);

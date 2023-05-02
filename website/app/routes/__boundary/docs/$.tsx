@@ -21,7 +21,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 	// Redirect sections to their first child
 	if (route === 'getting-started')
-		return redirect('/docs/getting-started/overview');
+		return redirect('/docs/getting-started/introduction');
 	if (route === 'guides') return redirect('/docs/guides/angular');
 	if (route === 'api') return redirect('/docs/api/introduction');
 

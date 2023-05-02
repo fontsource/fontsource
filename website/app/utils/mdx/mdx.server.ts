@@ -70,17 +70,6 @@ const fetchMdx = async (slug: string): Promise<MdxResult | null> => {
 	return { code, frontmatter, globals };
 };
 
-interface MdxListResult {
-	route: string;
-	section: string;
-	title: string;
-}
-export interface FetchMdxListResult {
-	[section: string]: {
-		[route: string]: string; // title
-	};
-}
-
 const populateDocsCache = async () => {
 	await ensurePrimary();
 
@@ -98,4 +87,4 @@ const resetDocsCache = async () => {
 	await knex('docs').del();
 };
 
-export { fetchMdx, fetchMdxList, populateDocsCache, resetDocsCache };
+export { fetchMdx, populateDocsCache, resetDocsCache };
