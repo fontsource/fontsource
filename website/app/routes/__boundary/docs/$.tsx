@@ -20,10 +20,10 @@ export const loader: LoaderFunction = async ({ params }) => {
 	}
 
 	// Redirect sections to their first child
-	if (route === 'getting-started')
+	if (route === 'getting-started' || route === 'getting-started/')
 		return redirect('/docs/getting-started/introduction');
-	if (route === 'guides') return redirect('/docs/guides/angular');
-	if (route === 'api') return redirect('/docs/api/introduction');
+	if (route === 'guides' || route === 'guides/') return redirect('/docs/guides/angular');
+	if (route === 'api' || route === 'api/') return redirect('/docs/api/introduction');
 
 	const mdx = await fetchMdx(route);
 	if (!mdx) {
