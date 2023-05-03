@@ -36,17 +36,20 @@ interface MdxResult extends SerialiseOutput {
 }
 
 const fetchMdx = async (slug: string): Promise<MdxResult | null> => {
-	const result = await knex('docs').where({ route: slug }).first();
-	if (result) {
-		return {
-			code: result.content,
-			frontmatter: {
-				description: result.description,
-				title: result.title,
-				section: result.section,
-			},
-			globals,
-		};
+	// If we're in production, we can just get the doc from the db cache.
+	if (process.env.NODE_ENV === 'production') {
+		const result = await knex('docs').where({ route: slug }).first();
+		if (result) {
+			return {
+				code: result.content,
+				frontmatter: {
+					description: result.description,
+					title: result.title,
+					section: result.section,
+				},
+				globals,
+			};
+		}
 	}
 
 	// If the doc doesn't exist in the db, we need to create it.

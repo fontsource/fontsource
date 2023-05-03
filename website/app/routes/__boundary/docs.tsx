@@ -3,6 +3,7 @@ import { Outlet } from '@remix-run/react';
 
 import { DocsHeader } from '@/components/docs/DocsHeader';
 import { LeftSidebar } from '@/components/docs/LeftSidebar';
+import { TableOfContents } from '@/components/docs/TableOfContents';
 import { mdxComponents } from '@/utils/mdx/getMdxComponent';
 
 const useStyles = createStyles((theme) => ({
@@ -28,16 +29,34 @@ export default function Docs() {
 		<>
 			<DocsHeader />
 			<Box className={classes.container}>
-				<Grid columns={24}>
-					<Grid.Col span={6}>
+				<Grid>
+					<Grid.Col
+						span={0}
+						sm={3}
+						sx={(theme) => ({
+							[theme.fn.smallerThan('sm')]: {
+								display: 'none',
+							},
+						})}
+					>
 						<LeftSidebar />
 					</Grid.Col>
-					<Grid.Col span="auto">
+					<Grid.Col md="auto">
 						<Container>
 							<Outlet context={mdxComponents} />
 						</Container>
 					</Grid.Col>
-					<Grid.Col span={6}>Test</Grid.Col>
+					<Grid.Col
+						span={0}
+						lg={3}
+						sx={(theme) => ({
+							[theme.fn.smallerThan('lg')]: {
+								display: 'none',
+							},
+						})}
+					>
+						<TableOfContents />
+					</Grid.Col>
 				</Grid>
 			</Box>
 		</>

@@ -1,4 +1,4 @@
-import type { ErrorBoundaryComponent, LoaderFunction } from '@remix-run/node';
+import type { ErrorBoundaryComponent, LoaderFunction, MetaFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
@@ -33,15 +33,22 @@ export const loader: LoaderFunction = async ({ params }) => {
 	return json<LoaderData>({ code: mdx.code, frontmatter: mdx.frontmatter });
 };
 
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+	const { frontmatter } = data as LoaderData;
+	return {
+		title: frontmatter.title,
+		description: frontmatter.description,
+	};
+};
+
+
 export default function Docs() {
 	const mdxComponents = useOutletContext();
-	const data = useLoaderData<LoaderData>();
-	const { code, frontmatter } = data;
+	const { code } = useLoaderData<LoaderData>();
 
 	const Content = useMemo(() => getMDXComponent(code), [code]);
 	return (
 		<>
-			{JSON.stringify(frontmatter)}
 			<Content components={mdxComponents} />
 		</>
 	);

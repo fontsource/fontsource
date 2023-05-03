@@ -7,19 +7,29 @@ section: Contents
 
 ---
 
-An updating monorepo full of self-hostable Open Source fonts bundled into individual NPM packages!
+Fontsource is a collection of open-source fonts packaged into individual NPM packages that you can self-host in your web applications.
 
-### Advantages
+## Advantages
 
 ---
+
+### 1. Performance
 
 - Self-hosting brings **significant performance gains** as loading fonts from hosted services, such as Google Fonts, lead to an extra (render blocking) network request. To provide perspective, for simple websites it has been seen to _double_ visual load times.
   Benchmarks can be found [here](https://github.com/HTTPArchive/almanac.httparchive.org/pull/607) and [here](https://github.com/reactiflux/reactiflux.com/pull/21).
 
+### 2. Version Locking
+
 - Fonts remain **version locked**. Google often pushes updates to their fonts [without notice](https://github.com/google/fonts/issues/1307), which may interfere with your live production projects. Manage your fonts like any other NPM dependency.
+
+### 3. Privacy
 
 - Commit to **privacy**. Google does track the usage of their fonts and for those who are extremely privacy concerned, self-hosting is an alternative.
 
+### 4. Offline
+
 - Your **fonts load offline**. On top of benefiting PWAs, often there may be situations, like working in an airplane or train, leaving you stranded without access to your online hosted fonts. Have the ability to keep working under any circumstance.
+
+### 5. Additional Fonts
 
 - **Support for fonts outside the Google Font ecosystem**. This repository is constantly evolving with [other Open Source fonts](https://github.com/fontsource/fontsource/blob/master/FONTLIST.md). Feel free to contribute!

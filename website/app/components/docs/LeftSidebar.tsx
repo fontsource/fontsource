@@ -1,7 +1,5 @@
 import sidebarConfigImport from '@docs/sidebar.json';
 import {
-	Box,
-	Button,
 	createStyles,
 	Divider,
 	Flex,
@@ -172,7 +170,7 @@ const LeftSidebar = () => {
 
 	return (
 		<ScrollArea.Autosize mah="100vh">
-			<Flex className={classes.wrapper}>
+			<nav className={classes.wrapper}>
 				{Object.entries(sections).map(([slug, { title, icon }]) => (
 					<RouteItem
 						key={slug}
@@ -188,6 +186,7 @@ const LeftSidebar = () => {
 							<Text key={section} fw={700} fz={13} transform="uppercase" mb='sm'>
 								{section}
 							</Text>
+							<Divider mb='xs'/>
 							{Object.entries(sidebarConfig[routeSection][section]).map(
 								([slug, title]) => (
 									<SectionItem
@@ -201,7 +200,7 @@ const LeftSidebar = () => {
 						</Fragment>
 					))}
 				</Flex>
-			</Flex>
+			</nav>
 		</ScrollArea.Autosize>
 	);
 };
