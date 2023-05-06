@@ -58,6 +58,11 @@ const sections: SectionsData = {
 };
 
 const useStyles = createStyles((theme) => ({
+	scrollWrapper: {
+		position: 'sticky',
+		top: rem(40),
+	},
+
 	wrapper: {
 		display: 'flex',
 		flexDirection: 'column',
@@ -169,7 +174,7 @@ const LeftSidebar = () => {
 	const sectionSlug = route?.[1] as keyof SidebarConfig[typeof routeSection];
 
 	return (
-		<ScrollArea.Autosize mah="100vh">
+		<ScrollArea.Autosize mah="100vh" className={classes.scrollWrapper}>
 			<nav className={classes.wrapper}>
 				{Object.entries(sections).map(([slug, { title, icon }]) => (
 					<RouteItem

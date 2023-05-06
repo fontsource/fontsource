@@ -31,7 +31,8 @@ const getNestedHeadings = (headingElements: HTMLHeadElement[]) => {
 	return nestedHeadings;
 };
 
-export const useHeadingsData = () => {
+// We need to trigger a dependency update when the page changes
+export const useHeadingsData = (page: string) => {
 	const [nestedHeadings, setNestedHeadings] = useState<HeadingsData[]>([]);
 
 	useEffect(() => {
@@ -41,7 +42,7 @@ export const useHeadingsData = () => {
 
 		const newNestedHeadings = getNestedHeadings(headingElements);
 		setNestedHeadings(newNestedHeadings);
-	}, []);
+	}, [page]);
 
 	return { nestedHeadings };
 };
