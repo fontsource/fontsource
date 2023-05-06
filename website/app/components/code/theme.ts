@@ -1,32 +1,17 @@
-import { themes } from 'prism-react-renderer';
+import type { themes } from 'prism-react-renderer';
 
 type PrismTheme = typeof themes.dracula; // Any theme would do, they don't export the type.
 
 export const theme: PrismTheme = {
-	...themes.nightOwl,
 	plain: {
 		color: '#C2BFFF',
 		backgroundColor: '#01112C',
 	},
-	/* styles: [
+	styles: [
 		{
-			types: ['inserted', 'attr-name'],
+			types: ['comment', 'block-comment', 'prolog', 'doctype', 'cdata'],
 			style: {
-				color: '#5BA2C5',
-				fontStyle: 'italic',
-			},
-		},
-		{
-			types: ['comment'],
-			style: {
-				color: 'rgb(99, 119, 119)',
-				fontStyle: 'italic',
-			},
-		},
-		{
-			types: ['string', 'url'],
-			style: {
-				color: '#C2BFFF',
+				color: '#68768D',
 			},
 		},
 		{
@@ -36,12 +21,54 @@ export const theme: PrismTheme = {
 			},
 		},
 		{
-			types: ['selector', 'doctype'],
+			types: ['tag', 'attr-name', 'namespace', 'deleted'],
 			style: {
-				color: '#94B8FF',
-				fontStyle: 'italic',
+				color: '#D1D1D1',
 			},
 		},
-	], */
+		{
+			types: ['function-name'],
+			style: {
+				color: '#F2C259',
+			},
+		},
+		{
+			types: ['boolean', 'number', 'function'],
+			style: {
+				color: '#DAD5FF',
+			},
+		},
+		{
+			types: ['property', 'class-name', 'constant', 'symbol'],
+			style: {
+				color: '#FFFFFF',
+			},
+		},
+		{
+			types: ['selector', 'important', 'atrule', 'keyword', 'builtin'],
+			style: {
+				color: '#625BF8',
+			},
+		},
+		{
+			types: ['string', 'char', 'attr-value', 'regex', 'variable'],
+			style: {
+				color: '#EFF5FE',
+			},
+		},
+		{
+			types: ['operator', 'entity', 'url'],
+			style: {
+				color: '#BBE9DC',
+			},
+		},
+		{
+			types: ['inserted'],
+			style: {
+				color: '#A3A3A3',
+			},
+		},
+	],
 };
+
 export default theme;
