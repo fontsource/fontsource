@@ -34,10 +34,10 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
-	const { frontmatter } = data as LoaderData;
+	const frontmatter = data?.frontmatter as FrontMatter | undefined;
 	return {
-		title: frontmatter.title,
-		description: frontmatter.description,
+		title: frontmatter?.title ?? 'Fontsource',
+		description: frontmatter?.description ?? 'Documentation',
 	};
 };
 
