@@ -41,16 +41,16 @@ export default function Docs() {
 					>
 						<LeftSidebar />
 					</Grid.Col>
-					<Grid.Col md="auto">
+					<Grid.Col span={12} sm={9} xl={6}>
 						<Container>
 							<Outlet context={mdxComponents} />
 						</Container>
 					</Grid.Col>
 					<Grid.Col
 						span={0}
-						lg={3}
+						xl={3}
 						sx={(theme) => ({
-							[theme.fn.smallerThan('lg')]: {
+							[theme.fn.smallerThan('xl')]: {
 								display: 'none',
 							},
 						})}

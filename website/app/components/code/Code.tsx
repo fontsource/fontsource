@@ -83,8 +83,11 @@ export const Code = (props: CodeProps) => {
 		<Box className={classes.root}>
 			<Highlight theme={theme} code={code} language={language}>
 				{({ style, tokens, getLineProps, getTokenProps }) => (
-					<ScrollArea>
-						<pre className={classes.code} style={style}>
+					<pre className={classes.code} style={style}>
+						<ScrollArea
+							type="auto"
+							offsetScrollbars
+						>
 							{tokens.map((line, i) => (
 								<div
 									key={i}
@@ -96,10 +99,11 @@ export const Code = (props: CodeProps) => {
 									))}
 								</div>
 							))}
-						</pre>
-					</ScrollArea>
+						</ScrollArea>
+					</pre>
 				)}
 			</Highlight>
+
 			<Group spacing={0} className={classes.tools}>
 				<Box className={classes.language}>
 					<Text fw={400} fz={13}>
