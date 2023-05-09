@@ -164,16 +164,16 @@ $axes: null !default;
       $styles: $styles,
       $axes: $axes
     )
-    using ($data) {
-    /* #{map.get($data, variant)} */
+    using ($props) {
+    /* #{map.get($props, variant)} */
     @font-face {
-      font-family: map.get($data, font-family);
-      font-style: map.get($data, font-style);
-      font-display: map.get($data, font-display);
-      font-weight: map.get($data, font-weight);
-      font-stretch: map.get($data, font-stretch);
-      unicode-range: map.get($data, unicode-range);
-      src: map.get($data, src);
+      font-family: map.get($props, font-family);
+      font-style: map.get($props, font-style);
+      font-display: map.get($props, font-display);
+      font-weight: map.get($props, font-weight);
+      font-stretch: map.get($props, font-stretch);
+      unicode-range: map.get($props, unicode-range);
+      src: map.get($props, src);
 
       @content();
     }
