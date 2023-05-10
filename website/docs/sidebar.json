@@ -9,8 +9,8 @@
 			"material-symbols": "Material Symbols"
 		},
 		"Sass": {
-			"mixins": "Mixins",
-			"variable-mixins": "Variable Mixins"
+			"faces-mixin": "Faces Mixin",
+			"generator-mixin": "Generator Mixin"
 		}
 	},
 	"guides": {

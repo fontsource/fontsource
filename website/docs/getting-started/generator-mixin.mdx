@@ -1,0 +1,144 @@
+---
+title: Generator Mixin
+section: Sass
+---
+
+# Generator Mixin
+
+---
+
+The generator mixin is used for the most advanced sass use cases. most people are probably better off using the [Faces mixin](./faces-mixin).
+
+### Import
+
+The generator mixin is included in the same modules as the faces mixin, so importing is the similar, but an additional import from the `sass:map` module is required to be able to extract generator properties:
+
+```scss
+@use "sass:map";
+
+@use "@fontsource/open-sans/scss/mixins" as OpenSans;
+```
+
+### Usage
+
+---
+
+The generator mixin is just a loop that passes in properties and generates css from your content block. It doesn't even have to be an @font-face deceleration, you can generate anything you want with the properties.
+
+```scss
+@include generator(
+		$weights: (
+			400,
+			800,
+		)
+	) using ($props) {
+	/* Hello #{map.get($props, family)} */
+	@font-face {
+		font-family: Random stuff #{map.get($props, font-family)};
+		font-style: normal;
+		font-weight: map.get($props, font-weight);
+		src: map.get($props, src);
+	}
+}
+```
+
+### Arguments
+
+---
+
+The generator mixin accepts the same arguments the faces mixin does. For a list of all the arguments, see [here](./faces-mixin#arguments).
+
+### Properties
+
+---
+
+The following is a list of properties that are passed into the generator's content block.
+
+#### Mixin Arguments
+
+All the arguments passed into the generator mixin are resolved to there final values (defaults and global settings are applied) and passed into the content block. Once these values are calculated, they are not changed through out the generation; in other words, the are constant through each content block iteration. For a complete list of all the arguments, see [here](./faces-mixin#arguments).
+
+```scss
+@include generator(
+		$weights: (
+			400,
+			800,
+		)
+	) using ($props) {
+	/* #{map.get($props, weights)} will resolve to: Hello 400, 800 */
+	/* #{map.get($props, family)} will default to: Open Sans */
+}
+```
+
+| Property   | Example                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------------------- |
+| metadata   | [see here](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss) |
+| directory  | `~@fontsource/open-sans/files`                                                                           |
+| family     | Open Sans                                                                                                |
+| display    | `swap`                                                                                                   |
+| displayVar | `true`                                                                                                   |
+| formats    | `(woff, woff2)`                                                                                          |
+| subsets    | `(latin)`                                                                                                |
+| weights    | `(400, 800)`                                                                                             |
+| styles     | `(normal)`                                                                                               |
+| axes       | `(wght, ital)`                                                                                           |
+
+#### Loop Parameters
+
+These are the variables that change on each iteration the content block is called.
+
+| Property      | Example                                               |
+| ------------- | ----------------------------------------------------- |
+| variant       | `open-sans-latin-800-italic`                          |
+| unicodeSubset | `cyrillic`                                            |
+| unicodeRange  | `(U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116)` |
+| weight        | `800`                                                 |
+| axis          | `wght`                                                |
+| style         | `italic`                                              |
+
+#### CSS Properties
+
+These are the all the css properties that are calculated and used by default in the faces mixin.
+
+| Property      | Example                                                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| font-family   | `"Open Sans"`                                                                                                                      |
+| font-style    | `italic`                                                                                                                           |
+| font-display  | `var(--fontsource-display, swap)`                                                                                                  |
+| font-weight   | `800`                                                                                                                              |
+| font-stretch  | `300 800`                                                                                                                          |
+| src           | `url(./files/open-sans-cyrillic-800-italic.woff2) format('woff2'), url(./files/open-sans-cyrillic-800-italic.woff) format('woff')` |
+| unicode-range | `U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116`                                                                                |
+
+### Example
+
+The following is how the faces mixin uses the generator for it's implementation.
+
+```scss
+@include generator(
+		// Faces mixin arguments are passed down to the generator
+		$metadata: $metadata,
+		$directory: $directory,
+		$family: $family,
+		$display: $display,
+		$displayVar: $displayVar,
+		$formats: $formats,
+		$subsets: $subsets,
+		$weights: $weights,
+		$styles: $styles,
+		$axes: $axes
+	) using ($props) {
+	/* #{map.get($props, variant)} */
+	@font-face {
+		font-family: map.get($props, font-family);
+		font-style: map.get($props, font-style);
+		font-display: map.get($props, font-display);
+		font-weight: map.get($props, font-weight);
+		font-stretch: map.get($props, font-stretch);
+		unicode-range: map.get($props, unicode-range);
+		src: map.get($props, src);
+
+		@content();
+	}
+}
+```

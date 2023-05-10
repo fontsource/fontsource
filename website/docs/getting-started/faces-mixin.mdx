@@ -1,0 +1,105 @@
+---
+title: Faces Mixin
+section: Sass
+---
+
+# Faces Mixin
+
+---
+
+## CSS
+
+---
+
+A very basic usage for your typical Sass/SCSS project is the following, importing the regular fontsource css files:
+
+```scss
+@import "~@fontsource/open-sans/index.css";
+@import "~@fontsource/open-sans/300-italic.css";
+```
+
+## Mixin
+
+---
+
+For more advanced setups, you can use our highly customizable Sass mixins that can modify many of the existing [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) variables.
+
+You can view what the full SCSS file looks like [here](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/mixins.scss).
+
+### Import
+
+To import the sass mixin correctly, use the `@use` deceleration with the `scss/mixins` file under the font's package. It's also recommended to give the import a name using `as`, so it does not clash with other packages.
+
+```scss
+@use "@fontsource/open-sans/scss/mixins" as OpenSans;
+```
+
+### Usage
+
+---
+
+To generates a CSS file similar to [open-sans/latin-500-italic.css](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/latin-500-italic.css), use the following:
+
+```scss
+@include OpenSans.faces($subsets: latin, $weights: 500, $styles: italic);
+```
+
+You can also specify a list of properties to, for instance, include multiple weights or styles. Use `all`, if you want to include all the options for a property.
+
+```scss
+@include OpenSans.faces(
+	$subsets: (
+		latin,
+		greek,
+	),
+	$weights: (
+		300,
+		400,
+		800,
+	),
+	$styles: all
+);
+```
+
+### Arguments
+
+---
+
+The Faces mixin accepts the following properties as arguments:
+
+| Variable    | Description                                                                                                                                       | Options                                                                         | Default                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------- |
+| $family     | Font family name (see [font-family](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family))                                     | Any string                                                                      | Metadata default used (e.g. "Open Sans") |
+| $display    | How the font is displayed when loading (see [font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display))             | One of: `auto`, `block`, `swap`, `fallback`, `optional`                         | `swap`                                   |
+| $displayVar | Wrap font-display in a css variable (`--fontsource-display`) for run time modification                                                            | One of: `true`, `false`                                                         | `true`                                   |
+| $formats    | List of included font file formats (see [src](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src))                                   | `all`, or any of: `woff`, `woff2`                                               | `all`                                    |
+| $subsets    | List of included subsets                                                                                                                          | `all`, or any of the subsets listed for the font                                | Metadata default used (e.g. latin)       |
+| $weights    | List of included weights (see [font-weight](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight))                             | `all`, or any of the weights listed for the font                                | Metadata default used (e.g. 400)         |
+| $styles     | List of included styles (see [font-style](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style))                                | `all`, or any of the styles listed for the font (usually `normal` and `italic`) | Metadata default used (e.g. normal)      |
+| $axes       | List of included variable font axes (see [Variable fonts guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide)) | `all` (which uses `full`), or any of the axes listed for the font               | `full`                                   |
+
+The following advanced properties shouldn't need to be modified as often, but are still available for use:
+
+| Variable   | Description                                                                                                                                                                                    | Default                                                    |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| $metadata  | [Metadata map](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss), which used for resolving default options, available properties, and source paths | Default package metadata (located in `scss/metadata.scss`) |
+| $directory | Base directory used for the font source paths                                                                                                                                                  | Default package path (e.g. `~@fontsource/open-sans/files`) |
+
+#### Global Configuration
+
+These arguments can also be set directly on module import, so it's the new default through out different uses of the faces mixin.
+
+```scss
+@use "@fontsource/open-sans/scss/mixins" as OpenSans with (
+	$weights: (
+		300,
+		700,
+	),
+	$family: "Open Sans Custom"
+);
+
+@include OpenSans.faces(
+	// The global configuration can still be overwritten through arguments
+	$family: "Open Sans Other"
+);
+```
