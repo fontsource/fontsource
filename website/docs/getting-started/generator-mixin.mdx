@@ -7,9 +7,11 @@ section: Sass
 
 ---
 
-The generator mixin is used for the most advanced sass use cases. most people are probably better off using the [Faces mixin](./faces-mixin).
+The generator mixin is used for the most advanced sass use cases. Most people are probably better off using the [Faces mixin](./faces-mixin).
 
 ### Import
+
+---
 
 The generator mixin is included in the same modules as the faces mixin, so importing is the similar, but an additional import from the `sass:map` module is required to be able to extract generator properties:
 
@@ -56,7 +58,7 @@ The following is a list of properties that are passed into the generator's conte
 
 #### Mixin Arguments
 
-All the arguments passed into the generator mixin are resolved to there final values (defaults and global settings are applied) and passed into the content block. Once these values are calculated, they are not changed through out the generation; in other words, the are constant through each content block iteration. For a complete list of all the arguments, see [here](./faces-mixin#arguments).
+All the arguments passed into the generator mixin are resolved to their final values (defaults and global settings are applied) and passed into the content block. Once these values are calculated, they are not changed through out the generation; in other words, they are constant through each content block iteration. For a complete list of all the arguments, see [here](./faces-mixin#arguments).
 
 ```scss
 @include generator(

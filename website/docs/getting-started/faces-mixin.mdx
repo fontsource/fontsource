@@ -28,6 +28,8 @@ You can view what the full SCSS file looks like [here](https://github.com/fontso
 
 ### Import
 
+---
+
 To import the sass mixin correctly, use the `@use` deceleration with the `scss/mixins` file under the font's package. It's also recommended to give the import a name using `as`, so it does not clash with other packages.
 
 ```scss
@@ -80,10 +82,10 @@ The Faces mixin accepts the following properties as arguments:
 
 The following advanced properties shouldn't need to be modified as often, but are still available for use:
 
-| Variable   | Description                                                                                                                                                                                    | Default                                                    |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| $metadata  | [Metadata map](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss), which used for resolving default options, available properties, and source paths | Default package metadata (located in `scss/metadata.scss`) |
-| $directory | Base directory used for the font source paths                                                                                                                                                  | Default package path (e.g. `~@fontsource/open-sans/files`) |
+| Variable   | Description                                                                                                                                                                                       | Default                                                    |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| $metadata  | [Metadata map](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss), which is used for resolving default options, available properties, and source paths | Default package metadata (located in `scss/metadata.scss`) |
+| $directory | Base directory used for the font source paths                                                                                                                                                     | Default package path (e.g. `~@fontsource/open-sans/files`) |
 
 #### Global Configuration
 
