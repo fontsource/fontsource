@@ -26,7 +26,7 @@ For more advanced setups, you can use our highly customizable Sass mixins that c
 
 You can view what the full SCSS file looks like [here](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/mixins.scss).
 
-### Import
+## Import
 
 ---
 
@@ -36,7 +36,7 @@ To import the sass mixin correctly, use the `@use` deceleration with the `scss/m
 @use "@fontsource/open-sans/scss/mixins" as OpenSans;
 ```
 
-### Usage
+## Usage
 
 ---
 
@@ -63,7 +63,7 @@ You can also specify a list of properties to, for instance, include multiple wei
 );
 ```
 
-### Arguments
+## Arguments
 
 ---
 
@@ -87,7 +87,7 @@ The following advanced properties shouldn't need to be modified as often, but ar
 | $metadata  | [Metadata map](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss), which is used for resolving default options, available properties, and source paths | Default package metadata (located in `scss/metadata.scss`) |
 | $directory | Base directory used for the font source paths                                                                                                                                                     | Default package path (e.g. `~@fontsource/open-sans/files`) |
 
-#### Global Configuration
+### Global Configuration
 
 These arguments can also be set directly on module import, so it's the new default through out different uses of the faces mixin.
 

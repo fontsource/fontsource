@@ -9,7 +9,7 @@ section: Sass
 
 The generator mixin is used for the most advanced sass use cases. Most people are probably better off using the [Faces mixin](./faces-mixin).
 
-### Import
+## Import
 
 ---
 
@@ -21,7 +21,7 @@ The generator mixin is included in the same modules as the faces mixin, so impor
 @use "@fontsource/open-sans/scss/mixins" as OpenSans;
 ```
 
-### Usage
+## Usage
 
 ---
 
@@ -44,19 +44,19 @@ The generator mixin is just a loop that passes in properties and generates css f
 }
 ```
 
-### Arguments
+## Arguments
 
 ---
 
 The generator mixin accepts the same arguments the faces mixin does. For a list of all the arguments, see [here](./faces-mixin#arguments).
 
-### Properties
+## Properties
 
 ---
 
 The following is a list of properties that are passed into the generator's content block.
 
-#### Mixin Arguments
+### Mixin Arguments
 
 All the arguments passed into the generator mixin are resolved to their final values (defaults and global settings are applied) and passed into the content block. Once these values are calculated, they are not changed through out the generation; in other words, they are constant through each content block iteration. For a complete list of all the arguments, see [here](./faces-mixin#arguments).
 
@@ -85,7 +85,7 @@ All the arguments passed into the generator mixin are resolved to their final va
 | styles     | `(normal)`                                                                                               |
 | axes       | `(wght, ital)`                                                                                           |
 
-#### Loop Parameters
+### Loop Parameters
 
 These are the variables that change on each iteration the content block is called.
 
@@ -98,7 +98,7 @@ These are the variables that change on each iteration the content block is calle
 | axis          | `wght`                                                |
 | style         | `italic`                                              |
 
-#### CSS Properties
+### CSS Properties
 
 These are the all the css properties that are calculated and used by default in the faces mixin.
 
@@ -112,7 +112,7 @@ These are the all the css properties that are calculated and used by default in 
 | src           | `url(./files/open-sans-cyrillic-800-italic.woff2) format('woff2'), url(./files/open-sans-cyrillic-800-italic.woff) format('woff')` |
 | unicode-range | `U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116`                                                                                |
 
-### Example
+## Example
 
 The following is how the faces mixin uses the generator for it's implementation.
 
