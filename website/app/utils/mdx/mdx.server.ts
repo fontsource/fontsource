@@ -59,16 +59,18 @@ const fetchMdx = async (slug: string): Promise<MdxResult | null> => {
 
 	const { code, frontmatter } = await serialise(source, globals);
 
-	await knex('docs')
-		.insert({
-			route: slug,
-			content: code,
-			title: frontmatter.title,
-			description: frontmatter.description,
-			section: frontmatter.section,
-		})
-		.onConflict('route')
-		.merge();
+	if (process.env.NODE_ENV === 'production') {
+		await knex('docs')
+			.insert({
+				route: slug,
+				content: code,
+				title: frontmatter.title,
+				description: frontmatter.description,
+				section: frontmatter.section,
+			})
+			.onConflict('route')
+			.merge();
+	}
 
 	return { code, frontmatter, globals };
 };
