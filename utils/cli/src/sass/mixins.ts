@@ -36,7 +36,11 @@ $axes: null !default;
     '~@fontsource#{if(map.get($metadata, axes), '-variable', '')}/#{map.get($metadata, id)}/files'
   );
 
-  $family: if($family, $family, map.get($metadata, family) + if(map.get($metadata, axes), ' Variable', ''));
+  $family: if(
+    $family,
+    $family,
+    map.get($metadata, family) + if(map.get($metadata, axes), ' Variable', '')
+  );
   $display: if($display, $display, swap);
   $displayVar: if($displayVar != null, $displayVar, true);
   $formats: if(not $formats or $formats == all, (woff2, woff), $formats);
@@ -58,11 +62,7 @@ $axes: null !default;
   $axes: if(
     $axes,
     if($axes == all, full, $axes),
-    if(
-      map.get($metadata, axes),
-      if(map.has-key($metadata, axes, wght), wght, full),
-      null
-    )
+    if(map.get($metadata, axes), if(map.has-key($metadata, axes, wght), wght, full), null)
   );
 
   @each $subset in $subsets {
@@ -74,7 +74,7 @@ $axes: null !default;
             // Is numeric subset
             $subset ==
               map.get($metadata, defaults, subset) and not
-              map.has-key($metadata, subsets, $unicodeSubset)
+              list.index(map.get($metadata, subsets), $unicodeSubset)
           )
       ) {
         @each $weight in if($axes, null, $weights) {
