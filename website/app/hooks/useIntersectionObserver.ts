@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react';
 
-import type { HeadingsData } from './useHeadingsData';
-
 type HeadingIntersectionEntry = Record<string, IntersectionObserverEntry>;
 
 export const useIntersectionObserver = (
-	setActiveId: React.Dispatch<React.SetStateAction<string>>
+	setActiveId: React.Dispatch<React.SetStateAction<string>>,
+	page: string
 ) => {
 	const headingElementsRef = useRef<HeadingIntersectionEntry>({});
 
 	useEffect(() => {
+		headingElementsRef.current = {}; // Reset ref on page change to update active states
+
 		const callback = (headings: IntersectionObserverEntry[]) => {
 			headingElementsRef.current = headings.reduce(
 				(
@@ -50,5 +51,5 @@ export const useIntersectionObserver = (
 		headingElements.forEach((element) => observer.observe(element));
 
 		return () => observer.disconnect();
-	}, [setActiveId]);
+	}, [setActiveId, page]);
 };

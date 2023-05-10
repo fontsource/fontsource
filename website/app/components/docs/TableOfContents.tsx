@@ -69,7 +69,7 @@ export const TableOfContents = () => {
 
 	// Use intersection observer to find which heading is currently active
 	const [activeId, setActiveId] = useState<string>(nestedHeadings[0]?.id ?? '');
-	useIntersectionObserver(setActiveId);
+	useIntersectionObserver(setActiveId, params?.['*'] ?? '');
 
 	return (
 		<nav className={classes.nav}>
