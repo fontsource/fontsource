@@ -3,11 +3,11 @@ title: Introduction
 section: Contents
 ---
 
-# Fontsource
+## Introduction
 
 ---
 
-Fontsource is a collection of open-source fonts packaged into individual NPM packages that you can self-host in your web applications.
+Fontsource is a collection of open-source fonts that are packaged into individual NPM packages for self-hosting in your web applications. This documentation outlines the benefits of using Fontsource and how to get started.
 
 ## Advantages
 
@@ -15,8 +15,7 @@ Fontsource is a collection of open-source fonts packaged into individual NPM pac
 
 ### 1. Performance
 
-- Self-hosting brings **significant performance gains** as loading fonts from hosted services, such as Google Fonts, lead to an extra (render blocking) network request. To provide perspective, for simple websites it has been seen to _double_ visual load times.
-  Benchmarks can be found [here](https://github.com/HTTPArchive/almanac.httparchive.org/pull/607) and [here](https://github.com/reactiflux/reactiflux.com/pull/21).
+- Self-hosting fonts can **significantly improve website performance** by eliminating the extra latency caused by additional DNS resolution and TCP connection establishment that is required when using a CDN like Google Fonts. This can help to prevent doubled visual load times for simple websites, as benchmarked [here](https://github.com/HTTPArchive/almanac.httparchive.org/pull/607) and [here](https://github.com/reactiflux/reactiflux.com/pull/21).
 
 ### 2. Version Locking
 
@@ -28,7 +27,7 @@ Fontsource is a collection of open-source fonts packaged into individual NPM pac
 
 ### 4. Offline
 
-- Your **fonts load offline**. On top of benefiting PWAs, often there may be situations, like working in an airplane or train, leaving you stranded without access to your online hosted fonts. Have the ability to keep working under any circumstance.
+- Your **fonts load offline**. Your fonts load offline with Fontsource. This feature is beneficial for Progressive Web Apps and situations where you have limited or no access to the internet.
 
 ### 5. Additional Fonts
 

@@ -2,7 +2,8 @@
 	"getting-started": {
 		"Contents": {
 			"introduction": "Introduction",
-			"install": "Install"
+			"install": "Install",
+			"variable": "Variable Fonts"
 		},
 		"Icons": {
 			"material-icons": "Material Icons",
@@ -15,12 +16,38 @@
 	},
 	"guides": {
 		"Frameworks": {
-			"nextjs": "Next.js"
-		},
-		"Libraries": {
+			"astro": {
+				"name": "Astro",
+				"external": "https://docs.astro.build/en/guides/fonts/#using-fontsource"
+			},
 			"angular": "Angular",
-			"svelte": "Svelte",
-			"vue": "Vue"
+			"flutter": {
+				"name": "Flutter",
+				"external": "https://pub.dev/packages/fontsource"
+			},
+			"gatsby": {
+				"name": "Gatsby",
+				"external": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource"
+			},
+			"nextjs": "Next.js",
+			"remix": "Remix",
+			"sveltekit": "SvelteKit",
+			"vue": "Vue",
+			"wmr": "WMR"
+		},
+		"Component Libraries": {
+			"chakra-ui": {
+				"name": "Chakra UI",
+				"external": "https://chakra-ui.com/community/recipes/using-fonts"
+			},
+			"material-ui": {
+				"name": "Material UI",
+				"external": "https://mui.com/material-ui/react-typography/#install-with-npm"
+			}
+		},
+		"Bundlers": {
+			"webpack": "Webpack",
+			"vite": "Vite"
 		}
 	},
 	"api": {

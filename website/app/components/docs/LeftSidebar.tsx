@@ -17,6 +17,7 @@ import { Fragment } from 'react';
 import type { IconProps } from '@/components/icons';
 import {
 	IconChangelog,
+	IconExternal,
 	IconGeneral,
 	IconGuide,
 	IconTool,
@@ -25,7 +26,13 @@ import {
 interface SidebarConfig {
 	[slug: string]: {
 		[section: string]: {
-			[slug: string]: string; // title
+			[slug: string]:
+				| string
+				| {
+						// title
+						name: string;
+						external: string; // url
+				  };
 		};
 	};
 }
@@ -143,10 +150,11 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 interface SectionItemProps {
 	slug: string;
 	title: string;
+	external?: string;
 	active?: boolean;
 }
 
-const SectionItem = ({ slug, title, active }: SectionItemProps) => {
+const SectionItem = ({ slug, title, external, active }: SectionItemProps) => {
 	const { classes } = useStyles();
 	const theme = useMantineTheme();
 
@@ -157,11 +165,17 @@ const SectionItem = ({ slug, title, active }: SectionItemProps) => {
 				backgroundColor: active ? 'rgba(98, 91, 248, 0.1)' : 'inherit',
 			}}
 			component={Link}
-			to={`/docs/${slug}`}
+			to={external ? external : `/docs/${slug}`}
 		>
-			<Text fw={active ? 700 : 400} color={active ? theme.colors.purple[0] : 'inherit'}>
-				{title}
-			</Text>
+			<Group position='apart'>
+				<Text
+					fw={active ? 700 : 400}
+					color={active ? theme.colors.purple[0] : 'inherit'}
+				>
+					{title}
+				</Text>
+				{external && <IconExternal />}
+			</Group>
 		</UnstyledButton>
 	);
 };
@@ -188,16 +202,25 @@ const LeftSidebar = () => {
 				<Flex className={classes.sections}>
 					{Object.keys(sidebarConfig[routeSection]).map((section) => (
 						<Fragment key={section}>
-							<Text key={section} fw={700} fz={13} transform="uppercase" mb='sm'>
+							<Text
+								key={section}
+								fw={700}
+								fz={13}
+								transform="uppercase"
+								mb="sm"
+							>
 								{section}
 							</Text>
-							<Divider mb='xs'/>
+							<Divider mb="xs" />
 							{Object.entries(sidebarConfig[routeSection][section]).map(
-								([slug, title]) => (
+								([slug, item]) => (
 									<SectionItem
 										key={slug}
 										slug={`${routeSection}/${slug}`}
-										title={title}
+										title={typeof item === 'string' ? item : item.name}
+										external={
+											typeof item === 'string' ? undefined : item.external
+										}
 										active={sectionSlug === slug}
 									/>
 								)

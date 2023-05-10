@@ -3,43 +3,49 @@ title: Install
 section: Contents
 ---
 
-# Install
+## Install
 
 ---
 
-Fontsource supports a variety of import methods. It either assumes you are using a bundler, such as Webpack, to load in CSS, or using Sass mixins which is explained [here](/docs/sass/mixins).
+Fontsource assumes you are using a bundler, such as Vite or Webpack to handle importing CSS into your final bundle. Please refer to Guides to see if your framework of choice is supported.
 
-## Quick Installation
+This project also supports the use of Sass mixins which is explained [here](/docs/getting-started/faces-mixin).
+
+### Variable Fonts
+
+If your chosen font supports variable fonts, we highly recommend using it when working with multiple weights for smaller bundle sizes. Learn more here.
+
+### Default Installation
 
 ---
 
-This is an installation example using Open Sans, applicable to all other fonts searchable via the [directory](/fonts).
+To install a font from Fontsource, use a package manager of choice to install the package. For example, to install Open Sans:
 
-```js
-  yarn add @fontsource/open-sans // npm install @fontsource/open-sans
+```sh
+  npm install @fontsource/open-sans
 ```
 
-Then within your app entry file, page or site component, import it in. E.g. `_app.jsx` or `index.jsx` etc.
+> **Note:** Alternatively, you can download the font files yourself on each directory listing.
+
+Next, import the font in your application entry file, page, or site component. For example, in \_app.jsx or index.jsx:
 
 ```jsx
 import "@fontsource/open-sans"; // Defaults to weight 400 with normal variant.
 ```
 
-Fontsource allows you to select weights and even individual styles, allowing you to cut down on payload sizes to the last byte! Utilizing the CSS [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range) selector, all language subsets are accounted for.
+You can also choose specific weights and styles to import, which can reduce the payload size even further. To import a specific weight or style, use the corresponding CSS file:
 
 ```jsx
 import "@fontsource/open-sans/500.css"; // Weight 500.
 import "@fontsource/open-sans/900-italic.css"; // Italic variant.
 ```
 
-> **Note:** The range of supported weights and styles a font may support is shown in each directory listing or package README.
+> **Note:** Each font package will provide information on the supported weights and styles in the directory listing or package README.
 
-Once imported, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
+Once you have imported the font, you can reference it in a CSS stylesheet, CSS Module, or CSS-in-JS:
 
 ```css
 body {
 	font-family: "Open Sans", sans-serif;
 }
 ```
-
-If your chosen font supports variable fonts, it is highly recommended to use it when working with multiple weights for smaller bundle sizes. Learn more [here](/docs/variable-fonts).

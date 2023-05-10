@@ -2,6 +2,7 @@ export { IconCaret } from './Caret';
 export { IconChangelog } from './Changelog';
 export { IconCopy } from './Copy';
 export { IconDiscord } from './Discord';
+export { IconExternal } from './External';
 export { IconEye } from './Eye';
 export { IconGeneral } from './General';
 export { IconGithub } from './Github';
