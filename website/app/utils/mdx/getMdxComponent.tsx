@@ -1,4 +1,4 @@
-import { Divider, List, rem, Text, Title } from '@mantine/core';
+import { Divider, List, rem, Table,Text, Title } from '@mantine/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const mdxComponents = {
+	// Typography
 	h1: (props: any) => (
 		<Title order={1} fw={700} size={28} mt='sm' mb='xs' sx={{ lineHeight: rem(50) }} {...props} />
 	),
@@ -28,12 +29,19 @@ const mdxComponents = {
 		<Text fw={400} size={15} sx={{ lineHeight: rem(24) }} {...props} />
 	),
 
+	// Lists
 	ul: (props: any) => <List {...props} />,
 	li: (props: any) => <List.Item {...props} />,
 
-	hr: (props: any) => <Divider mb='md' {...props} />,
+	// Code
 	pre: (props: any) => <div {...props} />, // Unnecessary pre as we use Code component
 	code: (props: any) => <Code {...props} />,
+
+	// Table
+	table: (props: any) => <Table fontSize='sm' {...props} />,
+
+	// Other
+	hr: (props: any) => <Divider mb='md' {...props} />,
 };
 
 const getMDXComponent = (code: string, globals?: Record<string, string>) => {
