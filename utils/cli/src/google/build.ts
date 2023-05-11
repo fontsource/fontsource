@@ -109,7 +109,11 @@ const build = async (id: string, opts: BuildOptions) => {
 		};
 
 		// Write metadata.scss
-		await fs.mkdir(path.join(opts.dir, 'scss'));
+		try {
+			await fs.mkdir(path.join(opts.dir, 'scss'));
+		} catch {
+			// Continue regardless of error since directory may already exist
+		}
 		await fs.writeFile(
 			path.join(opts.dir, 'scss/metadata.scss'),
 			sassMetadata(metadata, font.unicodeRange, opts.isVariable)

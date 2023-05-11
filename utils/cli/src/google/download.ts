@@ -8,16 +8,15 @@ import {
 	APIv2,
 	APIVariable,
 } from 'google-font-metadata';
-import got from 'got';
 import PQueue from 'p-queue';
 import * as path from 'pathe';
 
 import { BuildOptions } from '../types';
 import { makeFontDownloadPath, makeVariableFontDownloadPath } from '../utils';
 
-const gotDownload = async (url: string, dest: fs.PathLike) => {
-	const response = await got(url).buffer();
-	await fs.writeFile(dest, response);
+const writeDownload = async (url: string, dest: fs.PathLike) => {
+	const response = await fetch(url).then(res => res.arrayBuffer());
+	await fs.writeFile(dest, Buffer.from(response));
 };
 
 // Parse API and split into variant + link array pairs.
@@ -212,7 +211,7 @@ const download = async (id: string, opts: BuildOptions) => {
 
 	// Download all font files
 	for (const link of links) {
-		queue.add(() => gotDownload(link.url, link.dest));
+		queue.add(() => writeDownload(link.url, link.dest));
 	}
 
 	await queue.onIdle();
@@ -221,9 +220,9 @@ const download = async (id: string, opts: BuildOptions) => {
 export {
 	download,
 	generateLinks,
-	gotDownload,
 	iconStaticLinks,
 	iconVariableLinks,
 	pairGenerator,
 	variableLinks,
+	writeDownload,
 };
