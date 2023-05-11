@@ -19,7 +19,7 @@
 		}
 	},
 	"scripts": {
-		"build": "pkgroll --target=node14",
+		"build": "pkgroll --target=node18",
 		"cli": "tsx ./src/cli.ts",
 		"lint": "eslint --fix",
 		"coverage": "vitest run --coverage",
