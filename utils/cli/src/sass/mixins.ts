@@ -174,8 +174,6 @@ $axes: null !default;
       font-stretch: map.get($props, font-stretch);
       unicode-range: map.get($props, unicode-range);
       src: map.get($props, src);
-
-      @content();
     }
   }
 }
