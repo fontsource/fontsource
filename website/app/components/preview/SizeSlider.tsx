@@ -1,13 +1,8 @@
-import {
-	ActionIcon,
-	createStyles,
-	Group,
-	rem,
-	Slider as MantineSlider,
-} from '@mantine/core';
+import { ActionIcon, createStyles, Group, rem } from '@mantine/core';
 import { useAtom } from 'jotai';
 
 import { Dropdown, DropdownItem } from '@/components';
+import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconItalic } from '../icons/Italic';
 import { italicAtom, sizeAtom } from './atoms';
@@ -67,7 +62,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const SizeSlider = ({hasItalic}: SizeSliderProps) => {
+const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 	const { classes, cx } = useStyles();
 	const [italic, setItalic] = useAtom(italicAtom);
 	const [size, setSize] = useAtom(sizeAtom);

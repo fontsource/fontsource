@@ -2,10 +2,11 @@ import {
 	createStyles,
 	Grid,
 	rem,
-	Slider as MantineSlider,
 	Text,
 } from '@mantine/core';
 import { useAtom } from 'jotai';
+
+import { Slider as MantineSlider} from '@/components/Slider'
 
 import { sizeAtom } from './atoms';
 
@@ -53,6 +54,11 @@ const SizeSlider = () => {
 					label={null}
 					value={size}
 					onChange={setSize}
+					styles={(theme) => ({
+						bar: {
+							backgroundColor: theme.colors.purple[0],
+						},
+					})}
 				/>
 			</Grid.Col>
 		</Grid>

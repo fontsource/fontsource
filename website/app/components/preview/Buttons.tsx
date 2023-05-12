@@ -5,11 +5,12 @@ import {
 	Group,
 	Popover,
 	rem,
-	Slider as MantineSlider,
 	Text,
 	Tooltip,
 } from '@mantine/core';
 import { useAtom } from 'jotai';
+
+import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconEye, IconHorizontal, IconVertical } from '../icons';
 import {

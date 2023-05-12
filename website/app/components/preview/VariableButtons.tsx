@@ -1,15 +1,8 @@
-import {
-	ActionIcon,
-	Box,
-	createStyles,
-	Group,
-	rem,
-	Slider,
-	Text,
-} from '@mantine/core';
+import { ActionIcon, Box, createStyles, Group, rem, Text } from '@mantine/core';
 import { useAtom } from 'jotai';
 
 import { IconRotate } from '@/components/icons';
+import { Slider } from '@/components/Slider';
 import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
 
 import { InfoTooltip } from '../InfoTooltip';
@@ -32,7 +25,7 @@ const useStyles = createStyles((theme) => ({
 		marginTop: rem(2),
 		padding: `${rem(8)} ${rem(12)}`,
 		justifyContent: 'space-between',
-		height: rem(90),
+		height: rem(94),
 		border: `${rem(1)} solid ${
 			theme.colorScheme === 'dark'
 				? theme.colors.border[1]
@@ -75,8 +68,8 @@ const VariableButton = ({
 
 	return (
 		<Box className={classes.button}>
-			<Group position="apart" mb={3}>
-				<Group align='center' spacing={2}>
+			<Group position="apart" mb={5}>
+				<Group align="center" spacing={2}>
 					<Text fz="sm" fw={400}>
 						{label} <span>({tag})</span>
 					</Text>
@@ -95,7 +88,7 @@ const VariableButton = ({
 				onChange={handleVariationAtom}
 				value={variableValue[tag] ?? Number(axes.default)}
 			/>
-			<Group position="apart" px={3} mt={4}>
+			<Group position="apart" px={3} mt={8}>
 				<Text fz="sm">{axes.min}</Text>
 				<Text fz="sm">{axes.max}</Text>
 			</Group>
@@ -120,7 +113,7 @@ const VariableButtonsGroup = ({
 						description={description}
 						axes={variable[key]}
 					/>
-				)
+				);
 			})}
 		</>
 	);
