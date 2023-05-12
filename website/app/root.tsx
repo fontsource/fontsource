@@ -11,13 +11,11 @@ import { useHotkeys } from '@mantine/hooks';
 import { StylesPlaceholder } from '@mantine/remix';
 import { cssBundleHref } from '@remix-run/css-bundle';
 import type {
-	ActionFunction,
 	HeadersFunction,
 	LinksFunction,
 	LoaderFunction,
 	MetaFunction,
 } from '@remix-run/node';
-import { json } from '@remix-run/node';
 import {
 	Links,
 	LiveReload,
@@ -25,13 +23,13 @@ import {
 	Outlet,
 	Scripts,
 	ScrollRestoration,
+	useFetcher,
 	useLoaderData,
-	useSubmit,
 } from '@remix-run/react';
 import { useState } from 'react';
 
 import { AppShell } from '@/components';
-import { getThemeSession, isTheme } from '@/utils/theme.server';
+import { getThemeSession } from '@/utils/theme.server';
 
 import { GlobalStyles } from './styles/global';
 import { theme } from './styles/theme';
@@ -67,25 +65,6 @@ export const loader: LoaderFunction = async ({ request }) => {
 	return data;
 };
 
-export const action: ActionFunction = async ({ request }) => {
-	const themeSession = await getThemeSession(request);
-	const requestText = await request.text();
-	const form = new URLSearchParams(requestText);
-	const theme = form.get('theme');
-
-	if (!theme || !isTheme(theme)) {
-		return json({
-			success: false,
-			message: `theme value of ${theme} is not a valid theme`,
-		});
-	}
-
-	themeSession.setTheme(theme);
-	return json(
-		{ success: true },
-		{ headers: { 'Set-Cookie': await themeSession.commit() } }
-	);
-};
 interface DocumentProps {
 	children: React.ReactNode;
 	title?: string;
@@ -99,11 +78,14 @@ export const Document = ({
 }: DocumentProps) => {
 	const [colorScheme, setColorScheme] =
 		useState<ColorScheme>(preferredColorScheme);
-	const updateThemeCookie = useSubmit();
+	const updateThemeCookie = useFetcher().submit;
 	const toggleColorScheme = (value?: ColorScheme) => {
 		const scheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
 		setColorScheme(scheme);
-		updateThemeCookie({ theme: scheme }, { method: 'post' });
+		updateThemeCookie(
+			{ theme: scheme },
+			{ method: 'post', action: '/actions/theme' }
+		);
 	};
 
 	// CTRL + J to toggle color scheme

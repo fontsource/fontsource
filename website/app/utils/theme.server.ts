@@ -8,11 +8,9 @@ const isTheme = (value: string): value is Theme =>
 const themeStorage = createCookieSessionStorage({
 	cookie: {
 		name: 'theme',
-		secure: true,
 		sameSite: 'lax',
 		path: '/',
 		httpOnly: true,
-		secrets: [process.env.COOKIE_SECRET!],
 		maxAge: 60 * 60 * 24 * 365,
 	},
 });
