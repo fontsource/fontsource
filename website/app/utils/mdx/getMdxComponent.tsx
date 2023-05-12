@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { Code } from '@/components/code/Code';
+import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 
 let _jsx_runtime: any;
 if (process.env.NODE_ENV === 'development') {
@@ -42,6 +43,7 @@ const mdxComponents = {
 
 	// Other
 	hr: (props: any) => <Divider mb='md' {...props} />,
+	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
 };
 
 const getMDXComponent = (code: string, globals?: Record<string, string>) => {

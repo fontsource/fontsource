@@ -67,43 +67,26 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-export const Code = (props: CodeProps) => {
+interface CodeWrapperProps {
+	children: React.ReactNode;
+	language: string;
+	code: string;
+}
+
+export const CodeWrapper = ({
+	children,
+	language,
+	code,
+}: CodeWrapperProps) => {
 	const { classes } = useStyles();
 	const clipboard = useClipboard();
+
 	const copyLabel = 'Copy code';
 	const copiedLabel = 'Copied';
 
-	const language = props.className?.replace(/language-/, '') ?? '';
-	// Inline code
-	if (language == '') return <MantineCode {...props} />;
-
-	const code = props.children?.toString().trim() ?? '';
-
 	return (
 		<Box className={classes.root}>
-			<Highlight theme={theme} code={code} language={language}>
-				{({ style, tokens, getLineProps, getTokenProps }) => (
-					<pre className={classes.code} style={style}>
-						<ScrollArea
-							type="auto"
-							offsetScrollbars
-						>
-							{tokens.map((line, i) => (
-								<div
-									key={i}
-									{...getLineProps({ line })}
-									className={classes.line}
-								>
-									{line.map((token, key) => (
-										<span key={key} {...getTokenProps({ token })} />
-									))}
-								</div>
-							))}
-						</ScrollArea>
-					</pre>
-				)}
-			</Highlight>
-
+			{children}
 			<Group spacing={0} className={classes.tools}>
 				<Box className={classes.language}>
 					<Text fw={400} fz={13}>
@@ -126,5 +109,46 @@ export const Code = (props: CodeProps) => {
 				</Tooltip>
 			</Group>
 		</Box>
+	);
+};
+
+interface CodeHighlightProps {
+	code: string;
+	language: string;
+}
+
+export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
+	const { classes } = useStyles();
+
+	return (
+		<Highlight theme={theme} code={code} language={language}>
+			{({ style, tokens, getLineProps, getTokenProps }) => (
+				<pre className={classes.code} style={style}>
+					<ScrollArea type="auto" offsetScrollbars>
+						{tokens.map((line, i) => (
+							<div key={i} {...getLineProps({ line })} className={classes.line}>
+								{line.map((token, key) => (
+									<span key={key} {...getTokenProps({ token })} />
+								))}
+							</div>
+						))}
+					</ScrollArea>
+				</pre>
+			)}
+		</Highlight>
+	);
+};
+
+export const Code = (props: CodeProps) => {
+	const language = props.className?.replace(/language-/, '') ?? '';
+	// Inline code
+	if (language == '') return <MantineCode {...props} />;
+
+	const code = props.children?.toString().trim() ?? '';
+
+	return (
+		<CodeWrapper language={language} code={code}>
+			<CodeHighlight code={code} language={language} />
+		</CodeWrapper>
 	);
 };
