@@ -5,7 +5,6 @@ import {
 	Flex,
 	Group,
 	rem,
-	ScrollArea,
 	Text,
 	UnstyledButton,
 	useMantineTheme,
@@ -22,7 +21,6 @@ import {
 	IconGuide,
 	IconTool,
 } from '@/components/icons';
-
 interface SidebarConfig {
 	[slug: string]: {
 		[section: string]: {
@@ -65,12 +63,9 @@ const sections: SectionsData = {
 };
 
 const useStyles = createStyles((theme) => ({
-	scrollWrapper: {
+	wrapper: {
 		position: 'sticky',
 		top: rem(40),
-	},
-
-	wrapper: {
 		display: 'flex',
 		flexDirection: 'column',
 		width: rem(240),
@@ -167,7 +162,7 @@ const SectionItem = ({ slug, title, external, active }: SectionItemProps) => {
 			component={Link}
 			to={external ? external : `/docs/${slug}`}
 		>
-			<Group position='apart'>
+			<Group position="apart">
 				<Text
 					fw={active ? 700 : 400}
 					color={active ? theme.colors.purple[0] : 'inherit'}
@@ -188,48 +183,40 @@ const LeftSidebar = () => {
 	const sectionSlug = route?.[1] as keyof SidebarConfig[typeof routeSection];
 
 	return (
-		<ScrollArea.Autosize mah="100vh" className={classes.scrollWrapper}>
-			<nav className={classes.wrapper}>
-				{Object.entries(sections).map(([slug, { title, icon }]) => (
-					<RouteItem
-						key={slug}
-						slug={slug}
-						title={title}
-						Icon={icon}
-						active={route?.[0] === slug}
-					/>
+		<nav className={classes.wrapper}>
+			{Object.entries(sections).map(([slug, { title, icon }]) => (
+				<RouteItem
+					key={slug}
+					slug={slug}
+					title={title}
+					Icon={icon}
+					active={route?.[0] === slug}
+				/>
+			))}
+			<Flex className={classes.sections}>
+				{Object.keys(sidebarConfig[routeSection]).map((section) => (
+					<Fragment key={section}>
+						<Text key={section} fw={700} fz={13} transform="uppercase" mb="sm">
+							{section}
+						</Text>
+						<Divider mb="xs" />
+						{Object.entries(sidebarConfig[routeSection][section]).map(
+							([slug, item]) => (
+								<SectionItem
+									key={slug}
+									slug={`${routeSection}/${slug}`}
+									title={typeof item === 'string' ? item : item.name}
+									external={
+										typeof item === 'string' ? undefined : item.external
+									}
+									active={sectionSlug === slug}
+								/>
+							)
+						)}
+					</Fragment>
 				))}
-				<Flex className={classes.sections}>
-					{Object.keys(sidebarConfig[routeSection]).map((section) => (
-						<Fragment key={section}>
-							<Text
-								key={section}
-								fw={700}
-								fz={13}
-								transform="uppercase"
-								mb="sm"
-							>
-								{section}
-							</Text>
-							<Divider mb="xs" />
-							{Object.entries(sidebarConfig[routeSection][section]).map(
-								([slug, item]) => (
-									<SectionItem
-										key={slug}
-										slug={`${routeSection}/${slug}`}
-										title={typeof item === 'string' ? item : item.name}
-										external={
-											typeof item === 'string' ? undefined : item.external
-										}
-										active={sectionSlug === slug}
-									/>
-								)
-							)}
-						</Fragment>
-					))}
-				</Flex>
-			</nav>
-		</ScrollArea.Autosize>
+			</Flex>
+		</nav>
 	);
 };
 
