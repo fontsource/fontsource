@@ -23,6 +23,7 @@ import { LanguageSelector } from './Language';
 import { SizeSlider } from './SizeSlider';
 
 interface ButtonsProps {
+	subsets: string[];
 	hasItalic: boolean;
 }
 
@@ -131,7 +132,7 @@ const ColorButton = ({ value, setValue }: ColorButtonProps) => {
 	);
 };
 
-const NormalButtonsGroup = ({ hasItalic }: ButtonsProps) => {
+const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
 	const [lineHeight, setLineHeight] = useAtom(lineHeightAtom);
 	const [letterSpacing, setLetterSpacing] = useAtom(letterSpacingAtom);
 	const [color, setColor] = useAtom(colorAtom);
@@ -139,7 +140,7 @@ const NormalButtonsGroup = ({ hasItalic }: ButtonsProps) => {
 
 	return (
 		<>
-			<LanguageSelector />
+			<LanguageSelector subsets={subsets} />
 			<SizeSlider hasItalic={hasItalic} />
 			<Group grow>
 				<SliderButton

@@ -7,7 +7,7 @@ import invariant from 'tiny-invariant';
 import { ContentHeader } from '@/components';
 import { Configure } from '@/components/preview/Configure';
 import { TextArea } from '@/components/preview/TextArea';
-import { getPreviewText } from '@/utils/language.server';
+import { getPreviewText } from '@/utils/language/language.server';
 import { getMetadata } from '@/utils/metadata/metadata.server';
 import { getAxisRegistry, getVariable } from '@/utils/metadata/variable.server';
 import type { AxisRegistry, Metadata, VariableData } from '@/utils/types';

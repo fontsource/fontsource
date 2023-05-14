@@ -73,6 +73,7 @@ export interface AlgoliaMetadata {
 	subsets: string[];
 	weights: number[];
 	styles: string[];
+	defSubset: string;
 	category: string;
 	variable: boolean;
 	lastModified: number;

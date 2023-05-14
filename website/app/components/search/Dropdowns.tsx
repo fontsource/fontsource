@@ -3,6 +3,7 @@ import type { PrimitiveAtom } from 'jotai';
 import { atom, useAtom } from 'jotai';
 
 import { Dropdown } from '@/components';
+import { languageData } from '@/utils/language/subsets';
 
 import { dropdownAtomArr, filterAtom } from './atoms';
 
@@ -61,36 +62,6 @@ const DropdownItem = ({
   );
 };
 
-const languageData: [string, string][] = [
-  ['Arabic', 'arabic'],
-  ['Bengali', 'bengali'],
-  ['Chinese (Hong Kong)', 'chinese-hongkong'],
-  ['Chinese (Simplified)', 'chinese-simplified'],
-  ['Chinese (Traditional)', 'chinese-traditional'],
-  ['Cyrillic', 'cyrillic'],
-  ['Cyrillic Extended', 'cyrillic-ext'],
-  ['Devanagari', 'devanagari'],
-  ['Greek', 'greek'],
-  ['Greek Extended', 'greek-ext'],
-  ['Gujarati', 'gujarati'],
-  ['Gurmukhi', 'gurmukhi'],
-  ['Hebrew', 'hebrew'],
-  ['Japanese', 'japanese'],
-  ['Kannada', 'kannada'],
-  ['Khmer', 'khmer'],
-  ['Korean', 'korean'],
-  ['Latin', 'latin'],
-  ['Latin Extended', 'latin-ext'],
-  ['Malayalam', 'malayalam'],
-  ['Myanmar', 'myanmar'],
-  ['Oriya', 'oriya'],
-  ['Sinhala', 'sinhala'],
-  ['Tamil', 'tamil'],
-  ['Telugu', 'telugu'],
-  ['Thai', 'thai'],
-  ['Tibetan', 'tibetan'],
-  ['Vietnamese', 'vietnamese'],
-];
 const languageAtomArr = atom(dropdownAtomArr(languageData.length));
 
 const LanguagesDropdown = () => {

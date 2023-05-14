@@ -1,7 +1,8 @@
-import { createStyles,  rem } from '@mantine/core';
+import { createStyles, rem } from '@mantine/core';
 import { useAtom } from 'jotai';
 
 import { Dropdown, DropdownItem } from '@/components';
+import { languageDataObj } from '@/utils/language/subsets';
 
 import { languageAtom } from './atoms';
 
@@ -11,10 +12,11 @@ const useStyles = createStyles((theme) => ({
 
 		padding: `${rem(2)} ${rem(16)}`,
 		height: rem(40),
-		border: `${rem(1)} solid ${theme.colorScheme === 'dark'
+		border: `${rem(1)} solid ${
+			theme.colorScheme === 'dark'
 				? theme.colors.border[1]
 				: theme.colors.border[0]
-			}`,
+		}`,
 		borderRadius: '4px',
 
 		backgroundColor:
@@ -32,22 +34,24 @@ const useStyles = createStyles((theme) => ({
 		'&:not([data-disabled])': theme.fn.hover({
 			backgroundColor: theme.fn.lighten(theme.colors.purple[0], 0.99),
 		}),
-	}
+	},
 }));
 
-const languages = ['Latin', 'Latin Extended', 'Cyrillic']
+interface LanguageSelectorProps {
+	subsets: string[];
+}
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	const { classes } = useStyles();
-	const [language, setLanguage] = useAtom(languageAtom)
+	const [language, setLanguage] = useAtom(languageAtom);
 
 	return (
 		<Dropdown label={language} className={classes.wrapper}>
-			{languages.map((lang) => (
-				<DropdownItem key={lang} value={lang} setValue={setLanguage} />
+			{subsets.map((lang) => (
+				<DropdownItem key={lang} value={languageDataObj[lang as keyof typeof languageDataObj]} setValue={setLanguage} />
 			))}
 		</Dropdown>
-	)
-}
+	);
+};
 
-export { LanguageSelector }
+export { LanguageSelector };
