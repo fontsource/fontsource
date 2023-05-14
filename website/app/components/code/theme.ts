@@ -2,7 +2,7 @@ import type { themes } from 'prism-react-renderer';
 
 type PrismTheme = typeof themes.dracula; // Any theme would do, they don't export the type.
 
-export const theme: PrismTheme = {
+export const themeLight: PrismTheme = {
 	plain: {
 		color: '#C2BFFF',
 		backgroundColor: '#01112C',
@@ -71,4 +71,10 @@ export const theme: PrismTheme = {
 	],
 };
 
-export default theme;
+export const themeDark: PrismTheme = {
+	...themeLight,
+	plain: {
+		color: '#C2BFFF',
+		backgroundColor: '#252E48',
+	},
+};

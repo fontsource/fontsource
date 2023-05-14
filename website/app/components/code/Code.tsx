@@ -1,4 +1,5 @@
 import type { CodeProps } from '@mantine/core';
+import { useMantineTheme } from '@mantine/core';
 import { Group } from '@mantine/core';
 import {
 	ActionIcon,
@@ -15,11 +16,23 @@ import { Highlight } from 'prism-react-renderer';
 
 import { IconCopy } from '@/components/icons';
 
-import { theme } from './theme';
+import { themeDark, themeLight } from './theme';
 
 const useStyles = createStyles((theme) => ({
 	root: {
 		position: 'relative',
+		margin: `${rem(16)} 0`,
+	},
+
+	dots: {
+		color: '#34435C',
+		position: 'absolute',
+		top: rem(8),
+		left: rem(14),
+		zIndex: 2,
+		fontSize: rem(12),
+		letterSpacing: rem(2),
+		userSelect: 'none',
 	},
 
 	tools: {
@@ -56,7 +69,9 @@ const useStyles = createStyles((theme) => ({
 		lineHeight: 1.7,
 		fontSize: rem(14),
 		borderRadius: rem(10),
-		padding: `${theme.spacing.sm} ${theme.spacing.md}`,
+		padding: `${rem(34)} ${theme.spacing.md} ${theme.spacing.md} ${
+			theme.spacing.md
+		}`,
 		marginTop: 0,
 		marginBottom: 0,
 		overflowX: 'hidden',
@@ -73,11 +88,7 @@ interface CodeWrapperProps {
 	code: string;
 }
 
-export const CodeWrapper = ({
-	children,
-	language,
-	code,
-}: CodeWrapperProps) => {
+export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 	const { classes } = useStyles();
 	const clipboard = useClipboard();
 
@@ -86,6 +97,7 @@ export const CodeWrapper = ({
 
 	return (
 		<Box className={classes.root}>
+			<Text className={classes.dots}>&#11044;&#11044;</Text>
 			{children}
 			<Group spacing={0} className={classes.tools}>
 				<Box className={classes.language}>
@@ -118,10 +130,15 @@ interface CodeHighlightProps {
 }
 
 export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
+	const theme = useMantineTheme();
 	const { classes } = useStyles();
 
 	return (
-		<Highlight theme={theme} code={code} language={language}>
+		<Highlight
+			theme={theme.colorScheme === 'dark' ? themeDark : themeLight}
+			code={code}
+			language={language}
+		>
 			{({ style, tokens, getLineProps, getTokenProps }) => (
 				<pre className={classes.code} style={style}>
 					<ScrollArea type="auto" offsetScrollbars>
