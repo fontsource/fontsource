@@ -8,11 +8,10 @@ import {
 	TextInput,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
-import { useFetcher } from '@remix-run/react';
 import { useAtom } from 'jotai';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { useFontLoaded } from '@/hooks/useFontLoaded';
+import { useLoadFont } from '@/hooks/useLoadFont';
 import type { Metadata } from '@/utils/types';
 
 import {
@@ -168,36 +167,15 @@ const TextBox = ({ family, weight, loaded, text }: TextBoxProps) => {
 
 const TextArea = ({ metadata, previewText }: TextAreaProps) => {
 	const { classes } = useStyles();
-	const fontCss = useFetcher();
-	// useFetcher only knows when the CSS is loaded, but not the font files themselves
-	const isFontLoaded = useFontLoaded(
-		metadata.variable ? `${metadata.family} Variable` : metadata.family,
+
+	const [loading, setLoading] = useState(true);
+	useLoadFont(
+		metadata.id,
+		metadata.family,
+		metadata.variable ? 'variable' : 'all',
+		setLoading,
 		metadata.weights
 	);
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		if (fontCss.type === 'init') {
-			let url = '';
-			if (metadata.variable) {
-				url = `/fonts/${metadata.id}/fetch-css/?variable=true&all=true`;
-			} else {
-				url = `/fonts/${metadata.id}/fetch-css/?all=true`;
-			}
-			fontCss.load(url);
-		}
-
-		if (fontCss.type === 'done') {
-			const style = document.createElement('style');
-			style.textContent = fontCss.data.css;
-			document.head.appendChild(style);
-		}
-
-		if (fontCss.type === 'done' && isFontLoaded) {
-			// Give browser time to load fonts in order to not cause a flash of unstyled font
-			setLoading(false);
-		}
-	}, [fontCss, isFontLoaded, metadata.id, metadata.variable]);
 
 	return (
 		<Flex direction="column" className={classes.wrapper}>

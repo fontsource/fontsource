@@ -7,15 +7,14 @@ import {
 	Skeleton,
 	Text,
 } from '@mantine/core';
-import { useFetcher } from '@remix-run/react';
 import { useAtom } from 'jotai';
 import { useEffect, useRef, useState } from 'react';
 import {
 	useInfiniteHits,
 	useInstantSearch,
 } from 'react-instantsearch-hooks-web';
-import useFontFaceObserver from 'use-font-face-observer';
 
+import { useLoadFont } from '@/hooks/useLoadFont';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 import { displayAtom, previewValueAtom, sizeAtom } from './atoms';
@@ -76,35 +75,10 @@ interface HitComponentProps extends Hit {
 }
 const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
 	const { classes } = useStyles();
-	const fontCss = useFetcher();
 	const [display] = useAtom(displayAtom);
-	// useFetcher only knows when the CSS is loaded, but not the font files themselves
-	const isFontLoaded = useFontFaceObserver(
-		[
-			{
-				family: hit.family,
-			},
-		],
-		{ timeout: 7500 }
-	);
+
 	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		if (fontCss.type === 'init') {
-			fontCss.load(`/fonts/${hit.objectID}/fetch-css`);
-		}
-
-		if (fontCss.type === 'done') {
-			const style = document.createElement('style');
-			style.textContent = fontCss.data.css;
-			document.head.appendChild(style);
-		}
-
-		if (fontCss.type === 'done' && isFontLoaded) {
-			// Give browser time to load fonts in order to not cause a flash of unstyled font
-			setLoading(false);
-		}
-	}, [fontCss, hit.objectID, isFontLoaded]);
+	useLoadFont(hit.objectID, hit.family, 'index', setLoading);
 
 	return (
 		<Box

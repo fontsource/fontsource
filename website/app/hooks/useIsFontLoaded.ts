@@ -1,6 +1,16 @@
 import useFontFaceObserver from 'use-font-face-observer';
 
-export const useFontLoaded = (family: string, weights: number[]) => {
+export const useIsFontLoaded = (family: string, weights?: number[]) => {
+	const isFontLoaded = useFontFaceObserver(
+		[
+			{
+				family,
+			},
+		],
+		{ timeout: 7500 }
+	);
+	if (!weights || weights.length === 0) return isFontLoaded;
+
 	const loadingArray = weights.map((weight) => {
 		// Loop loading order is guaranteed to be consistent, so we can disable the rule
 		// eslint-disable-next-line react-hooks/rules-of-hooks

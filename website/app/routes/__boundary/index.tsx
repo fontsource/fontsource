@@ -6,6 +6,7 @@ import algoliasearch from 'algoliasearch/lite';
 import { Provider } from 'jotai';
 import { renderToString } from 'react-dom/server';
 import { getServerState } from 'react-instantsearch-hooks-server';
+import type { InstantSearchServerState } from 'react-instantsearch-hooks-web';
 import {
 	InstantSearch,
 	InstantSearchSSRProvider,
@@ -44,9 +45,11 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-export const loader: LoaderFunction = async ({ request }) => {
-	const serverUrl = request.url;
+interface LoaderData {
+	serverState: InstantSearchServerState;
+}
 
+export const loader: LoaderFunction = async () => {
 	const serverState = await getServerState(
 		<MantineProvider theme={theme}>
 			<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
@@ -57,14 +60,13 @@ export const loader: LoaderFunction = async ({ request }) => {
 		{ renderToString }
 	);
 
-	return json({
+	return json<LoaderData>({
 		serverState,
-		serverUrl,
 	});
 };
 
 export default function Index() {
-	const { serverState } = useLoaderData();
+	const { serverState } = useLoaderData<LoaderData>();
 	const { classes } = useStyles();
 
 	return (
