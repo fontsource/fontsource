@@ -20,7 +20,7 @@ export const useLoadFont = (
 	);
 
 	useEffect(() => {
-		if (fontCss.type === 'init') {
+		if (fontCss.state === 'idle' && !fontCss.data?.css) {
 			let url = '';
 			if (type === 'index') {
 				url = `/fonts/${id}/fetch-css`;
@@ -34,14 +34,14 @@ export const useLoadFont = (
 			fontCss.load(url);
 		}
 
-		if (fontCss.type === 'done') {
+		const isDone = fontCss.state === 'idle' && fontCss.data?.css;
+		if (isDone && !isFontLoaded) {
 			const style = document.createElement('style');
 			style.textContent = fontCss.data.css;
 			document.head.appendChild(style);
 		}
 
-		if (fontCss.type === 'done' && isFontLoaded) {
-			// Give browser time to load fonts in order to not cause a flash of unstyled font
+		if (isDone && isFontLoaded) {
 			setLoading(false);
 		}
 	}, [fontCss, id, isFontLoaded, type, setLoading]);
