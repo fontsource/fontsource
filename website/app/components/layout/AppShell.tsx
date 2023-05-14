@@ -1,14 +1,21 @@
+import { Footer } from './Footer';
 import { Header } from './Header';
 
 interface AppShellProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 export const AppShell = ({ children }: AppShellProps) => {
-  return (
-    <>
-      <Header />
-      <main>{children}</main>
-    </>
-  );
+	return (
+		<div style={{
+			display: 'flex',
+			minHeight: '100vh',
+			flexDirection: 'column',
+			justifyContent: 'flex-start'
+		}}>
+			<Header />
+			<main>{children}</main>
+			<Footer style={{ marginTop: 'auto' }} />
+		</div>
+	);
 };

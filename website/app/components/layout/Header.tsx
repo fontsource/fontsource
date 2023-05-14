@@ -1,13 +1,13 @@
 import type { ActionIconProps, ContainerProps } from '@mantine/core';
 import {
 	ActionIcon,
-	Anchor,
 	Box,
 	Burger,
 	Container,
 	createStyles,
 	Group,
 	rem,
+	Text,
 	Tooltip,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -15,7 +15,7 @@ import { Link, NavLink } from '@remix-run/react';
 
 import { IconDiscord, IconGithub, LogoText, ThemeButton } from '@/components';
 
-const HEADER_HEIGHT = 72;
+export const HEADER_HEIGHT = 72;
 
 const useStyles = createStyles((theme) => ({
 	header: {
@@ -66,6 +66,9 @@ const useStyles = createStyles((theme) => ({
 
 		'&:hover': {
 			textDecoration: 'none',
+			color: theme.colors.purple,
+			borderBottomColor: theme.colors.purple,
+			fontWeight: 700,
 		},
 	},
 
@@ -85,7 +88,7 @@ interface IconProps extends ActionIconProps {
 const Icon = ({ label, icon, href, ...others }: IconProps) => {
 	return (
 		<Tooltip label={label}>
-			<ActionIcon variant="subtle" {...others}>
+			<ActionIcon variant="transparent" {...others}>
 				<a href={href} target="_blank" rel="noreferrer">
 					{icon}
 				</a>
@@ -99,20 +102,21 @@ interface HeaderNavLinkProps {
 	to: string;
 }
 
-const HeaderNavLink = ({ label, to, ...others }: HeaderNavLinkProps) => {
+const HeaderNavLink = ({ label, to }: HeaderNavLinkProps) => {
 	const { classes, cx } = useStyles();
 
 	return (
-		<Anchor component="text" {...others}>
+		<Text>
 			<NavLink
 				to={to}
+				prefetch="intent"
 				className={({ isActive }) =>
 					cx(classes.link, isActive ? classes.active : undefined)
 				}
 			>
 				{label}
 			</NavLink>
-		</Anchor>
+		</Text>
 	);
 };
 
@@ -124,7 +128,7 @@ export const Header = ({ ...other }: ContainerProps) => {
 		<Box component="header" className={classes.header}>
 			<Container className={classes.inner} {...other}>
 				<Link to="/">
-					<LogoText height={31} />
+					<LogoText height={31} isHeader />
 				</Link>
 				<div className={classes.links}>
 					<Tooltip.Group openDelay={600} closeDelay={100}>
