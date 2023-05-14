@@ -51,13 +51,24 @@ const packagerIconsStatic = async (id: string, opts: BuildOptions) => {
 					// This takes in a font object and returns an @font-face block
 					const css = generateFontFace(fontObj);
 
-					const cssPath = path.join(opts.dir, `${subset}-${weight}.css`);
-					await fs.writeFile(cssPath, css);
+					if (style === 'normal') {
+						let cssPath = path.join(opts.dir, `${weight}.css`);
+						await fs.writeFile(cssPath, css);
+
+						cssPath = path.join(opts.dir, `${subset}-${weight}.css`);
+						await fs.writeFile(cssPath, css);
+					} else {
+						let cssPath = path.join(opts.dir, `${weight}-italic.css`);
+						await fs.writeFile(cssPath, css);
+
+						cssPath = path.join(opts.dir, `${subset}-${weight}-italic.css`);
+						await fs.writeFile(cssPath, css);
+					}
 					cssSubset.push(css);
 				}
 			}
 
-			// If the weight is 400, generate index.css
+			// If the weight is index, generate index.css
 			if (weight === indexWeight) {
 				const cssIndexPath = path.join(opts.dir, 'index.css');
 				await fs.writeFile(cssIndexPath, cssSubset.join('\n\n'));
