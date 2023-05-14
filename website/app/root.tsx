@@ -107,7 +107,14 @@ export const Document = ({
 						<Links />
 						<StylesPlaceholder />
 					</head>
-					<body>
+					<body
+						style={{
+							display: 'flex', // If content is smaller than viewport, footer will be at bottom
+							minHeight: '100vh',
+							flexDirection: 'column',
+							justifyContent: 'flex-start',
+						}}
+					>
 						<GlobalStyles />
 						<AppShell>{children}</AppShell>
 						<ScrollRestoration />
