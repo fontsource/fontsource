@@ -3,7 +3,7 @@ import PQueue from 'p-queue';
 import { addCss } from '@/utils/css.server';
 import { knex } from '@/utils/db.server';
 import { ensurePrimary } from '@/utils/fly.server';
-import type { DownloadMetadata, FontList } from '@/utils/types';
+import type { DownloadMetadata, FontList, Metadata } from '@/utils/types';
 import { kya } from '@/utils/utils.server';
 
 const getFontList = async (): Promise<FontList> => {
@@ -59,7 +59,7 @@ const updateMetadata = async (metadata: DownloadMetadata) => {
 	console.log(`Fetched metadata for ${metadata.id}`);
 };
 
-const getMetadata = async (id: string) => {
+const getMetadata = async (id: string): Promise<Metadata> => {
 	// Check if metadata already exists in DB
 	let metadata = await knex('fonts').where({ id }).first();
 	if (!metadata) {

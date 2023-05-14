@@ -15,7 +15,15 @@ import { useEffect, useState } from 'react';
 import { useFontLoaded } from '@/hooks/useFontLoaded';
 import type { Metadata } from '@/utils/types';
 
-import { colorAtom, italicAtom, letterSpacingAtom, lineHeightAtom, sizeAtom, transparencyAtom, variationAtom } from './atoms';
+import {
+	colorAtom,
+	italicAtom,
+	letterSpacingAtom,
+	lineHeightAtom,
+	sizeAtom,
+	transparencyAtom,
+	variationAtom,
+} from './atoms';
 
 interface TagProps {
 	weight: number;
@@ -25,10 +33,12 @@ interface TextBoxProps {
 	family: string;
 	weight: number;
 	loaded: boolean;
+	text: string;
 }
 
 interface TextAreaProps {
 	metadata: Metadata;
+	previewText: string;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -110,12 +120,10 @@ const Tag = ({ weight, active }: TagProps) => {
 	);
 };
 
-const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
+const TextBox = ({ family, weight, loaded, text }: TextBoxProps) => {
 	const { classes } = useStyles();
 	const { ref, focused } = useFocusWithin();
-	const [previewText, setPreviewText] = useState(
-		'Sphinx of black quartz, judge my vow.'
-	);
+	const [previewText, setPreviewText] = useState(text);
 	const [size] = useAtom(sizeAtom);
 	const [italic] = useAtom(italicAtom);
 	const [letterSpacing] = useAtom(letterSpacingAtom);
@@ -158,7 +166,7 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 	);
 };
 
-const TextArea = ({ metadata }: TextAreaProps) => {
+const TextArea = ({ metadata, previewText }: TextAreaProps) => {
 	const { classes } = useStyles();
 	const fontCss = useFetcher();
 	// useFetcher only knows when the CSS is loaded, but not the font files themselves
@@ -202,6 +210,7 @@ const TextArea = ({ metadata }: TextAreaProps) => {
 						metadata.variable ? `${metadata.family} Variable` : metadata.family
 					}
 					loaded={loading}
+					text={previewText}
 				/>
 			))}
 		</Flex>

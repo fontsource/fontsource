@@ -7,6 +7,7 @@ import invariant from 'tiny-invariant';
 import { ContentHeader } from '@/components';
 import { Configure } from '@/components/preview/Configure';
 import { TextArea } from '@/components/preview/TextArea';
+import { getPreviewText } from '@/utils/language.server';
 import { getMetadata } from '@/utils/metadata/metadata.server';
 import { getAxisRegistry, getVariable } from '@/utils/metadata/variable.server';
 import type { AxisRegistry, Metadata, VariableData } from '@/utils/types';
@@ -22,13 +23,16 @@ export const loader: LoaderFunction = async ({ params }) => {
 		axisRegistry = await getAxisRegistry();
 	}
 
-	return json({ metadata, variable, axisRegistry });
+	const defSubsetText = getPreviewText(metadata.id, metadata.defSubset);
+
+	return json({ metadata, variable, axisRegistry, defSubsetText });
 };
 
 interface FontMetadata {
 	metadata: Metadata;
 	variable: VariableData;
 	axisRegistry: Record<string, AxisRegistry>;
+	defSubsetText: string;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -51,7 +55,7 @@ const useStyles = createStyles((theme) => ({
 
 export default function Font() {
 	const data: FontMetadata = useLoaderData();
-	const { metadata, variable, axisRegistry } = data;
+	const { metadata, variable, axisRegistry, defSubsetText } = data;
 	const { classes } = useStyles();
 
 	return (
@@ -75,7 +79,7 @@ export default function Font() {
 				</Tabs.List>
 			</ContentHeader>
 			<Tabs.Panel value="preview" className={classes.wrapperPreview}>
-				<TextArea metadata={metadata} />
+				<TextArea metadata={metadata} previewText={defSubsetText} />
 				<Configure
 					metadata={metadata}
 					variable={variable}
