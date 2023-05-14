@@ -29,6 +29,7 @@ const getMetadata = async (id: string) =>
 			'subsets',
 			'weights',
 			'styles',
+			'defSubset',
 			'category',
 			'variable',
 			'lastModified'
@@ -72,6 +73,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 				weights: metadata.weights.split(',').map((w: string) => Number(w)),
 				styles: metadata.styles.split(','),
 				category: metadata.category,
+				defSubset: metadata.defSubset,
 				variable: Boolean(metadata.variable),
 				// Algolia sorts date using a unix timestamp instead
 				lastModified: Math.floor(
