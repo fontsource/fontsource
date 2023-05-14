@@ -53,7 +53,7 @@ interface ConfigureProps {
 
 const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 	const { classes } = useStyles();
-	const [_, setVariation] = useAtom(variationAtom);
+	const [, setVariation] = useAtom(variationAtom);
 	const resetVariationAtom = () => {
 		setVariation({});
 	};

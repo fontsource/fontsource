@@ -1,57 +1,40 @@
 import { Checkbox, Menu } from '@mantine/core';
-import type { PrimitiveAtom } from 'jotai';
 import { atom, useAtom } from 'jotai';
 
 import { Dropdown } from '@/components';
-import { languageData } from '@/utils/language/subsets';
+import { subsetsMap } from '@/utils/language/subsets';
 
-import { dropdownAtomArr, filterAtom } from './atoms';
-
-// Gives a truncated label for multiple selected items
-const getLabel = (
-  data: string[][],
-  state: PrimitiveAtom<boolean>[],
-  placeholder: string
-) => {
-  const checked = data.filter((_, i) => {
-    const [checked] = useAtom(state[i]);
-    return checked;
-  });
-  if (checked.length === 0) return placeholder;
-
-  if (checked.length === 1) return checked[0][0];
-
-  return `${checked[0][0]} + ${checked.length - 1}`;
-};
+import { filterAtom } from './atoms';
 
 interface FilterChange {
   filter: (event: string) => void;
 }
 interface DropdownItemProps extends FilterChange {
   label: string;
-  value: string;
+	value: string;
+	currentState: string;
+	setState: (value: React.SetStateAction<any>) => void;
   valuePrefix: string;
-  state: PrimitiveAtom<boolean>;
 }
 
 const DropdownItem = ({
-  label,
-  value,
-  valuePrefix,
+	label,
+	value,
+	valuePrefix,
+	currentState,
+	setState,
   filter,
-  state,
 }: DropdownItemProps) => {
-  const [checked, setChecked] = useAtom(state);
   return (
     <Menu.Item
       onClick={() => {
-        setChecked(!checked);
+        setState(currentState === value ? '' : value);
         filter(`${valuePrefix}${value}`);
       }}
     >
       <Checkbox
         label={label}
-        checked={checked}
+				checked={currentState === value}
         readOnly
         style={{
           pointerEvents: 'none',
@@ -62,56 +45,59 @@ const DropdownItem = ({
   );
 };
 
-const languageAtomArr = atom(dropdownAtomArr(languageData.length));
+type LanguageAtom = keyof typeof subsetsMap | '';
+const languageAtom = atom<LanguageAtom>('');
 
 const LanguagesDropdown = () => {
-  // We have to persist dropdown state across re-renders
-  const [checkboxState] = useAtom(languageAtomArr);
-  const [, setFilterItems] = useAtom(filterAtom);
-  const placeholder = 'All languages';
+	const [, setFilterItems] = useAtom(filterAtom);
+	const [subset, setSubset] = useAtom(languageAtom);
 
+	const label = subset !== '' ? subsetsMap[subset] : 'All languages';
   return (
-    <Dropdown label={getLabel(languageData, checkboxState, placeholder)}>
-      {languageData.map(([label, value], index) => (
-        <DropdownItem
+    <Dropdown label={label}>
+      {Object.entries(subsetsMap).map(([key, label]) => (
+				<DropdownItem
+					key={key}
           label={label}
-          value={value}
+					value={key}
+					currentState={subset}
+					setState={setSubset}
           valuePrefix="subsets:"
           filter={setFilterItems}
-          key={value}
-          state={checkboxState[index]}
         />
       ))}
     </Dropdown>
   );
 };
 
-const categoryData: [string, string][] = [
-  ['Serif', 'serif'],
-  ['Sans Serif', 'sans-serif'],
-  ['Display', 'display'],
-  ['Handwriting', 'handwriting'],
-  ['Monospace', 'monospace'],
-  ['Other', 'other'],
-];
-const categoryAtomArr = atom(dropdownAtomArr(categoryData.length));
+const categoriesMap = {
+	'serif': 'Serif',
+	'sans-serif': 'Sans Serif',
+	'display': 'Display',
+	'handwriting': 'Handwriting',
+	'monospace': 'Monospace',
+	'other': 'Other',
+}
+
+type CategoryAtom = keyof typeof categoriesMap | '';
+const categoryAtom = atom<CategoryAtom>('');
 
 const CategoriesDropdown = () => {
-  // We have to persist dropdown state across re-renders
-  const [checkboxState] = useAtom(categoryAtomArr);
   const [, setFilterItems] = useAtom(filterAtom);
-  const placeholder = 'All categories';
+	const [category, setCategory] = useAtom(categoryAtom);
 
+	const label = category !== '' ? categoriesMap[category] : 'All categories';
   return (
-    <Dropdown label={getLabel(categoryData, checkboxState, placeholder)}>
-      {categoryData.map(([label, value], index) => (
-        <DropdownItem
+		<Dropdown label={label}>
+      {Object.entries(categoriesMap).map(([key, label]) => (
+				<DropdownItem
+					key={key}
           label={label}
-          value={value}
+					value={key}
+					currentState={category}
+					setState={setCategory}
           valuePrefix="category:"
           filter={setFilterItems}
-          key={value}
-          state={checkboxState[index]}
         />
       ))}
     </Dropdown>
@@ -120,7 +106,7 @@ const CategoriesDropdown = () => {
 
 export {
   CategoriesDropdown,
-  categoryAtomArr,
-  languageAtomArr,
+  categoryAtom,
+  languageAtom,
   LanguagesDropdown,
 };

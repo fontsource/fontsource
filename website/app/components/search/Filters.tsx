@@ -14,11 +14,11 @@ import { useConfigure } from 'react-instantsearch-hooks-web';
 
 import { IconTrash } from '@/components';
 
-import { dropdownAtomArr, filterAtom, filterBaseAtom } from './atoms';
+import { filterAtom, filterBaseAtom } from './atoms';
 import {
 	CategoriesDropdown,
-	categoryAtomArr,
-	languageAtomArr,
+	categoryAtom,
+	languageAtom,
 	LanguagesDropdown,
 } from './Dropdowns';
 import { PreviewSelector } from './PreviewTextInput';
@@ -84,12 +84,12 @@ const Filters = () => {
 	const [, setBaseFilter] = useAtom(filterBaseAtom);
 	const [filterItems, setFilterItems] = useAtom(filterAtom);
 
-	const [languageItems, setLanguageItems] = useAtom(languageAtomArr);
-	const [categoryItems, setCategoryItems] = useAtom(categoryAtomArr);
+	const [, setLanguage] = useAtom(languageAtom);
+	const [, setCategory] = useAtom(categoryAtom);
 
 	// 24 is divisible by 2, 3 and 4 for the hits grid
 	useConfigure({
-		filters: filterItems.join(' AND '),
+		filters: filterItems,
 		attributesToHighlight: [],
 		hitsPerPage: 24,
 	});
@@ -138,9 +138,9 @@ const Filters = () => {
 						className={classes.button}
 						onClick={() => {
 							setVariable(false);
-							setLanguageItems(dropdownAtomArr(languageItems.length));
-							setCategoryItems(dropdownAtomArr(categoryItems.length));
-							setBaseFilter([]);
+							setLanguage('');
+							setCategory('');
+							setBaseFilter({});
 						}}
 					>
 						Clear all filters

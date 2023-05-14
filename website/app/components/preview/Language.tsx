@@ -2,7 +2,7 @@ import { createStyles, rem } from '@mantine/core';
 import { useAtom } from 'jotai';
 
 import { Dropdown, DropdownItem } from '@/components';
-import { languageDataObj } from '@/utils/language/subsets';
+import { subsetsMap } from '@/utils/language/subsets';
 
 import { languageAtom } from './atoms';
 
@@ -48,7 +48,7 @@ const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	return (
 		<Dropdown label={language} className={classes.wrapper}>
 			{subsets.map((lang) => (
-				<DropdownItem key={lang} value={languageDataObj[lang as keyof typeof languageDataObj]} setValue={setLanguage} />
+				<DropdownItem key={lang} value={subsetsMap[lang as keyof typeof subsetsMap]} setValue={setLanguage} />
 			))}
 		</Dropdown>
 	);

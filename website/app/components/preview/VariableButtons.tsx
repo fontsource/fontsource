@@ -56,7 +56,7 @@ const VariableButton = ({
 	description,
 }: VariableButtonProps) => {
 	const { classes } = useStyles();
-	const [_, setVariation] = useAtom(variationAtom);
+	const [, setVariation] = useAtom(variationAtom);
 	const [variableValue] = useAtom(variableAtom);
 
 	const handleVariationAtom = (value: number) => {

@@ -15,25 +15,56 @@ const previewTypingAtom = atom(
 	}
 );
 
-// Creates an array of atoms, one each per checkbox
-const dropdownAtomArr = (length: number) =>
-	Array.from({ length }, () => atom(false));
-type DropdownState = ReturnType<typeof dropdownAtomArr>;
-
 // Adds or removes filter item on input
-const filterBaseAtom = atom<string[]>([]);
+interface FilterState {
+	variable?: boolean;
+	subset?: string;
+	category?: string;
+}
+
+const filterBaseAtom = atom<FilterState>({});
 const filterAtom = atom(
-	(get) => get(filterBaseAtom),
+	(get) => {
+		const filterItems = get(filterBaseAtom);
+		let filterArr = [];
+		if (filterItems.variable) {
+			filterArr.push('variable:true');
+		}
+		if (filterItems.subset) {
+			filterArr.push(filterItems.subset);
+		}
+		if (filterItems.category) {
+			filterArr.push(filterItems.category);
+		}
+
+		return filterArr.join(' AND ');
+	 },
 	(get, set, facet: string) => {
 		const filterItems = get(filterBaseAtom);
-		// If already includes, remove from array
-		if (filterItems.includes(facet)) {
-			set(
-				filterBaseAtom,
-				filterItems.filter((f) => f !== facet)
-			);
-		} else {
-			set(filterBaseAtom, [...filterItems, facet]);
+
+		if (facet === 'variable:true') {
+			if (filterItems.variable) {
+				set(filterBaseAtom, { ...filterItems, variable: false });
+			}
+			else {
+				set(filterBaseAtom, { ...filterItems, variable: true });
+			}
+		}
+
+		if (facet.startsWith('subsets:')) {
+			if (filterItems.subset === facet) {
+				set(filterBaseAtom, { ...filterItems, subset: undefined });
+			} else {
+				set(filterBaseAtom, { ...filterItems, subset: facet });
+			}
+		}
+
+		if (facet.startsWith('category:')) {
+			if (filterItems.category === facet) {
+				set(filterBaseAtom, { ...filterItems, category: undefined });
+			} else {
+				set(filterBaseAtom, { ...filterItems, category: facet });
+			}
 		}
 	}
 );
@@ -46,7 +77,6 @@ const displayAtom = atom<DisplayValues>('grid');
 
 export {
 	displayAtom,
-	dropdownAtomArr,
 	filterAtom,
 	filterBaseAtom,
 	previewInputViewAtom,
@@ -56,4 +86,3 @@ export {
 	sizeAtom,
 	sortAtom,
 };
-export type { DropdownState };

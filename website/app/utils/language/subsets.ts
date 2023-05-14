@@ -1,36 +1,4 @@
-export const languageData: [string, string][] = [
-  ['Arabic', 'arabic'],
-  ['Bengali', 'bengali'],
-  ['Chinese (Hong Kong)', 'chinese-hongkong'],
-  ['Chinese (Simplified)', 'chinese-simplified'],
-  ['Chinese (Traditional)', 'chinese-traditional'],
-  ['Cyrillic', 'cyrillic'],
-  ['Cyrillic Extended', 'cyrillic-ext'],
-  ['Devanagari', 'devanagari'],
-  ['Greek', 'greek'],
-  ['Greek Extended', 'greek-ext'],
-  ['Gujarati', 'gujarati'],
-  ['Gurmukhi', 'gurmukhi'],
-  ['Hebrew', 'hebrew'],
-  ['Japanese', 'japanese'],
-  ['Kannada', 'kannada'],
-  ['Khmer', 'khmer'],
-  ['Korean', 'korean'],
-  ['Latin', 'latin'],
-  ['Latin Extended', 'latin-ext'],
-  ['Malayalam', 'malayalam'],
-  ['Myanmar', 'myanmar'],
-  ['Oriya', 'oriya'],
-  ['Sinhala', 'sinhala'],
-  ['Tamil', 'tamil'],
-  ['Telugu', 'telugu'],
-  ['Thai', 'thai'],
-  ['Tibetan', 'tibetan'],
-  ['Vietnamese', 'vietnamese'],
-];
-
-// Recreate languageData as an object copied
-export const languageDataObj = {
+export const subsetsMap = {
 	'arabic': 'Arabic',
 	'bengali': 'Bengali',
 	'chinese-hongkong': 'Chinese (Hong Kong)',
