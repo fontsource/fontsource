@@ -141,7 +141,13 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 		>
 			{({ style, tokens, getLineProps, getTokenProps }) => (
 				<pre className={classes.code} style={style}>
-					<ScrollArea type="auto" offsetScrollbars>
+					<ScrollArea type="auto" offsetScrollbars styles={{
+						scrollbar: {
+							'&:hover': {
+								backgroundColor: 'transparent',
+							},
+						}
+					}}>
 						{tokens.map((line, i) => (
 							<div key={i} {...getLineProps({ line })} className={classes.line}>
 								{line.map((token, key) => (
