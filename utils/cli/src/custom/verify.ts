@@ -87,6 +87,7 @@ export const verify = async ({font, ci}: VerifyProps): Promise<void> => {
 					placeholder: 'noto-sans-jp',
 					validate(value) {
 						if (!value) return 'Please enter an ID.';
+						return undefined;
 					},
 				}),
 		});
