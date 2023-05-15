@@ -1,4 +1,4 @@
-import { Group, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Stack, Text, useMantineTheme } from '@mantine/core';
 
 import type { IconProps } from './types';
 
@@ -41,8 +41,10 @@ const IconAlgolia = ({ height, ...others }: IconProps) => {
 
 const SearchByAlgolia = (props: IconProps) => {
 	return (
-		<Stack spacing={0} sx={{ userSelect: 'none', opacity: '80%'}}>
-			<Text span fw={600} fz={8}>Search by</Text>
+		<Stack spacing={0} sx={{ userSelect: 'none', opacity: '80%' }}>
+			<Text span fw={600} fz={8}>
+				Search by
+			</Text>
 			<IconAlgolia {...props} />
 		</Stack>
 	);

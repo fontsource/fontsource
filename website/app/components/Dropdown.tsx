@@ -20,10 +20,11 @@ const useStyles = createStyles((theme) => ({
 	button: {
 		padding: `${rem(2)} ${rem(16)}`,
 		height: rem(40),
-		border: `${rem(1)} solid ${theme.colorScheme === 'dark'
+		border: `${rem(1)} solid ${
+			theme.colorScheme === 'dark'
 				? theme.colors.border[1]
 				: theme.colors.border[0]
-			}`,
+		}`,
 		borderRadius: '4px',
 
 		backgroundColor:
@@ -38,9 +39,12 @@ const useStyles = createStyles((theme) => ({
 
 		fontWeight: 400,
 
-		'&:not([data-disabled])': theme.fn.hover({
-			backgroundColor: theme.fn.lighten(theme.colors.purple[0], 0.95),
-		}),
+		'&:hover': {
+			backgroundColor:
+				theme.colorScheme === 'dark'
+					? theme.fn.darken(theme.colors.background[4], 0.2)
+					: theme.fn.lighten(theme.colors.purple[0], 0.95),
+		},
 	},
 }));
 
