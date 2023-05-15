@@ -106,8 +106,8 @@ export const create = async () => {
 		family: cfg.name,
 		subsets: ['latin'], // cfg.subsets.split(',').map((subset) => subset.trim()),
 		weights: cfg.weights.split(',').map((weight) => Number.parseInt(weight.trim(), 10)),
-		styles: cfg.styles,
-		defSubset: cfg.subsets.split(',')[0].trim(),
+		styles: cfg.styles as string[],
+		defSubset: 'latin', // cfg.subsets.split(',')[0].trim(),
 		variable: false,
 		lastModified: new Date().toISOString().split('T')[0], // YYYY-MM-DD
 		version: cfg.version,
