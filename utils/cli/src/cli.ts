@@ -74,9 +74,11 @@ cli.command('create').action(async () => {
 	}
 });
 
-cli.command('create-verify').action(async () => {
+cli.command('create-verify')
+	.option('-i, --id <id>', 'ID of the font to verify')
+	.action(async (options) => {
 	try {
-		await verify();
+		await verify(options.id);
 	} catch (error) {
 		consola.error(error);
 	}
