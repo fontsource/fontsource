@@ -50,6 +50,7 @@ const licenseMap = {
 	'sil open font license, 1.1': 'OFL-1.1',
 	'ubuntu font license, 1.0': 'UFL-1.0',
 	'mit license': 'MIT',
+	'cc0-1.0': 'CC0-1.0',
 };
 
 export const licenseShort = (license: string): string | undefined =>

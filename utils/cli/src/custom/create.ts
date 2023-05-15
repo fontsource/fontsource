@@ -68,6 +68,7 @@ export const create = async () => {
 				{ value: 'apache license, version 2.0', label: 'Apache License 2.0 (Apache-2.0)' },
 				{ value: 'ubuntu font license, 1.0', label: 'Ubuntu Font License (UFL-1.0)' },
 				{ value: 'mit', label: 'MIT License' },
+				{ value: 'cc0-1.0', label: 'CC0-1.0 License' },
 				{ value: 'other', label: 'Other License', hint: 'Please make an issue verifying if this is usable! We are likely to reject PRs that do not match the above licenses.' }
 			]
 		}),
@@ -106,7 +107,7 @@ export const create = async () => {
 		styles: cfg.styles,
 		defSubset: cfg.subsets.split(',')[0].trim(),
 		variable: false,
-		lastModified: new Date().toISOString(),
+		lastModified: new Date().toISOString().split('T')[0], // YYYY-MM-DD
 		version: cfg.version,
 		category: cfg.category,
 		license: {
