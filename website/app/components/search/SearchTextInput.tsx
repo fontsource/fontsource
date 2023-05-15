@@ -4,7 +4,7 @@ import { useFocusWithin } from '@mantine/hooks';
 import { useState } from 'react';
 import { useSearchBox } from 'react-instantsearch-hooks-web';
 
-import { IconSearch } from '@/components';
+import { IconSearch, SearchByAlgolia } from '@/components';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -67,9 +67,14 @@ const SearchBar = ({ ...others }: TextInputProps) => {
 						color: theme.colors.purple[0],
 					},
 				},
+
+				rightSection: {
+					right: rem(44),
+				}
 			})}
 			ref={ref}
 			icon={<IconSearch active={focused} />}
+			rightSection={<SearchByAlgolia height={14} />}
 			{...others}
 		/>
 	);

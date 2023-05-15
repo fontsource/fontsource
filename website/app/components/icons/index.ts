@@ -1,3 +1,4 @@
+export { IconAlgolia, SearchByAlgolia } from './Algolia';
 export { IconCaret } from './Caret';
 export { IconChangelog } from './Changelog';
 export { IconCopy } from './Copy';
