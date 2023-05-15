@@ -35,6 +35,8 @@ npx fontsource create-verify [options]
 | Option     | Description                               | Default              |
 | ---------- | ----------------------------------------- | -------------------- |
 | `-i, --id` | Directory to verify package e.g. `./[id]` | Prompts user instead |
+| `--ci`     | Disables fancy prompts                    | `false`              |
+| `--cwd`    | Sets the current working directory        | `process.cwd()`      |
 
 ## `fontsource fetch`
 

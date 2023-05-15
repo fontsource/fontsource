@@ -70,9 +70,15 @@ export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 interface VerifyProps {
 	font?: string;
 	ci?: boolean;
+	cwd?: string;
 }
 
-export const verify = async ({font, ci}: VerifyProps): Promise<void> => {
+export const verify = async ({ font, ci, cwd }: VerifyProps): Promise<void> => {
+	let currentDir = process.cwd();
+	if (cwd) {
+		currentDir = cwd;
+	}
+
 	let id = font;
 	if (ci && !id) {
 		throw new Error('No font ID provided. This is needed in CI.');
@@ -94,8 +100,10 @@ export const verify = async ({font, ci}: VerifyProps): Promise<void> => {
 		id = cfg.id;
 	}
 
+	const fontDir = path.join(currentDir, id);
+
 	// Check if the directory does not exist
-	if (!(await fs.pathExists(`./${id}/files`))) {
+	if (!(await fs.pathExists(`${currentDir}/${id}/files`))) {
 		if (ci) {
 			throw new Error('The directory does not exist.');
 		}
@@ -104,7 +112,7 @@ export const verify = async ({font, ci}: VerifyProps): Promise<void> => {
 	}
 
 	// Check if the metadata.json file exists
-	if (!(await fs.pathExists(`./${id}/metadata.json`))) {
+	if (!(await fs.pathExists(path.join(fontDir, 'metadata.json')))) {
 		if (ci) {
 			throw new Error('The metadata.json file does not exist.');
 		}
@@ -113,7 +121,7 @@ export const verify = async ({font, ci}: VerifyProps): Promise<void> => {
 	}
 
 	// Check if LICENSE file exists
-	if (!(await fs.pathExists(`./${id}/LICENSE`))) {
+	if (!(await fs.pathExists(path.join(fontDir, 'LICENSE')))) {
 		if (ci) {
 			throw new Error('The LICENSE file does not exist.');
 		}
@@ -123,12 +131,11 @@ export const verify = async ({font, ci}: VerifyProps): Promise<void> => {
 
 	// Verify filenames
 	try {
-		const dir = `./${id}`;
 		// Read metadata.json
 		const metadata: Metadata = await fs.readJson(
-			path.join(dir, 'metadata.json')
+			path.join(fontDir, 'metadata.json')
 		);
-		await verifyFilenames(metadata, dir);
+		await verifyFilenames(metadata, fontDir);
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (error: any) {
 		if (ci) {
