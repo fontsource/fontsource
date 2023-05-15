@@ -17,13 +17,15 @@ export const create = async () => {
 				if (!value) return 'Please enter a name';
 			}
 		}),
+		// TODO: Add support for multiple subsets
+		/*
 		subsets: () => text({
 			message: colors.bold('What are the subsets of the font? (separate by commas)'),
 			placeholder: 'latin, latin-ext, japanese',
 			validate(value) {
 				if (!value) return 'Please enter at least one subset';
 			}
-		}),
+		}), */
 		weights: () => text({
 			message: colors.bold('What are the weights of the font? (separate by commas)'),
 			placeholder: '100, 200, 300, 400, 500, 600, 700, 800, 900',
@@ -102,7 +104,7 @@ export const create = async () => {
 	const metadata: Metadata = {
 		id: cfg.name.toLowerCase().replace(/ /g, '-'),
 		family: cfg.name,
-		subsets: cfg.subsets.split(',').map((subset) => subset.trim()),
+		subsets: ['latin'], // cfg.subsets.split(',').map((subset) => subset.trim()),
 		weights: cfg.weights.split(',').map((weight) => Number.parseInt(weight.trim(), 10)),
 		styles: cfg.styles,
 		defSubset: cfg.subsets.split(',')[0].trim(),

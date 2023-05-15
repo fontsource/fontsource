@@ -11,7 +11,7 @@ export const packagerCustom = async (metadata: Metadata) => {
 	const dir = `./${id}`;
 
 	// Find the weight for index.css in the case weight 400 does not exist.
-  const indexWeight = findClosest(weights, 400);
+	const indexWeight = findClosest(weights, 400);
 
 	// Write the CSS files
 	for (const subset of subsets) {
@@ -29,39 +29,50 @@ export const packagerCustom = async (metadata: Metadata) => {
 					src: [
 						{
 							url: makeFontFilePath(id, subset, weight, style, 'woff2'),
-							format: 'woff2',
+							format: 'woff2' as const,
 						},
 						{
 							url: makeFontFilePath(id, subset, weight, style, 'woff'),
-							format: 'woff',
+							format: 'woff' as const,
 						},
 					],
-					comment: `${id}-${subset}-${weight}-${style} CUSTOM`,
+					comment: `${id}-${subset}-${weight}-${style}`,
 					displayVar: true,
 				};
 				// This takes in a font object and returns an @font-face block
 				const css = generateFontFace(fontObj);
 
-				// Needed to differentiate filenames
+				// Needed to differentiate filenames for style CSS
 				if (style === 'normal') {
-					await fs.writeFile(path.join(dir,`${subset}-${weight}.css`), css);
+					// Custom packager only supports 1 subset so it's safe to make this assumption
+					await fs.writeFile(path.join(dir, `${weight}.css`), css);
+					await fs.writeFile(path.join(dir, `${subset}-${weight}.css`), css);
+
+					// Write index.css
+					if (weight === indexWeight) {
+						await fs.writeFile(path.join(dir, 'index.css'), css);
+					}
 					cssSubset.push(css);
 				} else {
-					await fs.writeFile(path.join(dir,`${subset}-${weight}-${style}.css`), css);
+					await fs.writeFile(path.join(dir, `${weight}-${style}.css`), css);
+					await fs.writeFile(
+						path.join(dir, `${subset}-${weight}-${style}.css`),
+						css
+					);
 					cssSubsetItalic.push(css);
 				}
 			}
+		}
 
-			if (weight === indexWeight) {
-				await fs.writeFile(path.join(dir,'index.css'), cssSubset.join('\n\n'));
-			}
+		// Write subset CSS files
+		await fs.writeFile(path.join(dir, `${subset}.css`), cssSubset.join('\n\n'));
 
-			await fs.writeFile(path.join(dir,`${subset}.css`), cssSubset.join('\n\n'));
-
-			// If there are italic styles for a subset
-			if (cssSubsetItalic.length > 0) {
-				await fs.writeFile(path.join(dir,`${subset}-italic.css`), cssSubsetItalic.join('\n\n'));
-			}
+		// If there are italic styles for a subset
+		if (cssSubsetItalic.length > 0) {
+			await fs.writeFile(
+				path.join(dir, `${subset}-italic.css`),
+				cssSubsetItalic.join('\n\n')
+			);
 		}
 	}
 };
