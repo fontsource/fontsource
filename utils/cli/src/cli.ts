@@ -74,15 +74,17 @@ cli.command('create').action(async () => {
 	}
 });
 
-cli.command('create-verify')
+cli
+	.command('create-verify')
 	.option('-i, --id <id>', 'ID of the font to verify')
-	.action(async (options) => {
-	try {
-		await verify(options.id);
-	} catch (error) {
-		consola.error(error);
-	}
-});
+	.option('--ci', 'Run in CI mode and throw errors instead of fancy prompts')
+	.action(async options => {
+		try {
+			await verify({ font: options.id, ci: options.ci });
+		} catch (error) {
+			consola.error(error);
+		}
+	});
 
 cli.help();
 cli.version(version);

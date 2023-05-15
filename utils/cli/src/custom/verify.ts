@@ -5,6 +5,7 @@ import path from 'pathe';
 import colors from 'picocolors';
 
 import { Metadata } from '../types';
+import { consola } from 'consola';
 
 export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 	// Read all the filenames in the files directory
@@ -66,8 +67,17 @@ export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 	}
 };
 
-export const verify = async (inputId?: string): Promise<void> => {
-	let id = inputId;
+interface VerifyProps {
+	font?: string;
+	ci?: boolean;
+}
+
+export const verify = async ({font, ci}: VerifyProps): Promise<void> => {
+	let id = font;
+	if (ci && !id) {
+		throw new Error('No font ID provided. This is needed in CI.');
+	}
+
 	if (!id) {
 		intro(colors.cyan(colors.bold('fontsource')));
 		const cfg = await group({
@@ -85,18 +95,27 @@ export const verify = async (inputId?: string): Promise<void> => {
 
 	// Check if the directory does not exist
 	if (!(await fs.pathExists(`./${id}/files`))) {
+		if (ci) {
+			throw new Error('The directory does not exist.');
+		}
 		cancel('The directory does not exist.');
 		return;
 	}
 
 	// Check if the metadata.json file exists
 	if (!(await fs.pathExists(`./${id}/metadata.json`))) {
+		if (ci) {
+			throw new Error('The metadata.json file does not exist.');
+		}
 		cancel('The metadata.json file does not exist.');
 		return;
 	}
 
 	// Check if LICENSE file exists
 	if (!(await fs.pathExists(`./${id}/LICENSE`))) {
+		if (ci) {
+			throw new Error('The LICENSE file does not exist.');
+		}
 		cancel('The LICENSE file does not exist.');
 		return;
 	}
@@ -111,13 +130,20 @@ export const verify = async (inputId?: string): Promise<void> => {
 		await verifyFilenames(metadata, dir);
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (error: any) {
+		if (ci) {
+			throw new Error(error.message);
+		}
 		cancel(error.message);
 		return;
 	}
 
-	outro(
-		colors.green(
-			'All checks passed! Feel free to send a PR over to the main repo adding the package to the appropriate fonts directory.'
-		)
-	);
+	if (ci) {
+		consola.success(`${id} passed all checks.`);
+	} else {
+		outro(
+			colors.green(
+				'All checks passed! Feel free to send a PR over to the main repo adding the package to the appropriate fonts directory.'
+			)
+		);
+	}
 };
