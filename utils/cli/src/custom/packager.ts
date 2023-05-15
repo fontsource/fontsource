@@ -59,6 +59,12 @@ export const packagerCustom = async (metadata: Metadata) => {
 						path.join(dir, `${subset}-${weight}-${style}.css`),
 						css
 					);
+
+					// Write index.css if there is no normal style
+					if (weight === indexWeight && styles.length === 1) {
+						await fs.writeFile(path.join(dir, 'index.css'), css);
+					}
+
 					cssSubsetItalic.push(css);
 				}
 			}
