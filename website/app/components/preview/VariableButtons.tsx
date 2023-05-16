@@ -1,12 +1,12 @@
+import { useSelector } from '@legendapp/state/react';
 import { ActionIcon, Box, createStyles, Group, rem, Text } from '@mantine/core';
-import { useAtom } from 'jotai';
 
 import { IconRotate } from '@/components/icons';
 import { Slider } from '@/components/Slider';
 import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
 
 import { InfoTooltip } from '../InfoTooltip';
-import { variableAtom, variationAtom } from './atoms';
+import { variableState } from './observables';
 
 interface VariableButtonGroupProps {
 	variable: VariableData;
@@ -56,14 +56,13 @@ const VariableButton = ({
 	description,
 }: VariableButtonProps) => {
 	const { classes } = useStyles();
-	const [, setVariation] = useAtom(variationAtom);
-	const [variableValue] = useAtom(variableAtom);
+	const variable = useSelector(variableState);
 
-	const handleVariationAtom = (value: number) => {
-		setVariation({ [tag]: value });
+	const handleVariation = (value: number) => {
+		variableState.set({ [tag]: value });
 	};
-	const resetVariationAtom = () => {
-		setVariation({ [tag]: undefined });
+	const resetVariation = () => {
+		variableState.set({ [tag]: undefined });
 	};
 
 	return (
@@ -75,7 +74,7 @@ const VariableButton = ({
 					</Text>
 					<InfoTooltip label={description} />
 				</Group>
-				<ActionIcon onClick={resetVariationAtom} variant="transparent" mr={-4}>
+				<ActionIcon onClick={resetVariation} variant="transparent" mr={-4}>
 					<IconRotate height={16} />
 				</ActionIcon>
 			</Group>
@@ -85,8 +84,8 @@ const VariableButton = ({
 				max={Number(axes.max)}
 				step={Number(axes.step)}
 				precision={1}
-				onChange={handleVariationAtom}
-				value={variableValue[tag] ?? Number(axes.default)}
+				onChange={handleVariation}
+				value={variable[tag] ?? Number(axes.default)}
 			/>
 			<Group position="apart" px={3} mt={8}>
 				<Text fz="sm">{axes.min}</Text>

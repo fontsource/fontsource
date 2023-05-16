@@ -1,11 +1,11 @@
+import { useSelector } from '@legendapp/state/react';
 import { ActionIcon, createStyles, Group, rem } from '@mantine/core';
-import { useAtom } from 'jotai';
 
 import { Dropdown, DropdownItem } from '@/components';
 import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconItalic } from '../icons/Italic';
-import { italicAtom, sizeAtom } from './atoms';
+import { previewState } from './observables';
 
 interface SizeSliderProps {
 	hasItalic: boolean;
@@ -64,35 +64,34 @@ const useStyles = createStyles((theme) => ({
 
 const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 	const { classes, cx } = useStyles();
-	const [italic, setItalic] = useAtom(italicAtom);
-	const [size, setSize] = useAtom(sizeAtom);
+	const state = useSelector(previewState);
 	const sizes = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64];
 
 	return (
 		<Group position="apart" spacing="xs">
 			<Group className={classes.wrapper}>
-				<Dropdown label={`${size} px`} width={70} className={classes.button}>
+				<Dropdown label={`${previewState.size.get()} px`} width={70} className={classes.button}>
 					{sizes.map((size) => (
-						<DropdownItem key={size} value={size} setValue={setSize} />
+						<DropdownItem key={size} value={size} setValue={previewState.size.set} />
 					))}
 				</Dropdown>
 				<MantineSlider
 					color="purple"
 					size="sm"
 					label={null}
-					value={size}
-					onChange={setSize}
+					value={previewState.size.get()}
+					onChange={previewState.size.set}
 					className={classes.slider}
 				/>
 			</Group>
 			<ActionIcon
 				className={cx(classes.wrapper, classes.italic)}
 				sx={(theme) => ({
-					backgroundColor: italic
+					backgroundColor: state.italic
 						? theme.fn.lighten(theme.colors.purple[0], 0.95)
 						: '#FFF',
 				})}
-				onClick={() => setItalic(!italic)}
+				onClick={() => previewState.italic.set(!state.italic)}
 				disabled={!hasItalic}
 			>
 				<IconItalic />

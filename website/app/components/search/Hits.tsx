@@ -1,3 +1,4 @@
+import { useSelector } from '@legendapp/state/react';
 import {
 	Box,
 	createStyles,
@@ -8,7 +9,6 @@ import {
 	Text,
 } from '@mantine/core';
 import { useFetcher } from '@remix-run/react';
-import { useAtom } from 'jotai';
 import { useEffect, useRef, useState } from 'react';
 import {
 	useInfiniteHits,
@@ -18,7 +18,7 @@ import {
 import { useLoadFont } from '@/hooks/useLoadFont';
 import type { AlgoliaMetadata } from '@/utils/types';
 
-import { displayAtom, previewValueAtom, sizeAtom } from './atoms';
+import { display, previewValue, size } from './observables';
 import { Sort } from './Sort';
 interface Hit {
 	hit: AlgoliaMetadata;
@@ -75,14 +75,14 @@ interface HitComponentProps extends Hit {
 }
 const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	const { classes } = useStyles();
-	const [display] = useAtom(displayAtom);
+	const displaySelect = useSelector(display);
 
 	const [loading, setLoading] = useState(true);
 	useLoadFont(hit.objectID, hit.family, 'index', setLoading);
 
 	// Change preview text if hit.defSubset is not latin or if it's an icon
-	const [previewValue] = useAtom(previewValueAtom);
-	const [currentPreview, setCurrentPreview] = useState(previewValue);
+	const previewValueSelect = useSelector(previewValue);
+	const [currentPreview, setCurrentPreview] = useState(previewValueSelect);
 	const previewFetcher = useFetcher();
 	const isNotLatin =
 		hit.defSubset !== 'latin' ||
@@ -107,15 +107,15 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 
 	// If previewValue changes, update currentPreview
 	useEffect(() => {
-		setCurrentPreview(previewValue);
-	}, [previewValue]);
+		setCurrentPreview(previewValueSelect);
+	}, [previewValueSelect]);
 
 	return (
 		<Box
 			component="a"
 			href={`/fonts/${hit.objectID}`}
 			className={classes.wrapper}
-			mih={{ base: '150px', sm: display == 'grid' ? '332px' : '150px' }}
+			mih={{ base: '150px', sm: displaySelect == 'grid' ? '332px' : '150px' }}
 		>
 			<Skeleton visible={loading}>
 				<Text size={fontSize} style={{ fontFamily: hit.family }}>
@@ -137,8 +137,8 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 };
 
 const InfiniteHits = () => {
-	const [size] = useAtom(sizeAtom);
-	const [display] = useAtom(displayAtom);
+	const sizeSelect = useSelector(size);
+	const displaySelect = useSelector(display);
 
 	// Infinite Scrolling
 	const { results, indexUiState } = useInstantSearch();
@@ -178,7 +178,7 @@ const InfiniteHits = () => {
 			<Sort count={results.nbHits} />
 			<SimpleGrid
 				breakpoints={
-					display == 'grid'
+					displaySelect == 'grid'
 						? [
 								{ minWidth: 'xl', cols: 4, spacing: 16 },
 								{ minWidth: 'md', cols: 3, spacing: 16 },
@@ -193,7 +193,7 @@ const InfiniteHits = () => {
 						key={hit.objectID}
 						// @ts-ignore - hit prop is messed up cause of Algolia
 						hit={hit}
-						fontSize={size}
+						fontSize={sizeSelect}
 					/>
 				))}
 				<div ref={sentinelRef} aria-hidden="true" key="sentinel" />

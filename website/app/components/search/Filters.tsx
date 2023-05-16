@@ -1,3 +1,4 @@
+import { useSelector } from '@legendapp/state/react';
 import {
 	Box,
 	Button,
@@ -8,19 +9,12 @@ import {
 	SimpleGrid,
 	UnstyledButton,
 } from '@mantine/core';
-import { useAtom } from 'jotai';
-import { useState } from 'react';
 import { useConfigure } from 'react-instantsearch-hooks-web';
 
 import { IconTrash } from '@/components';
 
-import { filterAtom, filterBaseAtom } from './atoms';
-import {
-	CategoriesDropdown,
-	categoryAtom,
-	languageAtom,
-	LanguagesDropdown,
-} from './Dropdowns';
+import { CategoriesDropdown, LanguagesDropdown } from './Dropdowns';
+import { category, filter, language, variable } from './observables';
 import { PreviewSelector } from './PreviewTextInput';
 import { SearchBar } from './SearchTextInput';
 import { SizeSlider } from './SizeSlider';
@@ -79,17 +73,10 @@ const useStyles = createStyles((theme) => ({
 
 const Filters = () => {
 	const { classes } = useStyles();
-	const [variable, setVariable] = useState(false);
-
-	const [, setBaseFilter] = useAtom(filterBaseAtom);
-	const [filterItems, setFilterItems] = useAtom(filterAtom);
-
-	const [, setLanguage] = useAtom(languageAtom);
-	const [, setCategory] = useAtom(categoryAtom);
-
+	const filterSelect = useSelector(filter);
 	// 24 is divisible by 2, 3 and 4 for the hits grid
 	useConfigure({
-		filters: filterItems,
+		filters: filterSelect,
 		attributesToHighlight: [],
 		hitsPerPage: 24,
 	});
@@ -117,14 +104,13 @@ const Filters = () => {
 					<UnstyledButton
 						w={200}
 						onClick={() => {
-							setVariable(!variable);
-							setFilterItems('variable:true');
+							variable.set(!variable.get());
 						}}
 					>
 						<Checkbox
 							color="purple"
 							label="Show only variable fonts"
-							checked={variable}
+							checked={variable.get()}
 							readOnly
 							style={{
 								pointerEvents: 'none',
@@ -137,10 +123,10 @@ const Filters = () => {
 						variant="subtle"
 						className={classes.button}
 						onClick={() => {
-							setVariable(false);
-							setLanguage('');
-							setCategory('');
-							setBaseFilter({});
+							variable.set(false);
+							language.set('');
+							category.set('');
+							filter.set('');
 						}}
 					>
 						Clear all filters

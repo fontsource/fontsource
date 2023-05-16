@@ -1,6 +1,7 @@
 import '@fontsource/inter/variable.css';
 import '@fontsource/source-code-pro/variable.css';
 
+import { enableLegendStateReact } from '@legendapp/state/react'
 import type { ColorScheme } from '@mantine/core';
 import {
 	ColorSchemeProvider,
@@ -33,6 +34,8 @@ import { getThemeSession } from '@/utils/theme.server';
 
 import { GlobalStyles } from './styles/global';
 import { theme } from './styles/theme';
+
+enableLegendStateReact()
 
 export const meta: MetaFunction = () => ({
 	charset: 'utf-8',

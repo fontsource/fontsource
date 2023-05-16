@@ -1,14 +1,14 @@
+import { useSelector } from '@legendapp/state/react';
 import {
 	createStyles,
 	Grid,
 	rem,
 	Text,
 } from '@mantine/core';
-import { useAtom } from 'jotai';
 
-import { Slider as MantineSlider} from '@/components/Slider'
+import { Slider as MantineSlider } from '@/components/Slider'
 
-import { sizeAtom } from './atoms';
+import { size } from './observables';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -34,7 +34,7 @@ const useStyles = createStyles((theme) => ({
 
 const SizeSlider = () => {
 	const { classes } = useStyles();
-	const [size, setSize] = useAtom(sizeAtom);
+	const sizeSelect = useSelector(size);
 
 	return (
 		<Grid
@@ -45,15 +45,15 @@ const SizeSlider = () => {
 			className={classes.wrapper}
 		>
 			<Grid.Col span={2}>
-				<Text>{size} px</Text>
+				<Text>{size.get()} px</Text>
 			</Grid.Col>
 			<Grid.Col span={8}>
 				<MantineSlider
 					color="purple"
 					size="sm"
 					label={null}
-					value={size}
-					onChange={setSize}
+					value={sizeSelect}
+					onChange={size.set}
 					styles={(theme) => ({
 						bar: {
 							backgroundColor: theme.colors.purple[0],

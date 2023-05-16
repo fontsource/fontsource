@@ -8,13 +8,12 @@ import {
 	ScrollArea,
 	Text,
 } from '@mantine/core';
-import { useAtom } from 'jotai';
 
 import { IconRotate } from '@/components/icons';
 import type { AxisRegistry, Metadata, VariableData } from '@/utils/types';
 
-import { variationAtom } from './atoms';
 import { NormalButtonsGroup } from './Buttons';
+import { variableState } from './observables';
 import { VariableButtonsGroup } from './VariableButtons';
 
 const useStyles = createStyles((theme) => ({
@@ -53,26 +52,31 @@ interface ConfigureProps {
 
 const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 	const { classes } = useStyles();
-	const [, setVariation] = useAtom(variationAtom);
-	const resetVariationAtom = () => {
-		setVariation({});
+	const resetVariation = () => {
+		variableState.set({});
 	};
 
 	return (
 		<ScrollArea.Autosize mah="50vh" className={classes.scrollWrapper}>
 			<Flex gap="xs" className={classes.wrapper}>
 				<Text className={classes.title}>Settings</Text>
-				<NormalButtonsGroup subsets={metadata.subsets} hasItalic={metadata.styles.includes('italic')} />
+				<NormalButtonsGroup
+					subsets={metadata.subsets}
+					hasItalic={metadata.styles.includes('italic')}
+				/>
 				{metadata.variable && (
 					<>
 						<Divider mt="sm" />
 						<Group position="apart">
 							<Text className={classes.title}>Variable Axes</Text>
-							<ActionIcon onClick={resetVariationAtom}>
+							<ActionIcon onClick={resetVariation}>
 								<IconRotate />
 							</ActionIcon>
 						</Group>
-						<VariableButtonsGroup variable={variable} axisRegistry={axisRegistry} />
+						<VariableButtonsGroup
+							variable={variable}
+							axisRegistry={axisRegistry}
+						/>
 					</>
 				)}
 			</Flex>

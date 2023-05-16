@@ -1,3 +1,4 @@
+import { useSelector } from '@legendapp/state/react';
 import {
 	Box,
 	createStyles,
@@ -8,21 +9,12 @@ import {
 	TextInput,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
-import { useAtom } from 'jotai';
 import { useState } from 'react';
 
 import { useLoadFont } from '@/hooks/useLoadFont';
 import type { Metadata } from '@/utils/types';
 
-import {
-	colorAtom,
-	italicAtom,
-	letterSpacingAtom,
-	lineHeightAtom,
-	sizeAtom,
-	transparencyAtom,
-	variationAtom,
-} from './atoms';
+import { fontVariation, previewState } from './observables';
 
 interface TagProps {
 	weight: number;
@@ -32,7 +24,6 @@ interface TextBoxProps {
 	family: string;
 	weight: number;
 	loaded: boolean;
-	text: string;
 }
 
 interface TextAreaProps {
@@ -119,17 +110,11 @@ const Tag = ({ weight, active }: TagProps) => {
 	);
 };
 
-const TextBox = ({ family, weight, loaded, text }: TextBoxProps) => {
+const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 	const { classes } = useStyles();
 	const { ref, focused } = useFocusWithin();
-	const [previewText, setPreviewText] = useState(text);
-	const [size] = useAtom(sizeAtom);
-	const [italic] = useAtom(italicAtom);
-	const [letterSpacing] = useAtom(letterSpacingAtom);
-	const [lineHeight] = useAtom(lineHeightAtom);
-	const [fontVariation] = useAtom(variationAtom);
-	const [color] = useAtom(colorAtom);
-	const [transparency] = useAtom(transparencyAtom);
+	const state = useSelector(previewState);
+	const variation = useSelector(fontVariation);
 
 	return (
 		<>
@@ -141,19 +126,19 @@ const TextBox = ({ family, weight, loaded, text }: TextBoxProps) => {
 							input: {
 								fontFamily: family,
 								fontWeight: weight,
-								fontSize: size,
-								color,
-								letterSpacing,
-								lineHeight,
-								opacity: transparency / 100,
+								fontSize: state.size,
+								color: state.color,
+								letterSpacing: state.letterSpacing,
+								lineHeight: state.lineHeight,
+								opacity: state.transparency / 100,
 								height: 'auto',
-								fontStyle: italic ? 'italic' : 'normal',
-								fontVariationSettings: fontVariation,
+								fontStyle: state.italic ? 'italic' : 'normal',
+								fontVariationSettings: variation,
 							},
 						}}
-						value={previewText}
+						value={state.text}
 						onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-							setPreviewText(event.currentTarget.value)
+							previewState.text.set(event.currentTarget.value)
 						}
 						autoComplete="off"
 						ref={ref}
@@ -165,7 +150,7 @@ const TextBox = ({ family, weight, loaded, text }: TextBoxProps) => {
 	);
 };
 
-const TextArea = ({ metadata, previewText }: TextAreaProps) => {
+const TextArea = ({ metadata }: TextAreaProps) => {
 	const { classes } = useStyles();
 
 	const [loading, setLoading] = useState(true);
@@ -188,7 +173,6 @@ const TextArea = ({ metadata, previewText }: TextAreaProps) => {
 						metadata.variable ? `${metadata.family} Variable` : metadata.family
 					}
 					loaded={loading}
-					text={previewText}
 				/>
 			))}
 		</Flex>

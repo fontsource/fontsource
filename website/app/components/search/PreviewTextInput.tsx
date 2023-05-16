@@ -1,3 +1,4 @@
+import { useObserve, useSelector } from '@legendapp/state/react';
 import type { DividerProps } from '@mantine/core';
 import {
 	Button,
@@ -7,17 +8,10 @@ import {
 	rem,
 	TextInput,
 } from '@mantine/core';
-import { useAtom } from 'jotai';
-import { useEffect } from 'react';
 
 import { IconCaret } from '@/components';
 
-import {
-	previewInputViewAtom,
-	previewLabelAtom,
-	previewTypingAtom,
-	previewValueAtom,
-} from './atoms';
+import { previewInputView, previewLabel, previewValue } from './observables';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -125,16 +119,14 @@ const ItemButton = ({ label, setLabel, value, setValue }: ItemButtonProps) => {
 
 const PreviewSelector = () => {
 	const { classes } = useStyles();
-	const [label, setLabel] = useAtom(previewLabelAtom);
-	const [, setValue] = useAtom(previewValueAtom);
-	const [inputView, setInputView] = useAtom(previewInputViewAtom);
-	const [, setInputViewTyping] = useAtom(previewTypingAtom);
+	const labelSelect = useSelector(previewLabel);
+	const inputViewSelect = useSelector(previewInputView);
 
-	useEffect(() => {
-		if (label !== 'Custom') {
-			setInputView('');
+	useObserve(() => {
+		if (previewLabel.get() !== 'Custom') {
+			previewInputView.set('');
 		}
-	}, [label, setInputView]);
+	});
 
 	return (
 		<div className={classes.wrapper}>
@@ -149,7 +141,7 @@ const PreviewSelector = () => {
 							},
 						}}
 					>
-						{label}
+						{labelSelect}
 					</Button>
 				</Menu.Target>
 				<Menu.Dropdown>
@@ -157,47 +149,49 @@ const PreviewSelector = () => {
 					<ItemButton
 						label="Sentence"
 						value="The quick brown fox jumps over the lazy dog."
-						setLabel={setLabel}
-						setValue={setValue}
+						setLabel={previewLabel.set}
+						setValue={previewValue.set}
 					/>
 					<ItemButton
 						label="Sentence"
 						value="Sphinx of black quartz, judge my vow."
-						setLabel={setLabel}
-						setValue={setValue}
+						setLabel={previewLabel.set}
+						setValue={previewValue.set}
 					/>
 					<Divider label="Alphabets" />
 					<ItemButton
 						label="Alphabet"
 						value="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-						setLabel={setLabel}
-						setValue={setValue}
+						setLabel={previewLabel.set}
+						setValue={previewValue.set}
 					/>
 					<ItemButton
 						label="Alphabet"
 						value="abcdefghijklmnopqrstuvwxyz"
-						setLabel={setLabel}
-						setValue={setValue}
+						setLabel={previewLabel.set}
+						setValue={previewValue.set}
 					/>
 					<Divider label="Numbers" />
 					<ItemButton
 						label="Number"
 						value="0123456789"
-						setLabel={setLabel}
-						setValue={setValue}
+						setLabel={previewLabel.set}
+						setValue={previewValue.set}
 					/>
 					<Divider label="Symbols" />
 					<ItemButton
 						label="Symbol"
 						value="!@#$%^&*()_+-=[]{}|;':,./<>?"
-						setLabel={setLabel}
-						setValue={setValue}
+						setLabel={previewLabel.set}
+						setValue={previewValue.set}
 					/>
 				</Menu.Dropdown>
 			</Menu>
 			<TextInput
-				value={inputView}
-				onChange={setInputViewTyping}
+				value={inputViewSelect}
+				onChange={(e) => {
+					previewInputView.set(e.currentTarget.value);
+				}}
 				placeholder="Type something"
 				variant="unstyled"
 				styles={(theme) => ({

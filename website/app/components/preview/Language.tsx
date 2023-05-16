@@ -1,10 +1,10 @@
+import { useSelector } from '@legendapp/state/react';
 import { createStyles, rem } from '@mantine/core';
-import { useAtom } from 'jotai';
 
 import { Dropdown, DropdownItem } from '@/components';
 import { subsetsMap } from '@/utils/language/subsets';
 
-import { languageAtom } from './atoms';
+import { previewState } from './observables';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -43,12 +43,16 @@ interface LanguageSelectorProps {
 
 const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	const { classes } = useStyles();
-	const [language, setLanguage] = useAtom(languageAtom);
+	const language = useSelector(previewState.language);
 
 	return (
 		<Dropdown label={language} className={classes.wrapper}>
 			{subsets.map((lang) => (
-				<DropdownItem key={lang} value={subsetsMap[lang as keyof typeof subsetsMap]} setValue={setLanguage} />
+				<DropdownItem
+					key={lang}
+					value={subsetsMap[lang as keyof typeof subsetsMap]}
+					setValue={previewState.language.set}
+				/>
 			))}
 		</Dropdown>
 	);

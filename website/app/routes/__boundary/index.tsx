@@ -3,7 +3,6 @@ import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import algoliasearch from 'algoliasearch/lite';
-import { Provider } from 'jotai';
 import { renderToString } from 'react-dom/server';
 import { getServerState } from 'react-instantsearch-hooks-server';
 import type { InstantSearchServerState } from 'react-instantsearch-hooks-web';
@@ -70,19 +69,17 @@ export default function Index() {
 	const { classes } = useStyles();
 
 	return (
-		<Provider>
-			<InstantSearchSSRProvider {...serverState}>
-				<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
-					<Box className={classes.background}>
-						<Box className={classes.container}>
-							<Filters />
-						</Box>
-					</Box>
+		<InstantSearchSSRProvider {...serverState}>
+			<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
+				<Box className={classes.background}>
 					<Box className={classes.container}>
-						<InfiniteHits />
+						<Filters />
 					</Box>
-				</InstantSearch>
-			</InstantSearchSSRProvider>
-		</Provider>
+				</Box>
+				<Box className={classes.container}>
+					<InfiniteHits />
+				</Box>
+			</InstantSearch>
+		</InstantSearchSSRProvider>
 	);
 }

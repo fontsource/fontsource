@@ -1,3 +1,4 @@
+import { useSelector } from '@legendapp/state/react';
 import {
 	Button,
 	ColorInput,
@@ -8,18 +9,12 @@ import {
 	Text,
 	Tooltip,
 } from '@mantine/core';
-import { useAtom } from 'jotai';
 
 import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconEye, IconHorizontal, IconVertical } from '../icons';
-import {
-	colorAtom,
-	letterSpacingAtom,
-	lineHeightAtom,
-	transparencyAtom,
-} from './atoms';
 import { LanguageSelector } from './Language';
+import { previewState } from './observables';
 import { SizeSlider } from './SizeSlider';
 
 interface ButtonsProps {
@@ -133,10 +128,7 @@ const ColorButton = ({ value, setValue }: ColorButtonProps) => {
 };
 
 const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
-	const [lineHeight, setLineHeight] = useAtom(lineHeightAtom);
-	const [letterSpacing, setLetterSpacing] = useAtom(letterSpacingAtom);
-	const [color, setColor] = useAtom(colorAtom);
-	const [transparency, setTransparency] = useAtom(transparencyAtom);
+	const state = useSelector(previewState);
 
 	return (
 		<>
@@ -146,26 +138,26 @@ const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
 				<SliderButton
 					label="Line Height"
 					icon={<IconVertical />}
-					value={lineHeight}
-					setValue={setLineHeight}
+					value={state.lineHeight}
+					setValue={previewState.lineHeight.set}
 					max={10}
 				/>
 				<SliderButton
 					label="Letter Spacing"
 					icon={<IconHorizontal />}
-					value={letterSpacing}
-					setValue={setLetterSpacing}
+					value={state.letterSpacing}
+					setValue={previewState.letterSpacing.set}
 					min={-20}
 					max={80}
 				/>
 			</Group>
 			<Group grow>
-				<ColorButton value={color} setValue={setColor} />
+				<ColorButton value={state.color} setValue={previewState.color.set} />
 				<SliderButton
 					label="Transparency"
 					icon={<IconEye />}
-					value={transparency}
-					setValue={setTransparency}
+					value={state.transparency}
+					setValue={previewState.transparency.set}
 					suffix="%"
 				/>
 			</Group>
