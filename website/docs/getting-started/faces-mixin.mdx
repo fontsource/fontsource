@@ -3,71 +3,57 @@ title: Faces Mixin
 section: Sass
 ---
 
-# Faces Mixin
+## Faces Mixin
 
 ---
 
-## Intro
+The Faces mixin in Fontsource allows you to generate a highly customizable CSS file for your font by modifying various [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) variables. This guide explains how to use the Faces mixin in your Sass/SCSS projects.
 
----
+### Installation
 
-### CSS
-
-A very basic usage for your typical Sass/SCSS project is the following, importing the regular fontsource css files:
-
-```scss
-@import "~@fontsource/open-sans/index.css";
-@import "~@fontsource/open-sans/300-italic.css";
-```
-
-### Mixin
-
-For more advanced setups, you can use our highly customizable Sass mixins that can modify many of the existing [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) variables.
-
-You can view what the full SCSS file looks like [here](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/mixins.scss).
-
-## Import
-
----
-
-To import the sass mixin correctly, use the `@use` deceleration with the `scss/mixins` file under the font's package. It's also recommended to give the import a name using `as`, so it does not clash with other packages.
+To use the Faces mixin, you need to import the mixin file from the specific font package. Here's an example for the Open Sans font:
 
 ```scss
 @use "@fontsource/open-sans/scss/mixins" as OpenSans;
 ```
 
+> **Note:** Make sure to adjust the import path and the name alias (as) according to the font package you are using.
+
+
 ## Usage
 
 ---
 
-To generates a CSS file similar to [open-sans/latin-500-italic.css](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/latin-500-italic.css), use the following:
-
-```scss
-@include OpenSans.faces($subsets: latin, $weights: 500, $styles: italic);
-```
-
-You can also specify a list of properties to, for instance, include multiple weights or styles. Use `all`, if you want to include all the options for a property.
+Once you have imported the mixin, you can use it to generate a CSS file with customized font variations. Here's an example that generates a CSS file similar to `open-sans/latin-500-italic.css`:
 
 ```scss
 @include OpenSans.faces(
-	$subsets: (
-		latin,
-		greek,
-	),
-	$weights: (
-		300,
-		400,
-		800,
-	),
-	$styles: all
+  $subsets: latin,
+  $weights: 500,
+  $styles: italic
 );
 ```
 
-## Arguments
+You can customize the font variations by specifying different subsets, weights, and styles. Use the all option if you want to include all available options for a specific property. Here's an example that includes multiple subsets, weights, and all available styles:
 
----
+```scss
+@include OpenSans.faces(
+  $subsets: (
+    latin,
+    greek,
+  ),
+  $weights: (
+    300,
+    400,
+    800,
+  ),
+  $styles: all
+);
+```
 
-The Faces mixin accepts the following properties as arguments:
+### Mixin Arguments
+
+The Faces mixin accepts several properties as arguments, allowing you to customize various aspects of the font. Here are the available arguments::
 
 | Variable    | Description                                                                                                                                       | Options                                                                         | Default                                  |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------- |
@@ -89,19 +75,21 @@ The following advanced properties shouldn't need to be modified as often, but ar
 
 ### Global Configuration
 
-These arguments can also be set directly on module import, so it's the new default through out different uses of the faces mixin.
+The arguments for the Faces mixin can also be set directly on module import, which will set the new defaults throughout different uses of the mixin. Here's an example:
 
 ```scss
 @use "@fontsource/open-sans/scss/mixins" as OpenSans with (
-	$weights: (
-		300,
-		700,
-	),
-	$family: "Open Sans Custom"
+  $weights: (
+    300,
+    700,
+  ),
+  $family: "Open Sans Custom"
 );
 
 @include OpenSans.faces(
-	// The global configuration can still be overwritten through arguments
-	$family: "Open Sans Other"
+  // The global configuration can still be overwritten through arguments
+  $family: "Open Sans Other"
 );
 ```
+
+By setting the arguments on module import, you can easily configure the defaults for the Faces mixin.

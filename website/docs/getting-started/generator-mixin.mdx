@@ -3,72 +3,68 @@ title: Generator Mixin
 section: Sass
 ---
 
-# Generator Mixin
+## Generator Mixin
 
 ---
 
-The generator mixin is used for the most advanced sass use cases. Most people are probably better off using the [Faces mixin](./faces-mixin).
+The generator mixin in Fontsource is a powerful tool that allows for advanced use cases in Sass. It provides a way to dynamically generate CSS based on the specified properties. Please note that the generator mixin is more advanced and is recommended for users who require fine-grained control over their font styles. For most use cases, the [Faces mixin](./faces-mixin) is sufficient.
 
 ## Import
 
 ---
 
-The generator mixin is included in the same modules as the faces mixin, so importing is the similar, but an additional import from the `sass:map` module is required to be able to extract generator properties:
+To use the generator mixin, you need to import the Fontsource mixin module along with the `sass:map` module to extract generator properties. Here's an example of how to import the generator mixin for the Open Sans font:
 
 ```scss
 @use "sass:map";
-
 @use "@fontsource/open-sans/scss/mixins" as OpenSans;
 ```
 
 ## Usage
 
----
-
-The generator mixin is just a loop that passes in properties and generates css from your content block. It doesn't even have to be an @font-face deceleration, you can generate anything you want with the properties.
+The generator mixin allows you to generate CSS based on the provided properties. It uses a loop to iterate over the properties and generate CSS from the content block. Here's an example of using the generator mixin:
 
 ```scss
-@include generator(
-		$weights: (
-			400,
-			800,
-		)
-	) using ($props) {
-	/* Hello #{map.get($props, family)} */
-	@font-face {
-		font-family: Random stuff #{map.get($props, font-family)};
-		font-style: normal;
-		font-weight: map.get($props, font-weight);
-		src: map.get($props, src);
-	}
+@include OpenSans.generator(
+  $weights: (
+    400,
+    800,
+  )
+) using ($props) {
+  /* CSS generated dynamically based on the properties */
+  @font-face {
+    font-family: "Random stuff #{map.get($props, font-family)}";
+    font-style: normal;
+    font-weight: map.get($props, font-weight);
+    src: map.get($props, src);
+  }
 }
 ```
 
-## Arguments
+In this example, the `OpenSans.generator` mixin is called with the desired properties, and the content block is used to generate CSS dynamically based on those properties.
+
+### Arguments
 
 ---
-
-The generator mixin accepts the same arguments the faces mixin does. For a list of all the arguments, see [here](./faces-mixin#arguments).
+The generator mixin accepts the same arguments as the faces mixin. You can refer to the [arguments section](./faces-mixin#arguments) of the faces mixin documentation for a complete list of available arguments.
 
 ## Properties
 
----
-
-The following is a list of properties that are passed into the generator's content block.
+The generator mixin provides several properties that can be accessed within the content block. These properties are passed into the content block and can be used to generate dynamic CSS. Here are the properties available:
 
 ### Mixin Arguments
 
-All the arguments passed into the generator mixin are resolved to their final values (defaults and global settings are applied) and passed into the content block. Once these values are calculated, they are not changed through out the generation; in other words, they are constant through each content block iteration. For a complete list of all the arguments, see [here](./faces-mixin#arguments).
+All the arguments passed into the generator mixin are resolved to their final values and passed into the content block. These values are constant throughout each content block iteration. You can refer to the [arguments section](./faces-mixin#arguments) of the faces mixin documentation for a complete list of available arguments.
 
 ```scss
 @include generator(
-		$weights: (
-			400,
-			800,
-		)
-	) using ($props) {
-	/* #{map.get($props, weights)} will resolve to: Hello 400, 800 */
-	/* #{map.get($props, family)} will default to: Open Sans */
+    $weights: (
+      400,
+      800,
+    )
+  ) using ($props) {
+  /* #{map.get($props, weights)} will resolve to: Hello 400, 800 */
+  /* #{map.get($props, family)} will default to: Open Sans */
 }
 ```
 
@@ -87,7 +83,7 @@ All the arguments passed into the generator mixin are resolved to their final va
 
 ### Loop Parameters
 
-These are the variables that change on each iteration the content block is called.
+These variables change on each iteration of the content block:
 
 | Property      | Example                                               |
 | ------------- | ----------------------------------------------------- |
@@ -100,7 +96,7 @@ These are the variables that change on each iteration the content block is calle
 
 ### CSS Properties
 
-These are the all the css properties that are calculated and used by default in the faces mixin.
+These are the CSS properties that are calculated and used by default in the faces mixin:
 
 | Property      | Example                                                                                                                            |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -114,31 +110,33 @@ These are the all the css properties that are calculated and used by default in 
 
 ## Example
 
-The following is how the faces mixin uses the generator for it's implementation.
+Here's an example of how the faces mixin uses the generator mixin for its implementation:
 
 ```scss
 @include generator(
-		// Faces mixin arguments are passed down to the generator
-		$metadata: $metadata,
-		$directory: $directory,
-		$family: $family,
-		$display: $display,
-		$displayVar: $displayVar,
-		$formats: $formats,
-		$subsets: $subsets,
-		$weights: $weights,
-		$styles: $styles,
-		$axes: $axes
-	) using ($props) {
-	/* #{map.get($props, variant)} */
-	@font-face {
-		font-family: map.get($props, font-family);
-		font-style: map.get($props, font-style);
-		font-display: map.get($props, font-display);
-		font-weight: map.get($props, font-weight);
-		font-stretch: map.get($props, font-stretch);
-		unicode-range: map.get($props, unicode-range);
-		src: map.get($props, src);
-	}
+    // Faces mixin arguments are passed down to the generator
+    $metadata: $metadata,
+    $directory: $directory,
+    $family: $family,
+    $display: $display,
+    $displayVar: $displayVar,
+    $formats: $formats,
+    $subsets: $subsets,
+    $weights: $weights,
+    $styles: $styles,
+    $axes: $axes
+  ) using ($props) {
+  /* #{map.get($props, variant)} */
+  @font-face {
+    font-family: map.get($props, font-family);
+    font-style: map.get($props, font-style);
+    font-display: map.get($props, font-display);
+    font-weight: map.get($props, font-weight);
+    font-stretch: map.get($props, font-stretch);
+    unicode-range: map.get($props, unicode-range);
+    src: map.get($props, src);
+  }
 }
 ```
+
+In this example, the faces mixin passes its arguments to the generator mixin, and the content block generates CSS based on the properties.

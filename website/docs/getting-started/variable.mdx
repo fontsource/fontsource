@@ -18,13 +18,15 @@ To use a variable font with Fontsource, you need to install the corresponding va
 After installing the package, you can import the font into your project like this:
 
 ```jsx
-import "@fontsource-variable/roboto-flex"; // Supports weights 100-900 in a single small file.
+// Supports weights 100-900 in a single small file.
+import "@fontsource-variable/roboto-flex";
 ```
 
 This will import the standard weight of the font. If you want to use a specific weight or variation, you can import the corresponding CSS file instead:
 
 ```jsx
-import "@fontsource-variable/roboto-flex/wght-ital.css"; // Supports weights 100-900 and italic style
+// Supports weights 100-900 in italic style.
+import "@fontsource-variable/roboto-flex/wght-ital.css";
 ```
 
 ### 3. CSS
@@ -41,6 +43,6 @@ body {
 
 In this example, we are setting the font weight to 500 and the width axis to 75% of the maximum width. Note that not all axes are supported by all variable fonts, so you will need to consult the font documentation to see which axes are available.
 
-## Axes
+## Understanding Variable Axes
 
 The default installation covers all weights.

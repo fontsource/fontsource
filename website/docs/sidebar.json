@@ -3,15 +3,20 @@
 		"Contents": {
 			"introduction": "Introduction",
 			"install": "Install",
-			"variable": "Variable Fonts"
+			"variable": "Variable Fonts",
+			"display": "Font Display"
 		},
 		"Icons": {
 			"material-icons": "Material Icons",
 			"material-symbols": "Material Symbols"
 		},
 		"Sass": {
+			"sass-import": "Import",
 			"faces-mixin": "Faces Mixin",
 			"generator-mixin": "Generator Mixin"
+		},
+		"Migration": {
+			"migrate-v5": "Migrating to v5"
 		}
 	},
 	"guides": {

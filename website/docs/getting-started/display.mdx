@@ -1,0 +1,40 @@
+---
+title: Font Display
+section: Contents
+---
+
+## Font Display
+
+---
+
+Fontsource provides a feature that allows users to customize the `font-display` property for imported fonts using CSS variables. This feature gives you more control over how fonts are displayed and loaded in your web application.
+
+### Prerequisites
+
+Before proceeding with customizing the font-display, ensure that you have already installed the desired font package using Fontsource. If you haven't done so, please refer to the Install guide for instructions on installing fonts from Fontsource.
+
+## Changing font-display
+
+To customize the `font-display` property, follow these steps:
+
+### 1. CSS Variable
+
+Each font uses the following CSS variable to set the `font-display` property with the default value of `swap` if the CSS variable is undefined:
+
+```css
+@font-face {
+  ...
+  font-display: var(--fontsource-display, swap);
+  ...
+}
+```
+
+### 2. Defining Display
+
+To change the `font-display` property, you need to define the `--fontsource-display` CSS variable with the desired value. This can be done in your application's CSS file or in a style block within your HTML.
+
+```css
+:root {
+  --fontsource-display: optional;
+}
+```
