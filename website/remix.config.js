@@ -10,7 +10,4 @@ module.exports = {
 		/^vfile.*/,
 	],
 	watchPaths: ['./docs/**/*'],
-	future: {
-		unstable_cssSideEffectImports: true,
-	},
 };

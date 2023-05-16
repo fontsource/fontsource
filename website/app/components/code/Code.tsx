@@ -12,7 +12,7 @@ import {
 	Tooltip,
 } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
-import { Highlight } from 'prism-react-renderer';
+import { Highlight, Prism } from 'prism-react-renderer';
 
 import { IconCopy } from '@/components/icons';
 
@@ -123,11 +123,15 @@ export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 		</Box>
 	);
 };
-
 interface CodeHighlightProps {
 	code: string;
 	language: string;
 }
+
+// Add support for additional languagaes
+(typeof global !== 'undefined' ? global : window).Prism = Prism;
+require('prismjs/components/prism-scss');
+require('prismjs/components/prism-json');
 
 export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 	const theme = useMantineTheme();
@@ -135,6 +139,7 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 
 	return (
 		<Highlight
+			prism={Prism}
 			theme={theme.colorScheme === 'dark' ? themeDark : themeLight}
 			code={code}
 			language={language}
