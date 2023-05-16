@@ -2,6 +2,7 @@ import { Divider, List, rem, Table,Text, Title } from '@mantine/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import { Blockquote } from '@/components/Blockquote';
 import { Code } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 
@@ -43,6 +44,7 @@ const mdxComponents = {
 
 	// Other
 	hr: (props: any) => <Divider mb='md' {...props} />,
+	blockquote: (props: any) => (<Blockquote {...props} />),
 	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
 };
 

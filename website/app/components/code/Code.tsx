@@ -148,13 +148,10 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 							scrollbar: {
 								'&:hover': {
 									backgroundColor: 'transparent',
-
 									'.___ref-thumb': {
 										backgroundColor: '#C2BFFF',
 									},
 								},
-
-
 							},
 
 							thumb: {
