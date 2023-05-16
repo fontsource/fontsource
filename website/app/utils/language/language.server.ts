@@ -1,16 +1,22 @@
-export const getPreviewText = (id: string, subset: string) => {
+export const getPreviewText = (subset: string, id?: string) => {
   switch (id) {
     case 'dseg-weather':
-    case 'dseg14':
-    case 'dseg7':
-      return '0123456789';
+			return '0123456789 ABC';
+		case 'dseg7-segg-chan':
+		case 'dseg7-segg-chan-mini':
+			return '0123456789'
 
     case 'material-icons':
     case 'material-icons-outlined':
-    case 'material-icons-rounded':
+    case 'material-icons-round':
     case 'material-icons-sharp':
     case 'material-icons-two-tone':
-      return 'photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close';
+			return 'photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close';
+
+		case 'material-symbols-outlined':
+		case 'material-symbols-rounded':
+		case 'material-symbols-sharp':
+			return 'search settings home person add shopping_cart favorite';
 
     case 'yakuhanjp':
     case 'yakuhanrp':

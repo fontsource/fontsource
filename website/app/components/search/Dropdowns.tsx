@@ -76,6 +76,7 @@ const categoriesMap = {
 	'display': 'Display',
 	'handwriting': 'Handwriting',
 	'monospace': 'Monospace',
+	'icons': 'Icons',
 	'other': 'Other',
 }
 

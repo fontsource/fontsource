@@ -7,6 +7,7 @@ import {
 	Skeleton,
 	Text,
 } from '@mantine/core';
+import { useFetcher } from '@remix-run/react';
 import { useAtom } from 'jotai';
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -71,14 +72,43 @@ const useStyles = createStyles((theme) => ({
 
 interface HitComponentProps extends Hit {
 	fontSize: number;
-	previewText: string;
 }
-const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
+const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	const { classes } = useStyles();
 	const [display] = useAtom(displayAtom);
 
 	const [loading, setLoading] = useState(true);
 	useLoadFont(hit.objectID, hit.family, 'index', setLoading);
+
+	// Change preview text if hit.defSubset is not latin or if it's an icon
+	const [previewValue] = useAtom(previewValueAtom);
+	const [currentPreview, setCurrentPreview] = useState(previewValue);
+	const previewFetcher = useFetcher();
+	const isNotLatin =
+		hit.defSubset !== 'latin' ||
+		hit.category === 'icons' ||
+		hit.category === 'other';
+	useEffect(() => {
+		if (
+			isNotLatin &&
+			previewFetcher.state === 'idle' &&
+			!previewFetcher.data?.text
+		) {
+			previewFetcher.submit(
+				{ id: hit.objectID, subset: hit.defSubset },
+				{ method: 'POST', action: '/actions/language' }
+			);
+		}
+
+		if (previewFetcher.state === 'idle' && previewFetcher.data?.text) {
+			setCurrentPreview(previewFetcher.data.text);
+		}
+	}, [previewFetcher, isNotLatin, hit.objectID, hit.defSubset]);
+
+	// If previewValue changes, update currentPreview
+	useEffect(() => {
+		setCurrentPreview(previewValue);
+	}, [previewValue]);
 
 	return (
 		<Box
@@ -89,7 +119,7 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
 		>
 			<Skeleton visible={loading}>
 				<Text size={fontSize} style={{ fontFamily: hit.family }}>
-					{previewText}
+					{currentPreview}
 				</Text>
 			</Skeleton>
 			<Group className={classes.textGroup} position="apart">
@@ -107,7 +137,6 @@ const HitComponent = ({ hit, fontSize, previewText }: HitComponentProps) => {
 };
 
 const InfiniteHits = () => {
-	const [previewValue] = useAtom(previewValueAtom);
 	const [size] = useAtom(sizeAtom);
 	const [display] = useAtom(displayAtom);
 
@@ -164,7 +193,6 @@ const InfiniteHits = () => {
 						key={hit.objectID}
 						// @ts-ignore - hit prop is messed up cause of Algolia
 						hit={hit}
-						previewText={previewValue}
 						fontSize={size}
 					/>
 				))}
