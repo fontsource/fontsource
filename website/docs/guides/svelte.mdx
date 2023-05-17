@@ -1,36 +1,39 @@
 ---
-title: Svelte.js
+title: SvelteKit
 section: Frameworks
 ---
 
-# Svelte.js / Svelte Kit
+## SvelteKit
 
 ---
 
-To include Fontsource into your Svelte / SvelteKit project, it is required to add the `style` and the `elements in your `+layout.svelte` file.
+To include Fontsource into your Svelte / SvelteKit project and apply it to your application's typography, follow the steps below.
 
-## Installation
+### 1. Entry File
 
----
-
-To include Fontsource into your Svelte / SvelteKit project, it is required to import the font you are gonna use in your `+layout.svelte` file.
+To apply the imported font to the typography of your Svelte / SvelteKit application, you can import the library into `+layout.svelte` file.
 
 ```html
-<!--We are modifying the +layout.svelte file. -->
 <script>
-	import "@fontsource/open-sans"; // The font we are gonna serve with fontsource
+  import "@fontsource-variable/open-sans";
 </script>
 ```
 
-After adding the import to +layout file, we are gonna add an `style` in the same `+layout.svelte` file the `body` selector, using the `global()` utility from Svelte:
+### 2. Usage
+
+To apply the imported font to the typography of your Svelte / SvelteKit application, you can modify the `body` selector within the `+layout.svelte` file.
 
 ```html
-<!--We are modifying the +layout.svelte file. -->
+<!-- +layout.svelte -->
+<script>
+  import "@fontsource-variable/open-sans";
+</script>
+
 <style>
-	<!-- We use the global selector because Svelte.-- > :global(body) {
-		font-family: "Open Sans", sans-serif;
-	}
+  :global(body) {
+    font-family: "Open Sans Variable", sans-serif;
+  }
 </style>
 ```
 
-> **Note:** This will modify all the font-family for all the elements.
+> **Note:** The font will be applied to all elements within your application's body. If you need to apply the font selectively, you can modify the CSS rules accordingly.

@@ -36,9 +36,8 @@
 			},
 			"nextjs": "Next.js",
 			"remix": "Remix",
-			"sveltekit": "SvelteKit",
-			"vue": "Vue",
-			"wmr": "WMR"
+			"svelte": "SvelteKit",
+			"vue": "Vue"
 		},
 		"Component Libraries": {
 			"chakra-ui": {
@@ -51,8 +50,7 @@
 			}
 		},
 		"Bundlers": {
-			"webpack": "Webpack",
-			"vite": "Vite"
+			"webpack": "Webpack"
 		}
 	},
 	"api": {

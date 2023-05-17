@@ -1,0 +1,52 @@
+---
+title: Webpack
+section: Bundlers
+---
+
+## Webpack
+
+---
+
+To use Fontsource with Webpack, you'll need to configure your Webpack project to handle font files and include Fontsource in the bundle. Follow the steps below to set it up.
+
+### Installation
+
+## 1. Install the loaders
+
+<PackageManagerCode cmd="css-loader file-loader mini-css-extract-plugin" />
+
+## 2. Configure the loaders
+
+Modify `webpack.config.js` to include the following configuration:
+
+```js
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = {
+  plugins: [new MiniCssExtractPlugin()],
+  module: {
+    rules: [
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ["file-loader"],
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+    ],
+  },
+};
+```
+
+## 3. Import the font
+
+Import the font in your entry file or component:
+
+```js
+import "@fontsource-variable/open-sans/wght.css";
+// You should be able to import other CSS files too
+import "./styles.css"
+
+// Your application code goes here
+```
