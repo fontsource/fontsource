@@ -132,6 +132,7 @@ interface CodeHighlightProps {
 (typeof global !== 'undefined' ? global : window).Prism = Prism;
 require('prismjs/components/prism-scss');
 require('prismjs/components/prism-json');
+require('prismjs/components/prism-bash');
 
 export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 	const theme = useMantineTheme();
@@ -142,7 +143,7 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 			prism={Prism}
 			theme={theme.colorScheme === 'dark' ? themeDark : themeLight}
 			code={code}
-			language={language}
+			language={language === 'sh' ? 'bash' : language}
 		>
 			{({ style, tokens, getLineProps, getTokenProps }) => (
 				<pre className={classes.code} style={style}>
@@ -181,7 +182,7 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 export const Code = (props: CodeProps) => {
 	const language = props.className?.replace(/language-/, '') ?? '';
 	// Inline code
-	if (language == '') return <MantineCode {...props} />;
+	if (language == '') return <MantineCode fw={600} fz={13} {...props} />;
 
 	const code = props.children?.toString().trim() ?? '';
 
