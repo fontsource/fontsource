@@ -103,6 +103,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 						<Group spacing="md" position="right">
 							<FooterNavLink label="Fonts" to="/" />
 							<FooterNavLink label="Documentation" to="/docs" />
+							<FooterNavLink label="Sponsors" to="/sponsors" />
 							<ThemeButton stroke="white" />
 							<Icon
 								label="GitHub"
