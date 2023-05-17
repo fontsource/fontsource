@@ -80,6 +80,12 @@ const useStyles = createStyles((theme) => ({
 	line: {
 		width: '100%',
 	},
+
+	inlineCode: {
+		fontWeight: 500,
+		fontSize: rem(13),
+		borderRadius: rem(4),
+	}
 }));
 
 interface CodeWrapperProps {
@@ -180,9 +186,10 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 };
 
 export const Code = (props: CodeProps) => {
+	const { classes } = useStyles();
 	const language = props.className?.replace(/language-/, '') ?? '';
 	// Inline code
-	if (language == '') return <MantineCode fw={600} fz={13} {...props} />;
+	if (language == '') return <MantineCode className={classes.inlineCode} {...props} />;
 
 	const code = props.children?.toString().trim() ?? '';
 
