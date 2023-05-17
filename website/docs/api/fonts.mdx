@@ -3,13 +3,17 @@ title: Fonts
 section: Reference
 ---
 
-# Fonts
+## Fonts
 
 ---
 
-Found at [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
+The Fonts endpoint provides an array of individual font objects. You can access this endpoint using the URL [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
 
-Returns an array of individual font objects.
+### Response
+
+The API response for the Fonts endpoint is an array of font objects. Each font object represents a specific font and provides detailed information about it.
+
+Example response:
 
 ```json
 [
@@ -30,15 +34,15 @@ Returns an array of individual font objects.
 ]
 ```
 
-## Queries
+### Queries
 
----
+The Fonts endpoint allows you to send queries to filter the list of fonts. Multiple queries can be combined using the & operator.
 
-Queries can be sent to filter the list of fonts and can be combined together using `&`.
-
-For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext` as well as if it is a variable font.
+You can include additional queries in the URL to filter the responses based on specific criteria. For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext`, as well as if it is a variable font.
 
 ### Options
+
+You can use the following queries to filter the list of fonts:
 
 ---
 

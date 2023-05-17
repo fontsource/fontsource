@@ -3,40 +3,68 @@ title: Font ID
 section: Reference
 ---
 
-# Font ID
+## Font ID
 
-Found at [`api.fontsource.org/v1/fonts/abel`](https://api.fontsource.org/v1/fonts/abel). Any font from Fontsource can be used.
+The Font ID endpoint allows you to retrieve detailed information about a specific font from Fontsource. The font ID is appended to the base URL as follows: [`api.fontsource.org/v1/fonts/abel`](https://api.fontsource.org/v1/fonts/abel)
 
-Returns a detailed font object.
+### Response
+
+The API response for the Font ID endpoint is a JSON object that provides comprehensive details about the font.
+
+Example response for the "Abel" font:
 
 ```json
 {
-	"id": "abel",
-	"family": "Abel",
-	"subsets": ["latin"],
-	"weights": [400],
-	"styles": ["normal"],
-	"unicodeRange": {
-		"latin": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-	},
-	"defSubset": "latin",
-	"variable": false,
-	"lastModified": "2020-09-10",
-	"category": "sans-serif",
-	"version": "v12",
-	"type": "google",
-	"variants": {
-		"400": {
-			"normal": {
-				"latin": {
-					"url": {
-						"woff2": "https://cdn.jsdelivr.net/npm/@fontsource/abel/files/abel-latin-400-normal.woff2",
-						"woff": "https://cdn.jsdelivr.net/npm/@fontsource/abel/files/abel-latin-400-normal.woff",
-						"ttf": "https://api.fontsource.org/v1/fonts/abel/latin-400-normal.ttf"
-					}
-				}
-			}
-		}
-	}
+  "id": "abel",
+  "family": "Abel",
+  "subsets": ["latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "unicodeRange": {
+    "latin": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2020-09-10",
+  "category": "sans-serif",
+  "version": "v12",
+  "type": "google",
+  "variants": {
+    "400": {
+      "normal": {
+        "latin": {
+          "url": {
+            "woff2": "https://cdn.jsdelivr.net/npm/@fontsource/abel/files/abel-latin-400-normal.woff2",
+            "woff": "https://cdn.jsdelivr.net/npm/@fontsource/abel/files/abel-latin-400-normal.woff",
+            "ttf": "https://api.fontsource.org/v1/fonts/abel/latin-400-normal.ttf"
+          }
+        }
+      }
+    }
+  }
 }
 ```
+
+### Properties
+
+The Font ID response includes the following properties:
+
+- `id`:** The unique identifier of the font.
+- `family`:** The name of the font family.
+- `subsets`:** An array of string subsets supported by the font.
+- `weights`:** An array of integer weights available for the font.
+- `styles`:** An array of string styles which may contain `normal` and/or `italic`.
+- `unicodeRange`:** An object containing the unicode range for each subset. The key is the subset name and the value is the unicode range.
+- `defSubset`:** The default subset for the font.
+- `variable`:** A boolean value indicating if the font is a variable font.
+- `lastModified`:** The date the font was last modified.
+- `category`:** The font category or classification.
+- `version`:** The source version of the font.
+- `type`:** The source type of the font.
+- `variants`:** An object containing the variants of the font. The key is the weight and the value is an object containing the styles and subsets for that weight.
+
+The `variants` property further includes variant-specific details such as URLs for different file formats (`woff2`, `woff`, `ttf`) based on subsets, weights, and styles.
+
+Please note that the provided example response represents the "Abel" font, and the actual response for other fonts may vary based on their specific attributes and settings.
+
+For more information, refer to the [Fontlist](/docs/api/fontlist) and [Fonts](/docs/api/fonts) sections of the documentation.

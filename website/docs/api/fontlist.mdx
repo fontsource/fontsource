@@ -3,21 +3,32 @@ title: Fontlist
 section: Reference
 ---
 
-# Fontlist
+## Fontlist
 
-Found at [`api.fontsource.org/fontlist`](https://api.fontsource.org/fontlist).
+The Fontlist endpoint provides an object that contains a list of fonts and their associated types. You can access this endpoint using the URL [`api.fontsource.org/fontlist`](https://api.fontsource.org/fontlist).
 
-Returns an object containing a list of fonts and the types associated with them.
+### Response
+
+The API response for the Fontlist endpoint is a JSON object that represents the available fonts and their corresponding types.
+
+Example response:
 
 ```json
 {
   ...
   "abeezee": "google",
-  "blackout-midnight": "league",
   "material-icons": "icons",
   "yakuhanjp": "other"
   ...
 }
 ```
 
-The only available types are `google`, `league`, `icons` and `other`. League is in reference to the [League of Moveable Type](https://www.theleagueofmoveabletype.com/).
+### Font Types
+
+The Fontlist API supports the following font types:
+
+- `google`:** Fonts sourced from Google Fonts.
+- `icons`:** Icon fonts.
+- `other`:** Fonts from other sources.
+
+The font types provide information about the source or category of each font.
