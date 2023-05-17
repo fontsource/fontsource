@@ -1,3 +1,5 @@
+import { useLocation } from '@remix-run/react';
+
 import { Footer } from './Footer';
 import { Header } from './Header';
 
@@ -6,11 +8,13 @@ interface AppShellProps {
 }
 
 export const AppShell = ({ children }: AppShellProps) => {
+	const isNotHome = useLocation().pathname !== '/';
+
 	return (
 		<>
 			<Header />
 			<main>{children}</main>
-			<Footer style={{ marginTop: 'auto' }} />
+			{isNotHome && (<Footer style={{ marginTop: 'auto' }} />)}
 		</>
 	);
 };
