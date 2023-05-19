@@ -5,14 +5,14 @@ Thanks for supporting Fontsource!
 > Please note that this project is released with a [Contributor Code of Conduct](https://github.com/fontsource/fontsource/blob/main/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 - [Contributing to Fontsource](#contributing-to-fontsource)
-	- [Questions](#questions)
-	- [Issues and Pull Requests](#issues-and-pull-requests)
-		- [Submitting an Issue](#submitting-an-issue)
-		- [Submitting a Pull Request (PR)](#submitting-a-pull-request-pr)
-	- [Development](#development)
-		- [Useful Scripts](#useful-scripts)
-		- [Website Development](#website-development)
-	- [Submit Documentation](#submit-documentation)
+  - [Questions](#questions)
+  - [Issues and Pull Requests](#issues-and-pull-requests)
+    - [Submitting an Issue](#submitting-an-issue)
+    - [Submitting a Pull Request (PR)](#submitting-a-pull-request-pr)
+  - [Development](#development)
+    - [Useful Scripts](#useful-scripts)
+    - [Website Development](#website-development)
+  - [Submit Documentation](#submit-documentation)
 
 ## Questions
 
@@ -41,16 +41,19 @@ You can file issues by filling out an [issue form](https://github.com/fontsource
 
 4. Create your patch or feature addition, **including appropriate test cases in the tests directory**.
 5. Ensure all tests and lints pass.
-6. On GitHub, send a pull request to fontsource:main.
+6. Create a Changeset using `pnpm exec changeset` and follow the prompts.
+7. On GitHub, send a pull request to fontsource:main.
    - If we suggest changes then:
      - Make the required updates.
      - Re-run the test suites to ensure tests are still passing.
      - Rebase your branch and force push to your GitHub repository (this will update your PR):
+
      ```shell
      git rebase main -i
      git push -f
      ```
-7. After your pull request is merged, you can safely delete your branch and pull changes from the main repository.
+
+8. After your pull request is merged, you can safely delete your branch and pull changes from the main repository.
 
 ## Development
 
