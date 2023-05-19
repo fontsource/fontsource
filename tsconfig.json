@@ -1,8 +1,11 @@
 {
-  "exclude": ["node_modules", "fonts"],
-  "references": [
-    { "path": "scripts" },
-    { "path": "website" },
-    { "path": "api" }
-  ]
+	"exclude": ["node_modules"],
+	"references": [
+		{ "path": "api" },
+		{ "path": "packages/cli" },
+		{ "path": "packages/generate" },
+		{ "path": "packages/publish" },
+		{ "path": "website" }
+	],
+	"files": []
 }

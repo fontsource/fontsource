@@ -15,5 +15,5 @@ quote_type = single
 [*.md]
 trim_trailing_whitespace = false
 
-[*.md]
-trim_trailing_whitespace = false
+[*.yml]
+indent_style = space
