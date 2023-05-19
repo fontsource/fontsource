@@ -48,7 +48,9 @@ interface LoaderData {
 	serverState: InstantSearchServerState;
 }
 
+/* Temporarily disable until https://github.com/algolia/instantsearch/issues/5628 is resolved
 export const loader: LoaderFunction = async () => {
+
 	const serverState = await getServerState(
 		<MantineProvider theme={theme}>
 			<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
@@ -63,13 +65,14 @@ export const loader: LoaderFunction = async () => {
 		serverState,
 	});
 };
+*/
 
 export default function Index() {
-	const { serverState } = useLoaderData<LoaderData>();
+	// const { serverState } = useLoaderData<LoaderData>();
 	const { classes } = useStyles();
 
 	return (
-		<InstantSearchSSRProvider {...serverState}>
+		<InstantSearchSSRProvider>
 			<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
 				<Box className={classes.background}>
 					<Box className={classes.container}>
