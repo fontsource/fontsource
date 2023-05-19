@@ -16,6 +16,7 @@ interface DropdownProps {
 	children: React.ReactNode;
 	className?: DefaultProps['className'];
 	icon?: React.ReactNode;
+	capitalize?: boolean;
 	closeOnItemClick?: boolean;
 }
 
@@ -81,6 +82,7 @@ const Dropdown = ({
 	width,
 	className,
 	closeOnItemClick,
+	capitalize,
 	children,
 }: DropdownProps) => {
 	const { classes } = useStyles();
@@ -97,7 +99,7 @@ const Dropdown = ({
 					className={className ?? classes.button}
 					w={rem(width) ?? rem(240)}
 					sx={(theme) => ({
-						textTransform: 'capitalize',
+						textTransform: capitalize ? 'capitalize' : undefined,
 						border: focused ? theme.colors.purple[0] : undefined,
 					})}
 				>

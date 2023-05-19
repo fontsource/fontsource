@@ -31,7 +31,7 @@ const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	}, [languageFetcher]);
 
 	return (
-		<Dropdown label={language} width={284}>
+		<Dropdown label={language} width={284} capitalize>
 			{subsets.map((lang) => (
 				<DropdownItem
 					key={lang}

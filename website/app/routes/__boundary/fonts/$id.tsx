@@ -34,7 +34,6 @@ export const loader: LoaderFunction = async ({ params }) => {
 		axisRegistry = await getAxisRegistry();
 	}
 	const downloadCount = await getDownloadCountTotal(id);
-
 	const defSubsetText = getPreviewText(metadata.id, metadata.defSubset);
 
 	return json({
