@@ -6,6 +6,7 @@ import {
 	ScrollArea,
 	UnstyledButton,
 } from '@mantine/core';
+import { useFocusWithin } from '@mantine/hooks';
 
 import { IconCaret } from '@/components';
 
@@ -26,6 +27,7 @@ interface DropdownItemProps {
 
 const useStyles = createStyles((theme) => ({
 	button: {
+		...theme.fn.focusStyles(),
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-between',
@@ -66,6 +68,7 @@ const DropdownItem = ({ label, value, setValue }: DropdownItemProps) => {
 			onClick={() => {
 				setValue(value);
 			}}
+			sx={{ textTransform: 'capitalize' }}
 		>
 			{label ?? value}
 		</Menu.Item>
@@ -81,16 +84,22 @@ const Dropdown = ({
 	children,
 }: DropdownProps) => {
 	const { classes } = useStyles();
+	const { ref, focused } = useFocusWithin();
 	return (
 		<Menu
 			shadow="md"
 			width={rem(width) ?? rem(240)}
 			closeOnItemClick={closeOnItemClick ?? true}
+			ref={ref}
 		>
 			<Menu.Target>
 				<UnstyledButton
 					className={className ?? classes.button}
 					w={rem(width) ?? rem(240)}
+					sx={(theme) => ({
+						textTransform: 'capitalize',
+						border: focused ? theme.colors.purple[0] : undefined,
+					})}
 				>
 					{label} {icon ?? <IconCaret />}
 				</UnstyledButton>

@@ -70,7 +70,8 @@ const useStyles = createStyles((theme) => ({
 				? theme.colors.border[1]
 				: theme.colors.border[0]
 		}`,
-		borderRadius: '4px',
+		borderRadius: rem(4),
+		paddingLeft: rem(12),
 	},
 }));
 
@@ -148,6 +149,7 @@ const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
 					variant="unstyled"
 					value={state.color}
 					onChange={previewState.color.set}
+					withEyeDropper={false}
 				/>
 				<SliderButton
 					label="Transparency"

@@ -16,7 +16,7 @@ const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	const languageFetcher = useFetcher();
 
 	const handleLanguage = (value: string) => {
-		previewState.language.set(subsetsMap[value as keyof typeof subsetsMap]);
+		previewState.language.set(subsetsMap[value as keyof typeof subsetsMap] ?? value);
 		languageFetcher.submit({ subset: value }, {
 			method: 'POST',
 			action: '/actions/language',
