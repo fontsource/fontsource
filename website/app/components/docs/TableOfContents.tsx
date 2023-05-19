@@ -43,7 +43,7 @@ const HeadingItem = (heading: HeadingItemProps) => {
 				sx={(theme) => ({
 					borderLeft: isActive
 						? `${rem(1)} solid ${theme.colors.purple[0]}`
-						: `${rem(1)} solid ${theme.colors.gray[2]}`,
+						: theme.colorScheme === 'dark' ? `${rem(1)} solid ${theme.colors.border[1]}` : `${rem(1)} solid ${theme.colors.border[0]}`,
 				})}
 			>
 				<UnstyledButton key={heading.id} component={Link} to={`#${heading.id}`}>

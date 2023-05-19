@@ -33,11 +33,6 @@ interface SliderButtonProps {
 	max?: number;
 }
 
-interface ColorButtonProps {
-	value: any;
-	setValue: (value: React.SetStateAction<any>) => void;
-}
-
 const useStyles = createStyles((theme) => ({
 	button: {
 		padding: `${rem(2)} ${rem(2)}`,
@@ -70,7 +65,12 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	colorButton: {
-		padding: 0,
+		border: `${rem(1)} solid ${
+			theme.colorScheme === 'dark'
+				? theme.colors.border[1]
+				: theme.colors.border[0]
+		}`,
+		borderRadius: '4px',
 	},
 }));
 
@@ -117,20 +117,8 @@ const SliderButton = ({
 	);
 };
 
-const ColorButton = ({ value, setValue }: ColorButtonProps) => {
-	const { classes, cx } = useStyles();
-
-	return (
-		<ColorInput
-			className={cx(classes.button, classes.colorButton)}
-			variant="unstyled"
-			value={value}
-			onChange={setValue}
-		/>
-	);
-};
-
 const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
+	const { classes } = useStyles();
 	const state = useSelector(previewState);
 
 	return (
@@ -155,7 +143,12 @@ const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
 				/>
 			</Group>
 			<Group grow>
-				<ColorButton value={state.color} setValue={previewState.color.set} />
+				<ColorInput
+					className={classes.colorButton}
+					variant="unstyled"
+					value={state.color}
+					onChange={previewState.color.set}
+				/>
 				<SliderButton
 					label="Transparency"
 					icon={<IconEye />}
@@ -168,4 +161,4 @@ const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
 	);
 };
 
-export { ColorButton, NormalButtonsGroup, SliderButton };
+export { NormalButtonsGroup, SliderButton };

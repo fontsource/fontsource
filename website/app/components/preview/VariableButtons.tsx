@@ -99,6 +99,22 @@ const VariableButton = ({
 				precision={1}
 				onChange={handleVariation}
 				value={variable[tag] ?? Number(axes.default)}
+
+				styles={(theme) => ({
+					label: {
+						position: 'absolute',
+						top: rem(-40),
+						backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[9],
+						fontSize: theme.fontSizes.xs,
+						color: theme.white,
+						padding: `calc(${theme.spacing.xs} / 2)`,
+						borderRadius: theme.radius.sm,
+						whiteSpace: 'nowrap',
+						pointerEvents: 'none',
+						userSelect: 'none',
+						touchAction: 'none',
+					},
+				})}
 			/>
 			<Group position="apart" px={3} mt={8}>
 				<Text fz="sm">{axes.min}</Text>

@@ -14,8 +14,8 @@ export const InfoTooltip = ({ label }: InfoTooltipProps) => {
 			transitionProps={{ duration: 200 }}
 			label={label}
 		>
-			<ActionIcon variant="transparent" color="gray" radius="xl">
-				<IconInfo height={18} />
+			<ActionIcon variant="transparent" radius="xl">
+				<IconInfo height={19} />
 			</ActionIcon>
 		</Tooltip>
 	);
