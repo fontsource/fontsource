@@ -1,9 +1,0 @@
-/* open-sauce-sans-all-600-iItalic*/
-@font-face {
-  font-family: 'Open Sauce Sans';
-  font-style: iItalic;
-  font-display: swap;
-  font-weight: 600;
-  src: url('./files/open-sauce-sans-all-600-iItalic.woff2') format('woff2'), url('./files/open-sauce-sans-all-600-iItalic.woff') format('woff');
-  
-}
