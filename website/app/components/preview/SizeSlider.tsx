@@ -93,7 +93,7 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 				className={cx(classes.wrapper, classes.italic)}
 				sx={(theme) => ({
 					backgroundColor: state.italic
-						? theme.fn.darken(theme.colors.background[4], 0.2)
+						? theme.fn.rgba(theme.colors.purple[0], 0.1)
 						: undefined,
 				})}
 				onClick={handleItalic}

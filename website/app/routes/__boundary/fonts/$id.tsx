@@ -6,13 +6,14 @@ import {
 	rem,
 	Tabs,
 	Title,
-} from '@mantine/core';
+	useMantineTheme} from '@mantine/core';
+import { useHover } from '@mantine/hooks';
 import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
-import { ContentHeader } from '@/components';
+import { ContentHeader, IconDownload } from '@/components';
 import { Configure } from '@/components/preview/Configure';
 import { Install } from '@/components/preview/Install';
 import { TextArea } from '@/components/preview/TextArea';
@@ -84,6 +85,27 @@ const useStyles = createStyles((theme) => ({
 		fontFamily: theme.fontFamilyMonospace,
 		textTransform: 'lowercase',
 	},
+
+	downloadButton: {
+		display: 'flex',
+		alignItems: 'center',
+		gap: rem(10),
+		backgroundColor: 'transparent',
+		color:
+			theme.colorScheme === 'dark'
+				? theme.colors.text[0]
+				: theme.colors.text[1],
+		border: 'none',
+		borderRadius: rem(4),
+		padding: `${theme.spacing.xs} ${theme.spacing.md}`,
+		cursor: 'pointer',
+		textDecoration: 'none',
+
+		'&:hover': {
+			backgroundColor: theme.fn.rgba(theme.colors.purple[0], 0.1),
+			color: theme.colors.purple[0],
+		},
+	},
 }));
 
 export default function Font() {
@@ -91,6 +113,8 @@ export default function Font() {
 	const { metadata, variable, axisRegistry, defSubsetText, downloadCount } =
 		data;
 	const { classes } = useStyles();
+	const theme = useMantineTheme();
+	const { hovered, ref } = useHover<HTMLAnchorElement>();
 
 	return (
 		<Tabs
@@ -145,7 +169,16 @@ export default function Font() {
 				<Tabs.List>
 					<Tabs.Tab value="preview">Preview</Tabs.Tab>
 					<Tabs.Tab value="install">Install</Tabs.Tab>
-					<Tabs.Tab value="download">Download</Tabs.Tab>
+					<a
+						href={`https://api.fontsource.org/v1/fonts/${metadata.id}/download`}
+						className={classes.downloadButton}
+						ref={ref}
+					>
+						<IconDownload height={19} stroke={hovered ? theme.colors.purple[0] : theme.colorScheme === 'dark'
+							? theme.colors.text[0]
+							: theme.colors.text[1]} />
+						Download
+					</a>
 				</Tabs.List>
 			</ContentHeader>
 			<Tabs.Panel value="preview">
@@ -169,7 +202,6 @@ export default function Font() {
 					downloadCount={downloadCount}
 				/>
 			</Tabs.Panel>
-			<Tabs.Panel value="download">Download</Tabs.Panel>
 		</Tabs>
 	);
 }
