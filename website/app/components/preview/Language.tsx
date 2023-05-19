@@ -10,8 +10,8 @@ import { previewState } from './observables';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
+		fontWeight: 400,
 		width: '100%',
-
 		padding: `${rem(2)} ${rem(16)}`,
 		height: rem(40),
 		border: `${rem(1)} solid ${
@@ -30,12 +30,6 @@ const useStyles = createStyles((theme) => ({
 			theme.colorScheme === 'dark'
 				? theme.colors.text[0]
 				: theme.colors.text[1],
-
-		fontWeight: 400,
-
-		'&:not([data-disabled])': theme.fn.hover({
-			backgroundColor: theme.fn.lighten(theme.colors.purple[0], 0.99),
-		}),
 	},
 }));
 

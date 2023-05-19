@@ -5,7 +5,7 @@ import { Dropdown, DropdownItem } from '@/components';
 import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconItalic } from '../icons/Italic';
-import { previewState } from './observables';
+import { previewState, variableState } from './observables';
 
 interface SizeSliderProps {
 	hasItalic: boolean;
@@ -32,6 +32,7 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	button: {
+		fontWeight: 400,
 		padding: rem(2),
 		height: rem(20),
 
@@ -44,12 +45,6 @@ const useStyles = createStyles((theme) => ({
 			theme.colorScheme === 'dark'
 				? theme.colors.text[0]
 				: theme.colors.text[1],
-
-		fontWeight: 400,
-
-		'&:not([data-disabled])': theme.fn.hover({
-			backgroundColor: '#FFF',
-		}),
 	},
 
 	slider: {
@@ -66,6 +61,15 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 	const { classes, cx } = useStyles();
 	const state = useSelector(previewState);
 	const sizes = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64];
+
+	const handleItalic = () => {
+		previewState.italic.set(!state.italic);
+		if (variableState.ital.get() === 1) {
+			variableState.ital.set(0);
+		} else {
+			variableState.ital.set(1);
+		}
+	};
 
 	return (
 		<Group position="apart" spacing="xs">
@@ -89,9 +93,9 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 				sx={(theme) => ({
 					backgroundColor: state.italic
 						? theme.fn.lighten(theme.colors.purple[0], 0.95)
-						: '#FFF',
+						: undefined,
 				})}
-				onClick={() => previewState.italic.set(!state.italic)}
+				onClick={handleItalic}
 				disabled={!hasItalic}
 			>
 				<IconItalic />

@@ -6,7 +6,7 @@ import { Slider } from '@/components/Slider';
 import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
 
 import { InfoTooltip } from '../InfoTooltip';
-import { variableState } from './observables';
+import { previewState, variableState } from './observables';
 
 interface VariableButtonGroupProps {
 	variable: VariableData;
@@ -44,7 +44,10 @@ const useStyles = createStyles((theme) => ({
 				: theme.colors.text[1],
 
 		'&:not([data-disabled])': theme.fn.hover({
-			backgroundColor: theme.fn.lighten(theme.colors.purple[0], 0.95),
+			backgroundColor:
+				theme.colorScheme === 'dark'
+					? theme.fn.darken(theme.colors.background[4], 0.2)
+					: theme.fn.lighten(theme.colors.purple[0], 0.95),
 		}),
 	},
 }));
@@ -59,6 +62,12 @@ const VariableButton = ({
 	const variable = useSelector(variableState);
 
 	const handleVariation = (value: number) => {
+		// If ital is changed, set italic to true
+		if (tag === 'ital' && value > 0) {
+			previewState.italic.set(true);
+		} else if (tag === 'ital' && value === 0) {
+			previewState.italic.set(false);
+		}
 		variableState.set({ [tag]: value });
 	};
 	const resetVariation = () => {
