@@ -5,15 +5,14 @@ Thanks for supporting Fontsource!
 > Please note that this project is released with a [Contributor Code of Conduct](https://github.com/fontsource/fontsource/blob/main/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 - [Contributing to Fontsource](#contributing-to-fontsource)
-  - [Questions](#questions)
-  - [Issues and Pull Requests](#issues-and-pull-requests)
-    - [Submitting an Issue](#submitting-an-issue)
-    - [Submitting a Pull Request (PR)](#submitting-a-pull-request-pr)
-  - [Development](#development)
-    - [Useful Scripts](#useful-scripts)
-    - [Packager Development](#packager-development)
-    - [Website Development](#website-development)
-  - [Submit Documentation](#submit-documentation)
+	- [Questions](#questions)
+	- [Issues and Pull Requests](#issues-and-pull-requests)
+		- [Submitting an Issue](#submitting-an-issue)
+		- [Submitting a Pull Request (PR)](#submitting-a-pull-request-pr)
+	- [Development](#development)
+		- [Useful Scripts](#useful-scripts)
+		- [Website Development](#website-development)
+	- [Submit Documentation](#submit-documentation)
 
 ## Questions
 
@@ -85,14 +84,6 @@ The project uses PNPM Workspaces, thus the packager, API and website should inst
 ### Useful Scripts
 
 - `pnpm run test` - Runs tests.
-- `pnpm run format` - Runs Prettier and dprint across the repository.
-- `pnpm run format:scripts` - Runs Prettier only over the `scripts` directory.
-- `pnpm run format:fonts` - Runs dprint on the `fonts` directory.
-- `pnpm run lint` - Runs ESLint over the `scripts` directory.
-
-### Packager Development
-
-More details can be found in the [README.md](https://github.com/fontsource/fontsource/tree/main/scripts#readme) of the `scripts` directory.
 
 ### Website Development
 
