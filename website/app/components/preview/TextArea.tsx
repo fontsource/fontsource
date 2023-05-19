@@ -7,9 +7,10 @@ import {
 	Skeleton,
 	Text,
 	TextInput,
+	useMantineTheme,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useLoadFont } from '@/hooks/useLoadFont';
 import type { Metadata } from '@/utils/types';
@@ -112,9 +113,16 @@ const Tag = ({ weight, active }: TagProps) => {
 
 const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 	const { classes } = useStyles();
+	const theme = useMantineTheme();
 	const { ref, focused } = useFocusWithin();
 	const state = useSelector(previewState);
 	const variation = useSelector(fontVariation);
+
+	useEffect(() => {
+		theme.colorScheme === 'dark'
+			? previewState.color.set('#FFFFFF')
+			: previewState.color.set('#000000');
+	}, [theme.colorScheme]);
 
 	return (
 		<>
