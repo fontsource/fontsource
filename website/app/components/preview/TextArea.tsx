@@ -33,11 +33,6 @@ interface TextAreaProps {
 }
 
 const useStyles = createStyles((theme) => ({
-	wrapper: {
-		padding: `${rem(24)} ${rem(40)} ${rem(24)} ${rem(24)}`,
-		width: '100%',
-	},
-
 	header: {
 		fontWeight: 700,
 		fontSize: rem(24),
@@ -171,7 +166,7 @@ const TextArea = ({ metadata }: TextAreaProps) => {
 	);
 
 	return (
-		<Flex direction="column" className={classes.wrapper}>
+		<Flex direction="column" >
 			<Text className={classes.header}>Font Preview</Text>
 			{metadata.weights.map((weight) => (
 				<TextBox

@@ -22,6 +22,7 @@ const useStyles = createStyles((theme) => ({
 		flexDirection: 'column',
 		width: rem(332),
 		padding: rem(24),
+		marginLeft: 'auto',
 	},
 
 	scrollWrapper: {
@@ -31,6 +32,8 @@ const useStyles = createStyles((theme) => ({
 				: theme.colors.border[0]
 		}`,
 		borderRadius: '4px',
+		width: rem(332),
+		marginLeft: 'auto',
 	},
 
 	title: {

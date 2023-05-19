@@ -1,4 +1,12 @@
-import { Badge, createStyles, Group, rem, Tabs, Title } from '@mantine/core';
+import {
+	Badge,
+	createStyles,
+	Grid,
+	Group,
+	rem,
+	Tabs,
+	Title,
+} from '@mantine/core';
 import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
@@ -28,7 +36,13 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 	const defSubsetText = getPreviewText(metadata.id, metadata.defSubset);
 
-	return json({ metadata, variable, axisRegistry, defSubsetText, downloadCount});
+	return json({
+		metadata,
+		variable,
+		axisRegistry,
+		defSubsetText,
+		downloadCount,
+	});
 };
 
 interface FontMetadata {
@@ -41,55 +55,41 @@ interface FontMetadata {
 
 const useStyles = createStyles((theme) => ({
 	wrapperPreview: {
-		display: 'flex',
-		flexDirection: 'row',
-		justifyContent: 'space-between',
-		padding: '24px',
+		maxWidth: '1440px',
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		padding: '40px 64px',
+
+		[theme.fn.smallerThan('lg')]: {
+			padding: '40px 40px',
+		},
+
+		[theme.fn.smallerThan('xs')]: {
+			padding: '40px 24px',
+		},
 	},
 
 	badge: {
 		padding: `${rem(4)} ${rem(8)}`,
 		gap: rem(10),
-		color: theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1],
-		backgroundColor: theme.colorScheme === 'dark' ? theme.colors.background[3] : theme.colors.background[2],
+		color:
+			theme.colorScheme === 'dark'
+				? theme.colors.text[0]
+				: theme.colors.text[1],
+		backgroundColor:
+			theme.colorScheme === 'dark'
+				? theme.colors.background[3]
+				: theme.colors.background[2],
 		borderRadius: rem(4),
 		fontFamily: theme.fontFamilyMonospace,
 		textTransform: 'lowercase',
-	},
-
-	infoWrapper: {
-		width: rem(332),
-		padding: rem(24),
-		border:
-			theme.colorScheme === 'dark'
-				? `${rem(1)} solid ${theme.colors.border[1]}`
-				: `${rem(1)} solid ${theme.colors.border[0]}`,
-		borderRadius: rem(4),
-	},
-
-	infoButton: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		padding: `${rem(8)} ${rem(16)}`,
-		border:
-			theme.colorScheme === 'dark'
-				? `${rem(1)} solid ${theme.colors.border[1]}`
-				: `${rem(1)} solid ${theme.colors.border[0]}`,
-		borderRadius: rem(4),
-
-		'&:hover': {
-			backgroundColor:
-				theme.colorScheme === 'dark'
-					? theme.fn.darken(theme.colors.background[4], 0.5)
-					: theme.fn.lighten(theme.colors.purple[0], 0.98),
-		},
 	},
 }));
 
 export default function Font() {
 	const data: FontMetadata = useLoaderData();
-	const { metadata, variable, axisRegistry, defSubsetText, downloadCount } = data;
+	const { metadata, variable, axisRegistry, defSubsetText, downloadCount } =
+		data;
 	const { classes } = useStyles();
 
 	return (
@@ -112,16 +112,26 @@ export default function Font() {
 					<Tabs.Tab value="download">Download</Tabs.Tab>
 				</Tabs.List>
 			</ContentHeader>
-			<Tabs.Panel value="preview" className={classes.wrapperPreview}>
-				<TextArea metadata={metadata} previewText={defSubsetText} />
-				<Configure
-					metadata={metadata}
-					variable={variable}
-					axisRegistry={axisRegistry}
-				/>
+			<Tabs.Panel value="preview">
+				<Grid className={classes.wrapperPreview}>
+					<Grid.Col span={8}>
+						<TextArea metadata={metadata} previewText={defSubsetText} />
+					</Grid.Col>
+					<Grid.Col span={4}>
+						<Configure
+							metadata={metadata}
+							variable={variable}
+							axisRegistry={axisRegistry}
+						/>
+					</Grid.Col>
+				</Grid>
 			</Tabs.Panel>
 			<Tabs.Panel value="install">
-				<Install metadata={metadata} variable={variable} downloadCount={downloadCount} />
+				<Install
+					metadata={metadata}
+					variable={variable}
+					downloadCount={downloadCount}
+				/>
 			</Tabs.Panel>
 			<Tabs.Panel value="download">Download</Tabs.Panel>
 		</Tabs>
