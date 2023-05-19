@@ -1,5 +1,9 @@
 [
+  "./fonts/google/noto-sans-syloti-nagri/files/noto-sans-syloti-nagri-latin-400-normal.woff",
+  "./fonts/google/noto-sans-syloti-nagri/files/noto-sans-syloti-nagri-latin-ext-400-normal.woff",
   "./fonts/google/noto-sans-syloti-nagri/files/noto-sans-syloti-nagri-syloti-nagri-400-normal.woff",
   "./fonts/google/noto-sans-syloti-nagri/files/noto-sans-syloti-nagri-syloti-nagri-400-normal.woff2",
-  "./fonts/google/noto-sans-syloti-nagri/files/noto-sans-syloti-nagri-all-400-normal.woff"
+  "./fonts/google/noto-sans-syloti-nagri/files/noto-sans-syloti-nagri-all-400-normal.woff",
+  "./fonts/google/noto-sans-syloti-nagri/files/noto-sans-syloti-nagri-latin-ext-400-normal.woff2",
+  "./fonts/google/noto-sans-syloti-nagri/files/noto-sans-syloti-nagri-latin-400-normal.woff2"
 ]

@@ -1,5 +1,9 @@
 [
   "./fonts/google/noto-sans-chakma/files/noto-sans-chakma-chakma-400-normal.woff",
+  "./fonts/google/noto-sans-chakma/files/noto-sans-chakma-latin-400-normal.woff",
+  "./fonts/google/noto-sans-chakma/files/noto-sans-chakma-latin-ext-400-normal.woff",
   "./fonts/google/noto-sans-chakma/files/noto-sans-chakma-chakma-400-normal.woff2",
-  "./fonts/google/noto-sans-chakma/files/noto-sans-chakma-all-400-normal.woff"
+  "./fonts/google/noto-sans-chakma/files/noto-sans-chakma-all-400-normal.woff",
+  "./fonts/google/noto-sans-chakma/files/noto-sans-chakma-latin-ext-400-normal.woff2",
+  "./fonts/google/noto-sans-chakma/files/noto-sans-chakma-latin-400-normal.woff2"
 ]

@@ -8,3 +8,4 @@ export const getVariableWght = (axes: Axes) => {
 
 	return `${axes.min} ${axes.max}`;
 };
+

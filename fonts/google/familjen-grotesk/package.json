@@ -1,6 +1,6 @@
 {
   "name": "@fontsource/familjen-grotesk",
-  "version": "4.5.3",
+  "version": "4.5.4",
   "description": "Self-host the Familjen Grotesk font in a neatly bundled NPM package.",
   "main": "index.css",
   "publishConfig": { "access": "public" },
