@@ -74,6 +74,7 @@ const useStyles = createStyles((theme) => ({
 const Filters = () => {
 	const { classes } = useStyles();
 	const filterSelect = useSelector(filter);
+	const variableSelect = useSelector(variable);
 	// 24 is divisible by 2, 3 and 4 for the hits grid
 	useConfigure({
 		filters: filterSelect,
@@ -108,9 +109,9 @@ const Filters = () => {
 						}}
 					>
 						<Checkbox
-							color="purple"
+							color="purple.0"
 							label="Show only variable fonts"
-							checked={variable.get()}
+							checked={variableSelect}
 							readOnly
 							style={{
 								pointerEvents: 'none',

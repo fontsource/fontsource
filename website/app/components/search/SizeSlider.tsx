@@ -49,7 +49,7 @@ const SizeSlider = () => {
 			</Grid.Col>
 			<Grid.Col span={8}>
 				<MantineSlider
-					color="purple"
+					color="purple.0"
 					size="sm"
 					label={null}
 					value={sizeSelect}

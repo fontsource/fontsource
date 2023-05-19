@@ -103,7 +103,7 @@ const SliderButton = ({
 			</Popover.Target>
 			<Popover.Dropdown>
 				<MantineSlider
-					color="purple"
+					color="purple.0"
 					size="sm"
 					label={null}
 					value={value}

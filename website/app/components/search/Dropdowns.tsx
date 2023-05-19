@@ -43,7 +43,7 @@ const LanguagesDropdown = () => {
 
 	const label = subset !== '' ? subsetsMap[subset] : 'All languages';
 	return (
-		<Dropdown label={label}>
+		<Dropdown label={label} closeOnItemClick={false}>
 			{Object.entries(subsetsMap).map(([key, label]) => (
 				<DropdownItem
 					key={key}
@@ -62,7 +62,7 @@ const CategoriesDropdown = () => {
 	const label =
 		categorySelect !== '' ? categoriesMap[categorySelect] : 'All categories';
 	return (
-		<Dropdown label={label}>
+		<Dropdown label={label} closeOnItemClick={false}>
 			{Object.entries(categoriesMap).map(([key, label]) => (
 				<DropdownItem
 					key={key}

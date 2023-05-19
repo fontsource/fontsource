@@ -93,10 +93,46 @@ export default function Font() {
 	const { classes } = useStyles();
 
 	return (
-		<Tabs defaultValue="preview" variant="pills">
+		<Tabs
+			defaultValue="preview"
+			unstyled
+			styles={(theme) => ({
+				tab: {
+					...theme.fn.focusStyles(),
+					backgroundColor: 'transparent',
+					color:
+						theme.colorScheme === 'dark'
+							? theme.colors.text[0]
+							: theme.colors.text[1],
+					border: 'none',
+					borderRadius: rem(4),
+					padding: `${theme.spacing.xs} ${theme.spacing.md}`,
+					cursor: 'pointer',
+					display: 'flex',
+					alignItems: 'center',
+
+					'&[data-active]': {
+						backgroundColor: theme.fn.rgba(theme.colors.purple[0], 0.1),
+						color: theme.colors.purple[0],
+						fontWeight: 700,
+					},
+
+					'&:hover': {
+						backgroundColor: theme.fn.rgba(theme.colors.purple[0], 0.1),
+						color: theme.colors.purple[0],
+					},
+				},
+
+				tabsList: {
+					display: 'flex',
+					alignItems: 'center',
+					gap: rem(10),
+				},
+			})}
+		>
 			<ContentHeader>
 				<Group align="center">
-					<Title order={1} color="purple" pr="lg">
+					<Title order={1} color="purple.0" pr="lg">
 						{metadata.family}
 					</Title>
 					<Badge color="gray" variant="light" className={classes.badge}>

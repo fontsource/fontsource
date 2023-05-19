@@ -1,5 +1,11 @@
 import type { DefaultProps } from '@mantine/core';
-import { Button, createStyles, Menu, rem, ScrollArea } from '@mantine/core';
+import {
+	createStyles,
+	Menu,
+	rem,
+	ScrollArea,
+	UnstyledButton,
+} from '@mantine/core';
 
 import { IconCaret } from '@/components';
 
@@ -9,6 +15,7 @@ interface DropdownProps {
 	children: React.ReactNode;
 	className?: DefaultProps['className'];
 	icon?: React.ReactNode;
+	closeOnItemClick?: boolean;
 }
 
 interface DropdownItemProps {
@@ -19,6 +26,9 @@ interface DropdownItemProps {
 
 const useStyles = createStyles((theme) => ({
 	button: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'space-between',
 		padding: `${rem(2)} ${rem(16)}`,
 		height: rem(40),
 		border: `${rem(1)} solid ${
@@ -67,27 +77,23 @@ const Dropdown = ({
 	icon,
 	width,
 	className,
+	closeOnItemClick,
 	children,
 }: DropdownProps) => {
 	const { classes } = useStyles();
 	return (
-		<Menu shadow="md" width={rem(width) ?? rem(240)} closeOnItemClick={false}>
+		<Menu
+			shadow="md"
+			width={rem(width) ?? rem(240)}
+			closeOnItemClick={closeOnItemClick ?? true}
+		>
 			<Menu.Target>
-				<Button
+				<UnstyledButton
 					className={className ?? classes.button}
-					variant="subtle"
-					rightIcon={icon ?? <IconCaret />}
-					styles={{
-						root: {
-							width: rem(width) ?? rem(240),
-						},
-						inner: {
-							justifyContent: 'space-between',
-						},
-					}}
+					w={rem(width) ?? rem(240)}
 				>
-					{label}
-				</Button>
+					{label} {icon ?? <IconCaret />}
+				</UnstyledButton>
 			</Menu.Target>
 			<Menu.Dropdown>
 				<ScrollArea.Autosize mah={rem(240)}>{children}</ScrollArea.Autosize>

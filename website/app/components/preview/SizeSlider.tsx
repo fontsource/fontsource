@@ -35,6 +35,7 @@ const useStyles = createStyles((theme) => ({
 		fontWeight: 400,
 		padding: rem(2),
 		height: rem(20),
+		borderRadius: rem(4),
 
 		backgroundColor:
 			theme.colorScheme === 'dark'
@@ -80,7 +81,7 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 					))}
 				</Dropdown>
 				<MantineSlider
-					color="purple"
+					color="purple.0"
 					size="sm"
 					label={null}
 					value={previewState.size.get()}
