@@ -12,6 +12,7 @@ interface DropdownProps {
 }
 
 interface DropdownItemProps {
+	label?: string;
 	value: any;
 	setValue: (value: React.SetStateAction<any>) => void;
 }
@@ -48,7 +49,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const DropdownItem = ({ value, setValue }: DropdownItemProps) => {
+const DropdownItem = ({ label, value, setValue }: DropdownItemProps) => {
 	return (
 		<Menu.Item
 			component="button"
@@ -56,7 +57,7 @@ const DropdownItem = ({ value, setValue }: DropdownItemProps) => {
 				setValue(value);
 			}}
 		>
-			{value}
+			{label ?? value}
 		</Menu.Item>
 	);
 };
