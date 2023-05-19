@@ -3,7 +3,7 @@ import { Box, createStyles, rem, Text } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
-		margin: 0,
+		margin: `${rem(20)} 0`,
 		padding: rem(16),
 		backgroundColor:
 			theme.colorScheme === 'dark'

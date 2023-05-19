@@ -24,6 +24,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
+// TODO: Implement DocSearch
 const DocsSearchBar = ({ ...others }: TextInputProps) => {
 	const { classes } = useStyles();
 	const { ref, focused } = useFocusWithin();
@@ -54,7 +55,6 @@ export const DocsHeader = () => {
 			<Title order={1} color="purple">
 				Documentation
 			</Title>
-			<DocsSearchBar />
 		</ContentHeader>
 	)
 }

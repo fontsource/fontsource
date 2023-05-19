@@ -10,7 +10,9 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const useStyles = createStyles((theme) => ({
 	nav: {
 		marginTop: rem(30),
+		marginLeft: 'auto',
 		position: 'sticky',
+		width: rem(240),
 		top: rem(40),
 		right: 0,
 	},
@@ -19,7 +21,6 @@ const useStyles = createStyles((theme) => ({
 		boxSizing: 'border-box',
 		position: 'sticky',
 		top: theme.spacing.xl,
-
 		marginTop: rem(10),
 	},
 

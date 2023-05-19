@@ -92,7 +92,7 @@ const useStyles = createStyles((theme) => ({
 	sections: {
 		display: 'flex',
 		flexDirection: 'column',
-		padding: rem(24),
+		padding: `${rem(8)} ${rem(24)}`,
 	},
 
 	sectionItem: {
@@ -128,8 +128,9 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 					: `${rem(1)} solid transparent`,
 			}}
 			component={Link}
-			to={`/docs/${slug}`}
+			to={slug === 'changelog' ? 'https://github.com/fontsource/fontsource/blob/main/CHANGELOG.md' : `/docs/${slug}` }
 			ref={ref}
+			target={slug === 'changelog' ? '_blank' : undefined}
 		>
 			<Group>
 				<Icon
@@ -196,7 +197,7 @@ const LeftSidebar = () => {
 			<Flex className={classes.sections}>
 				{Object.keys(sidebarConfig[routeSection]).map((section) => (
 					<Fragment key={section}>
-						<Text key={section} fw={700} fz={13} transform="uppercase" mb="sm">
+						<Text key={section} fw={700} fz={13} mt='sm' transform="uppercase" mb="sm">
 							{section}
 						</Text>
 						<Divider mb="xs" />
