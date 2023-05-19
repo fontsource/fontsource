@@ -13,7 +13,7 @@ import { IconRotate } from '@/components/icons';
 import type { AxisRegistry, Metadata, VariableData } from '@/utils/types';
 
 import { NormalButtonsGroup } from './Buttons';
-import { variableState } from './observables';
+import { previewState, variableState } from './observables';
 import { VariableButtonsGroup } from './VariableButtons';
 
 const useStyles = createStyles((theme) => ({
@@ -56,6 +56,7 @@ interface ConfigureProps {
 const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 	const { classes } = useStyles();
 	const resetVariation = () => {
+		previewState.italic.set(false);
 		variableState.set({});
 	};
 

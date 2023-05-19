@@ -1,4 +1,4 @@
-import { observable, observe } from '@legendapp/state';
+import { observable } from '@legendapp/state';
 
 export const previewState = observable({
 	language: 'Latin',
@@ -32,6 +32,6 @@ const createFontVariation = (axes: Record<string, number | undefined>) => {
 };
 
 // Update fontVariation when variableState changes
-observe(variableState, () => {
+variableState.onChange(() => {
 	fontVariation.set(createFontVariation(variableState.get()));
 });

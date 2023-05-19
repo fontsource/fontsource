@@ -68,10 +68,14 @@ const VariableButton = ({
 		} else if (tag === 'ital' && value === 0) {
 			previewState.italic.set(false);
 		}
-		variableState.set({ [tag]: value });
+		variableState.set({ ...variableState.get(), [tag]: value });
 	};
+
 	const resetVariation = () => {
-		variableState.set({ [tag]: undefined });
+		if (tag === 'ital')
+			previewState.italic.set(false);
+
+		variableState.set({ ...variableState.get(), [tag]: undefined });
 	};
 
 	return (
