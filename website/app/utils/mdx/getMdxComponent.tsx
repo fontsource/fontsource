@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { Blockquote } from '@/components/Blockquote';
-import { Code } from '@/components/code/Code';
+import { CodeMdx } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 
 let _jsx_runtime: any;
@@ -37,7 +37,7 @@ const mdxComponents = {
 
 	// Code
 	pre: (props: any) => <div {...props} />, // Unnecessary pre as we use Code component
-	code: (props: any) => <Code {...props} />,
+	code: (props: any) => <CodeMdx {...props} />,
 
 	// Table
 	table: (props: any) => <Table fontSize='sm' {...props} />,

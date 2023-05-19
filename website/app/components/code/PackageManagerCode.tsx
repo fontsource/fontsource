@@ -4,7 +4,7 @@ import { Tabs } from '@mantine/core';
 
 import { CodeHighlight, CodeWrapper } from './Code';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
 	wrapper: {
 		marginTop: rem(10),
 	},
@@ -14,7 +14,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-interface PackageManagerProps extends CodeProps {
+interface PackageManagerProps extends Partial<CodeProps> {
 	cmd: string;
 }
 

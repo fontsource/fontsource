@@ -29,6 +29,12 @@ const getDownloadCountList = async () => {
 	return { month: cleanCounts(dataMonth), total: cleanCounts(dataTotal) };
 };
 
+const getDownloadCountMonth = async (id: string) =>
+	(await knex.select('month').from('downloads').where({ id }).first())?.month;
+
+const getDownloadCountTotal = async (id: string) =>
+	(await knex.select('total').from('downloads').where({ id }).first())?.total;
+
 const updateDownloadCount = async () => {
 	await ensurePrimary();
 
@@ -46,4 +52,4 @@ const updateDownloadCount = async () => {
 	}
 };
 
-export { getDownloadCountList, updateDownloadCount };
+export { getDownloadCountList, getDownloadCountMonth, getDownloadCountTotal, updateDownloadCount };

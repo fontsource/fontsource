@@ -34,6 +34,7 @@
 		"instantsearch.js": "^4.56.0",
 		"knex": "^2.4.2",
 		"ky": "^0.33.3",
+		"millify": "^6.1.0",
 		"nanoid": "^4.0.2",
 		"p-queue": "^6.6.2",
 		"pathe": "^1.1.0",

@@ -60,6 +60,7 @@ const useStyles = createStyles((theme) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
+		userSelect: 'none',
 	},
 
 	code: {
@@ -185,7 +186,7 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 	);
 };
 
-export const Code = (props: CodeProps) => {
+export const CodeMdx = (props: CodeProps) => {
 	const { classes } = useStyles();
 	const language = props.className?.replace(/language-/, '') ?? '';
 	// Inline code
@@ -196,6 +197,22 @@ export const Code = (props: CodeProps) => {
 	return (
 		<CodeWrapper language={language} code={code}>
 			<CodeHighlight code={code} language={language} />
+		</CodeWrapper>
+	);
+};
+
+interface CodeDirectProps extends CodeProps {
+	language: string;
+}
+
+export const Code = ({ language, children, ...others }: CodeDirectProps) => {
+	const { classes } = useStyles();
+	// Inline code
+	if (language == '') return <MantineCode className={classes.inlineCode} children={children} {...others} />;
+
+	return (
+		<CodeWrapper language={language} code={children?.toString() ?? ''}>
+			<CodeHighlight code={children?.toString() ?? ''} language={language} />
 		</CodeWrapper>
 	);
 };

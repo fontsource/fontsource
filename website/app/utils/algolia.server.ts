@@ -1,7 +1,7 @@
 import algoliasearch from 'algoliasearch';
 
 import { knex } from '@/utils/db.server';
-import { updateDownloadCount } from '@/utils/metadata/download.server';
+import { getDownloadCountMonth, updateDownloadCount } from '@/utils/metadata/download.server';
 import {
 	getFontList,
 	updateSingleMetadata,
@@ -38,9 +38,6 @@ const getMetadata = async (id: string) =>
 		.where({ id })
 		.first();
 
-const downloadCount = async (id: string) =>
-	await knex.select('month').from('downloads').where({ id }).first();
-
 const updateAlgoliaIndex = async (force?: boolean) => {
 	try {
 		// Get font list
@@ -64,7 +61,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 				metadata = await getMetadata(id);
 			}
 
-			const downloadCountMonthly = await downloadCount(id);
+			const downloadCountMonthly = await getDownloadCountMonth(id);
 
 			const obj = {
 				objectID: id,
@@ -79,7 +76,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 				lastModified: Math.floor(
 					new Date(metadata.lastModified).getTime() / 1000
 				),
-				downloadMonth: downloadCountMonthly?.month ?? 0,
+				downloadMonth: downloadCountMonthly ?? 0,
 				randomIndex: randomIndexArr[index],
 			};
 
