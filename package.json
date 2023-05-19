@@ -1,50 +1,45 @@
 {
-  "name": "fontsource",
-  "version": "4.5.0",
-  "packageManager": "pnpm@7.5.2",
-  "author": "Lotus <declininglotus@gmail.com>",
-  "license": "MIT",
-  "private": true,
-  "workspaces": [
-    "api",
-    "scripts",
-    "website"
-  ],
-  "scripts": {
-    "build:generic": "tsx scripts/generic/build.ts",
-    "build:generic-force": "tsx scripts/generic/rebuilder.ts",
-    "build:google": "tsx scripts/google/download-google.ts",
-    "build:google-force": "tsx scripts/google/download-google.ts force",
-    "deploy": "mass-publish publish patch",
-    "deploy:ci": "mass-publish publish patch --yes",
-    "deploy:republish": "mass-publish publish from-package --yes --force-publish",
-    "format": "pnpm run format:scripts && pnpm run format:fonts",
-    "format:scripts": "prettier --write ./scripts/**/*.{js,jsx,ts,tsx,json,md}",
-    "format:fonts": "dprint fmt",
-    "lint": "pnpm -r lint",
-    "readme-update:google": "tsx scripts/google/google-readme-updater.ts",
-    "util:algolia": "tsx scripts/utils/algolia-index.ts",
-    "util:fontlist": "tsx scripts/utils/fontlist-generator.ts",
-    "util:run-check": "tsx scripts/google/run-checks.ts",
-    "util:generic-renamer": "tsx scripts/generic/renamer.ts",
-    "util:package-json-rebuild": "tsx scripts/utils/package-json-rebuild.ts",
-    "util:subsets": "tsx scripts/utils/subset-list.ts",
-    "test": "jest"
-  },
-  "dependencies": {
-    "@swc/core": "^1.2.151",
-    "@swc/jest": "^0.2.20",
-    "@types/node": "^18.0.6",
-    "dprint": "^0.30.3",
-    "eslint": "^8.11.0",
-    "jest": "^28.1.3",
-    "mass-publish": "^1.1.2",
-    "mock-fs": "^5.1.2",
-    "prettier": "^2.6.0",
-    "tsx": "^3.8.0",
-    "typescript": "^4.6.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "fontsource",
+	"version": "4.5.0",
+	"packageManager": "pnpm@8.3.1",
+	"author": "Ayuhito <hello@ayuhito.com>",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"build:generic": "tsx scripts/generic/build.ts",
+		"build:generic-force": "tsx scripts/generic/rebuilder.ts",
+		"build:google": "tsx scripts/google/download-google.ts",
+		"build:google-force": "tsx scripts/google/download-google.ts force",
+		"deploy": "mass-publish publish patch",
+		"deploy:ci": "mass-publish publish patch --yes",
+		"deploy:republish": "mass-publish publish from-package --yes --force-publish",
+		"format": "pnpm run format:scripts && pnpm run format:fonts",
+		"format:scripts": "prettier --write ./scripts/**/*.{js,jsx,ts,tsx,json,md}",
+		"format:fonts": "dprint fmt",
+		"lint": "pnpm -r lint",
+		"readme-update:google": "tsx scripts/google/google-readme-updater.ts",
+		"util:algolia": "tsx scripts/utils/algolia-index.ts",
+		"util:fontlist": "tsx scripts/utils/fontlist-generator.ts",
+		"util:run-check": "tsx scripts/google/run-checks.ts",
+		"util:generic-renamer": "tsx scripts/generic/renamer.ts",
+		"util:package-json-rebuild": "tsx scripts/utils/package-json-rebuild.ts",
+		"util:subsets": "tsx scripts/utils/subset-list.ts",
+		"test": "jest"
+	},
+	"dependencies": {
+		"@swc/core": "^1.2.151",
+		"@swc/jest": "^0.2.20",
+		"@types/node": "^18.0.6",
+		"dprint": "^0.30.3",
+		"eslint": "^8.11.0",
+		"jest": "^28.1.3",
+		"mass-publish": "^1.1.2",
+		"mock-fs": "^5.1.2",
+		"prettier": "^2.6.0",
+		"tsx": "^3.8.0",
+		"typescript": "^4.6.2"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }

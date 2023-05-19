@@ -1,0 +1,184 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`packager icons > should generate Material Icons CSS successfully (static) 1`] = `
+[MockFunction writeFile] {
+  "calls": [
+    [
+      "test/material-icons/400.css",
+      "/* material-icons-latin-400-normal */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/material-icons-latin-400-normal.woff2) format('woff2'), url(./files/material-icons-latin-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "test/material-icons/latin-400.css",
+      "/* material-icons-latin-400-normal */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/material-icons-latin-400-normal.woff2) format('woff2'), url(./files/material-icons-latin-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "test/material-icons/index.css",
+      "/* material-icons-latin-400-normal */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/material-icons-latin-400-normal.woff2) format('woff2'), url(./files/material-icons-latin-400-normal.woff) format('woff');
+}",
+    ],
+    [
+      "test/material-icons/latin.css",
+      "/* material-icons-latin-400-normal */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/material-icons-latin-400-normal.woff2) format('woff2'), url(./files/material-icons-latin-400-normal.woff) format('woff');
+}",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`packager icons > should generate Material Symbols Sharp CSS successfully (variable) 1`] = `
+[MockFunction writeFile] {
+  "calls": [
+    [
+      "test/material-symbols-sharp/opsz.css",
+      "/* material-symbols-sharp-latin-opsz-normal */
+@font-face {
+  font-family: 'Material Symbols Sharp Variable';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 100 700;
+  src: url(./files/material-symbols-sharp-latin-opsz-normal.woff2) format('woff2-variations');
+}",
+    ],
+    [
+      "test/material-symbols-sharp/fill.css",
+      "/* material-symbols-sharp-latin-fill-normal */
+@font-face {
+  font-family: 'Material Symbols Sharp Variable';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 100 700;
+  src: url(./files/material-symbols-sharp-latin-fill-normal.woff2) format('woff2-variations');
+}",
+    ],
+    [
+      "test/material-symbols-sharp/grad.css",
+      "/* material-symbols-sharp-latin-grad-normal */
+@font-face {
+  font-family: 'Material Symbols Sharp Variable';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 100 700;
+  src: url(./files/material-symbols-sharp-latin-grad-normal.woff2) format('woff2-variations');
+}",
+    ],
+    [
+      "test/material-symbols-sharp/wght.css",
+      "/* material-symbols-sharp-latin-wght-normal */
+@font-face {
+  font-family: 'Material Symbols Sharp Variable';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 100 700;
+  src: url(./files/material-symbols-sharp-latin-wght-normal.woff2) format('woff2-variations');
+}",
+    ],
+    [
+      "test/material-symbols-sharp/full.css",
+      "/* material-symbols-sharp-latin-full-normal */
+@font-face {
+  font-family: 'Material Symbols Sharp Variable';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 100 700;
+  src: url(./files/material-symbols-sharp-latin-full-normal.woff2) format('woff2-variations');
+}",
+    ],
+    [
+      "test/material-symbols-sharp/standard.css",
+      "/* material-symbols-sharp-latin-standard-normal */
+@font-face {
+  font-family: 'Material Symbols Sharp Variable';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 100 700;
+  src: url(./files/material-symbols-sharp-latin-standard-normal.woff2) format('woff2-variations');
+}",
+    ],
+    [
+      "test/material-symbols-sharp/index.css",
+      "/* material-symbols-sharp-latin-wght-normal */
+@font-face {
+  font-family: 'Material Symbols Sharp Variable';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 100 700;
+  src: url(./files/material-symbols-sharp-latin-wght-normal.woff2) format('woff2-variations');
+}",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
