@@ -5,6 +5,8 @@ section: Contents
 
 ## Variable Fonts
 
+---
+
 Variable fonts allow designers and developers to use a single font file that contains multiple variations of the same font, such as different weights, widths, and styles. This can result in **smaller file sizes** and **more flexible design options**. Here's how you can use variable fonts with Fontsource:
 
 ### 1. Install Package
@@ -35,14 +37,72 @@ Once the font is imported, you can use it in your CSS stylesheets just like any 
 
 ```css
 body {
-	font-family: "Roboto Flex", sans-serif;
-	font-weight: 500;
-	font-variation-settings: "wdth" 75, "wght" 500;
+    font-family: "Roboto Flex Variable", sans-serif;
+    font-weight: 500;
+    font-variation-settings: "wdth" 75, "wght" 500;
 }
 ```
 
 In this example, we are setting the font weight to 500 and the width axis to 75% of the maximum width. Note that not all axes are supported by all variable fonts, so you will need to consult the font documentation to see which axes are available.
 
+### 4. Fallbacks
+
+Optionally, if you want to use variable fonts but also support browsers that do not support them, you can use the `@supports` rule to provide a fallback. You will also need to import `@fontsource/roboto-flex` or any other font as the fallback, however, it is also fine to rely on default system fonts for this. Here's an example:
+
+```css
+body {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 500;
+}
+
+@supports (font-variation-settings: normal) {
+    body {
+        font-family: "Roboto Flex Variable", sans-serif;
+        font-weight: 500;
+        font-variation-settings: "wdth" 75, "wght" 500;
+    }
+}
+```
+
+This will only apply the font styles if the browser supports variable fonts (`font-variation-settings`). Otherwise, it will use the fallback font.
+
 ## Understanding Variable Axes
 
-The default installation covers all weights.
+Variable axes in fonts refer to the ability to adjust various visual characteristics of a font along a continuous spectrum. This allows for greater flexibility and control in fine-tuning the appearance of typography. Fontsource, a font provider, supports variable axes in its fonts, enabling users to leverage these customizable options for their design needs.
+
+#####
+
+Fontsource's variable axes encompass a range of standard and custom options. The standard axes include:
+
+```jsx
+import "@fontsource-variable/roboto-flex/wght.css";
+import "@fontsource-variable/roboto-flex/wdth-ital.css";
+import "@fontsource-variable/roboto-flex/slnt.css";
+import "@fontsource-variable/roboto-flex/opsz-ital.css";
+```
+
+> **Note:** Every import includes the `wght` axis as multiple imports of different axes are not supported. You **must** use a single import when importing variable fonts.
+
+If you are using multiple of the above axes, you can import them all at once using the `standard` CSS file:
+
+```jsx
+import "@fontsource-variable/roboto-flex/standard.css";
+```
+
+In addition to these standard axes, Fontsource also provides support for specific custom axes, such as:
+
+```jsx
+import "@fontsource-variable/roboto-flex/grad.css";
+import "@fontsource-variable/roboto-flex/ytuc.css";
+import "@fontsource-variable/roboto-flex/xtra.css";
+```
+
+> **Note:** The above axes are not supported by all fonts. Please refer to the font page in the search directory to see which axes are available.
+
+These custom axes offer additional opportunities for fine-grained customization beyond the standard options, providing more specialized variations. If you want to import **all** available axes, you can use the `full` CSS file:
+
+```jsx
+import "@fontsource-variable/roboto-flex/full.css";
+```
+
+By leveraging Fontsource's variable axes, designers and developers can precisely tailor the visual attributes of fonts, achieving the desired typographic effect and enhancing the overall aesthetic of their projects.

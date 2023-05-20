@@ -7,7 +7,7 @@ section: Migration
 
 ---
 
-Fontsource v5 introduces several breaking changes that may require modifications to your existing codebase. This guide will help you migrate from the previous version to the latest version of Fontsource. Please review the following breaking changes and apply the necessary updates.
+Fontsource V5 introduces several breaking changes that may require modifications to your existing codebase. This guide will help you migrate from the previous version to the latest version of Fontsource. Please review the following breaking changes and apply the necessary updates.
 
 ## Breaking Changes
 
@@ -37,7 +37,7 @@ import "@fontsource-variable/roboto-flex/full-ital.css";
 
 ### Variable Font Family Names
 
-A mistake made the `font-family` names for variable fonts inconsistent with the rest of the packages. This has been fixed in v5, so you will need to update your CSS stylesheets.
+A mistake made the `font-family` names for variable fonts inconsistent with the rest of the packages. This has been fixed in V5, so you will need to update your CSS stylesheets.
 
 #### Before
 
@@ -55,9 +55,13 @@ body {
 }
 ```
 
+### Renamed Variable Font Files
+
+If you relied on the previous file names that used `wghtOnly`, you will need to update your code to only use `wght` instead.
+
 ### Rewritten Sass Integration
 
-The Sass integration in Fontsource has been completely rewritten in version 5. Please refer to the new Sass documentation for detailed usage instructions as there are many changes. Here's a small example to showcase the difference:
+The Sass integration in Fontsource has been completely rewritten in V5. Please refer to the new Sass documentation for detailed usage instructions as there are many changes. Here's a small example to showcase the difference:
 
 #### Before
 
@@ -74,14 +78,15 @@ The Sass integration in Fontsource has been completely rewritten in version 5. P
 ```scss
 @include OpenSans.faces(
   $subsets: latin,
-  $weights: 500,
-  $styles: italic
+  $weights: (300, 400, 500, 800),
+  $styles: all,
+  $directory: "~@fontsource/open-sans/files"
 );
 ```
 
 ### License Metadata
 
-A small change to the `metadata.json` file changes the `license` property from type `string` to an a new license object. This is to store more relevant information to font licenses.
+A small change to the `metadata.json` file changes the `license` property from type `string` to an a new license object. This has the added benefit of `LICENSE` files in each package due to the new stored details.
 
 #### Before
 

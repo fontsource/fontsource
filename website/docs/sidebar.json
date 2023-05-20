@@ -4,7 +4,8 @@
 			"introduction": "Introduction",
 			"install": "Install",
 			"variable": "Variable Fonts",
-			"display": "Font Display"
+			"display": "Font Display",
+			"subsets": "Individual Subsets"
 		},
 		"Icons": {
 			"material-icons": "Material Icons",
@@ -16,7 +17,7 @@
 			"generator-mixin": "Generator Mixin"
 		},
 		"Migration": {
-			"migrate-v5": "Migrating to v5"
+			"migrate-v5": "Migrating to V5"
 		}
 	},
 	"guides": {

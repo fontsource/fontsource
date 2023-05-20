@@ -1,0 +1,20 @@
+---
+title: Individual Subsets
+section: Contents
+---
+
+## Individual Subsets
+
+---
+
+In the rare case that you need to import a specific subset of a font, you can do so by importing the subset's CSS file. For example, if you only need the `latin` subset of the `Open Sans` font, you can import the `latin.css` file:
+
+```js
+import "@fontsource/open-sans/latin.css";
+import "@fontsource/open-sans/latin-ext-300.css";
+import "@fontsource/open-sans/greek-700-italic.css";
+```
+
+This is not available for variable fonts.
+
+> **Note:** We do not recommend using this method unless you have a specific reason to do so. The default CSS utilises the `unicode-range` property to only load the characters that are used on the page, which is more efficient than manually loading subsets.

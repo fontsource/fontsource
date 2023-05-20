@@ -13,17 +13,14 @@ To use Fontsource with Webpack, you'll need to configure your Webpack project to
 
 ## 1. Install the loaders
 
-<PackageManagerCode cmd="css-loader file-loader mini-css-extract-plugin" />
+<PackageManagerCode cmd="css-loader file-loader" />
 
 ## 2. Configure the loaders
 
 Modify `webpack.config.js` to include the following configuration:
 
 ```js
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 module.exports = {
-  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
@@ -32,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: ["css-loader"],
       },
     ],
   },

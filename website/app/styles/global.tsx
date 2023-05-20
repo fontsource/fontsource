@@ -22,7 +22,10 @@ export const GlobalStyles = () => (
 
         fontSize: theme.fontSizes.md,
         lineHeight: '160%',
-      },
+			},
+			a: {
+				color: theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[7],
+			}
     })}
   />
 );
