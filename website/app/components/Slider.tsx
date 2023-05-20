@@ -6,6 +6,24 @@ import { Slider as MantineSlider } from '@mantine/core';
 const Slider = (props: SliderProps) => (
 	<MantineSlider
 		{...props}
+		sx={(theme) => ({
+			'& .mantine-Slider-label': {
+				position: 'absolute',
+				top: rem(-40),
+				backgroundColor:
+					theme.colorScheme === 'dark'
+						? theme.colors.dark[4]
+						: theme.colors.gray[9],
+				fontSize: theme.fontSizes.xs,
+				color: theme.white,
+				padding: `calc(${theme.spacing.xs} / 2)`,
+				borderRadius: theme.radius.sm,
+				whiteSpace: 'nowrap',
+				pointerEvents: 'none',
+				userSelect: 'none',
+				touchAction: 'none',
+			},
+		})}
 		styles={(theme) => ({
 			track: {
 				'&::before': {
@@ -25,23 +43,6 @@ const Slider = (props: SliderProps) => (
 				border: `${rem(4)} solid white`,
 
 				boxShadow: `0 0 0 ${rem(1)} ${theme.colors.border[0]}`,
-			},
-
-			label: {
-				position: 'absolute',
-				top: rem(-40),
-				backgroundColor:
-					theme.colorScheme === 'dark'
-						? theme.colors.dark[4]
-						: theme.colors.gray[9],
-				fontSize: theme.fontSizes.xs,
-				color: theme.white,
-				padding: `calc(${theme.spacing.xs} / 2)`,
-				borderRadius: theme.radius.sm,
-				whiteSpace: 'nowrap',
-				pointerEvents: 'none',
-				userSelect: 'none',
-				touchAction: 'none',
 			},
 
 			dragging: {
