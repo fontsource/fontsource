@@ -36,7 +36,7 @@ export const rebuild = async (opts?: RebuildOptions) => {
 		// Delete everything in dir except files
 		const files = await fs.readdir(fontDir);
 		for (const file of files) {
-			if (file !== 'files') {
+			if (file !== 'files' && file !== 'LICENSE') {
 				await fs.remove(path.join(fontDir, file));
 			}
 		}
