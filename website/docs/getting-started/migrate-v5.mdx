@@ -1,5 +1,5 @@
 ---
-title: Migrating to v5
+title: Migrating to V5
 section: Migration
 ---
 
@@ -83,6 +83,12 @@ The Sass integration in Fontsource has been completely rewritten in V5. Please r
   $directory: "~@fontsource/open-sans/files"
 );
 ```
+
+### Material Icons
+
+The Material Icons package has been including the `.material-icons` class by default. This has been removed in V5, so you will need to add it manually to your codebase. You can find it in the [documentation](/docs/getting-started/material-icons) for reference.
+
+Additionally, `@fontsource/material-icons-rounded` has been renamed to `@fontsource/material-icons-round` to match the official package name.
 
 ### License Metadata
 
