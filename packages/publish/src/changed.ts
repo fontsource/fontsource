@@ -5,11 +5,12 @@ import colors from 'picocolors';
 
 import type { ChangedFlags, ChangedList, Context, PackageJson } from './types';
 import { getPackages, mergeFlags } from './utils';
-import { getHash } from './hash';
+import { getHash, hasher } from './hash';
 
 // Iterate through all packages in directory and return a list of changed packages
 const getChanged = async (ctx: Context) => {
 	const changedList: ChangedList = [];
+	const newHash = await hasher();
 
 	for (const packageDir of ctx.packages) {
 		const packages = await getPackages(packageDir);
@@ -22,7 +23,7 @@ const getChanged = async (ctx: Context) => {
 			);
 
 			// Get hash of current package and compare with old hash
-			const hash = await getHash(packagePath);
+			const hash = await getHash(packagePath, newHash);
 			if (packageJson.publishHash !== hash || ctx.forcePublish) {
 				changedList.push({
 					name: packageJson.name,

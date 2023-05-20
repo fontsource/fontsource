@@ -17,14 +17,19 @@ const getAllFiles = async (dir: string): Promise<string[]> => {
 	return Array.prototype.concat(...files);
 };
 
-const getHash = async (dir: string): Promise<string> => {
+const hasher = createXXHash64;
+
+const getHash = async (
+	dir: string,
+	hasher: Awaited<ReturnType<typeof createXXHash64>>
+): Promise<string> => {
 	const files = await getAllFiles(dir);
-	const hash = await createXXHash64();
+	hasher.init();
 	for (const file of files) {
 		const contents = await fs.readFile(file);
-		hash.update(contents);
+		hasher.update(contents);
 	}
-	return hash.digest();
+	return hasher.digest();
 };
 
-export { getHash, getAllFiles };
+export { getHash, getAllFiles, hasher };
