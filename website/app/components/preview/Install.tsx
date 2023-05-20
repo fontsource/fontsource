@@ -70,6 +70,10 @@ const useStyles = createStyles((theme) => ({
 				: `${rem(1)} solid ${theme.colors.border[0]}`,
 		borderRadius: rem(4),
 		marginLeft: 'auto',
+
+		[theme.fn.smallerThan('md')]: {
+			width: '100%',
+		},
 	},
 
 	infoButton: {
@@ -340,7 +344,7 @@ export const Install = ({
 
 	return (
 		<Grid className={classes.wrapper}>
-			<Grid.Col span={8}>
+			<Grid.Col span={12} md={8}>
 				<Group position="apart" mb={28}>
 					<Title>Getting Started</Title>
 					<UnstyledButton
@@ -354,13 +358,16 @@ export const Install = ({
 						</Group>
 					</UnstyledButton>
 				</Group>
-				<Tabs defaultValue={variable ? 'variable' : 'static'} styles={(theme) => ({
-				tab: {
-					'&[data-active]': {
-						borderBottom: `${rem(2)} solid ${theme.colors.purple[0]}`,
-					},
-				},
-			})}>
+				<Tabs
+					defaultValue={variable ? 'variable' : 'static'}
+					styles={(theme) => ({
+						tab: {
+							'&[data-active]': {
+								borderBottom: `${rem(2)} solid ${theme.colors.purple[0]}`,
+							},
+						},
+					})}
+				>
 					<Tabs.List>
 						{variable && <Tabs.Tab value="variable">Variable</Tabs.Tab>}
 						<Tabs.Tab value="static">Static</Tabs.Tab>
@@ -374,7 +381,7 @@ export const Install = ({
 					</Tabs.Panel>
 				</Tabs>
 			</Grid.Col>
-			<Grid.Col span={4}>
+			<Grid.Col span={12} md={4}>
 				<div className={classes.infoWrapper}>
 					<Text fw={700} fz={15}>
 						Font Details
@@ -399,7 +406,15 @@ export const Install = ({
 							<Text>Version: {metadata.version}</Text>
 						</Group>
 						<Text>&copy; {replaceAttribution}</Text>
-						<Group position="apart" grow>
+						<Group
+							position="apart"
+							grow
+							sx={(theme) => ({
+								[theme.fn.smallerThan('md')]: {
+									marginTop: rem(16),
+								},
+							})}
+						>
 							<UnstyledButton
 								component="a"
 								className={classes.infoButton}
