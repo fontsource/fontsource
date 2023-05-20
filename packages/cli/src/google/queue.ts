@@ -16,10 +16,11 @@ import { build } from './build';
 const queue = new PQueue({ concurrency: 3 });
 
 // @ts-ignore - rollup-plugin-dts being too strict
-queue.on('error', error => {
+queue.on('error', (error) => {
 	throw new Error(error);
 });
 
+// @ts-ignore - rollup-plugin-dts being too strict
 queue.on('idle', async () => {
 	consola.success(
 		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`
