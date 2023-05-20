@@ -1,4 +1,4 @@
-import type { SliderProps} from '@mantine/core';
+import type { SliderProps } from '@mantine/core';
 import { rem } from '@mantine/core';
 import { Slider as MantineSlider } from '@mantine/core';
 
@@ -27,9 +27,26 @@ const Slider = (props: SliderProps) => (
 				boxShadow: `0 0 0 ${rem(1)} ${theme.colors.border[0]}`,
 			},
 
+			label: {
+				position: 'absolute',
+				top: rem(-40),
+				backgroundColor:
+					theme.colorScheme === 'dark'
+						? theme.colors.dark[4]
+						: theme.colors.gray[9],
+				fontSize: theme.fontSizes.xs,
+				color: theme.white,
+				padding: `calc(${theme.spacing.xs} / 2)`,
+				borderRadius: theme.radius.sm,
+				whiteSpace: 'nowrap',
+				pointerEvents: 'none',
+				userSelect: 'none',
+				touchAction: 'none',
+			},
+
 			dragging: {
 				boxShadow: `0 0 0 ${rem(2)} ${theme.colors.border[0]}`,
-			}
+			},
 		})}
 	/>
 );
