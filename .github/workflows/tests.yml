@@ -16,8 +16,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: "0"
 
       - name: Enable PNPM
         uses: pnpm/action-setup@v2
@@ -29,14 +27,10 @@ jobs:
           cache: "pnpm"
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Run lints
         run: pnpm run lint
 
       - name: Run tests
-        run: pnpm run test
-
-      - uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+        run: pnpm run test:ci
