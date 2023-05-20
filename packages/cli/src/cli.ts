@@ -62,6 +62,11 @@ cli
 				}`
 			);
 			await processGoogle(options, fonts);
+			if (options.force) {
+				consola.info('Rebuilding custom packages...');
+				await rebuild();
+				consola.success('Finished rebuilding custom packages.');
+			}
 		} catch (error) {
 			consola.error(error);
 		}
