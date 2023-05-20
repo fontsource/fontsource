@@ -1,5 +1,5 @@
 import { confirm, isCancel } from '@clack/prompts';
-import consola from 'consola';
+import { consola } from 'consola';
 import fs from 'fs-extra';
 import stringify from 'json-stringify-pretty-compact';
 import latestVersion from 'latest-version';
@@ -9,7 +9,13 @@ import colors from 'picocolors';
 import semver from 'semver';
 
 import { getChanged } from './changed';
-import type { BumpFlags, BumpObject, ChangedList, Context, PackageJson } from './types';
+import type {
+	BumpFlags,
+	BumpObject,
+	ChangedList,
+	Context,
+	PackageJson,
+} from './types';
 import { mergeFlags } from './utils';
 
 export const isValidBumpArg = (bumpArg: string): boolean => {
@@ -22,7 +28,10 @@ export const isValidBumpArg = (bumpArg: string): boolean => {
 	return true;
 };
 
-export const bumpValue = (oldVersion: string, bumpArg: string): string | false => {
+export const bumpValue = (
+	oldVersion: string,
+	bumpArg: string
+): string | false => {
 	// Check if valid semver version and if invalid return false
 	const arr = semver.valid(oldVersion)?.split('.');
 	if (arr) {
@@ -99,8 +108,12 @@ export const writeUpdate = async (pkg: BumpObject): Promise<void> => {
 
 const queue = new PQueue({ concurrency: 12 });
 
-export const bumpPackages = async (diff: ChangedList, config: Context, version: string) => {
-// Create bump objects with bumped version
+export const bumpPackages = async (
+	diff: ChangedList,
+	config: Context,
+	version: string
+) => {
+	// Create bump objects with bumped version
 	const bumpObjects: BumpObject[] = [];
 	for (const pkg of diff) {
 		const newVersion = bumpValue(pkg.version, version);
@@ -143,7 +156,6 @@ export const bumpPackages = async (diff: ChangedList, config: Context, version: 
 		if (!yes || isCancel(yes)) {
 			throw new Error('Bump cancelled.');
 		}
-
 	} else {
 		consola.info(colors.bold(colors.blue(`Bumping ${count} packages...`)));
 	}
@@ -159,9 +171,7 @@ export const bumpPackages = async (diff: ChangedList, config: Context, version: 
 			await writeUpdate(pkg);
 		} else {
 			consola.info(
-				colors.yellow(
-					`Skipping ${pkg.name} as it is set to not publish.`
-				)
+				colors.yellow(`Skipping ${pkg.name} as it is set to not publish.`)
 			);
 		}
 	}

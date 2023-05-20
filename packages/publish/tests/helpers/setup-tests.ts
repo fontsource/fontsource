@@ -1,4 +1,4 @@
-import consola from 'consola';
+import { consola } from 'consola';
 import { beforeAll, beforeEach, vi } from 'vitest';
 
 beforeAll(() => {

@@ -19,10 +19,10 @@
 		"@clack/prompts": "^0.6.0",
 		"@npmcli/package-json": "^3.0.0",
 		"cac": "^6.7.14",
-		"consola": "^2.15.3",
+		"consola": "^3.1.0",
 		"defu": "^6.1.2",
 		"dotenv": "^16.0.3",
-		"execa": "^7.0.0",
+		"execa": "^7.1.1",
 		"folder-hash": "^4.0.4",
 		"fs-extra": "^11.1.0",
 		"json-stringify-pretty-compact": "^4.0.0",
@@ -33,21 +33,21 @@
 		"parse-git-config": "^3.0.0",
 		"pathe": "^1.1.0",
 		"picocolors": "^1.0.0",
-		"semver": "^7.3.8"
+		"semver": "^7.5.1"
 	},
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.2.4",
 		"@types/folder-hash": "^4.0.2",
 		"@types/fs-extra": "^11.0.1",
 		"@types/libnpmpublish": "^4.0.3",
-		"@types/node": "^18.14.1",
+		"@types/node": "^20.2.1",
 		"@types/pacote": "^11.1.5",
 		"@types/parse-git-config": "^3.0.1",
-		"@types/semver": "^7.3.13",
-		"eslint": "^8.35.0",
+		"@types/semver": "^7.5.0",
+		"eslint": "^8.41.0",
 		"pkgroll": "^1.9.0",
 		"tsx": "^3.12.3",
-		"typescript": "^4.9.5"
+		"typescript": "^5.0.4"
 	},
 	"files": [
 		"dist/*"

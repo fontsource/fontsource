@@ -1,4 +1,4 @@
-import consola from 'consola';
+import { consola } from 'consola';
 import * as dotenv from 'dotenv';
 import { publish } from 'libnpmpublish';
 import PQueue from 'p-queue';
@@ -90,10 +90,9 @@ export const publishPackages = async (
 	}
 
 	const finishedPublish = await Promise.all(publishArr);
-	const errArray = (finishedPublish).filter(
+	const errArray = finishedPublish.filter(
 		(pkg) => pkg !== undefined
 	) as PublishObject[];
-
 
 	// Write updated package.json files
 	if (version !== 'from-package') {

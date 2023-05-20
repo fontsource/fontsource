@@ -1,6 +1,6 @@
 /* eslint-disable unicorn/no-process-exit */
 import { cac } from 'cac';
-import consola from 'consola';
+import { consola } from 'consola';
 import * as dotenv from 'dotenv';
 import colors from 'picocolors';
 
@@ -15,7 +15,8 @@ dotenv.config();
 
 const cli = cac('fontsource-publish');
 
-cli.command('init', 'Add config file with default variables in root')
+cli
+	.command('init', 'Add config file with default variables in root')
 	.action(async () => {
 		try {
 			await init();
@@ -26,7 +27,11 @@ cli.command('init', 'Add config file with default variables in root')
 		}
 	});
 
-cli.command('changed', 'Calculates hashes and lists all packages that have changes made to them')
+cli
+	.command(
+		'changed',
+		'Calculates hashes and lists all packages that have changes made to them'
+	)
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
 	.action(async (opts: ChangedFlags) => {
@@ -38,32 +43,43 @@ cli.command('changed', 'Calculates hashes and lists all packages that have chang
 		}
 	});
 
-
-cli.command('bump <version>', 'Bumps the version of all changed packages.')
+cli
+	.command('bump <version>', 'Bumps the version of all changed packages.')
 	.option('--force', 'Force bump ALL packages regardless if changed or not')
-	.option('--yes', 'Skips confirmation to write the bump changes to package.json. Useful in CI')
+	.option(
+		'--yes',
+		'Skips confirmation to write the bump changes to package.json. Useful in CI'
+	)
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
 	.action(async (version: string, opts: BumpFlags) => {
 		try {
 			await bump(version, opts);
-			consola.success(colors.green(colors.bold('Successfully bumped packages.')));
+			consola.success(
+				colors.green(colors.bold('Successfully bumped packages.'))
+			);
 		} catch (error) {
 			consola.error(error);
 			process.exit(1);
 		}
 	});
 
-cli.command('publish <version>', 'Publishes all packages to NPM.')
+cli
+	.command('publish <version>', 'Publishes all packages to NPM.')
 	// Carry over bump and changed command options
 	.option('--force', 'Force bump ALL packages regardless if changed or not')
-	.option('--yes', 'Skips confirmation to write the bump changes to package.json. Useful in CI')
+	.option(
+		'--yes',
+		'Skips confirmation to write the bump changes to package.json. Useful in CI'
+	)
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
 	.action(async (version: string, opts: PublishFlags) => {
 		try {
 			await publishPackages(version, opts);
-			consola.success(colors.green(colors.bold('Successfully published all packages.')));
+			consola.success(
+				colors.green(colors.bold('Successfully published all packages.'))
+			);
 		} catch (error) {
 			consola.error(error);
 			process.exit(1);
