@@ -26,7 +26,7 @@ importers:
         specifier: ^0.6.3
         version: 0.6.3
       '@fontsource-utils/generate':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../generate
       cac:
         specifier: ^6.7.14
