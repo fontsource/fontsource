@@ -8,8 +8,9 @@
 	"scripts": {
 		"build": "pnpm --filter \"./packages/*\" run build",
 		"coverage": "vitest run --coverage",
-		"lint": "pnpm --recursive run lint",
+		"lint": "pnpm -r run lint",
 		"test": "vitest",
+		"test:ci": "CI=true pnpm --stream --filter \"./packages/*\" run test",
 		"ci:version": "changeset version",
 		"ci:publish": "pnpm publish --recursive"
 	},

@@ -18,6 +18,7 @@
 	"scripts": {
 		"build": "pkgroll --target=node14",
 		"lint": "eslint --fix",
+		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "pnpm run build"
 	},
