@@ -10,6 +10,10 @@ const getAllFiles = async (dir: string): Promise<string[]> => {
 			if (dirent.name === 'package.json') {
 				return [];
 			}
+			// Ignore .woff and .woff2 files
+			if (dirent.name.endsWith('.woff') || dirent.name.endsWith('.woff2')) {
+				return [];
+			}
 			const res = path.resolve(dir, dirent.name);
 			return dirent.isDirectory() ? getAllFiles(res) : res;
 		})
@@ -17,13 +21,9 @@ const getAllFiles = async (dir: string): Promise<string[]> => {
 	return Array.prototype.concat(...files);
 };
 
-const hasher = createXXHash64;
-
-const getHash = async (
-	dir: string,
-	hasher: Awaited<ReturnType<typeof createXXHash64>>
-): Promise<string> => {
+const getHash = async (dir: string): Promise<string> => {
 	const files = await getAllFiles(dir);
+	const hasher = await createXXHash64();
 	hasher.init();
 	for (const file of files) {
 		const contents = await fs.readFile(file);
@@ -32,4 +32,4 @@ const getHash = async (
 	return hasher.digest();
 };
 
-export { getHash, getAllFiles, hasher };
+export { getHash, getAllFiles };
