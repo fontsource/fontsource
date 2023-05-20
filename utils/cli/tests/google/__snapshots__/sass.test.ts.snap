@@ -55,12 +55,43 @@ $category: sans-serif !default;
 $subsets: (cyrillic-ext, latin, latin-ext, vietnamese) !default;
 $weights: (300, 400, 500, 600, 700, 800, 900) !default;
 $styles: (normal) !default;
-$axes: null !default;
+$axes: (
+  slnt: (
+    default: 0,
+    min: -15,
+    max: 0,
+    step: 1,
+  ),
+  wght: (
+    default: 400,
+    min: 300,
+    max: 1000,
+    step: 1,
+  ),
+  CASL: (
+    default: 0,
+    min: 0,
+    max: 1,
+    step: 0.01,
+  ),
+  CRSV: (
+    default: 0.5,
+    min: 0,
+    max: 1,
+    step: 0.1,
+  ),
+  MONO: (
+    default: 0,
+    min: 0,
+    max: 1,
+    step: 0.01,
+  ),
+) !default;
 $defaults: (
   subset: latin,
   weight: 400,
   style: normal,
-  axis: null,
+  axis: wght,
 ) !default;
 $unicode: (
   cyrillic-ext: (U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F),

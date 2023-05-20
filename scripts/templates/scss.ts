@@ -106,6 +106,7 @@ $stretch: <%= variableWdth %>;
   $style: $style,
   $display: $display,
   $weight: $weightVariable,
+  $type: $type,
   $woff2Path: null,
   $unicodeRange: $unicodeRange,
   $unicodeRangeValues: $unicodeRangeValues

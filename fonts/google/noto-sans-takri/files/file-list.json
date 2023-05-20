@@ -1,5 +1,9 @@
 [
+  "./fonts/google/noto-sans-takri/files/noto-sans-takri-latin-400-normal.woff",
+  "./fonts/google/noto-sans-takri/files/noto-sans-takri-latin-ext-400-normal.woff",
   "./fonts/google/noto-sans-takri/files/noto-sans-takri-takri-400-normal.woff",
   "./fonts/google/noto-sans-takri/files/noto-sans-takri-takri-400-normal.woff2",
-  "./fonts/google/noto-sans-takri/files/noto-sans-takri-all-400-normal.woff"
+  "./fonts/google/noto-sans-takri/files/noto-sans-takri-all-400-normal.woff",
+  "./fonts/google/noto-sans-takri/files/noto-sans-takri-latin-ext-400-normal.woff2",
+  "./fonts/google/noto-sans-takri/files/noto-sans-takri-latin-400-normal.woff2"
 ]

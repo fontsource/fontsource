@@ -36,7 +36,11 @@ $axes: null !default;
     '~@fontsource#{if(map.get($metadata, axes), '-variable', '')}/#{map.get($metadata, id)}/files'
   );
 
-  $family: if($family, $family, map.get($metadata, family) + if(map.get($metadata, axes), ' Variable', ''));
+  $family: if(
+    $family,
+    $family,
+    map.get($metadata, family) + if(map.get($metadata, axes), ' Variable', '')
+  );
   $display: if($display, $display, swap);
   $displayVar: if($displayVar != null, $displayVar, true);
   $formats: if(not $formats or $formats == all, (woff2, woff), $formats);
@@ -58,11 +62,7 @@ $axes: null !default;
   $axes: if(
     $axes,
     if($axes == all, full, $axes),
-    if(
-      map.get($metadata, axes),
-      if(map.has-key($metadata, axes, wght), wght, full),
-      null
-    )
+    if(map.get($metadata, axes), if(map.has-key($metadata, axes, wght), wght, full), null)
   );
 
   @each $subset in $subsets {
@@ -74,7 +74,7 @@ $axes: null !default;
             // Is numeric subset
             $subset ==
               map.get($metadata, defaults, subset) and not
-              map.has-key($metadata, subsets, $unicodeSubset)
+              list.index(map.get($metadata, subsets), $unicodeSubset)
           )
       ) {
         @each $weight in if($axes, null, $weights) {
@@ -114,18 +114,18 @@ $axes: null !default;
 
                 font-family: string.quote($family),
                 font-style: if(
-                  ($axis == full or $axis == slnt) and map.has-key($metadata, axes, slnt), 
+                  ($axis == full or $axis == slnt) and map.has-key($metadata, axes, slnt),
                   oblique map.get($metadata, axes, slnt, min) + deg map.get($metadata, axes, slnt, max) + deg,
                   $style
                 ),
                 font-display: if($displayVar, var(--fontsource-display, $display), $display),
                 font-weight: if(
-                  ($axis == full or $axis == wght) and map.has-key($metadata, axes, wght), 
+                  ($axis == full or $axis == wght) and map.has-key($metadata, axes, wght),
                   map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max),
                   $weight
                 ),
                 font-stretch: if(
-                  ($axis == full or $axis == wdth) and map.has-key($metadata, axes, wdth), 
+                  ($axis == full or $axis == wdth) and map.has-key($metadata, axes, wdth),
                   '#{map.get($metadata, axes, wdth, min)}% #{map.get($metadata, axes, wdth, max)}%',
                   null
                 ),
@@ -164,18 +164,16 @@ $axes: null !default;
       $styles: $styles,
       $axes: $axes
     )
-    using ($data) {
-    /* #{map.get($data, variant)} */
+    using ($props) {
+    /* #{map.get($props, variant)} */
     @font-face {
-      font-family: map.get($data, font-family);
-      font-style: map.get($data, font-style);
-      font-display: map.get($data, font-display);
-      font-weight: map.get($data, font-weight);
-      font-stretch: map.get($data, font-stretch);
-      unicode-range: map.get($data, unicode-range);
-      src: map.get($data, src);
-
-      @content();
+      font-family: map.get($props, font-family);
+      font-style: map.get($props, font-style);
+      font-display: map.get($props, font-display);
+      font-weight: map.get($props, font-weight);
+      font-stretch: map.get($props, font-stretch);
+      unicode-range: map.get($props, unicode-range);
+      src: map.get($props, src);
     }
   }
 }

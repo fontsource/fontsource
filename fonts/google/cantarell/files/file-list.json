@@ -1,14 +1,22 @@
 [
   "./fonts/google/cantarell/files/cantarell-latin-400-italic.woff",
+  "./fonts/google/cantarell/files/cantarell-latin-ext-400-italic.woff",
   "./fonts/google/cantarell/files/cantarell-latin-400-normal.woff",
+  "./fonts/google/cantarell/files/cantarell-latin-ext-400-normal.woff",
   "./fonts/google/cantarell/files/cantarell-latin-700-italic.woff",
+  "./fonts/google/cantarell/files/cantarell-latin-ext-700-italic.woff",
   "./fonts/google/cantarell/files/cantarell-latin-700-normal.woff",
-  "./fonts/google/cantarell/files/cantarell-latin-400-italic.woff2",
+  "./fonts/google/cantarell/files/cantarell-latin-ext-700-normal.woff",
+  "./fonts/google/cantarell/files/cantarell-latin-ext-400-italic.woff2",
   "./fonts/google/cantarell/files/cantarell-all-400-italic.woff",
-  "./fonts/google/cantarell/files/cantarell-latin-400-normal.woff2",
+  "./fonts/google/cantarell/files/cantarell-latin-400-italic.woff2",
+  "./fonts/google/cantarell/files/cantarell-latin-ext-400-normal.woff2",
   "./fonts/google/cantarell/files/cantarell-all-400-normal.woff",
-  "./fonts/google/cantarell/files/cantarell-latin-700-italic.woff2",
+  "./fonts/google/cantarell/files/cantarell-latin-400-normal.woff2",
+  "./fonts/google/cantarell/files/cantarell-latin-ext-700-italic.woff2",
   "./fonts/google/cantarell/files/cantarell-all-700-italic.woff",
-  "./fonts/google/cantarell/files/cantarell-latin-700-normal.woff2",
-  "./fonts/google/cantarell/files/cantarell-all-700-normal.woff"
+  "./fonts/google/cantarell/files/cantarell-latin-700-italic.woff2",
+  "./fonts/google/cantarell/files/cantarell-latin-ext-700-normal.woff2",
+  "./fonts/google/cantarell/files/cantarell-all-700-normal.woff",
+  "./fonts/google/cantarell/files/cantarell-latin-700-normal.woff2"
 ]

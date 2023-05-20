@@ -5,7 +5,7 @@
   font-display: swap;
   font-weight: 400;
   src: url('./files/noto-sans-limbu-limbu-400-normal.woff2') format('woff2'), url('./files/noto-sans-limbu-all-400-normal.woff') format('woff');
-  unicode-range: U+0965,U+1900-194F,U+200C-200D,U+25CC;
+  unicode-range: U+0964-0965,U+1900-194F,U+200C-200D,U+25CC;
 }
 /* noto-sans-limbu-latin-ext-400-normal*/
 @font-face {

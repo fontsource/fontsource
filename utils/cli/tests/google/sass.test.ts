@@ -9,7 +9,8 @@ describe('sass', () => {
 		expect(
 			sassMetadata(
 				mockSassMetadata.carlito.metadata as Metadata,
-				mockSassMetadata.carlito.unicode
+				mockSassMetadata.carlito.unicode,
+				false
 			)
 		).toMatchSnapshot();
 	});
@@ -18,7 +19,8 @@ describe('sass', () => {
 		expect(
 			sassMetadata(
 				mockSassMetadata.notoSansJp.metadata as Metadata,
-				mockSassMetadata.notoSansJp.unicode
+				mockSassMetadata.notoSansJp.unicode,
+				false
 			)
 		).toMatchSnapshot();
 	});
@@ -27,7 +29,8 @@ describe('sass', () => {
 		expect(
 			sassMetadata(
 				mockSassMetadata.recursive.metadata as Metadata,
-				mockSassMetadata.recursive.unicode
+				mockSassMetadata.recursive.unicode,
+				true
 			)
 		).toMatchSnapshot();
 	});

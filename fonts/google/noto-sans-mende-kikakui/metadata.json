@@ -1,0 +1,15 @@
+{
+  "fontId": "noto-sans-mende-kikakui",
+  "fontName": "Noto Sans Mende Kikakui",
+  "subsets": ["latin", "latin-ext", "mende-kikakui"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "latin",
+  "variable": false,
+  "lastModified": "2022-11-09",
+  "version": "v28",
+  "category": "sans-serif",
+  "source": "https://fonts.google.com/",
+  "license": "https://fonts.google.com/attribution",
+  "type": "google"
+}

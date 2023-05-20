@@ -9,8 +9,8 @@
     "EDPT": { "default": "100", "min": "0", "max": "200", "step": "1" },
     "EHLT": { "default": "12", "min": "0", "max": "24", "step": "1" }
   },
-  "lastModified": "2022-09-14",
-  "version": "v6",
+  "lastModified": "2022-11-09",
+  "version": "v9",
   "category": "display",
   "source": "https://fonts.google.com/",
   "license": "https://fonts.google.com/attribution",

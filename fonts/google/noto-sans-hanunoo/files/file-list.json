@@ -1,5 +1,9 @@
 [
   "./fonts/google/noto-sans-hanunoo/files/noto-sans-hanunoo-hanunoo-400-normal.woff",
+  "./fonts/google/noto-sans-hanunoo/files/noto-sans-hanunoo-latin-400-normal.woff",
+  "./fonts/google/noto-sans-hanunoo/files/noto-sans-hanunoo-latin-ext-400-normal.woff",
   "./fonts/google/noto-sans-hanunoo/files/noto-sans-hanunoo-hanunoo-400-normal.woff2",
-  "./fonts/google/noto-sans-hanunoo/files/noto-sans-hanunoo-all-400-normal.woff"
+  "./fonts/google/noto-sans-hanunoo/files/noto-sans-hanunoo-all-400-normal.woff",
+  "./fonts/google/noto-sans-hanunoo/files/noto-sans-hanunoo-latin-ext-400-normal.woff2",
+  "./fonts/google/noto-sans-hanunoo/files/noto-sans-hanunoo-latin-400-normal.woff2"
 ]

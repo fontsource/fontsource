@@ -7,3 +7,7 @@ export {
 	APIv2,
 	APIVariable,
 } from 'google-font-metadata';
+
+export { verify } from './custom/verify';
+export { create } from './custom/create';
+export { processGoogle } from './google/queue';

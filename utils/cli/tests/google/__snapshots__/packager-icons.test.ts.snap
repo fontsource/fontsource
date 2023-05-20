@@ -4,6 +4,17 @@ exports[`packager icons > should generate Material Icons CSS successfully (stati
 [MockFunction writeFile] {
   "calls": [
     [
+      "test/material-icons/400.css",
+      "/* material-icons-latin-400-normal */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(./files/material-icons-latin-400-normal.woff2) format('woff2'), url(./files/material-icons-latin-400-normal.woff) format('woff');
+}",
+    ],
+    [
       "test/material-icons/latin-400.css",
       "/* material-icons-latin-400-normal */
 @font-face {
@@ -38,6 +49,10 @@ exports[`packager icons > should generate Material Icons CSS successfully (stati
     ],
   ],
   "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
     {
       "type": "return",
       "value": undefined,

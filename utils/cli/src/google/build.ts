@@ -1,10 +1,10 @@
 import fs from 'fs-extra';
 import {
-	APIIconStatic,
-	APIIconVariable,
-	APILicense,
-	APIv2,
-	APIVariable,
+	APIIconStatic as APIIconStaticImport,
+	APIIconVariable as APIIconVariableImport,
+	APILicense as APILicenseImport,
+	APIv2 as APIv2Import,
+	APIVariable as APIVariableImport,
 } from 'google-font-metadata';
 import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
@@ -22,6 +22,13 @@ import { packagerIconsStatic, packagerIconsVariable } from './packager-icons';
 import { packagerV1 } from './packager-v1';
 import { packagerV2 } from './packager-v2';
 import { packagerVariable } from './packager-variable';
+
+// Cache imported functions
+const APIIconStatic = APIIconStaticImport;
+const APIIconVariable = APIIconVariableImport;
+const APILicense = APILicenseImport;
+const APIv2 = APIv2Import;
+const APIVariable = APIVariableImport;
 
 const build = async (id: string, opts: BuildOptions) => {
 	const font = opts.isIcon ? APIIconStatic[id] : APIv2[id];
@@ -102,7 +109,11 @@ const build = async (id: string, opts: BuildOptions) => {
 		};
 
 		// Write metadata.scss
-		await fs.mkdir(path.join(opts.dir, 'scss'));
+		try {
+			await fs.mkdir(path.join(opts.dir, 'scss'));
+		} catch {
+			// Continue regardless of error since directory may already exist
+		}
 		await fs.writeFile(
 			path.join(opts.dir, 'scss/metadata.scss'),
 			sassMetadata(metadata, font.unicodeRange, opts.isVariable)
