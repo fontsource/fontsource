@@ -22,10 +22,10 @@ jobs:
       - name: Enable PNPM
         uses: pnpm/action-setup@v2
 
-      - name: Set node version to 16
+      - name: Set node version to 20
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "20"
           cache: "pnpm"
 
       - name: Install

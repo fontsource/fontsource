@@ -15,7 +15,7 @@ import { BuildOptions } from '../types';
 import { makeFontDownloadPath, makeVariableFontDownloadPath } from '../utils';
 
 const writeDownload = async (url: string, dest: fs.PathLike) => {
-	const response = await fetch(url).then(res => res.arrayBuffer());
+	const response = await fetch(url).then((res) => res.arrayBuffer());
 	await fs.writeFile(dest, Buffer.from(response));
 };
 
@@ -26,19 +26,19 @@ const pairGenerator = (
 	// [['weight.style.subset.url.extension', 'link to font or local name'], ...]
 	const flattenedPairs: [string, string][] = Object.entries(flatten(variants));
 	// Split ['weight.style.subset.url|local.extension'] into individual array elements
-	const splitPairs = flattenedPairs.map(pair => [
+	const splitPairs = flattenedPairs.map((pair) => [
 		pair[0].split('.'),
 		pair[1],
 	]) as string[][];
 
 	// Ensure that the pair has a valid URL to download
 	const ABSOLUTE_URL_REGEX = /^https?:\/\//;
-	const urlPairs = splitPairs.filter(pair =>
+	const urlPairs = splitPairs.filter((pair) =>
 		ABSOLUTE_URL_REGEX.test(pair[1].toString())
 	);
 
 	// Filter out TTF and OTF files as they are not needed for NPM
-	const cleanedPairs = urlPairs.filter(pair => {
+	const cleanedPairs = urlPairs.filter((pair) => {
 		const extension = pair[0][4];
 		if (extension === 'truetype' || extension === 'opentype') {
 			return false;
@@ -75,12 +75,12 @@ const generateLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 	// If true, we need to download the woff2 files from V1. Else remove all woff2 files
 	if (!hasUnicodeSubsets) {
 		downloadURLPairsV1 = downloadURLPairsV1.filter(
-			pair => pair[0][4] !== 'woff2'
+			(pair) => pair[0][4] !== 'woff2'
 		);
 	}
 
 	// V1 { url, dest } pairs
-	const linksV1 = downloadURLPairsV1.map(pair => {
+	const linksV1 = downloadURLPairsV1.map((pair) => {
 		const types = pair[0];
 		const dest = makeFontDownloadPath(
 			opts.dir,
@@ -98,7 +98,7 @@ const generateLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 	});
 
 	// V2 { url, dest } pairs
-	const linksV2 = downloadURLPairsV2.map(pair => {
+	const linksV2 = downloadURLPairsV2.map((pair) => {
 		const types = pair[0];
 		const dest = makeFontDownloadPath(
 			opts.dir,
@@ -124,7 +124,7 @@ const variableLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 
 	// Variable { url, dest } pairs
 	// Types [type, style, subset]
-	const links = downloadURLPairsVariable.map(pair => {
+	const links = downloadURLPairsVariable.map((pair) => {
 		const types = pair[0];
 		const dest = makeVariableFontDownloadPath(
 			opts.dir,
@@ -150,7 +150,7 @@ const iconStaticLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 
 	// Icon Static { url, dest } pairs
 	// Types [type, style, subset]
-	const links = downloadURLPairsIconStatic.map(pair => {
+	const links = downloadURLPairsIconStatic.map((pair) => {
 		const types = pair[0];
 		const dest = makeFontDownloadPath(
 			opts.dir,
@@ -177,7 +177,7 @@ const iconVariableLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 
 	// Icon Variable { url, dest } pairs
 	// Types [type, style, subset]
-	const links = downloadURLPairsIconVariable.map(pair => {
+	const links = downloadURLPairsIconVariable.map((pair) => {
 		const types = pair[0];
 		const dest = makeVariableFontDownloadPath(
 			opts.dir,

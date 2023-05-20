@@ -1,0 +1,46 @@
+---
+title: Remix
+section: Frameworks
+---
+
+## Remix
+
+---
+
+Remix is a full-stack JavaScript framework for building web applications. To import fonts into a Remix project, you can leverage the CSS bundler plugin built into the framework. Follow the steps below to set it up.
+
+### 1. Install the plugin
+
+<PackageManagerCode cmd="@remix-run/css-bundle" />
+
+### 2. Configure the plugin
+
+Modify `root.tsx` to include the following code:
+
+```tsx
+import { cssBundleHref } from "@remix-run/css-bundle";
+import type { LinksFunction } from "@remix-run/node";
+
+import "@fontsource-variable/open-sans/wght.css";
+
+export const links: LinksFunction = () => {
+  return [
+    ...(cssBundleHref
+      ? [{ rel: "stylesheet", href: cssBundleHref }]
+      : []),
+    // ...
+  ];
+};
+```
+
+### 3. Usage
+
+You can now use the imported fonts in your Remix.js project.
+
+```css
+h1 {
+  font-family: "Open Sans Variable", sans-serif;
+}
+```
+
+Read the official documentation on the plugin [here](https://remix.run/docs/en/main/guides/styling#css-bundling).

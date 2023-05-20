@@ -114,18 +114,18 @@ $axes: null !default;
 
                 font-family: string.quote($family),
                 font-style: if(
-                  ($axis == full or $axis == slnt) and map.has-key($metadata, axes, slnt), 
+                  ($axis == full or $axis == slnt) and map.has-key($metadata, axes, slnt),
                   oblique map.get($metadata, axes, slnt, min) + deg map.get($metadata, axes, slnt, max) + deg,
                   $style
                 ),
                 font-display: if($displayVar, var(--fontsource-display, $display), $display),
                 font-weight: if(
-                  ($axis == full or $axis == wght) and map.has-key($metadata, axes, wght), 
+                  ($axis == full or $axis == wght) and map.has-key($metadata, axes, wght),
                   map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max),
                   $weight
                 ),
                 font-stretch: if(
-                  ($axis == full or $axis == wdth) and map.has-key($metadata, axes, wdth), 
+                  ($axis == full or $axis == wdth) and map.has-key($metadata, axes, wdth),
                   '#{map.get($metadata, axes, wdth, min)}% #{map.get($metadata, axes, wdth, max)}%',
                   null
                 ),

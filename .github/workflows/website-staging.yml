@@ -1,0 +1,32 @@
+name: Website Staging Deploy
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "website/**"
+
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only --config fly.staging.toml
+
+      - name: Trigger DB updates
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: "https://staging.fontsource.org/actions/update"
+          method: "POST"
+          bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
+          data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true, "docs": true}'
+          preventFailureOnNoResponse: true

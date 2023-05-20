@@ -36,7 +36,7 @@ export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 
 	// Check if all expected filenames are present and show all missing or non-matching filenames
 	const missingFilenames = expectedFilenames.filter(
-		filename => !filenames.includes(filename)
+		(filename) => !filenames.includes(filename)
 	);
 	if (missingFilenames.length > 0) {
 		throw new Error(
@@ -52,7 +52,7 @@ export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 
 	// Check if all filenames are expected and show all non-matching filenames
 	const nonMatchingFilenames = filenames.filter(
-		filename => !expectedFilenames.includes(filename)
+		(filename) => !expectedFilenames.includes(filename)
 	);
 	if (nonMatchingFilenames.length > 0) {
 		throw new Error(

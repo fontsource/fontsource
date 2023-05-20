@@ -1,33 +1,30 @@
 ---
 title: Getting Started API
+section: Setup
 ---
 
-# About
+## Introduction
 
 ---
 
-The Fontsource API allows developers to query information about fonts which the repository supports.
+The Fontsource API provides developers with access to information about the fonts supported by the Fontsource repository.
 
-> **Note:** The API servers are kindly sponsored by our friends at [JSDelivr](https://www.jsdelivr.com/). We recommend using them as other CDNs may impose restrictions due to certain package sizes exceeding their limits.
-
-<CarbonAd />
+> **Note:** The API servers are generously sponsored by [JSDelivr](https://www.jsdelivr.com/). We recommend using them as other CDNs may impose restrictions due to certain package sizes exceeding their limits.
 
 ## Usage
 
 ---
 
-The URL to access the API is found at [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
+To access the Fontsource API, you can use the following URL: [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
 
-Each route can also have additional queries included with the URL to filter the responses appropriately.
+#####
 
-For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext` as well as if it is a variable font.
+You can include additional queries in the URL to filter the responses based on specific criteria. For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext`, as well as if it is a variable font.
 
 ## Contents
 
----
+- **[Fontlist:](/docs/api/fontlist)** Retrieve a list of available fonts.
+- **[Fonts:](/docs/api/fonts)** Get detailed information about specific fonts.
+- **[Font ID:](/docs/api/font-id)** Access information about a font based on its ID.
 
-- **[Fontlist](/docs/api/fontlist)**
-
-- **[Fonts](/docs/api/fonts)**
-
-- **[Font ID](/docs/api/font-id)**
+Please refer to the respective sections for more detailed documentation on each topic.

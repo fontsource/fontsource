@@ -1,0 +1,40 @@
+fuse:
+  dir: '${LITEFS_DIR}'
+
+data:
+  # Path to internal data storage.
+  dir: '/var/lib/litefs'
+
+proxy:
+  # matches the internal_port in fly.toml
+  addr: ':${INTERNAL_PORT}'
+  # PORT is set in the Dockerfile
+  target: 'localhost:${PORT}'
+  db: '${DATABASE_FILENAME}'
+  passthrough:
+    - '/build/*'
+    - '/*.png'
+    - '/*.ico'
+    - '/*.txt'
+    - '/*.svg'
+
+# This flag ensure that LiteFS continues to run if there is an issue on startup.
+# It makes it easy to ssh in and debug any issues you might be having rather
+# than continually restarting on initialization failure.
+exit-on-error: false
+
+lease:
+  candidate: ${FLY_REGION == PRIMARY_REGION}
+  promote: true
+  type: 'consul'
+  advertise-url: 'http://${FLY_ALLOC_ID}.vm.${FLY_APP_NAME}.internal:20202'
+
+  consul:
+    url: '${FLY_CONSUL_URL}'
+    key: '${FLY_APP_NAME}/primary'
+
+exec:
+  - cmd: 'npm run migrations'
+    if-candidate: true
+
+  - cmd: 'npm run start'

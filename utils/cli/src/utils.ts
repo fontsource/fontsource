@@ -16,7 +16,8 @@ const makeVariableFontDownloadPath = (
 	subset: string,
 	axes: string,
 	style: string
-): string => `${fontDir}/files/${fontId}-${subset}-${axes.toLowerCase()}-${style}.woff2`;
+): string =>
+	`${fontDir}/files/${fontId}-${subset}-${axes.toLowerCase()}-${style}.woff2`;
 
 // Used for the src urls in CSS files
 const makeFontFilePath = (
@@ -37,7 +38,7 @@ const makeVariableFontFilePath = (
 // Insert a weight array to find the closest number given num - used for index.css gen
 const findClosest = (arr: number[], num: number): number => {
 	// Array of absolute values showing diff from target number
-	const indexArr = arr.map(weight => Math.abs(Number(weight) - num));
+	const indexArr = arr.map((weight) => Math.abs(Number(weight) - num));
 	// Find smallest diff
 	const min = Math.min(...indexArr);
 	const closest = arr[indexArr.indexOf(min)];

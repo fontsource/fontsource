@@ -1,0 +1,39 @@
+---
+title: SvelteKit
+section: Frameworks
+---
+
+## SvelteKit
+
+---
+
+To include Fontsource into your Svelte / SvelteKit project and apply it to your application's typography, follow the steps below.
+
+### 1. Entry File
+
+To apply the imported font to the typography of your Svelte / SvelteKit application, you can import the library into `+layout.svelte` file.
+
+```html
+<script>
+  import "@fontsource-variable/open-sans";
+</script>
+```
+
+### 2. Usage
+
+To apply the imported font to the typography of your Svelte / SvelteKit application, you can modify the `body` selector within the `+layout.svelte` file.
+
+```html
+<!-- +layout.svelte -->
+<script>
+  import "@fontsource-variable/open-sans";
+</script>
+
+<style>
+  :global(body) {
+    font-family: "Open Sans Variable", sans-serif;
+  }
+</style>
+```
+
+> **Note:** The font will be applied to all elements within your application's body. If you need to apply the font selectively, you can modify the CSS rules accordingly.

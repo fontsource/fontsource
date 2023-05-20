@@ -79,7 +79,7 @@ cli
 	.option('-i, --id <id>', 'ID of the font to verify')
 	.option('--cwd <cwd>', 'Directory to run verification in')
 	.option('--ci', 'Run in CI mode and throw errors instead of fancy prompts')
-	.action(async options => {
+	.action(async (options) => {
 		try {
 			await verify({ font: options.id, ci: options.ci, cwd: options.cwd });
 		} catch (error) {

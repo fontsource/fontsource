@@ -48,7 +48,7 @@ export const create = async () => {
 						if (!value) return 'Please enter at least one weight';
 						// Split array and check if all values are numbers
 						const weights = value.split(',').map(Number);
-						if (weights.some(weight => Number.isNaN(weight)))
+						if (weights.some((weight) => Number.isNaN(weight)))
 							return 'Please enter only numbers';
 						return undefined;
 					},
@@ -154,7 +154,7 @@ export const create = async () => {
 		subsets: ['latin'], // cfg.subsets.split(',').map((subset) => subset.trim()),
 		weights: cfg.weights
 			.split(',')
-			.map(weight => Number.parseInt(weight.trim(), 10)),
+			.map((weight) => Number.parseInt(weight.trim(), 10)),
 		styles: cfg.styles as string[],
 		defSubset: 'latin', // cfg.subsets.split(',')[0].trim(),
 		variable: false,
