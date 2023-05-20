@@ -1,25 +1,16 @@
 import { consola } from 'consola';
-import { hashElement } from 'folder-hash';
 import fs from 'fs-extra';
 import path from 'pathe';
 import colors from 'picocolors';
 
 import type { ChangedFlags, ChangedList, Context, PackageJson } from './types';
 import { getPackages, mergeFlags } from './utils';
-
-const getHash = async (packagePath: string) => {
-	const hashOptions = {
-		folders: { exclude: ['.*', 'node_modules'] },
-		files: { exclude: ['package.json'] },
-	};
-
-	const hash = await hashElement(packagePath, hashOptions);
-	return hash.hash;
-};
+import { getHash, hasher } from './hash';
 
 // Iterate through all packages in directory and return a list of changed packages
 const getChanged = async (ctx: Context) => {
 	const changedList: ChangedList = [];
+	const newHash = await hasher();
 
 	for (const packageDir of ctx.packages) {
 		const packages = await getPackages(packageDir);
@@ -32,7 +23,7 @@ const getChanged = async (ctx: Context) => {
 			);
 
 			// Get hash of current package and compare with old hash
-			const hash = await getHash(packagePath);
+			const hash = await getHash(packagePath, newHash);
 			if (packageJson.publishHash !== hash || ctx.forcePublish) {
 				changedList.push({
 					name: packageJson.name,
@@ -53,11 +44,14 @@ const changed = async (options: ChangedFlags) => {
 	const config = await mergeFlags(options);
 	const diff = await getChanged(config);
 
-	if (Object.keys(diff).length > 0) {
+	if (diff.length > 0) {
 		consola.info(colors.bold(colors.blue('Packages changed:')));
 		for (const item of diff) {
 			consola.info(item.name);
 		}
+		consola.info(
+			colors.bold(colors.magenta(`${diff.length} packages changed.`))
+		);
 	} else {
 		consola.info(colors.bold(colors.red('No packages changed.')));
 	}
