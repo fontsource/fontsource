@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/publish",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Fontsource Publish CLI",
 	"bin": {
 		"fontsource-publish": "./dist/cli.mjs"

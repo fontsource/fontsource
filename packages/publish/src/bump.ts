@@ -43,11 +43,14 @@ export const bumpValue = (
 		if (bumpArg === 'minor') {
 			const newNum = Number(arr[1]) + 1;
 			arr[1] = String(newNum);
+			arr[2] = '0';
 			return arr.join('.');
 		}
 		if (bumpArg === 'major') {
 			const newNum = Number(arr[0]) + 1;
 			arr[0] = String(newNum);
+			arr[1] = '0';
+			arr[2] = '0';
 			return arr.join('.');
 		}
 		if (bumpArg === 'from-package') {
@@ -130,13 +133,16 @@ export const bumpPackages = async (
 	}
 
 	// Check if package versions are free of conflicts on NPM
-	const pendingObjects = [];
-	for (const pkg of bumpObjects) {
-		const newPkg = queue.add(() => verifyVersion(pkg, version));
-		pendingObjects.push(newPkg);
+	let pendingObjects;
+	if (!config.noVerify) {
+		pendingObjects = [];
+		for (const pkg of bumpObjects) {
+			const newPkg = queue.add(() => verifyVersion(pkg, version));
+			pendingObjects.push(newPkg);
+		}
 	}
 	// Wait for queue to finish
-	const verifiedObjects = await Promise.all(pendingObjects);
+	const verifiedObjects = await Promise.all(pendingObjects ?? bumpObjects);
 	consola.info(colors.bold(colors.blue('All packages verified.')));
 
 	// Print out all new versions and prompt user to continue
