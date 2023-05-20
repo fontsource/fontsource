@@ -8,9 +8,10 @@
 	"scripts": {
 		"build": "pnpm --filter \"./packages/*\" run build",
 		"coverage": "vitest run --coverage",
+		"lint": "pnpm --recursive run lint",
 		"test": "vitest",
 		"ci:version": "changeset version",
-		"ci:publish": "pnpm publish -r"
+		"ci:publish": "pnpm publish --recursive"
 	},
 	"dependencies": {
 		"@changesets/changelog-github": "^0.4.8",
