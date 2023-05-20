@@ -6,9 +6,16 @@ import path from 'pathe';
 import { Metadata } from '../types';
 import { findClosest, makeFontFilePath } from '../utils';
 
-export const packagerCustom = async (metadata: Metadata) => {
+interface PackagerOptions {
+	dir?: string;
+}
+
+export const packagerCustom = async (
+	metadata: Metadata,
+	opts?: PackagerOptions
+) => {
 	const { id, family, subsets, weights, styles } = metadata;
-	const dir = `./${id}`;
+	const dir = opts?.dir ? opts.dir : `./${id}`;
 
 	// Find the weight for index.css in the case weight 400 does not exist.
 	const indexWeight = findClosest(weights, 400);

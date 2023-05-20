@@ -9,6 +9,8 @@ export interface BuildOptions {
 	force: boolean;
 	isVariable: boolean;
 	isIcon?: boolean;
+	version?: string;
+	publishHash?: string;
 }
 
 export interface Axes {

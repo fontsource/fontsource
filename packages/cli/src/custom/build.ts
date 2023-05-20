@@ -10,17 +10,27 @@ import { readme } from '../templates/readme';
 import type { Metadata } from '../types';
 import { packagerCustom } from './packager';
 
-export const buildCustom = async (metadata: Metadata) => {
+interface CustomOptions {
+	dir?: string;
+	version?: string;
+	publishHash?: string;
+}
+
+export const buildCustom = async (metadata: Metadata, opts?: CustomOptions) => {
 	// Create the directory for the font
-	const dir = `./${metadata.id}`;
+	const dir = opts?.dir ? path.join(opts.dir, metadata.id) : `./${metadata.id}`;
 	fs.ensureDirSync(dir);
 	fs.ensureDirSync(path.join(dir, '/files'));
 
 	// Generate CSS files
-	await packagerCustom(metadata);
+	await packagerCustom(metadata, { dir });
 
 	// Write metadata.scss
-	await fs.mkdir(path.join(dir, 'scss'));
+	try {
+		await fs.mkdir(path.join(dir, 'scss'));
+	} catch (err) {
+		// Continue as it may exist
+	}
 	await fs.writeFile(
 		path.join(dir, 'scss/metadata.scss'),
 		sassMetadata(metadata, {}, false)
@@ -47,5 +57,7 @@ export const buildCustom = async (metadata: Metadata) => {
 		isVariable: false,
 		tmpDir: '',
 		force: false,
+		version: opts?.version,
+		publishHash: opts?.publishHash,
 	});
 };

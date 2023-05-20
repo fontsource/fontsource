@@ -16,8 +16,9 @@ import colors from 'picocolors';
 
 import { version } from '../package.json';
 import { create } from './custom/create';
-import { verify } from './custom/verify';
+import { verify, verifyAll } from './custom/verify';
 import { processGoogle } from './google/queue';
+import { rebuild } from './custom/rebuilder';
 
 const cli = cac('fontsource');
 
@@ -61,6 +62,11 @@ cli
 				}`
 			);
 			await processGoogle(options, fonts);
+			if (options.force) {
+				consola.info('Rebuilding custom packages...');
+				await rebuild();
+				consola.success('Finished rebuilding custom packages.');
+			}
 		} catch (error) {
 			consola.error(error);
 		}
@@ -79,9 +85,28 @@ cli
 	.option('-i, --id <id>', 'ID of the font to verify')
 	.option('--cwd <cwd>', 'Directory to run verification in')
 	.option('--ci', 'Run in CI mode and throw errors instead of fancy prompts')
+	.option('--all', 'Verify all fonts')
 	.action(async (options) => {
 		try {
-			await verify({ font: options.id, ci: options.ci, cwd: options.cwd });
+			if (options.all) {
+				await verifyAll();
+				consola.success('All packages valid.');
+			} else {
+				await verify({ font: options.id, ci: options.ci, cwd: options.cwd });
+			}
+		} catch (error) {
+			consola.error(error);
+		}
+	});
+
+cli
+	.command('create-rebuild')
+	.option('--cwd <cwd>', 'Directory to run rebuild in')
+	.action(async (options) => {
+		try {
+			consola.info('Rebuilding custom packages...');
+			await rebuild({ cwd: options.cwd });
+			consola.success('Finished rebuilding custom packages.');
 		} catch (error) {
 			consola.error(error);
 		}
