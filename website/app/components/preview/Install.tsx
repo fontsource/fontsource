@@ -354,7 +354,13 @@ export const Install = ({
 						</Group>
 					</UnstyledButton>
 				</Group>
-				<Tabs defaultValue={variable ? 'variable' : 'static'}>
+				<Tabs defaultValue={variable ? 'variable' : 'static'} styles={(theme) => ({
+				tab: {
+					'&[data-active]': {
+						borderBottom: `${rem(2)} solid ${theme.colors.purple[0]}`,
+					},
+				},
+			})}>
 					<Tabs.List>
 						{variable && <Tabs.Tab value="variable">Variable</Tabs.Tab>}
 						<Tabs.Tab value="static">Static</Tabs.Tab>

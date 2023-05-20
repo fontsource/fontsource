@@ -22,7 +22,17 @@ export const PackageManagerCode = ({ cmd, ...props }: PackageManagerProps) => {
 	const { classes } = useStyles();
 	const language = 'sh';
 	return (
-		<Tabs defaultValue="npm" className={classes.wrapper}>
+		<Tabs
+			defaultValue="npm"
+			className={classes.wrapper}
+			styles={(theme) => ({
+				tab: {
+					'&[data-active]': {
+						borderBottom: `${rem(2)} solid ${theme.colors.purple[0]}`,
+					},
+				},
+			})}
+		>
 			<Tabs.List>
 				<Tabs.Tab value="npm">npm</Tabs.Tab>
 				<Tabs.Tab value="yarn">yarn</Tabs.Tab>
