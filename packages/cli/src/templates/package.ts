@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
+import BASE_VERSION from '../../version';
 
 import { BuildOptions, Metadata } from '../types';
 
@@ -15,11 +16,7 @@ const template = (
 	existing?: ExistingData
 ) => ({
 	name: isVariable ? `@fontsource-variable/${id}` : `@fontsource/${id}`,
-	version:
-		existing?.oldVersion ??
-		JSON.parse(
-			fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8')
-		).version,
+	version: existing?.oldVersion ?? BASE_VERSION,
 	description: `Self-host the ${family} font in a neatly bundled NPM package.`,
 	main: 'index.css',
 	publishConfig: { access: 'public' },

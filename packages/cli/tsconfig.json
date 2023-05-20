@@ -6,6 +6,7 @@
 		"scripts/**/*.ts",
 		"tests/**/*.ts",
 		"tests/**/*.json",
+		"version.ts",
 		"vitest.config.ts"
 	],
 	"exclude": [".eslintrc.cjs"],
