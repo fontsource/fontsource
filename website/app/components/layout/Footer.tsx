@@ -92,6 +92,9 @@ const FooterNavLink = ({ label, to }: FooterNavLinkProps) => {
 export const Footer = ({ ...other }: ContainerProps) => {
 	const { classes } = useStyles();
 
+	// TODO: Sponsors
+	// <FooterNavLink label="Sponsors" to="/sponsors" />
+
 	return (
 		<Box component="footer" className={classes.header} {...other}>
 			<Container className={classes.inner}>
@@ -103,7 +106,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 						<Group spacing="md" position="right">
 							<FooterNavLink label="Fonts" to="/" />
 							<FooterNavLink label="Documentation" to="/docs" />
-							<FooterNavLink label="Sponsors" to="/sponsors" />
+
 							<ThemeButton stroke="white" />
 							<Icon
 								label="GitHub"
