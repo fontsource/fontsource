@@ -1,5 +1,5 @@
 import { createXXHash64 } from 'hash-wasm';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import * as path from 'pathe';
 
 const getAllFiles = async (dir: string): Promise<string[]> => {

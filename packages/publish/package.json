@@ -6,7 +6,7 @@
 		"fontsource-publish": "./dist/cli.mjs"
 	},
 	"scripts": {
-		"build": "pkgroll --target=node14",
+		"build": "pkgroll --target=node14 && tsx ./scripts/add-hashbang.ts",
 		"dev": "pnpm run build && node ./dist/cli.mjs",
 		"lint": "eslint --fix",
 		"coverage": "vitest run --coverage",
@@ -46,6 +46,7 @@
 		"@types/parse-git-config": "^3.0.1",
 		"@types/semver": "^7.5.0",
 		"eslint": "^8.41.0",
+		"magic-string": "^0.30.0",
 		"pkgroll": "^1.9.0",
 		"tsx": "^3.12.3",
 		"typescript": "^5.0.4"
