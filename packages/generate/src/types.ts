@@ -5,7 +5,7 @@ export interface Axes {
 
 export interface Source {
 	url: string;
-	format: 'woff2' | 'woff' | 'woff2-variations';
+	format: 'woff2' | 'woff' | 'woff2-variations' | string;
 }
 
 export interface Variable {

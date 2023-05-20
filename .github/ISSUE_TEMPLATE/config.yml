@@ -1,5 +1,9 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Font Request
+    url: https://github.com/fontsource/font-files/issues
+    about: For requesting new fonts, open an issue in the font-files repository.
+
   - name: Questions
     url: https://github.com/fontsource/fontsource/discussions
     about: For general support or questions, please look here.
