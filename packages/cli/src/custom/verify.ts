@@ -6,6 +6,7 @@ import colors from 'picocolors';
 
 import { Metadata } from '../types';
 import { consola } from 'consola';
+import { getDirectories } from './utils';
 
 export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 	// Read all the filenames in the files directory
@@ -153,5 +154,26 @@ export const verify = async ({ font, ci, cwd }: VerifyProps): Promise<void> => {
 				'All checks passed! Feel free to send a PR over to the main repo adding the package to the appropriate fonts directory.'
 			)
 		);
+	}
+};
+
+export const verifyAll = async (): Promise<void> => {
+	const fontDir = './fonts/other';
+	const directories = getDirectories(fontDir);
+	let hasErrors = false;
+
+	for (const directory of directories) {
+		try {
+			await verify({ font: directory, ci: true, cwd: fontDir });
+		} catch (error) {
+			consola.warn(`Error verifying ${directory}.`);
+			consola.warn(error);
+			hasErrors = true;
+		}
+	}
+
+	if (hasErrors) {
+		consola.error('Errors found. Exiting.');
+		process.exit(1);
 	}
 };
