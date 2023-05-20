@@ -17,13 +17,13 @@ describe('get changed packages', () => {
 			{
 				name: 'package1',
 				path: 'packages/publish/tests/fixtures/package1',
-				hash: 'LLavxt/iSTPxM20Kt5HiX29qAlQ=',
+				hash: '2d7f1808da1fa63c',
 				version: '0.1.0',
 			},
 			{
 				name: 'package3',
 				path: 'packages/publish/tests/fixtures/package3diff',
-				hash: 'vf/Trotp49mYw0FcaPvFqUqPnOg=',
+				hash: 'd4a613dee558a143',
 				version: '0.3.0',
 			},
 		]);
