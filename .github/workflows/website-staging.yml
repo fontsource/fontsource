@@ -28,5 +28,5 @@ jobs:
           url: "https://staging.fontsource.org/actions/update"
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
-          data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true, "docs": true}'
+          data: '{"download": true, "axisRegistry": true, "docs": true}'
           preventFailureOnNoResponse: true
