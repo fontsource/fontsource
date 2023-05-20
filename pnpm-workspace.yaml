@@ -1,5 +1,3 @@
 packages:
-  - api
-  - scripts
-  - utils/*
+  - packages/*
   - website

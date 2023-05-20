@@ -4,7 +4,7 @@ import { getChanged } from '../src/changed';
 
 describe('get changed packages', () => {
 	const config = {
-		packages: ['./tests/fixtures/'],
+		packages: ['./packages/publish/tests/fixtures/'],
 		ignoreExtension: [],
 		commitMessage: 'chore: release new versions',
 	};
@@ -16,13 +16,13 @@ describe('get changed packages', () => {
 		expect(packages).toEqual([
 			{
 				name: 'package1',
-				path: 'tests/fixtures/package1',
+				path: 'packages/publish/tests/fixtures/package1',
 				hash: 'LLavxt/iSTPxM20Kt5HiX29qAlQ=',
 				version: '0.1.0',
 			},
 			{
 				name: 'package3',
-				path: 'tests/fixtures/package3diff',
+				path: 'packages/publish/tests/fixtures/package3diff',
 				hash: 'vf/Trotp49mYw0FcaPvFqUqPnOg=',
 				version: '0.3.0',
 			},
