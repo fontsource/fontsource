@@ -1,9 +1,0 @@
-/* scheherazade-arabic-400-normal*/
-@font-face {
-  font-family: 'Scheherazade';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url('./files/scheherazade-arabic-400-normal.woff2') format('woff2'), url('./files/scheherazade-arabic-400-normal.woff') format('woff');
-  
-}
