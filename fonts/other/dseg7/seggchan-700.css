@@ -1,9 +1,0 @@
-/* dseg7-seggchan-700-normal*/
-@font-face {
-  font-family: 'DSEG7';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url('./files/dseg7-seggchan-700-normal.woff2') format('woff2'), url('./files/dseg7-seggchan-700-normal.woff') format('woff');
-  
-}
