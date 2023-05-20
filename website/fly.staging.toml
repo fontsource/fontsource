@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for fontsource on 2023-05-20T03:14:10+01:00
+# fly.toml app configuration file generated for fontsource-staging on 2023-05-20T03:28:40+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "fontsource"
+app = "fontsource-staging"
 primary_region = "nrt"
 kill_signal = "SIGINT"
 kill_timeout = "5s"
@@ -12,9 +12,8 @@ kill_timeout = "5s"
   auto_rollback = true
   enable_consul = true
 
-[[mounts]]
-  source = "litefs"
-  destination = "/var/lib/litefs"
+[env]
+  PRIMARY_REGION = "nrt"
 
 [[services]]
   protocol = "tcp"
@@ -46,5 +45,5 @@ kill_timeout = "5s"
     grace_period = "15s"
     restart_limit = 0
     method = "get"
-    path = "/docs/getting-started/introduction" # Don't hit main route as that burns algolia quota
+    path = "/docs/getting-started/introduction"
     protocol = "http"
