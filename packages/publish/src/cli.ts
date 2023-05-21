@@ -52,7 +52,6 @@ cli
 	)
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
-	.option('--no-verify', 'Skip version verification')
 	.action(async (version: string, opts: BumpFlags) => {
 		try {
 			await bump(version, opts);
