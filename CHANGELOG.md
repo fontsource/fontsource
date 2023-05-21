@@ -62,6 +62,12 @@ body {
 - Include subset specific italic files. [#289](https://github.com/fontsource/fontsource/issues/289)
 - Variable fonts now support numbered subsets. [#548](https://github.com/fontsource/fontsource/issues/548)
 
+### Documentation
+
+Brand new website has been [released](https://fontsource.org/)! Please note that it is very rough around the edges and we would appreciate PRs to help improve it! [#558](https://github.com/fontsource/fontsource/issues/558)
+
+Huge shoutout to [jsDelivr](https://www.jsdelivr.com/) for sponsoring the design for the new website and [Fly.io](https://fly.io/) for sponsoring the hosting!
+
 # 4.x Release
 
 ## 4.5.x
@@ -100,10 +106,6 @@ body {
 ### Fixes
 
 - Update dependencies. [#187](https://github.com/fontsource/fontsource/pull/187)
-
-### Documentation
-
-Brand new website has been [released](https://fontsource.org/)! Please note that it is very rough around the edges and we would appreciate PRs to help improve it! [#558](https://github.com/fontsource/fontsource/issues/558)
 
 ### Documentation
 

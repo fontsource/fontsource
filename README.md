@@ -5,22 +5,18 @@
 An updating monorepo full of self-hostable Open Source fonts bundled into individual NPM packages!
 
 Our full documentation and search directory can be found [here](https://fontsource.org/).
-[https://fontsource.org/](https://fontsource.org/)
-
-Alternatively, you can see the list of supported fonts in Markdown format [here](https://github.com/fontsource/fontsource/blob/main/FONTLIST.md).
 
 ##
 
-- Self-hosting brings **significant performance gains** as loading fonts from hosted services, such as Google Fonts, lead to an extra (render blocking) network request. To provide perspective, for simple websites it has been seen to _double_ visual load times.
-  Benchmarks can be found [here](https://github.com/HTTPArchive/almanac.httparchive.org/pull/607) and [here](https://github.com/reactiflux/reactiflux.com/pull/21).
+- Self-hosting fonts can **significantly improve website performance** by eliminating the extra latency caused by additional DNS resolution and TCP connection establishment that is required when using a CDN like Google Fonts. This can help to prevent doubled visual load times for simple websites, as benchmarked [here](https://github.com/HTTPArchive/almanac.httparchive.org/pull/607) and [here](https://github.com/reactiflux/reactiflux.com/pull/21).
 
 - Fonts remain **version locked**. Google often pushes updates to their fonts [without notice](https://github.com/google/fonts/issues/1307), which may interfere with your live production projects. Manage your fonts like any other NPM dependency.
 
 - Commit to **privacy**. Google does track the usage of their fonts and for those who are extremely privacy concerned, self-hosting is an alternative.
 
-- Your **fonts load offline**. On top of benefiting PWAs, often there may be situations, like working in an airplane or train, leaving you stranded without access to your online hosted fonts. Have the ability to keep working under any circumstance.
+- Your **fonts load offline**. This feature is beneficial for Progressive Web Apps and situations where you have limited or no access to the internet.
 
-- **Support for fonts outside the Google Font ecosystem**. This repository is constantly evolving with [other Open Source fonts](https://github.com/fontsource/fontsource/blob/main/FONTLIST.md). Feel free to contribute!
+- **Support for fonts outside the Google Font ecosystem**. This repository is constantly evolving with [other Open Source fonts](https://github.com/fontsource/fontsource/blob/master/FONTLIST.md). Feel free to contribute!
 
 ## API
 
@@ -47,15 +43,3 @@ You can find their specific licenses on each package `README.md`.
 ## Other Notes
 
 Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/fontsource/fontsource/issues).
-
-## Community Sponsors
-
-<p align="center" width="100%">
-  <a href="https://vercel.com/?utm_source=fontsource&utm_campaign=oss">
-    <img width="33%" src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg">
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://www.jsdelivr.com/">
-    <img width="33%" src="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg">
-  </a>
-</p>

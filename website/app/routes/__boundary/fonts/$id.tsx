@@ -6,7 +6,8 @@ import {
 	rem,
 	Tabs,
 	Title,
-	useMantineTheme} from '@mantine/core';
+	useMantineTheme,
+} from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
@@ -83,6 +84,10 @@ const useStyles = createStyles((theme) => ({
 		borderRadius: rem(4),
 		fontFamily: theme.fontFamilyMonospace,
 		textTransform: 'lowercase',
+
+		[theme.fn.smallerThan('md')]: {
+			display: 'none',
+		},
 	},
 
 	downloadButton: {
@@ -103,6 +108,10 @@ const useStyles = createStyles((theme) => ({
 		'&:hover': {
 			backgroundColor: theme.fn.rgba(theme.colors.purple[0], 0.1),
 			color: theme.colors.purple[0],
+		},
+
+		[theme.fn.smallerThan('sm')]: {
+			display: 'none',
 		},
 	},
 }));
@@ -173,19 +182,34 @@ export default function Font() {
 						className={classes.downloadButton}
 						ref={ref}
 					>
-						<IconDownload height={19} stroke={hovered ? theme.colors.purple[0] : theme.colorScheme === 'dark'
-							? theme.colors.text[0]
-							: theme.colors.text[1]} />
+						<IconDownload
+							height={19}
+							stroke={
+								hovered
+									? theme.colors.purple[0]
+									: theme.colorScheme === 'dark'
+									? theme.colors.text[0]
+									: theme.colors.text[1]
+							}
+						/>
 						Download
 					</a>
 				</Tabs.List>
 			</ContentHeader>
 			<Tabs.Panel value="preview">
 				<Grid className={classes.wrapperPreview}>
-					<Grid.Col span={8}>
+					<Grid.Col span={12} md={8}>
 						<TextArea metadata={metadata} previewText={defSubsetText} />
 					</Grid.Col>
-					<Grid.Col span={4}>
+					<Grid.Col
+						span={12}
+						md={4}
+						sx={(theme) => ({
+							[theme.fn.smallerThan('md')]: {
+								display: 'none',
+							},
+						})}
+					>
 						<Configure
 							metadata={metadata}
 							variable={variable}

@@ -32,7 +32,8 @@ export default function Docs() {
 				<Grid>
 					<Grid.Col
 						span={0}
-						sm={3}
+						sm={4}
+						md={3}
 						sx={(theme) => ({
 							[theme.fn.smallerThan('sm')]: {
 								display: 'none',
@@ -41,7 +42,7 @@ export default function Docs() {
 					>
 						<LeftSidebar />
 					</Grid.Col>
-					<Grid.Col span={12} sm={9} xl={6}>
+					<Grid.Col span={12} sm={8} md={9} xl={6}>
 						<Container>
 							<Outlet context={mdxComponents} />
 						</Container>

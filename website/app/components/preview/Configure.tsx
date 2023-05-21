@@ -63,7 +63,9 @@ const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 	return (
 		<ScrollArea.Autosize mah="50vh" className={classes.scrollWrapper}>
 			<Flex gap="xs" className={classes.wrapper}>
-				<Text className={classes.title} mb={4}>Settings</Text>
+				<Text className={classes.title} mb={4}>
+					Settings
+				</Text>
 				<NormalButtonsGroup
 					subsets={metadata.subsets}
 					hasItalic={metadata.styles.includes('italic')}

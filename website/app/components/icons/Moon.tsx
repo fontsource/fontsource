@@ -4,10 +4,11 @@ import type { IconProps } from './types';
 
 const IconMoon = ({ height, stroke, ...others }: IconProps) => {
 	const theme = useMantineTheme();
-	const strokeNew =
-		stroke ?? theme.colorScheme === 'dark'
-			? theme.colors.text[0]
-			: theme.colors.text[1];
+	const strokeNew = stroke
+		? stroke
+		: theme.colorScheme === 'dark'
+		? theme.colors.text[0]
+		: theme.colors.text[1];
 
 	return (
 		<svg
