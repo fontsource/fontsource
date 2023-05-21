@@ -3,7 +3,7 @@ import type { Metadata } from '../types';
 const variableText = () => `## Variable Fonts
 
 This particular typeface supports [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide).
-Variable documentation can be found [here](https://fontsource.org/docs/variable-fonts).\n\n`;
+Variable documentation can be found [here](https://fontsource.org/docs/getting-started/variable).\n\n`;
 
 const readme = (
 	{
@@ -25,7 +25,7 @@ The CSS and web font files to easily self-host the “${family}” font. Please 
 
 ## Quick Installation
 
-Fontsource has a variety of methods to import CSS, such as using a bundler like Webpack. Alternatively, it supports SASS. Full documentation can be found [here](https://beta.fontsource.org/docs/getting-started/introduction).
+Fontsource has a variety of methods to import CSS, such as using a bundler like Webpack. Alternatively, it supports SASS. Full documentation can be found [here](https://fontsource.org/docs/getting-started/introduction).
 
 \`\`\`javascript
 npm install ${isVariable ? `@fontsource-variable/${id}` : `@fontsource/${id}`}
