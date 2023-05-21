@@ -5,6 +5,7 @@ import PQueue from 'p-queue';
 import pacote from 'pacote';
 import path from 'pathe';
 import colors from 'picocolors';
+import fs from 'fs-extra';
 
 import { bumpPackages } from './bump';
 import { getChanged } from './changed';
@@ -16,8 +17,9 @@ import {
 	gitPush,
 	gitRemoteAdd,
 } from './git';
-import type { BumpObject, PublishFlags } from './types';
+import type { BumpObject, PackageJson, PublishFlags } from './types';
 import { mergeFlags } from './utils';
+import stringify from 'json-stringify-pretty-compact';
 
 const checkEnv = async () => {
 	dotenv.config();
@@ -30,6 +32,14 @@ const checkEnv = async () => {
 	if (!process.env.NPM_TOKEN) {
 		throw new Error('Missing NPM access token! (NPM_TOKEN)');
 	}
+};
+
+export const writeUpdate = async (pkg: BumpObject): Promise<void> => {
+	const pkgPath = path.join(pkg.path, 'package.json');
+	const pkgJson: PackageJson = await fs.readJson(pkgPath);
+	pkgJson.version = pkg.bumpVersion;
+	pkgJson.publishHash = pkg.hash;
+	await fs.writeFile(pkgPath, stringify(pkgJson));
 };
 
 interface PublishObject extends BumpObject {
@@ -51,6 +61,7 @@ const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 			npmVersion,
 			token,
 		});
+		await writeUpdate(pkg);
 		consola.success(`Successfully published ${colors.green(npmVersion)}!`);
 	} catch (error) {
 		const newPkg = { ...pkg, error };
@@ -77,7 +88,7 @@ export const publishPackages = async (
 
 	const config = await mergeFlags(options);
 	const diff = await getChanged(config);
-	const bumped = await bumpPackages(diff, config, version);
+	const bumped = await bumpPackages(diff, version);
 
 	// Collect errored out packages
 	const publishArr = [];
