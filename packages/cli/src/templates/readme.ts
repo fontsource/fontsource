@@ -25,7 +25,7 @@ The CSS and web font files to easily self-host the “${family}” font. Please 
 
 ## Quick Installation
 
-Fontsource has a variety of methods to import CSS, such as using a bundler like Webpack. Alternatively, it supports SASS. Full documentation can be found [here](https://fontsource.org/docs/introduction).
+Fontsource has a variety of methods to import CSS, such as using a bundler like Webpack. Alternatively, it supports SASS. Full documentation can be found [here](https://beta.fontsource.org/docs/getting-started/introduction).
 
 \`\`\`javascript
 npm install ${isVariable ? `@fontsource-variable/${id}` : `@fontsource/${id}`}
@@ -50,7 +50,11 @@ Supported variables:
 - Weights: \`[${weights}]\`
 - Styles: \`[${styles}]\`
 - Subsets: \`[${subsets}]\`${
-	isVariable ? `\n- Axes: \`[${Object.keys(variable).filter(axis => axis !== 'ital')}]\`` : ''
+	isVariable
+		? `\n- Axes: \`[${Object.keys(variable).filter(
+				(axis) => axis !== 'ital'
+		  )}]\``
+		: ''
 }
 
 Finally, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
