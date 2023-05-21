@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/publish",
-	"version": "0.1.6",
+	"version": "0.2.0",
 	"description": "Fontsource Publish CLI",
 	"bin": {
 		"fontsource-publish": "./dist/cli.mjs"
@@ -18,7 +18,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@clack/prompts": "^0.6.0",
-		"@npmcli/package-json": "^3.0.0",
+		"@npmcli/package-json": "^3.1.0",
 		"cac": "^6.7.14",
 		"consola": "^3.1.0",
 		"defu": "^6.1.2",
@@ -27,9 +27,7 @@
 		"fs-extra": "^11.1.0",
 		"hash-wasm": "^4.9.0",
 		"json-stringify-pretty-compact": "^4.0.0",
-		"libnpmpublish": "4",
 		"p-queue": "^7.3.4",
-		"pacote": "11",
 		"parse-git-config": "^3.0.0",
 		"pathe": "^1.1.0",
 		"picocolors": "^1.0.0",
@@ -39,9 +37,7 @@
 		"@ayuhito/eslint-config": "^0.2.4",
 		"@types/folder-hash": "^4.0.2",
 		"@types/fs-extra": "^11.0.1",
-		"@types/libnpmpublish": "^4.0.3",
 		"@types/node": "^20.2.1",
-		"@types/pacote": "^11.1.5",
 		"@types/parse-git-config": "^3.0.1",
 		"@types/semver": "^7.5.0",
 		"eslint": "^8.41.0",

@@ -1,8 +1,6 @@
 import { consola } from 'consola';
 import * as dotenv from 'dotenv';
-import { publish } from 'libnpmpublish';
 import PQueue from 'p-queue';
-import pacote from 'pacote';
 import path from 'pathe';
 import colors from 'picocolors';
 import fs from 'fs-extra';
@@ -20,6 +18,8 @@ import {
 import type { BumpObject, PackageJson, PublishFlags } from './types';
 import { mergeFlags } from './utils';
 import stringify from 'json-stringify-pretty-compact';
+import { confirm, isCancel } from '@clack/prompts';
+import { execa } from 'execa';
 
 const checkEnv = async () => {
 	dotenv.config();
@@ -48,30 +48,22 @@ interface PublishObject extends BumpObject {
 
 const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
-	const packageManifest = await pacote.manifest(
-		path.join(process.cwd(), pkg.path)
-	);
-	const tarData = await pacote.tarball(path.join(process.cwd(), pkg.path));
-	const token = process.env.NPM_TOKEN;
-
+	const publishFlags = ['--access', 'public', '--tag', 'latest'];
 	try {
-		// @ts-ignore - libnpmpublish types are incorrect (probably)
-		await publish(packageManifest, tarData, {
-			access: 'public',
-			npmVersion,
-			token,
+		await execa('npm', ['publish', ...publishFlags], {
+			cwd: pkg.path,
 		});
 		await writeUpdate(pkg);
-		consola.success(`Successfully published ${colors.green(npmVersion)}!`);
 	} catch (error) {
-		const newPkg = { ...pkg, error };
-		return newPkg;
+		consola.error(`Failed to publish ${npmVersion}!`);
+		throw error;
 	}
 
+	consola.success(`Successfully published ${colors.green(npmVersion)}!`);
 	return undefined;
 };
 
-const queue = new PQueue({ concurrency: 6 });
+const queue = new PQueue({ concurrency: 8 });
 
 export const publishPackages = async (
 	version: string,
@@ -89,6 +81,19 @@ export const publishPackages = async (
 	const config = await mergeFlags(options);
 	const diff = await getChanged(config);
 	const bumped = await bumpPackages(diff, version);
+	if (!config.yes) {
+		const yes = await confirm({ message: `Publish packages?` });
+		if (!yes || isCancel(yes)) {
+			throw new Error('Bump cancelled.');
+		}
+	}
+
+	// Setup .npmrc
+	const npmrc = path.join(process.cwd(), '.npmrc');
+	await fs.writeFile(
+		npmrc,
+		`//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}`
+	);
 
 	// Collect errored out packages
 	const publishArr = [];
@@ -100,29 +105,23 @@ export const publishPackages = async (
 		}
 	}
 
-	const finishedPublish = await Promise.all(publishArr);
-	const errArray = finishedPublish.filter(
-		(pkg) => pkg !== undefined
-	) as PublishObject[];
+	await Promise.all(publishArr);
 
-	// Write updated package.json files
-	if (version !== 'from-package') {
-		// Stage all files
-		await gitAdd();
+	// Cleanup .npmrc
+	await fs.remove(npmrc);
 
-		// Commit changes
-		const commitMessage = getCommitMessage(config, bumped);
-		await gitCommit(commitMessage);
+	// Stage all files
+	await gitAdd();
 
-		// Push changes
-		await gitRemoteAdd(name);
-		await gitPush();
-	}
-	if (errArray.length > 0) {
-		consola.error('The following packages failed to publish:');
-		for (const pkg of errArray) {
-			consola.error(`${pkg.name}@${pkg.bumpVersion}: ${pkg.error}`);
-		}
-		throw new Error('Failed to publish packages!');
-	}
+	// Commit changes
+	const commitMessage = getCommitMessage(config, bumped);
+	await gitCommit(commitMessage);
+
+	// Push changes
+	await gitRemoteAdd(name);
+	await gitPush();
 };
+
+queue.on('error', (error) => {
+	throw error;
+});
