@@ -27,6 +27,8 @@ import { Code } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import type { Metadata, VariableData } from '@/utils/types';
 
+import { CarbonAd } from '../CarbonAd';
+
 const useStyles = createStyles((theme) => ({
 	wrapper: {
 		maxWidth: '1440px',
@@ -442,6 +444,7 @@ export const Install = ({
 						</Group>
 					</Stack>
 				</div>
+				<CarbonAd w={332} />
 			</Grid.Col>
 		</Grid>
 	);
