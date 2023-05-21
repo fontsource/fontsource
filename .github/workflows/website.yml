@@ -25,7 +25,7 @@ jobs:
       - name: Trigger DB updates
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://beta.fontsource.org/actions/update"
+          url: "https://fontsource.org/actions/update"
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
           data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true, "docs": true}'
