@@ -34,11 +34,19 @@ const checkEnv = async () => {
 	}
 };
 
-export const writeUpdate = async (pkg: BumpObject): Promise<void> => {
+interface WriteOptions {
+	version?: boolean;
+	hash?: boolean;
+}
+
+export const writeUpdate = async (
+	pkg: BumpObject,
+	opts: WriteOptions
+): Promise<void> => {
 	const pkgPath = path.join(pkg.path, 'package.json');
 	const pkgJson: PackageJson = await fs.readJson(pkgPath);
-	pkgJson.version = pkg.bumpVersion;
-	pkgJson.publishHash = pkg.hash;
+	if (opts.version) pkgJson.version = pkg.bumpVersion;
+	if (opts.hash) pkgJson.publishHash = pkg.hash;
 	await fs.writeFile(pkgPath, stringify(pkgJson));
 };
 
@@ -50,10 +58,11 @@ const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
 	const publishFlags = ['--access', 'public', '--tag', 'latest'];
 	try {
+		await writeUpdate(pkg, { version: true });
 		await execa('npm', ['publish', ...publishFlags], {
 			cwd: pkg.path,
 		});
-		await writeUpdate(pkg);
+		await writeUpdate(pkg, { hash: true });
 	} catch (error) {
 		consola.error(`Failed to publish ${npmVersion}!`);
 		throw error;
