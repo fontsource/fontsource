@@ -71,3 +71,4 @@ api/dist
 dist
 .npmrc
 *.tsbuildinfo
+.npmrc
