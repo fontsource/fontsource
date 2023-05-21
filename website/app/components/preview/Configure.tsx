@@ -12,6 +12,7 @@ import {
 import { IconRotate } from '@/components/icons';
 import type { AxisRegistry, Metadata, VariableData } from '@/utils/types';
 
+import { CarbonAd } from '../CarbonAd';
 import { NormalButtonsGroup } from './Buttons';
 import { previewState, variableState } from './observables';
 import { VariableButtonsGroup } from './VariableButtons';
@@ -61,32 +62,35 @@ const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 	};
 
 	return (
-		<ScrollArea.Autosize mah="50vh" className={classes.scrollWrapper}>
-			<Flex gap="xs" className={classes.wrapper}>
-				<Text className={classes.title} mb={4}>
-					Settings
-				</Text>
-				<NormalButtonsGroup
-					subsets={metadata.subsets}
-					hasItalic={metadata.styles.includes('italic')}
-				/>
-				{metadata.variable && (
-					<>
-						<Divider mt="sm" />
-						<Group position="apart">
-							<Text className={classes.title}>Variable Axes</Text>
-							<ActionIcon onClick={resetVariation}>
-								<IconRotate />
-							</ActionIcon>
-						</Group>
-						<VariableButtonsGroup
-							variable={variable}
-							axisRegistry={axisRegistry}
-						/>
-					</>
-				)}
-			</Flex>
-		</ScrollArea.Autosize>
+		<>
+			<ScrollArea.Autosize mah="50vh" className={classes.scrollWrapper}>
+				<Flex gap="xs" className={classes.wrapper}>
+					<Text className={classes.title} mb={4}>
+						Settings
+					</Text>
+					<NormalButtonsGroup
+						subsets={metadata.subsets}
+						hasItalic={metadata.styles.includes('italic')}
+					/>
+					{metadata.variable && (
+						<>
+							<Divider mt="sm" />
+							<Group position="apart">
+								<Text className={classes.title}>Variable Axes</Text>
+								<ActionIcon onClick={resetVariation}>
+									<IconRotate />
+								</ActionIcon>
+							</Group>
+							<VariableButtonsGroup
+								variable={variable}
+								axisRegistry={axisRegistry}
+							/>
+						</>
+					)}
+				</Flex>
+			</ScrollArea.Autosize>
+			<CarbonAd w={332} />
+		</>
 	);
 };
 

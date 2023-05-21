@@ -52,9 +52,9 @@ const DocsSearchBar = ({ ...others }: TextInputProps) => {
 export const DocsHeader = () => {
 	return (
 		<ContentHeader>
-			<Title order={1} color="purple">
+			<Title order={1} color="purple.0">
 				Documentation
 			</Title>
 		</ContentHeader>
-	)
-}
+	);
+};

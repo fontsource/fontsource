@@ -1,8 +1,9 @@
-import type { TextProps} from '@mantine/core';
+import type { TextProps } from '@mantine/core';
 import { Box, createStyles, rem, Text, UnstyledButton } from '@mantine/core';
 import { Link, useParams } from '@remix-run/react';
 import { useState } from 'react';
 
+import { CarbonAd } from '@/components/CarbonAd';
 import type { HeadingsData } from '@/hooks/useHeadingsData';
 import { useHeadingsData } from '@/hooks/useHeadingsData';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
@@ -43,18 +44,27 @@ const HeadingItem = (heading: HeadingItemProps) => {
 				sx={(theme) => ({
 					borderLeft: isActive
 						? `${rem(1)} solid ${theme.colors.purple[0]}`
-						: theme.colorScheme === 'dark' ? `${rem(1)} solid ${theme.colors.border[1]}` : `${rem(1)} solid ${theme.colors.border[0]}`,
+						: theme.colorScheme === 'dark'
+						? `${rem(1)} solid ${theme.colors.border[1]}`
+						: `${rem(1)} solid ${theme.colors.border[0]}`,
 				})}
 			>
 				<UnstyledButton key={heading.id} component={Link} to={`#${heading.id}`}>
-					<Text fz={15} fw={isActive ? 700 : 400} pl={heading.pl ?? 16} py={4}>{heading.title}</Text>
+					<Text fz={15} fw={isActive ? 700 : 400} pl={heading.pl ?? 16} py={4}>
+						{heading.title}
+					</Text>
 				</UnstyledButton>
 			</Box>
 			<div className={classes.nestedWrapper}>
 				{heading.items &&
 					heading.items.length > 0 &&
 					heading.items.map((child) => (
-						<HeadingItem key={child.id} active={heading.active} pl={32} {...child} />
+						<HeadingItem
+							key={child.id}
+							active={heading.active}
+							pl={32}
+							{...child}
+						/>
 					))}
 			</div>
 		</>
@@ -80,6 +90,7 @@ export const TableOfContents = () => {
 					<HeadingItem key={heading.id} active={activeId} {...heading} />
 				))}
 			</div>
+			<CarbonAd />
 		</nav>
 	);
 };
