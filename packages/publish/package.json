@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/publish",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "Fontsource Publish CLI",
 	"bin": {
 		"fontsource-publish": "./dist/cli.mjs"
@@ -27,7 +27,6 @@
 		"fs-extra": "^11.1.0",
 		"hash-wasm": "^4.9.0",
 		"json-stringify-pretty-compact": "^4.0.0",
-		"latest-version": "^7.0.0",
 		"libnpmpublish": "4",
 		"p-queue": "^7.3.4",
 		"pacote": "11",
