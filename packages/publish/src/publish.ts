@@ -20,6 +20,7 @@ import {
 import type { BumpObject, PackageJson, PublishFlags } from './types';
 import { mergeFlags } from './utils';
 import stringify from 'json-stringify-pretty-compact';
+import { confirm, isCancel } from '@clack/prompts';
 
 const checkEnv = async () => {
 	dotenv.config();
@@ -64,14 +65,14 @@ const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 		await writeUpdate(pkg);
 		consola.success(`Successfully published ${colors.green(npmVersion)}!`);
 	} catch (error) {
-		const newPkg = { ...pkg, error };
-		return newPkg;
+		consola.error(`Failed to publish ${npmVersion}!`, error);
+		return { ...pkg, error };
 	}
 
 	return undefined;
 };
 
-const queue = new PQueue({ concurrency: 6 });
+const queue = new PQueue({ concurrency: 2 });
 
 export const publishPackages = async (
 	version: string,
@@ -89,6 +90,12 @@ export const publishPackages = async (
 	const config = await mergeFlags(options);
 	const diff = await getChanged(config);
 	const bumped = await bumpPackages(diff, version);
+	if (!config.yes) {
+		const yes = await confirm({ message: `Publish packages?` });
+		if (!yes || isCancel(yes)) {
+			throw new Error('Bump cancelled.');
+		}
+	}
 
 	// Collect errored out packages
 	const publishArr = [];
