@@ -36,8 +36,8 @@ describe('sass mixins', () => {
 		expect(
 			compileSass(
 				sassMetadata(
-					mockSassMetadata.carlito.metadata as Metadata,
-					mockSassMetadata.carlito.unicode,
+					mockSassMetadata.notoSansJp.metadata as Metadata,
+					mockSassMetadata.notoSansJp.unicode,
 					false
 				)
 			)
@@ -48,9 +48,9 @@ describe('sass mixins', () => {
 		expect(
 			compileSass(
 				sassMetadata(
-					mockSassMetadata.carlito.metadata as Metadata,
-					mockSassMetadata.carlito.unicode,
-					false
+					mockSassMetadata.recursive.metadata as Metadata,
+					mockSassMetadata.recursive.unicode,
+					true
 				)
 			)
 		).toMatchSnapshot();
