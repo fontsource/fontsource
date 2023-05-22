@@ -30,7 +30,7 @@ jobs:
         run: pnpm install
 
       - name: Create Release Pull Request or Publish to npm
-        id: changesets
+        id: cs
         uses: changesets/action@v1
         with:
           version: "pnpm run ci:version"
@@ -42,7 +42,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Dispatch Dependency Update PR to font-files
-        if: steps.changesets.outputs.published == 'true'
+        if: steps.cs.outputs.published
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
