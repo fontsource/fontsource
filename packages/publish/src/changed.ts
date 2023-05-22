@@ -16,7 +16,7 @@ const getChanged = async (ctx: Context) => {
 	const handleHash = async (packagePath: string, packageJson: PackageJson) => {
 		// Get hash of current package and compare with old hash
 		const hash = await getHash(packagePath);
-		if (packageJson.publishHash !== hash || ctx.forcePublish) {
+		if (packageJson.publishHash !== hash || ctx.force) {
 			changedList.push({
 				name: packageJson.name,
 				hash,
