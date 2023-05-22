@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.6
+
+### Patch Changes
+
+- [#700](https://github.com/fontsource/fontsource/pull/700) [`b23bb3b5`](https://github.com/fontsource/fontsource/commit/b23bb3b5ec64fd7727a44777baaf262cf9d30589) Thanks [@ayuhito](https://github.com/ayuhito)! - When using the force flag, the stored publish hash was removed. This PR stores the hash even when force rebuilding.
+
 ## 0.3.5
 
 ### Patch Changes
