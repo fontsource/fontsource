@@ -15,7 +15,7 @@ export interface Context {
 	updateMessage?: string;
 	git?: Git;
 	noVerify?: boolean;
-	forcePublish?: boolean;
+	force?: boolean;
 	yes?: boolean;
 }
 
