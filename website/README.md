@@ -1,13 +1,17 @@
-## Getting Started
+# Welcome to Remix!
 
-This is a [Next.js](https://nextjs.org/) project.
+- [Remix Docs](https://remix.run/docs)
 
-First, run the development server:
+## Setup
 
-```bash
-pnpm run dev:watch
-```
+- `pnpm install`
+- `pnpm migrations`
+- `pnpm dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy
 
-More documentation will be written at a later date.
+- `fly deploy --remote-only`
+
+#### Production Settings
+
+- `fly scale count 3 --region lhr,sjc,nrt --max-per-region 1`

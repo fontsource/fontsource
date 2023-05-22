@@ -12,6 +12,62 @@ These occur when an automatic update is pushed from a source, such as Google, or
 
 These will always contain changes from Fontsource's end.
 
+# 5.x Release
+
+## 5.0.x
+
+For a full migration guide, please visit the [documentation](https://fontsource.org/docs/getting-started/migrate-v5).
+
+### BREAKING CHANGES
+
+- Variable fonts are now split into separate packages. [#589](https://github.com/fontsource/fontsource/issues/589)
+
+```js
+// Before
+import "@fontsource/roboto-flex/variable.css";
+
+// After
+import "@fontsource-variable/roboto-flex";
+```
+
+- Variable font family names have been corrected. [#385](https://github.com/fontsource/fontsource/issues/385)
+
+```css
+// Before
+body {
+    font-family: "Roboto FlexVariable", sans-serif;
+}
+
+// After
+body {
+    font-family: "Roboto Flex Variable", sans-serif;
+}
+```
+
+- Renamed variable font files to remove `wghtOnly` suffix. [#388](https://github.com/fontsource/fontsource/issues/388)
+- Full Sass integration rewrite. [#153](https://github.com/fontsource/fontsource/issues/153) [#356](https://github.com/fontsource/fontsource/issues/356) [#419](https://github.com/fontsource/fontsource/issues/419) [#492](https://github.com/fontsource/fontsource/issues/492) [#519](https://github.com/fontsource/fontsource/issues/519)
+- Remove custom icon classes from Material Icons.  [#532](https://github.com/fontsource/fontsource/issues/532)
+- Rename `@fontsource/material-icons-rounded` to `@fontsource/material-icons-round`. [#363](https://github.com/fontsource/fontsource/issues/363)
+- Add new license metadata that changes the license property in `metadata.json`. [#156](https://github.com/fontsource/fontsource/issues/156)
+
+### Features
+
+- Customizable `font-display` property using CSS variables. [#121](https://github.com/fontsource/fontsource/issues/121)
+- Include `LICENSE` file in each package. [#156](https://github.com/fontsource/fontsource/issues/156)
+- The entire project has been moved into a CLI tool. [#562](https://github.com/fontsource/fontsource/issues/562)
+- Rewrite custom packager to be included into the CLI. [#501](https://github.com/fontsource/fontsource/issues/501)
+
+### Fixes
+
+- Include subset specific italic files. [#289](https://github.com/fontsource/fontsource/issues/289)
+- Variable fonts now support numbered subsets. [#548](https://github.com/fontsource/fontsource/issues/548)
+
+### Documentation
+
+Brand new website has been [released](https://fontsource.org/)! Please note that it is very rough around the edges and we would appreciate PRs to help improve it! [#558](https://github.com/fontsource/fontsource/issues/558)
+
+Huge shoutout to [jsDelivr](https://www.jsdelivr.com/) for sponsoring the design for the new website and [Fly.io](https://fly.io/) for sponsoring the hosting!
+
 # 4.x Release
 
 ## 4.5.x

@@ -11,7 +11,6 @@ Thanks for supporting Fontsource!
     - [Submitting a Pull Request (PR)](#submitting-a-pull-request-pr)
   - [Development](#development)
     - [Useful Scripts](#useful-scripts)
-    - [Packager Development](#packager-development)
     - [Website Development](#website-development)
   - [Submit Documentation](#submit-documentation)
 
@@ -42,16 +41,19 @@ You can file issues by filling out an [issue form](https://github.com/fontsource
 
 4. Create your patch or feature addition, **including appropriate test cases in the tests directory**.
 5. Ensure all tests and lints pass.
-6. On GitHub, send a pull request to fontsource:main.
+6. Create a Changeset using `pnpm exec changeset` and follow the prompts.
+7. On GitHub, send a pull request to fontsource:main.
    - If we suggest changes then:
      - Make the required updates.
      - Re-run the test suites to ensure tests are still passing.
      - Rebase your branch and force push to your GitHub repository (this will update your PR):
+
      ```shell
      git rebase main -i
      git push -f
      ```
-7. After your pull request is merged, you can safely delete your branch and pull changes from the main repository.
+
+8. After your pull request is merged, you can safely delete your branch and pull changes from the main repository.
 
 ## Development
 
@@ -85,14 +87,6 @@ The project uses PNPM Workspaces, thus the packager, API and website should inst
 ### Useful Scripts
 
 - `pnpm run test` - Runs tests.
-- `pnpm run format` - Runs Prettier and dprint across the repository.
-- `pnpm run format:scripts` - Runs Prettier only over the `scripts` directory.
-- `pnpm run format:fonts` - Runs dprint on the `fonts` directory.
-- `pnpm run lint` - Runs ESLint over the `scripts` directory.
-
-### Packager Development
-
-More details can be found in the [README.md](https://github.com/fontsource/fontsource/tree/main/scripts#readme) of the `scripts` directory.
 
 ### Website Development
 

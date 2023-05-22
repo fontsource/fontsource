@@ -2,13 +2,13 @@ name: Packager Tests
 on:
   pull_request:
     branches: [main]
-    paths-ignore:
-      - "website/**"
+    paths:
+      - "packages/**"
 
   push:
     branches: [main]
-    paths-ignore:
-      - "website/**"
+    paths:
+      - "packages/**"
 
 jobs:
   build:
@@ -16,27 +16,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: "0"
 
       - name: Enable PNPM
         uses: pnpm/action-setup@v2
 
-      - name: Set node version to 16
+      - name: Set node version to 20
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "20"
           cache: "pnpm"
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Run lints
         run: pnpm run lint
 
       - name: Run tests
-        run: pnpm run test
-
-      - uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+        run: pnpm run test:ci

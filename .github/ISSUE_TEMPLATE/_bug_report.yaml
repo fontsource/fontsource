@@ -37,7 +37,7 @@ body:
     id: version
     attributes:
       label: Version
-      placeholder: 4.5.0
+      placeholder: 5.0.0
   - type: input
     id: os
     attributes:
