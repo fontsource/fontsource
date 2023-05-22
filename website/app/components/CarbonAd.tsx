@@ -46,6 +46,10 @@ const useStyles = createStyles((theme) => ({
 			fontWeight: 600,
 			letterSpacing: 0.5,
 		},
+
+		[theme.fn.smallerThan('md')]: {
+			display: 'none',
+		},
 	},
 }));
 
