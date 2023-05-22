@@ -60,7 +60,8 @@ const generateLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 	const fontV2 = APIv2[id];
 
 	// Parses variants into readable pairs of data
-	let downloadURLPairsV1 = pairGenerator(fontV1.variants);
+	// If noSubset is true, we can skip parsing V1 variants
+	let downloadURLPairsV1 = opts.noSubset ? [] : pairGenerator(fontV1.variants);
 	const downloadURLPairsV2 = pairGenerator(fontV2.variants);
 
 	// Flag to check whether font has unicode subsets like [132]

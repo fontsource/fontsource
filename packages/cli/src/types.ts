@@ -8,6 +8,7 @@ export interface BuildOptions {
 	tmpDir: string;
 	force: boolean;
 	isVariable: boolean;
+	noSubset?: boolean;
 	isIcon?: boolean;
 	version?: string;
 	publishHash?: string;
