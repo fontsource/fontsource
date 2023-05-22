@@ -2,4 +2,4 @@
 "@fontsource-utils/publish": patch
 ---
 
-fix(publish): enable force flag
+Enable force flag in publisher.
