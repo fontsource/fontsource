@@ -4,7 +4,7 @@ import { sassMetadata } from '../../src/sass/metadata';
 import { Metadata } from '../../src/types';
 import mockSassMetadata from './fixtures/sass-metadata.json';
 
-describe('sass', () => {
+describe('sass metadata', () => {
 	it('should generate sass metadata for non unicode range font successfully', async () => {
 		expect(
 			sassMetadata(
