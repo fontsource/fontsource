@@ -1,5 +1,15 @@
 # @fontsource-utils/cli
 
+## 0.3.7
+
+### Patch Changes
+
+- [#707](https://github.com/fontsource/fontsource/pull/707) [`e00f245b`](https://github.com/fontsource/fontsource/commit/e00f245b0d0a6c6a5e7b8b8e19bcb468ea5d3479) Thanks [@jwr12135](https://github.com/jwr12135)! - test(cli): add tests for sass mixins css output.
+
+- [#703](https://github.com/fontsource/fontsource/pull/703) [`325ba223`](https://github.com/fontsource/fontsource/commit/325ba22389ef7710a355c5fc12864fcf27b0dc28) Thanks [@justalemming](https://github.com/justalemming)! - Add missing " to CSS example in `readme.ts`.
+
+- [`169139c2`](https://github.com/fontsource/fontsource/commit/169139c21906f707c277f416f324e4695f62ad55) Thanks [@jwr12135](https://github.com/jwr12135)! - Fix incorrect sass mixin source path for non unicode fonts
+
 ## 0.3.6
 
 ### Patch Changes
