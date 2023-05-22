@@ -41,7 +41,21 @@ export const meta: MetaFunction = () => ({
 	charset: 'utf-8',
 	title: 'Fontsource',
 	viewport: 'width=device-width,initial-scale=1',
+	'og:title': 'Fontsource',
+	'og:description':
+		'Self-host Open Source fonts in neatly bundled NPM packages.',
 	'og:image': '/og-image.png',
+	'og:image:width': '1200',
+	'og:image:height': '800',
+	'og:image:alt': 'Fontsource logo',
+	'og:type': 'website',
+	'twitter:card': 'summary_large_image',
+	'twitter:site': '@ayuhitoo',
+	'twitter:title': 'Fontsource',
+	'twitter:description':
+		'Self-host Open Source fonts in neatly bundled NPM packages.',
+	'twitter:image': '/og-image.png',
+	'twitter:image:alt': 'Fontsource logo',
 });
 
 export const headers: HeadersFunction = () => ({
