@@ -88,9 +88,13 @@ const testIds = [
 	'ballet',
 	'fraunces',
 	'noto-sans-jp',
+	'noto-serif-hk',
 	'recursive',
 	'roboto-flex',
 ];
+
+// These fonts are too big for NPM and should not download individual subsets
+const removeSubsetIds = new Set(['noto-serif-hk']);
 
 export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 	// Ensure all chosen dirs are created
@@ -113,6 +117,7 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 		const buildOpts: BuildOptions = {
 			dir: outDir,
 			tmpDir,
+			noSubset: removeSubsetIds.has(id),
 			isVariable: false,
 			isIcon: false,
 			force: opts.force ?? false,

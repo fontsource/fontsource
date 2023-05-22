@@ -60,6 +60,7 @@ describe('download google', () => {
 				tmpDir: 'fonts/google/temp',
 				force: false,
 				isVariable: false,
+				noSubset: false,
 			};
 			expect(generateLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
 		});
@@ -96,6 +97,17 @@ describe('download google', () => {
 			expect(
 				iconVariableLinks('material-symbols-sharp', buildOpts)
 			).toMatchSnapshot();
+		});
+
+		it('should skip generating v1 pairs if noSubset is true', () => {
+			const buildOpts = {
+				dir: 'fonts/google/noto-sans-jp',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: false,
+				noSubset: true,
+			};
+			expect(generateLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
 		});
 	});
 });
