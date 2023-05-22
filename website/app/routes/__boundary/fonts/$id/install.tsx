@@ -12,7 +12,6 @@ import type { Metadata, VariableData } from '@/utils/types';
 
 export const loader: LoaderFunction = async ({ params }) => {
 	const { id } = params;
-	console.log('id', id);
 	invariant(id, 'Missing font ID!');
 	const metadata = await getMetadata(id);
 	let variable;
