@@ -6,9 +6,6 @@ on:
     paths:
       - "website/**"
 
-env:
-  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
 permissions:
   pull-requests: write
 
@@ -22,8 +19,26 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Enable PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Set node version to 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install
+
+      - name: Run lints
+        run: pnpm run lint
+
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only --config fly.staging.toml
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
       - name: Trigger DB updates
         uses: fjogeleit/http-request-action@v1
