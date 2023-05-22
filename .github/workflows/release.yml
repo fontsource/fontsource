@@ -42,7 +42,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Dispatch Dependency Update PR to font-files
-        if: steps.cs.outputs.published
+        if: steps.cs.outputs.published == 'true'
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.DISPATCH_PAT }}
