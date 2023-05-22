@@ -1,4 +1,4 @@
-import { Divider, List, rem, Table,Text, Title } from '@mantine/core';
+import { Divider, List, rem, Table, Text, Title } from '@mantine/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
@@ -16,16 +16,48 @@ if (process.env.NODE_ENV === 'development') {
 const mdxComponents = {
 	// Typography
 	h1: (props: any) => (
-		<Title order={1} fw={700} size={28} mt='sm' mb='xs' sx={{ lineHeight: rem(50) }} {...props} />
+		<Title
+			order={1}
+			fw={700}
+			size={28}
+			mt="sm"
+			mb="xs"
+			sx={{ lineHeight: rem(50) }}
+			{...props}
+		/>
 	),
 	h2: (props: any) => (
-		<Title order={2} fw={700} size={24} mt='sm' mb='xs' sx={{ lineHeight: rem(50) }} {...props} />
+		<Title
+			order={2}
+			fw={700}
+			size={24}
+			mt="sm"
+			mb="xs"
+			sx={{ lineHeight: rem(50) }}
+			{...props}
+		/>
 	),
 	h3: (props: any) => (
-		<Title order={3} fw={700} size={18} mt='sm' mb='xs'  sx={{ lineHeight: rem(40) }} {...props} />
+		<Title
+			order={3}
+			fw={700}
+			size={18}
+			mt="sm"
+			mb="xs"
+			sx={{ lineHeight: rem(40) }}
+			{...props}
+		/>
 	),
 	h4: (props: any) => (
-		<Title order={4} fw={700} size={16} mt='sm' mb='xs' sx={{ lineHeight: rem(40) }} {...props} />
+		<Title
+			order={4}
+			fw={700}
+			size={16}
+			mt="sm"
+			mb="xs"
+			sx={{ lineHeight: rem(40) }}
+			{...props}
+		/>
 	),
 	p: (props: any) => (
 		<Text fw={400} size={15} sx={{ lineHeight: rem(24) }} {...props} />
@@ -40,11 +72,11 @@ const mdxComponents = {
 	code: (props: any) => <CodeMdx {...props} />,
 
 	// Table
-	table: (props: any) => <Table fontSize='sm' {...props} />,
+	table: (props: any) => <Table fontSize="sm" {...props} />,
 
 	// Other
-	hr: (props: any) => <Divider mb='md' {...props} />,
-	blockquote: (props: any) => (<Blockquote {...props} />),
+	hr: (props: any) => <Divider mb="md" {...props} />,
+	blockquote: (props: any) => <Blockquote {...props} />,
 	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
 };
 
