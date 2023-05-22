@@ -50,11 +50,47 @@ export const writeUpdate = async (
 	await fs.writeFile(pkgPath, stringify(pkgJson));
 };
 
+interface DoGitOptions {
+	name: string;
+	config: Context;
+	bumped: BumpObject[];
+	npmrc: string;
+}
+
+let hasRun = false;
+
+const doGitOperations = async ({
+	name,
+	config,
+	bumped,
+	npmrc,
+}: DoGitOptions) => {
+	if (hasRun) return;
+	hasRun = true;
+
+	// Cleanup .npmrc
+	await fs.remove(npmrc);
+
+	// Stage all files
+	await gitAdd();
+
+	// Commit changes
+	const commitMessage = getCommitMessage(config, bumped);
+	await gitCommit(commitMessage);
+
+	// Push changes
+	await gitRemoteAdd(name);
+	await gitPush();
+};
+
 interface PublishObject extends BumpObject {
 	error?: unknown;
 }
 
-const packPublish = async (pkg: BumpObject): Promise<PublishObject> => {
+const packPublish = async (
+	pkg: BumpObject,
+	gitOpts: DoGitOptions
+): Promise<PublishObject> => {
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
 	const publishFlags = ['--access', 'public', '--tag', 'latest'];
 	try {
@@ -71,6 +107,7 @@ const packPublish = async (pkg: BumpObject): Promise<PublishObject> => {
 		// If we get rate limited, throw the error to stop the queue
 		// The retry delay should mean all other active publishes will also fail safely
 		if (errorString.includes('429 Too Many Requests')) {
+			await doGitOperations(gitOpts);
 			throw error;
 		}
 
@@ -82,34 +119,6 @@ const packPublish = async (pkg: BumpObject): Promise<PublishObject> => {
 	return Promise.resolve(pkg);
 };
 
-interface DoGitOptions {
-	name: string;
-	config: Context;
-	bumped: BumpObject[];
-	npmrc: string;
-}
-
-const doGitOperations = async ({
-	name,
-	config,
-	bumped,
-	npmrc,
-}: DoGitOptions) => {
-	// Cleanup .npmrc
-	await fs.remove(npmrc);
-
-	// Stage all files
-	await gitAdd();
-
-	// Commit changes
-	const commitMessage = getCommitMessage(config, bumped);
-	await gitCommit(commitMessage);
-
-	// Push changes
-	await gitRemoteAdd(name);
-	await gitPush();
-};
-
 export const publishPackages = async (
 	version: string,
 	options: PublishFlags
@@ -119,8 +128,6 @@ export const publishPackages = async (
 			options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''
 		}`
 	);
-
-	const queue = new PQueue({ concurrency: 8 });
 
 	// Check for required environment variables
 	await checkEnv();
@@ -143,26 +150,19 @@ export const publishPackages = async (
 		`//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}`
 	);
 
+	const queue = new PQueue({ concurrency: 8 });
+
 	// Collect errored out packages
 	const publishArr = [];
 
 	for (const pkg of bumped) {
 		if (pkg && !pkg.noPublish) {
-			const newPkg = queue.add(() => packPublish(pkg));
+			const newPkg = queue.add(() =>
+				packPublish(pkg, { name, config, bumped, npmrc })
+			);
 			publishArr.push(newPkg);
 		}
 	}
-
-	queue.on('error', async (error) => {
-		if (error.stderr.includes('429 Too Many Requests')) {
-			// We still want to commit the font changes and already published packages publish hashes
-			await doGitOperations({ name, config, bumped, npmrc });
-			throw error;
-		} else {
-			consola.error("This shouldn't happen.");
-			throw error;
-		}
-	});
 
 	// We only want the build to crash on a 429 error
 	// Otherwise, we want to continue publishing, commit and print the errors at the end
