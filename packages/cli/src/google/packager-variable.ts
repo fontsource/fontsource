@@ -63,9 +63,12 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 			const css = cssStyle.join('\n\n');
 			await fs.writeFile(cssPath, css);
 
+			// Ensure style is normal or there is only one style
+			if (axes === 'wght' && (style === 'normal' || styles.length === 1))
+				indexCSS = css;
+
 			// Some fonts may not have a wght axis, but usually have an opsz axis to compensate
-			if (axes === 'wght') indexCSS = css;
-			if (!indexCSS && axes === 'opsz') indexCSS = css;
+			if (indexCSS === '' && axes === 'opsz') indexCSS = css;
 		}
 	}
 
