@@ -1,7 +1,7 @@
 import '@fontsource/inter/variable.css';
 import '@fontsource/source-code-pro/variable.css';
 
-import { enableLegendStateReact } from '@legendapp/state/react'
+import { enableLegendStateReact } from '@legendapp/state/react';
 import type { ColorScheme } from '@mantine/core';
 import {
 	ColorSchemeProvider,
@@ -35,12 +35,13 @@ import { getThemeSession } from '@/utils/theme.server';
 import { GlobalStyles } from './styles/global';
 import { theme } from './styles/theme';
 
-enableLegendStateReact()
+enableLegendStateReact();
 
 export const meta: MetaFunction = () => ({
 	charset: 'utf-8',
 	title: 'Fontsource',
 	viewport: 'width=device-width,initial-scale=1',
+	'og:image': '/og-image.png',
 });
 
 export const headers: HeadersFunction = () => ({
