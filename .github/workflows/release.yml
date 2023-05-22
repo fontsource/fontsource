@@ -9,6 +9,9 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+  contents: write
+
 jobs:
   release:
     name: Release
@@ -45,6 +48,6 @@ jobs:
         if: steps.cs.outputs.published
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.DISPATCH_PAT }}
           repository: fontsource/font-files
           event-type: update-deps
