@@ -1,5 +1,13 @@
 # @fontsource-utils/publish
 
+## 0.2.4
+
+### Patch Changes
+
+- [#714](https://github.com/fontsource/fontsource/pull/714) [`662848ac`](https://github.com/fontsource/fontsource/commit/662848acdca35277091fcee6a11a634487df0728) Thanks [@ayuhito](https://github.com/ayuhito)! - Fix error handling in publisher encountering different error objects.
+
+- [#715](https://github.com/fontsource/fontsource/pull/715) [`0c017d37`](https://github.com/fontsource/fontsource/commit/0c017d378fdb35eb46e467017ae0d7baee2422ff) Thanks [@ayuhito](https://github.com/ayuhito)! - Enable force flag in publisher.
+
 ## 0.2.3
 
 ### Patch Changes
