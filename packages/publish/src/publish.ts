@@ -65,18 +65,17 @@ const packPublish = async (pkg: BumpObject): Promise<PublishObject> => {
 		await writeUpdate(pkg, { hash: true });
 	} catch (error) {
 		consola.error(`Failed to publish ${npmVersion}!`);
+		// @ts-ignore - This is a custom error thrown by execa
+		const errorString = error.stderr as string;
+
 		// If we get rate limited, throw the error to stop the queue
 		// The retry delay should mean all other active publishes will also fail safely
-		// @ts-ignore - This is a custom error thrown by execa
-		if (error.message.contains('429 Too Many Requests')) {
+		if (errorString.includes('429 Too Many Requests')) {
 			throw error;
 		}
 
 		// Otherwise, just reject the promise and store the error message so we can print it later
-		return Promise.reject({
-			...pkg,
-			error,
-		});
+		return Promise.reject(errorString);
 	}
 
 	consola.success(`Successfully published ${colors.green(npmVersion)}!`);
@@ -155,7 +154,7 @@ export const publishPackages = async (
 	}
 
 	queue.on('error', async (error) => {
-		if (error.message.includes('429 Too Many Requests')) {
+		if (error.stderr.includes('429 Too Many Requests')) {
 			// We still want to commit the font changes and already published packages publish hashes
 			await doGitOperations({ name, config, bumped, npmrc });
 			throw error;
@@ -175,12 +174,7 @@ export const publishPackages = async (
 		consola.error('Failed to publish the following packages:');
 		for (const error of errors) {
 			if (error.status !== 'rejected') continue; // This should never happen, but ts is complaining
-			const pkg = error.reason as PublishObject;
-			consola.error(
-				`${colors.bold(colors.red(pkg.name))} - ${colors.red(
-					(pkg.error as Error).message
-				)}`
-			);
+			consola.error(`${colors.red(error.reason)}`);
 		}
 	}
 
