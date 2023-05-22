@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`sass mixins > should compile sass for non unicode range font successfully 1`] = `
+{
+  "css": "/* carlito-latin-400-normal */
+@font-face {
+  font-family: \\"Carlito\\";
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(\\"~@fontsource/carlito/files/carlito-latin-400-normal.woff2\\") format(\\"woff2\\"), url(\\"~@fontsource/carlito/files/carlito-latin-400-normal.woff\\") format(\\"woff\\");
+}",
+  "loadedUrls": [],
+}
+`;
+
+exports[`sass mixins > should compile sass for numeric subset font successfully 1`] = `
+{
+  "css": "/* carlito-latin-400-normal */
+@font-face {
+  font-family: \\"Carlito\\";
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(\\"~@fontsource/carlito/files/carlito-latin-400-normal.woff2\\") format(\\"woff2\\"), url(\\"~@fontsource/carlito/files/carlito-latin-400-normal.woff\\") format(\\"woff\\");
+}",
+  "loadedUrls": [],
+}
+`;
+
+exports[`sass mixins > should compile sass for variable font successfully 1`] = `
+{
+  "css": "/* carlito-latin-400-normal */
+@font-face {
+  font-family: \\"Carlito\\";
+  font-style: normal;
+  font-display: var(--fontsource-display, swap);
+  font-weight: 400;
+  src: url(\\"~@fontsource/carlito/files/carlito-latin-400-normal.woff2\\") format(\\"woff2\\"), url(\\"~@fontsource/carlito/files/carlito-latin-400-normal.woff\\") format(\\"woff\\");
+}",
+  "loadedUrls": [],
+}
+`;

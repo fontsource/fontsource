@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`sass > should generate sass metadata for non unicode range font successfully 1`] = `
+exports[`sass metadata > should generate sass metadata for non unicode range font successfully 1`] = `
 "$id: 'carlito' !default;
 $family: 'Carlito' !default;
 $category: sans-serif !default;
@@ -18,7 +18,7 @@ $unicode: null !default;
 "
 `;
 
-exports[`sass > should generate sass metadata for numeric subset font successfully 1`] = `
+exports[`sass metadata > should generate sass metadata for numeric subset font successfully 1`] = `
 "$id: 'noto-sans-jp' !default;
 $family: 'Noto Sans JP' !default;
 $category: sans-serif !default;
@@ -48,7 +48,7 @@ $unicode: (
 "
 `;
 
-exports[`sass > should generate sass metadata for variable font successfully 1`] = `
+exports[`sass metadata > should generate sass metadata for variable font successfully 1`] = `
 "$id: 'recursive' !default;
 $family: 'Recursive' !default;
 $category: sans-serif !default;

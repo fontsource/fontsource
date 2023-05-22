@@ -1,0 +1,58 @@
+import { describe, expect, it } from 'vitest';
+import { compileString } from 'sass';
+
+import { sassMixins } from '../../src/sass/mixins';
+import { sassMetadata } from '../../src/sass/metadata';
+import { Metadata } from '../../src/types';
+import mockSassMetadata from './fixtures/sass-metadata.json';
+
+const compileSass = (metadata: string) => {
+	const metadataMap = `(${metadata
+		.replaceAll('$', '')
+		.replaceAll(' !default;', ',')})`;
+
+	return compileString(
+		sassMixins
+			.replace("@use 'metadata';", '')
+			.replace('meta.module-variables(metadata) !default', metadataMap) +
+			`@include faces()`
+	);
+};
+
+describe('sass mixins', () => {
+	it('should compile sass for non unicode range font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.carlito.metadata as Metadata,
+					mockSassMetadata.carlito.unicode,
+					false
+				)
+			)
+		).toMatchSnapshot();
+	});
+
+	it('should compile sass for numeric subset font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.carlito.metadata as Metadata,
+					mockSassMetadata.carlito.unicode,
+					false
+				)
+			)
+		).toMatchSnapshot();
+	});
+
+	it('should compile sass for variable font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.carlito.metadata as Metadata,
+					mockSassMetadata.carlito.unicode,
+					false
+				)
+			)
+		).toMatchSnapshot();
+	});
+});
