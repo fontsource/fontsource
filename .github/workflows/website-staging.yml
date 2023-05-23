@@ -1,6 +1,6 @@
 name: Website Staging Deploy
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
     paths:
@@ -13,6 +13,9 @@ jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://staging.fontsource.org/
     defaults:
       run:
         working-directory: website
