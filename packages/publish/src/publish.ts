@@ -15,7 +15,7 @@ import {
 	gitPush,
 	gitRemoteAdd,
 } from './git';
-import type { BumpObject, PackageJson, PublishFlags } from './types';
+import type { BumpObject, Context, PackageJson, PublishFlags } from './types';
 import { mergeFlags } from './utils';
 import stringify from 'json-stringify-pretty-compact';
 import { confirm, isCancel } from '@clack/prompts';
@@ -50,11 +50,47 @@ export const writeUpdate = async (
 	await fs.writeFile(pkgPath, stringify(pkgJson));
 };
 
+interface DoGitOptions {
+	name: string;
+	config: Context;
+	bumped: BumpObject[];
+	npmrc: string;
+}
+
+let hasRun = false;
+
+const doGitOperations = async ({
+	name,
+	config,
+	bumped,
+	npmrc,
+}: DoGitOptions) => {
+	if (hasRun) return;
+	hasRun = true;
+
+	// Cleanup .npmrc
+	await fs.remove(npmrc);
+
+	// Stage all files
+	await gitAdd();
+
+	// Commit changes
+	const commitMessage = getCommitMessage(config, bumped);
+	await gitCommit(commitMessage);
+
+	// Push changes
+	await gitRemoteAdd(name);
+	await gitPush();
+};
+
 interface PublishObject extends BumpObject {
 	error?: unknown;
 }
 
-const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
+const packPublish = async (
+	pkg: BumpObject,
+	gitOpts: DoGitOptions
+): Promise<PublishObject> => {
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
 	const publishFlags = ['--access', 'public', '--tag', 'latest'];
 	try {
@@ -65,14 +101,23 @@ const packPublish = async (pkg: BumpObject): Promise<void | PublishObject> => {
 		await writeUpdate(pkg, { hash: true });
 	} catch (error) {
 		consola.error(`Failed to publish ${npmVersion}!`);
-		throw error;
+		// @ts-ignore - This is a custom error thrown by execa
+		const errorString = error.stderr as string;
+
+		// If we get rate limited, throw the error to stop the queue
+		// The retry delay should mean all other active publishes will also fail safely
+		if (errorString.includes('429 Too Many Requests')) {
+			await doGitOperations(gitOpts);
+			throw error;
+		}
+
+		// Otherwise, just reject the promise and store the error message so we can print it later
+		return Promise.reject(errorString);
 	}
 
 	consola.success(`Successfully published ${colors.green(npmVersion)}!`);
-	return undefined;
+	return Promise.resolve(pkg);
 };
-
-const queue = new PQueue({ concurrency: 8 });
 
 export const publishPackages = async (
 	version: string,
@@ -83,6 +128,7 @@ export const publishPackages = async (
 			options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''
 		}`
 	);
+
 	// Check for required environment variables
 	await checkEnv();
 	const { name } = await getGitConfig();
@@ -104,33 +150,37 @@ export const publishPackages = async (
 		`//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}`
 	);
 
+	const queue = new PQueue({ concurrency: 8 });
+
 	// Collect errored out packages
 	const publishArr = [];
 
 	for (const pkg of bumped) {
 		if (pkg && !pkg.noPublish) {
-			const newPkg = queue.add(() => packPublish(pkg));
+			const newPkg = queue.add(() =>
+				packPublish(pkg, { name, config, bumped, npmrc })
+			);
 			publishArr.push(newPkg);
 		}
 	}
 
-	await Promise.all(publishArr);
+	// We only want the build to crash on a 429 error
+	// Otherwise, we want to continue publishing, commit and print the errors at the end
+	const results = await Promise.allSettled(publishArr);
 
-	// Cleanup .npmrc
-	await fs.remove(npmrc);
+	// Print errors
+	const errors = results.filter((r) => r.status === 'rejected');
+	if (errors.length > 0) {
+		consola.error('Failed to publish the following packages:');
+		for (const error of errors) {
+			if (error.status !== 'rejected') continue; // This should never happen, but ts is complaining
+			consola.error(`${colors.red(error.reason)}`);
+		}
+	}
 
-	// Stage all files
-	await gitAdd();
+	await doGitOperations({ name, config, bumped, npmrc });
 
-	// Commit changes
-	const commitMessage = getCommitMessage(config, bumped);
-	await gitCommit(commitMessage);
-
-	// Push changes
-	await gitRemoteAdd(name);
-	await gitPush();
+	if (errors.length > 0) {
+		throw new Error('Failed to publish packages!');
+	}
 };
-
-queue.on('error', (error) => {
-	throw error;
-});

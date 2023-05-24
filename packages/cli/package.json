@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/cli",
-	"version": "0.3.4",
+	"version": "0.3.7",
 	"description": "Fontsource CLI",
 	"bin": {
 		"fontsource": "./dist/cli.mjs"
@@ -55,6 +55,7 @@
 		"eslint": "^8.40.0",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.10.0",
+		"sass": "^1.62.1",
 		"tsx": "^3.12.7",
 		"typescript": "^5.0.4"
 	},

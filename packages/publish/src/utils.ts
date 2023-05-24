@@ -8,16 +8,21 @@ const getPackages = async (dir: string): Promise<string[]> => {
 		withFileTypes: true,
 	});
 	return packages
-		.filter(dirent => dirent.isDirectory())
-		.map(dirent => dirent.name);
+		.filter((dirent) => dirent.isDirectory())
+		.map((dirent) => dirent.name);
 };
 
 const mergeFlags = async (options: Flags): Promise<Context> => {
 	const flags = {} as Context;
 	// CLI args come in string format
-	if (options.packages) flags.packages = options.packages.split(',');
+	if (options.packages) {
+		flags.packages = options.packages.split(',');
+		delete options.packages;
+	}
+
+	Object.assign(flags, options);
 
 	return defu(flags, await fs.readJson('font-publish.json'));
 };
 
-export { getPackages,mergeFlags };
+export { getPackages, mergeFlags };

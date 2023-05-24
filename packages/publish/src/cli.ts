@@ -32,6 +32,7 @@ cli
 		'changed',
 		'Calculates hashes and lists all packages that have changes made to them'
 	)
+	.option('--force', 'Force publish ALL packages regardless if changed or not')
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
 	.action(async (opts: ChangedFlags) => {

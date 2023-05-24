@@ -82,7 +82,10 @@ const build = async (id: string, opts: BuildOptions) => {
 		} else if (opts.isVariable) {
 			await packagerVariable(id, opts);
 		} else {
-			await packagerV1(id, opts);
+			// If true, skip individual subset generation as the package may be too large
+			if (!opts.noSubset) {
+				await packagerV1(id, opts);
+			}
 			await packagerV2(id, opts);
 		}
 

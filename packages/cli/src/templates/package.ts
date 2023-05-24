@@ -48,18 +48,19 @@ const template = (
 
 const packageJson = async (metadata: Metadata, opts: BuildOptions) => {
 	let oldVersion;
+	let oldPublishHash;
 	try {
 		await fs.access(path.join(opts.dir, 'package.json'));
-		oldVersion = JSON.parse(
-			await fs.readFile(path.join(opts.dir, 'package.json'), 'utf8')
-		).version;
+		const file = await fs.readJson(path.join(opts.dir, 'package.json'));
+		oldVersion = file.version;
+		oldPublishHash = file.publishHash;
 	} catch {
 		// Continue
 	}
 
 	const file = template(metadata, opts.isVariable, {
 		oldVersion: opts.version ?? oldVersion,
-		publishHash: opts.publishHash,
+		publishHash: opts.publishHash ?? oldPublishHash,
 	});
 	await fs.writeFile(path.join(opts.dir, 'package.json'), stringify(file));
 };
