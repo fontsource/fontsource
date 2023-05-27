@@ -17,6 +17,9 @@ export default {
 			return fontsRouter.handle(request, env, ctx);
 		}
 
-		return new Response('Not Found.', { status: 404 });
+		return new Response(
+			'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api',
+			{ status: 404 }
+		);
 	},
 };
