@@ -13,7 +13,7 @@ const updateList = async (key: FontlistQueries, env: Env) => {
 
 	for (const value of Object.values(data)) {
 		if (key === 'variable') {
-			list[key] = value.variable ? true : false;
+			list[value.id] = value.variable ? true : false;
 		} else {
 			list[value.id] = value[key];
 		}
