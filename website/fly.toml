@@ -12,6 +12,9 @@ kill_timeout = "5s"
   auto_rollback = true
   enable_consul = true
 
+[env]
+  PRIMARY_REGION = "nrt"
+
 [[mounts]]
   source = "litefs"
   destination = "/var/lib/litefs"
