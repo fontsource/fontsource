@@ -43,7 +43,7 @@ body {
 }
 ```
 
-In this example, we are setting the font weight to 500 and the width axis to 75% of the maximum width. Note that not all axes are supported by all variable fonts, so you will need to consult the font documentation to see which axes are available.
+In this example, we are setting the font weight to `500` and the width axis to `75%` of the maximum width. Note that not all axes are supported by all variable fonts, so you will need to consult the font documentation to see which axes are available.
 
 ### 4. Fallbacks
 
@@ -68,11 +68,11 @@ This will only apply the font styles if the browser supports variable fonts (`fo
 
 ## Understanding Variable Axes
 
-Variable axes in fonts refer to the ability to adjust various visual characteristics of a font along a continuous spectrum. This allows for greater flexibility and control in fine-tuning the appearance of typography. Fontsource, a font provider, supports variable axes in its fonts, enabling users to leverage these customizable options for their design needs.
+Variable axes in fonts refer to the ability to adjust various visual characteristics of a font along a continuous spectrum. This allows for greater flexibility and control in fine-tuning the appearance of typography.
 
-#####
+### Standard Axes
 
-Fontsource's variable axes encompass a range of standard and custom options. The standard axes include:
+Fontsource's variable axes encompass a range of `standard` and `custom` options. The standard axes consist of a small subset of the most commonly used axes, including `[wght, wdth, slnt, opsz, ital]`. If you want to import these axes individually, you can do so using the following syntax:
 
 ```jsx
 import "@fontsource-variable/roboto-flex/wght.css";
@@ -81,15 +81,18 @@ import "@fontsource-variable/roboto-flex/slnt.css";
 import "@fontsource-variable/roboto-flex/opsz-italic.css";
 ```
 
-> **Note:** Every import includes the `wght` axis as multiple imports of different axes are not supported. You **must** use a single import when importing variable fonts.
-
-If you are using multiple of the above axes, you can import them all at once using the `standard` CSS file:
+However, if you want to import multiple standard axes, it is recommended to use the `standard` CSS file instead:
 
 ```jsx
 import "@fontsource-variable/roboto-flex/standard.css";
+import "@fontsource-variable/roboto-flex/standard-italic.css";
 ```
 
-In addition to these standard axes, Fontsource also provides support for specific custom axes, such as:
+> **Note:** Each import includes the `wght` axis as multiple imports of different axes are not supported. Therefore, you must use a single import when importing variable fonts.
+
+### Custom Axes
+
+In addition to the standard axes, Fontsource provides a variety of custom options. To import these axes individually, you can use the following syntax:
 
 ```jsx
 import "@fontsource-variable/roboto-flex/grad.css";
@@ -97,12 +100,11 @@ import "@fontsource-variable/roboto-flex/ytuc.css";
 import "@fontsource-variable/roboto-flex/xtra.css";
 ```
 
-> **Note:** The above axes are not supported by all fonts. Please refer to the font page in the search directory to see which axes are available.
+> **Note:** Please note that not all fonts support these custom axes. To see which axes are available for a specific font, refer to the font's page in the search directory. You can also explore the [**Axis Registry**](https://fonts.google.com/variablefonts#axis-definitions) to learn more about these various axes.
 
 These custom axes offer additional opportunities for fine-grained customization beyond the standard options, providing more specialized variations. If you want to import **all** available axes, you can use the `full` CSS file:
 
 ```jsx
 import "@fontsource-variable/roboto-flex/full.css";
+import "@fontsource-variable/roboto-flex/full-italic.css";
 ```
-
-By leveraging Fontsource's variable axes, designers and developers can precisely tailor the visual attributes of fonts, achieving the desired typographic effect and enhancing the overall aesthetic of their projects.
