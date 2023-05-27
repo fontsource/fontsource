@@ -2,10 +2,9 @@ import * as gfm from 'google-font-metadata';
 import { describe, expect, it, vi } from 'vitest';
 
 import {
-	generateLinks,
-	iconStaticLinks,
-	iconVariableLinks,
-	pairGenerator,
+	getStaticVariantList,
+	getVariableVariantList,
+	staticLinks,
 	variableLinks,
 } from '../../src/google/download';
 import testData from './fixtures/download-file-data.json';
@@ -21,17 +20,19 @@ describe('download google', () => {
 	describe('pair generator', () => {
 		it('should generate APIv1 pairs and strip TTF links', () => {
 			const { APIv1Variant, APIv1Result } = testData;
-			expect(pairGenerator(APIv1Variant)).toEqual(APIv1Result);
+			expect(getStaticVariantList(APIv1Variant)).toEqual(APIv1Result);
 		});
 
 		it('should generate APIv2 pairs and strip OTF links', () => {
 			const { APIv2Variant, APIv2Result } = testData;
-			expect(pairGenerator(APIv2Variant)).toEqual(APIv2Result);
+			expect(getStaticVariantList(APIv2Variant)).toEqual(APIv2Result);
 		});
 
 		it('should generate APIVariable pairs', () => {
 			const { APIVariableVariant, APIVariableResult } = testData;
-			expect(pairGenerator(APIVariableVariant)).toEqual(APIVariableResult);
+			expect(getVariableVariantList(APIVariableVariant)).toEqual(
+				APIVariableResult
+			);
 		});
 	});
 
@@ -51,7 +52,7 @@ describe('download google', () => {
 				force: false,
 				isVariable: false,
 			};
-			expect(generateLinks('abel', buildOpts)).toMatchSnapshot();
+			expect(staticLinks('abel', buildOpts)).toMatchSnapshot();
 		});
 
 		it('should generate links for unicode subset font (noto-sans-jp)', () => {
@@ -62,7 +63,7 @@ describe('download google', () => {
 				isVariable: false,
 				noSubset: false,
 			};
-			expect(generateLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
+			expect(staticLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
 		});
 
 		it('should generate links for variable fonts (cabin)', () => {
@@ -83,7 +84,7 @@ describe('download google', () => {
 				isVariable: false,
 				isIcon: true,
 			};
-			expect(iconStaticLinks('material-icons', buildOpts)).toMatchSnapshot();
+			expect(staticLinks('material-icons', buildOpts)).toMatchSnapshot();
 		});
 
 		it('should generate links for icon variable fonts (material-symbols)', () => {
@@ -95,7 +96,7 @@ describe('download google', () => {
 				isIcon: true,
 			};
 			expect(
-				iconVariableLinks('material-symbols-sharp', buildOpts)
+				variableLinks('material-symbols-sharp', buildOpts)
 			).toMatchSnapshot();
 		});
 
@@ -107,7 +108,7 @@ describe('download google', () => {
 				isVariable: false,
 				noSubset: true,
 			};
-			expect(generateLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
+			expect(staticLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
 		});
 	});
 });
