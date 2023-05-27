@@ -57,7 +57,7 @@ jobs:
           url: "https://staging.fontsource.org/actions/update"
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
-          data: '{"download": true, "axisRegistry": true, "docs": true}'
+          data: '{"download": true, "axisRegistry": true}'
           preventFailureOnNoResponse: true
 
       - uses: marocchino/sticky-pull-request-comment@v2
