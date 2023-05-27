@@ -1,5 +1,5 @@
-import { Router, IRequest } from 'itty-router';
 import { CFRouterContext } from '@/types';
+import { IRequest, Router } from 'itty-router';
 
 const router = Router<IRequest, CFRouterContext>();
 
