@@ -60,6 +60,10 @@ export const licenseShort = (license: string): string | undefined =>
 export const sassVar = (key: string, value: string) =>
 	`$${key}: ${value} !default;\n`;
 
+// `assertNever` will result in a type error if the passed in value is not of type `never`. Useful for exhaustiveness checking.
+// This will never actually be called, will never return, but its return type can be used in place of any value.
+export const assertNever = (value: never): never => value;
+
 export {
 	findClosest,
 	makeFontDownloadPath,

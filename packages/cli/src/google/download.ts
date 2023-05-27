@@ -11,7 +11,11 @@ import PQueue from 'p-queue';
 import * as path from 'pathe';
 
 import { BuildOptions } from '../types';
-import { makeFontDownloadPath, makeVariableFontDownloadPath } from '../utils';
+import {
+	assertNever,
+	makeFontDownloadPath,
+	makeVariableFontDownloadPath,
+} from '../utils';
 
 const writeDownload = async (url: string, dest: fs.PathLike) => {
 	const response = await fetch(url).then((res) => res.arrayBuffer());
@@ -125,8 +129,7 @@ const getDownloadPath = (
 			variant.style
 		);
 	}
-	// Makes sure that all variants are handled above.
-	return variant;
+	return assertNever(variant);
 };
 
 const variantsToLinks = (
