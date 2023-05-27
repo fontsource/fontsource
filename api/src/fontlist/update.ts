@@ -1,5 +1,5 @@
-import type { Fontlist, FontlistQueries } from '@/fontlist/types';
-import type { FontsourceMetadata } from '@/types';
+import type { Fontlist, FontlistQueries } from './types';
+import type { FontsourceMetadata } from '../types';
 
 const METADATA_URL =
 	'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/fontsource.json';

@@ -1,5 +1,5 @@
 import { Router, IRequestStrict } from 'itty-router';
-import { CFRouterContext } from '@/types';
+import { CFRouterContext } from '../types';
 
 const router = Router<IRequestStrict, CFRouterContext>();
 

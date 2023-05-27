@@ -1,6 +1,7 @@
-import { FontMetadata } from '@/types';
+import { FontMetadata } from '../types';
 
 const fontlistQueries = [
+	'family',
 	'subsets',
 	'weights',
 	'styles',
@@ -18,5 +19,5 @@ interface Fontlist {
 	[key: string]: string | string[] | number[] | boolean;
 }
 
-export { isFontlistQuery };
+export { isFontlistQuery, fontlistQueries };
 export type { FontlistQueries, Fontlist };

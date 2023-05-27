@@ -1,0 +1,124 @@
+{
+	"abel": {
+		"id": "abel",
+		"family": "Abel",
+		"subsets": ["latin"],
+		"weights": [400],
+		"styles": ["normal"],
+		"defSubset": "latin",
+		"variable": false,
+		"lastModified": "2022-09-22",
+		"version": "v18",
+		"category": "sans-serif",
+		"license": {
+			"type": "OFL-1.1",
+			"url": "http://scripts.sil.org/OFL",
+			"attribution": "Copyright (c) 2011, Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name Abel."
+		},
+		"source": "https://github.com/google/fonts",
+		"type": "google",
+		"npmVersion": "5.0.0",
+		"unicodeRange": {
+			"latin": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+		}
+	},
+	"advent-pro": {
+		"id": "advent-pro",
+		"family": "Advent Pro",
+		"subsets": ["cyrillic", "cyrillic-ext", "greek", "latin", "latin-ext"],
+		"weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+		"styles": ["italic", "normal"],
+		"defSubset": "latin",
+		"variable": {
+			"ital": { "default": "0", "min": "0", "max": "1", "step": "1" },
+			"wdth": { "default": "100", "min": "100", "max": "200", "step": "0.1" },
+			"wght": { "default": "400", "min": "100", "max": "900", "step": "1" }
+		},
+		"lastModified": "2023-03-21",
+		"version": "v20",
+		"category": "sans-serif",
+		"license": {
+			"type": "OFL-1.1",
+			"url": "http://scripts.sil.org/OFL",
+			"attribution": "Copyright 2018 The Advent Pro Project Authors (https://github.com/googlefonts/Advent)"
+		},
+		"source": "https://github.com/google/fonts",
+		"type": "google",
+		"npmVersion": "5.0.1",
+		"unicodeRange": {
+			"cyrillic-ext": "U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F",
+			"cyrillic": "U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116",
+			"greek": "U+0370-03FF",
+			"latin-ext": "U+0100-02AF,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF",
+			"latin": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+		}
+	},
+	"material-icons": {
+		"id": "material-icons",
+		"family": "Material Icons",
+		"subsets": ["latin"],
+		"weights": [400],
+		"styles": ["normal"],
+		"defSubset": "latin",
+		"variable": false,
+		"lastModified": "2023-03-08",
+		"version": "v140",
+		"category": "icons",
+		"license": {
+			"type": "Apache-2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html",
+			"attribution": "Copyright 2014 Google, Inc. All Rights Reserved."
+		},
+		"source": "https://github.com/google/fonts",
+		"type": "google",
+		"npmVersion": "5.0.0",
+		"unicodeRange": {}
+	},
+	"material-symbols-outlined": {
+		"id": "material-symbols-outlined",
+		"family": "Material Symbols Outlined",
+		"subsets": ["latin"],
+		"weights": [100, 200, 300, 400, 500, 600, 700],
+		"styles": ["normal"],
+		"defSubset": "latin",
+		"variable": {
+			"FILL": { "min": "0", "max": "1", "default": "0", "step": "1" },
+			"wght": { "min": "100", "max": "700", "default": "400", "step": "1" },
+			"GRAD": { "min": "-25", "max": "200", "default": "0", "step": "1" },
+			"opsz": { "default": "48", "min": "30", "max": "48", "step": "0.1" }
+		},
+		"lastModified": "2023-04-27",
+		"version": "v108",
+		"category": "icons",
+		"license": {
+			"type": "Apache-2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html",
+			"attribution": "Copyright 2022, 2022 Google LLC.  All Rights Reserved."
+		},
+		"source": "https://github.com/google/fonts",
+		"type": "google",
+		"npmVersion": "5.0.0",
+		"unicodeRange": {}
+	},
+	"yakuhanjp": {
+		"id": "yakuhanjp",
+		"family": "YakuHanJP",
+		"subsets": ["latin"],
+		"weights": [100, 200, 300, 400, 500, 700, 900],
+		"styles": ["normal"],
+		"defSubset": "latin",
+		"variable": false,
+		"lastModified": "2023-05-15",
+		"version": "v3.3.1",
+		"category": "other",
+		"license": {
+			"type": "OFL-1.1",
+			"url": "https://github.com/qrac/yakuhanjp",
+			"attribution": "QRANOKO (https://qranoko.jp/)"
+		},
+		"source": "https://github.com/qrac/yakuhanjp",
+		"type": "other",
+		"npmVersion": "5.0.0",
+		"unicodeRange": {}
+	}
+}

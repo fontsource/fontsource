@@ -1,0 +1,146 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fontlist worker > should return return value of category query string 1`] = `
+{
+  "abel": "sans-serif",
+  "advent-pro": "sans-serif",
+  "material-icons": "icons",
+  "material-symbols-outlined": "icons",
+  "yakuhanjp": "other",
+}
+`;
+
+exports[`fontlist worker > should return return value of family query string 1`] = `
+{
+  "abel": "Abel",
+  "advent-pro": "Advent Pro",
+  "material-icons": "Material Icons",
+  "material-symbols-outlined": "Material Symbols Outlined",
+  "yakuhanjp": "YakuHanJP",
+}
+`;
+
+exports[`fontlist worker > should return return value of lastModified query string 1`] = `
+{
+  "abel": "2022-09-22",
+  "advent-pro": "2023-03-21",
+  "material-icons": "2023-03-08",
+  "material-symbols-outlined": "2023-04-27",
+  "yakuhanjp": "2023-05-15",
+}
+`;
+
+exports[`fontlist worker > should return return value of styles query string 1`] = `
+{
+  "abel": [
+    "normal",
+  ],
+  "advent-pro": [
+    "italic",
+    "normal",
+  ],
+  "material-icons": [
+    "normal",
+  ],
+  "material-symbols-outlined": [
+    "normal",
+  ],
+  "yakuhanjp": [
+    "normal",
+  ],
+}
+`;
+
+exports[`fontlist worker > should return return value of subsets query string 1`] = `
+{
+  "abel": [
+    "latin",
+  ],
+  "advent-pro": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "latin",
+    "latin-ext",
+  ],
+  "material-icons": [
+    "latin",
+  ],
+  "material-symbols-outlined": [
+    "latin",
+  ],
+  "yakuhanjp": [
+    "latin",
+  ],
+}
+`;
+
+exports[`fontlist worker > should return return value of type query string 1`] = `
+{
+  "abel": "google",
+  "advent-pro": "google",
+  "material-icons": "google",
+  "material-symbols-outlined": "google",
+  "yakuhanjp": "other",
+}
+`;
+
+exports[`fontlist worker > should return return value of variable query string 1`] = `
+{
+  "abel": false,
+  "advent-pro": true,
+  "material-icons": false,
+  "material-symbols-outlined": true,
+  "yakuhanjp": false,
+}
+`;
+
+exports[`fontlist worker > should return return value of version query string 1`] = `
+{
+  "abel": "v18",
+  "advent-pro": "v20",
+  "material-icons": "v140",
+  "material-symbols-outlined": "v108",
+  "yakuhanjp": "v3.3.1",
+}
+`;
+
+exports[`fontlist worker > should return return value of weights query string 1`] = `
+{
+  "abel": [
+    400,
+  ],
+  "advent-pro": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+  ],
+  "material-icons": [
+    400,
+  ],
+  "material-symbols-outlined": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+  ],
+  "yakuhanjp": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    700,
+    900,
+  ],
+}
+`;

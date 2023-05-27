@@ -1,7 +1,7 @@
-import { CFRouterContext } from '@/types';
+import { CFRouterContext } from '../types';
 import { IRequestStrict, Router } from 'itty-router';
-import { updateList } from '@/fontlist/update';
-import { Fontlist, FontlistQueries, isFontlistQuery } from '@/fontlist/types';
+import { updateList } from './update';
+import { Fontlist, FontlistQueries, isFontlistQuery } from './types';
 
 const router = Router<IRequestStrict, CFRouterContext>();
 
@@ -23,7 +23,7 @@ router.get('/fontlist', async (request, env, _ctx) => {
 	const queryString = url.searchParams.toString();
 
 	// If there is more than 2 query strings, then return 400
-	if (queryString.split('&').length > 2) {
+	if (queryString.split('&').length >= 2) {
 		return new Response('Bad Request. You can only use one query parameter.', {
 			status: 400,
 		});

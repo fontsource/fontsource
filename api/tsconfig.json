@@ -3,12 +3,14 @@
 		/* Language and Environment */
 		"target": "es2021",
 		"lib": ["es2021"],
-		"jsx": "react",
 
 		/* Modules */
 		"module": "es2022",
 		"moduleResolution": "node",
-		"types": ["@cloudflare/workers-types"],
+		"types": [
+			"@cloudflare/workers-types",
+			"vitest-environment-miniflare/globals"
+		],
 		"resolveJsonModule": true,
 
 		/* JavaScript Support */
@@ -27,10 +29,16 @@
 		"strict": true,
 
 		/* Completeness */
-		"skipLibCheck": true,
-		"paths": {
-			"@/*": ["./src/*"]
-		}
+		"skipLibCheck": true
 	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.json",
+		"tests/**/*.ts",
+		"tests/**/*.json",
+		"vitest.config.ts",
+		"worker-configuration.d.ts"
+	],
+	"exclude": ["node_modules"],
 	"$schema": "https://json.schemastore.org/tsconfig"
 }
