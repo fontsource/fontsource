@@ -37,9 +37,6 @@ importers:
       dotenv:
         specifier: ^16.0.3
         version: 16.0.3
-      flat:
-        specifier: ^5.0.2
-        version: 5.0.2
       fs-extra:
         specifier: ^11.1.1
         version: 11.1.1
@@ -62,9 +59,6 @@ importers:
       '@ayuhito/eslint-config':
         specifier: ^0.2.4
         version: 0.2.4(eslint@8.40.0)(typescript@5.0.4)
-      '@types/flat':
-        specifier: ^5.0.2
-        version: 5.0.2
       '@types/fs-extra':
         specifier: ^11.0.1
         version: 11.0.1
@@ -3609,10 +3603,6 @@ packages:
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
 
-  /@types/flat@5.0.2:
-    resolution: {integrity: sha512-3zsplnP2djeps5P9OyarTxwRpMLoe5Ash8aL9iprw0JxB+FAHjY+ifn4yZUuW4/9hqtnmor6uvjSRzJhiVbrEQ==}
-    dev: true
-
   /@types/folder-hash@4.0.2:
     resolution: {integrity: sha512-vMVeAUKl8EmDiTLj8XJQL4gJd8UYQfxRUWiv8cZpI/iQcVkS4GHlwVdInH/4iVIzLjlc/+ejcGEhKt92bkWesQ==}
     dev: true
@@ -6720,11 +6710,6 @@ packages:
     dependencies:
       flatted: 3.2.7
       rimraf: 3.0.2
-
-  /flat@5.0.2:
-    resolution: {integrity: sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==}
-    hasBin: true
-    dev: false
 
   /flatted@3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}

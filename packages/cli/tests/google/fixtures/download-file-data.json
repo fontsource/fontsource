@@ -14,14 +14,22 @@
 		}
 	},
 	"APIv1Result": [
-		[
-			["400", "italic", "latin", "url", "woff2"],
-			"https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8D.woff2"
-		],
-		[
-			["400", "italic", "latin", "url", "woff"],
-			"https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8F.woff"
-		]
+		{
+			"kind": "static",
+			"weight": 400,
+			"style": "italic",
+			"subset": "latin",
+			"url": "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8D.woff2",
+			"extension": "woff2"
+		},
+		{
+			"kind": "static",
+			"weight": 400,
+			"style": "italic",
+			"subset": "latin",
+			"url": "https://fonts.gstatic.com/s/abeezee/v14/esDT31xSG-6AGleN2tCUkp8F.woff",
+			"extension": "woff"
+		}
 	],
 
 	"APIv2Variant": {
@@ -39,14 +47,22 @@
 		}
 	},
 	"APIv2Result": [
-		[
-			["100", "normal", "[0]", "url", "woff2"],
-			"https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHp2WPP0IMAVxt9WteveoOOkzD_1Iv4Hrzhqj9DSTKYk.0.woff2"
-		],
-		[
-			["100", "normal", "[0]", "url", "woff"],
-			"https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHpw.woff"
-		]
+		{
+			"kind": "static",
+			"weight": 100,
+			"style": "normal",
+			"subset": "0",
+			"url": "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHp2WPP0IMAVxt9WteveoOOkzD_1Iv4Hrzhqj9DSTKYk.0.woff2",
+			"extension": "woff2"
+		},
+		{
+			"kind": "static",
+			"weight": 100,
+			"style": "normal",
+			"subset": "0",
+			"url": "https://fonts.gstatic.com/s/notosanshk/v6/nKKO-GM_FYFRJvXzVXaAPe9ZUHpw.woff",
+			"extension": "woff"
+		}
 	],
 
 	"APIVariableVariant": {
@@ -58,13 +74,21 @@
 		}
 	},
 	"APIVariableResult": [
-		[
-			["full", "italic", "vietnamese"],
-			"https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_BCnhRv.woff2"
-		],
-		[
-			["full", "italic", "latin-ext"],
-			"https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_FCnhRv.woff2"
-		]
+		{
+			"kind": "variable",
+			"axes": "full",
+			"style": "italic",
+			"subset": "vietnamese",
+			"url": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_BCnhRv.woff2",
+			"extension": "woff2"
+		},
+		{
+			"kind": "variable",
+			"axes": "full",
+			"style": "italic",
+			"subset": "latin-ext",
+			"url": "https://fonts.gstatic.com/s/cabin/v18/u-4_0qWljRw-Pd81z_FCnhRv.woff2",
+			"extension": "woff2"
+		}
 	]
 }
