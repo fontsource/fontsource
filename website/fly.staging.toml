@@ -15,10 +15,6 @@ kill_timeout = "5s"
 [env]
   PRIMARY_REGION = "nrt"
 
-[[mounts]]
-  source = "litefs"
-  destination = "/var/lib/litefs"
-
 [[services]]
   protocol = "tcp"
   internal_port = 8080
