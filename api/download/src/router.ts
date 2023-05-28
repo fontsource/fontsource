@@ -1,5 +1,5 @@
-import { IRequestStrict, Router, error, withParams } from 'itty-router';
-import { CFRouterContext } from './types';
+import { IRequestStrict, Router, error, text, withParams } from 'itty-router';
+import { CFRouterContext, IDResponse } from './types';
 import { updateBucket } from './update';
 
 interface DownloadRequest extends IRequestStrict {
@@ -11,7 +11,14 @@ const router = Router<DownloadRequest, CFRouterContext>();
 router.get('/v1/download/:id', withParams, async (request, env, _ctx) => {
 	const id = request.id;
 
-	await updateBucket(id, env);
+	// Get id from kv
+	const data = await env.FONTS.get<IDResponse>(id, { type: 'json' });
+	if (!data) {
+		return error(404, 'Not Found.');
+	}
+
+	await updateBucket(data, env);
+	return text('Success.');
 });
 
 // 404 for everything else
