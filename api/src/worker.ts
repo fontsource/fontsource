@@ -13,7 +13,7 @@ export default {
 			return fontlistRouter.handle(request, env, ctx);
 		}
 
-		if (url.pathname.startsWith('/v1/fonts/')) {
+		if (url.pathname.startsWith('/v1/fonts')) {
 			return fontsRouter.handle(request, env, ctx);
 		}
 

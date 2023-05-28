@@ -1,0 +1,288 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fonts worker > should filter a single query param (array) 1`] = `[]`;
+
+exports[`fonts worker > should filter a single query param (boolean) 1`] = `
+[
+  {
+    "category": "sans-serif",
+    "defSubset": "latin",
+    "family": "Advent Pro",
+    "id": "advent-pro",
+    "lastModified": "2023-03-21",
+    "license": "OFL-1.1",
+    "styles": [
+      "italic",
+      "normal",
+    ],
+    "subsets": [
+      "cyrillic",
+      "cyrillic-ext",
+      "greek",
+      "latin",
+      "latin-ext",
+    ],
+    "type": "google",
+    "variable": true,
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900,
+    ],
+  },
+  {
+    "category": "icons",
+    "defSubset": "latin",
+    "family": "Material Symbols Outlined",
+    "id": "material-symbols-outlined",
+    "lastModified": "2023-04-27",
+    "license": "Apache-2.0",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "google",
+    "variable": true,
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+    ],
+  },
+]
+`;
+
+exports[`fonts worker > should filter a single query param (number array) 1`] = `
+[
+  {
+    "category": "sans-serif",
+    "defSubset": "latin",
+    "family": "Advent Pro",
+    "id": "advent-pro",
+    "lastModified": "2023-03-21",
+    "license": "OFL-1.1",
+    "styles": [
+      "italic",
+      "normal",
+    ],
+    "subsets": [
+      "cyrillic",
+      "cyrillic-ext",
+      "greek",
+      "latin",
+      "latin-ext",
+    ],
+    "type": "google",
+    "variable": true,
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900,
+    ],
+  },
+  {
+    "category": "other",
+    "defSubset": "latin",
+    "family": "YakuHanJP",
+    "id": "yakuhanjp",
+    "lastModified": "2023-05-15",
+    "license": "OFL-1.1",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "other",
+    "variable": false,
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      700,
+      900,
+    ],
+  },
+]
+`;
+
+exports[`fonts worker > should filter a single query param (string array) 1`] = `[]`;
+
+exports[`fonts worker > should filter a single query param (string) 1`] = `
+[
+  {
+    "category": "other",
+    "defSubset": "latin",
+    "family": "YakuHanJP",
+    "id": "yakuhanjp",
+    "lastModified": "2023-05-15",
+    "license": "OFL-1.1",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "other",
+    "variable": false,
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      700,
+      900,
+    ],
+  },
+]
+`;
+
+exports[`fonts worker > should filter comma separated query params 1`] = `[]`;
+
+exports[`fonts worker > should filter multiple query params 1`] = `[]`;
+
+exports[`fonts worker > should return array of metadata default request 1`] = `
+[
+  {
+    "category": "sans-serif",
+    "defSubset": "latin",
+    "family": "Abel",
+    "id": "abel",
+    "lastModified": "2022-09-22",
+    "license": "OFL-1.1",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "google",
+    "variable": false,
+    "weights": [
+      400,
+    ],
+  },
+  {
+    "category": "sans-serif",
+    "defSubset": "latin",
+    "family": "Advent Pro",
+    "id": "advent-pro",
+    "lastModified": "2023-03-21",
+    "license": "OFL-1.1",
+    "styles": [
+      "italic",
+      "normal",
+    ],
+    "subsets": [
+      "cyrillic",
+      "cyrillic-ext",
+      "greek",
+      "latin",
+      "latin-ext",
+    ],
+    "type": "google",
+    "variable": true,
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900,
+    ],
+  },
+  {
+    "category": "icons",
+    "defSubset": "latin",
+    "family": "Material Icons",
+    "id": "material-icons",
+    "lastModified": "2023-03-08",
+    "license": "Apache-2.0",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "google",
+    "variable": false,
+    "weights": [
+      400,
+    ],
+  },
+  {
+    "category": "icons",
+    "defSubset": "latin",
+    "family": "Material Symbols Outlined",
+    "id": "material-symbols-outlined",
+    "lastModified": "2023-04-27",
+    "license": "Apache-2.0",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "google",
+    "variable": true,
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+    ],
+  },
+  {
+    "category": "other",
+    "defSubset": "latin",
+    "family": "YakuHanJP",
+    "id": "yakuhanjp",
+    "lastModified": "2023-05-15",
+    "license": "OFL-1.1",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "other",
+    "variable": false,
+    "weights": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      700,
+      900,
+    ],
+  },
+]
+`;

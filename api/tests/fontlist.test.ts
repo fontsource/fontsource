@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, beforeEach, expect, it, vi } from 'vitest';
+import { beforeEach, expect, it } from 'vitest';
 const describe = setupMiniflareIsolatedStorage();
 import worker from '../src/worker';
 import { fontlistQueries } from '../src/fontlist/types';

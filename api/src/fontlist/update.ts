@@ -1,9 +1,8 @@
 import type { Fontlist, FontlistQueries } from './types';
 import type { FontsourceMetadata } from '../types';
+import { METADATA_URL } from '../utils';
 
-const METADATA_URL =
-	'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/fontsource.json';
-
+// This updates the fontlist dataset for a given key
 const updateList = async (key: FontlistQueries, env: Env) => {
 	const response = await fetch(METADATA_URL);
 	const data = await response.json<FontsourceMetadata>();

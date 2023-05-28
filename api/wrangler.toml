@@ -3,5 +3,6 @@ main = "src/worker.ts"
 compatibility_date = "2023-05-27"
 
 kv_namespaces = [
-  { binding = "FONTLIST", id = "ef03b5ef10034282a8e6220b9a5258c1", preview_id = "8786b20cf84b4b62ba88505d8cd8caaf" }
+  { binding = "FONTLIST", id = "ef03b5ef10034282a8e6220b9a5258c1", preview_id = "8786b20cf84b4b62ba88505d8cd8caaf" },
+  { binding = "FONTS", id = "3dfa82ada2204c49b2f317a63b72d93c", preview_id = "fe8764b094ec4524ba50631ecc24f177" }
 ]
