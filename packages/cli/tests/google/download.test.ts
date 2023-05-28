@@ -132,5 +132,17 @@ describe('download google', () => {
 			};
 			expect(staticLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
 		});
+
+		it('should generate links for ttf files (icons)', () => {
+			const buildOpts = {
+				dir: 'fonts/icons/material-icons',
+				tmpDir: 'fonts/icons/temp',
+				force: false,
+				isVariable: false,
+				isIcon: true,
+				ttf: true,
+			};
+			expect(staticLinks('material-icons', buildOpts)).toMatchSnapshot();
+		});
 	});
 });

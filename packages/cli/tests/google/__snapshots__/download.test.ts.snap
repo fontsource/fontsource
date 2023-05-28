@@ -8844,6 +8844,23 @@ exports[`download google > download links > should generate links for otf files 
 ]
 `;
 
+exports[`download google > download links > should generate links for ttf files (icons) 1`] = `
+[
+  {
+    "dest": "fonts/icons/material-icons/files/material-icons-latin-400-normal.woff2",
+    "url": "https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2",
+  },
+  {
+    "dest": "fonts/icons/material-icons/files/material-icons-latin-400-normal.woff",
+    "url": "https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNaIhQ8tQ.woff",
+  },
+  {
+    "dest": "fonts/icons/material-icons/files/material-icons-latin-400-normal.ttf",
+    "url": "https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNZ.ttf",
+  },
+]
+`;
+
 exports[`download google > download links > should generate links for ttf files 1`] = `
 [
   {

@@ -145,7 +145,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		await generateLicense(id, fontLicense.license.type, opts);
 
 		// Write .npmignore
-		if (opts.isVariable) {
+		if (!opts.isVariable) {
 			await fs.writeFile(path.join(opts.dir, '.npmignore'), npmIgnore);
 		}
 
