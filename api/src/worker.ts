@@ -1,5 +1,6 @@
 import fontsRouter from './fonts/router';
 import fontlistRouter from './fontlist/router';
+import { error } from 'itty-router';
 
 export default {
 	async fetch(
@@ -17,9 +18,9 @@ export default {
 			return fontsRouter.handle(request, env, ctx);
 		}
 
-		return new Response(
-			'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api',
-			{ status: 404 }
+		return error(
+			404,
+			'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api'
 		);
 	},
 };

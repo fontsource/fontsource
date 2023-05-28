@@ -1,5 +1,5 @@
-import { ArrayMetadata } from './types';
-import { updateArrayMetadata } from './update';
+import { ArrayMetadata, IDResponse } from './types';
+import { updateArrayMetadata, updateId } from './update';
 
 const getOrUpdateArrayMetadata = async (env: Env) => {
 	const value = await env.FONTLIST.get<ArrayMetadata>('metadata_arr', {
@@ -13,4 +13,14 @@ const getOrUpdateArrayMetadata = async (env: Env) => {
 	return value;
 };
 
-export { getOrUpdateArrayMetadata };
+const getOrUpdateId = async (id: string, env: Env) => {
+	const value = await env.FONTS.get<IDResponse>(id, { type: 'json' });
+
+	if (!value) {
+		return await updateId(id, env);
+	}
+
+	return value;
+};
+
+export { getOrUpdateArrayMetadata, getOrUpdateId };

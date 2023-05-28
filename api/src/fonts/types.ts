@@ -61,5 +61,11 @@ interface IDResponse {
 	variants: FontVariants;
 }
 
-export type { ArrayMetadataItem, ArrayMetadata, FontsQueries, IDResponse };
+export type {
+	ArrayMetadataItem,
+	ArrayMetadata,
+	FontsQueries,
+	IDResponse,
+	FontVariants,
+};
 export { isFontsQueries };

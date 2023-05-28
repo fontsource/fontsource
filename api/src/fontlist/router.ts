@@ -42,6 +42,11 @@ router.get('/fontlist', async (request, env, _ctx) => {
 });
 
 // 404 for everything else
-router.all('*', () => error(404, 'Not Found.'));
+router.all('*', () =>
+	error(
+		404,
+		'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api'
+	)
+);
 
 export default router;
