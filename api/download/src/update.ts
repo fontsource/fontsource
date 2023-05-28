@@ -1,6 +1,7 @@
 import JSZip from 'jszip';
 import { IDResponse } from './types';
 import { StatusError } from 'itty-router';
+import PQueue from 'p-queue';
 
 interface URLMetadata {
 	id: string;
@@ -25,6 +26,33 @@ const updateBucket = async (
 		const zip = new JSZip();
 		const webfonts = zip.folder('webfonts');
 
+		// Create a queue
+		const queue = new PQueue({ concurrency: 16 });
+
+		const downloadFile = async ({
+			id,
+			subset,
+			weight,
+			style,
+			extension,
+		}: URLMetadata) => {
+			const url = getFileUrl(
+				{ id, subset, weight, style, extension },
+				'latest'
+			);
+			const buffer = await fetch(url).then((res) => res.arrayBuffer());
+
+			// Add to zip file
+			if (!webfonts) throw new Error('could not generate webfonts folder');
+			webfonts.file(`${id}-${subset}-${weight}-${style}.${extension}`, buffer);
+
+			// Add to bucket
+			await env.BUCKET.put(
+				`${id}@latest/${subset}-${weight}-${style}.${extension}`,
+				buffer
+			);
+		};
+
 		// Add all individual font files to the bucket
 		for (const weight of weights) {
 			for (const style of styles) {
@@ -39,26 +67,14 @@ const updateBucket = async (
 							extension,
 						};
 
-						const url = getFileUrl(urlMetadata, 'latest');
-						const buffer = await fetch(url).then((res) => res.arrayBuffer());
-
-						// Add to zip file
-						if (!webfonts)
-							throw new Error('could not generate webfonts folder');
-						webfonts.file(
-							`${id}-${subset}-${weight}-${style}.${extension}`,
-							buffer
-						);
-
-						// Add to bucket
-						await env.BUCKET.put(
-							`${id}@latest/${subset}-${weight}-${style}.${extension}`,
-							buffer
-						);
+						queue.add(() => downloadFile(urlMetadata));
 					}
 				}
 			}
 		}
+
+		// Wait for all files to be downloaded
+		await queue.onIdle();
 
 		// Add zip file to bucket
 		const zipBuffer = await zip.generateAsync({ type: 'arraybuffer' });

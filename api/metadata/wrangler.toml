@@ -17,3 +17,6 @@ services = [
 
 [placement]
 mode = "smart"
+
+[miniflare.mounts]
+download = "../download/"
