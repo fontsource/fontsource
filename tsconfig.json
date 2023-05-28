@@ -1,7 +1,8 @@
 {
 	"exclude": ["node_modules"],
 	"references": [
-		{ "path": "api" },
+		{ "path": "api/download" },
+		{ "path": "api/metadata" },
 		{ "path": "packages/cli" },
 		{ "path": "packages/generate" },
 		{ "path": "packages/publish" },
