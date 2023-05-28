@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.9
+
+### Patch Changes
+
+- [#739](https://github.com/fontsource/fontsource/pull/739) [`7b70aa7812`](https://github.com/fontsource/fontsource/commit/7b70aa781228fb630dc1a0b59e0ba2ca124a944b) Thanks [@ayuhito](https://github.com/ayuhito)! - Undo custom package verifier changes from [#737](https://github.com/fontsource/fontsource/pull/737).
+
 ## 0.3.8
 
 ### Patch Changes
