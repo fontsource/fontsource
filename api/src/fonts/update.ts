@@ -1,14 +1,9 @@
-import { FontsourceMetadata } from '../types';
-import { METADATA_URL } from '../utils';
+import { getOrUpdateMetadata } from '../fontlist/get';
 import { ArrayMetadata } from './types';
 
 // This updates the main array of fonts dataset
-const updateBase = async (env: Env) => {
-	const response = await fetch(METADATA_URL);
-	const data = await response.json<FontsourceMetadata>();
-
-	// Save entire metadata into KV first
-	await env.FONTLIST.put('metadata', JSON.stringify(data));
+const updateArrayMetadata = async (env: Env) => {
+	const data = getOrUpdateMetadata(env);
 
 	// v1 Response
 	const list: ArrayMetadata = [];
@@ -34,4 +29,4 @@ const updateBase = async (env: Env) => {
 	return list;
 };
 
-export { updateBase };
+export { updateArrayMetadata };

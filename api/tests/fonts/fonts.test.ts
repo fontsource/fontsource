@@ -1,7 +1,7 @@
 import { beforeEach, expect, it } from 'vitest';
 const describe = setupMiniflareIsolatedStorage();
-import worker from '../src/worker';
-import { mockMetadata } from './helpers';
+import worker from '../../src/worker';
+import { mockMetadata } from '../helpers';
 
 describe('fonts worker', () => {
 	const env = getMiniflareBindings() as Env;

@@ -2,6 +2,16 @@ import type { Fontlist, FontlistQueries } from './types';
 import type { FontsourceMetadata } from '../types';
 import { METADATA_URL } from '../utils';
 
+const updateMetadata = async (env: Env) => {
+	const response = await fetch(METADATA_URL);
+	const data = await response.json<FontsourceMetadata>();
+
+	// Save entire metadata into KV first
+	await env.FONTLIST.put('metadata', JSON.stringify(data));
+
+	return data;
+};
+
 // This updates the fontlist dataset for a given key
 const updateList = async (key: FontlistQueries, env: Env) => {
 	const response = await fetch(METADATA_URL);
@@ -23,4 +33,4 @@ const updateList = async (key: FontlistQueries, env: Env) => {
 	return list;
 };
 
-export { updateList };
+export { updateList, updateMetadata };
