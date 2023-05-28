@@ -3,10 +3,6 @@
 exports[`download google > download links > should generate links for base font (abel) 1`] = `
 [
   {
-    "dest": "fonts/google/abel/files/abel-latin-400-normal.woff",
-    "url": "https://fonts.gstatic.com/s/abel/v18/MwQ5bhbm2POE2V9BOw.woff",
-  },
-  {
     "dest": "fonts/google/abel/files/abel-latin-400-normal.woff2",
     "url": "https://fonts.gstatic.com/s/abel/v18/MwQ5bhbm2POE2V9BPQ.woff2",
   },
