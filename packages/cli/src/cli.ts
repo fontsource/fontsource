@@ -86,7 +86,6 @@ cli
 	.option('-i, --id <id>', 'ID of the font to verify')
 	.option('--cwd <cwd>', 'Directory to run verification in')
 	.option('--ci', 'Run in CI mode and throw errors instead of fancy prompts')
-	.option('--ttf', 'Also verify TTF/OTF fonts')
 	.option('--all', 'Verify all fonts')
 	.action(async (options) => {
 		try {
