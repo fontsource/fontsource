@@ -8,7 +8,7 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/v1/download/:id', withParams, async (request, env, _ctx) => {
+router.get('/download/:id', withParams, async (request, env, _ctx) => {
 	const id = request.id;
 
 	// Get id from kv

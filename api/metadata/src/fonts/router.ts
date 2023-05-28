@@ -3,9 +3,11 @@ import { CFRouterContext } from '../types';
 
 import { getOrUpdateArrayMetadata, getOrUpdateId } from './get';
 import { isFontsQueries } from './types';
+import { getOrUpdateFile } from '../download/get';
 
 interface FontRequest extends IRequestStrict {
 	font: string;
+	file: string;
 }
 
 const router = Router<FontRequest, CFRouterContext>();
@@ -67,6 +69,59 @@ router.get('/v1/fonts/:font', withParams, async (request, env, _ctx) => {
 	}
 
 	return json(data);
+});
+
+// This is a deprecated route, but we need to keep it for backwards compatibility
+router.get('/v1/fonts/:font/:file', withParams, async (request, env, _ctx) => {
+	const id = request.font;
+	const file = request.file;
+
+	// Check if id exists in kv
+	const data = await getOrUpdateId(id, env);
+	if (!data) {
+		return error(404, 'Not Found. Font does not exist.');
+	}
+
+	// Get from bucket directly
+	const font = await getOrUpdateFile(data.id, file, env);
+	if (!font) {
+		return error(404, 'Not Found. Font file does not exist.');
+	}
+
+	// Return appropriate content type
+	if (file.endsWith('.woff2')) {
+		return new Response(font.body, {
+			headers: {
+				'Content-Type': 'font/woff2',
+			},
+		});
+	}
+
+	if (file.endsWith('.woff')) {
+		return new Response(font.body, {
+			headers: {
+				'Content-Type': 'font/woff',
+			},
+		});
+	}
+
+	if (file.endsWith('.ttf')) {
+		return new Response(font.body, {
+			headers: {
+				'Content-Type': 'font/ttf',
+			},
+		});
+	}
+
+	if (file.endsWith('.otf')) {
+		return new Response(font.body, {
+			headers: {
+				'Content-Type': 'font/otf',
+			},
+		});
+	}
+
+	return error(400, 'Bad Request. Invalid file type.');
 });
 
 // 404 for everything else
