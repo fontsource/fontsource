@@ -2,6 +2,9 @@ name = "download"
 main = "src/worker.ts"
 compatibility_date = "2023-05-27"
 
-kv_namespaces = [
+r2_buckets = [
   { binding = "BUCKET", bucket_name = "fonts" }
 ]
+
+[placement]
+mode = "smart"

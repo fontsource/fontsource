@@ -1,5 +1,6 @@
 import fontsRouter from './fonts/router';
 import fontlistRouter from './fontlist/router';
+import downloadRouter from './download/router';
 import { error } from 'itty-router';
 
 export default {
@@ -19,7 +20,7 @@ export default {
 		}
 
 		if (url.pathname.startsWith('/v1/download')) {
-			return fontsRouter.handle(request, env, ctx);
+			return downloadRouter.handle(request, env, ctx);
 		}
 
 		return error(
