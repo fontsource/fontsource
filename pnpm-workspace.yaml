@@ -1,4 +1,4 @@
 packages:
-  - api
+  - api/*
   - packages/*
   - website
