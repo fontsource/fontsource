@@ -4,11 +4,25 @@ import { updateBucket } from './update';
 
 interface DownloadRequest extends IRequestStrict {
 	id: string;
+	file: string;
 }
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/download/:id', withParams, async (request, env, _ctx) => {
+router.get('/v1/download/:id', withParams, async (request, env, _ctx) => {
+	const id = request.id;
+
+	// Get id from kv
+	const data = await env.FONTS.get<IDResponse>(id, { type: 'json' });
+	if (!data) {
+		return error(404, 'Not Found.');
+	}
+
+	await updateBucket(data, env);
+	return text('Success.');
+});
+
+router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
 	const id = request.id;
 
 	// Get id from kv

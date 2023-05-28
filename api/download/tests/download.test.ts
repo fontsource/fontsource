@@ -57,7 +57,7 @@ describe('download worker', () => {
 		]);
 	});
 
-	it('should return 400 for invalid font id', async () => {
+	it('should return 404 for invalid font id', async () => {
 		const request = new Request('http://localhost:8787/download/invalid');
 		const response = await worker.fetch(request, env, ctx);
 

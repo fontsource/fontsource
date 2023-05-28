@@ -11,7 +11,7 @@ const router = Router<DownloadRequest, CFRouterContext>();
 router.get('/v1/download/:id', withParams, async (request, env, _ctx) => {
 	const id = request.id;
 
-	const zip = await getOrUpdateZip(id, env);
+	const zip = await getOrUpdateZip(request, id, env);
 	if (!zip) {
 		return error(404, 'Not Found.');
 	}

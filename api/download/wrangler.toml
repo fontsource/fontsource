@@ -7,7 +7,7 @@ kv_namespaces = [
 ]
 
 r2_buckets = [
-  { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "font-preview" }
+  { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" }
 ]
 
 [placement]
