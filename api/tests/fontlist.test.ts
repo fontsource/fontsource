@@ -19,10 +19,17 @@ describe('fontlist worker', () => {
 
 		const body = await response.json();
 		expect(body).toEqual({
-			abel: 'google',
-			'advent-pro': 'google',
+			akshar: 'google',
+			alegreya: 'google',
+			archivo: 'google',
+			ballet: 'google',
+			fraunces: 'google',
 			'material-icons': 'google',
 			'material-symbols-outlined': 'google',
+			'noto-sans-jp': 'google',
+			'noto-serif-hk': 'google',
+			recursive: 'google',
+			'roboto-flex': 'google',
 			yakuhanjp: 'other',
 		});
 	});
