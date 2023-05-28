@@ -1,4 +1,5 @@
 import router from './router';
+import { error } from 'itty-router';
 
 export default {
 	async fetch(
@@ -6,6 +7,11 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<Response> {
-		return router.handle(request, env, ctx);
+		try {
+			return router.handle(request, env, ctx);
+		} catch (e) {
+			console.error(e);
+			return error(500, 'Internal Server Error.');
+		}
 	},
 };
