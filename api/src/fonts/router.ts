@@ -58,8 +58,7 @@ router.get('/v1/fonts', async (request, env, _ctx) => {
 	return json(filtered);
 });
 
-router.get('/v1/fonts/:font', withParams, async (request, env, ctx) => {
-	const url = new URL(request.url);
+router.get('/v1/fonts/:font', withParams, async (request, env, _ctx) => {
 	const id = request.font;
 
 	const data = await getOrUpdateId(id, env);

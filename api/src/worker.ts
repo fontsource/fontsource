@@ -18,6 +18,10 @@ export default {
 			return fontsRouter.handle(request, env, ctx);
 		}
 
+		if (url.pathname.startsWith('/v1/download')) {
+			return fontsRouter.handle(request, env, ctx);
+		}
+
 		return error(
 			404,
 			'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api'
