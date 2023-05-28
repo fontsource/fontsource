@@ -67,12 +67,15 @@ Builds all Google Fonts packages from the metadata generated from `fontsource fe
 npx fontsource build [...fonts] [options]
 ```
 
+- Fonts is a list of font ids to build. If not provided, it will build all fonts.
+
 ### Options
 
 | Option        | Description                                     | Default |
 | ------------- | ----------------------------------------------- | ------- |
 | `-f, --force` | Force rebuild all packages from scratch         | `false` |
 | `-t, --test`  | Generate a small number of packages for testing | `false` |
+| `--ttf`       | Download TTF/OTF font files                     | `false` |
 
 ## License
 
