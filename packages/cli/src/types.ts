@@ -1,6 +1,7 @@
 export interface CLIOptions {
 	test?: boolean;
 	force?: boolean;
+	ttf?: boolean;
 }
 
 export interface BuildOptions {
@@ -12,6 +13,7 @@ export interface BuildOptions {
 	isIcon?: boolean;
 	version?: string;
 	publishHash?: string;
+	ttf?: boolean;
 }
 
 export interface Axes {

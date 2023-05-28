@@ -73,6 +73,7 @@ npx fontsource build [...fonts] [options]
 | ------------- | ----------------------------------------------- | ------- |
 | `-f, --force` | Force rebuild all packages from scratch         | `false` |
 | `-t, --test`  | Generate a small number of packages for testing | `false` |
+| `--ttf`       | Download TTF/OTF font files                     | `false` |
 
 ## License
 

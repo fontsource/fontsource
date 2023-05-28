@@ -110,5 +110,39 @@ describe('download google', () => {
 			};
 			expect(staticLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
 		});
+
+		it('should generate links for ttf files', () => {
+			const buildOpts = {
+				dir: 'fonts/google/abel',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: false,
+				ttf: true,
+			};
+			expect(staticLinks('abel', buildOpts)).toMatchSnapshot();
+		});
+
+		it('should generate links for otf files', () => {
+			const buildOpts = {
+				dir: 'fonts/google/noto-sans-jp',
+				tmpDir: 'fonts/google/temp',
+				force: false,
+				isVariable: false,
+				ttf: true,
+			};
+			expect(staticLinks('noto-sans-jp', buildOpts)).toMatchSnapshot();
+		});
+
+		it('should generate links for ttf files (icons)', () => {
+			const buildOpts = {
+				dir: 'fonts/icons/material-icons',
+				tmpDir: 'fonts/icons/temp',
+				force: false,
+				isVariable: false,
+				isIcon: true,
+				ttf: true,
+			};
+			expect(staticLinks('material-icons', buildOpts)).toMatchSnapshot();
+		});
 	});
 });

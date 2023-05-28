@@ -54,6 +54,7 @@ cli
 	.command('build [...fonts]', 'Build font packages')
 	.option('-f, --force', 'Force rebuild all packages')
 	.option('-t, --test', 'Build test fonts only')
+	.option('--ttf', 'Include TTF/OTF fonts')
 	.action(async (fonts: string[], options) => {
 		try {
 			consola.info(

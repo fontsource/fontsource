@@ -28,7 +28,7 @@ type StaticVariant = {
 	style: string;
 	subset: string;
 	url: string;
-	extension: 'woff' | 'woff2';
+	extension: 'woff' | 'woff2' | 'ttf' | 'otf';
 };
 
 type VariableVariant = {
@@ -46,7 +46,10 @@ const isAbsoluteURL = (url: string): boolean => {
 	return /^https?:\/\//.test(url);
 };
 
-const getStaticVariantList = (variants: FontVariants): StaticVariant[] => {
+const getStaticVariantList = (
+	variants: FontVariants,
+	ttf?: boolean
+): StaticVariant[] => {
 	const variantList: StaticVariant[] = [];
 	for (const [weight, styles] of Object.entries(variants)) {
 		for (const [style, subsets] of Object.entries(styles)) {
@@ -70,6 +73,23 @@ const getStaticVariantList = (variants: FontVariants): StaticVariant[] => {
 						url: url.woff,
 						extension: 'woff',
 					});
+				}
+				// Include TTF if requested
+				if (ttf) {
+					if (url.truetype && isAbsoluteURL(url.truetype)) {
+						variantList.push({
+							...props,
+							url: url.truetype,
+							extension: 'ttf',
+						});
+					}
+					if (url.opentype && isAbsoluteURL(url.opentype)) {
+						variantList.push({
+							...props,
+							url: url.opentype,
+							extension: 'otf',
+						});
+					}
 				}
 			}
 		}
@@ -161,7 +181,7 @@ const staticLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 
 	if (opts.isIcon) {
 		const font = APIIconStatic[id];
-		variants = getStaticVariantList(font.variants);
+		variants = getStaticVariantList(font.variants, opts.ttf);
 	} else {
 		const fontV1 = APIv1[id];
 		const fontV2 = APIv2[id];
@@ -170,8 +190,8 @@ const staticLinks = (id: string, opts: BuildOptions): DownloadLinks[] => {
 		// language subsets, but if noSubset is true, we can skip parsing them.
 		const variantsV1 = opts.noSubset
 			? []
-			: getStaticVariantList(fontV1.variants);
-		const variantsV2 = getStaticVariantList(fontV2.variants);
+			: getStaticVariantList(fontV1.variants, opts.ttf);
+		const variantsV2 = getStaticVariantList(fontV2.variants, opts.ttf);
 
 		// Order is important here, as we want V2 variants to overwrite V1 variants when deduplicating.
 		variants = [...variantsV1, ...variantsV2];
