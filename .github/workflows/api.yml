@@ -1,18 +1,21 @@
-name: Packager Tests
+name: API Tests
 on:
   pull_request:
     branches: [main]
     paths:
-      - "packages/**"
+      - "api/**"
 
   push:
     branches: [main]
     paths:
-      - "packages/**"
+      - "api/**"
 
 jobs:
-  packager:
+  api:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api
 
     steps:
       - uses: actions/checkout@v3
@@ -33,4 +36,4 @@ jobs:
         run: pnpm run lint
 
       - name: Run tests
-        run: pnpm run test:ci
+        run: pnpm run coverage
