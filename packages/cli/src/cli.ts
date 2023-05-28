@@ -54,6 +54,7 @@ cli
 	.command('build [...fonts]', 'Build font packages')
 	.option('-f, --force', 'Force rebuild all packages')
 	.option('-t, --test', 'Build test fonts only')
+	.option('--ttf', 'Include TTF/OTF fonts')
 	.action(async (fonts: string[], options) => {
 		try {
 			consola.info(
@@ -85,6 +86,7 @@ cli
 	.option('-i, --id <id>', 'ID of the font to verify')
 	.option('--cwd <cwd>', 'Directory to run verification in')
 	.option('--ci', 'Run in CI mode and throw errors instead of fancy prompts')
+	.option('--ttf', 'Also verify TTF/OTF fonts')
 	.option('--all', 'Verify all fonts')
 	.action(async (options) => {
 		try {

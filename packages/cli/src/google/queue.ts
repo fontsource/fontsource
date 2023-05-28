@@ -121,6 +121,7 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 			isVariable: false,
 			isIcon: false,
 			force: opts.force ?? false,
+			ttf: opts.ttf ?? false,
 		};
 
 		try {
