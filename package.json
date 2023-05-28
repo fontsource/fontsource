@@ -7,7 +7,7 @@
 	"private": true,
 	"scripts": {
 		"build": "pnpm --filter \"./packages/*\" run build",
-		"coverage": "vitest run --coverage && pnpm --filter \"./api\" run coverage",
+		"coverage": "vitest run --coverage",
 		"lint": "pnpm -r run lint",
 		"test": "vitest",
 		"test:ci": "CI=true pnpm build && pnpm coverage",
