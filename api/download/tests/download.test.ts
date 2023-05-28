@@ -45,7 +45,7 @@ describe('download worker', () => {
 			})
 		);
 
-		const request = new Request('http://localhost:8787/v1/download/roboto');
+		const request = new Request('http://localhost:8787/download/roboto');
 		const response = await worker.fetch(request, env, ctx);
 
 		expect(response.status).toBe(200);
@@ -58,7 +58,7 @@ describe('download worker', () => {
 	});
 
 	it('should return 400 for invalid font id', async () => {
-		const request = new Request('http://localhost:8787/v1/download/invalid');
+		const request = new Request('http://localhost:8787/download/invalid');
 		const response = await worker.fetch(request, env, ctx);
 
 		expect(response.status).toBe(404);
