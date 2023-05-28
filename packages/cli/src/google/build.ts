@@ -22,6 +22,7 @@ import { packagerIconsStatic, packagerIconsVariable } from './packager-icons';
 import { packagerV1 } from './packager-v1';
 import { packagerV2 } from './packager-v2';
 import { packagerVariable } from './packager-variable';
+import { npmIgnore } from '../templates/npmignore';
 
 // Cache imported functions
 const APIIconStatic = APIIconStaticImport;
@@ -142,6 +143,11 @@ const build = async (id: string, opts: BuildOptions) => {
 
 		// Write LICENSE file
 		await generateLicense(id, fontLicense.license.type, opts);
+
+		// Write .npmignore
+		if (opts.isVariable) {
+			await fs.writeFile(path.join(opts.dir, '.npmignore'), npmIgnore);
+		}
 
 		// Write metadata.json
 		await fs.writeFile(

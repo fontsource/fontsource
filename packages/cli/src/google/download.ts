@@ -48,7 +48,7 @@ const isAbsoluteURL = (url: string): boolean => {
 
 const getStaticVariantList = (
 	variants: FontVariants,
-	includeTTF?: boolean
+	ttf?: boolean
 ): StaticVariant[] => {
 	const variantList: StaticVariant[] = [];
 	for (const [weight, styles] of Object.entries(variants)) {
@@ -75,7 +75,7 @@ const getStaticVariantList = (
 					});
 				}
 				// Include TTF if requested
-				if (includeTTF) {
+				if (ttf) {
 					if (url.truetype && isAbsoluteURL(url.truetype)) {
 						variantList.push({
 							...props,
