@@ -37,10 +37,7 @@ export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 
 	// Check if all expected filenames are present and show all missing or non-matching filenames
 	const missingFilenames = expectedFilenames.filter(
-		(filename) =>
-			!filenames.includes(filename) ||
-			!filename.endsWith('.ttf') ||
-			!filename.endsWith('.otf')
+		(filename) => !filenames.includes(filename)
 	);
 	if (missingFilenames.length > 0) {
 		throw new Error(

@@ -1,5 +1,21 @@
 # @fontsource-utils/cli
 
+## 0.3.9
+
+### Patch Changes
+
+- [#739](https://github.com/fontsource/fontsource/pull/739) [`7b70aa7812`](https://github.com/fontsource/fontsource/commit/7b70aa781228fb630dc1a0b59e0ba2ca124a944b) Thanks [@ayuhito](https://github.com/ayuhito)! - Undo custom package verifier changes from [#737](https://github.com/fontsource/fontsource/pull/737).
+
+## 0.3.8
+
+### Patch Changes
+
+- [#733](https://github.com/fontsource/fontsource/pull/733) [`0f162c9e18`](https://github.com/fontsource/fontsource/commit/0f162c9e1893729352fb8467e2515e7bd65baa0e) Thanks [@Sh4rK](https://github.com/Sh4rK)! - Remove duplicated WOFF file downloads of different content for Google Font packages.
+
+- [#731](https://github.com/fontsource/fontsource/pull/731) [`12a99e950c`](https://github.com/fontsource/fontsource/commit/12a99e950c5e6ee3c9d63c4b3358aaf373f62aa3) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(cli): improve variable fonts readme
+
+- [#737](https://github.com/fontsource/fontsource/pull/737) [`f1bf4e666d`](https://github.com/fontsource/fontsource/commit/f1bf4e666d7e3e59f1fcfbfd80cfdf54320d99b4) Thanks [@ayuhito](https://github.com/ayuhito)! - Add TTF/OTF support to the CLI under the `--ttf` flag. This does not update CSS files to include TTF variants, but instead can be used to populate the `font-files` repository making it an accessible source for developers.
+
 ## 0.3.7
 
 ### Patch Changes
