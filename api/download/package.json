@@ -1,0 +1,24 @@
+{
+	"name": "download-api",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"lint": "eslint --fix",
+		"coverage": "vitest run --coverage",
+		"test": "vitest"
+	},
+	"devDependencies": {
+		"@ayuhito/eslint-config": "^0.2.4",
+		"@cloudflare/workers-types": "^4.20230518.0",
+		"eslint": "^8.41.0",
+		"itty-router": "^4.0.2",
+		"jszip": "^3.10.1",
+		"p-queue": "^7.3.4",
+		"typescript": "^5.0.4",
+		"vitest-environment-miniflare": "^2.14.0",
+		"woff2sfnt-sfnt2woff": "^1.0.0",
+		"wrangler": "^3.0.1"
+	}
+}
