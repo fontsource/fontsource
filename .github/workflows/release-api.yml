@@ -37,7 +37,7 @@ jobs:
           version: "pnpm run ci:version"
           publish: "pnpm run ci:publish-api"
           commit: "chore(api): release versions"
-          title: "Release 🎉"
+          title: "Release API 🤖"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
