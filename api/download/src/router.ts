@@ -1,5 +1,5 @@
-import { IRequestStrict, Router, error, text, withParams } from 'itty-router';
-import { CFRouterContext, IDResponse } from './types';
+import { IRequestStrict, Router, error, text } from 'itty-router';
+import { CFRouterContext, FileGenerator } from './types';
 import { updateBucket } from './update';
 
 interface DownloadRequest extends IRequestStrict {
@@ -9,29 +9,13 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/v1/download/:id', withParams, async (request, env, _ctx) => {
-	const id = request.id;
-
-	// Get id from kv
-	const data = await env.FONTS.get<IDResponse>(id, { type: 'json' });
-	if (!data) {
+router.post('/v1/*', async (request, env, _ctx) => {
+	const body = await request.json<FileGenerator>();
+	if (!body) {
 		return error(404, 'Not Found.');
 	}
 
-	await updateBucket(data, env);
-	return text('Success.');
-});
-
-router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
-	const id = request.id;
-
-	// Get id from kv
-	const data = await env.FONTS.get<IDResponse>(id, { type: 'json' });
-	if (!data) {
-		return error(404, 'Not Found.');
-	}
-
-	await updateBucket(data, env);
+	await updateBucket(body, env);
 	return text('Success.');
 });
 

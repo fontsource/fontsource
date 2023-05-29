@@ -76,8 +76,13 @@ router.get('/v1/fonts/:font/:file', withParams, async (request, env, _ctx) => {
 	const id = request.font;
 	const file = request.file;
 
+	const data = await getOrUpdateId(id, env);
+	if (!data) {
+		return error(404, 'Not Found. Font does not exist.');
+	}
+
 	// Get from bucket directly
-	const font = await getOrUpdateFile(request, id, file, env);
+	const font = await getOrUpdateFile(request, data, file, env);
 	if (!font) {
 		return error(404, 'Not Found. Font file does not exist.');
 	}

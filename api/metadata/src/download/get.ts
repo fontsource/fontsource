@@ -1,28 +1,52 @@
-const getOrUpdateZip = async (request: Request, id: string, env: Env) => {
+interface FileGenerator {
+	id: string;
+	subsets: string[];
+	weights: number[];
+	styles: string[];
+}
+
+// We need to make a POST request to the download worker
+const createRequest = (request: Request, data: FileGenerator) => {
+	const newRequestInit = {
+		method: 'POST',
+		body: JSON.stringify({ ...data }),
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	};
+
+	return new Request(request, newRequestInit);
+};
+
+const getOrUpdateZip = async (
+	request: Request,
+	data: FileGenerator,
+	env: Env
+) => {
 	// Check if download.zip exists in bucket
-	const zip = await env.BUCKET.get(`${id}@latest/download.zip`);
+	const zip = await env.BUCKET.get(`${data.id}@latest/download.zip`);
 	if (!zip) {
 		// Try calling download worker
-		await env.DOWNLOAD.fetch(request.clone());
+		await env.DOWNLOAD.fetch(createRequest(request, data));
 		// Check again if download.zip exists in bucket
-		return await env.BUCKET.get(`${id}@latest/download.zip`);
+		return await env.BUCKET.get(`${data.id}@latest/download.zip`);
 	}
 	return zip;
 };
 
 const getOrUpdateFile = async (
 	request: Request,
-	id: string,
+	data: FileGenerator,
 	file: string,
 	env: Env
 ) => {
 	// Check if file exists in bucket
-	const font = await env.BUCKET.get(`${id}@latest/${file}`);
+	const font = await env.BUCKET.get(`${data.id}@latest/${file}`);
 	if (!font) {
 		// Try calling download worker
-		await env.DOWNLOAD.fetch(request.clone());
+		await env.DOWNLOAD.fetch(createRequest(request, data));
 		// Check again if file exists in bucket
-		return await env.BUCKET.get(`${id}@latest/${file}`);
+		return await env.BUCKET.get(`${data.id}@latest/${file}`);
 	}
 	return font;
 };

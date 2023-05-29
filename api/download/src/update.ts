@@ -1,5 +1,5 @@
 import JSZip from 'jszip';
-import { IDResponse } from './types';
+import { FileGenerator } from './types';
 import { StatusError } from 'itty-router';
 import PQueue from 'p-queue';
 
@@ -18,7 +18,7 @@ const getFileUrl = (
 	`https://cdn.jsdelivr.net/npm/@fontsource/${id}@${npmVersion}/files/${id}-${subset}-${weight}-${style}.${extension}`;
 
 const updateBucket = async (
-	{ id, weights, styles, subsets }: IDResponse,
+	{ id, weights, styles, subsets }: FileGenerator,
 	env: Env
 ) => {
 	try {
