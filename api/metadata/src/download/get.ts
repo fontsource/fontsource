@@ -6,16 +6,19 @@ interface FileGenerator {
 }
 
 // We need to make a POST request to the download worker
-const createRequest = (request: Request, data: FileGenerator) => {
+const createRequest = (
+	request: Request,
+	{ id, subsets, weights, styles }: FileGenerator
+) => {
 	const newRequestInit = {
 		method: 'POST',
-		body: JSON.stringify({ ...data }),
+		body: JSON.stringify({ id, subsets, weights, styles }),
 		headers: {
 			'Content-Type': 'application/json',
 		},
 	};
 
-	return new Request(request, newRequestInit);
+	return new Request(request.clone(), newRequestInit);
 };
 
 const getOrUpdateZip = async (

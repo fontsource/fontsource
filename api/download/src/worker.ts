@@ -7,6 +7,9 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<Response> {
-		return router.handle(request, env, ctx).catch(error);
+		return router.handle(request, env, ctx).catch((err) => {
+			console.error(err);
+			return error(err);
+		});
 	},
 };

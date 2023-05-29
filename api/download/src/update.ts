@@ -2,7 +2,8 @@ import JSZip from 'jszip';
 import { FileGenerator } from './types';
 import { StatusError } from 'itty-router';
 import PQueue from 'p-queue';
-import { decompress } from 'wawoff2';
+// @ts-ignore - no types
+import woff2ttf from 'woff2sfnt-sfnt2woff';
 
 interface URLMetadata {
 	id: string;
@@ -44,7 +45,8 @@ const updateBucket = async (
 		const buffer = await res.arrayBuffer();
 
 		// Add to zip file
-		if (!webfonts) throw new Error('could not generate webfonts folder');
+		if (!webfonts)
+			throw new StatusError(500, 'could not generate webfonts folder');
 		webfonts.file(`${id}-${subset}-${weight}-${style}.${extension}`, buffer);
 
 		// Add to bucket
@@ -53,10 +55,18 @@ const updateBucket = async (
 			buffer
 		);
 
-		// If woff2, decompress and add to ttf folder
-		if (extension === 'woff2') {
-			const ttfBuffer = await decompress(new Uint8Array(buffer));
-			if (!ttf) throw new Error('could not generate ttf folder');
+		// If woff, decompress and add to ttf folder
+		if (extension === 'woff') {
+			let ttfBuffer;
+			try {
+				ttfBuffer = await woff2ttf.toSfnt(new Uint8Array(buffer));
+			} catch (err) {
+				throw new StatusError(500, 'could not convert woff to ttf');
+			}
+			if (!ttfBuffer)
+				throw new StatusError(500, 'could not convert woff to ttf');
+
+			if (!ttf) throw new StatusError(500, 'could not generate ttf folder');
 			ttf.file(`${id}-${subset}-${weight}-${style}.ttf`, ttfBuffer);
 
 			// Add to bucket

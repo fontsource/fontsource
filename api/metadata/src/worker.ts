@@ -13,15 +13,24 @@ export default {
 			const url = new URL(request.url);
 
 			if (url.pathname.startsWith('/fontlist')) {
-				return fontlistRouter.handle(request, env, ctx);
+				return fontlistRouter.handle(request, env, ctx).catch((err) => {
+					console.error(err);
+					return error(err);
+				});
 			}
 
 			if (url.pathname.startsWith('/v1/fonts')) {
-				return fontsRouter.handle(request, env, ctx);
+				return fontsRouter.handle(request, env, ctx).catch((err) => {
+					console.error(err);
+					return error(err);
+				});
 			}
 
 			if (url.pathname.startsWith('/v1/download')) {
-				return downloadRouter.handle(request, env, ctx);
+				return downloadRouter.handle(request, env, ctx).catch((err) => {
+					console.error(err);
+					return error(err);
+				});
 			}
 
 			return error(

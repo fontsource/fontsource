@@ -10,5 +10,8 @@ r2_buckets = [
   { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" }
 ]
 
+logpush = true
+node_compat = true
+
 [placement]
 mode = "smart"

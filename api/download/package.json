@@ -18,7 +18,7 @@
 		"p-queue": "^7.3.4",
 		"typescript": "^5.0.4",
 		"vitest-environment-miniflare": "^2.14.0",
-		"wawoff2": "^2.0.1",
+		"woff2sfnt-sfnt2woff": "^1.0.0",
 		"wrangler": "^3.0.1"
 	}
 }
