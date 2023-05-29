@@ -27,7 +27,7 @@ jobs:
           cache: "pnpm"
 
       - name: Install
-        run: pnpm install'
+        run: pnpm install
 
       - name: Create Release Pull Request or Publish Cloudflare
         id: cs
