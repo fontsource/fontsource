@@ -46,6 +46,9 @@ importers:
       vitest-environment-miniflare:
         specifier: ^2.14.0
         version: 2.14.0(vitest@0.31.1)
+      wawoff2:
+        specifier: ^2.0.1
+        version: 2.0.1
       wrangler:
         specifier: ^3.0.1
         version: 3.0.1
@@ -12797,6 +12800,13 @@ packages:
 
   /vscode-uri@3.0.7:
     resolution: {integrity: sha512-eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==}
+    dev: true
+
+  /wawoff2@2.0.1:
+    resolution: {integrity: sha512-r0CEmvpH63r4T15ebFqeOjGqU4+EgTx4I510NtK35EMciSdcTxCw3Byy3JnBonz7iyIFZ0AbVo0bbFpEVuhCYA==}
+    hasBin: true
+    dependencies:
+      argparse: 2.0.1
     dev: true
 
   /wcwidth@1.0.1:

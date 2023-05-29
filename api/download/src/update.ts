@@ -2,6 +2,7 @@ import JSZip from 'jszip';
 import { FileGenerator } from './types';
 import { StatusError } from 'itty-router';
 import PQueue from 'p-queue';
+import { decompress } from 'wawoff2';
 
 interface URLMetadata {
 	id: string;
@@ -25,6 +26,7 @@ const updateBucket = async (
 		// Generate zip file of all fonts
 		const zip = new JSZip();
 		const webfonts = zip.folder('webfonts');
+		const ttf = zip.folder('ttf');
 
 		// Create a queue
 		const queue = new PQueue({ concurrency: 16 });
@@ -54,6 +56,19 @@ const updateBucket = async (
 				`${id}@latest/${subset}-${weight}-${style}.${extension}`,
 				buffer
 			);
+
+			// If woff2, decompress and add to ttf folder
+			if (extension === 'woff2') {
+				const ttfBuffer = await decompress(new Uint8Array(buffer));
+				if (!ttf) throw new Error('could not generate ttf folder');
+				ttf.file(`${id}-${subset}-${weight}-${style}.ttf`, ttfBuffer);
+
+				// Add to bucket
+				await env.BUCKET.put(
+					`${id}@latest/${subset}-${weight}-${style}.ttf`,
+					ttfBuffer
+				);
+			}
 		};
 
 		// Add all individual font files to the bucket
