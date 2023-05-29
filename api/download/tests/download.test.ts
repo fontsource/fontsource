@@ -1,4 +1,6 @@
 import { beforeEach, expect, it } from 'vitest';
+import * as fs from 'node:fs/promises';
+import * as path from 'node:path';
 const describe = setupMiniflareIsolatedStorage();
 import worker from '../src/worker';
 
@@ -19,19 +21,23 @@ describe('download worker', () => {
 				method: 'GET',
 				path: '/npm/@fontsource/roboto@latest/files/roboto-latin-400-normal.woff2',
 			})
-			.reply(200, 'test');
+			.reply(
+				200,
+				await fs.readFile(
+					path.resolve(__dirname, './fixtures/roboto-latin-400-normal.woff2')
+				)
+			);
 		origin
 			.intercept({
 				method: 'GET',
 				path: '/npm/@fontsource/roboto@latest/files/roboto-latin-400-normal.woff',
 			})
-			.reply(200, 'test');
-		origin
-			.intercept({
-				method: 'GET',
-				path: '/npm/@fontsource/roboto@latest/files/roboto-latin-400-normal.ttf',
-			})
-			.reply(200, 'test');
+			.reply(
+				200,
+				await fs.readFile(
+					path.resolve(__dirname, './fixtures/roboto-latin-400-normal.woff')
+				)
+			);
 
 		// Mock invalids
 		origin
@@ -44,12 +50,6 @@ describe('download worker', () => {
 			.intercept({
 				method: 'GET',
 				path: '/npm/@fontsource/invalid@latest/files/invalid-latin-400-normal.woff',
-			})
-			.reply(404, 'test');
-		origin
-			.intercept({
-				method: 'GET',
-				path: '/npm/@fontsource/invalid@latest/files/invalid-latin-400-normal.ttf',
 			})
 			.reply(404, 'test');
 	});
@@ -73,6 +73,7 @@ describe('download worker', () => {
 		// Check uploaded files
 		expect((await env.BUCKET.list()).objects.map((item) => item.key)).toEqual([
 			'roboto@latest/download.zip',
+			'roboto@latest/latin-400-normal.ttf',
 			'roboto@latest/latin-400-normal.woff',
 			'roboto@latest/latin-400-normal.woff2',
 		]);

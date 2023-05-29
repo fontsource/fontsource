@@ -15,14 +15,7 @@ router.post('/v1/*', async (request, env, _ctx) => {
 		return error(404, 'Not Found.');
 	}
 
-	try {
-		await updateBucket(body, env);
-	} catch (err) {
-		if (err instanceof StatusError) {
-			return error(err.status, err.message);
-		}
-		return error(500, 'Internal Server Error.');
-	}
+	await updateBucket(body, env);
 	return text('Success.');
 });
 

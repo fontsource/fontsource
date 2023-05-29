@@ -22,84 +22,86 @@ const updateBucket = async (
 	{ id, weights, styles, subsets }: FileGenerator,
 	env: Env
 ) => {
-	try {
-		// Generate zip file of all fonts
-		const zip = new JSZip();
-		const webfonts = zip.folder('webfonts');
-		const ttf = zip.folder('ttf');
+	// Generate zip file of all fonts
+	const zip = new JSZip();
+	const webfonts = zip.folder('webfonts');
+	const ttf = zip.folder('ttf');
 
-		// Create a queue
-		const queue = new PQueue({ concurrency: 16 });
+	// Create a queue
+	const queue = new PQueue({ concurrency: 16 });
 
-		const downloadFile = async ({
-			id,
-			subset,
-			weight,
-			style,
-			extension,
-		}: URLMetadata) => {
-			const url = getFileUrl(
-				{ id, subset, weight, style, extension },
-				'latest'
-			);
-			const res = await fetch(url);
-			if (!res.ok) throw new StatusError(404, `Could not find ${url}`);
+	const downloadFile = async ({
+		id,
+		subset,
+		weight,
+		style,
+		extension,
+	}: URLMetadata) => {
+		const url = getFileUrl({ id, subset, weight, style, extension }, 'latest');
+		const res = await fetch(url);
+		if (!res.ok) throw new StatusError(404, `Could not find ${url}`);
 
-			const buffer = await res.arrayBuffer();
+		const buffer = await res.arrayBuffer();
 
-			// Add to zip file
-			if (!webfonts) throw new Error('could not generate webfonts folder');
-			webfonts.file(`${id}-${subset}-${weight}-${style}.${extension}`, buffer);
+		// Add to zip file
+		if (!webfonts) throw new Error('could not generate webfonts folder');
+		webfonts.file(`${id}-${subset}-${weight}-${style}.${extension}`, buffer);
+
+		// Add to bucket
+		await env.BUCKET.put(
+			`${id}@latest/${subset}-${weight}-${style}.${extension}`,
+			buffer
+		);
+
+		// If woff2, decompress and add to ttf folder
+		if (extension === 'woff2') {
+			const ttfBuffer = await decompress(new Uint8Array(buffer));
+			if (!ttf) throw new Error('could not generate ttf folder');
+			ttf.file(`${id}-${subset}-${weight}-${style}.ttf`, ttfBuffer);
 
 			// Add to bucket
 			await env.BUCKET.put(
-				`${id}@latest/${subset}-${weight}-${style}.${extension}`,
-				buffer
+				`${id}@latest/${subset}-${weight}-${style}.ttf`,
+				ttfBuffer
 			);
+		}
+	};
 
-			// If woff2, decompress and add to ttf folder
-			if (extension === 'woff2') {
-				const ttfBuffer = await decompress(new Uint8Array(buffer));
-				if (!ttf) throw new Error('could not generate ttf folder');
-				ttf.file(`${id}-${subset}-${weight}-${style}.ttf`, ttfBuffer);
+	let hasError;
 
-				// Add to bucket
-				await env.BUCKET.put(
-					`${id}@latest/${subset}-${weight}-${style}.ttf`,
-					ttfBuffer
-				);
-			}
-		};
+	// Add all individual font files to the bucket
+	for (const weight of weights) {
+		for (const style of styles) {
+			for (const subset of subsets) {
+				for (const extension of ['woff2', 'woff']) {
+					// For now we only push to latest tag
+					const urlMetadata: URLMetadata = {
+						id,
+						subset,
+						weight,
+						style,
+						extension,
+					};
 
-		// Add all individual font files to the bucket
-		for (const weight of weights) {
-			for (const style of styles) {
-				for (const subset of subsets) {
-					for (const extension of ['woff2', 'woff']) {
-						// For now we only push to latest tag
-						const urlMetadata: URLMetadata = {
-							id,
-							subset,
-							weight,
-							style,
-							extension,
-						};
-
-						queue.add(() => downloadFile(urlMetadata));
-					}
+					queue
+						.add(() => downloadFile(urlMetadata))
+						.catch((err) => {
+							queue.pause();
+							queue.clear();
+							hasError = err;
+						});
 				}
 			}
 		}
-
-		// Wait for all files to be downloaded
-		await queue.onIdle();
-
-		// Add zip file to bucket
-		const zipBuffer = await zip.generateAsync({ type: 'arraybuffer' });
-		await env.BUCKET.put(`${id}@latest/download.zip`, zipBuffer);
-	} catch (err) {
-		throw new StatusError(500, 'Could not update bucket.');
 	}
+
+	// Wait for all files to be downloaded
+	await queue.onIdle();
+	if (hasError) throw hasError;
+
+	// Add zip file to bucket
+	const zipBuffer = await zip.generateAsync({ type: 'arraybuffer' });
+	await env.BUCKET.put(`${id}@latest/download.zip`, zipBuffer);
 };
 
 export { updateBucket };
