@@ -11,7 +11,7 @@ r2_buckets = [
 ]
 
 logpush = true
-node_compat = true
+workers_dev = false
 
-[placement]
-mode = "smart"
+# Need the buffer for woff2ttf
+node_compat = true
