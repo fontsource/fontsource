@@ -32,20 +32,41 @@ describe('download worker', () => {
 				path: '/npm/@fontsource/roboto@latest/files/roboto-latin-400-normal.ttf',
 			})
 			.reply(200, 'test');
+
+		// Mock invalids
+		origin
+			.intercept({
+				method: 'GET',
+				path: '/npm/@fontsource/invalid@latest/files/invalid-latin-400-normal.woff2',
+			})
+			.reply(404, 'test');
+		origin
+			.intercept({
+				method: 'GET',
+				path: '/npm/@fontsource/invalid@latest/files/invalid-latin-400-normal.woff',
+			})
+			.reply(404, 'test');
+		origin
+			.intercept({
+				method: 'GET',
+				path: '/npm/@fontsource/invalid@latest/files/invalid-latin-400-normal.ttf',
+			})
+			.reply(404, 'test');
 	});
 
 	it('should return type as default request', async () => {
-		env.FONTS.put(
-			'roboto',
-			JSON.stringify({
+		const request = new Request('http://localhost:8787/v1/download/roboto', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
 				id: 'roboto',
 				subsets: ['latin'],
 				weights: [400],
 				styles: ['normal'],
-			})
-		);
-
-		const request = new Request('http://localhost:8787/download/roboto');
+			}),
+		});
 		const response = await worker.fetch(request, env, ctx);
 
 		expect(response.status).toBe(200);
@@ -58,7 +79,18 @@ describe('download worker', () => {
 	});
 
 	it('should return 404 for invalid font id', async () => {
-		const request = new Request('http://localhost:8787/download/invalid');
+		const request = new Request('http://localhost:8787/v1/download/invalid', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				id: 'invalid',
+				subsets: ['latin'],
+				weights: [400],
+				styles: ['normal'],
+			}),
+		});
 		const response = await worker.fetch(request, env, ctx);
 
 		expect(response.status).toBe(404);

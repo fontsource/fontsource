@@ -1,4 +1,4 @@
-import { IRequestStrict, Router, error, text } from 'itty-router';
+import { IRequestStrict, Router, error, text, StatusError } from 'itty-router';
 import { CFRouterContext, FileGenerator } from './types';
 import { updateBucket } from './update';
 
@@ -15,7 +15,14 @@ router.post('/v1/*', async (request, env, _ctx) => {
 		return error(404, 'Not Found.');
 	}
 
-	await updateBucket(body, env);
+	try {
+		await updateBucket(body, env);
+	} catch (err) {
+		if (err instanceof StatusError) {
+			return error(err.status, err.message);
+		}
+		return error(500, 'Internal Server Error.');
+	}
 	return text('Success.');
 });
 

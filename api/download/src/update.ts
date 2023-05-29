@@ -40,7 +40,10 @@ const updateBucket = async (
 				{ id, subset, weight, style, extension },
 				'latest'
 			);
-			const buffer = await fetch(url).then((res) => res.arrayBuffer());
+			const res = await fetch(url);
+			if (!res.ok) throw new StatusError(404, `Could not find ${url}`);
+
+			const buffer = await res.arrayBuffer();
 
 			// Add to zip file
 			if (!webfonts) throw new Error('could not generate webfonts folder');
