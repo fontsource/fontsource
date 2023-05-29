@@ -16,9 +16,7 @@ services = [
 ]
 
 logpush = true
-
-[placement]
-mode = "smart"
+workers_dev = false
 
 [miniflare.mounts]
 download = "../download/"
