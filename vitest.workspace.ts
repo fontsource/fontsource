@@ -1,4 +1,4 @@
 import { defineWorkspace } from 'vitest/config';
 
-// defineWorkspace provides a nice type hinting DX
+// api is not included in workspace because Miniflare breaks
 export default defineWorkspace(['packages/*']);
