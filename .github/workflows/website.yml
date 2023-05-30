@@ -10,6 +10,7 @@ jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
+    if: github.repository == 'fontsource/fontsource'
     defaults:
       run:
         working-directory: website
