@@ -137,7 +137,7 @@ export const TabsWrapper = ({
 						Install
 					</Tabs.Tab>
 					<a
-						href={`https://api.fontsource.org/v1/fonts/${metadata.id}/download`}
+						href={`https://api.fontsource.org/v1/download/${metadata.id}`}
 						className={classes.downloadButton}
 						ref={ref}
 					>

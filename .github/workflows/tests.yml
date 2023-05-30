@@ -11,7 +11,7 @@ on:
       - "packages/**"
 
 jobs:
-  build:
+  packager:
     runs-on: ubuntu-latest
 
     steps:

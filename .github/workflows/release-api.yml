@@ -1,11 +1,11 @@
-name: Release Packager
+name: Release API
 
 on:
   push:
     branches:
       - main
     paths:
-      - "packages/**"
+      - "api/**"
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
@@ -30,22 +30,15 @@ jobs:
       - name: Install
         run: pnpm install
 
-      - name: Create Release Pull Request or Publish to npm
+      - name: Create Release Pull Request or Publish Cloudflare
         id: cs
         uses: changesets/action@v1
         with:
           version: "pnpm run ci:version"
-          publish: "pnpm run ci:publish"
-          commit: "chore: release versions"
-          title: "Release 🎉"
+          publish: "pnpm run ci:publish-api"
+          commit: "chore(api): release versions"
+          title: "Release API 🤖"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Dispatch Dependency Update PR to font-files
-        if: steps.cs.outputs.published == 'true'
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.DISPATCH_PAT }}
-          repository: fontsource/font-files
-          event-type: update-deps
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

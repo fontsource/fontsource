@@ -1,0 +1,317 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fontlist worker > should return return value of category query string 1`] = `
+{
+  "akshar": "sans-serif",
+  "alegreya": "serif",
+  "archivo": "sans-serif",
+  "ballet": "handwriting",
+  "fraunces": "serif",
+  "material-icons": "icons",
+  "material-symbols-outlined": "icons",
+  "noto-sans-jp": "sans-serif",
+  "noto-serif-hk": "serif",
+  "recursive": "sans-serif",
+  "roboto-flex": "sans-serif",
+  "yakuhanjp": "other",
+}
+`;
+
+exports[`fontlist worker > should return return value of family query string 1`] = `
+{
+  "akshar": "Akshar",
+  "alegreya": "Alegreya",
+  "archivo": "Archivo",
+  "ballet": "Ballet",
+  "fraunces": "Fraunces",
+  "material-icons": "Material Icons",
+  "material-symbols-outlined": "Material Symbols Outlined",
+  "noto-sans-jp": "Noto Sans JP",
+  "noto-serif-hk": "Noto Serif HK",
+  "recursive": "Recursive",
+  "roboto-flex": "Roboto Flex",
+  "yakuhanjp": "YakuHanJP",
+}
+`;
+
+exports[`fontlist worker > should return return value of lastModified query string 1`] = `
+{
+  "akshar": "2023-03-21",
+  "alegreya": "2023-03-21",
+  "archivo": "2022-09-22",
+  "ballet": "2023-03-09",
+  "fraunces": "2023-03-21",
+  "material-icons": "2023-03-08",
+  "material-symbols-outlined": "2023-04-27",
+  "noto-sans-jp": "2023-04-13",
+  "noto-serif-hk": "2022-09-27",
+  "recursive": "2023-01-06",
+  "roboto-flex": "2023-01-06",
+  "yakuhanjp": "2023-05-15",
+}
+`;
+
+exports[`fontlist worker > should return return value of styles query string 1`] = `
+{
+  "akshar": [
+    "normal",
+  ],
+  "alegreya": [
+    "italic",
+    "normal",
+  ],
+  "archivo": [
+    "italic",
+    "normal",
+  ],
+  "ballet": [
+    "normal",
+  ],
+  "fraunces": [
+    "italic",
+    "normal",
+  ],
+  "material-icons": [
+    "normal",
+  ],
+  "material-symbols-outlined": [
+    "normal",
+  ],
+  "noto-sans-jp": [
+    "normal",
+  ],
+  "noto-serif-hk": [
+    "normal",
+  ],
+  "recursive": [
+    "normal",
+  ],
+  "roboto-flex": [
+    "normal",
+  ],
+  "yakuhanjp": [
+    "normal",
+  ],
+}
+`;
+
+exports[`fontlist worker > should return return value of subsets query string 1`] = `
+{
+  "akshar": [
+    "devanagari",
+    "latin",
+    "latin-ext",
+  ],
+  "alegreya": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "greek-ext",
+    "latin",
+    "latin-ext",
+    "vietnamese",
+  ],
+  "archivo": [
+    "latin",
+    "latin-ext",
+    "vietnamese",
+  ],
+  "ballet": [
+    "latin",
+    "latin-ext",
+    "vietnamese",
+  ],
+  "fraunces": [
+    "latin",
+    "latin-ext",
+    "vietnamese",
+  ],
+  "material-icons": [
+    "latin",
+  ],
+  "material-symbols-outlined": [
+    "latin",
+  ],
+  "noto-sans-jp": [
+    "cyrillic",
+    "japanese",
+    "latin",
+    "latin-ext",
+    "vietnamese",
+  ],
+  "noto-serif-hk": [
+    "chinese-hongkong",
+    "cyrillic",
+    "latin",
+    "latin-ext",
+    "vietnamese",
+  ],
+  "recursive": [
+    "cyrillic-ext",
+    "latin",
+    "latin-ext",
+    "vietnamese",
+  ],
+  "roboto-flex": [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "latin",
+    "latin-ext",
+    "vietnamese",
+  ],
+  "yakuhanjp": [
+    "latin",
+  ],
+}
+`;
+
+exports[`fontlist worker > should return return value of type query string 1`] = `
+{
+  "akshar": "google",
+  "alegreya": "google",
+  "archivo": "google",
+  "ballet": "google",
+  "fraunces": "google",
+  "material-icons": "google",
+  "material-symbols-outlined": "google",
+  "noto-sans-jp": "google",
+  "noto-serif-hk": "google",
+  "recursive": "google",
+  "roboto-flex": "google",
+  "yakuhanjp": "other",
+}
+`;
+
+exports[`fontlist worker > should return return value of variable query string 1`] = `
+{
+  "akshar": true,
+  "alegreya": true,
+  "archivo": true,
+  "ballet": true,
+  "fraunces": true,
+  "material-icons": false,
+  "material-symbols-outlined": true,
+  "noto-sans-jp": true,
+  "noto-serif-hk": true,
+  "recursive": true,
+  "roboto-flex": true,
+  "yakuhanjp": false,
+}
+`;
+
+exports[`fontlist worker > should return return value of version query string 1`] = `
+{
+  "akshar": "v9",
+  "alegreya": "v35",
+  "archivo": "v18",
+  "ballet": "v25",
+  "fraunces": "v30",
+  "material-icons": "v140",
+  "material-symbols-outlined": "v108",
+  "noto-sans-jp": "v51",
+  "noto-serif-hk": "v2",
+  "recursive": "v37",
+  "roboto-flex": "v9",
+  "yakuhanjp": "v3.3.1",
+}
+`;
+
+exports[`fontlist worker > should return return value of weights query string 1`] = `
+{
+  "akshar": [
+    300,
+    400,
+    500,
+    600,
+    700,
+  ],
+  "alegreya": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+  ],
+  "archivo": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+  ],
+  "ballet": [
+    400,
+  ],
+  "fraunces": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+  ],
+  "material-icons": [
+    400,
+  ],
+  "material-symbols-outlined": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+  ],
+  "noto-sans-jp": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+  ],
+  "noto-serif-hk": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+  ],
+  "recursive": [
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+  ],
+  "roboto-flex": [
+    400,
+  ],
+  "yakuhanjp": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    700,
+    900,
+  ],
+}
+`;
