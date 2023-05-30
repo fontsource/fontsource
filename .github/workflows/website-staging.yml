@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   approve:
+    if: github.repository == 'fontsource/fontsource'
     name: Approve PR to deploy
     runs-on: ubuntu-latest
     steps:
