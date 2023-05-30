@@ -3,13 +3,13 @@ title: Qwik
 section: Frameworks
 ---
 
-# Qwik
+## Qwik
 
 ---
 
 To use Fontsource with a [Qwik City](https://qwik.builder.io) project, it is suggested to use the `/routes/layout.tsx` file. 
 
-## Installation
+### 1. Installation
 
 ---
 
@@ -34,7 +34,7 @@ export default component$(() => {
 
 > **Note:** Alternatively, you can import the font in **index.tsx** or any other component file and it should have the same effect.
 
-## Usage  
+### 2. Usage  
 
 ---
 
@@ -46,18 +46,18 @@ h1 {
 }
 ```
 
-### Scoped Component Fonts
+#### Scoped Component Fonts
 
 To use Qwik's scoped CSS functionality, you can use the font declaration in the `useStylesScoped$()` hook from Qwik. 
 
 ```tsx
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import "@fontsource/open-sans/500.css";
+import "@fontsource-variable/open-sans";
 
 export default component$(() => {
   useStylesScoped$(`
       .heading {
-        font-family: 'Open Sans', sans-serif;
+        font-family: "Open Sans Variable", sans-serif;
         font-weight: 500;
       }
     `);
@@ -73,7 +73,7 @@ export default component$(() => {
 
 You can opt out of this scoped behavior by using Qwik's `:global()` selector.
 
-### Extensibility
+### 3. Extensibility
 
 By default, Qwik works well with Fontsource out of the box. This even includes [lazy-loadable references](https://qwik.builder.io/docs/components/styles/#usestyles) to component styles with `useStyles$()`.
 
