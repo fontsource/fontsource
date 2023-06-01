@@ -1,5 +1,5 @@
-import '@fontsource/inter/variable.css';
-import '@fontsource/source-code-pro/variable.css';
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource-variable/source-code-pro/wght.css';
 
 import { enableLegendStateReact } from '@legendapp/state/react';
 import type { ColorScheme } from '@mantine/core';
