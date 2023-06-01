@@ -15,8 +15,8 @@ import type {
 	HeadersFunction,
 	LinksFunction,
 	LoaderFunction,
-	MetaFunction,
 } from '@remix-run/node';
+import type { V2_MetaFunction } from '@remix-run/react';
 import {
 	Links,
 	LiveReload,
@@ -34,29 +34,16 @@ import { getThemeSession } from '@/utils/theme.server';
 
 import { GlobalStyles } from './styles/global';
 import { theme } from './styles/theme';
+import { ogMeta } from './utils/meta';
 
 enableLegendStateReact();
 
-export const meta: MetaFunction = () => ({
-	charset: 'utf-8',
-	title: 'Fontsource',
-	viewport: 'width=device-width,initial-scale=1',
-	'og:title': 'Fontsource',
-	'og:description':
-		'Self-host Open Source fonts in neatly bundled NPM packages.',
-	'og:image': '/og-image.png',
-	'og:image:width': '1200',
-	'og:image:height': '800',
-	'og:image:alt': 'Fontsource logo',
-	'og:type': 'website',
-	'twitter:card': 'summary_large_image',
-	'twitter:site': '@ayuhitoo',
-	'twitter:title': 'Fontsource',
-	'twitter:description':
-		'Self-host Open Source fonts in neatly bundled NPM packages.',
-	'twitter:image': '/og-image.png',
-	'twitter:image:alt': 'Fontsource logo',
-});
+export const meta: V2_MetaFunction = () => {
+	return ogMeta({
+		title: 'Fontsource',
+		description: 'Self-host Open Source fonts in neatly bundled packages.',
+	});
+};
 
 export const headers: HeadersFunction = () => ({
 	'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
@@ -106,15 +93,10 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 interface DocumentProps {
 	children: React.ReactNode;
-	title?: string;
 	preferredColorScheme: ColorScheme;
 }
 
-export const Document = ({
-	children,
-	title,
-	preferredColorScheme,
-}: DocumentProps) => {
+export const Document = ({ children, preferredColorScheme }: DocumentProps) => {
 	const [colorScheme, setColorScheme] =
 		useState<ColorScheme>(preferredColorScheme);
 	const updateThemeCookie = useFetcher().submit;
@@ -142,6 +124,11 @@ export const Document = ({
 			>
 				<html lang="en">
 					<head>
+						<meta charSet="utf-8" />
+						<meta
+							name="viewport"
+							content="width=device-width,initial-scale=1"
+						/>
 						<Meta />
 						<Links />
 						<StylesPlaceholder />

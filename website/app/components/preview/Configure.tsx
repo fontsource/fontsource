@@ -10,7 +10,7 @@ import {
 } from '@mantine/core';
 
 import { IconRotate } from '@/components/icons';
-import type { AxisRegistry, Metadata, VariableData } from '@/utils/types';
+import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 
 import { CarbonAd } from '../CarbonAd';
 import { NormalButtonsGroup } from './Buttons';
@@ -51,7 +51,7 @@ const useStyles = createStyles((theme) => ({
 interface ConfigureProps {
 	metadata: Metadata;
 	variable: VariableData;
-	axisRegistry: Record<string, AxisRegistry>;
+	axisRegistry?: AxisRegistryAll;
 }
 
 const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {

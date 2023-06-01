@@ -10,7 +10,7 @@ import { previewState, variableState } from './observables';
 
 interface VariableButtonGroupProps {
 	variable: VariableData;
-	axisRegistry: AxisRegistryAll;
+	axisRegistry?: AxisRegistryAll;
 }
 
 interface VariableButtonProps {
@@ -114,8 +114,8 @@ const VariableButtonsGroup = ({
 	return (
 		<>
 			{Object.keys(variable).map((key) => {
-				const label = axisRegistry[key]?.name ?? key;
-				const description = axisRegistry[key]?.description ?? key;
+				const label = axisRegistry?.[key]?.name ?? key;
+				const description = axisRegistry?.[key]?.description ?? key;
 				return (
 					<VariableButton
 						key={key}
