@@ -7,5 +7,8 @@ module.exports = {
 		/^unist.*/,
 		/^vfile.*/,
 	],
-	watchPaths: ['./docs/**/*'],
+	watchPaths: [ './docs/**/*' ],
+	future: {
+		v2_meta: true,
+	}
 };

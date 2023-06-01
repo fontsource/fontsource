@@ -1,19 +1,9 @@
-import { Box, createStyles, MantineProvider } from '@mantine/core';
-import type { LoaderFunction } from '@remix-run/node';
-import { json } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { Box, createStyles } from '@mantine/core';
 import algoliasearch from 'algoliasearch/lite';
-import { renderToString } from 'react-dom/server';
-import { getServerState } from 'react-instantsearch-hooks-server';
-import type { InstantSearchServerState } from 'react-instantsearch-hooks-web';
-import {
-	InstantSearch,
-	InstantSearchSSRProvider,
-} from 'react-instantsearch-hooks-web';
+import { InstantSearch } from 'react-instantsearch-hooks-web';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
-import { theme } from '@/styles/theme';
 
 const searchClient = algoliasearch(
 	'WNATE69PVR',
@@ -44,12 +34,8 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-interface LoaderData {
-	serverState: InstantSearchServerState;
-}
-
 /* Temporarily disable until https://github.com/algolia/instantsearch/issues/5628 is resolved
-export const loader: LoaderFunction = async () => {
+export const loader = async () => {
 
 	const serverState = await getServerState(
 		<MantineProvider theme={theme}>
@@ -72,17 +58,15 @@ export default function Index() {
 	const { classes } = useStyles();
 
 	return (
-		<InstantSearchSSRProvider>
-			<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
-				<Box className={classes.background}>
-					<Box className={classes.container}>
-						<Filters />
-					</Box>
-				</Box>
+		<InstantSearch searchClient={searchClient} indexName="prod_POPULAR">
+			<Box className={classes.background}>
 				<Box className={classes.container}>
-					<InfiniteHits />
+					<Filters />
 				</Box>
-			</InstantSearch>
-		</InstantSearchSSRProvider>
+			</Box>
+			<Box className={classes.container}>
+				<InfiniteHits />
+			</Box>
+		</InstantSearch>
 	);
 }

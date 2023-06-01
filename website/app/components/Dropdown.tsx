@@ -92,7 +92,6 @@ const Dropdown = ({
 			shadow="md"
 			width={rem(width) ?? rem(240)}
 			closeOnItemClick={closeOnItemClick ?? true}
-			ref={ref}
 		>
 			<Menu.Target>
 				<UnstyledButton
@@ -107,7 +106,9 @@ const Dropdown = ({
 				</UnstyledButton>
 			</Menu.Target>
 			<Menu.Dropdown>
-				<ScrollArea.Autosize mah={rem(240)}>{children}</ScrollArea.Autosize>
+				<ScrollArea.Autosize ref={ref} mah={rem(240)}>
+					{children}
+				</ScrollArea.Autosize>
 			</Menu.Dropdown>
 		</Menu>
 	);
