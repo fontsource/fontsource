@@ -87,8 +87,6 @@ const useStyles = createStyles((theme) => ({
 			'&:hover': {
 				textDecoration: 'none',
 				color: theme.colors.purple,
-				borderBottomColor: theme.colors.purple,
-				fontWeight: 700,
 			},
 		},
 	},
