@@ -1,11 +1,14 @@
-import { beforeEach, expect, it } from 'vitest';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-const describe = setupMiniflareIsolatedStorage();
+
+import { beforeEach, expect, it } from 'vitest';
+
 import worker from '../src/worker';
 
+const describe = setupMiniflareIsolatedStorage();
+
 describe('download worker', () => {
-	const env = getMiniflareBindings() as Env;
+	const env = getMiniflareBindings();
 	const ctx = new ExecutionContext();
 
 	beforeEach(async () => {

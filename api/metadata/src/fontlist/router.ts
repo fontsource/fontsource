@@ -1,7 +1,8 @@
-import { CFRouterContext } from '../types';
-import { IRequestStrict, Router, error, json } from 'itty-router';
+import { error, type IRequestStrict, json, Router } from 'itty-router';
+
+import type { CFRouterContext } from '../types';
 import { getOrUpdateList } from './get';
-import { Fontlist, isFontlistQuery } from './types';
+import { type Fontlist, isFontlistQuery } from './types';
 
 const router = Router<IRequestStrict, CFRouterContext>();
 

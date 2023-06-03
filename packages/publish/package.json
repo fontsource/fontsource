@@ -34,7 +34,7 @@
 		"semver": "^7.5.1"
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.3.4",
+		"@ayuhito/eslint-config": "^0.3.5",
 		"@types/folder-hash": "^4.0.2",
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "^20.2.5",

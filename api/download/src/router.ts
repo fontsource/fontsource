@@ -1,5 +1,6 @@
-import { IRequestStrict, Router, error, text, StatusError } from 'itty-router';
-import { CFRouterContext, FileGenerator } from './types';
+import { error, type IRequestStrict, Router, text } from 'itty-router';
+
+import type { CFRouterContext, FileGenerator } from './types';
 import { updateBucket } from './update';
 
 interface DownloadRequest extends IRequestStrict {
@@ -11,9 +12,6 @@ const router = Router<DownloadRequest, CFRouterContext>();
 
 router.post('/v1/*', async (request, env, _ctx) => {
 	const body = await request.json<FileGenerator>();
-	if (!body) {
-		return error(404, 'Not Found.');
-	}
 
 	await updateBucket(body, env);
 	return text('Success.');
