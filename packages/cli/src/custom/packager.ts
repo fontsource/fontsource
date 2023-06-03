@@ -44,7 +44,6 @@ export const packagerCustom = async (
 						},
 					],
 					comment: `${id}-${subset}-${weight}-${style}`,
-					displayVar: true,
 				};
 				// This takes in a font object and returns an @font-face block
 				const css = generateFontFace(fontObj);

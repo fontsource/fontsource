@@ -61,44 +61,6 @@ describe('generate font face', () => {
 		expect(result).toMatchSnapshot();
 	});
 
-	it('should generate a single font face with variable font display', () => {
-		const font = {
-			family: 'Open Sans',
-			style: 'normal',
-			display: 'swap',
-			weight: 400,
-			src: [
-				{
-					url: './fonts/open-sans-v17-latin-regular.woff2',
-					format: 'woff2',
-				},
-			],
-			displayVar: true,
-		};
-
-		const result = generateFontFace(font);
-		expect(result).toMatchSnapshot();
-	});
-
-	it('should generate a single font face with different variable font display fallback', () => {
-		const font = {
-			family: 'Open Sans',
-			style: 'normal',
-			display: 'optional',
-			weight: 400,
-			src: [
-				{
-					url: './fonts/open-sans-v17-latin-regular.woff2',
-					format: 'woff2',
-				},
-			],
-			displayVar: true,
-		};
-
-		const result = generateFontFace(font);
-		expect(result).toMatchSnapshot();
-	});
-
 	it('should generate a single font face with unicode range', () => {
 		const font = {
 			family: 'Open Sans',
