@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { sassMetadata } from '../../src/sass/metadata';
-import { Metadata } from '../../src/types';
+import type { Metadata } from '../../src/types';
 import mockSassMetadata from './fixtures/sass-metadata.json';
 
 describe('sass metadata', () => {

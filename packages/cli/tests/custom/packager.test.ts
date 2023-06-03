@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import { describe, expect, it, vi } from 'vitest';
 
 import { packagerCustom } from '../../src/custom/packager';
-import { Metadata } from '../../src/types';
+import type { Metadata } from '../../src/types';
 
 vi.mock('fs-extra');
 
@@ -12,7 +12,7 @@ describe('packager custom', () => {
 			id: 'custom-font',
 			family: 'Custom Font',
 			variable: false,
-			weights: [400,500],
+			weights: [400, 500],
 			styles: ['normal', 'italic'],
 			defSubset: 'latin',
 			subsets: ['latin', 'latin-ext'],
