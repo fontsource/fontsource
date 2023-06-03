@@ -1,8 +1,8 @@
 /* eslint-disable no-await-in-loop */
-import { FontObject, generateFontFace } from '@fontsource-utils/generate';
+import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
 import {
-	APIIconResponse,
+	type APIIconResponse,
 	APIIconStatic,
 	APIIconVariable,
 } from 'google-font-metadata';

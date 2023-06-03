@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+
 import path from 'pathe';
 
 export const getDirectories = (dir: string, cwd?: string) => {

@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
-import BASE_VERSION from '../../version';
 
-import { BuildOptions, Metadata } from '../types';
+import BASE_VERSION from '../../version';
+import type { BuildOptions, Metadata } from '../types';
 
 interface ExistingData {
 	oldVersion?: string;

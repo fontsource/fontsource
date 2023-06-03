@@ -1,11 +1,11 @@
 /* eslint-disable consistent-return */
 import { cancel, group, intro, outro, text } from '@clack/prompts';
+import { consola } from 'consola';
 import fs from 'fs-extra';
 import path from 'pathe';
 import colors from 'picocolors';
 
-import { Metadata } from '../types';
-import { consola } from 'consola';
+import { type Metadata } from '../types';
 import { getDirectories } from './utils';
 
 export const verifyFilenames = async (metadata: Metadata, dir: string) => {
@@ -88,13 +88,14 @@ export const verify = async ({ font, ci, cwd }: VerifyProps): Promise<void> => {
 	if (!id) {
 		intro(colors.cyan(colors.bold('fontsource')));
 		const cfg = await group({
-			id: () =>
-				text({
+			id: async () =>
+				await text({
 					message: colors.bold('What is the ID of the font?'),
 					placeholder: 'noto-sans-jp',
 					validate(value) {
 						if (!value) return 'Please enter an ID.';
-						return undefined;
+						// eslint-disable-next-line no-useless-return
+						return;
 					},
 				}),
 		});
@@ -164,6 +165,7 @@ export const verifyAll = async (): Promise<void> => {
 
 	for (const directory of directories) {
 		try {
+			// eslint-disable-next-line no-await-in-loop
 			await verify({ font: directory, ci: true, cwd: fontDir });
 		} catch (error) {
 			consola.warn(`Error verifying ${directory}.`);
@@ -174,6 +176,7 @@ export const verifyAll = async (): Promise<void> => {
 
 	if (hasErrors) {
 		consola.error('Errors found. Exiting.');
+		// eslint-disable-next-line unicorn/no-process-exit
 		process.exit(1);
 	}
 };

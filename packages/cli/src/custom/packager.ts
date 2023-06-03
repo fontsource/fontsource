@@ -3,7 +3,7 @@ import { generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
 import path from 'pathe';
 
-import { Metadata } from '../types';
+import type { Metadata } from '../types';
 import { findClosest, makeFontFilePath } from '../utils';
 
 interface PackagerOptions {
@@ -15,7 +15,7 @@ export const packagerCustom = async (
 	opts?: PackagerOptions
 ) => {
 	const { id, family, subsets, weights, styles } = metadata;
-	const dir = opts?.dir ? opts.dir : `./${id}`;
+	const dir = opts?.dir ?? `./${id}`;
 
 	// Find the weight for index.css in the case weight 400 does not exist.
 	const indexWeight = findClosest(weights, 400);

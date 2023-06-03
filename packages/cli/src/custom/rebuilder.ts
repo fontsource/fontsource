@@ -1,13 +1,15 @@
+/* eslint-disable no-await-in-loop */
+import { consola } from 'consola';
 import fs from 'fs-extra';
 import path from 'pathe';
-import { Metadata } from '../types';
+
+import { type Metadata } from '../types';
 import { buildCustom } from './build';
 import { getDirectories } from './utils';
 import { verifyAll } from './verify';
-import { consola } from 'consola';
 
 const getMetadata = async (dir: string): Promise<Metadata> => {
-	return await fs.readJson(path.join(dir, 'metadata.json'), 'utf-8');
+	return await fs.readJson(path.join(dir, 'metadata.json'), 'utf8');
 };
 
 interface PackageJson {
@@ -16,7 +18,7 @@ interface PackageJson {
 }
 
 const getPackageJson = async (dir: string): Promise<PackageJson> => {
-	return await fs.readJson(path.join(dir, 'package.json'), 'utf-8');
+	return await fs.readJson(path.join(dir, 'package.json'), 'utf8');
 };
 
 interface RebuildOptions {

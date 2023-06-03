@@ -12,9 +12,10 @@ import * as path from 'pathe';
 import { sassMetadata } from '../sass/metadata';
 import { sassMixins } from '../sass/mixins';
 import { changelog } from '../templates/changelog';
+import { npmIgnore } from '../templates/npmignore';
 import { packageJson } from '../templates/package';
 import { readme } from '../templates/readme';
-import { BuildOptions, Metadata } from '../types';
+import { type BuildOptions, type Metadata } from '../types';
 import { licenseShort } from '../utils';
 import { download } from './download';
 import { generateLicense } from './license';
@@ -22,7 +23,6 @@ import { packagerIconsStatic, packagerIconsVariable } from './packager-icons';
 import { packagerV1 } from './packager-v1';
 import { packagerV2 } from './packager-v2';
 import { packagerVariable } from './packager-variable';
-import { npmIgnore } from '../templates/npmignore';
 
 // Cache imported functions
 const APIIconStatic = APIIconStaticImport;
@@ -98,7 +98,7 @@ const build = async (id: string, opts: BuildOptions) => {
 			weights: font.weights,
 			styles: font.styles,
 			defSubset: font.defSubset,
-			variable: fontVariable ? fontVariable.axes : false,
+			variable: fontVariable === undefined ? false : fontVariable.axes,
 			lastModified: font.lastModified,
 			version: font.version,
 			category: font.category as Metadata['category'],
