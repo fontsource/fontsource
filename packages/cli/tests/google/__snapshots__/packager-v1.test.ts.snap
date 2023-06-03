@@ -9,7 +9,7 @@ exports[`packager v1 > should generate Abel CSS successfully 1`] = `
 @font-face {
   font-family: 'Abel';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/abel-latin-400-normal.woff2) format('woff2'), url(./files/abel-latin-400-normal.woff) format('woff');
 }",
@@ -20,7 +20,7 @@ exports[`packager v1 > should generate Abel CSS successfully 1`] = `
 @font-face {
   font-family: 'Abel';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/abel-latin-400-normal.woff2) format('woff2'), url(./files/abel-latin-400-normal.woff) format('woff');
 }",
@@ -48,7 +48,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-latin-400-italic.woff2) format('woff2'), url(./files/cabin-latin-400-italic.woff) format('woff');
 }",
@@ -59,7 +59,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-latin-400-normal.woff2) format('woff2'), url(./files/cabin-latin-400-normal.woff) format('woff');
 }",
@@ -70,7 +70,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-latin-500-italic.woff2) format('woff2'), url(./files/cabin-latin-500-italic.woff) format('woff');
 }",
@@ -81,7 +81,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-latin-500-normal.woff2) format('woff2'), url(./files/cabin-latin-500-normal.woff) format('woff');
 }",
@@ -92,7 +92,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-latin-600-italic.woff2) format('woff2'), url(./files/cabin-latin-600-italic.woff) format('woff');
 }",
@@ -103,7 +103,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-latin-600-normal.woff2) format('woff2'), url(./files/cabin-latin-600-normal.woff) format('woff');
 }",
@@ -114,7 +114,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-latin-700-italic.woff2) format('woff2'), url(./files/cabin-latin-700-italic.woff) format('woff');
 }",
@@ -125,7 +125,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-latin-700-normal.woff2) format('woff2'), url(./files/cabin-latin-700-normal.woff) format('woff');
 }",
@@ -136,7 +136,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-latin-400-normal.woff2) format('woff2'), url(./files/cabin-latin-400-normal.woff) format('woff');
 }
@@ -145,7 +145,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-latin-500-normal.woff2) format('woff2'), url(./files/cabin-latin-500-normal.woff) format('woff');
 }
@@ -154,7 +154,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-latin-600-normal.woff2) format('woff2'), url(./files/cabin-latin-600-normal.woff) format('woff');
 }
@@ -163,7 +163,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-latin-700-normal.woff2) format('woff2'), url(./files/cabin-latin-700-normal.woff) format('woff');
 }",
@@ -174,7 +174,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-latin-400-italic.woff2) format('woff2'), url(./files/cabin-latin-400-italic.woff) format('woff');
 }
@@ -183,7 +183,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-latin-500-italic.woff2) format('woff2'), url(./files/cabin-latin-500-italic.woff) format('woff');
 }
@@ -192,7 +192,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-latin-600-italic.woff2) format('woff2'), url(./files/cabin-latin-600-italic.woff) format('woff');
 }
@@ -201,7 +201,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-latin-700-italic.woff2) format('woff2'), url(./files/cabin-latin-700-italic.woff) format('woff');
 }",
@@ -212,7 +212,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-latin-ext-400-italic.woff2) format('woff2'), url(./files/cabin-latin-ext-400-italic.woff) format('woff');
 }",
@@ -223,7 +223,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-latin-ext-400-normal.woff2) format('woff2'), url(./files/cabin-latin-ext-400-normal.woff) format('woff');
 }",
@@ -234,7 +234,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-latin-ext-500-italic.woff2) format('woff2'), url(./files/cabin-latin-ext-500-italic.woff) format('woff');
 }",
@@ -245,7 +245,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-latin-ext-500-normal.woff2) format('woff2'), url(./files/cabin-latin-ext-500-normal.woff) format('woff');
 }",
@@ -256,7 +256,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-latin-ext-600-italic.woff2) format('woff2'), url(./files/cabin-latin-ext-600-italic.woff) format('woff');
 }",
@@ -267,7 +267,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-latin-ext-600-normal.woff2) format('woff2'), url(./files/cabin-latin-ext-600-normal.woff) format('woff');
 }",
@@ -278,7 +278,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-latin-ext-700-italic.woff2) format('woff2'), url(./files/cabin-latin-ext-700-italic.woff) format('woff');
 }",
@@ -289,7 +289,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-latin-ext-700-normal.woff2) format('woff2'), url(./files/cabin-latin-ext-700-normal.woff) format('woff');
 }",
@@ -300,7 +300,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-latin-ext-400-normal.woff2) format('woff2'), url(./files/cabin-latin-ext-400-normal.woff) format('woff');
 }
@@ -309,7 +309,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-latin-ext-500-normal.woff2) format('woff2'), url(./files/cabin-latin-ext-500-normal.woff) format('woff');
 }
@@ -318,7 +318,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-latin-ext-600-normal.woff2) format('woff2'), url(./files/cabin-latin-ext-600-normal.woff) format('woff');
 }
@@ -327,7 +327,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-latin-ext-700-normal.woff2) format('woff2'), url(./files/cabin-latin-ext-700-normal.woff) format('woff');
 }",
@@ -338,7 +338,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-latin-ext-400-italic.woff2) format('woff2'), url(./files/cabin-latin-ext-400-italic.woff) format('woff');
 }
@@ -347,7 +347,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-latin-ext-500-italic.woff2) format('woff2'), url(./files/cabin-latin-ext-500-italic.woff) format('woff');
 }
@@ -356,7 +356,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-latin-ext-600-italic.woff2) format('woff2'), url(./files/cabin-latin-ext-600-italic.woff) format('woff');
 }
@@ -365,7 +365,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-latin-ext-700-italic.woff2) format('woff2'), url(./files/cabin-latin-ext-700-italic.woff) format('woff');
 }",
@@ -376,7 +376,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-vietnamese-400-italic.woff2) format('woff2'), url(./files/cabin-vietnamese-400-italic.woff) format('woff');
 }",
@@ -387,7 +387,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-vietnamese-400-normal.woff2) format('woff2'), url(./files/cabin-vietnamese-400-normal.woff) format('woff');
 }",
@@ -398,7 +398,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-vietnamese-500-italic.woff2) format('woff2'), url(./files/cabin-vietnamese-500-italic.woff) format('woff');
 }",
@@ -409,7 +409,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-vietnamese-500-normal.woff2) format('woff2'), url(./files/cabin-vietnamese-500-normal.woff) format('woff');
 }",
@@ -420,7 +420,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-vietnamese-600-italic.woff2) format('woff2'), url(./files/cabin-vietnamese-600-italic.woff) format('woff');
 }",
@@ -431,7 +431,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-vietnamese-600-normal.woff2) format('woff2'), url(./files/cabin-vietnamese-600-normal.woff) format('woff');
 }",
@@ -442,7 +442,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-vietnamese-700-italic.woff2) format('woff2'), url(./files/cabin-vietnamese-700-italic.woff) format('woff');
 }",
@@ -453,7 +453,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-vietnamese-700-normal.woff2) format('woff2'), url(./files/cabin-vietnamese-700-normal.woff) format('woff');
 }",
@@ -464,7 +464,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-vietnamese-400-normal.woff2) format('woff2'), url(./files/cabin-vietnamese-400-normal.woff) format('woff');
 }
@@ -473,7 +473,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-vietnamese-500-normal.woff2) format('woff2'), url(./files/cabin-vietnamese-500-normal.woff) format('woff');
 }
@@ -482,7 +482,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-vietnamese-600-normal.woff2) format('woff2'), url(./files/cabin-vietnamese-600-normal.woff) format('woff');
 }
@@ -491,7 +491,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-vietnamese-700-normal.woff2) format('woff2'), url(./files/cabin-vietnamese-700-normal.woff) format('woff');
 }",
@@ -502,7 +502,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/cabin-vietnamese-400-italic.woff2) format('woff2'), url(./files/cabin-vietnamese-400-italic.woff) format('woff');
 }
@@ -511,7 +511,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/cabin-vietnamese-500-italic.woff2) format('woff2'), url(./files/cabin-vietnamese-500-italic.woff) format('woff');
 }
@@ -520,7 +520,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 600;
   src: url(./files/cabin-vietnamese-600-italic.woff2) format('woff2'), url(./files/cabin-vietnamese-600-italic.woff) format('woff');
 }
@@ -529,7 +529,7 @@ exports[`packager v1 > should generate Cabin CSS successfully 1`] = `
 @font-face {
   font-family: 'Cabin';
   font-style: italic;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/cabin-vietnamese-700-italic.woff2) format('woff2'), url(./files/cabin-vietnamese-700-italic.woff) format('woff');
 }",
@@ -669,7 +669,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 100;
   src: url(./files/noto-sans-jp-japanese-100-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-100-normal.woff) format('woff');
 }",
@@ -680,7 +680,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 300;
   src: url(./files/noto-sans-jp-japanese-300-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-300-normal.woff) format('woff');
 }",
@@ -691,7 +691,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/noto-sans-jp-japanese-400-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-400-normal.woff) format('woff');
 }",
@@ -702,7 +702,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/noto-sans-jp-japanese-500-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-500-normal.woff) format('woff');
 }",
@@ -713,7 +713,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/noto-sans-jp-japanese-700-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-700-normal.woff) format('woff');
 }",
@@ -724,7 +724,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 900;
   src: url(./files/noto-sans-jp-japanese-900-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-900-normal.woff) format('woff');
 }",
@@ -735,7 +735,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 100;
   src: url(./files/noto-sans-jp-japanese-100-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-100-normal.woff) format('woff');
 }
@@ -744,7 +744,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 300;
   src: url(./files/noto-sans-jp-japanese-300-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-300-normal.woff) format('woff');
 }
@@ -753,7 +753,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/noto-sans-jp-japanese-400-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-400-normal.woff) format('woff');
 }
@@ -762,7 +762,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/noto-sans-jp-japanese-500-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-500-normal.woff) format('woff');
 }
@@ -771,7 +771,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/noto-sans-jp-japanese-700-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-700-normal.woff) format('woff');
 }
@@ -780,7 +780,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 900;
   src: url(./files/noto-sans-jp-japanese-900-normal.woff2) format('woff2'), url(./files/noto-sans-jp-japanese-900-normal.woff) format('woff');
 }",
@@ -791,7 +791,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 100;
   src: url(./files/noto-sans-jp-latin-100-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-100-normal.woff) format('woff');
 }",
@@ -802,7 +802,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 300;
   src: url(./files/noto-sans-jp-latin-300-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-300-normal.woff) format('woff');
 }",
@@ -813,7 +813,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/noto-sans-jp-latin-400-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-400-normal.woff) format('woff');
 }",
@@ -824,7 +824,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/noto-sans-jp-latin-500-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-500-normal.woff) format('woff');
 }",
@@ -835,7 +835,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/noto-sans-jp-latin-700-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-700-normal.woff) format('woff');
 }",
@@ -846,7 +846,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 900;
   src: url(./files/noto-sans-jp-latin-900-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-900-normal.woff) format('woff');
 }",
@@ -857,7 +857,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 100;
   src: url(./files/noto-sans-jp-latin-100-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-100-normal.woff) format('woff');
 }
@@ -866,7 +866,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 300;
   src: url(./files/noto-sans-jp-latin-300-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-300-normal.woff) format('woff');
 }
@@ -875,7 +875,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 400;
   src: url(./files/noto-sans-jp-latin-400-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-400-normal.woff) format('woff');
 }
@@ -884,7 +884,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 500;
   src: url(./files/noto-sans-jp-latin-500-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-500-normal.woff) format('woff');
 }
@@ -893,7 +893,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 700;
   src: url(./files/noto-sans-jp-latin-700-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-700-normal.woff) format('woff');
 }
@@ -902,7 +902,7 @@ exports[`packager v1 > should generate Noto Sans JP successfully 1`] = `
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
-  font-display: var(--fontsource-display, swap);
+  font-display: swap;
   font-weight: 900;
   src: url(./files/noto-sans-jp-latin-900-normal.woff2) format('woff2'), url(./files/noto-sans-jp-latin-900-normal.woff) format('woff');
 }",

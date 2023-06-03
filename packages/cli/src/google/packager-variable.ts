@@ -48,7 +48,6 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 						},
 					],
 					comment: `${id}-${subset}-${axesLower}-${style}`,
-					displayVar: true,
 				};
 
 				// This takes in a font object and returns an @font-face block

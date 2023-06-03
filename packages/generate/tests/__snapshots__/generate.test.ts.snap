@@ -23,16 +23,6 @@ exports[`generate font face > should generate a single font face with different 
 }"
 `;
 
-exports[`generate font face > should generate a single font face with different variable font display fallback 1`] = `
-"@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-display: var(--fontsource-display, optional);
-  font-weight: 400;
-  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
-}"
-`;
-
 exports[`generate font face > should generate a single font face with font stretch 1`] = `
 "@font-face {
   font-family: 'Open Sans Variable';
@@ -73,16 +63,6 @@ exports[`generate font face > should generate a single font face with unicode ra
   font-weight: 400;
   src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
   unicode-range: U+000-5FF;
-}"
-`;
-
-exports[`generate font face > should generate a single font face with variable font display 1`] = `
-"@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-display: var(--fontsource-display, swap);
-  font-weight: 400;
-  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2');
 }"
 `;
 

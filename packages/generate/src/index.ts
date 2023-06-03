@@ -12,7 +12,6 @@ const generateFontFace = (font: FontObject) => {
 		unicodeRange,
 		comment,
 		spacer = '\n  ',
-		displayVar = false,
 	} = font;
 	// If variable, modify output
 	const { wght, stretch, slnt } = variable ?? {};
@@ -25,9 +24,7 @@ const generateFontFace = (font: FontObject) => {
 			? `oblique ${Number(slnt.max) * -1}deg ${Number(slnt.min) * -1}deg`
 			: style
 	};`;
-	result += displayVar
-		? `${spacer}font-display: var(--fontsource-display, ${display});`
-		: `${spacer}font-display: ${display};`;
+	result += `${spacer}font-display: ${display};`;
 	// If variable wght is present, use min max wght vals
 	result += `${spacer}font-weight: ${wght ? getVariableWght(wght) : weight};`;
 
