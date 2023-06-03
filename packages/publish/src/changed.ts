@@ -1,12 +1,12 @@
 import { consola } from 'consola';
 import fs from 'fs-extra';
+import PQueue from 'p-queue';
 import path from 'pathe';
 import colors from 'picocolors';
 
+import { getHash } from './hash';
 import type { ChangedFlags, ChangedList, Context, PackageJson } from './types';
 import { getPackages, mergeFlags } from './utils';
-import { getHash } from './hash';
-import PQueue from 'p-queue';
 
 // Iterate through all packages in directory and return a list of changed packages
 const getChanged = async (ctx: Context) => {
@@ -36,7 +36,8 @@ const getChanged = async (ctx: Context) => {
 				path.join(process.cwd(), packagePath, 'package.json')
 			);
 
-			queue.add(() => handleHash(packagePath, packageJson));
+			// eslint-disable-next-line @typescript-eslint/promise-function-async
+			void queue.add(() => handleHash(packagePath, packageJson));
 		}
 	}
 

@@ -1,9 +1,12 @@
+import { confirm, isCancel } from '@clack/prompts';
 import { consola } from 'consola';
 import * as dotenv from 'dotenv';
+import { execa } from 'execa';
+import fs from 'fs-extra';
+import stringify from 'json-stringify-pretty-compact';
 import PQueue from 'p-queue';
 import path from 'pathe';
 import colors from 'picocolors';
-import fs from 'fs-extra';
 
 import { bumpPackages } from './bump';
 import { getChanged } from './changed';
@@ -17,9 +20,6 @@ import {
 } from './git';
 import type { BumpObject, Context, PackageJson, PublishFlags } from './types';
 import { mergeFlags } from './utils';
-import stringify from 'json-stringify-pretty-compact';
-import { confirm, isCancel } from '@clack/prompts';
-import { execa } from 'execa';
 
 const checkEnv = async () => {
 	dotenv.config();
@@ -101,7 +101,7 @@ const packPublish = async (
 		await writeUpdate(pkg, { hash: true });
 	} catch (error) {
 		consola.error(`Failed to publish ${npmVersion}!`);
-		// @ts-ignore - This is a custom error thrown by execa
+		// @ts-expect-error - This is a custom error thrown by execa
 		const errorString = error.stderr as string;
 
 		// If we get rate limited, throw the error to stop the queue
@@ -112,11 +112,11 @@ const packPublish = async (
 		}
 
 		// Otherwise, just reject the promise and store the error message so we can print it later
-		return Promise.reject(errorString);
+		return await Promise.reject(errorString);
 	}
 
 	consola.success(`Successfully published ${colors.green(npmVersion)}!`);
-	return Promise.resolve(pkg);
+	return pkg;
 };
 
 export const publishPackages = async (
@@ -137,7 +137,8 @@ export const publishPackages = async (
 	const diff = await getChanged(config);
 	const bumped = await bumpPackages(diff, version);
 	if (!config.yes) {
-		const yes = await confirm({ message: `Publish packages?` });
+		const yes = await confirm({ message: 'Publish packages?' });
+		// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 		if (!yes || isCancel(yes)) {
 			throw new Error('Bump cancelled.');
 		}
@@ -147,7 +148,7 @@ export const publishPackages = async (
 	const npmrc = path.join(process.cwd(), '.npmrc');
 	await fs.writeFile(
 		npmrc,
-		`//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}`
+		`//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN!}`
 	);
 
 	const queue = new PQueue({ concurrency: 8 });
@@ -156,9 +157,9 @@ export const publishPackages = async (
 	const publishArr = [];
 
 	for (const pkg of bumped) {
-		if (pkg && !pkg.noPublish) {
-			const newPkg = queue.add(() =>
-				packPublish(pkg, { name, config, bumped, npmrc })
+		if (!pkg.noPublish) {
+			const newPkg = queue.add(
+				async () => await packPublish(pkg, { name, config, bumped, npmrc })
 			);
 			publishArr.push(newPkg);
 		}

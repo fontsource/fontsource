@@ -1,8 +1,8 @@
-import { describe, expect, it, vi } from 'vitest';
 import fs from 'fs-extra';
+import { describe, expect, it, vi } from 'vitest';
 
 import { bumpPackages, bumpValue, isValidBumpArg } from '../src/bump';
-import { ChangedList } from '../src/types';
+import { type ChangedList } from '../src/types';
 
 vi.mock('fs-extra');
 vi.mock('latest-version');

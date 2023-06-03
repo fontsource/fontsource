@@ -1,5 +1,6 @@
-import MagicString from 'magic-string';
 import * as fs from 'node:fs';
+
+import MagicString from 'magic-string';
 import { join } from 'pathe';
 
 // Until pkgroll fixes the shebang bug, this needs to be run postbuild

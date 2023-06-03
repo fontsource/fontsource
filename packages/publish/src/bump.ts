@@ -59,8 +59,8 @@ export const bumpPackages = async (diff: ChangedList, version: string) => {
 	const bumpObjects: BumpObject[] = [];
 	for (const pkg of diff) {
 		const newVersion = bumpValue(pkg.version, version);
-		if (!newVersion) {
-			throw new Error(
+		if (typeof newVersion !== 'string') {
+			throw new TypeError(
 				`Failed to bump version for ${pkg.name} for ${pkg.version}`
 			);
 		}
@@ -74,22 +74,12 @@ export const bumpPackages = async (diff: ChangedList, version: string) => {
 	// Print out all new versions and prompt user to continue
 	let count = 0;
 	for (const pkg of bumpObjects) {
-		if (!pkg) {
-			throw new Error('Package object is undefined.');
-		}
 		consola.info(
 			colors.magenta(`${pkg.name}: ${pkg.version} --> ${pkg.bumpVersion}`)
 		);
 		count += 1;
 	}
 	consola.info(colors.magenta(`${count} packages will be updated.`));
-
-	// Sanity check
-	for (const pkg of bumpObjects) {
-		if (!pkg) {
-			throw new Error('Package object is undefined.');
-		}
-	}
 
 	return bumpObjects;
 };
