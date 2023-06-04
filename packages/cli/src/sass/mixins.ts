@@ -11,7 +11,6 @@ $directory: null !default;
 
 $family: null !default;
 $display: null !default;
-$displayVar: null !default;
 $formats: null !default;
 $subsets: null !default;
 $weights: null !default;
@@ -23,7 +22,6 @@ $axes: null !default;
   $directory: $directory,
   $family: $family,
   $display: $display,
-  $displayVar: $displayVar,
   $formats: $formats,
   $subsets: $subsets,
   $weights: $weights,
@@ -40,7 +38,6 @@ $axes: null !default;
 
   $family: if($family, $family, map.get($metadata, family) + if($isVariable, ' Variable', ''));
   $display: if($display, $display, swap);
-  $displayVar: if($displayVar != null, $displayVar, true);
   $formats: if(not $formats or $formats == all, if($isVariable, woff2, (woff2, woff)), $formats);
   $subsets: if(
     $subsets,
@@ -93,7 +90,6 @@ $axes: null !default;
                 directory: $directory,
                 family: $family,
                 display: $display,
-                displayVar: $displayVar,
                 formats: $formats,
                 subsets: $subsets,
                 weights: $weights,
@@ -114,7 +110,7 @@ $axes: null !default;
                   oblique map.get($metadata, axes, slnt, min) + deg map.get($metadata, axes, slnt, max) + deg,
                   $style
                 ),
-                font-display: if($displayVar, var(--fontsource-display, $display), $display),
+                font-display: $display,
                 font-weight: if(
                   (($axis == full) or ($axis == wght)) and map.has-key($metadata, axes, wght),
                   map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max),
@@ -141,7 +137,6 @@ $axes: null !default;
   $directory: $directory,
   $family: $family,
   $display: $display,
-  $displayVar: $displayVar,
   $formats: $formats,
   $subsets: $subsets,
   $weights: $weights,
@@ -153,7 +148,6 @@ $axes: null !default;
       $directory: $directory,
       $family: $family,
       $display: $display,
-      $displayVar: $displayVar,
       $formats: $formats,
       $subsets: $subsets,
       $weights: $weights,
