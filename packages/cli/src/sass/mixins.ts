@@ -17,6 +17,9 @@ $weights: null !default;
 $styles: null !default;
 $axes: null !default;
 
+// Deprecated
+$displayVar: null !default;
+
 @mixin generator(
   $metadata: $metadata,
   $directory: $directory,
@@ -26,8 +29,15 @@ $axes: null !default;
   $subsets: $subsets,
   $weights: $weights,
   $styles: $styles,
-  $axes: $axes
+  $axes: $axes,
+
+  // Deprecated
+  $displayVar: $displayVar
 ) {
+  @if $displayVar != null {
+    @warn "$displayVar is deprecated due to the limitation of using css variables in @font-face (https://github.com/fontsource/fontsource/issues/726).";
+  }
+
   $isVariable: map.get($metadata, axes) != null;
 
   $directory: if(
@@ -141,7 +151,10 @@ $axes: null !default;
   $subsets: $subsets,
   $weights: $weights,
   $styles: $styles,
-  $axes: $axes
+  $axes: $axes,
+
+  // Deprecated
+  $displayVar: $displayVar
 ) {
   @include generator(
       $metadata: $metadata,
@@ -152,7 +165,9 @@ $axes: null !default;
       $subsets: $subsets,
       $weights: $weights,
       $styles: $styles,
-      $axes: $axes
+      $axes: $axes,
+
+      $displayVar: $displayVar
     )
     using ($props) {
     /* #{map.get($props, variant)} */
