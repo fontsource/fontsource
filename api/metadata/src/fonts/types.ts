@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 interface ArrayMetadataItem {
 	id: string;
 	family: string;
@@ -26,7 +27,7 @@ const fontsQueries = [
 	'license',
 	'type',
 ] as const;
-type FontsQueries = typeof fontsQueries[number] & keyof ArrayMetadataItem;
+type FontsQueries = (typeof fontsQueries)[number] & keyof ArrayMetadataItem;
 const isFontsQueries = (x: string): x is FontsQueries =>
 	fontsQueries.includes(x as FontsQueries);
 
@@ -62,10 +63,10 @@ interface IDResponse {
 }
 
 export type {
-	ArrayMetadataItem,
 	ArrayMetadata,
+	ArrayMetadataItem,
 	FontsQueries,
-	IDResponse,
 	FontVariants,
+	IDResponse,
 };
 export { isFontsQueries };

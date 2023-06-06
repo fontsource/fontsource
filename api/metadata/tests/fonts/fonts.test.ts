@@ -1,10 +1,12 @@
 import { beforeEach, expect, it } from 'vitest';
-const describe = setupMiniflareIsolatedStorage();
+
 import worker from '../../src/worker';
 import { mockMetadata } from '../helpers';
 
+const describe = setupMiniflareIsolatedStorage();
+
 describe('fonts worker', () => {
-	const env = getMiniflareBindings() as Env;
+	const env = getMiniflareBindings() satisfies Env;
 	const ctx = new ExecutionContext();
 
 	beforeEach(async () => {
@@ -81,7 +83,7 @@ describe('fonts worker', () => {
 	});
 
 	it('should return 400 for invalid query string', async () => {
-		const request = new Request(`http://localhost:8787/v1/fonts?invalid`);
+		const request = new Request('http://localhost:8787/v1/fonts?invalid');
 		const response = await worker.fetch(request, env, ctx);
 		expect(response.status).toBe(400);
 	});

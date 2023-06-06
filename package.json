@@ -20,6 +20,7 @@
 		"@changesets/cli": "^2.26.1",
 		"@vitest/coverage-c8": "^0.31.4",
 		"eslint": "^8.42.0",
+		"prettier": "^2.8.8",
 		"vitest": "^0.31.4"
 	},
 	"publishConfig": {

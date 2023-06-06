@@ -21,7 +21,7 @@ const updateList = async (key: FontlistQueries, env: Env) => {
 	const list: Fontlist = {};
 
 	for (const value of Object.values(data)) {
-		list[value.id] = key === 'variable' ? !!value.variable : value[key];
+		list[value.id] = key === 'variable' ? Boolean(value.variable) : value[key];
 	}
 
 	// Store the list in KV

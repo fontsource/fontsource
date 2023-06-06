@@ -1,9 +1,15 @@
-import { Router, IRequestStrict, error, json, withParams } from 'itty-router';
-import { CFRouterContext } from '../types';
+import {
+	error,
+	type IRequestStrict,
+	json,
+	Router,
+	withParams,
+} from 'itty-router';
 
+import { getOrUpdateFile } from '../download/get';
+import { type CFRouterContext } from '../types';
 import { getOrUpdateArrayMetadata, getOrUpdateId } from './get';
 import { isFontsQueries } from './types';
-import { getOrUpdateFile } from '../download/get';
 
 interface FontRequest extends IRequestStrict {
 	font: string;
@@ -47,7 +53,7 @@ router.get('/v1/fonts', async (request, env, _ctx) => {
 			}
 
 			// Coerce to string for boolean responses (variable)
-			return values.some((v) => String(item[key]) === v);
+			return values.includes(String(item[key]));
 		});
 	}
 
