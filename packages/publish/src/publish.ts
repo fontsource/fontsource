@@ -104,7 +104,7 @@ const packPublish = async (
 	} catch (error) {
 		consola.error(`Failed to publish ${npmVersion}!`);
 		consola.error(error);
-    // @ts-expect-error - This is a custom error thrown by execa
+		// @ts-expect-error - This is a custom error thrown by execa
 		const errorString = error.stderr as string;
 
 		// If we get rate limited, throw the error to stop the queue
@@ -147,7 +147,6 @@ export const publishPackages = async (
 	const bumped = await bumpPackages(diff, version);
 	if (!config.yes) {
 		const yes = await confirm({ message: 'Publish packages?' });
-		// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 		if (!yes || isCancel(yes)) {
 			throw new Error('Bump cancelled.');
 		}
@@ -168,6 +167,7 @@ export const publishPackages = async (
 	for (const pkg of bumped) {
 		if (pkg && !pkg.noPublish) {
 			const newPkg = queue
+				// eslint-disable-next-line @typescript-eslint/promise-function-async
 				.add(() => packPublish(pkg, { name, config, bumped, npmrc }))
 				.catch((error) => {
 					// Empty queue when we hit the error limit

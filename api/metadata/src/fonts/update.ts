@@ -39,11 +39,9 @@ const generateFontVariants = ({
 	const variants: FontVariants = {};
 
 	for (const weight of weights) {
-		// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 		variants[weight] = variants[weight] || {};
 
 		for (const style of styles) {
-			// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 			variants[weight][style] = variants[weight][style] || {};
 
 			for (const subset of subsets) {
