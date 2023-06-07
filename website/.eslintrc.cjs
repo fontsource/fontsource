@@ -15,5 +15,5 @@ module.exports = {
 		'import/no-default-export': 'off',
 		// Remix compile target doesn't support replaceAll
 		'unicorn/prefer-string-replace-all': 'off',
-	},
+	}
 };

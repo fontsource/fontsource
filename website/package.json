@@ -9,7 +9,7 @@
 		"migrations": "knex migrate:latest",
 		"reset-db": "knex migrate:rollback --all && knex migrate:latest",
 		"start": "remix-serve build",
-		"lint": "eslint --fix",
+		"lint": "eslint . --fix",
 		"ci:lint": "eslint ."
 	},
 	"dependencies": {
@@ -58,7 +58,7 @@
 		"vfile-matter": "^4.0.1"
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.3.10",
+		"@ayuhito/eslint-config": "^0.4.0",
 		"@remix-run/dev": "^1.17.0",
 		"@remix-run/eslint-config": "^1.17.0",
 		"@types/node": "^20.2.5",
