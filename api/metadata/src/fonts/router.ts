@@ -16,9 +16,9 @@ interface FontRequest extends IRequestStrict {
 	file: string;
 }
 
-const router = Router<FontRequest, CFRouterContext>({ base: '/v1' });
+const router = Router<FontRequest, CFRouterContext>();
 
-router.get('/fonts', async (request, env, _ctx) => {
+router.get('/v1/fonts', async (request, env, _ctx) => {
 	const url = new URL(request.url);
 	const data = await getOrUpdateArrayMetadata(env);
 
@@ -66,7 +66,7 @@ router.get('/fonts', async (request, env, _ctx) => {
 	return json(filtered);
 });
 
-router.get('/fonts/:font', withParams, async (request, env, _ctx) => {
+router.get('/v1/fonts/:font', withParams, async (request, env, _ctx) => {
 	const id = request.font;
 
 	const data = await getOrUpdateId(id, env);
@@ -78,7 +78,7 @@ router.get('/fonts/:font', withParams, async (request, env, _ctx) => {
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
-router.get('/fonts/:font/:file', withParams, async (request, env, _ctx) => {
+router.get('/v1/fonts/:font/:file', withParams, async (request, env, _ctx) => {
 	const id = request.font;
 	const file = request.file;
 

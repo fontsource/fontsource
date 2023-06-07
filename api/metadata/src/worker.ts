@@ -4,10 +4,7 @@ import downloadRouter from './download/router';
 import fontlistRouter from './fontlist/router';
 import fontsRouter from './fonts/router';
 
-const { preflight, corsify } = createCors({
-	origins: ['*'],
-	methods: ['GET'],
-});
+const { preflight, corsify } = createCors();
 
 const router = Router();
 

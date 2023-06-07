@@ -8,11 +8,9 @@ interface DownloadRequest extends IRequestStrict {
 	id: string;
 }
 
-const router = Router<DownloadRequest, CFRouterContext>({
-	base: '/v1',
-});
+const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/download/:id', withParams, async (request, env, _ctx) => {
+router.get('/v1/download/:id', withParams, async (request, env, _ctx) => {
 	const id = request.id;
 
 	const data = await getOrUpdateId(id, env);
