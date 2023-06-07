@@ -1,6 +1,5 @@
 import type { SliderProps } from '@mantine/core';
-import { rem } from '@mantine/core';
-import { Slider as MantineSlider } from '@mantine/core';
+import { rem, Slider as MantineSlider } from '@mantine/core';
 
 // We need to patch slider styles forcefully because Remix Mantine seems to be missing the styles for the slider component for some odd reason. Can be removed when Mantine v7 is released.
 const Slider = (props: SliderProps) => (

@@ -70,7 +70,7 @@ const SearchBar = ({ ...others }: TextInputProps) => {
 
 				rightSection: {
 					right: rem(44),
-				}
+				},
 			})}
 			ref={ref}
 			icon={<IconSearch active={focused} />}

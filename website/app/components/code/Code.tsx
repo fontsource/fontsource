@@ -1,15 +1,16 @@
+/* eslint-disable unicorn/prefer-module */
 import type { CodeProps } from '@mantine/core';
-import { useMantineTheme } from '@mantine/core';
-import { Group } from '@mantine/core';
 import {
 	ActionIcon,
 	Box,
 	Code as MantineCode,
 	createStyles,
+	Group,
 	rem,
 	ScrollArea,
 	Text,
 	Tooltip,
+	useMantineTheme,
 } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
 import { Highlight, Prism } from 'prism-react-renderer';
@@ -86,7 +87,7 @@ const useStyles = createStyles((theme) => ({
 		fontWeight: 500,
 		fontSize: rem(13),
 		borderRadius: rem(4),
-	}
+	},
 }));
 
 interface CodeWrapperProps {
@@ -121,7 +122,9 @@ export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 					<ActionIcon
 						className={classes.copy}
 						aria-label={clipboard.copied ? copiedLabel : copyLabel}
-						onClick={() => clipboard.copy(code)}
+						onClick={() => {
+							clipboard.copy(code);
+						}}
 					>
 						<IconCopy stroke="white" />
 					</ActionIcon>
@@ -136,7 +139,7 @@ interface CodeHighlightProps {
 }
 
 // Add support for additional languagaes
-(typeof global !== 'undefined' ? global : window).Prism = Prism;
+(typeof global === 'undefined' ? window : global).Prism = Prism;
 require('prismjs/components/prism-scss');
 require('prismjs/components/prism-json');
 require('prismjs/components/prism-bash');
@@ -190,7 +193,8 @@ export const CodeMdx = (props: CodeProps) => {
 	const { classes } = useStyles();
 	const language = props.className?.replace(/language-/, '') ?? '';
 	// Inline code
-	if (language == '') return <MantineCode className={classes.inlineCode} {...props} />;
+	if (language === '')
+		return <MantineCode className={classes.inlineCode} {...props} />;
 
 	const code = props.children?.toString().trim() ?? '';
 
@@ -208,7 +212,14 @@ interface CodeDirectProps extends CodeProps {
 export const Code = ({ language, children, ...others }: CodeDirectProps) => {
 	const { classes } = useStyles();
 	// Inline code
-	if (language == '') return <MantineCode className={classes.inlineCode} children={children} {...others} />;
+	if (language === '')
+		return (
+			<MantineCode
+				className={classes.inlineCode}
+				children={children}
+				{...others}
+			/>
+		);
 
 	return (
 		<CodeWrapper language={language} code={children?.toString() ?? ''}>

@@ -5,9 +5,10 @@ import type { IconProps } from './types';
 const IconNpm = ({ height, stroke, ...others }: IconProps) => {
 	const theme = useMantineTheme();
 	const strokeNew =
-		stroke ?? theme.colorScheme === 'dark'
+		stroke ??
+		(theme.colorScheme === 'dark'
 			? theme.colors.text[0]
-			: theme.colors.text[1];
+			: theme.colors.text[1]);
 
 	return (
 		<svg

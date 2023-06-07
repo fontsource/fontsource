@@ -13,7 +13,7 @@ export const previewState = observable({
 });
 
 // Verify that the color is a valid hex code
-const COLOR_REGEX = /^#[a-fA-F0-9]{0,6}$/;
+const COLOR_REGEX = /^#[\dA-Fa-f]{0,6}$/;
 previewState.color.onChange((e) => {
 	if (!COLOR_REGEX.test(e.value)) previewState.color.set(e.getPrevious());
 });

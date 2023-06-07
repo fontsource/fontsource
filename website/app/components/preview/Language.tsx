@@ -16,16 +16,20 @@ const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	const languageFetcher = useFetcher();
 
 	const handleLanguage = (value: string) => {
-		previewState.language.set(subsetsMap[value as keyof typeof subsetsMap] ?? value);
-		languageFetcher.submit({ subset: value }, {
-			method: 'POST',
-			action: '/actions/language',
-		})
+		previewState.language.set(
+			subsetsMap[value as keyof typeof subsetsMap] ?? value
+		);
+		languageFetcher.submit(
+			{ subset: value },
+			{
+				method: 'POST',
+				action: '/actions/language',
+			}
+		);
 	};
 
 	useEffect(() => {
 		if (languageFetcher.state === 'idle' && languageFetcher.data?.text) {
-
 			previewState.text.set(languageFetcher.data.text);
 		}
 	}, [languageFetcher]);

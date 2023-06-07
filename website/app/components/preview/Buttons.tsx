@@ -106,7 +106,7 @@ const SliderButton = ({
 				<MantineSlider
 					color="purple.0"
 					size="sm"
-					label={null}
+					label={undefined}
 					value={value}
 					onChange={setValue}
 					defaultValue={defaultValue}

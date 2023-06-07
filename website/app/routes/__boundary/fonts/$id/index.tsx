@@ -75,7 +75,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function Font() {
-	const data: FontMetadata = useLoaderData();
+	const data = useLoaderData<FontMetadata>();
 	const { metadata, variable, axisRegistry, defSubsetText } = data;
 	const { classes } = useStyles();
 

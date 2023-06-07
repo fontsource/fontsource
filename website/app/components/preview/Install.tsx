@@ -136,9 +136,13 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 		['wght', 'wdth', 'slnt', 'opsz'].includes(axis)
 	);
 
-	const importComment = `// Supports weights ${
-		metadata.weights[0]
-	}-${metadata.weights.at(-1)}\n`;
+	const importComment =
+		metadata.weights.length === 1
+			? `// Supports only weight ${metadata.weights[0]}`
+			: `// Supports weights ${metadata.weights[0]}-${
+					metadata.weights.at(-1) ?? 400
+			  }\n`;
+
 	const generateImports = () => {
 		if (activeAxes.length === 1 && isActive.wght) {
 			if (isItal)
@@ -148,9 +152,8 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 
 		// If it is only wght and another axes, return axes.css
 		if (activeAxes.length === 2 && isActive.wght) {
-			const selected = activeAxes
-				.filter((axis) => axis !== 'wght')[0]
-				.toLowerCase();
+			const selected =
+				activeAxes.find((axis) => axis !== 'wght')?.toLowerCase() ?? 'wght';
 			if (isItal)
 				return `import '@fontsource-variable/${metadata.id}/${selected}-italic.css';`;
 			return `import '@fontsource-variable/${metadata.id}/${selected}.css';`;
@@ -167,6 +170,7 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 	const handleActive = (value: string | number) => {
 		setActive((prev) => {
 			if (prev[value]) {
+				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,
@@ -201,7 +205,9 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 						<Badge
 							key={axis}
 							className={classes.badge}
-							onClick={() => handleActive(axis)}
+							onClick={() => {
+								handleActive(axis);
+							}}
 							sx={(theme) => ({
 								backgroundColor: isActive[axis]
 									? theme.colors.purple[0]
@@ -242,6 +248,7 @@ const Static = ({ metadata }: InstallProps) => {
 		setActive((prev) => {
 			if (keys.length === 1 && prev[value]) return prev;
 			if (prev[value]) {
+				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,
@@ -263,11 +270,11 @@ const Static = ({ metadata }: InstallProps) => {
 			return `import '@fontsource/${metadata.id}';`;
 		}
 
-		keys.forEach((weight) => {
-			if (isItal)
-				imports += `import '@fontsource/${metadata.id}/${weight}-italic.css';\n`;
-			else imports += `import '@fontsource/${metadata.id}/${weight}.css';\n`;
-		});
+		for (const weight of keys) {
+			imports += isItal
+				? `import '@fontsource/${metadata.id}/${weight}-italic.css';\n`
+				: `import '@fontsource/${metadata.id}/${weight}.css';\n`;
+		}
 		return imports.trim();
 	};
 
@@ -289,7 +296,9 @@ const Static = ({ metadata }: InstallProps) => {
 					<Badge
 						key={weight}
 						className={classes.badge}
-						onClick={() => handleActive(weight)}
+						onClick={() => {
+							handleActive(weight);
+						}}
 						sx={(theme) => ({
 							backgroundColor: isActive[weight]
 								? theme.colors.purple[0]
@@ -303,7 +312,9 @@ const Static = ({ metadata }: InstallProps) => {
 				{metadata.styles.includes('italic') && (
 					<Badge
 						className={classes.badge}
-						onClick={() => setIsItal((prev) => !prev)}
+						onClick={() => {
+							setIsItal((prev) => !prev);
+						}}
 						sx={(theme) => ({
 							backgroundColor: isItal ? theme.colors.purple[0] : undefined,
 							color: isItal ? theme.colors.text[0] : undefined,
@@ -339,8 +350,8 @@ export const Install = ({
 
 	// Replace any urls as well as () and <> with empty string
 	const replaceAttribution = metadata.license.attribution
-		.replace(/(?:https?):\/\/[\n\S]+/g, '')
-		.replace(/(\(|\)|<|>)/g, '')
+		.replace(/https?:\/\/[\S\n]+/g, '')
+		.replace(/([()<>])/g, '')
 		// Also replace emails
 		.replace(/[\w.]+@[\w.]+/g, '');
 

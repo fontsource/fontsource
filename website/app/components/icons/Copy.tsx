@@ -4,8 +4,11 @@ import type { IconProps } from './types';
 
 export const IconCopy = ({ height, stroke, ...others }: IconProps) => {
 	const theme = useMantineTheme();
-  const strokeNew = stroke ??
-		theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1];
+	const strokeNew =
+		stroke ??
+		(theme.colorScheme === 'dark'
+			? theme.colors.text[0]
+			: theme.colors.text[1]);
 
 	return (
 		<svg

@@ -1,6 +1,5 @@
 import type { CodeProps } from '@mantine/core';
-import { createStyles, rem } from '@mantine/core';
-import { Tabs } from '@mantine/core';
+import { createStyles, rem, Tabs } from '@mantine/core';
 
 import { CodeHighlight, CodeWrapper } from './Code';
 

@@ -1,6 +1,13 @@
 import type { BoxProps } from '@mantine/core';
-import { Badge, createStyles, useMantineTheme } from '@mantine/core';
-import { Group, rem, Tabs, Title } from '@mantine/core';
+import {
+	Badge,
+	createStyles,
+	Group,
+	rem,
+	Tabs,
+	Title,
+	useMantineTheme,
+} from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { useNavigate } from '@remix-run/react';
 
@@ -74,7 +81,7 @@ export const TabsWrapper = ({
 			value={tabsValue}
 			onTabChange={(value) => {
 				if (value === 'preview') navigate(`/fonts/${metadata.id}`);
-				navigate(`/fonts/${metadata.id}/${value}`);
+				navigate(`/fonts/${metadata.id}/${String(value)}`);
 			}}
 			unstyled
 			styles={(theme) => ({
@@ -126,13 +133,17 @@ export const TabsWrapper = ({
 				<Tabs.List>
 					<Tabs.Tab
 						value="preview"
-						onClick={() => navigate(`/fonts/${metadata.id}`)}
+						onClick={() => {
+							navigate(`/fonts/${metadata.id}`);
+						}}
 					>
 						Preview
 					</Tabs.Tab>
 					<Tabs.Tab
 						value="install"
-						onClick={() => navigate(`/fonts/${metadata.id}/install`)}
+						onClick={() => {
+							navigate(`/fonts/${metadata.id}/install`);
+						}}
 					>
 						Install
 					</Tabs.Tab>

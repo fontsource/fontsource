@@ -25,9 +25,9 @@ export const loader: LoaderFunction = async () => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-	const data: UpdateData = await request.json();
-	const header = await request.headers.get('Authorization');
-	if (!header || header !== `Bearer ${process.env.UPDATE_TOKEN}`) {
+	const data: UpdateData | undefined = await request.json();
+	const header = request.headers.get('Authorization');
+	if (!header || header !== `Bearer ${process.env.UPDATE_TOKEN!}`) {
 		throw new Response('Invalid update bearer token', { status: 401 });
 	}
 	if (!data) {
@@ -39,7 +39,8 @@ export const action: ActionFunction = async ({ request }) => {
 		if (Array.isArray(data.fonts)) {
 			console.log(`Updating ${data.fonts.length} fonts`);
 			for (const id of data.fonts) {
-				metadataQueue.add(async () => await updateSingleMetadata(id));
+				// eslint-disable-next-line @typescript-eslint/promise-function-async
+				void metadataQueue.add(() => updateSingleMetadata(id));
 			}
 		} else {
 			await updateAllMetadata();

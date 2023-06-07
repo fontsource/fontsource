@@ -60,7 +60,12 @@ interface SortItemProps {
 
 const SortItem = ({ value, setState }: SortItemProps) => {
 	return (
-		<Menu.Item style={{ width: '100%' }} onClick={() => setState(value)}>
+		<Menu.Item
+			style={{ width: '100%' }}
+			onClick={() => {
+				setState(value);
+			}}
+		>
 			{value}
 		</Menu.Item>
 	);

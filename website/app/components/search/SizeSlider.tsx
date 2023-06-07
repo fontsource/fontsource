@@ -1,12 +1,7 @@
 import { useSelector } from '@legendapp/state/react';
-import {
-	createStyles,
-	Grid,
-	rem,
-	Text,
-} from '@mantine/core';
+import { createStyles, Grid, rem, Text } from '@mantine/core';
 
-import { Slider as MantineSlider } from '@/components/Slider'
+import { Slider as MantineSlider } from '@/components/Slider';
 
 import { size } from './observables';
 
@@ -51,7 +46,7 @@ const SizeSlider = () => {
 				<MantineSlider
 					color="purple.0"
 					size="sm"
-					label={null}
+					label={undefined}
 					value={sizeSelect}
 					onChange={size.set}
 					styles={(theme) => ({

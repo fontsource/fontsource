@@ -12,6 +12,7 @@ export const useIntersectionObserver = (
 		headingElementsRef.current = {}; // Reset ref on page change to update active states
 
 		const callback = (headings: IntersectionObserverEntry[]) => {
+			// eslint-disable-next-line unicorn/no-array-reduce
 			headingElementsRef.current = headings.reduce(
 				(
 					map: HeadingIntersectionEntry,
@@ -24,11 +25,13 @@ export const useIntersectionObserver = (
 			);
 
 			const visibleHeadings: IntersectionObserverEntry[] = [];
+			// eslint-disable-next-line unicorn/no-array-for-each
 			Object.keys(headingElementsRef.current).forEach((key: any) => {
 				const headingElement = headingElementsRef.current[key];
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
 			});
 
+			// eslint-disable-next-line unicorn/consistent-function-scoping
 			const getIndexFromId = (id: string) =>
 				headingElements.findIndex((heading) => heading.id === id);
 
@@ -36,7 +39,7 @@ export const useIntersectionObserver = (
 				setActiveId(visibleHeadings[0].target.id);
 			} else if (visibleHeadings.length > 1) {
 				const sortedVisibleHeadings = visibleHeadings.sort(
-				// @ts-ignore - Technically, booleans can't be compared, but this works
+					// @ts-expect-error - Technically, booleans can't be compared, but this works
 					(a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id)
 				);
 				setActiveId(sortedVisibleHeadings[0].target.id);
@@ -47,10 +50,12 @@ export const useIntersectionObserver = (
 			rootMargin: '0px 0px -40% 0px',
 		});
 
-		const headingElements = Array.from(document.querySelectorAll('h2, h3'));
+		const headingElements = [...document.querySelectorAll('h2, h3')];
 
-		headingElements.forEach((element) => observer.observe(element));
+		for (const element of headingElements) observer.observe(element);
 
-		return () => observer.disconnect();
+		return () => {
+			observer.disconnect();
+		};
 	}, [setActiveId, page]);
 };
