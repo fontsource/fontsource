@@ -87,6 +87,8 @@ interface PublishObject extends BumpObject {
 	error?: unknown;
 }
 
+let errorCount = 0;
+
 const packPublish = async (
 	pkg: BumpObject,
 	gitOpts: DoGitOptions
@@ -101,13 +103,20 @@ const packPublish = async (
 		await writeUpdate(pkg, { hash: true });
 	} catch (error) {
 		consola.error(`Failed to publish ${npmVersion}!`);
-		// @ts-expect-error - This is a custom error thrown by execa
+		consola.error(error);
+    // @ts-expect-error - This is a custom error thrown by execa
 		const errorString = error.stderr as string;
 
 		// If we get rate limited, throw the error to stop the queue
 		// The retry delay should mean all other active publishes will also fail safely
 		if (errorString.includes('429 Too Many Requests')) {
 			await doGitOperations(gitOpts);
+			throw error;
+		}
+
+		// If errorCount exceeds 5, throw an error to stop the queue
+		errorCount++;
+		if (errorCount > 5) {
 			throw error;
 		}
 
@@ -157,10 +166,15 @@ export const publishPackages = async (
 	const publishArr = [];
 
 	for (const pkg of bumped) {
-		if (!pkg.noPublish) {
-			const newPkg = queue.add(
-				async () => await packPublish(pkg, { name, config, bumped, npmrc })
-			);
+		if (pkg && !pkg.noPublish) {
+			const newPkg = queue
+				.add(() => packPublish(pkg, { name, config, bumped, npmrc }))
+				.catch((error) => {
+					// Empty queue when we hit the error limit
+					queue.pause();
+					queue.clear();
+					throw error;
+				});
 			publishArr.push(newPkg);
 		}
 	}
@@ -169,15 +183,8 @@ export const publishPackages = async (
 	// Otherwise, we want to continue publishing, commit and print the errors at the end
 	const results = await Promise.allSettled(publishArr);
 
-	// Print errors
+	// Filter errors
 	const errors = results.filter((r) => r.status === 'rejected');
-	if (errors.length > 0) {
-		consola.error('Failed to publish the following packages:');
-		for (const error of errors) {
-			if (error.status !== 'rejected') continue; // This should never happen, but ts is complaining
-			consola.error(`${colors.red(error.reason)}`);
-		}
-	}
 
 	await doGitOperations({ name, config, bumped, npmrc });
 

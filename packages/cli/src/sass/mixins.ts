@@ -11,25 +11,33 @@ $directory: null !default;
 
 $family: null !default;
 $display: null !default;
-$displayVar: null !default;
 $formats: null !default;
 $subsets: null !default;
 $weights: null !default;
 $styles: null !default;
 $axes: null !default;
 
+// Deprecated
+$displayVar: null !default;
+
 @mixin generator(
   $metadata: $metadata,
   $directory: $directory,
   $family: $family,
   $display: $display,
-  $displayVar: $displayVar,
   $formats: $formats,
   $subsets: $subsets,
   $weights: $weights,
   $styles: $styles,
-  $axes: $axes
+  $axes: $axes,
+
+  // Deprecated
+  $displayVar: $displayVar
 ) {
+  @if $displayVar != null {
+    @warn "$displayVar is deprecated due to the limitation of using css variables in @font-face (https://github.com/fontsource/fontsource/issues/726).";
+  }
+
   $isVariable: map.get($metadata, axes) != null;
 
   $directory: if(
@@ -40,7 +48,6 @@ $axes: null !default;
 
   $family: if($family, $family, map.get($metadata, family) + if($isVariable, ' Variable', ''));
   $display: if($display, $display, swap);
-  $displayVar: if($displayVar != null, $displayVar, true);
   $formats: if(not $formats or $formats == all, if($isVariable, woff2, (woff2, woff)), $formats);
   $subsets: if(
     $subsets,
@@ -93,7 +100,6 @@ $axes: null !default;
                 directory: $directory,
                 family: $family,
                 display: $display,
-                displayVar: $displayVar,
                 formats: $formats,
                 subsets: $subsets,
                 weights: $weights,
@@ -114,7 +120,7 @@ $axes: null !default;
                   oblique map.get($metadata, axes, slnt, min) + deg map.get($metadata, axes, slnt, max) + deg,
                   $style
                 ),
-                font-display: if($displayVar, var(--fontsource-display, $display), $display),
+                font-display: $display,
                 font-weight: if(
                   (($axis == full) or ($axis == wght)) and map.has-key($metadata, axes, wght),
                   map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max),
@@ -141,24 +147,27 @@ $axes: null !default;
   $directory: $directory,
   $family: $family,
   $display: $display,
-  $displayVar: $displayVar,
   $formats: $formats,
   $subsets: $subsets,
   $weights: $weights,
   $styles: $styles,
-  $axes: $axes
+  $axes: $axes,
+
+  // Deprecated
+  $displayVar: $displayVar
 ) {
   @include generator(
       $metadata: $metadata,
       $directory: $directory,
       $family: $family,
       $display: $display,
-      $displayVar: $displayVar,
       $formats: $formats,
       $subsets: $subsets,
       $weights: $weights,
       $styles: $styles,
-      $axes: $axes
+      $axes: $axes,
+
+      $displayVar: $displayVar
     )
     using ($props) {
     /* #{map.get($props, variant)} */
