@@ -1,7 +1,7 @@
 import { createCookieSessionStorage } from '@remix-run/node';
 
 const themes = ['light', 'dark'] as const;
-type Theme = typeof themes[number];
+type Theme = (typeof themes)[number];
 const isTheme = (value: string): value is Theme =>
 	themes.includes(value as Theme);
 
@@ -20,10 +20,12 @@ const getThemeSession = async (request: Request) => {
 	return {
 		getTheme: () => {
 			const themeValue = session.get('theme');
-			return isTheme(themeValue) ? themeValue : null;
+			return isTheme(themeValue) ? themeValue : undefined;
 		},
-		setTheme: (theme: Theme) => session.set('theme', theme),
-		commit: () => themeStorage.commitSession(session),
+		setTheme: (theme: Theme) => {
+			session.set('theme', theme);
+		},
+		commit: async () => await themeStorage.commitSession(session),
 	};
 };
 

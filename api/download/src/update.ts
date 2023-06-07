@@ -1,9 +1,10 @@
-import JSZip from 'jszip';
-import { FileGenerator } from './types';
 import { StatusError } from 'itty-router';
+import JSZip from 'jszip';
 import PQueue from 'p-queue';
-// @ts-ignore - no types
+// @ts-expect-error - no types
 import woff2ttf from 'woff2sfnt-sfnt2woff';
+
+import { type FileGenerator } from './types';
 
 interface URLMetadata {
 	id: string;
@@ -60,7 +61,7 @@ const updateBucket = async (
 			let ttfBuffer;
 			try {
 				ttfBuffer = await woff2ttf.toSfnt(new Uint8Array(buffer));
-			} catch (err) {
+			} catch {
 				throw new StatusError(500, 'could not convert woff to ttf');
 			}
 			if (!ttfBuffer)
@@ -77,7 +78,7 @@ const updateBucket = async (
 		}
 	};
 
-	let hasError;
+	let hasError: Error | undefined;
 
 	// Add all individual font files to the bucket
 	for (const weight of weights) {
@@ -93,12 +94,13 @@ const updateBucket = async (
 						extension,
 					};
 
-					queue
+					void queue
+						// eslint-disable-next-line @typescript-eslint/promise-function-async
 						.add(() => downloadFile(urlMetadata))
-						.catch((err) => {
+						.catch((error) => {
 							queue.pause();
 							queue.clear();
-							hasError = err;
+							hasError = error;
 						});
 				}
 			}

@@ -75,15 +75,23 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 	return (
 		<Group position="apart" spacing="xs">
 			<Group className={classes.wrapper}>
-				<Dropdown label={`${previewState.size.get()} px`} width={70} className={classes.button}>
+				<Dropdown
+					label={`${previewState.size.get()} px`}
+					width={70}
+					className={classes.button}
+				>
 					{sizes.map((size) => (
-						<DropdownItem key={size} value={size} setValue={previewState.size.set} />
+						<DropdownItem
+							key={size}
+							value={size}
+							setValue={previewState.size.set}
+						/>
 					))}
 				</Dropdown>
 				<MantineSlider
 					color="purple.0"
 					size="sm"
-					label={null}
+					label={undefined}
 					value={previewState.size.get()}
 					onChange={previewState.size.set}
 					className={classes.slider}

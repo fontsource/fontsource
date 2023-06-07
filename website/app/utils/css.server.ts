@@ -28,7 +28,7 @@ const cssRewrite = (css: string, id: string, dir: FontDirectory) =>
 		/url\(\.\/(files\/.*?)\)/g,
 		// match "url(./files/${woffFileName})", then replace with "url(${baseURL}/files/${woffFileName})"
 		`url('${BASE_URL(dir)}/${id}/$1')`
-			.replace(/\/\*[\s\S]*?\*\/|[\r\n\t]+/g, '')
+			.replace(/\/\*[\S\s]*?\*\/|[\t\n\r]+/g, '')
 			// limit number of adjacent spaces to 1
 			.replace(/ {2,}/g, ' ')
 			// remove spaces around the following: ,:;{}
@@ -58,12 +58,10 @@ const addCss = async (metadata: DownloadMetadata) => {
 	let fontDir = getFontDirectory(metadata, false);
 	for (const weight of weights) {
 		for (const style of styles) {
-			let url;
-			if (style === 'italic') {
-				url = `${BASE_URL(fontDir)}/${id}/${weight}-italic.css`;
-			} else {
-				url = `${BASE_URL(fontDir)}/${id}/${weight}.css`;
-			}
+			const url =
+				style === 'italic'
+					? `${BASE_URL(fontDir)}/${id}/${weight}-italic.css`
+					: `${BASE_URL(fontDir)}/${id}/${weight}.css`;
 
 			try {
 				const css = cssRewrite(await kya(url, { text: true }), id, fontDir);
@@ -79,15 +77,15 @@ const addCss = async (metadata: DownloadMetadata) => {
 					})
 					.onConflict(['id', 'weight', 'isItalic', 'isVariable'])
 					.merge();
-			} catch (err) {
+			} catch (error) {
 				// There is a rare instance where a font has 400, 400italic, 700 but no 700italic
 				// If it is not 404 and not italic, then throw error. Otherwise suppress
 				if (
-					err instanceof HTTPError &&
-					err.response.status !== 404 &&
+					error instanceof HTTPError &&
+					error.response.status !== 404 &&
 					style !== 'italic'
 				) {
-					throw err;
+					throw error;
 				}
 			}
 		}
@@ -114,30 +112,29 @@ const addCss = async (metadata: DownloadMetadata) => {
 			})
 			.onConflict(['id', 'weight', 'isItalic', 'isVariable'])
 			.merge();
-	} catch (err) {
-		if (err instanceof HTTPError && err.response.status === 404) {
+	} catch (error) {
+		if (error instanceof HTTPError && error.response.status === 404) {
 			// In the rare case a font has no index.css due to a bug upstream, we can just use a find closest value
-			let css;
-			let weight = findClosest(weights, 400);
-			if (styles.length === 1 && styles.includes('italic')) {
-				// If only italic, then use 400italic
-				css = cssRewrite(
-					await kya(`${BASE_URL(fontDir)}/${id}/${weight}-italic.css`, {
-						text: true,
-					}),
-					id,
-					fontDir
-				);
-			} else {
-				// Otherwise use 400
-				css = cssRewrite(
-					await kya(`${BASE_URL(fontDir)}/${id}/${weight}.css`, {
-						text: true,
-					}),
-					id,
-					fontDir
-				);
-			}
+			const weight = findClosest(weights, 400);
+
+			const css =
+				styles.length === 1 && styles.includes('italic')
+					? // If only italic, then use 400italic
+					  cssRewrite(
+							await kya(`${BASE_URL(fontDir)}/${id}/${weight}-italic.css`, {
+								text: true,
+							}),
+							id,
+							fontDir
+					  )
+					: // Otherwise use 400
+					  cssRewrite(
+							await kya(`${BASE_URL(fontDir)}/${id}/${weight}.css`, {
+								text: true,
+							}),
+							id,
+							fontDir
+					  );
 
 			await knex('css')
 				.insert({
@@ -316,7 +313,7 @@ const getCss = async (id: string, opts: CssOptions): Promise<string> => {
 			await updateSingleMetadata(id);
 			css = getAllCss(id, opts.variable);
 		}
-		return css;
+		return await css;
 	}
 
 	throw new Error('Invalid options');

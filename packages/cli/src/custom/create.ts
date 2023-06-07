@@ -1,4 +1,4 @@
-/* eslint-disable consistent-return */
+/* eslint-disable no-useless-return */ // Else we get a ts-error for unfulilled codepaths
 import {
 	cancel,
 	confirm,
@@ -12,7 +12,7 @@ import {
 import consola from 'consola';
 import colors from 'picocolors';
 
-import type { Metadata } from '../types';
+import { isCategoryName, type Metadata } from '../types';
 import { licenseShort } from '../utils';
 import { buildCustom } from './build';
 
@@ -20,13 +20,13 @@ export const create = async () => {
 	intro(colors.cyan(colors.bold('fontsource')));
 	const cfg = await group(
 		{
-			name: () =>
-				text({
+			name: async () =>
+				await text({
 					message: colors.bold('What is the name of the font?'),
 					placeholder: 'Noto Sans JP',
 					validate(value) {
 						if (!value) return 'Please enter a name';
-						return undefined;
+						return;
 					},
 				}),
 			// TODO: Add support for multiple subsets
@@ -38,8 +38,8 @@ export const create = async () => {
 				if (!value) return 'Please enter at least one subset';
 			}
 		}), */
-			weights: () =>
-				text({
+			weights: async () =>
+				await text({
 					message: colors.bold(
 						'What are the weights of the font? (separate by commas)'
 					),
@@ -50,11 +50,11 @@ export const create = async () => {
 						const weights = value.split(',').map(Number);
 						if (weights.some((weight) => Number.isNaN(weight)))
 							return 'Please enter only numbers';
-						return undefined;
+						return;
 					},
 				}),
-			styles: () =>
-				multiselect({
+			styles: async () =>
+				await multiselect({
 					message: colors.bold('What are the styles of the font?'),
 					options: [
 						{ value: 'normal', label: 'Normal' },
@@ -62,80 +62,81 @@ export const create = async () => {
 					],
 					required: true,
 				}),
-			version: () =>
-				text({
+			version: async () =>
+				await text({
 					message: colors.bold('What is the version of the font?'),
 					placeholder: 'v1.0',
 					validate(value) {
 						if (!value) return 'Please enter a version';
-						return undefined;
+						return;
 					},
 				}),
-			category: () =>
-				select({
+			category: async () =>
+				await select({
 					message: colors.bold('What is the category of the font?'),
+					initialValue: 'sans-serif',
 					options: [
-						// Can remove when https://github.com/natemoo-re/clack/pull/102
-						{ value: 'sans-serif' as unknown as void, label: 'Sans Serif' },
-						{ value: 'serif' as unknown as void, label: 'Serif' },
-						{ value: 'display' as unknown as void, label: 'Display' },
-						{ value: 'monospace' as unknown as void, label: 'Monospace' },
-						{ value: 'handwriting' as unknown as void, label: 'Handwriting' },
-						{ value: 'icons' as unknown as void, label: 'Icons' },
-						{ value: 'other' as unknown as void, label: 'Other' },
+						{ value: 'sans-serif', label: 'Sans Serif' },
+						{ value: 'serif', label: 'Serif' },
+						{ value: 'display', label: 'Display' },
+						{ value: 'monospace', label: 'Monospace' },
+						{ value: 'handwriting', label: 'Handwriting' },
+						{ value: 'icons', label: 'Icons' },
+						{ value: 'other', label: 'Other' },
 					],
 				}),
-			license: () =>
-				select({
+			license: async () =>
+				await select({
 					message: colors.bold('What is the license of the font?'),
+					initialValue: 'sil open font license, 1.1',
 					options: [
 						{
-							value: 'sil open font license, 1.1' as unknown as void,
+							value: 'sil open font license, 1.1',
 							label: 'SIL Open Font License (OFL-1.1)',
 						},
 						{
-							value: 'apache license, version 2.0' as unknown as void,
+							value: 'apache license, version 2.0',
 							label: 'Apache License 2.0 (Apache-2.0)',
 						},
 						{
-							value: 'ubuntu font license, 1.0' as unknown as void,
+							value: 'ubuntu font license, 1.0',
 							label: 'Ubuntu Font License (UFL-1.0)',
 						},
-						{ value: 'mit' as unknown as void, label: 'MIT License' },
-						{ value: 'cc0-1.0' as unknown as void, label: 'CC0-1.0 License' },
+						{ value: 'mit', label: 'MIT License' },
+						{ value: 'cc0-1.0', label: 'CC0-1.0 License' },
 						{
-							value: 'other' as unknown as void,
+							value: 'other',
 							label: 'Other License',
 							hint: 'Please make an issue verifying if this is usable! We are likely to reject PRs that do not match the above licenses.',
 						},
 					],
 				}),
-			licenseUrl: () =>
-				text({
+			licenseUrl: async () =>
+				await text({
 					message: colors.bold('What is the URL of the license?'),
 					validate(value) {
 						if (!value) return 'Please enter a URL';
-						return undefined;
+						return;
 					},
 				}),
-			licenseAttribution: () =>
-				text({
+			licenseAttribution: async () =>
+				await text({
 					message: colors.bold(
 						'What is the author name or attribution of the font?'
 					),
 					validate(value) {
 						if (!value) return 'Please enter a name or attribution';
-						return undefined;
+						return;
 					},
 				}),
-			sourceUrl: () =>
-				text({
+			sourceUrl: async () =>
+				await text({
 					message: colors.bold(
 						'What is the URL of the source files? GitHub repositories are preferred'
 					),
 					validate(value) {
 						if (!value) return 'Please enter a URL';
-						return undefined;
+						return;
 					},
 				}),
 		},
@@ -148,8 +149,12 @@ export const create = async () => {
 		}
 	);
 
+	if (!isCategoryName(cfg.category)) {
+		throw new Error(`Invalid category name: ${cfg.category}`);
+	}
+
 	const metadata: Metadata = {
-		id: cfg.name.toLowerCase().replace(/ /g, '-'),
+		id: cfg.name.toLowerCase().replaceAll(' ', '-'),
 		family: cfg.name,
 		subsets: ['latin'], // cfg.subsets.split(',').map((subset) => subset.trim()),
 		weights: cfg.weights
@@ -176,7 +181,7 @@ export const create = async () => {
 		),
 	});
 
-	if (!confirmCreate) {
+	if (typeof confirmCreate === 'boolean' && !confirmCreate) {
 		cancel('Package creation cancelled.');
 		// eslint-disable-next-line unicorn/no-process-exit
 		process.exit(0);

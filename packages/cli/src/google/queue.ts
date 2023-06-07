@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import consola from 'consola';
 import fs from 'fs-extra';
 import {
@@ -10,18 +11,18 @@ import PQueue from 'p-queue';
 import * as path from 'pathe';
 import colors from 'picocolors';
 
-import { BuildOptions, CLIOptions } from '../types';
+import { type BuildOptions, type CLIOptions } from '../types';
 import { build } from './build';
 
 const queue = new PQueue({ concurrency: 3 });
 
-// @ts-ignore - rollup-plugin-dts being too strict
+// @ts-ignore - dts thinks there is a typing error here
 queue.on('error', (error) => {
 	throw new Error(error);
 });
 
-// @ts-ignore - rollup-plugin-dts being too strict
-queue.on('idle', async () => {
+// @ts-ignore - dts thinks there is a typing error here
+queue.on('idle', () => {
 	consola.success(
 		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`
 	);
@@ -96,7 +97,7 @@ const testIds = [
 // These fonts are too big for NPM and should not download individual subsets
 const removeSubsetIds = new Set(['noto-serif-hk']);
 
-export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
+export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 	// Ensure all chosen dirs are created
 	const outDir = path.resolve(process.cwd(), 'fonts');
 	await fs.ensureDir(outDir);
@@ -109,6 +110,8 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 		fontIds = testIds;
 	} else if (!fonts || fonts.length === 0) {
 		fontIds = Object.keys(APIv2);
+	} else {
+		throw new Error('No fonts specified.');
 	}
 
 	// Normal fonts
@@ -127,17 +130,20 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 		try {
 			if (id in APIv2) {
 				// Create base font package
-				queue.add(() => buildPackage(id, buildOpts));
+				// eslint-disable-next-line @typescript-eslint/promise-function-async
+				void queue.add(() => buildPackage(id, buildOpts));
 
 				// Build separate package for variable fonts
-				if (APIVariable[id]) {
-					queue.add(() => buildVariablePackage(id, buildOpts));
+				if (APIVariable[id] !== undefined) {
+					// eslint-disable-next-line @typescript-eslint/promise-function-async
+					void queue.add(() => buildVariablePackage(id, buildOpts));
 				}
 			} else {
 				consola.warn(`Skipping ${id} as it is not a Google Font.`);
 			}
 		} catch (error) {
-			throw new Error(`${id} experienced an error. ${error}`);
+			consola.error(`Error processing ${id}.`);
+			throw error;
 		}
 	}
 
@@ -160,16 +166,19 @@ export const processGoogle = async (opts: CLIOptions, fonts: string[]) => {
 		try {
 			if (id in APIIconStatic) {
 				// Create base font package
-				queue.add(() => buildIconPackage(id, buildOpts));
+				// eslint-disable-next-line @typescript-eslint/promise-function-async
+				void queue.add(() => buildIconPackage(id, buildOpts));
 
-				if (APIIconVariable[id]) {
-					queue.add(() => buildVariableIconPackage(id, buildOpts));
+				if (APIIconVariable[id] !== undefined) {
+					// eslint-disable-next-line @typescript-eslint/promise-function-async
+					void queue.add(() => buildVariableIconPackage(id, buildOpts));
 				}
 			} else {
 				consola.warn(`Skipping ${id} as it is not a Google Font.`);
 			}
 		} catch (error) {
-			throw new Error(`${id} experienced an error. ${error}`);
+			consola.error(`Error processing ${id}.`);
+			throw error;
 		}
 	}
 

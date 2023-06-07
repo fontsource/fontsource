@@ -22,6 +22,7 @@ import {
 	IconGuide,
 	IconTool,
 } from '@/components/icons';
+
 interface SidebarConfig {
 	[slug: string]: {
 		[section: string]: {
@@ -154,7 +155,7 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 			<Group>
 				<Icon
 					height={18}
-					stroke={active || hovered ? theme.colors.purple[0] : undefined}
+					stroke={active ?? hovered ? theme.colors.purple[0] : undefined}
 				/>
 				<Text fw={active ? 700 : 400}>{title}</Text>
 			</Group>
@@ -194,7 +195,7 @@ const SectionItem = ({
 				backgroundColor: active ? 'rgba(98, 91, 248, 0.1)' : 'inherit',
 			})}
 			component={Link}
-			to={external ? external : `/docs/${slug}`}
+			to={external ?? `/docs/${slug}`}
 			onClick={handleToggle}
 		>
 			<Group position="apart">

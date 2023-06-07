@@ -1,11 +1,13 @@
 import { beforeEach, expect, it } from 'vitest';
-const describe = setupMiniflareIsolatedStorage();
-import worker from '../src/worker';
+
 import { fontlistQueries } from '../src/fontlist/types';
+import worker from '../src/worker';
 import { mockMetadata } from './helpers';
 
+const describe = setupMiniflareIsolatedStorage();
+
 describe('fontlist worker', () => {
-	const env = getMiniflareBindings() as Env;
+	const env = getMiniflareBindings() satisfies Env;
 	const ctx = new ExecutionContext();
 
 	beforeEach(async () => {
@@ -47,13 +49,13 @@ describe('fontlist worker', () => {
 	}
 
 	it('should return 400 for invalid query string', async () => {
-		const request = new Request(`http://localhost:8787/fontlist?invalid`);
+		const request = new Request('http://localhost:8787/fontlist?invalid');
 		const response = await worker.fetch(request, env, ctx);
 		expect(response.status).toBe(400);
 	});
 
 	it('should return 400 for multiple query strings', async () => {
-		const request = new Request(`http://localhost:8787/fontlist?type&category`);
+		const request = new Request('http://localhost:8787/fontlist?type&category');
 		const response = await worker.fetch(request, env, ctx);
 		expect(response.status).toBe(400);
 	});

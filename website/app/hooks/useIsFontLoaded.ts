@@ -7,7 +7,7 @@ export const useIsFontLoaded = (family: string, weights?: number[]) => {
 				family,
 			},
 		],
-		{ timeout: 15000 }
+		{ timeout: 15_000 }
 	);
 	if (!weights || weights.length === 0) return isFontLoaded;
 
@@ -18,15 +18,14 @@ export const useIsFontLoaded = (family: string, weights?: number[]) => {
 			[
 				{
 					family,
-					// @ts-ignore - weight is a number, but the type definition is wrong
+					// @ts-expect-error - weight is a number, but the type definition is wrong
 					weight: String(weight),
 				},
 			],
-			{ timeout: 15000 }
+			{ timeout: 15_000 }
 		);
 	});
-	const getFontLoaded = loadingArray.every((item) => item);
+	const getFontLoaded = loadingArray.every(Boolean);
 
 	return getFontLoaded;
 };
-

@@ -1,6 +1,5 @@
 import type { ErrorBoundaryComponent, LoaderFunction } from '@remix-run/node';
-import { redirect } from '@remix-run/node';
-import { json } from '@remix-run/node';
+import { json,redirect  } from '@remix-run/node';
 import type { V2_MetaFunction } from '@remix-run/react';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 import { useMemo } from 'react';

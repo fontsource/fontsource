@@ -1,4 +1,4 @@
-import { FontMetadata } from '../types';
+import type { FontMetadata } from '../types';
 
 const fontlistQueries = [
 	'family',
@@ -15,9 +15,7 @@ type FontlistQueries = typeof fontlistQueries[number] & keyof FontMetadata;
 const isFontlistQuery = (query: string): query is FontlistQueries =>
 	fontlistQueries.includes(query as FontlistQueries);
 
-interface Fontlist {
-	[key: string]: string | string[] | number[] | boolean;
-}
+type Fontlist = Record<string, string | string[] | number[] | boolean>;
 
-export { isFontlistQuery, fontlistQueries };
-export type { FontlistQueries, Fontlist };
+export { fontlistQueries, isFontlistQuery };
+export type { Fontlist, FontlistQueries };

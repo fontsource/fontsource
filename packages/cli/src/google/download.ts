@@ -10,7 +10,7 @@ import {
 import PQueue from 'p-queue';
 import * as path from 'pathe';
 
-import { BuildOptions } from '../types';
+import { type BuildOptions } from '../types';
 import {
 	assertNever,
 	makeFontDownloadPath,
@@ -18,27 +18,27 @@ import {
 } from '../utils';
 
 const writeDownload = async (url: string, dest: fs.PathLike) => {
-	const response = await fetch(url).then((res) => res.arrayBuffer());
-	await fs.writeFile(dest, Buffer.from(response));
+	const res = await fetch(url);
+	await fs.writeFile(dest, Buffer.from(await res.arrayBuffer()));
 };
 
-type StaticVariant = {
+interface StaticVariant {
 	kind: 'static';
 	weight: number;
 	style: string;
 	subset: string;
 	url: string;
 	extension: 'woff' | 'woff2' | 'ttf' | 'otf';
-};
+}
 
-type VariableVariant = {
+interface VariableVariant {
 	kind: 'variable';
 	axes: string;
 	style: string;
 	subset: string;
 	url: string;
 	extension: 'woff2';
-};
+}
 
 type Variant = StaticVariant | VariableVariant;
 
@@ -110,7 +110,7 @@ const getVariableVariantList = (
 						axes,
 						style,
 						subset: subset.replace('[', '').replace(']', ''),
-						url: url,
+						url,
 						extension: 'woff2',
 					});
 				}
@@ -158,7 +158,7 @@ const variantsToLinks = (
 	opts: BuildOptions
 ): DownloadLinks[] => {
 	// Map of destination paths to download URLs
-	let linkMap = new Map<string, string>();
+	const linkMap = new Map<string, string>();
 
 	// We add all variants to the map, later variants will overwrite equivalent earlier variants.
 	// This is to ensure that we don't download the same file twice, and that we select V2 variants over V1 variants.
@@ -212,20 +212,23 @@ const download = async (id: string, opts: BuildOptions) => {
 	await fs.ensureDir(path.join(opts.dir, 'files'));
 
 	// Get download URLs of font files
-	let links = opts.isVariable ? variableLinks(id, opts) : staticLinks(id, opts);
+	const links = opts.isVariable
+		? variableLinks(id, opts)
+		: staticLinks(id, opts);
 
 	// Download all font files
 	for (const link of links) {
-		queue.add(() => writeDownload(link.url, link.dest));
+		// eslint-disable-next-line @typescript-eslint/return-await
+		void queue.add(async () => writeDownload(link.url, link.dest));
 	}
 
 	await queue.onIdle();
 };
 
 export {
+	download,
 	getStaticVariantList,
 	getVariableVariantList,
 	staticLinks,
 	variableLinks,
-	download,
 };

@@ -7,7 +7,7 @@ import type { DownloadMetadata, FontList, Metadata } from '@/utils/types';
 import { kya } from '@/utils/utils.server';
 
 const getFontList = async (): Promise<FontList> => {
-	return kya(
+	return await kya(
 		'https://raw.githubusercontent.com/fontsource/font-files/main/FONTLIST.json'
 	);
 };
@@ -69,7 +69,7 @@ const getMetadata = async (id: string): Promise<Metadata> => {
 
 	// Convert metadata from DB to JSON friendly
 	metadata.subsets = metadata.subsets.split(',');
-	metadata.weights = metadata.weights.split(',').map((w: string) => Number(w));
+	metadata.weights = metadata.weights.split(',').map(Number);
 	metadata.styles = metadata.styles.split(',');
 	metadata.variable = Boolean(metadata.variable);
 	metadata.license = JSON.parse(metadata.license);
@@ -95,12 +95,12 @@ const updateMetadataCaches = async () => {
 };
 
 export const metadataQueue = new PQueue({ concurrency: 4 });
-// @ts-ignore - for some reason error is not an accepted type
-metadataQueue.on('error', async (error) => {
+// @ts-expect-error - for some reason error is not an accepted type
+metadataQueue.on('error', (error) => {
 	console.error(error);
 });
 
-metadataQueue.on('idle', async () => {
+metadataQueue.on('idle', () => {
 	console.log('Metadata update complete!');
 });
 
@@ -137,7 +137,9 @@ const updateAllMetadata = async () => {
 
 	for (const id of updateArr) {
 		// eslint-disable-next-line no-loop-func
-		metadataQueue.add(async () => await updateMetadata(manifestCache[id]));
+		void metadataQueue.add(async () => {
+			await updateMetadata(manifestCache[id]);
+		});
 	}
 };
 

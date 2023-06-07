@@ -16,9 +16,9 @@ import colors from 'picocolors';
 
 import { version } from '../package.json';
 import { create } from './custom/create';
+import { rebuild } from './custom/rebuilder';
 import { verify, verifyAll } from './custom/verify';
 import { processGoogle } from './google/queue';
-import { rebuild } from './custom/rebuilder';
 
 const cli = cac('fontsource');
 

@@ -22,14 +22,25 @@ export const useLoadFont = (
 	useEffect(() => {
 		if (fontCss.state === 'idle' && !fontCss.data?.css) {
 			let url = '';
-			if (type === 'index') {
-				url = `/fonts/${id}/fetch-css`;
-			} else if (type === 'variable') {
-				url = `/fonts/${id}/fetch-css/?variable=true&all=true`;
-			} else if (type === 'all') {
-				url = `/fonts/${id}/fetch-css/?all=true`;
-			} else {
-				throw new Error('Invalid load type');
+			switch (type) {
+				case 'index': {
+					url = `/fonts/${id}/fetch-css`;
+
+					break;
+				}
+				case 'variable': {
+					url = `/fonts/${id}/fetch-css/?variable=true&all=true`;
+
+					break;
+				}
+				case 'all': {
+					url = `/fonts/${id}/fetch-css/?all=true`;
+
+					break;
+				}
+				default: {
+					throw new Error('Invalid load type');
+				}
 			}
 			fontCss.load(url);
 		}
@@ -37,8 +48,8 @@ export const useLoadFont = (
 		const isDone = fontCss.state === 'idle' && fontCss.data?.css;
 		if (isDone && !isFontLoaded) {
 			const style = document.createElement('style');
-			style.textContent = fontCss.data.css;
-			document.head.appendChild(style);
+			style.textContent = fontCss.data?.css;
+			document.head.append(style);
 		}
 
 		if (isDone && isFontLoaded) {

@@ -1,6 +1,5 @@
 import type { BoxProps } from '@mantine/core';
-import { rem } from '@mantine/core';
-import { Box, createStyles } from '@mantine/core';
+import { Box, createStyles, rem } from '@mantine/core';
 import { useLocation } from '@remix-run/react';
 import { useEffect } from 'react';
 import Balancer from 'react-wrap-balancer';
@@ -63,7 +62,7 @@ export const CarbonAd = ({ ...props }: BoxProps) => {
 			'//cdn.carbonads.com/carbon.js?serve=CEAI42QN&placement=fontsourceorg';
 		script.id = '_carbonads_js';
 		script.async = true;
-		document.getElementById('carbonads')?.replaceWith(script);
+		document.querySelector('#carbonads')?.replaceWith(script);
 	}, [location]);
 
 	return (

@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/no-await-expression-member */
+/* eslint-disable @typescript-eslint/no-dynamic-delete */
 import { knex } from '@/utils/db.server';
 import { ensurePrimary } from '@/utils/fly.server';
 import { kya } from '@/utils/utils.server';
@@ -52,4 +54,9 @@ const updateDownloadCount = async () => {
 	}
 };
 
-export { getDownloadCountList, getDownloadCountMonth, getDownloadCountTotal, updateDownloadCount };
+export {
+	getDownloadCountList,
+	getDownloadCountMonth,
+	getDownloadCountTotal,
+	updateDownloadCount,
+};

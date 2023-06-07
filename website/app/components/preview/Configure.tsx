@@ -54,12 +54,13 @@ interface ConfigureProps {
 	axisRegistry?: AxisRegistryAll;
 }
 
+const resetVariation = () => {
+	previewState.italic.set(false);
+	variableState.set({});
+};
+
 const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 	const { classes } = useStyles();
-	const resetVariation = () => {
-		previewState.italic.set(false);
-		variableState.set({});
-	};
 
 	return (
 		<>
@@ -72,7 +73,7 @@ const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 						subsets={metadata.subsets}
 						hasItalic={metadata.styles.includes('italic')}
 					/>
-					{metadata.variable && (
+					{Boolean(metadata.variable) && (
 						<>
 							<Divider mt="sm" />
 							<Group position="apart">

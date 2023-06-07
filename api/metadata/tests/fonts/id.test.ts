@@ -1,10 +1,12 @@
 import { beforeEach, expect, it } from 'vitest';
-const describe = setupMiniflareIsolatedStorage();
+
 import worker from '../../src/worker';
 import { mockMetadata } from '../helpers';
 
+const describe = setupMiniflareIsolatedStorage();
+
 describe('fonts id worker', () => {
-	const env = getMiniflareBindings() as Env;
+	const env = getMiniflareBindings() satisfies Env;
 	const ctx = new ExecutionContext();
 
 	beforeEach(async () => {

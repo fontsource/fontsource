@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'node:url';
+
 import type { LoaderFunction } from '@remix-run/node';
 import path from 'pathe';
 import { SitemapStream, streamToPromise } from 'sitemap';
@@ -24,7 +26,9 @@ export const loader: LoaderFunction = async () => {
 	}
 
 	// Pipe all docs to stream
-	const slugs = await getAllSlugsInDir(path.join(__dirname, '../docs'));
+	const slugs = await getAllSlugsInDir(
+		path.join(path.dirname(fileURLToPath(import.meta.url)), '../docs')
+	);
 
 	for (const slug of slugs) {
 		smStream.write({

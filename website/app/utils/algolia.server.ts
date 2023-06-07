@@ -1,7 +1,10 @@
 import algoliasearch from 'algoliasearch';
 
 import { knex } from '@/utils/db.server';
-import { getDownloadCountMonth, updateDownloadCount } from '@/utils/metadata/download.server';
+import {
+	getDownloadCountMonth,
+	updateDownloadCount,
+} from '@/utils/metadata/download.server';
 import {
 	getFontList,
 	updateSingleMetadata,
@@ -10,7 +13,7 @@ import type { AlgoliaMetadata } from '@/utils/types';
 
 const shuffleArray = (size: number) => {
 	// Generate array of numbers from 0 to size
-	const arr: number[] = [...Array(size).keys()];
+	const arr: number[] = [...Array.from({ length: size }).keys()];
 
 	// Durstenfeld shuffle to randomly sort array
 	for (let i = arr.length - 1; i > 0; i--) {
@@ -67,7 +70,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 				objectID: id,
 				family: metadata.family,
 				subsets: metadata.subsets.split(','),
-				weights: metadata.weights.split(',').map((w: string) => Number(w)),
+				weights: metadata.weights.split(',').map(Number),
 				styles: metadata.styles.split(','),
 				category: metadata.category,
 				defSubset: metadata.defSubset,
@@ -92,8 +95,8 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 			await searchIndex.saveObjects(indexArray);
 			console.log('Updated Algolia index');
 		}
-	} catch (err) {
-		console.error(err);
+	} catch (error) {
+		console.error(error);
 	}
 };
 

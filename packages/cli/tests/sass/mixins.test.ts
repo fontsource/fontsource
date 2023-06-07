@@ -1,9 +1,9 @@
-import { describe, expect, it } from 'vitest';
 import { compileString } from 'sass';
+import { describe, expect, it } from 'vitest';
 
-import { sassMixins } from '../../src/sass/mixins';
 import { sassMetadata } from '../../src/sass/metadata';
-import { Metadata } from '../../src/types';
+import { sassMixins } from '../../src/sass/mixins';
+import type { Metadata } from '../../src/types';
 import mockSassMetadata from './fixtures/sass-metadata.json';
 
 const compileSass = (metadata: string) => {
@@ -15,7 +15,7 @@ const compileSass = (metadata: string) => {
 		sassMixins
 			.replace("@use 'metadata';", '')
 			.replace('meta.module-variables(metadata) !default', metadataMap) +
-			`@include faces()`
+			'@include faces()'
 	);
 };
 

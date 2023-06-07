@@ -15,10 +15,10 @@ export const action: ActionFunction = async ({ request }) => {
 
 	// Return 400 if no id
 	if (!subset) {
-		return json({message: 'No subset found'}, { status: 400 });
+		return json({ message: 'No subset found' }, { status: 400 });
 	}
 
 	// Get preview text
-	const text = await getPreviewText(subset, id);
+	const text = getPreviewText(subset, id);
 	return json({ text });
 };

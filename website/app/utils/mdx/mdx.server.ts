@@ -1,4 +1,6 @@
-import * as fs from 'fs/promises';
+import * as fs from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+
 import * as path from 'pathe';
 
 import { knex } from '@/utils/db.server';
@@ -23,11 +25,15 @@ process.env.NODE_ENV === 'production'
 	  });
 
 const getSource = async (slug: string) => {
-	const filepath = path.join(__dirname, '../docs', slug + '.mdx');
+	const filepath = path.join(
+		path.dirname(fileURLToPath(import.meta.url)),
+		'../docs',
+		slug + '.mdx'
+	);
 	try {
 		return await fs.readFile(filepath, 'utf8');
 	} catch {
-		return null;
+		// Return undefined
 	}
 };
 
@@ -35,7 +41,7 @@ interface MdxResult extends SerialiseOutput {
 	globals: Globals;
 }
 
-const fetchMdx = async (slug: string): Promise<MdxResult | null> => {
+const fetchMdx = async (slug: string): Promise<MdxResult | undefined> => {
 	// If we're in production, we can just get the doc from the db cache.
 	if (process.env.NODE_ENV === 'production') {
 		const result = await knex('docs').where({ route: slug }).first();
@@ -55,7 +61,7 @@ const fetchMdx = async (slug: string): Promise<MdxResult | null> => {
 	// If the doc doesn't exist in the db, we need to create it.
 	await ensurePrimary();
 	const source = await getSource(slug);
-	if (!source) return null;
+	if (!source) return;
 
 	const { code, frontmatter } = await serialise(source, globals);
 
@@ -79,7 +85,9 @@ const populateDocsCache = async () => {
 	await ensurePrimary();
 
 	// Get all mdx files in nested directories in the docs folder
-	const slugs = await getAllSlugsInDir(path.join(__dirname, '../docs'));
+	const slugs = await getAllSlugsInDir(
+		path.join(path.dirname(fileURLToPath(import.meta.url)), '../docs')
+	);
 
 	// Run fetchMdx for each slug to put it in the db cache
 	for (const slug of slugs) {

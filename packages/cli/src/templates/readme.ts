@@ -30,9 +30,9 @@ import "@fontsource/${id}/400-italic.css"; // Specify weight and style
 \`\`\`
 
 Supported variables:
-- Weights: \`[${weights}]\`
-- Styles: \`[${styles}]\`
-- Subsets: \`[${subsets}]\`
+- Weights: \`[${String(weights)}]\`
+- Styles: \`[${String(styles)}]\`
+- Subsets: \`[${String(subsets)}]\`
 
 > Note: \`italic\` may not be supported by all fonts. To learn more about what weights and styles are supported, please visit the [Fontsource website](https://fontsource.org/fonts/${id}).
 
@@ -87,10 +87,10 @@ import "@fontsource-variable/${id}/wght-italic.css"; // Specify axis and style
 \`\`\`
 
 Supported variables:
-- Weights: \`[${weights}]\`
-- Styles: \`[${styles}]\`
-- Subsets: \`[${subsets}]\`
-- Axes: \`[${Object.keys(variable).filter((axis) => axis !== 'ital')}]\`
+- Weights: \`[${String(weights)}]\`
+- Styles: \`[${String(styles)}]\`
+- Subsets: \`[${String(subsets)}]\`
+- Axes: \`[${String(Object.keys(variable).filter((axis) => axis !== 'ital'))}]\`
 
 > Note: \`italic\` may not be supported by all fonts. To learn more about what axes and styles are supported, please visit the [Fontsource website](https://fontsource.org/fonts/${id}).
 

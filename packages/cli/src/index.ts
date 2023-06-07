@@ -1,3 +1,6 @@
+export { create } from './custom/create';
+export { verify } from './custom/verify';
+export { processGoogle } from './google/queue';
 export {
 	APIIconStatic,
 	APIIconVariable,
@@ -7,7 +10,3 @@ export {
 	APIv2,
 	APIVariable,
 } from 'google-font-metadata';
-
-export { verify } from './custom/verify';
-export { create } from './custom/create';
-export { processGoogle } from './google/queue';

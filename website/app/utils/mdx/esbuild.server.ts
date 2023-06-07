@@ -1,3 +1,6 @@
+/* eslint-disable unicorn/no-await-expression-member */
+import { StringDecoder } from 'node:string_decoder';
+
 import { NodeResolvePlugin } from '@esbuild-plugins/node-resolve';
 import type { ModuleInfo } from '@fal-works/esbuild-plugin-global-externals';
 import { globalExternals } from '@fal-works/esbuild-plugin-global-externals';
@@ -5,7 +8,6 @@ import type { BuildOptions, Loader, Plugin } from 'esbuild';
 import * as esbuild from 'esbuild';
 import { nanoid } from 'nanoid';
 import path from 'pathe';
-import { StringDecoder } from 'string_decoder';
 import type { VFileCompatible } from 'vfile';
 import { VFile } from 'vfile';
 import { matter } from 'vfile-matter';
@@ -91,25 +93,18 @@ const esbuildOptions = async (
 			build.onLoad({ filter: /.*/ }, async ({ path: filePath, pluginData }) => {
 				if (pluginData === undefined || !pluginData.inMemory) {
 					// Return an empty object so that esbuild will load & parse the file contents itself.
-					return null;
+					return;
 				}
 
 				// the || .js allows people to exclude a file extension
 				const fileType = (path.extname(filePath) || '.jsx').slice(1);
 				const contents = absoluteFiles[filePath];
 
-				if (fileType === 'mdx') return null;
+				if (fileType === 'mdx') return;
 
-				let loader: Loader;
-
-				if (
-					build.initialOptions.loader &&
-					build.initialOptions.loader[`.${fileType}`]
-				) {
-					loader = build.initialOptions.loader[`.${fileType}`];
-				} else {
-					loader = fileType as Loader;
-				}
+				const loader: Loader = build.initialOptions.loader?.[`.${fileType}`]
+					? build.initialOptions.loader[`.${fileType}`]
+					: (fileType as Loader);
 
 				return {
 					contents,
@@ -178,7 +173,7 @@ const serialise = async (
 
 	return {
 		code: `${code};return Component`,
-		frontmatter: file.data.matter as unknown as FrontMatter,
+		frontmatter: file.data.matter as FrontMatter,
 	};
 };
 

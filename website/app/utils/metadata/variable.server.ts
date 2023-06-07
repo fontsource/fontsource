@@ -5,7 +5,8 @@ import { kya } from '@/utils/utils.server';
 
 const getVariable = async (id: string) => {
 	const variable = await knex('variable').where({ id }).first();
-	if (!variable) return null;
+	if (!variable) return;
+
 	return JSON.parse(variable.axes);
 };
 

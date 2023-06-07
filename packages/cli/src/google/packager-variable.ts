@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-import { FontObject, generateFontFace } from '@fontsource-utils/generate';
+import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
 import { APIv2, APIVariable } from 'google-font-metadata';
 import * as path from 'pathe';

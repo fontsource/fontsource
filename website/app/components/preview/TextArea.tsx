@@ -155,26 +155,25 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 
 const TextArea = ({ metadata }: TextAreaProps) => {
 	const { classes } = useStyles();
+	const isVariable = Boolean(metadata.variable);
 
 	const [loading, setLoading] = useState(true);
 	useLoadFont(
 		metadata.id,
 		metadata.family,
-		metadata.variable ? 'variable' : 'all',
+		isVariable ? 'variable' : 'all',
 		setLoading,
 		metadata.weights
 	);
 
 	return (
-		<Flex direction="column" >
+		<Flex direction="column">
 			<Text className={classes.header}>Font Preview</Text>
 			{metadata.weights.map((weight) => (
 				<TextBox
 					key={weight}
 					weight={weight}
-					family={
-						metadata.variable ? `${metadata.family} Variable` : metadata.family
-					}
+					family={isVariable ? `${metadata.family} Variable` : metadata.family}
 					loaded={loading}
 				/>
 			))}

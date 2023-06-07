@@ -20,6 +20,7 @@ import type { AlgoliaMetadata } from '@/utils/types';
 
 import { display, previewValue, size } from './observables';
 import { Sort } from './Sort';
+
 interface Hit {
 	hit: AlgoliaMetadata;
 }
@@ -115,7 +116,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 			component="a"
 			href={`/fonts/${hit.objectID}`}
 			className={classes.wrapper}
-			mih={{ base: '150px', sm: displaySelect == 'grid' ? '332px' : '150px' }}
+			mih={{ base: '150px', sm: displaySelect === 'grid' ? '332px' : '150px' }}
 		>
 			<Skeleton visible={loading}>
 				<Text size={fontSize} style={{ fontFamily: hit.family }}>
@@ -148,11 +149,11 @@ const InfiniteHits = () => {
 	useEffect(() => {
 		if (sentinelRef.current !== null) {
 			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
+				for (const entry of entries) {
 					if (entry.isIntersecting && !isLastPage) {
 						showMore();
 					}
-				});
+				}
 			});
 
 			observer.observe(sentinelRef.current);
@@ -178,7 +179,7 @@ const InfiniteHits = () => {
 			<Sort count={results.nbHits} />
 			<SimpleGrid
 				breakpoints={
-					displaySelect == 'grid'
+					displaySelect === 'grid'
 						? [
 								{ minWidth: 'xl', cols: 4, spacing: 16 },
 								{ minWidth: 'md', cols: 3, spacing: 16 },
@@ -191,7 +192,7 @@ const InfiniteHits = () => {
 				{hits.map((hit) => (
 					<HitComponent
 						key={hit.objectID}
-						// @ts-ignore - hit prop is messed up cause of Algolia
+						// @ts-expect-error - hit prop is messed up cause of Algolia
 						hit={hit}
 						fontSize={sizeSelect}
 					/>

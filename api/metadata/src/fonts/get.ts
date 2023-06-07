@@ -1,4 +1,4 @@
-import { ArrayMetadata, IDResponse } from './types';
+import type { ArrayMetadata, IDResponse } from './types';
 import { updateArrayMetadata, updateId } from './update';
 
 const getOrUpdateArrayMetadata = async (env: Env) => {

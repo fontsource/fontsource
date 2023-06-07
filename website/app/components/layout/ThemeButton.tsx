@@ -19,7 +19,12 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 
 	return (
 		<Tooltip label={dark ? 'Light mode' : 'Dark mode'}>
-			<ActionIcon variant="transparent" onClick={() => toggleColorScheme()}>
+			<ActionIcon
+				variant="transparent"
+				onClick={() => {
+					toggleColorScheme();
+				}}
+			>
 				{dark ? <IconSun {...others} /> : <IconMoon {...others} />}
 			</ActionIcon>
 		</Tooltip>
@@ -34,7 +39,9 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 
 	return (
 		<UnstyledButton
-			onClick={() => toggleColorScheme()}
+			onClick={() => {
+				toggleColorScheme();
+			}}
 			sx={(theme) => ({
 				display: 'flex',
 				alignItems: 'center',

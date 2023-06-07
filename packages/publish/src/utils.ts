@@ -13,7 +13,7 @@ const getPackages = async (dir: string): Promise<string[]> => {
 };
 
 const mergeFlags = async (options: Flags): Promise<Context> => {
-	const flags = {} as Context;
+	const flags: any = {};
 	// CLI args come in string format
 	if (options.packages) {
 		flags.packages = options.packages.split(',');

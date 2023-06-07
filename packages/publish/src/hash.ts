@@ -1,11 +1,11 @@
-import { createXXHash64 } from 'hash-wasm';
 import fs from 'fs-extra';
+import { createXXHash64 } from 'hash-wasm';
 import * as path from 'pathe';
 
 const getAllFiles = async (dir: string): Promise<string[]> => {
 	const dirents = await fs.readdir(dir, { withFileTypes: true });
 	const files = await Promise.all(
-		dirents.map((dirent) => {
+		dirents.map(async (dirent) => {
 			// If file is package.json, do not include
 			if (dirent.name === 'package.json') {
 				return [];
@@ -15,9 +15,10 @@ const getAllFiles = async (dir: string): Promise<string[]> => {
 				return [];
 			}
 			const res = path.resolve(dir, dirent.name);
-			return dirent.isDirectory() ? getAllFiles(res) : res;
+			return dirent.isDirectory() ? await getAllFiles(res) : res;
 		})
 	);
+	// eslint-disable-next-line unicorn/prefer-spread
 	return Array.prototype.concat(...files);
 };
 
@@ -32,4 +33,4 @@ const getHash = async (dir: string): Promise<string> => {
 	return hasher.digest();
 };
 
-export { getHash, getAllFiles };
+export { getAllFiles, getHash };

@@ -10,18 +10,20 @@ const getNestedHeadings = (headingElements: HTMLHeadElement[]) => {
 	const nestedHeadings: HeadingsData[] = [];
 
 	for (const heading of headingElements) {
-		const { innerText: title, id } = heading;
+		const { textContent, id, nodeName } = heading;
+		const title = String(textContent);
 
-		if (heading.nodeName === 'H2') {
+		if (nodeName === 'H2') {
 			nestedHeadings.push({ id, title, items: [] });
-		} else if (heading.nodeName === 'H3' && nestedHeadings.length > 0) {
+		} else if (nodeName === 'H3' && nestedHeadings.length > 0) {
 			// If items array is undefined, create it
-			if (!nestedHeadings[nestedHeadings.length - 1].items) {
+			if (!nestedHeadings.at(-1)?.items) {
+				// eslint-disable-next-line unicorn/prefer-at
 				nestedHeadings[nestedHeadings.length - 1].items = [];
 			}
 
-			// @ts-ignore - TS doesn't know that items is defined now
-			nestedHeadings[nestedHeadings.length - 1].items.push({
+			// @ts-expect-error - TS doesn't know that items is defined now
+			nestedHeadings.at(-1).items.push({
 				id,
 				title,
 			});
@@ -36,11 +38,11 @@ export const useHeadingsData = (page: string) => {
 	const [nestedHeadings, setNestedHeadings] = useState<HeadingsData[]>([]);
 
 	useEffect(() => {
-		const headingElements = Array.from(
-			document.querySelectorAll('h2, h3')
-		) as HTMLHeadElement[];
+		const headingElements = [...document.querySelectorAll('h2, h3')];
 
-		const newNestedHeadings = getNestedHeadings(headingElements);
+		const newNestedHeadings = getNestedHeadings(
+			headingElements as HTMLHeadElement[]
+		);
 		setNestedHeadings(newNestedHeadings);
 	}, [page]);
 

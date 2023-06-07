@@ -21,10 +21,11 @@
 	"scripts": {
 		"build": "pkgroll --target=node18 && tsx ./scripts/add-hashbang.ts",
 		"cli": "tsx ./src/cli.ts",
-		"lint": "eslint --fix",
+		"lint": "eslint . --fix",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
-		"prepublish": "pnpm run build"
+		"prepublish": "pnpm run build",
+		"ci:lint": "eslint ."
 	},
 	"keywords": [
 		"fontsource",
@@ -38,24 +39,24 @@
 		"@fontsource-utils/generate": "workspace:*",
 		"cac": "^6.7.14",
 		"consola": "^3.1.0",
-		"dotenv": "^16.0.3",
+		"dotenv": "^16.1.4",
 		"fs-extra": "^11.1.1",
 		"google-font-metadata": "^5.2.0",
 		"json-stringify-pretty-compact": "^4.0.0",
 		"p-queue": "^7.3.4",
-		"pathe": "^1.1.0",
+		"pathe": "^1.1.1",
 		"picocolors": "^1.0.0"
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.2.4",
+		"@ayuhito/eslint-config": "^0.4.1",
 		"@types/fs-extra": "^11.0.1",
-		"@types/node": "^20.1.3",
-		"eslint": "^8.40.0",
+		"@types/node": "^20.2.5",
+		"eslint": "^8.42.0",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.10.0",
 		"sass": "^1.62.1",
 		"tsx": "^3.12.7",
-		"typescript": "^5.0.4"
+		"typescript": "^5.1.3"
 	},
 	"files": [
 		"dist/*"

@@ -49,7 +49,7 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
 };
 
 export default function InstallPage() {
-	const data: FontMetadata = useLoaderData();
+	const data = useLoaderData<FontMetadata>();
 	const { metadata, variable, downloadCount } = data;
 
 	return (

@@ -1,4 +1,4 @@
-import { Axes, Metadata, UnicodeRange } from '../types';
+import type { Axes, Metadata, UnicodeRange } from '../types';
 import { findClosest, sassVar } from '../utils';
 
 const axesValue = (metadata: Metadata) => {

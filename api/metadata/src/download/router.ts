@@ -1,7 +1,8 @@
-import { CFRouterContext } from '../types';
-import { IRequestStrict, Router, error, withParams } from 'itty-router';
-import { getOrUpdateZip } from './get';
+import { error, type IRequestStrict, Router, withParams } from 'itty-router';
+
 import { getOrUpdateId } from '../fonts/get';
+import type { CFRouterContext } from '../types';
+import { getOrUpdateZip } from './get';
 
 interface DownloadRequest extends IRequestStrict {
 	id: string;

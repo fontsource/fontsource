@@ -1,6 +1,6 @@
+import type { FontsourceMetadata } from '../types';
+import type { Fontlist, FontlistQueries } from './types';
 import { updateList, updateMetadata } from './update';
-import { Fontlist, FontlistQueries } from './types';
-import { FontsourceMetadata } from '../types';
 
 const getOrUpdateMetadata = async (env: Env): Promise<FontsourceMetadata> => {
 	const value = await env.FONTLIST.get<FontsourceMetadata>('metadata', {

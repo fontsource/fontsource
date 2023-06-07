@@ -1,5 +1,6 @@
-import router from './router';
 import { error } from 'itty-router';
+
+import router from './router';
 
 export default {
 	async fetch(
@@ -7,9 +8,9 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<Response> {
-		return router.handle(request, env, ctx).catch((err) => {
-			console.error(err);
-			return error(err);
+		return await router.handle(request, env, ctx).catch((error_) => {
+			console.error(error_);
+			return error(error_);
 		});
 	},
 };

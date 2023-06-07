@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-module */
 import { Divider, List, rem, Table, Text, Title } from '@mantine/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -6,12 +7,11 @@ import { Blockquote } from '@/components/Blockquote';
 import { CodeMdx } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 
-let _jsx_runtime: any;
-if (process.env.NODE_ENV === 'development') {
-	_jsx_runtime = require('react/jsx-dev-runtime');
-} else {
-	_jsx_runtime = require('react/jsx-runtime');
-}
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const _jsx_runtime =
+	process.env.NODE_ENV === 'development'
+		? require('react/jsx-dev-runtime')
+		: require('react/jsx-runtime');
 
 const mdxComponents = {
 	// Typography
@@ -87,7 +87,8 @@ const getMDXComponent = (code: string, globals?: Record<string, string>) => {
 
 const getMDXExport = (code: string, globals?: Record<string, string>) => {
 	const scope = { React, ReactDOM, _jsx_runtime, ...globals };
-	// eslint-disable-next-line
+
+	// eslint-disable-next-line @typescript-eslint/no-implied-eval, no-new-func
 	const fn = new Function(...Object.keys(scope), code);
 	return fn(...Object.values(scope));
 };

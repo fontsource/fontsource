@@ -14,7 +14,7 @@ export const AppShell = ({ children }: AppShellProps) => {
 		<>
 			<Header />
 			<main>{children}</main>
-			{isNotHome && (<Footer style={{ marginTop: 'auto' }} />)}
+			{isNotHome && <Footer style={{ marginTop: 'auto' }} />}
 		</>
 	);
 };

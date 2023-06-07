@@ -1,13 +1,13 @@
 type CFRouterContext = [env: Env, ctx: ExecutionContext];
 
-interface VariableMetadata {
-	[axes: string]: {
-		default: string;
-		min: string;
-		max: string;
-		step: string;
-	};
+interface AxesMetadata {
+	default: string;
+	min: string;
+	max: string;
+	step: string;
 }
+
+type VariableMetadata = Record<string, AxesMetadata>;
 
 interface LicenseMetadata {
 	type: string;
@@ -30,11 +30,9 @@ interface FontMetadata {
 	type: 'google' | 'icons' | 'other';
 	version: string;
 	npmVersion: string;
-	unicodeRange: {
-		[subset: string]: string;
-	};
+	unicodeRange: Record<string, string>;
 }
 
 type FontsourceMetadata = Record<string, FontMetadata>;
 
-export type { CFRouterContext, FontsourceMetadata, FontMetadata };
+export type { CFRouterContext, FontMetadata, FontsourceMetadata };

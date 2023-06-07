@@ -1,11 +1,15 @@
-import { beforeEach, expect, it } from 'vitest';
+/* eslint-disable unicorn/prefer-module */
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-const describe = setupMiniflareIsolatedStorage();
+
+import { beforeEach, expect, it } from 'vitest';
+
 import worker from '../src/worker';
 
+const describe = setupMiniflareIsolatedStorage();
+
 describe('download worker', () => {
-	const env = getMiniflareBindings() as Env;
+	const env = getMiniflareBindings() satisfies Env;
 	const ctx = new ExecutionContext();
 
 	beforeEach(async () => {
@@ -71,7 +75,8 @@ describe('download worker', () => {
 
 		expect(response.status).toBe(200);
 		// Check uploaded files
-		expect((await env.BUCKET.list()).objects.map((item) => item.key)).toEqual([
+		const list = await env.BUCKET.list();
+		expect(list.objects.map((item) => item.key)).toEqual([
 			'roboto@latest/download.zip',
 			'roboto@latest/latin-400-normal.ttf',
 			'roboto@latest/latin-400-normal.woff',

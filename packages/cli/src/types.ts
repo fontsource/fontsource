@@ -16,25 +16,29 @@ export interface BuildOptions {
 	ttf?: boolean;
 }
 
-export interface Axes {
-	[axesType: string]: {
-		default: string;
-		min: string;
-		max: string;
-		step: string;
-	};
+interface AxisOptions {
+	default: string;
+	min: string;
+	max: string;
+	step: string;
 }
+
+export type Axes = Record<string, AxisOptions>;
 
 export type VariableMetadata = boolean | Axes;
 
-export type CategoryNames =
-	| 'sans-serif'
-	| 'serif'
-	| 'display'
-	| 'handwriting'
-	| 'monospace'
-	| 'icons'
-	| 'other';
+const CATEGORY_NAMES = [
+	'sans-serif',
+	'serif',
+	'display',
+	'handwriting',
+	'monospace',
+	'icons',
+	'other',
+] as const;
+export type CategoryNames = typeof CATEGORY_NAMES[number];
+export const isCategoryName = (value: string): value is CategoryNames =>
+	CATEGORY_NAMES.includes(value as CategoryNames);
 
 export type TypeNames = 'google' | 'league' | 'icons' | 'other';
 
@@ -58,6 +62,4 @@ export interface Metadata {
 	type: TypeNames;
 }
 
-export type UnicodeRange = {
-	[subset: string]: string;
-};
+export type UnicodeRange = Record<string, string>;

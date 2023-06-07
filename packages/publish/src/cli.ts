@@ -9,7 +9,7 @@ import { bump } from './bump';
 import { changed } from './changed';
 import { init } from './init';
 import { publishPackages } from './publish';
-import { BumpFlags, ChangedFlags, PublishFlags } from './types';
+import { type BumpFlags, type ChangedFlags, type PublishFlags } from './types';
 
 dotenv.config();
 

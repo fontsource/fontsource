@@ -28,7 +28,7 @@ export const buildCustom = async (metadata: Metadata, opts?: CustomOptions) => {
 	// Write metadata.scss
 	try {
 		await fs.mkdir(path.join(dir, 'scss'));
-	} catch (err) {
+	} catch {
 		// Continue as it may exist
 	}
 	await fs.writeFile(

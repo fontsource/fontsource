@@ -54,4 +54,4 @@ const getOrUpdateFile = async (
 	return font;
 };
 
-export { getOrUpdateZip, getOrUpdateFile };
+export { getOrUpdateFile, getOrUpdateZip };
