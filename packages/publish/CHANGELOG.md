@@ -1,5 +1,11 @@
 # @fontsource-utils/publish
 
+## 0.2.6
+
+### Patch Changes
+
+- [#756](https://github.com/fontsource/fontsource/pull/756) [`690d9f110a`](https://github.com/fontsource/fontsource/commit/690d9f110ad68681566314d9040b3ac17eeb99c9) Thanks [@ayuhito](https://github.com/ayuhito)! - Migrate code to new ESLint config and semantics.
+
 ## 0.2.5
 
 ### Patch Changes

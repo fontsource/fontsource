@@ -1,5 +1,14 @@
 # @fontsource-utils/cli
 
+## 0.3.11
+
+### Patch Changes
+
+- [#756](https://github.com/fontsource/fontsource/pull/756) [`690d9f110a`](https://github.com/fontsource/fontsource/commit/690d9f110ad68681566314d9040b3ac17eeb99c9) Thanks [@ayuhito](https://github.com/ayuhito)! - Migrate code to new ESLint config and semantics.
+
+- Updated dependencies [[`690d9f110a`](https://github.com/fontsource/fontsource/commit/690d9f110ad68681566314d9040b3ac17eeb99c9)]:
+  - @fontsource-utils/generate@0.3.1
+
 ## 0.3.10
 
 ### Patch Changes
