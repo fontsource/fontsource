@@ -11,8 +11,8 @@ const router = Router();
 router.all('*', preflight);
 
 router.get('/fontlist', fontlistRouter.handle);
-router.get('/v1/fonts', fontsRouter.handle);
-router.get('/v1/download', downloadRouter.handle);
+router.get('/v1/fonts/*?', fontsRouter.handle);
+router.get('/v1/download/*?', downloadRouter.handle);
 router.all('*', () =>
 	error(
 		404,
