@@ -4,9 +4,6 @@ module.exports = {
 		'@remix-run/eslint-config',
 		'@remix-run/eslint-config/node',
 	],
-	parserOptions: {
-		project: true,
-	},
 	rules: {
 		'@typescript-eslint/consistent-indexed-object-style': 'off',
 		// Remix lets you throw other things than errors
