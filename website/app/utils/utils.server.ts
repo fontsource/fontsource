@@ -1,4 +1,5 @@
-import * as fs from 'fs/promises';
+import * as fs from 'node:fs/promises';
+
 import type { HTTPError } from 'ky';
 import ky from 'ky';
 import * as path from 'pathe';
@@ -14,10 +15,12 @@ export const kya = async (url: string, opts?: KyaOpts) => {
 			beforeError: [
 				(error: HTTPError) => {
 					const { response } = error;
-					if (response && response.body) {
+					if (response?.body) {
 						error.name = 'HTTPError';
-						// @ts-ignore
-						error.message = `Failed to fetch ${url} with ${response.body.message} (${response.status})`;
+						error.message = `Failed to fetch ${url} with ${
+							// @ts-expect-error - Message doesn't apparently exist on readable stream
+							response.body.message as string
+						} (${response.status})`;
 					}
 
 					return error;
@@ -33,7 +36,7 @@ export const kya = async (url: string, opts?: KyaOpts) => {
 
 // We need know if a variable font may be a standard or variable font
 const STANDARD_AXES = ['opsz', 'slnt', 'wdth', 'wght'] as const;
-type StandardAxes = typeof STANDARD_AXES[number];
+type StandardAxes = (typeof STANDARD_AXES)[number];
 
 export const isStandardAxesKey = (axesKey: string): axesKey is StandardAxes =>
 	STANDARD_AXES.includes(axesKey as StandardAxes);
@@ -50,7 +53,9 @@ export const getAllSlugsInDir = async (dir: string) => {
 		for (const file of filesInDirectory) {
 			const absolute = path.join(directory, file);
 			const newSlug = currentSlug ? currentSlug + '/' + file : file;
-			if ((await fs.stat(absolute)).isDirectory()) {
+
+			const stat = await fs.stat(absolute);
+			if (stat.isDirectory()) {
 				await getFilesRecursively(absolute, newSlug);
 			} else {
 				// We only want to add mdx files

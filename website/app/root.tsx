@@ -85,7 +85,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 	const data = {
 		colorScheme: themeSession.getTheme(),
-		headerColorScheme: await request.headers.get('Sec-CH-Prefers-Color-Scheme'),
+		headerColorScheme: request.headers.get('Sec-CH-Prefers-Color-Scheme'),
 	};
 
 	return data;
@@ -101,7 +101,7 @@ export const Document = ({ children, preferredColorScheme }: DocumentProps) => {
 		useState<ColorScheme>(preferredColorScheme);
 	const updateThemeCookie = useFetcher().submit;
 	const toggleColorScheme = (value?: ColorScheme) => {
-		const scheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
+		const scheme = value ?? (colorScheme === 'dark' ? 'light' : 'dark');
 		setColorScheme(scheme);
 		updateThemeCookie(
 			{ theme: scheme },
@@ -110,7 +110,14 @@ export const Document = ({ children, preferredColorScheme }: DocumentProps) => {
 	};
 
 	// CTRL + J to toggle color scheme
-	useHotkeys([['mod+J', () => toggleColorScheme()]]);
+	useHotkeys([
+		[
+			'mod+J',
+			() => {
+				toggleColorScheme();
+			},
+		],
+	]);
 
 	return (
 		<ColorSchemeProvider

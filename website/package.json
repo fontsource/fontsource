@@ -12,13 +12,13 @@
 		"lint": "eslint **/*.{js,jsx,ts,tsx}"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.11.0",
+		"@emotion/react": "^11.11.1",
 		"@emotion/server": "^11.11.0",
 		"@esbuild-plugins/node-resolve": "^0.2.2",
 		"@fal-works/esbuild-plugin-global-externals": "^2.1.2",
 		"@fontsource-variable/inter": "^5.0.2",
 		"@fontsource-variable/source-code-pro": "^5.0.3",
-		"@legendapp/state": "^1.2.7",
+		"@legendapp/state": "^1.2.8",
 		"@mantine/core": "^6.0.13",
 		"@mantine/hooks": "^6.0.13",
 		"@mantine/nprogress": "^6.0.13",
@@ -57,14 +57,13 @@
 		"vfile-matter": "^4.0.1"
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.3.5",
+		"@ayuhito/eslint-config": "^0.3.6",
 		"@remix-run/dev": "^1.17.0",
-		"@remix-run/eslint-config": "^1.16.1",
+		"@remix-run/eslint-config": "^1.17.0",
 		"@types/node": "^20.2.5",
 		"@types/react": "^18.2.8",
 		"@types/react-dom": "^18.2.4",
 		"eslint": "^8.42.0",
-		"eslint-plugin-simple-import-sort": "^10.0.0",
 		"typescript": "^5.1.3"
 	},
 	"engines": {
