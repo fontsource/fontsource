@@ -1,5 +1,11 @@
 # @fontsource-utils/publish
 
+## 0.2.5
+
+### Patch Changes
+
+- [#753](https://github.com/fontsource/fontsource/pull/753) [`935e41e783`](https://github.com/fontsource/fontsource/commit/935e41e783a1c6bc622c41d91d467f250dfe5e23) Thanks [@ayuhito](https://github.com/ayuhito)! - Add a counter for the maximum number of errors to occur before throwing the whole queue.
+
 ## 0.2.4
 
 ### Patch Changes
