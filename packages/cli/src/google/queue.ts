@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import consola from 'consola';
 import fs from 'fs-extra';
 import {
@@ -15,10 +16,12 @@ import { build } from './build';
 
 const queue = new PQueue({ concurrency: 3 });
 
+// @ts-ignore - dts thinks there is a typing error here
 queue.on('error', (error) => {
 	throw new Error(error);
 });
 
+// @ts-ignore - dts thinks there is a typing error here
 queue.on('idle', () => {
 	consola.success(
 		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`
