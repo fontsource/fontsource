@@ -11,7 +11,7 @@
 		"ci:lint": "eslint ."
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.4.0",
+		"@ayuhito/eslint-config": "^0.4.1",
 		"@cloudflare/workers-types": "^4.20230518.0",
 		"eslint": "^8.42.0",
 		"itty-router": "^4.0.9",

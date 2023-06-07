@@ -26,8 +26,8 @@ importers:
   api/download:
     devDependencies:
       '@ayuhito/eslint-config':
-        specifier: ^0.4.0
-        version: 0.4.0(eslint@8.42.0)(typescript@5.1.3)
+        specifier: ^0.4.1
+        version: 0.4.1(eslint@8.42.0)(typescript@5.1.3)
       '@cloudflare/workers-types':
         specifier: ^4.20230518.0
         version: 4.20230518.0
@@ -59,8 +59,8 @@ importers:
   api/metadata:
     devDependencies:
       '@ayuhito/eslint-config':
-        specifier: ^0.4.0
-        version: 0.4.0(eslint@8.42.0)(typescript@5.1.3)
+        specifier: ^0.4.1
+        version: 0.4.1(eslint@8.42.0)(typescript@5.1.3)
       '@cloudflare/workers-types':
         specifier: ^4.20230518.0
         version: 4.20230518.0
@@ -117,8 +117,8 @@ importers:
         version: 1.0.0
     devDependencies:
       '@ayuhito/eslint-config':
-        specifier: ^0.4.0
-        version: 0.4.0(eslint@8.42.0)(typescript@5.1.3)
+        specifier: ^0.4.1
+        version: 0.4.1(eslint@8.42.0)(typescript@5.1.3)
       '@types/fs-extra':
         specifier: ^11.0.1
         version: 11.0.1
@@ -147,8 +147,8 @@ importers:
   packages/generate:
     devDependencies:
       '@ayuhito/eslint-config':
-        specifier: ^0.4.0
-        version: 0.4.0(eslint@8.42.0)(typescript@5.1.3)
+        specifier: ^0.4.1
+        version: 0.4.1(eslint@8.42.0)(typescript@5.1.3)
       '@types/node':
         specifier: ^20.2.5
         version: 20.2.5
@@ -214,8 +214,8 @@ importers:
         version: 7.5.1
     devDependencies:
       '@ayuhito/eslint-config':
-        specifier: ^0.4.0
-        version: 0.4.0(eslint@8.42.0)(typescript@5.1.3)
+        specifier: ^0.4.1
+        version: 0.4.1(eslint@8.42.0)(typescript@5.1.3)
       '@types/folder-hash':
         specifier: ^4.0.2
         version: 4.0.2
@@ -380,8 +380,8 @@ importers:
         version: 4.0.1
     devDependencies:
       '@ayuhito/eslint-config':
-        specifier: ^0.4.0
-        version: 0.4.0(eslint@8.42.0)(typescript@5.1.3)
+        specifier: ^0.4.1
+        version: 0.4.1(eslint@8.42.0)(typescript@5.1.3)
       '@remix-run/dev':
         specifier: ^1.17.0
         version: 1.17.0(@remix-run/serve@1.17.0)(@types/node@20.2.5)
@@ -518,8 +518,8 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.18
 
-  /@ayuhito/eslint-config@0.4.0(eslint@8.42.0)(typescript@5.1.3):
-    resolution: {integrity: sha512-GE06v3ProEZa+s86BQn/jJpKFOA6fExDAuui8ubYo50m7DEiMgiasvSAz7QELjOozM7XOBBztFW1eT1kgDRyvQ==}
+  /@ayuhito/eslint-config@0.4.1(eslint@8.42.0)(typescript@5.1.3):
+    resolution: {integrity: sha512-eOEw6uljpMiXVb4IgIxV7Uesjfl5nYG08i3jWLOPA2kQQgQixtm/o3Qhpzg4nTKWYUl44i6CdPLgaduZjdULNA==}
     dependencies:
       '@rushstack/eslint-patch': 1.3.0
       '@typescript-eslint/eslint-plugin': 5.59.9(@typescript-eslint/parser@5.59.9)(eslint@8.42.0)(typescript@5.1.3)
