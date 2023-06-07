@@ -5,9 +5,10 @@
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
-		"lint": "eslint --fix",
+		"lint": "eslint . --fix",
 		"coverage": "vitest run --coverage",
-		"test": "vitest"
+		"test": "vitest",
+		"ci:lint": "eslint ."
 	},
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.3.9",

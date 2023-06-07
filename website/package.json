@@ -9,7 +9,8 @@
 		"migrations": "knex migrate:latest",
 		"reset-db": "knex migrate:rollback --all && knex migrate:latest",
 		"start": "remix-serve build",
-		"lint": "eslint **/*.{js,jsx,ts,tsx}"
+		"lint": "eslint --fix",
+		"ci:lint": "eslint ."
 	},
 	"dependencies": {
 		"@emotion/react": "^11.11.1",

@@ -17,10 +17,11 @@
 	},
 	"scripts": {
 		"build": "pkgroll --target=node14",
-		"lint": "eslint --fix",
+		"lint": "eslint . --fix",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
-		"prepublish": "pnpm run build"
+		"prepublish": "pnpm run build",
+		"ci:lint": "eslint ."
 	},
 	"keywords": [],
 	"author": "Ayuhito <hello@ayuhito.com>",

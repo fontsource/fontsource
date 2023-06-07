@@ -21,10 +21,11 @@
 	"scripts": {
 		"build": "pkgroll --target=node18 && tsx ./scripts/add-hashbang.ts",
 		"cli": "tsx ./src/cli.ts",
-		"lint": "eslint --fix",
+		"lint": "eslint . --fix",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
-		"prepublish": "pnpm run build"
+		"prepublish": "pnpm run build",
+		"ci:lint": "eslint ."
 	},
 	"keywords": [
 		"fontsource",
