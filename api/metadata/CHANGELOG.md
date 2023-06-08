@@ -1,5 +1,11 @@
 # api
 
+## 0.1.3
+
+### Patch Changes
+
+- [#759](https://github.com/fontsource/fontsource/pull/759) [`aeeb293236`](https://github.com/fontsource/fontsource/commit/aeeb29323657d76313a743d951c90905999407e9) Thanks [@ayuhito](https://github.com/ayuhito)! - Add CORS headers to API responses.
+
 ## 0.1.2
 
 ### Patch Changes
