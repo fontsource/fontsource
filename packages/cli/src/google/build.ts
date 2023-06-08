@@ -38,7 +38,7 @@ const build = async (id: string, opts: BuildOptions) => {
 
 	// Determine license metadata
 	let fontLicense = APILicense[id];
-	if (!fontLicense) {
+	if (!fontLicense?.license) {
 		consola.warn(`No license metadata found for ${id}`);
 		fontLicense = {
 			id,
