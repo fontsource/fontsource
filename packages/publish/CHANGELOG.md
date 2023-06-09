@@ -1,5 +1,11 @@
 # @fontsource-utils/publish
 
+## 0.2.7
+
+### Patch Changes
+
+- [#766](https://github.com/fontsource/fontsource/pull/766) [`32b6b2aa08`](https://github.com/fontsource/fontsource/commit/32b6b2aa0881ddc9badf5238225f47ca8f85ef18) Thanks [@ayuhito](https://github.com/ayuhito)! - Write `.npmrc` inside each package for authentication.
+
 ## 0.2.6
 
 ### Patch Changes
