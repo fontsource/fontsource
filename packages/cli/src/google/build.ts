@@ -1,3 +1,4 @@
+import consola from 'consola';
 import fs from 'fs-extra';
 import {
 	APIIconStatic as APIIconStaticImport,
@@ -34,7 +35,21 @@ const APIVariable = APIVariableImport;
 const build = async (id: string, opts: BuildOptions) => {
 	const font = opts.isIcon ? APIIconStatic[id] : APIv2[id];
 	const fontVariable = opts.isIcon ? APIIconVariable[id] : APIVariable[id];
-	const fontLicense = APILicense[id];
+
+	// Determine license metadata
+	let fontLicense = APILicense[id];
+	if (!fontLicense?.license) {
+		consola.warn(`No license metadata found for ${id}`);
+		fontLicense = {
+			id,
+			authors: { copyright: 'Google Inc.' },
+			license: {
+				type: 'SIL Open Font License, 1.1',
+				url: 'http://scripts.sil.org/OFL',
+			},
+			original: 'Google Inc.',
+		};
+	}
 
 	// Set file directories
 	await fs.mkdir(opts.dir, { recursive: true });
