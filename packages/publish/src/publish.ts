@@ -54,22 +54,13 @@ interface DoGitOptions {
 	name: string;
 	config: Context;
 	bumped: BumpObject[];
-	npmrc: string;
 }
 
 let hasRun = false;
 
-const doGitOperations = async ({
-	name,
-	config,
-	bumped,
-	npmrc,
-}: DoGitOptions) => {
+const doGitOperations = async ({ name, config, bumped }: DoGitOptions) => {
 	if (hasRun) return;
 	hasRun = true;
-
-	// Cleanup .npmrc
-	await fs.remove(npmrc);
 
 	// Stage all files
 	await gitAdd();
@@ -96,11 +87,23 @@ const packPublish = async (
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
 	const publishFlags = ['--access', 'public', '--tag', 'latest'];
 	try {
+		// Setup .npmrc
+		const npmrc = path.join(pkg.path, '.npmrc');
+		await fs.writeFile(
+			npmrc,
+			// eslint-disable-next-line no-template-curly-in-string
+			'//registry.npmjs.org/:_authToken=${NPM_TOKEN}'
+		);
+
+		// Update version, then publish, then hash
 		await writeUpdate(pkg, { version: true });
 		await execa('npm', ['publish', ...publishFlags], {
 			cwd: pkg.path,
 		});
 		await writeUpdate(pkg, { hash: true });
+
+		// Remove .npmrc
+		await fs.remove(npmrc);
 	} catch (error) {
 		consola.error(`Failed to publish ${npmVersion}!`);
 		consola.error(error);
@@ -152,13 +155,6 @@ export const publishPackages = async (
 		}
 	}
 
-	// Setup .npmrc
-	const npmrc = path.join(process.cwd(), '.npmrc');
-	await fs.writeFile(
-		npmrc,
-		`//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN!}`
-	);
-
 	const queue = new PQueue({ concurrency: 8 });
 
 	// Collect errored out packages
@@ -168,7 +164,7 @@ export const publishPackages = async (
 		if (pkg && !pkg.noPublish) {
 			const newPkg = queue
 				// eslint-disable-next-line @typescript-eslint/promise-function-async
-				.add(() => packPublish(pkg, { name, config, bumped, npmrc }))
+				.add(() => packPublish(pkg, { name, config, bumped }))
 				.catch((error) => {
 					// Empty queue when we hit the error limit
 					queue.pause();
@@ -186,7 +182,7 @@ export const publishPackages = async (
 	// Filter errors
 	const errors = results.filter((r) => r.status === 'rejected');
 
-	await doGitOperations({ name, config, bumped, npmrc });
+	await doGitOperations({ name, config, bumped });
 
 	if (errors.length > 0) {
 		throw new Error('Failed to publish packages!');
