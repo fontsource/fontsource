@@ -13,7 +13,7 @@
 		"ci:lint": "pnpm -r run ci:lint",
 		"ci:test": "CI=true pnpm build && pnpm coverage",
 		"ci:version": "changeset version",
-		"ci:publish": "pnpm --filter \"./packages/*\" run publish",
+		"ci:publish": "pnpm --filter \"./packages/*\" publish",
 		"ci:publish-api": "pnpm --filter \"./api/*\" run deploy"
 	},
 	"dependencies": {
