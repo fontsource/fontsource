@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.12
+
+### Patch Changes
+
+- [#762](https://github.com/fontsource/fontsource/pull/762) [`407982c7e4`](https://github.com/fontsource/fontsource/commit/407982c7e4f15dad8f3a88c2a7423e3c2969866e) Thanks [@ayuhito](https://github.com/ayuhito)! - Handle missing license metadata gracefully in CLI.
+
 ## 0.3.11
 
 ### Patch Changes
