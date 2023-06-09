@@ -9,15 +9,14 @@ import type { BuildOptions } from '../types';
 
 // Download license from Google Fonts Github repo and save to package
 const generateLicense = async (
-	id: string,
-	licenseType: string,
+	fontLicense: (typeof APILicense)[string],
 	opts: BuildOptions
 ) => {
 	const licensePath = path.join(opts.dir, 'LICENSE');
-	const copyright = APILicense[id].original;
+	const copyright = fontLicense.original;
 
 	let txt;
-	switch (licenseType.toLowerCase()) {
+	switch (fontLicense.license.type.toLowerCase()) {
 		case 'apache license, version 2.0': {
 			txt = apache(copyright);
 			break;
@@ -31,7 +30,7 @@ const generateLicense = async (
 			break;
 		}
 		default: {
-			throw new Error(`Unknown license type: ${licenseType}`);
+			throw new Error(`Unknown license type: ${fontLicense.license.type}`);
 		}
 	}
 
