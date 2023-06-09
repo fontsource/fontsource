@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.13
+
+### Patch Changes
+
+- [#764](https://github.com/fontsource/fontsource/pull/764) [`b5df64999a`](https://github.com/fontsource/fontsource/commit/b5df64999a04dcb477b7771749436505a58820b7) Thanks [@ayuhito](https://github.com/ayuhito)! - Check for missing license in generateLicense function.
+
 ## 0.3.12
 
 ### Patch Changes
