@@ -157,7 +157,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		await fs.writeFile(path.join(opts.dir, 'CHANGELOG.md'), changelog);
 
 		// Write LICENSE file
-		await generateLicense(id, fontLicense.license.type, opts);
+		await generateLicense(fontLicense, opts);
 
 		// Write .npmignore
 		if (!opts.isVariable) {
