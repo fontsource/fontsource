@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.14
+
+### Patch Changes
+
+- [#774](https://github.com/fontsource/fontsource/pull/774) [`699825b9dc`](https://github.com/fontsource/fontsource/commit/699825b9dca44f5781a6c2cd4a58e33759e19fb3) Thanks [@YusukeSano](https://github.com/YusukeSano)! - Remove square brackets from unicode subset of variable font.
+
 ## 0.3.13
 
 ### Patch Changes
