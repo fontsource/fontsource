@@ -10,18 +10,9 @@ permissions:
   pull-requests: write
 
 jobs:
-  approve:
-    if: github.repository == 'fontsource/fontsource'
-    name: Approve PR to deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Approve
-        run: echo For security reasons, all pull requests from a fork need to be approved first before deploying.
-
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
-    needs: [approve]
     environment:
       name: staging
       url: https://staging.fontsource.org/
