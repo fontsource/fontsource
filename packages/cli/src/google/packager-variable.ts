@@ -34,9 +34,6 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 			const cssStyle: string[] = [];
 
 			for (const subset of Object.keys(variant[style])) {
-				// Remove brackets from unicode subset
-				const cleanedSubset = subset.replace('[', '').replace(']', '');
-
 				const fontObj: FontObject = {
 					family: font.family,
 					style,
@@ -46,12 +43,7 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 					variable: variableOpts,
 					src: [
 						{
-							url: makeVariableFontFilePath(
-								id,
-								cleanedSubset,
-								axesLower,
-								style
-							),
+							url: makeVariableFontFilePath(id, subset, axesLower, style),
 							format: 'woff2-variations',
 						},
 					],
