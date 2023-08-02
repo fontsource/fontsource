@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.15
+
+### Patch Changes
+
+- [`830b10c7ee`](https://github.com/fontsource/fontsource/commit/830b10c7ee0ff58e07e1f82fda3eaf086bb24a54) Thanks [@ayuhito](https://github.com/ayuhito)! - Fix variable font file paths in CSS.
+
 ## 0.3.14
 
 ### Patch Changes
