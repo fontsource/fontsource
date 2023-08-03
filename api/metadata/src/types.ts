@@ -29,10 +29,20 @@ interface FontMetadata {
 	source: string;
 	type: 'google' | 'icons' | 'other';
 	version: string;
-	npmVersion: string;
+	npmVersions: string;
 	unicodeRange: Record<string, string>;
 }
 
 type FontsourceMetadata = Record<string, FontMetadata>;
 
-export type { CFRouterContext, FontMetadata, FontsourceMetadata };
+type MetadataResponse = Record<
+	string,
+	Omit<FontMetadata, 'npmVersion'> & { npmVersions: string[] }
+>;
+
+export type {
+	CFRouterContext,
+	FontMetadata,
+	FontsourceMetadata,
+	MetadataResponse,
+};
