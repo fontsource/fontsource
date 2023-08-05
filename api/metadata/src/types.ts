@@ -40,9 +40,14 @@ type MetadataResponse = Record<
 	Omit<FontMetadata, 'npmVersion'> & { npmVersions: string[] }
 >;
 
+interface TTLMetadata {
+	ttl: number;
+}
+
 export type {
 	CFRouterContext,
 	FontMetadata,
 	FontsourceMetadata,
 	MetadataResponse,
+	TTLMetadata,
 };

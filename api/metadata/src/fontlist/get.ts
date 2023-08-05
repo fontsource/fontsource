@@ -1,9 +1,15 @@
-import type { FontsourceMetadata } from '../types';
+import type { FontsourceMetadata, TTLMetadata } from '../types';
 import type { Fontlist, FontlistQueries } from './types';
 import { updateList, updateMetadata } from './update';
 
-const getOrUpdateMetadata = async (env: Env): Promise<FontsourceMetadata> => {
-	const value = await env.FONTLIST.get<FontsourceMetadata>('metadata', {
+const getOrUpdateMetadata = async (
+	env: Env,
+	ctx: ExecutionContext
+): Promise<FontsourceMetadata> => {
+	const { value, metadata } = await env.FONTLIST.getWithMetadata<
+		FontsourceMetadata,
+		TTLMetadata
+	>('metadata', {
 		type: 'json',
 	});
 
@@ -11,17 +17,35 @@ const getOrUpdateMetadata = async (env: Env): Promise<FontsourceMetadata> => {
 		return await updateMetadata(env);
 	}
 
+	// If the ttl is not set or the ttl is greater than the current time, then return old value
+	// while revalidating the cache
+	if (!metadata?.ttl || metadata.ttl > Date.now()) {
+		ctx.waitUntil(updateMetadata(env));
+	}
+
 	return value;
 };
 
 const getOrUpdateList = async (
 	key: FontlistQueries,
-	env: Env
+	env: Env,
+	ctx: ExecutionContext
 ): Promise<Fontlist> => {
-	let value = await env.FONTLIST.get<Fontlist>(key, { type: 'json' });
+	const { value, metadata } = await env.FONTLIST.getWithMetadata<
+		Fontlist,
+		TTLMetadata
+	>(key, {
+		type: 'json',
+	});
 
 	if (!value) {
-		value = await updateList(key, env);
+		return await updateList(key, env);
+	}
+
+	// If the ttl is not set or the ttl is greater than the current time, then return old value
+	// while revalidating the cache
+	if (!metadata?.ttl || metadata.ttl > Date.now()) {
+		ctx.waitUntil(updateList(key, env));
 	}
 
 	return value;

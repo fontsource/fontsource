@@ -1,6 +1,14 @@
 # Fontsource API
 
-This API uses Cloudflare Workers, KV and R2 to serve the API and CDN. We use a proxy provided by jsDelivr to cache all R2 requests on the edge to also reduce costs.
+This API uses Cloudflare Workers, KV and R2 to serve the API and CDN. We also use a custom proxy provided by jsDelivr to cache all R2 requests on the edge to also reduce costs.
+
+Learn more about the API at [fontsource.org](https://fontsource.org/docs/api/introduction).
+
+### Workers
+
+- [cdn](./cdn) - The CDN worker that acts as the origin for the jsDelivr proxy.
+- [download](./download) - An unbound worker that populates the R2 bucket with the latest fonts.
+- [metadata](./metadata) - The API worker that serves the KV metadata for the fonts.
 
 ### Development
 

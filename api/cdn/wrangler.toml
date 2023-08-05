@@ -3,19 +3,17 @@ main = "src/worker.ts"
 compatibility_date = "2023-05-27"
 
 kv_namespaces = [
-  { binding = "FONTLIST", id = "ef03b5ef10034282a8e6220b9a5258c1", preview_id = "8786b20cf84b4b62ba88505d8cd8caaf" }
+  { binding = "FONTLIST", id = "ef03b5ef10034282a8e6220b9a5258c1", preview_id = "8786b20cf84b4b62ba88505d8cd8caaf" },
 ]
 
 r2_buckets = [
-  { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" }
+  { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" },
 ]
 
 services = [
-  { binding = "DOWNLOAD", service = "download", environment = "production" }
+  { binding = "DOWNLOAD", service = "download", environment = "production" },
+  { binding = "METADATA", service = "api", environment = "production" },
 ]
 
 logpush = true
 workers_dev = false
-
-# Need the buffer for woff2ttf
-node_compat = true
