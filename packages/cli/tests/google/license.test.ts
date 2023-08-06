@@ -6,6 +6,16 @@ import { generateLicense } from '../../src/google/license';
 vi.mock('fs-extra');
 
 describe('generate license', () => {
+	const fontLicense = {
+		id: 'noto-sans-jp',
+		authors: { copyright: 'Google Inc.' },
+		license: {
+			type: 'SIL Open Font License, 1.1',
+			url: 'http://scripts.sil.org/OFL',
+		},
+		original: 'Google Inc.',
+	};
+
 	it('should generate license successfully (apache)', async () => {
 		const buildOpts = {
 			dir: 'test/noto-sans-jp',
@@ -14,11 +24,12 @@ describe('generate license', () => {
 			isVariable: false,
 		};
 
-		await generateLicense(
-			'noto-sans-jp',
-			'apache license, version 2.0',
-			buildOpts
-		);
+		const license = {
+			...fontLicense,
+			license: { ...fontLicense.license, type: 'apache license, version 2.0' },
+		};
+
+		await generateLicense(license, buildOpts);
 
 		expect(vi.mocked(fs.writeFile)).toBeCalledWith(
 			'test/noto-sans-jp/LICENSE',
@@ -34,11 +45,12 @@ describe('generate license', () => {
 			isVariable: false,
 		};
 
-		await generateLicense(
-			'noto-sans-jp',
-			'sil open font license, 1.1',
-			buildOpts
-		);
+		const license = {
+			...fontLicense,
+			license: { ...fontLicense.license, type: 'sil open font license, 1.1' },
+		};
+
+		await generateLicense(license, buildOpts);
 
 		expect(vi.mocked(fs.writeFile)).toBeCalledWith(
 			'test/noto-sans-jp/LICENSE',
@@ -54,11 +66,12 @@ describe('generate license', () => {
 			isVariable: false,
 		};
 
-		await generateLicense(
-			'noto-sans-jp',
-			'ubuntu font license, 1.0',
-			buildOpts
-		);
+		const license = {
+			...fontLicense,
+			license: { ...fontLicense.license, type: 'ubuntu font license, 1.0' },
+		};
+
+		await generateLicense(license, buildOpts);
 
 		expect(vi.mocked(fs.writeFile)).toBeCalledWith(
 			'test/noto-sans-jp/LICENSE',
@@ -74,8 +87,11 @@ describe('generate license', () => {
 			isVariable: false,
 		};
 
-		await expect(
-			generateLicense('noto-sans-jp', 'unknown license', buildOpts)
-		).rejects.toThrow();
+		const license = {
+			...fontLicense,
+			license: { ...fontLicense.license, type: 'unknown' },
+		};
+
+		await expect(generateLicense(license, buildOpts)).rejects.toThrow();
 	});
 });

@@ -17,11 +17,6 @@ import { build } from './build';
 const queue = new PQueue({ concurrency: 3 });
 
 // @ts-ignore - dts thinks there is a typing error here
-queue.on('error', (error) => {
-	throw new Error(error);
-});
-
-// @ts-ignore - dts thinks there is a typing error here
 queue.on('idle', () => {
 	consola.success(
 		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`
@@ -127,23 +122,28 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 			ttf: opts.ttf ?? false,
 		};
 
-		try {
-			if (id in APIv2) {
-				// Create base font package
+		if (id in APIv2) {
+			// Create base font package
+			void queue
 				// eslint-disable-next-line @typescript-eslint/promise-function-async
-				void queue.add(() => buildPackage(id, buildOpts));
+				.add(() => buildPackage(id, buildOpts))
+				.catch((error) => {
+					consola.error(`Error processing ${id}.`);
+					throw error;
+				});
 
-				// Build separate package for variable fonts
-				if (APIVariable[id] !== undefined) {
+			// Build separate package for variable fonts
+			if (APIVariable[id] !== undefined) {
+				void queue
 					// eslint-disable-next-line @typescript-eslint/promise-function-async
-					void queue.add(() => buildVariablePackage(id, buildOpts));
-				}
-			} else {
-				consola.warn(`Skipping ${id} as it is not a Google Font.`);
+					.add(() => buildVariablePackage(id, buildOpts))
+					.catch((error) => {
+						consola.error(`Error processing ${id} [VARIABLE].`);
+						throw error;
+					});
 			}
-		} catch (error) {
-			consola.error(`Error processing ${id}.`);
-			throw error;
+		} else {
+			consola.warn(`Skipping ${id} as it is not a Google Font.`);
 		}
 	}
 
@@ -163,22 +163,27 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 			ttf: opts.ttf ?? false,
 		};
 
-		try {
-			if (id in APIIconStatic) {
-				// Create base font package
+		if (id in APIIconStatic) {
+			// Create base font package
+			void queue
 				// eslint-disable-next-line @typescript-eslint/promise-function-async
-				void queue.add(() => buildIconPackage(id, buildOpts));
+				.add(() => buildIconPackage(id, buildOpts))
+				.catch((error) => {
+					consola.error(`Error processing ${id}.`);
+					throw error;
+				});
 
-				if (APIIconVariable[id] !== undefined) {
+			if (APIIconVariable[id] !== undefined) {
+				void queue
 					// eslint-disable-next-line @typescript-eslint/promise-function-async
-					void queue.add(() => buildVariableIconPackage(id, buildOpts));
-				}
-			} else {
-				consola.warn(`Skipping ${id} as it is not a Google Font.`);
+					.add(() => buildVariableIconPackage(id, buildOpts))
+					.catch((error) => {
+						consola.error(`Error processing ${id} [VARIABLE].`);
+						throw error;
+					});
 			}
-		} catch (error) {
-			consola.error(`Error processing ${id}.`);
-			throw error;
+		} else {
+			consola.warn(`Skipping ${id} as it is not a Google Font.`);
 		}
 	}
 

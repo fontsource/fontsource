@@ -1,3 +1,6 @@
+const cleanPaths = (str: string): string =>
+	str.replace('[', '').replace(']', '');
+
 // Used to determine where the downloader should save the files
 const makeFontDownloadPath = (
 	fontDir: string,
@@ -7,7 +10,9 @@ const makeFontDownloadPath = (
 	style: string,
 	extension: string
 ): string =>
-	`${fontDir}/files/${fontId}-${subset}-${weight}-${style}.${extension}`;
+	cleanPaths(
+		`${fontDir}/files/${fontId}-${subset}-${weight}-${style}.${extension}`
+	);
 
 // Some axes are all uppercase making packages inconsistent
 const makeVariableFontDownloadPath = (
@@ -17,7 +22,9 @@ const makeVariableFontDownloadPath = (
 	axes: string,
 	style: string
 ): string =>
-	`${fontDir}/files/${fontId}-${subset}-${axes.toLowerCase()}-${style}.woff2`;
+	cleanPaths(
+		`${fontDir}/files/${fontId}-${subset}-${axes.toLowerCase()}-${style}.woff2`
+	);
 
 // Used for the src urls in CSS files
 const makeFontFilePath = (
@@ -26,14 +33,15 @@ const makeFontFilePath = (
 	weight: number,
 	style: string,
 	extension: string
-): string => `./files/${fontId}-${subset}-${weight}-${style}.${extension}`;
+): string =>
+	cleanPaths(`./files/${fontId}-${subset}-${weight}-${style}.${extension}`);
 
 const makeVariableFontFilePath = (
 	fontId: string,
 	subset: string,
 	axes: string,
 	style: string
-): string => `./files/${fontId}-${subset}-${axes}-${style}.woff2`;
+): string => cleanPaths(`./files/${fontId}-${subset}-${axes}-${style}.woff2`);
 
 // Insert a weight array to find the closest number given num - used for index.css gen
 const findClosest = (arr: number[], num: number): number => {

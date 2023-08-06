@@ -1,5 +1,29 @@
 # @fontsource-utils/cli
 
+## 0.3.15
+
+### Patch Changes
+
+- [`830b10c7ee`](https://github.com/fontsource/fontsource/commit/830b10c7ee0ff58e07e1f82fda3eaf086bb24a54) Thanks [@ayuhito](https://github.com/ayuhito)! - Fix variable font file paths in CSS.
+
+## 0.3.14
+
+### Patch Changes
+
+- [#774](https://github.com/fontsource/fontsource/pull/774) [`699825b9dc`](https://github.com/fontsource/fontsource/commit/699825b9dca44f5781a6c2cd4a58e33759e19fb3) Thanks [@YusukeSano](https://github.com/YusukeSano)! - Remove square brackets from unicode subset of variable font.
+
+## 0.3.13
+
+### Patch Changes
+
+- [#764](https://github.com/fontsource/fontsource/pull/764) [`b5df64999a`](https://github.com/fontsource/fontsource/commit/b5df64999a04dcb477b7771749436505a58820b7) Thanks [@ayuhito](https://github.com/ayuhito)! - Check for missing license in generateLicense function.
+
+## 0.3.12
+
+### Patch Changes
+
+- [#762](https://github.com/fontsource/fontsource/pull/762) [`407982c7e4`](https://github.com/fontsource/fontsource/commit/407982c7e4f15dad8f3a88c2a7423e3c2969866e) Thanks [@ayuhito](https://github.com/ayuhito)! - Handle missing license metadata gracefully in CLI.
+
 ## 0.3.11
 
 ### Patch Changes
