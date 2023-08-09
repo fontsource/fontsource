@@ -60,6 +60,7 @@ COPY --from=production-deps /app/node_modules /app/node_modules
 COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
 COPY --from=build /app/migrations /app/migrations
+COPY --from=build /app/docs /app/docs
 COPY knexfile.js ./
 COPY package.json ./
 
