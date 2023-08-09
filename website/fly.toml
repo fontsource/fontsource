@@ -15,7 +15,7 @@ enable_consul = true
 [env]
 PRIMARY_REGION = "nrt"
 
-[[mounts]]
+[mounts]
 source = "litefs"
 destination = "/var/lib/litefs"
 
