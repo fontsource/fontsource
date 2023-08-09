@@ -42,7 +42,7 @@ jobs:
         run: pnpm run lint
 
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only -c fly.staging.toml
+      - run: flyctl deploy --remote-only --config fly.staging.toml
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_STAGING_TOKEN }}
 

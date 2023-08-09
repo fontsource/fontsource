@@ -12,6 +12,9 @@ jobs:
     name: Deploy app
     runs-on: ubuntu-latest
     if: github.repository == 'fontsource/fontsource'
+    environment:
+      name: production-${{ github.event.number }}
+      url: https://fontsource.org/
     defaults:
       run:
         working-directory: website
