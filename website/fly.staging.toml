@@ -4,7 +4,7 @@
 #
 
 app = "fontsource-staging"
-primary_region = "lhr"
+primary_region = "nrt"
 kill_signal = "SIGINT"
 kill_timeout = "5s"
 
@@ -13,7 +13,11 @@ auto_rollback = true
 enable_consul = true
 
 [env]
-PRIMARY_REGION = "lhr"
+PRIMARY_REGION = "nrt"
+
+[mounts]
+source = "litefs"
+destination = "/var/lib/litefs"
 
 [[services]]
 protocol = "tcp"

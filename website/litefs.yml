@@ -31,7 +31,7 @@ lease:
 
   consul:
     url: '${FLY_CONSUL_URL}'
-    key: '${FLY_APP_NAME}/primary'
+    key: 'litefs/${FLY_APP_NAME}'
 
 exec:
   - cmd: 'npm run reset-db'
