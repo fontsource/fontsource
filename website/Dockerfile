@@ -1,5 +1,5 @@
 # Fetch the LiteFS binary using a multi-stage build.
-FROM flyio/litefs:0.4 AS litefs
+FROM flyio/litefs:0.5 AS litefs
 
 # base node image
 FROM node:18-bullseye-slim as base

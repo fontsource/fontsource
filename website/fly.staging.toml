@@ -13,7 +13,7 @@ auto_rollback = true
 enable_consul = true
 
 [env]
-PRIMARY_REGION = "nrt"
+PRIMARY_REGION = "lhr"
 
 [[services]]
 protocol = "tcp"
