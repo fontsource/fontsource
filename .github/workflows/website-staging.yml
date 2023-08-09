@@ -53,7 +53,7 @@ jobs:
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
           data: '{"download": true, "axisRegistry": true, "docs": true}'
-          preventFailureOnNoResponse: true
+          timeout: 300000
 
       - uses: marocchino/sticky-pull-request-comment@v2
         with:

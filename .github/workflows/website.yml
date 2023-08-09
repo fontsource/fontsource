@@ -46,4 +46,4 @@ jobs:
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
           data: '{"algolia": true, "download": true, "axisRegistry": true, "docs": true}'
-          preventFailureOnNoResponse: true
+          timeout: 300000
