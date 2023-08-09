@@ -18,7 +18,7 @@ jobs:
       name: staging-${{ github.event.number }}
       url: https://staging.fontsource.org/
     concurrency:
-      group: staging-${{ github.event.number }}
+      group: staging
     defaults:
       run:
         working-directory: website
