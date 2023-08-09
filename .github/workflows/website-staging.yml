@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - "website/**"
+  workflow_dispatch:
 
 permissions:
   pull-requests: write
