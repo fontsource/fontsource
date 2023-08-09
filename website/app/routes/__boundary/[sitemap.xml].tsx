@@ -1,4 +1,4 @@
-import { fileURLToPath } from 'node:url';
+
 
 import type { LoaderFunction } from '@remix-run/node';
 import path from 'pathe';
@@ -26,9 +26,8 @@ export const loader: LoaderFunction = async () => {
 	}
 
 	// Pipe all docs to stream
-	const slugs = await getAllSlugsInDir(
-		path.join(path.dirname(fileURLToPath(import.meta.url)), '../docs')
-	);
+	// eslint-disable-next-line unicorn/prefer-module
+	const slugs = await getAllSlugsInDir(path.join(__dirname+ '../docs'));
 
 	for (const slug of slugs) {
 		smStream.write({

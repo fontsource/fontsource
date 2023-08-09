@@ -5,12 +5,16 @@ on:
       - main
     paths:
       - "website/**"
+  workflow_dispatch:
 
 jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
     if: github.repository == 'fontsource/fontsource'
+    environment:
+      name: production-${{ github.event.number }}
+      url: https://fontsource.org/
     defaults:
       run:
         working-directory: website
@@ -44,5 +48,5 @@ jobs:
           url: "https://fontsource.org/actions/update"
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
-          data: '{"fonts": true, "algolia": true, "download": true, "axisRegistry": true, "docs": true}'
-          preventFailureOnNoResponse: true
+          data: '{"algolia": true, "download": true, "axisRegistry": true, "docs": true}'
+          timeout: 300000

@@ -21,7 +21,6 @@ import {
 	IconExternal,
 	IconGithub,
 	IconNpm,
-	IconVersion,
 } from '@/components';
 import { Code } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
@@ -348,12 +347,22 @@ export const Install = ({
 }: InstallProps) => {
 	const { classes } = useStyles();
 
+	// TODO: Readd attribution to metadata
+	/**
 	// Replace any urls as well as () and <> with empty string
 	const replaceAttribution = metadata.license.attribution
 		.replace(/https?:\/\/[\S\n]+/g, '')
 		.replace(/([()<>])/g, '')
 		// Also replace emails
 		.replace(/[\w.]+@[\w.]+/g, '');
+
+		<Text>&copy; {replaceAttribution}</Text>
+
+		<Group spacing="xs">
+							<IconVersion />
+							<Text>Version: {metadata.version}</Text>
+						</Group>
+ */
 
 	return (
 		<Grid className={classes.wrapper}>
@@ -414,11 +423,8 @@ export const Install = ({
 							<IconEdit />
 							<Text>Last Modified: {metadata.lastModified}</Text>
 						</Group>
-						<Group spacing="xs">
-							<IconVersion />
-							<Text>Version: {metadata.version}</Text>
-						</Group>
-						<Text>&copy; {replaceAttribution}</Text>
+
+
 						<Group
 							position="apart"
 							grow

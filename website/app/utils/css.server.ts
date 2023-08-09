@@ -2,12 +2,11 @@ import { HTTPError } from 'ky';
 
 import { knex } from '@/utils/db.server';
 import { ensurePrimary } from '@/utils/fly.server';
-import {
-	metadataQueue,
-	updateSingleMetadata,
-} from '@/utils/metadata/metadata.server';
-import type { DownloadMetadata, FontDirectory } from '@/utils/types';
+import type { FontDirectory, Metadata } from '@/utils/types';
 import { isStandardAxesKey, kya } from '@/utils/utils.server';
+
+import { getMetadata } from './metadata/metadata.server';
+import { getVariable } from './metadata/variable.server';
 
 const BASE_URL = (dir: FontDirectory) =>
 	`https://cdn.jsdelivr.net/gh/fontsource/font-files@main/fonts/${dir}`;
@@ -34,12 +33,12 @@ const cssRewrite = (css: string, id: string, dir: FontDirectory) =>
 			// remove spaces around the following: ,:;{}
 			.replace(/ ?([,:;{}]) ?/g, '$1')
 			// remove last semicolon in block
-			.replace(/;}/g, '}')
+			.replace(/;}/g, '}'),
 	);
 
 const getFontDirectory = (
-	metadata: DownloadMetadata,
-	variable: boolean
+	metadata: Metadata,
+	variable: boolean,
 ): FontDirectory => {
 	const { type, category } = metadata;
 	if (type === 'google') {
@@ -51,7 +50,7 @@ const getFontDirectory = (
 	return 'other';
 };
 
-const addCss = async (metadata: DownloadMetadata) => {
+const addCss = async (metadata: Metadata) => {
 	await ensurePrimary();
 	// Add general CSS
 	const { id, weights, styles, variable } = metadata;
@@ -98,7 +97,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 				text: true,
 			}),
 			id,
-			fontDir
+			fontDir,
 		);
 
 		await knex('css')
@@ -125,7 +124,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 								text: true,
 							}),
 							id,
-							fontDir
+							fontDir,
 					  )
 					: // Otherwise use 400
 					  cssRewrite(
@@ -133,7 +132,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 								text: true,
 							}),
 							id,
-							fontDir
+							fontDir,
 					  );
 
 			await knex('css')
@@ -152,11 +151,15 @@ const addCss = async (metadata: DownloadMetadata) => {
 
 	// Add variable CSS
 	if (variable) {
+		const variableMetadata = await getVariable(id);
+		if (!variableMetadata) {
+			throw new Error('No variable metadata found');
+		}
 		fontDir = getFontDirectory(metadata, true);
 
 		// Remove ital key to make other keys easier to check
-		const keys = Object.keys(variable).filter(
-			(item) => !['ital'].includes(item)
+		const keys = Object.keys(variableMetadata).filter(
+			(item) => !['ital'].includes(item),
 		);
 		let css;
 
@@ -171,7 +174,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 					`${BASE_URL(fontDir)}/${id}/${keys[0].toLowerCase()}.css`,
 					{
 						text: true,
-					}
+					},
 				);
 			} else if (keys.every((key) => isStandardAxesKey(key))) {
 				css = await kya(`${BASE_URL(fontDir)}/${id}/standard.css`, {
@@ -192,7 +195,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 
 		css = cssRewrite(css, id, fontDir);
 
-		const wght = variable.wght;
+		const wght = variableMetadata.wght;
 		await knex('css')
 			.insert({
 				id,
@@ -206,7 +209,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 			.merge();
 
 		// If it has italic variant
-		if ('ital' in variable) {
+		if ('ital' in variableMetadata) {
 			try {
 				if (keys.length === 1 && keys.includes('wght')) {
 					css = await kya(`${BASE_URL(fontDir)}/${id}/wght-italic.css`, {
@@ -218,7 +221,7 @@ const addCss = async (metadata: DownloadMetadata) => {
 						`${BASE_URL(fontDir)}/${id}/${keys[0].toLowerCase()}-italic.css`,
 						{
 							text: true,
-						}
+						},
 					);
 				} else if (keys.every((key) => isStandardAxesKey(key))) {
 					css = await kya(`${BASE_URL(fontDir)}/${id}/standard-italic.css`, {
@@ -275,14 +278,14 @@ const getAllCss = async (id: string, variable?: boolean) => {
 		css.push(
 			await knex('css')
 				.select('css')
-				.where({ id, isVariable: true, isItalic: true })
+				.where({ id, isVariable: true, isItalic: true }),
 		);
 	} else {
 		css = await knex('css').select('css').where({ id, isVariable: false });
 		css.push(
 			await knex('css')
 				.select('css')
-				.where({ id, isVariable: false, isItalic: true })
+				.where({ id, isVariable: false, isItalic: true }),
 		);
 	}
 	if (css.length === 0) {
@@ -297,9 +300,8 @@ const getCss = async (id: string, opts: CssOptions): Promise<string> => {
 		try {
 			css = await getIndexCss(id);
 		} catch {
-			await metadataQueue.onIdle();
 			// Maybe the font isn't in the db yet, try again
-			await updateSingleMetadata(id);
+			await addCss(await getMetadata(id));
 			css = getIndexCss(id);
 		}
 		return css;
@@ -309,8 +311,7 @@ const getCss = async (id: string, opts: CssOptions): Promise<string> => {
 		try {
 			css = await getAllCss(id, opts.variable);
 		} catch {
-			await metadataQueue.onIdle();
-			await updateSingleMetadata(id);
+			await addCss(await getMetadata(id));
 			css = getAllCss(id, opts.variable);
 		}
 		return await css;

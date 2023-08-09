@@ -1,10 +1,11 @@
 name: Website Staging Deploy
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
     paths:
       - "website/**"
+  workflow_dispatch:
 
 permissions:
   pull-requests: write
@@ -14,8 +15,10 @@ jobs:
     name: Deploy app
     runs-on: ubuntu-latest
     environment:
-      name: staging
+      name: staging-${{ github.event.number }}
       url: https://staging.fontsource.org/
+    concurrency:
+      group: staging
     defaults:
       run:
         working-directory: website
@@ -50,7 +53,7 @@ jobs:
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
           data: '{"download": true, "axisRegistry": true, "docs": true}'
-          preventFailureOnNoResponse: true
+          timeout: 300000
 
       - uses: marocchino/sticky-pull-request-comment@v2
         with:

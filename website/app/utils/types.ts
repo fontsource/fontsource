@@ -9,7 +9,7 @@ export const FONT_DIRS = [
 	'variable-icons',
 	'other',
 ] as const;
-export type FontDirectory = typeof FONT_DIRS[number];
+export type FontDirectory = (typeof FONT_DIRS)[number];
 
 export interface LicenseData {
 	type: string;
@@ -23,13 +23,14 @@ export interface Metadata {
 	weights: number[];
 	styles: string[];
 	defSubset: string;
-	variable: false | VariableData;
+	variable: boolean;
 	lastModified: string;
 	version: string;
 	category: string;
 	source: string;
 	license: LicenseData;
 	type: 'google' | 'other';
+	unicodeRange: UnicodeData;
 }
 
 export interface UnicodeData {
@@ -38,11 +39,6 @@ export interface UnicodeData {
 
 export interface VariableData {
 	[key: string]: AxesData;
-}
-
-export interface DownloadMetadata extends Metadata {
-	unicodeRange: UnicodeData;
-	npmVersion: string;
 }
 export interface AxesData {
 	default: string;

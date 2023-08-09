@@ -50,7 +50,7 @@ const useStyles = createStyles((theme) => ({
 
 interface ConfigureProps {
 	metadata: Metadata;
-	variable: VariableData;
+	variable?: VariableData;
 	axisRegistry?: AxisRegistryAll;
 }
 
@@ -73,7 +73,7 @@ const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 						subsets={metadata.subsets}
 						hasItalic={metadata.styles.includes('italic')}
 					/>
-					{Boolean(metadata.variable) && (
+					{variable && (
 						<>
 							<Divider mt="sm" />
 							<Group position="apart">

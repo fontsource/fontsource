@@ -1,11 +1,30 @@
 import { knex } from '@/utils/db.server';
 import { ensurePrimary } from '@/utils/fly.server';
-import type { AxisRegistry, AxisRegistryAll } from '@/utils/types';
+import type {
+	AxisRegistry,
+	AxisRegistryAll,
+	VariableData,
+} from '@/utils/types';
 import { kya } from '@/utils/utils.server';
 
-const getVariable = async (id: string) => {
+const VARIABLE_URL = (id: string) =>
+	`https://cdn.jsdelivr.net/npm/@fontsource/${id}/metadata.json`;
+
+const getVariable = async (id: string): Promise<VariableData | undefined> => {
 	const variable = await knex('variable').where({ id }).first();
-	if (!variable) return;
+
+	if (!variable) {
+		const metadata = await kya(VARIABLE_URL(id));
+		await knex('variable')
+			.insert({
+				id,
+				axes: JSON.stringify(metadata.variable),
+			})
+			.onConflict('id')
+			.merge();
+
+		return metadata.variable;
+	}
 
 	return JSON.parse(variable.axes);
 };

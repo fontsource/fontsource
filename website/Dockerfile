@@ -1,8 +1,8 @@
 # Fetch the LiteFS binary using a multi-stage build.
-FROM flyio/litefs:0.4 AS litefs
+FROM flyio/litefs:0.5 AS litefs
 
 # base node image
-FROM node:18-bullseye-slim as base
+FROM node:20-bullseye-slim as base
 
 # Install fuse and ca-certificates for lite-fs
 RUN apt-get update && apt-get install -y fuse3 ca-certificates
@@ -59,13 +59,15 @@ COPY --from=production-deps /app/node_modules /app/node_modules
 
 COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
+COPY --from=build /app/migrations /app/migrations
+COPY --from=build /app/docs /app/docs
+COPY knexfile.js ./
+COPY package.json ./
 
 # Setup LiteFS
 COPY --from=litefs /usr/local/bin/litefs /usr/local/bin/litefs
-ADD litefs.yml /etc/litefs.yml
+COPY litefs.yml /etc/litefs.yml
 RUN mkdir -p /data ${LITEFS_DIR}
-
-ADD . .
 
 EXPOSE 3000
 CMD ["litefs", "mount"]

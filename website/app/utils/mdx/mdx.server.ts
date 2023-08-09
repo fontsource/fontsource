@@ -1,5 +1,4 @@
 import * as fs from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
 
 import * as path from 'pathe';
 
@@ -26,7 +25,8 @@ process.env.NODE_ENV === 'production'
 
 const getSource = async (slug: string) => {
 	const filepath = path.join(
-		path.dirname(fileURLToPath(import.meta.url)),
+		// eslint-disable-next-line unicorn/prefer-module
+		__dirname,
 		'../docs',
 		slug + '.mdx'
 	);
@@ -86,7 +86,8 @@ const populateDocsCache = async () => {
 
 	// Get all mdx files in nested directories in the docs folder
 	const slugs = await getAllSlugsInDir(
-		path.join(path.dirname(fileURLToPath(import.meta.url)), '../docs')
+		// eslint-disable-next-line unicorn/prefer-module
+		path.join(__dirname, '../docs')
 	);
 
 	// Run fetchMdx for each slug to put it in the db cache
