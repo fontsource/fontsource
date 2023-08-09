@@ -34,7 +34,7 @@ lease:
     key: '${FLY_APP_NAME}/primary'
 
 exec:
-  - cmd: 'npm run migrations'
+  - cmd: 'npm run reset-db'
     if-candidate: true
 
   - cmd: 'npm run start'
