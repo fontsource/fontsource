@@ -14,6 +14,9 @@ auto_rollback = true
 [env]
 PRIMARY_REGION = "nrt"
 
+[deploy]
+strategy = "canary"
+
 [[services]]
 protocol = "tcp"
 internal_port = 8080

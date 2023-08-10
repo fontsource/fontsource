@@ -1,5 +1,4 @@
 import algoliasearch from 'algoliasearch';
-import consola from 'consola';
 
 import {
 	getDownloadCountMonth,
@@ -43,7 +42,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 		for (const id of list) {
 			const metadata = metadataFull[id];
 			if (!metadata)
-				consola.warn(`No metadata found for ${id} when updating Algolia index`);
+				console.warn(`No metadata found for ${id} when updating Algolia index`);
 
 			const downloadCountMonthly = await getDownloadCountMonth(id);
 
