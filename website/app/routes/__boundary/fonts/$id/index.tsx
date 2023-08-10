@@ -16,7 +16,7 @@ import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 
 interface FontMetadata {
 	metadata: Metadata;
-	variable: VariableData;
+	variable?: VariableData;
 	axisRegistry?: AxisRegistryAll;
 	defSubsetText: string;
 	downloadCount: number;

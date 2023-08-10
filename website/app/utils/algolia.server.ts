@@ -1,14 +1,10 @@
 import algoliasearch from 'algoliasearch';
 
-import { knex } from '@/utils/db.server';
 import {
 	getDownloadCountMonth,
 	updateDownloadCount,
 } from '@/utils/metadata/download.server';
-import {
-	getFontList,
-	updateSingleMetadata,
-} from '@/utils/metadata/metadata.server';
+import { getFontlist, getFullMetadata } from '@/utils/metadata/metadata.server';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 const shuffleArray = (size: number) => {
@@ -23,28 +19,13 @@ const shuffleArray = (size: number) => {
 	return arr;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const client = algoliasearch('WNATE69PVR', process.env.ALGOLIA_ADMIN_KEY!);
-
-const getMetadata = async (id: string) =>
-	await knex
-		.select(
-			'family',
-			'subsets',
-			'weights',
-			'styles',
-			'defSubset',
-			'category',
-			'variable',
-			'lastModified'
-		)
-		.from('fonts')
-		.where({ id })
-		.first();
 
 const updateAlgoliaIndex = async (force?: boolean) => {
 	try {
 		// Get font list
-		const list = Object.keys(await getFontList());
+		const list = Object.keys(await getFontlist());
 		const indexArray: AlgoliaMetadata[] = [];
 
 		// For the random shuffle, we need a presorted index
@@ -55,26 +36,25 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 		// we can just update it everytime we update the index
 		await updateDownloadCount();
 
+		const metadataFull = await getFullMetadata();
+
 		let index = 0;
 		for (const id of list) {
-			let metadata = await getMetadata(id);
-
-			if (!metadata) {
-				await updateSingleMetadata(id);
-				metadata = await getMetadata(id);
-			}
+			const metadata = metadataFull[id];
+			if (!metadata)
+				console.warn(`No metadata found for ${id} when updating Algolia index`);
 
 			const downloadCountMonthly = await getDownloadCountMonth(id);
 
 			const obj = {
 				objectID: id,
 				family: metadata.family,
-				subsets: metadata.subsets.split(','),
-				weights: metadata.weights.split(',').map(Number),
-				styles: metadata.styles.split(','),
+				subsets: metadata.subsets,
+				weights: metadata.weights,
+				styles: metadata.styles,
 				category: metadata.category,
 				defSubset: metadata.defSubset,
-				variable: Boolean(metadata.variable),
+				variable: metadata.variable,
 				// Algolia sorts date using a unix timestamp instead
 				lastModified: Math.floor(
 					new Date(metadata.lastModified).getTime() / 1000
