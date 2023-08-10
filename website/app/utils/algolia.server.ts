@@ -1,10 +1,11 @@
 import algoliasearch from 'algoliasearch';
+import consola from 'consola';
 
 import {
 	getDownloadCountMonth,
 	updateDownloadCount,
 } from '@/utils/metadata/download.server';
-import { getFontlist, getMetadata } from '@/utils/metadata/metadata.server';
+import { getFontlist, getFullMetadata } from '@/utils/metadata/metadata.server';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 const shuffleArray = (size: number) => {
@@ -36,9 +37,13 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 		// we can just update it everytime we update the index
 		await updateDownloadCount();
 
+		const metadataFull = await getFullMetadata();
+
 		let index = 0;
 		for (const id of list) {
-			const metadata = await getMetadata(id);
+			const metadata = metadataFull[id];
+			if (!metadata)
+				consola.warn(`No metadata found for ${id} when updating Algolia index`);
 
 			const downloadCountMonthly = await getDownloadCountMonth(id);
 
@@ -53,7 +58,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 				variable: metadata.variable,
 				// Algolia sorts date using a unix timestamp instead
 				lastModified: Math.floor(
-					new Date(metadata.lastModified).getTime() / 1000,
+					new Date(metadata.lastModified).getTime() / 1000
 				),
 				downloadMonth: downloadCountMonthly ?? 0,
 				randomIndex: randomIndexArr[index],
