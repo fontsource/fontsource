@@ -7,9 +7,9 @@ import {
 	withParams,
 } from 'itty-router';
 
-import { type CFRouterContext, type Manifest } from './types';
-import { bucketPath, downloadManifest, generateZip } from './update';
-import { generateManifest } from './util';
+import { type CFRouterContext } from './types';
+import { bucketPath, downloadFile, downloadManifest, generateZip } from './update';
+import { generateManifest, generateManifestItem } from './util';
 
 interface DownloadRequest extends IRequestStrict {
 	id: string;
@@ -18,37 +18,7 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-const handleManifest = async (
-	manifest: Manifest[],
-	env: Env,
-	ctx: ExecutionContext,
-) => {
-	// Workers have limited resources, so we need to split up the manifest into
-	// chunks of 35 files
-	if (manifest.length > 35) {
-		const nextManifest = manifest.splice(35);
-		// Post to manifest route to continue rest of downloads
-		const manifestRequest = new Request('/v1/manifest', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(nextManifest),
-		});
-
-		env.DOWNLOAD.fetch(manifestRequest);
-	}
-
-	// Download current manifest
-	await downloadManifest(manifest, env);
-
-	if (manifest.length < 35) {
-		// If this is the only manifest, we can generate a zip file
-		await generateZip(manifest[0].id, manifest[0].version, env);
-	}
-};
-
-router.post('/v1/:id', withParams, async (request, env, ctx) => {
+router.post('/v1/:id', withParams, async (request, env, _ctx) => {
 	const { id } = request;
 
 	const metadata = await env.FONTS.get<IDResponse>(id, 'json');
@@ -71,17 +41,22 @@ router.post('/v1/:id', withParams, async (request, env, ctx) => {
 		return !existingFile;
 	});
 
-	await handleManifest(manifest, env, ctx);
+	await downloadManifest(manifest, env);
+	await generateZip(manifest[0].id, manifest[0].version, env);
 
 	return text('Success.');
 });
 
-router.post('/v1/:id/:file', async (request, env, ctx) => {});
+router.post('/v1/:id/:file', withParams, async (request, env, _ctx) => {
+	const { id, file } = request;
 
-router.post('/v1/manifest', async (request, env, ctx) => {
-	const manifest = await request.json<Manifest[]>();
+	const metadata = await env.FONTS.get<IDResponse>(id, 'json');
+	if (!metadata) {
+		return error(404, 'Not Found. Font does not exist.');
+	}
 
-	await handleManifest(manifest, env, ctx);
+	const manifestItem = generateManifestItem(id, file, metadata);
+	await downloadFile(manifestItem, env);
 
 	return text('Success.');
 });
