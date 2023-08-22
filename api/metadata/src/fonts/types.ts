@@ -16,6 +16,7 @@ interface ArrayMetadataItem {
 type ArrayMetadata = ArrayMetadataItem[];
 
 const fontsQueries = [
+	'id',
 	'family',
 	'subsets',
 	'weights',
