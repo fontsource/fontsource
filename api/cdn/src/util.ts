@@ -1,4 +1,5 @@
 import { type IDResponse } from 'common-api/types';
+import { StatusError } from 'itty-router';
 
 const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'otf'] as const;
 type AcceptedExtension = (typeof ACCEPTED_EXTENSIONS)[number];
@@ -11,9 +12,11 @@ export const isAcceptedExtension = (
 // Fetch latest metadata from metadata worker
 export const getMetadata = async (id: string, req: Request, env: Env) => {
 	const apiPathname = `/v1/fonts/${id}`;
+	const url = new URL(req.url);
+	url.pathname = apiPathname;
 
 	// Update incoming request to use new pathname
-	const newRequest = new Request(apiPathname, req);
+	const newRequest = new Request(url.toString(), req);
 
 	const metadata = await env.METADATA.fetch(newRequest);
 	if (!metadata.ok) {
@@ -29,16 +32,20 @@ export const getMetadata = async (id: string, req: Request, env: Env) => {
 export const downloadVersion = async (
 	id: string,
 	version: string,
+	req: Request,
 	env: Env,
 ) => {
 	const apiPathname = `/v1/fonts/${id}/${version}`;
+	const url = new URL(req.url);
+	url.pathname = apiPathname;
+	console.log(apiPathname);
 
-	const response = await env.DOWNLOAD.fetch(apiPathname);
+	const newRequest = new Request(url.toString(), req);
+
+	const response = await env.DOWNLOAD.fetch(newRequest);
 	if (!response.ok) {
-		throw new Error(
+		throw new StatusError(response.status,
 			`Bad response from download worker. Status: ${String(response.status)}`,
 		);
 	}
-
-	return await response.arrayBuffer();
 };

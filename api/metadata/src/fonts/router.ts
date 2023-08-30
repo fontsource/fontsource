@@ -12,7 +12,7 @@ import { getOrUpdateArrayMetadata, getOrUpdateId } from './get';
 import { isFontsQueries } from './types';
 
 interface FontRequest extends IRequestStrict {
-	font: string;
+	id: string;
 	file: string;
 }
 
@@ -66,8 +66,8 @@ router.get('/v1/fonts', async (request, env, _ctx) => {
 	return json(filtered);
 });
 
-router.get('/v1/fonts/:font', withParams, async (request, env, _ctx) => {
-	const id = request.font;
+router.get('/v1/fonts/:id', withParams, async (request, env, _ctx) => {
+	const { id } = request;
 
 	const data = await getOrUpdateId(id, env);
 	if (!data) {
@@ -78,9 +78,8 @@ router.get('/v1/fonts/:font', withParams, async (request, env, _ctx) => {
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
-router.get('/v1/fonts/:font/:file', withParams, async (request, env, _ctx) => {
-	const id = request.font;
-	const file = request.file;
+router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
+	const { id, file } = request;
 
 	const data = await getOrUpdateId(id, env);
 	if (!data) {

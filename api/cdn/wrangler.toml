@@ -17,3 +17,7 @@ services = [
 
 logpush = true
 workers_dev = false
+
+[miniflare.mounts]
+download = "../download/"
+api = "../api/"

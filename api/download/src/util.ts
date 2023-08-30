@@ -1,28 +1,16 @@
 import { type IDResponse } from 'common-api/types';
+import { splitTag } from 'common-api/util';
 import { StatusError } from 'itty-router';
 
 import { type Manifest } from './types';
-
-interface Tag {
-	id: string;
-	version: string;
-}
-
-const splitTag = (tag: string): Tag => {
-// Parse tag for version e.g roboto@1.1.1
-	const tagSplit = tag.split('@');
-	const version = tagSplit[1];
-	if (version.split('.').length !== 3) {
-		throw new StatusError(400, 'Bad Request. Invalid version.');
-	}
-
-	return { id: tagSplit[0], version};
-};
 
 export const generateManifestItem = (tag: string, file: string, metadata: IDResponse): Manifest => {
 	const { id, version } = splitTag(tag);
 	const [filename, extension] = file.split('.');
 	const [subset, weight, style] = filename.split('-');
+	if (!subset || !weight || !style) {
+		throw new StatusError(400, 'Bad Request. Invalid filename.');
+	}
 
 	if (id !== metadata.id) {
 		throw new StatusError(400, 'Bad Request. Invalid ID.');
