@@ -1,5 +1,11 @@
 # api
 
+## 0.1.4
+
+### Patch Changes
+
+- [#791](https://github.com/fontsource/fontsource/pull/791) [`c8eaf1f911`](https://github.com/fontsource/fontsource/commit/c8eaf1f91136fc837295ead9672458f0d1707866) Thanks [@jwr1](https://github.com/jwr1)! - Fix id query not allowed in API fonts route
+
 ## 0.1.3
 
 ### Patch Changes
