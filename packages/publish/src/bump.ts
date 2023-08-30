@@ -4,7 +4,7 @@ import semver from 'semver';
 
 import { getChanged } from './changed';
 import type { BumpFlags, BumpObject, ChangedList } from './types';
-import { mergeFlags } from './utils';
+import { mergeFlags, writeUpdate } from './utils';
 
 export const isValidBumpArg = (bumpArg: string): boolean => {
 	const validBumpArgs = new Set(['patch', 'minor', 'major', 'from-package']);
@@ -18,7 +18,7 @@ export const isValidBumpArg = (bumpArg: string): boolean => {
 
 export const bumpValue = (
 	oldVersion: string,
-	bumpArg: string
+	bumpArg: string,
 ): string | false => {
 	// Check if valid semver version and if invalid return false
 	const arr = semver.valid(oldVersion)?.split('.');
@@ -61,7 +61,7 @@ export const bumpPackages = async (diff: ChangedList, version: string) => {
 		const newVersion = bumpValue(pkg.version, version);
 		if (typeof newVersion !== 'string') {
 			throw new TypeError(
-				`Failed to bump version for ${pkg.name} for ${pkg.version}`
+				`Failed to bump version for ${pkg.name} for ${pkg.version}`,
 			);
 		}
 		const bumpObject: BumpObject = {
@@ -75,7 +75,7 @@ export const bumpPackages = async (diff: ChangedList, version: string) => {
 	let count = 0;
 	for (const pkg of bumpObjects) {
 		consola.info(
-			colors.magenta(`${pkg.name}: ${pkg.version} --> ${pkg.bumpVersion}`)
+			colors.magenta(`${pkg.name}: ${pkg.version} --> ${pkg.bumpVersion}`),
 		);
 		count += 1;
 	}
@@ -91,9 +91,12 @@ export const bump = async (version: string, options: BumpFlags) => {
 	consola.info(
 		`${colors.bold(colors.blue('Verifying packages...'))} ${
 			options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''
-		}`
+		}`,
 	);
 	const config = await mergeFlags(options);
 	const diff = await getChanged(config);
-	await bumpPackages(diff, version);
+	const bumpObjects = await bumpPackages(diff, version);
+	for (const pkg of bumpObjects) {
+		await writeUpdate(pkg, { version: true, hash: true });
+	}
 };
