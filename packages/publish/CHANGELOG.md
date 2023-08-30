@@ -1,5 +1,11 @@
 # @fontsource-utils/publish
 
+## 0.2.8
+
+### Patch Changes
+
+- [#795](https://github.com/fontsource/fontsource/pull/795) [`aa033e53ae`](https://github.com/fontsource/fontsource/commit/aa033e53aec2f2c3fa0d74c6344f79d5d288e429) Thanks [@ayuhito](https://github.com/ayuhito)! - Write updates to disk when bumping packages using the bump command.
+
 ## 0.2.7
 
 ### Patch Changes
