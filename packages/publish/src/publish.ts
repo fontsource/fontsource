@@ -3,7 +3,6 @@ import { consola } from 'consola';
 import * as dotenv from 'dotenv';
 import { execa } from 'execa';
 import fs from 'fs-extra';
-import stringify from 'json-stringify-pretty-compact';
 import PQueue from 'p-queue';
 import path from 'pathe';
 import colors from 'picocolors';
@@ -18,36 +17,20 @@ import {
 	gitPush,
 	gitRemoteAdd,
 } from './git';
-import type { BumpObject, Context, PackageJson, PublishFlags } from './types';
-import { mergeFlags } from './utils';
+import type { BumpObject, Context, PublishFlags } from './types';
+import { mergeFlags, writeUpdate } from './utils';
 
 const checkEnv = async () => {
 	dotenv.config();
 	// Ensure all env variables are loaded
 	if (!process.env.GITHUB_TOKEN) {
 		throw new Error(
-			'Missing Github Personal Access Token (GITHUB_TOKEN) in environment! '
+			'Missing Github Personal Access Token (GITHUB_TOKEN) in environment! ',
 		);
 	}
 	if (!process.env.NPM_TOKEN) {
 		throw new Error('Missing NPM access token! (NPM_TOKEN)');
 	}
-};
-
-interface WriteOptions {
-	version?: boolean;
-	hash?: boolean;
-}
-
-export const writeUpdate = async (
-	pkg: BumpObject,
-	opts: WriteOptions
-): Promise<void> => {
-	const pkgPath = path.join(pkg.path, 'package.json');
-	const pkgJson: PackageJson = await fs.readJson(pkgPath);
-	if (opts.version) pkgJson.version = pkg.bumpVersion;
-	if (opts.hash) pkgJson.publishHash = pkg.hash;
-	await fs.writeFile(pkgPath, stringify(pkgJson));
 };
 
 interface DoGitOptions {
@@ -82,7 +65,7 @@ let errorCount = 0;
 
 const packPublish = async (
 	pkg: BumpObject,
-	gitOpts: DoGitOptions
+	gitOpts: DoGitOptions,
 ): Promise<PublishObject> => {
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
 	const publishFlags = ['--access', 'public', '--tag', 'latest'];
@@ -92,7 +75,7 @@ const packPublish = async (
 		await fs.writeFile(
 			npmrc,
 			// eslint-disable-next-line no-template-curly-in-string
-			'//registry.npmjs.org/:_authToken=${NPM_TOKEN}'
+			'//registry.npmjs.org/:_authToken=${NPM_TOKEN}',
 		);
 
 		// Update version, then publish, then hash
@@ -133,12 +116,12 @@ const packPublish = async (
 
 export const publishPackages = async (
 	version: string,
-	options: PublishFlags
+	options: PublishFlags,
 ) => {
 	consola.info(
 		`${colors.bold(colors.blue('Publishing packages...'))} ${
 			options.forcePublish ? colors.red(colors.bold('[FORCE]')) : ''
-		}`
+		}`,
 	);
 
 	// Check for required environment variables

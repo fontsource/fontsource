@@ -1,7 +1,25 @@
 import defu from 'defu';
 import fs from 'fs-extra';
+import stringify from 'json-stringify-pretty-compact';
+import path from 'pathe';
 
-import type { Context, Flags } from './types';
+import type { BumpObject, Context, Flags, PackageJson } from './types';
+
+interface WriteOptions {
+	version?: boolean;
+	hash?: boolean;
+}
+
+export const writeUpdate = async (
+	pkg: BumpObject,
+	opts: WriteOptions,
+): Promise<void> => {
+	const pkgPath = path.join(pkg.path, 'package.json');
+	const pkgJson: PackageJson = await fs.readJson(pkgPath);
+	if (opts.version) pkgJson.version = pkg.bumpVersion;
+	if (opts.hash) pkgJson.publishHash = pkg.hash;
+	await fs.writeFile(pkgPath, stringify(pkgJson));
+};
 
 const getPackages = async (dir: string): Promise<string[]> => {
 	const packages = await fs.readdir(dir, {
