@@ -28,7 +28,7 @@
 		"fs-extra": "^11.1.0",
 		"hash-wasm": "^4.9.0",
 		"json-stringify-pretty-compact": "^4.0.0",
-		"p-queue": "^7.3.4",
+		"p-queue": "^7.4.1",
 		"parse-git-config": "^3.0.0",
 		"pathe": "^1.1.1",
 		"picocolors": "^1.0.0",
@@ -41,11 +41,11 @@
 		"@types/node": "^20.4.7",
 		"@types/parse-git-config": "^3.0.1",
 		"@types/semver": "^7.5.0",
-		"eslint": "^8.46.0",
+		"eslint": "^8.49.0",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.9.0",
 		"tsx": "^3.12.3",
-		"typescript": "^5.1.6"
+		"typescript": "^5.2.2"
 	},
 	"files": [
 		"dist/*"

@@ -12,15 +12,15 @@
 	},
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.4.1",
-		"@cloudflare/workers-types": "^4.20230807.0",
-		"eslint": "^8.46.0",
-		"itty-router": "^4.0.14",
+		"@cloudflare/workers-types": "^4.20230904.0",
+		"eslint": "^8.49.0",
+		"itty-router": "^4.0.22",
 		"jszip": "^3.10.1",
-		"p-queue": "^7.3.4",
-		"typescript": "^5.1.6",
-		"vitest-environment-miniflare": "^2.14.0",
+		"p-queue": "^7.4.1",
+		"typescript": "^5.2.2",
+		"vitest-environment-miniflare": "^2.14.1",
 		"woff2sfnt-sfnt2woff": "^1.0.0",
-		"wrangler": "^3.5.0"
+		"wrangler": "^3.7.0"
 	},
 	"dependencies": {
 		"common-api": "workspace:*"

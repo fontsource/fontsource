@@ -63,8 +63,8 @@
 		"@types/node": "^20.4.7",
 		"@types/react": "^18.2.8",
 		"@types/react-dom": "^18.2.4",
-		"eslint": "^8.46.0",
-		"typescript": "^5.1.6"
+		"eslint": "^8.49.0",
+		"typescript": "^5.2.2"
 	},
 	"engines": {
 		"node": ">=18"
