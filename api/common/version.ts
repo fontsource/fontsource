@@ -7,6 +7,10 @@ export const getAvailableVersions = async (id: string): Promise<string[]> => {
 		`https://data.jsdelivr.com/v1/packages/npm/@fontsource/${id}`,
 	).then(async (res) => await res.json<JSDelivrAPIVersion>());
 
+	if (!npmList.versions) {
+		throw new StatusError(404, `Not Found. ${id} does not exist.`);
+	}
+
 	const versions = npmList.versions.map((version) => version.version);
 
 	return versions;

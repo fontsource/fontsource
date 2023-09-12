@@ -2,10 +2,6 @@ name = "download"
 main = "src/worker.ts"
 compatibility_date = "2023-05-27"
 
-kv_namespaces = [
-  { binding = "FONTS", id = "3dfa82ada2204c49b2f317a63b72d93c", preview_id = "fe8764b094ec4524ba50631ecc24f177" },
-]
-
 r2_buckets = [
   { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" },
 ]
@@ -19,3 +15,6 @@ workers_dev = false
 
 # Need the buffer for woff2ttf
 node_compat = true
+
+[miniflare.mounts]
+api = "../api/"

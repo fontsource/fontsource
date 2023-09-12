@@ -4,13 +4,24 @@ import { StatusError } from 'itty-router';
 
 import { type Manifest } from './types';
 
+type ManifestGenerator = Omit<
+	IDResponse,
+	| 'variants'
+	| 'defSubset'
+	| 'license'
+	| 'type'
+	| 'family'
+	| 'lastModified'
+	| 'category'
+>;
+
 export const generateManifestItem = async (
 	tag: string,
 	file: string,
-	metadata: IDResponse,
+	metadata: ManifestGenerator,
 ): Promise<Manifest> => {
 	const { id, version } = await splitTag(tag);
-	const [filename, extension] = file.split('.');
+	let [filename, extension] = file.split('.');
 	const [subset, weight, style] = filename.split('-');
 	if (!subset || !weight || !style) {
 		throw new StatusError(400, 'Bad Request. Invalid filename.');
@@ -18,6 +29,12 @@ export const generateManifestItem = async (
 
 	if (id !== metadata.id) {
 		throw new StatusError(400, 'Bad Request. Invalid ID.');
+	}
+
+	// If the extension is ttf, change it to woff since jsdelivr doesn't store tff
+	// and we convert it from woff to ttf on the fly
+	if (extension === 'ttf') {
+		extension = 'woff';
 	}
 
 	return {
@@ -28,18 +45,21 @@ export const generateManifestItem = async (
 		variable: metadata.variable,
 		extension,
 		version,
-		url: `https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/files/${id}-${file}`,
+		url: `https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/files/${id}-${file.replace(
+			'.ttf',
+			'.woff',
+		)}`,
 	};
 };
 
 export const generateManifest = async (
 	tag: string,
-	metadata: IDResponse,
+	metadata: ManifestGenerator,
 ): Promise<Manifest[]> => {
 	const { id, version } = await splitTag(tag);
 
 	if (id !== metadata.id) {
-		throw new StatusError(400, 'Bad Request. Invalid font sID.');
+		throw new StatusError(400, 'Bad Request. Invalid font ID.');
 	}
 
 	// Generate manifest

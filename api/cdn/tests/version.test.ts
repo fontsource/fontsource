@@ -1,82 +1,46 @@
-import { getVersion } from 'common-api/version';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { getVersionUrl } from 'common-api/version';
+import { describe, expect, it } from 'vitest';
 
 describe('version tag from url', () => {
-	beforeEach(async () => {
-		const fetchMock = getMiniflareFetchMock();
-		// Throw when no matching mocked request is found
-		fetchMock.disableNetConnect();
-
-		// Handlers
-		// We want this to be the default response for all requests
-		const origin = fetchMock.get('https://data.jsdelivr.com');
-		origin
-			.intercept({
-				method: 'GET',
-				path: '/v1/packages/npm/@fontsource/abel',
-			})
-			.reply(200, {
-				type: 'npm',
-				name: '@fontsource/abel',
-				versions: [
-					{
-						version: '1.0.0',
-					},
-					{
-						version: '1.1.0',
-					},
-					{
-						version: '1.1.1',
-					},
-					{
-						version: '2.0.0',
-					},
-					{
-						version: '2.1.0',
-					},
-				],
-			});
-	});
-
 	it('should return the latest tag from the url', async () => {
-		const version = await getVersion(
+		const version = await getVersionUrl(
 			'abel',
 			'http://r2.fontsource.org/fonts/abel@latest/latin-400-normal.ttf',
 		);
 
-		expect(version).toBe('latest');
+		expect(version).toContain('5.0.');
 	});
 
 	it('should return the major tag from the url', async () => {
-		const version = await getVersion(
+		const version = await getVersionUrl(
 			'abel',
-			'http://r2.fontsource.org/fonts/abel@1/latin-400-normal.ttf',
+			'http://r2.fontsource.org/fonts/abel@5/latin-400-normal.ttf',
 		);
 
-		expect(version).toBe('1.1.1');
+		expect(version).toBe('5.0.8');
 	});
 
 	it('should return the major.minor tag from the url', async () => {
-		const version = await getVersion(
+		const version = await getVersionUrl(
 			'abel',
-			'http://r2.fontsource.org/fonts/abel@1.1/latin-400-normal.ttf',
+			'http://r2.fontsource.org/fonts/abel@5.0/latin-400-normal.ttf',
 		);
 
-		expect(version).toBe('1.1.1');
+		expect(version).toBe('5.0.8');
 	});
 
 	it('should return the major.minor.patch tag from the url', async () => {
-		const version = await getVersion(
+		const version = await getVersionUrl(
 			'abel',
-			'http://r2.fontsource.org/fonts/abel@1.1.1/latin-400-normal.ttf',
+			'http://r2.fontsource.org/fonts/abel@5.0.8/latin-400-normal.ttf',
 		);
 
-		expect(version).toBe('1.1.1');
+		expect(version).toBe('5.0.8');
 	});
 
 	it('should throw on invalid semver format version tag', async () => {
 		await expect(
-			getVersion(
+			getVersionUrl(
 				'abel',
 				'http://r2.fontsource.org/fonts/abel@invalid/latin-400-normal.ttf',
 			),
@@ -85,7 +49,7 @@ describe('version tag from url', () => {
 
 	it('should throw on invalid number version tag', async () => {
 		await expect(
-			getVersion(
+			getVersionUrl(
 				'abel',
 				'http://r2.fontsource.org/fonts/abel@1.2.0/latin-400-normal.ttf',
 			),
@@ -94,7 +58,7 @@ describe('version tag from url', () => {
 
 	it('should throw on missing version tag', async () => {
 		await expect(
-			getVersion(
+			getVersionUrl(
 				'abel',
 				'http://r2.fontsource.org/fonts/abel/latin-400-normal.ttf',
 			),

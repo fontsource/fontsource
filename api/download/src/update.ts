@@ -1,4 +1,4 @@
-import { type IDResponse } from 'common-api/types';
+import { getMetadata } from 'common-api/util';
 import { error, StatusError } from 'itty-router';
 import JSZip from 'jszip';
 import PQueue from 'p-queue';
@@ -35,7 +35,6 @@ const downloadFile = async (manifest: Manifest, env: Env) => {
 	const buffer = await res.arrayBuffer();
 
 	// Add to bucket
-	console.log(bucketPath(manifest));
 	await env.BUCKET.put(bucketPath(manifest), buffer);
 
 	// If woff, decompress and add to ttf folder
@@ -87,7 +86,12 @@ const downloadManifest = async (manifest: Manifest[], env: Env) => {
 	if (hasError) throw hasError;
 };
 
-const generateZip = async (id: string, version: string, env: Env) => {
+const generateZip = async (
+	id: string,
+	version: string,
+	req: Request,
+	env: Env,
+) => {
 	// Check if zip file already exists
 	const zipFile = await env.BUCKET.get(`${id}@${version}/download.zip`);
 	if (zipFile) return;
@@ -98,7 +102,7 @@ const generateZip = async (id: string, version: string, env: Env) => {
 	const ttf = zip.folder('ttf');
 
 	// Generate a full manifest to track all files
-	const metadata = await env.FONTS.get<IDResponse>(id, 'json');
+	const metadata = await getMetadata(id, req.clone(), env);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
@@ -140,7 +144,7 @@ const generateZip = async (id: string, version: string, env: Env) => {
 
 	// Add LICENSE file
 	const license = await fetch(
-		`https://cdn.jsdelivr.net/npm/@fontsource/${metadata.id}@${version}/LICENSE`,
+		`https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/LICENSE`,
 	);
 	if (!license.ok) {
 		throw new StatusError(500, 'Could not find LICENSE file');

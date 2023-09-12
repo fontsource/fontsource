@@ -25,8 +25,9 @@ const router = Router<DownloadRequest, CFRouterContext>();
 
 router.post('/v1/:id', withParams, async (request, env, _ctx) => {
 	const { id } = request;
+	const fontId = id.split('@')[0];
 
-	const metadata = await getMetadata(id, request.clone(), env);
+	const metadata = await getMetadata(fontId, request.clone(), env);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
@@ -47,16 +48,16 @@ router.post('/v1/:id', withParams, async (request, env, _ctx) => {
 	});
 
 	await downloadManifest(manifest, env);
-	await generateZip(manifest[0].id, manifest[0].version, env);
+	await generateZip(manifest[0].id, manifest[0].version, request, env);
 
 	return text('Success.');
 });
 
 router.post('/v1/:id/:file', withParams, async (request, env, _ctx) => {
 	const { id, file } = request;
-	const [fontId] = id.split('@');
+	const fontId = id.split('@')[0];
 
-	const metadata = await getMetadata(fontId, request, env);
+	const metadata = await getMetadata(fontId, request.clone(), env);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
