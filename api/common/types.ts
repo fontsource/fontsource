@@ -32,4 +32,9 @@ interface IDResponse {
 	variants: FontVariants;
 }
 
-export type { FontVariants, IDResponse };
+interface StatusErrorObject {
+	status: number;
+	error: string;
+}
+
+export type { FontVariants, IDResponse, StatusErrorObject };

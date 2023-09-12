@@ -1,17 +1,41 @@
-import { StatusError } from 'itty-router'
+import { StatusError } from 'itty-router';
+import { getVersion } from './version';
+import { IDResponse, StatusErrorObject } from './types';
+
+// Fetch latest metadata from metadata worker
+export const getMetadata = async (id: string, req: Request, env: Env) => {
+	const apiPathname = `/v1/fonts/${id}`;
+	const url = new URL(req.url);
+	url.pathname = apiPathname;
+
+	// Update incoming request to use new pathname
+	const newRequest = new Request(url.toString(), { ...req, method: 'GET' });
+	const metadata = await env.METADATA.fetch(newRequest);
+	if (!metadata.ok) {
+		const error = await metadata.json<StatusErrorObject>();
+		throw new StatusError(
+			500,
+			`Bad response from metadata worker. ${error.error}`,
+		);
+	}
+
+	return await metadata.json<IDResponse>();
+};
 
 interface Tag {
 	id: string;
 	version: string;
 }
 
-export const splitTag = (tag: string): Tag => {
-// Parse tag for version e.g roboto@1.1.1
-	const tagSplit = tag.split('@');
-	const version = tagSplit[1];
-	if (version.split('.').length !== 3) {
-		throw new StatusError(400, 'Bad Request. Invalid version.');
+export const splitTag = async (tag: string): Promise<Tag> => {
+	// Parse tag for version e.g roboto@1.1.1
+	const [id, versionTag] = tag.split('@');
+	if (!versionTag) {
+		throw new StatusError(400, 'Bad Request. Invalid tag format.');
 	}
 
-	return { id: tagSplit[0], version};
+	// Validate version tag
+	const version = await getVersion(id, versionTag);
+
+	return { id, version };
 };

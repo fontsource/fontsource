@@ -1,8 +1,8 @@
-import { splitTag } from 'common-api/util';
+import { getMetadata, splitTag } from 'common-api/util';
 import { error, type IRequestStrict, Router, withParams } from 'itty-router';
 
 import type { CFRouterContext } from './types';
-import { downloadVersion, getMetadata, isAcceptedExtension } from './util';
+import { downloadFile, isAcceptedExtension } from './util';
 
 interface CDNRequest extends IRequestStrict {
 	id: string;
@@ -22,7 +22,7 @@ router.get('/fonts/:id/:file', withParams, async (request, env, ctx) => {
 	if (response) return response;
 
 	// Read version metadata from url
-	const {id: fontId, version} = splitTag(id);
+	const { id: fontId, version } = await splitTag(id);
 	const extension = file.split('.').pop();
 	if (!extension || !isAcceptedExtension(extension)) {
 		return error(400, 'Bad Request. Invalid file extension.');
@@ -56,7 +56,7 @@ router.get('/fonts/:id/:file', withParams, async (request, env, ctx) => {
 		return error(404, 'Not Found. Font does not exist.');
 	}
 
-	await downloadVersion(fontId, version, request.clone(), env);
+	await downloadFile(fontId, version, file, request.clone(), env);
 
 	// Check R2 bucket for file
 	item = await env.BUCKET.get(`${id}/${file}`);
@@ -88,8 +88,8 @@ router.get('/fonts/:id/:file', withParams, async (request, env, ctx) => {
 router.all('*', () =>
 	error(
 		404,
-		'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api'
-	)
+		'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api',
+	),
 );
 
 export default router;

@@ -1,4 +1,4 @@
-import { type IDResponse } from 'common-api/types';
+import { getMetadata } from 'common-api/util';
 import {
 	error,
 	type IRequestStrict,
@@ -8,7 +8,12 @@ import {
 } from 'itty-router';
 
 import { type CFRouterContext } from './types';
-import { bucketPath, downloadFile, downloadManifest, generateZip } from './update';
+import {
+	bucketPath,
+	downloadFile,
+	downloadManifest,
+	generateZip,
+} from './update';
 import { generateManifest, generateManifestItem } from './util';
 
 interface DownloadRequest extends IRequestStrict {
@@ -21,12 +26,12 @@ const router = Router<DownloadRequest, CFRouterContext>();
 router.post('/v1/:id', withParams, async (request, env, _ctx) => {
 	const { id } = request;
 
-	const metadata = await env.FONTS.get<IDResponse>(id, 'json');
+	const metadata = await getMetadata(id, request.clone(), env);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
 
-	const baseManifest = generateManifest(id, metadata);
+	const baseManifest = await generateManifest(id, metadata);
 
 	// Search for a list of existing files and prune out those that already exist
 	const existingFiles = await env.BUCKET.list({
@@ -49,13 +54,14 @@ router.post('/v1/:id', withParams, async (request, env, _ctx) => {
 
 router.post('/v1/:id/:file', withParams, async (request, env, _ctx) => {
 	const { id, file } = request;
+	const [fontId] = id.split('@');
 
-	const metadata = await env.FONTS.get<IDResponse>(id, 'json');
+	const metadata = await getMetadata(fontId, request, env);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
 
-	const manifestItem = generateManifestItem(id, file, metadata);
+	const manifestItem = await generateManifestItem(id, file, metadata);
 	await downloadFile(manifestItem, env);
 
 	return text('Success.');

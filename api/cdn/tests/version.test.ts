@@ -1,6 +1,5 @@
+import { getVersion } from 'common-api/version';
 import { beforeEach, describe, expect, it } from 'vitest';
-
-import { getVersion } from '../src/version';
 
 describe('version tag from url', () => {
 	beforeEach(async () => {

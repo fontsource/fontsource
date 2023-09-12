@@ -35,6 +35,7 @@ const downloadFile = async (manifest: Manifest, env: Env) => {
 	const buffer = await res.arrayBuffer();
 
 	// Add to bucket
+	console.log(bucketPath(manifest));
 	await env.BUCKET.put(bucketPath(manifest), buffer);
 
 	// If woff, decompress and add to ttf folder
@@ -102,7 +103,7 @@ const generateZip = async (id: string, version: string, env: Env) => {
 		return error(404, 'Not Found. Font does not exist.');
 	}
 
-	const fullManifest = generateManifest(id, metadata);
+	const fullManifest = await generateManifest(id, metadata);
 	// For every woff file, generate an equivalent manifest entry for ttf
 	for (const file of fullManifest) {
 		if (file.extension === 'woff') {

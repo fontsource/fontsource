@@ -4,8 +4,12 @@ import { StatusError } from 'itty-router';
 
 import { type Manifest } from './types';
 
-export const generateManifestItem = (tag: string, file: string, metadata: IDResponse): Manifest => {
-	const { id, version } = splitTag(tag);
+export const generateManifestItem = async (
+	tag: string,
+	file: string,
+	metadata: IDResponse,
+): Promise<Manifest> => {
+	const { id, version } = await splitTag(tag);
 	const [filename, extension] = file.split('.');
 	const [subset, weight, style] = filename.split('-');
 	if (!subset || !weight || !style) {
@@ -28,14 +32,14 @@ export const generateManifestItem = (tag: string, file: string, metadata: IDResp
 	};
 };
 
-export const generateManifest = (
+export const generateManifest = async (
 	tag: string,
 	metadata: IDResponse,
-): Manifest[] => {
-	const { id, version } = splitTag(tag);
+): Promise<Manifest[]> => {
+	const { id, version } = await splitTag(tag);
 
 	if (id !== metadata.id) {
-		throw new StatusError(400, 'Bad Request. Invalid ID.');
+		throw new StatusError(400, 'Bad Request. Invalid font sID.');
 	}
 
 	// Generate manifest

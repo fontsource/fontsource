@@ -1,4 +1,4 @@
-import { type IDResponse } from 'common-api/types';
+import { type StatusErrorObject } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
 const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'otf'] as const;
@@ -9,25 +9,6 @@ export const isAcceptedExtension = (
 ): extension is AcceptedExtension =>
 	ACCEPTED_EXTENSIONS.includes(extension as AcceptedExtension);
 
-// Fetch latest metadata from metadata worker
-export const getMetadata = async (id: string, req: Request, env: Env) => {
-	const apiPathname = `/v1/fonts/${id}`;
-	const url = new URL(req.url);
-	url.pathname = apiPathname;
-
-	// Update incoming request to use new pathname
-	const newRequest = new Request(url.toString(), req);
-
-	const metadata = await env.METADATA.fetch(newRequest);
-	if (!metadata.ok) {
-		throw new Error(
-			`Bad response from metadata worker. Status: ${String(metadata.status)}`,
-		);
-	}
-
-	return await metadata.json<IDResponse>();
-};
-
 // Download specified version from download worker
 export const downloadVersion = async (
 	id: string,
@@ -35,17 +16,41 @@ export const downloadVersion = async (
 	req: Request,
 	env: Env,
 ) => {
-	const apiPathname = `/v1/fonts/${id}/${version}`;
+	const apiPathname = `/v1/${id}@${version}`;
 	const url = new URL(req.url);
 	url.pathname = apiPathname;
-	console.log(apiPathname);
 
-	const newRequest = new Request(url.toString(), req);
+	const newRequest = new Request(url.toString(), { ...req, method: 'POST' });
 
 	const response = await env.DOWNLOAD.fetch(newRequest);
 	if (!response.ok) {
-		throw new StatusError(response.status,
-			`Bad response from download worker. Status: ${String(response.status)}`,
+		const error = await response.json<StatusErrorObject>();
+		throw new StatusError(
+			response.status,
+			`Bad response from download worker. ${error.error}`,
+		);
+	}
+};
+
+export const downloadFile = async (
+	id: string,
+	version: string,
+	file: string,
+	req: Request,
+	env: Env,
+) => {
+	const apiPathname = `/v1/${id}@${version}/${file}`;
+	const url = new URL(req.url);
+	url.pathname = apiPathname;
+
+	const newRequest = new Request(url.toString(), { ...req, method: 'POST' });
+
+	const response = await env.DOWNLOAD.fetch(newRequest);
+	if (!response.ok) {
+		const error = await response.json<StatusErrorObject>();
+		throw new StatusError(
+			response.status,
+			`Bad response from download worker. ${error.error}`,
 		);
 	}
 };
