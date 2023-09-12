@@ -119,7 +119,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 			mih={{ base: '150px', sm: displaySelect === 'grid' ? '332px' : '150px' }}
 		>
 			<Skeleton visible={loading}>
-				<Text size={fontSize} style={{ fontFamily: hit.family }}>
+				<Text size={fontSize} style={{ fontFamily: `"${hit.family}"` }}>
 					{currentPreview}
 				</Text>
 			</Skeleton>

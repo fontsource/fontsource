@@ -127,7 +127,7 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 						variant="unstyled"
 						sx={{
 							input: {
-								fontFamily: family,
+								fontFamily: `"${family}"`,
 								fontWeight: weight,
 								fontSize: state.size,
 								color: state.color,
