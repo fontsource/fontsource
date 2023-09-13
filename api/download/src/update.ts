@@ -1,5 +1,5 @@
-import { getMetadata } from 'common-api/util';
-import { error, StatusError } from 'itty-router';
+import { type IDResponse } from 'common-api/types';
+import { StatusError } from 'itty-router';
 import JSZip from 'jszip';
 import PQueue from 'p-queue';
 // @ts-expect-error - no types
@@ -89,6 +89,7 @@ const downloadManifest = async (manifest: Manifest[], env: Env) => {
 const generateZip = async (
 	id: string,
 	version: string,
+	metadata: IDResponse,
 	req: Request,
 	env: Env,
 ) => {
@@ -101,13 +102,7 @@ const generateZip = async (
 	const webfonts = zip.folder('webfonts');
 	const ttf = zip.folder('ttf');
 
-	// Generate a full manifest to track all files
-	const metadata = await getMetadata(id, req.clone(), env);
-	if (!metadata) {
-		return error(404, 'Not Found. Font does not exist.');
-	}
-
-	const fullManifest = await generateManifest(id, metadata);
+	const fullManifest = await generateManifest(`${id}@${version}`, metadata);
 	// For every woff file, generate an equivalent manifest entry for ttf
 	for (const file of fullManifest) {
 		if (file.extension === 'woff') {

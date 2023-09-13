@@ -8,7 +8,7 @@ import { unstable_dev, type UnstableDevWorker } from 'wrangler';
 
 describe('download worker', () => {
 	let metadataWorker: UnstableDevWorker;
-	let downloadWorker: UnstableDevWorker;
+	let worker: UnstableDevWorker;
 
 	beforeAll(async () => {
 		metadataWorker = await unstable_dev(
@@ -18,22 +18,19 @@ describe('download worker', () => {
 				experimental: { disableExperimentalWarning: true },
 			},
 		);
-		downloadWorker = await unstable_dev(
-			path.resolve(__dirname, '../src/worker.ts'),
-			{
-				config: path.resolve(__dirname, '../wrangler.toml'),
-				experimental: { disableExperimentalWarning: true },
-			},
-		);
+		worker = await unstable_dev(path.resolve(__dirname, '../src/worker.ts'), {
+			config: path.resolve(__dirname, '../wrangler.toml'),
+			experimental: { disableExperimentalWarning: true },
+		});
 	});
 
 	afterAll(async () => {
 		await metadataWorker.stop();
-		await downloadWorker.stop();
+		await worker.stop();
 	});
 
 	it('should successfully generate zip with latest', async () => {
-		const resp = await downloadWorker.fetch('/v1/abel@latest', {
+		const resp = await worker.fetch('/v1/abel@latest', {
 			method: 'POST',
 		});
 
@@ -42,7 +39,7 @@ describe('download worker', () => {
 	});
 
 	it('should successfully generate zip with version', async () => {
-		const resp = await downloadWorker.fetch('/v1/abel@5', {
+		const resp = await worker.fetch('/v1/abel@5', {
 			method: 'POST',
 		});
 
@@ -51,72 +48,54 @@ describe('download worker', () => {
 	});
 
 	it('should successfully download woff2 file with latest', async () => {
-		const resp = await downloadWorker.fetch(
-			'/v1/abel@latest/latin-400-normal.woff2',
-			{
-				method: 'POST',
-			},
-		);
+		const resp = await worker.fetch('/v1/abel@latest/latin-400-normal.woff2', {
+			method: 'POST',
+		});
 
 		const text = await resp.text();
 		expect(text).toEqual('Success.');
 	});
 
 	it('should successfully download woff2 file with version', async () => {
-		const resp = await downloadWorker.fetch(
-			'/v1/abel@5.0/latin-400-normal.woff2',
-			{
-				method: 'POST',
-			},
-		);
+		const resp = await worker.fetch('/v1/abel@5.0/latin-400-normal.woff2', {
+			method: 'POST',
+		});
 
 		const text = await resp.text();
 		expect(text).toEqual('Success.');
 	});
 
 	it('should successfully download woff file with latest', async () => {
-		const resp = await downloadWorker.fetch(
-			'/v1/abel@latest/latin-400-normal.woff',
-			{
-				method: 'POST',
-			},
-		);
+		const resp = await worker.fetch('/v1/abel@latest/latin-400-normal.woff', {
+			method: 'POST',
+		});
 
 		const text = await resp.text();
 		expect(text).toEqual('Success.');
 	});
 
 	it('should successfully download woff file with version', async () => {
-		const resp = await downloadWorker.fetch(
-			'/v1/abel@5.0.8/latin-400-normal.woff',
-			{
-				method: 'POST',
-			},
-		);
+		const resp = await worker.fetch('/v1/abel@5.0.8/latin-400-normal.woff', {
+			method: 'POST',
+		});
 
 		const text = await resp.text();
 		expect(text).toEqual('Success.');
 	});
 
 	it('should successfully download ttf file with latest', async () => {
-		const resp = await downloadWorker.fetch(
-			'/v1/abel@latest/latin-400-normal.ttf',
-			{
-				method: 'POST',
-			},
-		);
+		const resp = await worker.fetch('/v1/abel@latest/latin-400-normal.ttf', {
+			method: 'POST',
+		});
 
 		const text = await resp.text();
 		expect(text).toEqual('Success.');
 	});
 
 	it('should successfully download ttf file with version', async () => {
-		const resp = await downloadWorker.fetch(
-			'/v1/abel@5.0.8/latin-400-normal.ttf',
-			{
-				method: 'POST',
-			},
-		);
+		const resp = await worker.fetch('/v1/abel@5.0.8/latin-400-normal.ttf', {
+			method: 'POST',
+		});
 
 		const text = await resp.text();
 		expect(text).toEqual('Success.');

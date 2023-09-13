@@ -9,7 +9,10 @@ export const getMetadata = async (id: string, req: Request, env: Env) => {
 	url.pathname = apiPathname;
 
 	// Update incoming request to use new pathname
-	const newRequest = new Request(url.toString(), { ...req, method: 'GET' });
+	const newRequest = new Request(url.toString(), {
+		...req.clone(),
+		method: 'GET',
+	});
 	const metadata = await env.METADATA.fetch(newRequest);
 	if (!metadata.ok) {
 		const error = await metadata.json<StatusErrorObject>();
@@ -31,7 +34,10 @@ export const splitTag = async (tag: string): Promise<Tag> => {
 	// Parse tag for version e.g roboto@1.1.1
 	const [id, versionTag] = tag.split('@');
 	if (!versionTag) {
-		throw new StatusError(400, 'Bad Request. Invalid tag format.');
+		throw new StatusError(
+			400,
+			'Bad Request. Invalid tag format.' + tag + id + versionTag,
+		);
 	}
 
 	// Validate version tag

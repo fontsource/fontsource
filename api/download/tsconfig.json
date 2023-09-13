@@ -7,10 +7,7 @@
 		/* Modules */
 		"module": "es2022",
 		"moduleResolution": "node",
-		"types": [
-			"@cloudflare/workers-types",
-			"vitest-environment-miniflare/globals"
-		],
+		"types": ["@cloudflare/workers-types"],
 		"resolveJsonModule": true,
 
 		/* JavaScript Support */
