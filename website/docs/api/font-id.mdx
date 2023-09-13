@@ -5,13 +5,43 @@ section: Reference
 
 ## Font ID
 
-The Font ID endpoint allows you to retrieve detailed information about a specific font from Fontsource. The font ID is appended to the base URL as follows: [`api.fontsource.org/v1/fonts/abel`](https://api.fontsource.org/v1/fonts/abel)
+---
+
+The Font ID endpoint allows you to retrieve detailed information about a specific font supported by Fontsource.
+
+### HTTP Request
+
+- `GET https://api.fontsource.org/v1/fonts/{id}`
 
 ### Response
 
 The API response for the Font ID endpoint is a JSON object that provides comprehensive details about the font.
 
-Example response for the "Abel" font:
+#### Attributes:
+
+Returns an object with:
+
+| Attribute    | Type                         | Description          |
+| ------------ | ---------------------------- | -------------------- |
+| id           | string                       | The font ID          |
+| family       | string                       | The font family      |
+| subsets      | string[]                     | Language subsets     |
+| weights      | number[]                     | Font weights         |
+| styles       | string[]                     | Font styles          |
+| unicodeRange | Record&lt;string, string&gt; | Unicode range        |
+| defSubset    | string                       | Default subset       |
+| variable     | boolean                      | Is the font variable |
+| lastModified | string                       | Last modified date   |
+| category     | string                       | Font category        |
+| version      | string                       | Font version         |
+| type         | string                       | Font type            |
+| variants     | Record&lt;string, object&gt; | File variants        |
+
+<br />
+
+Variants is an object that creates records starting with `weight`, `style`, `subset` followed by a URL object containing each supported file format (`woff2`, `woff`, `ttf`).
+
+#### Response example:
 
 ```json
 {
@@ -44,27 +74,6 @@ Example response for the "Abel" font:
   }
 }
 ```
+#### Example:
 
-### Properties
-
-The Font ID response includes the following properties:
-
-- `id`:** The unique identifier of the font.
-- `family`:** The name of the font family.
-- `subsets`:** An array of string subsets supported by the font.
-- `weights`:** An array of integer weights available for the font.
-- `styles`:** An array of string styles which may contain `normal` and/or `italic`.
-- `unicodeRange`:** An object containing the unicode range for each subset. The key is the subset name and the value is the unicode range.
-- `defSubset`:** The default subset for the font.
-- `variable`:** A boolean value indicating if the font is a variable font.
-- `lastModified`:** The date the font was last modified.
-- `category`:** The font category or classification.
-- `version`:** The source version of the font.
-- `type`:** The source type of the font.
-- `variants`:** An object containing the variants of the font. The key is the weight and the value is an object containing the styles and subsets for that weight.
-
-The `variants` property further includes variant-specific details such as URLs for different file formats (`woff2`, `woff`, `ttf`) based on subsets, weights, and styles.
-
-Please note that the provided example response represents the "Abel" font, and the actual response for other fonts may vary based on their specific attributes and settings.
-
-For more information, refer to the [Fontlist](/docs/api/fontlist) and [Fonts](/docs/api/fonts) sections of the documentation.
+- `GET [https://api.fontsource.org/v1/fonts/abel](https://api.fontsource.org/v1/fonts/abel)`

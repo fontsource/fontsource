@@ -10,10 +10,10 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/v1/download/:id', withParams, async (request, env, _ctx) => {
+router.get('/v1/download/:id', withParams, async (request, env, ctx) => {
 	const id = request.id;
 
-	const data = await getOrUpdateId(id, env);
+	const data = await getOrUpdateId(id, env, ctx);
 	if (!data) {
 		return error(404, 'Not Found.');
 	}
@@ -35,8 +35,8 @@ router.get('/v1/download/:id', withParams, async (request, env, _ctx) => {
 router.all('*', () =>
 	error(
 		404,
-		'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api'
-	)
+		'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api',
+	),
 );
 
 export default router;

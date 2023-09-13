@@ -43,7 +43,7 @@
 		"fs-extra": "^11.1.1",
 		"google-font-metadata": "^5.2.0",
 		"json-stringify-pretty-compact": "^4.0.0",
-		"p-queue": "^7.3.4",
+		"p-queue": "^7.4.1",
 		"pathe": "^1.1.1",
 		"picocolors": "^1.0.0"
 	},
@@ -51,12 +51,12 @@
 		"@ayuhito/eslint-config": "^0.4.1",
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "^20.2.5",
-		"eslint": "^8.42.0",
+		"eslint": "^8.49.0",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.10.0",
 		"sass": "^1.62.1",
 		"tsx": "^3.12.7",
-		"typescript": "^5.1.3"
+		"typescript": "^5.2.2"
 	},
 	"files": [
 		"dist/*"

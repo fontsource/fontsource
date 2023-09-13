@@ -8,7 +8,7 @@ interface FileGenerator {
 // We need to make a POST request to the download worker
 const createRequest = (
 	request: Request,
-	{ id, subsets, weights, styles }: FileGenerator
+	{ id, subsets, weights, styles }: FileGenerator,
 ) => {
 	const newRequestInit = {
 		method: 'POST',
@@ -24,7 +24,7 @@ const createRequest = (
 const getOrUpdateZip = async (
 	request: Request,
 	data: FileGenerator,
-	env: Env
+	env: Env,
 ) => {
 	// Check if download.zip exists in bucket
 	const zip = await env.BUCKET.get(`${data.id}@latest/download.zip`);
@@ -32,7 +32,8 @@ const getOrUpdateZip = async (
 		// Try calling download worker
 		await env.DOWNLOAD.fetch(createRequest(request, data));
 		// Check again if download.zip exists in bucket
-		return await env.BUCKET.get(`${data.id}@latest/download.zip`);
+		const zip = await env.BUCKET.get(`${data.id}@latest/download.zip`);
+		return zip;
 	}
 	return zip;
 };
@@ -41,7 +42,7 @@ const getOrUpdateFile = async (
 	request: Request,
 	data: FileGenerator,
 	file: string,
-	env: Env
+	env: Env,
 ) => {
 	// Check if file exists in bucket
 	const font = await env.BUCKET.get(`${data.id}@latest/${file}`);
@@ -49,7 +50,8 @@ const getOrUpdateFile = async (
 		// Try calling download worker
 		await env.DOWNLOAD.fetch(createRequest(request, data));
 		// Check again if file exists in bucket
-		return await env.BUCKET.get(`${data.id}@latest/${file}`);
+		const zip = await env.BUCKET.get(`${data.id}@latest/${file}`);
+		return zip;
 	}
 	return font;
 };
