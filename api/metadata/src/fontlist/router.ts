@@ -7,13 +7,6 @@ import { type Fontlist, isFontlistQuery } from './types';
 const router = Router<IRequestStrict, CFRouterContext>();
 
 router.get('/fontlist', async (request, env, ctx) => {
-	// Check cf cache
-	const cacheKey = new Request(request.url, request);
-	const cache = caches.default;
-
-	const response = await cache.match(cacheKey);
-	if (response) return response;
-
 	// Get query string
 	const url = new URL(request.url);
 	const queryString = url.searchParams.toString();
