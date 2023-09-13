@@ -6,6 +6,7 @@ Learn more about the API at [fontsource.org](https://fontsource.org/docs/api/int
 
 ### Workers
 
+- [common](./common) - A shared library of common functions and types used by the other workers.
 - [download](./download) - An unbound worker that populates the R2 bucket with the latest fonts.
 - [metadata](./metadata) - The API worker that serves the KV metadata for the fonts.
 

@@ -1,0 +1,11 @@
+{
+	"name": "common-api",
+	"private": true,
+	"description": "Shared utilities for the workers",
+	"author": "Ayuhito <hello@ayuhito.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20230904.0",
+		"itty-router": "^4.0.22"
+	}
+}
