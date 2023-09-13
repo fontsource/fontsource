@@ -1,5 +1,5 @@
 import type { FontsourceMetadata } from '../types';
-import { METADATA_URL } from '../utils';
+import { METADATA_URL, TTL_TIME } from '../utils';
 import type { Fontlist, FontlistQueries } from './types';
 
 const updateMetadata = async (env: Env) => {
@@ -10,7 +10,7 @@ const updateMetadata = async (env: Env) => {
 	await env.FONTLIST.put('metadata', JSON.stringify(data), {
 		metadata: {
 			// We need to set a custom ttl for a stale-while-revalidate strategy
-			ttl: Date.now() + 1000 * 60 * 60, // 1 hour
+			ttl: Date.now() + TTL_TIME,
 		},
 	});
 
@@ -33,7 +33,7 @@ const updateList = async (key: FontlistQueries, env: Env) => {
 	// Store the list in KV
 	await env.FONTLIST.put(key, JSON.stringify(list), {
 		metadata: {
-			ttl: Date.now() + 1000 * 60 * 60, // 1 hour
+			ttl: Date.now() + TTL_TIME,
 		},
 	});
 	return list;
