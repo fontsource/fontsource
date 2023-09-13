@@ -5,6 +5,8 @@ section: Reference
 
 ## Font ID
 
+---
+
 The Font ID endpoint allows you to retrieve detailed information about a specific font supported by Fontsource.
 
 ### HTTP Request
@@ -16,7 +18,7 @@ The Font ID endpoint allows you to retrieve detailed information about a specifi
 
 The API response for the Font ID endpoint is a JSON object that provides comprehensive details about the font.
 
-**Attributes**:
+#### Attributes:
 
 Returns an object with:
 
@@ -37,9 +39,11 @@ Returns an object with:
 | variants     | Record&lt;string, object&gt; | File variants        |
 | npmVersions  | string[]                     | NPM versions         |
 
+<br />
+
 Variants is an object that creates records starting with `weight`, `style`, `subset` followed by a URL object containing each supported file format (`woff2`, `woff`, `ttf`).
 
-**Response example**:
+#### Response example:
 
 ```json
 {
@@ -78,7 +82,7 @@ Variants is an object that creates records starting with `weight`, `style`, `sub
 
 The Font ID endpoint supports queries that allow you to only retrieve the information you need.
 
-**Example**:
+#### Example:
 
 - `GET https://api.fontsource.org/v1/fonts/abel?weights`
 - `GET https://api.fontsource.org/v1/fonts/abel?weights&styles`

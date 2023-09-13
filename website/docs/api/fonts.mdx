@@ -17,7 +17,7 @@ The Fonts endpoint provides an array of individual font objects.
 
 The API response for the Fonts endpoint is an array of font objects. Each font object represents a specific font and provides detailed information about it.
 
-**Attributes**:
+#### Attributes:
 
 Returns an array of:
 
@@ -35,7 +35,7 @@ Returns an array of:
 | version      | string   | Font version         |
 | type         | string   | Font type            |
 
-**Response example**:
+#### Response example:
 
 ```json
 [
@@ -60,13 +60,14 @@ Returns an array of:
 
 The Fonts endpoint allows you to send queries to filter the list of fonts. Multiple queries can be combined using the & operator. Attributes in arrays can be separated using a comma separator `,` which acts as an AND operator.
 
+<br />
+
 You can include additional queries in the URL to filter the responses based on specific criteria. For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext`, as well as if it is a variable font.
 
 #### Options
 
 You can use the following queries to filter the list of fonts:
 
----
 
 | Query        | Type     | Example                 |
 | ------------ | -------- | ----------------------- |
