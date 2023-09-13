@@ -3,8 +3,8 @@ import type { FontMetadata } from '../types';
 import type { ArrayMetadata, FontVariants, IDResponse } from './types';
 
 // This updates the main array of fonts dataset
-const updateArrayMetadata = async (env: Env) => {
-	const data = await getOrUpdateMetadata(env);
+const updateArrayMetadata = async (env: Env, ctx: ExecutionContext) => {
+	const data = await getOrUpdateMetadata(env, ctx);
 
 	// v1 Response
 	const list: ArrayMetadata = [];
@@ -61,9 +61,10 @@ const generateFontVariants = ({
 
 const updateId = async (
 	id: string,
-	env: Env
+	env: Env,
+	ctx: ExecutionContext,
 ): Promise<IDResponse | undefined> => {
-	const data = await getOrUpdateMetadata(env);
+	const data = await getOrUpdateMetadata(env, ctx);
 
 	if (data[id] === undefined) {
 		return;

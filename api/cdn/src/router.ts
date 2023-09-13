@@ -27,6 +27,7 @@ router.get('/fonts/:id/:file', withParams, async (request, env, ctx) => {
 	if (!extension || !isAcceptedExtension(extension)) {
 		return error(400, 'Bad Request. Invalid file extension.');
 	}
+	const isZip = extension === 'zip';
 
 	// Check R2 bucket for file
 	let item = await env.BUCKET.get(`${id}/${file}`);
@@ -43,7 +44,10 @@ router.get('/fonts/:id/:file', withParams, async (request, env, ctx) => {
 			status: 200,
 			headers: {
 				'Cache-Control': cacheControl,
-				'Content-Type': `font/${extension}`,
+				'Content-Type': isZip ? 'application/zip' : `font/${extension}`,
+				...(isZip
+					? { 'Content-Disposition': `attachment; filename="${id}.zip"` }
+					: {}),
 			},
 		});
 		ctx.waitUntil(cache.put(cacheKey, response.clone()));
@@ -73,7 +77,10 @@ router.get('/fonts/:id/:file', withParams, async (request, env, ctx) => {
 			status: 200,
 			headers: {
 				'Cache-Control': cacheControl,
-				'Content-Type': `font/${extension}`,
+				'Content-Type': isZip ? 'application/zip' : `font/${extension}`,
+				...(isZip
+					? { 'Content-Disposition': `attachment; filename="${id}.zip"` }
+					: {}),
 			},
 		});
 		ctx.waitUntil(cache.put(cacheKey, response.clone()));

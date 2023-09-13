@@ -1,7 +1,7 @@
 import { type StatusErrorObject } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
-const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'otf'] as const;
+const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'otf', 'zip'] as const;
 type AcceptedExtension = (typeof ACCEPTED_EXTENSIONS)[number];
 
 export const isAcceptedExtension = (
@@ -39,7 +39,9 @@ export const downloadFile = async (
 	req: Request,
 	env: Env,
 ) => {
-	const apiPathname = `/v1/${id}@${version}/${file}`;
+	const apiPathname = file.endsWith('.zip')
+		? `/v1/${id}@${version}`
+		: `/v1/${id}@${version}/${file}`;
 	const url = new URL(req.url);
 	url.pathname = apiPathname;
 
