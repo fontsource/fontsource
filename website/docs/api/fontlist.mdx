@@ -5,13 +5,26 @@ section: Reference
 
 ## Fontlist
 
-The Fontlist endpoint provides an object that contains a list of fonts and their associated types. You can access this endpoint using the URL [`api.fontsource.org/fontlist`](https://api.fontsource.org/fontlist).
+The Fontlist endpoint provides an object that contains a list of fonts and their associated properties.
+
+### HTTP Request
+
+`GET https://api.fontsource.org/fontlist`
 
 ### Response
 
 The API response for the Fontlist endpoint is a JSON object that represents the available fonts and their corresponding types.
 
-Example response:
+**Attributes**:
+
+Returns an object of:
+
+| Attribute | Type                             | Description   |
+| --------- | -------------------------------- | ------------- |
+| [id]      | string                           | The font ID   |
+| type      | google &#124; icons &#124; other | The font type |
+
+**Response example**:
 
 ```json
 {
@@ -23,12 +36,26 @@ Example response:
 }
 ```
 
-### Font Types
+### Queries
 
-The Fontlist API supports the following font types:
+The Fontlist API supports the following queries without values:
 
-- `google`: Fonts sourced from Google Fonts.
-- `icons`: Icon fonts.
-- `other`: Fonts from other sources.
+| Query        | Returns ID Property | Property Type |
+| ------------ | ------------------- | ------------- |
+| family       | Family names        | string        |
+| subsets      | Supported subsets   | string[]      |
+| weights      | Supported weights   | number[]      |
+| styles       | Supported styles    | string[]      |
+| variable     | If font is variable | boolean       |
+| category     | Font category       | string        |
+| lastModified | Last modified date  | string        |
+| version      | Font version        | string        |
+| type         | Font type           | string        |
 
-The font types provide information about the source or category of each font.
+**Example**:
+
+- `GET https://api.fontsource.org/fontlist?family`
+- `GET https://api.fontsource.org/fontlist?subsets`
+- `GET https://api.fontsource.org/fontlist?lastModified`
+
+> **Note:** You cannot query for multiple properties at once.
