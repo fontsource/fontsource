@@ -16,7 +16,7 @@ Our full documentation and search directory can be found [here](https://fontsour
 
 - Your **fonts load offline**. This feature is beneficial for Progressive Web Apps and situations where you have limited or no access to the internet.
 
-- **Support for fonts outside the Google Font ecosystem**. This repository is constantly evolving with [other Open Source fonts](https://github.com/fontsource/fontsource/blob/master/FONTLIST.md). Feel free to contribute!
+- **Support for fonts outside the Google Font ecosystem**. This repository is constantly evolving with [other Open Source fonts](https://github.com/fontsource/font-files). Feel free to contribute!
 
 ## API
 
@@ -31,7 +31,7 @@ See [CHANGELOG.md](https://github.com/fontsource/fontsource/blob/main/CHANGELOG.
 For Open Source fonts that are not automatically updated by the Google ecosystem, we have a generic packager that builds CSS files for the project.
 
 Make a request by creating an [issue](https://github.com/fontsource/fontsource/issues)!
-If you wish to submit a PR yourself, check out the documentation on packaging the fonts yourself [here](https://github.com/fontsource/fontsource/blob/main/scripts/generic/README.md).
+If you wish to submit a PR yourself, check out the documentation on packaging the fonts yourself [here](https://github.com/fontsource/font-files/blob/main/CONTRIBUTING.md).
 
 ## Licensing
 
