@@ -12,15 +12,15 @@ import { getOrUpdateArrayMetadata, getOrUpdateId } from './get';
 import { isFontsQueries } from './types';
 
 interface FontRequest extends IRequestStrict {
-	font: string;
+	id: string;
 	file: string;
 }
 
 const router = Router<FontRequest, CFRouterContext>();
 
-router.get('/v1/fonts', async (request, env, _ctx) => {
+router.get('/v1/fonts', async (request, env, ctx) => {
 	const url = new URL(request.url);
-	const data = await getOrUpdateArrayMetadata(env);
+	const data = await getOrUpdateArrayMetadata(env, ctx);
 
 	// If no query string, return the entire list
 	if (url.searchParams.toString().length === 0) {
@@ -66,10 +66,10 @@ router.get('/v1/fonts', async (request, env, _ctx) => {
 	return json(filtered);
 });
 
-router.get('/v1/fonts/:font', withParams, async (request, env, _ctx) => {
-	const id = request.font;
+router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
+	const { id } = request;
 
-	const data = await getOrUpdateId(id, env);
+	const data = await getOrUpdateId(id, env, ctx);
 	if (!data) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
@@ -78,11 +78,10 @@ router.get('/v1/fonts/:font', withParams, async (request, env, _ctx) => {
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
-router.get('/v1/fonts/:font/:file', withParams, async (request, env, _ctx) => {
-	const id = request.font;
-	const file = request.file;
+router.get('/v1/fonts/:id/:file', withParams, async (request, env, ctx) => {
+	const { id, file } = request;
 
-	const data = await getOrUpdateId(id, env);
+	const data = await getOrUpdateId(id, env, ctx);
 	if (!data) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
@@ -133,8 +132,8 @@ router.get('/v1/fonts/:font/:file', withParams, async (request, env, _ctx) => {
 router.all('*', () =>
 	error(
 		404,
-		'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api'
-	)
+		'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api',
+	),
 );
 
 export default router;
