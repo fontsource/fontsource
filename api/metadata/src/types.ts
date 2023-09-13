@@ -35,4 +35,16 @@ interface FontMetadata {
 
 type FontsourceMetadata = Record<string, FontMetadata>;
 
-export type { CFRouterContext, FontMetadata, FontsourceMetadata };
+type MetadataResponse = Record<string, Omit<FontMetadata, 'npmVersion'>>;
+
+interface TTLMetadata {
+	ttl: number;
+}
+
+export type {
+	CFRouterContext,
+	FontMetadata,
+	FontsourceMetadata,
+	MetadataResponse,
+	TTLMetadata,
+};

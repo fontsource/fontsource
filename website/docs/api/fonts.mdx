@@ -7,13 +7,36 @@ section: Reference
 
 ---
 
-The Fonts endpoint provides an array of individual font objects. You can access this endpoint using the URL [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
+The Fonts endpoint provides an array of individual font objects.
+
+### HTTP Request
+
+- `GET [https://api.fontsource.org/v1/fonts](https://api.fontsource.org/v1/fonts)`
+- `GET https://api.fontsource.org/v1/fonts?{query}`
 
 ### Response
 
 The API response for the Fonts endpoint is an array of font objects. Each font object represents a specific font and provides detailed information about it.
 
-Example response:
+#### Attributes:
+
+Returns an array of:
+
+| Attribute    | Type     | Description          |
+| ------------ | -------- | -------------------- |
+| id           | string   | The font ID          |
+| family       | string   | The font family      |
+| subsets      | string[] | Language subsets     |
+| weights      | number[] | Font weights         |
+| styles       | string[] | Font styles          |
+| defSubset    | string   | Default subset       |
+| variable     | boolean  | Is the font variable |
+| lastModified | string   | Last modified date   |
+| category     | string   | Font category        |
+| version      | string   | Font version         |
+| type         | string   | Font type            |
+
+#### Response example:
 
 ```json
 [
@@ -36,15 +59,16 @@ Example response:
 
 ### Queries
 
-The Fonts endpoint allows you to send queries to filter the list of fonts. Multiple queries can be combined using the & operator.
+The Fonts endpoint allows you to send queries to filter the list of fonts. Multiple queries can be combined using the & operator. Attributes in arrays can be separated using a comma separator `,` which acts as an AND operator.
+
+<br />
 
 You can include additional queries in the URL to filter the responses based on specific criteria. For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext`, as well as if it is a variable font.
 
-### Options
+#### Options
 
 You can use the following queries to filter the list of fonts:
 
----
 
 | Query        | Type     | Example                 |
 | ------------ | -------- | ----------------------- |
@@ -60,12 +84,8 @@ You can use the following queries to filter the list of fonts:
 | version      | string   | version=v14             |
 | type         | string   | type=google             |
 
-### Known values
+#### Example:
 
----
-
-- subsets: `latin, latin-ext, sinhala, greek, kannada, telugu, vietnamese, hebrew, cyrillic, cyrillic-ext, greek-ext, arabic, devanagari, khmer, tamil, thai, bengali, gujarati, oriya, malayalam, gurmukhi, korean, all, japanese, classic, classic-mini, modern, modern-mini, seggchan, seggchan-mini, cherokee, tibetan, kayah-li, chinese-simplified, base, music, adlam, anatolian-hieroglyphs, armenian, avestan, balinese, bamum, bassa-vah, batak, bhaiksuki, brahmi, buginese, buhid, canadian-aboriginal, carian, caucasian-albanian, chakma, cham, coptic, cuneiform, cypriot, deseret, duployan, egyptian-hieroglyphs, elbasan, elymaic, georgian, glagolitic, gothic, grantha, gunjala-gondi, hanifi-rohingya, hanunoo, hatran, chinese-hongkong, imperial-aramaic, indic-siyaq-numbers, inscriptional-pahlavi, inscriptional-parthian, javanese, kaithi, kharoshthi, khojki, khudawadi, lao, lepcha, limbu, linear-a, linear-b, lisu, lycian, lydian, mahajani, mandaic, manichaean, marchen, masaram-gondi, math, mayan-numerals, medefaidrin, meetei-mayek, meroitic, miao, modi, mongolian, mro, multani, myanmar, nko, nabataean, new-tai-lue, newa, nushu, ogham, ol-chiki, old-hungarian, old-italic, old-north-arabian, old-permic, old-persian, old-sogdian, old-south-arabian, old-turkic, osage, osmanya, pahawh-hmong, palmyrene, pau-cin-hau, phags-pa, phoenician, psalter-pahlavi, rejang, runic, samaritan, saurashtra, sharada, shavian, siddham, sogdian, sora-sompeng, soyombo, sundanese, syloti-nagri, symbols, syriac, tagalog, tagbanwa, tai-le, tai-tham, tai-viet, takri, tamil-supplement, chinese-traditional, thaana, tifinagh, tirhuta, ugaritic, vai, wancho, warang-citi, yi, zanabazar-square, ahom, dogra, ethiopic, nyiakeng-puachue-hmong, tangut, yezidi, farsi-digits, farsi-digits-without-latin, without-latin, latin-oblique`
-
-- weights: `100,200,300,400,500,600,700,800,900`
-
-- styles: `italic, normal`
+- `GET [https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true)`
+- `GET [https://api.fontsource.org/v1/fonts?weights=400,900&styles=normal](https://api.fontsource.org/v1/fonts?weights=400,900&styles=normal)`
+- `GET [https://api.fontsource.org/v1/fonts?lastModified=2022-09-22](https://api.fontsource.org/v1/fonts?lastModified=2022-09-22)`

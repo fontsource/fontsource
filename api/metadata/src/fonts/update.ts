@@ -3,8 +3,8 @@ import type { FontMetadata } from '../types';
 import type { ArrayMetadata, FontVariants, IDResponse } from './types';
 
 // This updates the main array of fonts dataset
-const updateArrayMetadata = async (env: Env) => {
-	const data = await getOrUpdateMetadata(env);
+const updateArrayMetadata = async (env: Env, ctx: ExecutionContext) => {
+	const data = await getOrUpdateMetadata(env, ctx);
 
 	// v1 Response
 	const list: ArrayMetadata = [];
@@ -26,7 +26,12 @@ const updateArrayMetadata = async (env: Env) => {
 	}
 
 	// Store the list in KV
-	await env.FONTLIST.put('metadata_arr', JSON.stringify(list));
+	await env.FONTLIST.put('metadata_arr', JSON.stringify(list), {
+		metadata: {
+			// We need to set a custom ttl for a stale-while-revalidate strategy
+			ttl: Date.now() + 1000 * 60 * 60, // 1 hour
+		},
+	});
 	return list;
 };
 
@@ -61,9 +66,10 @@ const generateFontVariants = ({
 
 const updateId = async (
 	id: string,
-	env: Env
+	env: Env,
+	ctx: ExecutionContext,
 ): Promise<IDResponse | undefined> => {
-	const data = await getOrUpdateMetadata(env);
+	const data = await getOrUpdateMetadata(env, ctx);
 
 	if (data[id] === undefined) {
 		return;
@@ -86,7 +92,12 @@ const updateId = async (
 	};
 
 	// Store the list in KV
-	await env.FONTS.put(id, JSON.stringify(value));
+	await env.FONTS.put(id, JSON.stringify(value), {
+		metadata: {
+			// We need to set a custom ttl for a stale-while-revalidate strategy
+			ttl: Date.now() + 1000 * 60 * 60, // 1 hour
+		},
+	});
 	return value;
 };
 

@@ -9,22 +9,26 @@ section: Setup
 
 The Fontsource API provides developers with access to information about the fonts supported by the Fontsource repository.
 
-> **Note:** The API servers are generously sponsored by [JSDelivr](https://www.jsdelivr.com/). We recommend using them as other CDNs may impose restrictions due to certain package sizes exceeding their limits.
+> **Note:** Please [sponsor](https://github.com/sponsors/ayuhito) the project if you use the API to support its development!
 
 ## Usage
 
 ---
 
-To access the Fontsource API, you can use the following URL: [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
+The Fontsource API is a read-only API that can be accessed by any HTTP client. An example URL that accepts a GET request is [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
 
-#####
+### Errors
 
-You can include additional queries in the URL to filter the responses based on specific criteria. For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext`, as well as if it is a variable font.
+| Code | Description                          |
+| ---- | ------------------------------------ |
+| 200  | The request was successful           |
+| 400  | The request was malformed            |
+| 404  | The requested resource was not found |
+| 422  | The request was unprocessable        |
+| 429  | The request was rate limited         |
+| 500  | An internal server error occurred    |
 
-## Contents
+### Limits
 
-- **[Fontlist:](/docs/api/fontlist)** Retrieve a list of available fonts.
-- **[Fonts:](/docs/api/fonts)** Get detailed information about specific fonts.
-- **[Font ID:](/docs/api/font-id)** Access information about a font based on its ID.
-
-Please refer to the respective sections for more detailed documentation on each topic.
+- We reserve the right to add more properties to objects, but will never change or remove them.
+- While the intention is not to throttle the API, we reserve the right to do so if necessary under fair use. The current hard limit is 2500 requests per 10 seconds.
