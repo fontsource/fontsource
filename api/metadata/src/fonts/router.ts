@@ -3,6 +3,7 @@ import {
 	type IRequestStrict,
 	json,
 	Router,
+	StatusError,
 	withParams,
 } from 'itty-router';
 
@@ -29,14 +30,12 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 
 	// Filter the results from given queries
 	const queries = url.searchParams.entries();
-	let queryDoesNotExist = false;
 	let filtered = data;
 
 	for (const [key, value] of queries) {
 		// Type guard
 		if (!isFontsQueries(key)) {
-			queryDoesNotExist = true;
-			break;
+			throw new StatusError(400, 'Bad Request. Invalid query parameter.');
 		}
 
 		// Multiple values may be comma separated
@@ -55,11 +54,6 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 			// Coerce to string for boolean responses (variable)
 			return values.includes(String(item[key]));
 		});
-	}
-
-	// If query does not exist, return 400
-	if (queryDoesNotExist) {
-		return error(400, 'Bad Request. Invalid query parameter.');
 	}
 
 	// Return the filtered results
