@@ -1,5 +1,11 @@
 # api
 
+## 0.1.5
+
+### Patch Changes
+
+- [#801](https://github.com/fontsource/fontsource/pull/801) [`7fb5ee6e01`](https://github.com/fontsource/fontsource/commit/7fb5ee6e019ff3d28e11eea61dffbdf97c77a33d) Thanks [@ayuhito](https://github.com/ayuhito)! - This adds SWR caching to the metadata API with 1-hour TTLs to the original source for faster performance and more up-to-date metadata.
+
 ## 0.1.4
 
 ### Patch Changes
