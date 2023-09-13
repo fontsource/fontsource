@@ -20,22 +20,22 @@ The API response for the Font ID endpoint is a JSON object that provides compreh
 
 Returns an object with:
 
-| Attribute    | Type                   | Description          |
-| ------------ | ---------------------- | -------------------- |
-| id           | string                 | The font ID          |
-| family       | string                 | The font family      |
-| subsets      | string[]               | Language subsets     |
-| weights      | number[]               | Font weights         |
-| styles       | string[]               | Font styles          |
-| unicodeRange | Record<string, string> | Unicode range        |
-| defSubset    | string                 | Default subset       |
-| variable     | boolean                | Is the font variable |
-| lastModified | string                 | Last modified date   |
-| category     | string                 | Font category        |
-| version      | string                 | Font version         |
-| type         | string                 | Font type            |
-| variants     | Record<string, object> | File variants        |
-| npmVersions  | string[]               | NPM versions         |
+| Attribute    | Type                         | Description          |
+| ------------ | ---------------------------- | -------------------- |
+| id           | string                       | The font ID          |
+| family       | string                       | The font family      |
+| subsets      | string[]                     | Language subsets     |
+| weights      | number[]                     | Font weights         |
+| styles       | string[]                     | Font styles          |
+| unicodeRange | Record&lt;string, string&gt; | Unicode range        |
+| defSubset    | string                       | Default subset       |
+| variable     | boolean                      | Is the font variable |
+| lastModified | string                       | Last modified date   |
+| category     | string                       | Font category        |
+| version      | string                       | Font version         |
+| type         | string                       | Font type            |
+| variants     | Record&lt;string, object&gt; | File variants        |
+| npmVersions  | string[]                     | NPM versions         |
 
 Variants is an object that creates records starting with `weight`, `style`, `subset` followed by a URL object containing each supported file format (`woff2`, `woff`, `ttf`).
 
