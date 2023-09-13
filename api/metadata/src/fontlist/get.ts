@@ -17,9 +17,9 @@ const getOrUpdateMetadata = async (
 		return await updateMetadata(env);
 	}
 
-	// If the ttl is not set or the ttl is greater than the current time, then return old value
+	// If the ttl is not set or the cache expiry is less than the current time, then return old value
 	// while revalidating the cache
-	if (!metadata?.ttl || metadata.ttl > Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now()) {
 		ctx.waitUntil(updateMetadata(env));
 	}
 
@@ -42,9 +42,7 @@ const getOrUpdateList = async (
 		return await updateList(key, env);
 	}
 
-	// If the ttl is not set or the ttl is greater than the current time, then return old value
-	// while revalidating the cache
-	if (!metadata?.ttl || metadata.ttl > Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now()) {
 		ctx.waitUntil(updateList(key, env));
 	}
 
