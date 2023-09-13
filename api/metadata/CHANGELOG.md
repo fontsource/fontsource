@@ -1,5 +1,11 @@
 # api
 
+## 0.1.6
+
+### Patch Changes
+
+- [#803](https://github.com/fontsource/fontsource/pull/803) [`b3917db10b`](https://github.com/fontsource/fontsource/commit/b3917db10b338c267a2c89094bb0427aa7660e6d) Thanks [@ayuhito](https://github.com/ayuhito)! - Update cache expiry rules for metadata worker to 6 hours and remove unnecessary CF Cache API references.
+
 ## 0.1.5
 
 ### Patch Changes
