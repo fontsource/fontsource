@@ -102,7 +102,7 @@ const generateZip = async (
 	for (const file of fullManifest) {
 		const item = await env.BUCKET.get(bucketPath(file));
 		if (!item) {
-			throw new StatusError(500, `Could not find ${file.url}`);
+			throw new StatusError(500, `Could not find ${bucketPath(file)}`);
 		}
 
 		const buffer = await item.arrayBuffer();

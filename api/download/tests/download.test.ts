@@ -14,7 +14,7 @@ describe('download worker', () => {
 		const fetchMock = getMiniflareFetchMock();
 
 		// Mock response
-		// https://data.jsdelivr.com/v1/packages/npm/@fontsource/${id}
+		// https://data.jsdelivr.com/v1/packages/npm/@fontsource/abel
 		const versions = fetchMock.get('https://data.jsdelivr.com');
 		versions
 			.intercept({ path: '/v1/packages/npm/@fontsource/abel' })
@@ -23,7 +23,7 @@ describe('download worker', () => {
 			});
 
 		const request = new Request(
-			'http://localhost:8787/v1/download/abel@latest',
+			'http://localhost:8787/v1/download/abel@5.0.1',
 			{
 				method: 'POST',
 			},
