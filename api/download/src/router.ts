@@ -7,9 +7,13 @@ import {
 	withParams,
 } from 'itty-router';
 
+import {
+	generateManifest,
+	generateManifestItem,
+	pruneManifest,
+} from './manifest';
 import { type CFRouterContext } from './types';
 import { downloadFile, downloadManifest, generateZip } from './update';
-import { generateManifest, generateManifestItem, pruneManifest } from './util';
 
 interface DownloadRequest extends IRequestStrict {
 	tag: string;

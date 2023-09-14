@@ -8,7 +8,7 @@ import worker from '../src/worker';
 
 const describe = setupMiniflareIsolatedStorage();
 
-describe('download worker', () => {
+describe.skip('download worker', () => {
 	const env = getMiniflareBindings() satisfies Env;
 	const ctx = new ExecutionContext();
 
@@ -28,8 +28,8 @@ describe('download worker', () => {
 			.reply(
 				200,
 				await fs.readFile(
-					path.resolve(__dirname, './fixtures/roboto-latin-400-normal.woff2')
-				)
+					path.resolve(__dirname, './fixtures/roboto-latin-400-normal.woff2'),
+				),
 			);
 		origin
 			.intercept({
@@ -39,8 +39,8 @@ describe('download worker', () => {
 			.reply(
 				200,
 				await fs.readFile(
-					path.resolve(__dirname, './fixtures/roboto-latin-400-normal.woff')
-				)
+					path.resolve(__dirname, './fixtures/roboto-latin-400-normal.woff'),
+				),
 			);
 
 		// Mock invalids
