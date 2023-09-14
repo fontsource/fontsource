@@ -2,8 +2,8 @@ import { getMetadata } from 'common-api/util';
 import {
 	error,
 	type IRequestStrict,
+	json,
 	Router,
-	text,
 	withParams,
 } from 'itty-router';
 
@@ -43,7 +43,7 @@ router.post('/v1/:tag', withParams, async (request, env, _ctx) => {
 		env,
 	);
 
-	return text('Success.');
+	return json({ status: 201, message: 'Success.' });
 });
 
 router.post('/v1/:tag/:file', withParams, async (request, env, _ctx) => {
@@ -58,7 +58,7 @@ router.post('/v1/:tag/:file', withParams, async (request, env, _ctx) => {
 	const manifestItem = await generateManifestItem(tag, file, metadata);
 	await downloadFile(manifestItem, env);
 
-	return text('Success.');
+	return json({ status: 201, message: 'Success.' });
 });
 
 // 404 for everything else

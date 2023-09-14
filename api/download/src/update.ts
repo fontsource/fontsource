@@ -5,8 +5,9 @@ import PQueue from 'p-queue';
 // @ts-expect-error - no types
 import woff2ttf from 'woff2sfnt-sfnt2woff';
 
+import { generateManifest } from './manifest';
 import { type Manifest } from './types';
-import { bucketPath, generateManifest } from './util';
+import { bucketPath } from './util';
 
 const downloadFile = async (manifest: Manifest, env: Env) => {
 	const { id, subset, weight, style, extension, version } = manifest;
