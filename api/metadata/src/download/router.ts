@@ -1,6 +1,6 @@
+import { getVersion } from 'common-api/version';
 import { error, type IRequestStrict, Router, withParams } from 'itty-router';
 
-import { getOrUpdateId } from '../fonts/get';
 import type { CFRouterContext } from '../types';
 import { getOrUpdateZip } from './get';
 
@@ -13,12 +13,10 @@ const router = Router<DownloadRequest, CFRouterContext>();
 router.get('/v1/download/:id', withParams, async (request, env, ctx) => {
 	const id = request.id;
 
-	const data = await getOrUpdateId(id, env, ctx);
-	if (!data) {
-		return error(404, 'Not Found.');
-	}
+	const version = await getVersion(id, 'latest');
+	const tag = `${id}@${version}`;
 
-	const zip = await getOrUpdateZip(request, data, env);
+	const zip = await getOrUpdateZip(tag, request, env);
 	if (!zip) {
 		return error(404, 'Zip Not Found.');
 	}

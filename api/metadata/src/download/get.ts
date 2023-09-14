@@ -1,56 +1,64 @@
-interface FileGenerator {
-	id: string;
-	subsets: string[];
-	weights: number[];
-	styles: string[];
-}
+import { type StatusErrorObject } from 'common-api/types';
+import { StatusError } from 'itty-router';
 
-// We need to make a POST request to the download worker
-const createRequest = (
-	request: Request,
-	{ id, subsets, weights, styles }: FileGenerator,
-) => {
-	const newRequestInit = {
-		method: 'POST',
-		body: JSON.stringify({ id, subsets, weights, styles }),
-		headers: {
-			'Content-Type': 'application/json',
-		},
-	};
-
-	return new Request(request.clone(), newRequestInit);
-};
-
-const getOrUpdateZip = async (
-	request: Request,
-	data: FileGenerator,
-	env: Env,
-) => {
+const getOrUpdateZip = async (tag: string, req: Request, env: Env) => {
 	// Check if download.zip exists in bucket
-	const zip = await env.BUCKET.get(`${data.id}@latest/download.zip`);
+	const zip = await env.BUCKET.get(`${tag}/download.zip`);
 	if (!zip) {
 		// Try calling download worker
-		await env.DOWNLOAD.fetch(createRequest(request, data));
+		const url = new URL(req.url);
+		url.pathname = `/v1/download/${tag}`;
+		const newRequest = new Request(url.toString(), {
+			...req.clone(),
+			method: 'POST',
+		});
+
+		const resp = await env.DOWNLOAD.fetch(newRequest);
+		if (!resp.ok) {
+			const error = await resp.json<StatusErrorObject>();
+
+			throw new StatusError(
+				500,
+				`Bad response from download worker. ${error.error}`,
+			);
+		}
+
 		// Check again if download.zip exists in bucket
-		const zip = await env.BUCKET.get(`${data.id}@latest/download.zip`);
+		const zip = await env.BUCKET.get(`${tag}/download.zip`);
 		return zip;
 	}
 	return zip;
 };
 
 const getOrUpdateFile = async (
-	request: Request,
-	data: FileGenerator,
+	tag: string,
 	file: string,
+	req: Request,
 	env: Env,
 ) => {
 	// Check if file exists in bucket
-	const font = await env.BUCKET.get(`${data.id}@latest/${file}`);
+	const font = await env.BUCKET.get(`${tag}/${file}`);
 	if (!font) {
 		// Try calling download worker
-		await env.DOWNLOAD.fetch(createRequest(request, data));
+		// Try calling download worker
+		const url = new URL(req.url);
+		url.pathname = `/v1/download/${tag}/${file}`;
+		const newRequest = new Request(url.toString(), {
+			...req.clone(),
+			method: 'POST',
+		});
+
+		const resp = await env.DOWNLOAD.fetch(newRequest);
+		if (!resp.ok) {
+			const error = await resp.json<StatusErrorObject>();
+
+			throw new StatusError(
+				500,
+				`Bad response from download worker. ${error.error}`,
+			);
+		}
 		// Check again if file exists in bucket
-		const zip = await env.BUCKET.get(`${data.id}@latest/${file}`);
+		const zip = await env.BUCKET.get(`${tag}/${file}`);
 		return zip;
 	}
 	return font;

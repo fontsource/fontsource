@@ -74,6 +74,10 @@ importers:
         version: 3.7.0
 
   api/metadata:
+    dependencies:
+      common-api:
+        specifier: workspace:*
+        version: link:../common
     devDependencies:
       '@ayuhito/eslint-config':
         specifier: ^0.4.1
