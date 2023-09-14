@@ -27,7 +27,20 @@ importers:
         specifier: ^0.34.4
         version: 0.34.4
 
+  api/common:
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: ^4.20230904.0
+        version: 4.20230904.0
+      itty-router:
+        specifier: ^4.0.22
+        version: 4.0.23
+
   api/download:
+    dependencies:
+      common-api:
+        specifier: workspace:*
+        version: link:../common
     devDependencies:
       '@ayuhito/eslint-config':
         specifier: ^0.4.1
@@ -61,6 +74,10 @@ importers:
         version: 3.7.0
 
   api/metadata:
+    dependencies:
+      common-api:
+        specifier: workspace:*
+        version: link:../common
     devDependencies:
       '@ayuhito/eslint-config':
         specifier: ^0.4.1

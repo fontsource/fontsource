@@ -1,8 +1,6 @@
 /* eslint-disable unicorn/prefer-module */
-import * as fs from 'node:fs/promises';
-import * as path from 'node:path';
 
-import { beforeEach, expect, it } from 'vitest';
+import { expect, it } from 'vitest';
 
 import worker from '../src/worker';
 
@@ -12,91 +10,53 @@ describe('download worker', () => {
 	const env = getMiniflareBindings() satisfies Env;
 	const ctx = new ExecutionContext();
 
-	beforeEach(async () => {
+	it('should download entire latest bucket', async () => {
 		const fetchMock = getMiniflareFetchMock();
-		// Throw when no matching mocked request is found
-		fetchMock.disableNetConnect();
 
-		// Handlers
-		// We want this to be the default response for all requests
-		const origin = fetchMock.get('https://cdn.jsdelivr.net');
-		origin
-			.intercept({
-				method: 'GET',
-				path: '/npm/@fontsource/roboto@latest/files/roboto-latin-400-normal.woff2',
-			})
-			.reply(
-				200,
-				await fs.readFile(
-					path.resolve(__dirname, './fixtures/roboto-latin-400-normal.woff2')
-				)
-			);
-		origin
-			.intercept({
-				method: 'GET',
-				path: '/npm/@fontsource/roboto@latest/files/roboto-latin-400-normal.woff',
-			})
-			.reply(
-				200,
-				await fs.readFile(
-					path.resolve(__dirname, './fixtures/roboto-latin-400-normal.woff')
-				)
-			);
+		// Mock response
+		// https://data.jsdelivr.com/v1/packages/npm/@fontsource/abel
+		const versions = fetchMock.get('https://data.jsdelivr.com');
+		versions
+			.intercept({ path: '/v1/packages/npm/@fontsource/abel' })
+			.reply(200, {
+				versions: [{ version: '5.0.1' }],
+			});
 
-		// Mock invalids
-		origin
-			.intercept({
-				method: 'GET',
-				path: '/npm/@fontsource/invalid@latest/files/invalid-latin-400-normal.woff2',
-			})
-			.reply(404, 'test');
-		origin
-			.intercept({
-				method: 'GET',
-				path: '/npm/@fontsource/invalid@latest/files/invalid-latin-400-normal.woff',
-			})
-			.reply(404, 'test');
-	});
-
-	it('should return type as default request', async () => {
-		const request = new Request('http://localhost:8787/v1/download/roboto', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+		const request = new Request(
+			'http://localhost:8787/v1/download/abel@5.0.1',
+			{
+				method: 'POST',
 			},
-			body: JSON.stringify({
-				id: 'roboto',
-				subsets: ['latin'],
-				weights: [400],
-				styles: ['normal'],
-			}),
-		});
+		);
 		const response = await worker.fetch(request, env, ctx);
 
-		expect(response.status).toBe(200);
+		expect(response.status).toBe(201);
 		// Check uploaded files
 		const list = await env.BUCKET.list();
 		expect(list.objects.map((item) => item.key)).toEqual([
-			'roboto@latest/download.zip',
-			'roboto@latest/latin-400-normal.ttf',
-			'roboto@latest/latin-400-normal.woff',
-			'roboto@latest/latin-400-normal.woff2',
+			'abel@5.0.1/download.zip',
+			'abel@5.0.1/latin-400-normal.ttf',
+			'abel@5.0.1/latin-400-normal.woff',
+			'abel@5.0.1/latin-400-normal.woff2',
 		]);
 	});
 
-	it('should return 404 for invalid font id', async () => {
-		const request = new Request('http://localhost:8787/v1/download/invalid', {
+	it('should return 400 for invalid tag', async () => {
+		const request = new Request('http://localhost:8787/v1/download/abel', {
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				id: 'invalid',
-				subsets: ['latin'],
-				weights: [400],
-				styles: ['normal'],
-			}),
 		});
+		const response = await worker.fetch(request, env, ctx);
+
+		expect(response.status).toBe(400);
+	});
+
+	it('should return 404 for invalid font id', async () => {
+		const request = new Request(
+			'http://localhost:8787/v1/download/invalid@latest',
+			{
+				method: 'POST',
+			},
+		);
 		const response = await worker.fetch(request, env, ctx);
 
 		expect(response.status).toBe(404);

@@ -21,5 +21,8 @@
 		"vitest-environment-miniflare": "^2.14.1",
 		"woff2sfnt-sfnt2woff": "^1.0.0",
 		"wrangler": "^3.7.0"
+	},
+	"dependencies": {
+		"common-api": "workspace:*"
 	}
 }

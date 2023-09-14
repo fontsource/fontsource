@@ -1,9 +1,14 @@
 type CFRouterContext = [env: Env, ctx: ExecutionContext];
-interface FileGenerator {
+
+interface Manifest {
 	id: string;
-	subsets: string[];
-	weights: number[];
-	styles: string[];
+	subset: string;
+	weight: number;
+	style: string;
+	variable: boolean;
+	extension: string;
+	version: string;
+	url: string;
 }
 
-export type { CFRouterContext, FileGenerator };
+export type { CFRouterContext, Manifest };

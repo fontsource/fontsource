@@ -1,3 +1,4 @@
+import { getVersion } from 'common-api/version';
 import {
 	error,
 	type IRequestStrict,
@@ -75,13 +76,11 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 router.get('/v1/fonts/:id/:file', withParams, async (request, env, ctx) => {
 	const { id, file } = request;
 
-	const data = await getOrUpdateId(id, env, ctx);
-	if (!data) {
-		return error(404, 'Not Found. Font does not exist.');
-	}
+	const version = await getVersion(id, 'latest');
+	const tag = `${id}@${version}`;
 
 	// Get from bucket directly
-	const font = await getOrUpdateFile(request, data, file, env);
+	const font = await getOrUpdateFile(tag, file, request, env);
 	if (!font) {
 		return error(404, 'Not Found. Font file does not exist.');
 	}
