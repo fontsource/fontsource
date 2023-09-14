@@ -38,13 +38,7 @@ router.post('/v1/download/:tag', withParams, async (request, env, _ctx) => {
 	const manifest = await pruneManifest(tag, baseManifest, env);
 
 	await downloadManifest(manifest, env);
-	await generateZip(
-		manifest[0].id,
-		manifest[0].version,
-		metadata,
-		request,
-		env,
-	);
+	await generateZip(id, version, metadata, env);
 
 	return json({ status: 201, message: 'Success.' }, { status: 201 });
 });
@@ -54,7 +48,10 @@ router.post(
 	withParams,
 	async (request, env, _ctx) => {
 		const { tag, file } = request;
-		const id = tag.split('@')[0];
+		const [id, version] = tag.split('@');
+		if (!id || !version) {
+			return error(400, 'Bad Request. Invalid font tag in URL.');
+		}
 
 		const metadata = await getMetadata(id, request, env);
 		if (!metadata) {

@@ -4,6 +4,9 @@
 	"description": "Shared utilities for the workers",
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
+	"scripts": {
+		"deploy": "echo 'Common Package'"
+	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20230904.0",
 		"itty-router": "^4.0.22"

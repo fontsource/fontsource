@@ -77,7 +77,6 @@ const generateZip = async (
 	id: string,
 	version: string,
 	metadata: IDResponse,
-	req: Request,
 	env: Env,
 ) => {
 	// Check if zip file already exists
