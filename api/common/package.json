@@ -10,5 +10,6 @@
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20230904.0",
 		"itty-router": "^4.0.22"
-	}
+	},
+	"version": null
 }
