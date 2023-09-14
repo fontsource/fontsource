@@ -22,9 +22,12 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.post('/v1/:tag', withParams, async (request, env, _ctx) => {
+router.post('/v1/download/:tag', withParams, async (request, env, _ctx) => {
 	const { tag } = request;
-	const id = tag.split('@')[0];
+	const [id, version] = tag.split('@');
+	if (!id || !version) {
+		return error(400, 'Bad Request. Invalid font tag in URL.');
+	}
 
 	const metadata = await getMetadata(id, request, env);
 	if (!metadata) {
@@ -43,23 +46,27 @@ router.post('/v1/:tag', withParams, async (request, env, _ctx) => {
 		env,
 	);
 
-	return json({ status: 201, message: 'Success.' });
+	return json({ status: 201, message: 'Success.' }, { status: 201 });
 });
 
-router.post('/v1/:tag/:file', withParams, async (request, env, _ctx) => {
-	const { tag, file } = request;
-	const id = tag.split('@')[0];
+router.post(
+	'/v1/download/:tag/:file',
+	withParams,
+	async (request, env, _ctx) => {
+		const { tag, file } = request;
+		const id = tag.split('@')[0];
 
-	const metadata = await getMetadata(id, request, env);
-	if (!metadata) {
-		return error(404, 'Not Found. Font does not exist.');
-	}
+		const metadata = await getMetadata(id, request, env);
+		if (!metadata) {
+			return error(404, 'Not Found. Font does not exist.');
+		}
 
-	const manifestItem = await generateManifestItem(tag, file, metadata);
-	await downloadFile(manifestItem, env);
+		const manifestItem = await generateManifestItem(tag, file, metadata);
+		await downloadFile(manifestItem, env);
 
-	return json({ status: 201, message: 'Success.' });
-});
+		return json({ status: 201, message: 'Success.' }, { status: 201 });
+	},
+);
 
 // 404 for everything else
 router.all('*', () =>

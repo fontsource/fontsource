@@ -30,9 +30,14 @@ export const getMetadata = async (id: string, req: Request, env: Env) => {
 
 	const metadata = await fetch(`https://api.fontsource.org/v1/fonts/${id}`);
 	if (!metadata.ok) {
+		// If font does not exist, return undefined. Other errors should be logged
+		if (metadata.status === 404) {
+			return;
+		}
+
 		const error = await metadata.json<StatusErrorObject>();
 		throw new StatusError(
-			500,
+			metadata.status,
 			`Bad response from metadata worker. ${error.error}`,
 		);
 	}
