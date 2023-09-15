@@ -1,41 +1,42 @@
-import { type IDResponse } from 'common-api/types';
-import { StatusError } from 'itty-router';
 import JSZip from 'jszip';
 import PQueue from 'p-queue';
 // @ts-expect-error - no types
 import woff2ttf from 'woff2sfnt-sfnt2woff';
 
-import { generateManifest } from './manifest';
-import { type Manifest } from './types';
-import { bucketPath } from './util';
+import { type Metadata } from '../types';
+import { bucketPath, getBucket, listBucket, putBucket } from './bucket';
+import { generateManifest, type Manifest } from './manifest';
 
-const downloadFile = async (manifest: Manifest, env: Env) => {
+export const downloadFile = async (manifest: Manifest) => {
 	const { id, subset, weight, style, extension, version } = manifest;
 	const url = manifest.url;
 
 	const res = await fetch(url);
 
 	if (!res.ok) {
-		throw new StatusError(404, `Could not find ${url}`);
+		throw new Response(`Could not find ${url}`, { status: 404 });
 	}
 
 	const buffer = await res.arrayBuffer();
 
 	// Add to bucket
-	await env.BUCKET.put(bucketPath(manifest), buffer);
+	await putBucket(bucketPath(manifest), buffer);
 
 	// If woff, decompress and add to ttf folder
 	if (extension === 'woff') {
 		let ttfBuffer;
 		try {
 			ttfBuffer = await woff2ttf.toSfnt(new Uint8Array(buffer));
-		} catch {
-			throw new StatusError(500, 'could not convert woff to ttf');
+		} catch (error) {
+			throw new Response(`Could not convert woff to ttf ${String(error)}`, {
+				status: 500,
+			});
 		}
-		if (!ttfBuffer) throw new StatusError(500, 'could not convert woff to ttf');
+		if (!ttfBuffer)
+			throw new Response('cCould not convert woff to ttf', { status: 500 });
 
 		// Add to bucket
-		await env.BUCKET.put(
+		await putBucket(
 			bucketPath({
 				id,
 				subset,
@@ -49,7 +50,7 @@ const downloadFile = async (manifest: Manifest, env: Env) => {
 	}
 };
 
-const downloadManifest = async (manifest: Manifest[], env: Env) => {
+export const downloadManifest = async (manifest: Manifest[]) => {
 	// Create a queue
 	const queue = new PQueue({ concurrency: 4 });
 	let hasError: Error | undefined;
@@ -59,8 +60,9 @@ const downloadManifest = async (manifest: Manifest[], env: Env) => {
 		// eslint-disable-next-line @typescript-eslint/promise-function-async
 		queue
 			.add(async () => {
-				await downloadFile(file, env);
+				await downloadFile(file);
 			})
+			// eslint-disable-next-line no-loop-func
 			.catch((error) => {
 				queue.pause();
 				queue.clear();
@@ -73,15 +75,14 @@ const downloadManifest = async (manifest: Manifest[], env: Env) => {
 	if (hasError) throw hasError;
 };
 
-const generateZip = async (
+export const generateZip = async (
 	id: string,
 	version: string,
-	metadata: IDResponse,
-	env: Env,
+	metadata: Metadata,
 ) => {
 	// Check if zip file already exists
-	const zipFile = await env.BUCKET.get(`${id}@${version}/download.zip`);
-	if (zipFile) return;
+	const zipFile = await listBucket(`${id}@${version}/download.zip`);
+	if (zipFile.length > 0) return;
 
 	// Generate zip file of all fonts
 	const zip = new JSZip();
@@ -100,9 +101,9 @@ const generateZip = async (
 	}
 
 	for (const file of fullManifest) {
-		const item = await env.BUCKET.get(bucketPath(file));
+		const item = await getBucket(bucketPath(file));
 		if (!item) {
-			throw new StatusError(500, `Could not find ${bucketPath(file)}`);
+			throw new Response(`Could not find ${bucketPath(file)}`, { status: 500 });
 		}
 
 		const buffer = await item.arrayBuffer();
@@ -119,7 +120,9 @@ const generateZip = async (
 				buffer,
 			);
 		} else {
-			throw new StatusError(500, `Invalid file extension ${file.extension}`);
+			throw new Response(`Invalid file extension ${file.extension}`, {
+				status: 500,
+			});
 		}
 	}
 
@@ -128,7 +131,7 @@ const generateZip = async (
 		`https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/LICENSE`,
 	);
 	if (!license.ok) {
-		throw new StatusError(500, 'Could not find LICENSE file');
+		throw new Response('Could not find LICENSE file', { status: 500 });
 	}
 
 	const licenseBuffer = await license.arrayBuffer();
@@ -136,7 +139,5 @@ const generateZip = async (
 
 	// Add to bucket
 	const zipBuffer = await zip.generateAsync({ type: 'uint8array' });
-	await env.BUCKET.put(`${id}@${version}/download.zip`, zipBuffer);
+	await putBucket(`${id}@${version}/download.zip`, zipBuffer);
 };
-
-export { bucketPath, downloadFile, downloadManifest, generateZip };

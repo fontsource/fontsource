@@ -1,55 +1,30 @@
-import { StatusError } from 'itty-router';
-
-type Tag = Record<string, string>;
-
 interface Version {
 	version: string;
-	links: {
-		self: string;
-		entry: string;
-		stats: string;
-	};
 }
 
 interface JSDelivrAPIVersion {
-	type: string;
-	name: string;
-	tags: Tag[];
-	versions: Version[];
-	links: {
-		stats: string;
-	};
+	versions?: Version[];
 }
 
 export const getAvailableVersions = async (id: string): Promise<string[]> => {
-	const npmList = await fetch(
+	const resp = await fetch(
 		`https://data.jsdelivr.com/v1/packages/npm/@fontsource/${id}`,
-	).then(async (res) => await res.json<JSDelivrAPIVersion>());
+	);
 
-	if (!npmList.versions) {
-		throw new StatusError(404, `Not Found. ${id} does not exist.`);
+	if (!resp.ok) {
+		throw new Response('Internal Server Error. Unable to fetch versions.', {
+			status: 500,
+		});
 	}
 
-	const versions = npmList.versions.map((version) => version.version);
+	const list = (await resp.json()) as JSDelivrAPIVersion;
+	if (resp.status === 404 || !list?.versions) {
+		throw new Response(`Not Found. ${id} does not exist.`, { status: 404 });
+	}
+
+	const versions = list.versions.map((version) => version.version);
 
 	return versions;
-};
-
-/**
- * Take in a URL and return the version tag specified in the URL.
- * @example "http://r2.fontsource.org/fonts/abel@latest/latin-400-normal.ttf" to latest
- */
-export const getVersionUrl = async (
-	id: string,
-	url: string,
-): Promise<string> => {
-	const tagUrl = url.split('@')[1];
-	if (!tagUrl)
-		throw new StatusError(400, `Bad Request. Missing tag for ${id}.`);
-	const tag = tagUrl.split('/')[0];
-	if (!tag) throw new StatusError(400, `Bad Request. Missing file for ${id}.`);
-
-	return getVersion(id, tag);
 };
 
 export const getVersion = async (id: string, tag: string): Promise<string> => {
@@ -76,10 +51,9 @@ export const getVersion = async (id: string, tag: string): Promise<string> => {
 			.shift();
 
 		if (latest) return latest;
-		throw new StatusError(
-			404,
-			`Not Found. Version ${tag} not found for ${id}.`,
-		);
+		throw new Response(`Not found. Version ${tag} not found for ${id}.`, {
+			status: 404,
+		});
 	}
 
 	const semver = tag.split('.');
@@ -88,10 +62,9 @@ export const getVersion = async (id: string, tag: string): Promise<string> => {
 	if (semver.length === 3) {
 		const version = versions.find((version) => version === tag);
 		if (version) return version;
-		throw new StatusError(
-			404,
-			`Not Found. Version ${tag} not found for ${id}.`,
-		);
+		throw new Response(`Not found. Version ${tag} not found for ${id}.`, {
+			status: 404,
+		});
 	}
 
 	// Find latest version that matches the minor version
@@ -113,10 +86,9 @@ export const getVersion = async (id: string, tag: string): Promise<string> => {
 			.shift();
 
 		if (version) return version;
-		throw new StatusError(
-			404,
-			`Not Found. Version ${tag} not found for ${id}.`,
-		);
+		throw new Response(`Not found. Version ${tag} not found for ${id}.`, {
+			status: 404,
+		});
 	}
 
 	// Find latest version that matches the major version
@@ -141,11 +113,37 @@ export const getVersion = async (id: string, tag: string): Promise<string> => {
 			.shift();
 
 		if (version) return version;
-		throw new StatusError(
-			404,
-			`Not Found. Version ${tag} not found for ${id}.`,
-		);
+		throw new Response(`Not found. Version ${tag} not found for ${id}.`, {
+			status: 404,
+		});
 	}
 
-	throw new StatusError(400, `Bad Request. Invalid tag ${tag} for ${id}.`);
+	throw new Response(`Bad Request. Invalid tag ${tag} for ${id}.`, {
+		status: 400,
+	});
+};
+
+interface Tag {
+	id: string;
+	version: string;
+}
+
+export const splitTag = async (tag: string): Promise<Tag> => {
+	// Parse tag for version e.g roboto@1.1.1
+	const [id, versionTag] = tag.split('@');
+	if (!id) {
+		throw new Response('Bad Request. Unable to parse font ID from tag.', {
+			status: 400,
+		});
+	}
+	if (!versionTag) {
+		throw new Response('Bad Request. Unable to parse version from tag.', {
+			status: 400,
+		});
+	}
+
+	// Validate version tag
+	const version = await getVersion(id, versionTag);
+
+	return { id, version };
 };

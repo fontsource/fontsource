@@ -37,7 +37,8 @@
 		"tests/**/*.ts",
 		"tests/**/*.json",
 		"vitest.config.ts",
-		"worker-configuration.d.ts"
+		"worker-configuration.d.ts",
+		"../../website/app/utils/download/manifest.ts"
 	],
 	"exclude": ["node_modules"],
 	"$schema": "https://json.schemastore.org/tsconfig"
