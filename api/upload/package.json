@@ -1,14 +1,22 @@
 {
-  "name": "upload",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "deploy": "wrangler deploy",
-    "start": "wrangler dev"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230419.0",
-    "typescript": "^5.0.4",
-    "wrangler": "^3.0.0"
-  }
+	"name": "upload",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"lint": "eslint . --fix",
+		"coverage": "vitest run --coverage",
+		"test": "vitest",
+		"ci:lint": "eslint ."
+	},
+	"devDependencies": {
+		"@ayuhito/eslint-config": "^0.4.1",
+		"@cloudflare/workers-types": "^4.20230914.0",
+		"eslint": "^8.49.0",
+		"itty-router": "^4.0.23",
+		"typescript": "^5.0.4",
+		"vitest-environment-miniflare": "^2.14.1",
+		"wrangler": "^3.8.0"
+	}
 }

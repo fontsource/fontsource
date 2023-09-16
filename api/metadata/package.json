@@ -12,12 +12,12 @@
 	},
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.4.1",
-		"@cloudflare/workers-types": "^4.20230904.0",
+		"@cloudflare/workers-types": "^4.20230914.0",
 		"eslint": "^8.49.0",
 		"itty-router": "^4.0.23",
 		"typescript": "^5.2.2",
 		"vitest-environment-miniflare": "^2.14.1",
-		"wrangler": "^3.7.0"
+		"wrangler": "^3.8.0"
 	},
 	"dependencies": {
 		"common-api": "workspace:*"

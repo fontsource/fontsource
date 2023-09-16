@@ -71,12 +71,5 @@
 	},
 	"engines": {
 		"node": ">=18"
-	},
-	"pnpm": {
-		"peerDependencyRules": {
-			"ignoreMissing": [
-				"@babel/*"
-			]
-		}
 	}
 }

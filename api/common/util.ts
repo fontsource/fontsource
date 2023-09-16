@@ -1,5 +1,4 @@
 import { StatusError } from 'itty-router';
-import { getVersion } from './version';
 import { IDResponse, StatusErrorObject } from './types';
 
 // Fetch latest metadata from metadata worker
@@ -43,25 +42,4 @@ export const getMetadata = async (id: string, req: Request, env: Env) => {
 	}
 
 	return await metadata.json<IDResponse>();
-};
-
-interface Tag {
-	id: string;
-	version: string;
-}
-
-export const splitTag = async (tag: string): Promise<Tag> => {
-	// Parse tag for version e.g roboto@1.1.1
-	const [id, versionTag] = tag.split('@');
-	if (!versionTag) {
-		throw new StatusError(
-			400,
-			'Bad Request. Invalid tag format.' + tag + id + versionTag,
-		);
-	}
-
-	// Validate version tag
-	const version = await getVersion(id, versionTag);
-
-	return { id, version };
 };
