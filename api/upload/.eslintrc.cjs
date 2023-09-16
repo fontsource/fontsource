@@ -1,7 +1,7 @@
 module.exports = {
-	extends: ["@ayuhito/eslint-config"],
+	extends: ['@ayuhito/eslint-config'],
 	rules: {
-		"no-console": "off",
-		"import/no-default-export": "off",
+		'no-console': 'off',
+		'import/no-default-export': 'off',
 	},
 };

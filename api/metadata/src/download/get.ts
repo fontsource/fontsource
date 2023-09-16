@@ -34,12 +34,15 @@ const getOrUpdateFile = async (tag: string, file: string, env: Env) => {
 	const font = await env.BUCKET.get(`${tag}/${file}`);
 	if (!font) {
 		// Try calling download worker
-		const req = new Request(`https://fontsource.org/actions/download/${tag}`, {
-			method: 'POST',
-			headers: {
-				Authorization: `Bearer ${env.UPLOAD_KEY}`,
+		const req = new Request(
+			`https://fontsource.org/actions/download/${tag}/${file}`,
+			{
+				method: 'POST',
+				headers: {
+					Authorization: `Bearer ${env.UPLOAD_KEY}`,
+				},
 			},
-		});
+		);
 
 		const resp = await fetch(req);
 		if (!resp.ok) {
