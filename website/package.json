@@ -39,7 +39,7 @@
 		"ky": "^0.33.3",
 		"millify": "^6.1.0",
 		"nanoid": "^4.0.2",
-		"p-queue": "^7.4.1",
+		"p-queue": "^6.6.2",
 		"pathe": "^1.1.1",
 		"prism-react-renderer": "^2.0.4",
 		"prismjs": "^1.29.0",
