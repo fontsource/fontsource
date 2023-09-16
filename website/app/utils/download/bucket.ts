@@ -22,9 +22,7 @@ export const bucketPath = ({
 }: BucketPath) => `${id}@${version}/${subset}-${weight}-${style}.${extension}`;
 
 export const listBucket = async (prefix: string) => {
-	const resp = await fetch(
-		`https://upload.fontsource.org/list?prefix=${prefix}`,
-	);
+	const resp = await fetch(`https://upload.fontsource.org/list/${prefix}`);
 	if (!resp.ok) {
 		throw new Response('Internal Server Error. Unable to fetch bucket.', {
 			status: 500,
