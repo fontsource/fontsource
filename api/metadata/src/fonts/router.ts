@@ -1,4 +1,4 @@
-import { getVersion } from 'common-api/version';
+import { getVersion } from 'common-api/util';
 import {
 	error,
 	type IRequestStrict,
@@ -73,14 +73,14 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
-router.get('/v1/fonts/:id/:file', withParams, async (request, env, ctx) => {
+router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
 	const { id, file } = request;
 
 	const version = await getVersion(id, 'latest');
 	const tag = `${id}@${version}`;
 
 	// Get from bucket directly
-	const font = await getOrUpdateFile(tag, file, request, env);
+	const font = await getOrUpdateFile(tag, file, env);
 	if (!font) {
 		return error(404, 'Not Found. Font file does not exist.');
 	}
