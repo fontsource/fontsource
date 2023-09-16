@@ -6,6 +6,7 @@ import {
 	withParams,
 } from 'itty-router';
 
+import { verifyAuth } from './auth';
 import { type CFRouterContext } from './types';
 
 interface DownloadRequest extends IRequestStrict {
@@ -15,38 +16,53 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/list/:prefix+', withParams, async (request, env, _ctx) => {
-	const { prefix } = request;
-	if (!prefix) return error(400, 'Bad Request. Prefix is required.');
+router.get(
+	'/list/:prefix+',
+	withParams,
+	verifyAuth,
+	async (request, env, _ctx) => {
+		const { prefix } = request;
+		if (!prefix) return error(400, 'Bad Request. Prefix is required.');
 
-	const list = await env.BUCKET.list({ prefix });
-	const objects = list.objects.map((object) => object.key);
+		const list = await env.BUCKET.list({ prefix });
+		const objects = list.objects.map((object) => object.key);
 
-	return json({ status: 200, objects }, { status: 200 });
-});
+		return json({ status: 200, objects }, { status: 200 });
+	},
+);
 
-router.get('/get/:path+', withParams, async (request, env, _ctx) => {
-	const { path } = request;
-	if (!path) return error(400, 'Bad Request. Path is required.');
+router.get(
+	'/get/:path+',
+	withParams,
+	verifyAuth,
+	async (request, env, _ctx) => {
+		const { path } = request;
+		if (!path) return error(400, 'Bad Request. Path is required.');
 
-	const object = await env.BUCKET.get(path);
-	if (!object) {
-		return error(404, `Not Found. Object ${path} does not exist.`);
-	}
+		const object = await env.BUCKET.get(path);
+		if (!object) {
+			return error(404, `Not Found. Object ${path} does not exist.`);
+		}
 
-	return new Response(await object.arrayBuffer(), {
-		status: 200,
-	});
-});
+		return new Response(await object.arrayBuffer(), {
+			status: 200,
+		});
+	},
+);
 
-router.put('/put/:path+', withParams, async (request, env, _ctx) => {
-	const { path } = request;
-	if (!path) return error(400, 'Bad Request. Path is required.');
+router.put(
+	'/put/:path+',
+	withParams,
+	verifyAuth,
+	async (request, env, _ctx) => {
+		const { path } = request;
+		if (!path) return error(400, 'Bad Request. Path is required.');
 
-	const body = await request.arrayBuffer();
-	await env.BUCKET.put(path, body);
-	return json({ status: 201, message: 'Success.' }, { status: 201 });
-});
+		const body = await request.arrayBuffer();
+		await env.BUCKET.put(path, body);
+		return json({ status: 201, message: 'Success.' }, { status: 201 });
+	},
+);
 
 // 404 for everything else
 router.all('*', () =>

@@ -1,7 +1,12 @@
 name = "upload"
-main = "src/index.ts"
+main = "src/worker.ts"
 compatibility_date = "2023-09-14"
 
 r2_buckets = [
-	{ binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" },
+  { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" },
 ]
+
+logpush = true
+workers_dev = false
+
+compatibility_flags = [ "nodejs_compat" ]
