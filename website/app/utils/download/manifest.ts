@@ -120,8 +120,8 @@ export const pruneManifest = async (
 	const existingFiles = await listBucket(prefix);
 
 	const manifest = baseManifest.filter((file) => {
-		const existingFile = existingFiles.find((existingFile) => {
-			return existingFile.key === bucketPath(file);
+		const existingFile = existingFiles.objects.find((existingFile) => {
+			return existingFile === bucketPath(file);
 		});
 
 		return !existingFile;

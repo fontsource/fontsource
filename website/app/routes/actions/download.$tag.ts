@@ -51,6 +51,12 @@ export const action: ActionFunction = async ({ request, params }) => {
 	const baseManifest = await generateManifest(tag, metadata);
 	const manifest = await pruneManifest(id, version, baseManifest);
 
+	if (baseManifest[0].version !== version) {
+		throw new Response('Bad Request. Invalid font tag.', {
+			status: 400,
+		});
+	}
+
 	await downloadManifest(manifest);
 	await generateZip(id, version, metadata);
 

@@ -1,11 +1,11 @@
 import { type Manifest } from './manifest';
 
-interface R2Object {
-	key: string;
-	size: number;
-}
+type R2Object = string;
 
-type ListBucket = R2Object[];
+interface ListBucket {
+	status: number;
+	objects: R2Object[];
+}
 
 type BucketPath = Pick<
 	Manifest,
