@@ -1,6 +1,6 @@
 import { getOrUpdateMetadata } from '../fontlist/get';
 import type { FontMetadata } from '../types';
-import { TTL_TIME } from '../utils';
+import { KV_TTL } from '../utils';
 import type { ArrayMetadata, FontVariants, IDResponse } from './types';
 
 // This updates the main array of fonts dataset
@@ -30,7 +30,7 @@ const updateArrayMetadata = async (env: Env, ctx: ExecutionContext) => {
 	await env.FONTLIST.put('metadata_arr', JSON.stringify(list), {
 		metadata: {
 			// We need to set a custom ttl for a stale-while-revalidate strategy
-			ttl: Date.now() + TTL_TIME,
+			ttl: Date.now() + KV_TTL,
 		},
 	});
 	return list;
@@ -96,7 +96,7 @@ const updateId = async (
 	await env.FONTS.put(id, JSON.stringify(value), {
 		metadata: {
 			// We need to set a custom ttl for a stale-while-revalidate strategy
-			ttl: Date.now() + TTL_TIME,
+			ttl: Date.now() + KV_TTL,
 		},
 	});
 	return value;
