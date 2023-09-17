@@ -1,12 +1,20 @@
-import { type IDResponse } from 'common-api/types';
-import { splitTag } from 'common-api/util';
-import { StatusError } from 'itty-router';
+import { type Metadata } from '../types';
+import { bucketPath, listBucket } from './bucket';
+import { splitTag } from './util';
 
-import { type Manifest } from './types';
-import { bucketPath } from './util';
+export interface Manifest {
+	id: string;
+	subset: string;
+	weight: number;
+	style: string;
+	variable: boolean;
+	extension: string;
+	version: string;
+	url: string;
+}
 
 type ManifestGenerator = Omit<
-	IDResponse,
+	Metadata,
 	| 'variants'
 	| 'defSubset'
 	| 'license'
@@ -25,11 +33,11 @@ export const generateManifestItem = async (
 	let [filename, extension] = file.split('.');
 	const [subset, weight, style] = filename.split('-');
 	if (!subset || !weight || !style) {
-		throw new StatusError(400, 'Bad Request. Invalid filename.');
+		throw new Response('Bad Request. Invalid filename.', { status: 400 });
 	}
 
 	if (id !== metadata.id) {
-		throw new StatusError(400, 'Bad Request. Invalid ID.');
+		throw new Response('Bad Request. Invalid ID.', { status: 400 });
 	}
 
 	// If the extension is ttf, change it to woff since jsdelivr doesn't store tff
@@ -60,7 +68,10 @@ export const generateManifest = async (
 	const { id, version } = await splitTag(tag);
 
 	if (id !== metadata.id) {
-		throw new StatusError(400, 'Bad Request. Invalid font ID.');
+		throw new Response(
+			'Unprocessable Entity.. Provided tag does not match metadata ID.',
+			{ status: 422 },
+		);
 	}
 
 	// Generate manifest
@@ -102,16 +113,15 @@ export const generateManifest = async (
 // Search for a list of existing files and prune out those that already exist
 export const pruneManifest = async (
 	id: string,
+	version: string,
 	baseManifest: Manifest[],
-	env: Env,
 ) => {
-	const existingFiles = await env.BUCKET.list({
-		prefix: `${id}/`,
-	});
+	const prefix = `${id}@${version}/`;
+	const existingFiles = await listBucket(prefix);
 
 	const manifest = baseManifest.filter((file) => {
 		const existingFile = existingFiles.objects.find((existingFile) => {
-			return existingFile.key === bucketPath(file);
+			return existingFile === bucketPath(file);
 		});
 
 		return !existingFile;

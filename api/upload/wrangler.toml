@@ -1,6 +1,6 @@
-name = "download"
+name = "upload"
 main = "src/worker.ts"
-compatibility_date = "2023-05-27"
+compatibility_date = "2023-09-14"
 
 r2_buckets = [
   { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" },
@@ -9,5 +9,4 @@ r2_buckets = [
 logpush = true
 workers_dev = false
 
-# Need the buffer for woff2ttf
-node_compat = true
+compatibility_flags = [ "nodejs_compat" ]

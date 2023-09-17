@@ -38,11 +38,11 @@ jobs:
       - name: Run tests
         run: pnpm run coverage
 
-  download:
+  upload:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: api/download
+        working-directory: api/upload
 
     steps:
       - uses: actions/checkout@v3
