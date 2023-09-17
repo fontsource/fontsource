@@ -52,7 +52,7 @@ export const downloadFile = async (manifest: Manifest) => {
 
 export const downloadManifest = async (manifest: Manifest[]) => {
 	// Create a queue
-	const queue = new PQueue({ concurrency: 12 });
+	const queue = new PQueue({ concurrency: 24 });
 	let hasError: Error | undefined;
 
 	// Download all files
