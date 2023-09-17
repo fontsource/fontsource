@@ -16,6 +16,13 @@ const getOrUpdateZip = async (tag: string, env: Env) => {
 		if (!resp.ok) {
 			const error = await resp.text();
 
+			if (resp.status === 524) {
+				throw new StatusError(
+					resp.status,
+					'Timeout from download worker. Please try again later as the package may be still downloading to our servers.',
+				);
+			}
+
 			throw new StatusError(
 				resp.status,
 				`Bad response from download worker. ${error}`,
