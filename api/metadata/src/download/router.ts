@@ -2,6 +2,7 @@ import { getVersion } from 'common-api/util';
 import { error, type IRequestStrict, Router, withParams } from 'itty-router';
 
 import type { CFRouterContext } from '../types';
+import { CF_EDGE_TTL } from '../utils';
 import { getOrUpdateZip } from './get';
 
 interface DownloadRequest extends IRequestStrict {
@@ -24,7 +25,8 @@ router.get('/v1/download/:id', withParams, async (request, env, ctx) => {
 	return new Response(zip.body, {
 		headers: {
 			'Content-Type': 'application/zip',
-			'Content-Disposition': `attachment; filename="${id}.zip"`,
+			'Content-Disposition': `attachment; filename="${tag}.zip"`,
+			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 		},
 	});
 });

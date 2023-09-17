@@ -1,6 +1,7 @@
 import { error, type IRequestStrict, json, Router } from 'itty-router';
 
 import type { CFRouterContext } from '../types';
+import { CF_EDGE_TTL } from '../utils';
 import { getOrUpdateList } from './get';
 import { type Fontlist, isFontlistQuery } from './types';
 
@@ -40,7 +41,11 @@ router.get('/fontlist', async (request, env, ctx) => {
 		return error(500, 'Internal server error.');
 	}
 
-	return json(list);
+	return json(list, {
+		headers: {
+			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
+		},
+	});
 });
 
 // 404 for everything else

@@ -10,6 +10,7 @@ import {
 
 import { getOrUpdateFile } from '../download/get';
 import { type CFRouterContext } from '../types';
+import { CF_EDGE_TTL } from '../utils';
 import { getOrUpdateArrayMetadata, getOrUpdateId } from './get';
 import { isFontsQueries } from './types';
 
@@ -58,7 +59,11 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 	}
 
 	// Return the filtered results
-	return json(filtered);
+	return json(filtered, {
+		headers: {
+			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
+		},
+	});
 });
 
 router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
@@ -69,7 +74,11 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 		return error(404, 'Not Found. Font does not exist.');
 	}
 
-	return json(data);
+	return json(data, {
+		headers: {
+			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
+		},
+	});
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
@@ -90,6 +99,7 @@ router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
 		return new Response(font.body, {
 			headers: {
 				'Content-Type': 'font/woff2',
+				'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 			},
 		});
 	}
@@ -98,6 +108,7 @@ router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
 		return new Response(font.body, {
 			headers: {
 				'Content-Type': 'font/woff',
+				'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 			},
 		});
 	}
@@ -106,6 +117,7 @@ router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
 		return new Response(font.body, {
 			headers: {
 				'Content-Type': 'font/ttf',
+				'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 			},
 		});
 	}
@@ -114,6 +126,7 @@ router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
 		return new Response(font.body, {
 			headers: {
 				'Content-Type': 'font/otf',
+				'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 			},
 		});
 	}
