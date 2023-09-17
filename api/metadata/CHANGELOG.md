@@ -1,5 +1,11 @@
 # api
 
+## 0.1.10
+
+### Patch Changes
+
+- [#812](https://github.com/fontsource/fontsource/pull/812) [`832a38f961`](https://github.com/fontsource/fontsource/commit/832a38f9617fda2c845b6b0daf3c6a68e69858fc) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(api): cache metadata on edge
+
 ## 0.1.9
 
 ### Patch Changes
