@@ -22,7 +22,11 @@ export const bucketPath = ({
 }: BucketPath) => `${id}@${version}/${subset}-${weight}-${style}.${extension}`;
 
 export const listBucket = async (prefix: string) => {
-	const resp = await fetch(`https://upload.fontsource.org/list/${prefix}`);
+	const resp = await fetch(`https://upload.fontsource.org/list/${prefix}`, {
+		headers: {
+			Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+		},
+	});
 	if (!resp.ok) {
 		throw new Response('Internal Server Error. Unable to fetch bucket.', {
 			status: 500,
@@ -36,6 +40,9 @@ export const listBucket = async (prefix: string) => {
 export const putBucket = async (bucketPath: string, body: ArrayBuffer) => {
 	const resp = await fetch(`https://upload.fontsource.org/put/${bucketPath}`, {
 		method: 'PUT',
+		headers: {
+			Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+		},
 		body,
 	});
 	if (!resp.ok) {
@@ -50,7 +57,11 @@ export const putBucket = async (bucketPath: string, body: ArrayBuffer) => {
 };
 
 export const getBucket = async (bucketPath: string) => {
-	const resp = await fetch(`https://upload.fontsource.org/get/${bucketPath}`);
+	const resp = await fetch(`https://upload.fontsource.org/get/${bucketPath}`, {
+		headers: {
+			Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+		},
+	});
 	if (!resp.ok) {
 		throw new Response('Internal Server Error. Unable to fetch bucket.', {
 			status: 500,
