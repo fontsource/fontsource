@@ -82,7 +82,7 @@ export const generateZip = async (
 ) => {
 	// Check if zip file already exists
 	const zipFile = await listBucket(`${id}@${version}/download.zip`);
-	if (zipFile.length > 0) return;
+	if (zipFile.objects.length > 0) return;
 
 	// Generate zip file of all fonts
 	const zip = new JSZip();
