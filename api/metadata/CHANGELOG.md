@@ -1,5 +1,11 @@
 # api
 
+## 0.1.9
+
+### Patch Changes
+
+- [#810](https://github.com/fontsource/fontsource/pull/810) [`08cc41ccbb`](https://github.com/fontsource/fontsource/commit/08cc41ccbbb61519c4a5421dfa0376961c17530c) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(website): increase concurrency for download worker
+
 ## 0.1.8
 
 ### Patch Changes
