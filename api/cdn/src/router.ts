@@ -37,9 +37,9 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 	const isZip = extension === 'zip';
 	// If version is a specific version e.g. @3.1.1, give maximum cache, else give 1 day
 	const cacheControl =
-		version.split('.').length === 3
+		tag.split('@')[1].split('.').length === 3
 			? 'public, max-age=31536000, immutable'
-			: 'public, max-age=86400';
+			: 'public, max-age=86400, stale-while-revalidate=604800';
 
 	const headers = {
 		'Cache-Control': cacheControl,
@@ -110,7 +110,7 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 
 	// If version is a specific version e.g. @3.1.1, give maximum cache, else give 1 day
 	const cacheControl =
-		version.split('.').length === 3
+		tag.split('@')[1].split('.').length === 3
 			? 'public, max-age=31536000, immutable'
 			: 'public, max-age=86400, stale-while-revalidate=604800';
 
