@@ -16,7 +16,6 @@ import {
 } from 'react-instantsearch-hooks-web';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
-import { useLoadFont } from '@/hooks/useLoadFont';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 import { display, previewValue, size } from './observables';
