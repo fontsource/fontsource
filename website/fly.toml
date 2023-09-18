@@ -15,7 +15,7 @@ auto_rollback = true
 PRIMARY_REGION = "nrt"
 
 [deploy]
-strategy = "canary"
+strategy = "bluegreen"
 
 [[services]]
 protocol = "tcp"
@@ -30,10 +30,11 @@ force_https = true
 [[services.ports]]
 port = 443
 handlers = ["tls", "http"]
+
 [services.concurrency]
 type = "connections"
-hard_limit = 60
-soft_limit = 45
+hard_limit = 100
+soft_limit = 50
 
 [[services.tcp_checks]]
 interval = "15s"
