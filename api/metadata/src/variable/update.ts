@@ -3,6 +3,7 @@ import { StatusError } from 'itty-router';
 import { AXIS_REGISTRY_URL, KV_TTL, VARIABLE_URL } from '../utils';
 import {
 	type AxisRegistry,
+	type AxisRegistryDownload,
 	type VariableMetadata,
 	type VariableMetadataWithVariants,
 } from './types';
@@ -81,11 +82,18 @@ export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
 			`Failed to fetch axis registry metadata. ${text}`,
 		);
 	}
-	const data = await resp.json<AxisRegistry>();
+	const data = await resp.json<AxisRegistryDownload>();
+
+	const registry: AxisRegistry = {};
+	// Remove tag property from all fonts and use it as a key
+	for (const item of data) {
+		const { tag, ...rest } = item;
+		registry[tag] = rest;
+	}
 
 	// Save entire metadata into KV first
 	ctx.waitUntil(
-		env.VARIABLE.put('axis_registry', JSON.stringify(data), {
+		env.VARIABLE.put('axis_registry', JSON.stringify(registry), {
 			metadata: {
 				// We need to set a custom ttl for a stale-while-revalidate strategy
 				ttl: Date.now() + KV_TTL,
@@ -93,5 +101,5 @@ export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
 		}),
 	);
 
-	return data;
+	return registry;
 };

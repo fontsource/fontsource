@@ -14,7 +14,7 @@ import {
 	getOrUpdateVariableId,
 	getOrUpdateVariableList,
 } from './get';
-import { isAxisRegistryQuery } from './types';
+import { type AxisRegistry, isAxisRegistryQuery } from './types';
 
 interface DownloadRequest extends IRequestStrict {
 	id: string;
@@ -60,7 +60,7 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 	}
 
 	const queries = url.searchParams.entries();
-	let filtered = registry;
+	const filtered: AxisRegistry = {};
 
 	for (const [key, value] of queries) {
 		// Type guard
@@ -70,16 +70,16 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 
 		// Multiple values may be comma separated
 		const values = value.split(',');
-
-		// Filter the results
-		filtered = filtered.filter((item) => {
-			if (key === 'name' || key === 'tag') {
-				return values.some((v) => item[key].includes(v));
+		for (const [tag, axisItem] of Object.entries(registry)) {
+			// Filter the results
+			if (key === 'tag') {
+				filtered[tag] = registry[tag];
 			}
 
-			// Coerce to string for boolean responses (variable)
-			return values.includes(String(item[key]));
-		});
+			if (key === 'name' && values.some((v) => axisItem.name.includes(v))) {
+				filtered[tag] = registry[tag];
+			}
+		}
 	}
 
 	return json(filtered, { headers });
