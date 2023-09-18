@@ -12,22 +12,42 @@ const makeFontFilePath = (
 	return `https://r2.fontsource.org/fonts/${tag}/${subset}-${weight}-${style}.${extension}`;
 };
 
+// Insert a weight array to find the closest number given num - used for index.css gen
+const findClosest = (arr: number[], num: number): number => {
+	// Array of absolute values showing diff from target number
+	const indexArr = arr.map((weight) => Math.abs(Number(weight) - num));
+	// Find smallest diff
+	const min = Math.min(...indexArr);
+	const closest = arr[indexArr.indexOf(min)];
+
+	return closest;
+};
+
 export const updateCss = (
 	tag: string,
 	fileName: string,
 	metadata: IDResponse,
 ) => {
-	const { family, styles, subsets, weights, unicodeRange } = metadata;
-	const [subset, weight, style] = fileName.split('-');
+	const { family, styles, subsets, weights, unicodeRange, defSubset } =
+		metadata;
+	const isIndex = fileName === 'index';
+	let [subset, weight, style] = fileName.split('-');
 	if (
-		!subset ||
-		!weight ||
-		!style ||
-		!subsets.includes(subset) ||
-		!weights.includes(Number(weight)) ||
-		!styles.includes(style)
+		!isIndex &&
+		(!subset ||
+			!weight ||
+			!style ||
+			!subsets.includes(subset) ||
+			!weights.includes(Number(weight)) ||
+			!styles.includes(style))
 	) {
 		throw new StatusError(404, 'Not Found. Invalid filename.');
+	}
+
+	if (isIndex) {
+		subset = defSubset;
+		weight = String(findClosest(weights, 400));
+		style = 'normal';
 	}
 
 	const fontObj: FontObject = {
