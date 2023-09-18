@@ -1,5 +1,11 @@
 # cdn
 
+## 0.1.2
+
+### Patch Changes
+
+- [`e6c9aa614b`](https://github.com/fontsource/fontsource/commit/e6c9aa614beb1784d006562e65f06b4d101d82e7) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): use full version tag for all bucket operations [#818](https://github.com/fontsource/fontsource/pull/818)
+
 ## 0.1.1
 
 ### Patch Changes
