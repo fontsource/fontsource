@@ -27,6 +27,34 @@ importers:
         specifier: ^0.34.4
         version: 0.34.4
 
+  api/cdn:
+    dependencies:
+      common-api:
+        specifier: workspace:*
+        version: link:../common
+    devDependencies:
+      '@ayuhito/eslint-config':
+        specifier: ^0.4.1
+        version: 0.4.1(eslint@8.49.0)(typescript@5.2.2)
+      '@cloudflare/workers-types':
+        specifier: ^4.20230904.0
+        version: 4.20230914.0
+      eslint:
+        specifier: ^8.49.0
+        version: 8.49.0
+      itty-router:
+        specifier: ^4.0.22
+        version: 4.0.23
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+      vitest-environment-miniflare:
+        specifier: ^2.14.1
+        version: 2.14.1(vitest@0.34.4)
+      wrangler:
+        specifier: ^3.7.0
+        version: 3.8.0
+
   api/common:
     devDependencies:
       '@cloudflare/workers-types':
@@ -5487,11 +5515,11 @@ packages:
       object-is: 1.1.5
       object-keys: 1.1.1
       object.assign: 4.1.4
-      regexp.prototype.flags: 1.5.0
+      regexp.prototype.flags: 1.5.1
       side-channel: 1.0.4
       which-boxed-primitive: 1.0.2
       which-collection: 1.0.1
-      which-typed-array: 1.1.9
+      which-typed-array: 1.1.11
     dev: true
 
   /deep-extend@0.6.0:
@@ -7831,17 +7859,6 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       has-symbols: 1.0.3
-
-  /is-typed-array@1.1.10:
-    resolution: {integrity: sha512-PJqgEHiWZvMpaFZ3uTc8kHPM4+4ADTlDniuQL7cU/UDA0Ql7F70yGfHph3cLNe+c9toaigv+DFzTJKhc2CtO6A==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      available-typed-arrays: 1.0.5
-      call-bind: 1.0.2
-      for-each: 0.3.3
-      gopd: 1.0.1
-      has-tostringtag: 1.0.0
-    dev: true
 
   /is-typed-array@1.1.12:
     resolution: {integrity: sha512-Z14TF2JNG8Lss5/HMqt0//T9JeHXttXy5pH/DBU4vi98ozO2btxzq9MwYDZYnKwU8nRsz/+GVFVRDq3DkVuSPg==}
@@ -12227,18 +12244,6 @@ packages:
       for-each: 0.3.3
       gopd: 1.0.1
       has-tostringtag: 1.0.0
-
-  /which-typed-array@1.1.9:
-    resolution: {integrity: sha512-w9c4xkx6mPidwp7180ckYWfMmvxpjlZuIudNtDf4N/tTAUB8VJbX25qZoAsrtGuYNnGw3pa0AXgbGKRB8/EceA==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      available-typed-arrays: 1.0.5
-      call-bind: 1.0.2
-      for-each: 0.3.3
-      gopd: 1.0.1
-      has-tostringtag: 1.0.0
-      is-typed-array: 1.1.10
-    dev: true
 
   /which@1.3.1:
     resolution: {integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==}
