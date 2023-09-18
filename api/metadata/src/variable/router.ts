@@ -24,6 +24,9 @@ const router = Router<DownloadRequest, CFRouterContext>();
 
 router.get('/v1/variable', async (_request, env, ctx) => {
 	const variableList = await getOrUpdateVariableList(env, ctx);
+	if (!variableList) {
+		throw new StatusError(500, 'Internal Server Error. Variable list empty.');
+	}
 
 	return json(variableList, {
 		headers: {
@@ -36,6 +39,12 @@ router.get('/v1/variable', async (_request, env, ctx) => {
 router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 	const { id } = request;
 	const variableId = await getOrUpdateVariableId(id, env, ctx);
+	if (!variableId) {
+		throw new StatusError(
+			404,
+			`Not Found. Variable metadata for ${id} not found.`,
+		);
+	}
 
 	return json(variableId, {
 		headers: {
@@ -48,6 +57,9 @@ router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 router.get('/v1/axis-registry', async (request, env, ctx) => {
 	const url = new URL(request.url);
 	const registry = await getOrUpdateAxisRegistry(env, ctx);
+	if (!registry) {
+		throw new StatusError(500, 'Internal Server Error. Axis registry empty.');
+	}
 
 	const headers = {
 		'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
