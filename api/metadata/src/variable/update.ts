@@ -36,7 +36,7 @@ export const updateVariableList = async (env: Env, ctx: ExecutionContext) => {
 		}),
 	);
 
-	return data;
+	return noVariants;
 };
 
 export const updateVariable = async (

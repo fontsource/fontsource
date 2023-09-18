@@ -72,11 +72,14 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 		const values = value.split(',');
 		for (const [tag, axisItem] of Object.entries(registry)) {
 			// Filter the results
-			if (key === 'tag') {
+			if (key === 'tag' && values.some((v) => tag === v.toUpperCase())) {
 				filtered[tag] = registry[tag];
 			}
 
-			if (key === 'name' && values.some((v) => axisItem.name.includes(v))) {
+			if (
+				key === 'name' &&
+				values.some((v) => axisItem.name.toLowerCase() === v.toLowerCase())
+			) {
 				filtered[tag] = registry[tag];
 			}
 		}
