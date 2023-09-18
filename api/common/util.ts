@@ -206,7 +206,7 @@ export const splitTag = async (tag: string): Promise<Tag> => {
 
 export const splitTagCF = async (tag: string): Promise<Tag> => {
 	// Parse tag for version e.g roboto@1.1.1
-	const [id, versionTag] = tag.split('@');
+	let [id, versionTag] = tag.split('@');
 	if (!id) {
 		throw new StatusError(
 			400,
@@ -214,10 +214,7 @@ export const splitTagCF = async (tag: string): Promise<Tag> => {
 		);
 	}
 	if (!versionTag) {
-		throw new StatusError(
-			400,
-			'Bad Request. Unable to parse version from tag.',
-		);
+		versionTag = 'latest';
 	}
 
 	// Validate version tag
