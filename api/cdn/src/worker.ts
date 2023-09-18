@@ -1,6 +1,6 @@
 import { error } from 'itty-router';
 
-import router from './router';
+import router, { corsify } from './router';
 
 export default {
 	async fetch(
@@ -8,9 +8,12 @@ export default {
 		env: Env,
 		ctx: ExecutionContext,
 	): Promise<Response> {
-		return await router.handle(request, env, ctx).catch((error_) => {
-			console.error(error_);
-			return error(error_);
-		});
+		return await router
+			.handle(request, env, ctx)
+			.catch((error_) => {
+				console.error(error_);
+				return error(error_);
+			})
+			.then(corsify);
 	},
 };
