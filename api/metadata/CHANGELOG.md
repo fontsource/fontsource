@@ -1,5 +1,14 @@
 # api
 
+## 0.1.12
+
+### Patch Changes
+
+- [#820](https://github.com/fontsource/fontsource/pull/820) [`ecbdc954b9`](https://github.com/fontsource/fontsource/commit/ecbdc954b9a9584b7d4035da9293a5d5d22a5fac) Thanks [@ayuhito](https://github.com/ayuhito)! - feat(api): add cors headers to cdn api
+
+- Updated dependencies [[`9e4c4e9cd6`](https://github.com/fontsource/fontsource/commit/9e4c4e9cd66428fd12cf6963862502c1239ea146)]:
+  - common-api@0.1.3
+
 ## 0.1.11
 
 ### Patch Changes

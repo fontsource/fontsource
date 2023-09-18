@@ -1,5 +1,11 @@
 # common-api
 
+## 0.1.3
+
+### Patch Changes
+
+- [#822](https://github.com/fontsource/fontsource/pull/822) [`9e4c4e9cd6`](https://github.com/fontsource/fontsource/commit/9e4c4e9cd66428fd12cf6963862502c1239ea146) Thanks [@ayuhito](https://github.com/ayuhito)! - feat(api): add css endpoint
+
 ## 0.1.2
 
 ### Patch Changes
