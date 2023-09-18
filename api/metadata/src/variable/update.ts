@@ -1,7 +1,8 @@
 import { StatusError } from 'itty-router';
 
-import { KV_TTL, VARIABLE_URL } from '../utils';
+import { AXIS_REGISTRY_URL, KV_TTL, VARIABLE_URL } from '../utils';
 import {
+	type AxisRegistry,
 	type VariableMetadata,
 	type VariableMetadataWithVariants,
 } from './types';
@@ -42,9 +43,15 @@ export const updateVariable = async (
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
-	const response = await fetch(VARIABLE_URL);
-	const data =
-		await response.json<Record<string, VariableMetadataWithVariants>>();
+	const resp = await fetch(VARIABLE_URL);
+	if (!resp.ok) {
+		const text = await resp.text();
+		throw new StatusError(
+			resp.status,
+			`Failed to fetch variable item metadata. ${text}`,
+		);
+	}
+	const data = await resp.json<Record<string, VariableMetadataWithVariants>>();
 	const dataId = data[id];
 
 	if (!dataId) {
@@ -63,4 +70,28 @@ export const updateVariable = async (
 	);
 
 	return dataId;
+};
+
+export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
+	const resp = await fetch(AXIS_REGISTRY_URL);
+	if (!resp.ok) {
+		const text = await resp.text();
+		throw new StatusError(
+			resp.status,
+			`Failed to fetch axis registry metadata. ${text}`,
+		);
+	}
+	const data = await resp.json<AxisRegistry>();
+
+	// Save entire metadata into KV first
+	ctx.waitUntil(
+		env.VARIABLE.put('axis_registry', JSON.stringify(data), {
+			metadata: {
+				// We need to set a custom ttl for a stale-while-revalidate strategy
+				ttl: Date.now() + KV_TTL,
+			},
+		}),
+	);
+
+	return data;
 };

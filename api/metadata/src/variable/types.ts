@@ -20,4 +20,21 @@ interface VariableMetadataWithVariants extends VariableMetadata {
 
 type VariableList = Record<string, VariableMetadata>;
 
-export type { VariableList, VariableMetadata, VariableMetadataWithVariants };
+interface AxisRegistryItem {
+	name: string;
+	tag: string;
+	description: string;
+	min: number;
+	max: number;
+	default: number;
+	precision: number;
+}
+
+type AxisRegistry = AxisRegistryItem[];
+
+export type {
+	AxisRegistry,
+	VariableList,
+	VariableMetadata,
+	VariableMetadataWithVariants,
+};
