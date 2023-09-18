@@ -1,17 +1,20 @@
-import { error, type IRequestStrict, Router, withParams } from 'itty-router';
+import {
+	error,
+	type IRequestStrict,
+	json,
+	Router,
+	StatusError,
+	withParams,
+} from 'itty-router';
 
-import type { CFRouterContext, TTLMetadata } from '../types';
+import type { CFRouterContext } from '../types';
 import { CF_EDGE_TTL } from '../utils';
 import {
-	type AxisRegistry,
-	type VariableList,
-	type VariableMetadataWithVariants,
-} from './types';
-import {
-	updateAxisRegistry,
-	updateVariable,
-	updateVariableList,
-} from './update';
+	getOrUpdateAxisRegistry,
+	getOrUpdateVariableId,
+	getOrUpdateVariableList,
+} from './get';
+import { isAxisRegistryQuery } from './types';
 
 interface DownloadRequest extends IRequestStrict {
 	id: string;
@@ -20,23 +23,9 @@ interface DownloadRequest extends IRequestStrict {
 const router = Router<DownloadRequest, CFRouterContext>();
 
 router.get('/v1/variable', async (_request, env, ctx) => {
-	const kv = await env.VARIABLE_LIST.getWithMetadata<VariableList, TTLMetadata>(
-		'metadata',
-		{
-			type: 'json',
-		},
-	);
+	const variableList = await getOrUpdateVariableList(env, ctx);
 
-	let { value, metadata } = kv;
-	if (!value) {
-		value = await updateVariableList(env, ctx);
-	}
-
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
-		ctx.waitUntil(updateVariableList(env, ctx));
-	}
-
-	return new Response(JSON.stringify(value), {
+	return json(variableList, {
 		headers: {
 			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 			'Content-Type': 'application/json',
@@ -46,24 +35,9 @@ router.get('/v1/variable', async (_request, env, ctx) => {
 
 router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 	const { id } = request;
+	const variableId = await getOrUpdateVariableId(id, env, ctx);
 
-	const kv = await env.VARIABLE.getWithMetadata<
-		VariableMetadataWithVariants,
-		TTLMetadata
-	>(id, {
-		type: 'json',
-	});
-
-	let { value, metadata } = kv;
-	if (!value) {
-		value = await updateVariable(id, env, ctx);
-	}
-
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
-		ctx.waitUntil(updateVariable(id, env, ctx));
-	}
-
-	return new Response(JSON.stringify(value), {
+	return json(variableId, {
 		headers: {
 			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 			'Content-Type': 'application/json',
@@ -71,29 +45,44 @@ router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 	});
 });
 
-router.get('/v1/axis-registry', async (_request, env, ctx) => {
-	const kv = await env.VARIABLE_LIST.getWithMetadata<AxisRegistry, TTLMetadata>(
-		'axis_registry',
-		{
-			type: 'json',
-		},
-	);
+router.get('/v1/axis-registry', async (request, env, ctx) => {
+	const url = new URL(request.url);
+	const registry = await getOrUpdateAxisRegistry(env, ctx);
 
-	let { value, metadata } = kv;
-	if (!value) {
-		value = await updateAxisRegistry(env, ctx);
+	const headers = {
+		'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
+		'Content-Type': 'application/json',
+	};
+
+	// If no query string, return the entire list
+	if (url.searchParams.toString().length === 0) {
+		return json(registry, { headers });
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
-		ctx.waitUntil(updateAxisRegistry(env, ctx));
+	const queries = url.searchParams.entries();
+	let filtered = registry;
+
+	for (const [key, value] of queries) {
+		// Type guard
+		if (!isAxisRegistryQuery(key)) {
+			throw new StatusError(400, 'Bad Request. Invalid query parameter.');
+		}
+
+		// Multiple values may be comma separated
+		const values = value.split(',');
+
+		// Filter the results
+		filtered = filtered.filter((item) => {
+			if (key === 'name' || key === 'tag') {
+				return values.some((v) => item[key].includes(v));
+			}
+
+			// Coerce to string for boolean responses (variable)
+			return values.includes(String(item[key]));
+		});
 	}
 
-	return new Response(JSON.stringify(value), {
-		headers: {
-			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
-			'Content-Type': 'application/json',
-		},
-	});
+	return json(filtered, { headers });
 });
 
 // 404 for everything else
