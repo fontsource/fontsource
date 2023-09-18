@@ -61,14 +61,19 @@ export const getAvailableVersions = async (id: string): Promise<string[]> => {
 	);
 
 	if (!resp.ok) {
-		throw new Response('Internal Server Error. Unable to fetch versions.', {
-			status: 500,
-		});
+		if (resp.status === 404) {
+			throw new StatusError(404, `Not Found. ${id} does not exist.`);
+		}
+		console.log(await resp.text());
+		throw new StatusError(
+			500,
+			'Internal Server Error. Unable to fetch versions.',
+		);
 	}
 
 	const list = (await resp.json()) as JSDelivrAPIVersion;
-	if (resp.status === 404 || !list?.versions) {
-		throw new Response(`Not Found. ${id} does not exist.`, { status: 404 });
+	if (!list?.versions || list.versions.length === 0) {
+		throw new StatusError(404, `Not Found. No versions found for ${id}.`);
 	}
 
 	const versions = list.versions.map((version) => version.version);
@@ -100,9 +105,10 @@ export const getVersion = async (id: string, tag: string): Promise<string> => {
 			.shift();
 
 		if (latest) return latest;
-		throw new Response(`Not found. Version ${tag} not found for ${id}.`, {
-			status: 404,
-		});
+		throw new StatusError(
+			404,
+			`Not found. Version ${tag} not found for ${id}.`,
+		);
 	}
 
 	const semver = tag.split('.');
@@ -111,9 +117,10 @@ export const getVersion = async (id: string, tag: string): Promise<string> => {
 	if (semver.length === 3) {
 		const version = versions.find((version) => version === tag);
 		if (version) return version;
-		throw new Response(`Not found. Version ${tag} not found for ${id}.`, {
-			status: 404,
-		});
+		throw new StatusError(
+			404,
+			`Not found. Version ${tag} not found for ${id}.`,
+		);
 	}
 
 	// Find latest version that matches the minor version
@@ -135,9 +142,10 @@ export const getVersion = async (id: string, tag: string): Promise<string> => {
 			.shift();
 
 		if (version) return version;
-		throw new Response(`Not found. Version ${tag} not found for ${id}.`, {
-			status: 404,
-		});
+		throw new StatusError(
+			404,
+			`Not found. Version ${tag} not found for ${id}.`,
+		);
 	}
 
 	// Find latest version that matches the major version
@@ -162,14 +170,13 @@ export const getVersion = async (id: string, tag: string): Promise<string> => {
 			.shift();
 
 		if (version) return version;
-		throw new Response(`Not found. Version ${tag} not found for ${id}.`, {
-			status: 404,
-		});
+		throw new StatusError(
+			404,
+			`Not found. Version ${tag} not found for ${id}.`,
+		);
 	}
 
-	throw new Response(`Bad Request. Invalid tag ${tag} for ${id}.`, {
-		status: 400,
-	});
+	throw new StatusError(400, `Bad Request. Invalid tag ${tag} for ${id}.`);
 };
 
 interface Tag {
