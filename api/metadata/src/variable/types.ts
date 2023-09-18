@@ -32,9 +32,16 @@ interface AxisRegistryItem {
 
 type AxisRegistry = AxisRegistryItem[];
 
+const axisRegistryQueries = ['name', 'tag'] as const;
+type AxisRegistryQueries = (typeof axisRegistryQueries)[number];
+const isAxisRegistryQuery = (x: string): x is AxisRegistryQueries =>
+	axisRegistryQueries.includes(x as AxisRegistryQueries);
+
 export type {
 	AxisRegistry,
 	VariableList,
 	VariableMetadata,
 	VariableMetadataWithVariants,
 };
+
+export { isAxisRegistryQuery };
