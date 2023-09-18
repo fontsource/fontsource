@@ -1,5 +1,11 @@
 import { getMetadataCF, splitTagCF } from 'common-api/util';
-import { error, type IRequestStrict, Router, withParams } from 'itty-router';
+import {
+	createCors,
+	error,
+	type IRequestStrict,
+	Router,
+	withParams,
+} from 'itty-router';
 
 import type { CFRouterContext } from './types';
 import { getOrUpdateFile, getOrUpdateZip, isAcceptedExtension } from './util';
@@ -9,7 +15,11 @@ interface CDNRequest extends IRequestStrict {
 	file: string;
 }
 
+export const { preflight, corsify } = createCors();
+
 const router = Router<CDNRequest, CFRouterContext>();
+
+router.all('*', preflight);
 
 router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 	const { tag, file } = request;
