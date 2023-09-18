@@ -1,5 +1,15 @@
 # api
 
+## 0.2.0
+
+### Minor Changes
+
+- [#826](https://github.com/fontsource/fontsource/pull/826) [`880624c251`](https://github.com/fontsource/fontsource/commit/880624c251c71e6e3e2155202a1a5ae821155970) Thanks [@ayuhito](https://github.com/ayuhito)! - feat(api): add axis registry queries
+
+### Patch Changes
+
+- [#824](https://github.com/fontsource/fontsource/pull/824) [`c9a873d82b`](https://github.com/fontsource/fontsource/commit/c9a873d82b2b0ddca1a2d2b1dc1f3ff17e99682e) Thanks [@ayuhito](https://github.com/ayuhito)! - feat(api): add variable metadata endpoints
+
 ## 0.1.12
 
 ### Patch Changes
