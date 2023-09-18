@@ -61,6 +61,9 @@ const getOrUpdateFile = async (tag: string, file: string, env: Env) => {
 
 		const resp = await fetch(req);
 		if (!resp.ok) {
+			if (resp.status === 404) {
+				throw new StatusError(resp.status, 'Not Found. File does not exist.');
+			}
 			const error = await resp.text();
 
 			throw new StatusError(

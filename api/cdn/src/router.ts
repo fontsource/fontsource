@@ -16,7 +16,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 
 	// Read version metadata from url
 	const { id, version } = await splitTagCF(tag);
-	const extension = file.split('.').pop();
+	const [fileName, extension] = file.split('.');
 	if (!extension || !isAcceptedExtension(extension)) {
 		return error(400, 'Bad Request. Invalid file extension.');
 	}
@@ -51,6 +51,20 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 	const metadata = await getMetadata(id);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
+	}
+
+	// Verify file name is valid before hitting download worker
+	const [subset, weight, style] = fileName.split('-');
+	if (
+		file !== 'download.zip' &&
+		(!subset ||
+			!weight ||
+			!style ||
+			!metadata.subsets.includes(subset) ||
+			!metadata.weights.includes(Number(weight)) ||
+			!metadata.styles.includes(style))
+	) {
+		return error(404, 'Not Found. Invalid filename.');
 	}
 
 	isZip
