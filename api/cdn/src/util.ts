@@ -1,7 +1,6 @@
-import { type StatusErrorObject } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
-const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'otf', 'zip'] as const;
+const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'zip'] as const;
 type AcceptedExtension = (typeof ACCEPTED_EXTENSIONS)[number];
 
 export const isAcceptedExtension = (
@@ -9,50 +8,71 @@ export const isAcceptedExtension = (
 ): extension is AcceptedExtension =>
 	ACCEPTED_EXTENSIONS.includes(extension as AcceptedExtension);
 
-// Download specified version from download worker
-export const downloadVersion = async (
-	id: string,
-	version: string,
-	req: Request,
-	env: Env,
-) => {
-	const apiPathname = `/v1/${id}@${version}`;
-	const url = new URL(req.url);
-	url.pathname = apiPathname;
+const getOrUpdateZip = async (tag: string, env: Env) => {
+	// Check if download.zip exists in bucket
+	const zip = await env.BUCKET.get(`${tag}/download.zip`);
+	if (!zip) {
+		// Try calling download worker
+		const req = new Request(`https://fontsource.org/actions/download/${tag}`, {
+			method: 'POST',
+			headers: {
+				Authorization: `Bearer ${env.UPLOAD_KEY}`,
+			},
+		});
 
-	const newRequest = new Request(url.toString(), { ...req, method: 'POST' });
+		const resp = await fetch(req);
+		if (!resp.ok) {
+			const error = await resp.text();
 
-	const response = await env.DOWNLOAD.fetch(newRequest);
-	if (!response.ok) {
-		const error = await response.json<StatusErrorObject>();
-		throw new StatusError(
-			response.status,
-			`Bad response from download worker. ${error.error}`,
-		);
+			if (resp.status === 524) {
+				throw new StatusError(
+					resp.status,
+					'Timeout from download worker. Please try again later as the package may be still downloading to our servers.',
+				);
+			}
+
+			throw new StatusError(
+				resp.status,
+				`Bad response from download worker. ${error}`,
+			);
+		}
+
+		// Check again if download.zip exists in bucket
+		const zip = await env.BUCKET.get(`${tag}/download.zip`);
+		return zip;
 	}
+	return zip;
 };
 
-export const downloadFile = async (
-	id: string,
-	version: string,
-	file: string,
-	req: Request,
-	env: Env,
-) => {
-	const apiPathname = file.endsWith('.zip')
-		? `/v1/${id}@${version}`
-		: `/v1/${id}@${version}/${file}`;
-	const url = new URL(req.url);
-	url.pathname = apiPathname;
-
-	const newRequest = new Request(url.toString(), { ...req, method: 'POST' });
-
-	const response = await env.DOWNLOAD.fetch(newRequest);
-	if (!response.ok) {
-		const error = await response.json<StatusErrorObject>();
-		throw new StatusError(
-			response.status,
-			`Bad response from download worker. ${error.error}`,
+const getOrUpdateFile = async (tag: string, file: string, env: Env) => {
+	// Check if file exists in bucket
+	const font = await env.BUCKET.get(`${tag}/${file}`);
+	if (!font) {
+		// Try calling download worker
+		const req = new Request(
+			`https://fontsource.org/actions/download/${tag}/${file}`,
+			{
+				method: 'POST',
+				headers: {
+					Authorization: `Bearer ${env.UPLOAD_KEY}`,
+				},
+			},
 		);
+
+		const resp = await fetch(req);
+		if (!resp.ok) {
+			const error = await resp.text();
+
+			throw new StatusError(
+				resp.status,
+				`Bad response from download worker. ${error}`,
+			);
+		}
+		// Check again if file exists in bucket
+		const font = await env.BUCKET.get(`${tag}/${file}`);
+		return font;
 	}
+	return font;
 };
+
+export { getOrUpdateFile, getOrUpdateZip };

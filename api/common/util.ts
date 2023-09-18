@@ -2,7 +2,7 @@ import { StatusError } from 'itty-router';
 import { IDResponse, StatusErrorObject } from './types';
 
 // Fetch latest metadata from metadata worker
-export const getMetadata = async (id: string, req: Request, env: Env) => {
+export const getMetadata = async (id: string) => {
 	// TODO: We've disabled the service binding for now until Miniflare 3 for Vitest is released
 	// TODO: This is due to us wanting to use nested workers which is not supported in Miniflare 2
 	// TODO: Alternatively, we could use this once our CDN proxy with jsDelivr is live

@@ -2,88 +2,71 @@ import { getMetadata, splitTag } from 'common-api/util';
 import { error, type IRequestStrict, Router, withParams } from 'itty-router';
 
 import type { CFRouterContext } from './types';
-import { downloadFile, isAcceptedExtension } from './util';
+import { getOrUpdateFile, getOrUpdateZip, isAcceptedExtension } from './util';
 
 interface CDNRequest extends IRequestStrict {
-	id: string;
+	tag: string;
 	file: string;
 }
 
 const router = Router<CDNRequest, CFRouterContext>();
 
-router.get('/fonts/:id/:file', withParams, async (request, env, ctx) => {
-	const { id, file, url } = request;
-
-	// Check CF cache
-	const cacheKey = new Request(url, request.clone());
-	const cache = caches.default;
-
-	let response = await cache.match(cacheKey);
-	if (response) return response;
+router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
+	const { tag, file } = request;
 
 	// Read version metadata from url
-	const { id: fontId, version } = await splitTag(id);
+	const { id, version } = await splitTag(tag);
 	const extension = file.split('.').pop();
 	if (!extension || !isAcceptedExtension(extension)) {
 		return error(400, 'Bad Request. Invalid file extension.');
 	}
+
 	const isZip = extension === 'zip';
+	// If version is a specific version e.g. @3.1.1, give maximum cache, else give 1 day
+	const cacheControl =
+		version.split('.').length === 3
+			? 'public, max-age=31536000, immutable'
+			: 'public, max-age=86400';
+
+	const headers = {
+		'Cache-Control': cacheControl,
+		'Content-Type': isZip ? 'application/zip' : `font/${extension}`,
+		...(isZip
+			? { 'Content-Disposition': `attachment; filename="${tag}.zip"` }
+			: {}),
+	};
 
 	// Check R2 bucket for file
-	let item = await env.BUCKET.get(`${id}/${file}`);
+	let item = await env.BUCKET.get(`${tag}/${file}`);
 	if (item !== null) {
-		// If version is a specific version e.g. @3.1.1, give maximum cache, else give 1 day
-		const cacheControl =
-			version.split('.').length === 3
-				? 'public, max-age=31536000, immutable'
-				: 'public, max-age=86400';
-
 		// Cache file
 		const blob = await item.arrayBuffer();
-		response = new Response(blob, {
+		const response = new Response(blob, {
 			status: 200,
-			headers: {
-				'Cache-Control': cacheControl,
-				'Content-Type': isZip ? 'application/zip' : `font/${extension}`,
-				...(isZip
-					? { 'Content-Disposition': `attachment; filename="${id}.zip"` }
-					: {}),
-			},
+			headers,
 		});
-		ctx.waitUntil(cache.put(cacheKey, response.clone()));
 		return response;
 	}
 
 	// Else query metadata for existence check
-	const metadata = await getMetadata(fontId, request.clone(), env);
+	const metadata = await getMetadata(id);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
 
-	await downloadFile(fontId, version, file, request.clone(), env);
+	isZip
+		? await getOrUpdateZip(tag, env)
+		: await getOrUpdateFile(tag, file, env);
 
 	// Check R2 bucket for file
 	item = await env.BUCKET.get(`${id}/${file}`);
 	if (item !== null) {
-		// If version is a specific version e.g. @3.1.1, give maximum cache, else give 1 day
-		const cacheControl =
-			version.split('.').length === 3
-				? 'public, max-age=31536000, immutable'
-				: 'public, max-age=86400';
-
 		// Cache file
 		const blob = await item.arrayBuffer();
-		response = new Response(blob, {
+		const response = new Response(blob, {
 			status: 200,
-			headers: {
-				'Cache-Control': cacheControl,
-				'Content-Type': isZip ? 'application/zip' : `font/${extension}`,
-				...(isZip
-					? { 'Content-Disposition': `attachment; filename="${id}.zip"` }
-					: {}),
-			},
+			headers,
 		});
-		ctx.waitUntil(cache.put(cacheKey, response.clone()));
 		return response;
 	}
 
