@@ -85,6 +85,10 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 		}
 	}
 
+	if (Object.keys(filtered).length === 0) {
+		throw new StatusError(404, 'Not Found. No matching axis found.');
+	}
+
 	return json(filtered, { headers });
 });
 
