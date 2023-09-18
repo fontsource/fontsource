@@ -15,6 +15,7 @@ import {
 	useInstantSearch,
 } from 'react-instantsearch-hooks-web';
 
+import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import { useLoadFont } from '@/hooks/useLoadFont';
 import type { AlgoliaMetadata } from '@/utils/types';
 
@@ -78,8 +79,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	const { classes } = useStyles();
 	const displaySelect = useSelector(display);
 
-	const [loading, setLoading] = useState(true);
-	useLoadFont(hit.objectID, hit.family, 'index', setLoading);
+	const isFontLoaded = useIsFontLoaded(hit.family);
 
 	// Change preview text if hit.defSubset is not latin or if it's an icon
 	const previewValueSelect = useSelector(previewValue);
@@ -97,7 +97,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 		) {
 			previewFetcher.submit(
 				{ id: hit.objectID, subset: hit.defSubset },
-				{ method: 'POST', action: '/actions/language' }
+				{ method: 'POST', action: '/actions/language' },
 			);
 		}
 
@@ -118,7 +118,11 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 			className={classes.wrapper}
 			mih={{ base: '150px', sm: displaySelect === 'grid' ? '332px' : '150px' }}
 		>
-			<Skeleton visible={loading}>
+			<link
+				rel="stylesheet"
+				href={`https://r2.fontsource.org/css/${hit.objectID}@latest/index.css`}
+			/>
+			<Skeleton visible={!isFontLoaded}>
 				<Text size={fontSize} style={{ fontFamily: `"${hit.family}"` }}>
 					{currentPreview}
 				</Text>

@@ -10,13 +10,13 @@ export const useLoadFont = (
 	family: string,
 	type: LoadType,
 	setLoading: React.Dispatch<React.SetStateAction<boolean>>,
-	weights?: number[]
+	weights?: number[],
 ) => {
 	const fontCss = useFetcher();
 	// useFetcher only knows when the CSS is loaded, but not the font files themselves
 	const isFontLoaded = useIsFontLoaded(
 		type === 'variable' ? `${family} Variable` : family,
-		weights
+		weights,
 	);
 
 	useEffect(() => {
