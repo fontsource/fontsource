@@ -5,8 +5,7 @@ import { ensurePrimary } from '@/utils/fly.server';
 import type { FontDirectory, Metadata } from '@/utils/types';
 import { isStandardAxesKey, kya } from '@/utils/utils.server';
 
-import { getMetadata } from './metadata/metadata.server';
-import { getVariable } from './metadata/variable.server';
+import { getMetadata, getVariable } from './metadata/metadata.server';
 
 const BASE_URL = (dir: FontDirectory) =>
 	`https://cdn.jsdelivr.net/gh/fontsource/font-files@main/fonts/${dir}`;
@@ -195,7 +194,7 @@ const addCss = async (metadata: Metadata) => {
 
 		css = cssRewrite(css, id, fontDir);
 
-		const wght = variableMetadata.wght;
+		const wght = variableMetadata.axes.wght;
 		await knex('css')
 			.insert({
 				id,

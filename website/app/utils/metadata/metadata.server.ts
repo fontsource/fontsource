@@ -1,9 +1,12 @@
-import type { Metadata } from '@/utils/types';
+import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 import { kya } from '@/utils/utils.server';
 
 const FONTLIST_URL = 'https://api.fontsource.org/fontlist';
 const METADATA_URL = 'https://api.fontsource.org/v1/fonts/';
 const FULL_METADATA_URL = 'https://api.fontsource.org/v1/fonts';
+const VARIABLE_URL = (id: string) =>
+	`https://api.fontsource.org/v1/variable/${id}`;
+const AXIS_REGISTRY_URL = 'https://api.fontsource.org/v1/axis-registry';
 
 const getFontlist = async (): Promise<Record<string, string>> => {
 	const fontlist = await kya(FONTLIST_URL);
@@ -27,4 +30,18 @@ const getFullMetadata = async (): Promise<Record<string, Metadata>> => {
 	return metadata;
 };
 
-export { getFontlist, getFullMetadata, getMetadata };
+const getVariable = async (id: string): Promise<VariableData> => {
+	return await kya(VARIABLE_URL(id));
+};
+
+const getAxisRegistry = async (): Promise<AxisRegistryAll> => {
+	return await kya(AXIS_REGISTRY_URL);
+};
+
+export {
+	getAxisRegistry,
+	getFontlist,
+	getFullMetadata,
+	getMetadata,
+	getVariable,
+};
