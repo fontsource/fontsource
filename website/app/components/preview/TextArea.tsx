@@ -158,12 +158,13 @@ const TextArea = ({ metadata }: TextAreaProps) => {
 	const isVariable = Boolean(metadata.variable);
 
 	const [loading, setLoading] = useState(true);
+
 	useLoadFont(
 		metadata.id,
 		metadata.family,
 		isVariable ? 'variable' : 'all',
 		setLoading,
-		metadata.weights
+		metadata.weights,
 	);
 
 	return (
