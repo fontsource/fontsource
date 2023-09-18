@@ -1,4 +1,4 @@
-import { getMetadata, splitTagCF } from 'common-api/util';
+import { getMetadataCF, splitTagCF } from 'common-api/util';
 import { error, type IRequestStrict, Router, withParams } from 'itty-router';
 
 import type { CFRouterContext } from './types';
@@ -48,7 +48,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 	}
 
 	// Else query metadata for existence check
-	const metadata = await getMetadata(id);
+	const metadata = await getMetadataCF(id, request.clone(), env);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
 	}

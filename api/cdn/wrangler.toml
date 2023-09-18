@@ -6,5 +6,12 @@ r2_buckets = [
   { binding = "BUCKET", bucket_name = "fonts", preview_bucket_name = "fonts-preview" },
 ]
 
+services = [
+  { binding = "METADATA", service = "api", environment = "production" },
+]
+
 logpush = true
 workers_dev = false
+
+[miniflare.mounts]
+api = "../api/"
