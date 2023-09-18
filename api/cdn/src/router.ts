@@ -4,11 +4,13 @@ import {
 	error,
 	type IRequestStrict,
 	Router,
+	StatusError,
 	withParams,
 } from 'itty-router';
 
+import { updateCss } from './css';
 import type { CFRouterContext } from './types';
-import { getOrUpdateFile, getOrUpdateZip, isAcceptedExtension } from './util';
+import { isAcceptedExtension, updateFile, updateZip } from './util';
 
 interface CDNRequest extends IRequestStrict {
 	tag: string;
@@ -48,7 +50,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 	};
 
 	// Check R2 bucket for file
-	let item = await env.BUCKET.get(`${fullTag}/${file}`);
+	let item = await env.FONTS.get(`${fullTag}/${file}`);
 	if (item !== null) {
 		const blob = await item.arrayBuffer();
 		const response = new Response(blob, {
@@ -78,12 +80,10 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 		return error(404, 'Not Found. Invalid filename.');
 	}
 
-	isZip
-		? await getOrUpdateZip(fullTag, env)
-		: await getOrUpdateFile(fullTag, file, env);
-
-	// Check R2 bucket for file
-	item = await env.BUCKET.get(`${fullTag}/${file}`);
+	// Fetch file from download worker
+	item = isZip
+		? await updateZip(fullTag, env)
+		: await updateFile(fullTag, file, env);
 	if (item !== null) {
 		const blob = await item.arrayBuffer();
 		const response = new Response(blob, {
@@ -95,6 +95,55 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 
 	// If file does not exist, return 404
 	return error(404, 'Not Found. File does not exist.');
+});
+
+router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
+	const { tag, file } = request;
+
+	// Read version metadata from url
+	const { id, version } = await splitTagCF(tag);
+	const fullTag = `${id}@${version}`;
+	const [fileName, extension] = file.split('.');
+	if (!extension || extension !== 'css') {
+		return error(400, 'Bad Request. Invalid file extension.');
+	}
+
+	// If version is a specific version e.g. @3.1.1, give maximum cache, else give 1 day
+	const cacheControl =
+		version.split('.').length === 3
+			? 'public, max-age=31536000, immutable'
+			: 'public, max-age=86400, stale-while-revalidate=604800';
+
+	const headers = {
+		'Cache-Control': cacheControl,
+		'Content-Type': 'text/css',
+	};
+
+	// Check KV for file
+	const key = `${fullTag}_${file}`;
+
+	let item = await env.CSS.get(key);
+	if (!item) {
+		// Else query metadata for existence check
+		const metadata = await getMetadataCF(id, request.clone(), env);
+		if (!metadata) {
+			throw new StatusError(404, 'Not Found. Font does not exist.');
+		}
+
+		// Fetch file from download worker
+		item = updateCss(fullTag, fileName, metadata);
+		if (!item) {
+			// If file does not exist, return 404
+			throw new StatusError(404, 'Not Found. File does not exist.');
+		}
+
+		ctx.waitUntil(env.CSS.put(key, item));
+	}
+
+	return new Response(item, {
+		status: 200,
+		headers,
+	});
 });
 
 // 404 for everything else

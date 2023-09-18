@@ -6,6 +6,7 @@ Learn more about the API at [fontsource.org](https://fontsource.org/docs/api/int
 
 ### Workers
 
+- [cdn](./cdn) - The worker that acts as the origin for the jsDelivr CDN proxy.
 - [common](./common) - A shared library of common functions and types used by the other workers.
 - [metadata](./metadata) - The API worker that serves the KV metadata for the fonts.
 - [upload](./upload) - A worker that uploads font files from our website VM to R2.

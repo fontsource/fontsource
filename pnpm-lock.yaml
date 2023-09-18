@@ -29,6 +29,9 @@ importers:
 
   api/cdn:
     dependencies:
+      '@fontsource-utils/generate':
+        specifier: workspace:*
+        version: link:../../packages/generate
       common-api:
         specifier: workspace:*
         version: link:../common

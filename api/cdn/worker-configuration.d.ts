@@ -1,5 +1,6 @@
 interface Env {
-	BUCKET: R2Bucket;
+	CSS: KVNamespace;
+	FONTS: R2Bucket;
 	METADATA: Fetcher;
 
 	// Secrets
