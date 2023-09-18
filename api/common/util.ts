@@ -193,3 +193,25 @@ export const splitTag = async (tag: string): Promise<Tag> => {
 
 	return { id, version };
 };
+
+export const splitTagCF = async (tag: string): Promise<Tag> => {
+	// Parse tag for version e.g roboto@1.1.1
+	const [id, versionTag] = tag.split('@');
+	if (!id) {
+		throw new StatusError(
+			400,
+			'Bad Request. Unable to parse font ID from tag.',
+		);
+	}
+	if (!versionTag) {
+		throw new StatusError(
+			400,
+			'Bad Request. Unable to parse version from tag.',
+		);
+	}
+
+	// Validate version tag
+	const version = await getVersion(id, versionTag);
+
+	return { id, version };
+};
