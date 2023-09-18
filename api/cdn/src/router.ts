@@ -16,6 +16,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 
 	// Read version metadata from url
 	const { id, version } = await splitTagCF(tag);
+	const fullTag = `${id}@${version}`;
 	const [fileName, extension] = file.split('.');
 	if (!extension || !isAcceptedExtension(extension)) {
 		return error(400, 'Bad Request. Invalid file extension.');
@@ -37,7 +38,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 	};
 
 	// Check R2 bucket for file
-	let item = await env.BUCKET.get(`${tag}/${file}`);
+	let item = await env.BUCKET.get(`${fullTag}/${file}`);
 	if (item !== null) {
 		const blob = await item.arrayBuffer();
 		const response = new Response(blob, {
@@ -68,11 +69,11 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 	}
 
 	isZip
-		? await getOrUpdateZip(tag, env)
-		: await getOrUpdateFile(tag, file, env);
+		? await getOrUpdateZip(fullTag, env)
+		: await getOrUpdateFile(fullTag, file, env);
 
 	// Check R2 bucket for file
-	item = await env.BUCKET.get(`${id}/${file}`);
+	item = await env.BUCKET.get(`${fullTag}/${file}`);
 	if (item !== null) {
 		const blob = await item.arrayBuffer();
 		const response = new Response(blob, {
