@@ -14,7 +14,7 @@
 		"ci:test": "CI=true pnpm build && pnpm coverage",
 		"ci:version": "changeset version",
 		"ci:publish": "pnpm --filter \"./packages/*\" publish",
-		"ci:publish-api": "pnpm --filter \"./api/*\" run deploy"
+		"ci:publish-api": "pnpm --filter \"./packages/*\" run build && pnpm --filter \"./api/*\" run deploy"
 	},
 	"dependencies": {
 		"@changesets/changelog-github": "^0.4.8",
