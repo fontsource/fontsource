@@ -1,5 +1,11 @@
 # cdn
 
+## 0.2.1
+
+### Patch Changes
+
+- [#829](https://github.com/fontsource/fontsource/pull/829) [`d93e483504`](https://github.com/fontsource/fontsource/commit/d93e48350457b31a74d8a191742a9740deb7278a) Thanks [@ayuhito](https://github.com/ayuhito)! - Use the Cache API for API and CDN workers.
+
 ## 0.2.0
 
 ### Minor Changes
