@@ -24,7 +24,6 @@ describe('fonts id worker', () => {
 	it('should return 404 for invalid id', async () => {
 		const request = new Request('http://localhost:8787/v1/fonts/invalid-id');
 		const response = await worker.fetch(request, env, ctx);
-		console.log(await response.text());
 		expect(response.status).toBe(404);
 	});
 });
