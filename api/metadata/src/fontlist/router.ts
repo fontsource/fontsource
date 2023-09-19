@@ -8,8 +8,18 @@ import { type Fontlist, isFontlistQuery } from './types';
 const router = Router<IRequestStrict, CFRouterContext>();
 
 router.get('/fontlist', async (request, env, ctx) => {
-	// Get query string
 	const url = new URL(request.url);
+
+	// Check cache first
+	const cacheKey = new Request(url.toString(), request);
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
+
+	// Get query string
 	const queryString = url.searchParams.toString();
 
 	// If there is more than 2 query strings, then return 400
@@ -41,11 +51,14 @@ router.get('/fontlist', async (request, env, ctx) => {
 		return error(500, 'Internal server error.');
 	}
 
-	return json(list, {
+	response = json(list, {
 		headers: {
 			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 		},
 	});
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 // 404 for everything else

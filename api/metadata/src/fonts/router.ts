@@ -1,4 +1,3 @@
-import { getVersion } from 'common-api/util';
 import {
 	error,
 	type IRequestStrict,
@@ -8,7 +7,6 @@ import {
 	withParams,
 } from 'itty-router';
 
-import { getOrUpdateFile } from '../download/get';
 import { type CFRouterContext } from '../types';
 import { CF_EDGE_TTL } from '../utils';
 import { getOrUpdateArrayMetadata, getOrUpdateId } from './get';
@@ -23,11 +21,29 @@ const router = Router<FontRequest, CFRouterContext>();
 
 router.get('/v1/fonts', async (request, env, ctx) => {
 	const url = new URL(request.url);
+
+	// Check cache first
+	const cacheKey = new Request(url.toString(), request);
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
+
+	const headers = {
+		'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
+	};
 	const data = await getOrUpdateArrayMetadata(env, ctx);
 
 	// If no query string, return the entire list
 	if (url.searchParams.toString().length === 0) {
-		return json(data);
+		response = json(data, {
+			headers,
+		});
+
+		ctx.waitUntil(cache.put(cacheKey, response.clone()));
+		return response;
 	}
 
 	// Filter the results from given queries
@@ -59,79 +75,63 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 	}
 
 	// Return the filtered results
-	return json(filtered, {
-		headers: {
-			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
-		},
+	response = json(filtered, {
+		headers,
 	});
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 	const { id } = request;
+	const url = new URL(request.url);
+
+	// Check cache first
+	const cacheKey = new Request(url.toString(), request);
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
 
 	const data = await getOrUpdateId(id, env, ctx);
 	if (!data) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
 
-	return json(data, {
+	response = json(data, {
 		headers: {
 			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 		},
 	});
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
-router.get('/v1/fonts/:id/:file', withParams, async (request, env, _ctx) => {
+router.get('/v1/fonts/:id/:file', withParams, async (request, env, ctx) => {
 	const { id, file } = request;
+	const url = new URL(request.url);
 
-	const version = await getVersion(id, 'latest');
-	const tag = `${id}@${version}`;
+	// Check cache first
+	const cacheKey = new Request(url.toString(), request);
+	const cache = caches.default;
 
-	// Get from bucket directly
-	const font = await getOrUpdateFile(tag, file, env);
-	if (!font) {
-		return error(404, 'Not Found. Font file does not exist.');
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
 	}
 
-	// Return appropriate content type
-	if (file.endsWith('.woff2')) {
-		return new Response(font.body, {
-			headers: {
-				'Content-Type': 'font/woff2',
-				'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
-			},
-		});
-	}
+	// Fetch from cdn worker
+	response = await fetch(
+		`https://r2.fontsource.org/fonts/${id}@latest/${file}`,
+	);
 
-	if (file.endsWith('.woff')) {
-		return new Response(font.body, {
-			headers: {
-				'Content-Type': 'font/woff',
-				'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
-			},
-		});
-	}
-
-	if (file.endsWith('.ttf')) {
-		return new Response(font.body, {
-			headers: {
-				'Content-Type': 'font/ttf',
-				'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
-			},
-		});
-	}
-
-	if (file.endsWith('.otf')) {
-		return new Response(font.body, {
-			headers: {
-				'Content-Type': 'font/otf',
-				'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
-			},
-		});
-	}
-
-	return error(400, 'Bad Request. Invalid file type.');
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 // 404 for everything else
