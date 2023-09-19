@@ -8,25 +8,12 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/v1/download/:id', withParams, async (request, _env, ctx) => {
-	const { id, url } = request;
-
-	// Check cache first
-	const cacheKey = new Request(url, request.clone());
-	const cache = caches.default;
-
-	let response = await cache.match(cacheKey);
-	if (response) {
-		return response;
-	}
-
-	// Fetch from cdn worker
-	response = await fetch(
+router.get('/v1/download/:id', withParams, async (request, _env, _ctx) => {
+	const { id } = request;
+	return Response.redirect(
 		`https://r2.fontsource.org/fonts/${id}@latest/download.zip`,
+		302,
 	);
-
-	ctx.waitUntil(cache.put(cacheKey, response.clone()));
-	return response;
 });
 
 // 404 for everything else
