@@ -1,9 +1,6 @@
-import { getVersion } from 'common-api/util';
 import { error, type IRequestStrict, Router, withParams } from 'itty-router';
 
 import type { CFRouterContext } from '../types';
-import { CF_EDGE_TTL } from '../utils';
-import { getOrUpdateZip } from './get';
 
 interface DownloadRequest extends IRequestStrict {
 	id: string;
@@ -11,24 +8,25 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/v1/download/:id', withParams, async (request, env, ctx) => {
-	const id = request.id;
+router.get('/v1/download/:id', withParams, async (request, _env, ctx) => {
+	const { id, url } = request;
 
-	const version = await getVersion(id, 'latest');
-	const tag = `${id}@${version}`;
+	// Check cache first
+	const cacheKey = new Request(url, request.clone());
+	const cache = caches.default;
 
-	const zip = await getOrUpdateZip(tag, env);
-	if (!zip) {
-		return error(404, 'Zip Not Found.');
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
 	}
 
-	return new Response(zip.body, {
-		headers: {
-			'Content-Type': 'application/zip',
-			'Content-Disposition': `attachment; filename="${tag}.zip"`,
-			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
-		},
-	});
+	// Fetch from cdn worker
+	response = await fetch(
+		`https://r2.fontsource.org/fonts/${id}@latest/download.zip`,
+	);
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 // 404 for everything else

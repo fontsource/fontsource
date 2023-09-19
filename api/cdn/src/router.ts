@@ -23,8 +23,17 @@ const router = Router<CDNRequest, CFRouterContext>();
 
 router.all('*', preflight);
 
-router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
-	const { tag, file } = request;
+router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
+	const { tag, file, url } = request;
+
+	// Check cache first
+	const cacheKey = new Request(url, request.clone());
+	const cache = caches.default;
+
+	const response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
 
 	// Read version metadata from url
 	const { id, version } = await splitTagCF(tag);
@@ -58,6 +67,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 			status: 200,
 			headers,
 		});
+		ctx.waitUntil(cache.put(cacheKey, response.clone()));
 		return response;
 	}
 
@@ -91,6 +101,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 			status: 200,
 			headers,
 		});
+		ctx.waitUntil(cache.put(cacheKey, response.clone()));
 		return response;
 	}
 
@@ -99,7 +110,16 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, _ctx) => {
 });
 
 router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
-	const { tag, file } = request;
+	const { tag, file, url } = request;
+
+	// Check cache first
+	const cacheKey = new Request(url, request.clone());
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
 
 	// Read version metadata from url
 	const { id, version } = await splitTagCF(tag);
@@ -143,10 +163,13 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 		ctx.waitUntil(env.CSS.put(key, item));
 	}
 
-	return new Response(item, {
+	response = new Response(item, {
 		status: 200,
 		headers,
 	});
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 // 404 for everything else

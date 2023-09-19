@@ -22,22 +22,46 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/v1/variable', async (_request, env, ctx) => {
+router.get('/v1/variable', async (request, env, ctx) => {
+	const { url } = request;
+
+	// Check cache first
+	const cacheKey = new Request(url, request.clone());
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
+
 	const variableList = await getOrUpdateVariableList(env, ctx);
 	if (!variableList) {
 		throw new StatusError(500, 'Internal Server Error. Variable list empty.');
 	}
 
-	return json(variableList, {
+	response = json(variableList, {
 		headers: {
 			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 			'Content-Type': 'application/json',
 		},
 	});
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
-	const { id } = request;
+	const { id, url } = request;
+
+	// Check cache first
+	const cacheKey = new Request(url.toString(), request.clone());
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
+
 	const variableId = await getOrUpdateVariableId(id, env, ctx);
 	if (!variableId) {
 		throw new StatusError(
@@ -46,16 +70,29 @@ router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 		);
 	}
 
-	return json(variableId, {
+	response = json(variableId, {
 		headers: {
 			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 			'Content-Type': 'application/json',
 		},
 	});
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 router.get('/v1/axis-registry', async (request, env, ctx) => {
 	const url = new URL(request.url);
+
+	// Check cache first
+	const cacheKey = new Request(url.toString(), request.clone());
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
+
 	const registry = await getOrUpdateAxisRegistry(env, ctx);
 	if (!registry) {
 		throw new StatusError(500, 'Internal Server Error. Axis registry empty.');
@@ -68,7 +105,9 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 
 	// If no query string, return the entire list
 	if (url.searchParams.toString().length === 0) {
-		return json(registry, { headers });
+		response = json(registry, { headers });
+		ctx.waitUntil(cache.put(cacheKey, response.clone()));
+		return response;
 	}
 
 	const queries = url.searchParams.entries();
@@ -101,7 +140,9 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 		throw new StatusError(404, 'Not Found. No matching axis found.');
 	}
 
-	return json(filtered, { headers });
+	response = json(filtered, { headers });
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 // 404 for everything else
