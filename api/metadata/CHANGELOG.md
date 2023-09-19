@@ -1,5 +1,14 @@
 # api
 
+## 0.2.2
+
+### Patch Changes
+
+- [#830](https://github.com/fontsource/fontsource/pull/830) [`f995b21170`](https://github.com/fontsource/fontsource/commit/f995b211702a62e0b93f82cca0cc194778272ad6) Thanks [@ayuhito](https://github.com/ayuhito)! - feat(api): add stats and version endpoints
+
+- Updated dependencies [[`f995b21170`](https://github.com/fontsource/fontsource/commit/f995b211702a62e0b93f82cca0cc194778272ad6)]:
+  - common-api@0.1.4
+
 ## 0.2.1
 
 ### Patch Changes
