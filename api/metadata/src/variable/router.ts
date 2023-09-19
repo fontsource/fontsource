@@ -8,7 +8,7 @@ import {
 } from 'itty-router';
 
 import type { CFRouterContext } from '../types';
-import { CF_EDGE_TTL } from '../utils';
+import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
 import {
 	getOrUpdateAxisRegistry,
 	getOrUpdateVariableId,
@@ -41,6 +41,7 @@ router.get('/v1/variable', async (request, env, ctx) => {
 
 	response = json(variableList, {
 		headers: {
+			'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 			'Content-Type': 'application/json',
 		},
@@ -72,6 +73,7 @@ router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 
 	response = json(variableId, {
 		headers: {
+			'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 			'Content-Type': 'application/json',
 		},
@@ -99,6 +101,7 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 	}
 
 	const headers = {
+		'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 		'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 		'Content-Type': 'application/json',
 	};

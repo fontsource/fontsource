@@ -1,7 +1,7 @@
 import { error, type IRequestStrict, json, Router } from 'itty-router';
 
 import type { CFRouterContext } from '../types';
-import { CF_EDGE_TTL } from '../utils';
+import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
 import { getOrUpdateList } from './get';
 import { type Fontlist, isFontlistQuery } from './types';
 
@@ -53,6 +53,7 @@ router.get('/fontlist', async (request, env, ctx) => {
 
 	response = json(list, {
 		headers: {
+			'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 		},
 	});

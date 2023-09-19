@@ -8,7 +8,7 @@ import {
 } from 'itty-router';
 
 import { type CFRouterContext } from '../types';
-import { CF_EDGE_TTL } from '../utils';
+import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
 import { getOrUpdateArrayMetadata, getOrUpdateId } from './get';
 import { isFontsQueries } from './types';
 
@@ -32,6 +32,7 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 	}
 
 	const headers = {
+		'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 		'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 	};
 	const data = await getOrUpdateArrayMetadata(env, ctx);
@@ -92,7 +93,6 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 
 	let response = await cache.match(cacheKey);
 	if (response) {
-		console.log('hit');
 		return response;
 	}
 
@@ -103,6 +103,7 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 
 	response = json(data, {
 		headers: {
+			'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 			'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 		},
 	});
