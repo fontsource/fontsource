@@ -3,7 +3,6 @@ import { redirect } from '@remix-run/node';
 
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
 import { populateDocsCache, resetDocsCache } from '@/utils/mdx/mdx.server';
-import { updateDownloadCount } from '@/utils/metadata/download.server';
 
 interface UpdateData {
 	algolia?: boolean;
@@ -37,11 +36,6 @@ export const action: ActionFunction = async ({ request }) => {
 	if (data.algolia) {
 		console.log('Updating algolia index');
 		await updateAlgoliaIndex(data.force);
-	}
-
-	if (data.download) {
-		console.log('Updating download count');
-		await updateDownloadCount();
 	}
 
 	return new Response('Success!');

@@ -9,10 +9,10 @@ import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
 import { getPreviewText } from '@/utils/language/language.server';
 import { ogMeta } from '@/utils/meta';
-import { getDownloadCountTotal } from '@/utils/metadata/download.server';
 import {
 	getAxisRegistry,
 	getMetadata,
+	getStats,
 	getVariable,
 } from '@/utils/metadata/metadata.server';
 import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
@@ -31,10 +31,10 @@ export const loader = async ({ params }: LoaderArgs) => {
 	const metadata = await getMetadata(id);
 	const defSubsetText = getPreviewText(metadata.id, metadata.defSubset);
 
-	const [variable, axisRegistry, downloadCount] = await Promise.all([
+	const [variable, axisRegistry, stats] = await Promise.all([
 		metadata.variable ? getVariable(id) : undefined,
 		metadata.variable ? getAxisRegistry() : undefined,
-		getDownloadCountTotal(id),
+		getStats(id),
 	]);
 
 	const res: FontMetadata = {
@@ -42,7 +42,7 @@ export const loader = async ({ params }: LoaderArgs) => {
 		variable,
 		axisRegistry,
 		defSubsetText,
-		downloadCount,
+		downloadCount: stats.total.npmDownloadTotal,
 	};
 
 	return json(res);
