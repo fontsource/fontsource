@@ -37,4 +37,10 @@ interface StatusErrorObject {
 	error: string;
 }
 
-export type { FontVariants, IDResponse, StatusErrorObject };
+interface VersionResponse {
+	latest: string;
+	static: string[];
+	variable?: string[];
+}
+
+export type { FontVariants, IDResponse, StatusErrorObject, VersionResponse };

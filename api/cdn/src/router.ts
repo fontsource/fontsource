@@ -1,4 +1,4 @@
-import { getMetadataCF, splitTagCF } from 'common-api/util';
+import { getMetadata, splitTag } from 'common-api/util';
 import {
 	createCors,
 	error,
@@ -36,7 +36,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	}
 
 	// Read version metadata from url
-	const { id, version } = await splitTagCF(tag);
+	const { id, version } = await splitTag(tag, request.clone(), env);
 	const fullTag = `${id}@${version}`;
 	const [fileName, extension] = file.split('.');
 	if (!extension || !isAcceptedExtension(extension)) {
@@ -72,7 +72,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	}
 
 	// Else query metadata for existence check
-	const metadata = await getMetadataCF(id, request.clone(), env);
+	const metadata = await getMetadata(id, request.clone(), env);
 	if (!metadata) {
 		return error(404, 'Not Found. Font does not exist.');
 	}
@@ -122,7 +122,7 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 	}
 
 	// Read version metadata from url
-	const { id, version } = await splitTagCF(tag);
+	const { id, version } = await splitTag(tag, request.clone(), env);
 	const fullTag = `${id}@${version}`;
 	const [fileName, extension] = file.split('.');
 	if (!extension || extension !== 'css') {
@@ -148,7 +148,7 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 	let item = await env.CSS.get(key);
 	if (!item) {
 		// Else query metadata for existence check
-		const metadata = await getMetadataCF(id, request.clone(), env);
+		const metadata = await getMetadata(id, request.clone(), env);
 		if (!metadata) {
 			throw new StatusError(404, 'Not Found. Font does not exist.');
 		}
