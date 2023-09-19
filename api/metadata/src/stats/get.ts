@@ -1,5 +1,7 @@
+import { type VersionResponse } from 'common-api/types';
+
 import { type TTLMetadata } from '../types';
-import { type StatsResponseAll, type VersionResponse } from './types';
+import { type StatsResponseAll } from './types';
 import { updatePackageStat, updateVersion } from './update';
 
 export const getOrUpdateVersion = async (
