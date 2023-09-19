@@ -30,7 +30,8 @@ interface AxisRegistryItem {
 	precision: number;
 }
 
-type AxisRegistry = AxisRegistryItem[];
+type AxisRegistryDownload = AxisRegistryItem[];
+type AxisRegistry = Record<string, Omit<AxisRegistryItem, 'tag'>>;
 
 const axisRegistryQueries = ['name', 'tag'] as const;
 type AxisRegistryQueries = (typeof axisRegistryQueries)[number];
@@ -39,6 +40,7 @@ const isAxisRegistryQuery = (x: string): x is AxisRegistryQueries =>
 
 export type {
 	AxisRegistry,
+	AxisRegistryDownload,
 	VariableList,
 	VariableMetadata,
 	VariableMetadataWithVariants,

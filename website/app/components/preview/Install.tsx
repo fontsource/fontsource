@@ -132,7 +132,7 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 
 	// Determine if it is a standard axis e.g. only contains wght, wdth, slnt, opsz or ital
 	const isStandard = activeAxes.every((axis) =>
-		['wght', 'wdth', 'slnt', 'opsz'].includes(axis)
+		['wght', 'wdth', 'slnt', 'opsz'].includes(axis),
 	);
 
 	const importComment =
@@ -200,7 +200,7 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 			</Title>
 			{variable && (
 				<Group>
-					{Object.keys(variable).map((axis) => (
+					{Object.keys(variable.axes).map((axis) => (
 						<Badge
 							key={axis}
 							className={classes.badge}
@@ -423,7 +423,6 @@ export const Install = ({
 							<IconEdit />
 							<Text>Last Modified: {metadata.lastModified}</Text>
 						</Group>
-
 
 						<Group
 							position="apart"

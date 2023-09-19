@@ -8,25 +8,24 @@ import { Install } from '@/components/preview/Install';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { ogMeta } from '@/utils/meta';
 import { getDownloadCountTotal } from '@/utils/metadata/download.server';
-import { getMetadata } from '@/utils/metadata/metadata.server';
-import { getVariable } from '@/utils/metadata/variable.server';
+import { getMetadata, getVariable } from '@/utils/metadata/metadata.server';
 import type { Metadata, VariableData } from '@/utils/types';
 
 interface FontMetadata {
 	metadata: Metadata;
-	variable: VariableData;
+	variable?: VariableData;
 	downloadCount: number;
 }
 
 export const loader = async ({ params }: LoaderArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
+
 	const metadata = await getMetadata(id);
-	let variable;
-	if (metadata.variable) {
-		variable = await getVariable(id);
-	}
-	const downloadCount = await getDownloadCountTotal(id);
+	const [variable, downloadCount] = await Promise.all([
+		metadata.variable ? getVariable(id) : undefined,
+		getDownloadCountTotal(id),
+	]);
 
 	const res: FontMetadata = {
 		metadata,

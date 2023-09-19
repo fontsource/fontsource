@@ -113,7 +113,7 @@ const VariableButtonsGroup = ({
 }: VariableButtonGroupProps) => {
 	return (
 		<>
-			{Object.keys(variable).map((key) => {
+			{Object.keys(variable.axes).map((key) => {
 				const label = axisRegistry?.[key]?.name ?? key;
 				const description = axisRegistry?.[key]?.description ?? key;
 				return (
@@ -122,7 +122,7 @@ const VariableButtonsGroup = ({
 						tag={key}
 						label={label}
 						description={description}
-						axes={variable[key]}
+						axes={variable.axes[key]}
 					/>
 				);
 			})}

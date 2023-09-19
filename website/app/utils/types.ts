@@ -38,7 +38,9 @@ export interface UnicodeData {
 }
 
 export interface VariableData {
-	[key: string]: AxesData;
+	family: string;
+	id: string;
+	axes: Record<string, AxesData>;
 }
 export interface AxesData {
 	default: string;

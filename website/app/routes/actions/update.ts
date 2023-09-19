@@ -4,7 +4,6 @@ import { redirect } from '@remix-run/node';
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
 import { populateDocsCache, resetDocsCache } from '@/utils/mdx/mdx.server';
 import { updateDownloadCount } from '@/utils/metadata/download.server';
-import { updateAxisRegistry } from '@/utils/metadata/variable.server';
 
 interface UpdateData {
 	algolia?: boolean;
@@ -33,11 +32,6 @@ export const action: ActionFunction = async ({ request }) => {
 		console.log('Resetting cache for docs');
 		await resetDocsCache();
 		await populateDocsCache();
-	}
-
-	if (data.axisRegistry) {
-		console.log('Updating axis registry');
-		await updateAxisRegistry();
 	}
 
 	if (data.algolia) {

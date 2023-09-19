@@ -14,7 +14,7 @@ import {
 	getOrUpdateVariableId,
 	getOrUpdateVariableList,
 } from './get';
-import { isAxisRegistryQuery } from './types';
+import { type AxisRegistry, isAxisRegistryQuery } from './types';
 
 interface DownloadRequest extends IRequestStrict {
 	id: string;
@@ -24,6 +24,9 @@ const router = Router<DownloadRequest, CFRouterContext>();
 
 router.get('/v1/variable', async (_request, env, ctx) => {
 	const variableList = await getOrUpdateVariableList(env, ctx);
+	if (!variableList) {
+		throw new StatusError(500, 'Internal Server Error. Variable list empty.');
+	}
 
 	return json(variableList, {
 		headers: {
@@ -36,6 +39,12 @@ router.get('/v1/variable', async (_request, env, ctx) => {
 router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 	const { id } = request;
 	const variableId = await getOrUpdateVariableId(id, env, ctx);
+	if (!variableId) {
+		throw new StatusError(
+			404,
+			`Not Found. Variable metadata for ${id} not found.`,
+		);
+	}
 
 	return json(variableId, {
 		headers: {
@@ -48,6 +57,9 @@ router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 router.get('/v1/axis-registry', async (request, env, ctx) => {
 	const url = new URL(request.url);
 	const registry = await getOrUpdateAxisRegistry(env, ctx);
+	if (!registry) {
+		throw new StatusError(500, 'Internal Server Error. Axis registry empty.');
+	}
 
 	const headers = {
 		'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
@@ -60,7 +72,7 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 	}
 
 	const queries = url.searchParams.entries();
-	let filtered = registry;
+	const filtered: AxisRegistry = {};
 
 	for (const [key, value] of queries) {
 		// Type guard
@@ -70,16 +82,23 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 
 		// Multiple values may be comma separated
 		const values = value.split(',');
-
-		// Filter the results
-		filtered = filtered.filter((item) => {
-			if (key === 'name' || key === 'tag') {
-				return values.some((v) => item[key].includes(v));
+		for (const [tag, axisItem] of Object.entries(registry)) {
+			// Filter the results
+			if (key === 'tag' && values.some((v) => tag === v.toUpperCase())) {
+				filtered[tag] = registry[tag];
 			}
 
-			// Coerce to string for boolean responses (variable)
-			return values.includes(String(item[key]));
-		});
+			if (
+				key === 'name' &&
+				values.some((v) => axisItem.name.toLowerCase() === v.toLowerCase())
+			) {
+				filtered[tag] = registry[tag];
+			}
+		}
+	}
+
+	if (Object.keys(filtered).length === 0) {
+		throw new StatusError(404, 'Not Found. No matching axis found.');
 	}
 
 	return json(filtered, { headers });

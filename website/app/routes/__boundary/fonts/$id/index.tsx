@@ -10,8 +10,11 @@ import { TextArea } from '@/components/preview/TextArea';
 import { getPreviewText } from '@/utils/language/language.server';
 import { ogMeta } from '@/utils/meta';
 import { getDownloadCountTotal } from '@/utils/metadata/download.server';
-import { getMetadata } from '@/utils/metadata/metadata.server';
-import { getAxisRegistry, getVariable } from '@/utils/metadata/variable.server';
+import {
+	getAxisRegistry,
+	getMetadata,
+	getVariable,
+} from '@/utils/metadata/metadata.server';
 import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 
 interface FontMetadata {
@@ -26,14 +29,13 @@ export const loader = async ({ params }: LoaderArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const metadata = await getMetadata(id);
-	let variable;
-	let axisRegistry;
-	if (metadata.variable) {
-		variable = await getVariable(id);
-		axisRegistry = await getAxisRegistry();
-	}
-	const downloadCount = await getDownloadCountTotal(id);
 	const defSubsetText = getPreviewText(metadata.id, metadata.defSubset);
+
+	const [variable, axisRegistry, downloadCount] = await Promise.all([
+		metadata.variable ? getVariable(id) : undefined,
+		metadata.variable ? getAxisRegistry() : undefined,
+		getDownloadCountTotal(id),
+	]);
 
 	const res: FontMetadata = {
 		metadata,
