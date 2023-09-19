@@ -7,8 +7,11 @@ import invariant from 'tiny-invariant';
 import { Install } from '@/components/preview/Install';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { ogMeta } from '@/utils/meta';
-import { getDownloadCountTotal } from '@/utils/metadata/download.server';
-import { getMetadata, getVariable } from '@/utils/metadata/metadata.server';
+import {
+	getMetadata,
+	getStats,
+	getVariable,
+} from '@/utils/metadata/metadata.server';
 import type { Metadata, VariableData } from '@/utils/types';
 
 interface FontMetadata {
@@ -22,15 +25,15 @@ export const loader = async ({ params }: LoaderArgs) => {
 	invariant(id, 'Missing font ID!');
 
 	const metadata = await getMetadata(id);
-	const [variable, downloadCount] = await Promise.all([
+	const [variable, stats] = await Promise.all([
 		metadata.variable ? getVariable(id) : undefined,
-		getDownloadCountTotal(id),
+		getStats(id),
 	]);
 
 	const res: FontMetadata = {
 		metadata,
 		variable,
-		downloadCount,
+		downloadCount: stats.total.npmDownloadTotal,
 	};
 
 	return json(res);

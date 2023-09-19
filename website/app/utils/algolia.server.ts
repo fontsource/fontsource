@@ -1,10 +1,10 @@
 import algoliasearch from 'algoliasearch';
 
 import {
-	getDownloadCountMonth,
-	updateDownloadCount,
-} from '@/utils/metadata/download.server';
-import { getFontlist, getFullMetadata } from '@/utils/metadata/metadata.server';
+	getFontlist,
+	getFullMetadata,
+	getStats,
+} from '@/utils/metadata/metadata.server';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 const shuffleArray = (size: number) => {
@@ -32,10 +32,6 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 		// as Algolia does not support random sorting natively
 		const randomIndexArr = shuffleArray(list.length);
 
-		// Since getting a new download count isn't expensive,
-		// we can just update it everytime we update the index
-		await updateDownloadCount();
-
 		const metadataFull = await getFullMetadata();
 
 		let index = 0;
@@ -44,7 +40,8 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 			if (!metadata)
 				console.warn(`No metadata found for ${id} when updating Algolia index`);
 
-			const downloadCountMonthly = await getDownloadCountMonth(id);
+			const stats = await getStats(id);
+			const downloadCountMonthly = stats?.total?.npmDownloadMonthly;
 
 			const obj = {
 				objectID: id,
@@ -57,7 +54,7 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 				variable: metadata.variable,
 				// Algolia sorts date using a unix timestamp instead
 				lastModified: Math.floor(
-					new Date(metadata.lastModified).getTime() / 1000
+					new Date(metadata.lastModified).getTime() / 1000,
 				),
 				downloadMonth: downloadCountMonthly ?? 0,
 				randomIndex: randomIndexArr[index],

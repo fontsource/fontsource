@@ -61,6 +61,19 @@ export interface AxisRegistry {
 
 export type AxisRegistryAll = Record<string, Omit<AxisRegistry, 'tag'>>;
 
+interface StatsResponse {
+	npmDownloadTotal: number;
+	npmDownloadMonthly: number;
+	jsDelivrHitsTotal: number;
+	jsDelivrHitsMonthly: number;
+}
+
+export interface StatsResponseAll {
+	total: StatsResponse;
+	static: StatsResponse;
+	variable?: StatsResponse;
+}
+
 export interface PackageJson {
 	version: string;
 }
