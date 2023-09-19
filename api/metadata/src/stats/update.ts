@@ -1,3 +1,4 @@
+import { type VersionResponse } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
 import { KV_TTL, STAT_TTL } from '../utils';
@@ -5,7 +6,6 @@ import {
 	type JSDelivrStat,
 	type NPMDownloadRegistry,
 	type StatsResponseAll,
-	type VersionResponse,
 } from './types';
 import { getAvailableVersions } from './util';
 

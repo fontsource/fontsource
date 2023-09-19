@@ -30,16 +30,9 @@ interface StatsResponseAll {
 	variable?: StatsResponse;
 }
 
-interface VersionResponse {
-	latest: string;
-	static: string[];
-	variable?: string[];
-}
-
 export type {
 	JSDelivrStat,
 	NPMDownloadRegistry,
 	StatsResponse,
 	StatsResponseAll,
-	VersionResponse,
 };
