@@ -3,6 +3,7 @@ import { createCors, error, Router } from 'itty-router';
 import downloadRouter from './download/router';
 import fontlistRouter from './fontlist/router';
 import fontsRouter from './fonts/router';
+import statsRouter from './stats/router';
 import variableRouter from './variable/router';
 
 export const { preflight, corsify } = createCors();
@@ -16,6 +17,8 @@ router.get('/v1/fonts/*?', fontsRouter.handle);
 router.get('/v1/download/*?', downloadRouter.handle);
 router.get('/v1/variable/*?', variableRouter.handle);
 router.get('/v1/axis-registry', variableRouter.handle);
+router.get('/v1/stats/*?', statsRouter.handle);
+router.get('/v1/version/*?', statsRouter.handle);
 
 router.all('*', () =>
 	error(

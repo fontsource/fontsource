@@ -5,6 +5,15 @@ interface NPMDownloadRegistry {
 	package: string;
 }
 
+interface NPMDownloadRegistryRange {
+	downloads: Array<{
+		downloads: number;
+		day: string;
+	}>;
+	start: string;
+	end: string;
+	package: string;
+}
 interface JSDelivrStatItem {
 	rank: number;
 	typeRank: number;
@@ -33,6 +42,7 @@ interface StatsResponseAll {
 export type {
 	JSDelivrStat,
 	NPMDownloadRegistry,
+	NPMDownloadRegistryRange,
 	StatsResponse,
 	StatsResponseAll,
 };

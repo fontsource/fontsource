@@ -5,6 +5,7 @@ import { KV_TTL, STAT_TTL } from '../utils';
 import {
 	type JSDelivrStat,
 	type NPMDownloadRegistry,
+	type NPMDownloadRegistryRange,
 	type StatsResponseAll,
 } from './types';
 import { getAvailableVersions } from './util';
@@ -113,15 +114,20 @@ export const updatePackageStat = async (
 		jsDelivrLastYearData,
 	] = await Promise.all([
 		npmMonthResp.json<NPMDownloadRegistry>(),
-		npmTotalResp.json<NPMDownloadRegistry>(),
+		npmTotalResp.json<NPMDownloadRegistryRange>(),
 		jsDelivrMonthResp.json<JSDelivrStat>(),
 		jsDelivrYearResp.json<JSDelivrStat>(),
 		jsDelivrLastYearResp.json<JSDelivrStat>(),
 	]);
 
+	const npmTotalCount = npmTotalData.downloads.reduce(
+		(acc, curr) => acc + curr.downloads,
+		0,
+	);
+
 	const resp: StatsResponseAll = {
 		total: {
-			npmDownloadTotal: npmTotalData.downloads,
+			npmDownloadTotal: npmTotalCount,
 			npmDownloadMonthly: npmMonthData.downloads,
 			jsDelivrHitsTotal:
 				jsDelivrYearData.hits.total + jsDelivrLastYearData.hits.total,
@@ -129,7 +135,7 @@ export const updatePackageStat = async (
 		},
 
 		static: {
-			npmDownloadTotal: npmTotalData.downloads,
+			npmDownloadTotal: npmTotalCount,
 			npmDownloadMonthly: npmMonthData.downloads,
 			jsDelivrHitsTotal:
 				jsDelivrYearData.hits.total + jsDelivrLastYearData.hits.total,
