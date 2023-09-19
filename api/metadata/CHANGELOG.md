@@ -1,5 +1,13 @@
 # api
 
+## 0.2.1
+
+### Patch Changes
+
+- [#829](https://github.com/fontsource/fontsource/pull/829) [`d93e483504`](https://github.com/fontsource/fontsource/commit/d93e48350457b31a74d8a191742a9740deb7278a) Thanks [@ayuhito](https://github.com/ayuhito)! - Use the Cache API for API and CDN workers.
+
+- [#827](https://github.com/fontsource/fontsource/pull/827) [`a5578da582`](https://github.com/fontsource/fontsource/commit/a5578da58241ca1ad03c714b9541e904126dada6) Thanks [@ayuhito](https://github.com/ayuhito)! - Return an object instead of an array for the axis registry endpoint.
+
 ## 0.2.0
 
 ### Minor Changes
