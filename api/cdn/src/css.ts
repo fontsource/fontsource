@@ -32,6 +32,7 @@ export const updateCss = (
 		metadata;
 	const isIndex = fileName === 'index';
 	let [subset, weight, style] = fileName.split('-');
+
 	if (
 		!isIndex &&
 		(!subset ||

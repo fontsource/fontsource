@@ -1,3 +1,5 @@
+import { type IDResponse } from 'common-api/types';
+import { getVariableMetadata } from 'common-api/util';
 import { StatusError } from 'itty-router';
 
 const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'zip'] as const;
@@ -8,62 +10,126 @@ export const isAcceptedExtension = (
 ): extension is AcceptedExtension =>
 	ACCEPTED_EXTENSIONS.includes(extension as AcceptedExtension);
 
-export const updateZip = async (tag: string, env: Env) => {
-	// Try calling download worker
-	const req = new Request(`https://fontsource.org/actions/download/${tag}`, {
-		method: 'POST',
-		headers: {
-			Authorization: `Bearer ${env.UPLOAD_KEY}`,
-		},
-	});
-
-	const resp = await fetch(req);
-	if (!resp.ok) {
-		const error = await resp.text();
-
-		if (resp.status === 524) {
-			throw new StatusError(
-				resp.status,
-				'Timeout from download worker. Please try again later as the package may be still downloading to our servers.',
-			);
-		}
-
-		throw new StatusError(
-			resp.status,
-			`Bad response from download worker. ${error}`,
-		);
+export const validateFontFilename = async (
+	filename: string,
+	metadata: IDResponse,
+	req: Request,
+	env: Env,
+) => {
+	const { id, weights, styles, subsets, variable } = metadata;
+	// Check if filename starts with id
+	if (!filename.startsWith(id)) {
+		throw new StatusError(404, 'Not Found. Invalid filename.');
 	}
 
-	// Check again if download.zip exists in bucket
-	const zip = await env.FONTS.get(`${tag}/download.zip`);
-	return zip;
+	// Remove id substring from filename
+	let filenameWithoutId = filename.replace(id, '');
+
+	// Remove dash prefix from start of filename once
+	if (filenameWithoutId.startsWith('-')) {
+		filenameWithoutId = filenameWithoutId.replace('-', '');
+	} else {
+		throw new StatusError(404, 'Not Found. Invalid filename.');
+	}
+
+	const filenameArr = filenameWithoutId.split('-');
+	const style = filenameArr.pop();
+	const weight = filenameArr.pop();
+	const subset = filenameArr.join('-');
+
+	// Accept id-subset-weight-style
+	if (
+		style &&
+		subsets.includes(subset) &&
+		weights.includes(Number(weight)) &&
+		styles.includes(style)
+	) {
+		return;
+	}
+
+	// Check variable variants
+	if (variable) {
+		const variableMetadata = await getVariableMetadata(id, req, env);
+
+		const axes = weight;
+
+		// Accept id-axes
+		const axesKeys = Object.keys(variableMetadata.axes);
+		if (axes && axesKeys.includes(axes)) {
+			return;
+		}
+
+		// Accept id-axes-italic
+		if (style === 'italic' && axes && axesKeys.includes(axes)) {
+			return;
+		}
+	}
+
+	throw new StatusError(404, 'Not Found. Invalid filename.');
 };
 
-export const updateFile = async (tag: string, file: string, env: Env) => {
-	// Try calling download worker
-	const req = new Request(
-		`https://fontsource.org/actions/download/${tag}/${file}`,
-		{
-			method: 'POST',
-			headers: {
-				Authorization: `Bearer ${env.UPLOAD_KEY}`,
-			},
-		},
-	);
-
-	const resp = await fetch(req);
-	if (!resp.ok) {
-		if (resp.status === 404) {
-			throw new StatusError(resp.status, 'Not Found. File does not exist.');
-		}
-		const error = await resp.text();
-
-		throw new StatusError(
-			resp.status,
-			`Bad response from download worker. ${error}`,
-		);
+export const validateCSSFilename = async (
+	filename: string,
+	metadata: IDResponse,
+	req: Request,
+	env: Env,
+) => {
+	const { id, weights, styles, subsets, variable } = metadata;
+	// Accept index.css
+	if (filename === 'index') {
+		return;
 	}
-	// Check again if file exists in bucket
-	const font = await env.FONTS.get(`${tag}/${file}`);
-	return font;
+
+	// Accept weight.css
+	if (weights.includes(Number(filename))) {
+		return;
+	}
+
+	// Accept weight-style.css
+	const [weight, style] = filename.split('-');
+	if (weights.includes(Number(weight)) && styles.includes(style)) {
+		return;
+	}
+
+	// Accept subset-weight-style.css
+	const filenameArr = filename.split('-');
+	const style2 = filenameArr.pop();
+	const weight2 = filenameArr.pop();
+	const subset = filenameArr.join('-');
+	if (
+		style2 &&
+		subsets.includes(subset) &&
+		weights.includes(Number(weight2)) &&
+		styles.includes(style2)
+	) {
+		return;
+	}
+
+	// Check variable variants
+	if (variable) {
+		const variableMetadata = await getVariableMetadata(id, req, env);
+
+		// Accept index.css, standard.css and full.css
+		if (
+			filename === 'index' ||
+			filename === 'standard' ||
+			filename === 'full'
+		) {
+			return;
+		}
+
+		// Accept axes.css
+		const axesKeys = Object.keys(variableMetadata.axes);
+		if (axesKeys.includes(filename)) {
+			return;
+		}
+
+		// Accept axes-italic.css
+		const [axes, italic] = filename.split('-');
+		if (italic === 'italic' && axesKeys.includes(axes)) {
+			return;
+		}
+	}
+
+	throw new StatusError(404, 'Not Found. Invalid filename.');
 };

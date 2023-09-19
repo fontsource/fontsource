@@ -1,5 +1,10 @@
 import { StatusError } from 'itty-router';
-import { IDResponse, StatusErrorObject, VersionResponse } from './types';
+import {
+	IDResponse,
+	StatusErrorObject,
+	VariableMetadata,
+	VersionResponse,
+} from './types';
 
 interface Tag {
 	id: string;
@@ -27,6 +32,32 @@ export const getMetadata = async (id: string, req: Request, env: Env) => {
 	}
 
 	return await metadata.json<IDResponse>();
+};
+
+export const getVariableMetadata = async (
+	id: string,
+	req: Request,
+	env: Env,
+) => {
+	const apiPathname = `/v1/variable/${id}`;
+	const url = new URL(req.url);
+	url.pathname = apiPathname;
+
+	// Update incoming request to use new pathname
+	const newRequest = new Request(url.toString(), {
+		...req.clone(),
+		method: 'GET',
+	});
+	const metadata = await env.METADATA.fetch(newRequest);
+	if (!metadata.ok) {
+		const error = await metadata.json<StatusErrorObject>();
+		throw new StatusError(
+			metadata.status,
+			`Bad response from metadata worker. ${error.error}`,
+		);
+	}
+
+	return await metadata.json<VariableMetadata>();
 };
 
 export const findVersion = async (

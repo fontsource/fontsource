@@ -10,7 +10,12 @@ import {
 
 import { updateCss } from './css';
 import type { CFRouterContext } from './types';
-import { isAcceptedExtension, updateFile, updateZip } from './util';
+import { updateFile, updateZip } from './update';
+import {
+	isAcceptedExtension,
+	validateCSSFilename,
+	validateFontFilename,
+} from './util';
 
 interface CDNRequest extends IRequestStrict {
 	tag: string;
@@ -78,18 +83,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	}
 
 	// Verify file name is valid before hitting download worker
-	const [subset, weight, style] = fileName.split('-');
-	if (
-		file !== 'download.zip' &&
-		(!subset ||
-			!weight ||
-			!style ||
-			!metadata.subsets.includes(subset) ||
-			!metadata.weights.includes(Number(weight)) ||
-			!metadata.styles.includes(style))
-	) {
-		return error(404, 'Not Found. Invalid filename.');
-	}
+	await validateFontFilename(fileName, metadata, request.clone(), env);
 
 	// Fetch file from download worker
 	item = isZip
@@ -152,6 +146,9 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 		if (!metadata) {
 			throw new StatusError(404, 'Not Found. Font does not exist.');
 		}
+
+		// Verify file name is valid before hitting download worker
+		await validateCSSFilename(fileName, metadata, request.clone(), env);
 
 		// Fetch file from download worker
 		item = updateCss(fullTag, fileName, metadata);
