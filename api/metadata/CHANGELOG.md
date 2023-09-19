@@ -1,5 +1,11 @@
 # api
 
+## 0.2.3
+
+### Patch Changes
+
+- [#833](https://github.com/fontsource/fontsource/pull/833) [`124c493560`](https://github.com/fontsource/fontsource/commit/124c493560b5695a31b0143f09719711fb096809) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): redirect deprecated api url to origin workers
+
 ## 0.2.2
 
 ### Patch Changes
