@@ -113,25 +113,10 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
-router.get('/v1/fonts/:id/:file', withParams, async (request, _env, ctx) => {
-	const { id, file, url } = request;
-
-	// Check cache first
-	const cacheKey = new Request(url, request.clone());
-	const cache = caches.default;
-
-	let response = await cache.match(cacheKey);
-	if (response) {
-		return response;
-	}
-
-	// Fetch from cdn worker
-	response = await fetch(
-		`https://r2.fontsource.org/fonts/${id}@latest/${file}`,
-	);
-
-	ctx.waitUntil(cache.put(cacheKey, response.clone()));
-	return response;
+router.get('/v1/fonts/:id/:file', withParams, async (request, _env, _ctx) => {
+	const { id, file } = request;
+	const url = `https://r2.fontsource.org/fonts/${id}@latest/${file}`;
+	return Response.redirect(url, 302);
 });
 
 // 404 for everything else
