@@ -24,11 +24,10 @@ const router = Router<CDNRequest, CFRouterContext>();
 router.all('*', preflight);
 
 router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
-	const { tag, file } = request;
-	const url = new URL(request.url);
+	const { tag, file, url } = request;
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url, request.clone());
 	const cache = caches.default;
 
 	const response = await cache.match(cacheKey);
@@ -111,11 +110,10 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 });
 
 router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
-	const { tag, file } = request;
-	const url = new URL(request.url);
+	const { tag, file, url } = request;
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url, request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);

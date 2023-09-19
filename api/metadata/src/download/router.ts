@@ -9,11 +9,10 @@ interface DownloadRequest extends IRequestStrict {
 const router = Router<DownloadRequest, CFRouterContext>();
 
 router.get('/v1/download/:id', withParams, async (request, _env, ctx) => {
-	const id = request.id;
-	const url = new URL(request.url);
+	const { id, url } = request;
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url, request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);

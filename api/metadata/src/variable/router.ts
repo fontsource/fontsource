@@ -23,10 +23,10 @@ interface DownloadRequest extends IRequestStrict {
 const router = Router<DownloadRequest, CFRouterContext>();
 
 router.get('/v1/variable', async (request, env, ctx) => {
-	const url = new URL(request.url);
+	const { url } = request;
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url, request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);
@@ -51,11 +51,10 @@ router.get('/v1/variable', async (request, env, ctx) => {
 });
 
 router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
-	const { id } = request;
-	const url = new URL(request.url);
+	const { id, url } = request;
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url.toString(), request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);
@@ -86,7 +85,7 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 	const url = new URL(request.url);
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url.toString(), request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);

@@ -11,7 +11,7 @@ router.get('/fontlist', async (request, env, ctx) => {
 	const url = new URL(request.url);
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url.toString(), request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);

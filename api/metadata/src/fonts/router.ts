@@ -23,7 +23,7 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 	const url = new URL(request.url);
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url.toString(), request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);
@@ -84,15 +84,15 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 });
 
 router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
-	const { id } = request;
-	const url = new URL(request.url);
+	const { id, url } = request;
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url, request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);
 	if (response) {
+		console.log('hit');
 		return response;
 	}
 
@@ -112,12 +112,11 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
-router.get('/v1/fonts/:id/:file', withParams, async (request, env, ctx) => {
-	const { id, file } = request;
-	const url = new URL(request.url);
+router.get('/v1/fonts/:id/:file', withParams, async (request, _env, ctx) => {
+	const { id, file, url } = request;
 
 	// Check cache first
-	const cacheKey = new Request(url.toString(), request);
+	const cacheKey = new Request(url, request.clone());
 	const cache = caches.default;
 
 	let response = await cache.match(cacheKey);
