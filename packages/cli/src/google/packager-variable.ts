@@ -10,11 +10,11 @@ import {
 import * as path from 'pathe';
 
 import type { BuildOptions, CSSGenerate } from '../types';
-import { makeVariableFontFilePath } from '../utils';
+import { findClosest, makeVariableFontFilePath } from '../utils';
 
 type GenerateMetadataV2 = Pick<
 	FontObjectV2['id'],
-	'id' | 'family' | 'unicodeRange'
+	'id' | 'family' | 'unicodeRange' | 'weights'
 >;
 
 type GenerateMetadataVariable = Pick<
@@ -33,7 +33,7 @@ const generateVariableCSS = (
 	) => string,
 	tag?: string,
 ): CSSGenerate => {
-	const { id, family, unicodeRange } = metadata;
+	const { id, family, unicodeRange, weights } = metadata;
 	const { axes, variants } = variableMeta;
 	const cssGenerate: CSSGenerate = [];
 	let indexCSS = '';
@@ -62,7 +62,7 @@ const generateVariableCSS = (
 					family,
 					style,
 					display: 'swap',
-					weight: Number(axes.wght.default),
+					weight: findClosest(weights, 400),
 					unicodeRange: unicodeRange[subset],
 					variable: variableOpts,
 					src: [
