@@ -17,8 +17,18 @@ import {
 	makeVariableFontFilePath,
 } from '../utils';
 
+type GenerateIconStatic = Pick<
+	FontObjectV2['id'],
+	'id' | 'family' | 'styles' | 'weights' | 'subsets' | 'variants'
+>;
+
+type GenerateIconVariable = Pick<
+	FontObjectVariable['id'],
+	'id' | 'family' | 'axes' | 'variants'
+>;
+
 const generateIconStaticCSS = (
-	metadata: FontObjectV2['id'],
+	metadata: GenerateIconStatic,
 	makeFontFilePath: (
 		id: string,
 		subset: string,
@@ -26,6 +36,7 @@ const generateIconStaticCSS = (
 		style: string,
 		extension: string,
 	) => string,
+	tag?: string,
 ): CSSGenerate => {
 	const cssGenerate: CSSGenerate = [];
 	const { id, family, styles, weights, subsets, variants } = metadata;
@@ -50,7 +61,7 @@ const generateIconStaticCSS = (
 						src: [
 							{
 								url: makeFontFilePath(
-									id,
+									tag ?? id,
 									subset,
 									String(weight),
 									style,
@@ -60,7 +71,7 @@ const generateIconStaticCSS = (
 							},
 							{
 								url: makeFontFilePath(
-									id,
+									tag ?? id,
 									subset,
 									String(weight),
 									style,
@@ -69,7 +80,7 @@ const generateIconStaticCSS = (
 								format: 'woff' as const,
 							},
 						],
-						comment: `${id}-${subset}-${weight}-${style}`,
+						comment: `${tag ?? id}-${subset}-${weight}-${style}`,
 					};
 					// This takes in a font object and returns an @font-face block
 					const css = generateFontFace(fontObj);
@@ -132,13 +143,14 @@ const packagerIconsStatic = async (id: string, opts: BuildOptions) => {
 };
 
 const generateIconVariableCSS = (
-	metadata: FontObjectVariable['id'],
+	metadata: GenerateIconVariable,
 	makeFontFilePath: (
 		id: string,
 		subset: string,
 		axesLower: string,
 		style: string,
 	) => string,
+	tag?: string,
 ): CSSGenerate => {
 	const cssGenerate: CSSGenerate = [];
 	const { id, family, variants, axes } = metadata;
@@ -175,11 +187,11 @@ const generateIconVariableCSS = (
 					variable: variableOpts,
 					src: [
 						{
-							url: makeFontFilePath(id, subset, axesLower, style),
+							url: makeFontFilePath(tag ?? id, subset, axesLower, style),
 							format: 'woff2-variations',
 						},
 					],
-					comment: `${id}-${subset}-${axesLower}-${style}`,
+					comment: `${tag ?? id}-${subset}-${axesLower}-${style}`,
 				};
 
 				// This takes in a font object and returns an @font-face block

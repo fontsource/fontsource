@@ -7,8 +7,19 @@ import * as path from 'pathe';
 import type { BuildOptions, CSSGenerate } from '../types';
 import { findClosest, makeFontFilePath } from '../utils';
 
+type GenerateMetadataV2 = Pick<
+	FontObjectV2['id'],
+	| 'id'
+	| 'family'
+	| 'styles'
+	| 'weights'
+	| 'subsets'
+	| 'variants'
+	| 'unicodeRange'
+>;
+
 const generateV2CSS = (
-	metadata: FontObjectV2['id'],
+	metadata: GenerateMetadataV2,
 	makeFontFilePath: (
 		id: string,
 		subset: string,
@@ -16,6 +27,7 @@ const generateV2CSS = (
 		style: string,
 		extension: string,
 	) => string,
+	tag?: string,
 ): CSSGenerate => {
 	const cssGenerate: CSSGenerate = [];
 	const { id, family, styles, weights, variants, unicodeRange } = metadata;
@@ -42,7 +54,7 @@ const generateV2CSS = (
 						src: [
 							{
 								url: makeFontFilePath(
-									id,
+									tag ?? id,
 									subset,
 									String(weight),
 									style,
@@ -52,7 +64,7 @@ const generateV2CSS = (
 							},
 							{
 								url: makeFontFilePath(
-									id,
+									tag ?? id,
 									subset,
 									String(weight),
 									style,
@@ -61,7 +73,7 @@ const generateV2CSS = (
 								format: 'woff' as const,
 							},
 						],
-						comment: `${id}-${subset}-${weight}-${style}`,
+						comment: `${tag ?? id}-${subset}-${weight}-${style}`,
 					};
 					// This takes in a font object and returns an @font-face block
 					const css = generateFontFace(fontObj);
