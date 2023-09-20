@@ -77,7 +77,7 @@ const generateIconStaticCSS = (
 					if (style === 'normal') {
 						cssGenerate.push(
 							{
-								filename: `$${weight}.css`,
+								filename: `${weight}.css`,
 								css,
 							},
 							{
