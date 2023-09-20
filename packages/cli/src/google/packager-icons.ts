@@ -17,8 +17,18 @@ import {
 	makeVariableFontFilePath,
 } from '../utils';
 
+type GenerateIconStatic = Pick<
+	FontObjectV2['id'],
+	'id' | 'family' | 'styles' | 'weights' | 'subsets' | 'variants'
+>;
+
+type GenerateIconVariable = Pick<
+	FontObjectVariable['id'],
+	'id' | 'family' | 'axes' | 'variants'
+>;
+
 const generateIconStaticCSS = (
-	metadata: FontObjectV2['id'],
+	metadata: GenerateIconStatic,
 	makeFontFilePath: (
 		id: string,
 		subset: string,
@@ -133,7 +143,7 @@ const packagerIconsStatic = async (id: string, opts: BuildOptions) => {
 };
 
 const generateIconVariableCSS = (
-	metadata: FontObjectVariable['id'],
+	metadata: GenerateIconVariable,
 	makeFontFilePath: (
 		id: string,
 		subset: string,

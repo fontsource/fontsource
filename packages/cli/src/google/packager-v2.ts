@@ -7,8 +7,19 @@ import * as path from 'pathe';
 import type { BuildOptions, CSSGenerate } from '../types';
 import { findClosest, makeFontFilePath } from '../utils';
 
+type GenerateMetadataV2 = Pick<
+	FontObjectV2['id'],
+	| 'id'
+	| 'family'
+	| 'styles'
+	| 'weights'
+	| 'subsets'
+	| 'variants'
+	| 'unicodeRange'
+>;
+
 const generateV2CSS = (
-	metadata: FontObjectV2['id'],
+	metadata: GenerateMetadataV2,
 	makeFontFilePath: (
 		id: string,
 		subset: string,
