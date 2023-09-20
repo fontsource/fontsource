@@ -20,6 +20,7 @@
 		"wrangler": "^3.7.0"
 	},
 	"dependencies": {
+		"@fontsource-utils/cli": "workspace:^",
 		"@fontsource-utils/generate": "workspace:*",
 		"common-api": "workspace:*"
 	}

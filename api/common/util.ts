@@ -188,6 +188,14 @@ export const splitTag = async (
 		versionTag = 'latest';
 	}
 
+	// Don't support version tags below v5
+	if (!versionTag.startsWith('5')) {
+		throw new StatusError(
+			400,
+			'Bad Request. Version tags below @5 are not supported.',
+		);
+	}
+
 	// Validate version tag
 	const versionMeta = await getVersion(id, versionTag, req, env);
 

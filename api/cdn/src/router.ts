@@ -43,11 +43,8 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	// Read version metadata from url
 	const { id, version } = await splitTag(tag, request.clone(), env);
 	const fullTag = `${id}@${version}`;
-	const [fileName, extension] = file.split('.');
-	if (!extension || !isAcceptedExtension(extension)) {
-		return error(400, 'Bad Request. Invalid file extension.');
-	}
 
+	const [, extension] = file.split('.');
 	const isZip = extension === 'zip';
 	// If version is a specific version e.g. @3.1.1, give maximum cache, else give 1 day
 	const tagSplit = tag.split('@')[1];
@@ -83,7 +80,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	}
 
 	// Verify file name is valid before hitting download worker
-	await validateFontFilename(fileName, metadata, request.clone(), env);
+	await validateFontFilename(file, metadata, request.clone(), env);
 
 	// Fetch file from download worker
 	item = isZip
@@ -118,10 +115,6 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 	// Read version metadata from url
 	const { id, version } = await splitTag(tag, request.clone(), env);
 	const fullTag = `${id}@${version}`;
-	const [fileName, extension] = file.split('.');
-	if (!extension || extension !== 'css') {
-		return error(400, 'Bad Request. Invalid file extension.');
-	}
 
 	// If version is a specific version e.g. @3.1.1, give maximum cache, else give 1 day
 	const tagSplit = tag.split('@')[1];
@@ -148,7 +141,7 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 		}
 
 		// Verify file name is valid before hitting download worker
-		await validateCSSFilename(fileName, metadata, request.clone(), env);
+		await validateCSSFilename(file, metadata, request.clone(), env);
 
 		// Fetch file from download worker
 		item = updateCss(fullTag, fileName, metadata);

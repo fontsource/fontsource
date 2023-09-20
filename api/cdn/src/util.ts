@@ -2,6 +2,8 @@ import { type IDResponse } from 'common-api/types';
 import { getVariableMetadata } from 'common-api/util';
 import { StatusError } from 'itty-router';
 
+import { type CSSFilename } from './types';
+
 const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'zip'] as const;
 type AcceptedExtension = (typeof ACCEPTED_EXTENSIONS)[number];
 
@@ -11,11 +13,20 @@ export const isAcceptedExtension = (
 	ACCEPTED_EXTENSIONS.includes(extension as AcceptedExtension);
 
 export const validateFontFilename = async (
-	filename: string,
+	file: string,
 	metadata: IDResponse,
 	req: Request,
 	env: Env,
 ) => {
+	const [filename, extension] = file.split('.');
+	if (!extension || !isAcceptedExtension(extension)) {
+		throw new StatusError(400, 'Bad Request. Invalid file extension.');
+	}
+
+	if (file === 'download.zip') {
+		return;
+	}
+
 	const { id, weights, styles, subsets, variable } = metadata;
 	// Check if filename starts with id
 	if (!filename.startsWith(id)) {
@@ -69,26 +80,31 @@ export const validateFontFilename = async (
 };
 
 export const validateCSSFilename = async (
-	filename: string,
+	file: string,
 	metadata: IDResponse,
 	req: Request,
 	env: Env,
-) => {
+): Promise<CSSFilename> => {
+	const [filename, extension] = file.split('.');
+	if (!extension || extension !== 'css') {
+		throw new StatusError(400, 'Bad Request. Invalid file extension.');
+	}
+
 	const { id, weights, styles, subsets, variable } = metadata;
 	// Accept index.css
 	if (filename === 'index') {
-		return;
+		return { isIndex: true };
 	}
 
 	// Accept weight.css
 	if (weights.includes(Number(filename))) {
-		return;
+		return { weight: Number(filename) };
 	}
 
 	// Accept weight-style.css
 	const [weight, style] = filename.split('-');
 	if (weights.includes(Number(weight)) && styles.includes(style)) {
-		return;
+		return { weight: Number(weight), style };
 	}
 
 	// Accept subset-weight-style.css
@@ -102,32 +118,28 @@ export const validateCSSFilename = async (
 		weights.includes(Number(weight2)) &&
 		styles.includes(style2)
 	) {
-		return;
+		return { subset, weight: Number(weight2), style: style2 };
 	}
 
 	// Check variable variants
 	if (variable) {
 		const variableMetadata = await getVariableMetadata(id, req, env);
 
-		// Accept index.css, standard.css and full.css
-		if (
-			filename === 'index' ||
-			filename === 'standard' ||
-			filename === 'full'
-		) {
-			return;
+		// Accept standard.css and full.css
+		if (filename === 'standard' || filename === 'full') {
+			return { isVariable: true, axes: filename };
 		}
 
 		// Accept axes.css
 		const axesKeys = Object.keys(variableMetadata.axes);
 		if (axesKeys.includes(filename)) {
-			return;
+			return { isVariable: true, axes: filename };
 		}
 
 		// Accept axes-italic.css
 		const [axes, italic] = filename.split('-');
 		if (italic === 'italic' && axesKeys.includes(axes)) {
-			return;
+			return { isVariable: true, axes, style: italic };
 		}
 	}
 
