@@ -1,8 +1,8 @@
-import { type IDResponse } from 'common-api/types';
-import { getVariableMetadata } from 'common-api/util';
+import {
+	type IDResponse,
+	type VariableMetadataWithVariants,
+} from 'common-api/types';
 import { StatusError } from 'itty-router';
-
-import { type CSSFilename } from './types';
 
 const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'zip'] as const;
 type AcceptedExtension = (typeof ACCEPTED_EXTENSIONS)[number];
@@ -12,12 +12,7 @@ export const isAcceptedExtension = (
 ): extension is AcceptedExtension =>
 	ACCEPTED_EXTENSIONS.includes(extension as AcceptedExtension);
 
-export const validateFontFilename = async (
-	file: string,
-	metadata: IDResponse,
-	req: Request,
-	env: Env,
-) => {
+export const validateFontFilename = (file: string, metadata: IDResponse) => {
 	const [filename, extension] = file.split('.');
 	if (!extension || !isAcceptedExtension(extension)) {
 		throw new StatusError(400, 'Bad Request. Invalid file extension.');
@@ -27,23 +22,9 @@ export const validateFontFilename = async (
 		return;
 	}
 
-	const { id, weights, styles, subsets, variable } = metadata;
-	// Check if filename starts with id
-	if (!filename.startsWith(id)) {
-		throw new StatusError(404, 'Not Found. Invalid filename.');
-	}
+	const { weights, styles, subsets } = metadata;
 
-	// Remove id substring from filename
-	let filenameWithoutId = filename.replace(id, '');
-
-	// Remove dash prefix from start of filename once
-	if (filenameWithoutId.startsWith('-')) {
-		filenameWithoutId = filenameWithoutId.replace('-', '');
-	} else {
-		throw new StatusError(404, 'Not Found. Invalid filename.');
-	}
-
-	const filenameArr = filenameWithoutId.split('-');
+	const filenameArr = filename.split('-');
 	const style = filenameArr.pop();
 	const weight = filenameArr.pop();
 	const subset = filenameArr.join('-');
@@ -58,89 +39,125 @@ export const validateFontFilename = async (
 		return;
 	}
 
-	// Check variable variants
-	if (variable) {
-		const variableMetadata = await getVariableMetadata(id, req, env);
+	throw new StatusError(404, 'Not Found. Invalid filename.');
+};
 
-		const axes = weight;
+export const validateVariableFontFileName = (
+	file: string,
+	metadata: IDResponse,
+	variableMeta: VariableMetadataWithVariants,
+) => {
+	const [filename, extension] = file.split('.');
+	if (!extension || extension !== 'woff2') {
+		throw new StatusError(400, 'Bad Request. Invalid file extension.');
+	}
 
-		// Accept id-axes
-		const axesKeys = Object.keys(variableMetadata.axes);
-		if (axes && axesKeys.includes(axes)) {
-			return;
-		}
+	const { subsets, styles } = metadata;
+	const { axes } = variableMeta;
 
-		// Accept id-axes-italic
-		if (style === 'italic' && axes && axesKeys.includes(axes)) {
-			return;
-		}
+	const filenameArr = filename.split('-');
+	const style = filenameArr.pop();
+	const axesKey = filenameArr.pop();
+	const subset = filenameArr.join('-');
+
+	// Accept id-subset-axes-style
+	if (
+		subsets.includes(subset) &&
+		axesKey &&
+		axes[axesKey] &&
+		style &&
+		styles.includes(style)
+	) {
+		return;
 	}
 
 	throw new StatusError(404, 'Not Found. Invalid filename.');
 };
 
-export const validateCSSFilename = async (
-	file: string,
-	metadata: IDResponse,
-	req: Request,
-	env: Env,
-): Promise<CSSFilename> => {
+export const validateCSSFilename = (file: string, metadata: IDResponse) => {
 	const [filename, extension] = file.split('.');
 	if (!extension || extension !== 'css') {
 		throw new StatusError(400, 'Bad Request. Invalid file extension.');
 	}
 
-	const { id, weights, styles, subsets, variable } = metadata;
 	// Accept index.css
 	if (filename === 'index') {
-		return { isIndex: true };
+		return;
 	}
+
+	const { weights, styles, subsets } = metadata;
 
 	// Accept weight.css
 	if (weights.includes(Number(filename))) {
-		return { weight: Number(filename) };
+		return;
 	}
 
-	// Accept weight-style.css
-	const [weight, style] = filename.split('-');
-	if (weights.includes(Number(weight)) && styles.includes(style)) {
-		return { weight: Number(weight), style };
+	// Accept weight-italic.css
+	let weight, style, subset;
+	[weight, style] = filename.split('-');
+	if (
+		weights.includes(Number(weight)) &&
+		style === 'italic' &&
+		styles.includes(style)
+	) {
+		return;
+	}
+
+	// Accept subset-weight.css
+	const subsetWeight = filename.split('-');
+	weight = subsetWeight.pop();
+	subset = subsetWeight.join('-');
+	if (subsets.includes(subset) && weights.includes(Number(weight))) {
+		return;
 	}
 
 	// Accept subset-weight-style.css
-	const filenameArr = filename.split('-');
-	const style2 = filenameArr.pop();
-	const weight2 = filenameArr.pop();
-	const subset = filenameArr.join('-');
+	const subsetWeightStyle = filename.split('-');
+	style = subsetWeightStyle.pop();
+	weight = subsetWeightStyle.pop();
+	subset = subsetWeightStyle.join('-');
 	if (
-		style2 &&
+		style &&
 		subsets.includes(subset) &&
-		weights.includes(Number(weight2)) &&
-		styles.includes(style2)
+		weights.includes(Number(weight)) &&
+		styles.includes(style)
 	) {
-		return { subset, weight: Number(weight2), style: style2 };
+		return;
 	}
 
-	// Check variable variants
-	if (variable) {
-		const variableMetadata = await getVariableMetadata(id, req, env);
+	throw new StatusError(404, 'Not Found. Invalid filename.');
+};
 
-		// Accept standard.css and full.css
-		if (filename === 'standard' || filename === 'full') {
-			return { isVariable: true, axes: filename };
-		}
+export const validateVCSSFilename = (
+	file: string,
+	variableMeta: VariableMetadataWithVariants,
+) => {
+	const [filename, extension] = file.split('.');
+	if (!extension || extension !== 'css') {
+		throw new StatusError(400, 'Bad Request. Invalid file extension.');
+	}
 
-		// Accept axes.css
-		const axesKeys = Object.keys(variableMetadata.axes);
-		if (axesKeys.includes(filename)) {
-			return { isVariable: true, axes: filename };
-		}
+	const { axes } = variableMeta;
+	// Accept index.css
+	if (filename === 'index') {
+		return;
+	}
 
-		// Accept axes-italic.css
-		const [axes, italic] = filename.split('-');
-		if (italic === 'italic' && axesKeys.includes(axes)) {
-			return { isVariable: true, axes, style: italic };
-		}
+	// Accept standard.css and full.css
+	if (filename === 'standard' || filename === 'full') {
+		return;
+	}
+
+	// Accept axes.css
+	const axesKeys = Object.keys(axes);
+	if (axesKeys.includes(filename)) {
+		return;
+	}
+
+	// Accept axes-italic.css
+	const [axesKey, italic] = filename.split('-');
+	if (italic === 'italic' && axesKeys.includes(axesKey)) {
+		return;
 	}
 
 	throw new StatusError(404, 'Not Found. Invalid filename.');

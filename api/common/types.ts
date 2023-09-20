@@ -40,6 +40,7 @@ interface StatusErrorObject {
 interface VersionResponse {
 	latest: string;
 	static: string[];
+	latestVariable?: string;
 	variable?: string[];
 }
 
@@ -51,7 +52,13 @@ interface AxesData {
 }
 
 // axes: italic: link
-type VariableVariants = Record<string, Record<string, string>>;
+interface VariableVariants {
+	[axes: string]: {
+		[style: string]: {
+			[subset: string]: string;
+		};
+	};
+}
 
 interface VariableMetadata {
 	family: string;

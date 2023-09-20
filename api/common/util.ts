@@ -2,7 +2,7 @@ import { StatusError } from 'itty-router';
 import {
 	IDResponse,
 	StatusErrorObject,
-	VariableMetadata,
+	VariableMetadataWithVariants,
 	VersionResponse,
 } from './types';
 
@@ -57,17 +57,17 @@ export const getVariableMetadata = async (
 		);
 	}
 
-	return await metadata.json<VariableMetadata>();
+	return await metadata.json<VariableMetadataWithVariants>();
 };
 
-export const findVersion = async (
+export const findVersion = (
 	id: string,
 	tag: string,
-	versions: VersionResponse,
-): Promise<string> => {
+	versions: string[],
+): string => {
 	if (tag === 'latest') {
 		// Get latest version in list
-		const latest = versions.static.shift();
+		const latest = versions.shift();
 
 		if (latest) return latest;
 		throw new StatusError(
@@ -80,7 +80,7 @@ export const findVersion = async (
 
 	// If the tag is a full semver, return it
 	if (semver.length === 3) {
-		const version = versions.static.find((version) => version === tag);
+		const version = versions.find((version) => version === tag);
 		if (version) return version;
 		throw new StatusError(
 			404,
@@ -92,7 +92,7 @@ export const findVersion = async (
 	if (semver.length === 2) {
 		const [major, minor] = semver;
 
-		const version = versions.static
+		const version = versions
 			// Filter out the major and minor versions that don't match
 			.filter((version) => version.startsWith(`${major}.${minor}`))
 			// Sort the versions in descending order
@@ -117,7 +117,7 @@ export const findVersion = async (
 	if (semver.length === 1) {
 		const [major] = semver;
 
-		const version = versions.static
+		const version = versions
 			.filter((version) => version.startsWith(`${major}.`))
 			// Sort the versions in descending order
 			.sort((a, b) => {
@@ -144,12 +144,7 @@ export const findVersion = async (
 	throw new StatusError(400, `Bad Request. Invalid tag ${tag} for ${id}.`);
 };
 
-export const getVersion = async (
-	id: string,
-	version: string,
-	req: Request,
-	env: Env,
-) => {
+export const getVersion = async (id: string, req: Request, env: Env) => {
 	const apiPathname = `/v1/version/${id}`;
 	const url = new URL(req.url);
 	url.pathname = apiPathname;
@@ -173,6 +168,7 @@ export const getVersion = async (
 
 export const splitTag = async (
 	tag: string,
+	isVariable: boolean,
 	req: Request,
 	env: Env,
 ): Promise<Tag> => {
@@ -197,11 +193,38 @@ export const splitTag = async (
 	}
 
 	// Validate version tag
-	const versionMeta = await getVersion(id, versionTag, req, env);
+
+	const {
+		static: staticVar,
+		variable,
+		latest,
+		latestVariable,
+	} = await getVersion(id, req, env);
 
 	if (versionTag === 'latest') {
-		return { id, version: versionMeta.latest };
+		if (isVariable) {
+			if (!latestVariable) {
+				throw new StatusError(
+					404,
+					`Not found. Version ${versionTag} not found for ${id}.`,
+				);
+			}
+			return { id, version: latestVariable };
+		}
+
+		return { id, version: latest };
 	}
 
-	return { id, version: await findVersion(id, versionTag, versionMeta) };
+	if (isVariable) {
+		if (!variable) {
+			throw new StatusError(
+				404,
+				`Not found. Version ${versionTag} not found for ${id}.`,
+			);
+		}
+
+		return { id, version: findVersion(id, versionTag, variable) };
+	}
+
+	return { id, version: findVersion(id, versionTag, staticVar) };
 };
