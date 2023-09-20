@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.16
+
+### Patch Changes
+
+- [#836](https://github.com/fontsource/fontsource/pull/836) [`398284bc90`](https://github.com/fontsource/fontsource/commit/398284bc90c51a27868b0f617136ff13f40f9182) Thanks [@ayuhito](https://github.com/ayuhito)! - refactor(cli): expose css generation for each package
+
 ## 0.3.15
 
 ### Patch Changes
