@@ -16,6 +16,7 @@ const generateV1CSS = (
 		style: string,
 		extension: string,
 	) => string,
+	tag?: string,
 ): CSSGenerate => {
 	const cssGenerate: CSSGenerate = [];
 	const { id, family, styles, weights, subsets, variants } = metadata;
@@ -37,7 +38,7 @@ const generateV1CSS = (
 						src: [
 							{
 								url: makeFontFilePath(
-									id,
+									tag ?? id,
 									subset,
 									String(weight),
 									style,
@@ -47,7 +48,7 @@ const generateV1CSS = (
 							},
 							{
 								url: makeFontFilePath(
-									id,
+									tag ?? id,
 									subset,
 									String(weight),
 									style,
@@ -56,7 +57,7 @@ const generateV1CSS = (
 								format: 'woff' as const,
 							},
 						],
-						comment: `${id}-${subset}-${weight}-${style}`,
+						comment: `${tag ?? id}-${subset}-${weight}-${style}`,
 					};
 					// This takes in a font object and returns an @font-face block
 					const css = generateFontFace(fontObj);

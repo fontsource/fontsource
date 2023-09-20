@@ -21,44 +21,47 @@ const generateVariableCSS = (
 		axes: string,
 		style: string,
 	) => string,
+	tag?: string,
 ): CSSGenerate => {
+	const { id, family, unicodeRange, weights } = metadata;
+	const { axes, variants } = variableMeta;
 	const cssGenerate: CSSGenerate = [];
 	let indexCSS = '';
 
-	for (const axes of Object.keys(variableMeta.variants)) {
-		const variant = variableMeta.variants[axes];
+	for (const axesKey of Object.keys(variants)) {
+		const variant = variants[axesKey];
 		const styles = Object.keys(variant);
-		const axesLower = axes.toLowerCase();
+		const axesLower = axesKey.toLowerCase();
 
 		// These are variable modifiers to change specific CSS selectors
 		// for variable fonts.
 		const variableOpts: FontObject['variable'] = {
-			wght: variableMeta.axes.wght,
+			wght: axes.wght,
 		};
-		if (axes === 'standard' || axes === 'full' || axes === 'wdth')
-			variableOpts.stretch = variableMeta.axes.wdth;
+		if (axesKey === 'standard' || axesKey === 'full' || axesKey === 'wdth')
+			variableOpts.stretch = axes.wdth;
 
-		if (axes === 'standard' || axes === 'full' || axes === 'slnt')
-			variableOpts.slnt = variableMeta.axes.slnt;
+		if (axesKey === 'standard' || axesKey === 'full' || axesKey === 'slnt')
+			variableOpts.slnt = axes.slnt;
 
 		for (const style of styles) {
 			const cssStyle: string[] = [];
 
 			for (const subset of Object.keys(variant[style])) {
 				const fontObj: FontObject = {
-					family: metadata.family,
+					family,
 					style,
 					display: 'swap',
-					weight: findClosest(metadata.weights, 400),
-					unicodeRange: metadata.unicodeRange[subset],
+					weight: findClosest(weights, 400),
+					unicodeRange: unicodeRange[subset],
 					variable: variableOpts,
 					src: [
 						{
-							url: makeFontFilePath(metadata.id, subset, axesLower, style),
+							url: makeFontFilePath(tag ?? id, subset, axesLower, style),
 							format: 'woff2-variations',
 						},
 					],
-					comment: `${metadata.id}-${subset}-${axesLower}-${style}`,
+					comment: `${tag ?? id}-${subset}-${axesLower}-${style}`,
 				};
 
 				// This takes in a font object and returns an @font-face block
@@ -77,11 +80,11 @@ const generateVariableCSS = (
 			});
 
 			// Ensure style is normal or there is only one style
-			if (axes === 'wght' && (style === 'normal' || styles.length === 1))
+			if (axesKey === 'wght' && (style === 'normal' || styles.length === 1))
 				indexCSS = css;
 
 			// Some fonts may not have a wght axis, but usually have an opsz axis to compensate
-			if (indexCSS === '' && axes === 'opsz') indexCSS = css;
+			if (indexCSS === '' && axesKey === 'opsz') indexCSS = css;
 		}
 	}
 
