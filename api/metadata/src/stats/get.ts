@@ -6,6 +6,7 @@ import { updatePackageStat, updateVersion } from './update';
 
 export const getOrUpdateVersion = async (
 	id: string,
+	isVariable: boolean,
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
@@ -18,11 +19,11 @@ export const getOrUpdateVersion = async (
 	});
 
 	if (!value) {
-		return await updateVersion(id, env, ctx);
+		return await updateVersion(id, isVariable, env, ctx);
 	}
 
 	if (!metadata?.ttl || metadata.ttl < Date.now()) {
-		ctx.waitUntil(updateVersion(id, env, ctx));
+		ctx.waitUntil(updateVersion(id, isVariable, env, ctx));
 	}
 
 	return value;

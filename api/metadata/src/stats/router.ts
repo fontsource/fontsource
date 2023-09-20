@@ -7,6 +7,7 @@ import {
 	withParams,
 } from 'itty-router';
 
+import { getOrUpdateId } from '../fonts/get';
 import type { CFRouterContext } from '../types';
 import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
 import { getOrUpdatePackageStat, getOrUpdateVersion } from './get';
@@ -29,7 +30,12 @@ router.get('/v1/version/:id', withParams, async (request, env, ctx) => {
 		return response;
 	}
 
-	const versions = await getOrUpdateVersion(id, env, ctx);
+	const metadata = await getOrUpdateId(id, env, ctx);
+	if (!metadata) {
+		throw new StatusError(404, 'Not found. Font does not exist.');
+	}
+
+	const versions = await getOrUpdateVersion(id, metadata.variable, env, ctx);
 	if (!versions) {
 		throw new StatusError(500, 'Internal Server Error. Version list empty.');
 	}

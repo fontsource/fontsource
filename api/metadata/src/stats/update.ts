@@ -12,20 +12,24 @@ import { getAvailableVersions } from './util';
 
 export const updateVersion = async (
 	id: string,
+	isVariable: boolean,
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
 	const key = `version:${id}`;
-	const val = await getAvailableVersions(id);
-	if (!val || val.length === 0) {
+	const [staticVal, variable] = await Promise.all([
+		getAvailableVersions(id),
+		isVariable ? getAvailableVersions(id, isVariable) : undefined,
+	]);
+
+	if (!staticVal || staticVal.length === 0) {
 		throw new StatusError(404, `Not found. No versions found for ${id}.`);
 	}
 
-	const latest = val[0];
-
 	const resp: VersionResponse = {
-		latest,
-		static: val,
+		latest: staticVal[0],
+		static: staticVal,
+		...(variable && { latestVariable: variable[0], variable }),
 	};
 
 	// Add to KV cache
