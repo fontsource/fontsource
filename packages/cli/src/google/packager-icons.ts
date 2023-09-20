@@ -5,18 +5,30 @@ import {
 	type APIIconResponse,
 	APIIconStatic,
 	APIIconVariable,
+	type FontObjectV2,
+	type FontObjectVariable,
 } from 'google-font-metadata';
 import * as path from 'pathe';
 
-import type { BuildOptions } from '../types';
+import type { BuildOptions, CSSGenerate } from '../types';
 import {
 	findClosest,
 	makeFontFilePath,
 	makeVariableFontFilePath,
 } from '../utils';
 
-const packagerIconsStatic = async (id: string, opts: BuildOptions) => {
-	const { family, styles, weights, subsets, variants } = APIIconStatic[id];
+const generateIconStaticCSS = (
+	metadata: FontObjectV2['id'],
+	makeFontFilePath: (
+		id: string,
+		subset: string,
+		weight: string,
+		style: string,
+		extension: string,
+	) => string,
+): CSSGenerate => {
+	const cssGenerate: CSSGenerate = [];
+	const { id, family, styles, weights, subsets, variants } = metadata;
 
 	// Find the weight for index.css in the case weight 400 does not exist.
 	const indexWeight = findClosest(weights, 400);
@@ -37,11 +49,23 @@ const packagerIconsStatic = async (id: string, opts: BuildOptions) => {
 						weight,
 						src: [
 							{
-								url: makeFontFilePath(id, subset, weight, style, 'woff2'),
+								url: makeFontFilePath(
+									id,
+									subset,
+									String(weight),
+									style,
+									'woff2',
+								),
 								format: 'woff2' as const,
 							},
 							{
-								url: makeFontFilePath(id, subset, weight, style, 'woff'),
+								url: makeFontFilePath(
+									id,
+									subset,
+									String(weight),
+									style,
+									'woff',
+								),
 								format: 'woff' as const,
 							},
 						],
@@ -51,17 +75,27 @@ const packagerIconsStatic = async (id: string, opts: BuildOptions) => {
 					const css = generateFontFace(fontObj);
 
 					if (style === 'normal') {
-						let cssPath = path.join(opts.dir, `${weight}.css`);
-						await fs.writeFile(cssPath, css);
-
-						cssPath = path.join(opts.dir, `${subset}-${weight}.css`);
-						await fs.writeFile(cssPath, css);
+						cssGenerate.push(
+							{
+								filename: `${weight}.css`,
+								css,
+							},
+							{
+								filename: `${subset}-${weight}.css`,
+								css,
+							},
+						);
 					} else {
-						let cssPath = path.join(opts.dir, `${weight}-italic.css`);
-						await fs.writeFile(cssPath, css);
-
-						cssPath = path.join(opts.dir, `${subset}-${weight}-italic.css`);
-						await fs.writeFile(cssPath, css);
+						cssGenerate.push(
+							{
+								filename: `${weight}-italic.css`,
+								css,
+							},
+							{
+								filename: `${subset}-${weight}-italic.css`,
+								css,
+							},
+						);
 					}
 					cssSubset.push(css);
 				}
@@ -69,37 +103,64 @@ const packagerIconsStatic = async (id: string, opts: BuildOptions) => {
 
 			// If the weight is index, generate index.css
 			if (weight === indexWeight) {
-				const cssIndexPath = path.join(opts.dir, 'index.css');
-				await fs.writeFile(cssIndexPath, cssSubset.join('\n\n'));
+				cssGenerate.push({
+					filename: 'index.css',
+					css: cssSubset.join('\n\n'),
+				});
 			}
 
-			const cssSubsetPath = path.join(opts.dir, `${subset}.css`);
-			await fs.writeFile(cssSubsetPath, cssSubset.join('\n\n'));
+			cssGenerate.push({
+				filename: `${subset}.css`,
+				css: cssSubset.join('\n\n'),
+			});
 		}
+	}
+
+	return cssGenerate;
+};
+
+const packagerIconsStatic = async (id: string, opts: BuildOptions) => {
+	const cssGenerate = generateIconStaticCSS(
+		APIIconStatic[id],
+		makeFontFilePath,
+	);
+
+	for (const item of cssGenerate) {
+		const cssPath = path.join(opts.dir, item.filename);
+		await fs.writeFile(cssPath, item.css);
 	}
 };
 
-const packagerIconsVariable = async (id: string, opts: BuildOptions) => {
-	const icon = APIIconVariable[id];
+const generateIconVariableCSS = (
+	metadata: FontObjectVariable['id'],
+	makeFontFilePath: (
+		id: string,
+		subset: string,
+		axesLower: string,
+		style: string,
+	) => string,
+): CSSGenerate => {
+	const cssGenerate: CSSGenerate = [];
+	const { id, family, variants, axes } = metadata;
 
 	// Generate CSS
 	let indexCSS = '';
 
-	for (const axes of Object.keys(icon.variants)) {
-		const variant = icon.variants[axes];
+	for (const axesKey of Object.keys(variants)) {
+		const variant = variants[axesKey];
 		const styles = Object.keys(variant);
-		const axesLower = axes.toLowerCase();
+		const axesLower = axesKey.toLowerCase();
 
 		// These are variable modifiers to change specific CSS selectors
 		// for variable fonts.
 		const variableOpts: APIIconResponse['axes'] = {
-			wght: icon.axes.wght,
+			wght: axes.wght,
 		};
-		if (axes === 'standard' || axes === 'full' || axes === 'wdth')
-			variableOpts.stretch = icon.axes.wdth;
+		if (axesKey === 'standard' || axesKey === 'full' || axesKey === 'wdth')
+			variableOpts.stretch = axes.wdth;
 
-		if (axes === 'standard' || axes === 'full' || axes === 'slnt')
-			variableOpts.slnt = icon.axes.slnt;
+		if (axesKey === 'standard' || axesKey === 'full' || axesKey === 'slnt')
+			variableOpts.slnt = axes.slnt;
 
 		// Generate variable CSS
 		for (const style of styles) {
@@ -107,14 +168,14 @@ const packagerIconsVariable = async (id: string, opts: BuildOptions) => {
 
 			for (const subset of Object.keys(variant[style])) {
 				const fontObj: FontObject = {
-					family: icon.family,
+					family,
 					style,
 					display: 'swap',
-					weight: Number(icon.axes.wght.default),
+					weight: Number(axes.wght.default),
 					variable: variableOpts,
 					src: [
 						{
-							url: makeVariableFontFilePath(id, subset, axesLower, style),
+							url: makeFontFilePath(id, subset, axesLower, style),
 							format: 'woff2-variations',
 						},
 					],
@@ -129,18 +190,40 @@ const packagerIconsVariable = async (id: string, opts: BuildOptions) => {
 			// Write down CSS
 			const filename =
 				style === 'normal' ? `${axesLower}.css` : `${axesLower}-${style}.css`;
-			const cssPath = path.join(opts.dir, filename);
 			const css = cssStyle.join('\n\n');
-			await fs.writeFile(cssPath, css);
+			cssGenerate.push({
+				filename,
+				css,
+			});
 
 			// Some fonts may not have a wght axis, but usually have an opsz axis to compensate
-			if (axes === 'wght') indexCSS = css;
-			if (!indexCSS && axes === 'opsz') indexCSS = css;
+			if (axesKey === 'wght') indexCSS = css;
+			if (!indexCSS && axesKey === 'opsz') indexCSS = css;
 		}
 	}
 
 	// Write down index.css for variable package
-	await fs.writeFile(path.join(opts.dir, 'index.css'), indexCSS);
+	cssGenerate.push({
+		filename: 'index.css',
+		css: indexCSS,
+	});
+
+	return cssGenerate;
 };
 
-export { packagerIconsStatic, packagerIconsVariable };
+const packagerIconsVariable = async (id: string, opts: BuildOptions) => {
+	const icon = APIIconVariable[id];
+	const cssGenerate = generateIconVariableCSS(icon, makeVariableFontFilePath);
+
+	for (const item of cssGenerate) {
+		const cssPath = path.join(opts.dir, item.filename);
+		await fs.writeFile(cssPath, item.css);
+	}
+};
+
+export {
+	generateIconStaticCSS,
+	generateIconVariableCSS,
+	packagerIconsStatic,
+	packagerIconsVariable,
+};
