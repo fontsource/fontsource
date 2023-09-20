@@ -135,7 +135,7 @@ router.get('/vfonts/:tag/:file', withParams, async (request, env, ctx) => {
 	};
 
 	// Check R2 bucket for file
-	let item = await env.FONTS.get(`variable:${fullTag}/${file}`);
+	let item = await env.FONTS.get(`${fullTag}/variable/${file}`);
 	if (item !== null) {
 		const blob = await item.arrayBuffer();
 		const response = new Response(blob, {
@@ -264,7 +264,7 @@ router.get('/vcss/:tag/:file', withParams, async (request, env, ctx) => {
 		'Content-Type': 'text/css',
 	};
 
-	// Check KV for file
+	// Check KV for css
 	const key = `variable:${fullTag}:${file}`;
 
 	let item = await env.CSS.get(key);

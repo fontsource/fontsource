@@ -89,6 +89,6 @@ export const updateVariableFile = async (
 		);
 	}
 	// Check again if file exists in bucket
-	const font = await env.FONTS.get(`variable:${tag}/${file}`);
+	const font = await env.FONTS.get(`${tag}/variable/${file}`);
 	return font;
 };
