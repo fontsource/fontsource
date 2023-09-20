@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/cli",
-	"version": "0.3.15",
+	"version": "0.3.16",
 	"description": "Fontsource CLI",
 	"bin": {
 		"fontsource": "./dist/cli.mjs"
