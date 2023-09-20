@@ -8,10 +8,10 @@ const makeFontDownloadPath = (
 	subset: string,
 	weight: number,
 	style: string,
-	extension: string
+	extension: string,
 ): string =>
 	cleanPaths(
-		`${fontDir}/files/${fontId}-${subset}-${weight}-${style}.${extension}`
+		`${fontDir}/files/${fontId}-${subset}-${weight}-${style}.${extension}`,
 	);
 
 // Some axes are all uppercase making packages inconsistent
@@ -20,19 +20,19 @@ const makeVariableFontDownloadPath = (
 	fontId: string,
 	subset: string,
 	axes: string,
-	style: string
+	style: string,
 ): string =>
 	cleanPaths(
-		`${fontDir}/files/${fontId}-${subset}-${axes.toLowerCase()}-${style}.woff2`
+		`${fontDir}/files/${fontId}-${subset}-${axes.toLowerCase()}-${style}.woff2`,
 	);
 
 // Used for the src urls in CSS files
 const makeFontFilePath = (
 	fontId: string,
 	subset: string,
-	weight: number,
+	weight: string,
 	style: string,
-	extension: string
+	extension: string,
 ): string =>
 	cleanPaths(`./files/${fontId}-${subset}-${weight}-${style}.${extension}`);
 
@@ -40,7 +40,7 @@ const makeVariableFontFilePath = (
 	fontId: string,
 	subset: string,
 	axes: string,
-	style: string
+	style: string,
 ): string => cleanPaths(`./files/${fontId}-${subset}-${axes}-${style}.woff2`);
 
 // Insert a weight array to find the closest number given num - used for index.css gen

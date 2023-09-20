@@ -1,53 +1,64 @@
 /* eslint-disable no-await-in-loop */
 import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
-import { APIv2, APIVariable } from 'google-font-metadata';
+import {
+	APIv2,
+	APIVariable,
+	type FontObjectV2,
+	type FontObjectVariable,
+} from 'google-font-metadata';
 import * as path from 'pathe';
 
-import type { BuildOptions } from '../types';
+import type { BuildOptions, CSSGenerate } from '../types';
 import { findClosest, makeVariableFontFilePath } from '../utils';
 
-const packagerVariable = async (id: string, opts: BuildOptions) => {
-	const font = APIv2[id];
-	const fontVariable = APIVariable[id];
-
-	// Generate CSS
+const generateVariableCSS = (
+	metadata: FontObjectV2['id'],
+	variableMeta: FontObjectVariable['id'],
+	makeFontFilePath: (
+		id: string,
+		subset: string,
+		axes: string,
+		style: string,
+	) => string,
+): CSSGenerate => {
+	const cssGenerate: CSSGenerate = [];
 	let indexCSS = '';
 
-	for (const axes of Object.keys(fontVariable.variants)) {
-		const variant = fontVariable.variants[axes];
+	for (const axes of Object.keys(variableMeta.variants)) {
+		const variant = variableMeta.variants[axes];
 		const styles = Object.keys(variant);
 		const axesLower = axes.toLowerCase();
 
 		// These are variable modifiers to change specific CSS selectors
 		// for variable fonts.
 		const variableOpts: FontObject['variable'] = {
-			wght: fontVariable.axes.wght,
+			wght: variableMeta.axes.wght,
 		};
 		if (axes === 'standard' || axes === 'full' || axes === 'wdth')
-			variableOpts.stretch = fontVariable.axes.wdth;
+			variableOpts.stretch = variableMeta.axes.wdth;
 
 		if (axes === 'standard' || axes === 'full' || axes === 'slnt')
-			variableOpts.slnt = fontVariable.axes.slnt;
+			variableOpts.slnt = variableMeta.axes.slnt;
 
 		for (const style of styles) {
 			const cssStyle: string[] = [];
 
 			for (const subset of Object.keys(variant[style])) {
 				const fontObj: FontObject = {
-					family: font.family,
+					family: metadata.family,
 					style,
 					display: 'swap',
-					weight: findClosest(font.weights, 400),
-					unicodeRange: font.unicodeRange[subset],
+					weight: findClosest(metadata.weights, 400),
+					unicodeRange: metadata.unicodeRange[subset],
 					variable: variableOpts,
 					src: [
 						{
-							url: makeVariableFontFilePath(id, subset, axesLower, style),
+							url: makeFontFilePath(metadata.id, subset, axesLower, style),
 							format: 'woff2-variations',
 						},
 					],
-					comment: `${id}-${subset}-${axesLower}-${style}`,
+					comment: `${metadata.id}-${subset}-${axesLower}-${style}`,
 				};
 
 				// This takes in a font object and returns an @font-face block
@@ -58,9 +69,12 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 			// Write down CSS
 			const filename =
 				style === 'normal' ? `${axesLower}.css` : `${axesLower}-${style}.css`;
-			const cssPath = path.join(opts.dir, filename);
 			const css = cssStyle.join('\n\n');
-			await fs.writeFile(cssPath, css);
+
+			cssGenerate.push({
+				filename,
+				css,
+			});
 
 			// Ensure style is normal or there is only one style
 			if (axes === 'wght' && (style === 'normal' || styles.length === 1))
@@ -72,7 +86,28 @@ const packagerVariable = async (id: string, opts: BuildOptions) => {
 	}
 
 	// Write down index.css for variable package
-	await fs.writeFile(path.join(opts.dir, 'index.css'), indexCSS);
+	cssGenerate.push({
+		filename: 'index.css',
+		css: indexCSS,
+	});
+
+	return cssGenerate;
 };
 
-export { packagerVariable };
+const packagerVariable = async (id: string, opts: BuildOptions) => {
+	const font = APIv2[id];
+	const fontVariable = APIVariable[id];
+
+	const cssGenerate = generateVariableCSS(
+		font,
+		fontVariable,
+		makeVariableFontFilePath,
+	);
+
+	for (const item of cssGenerate) {
+		const cssPath = path.join(opts.dir, item.filename);
+		await fs.writeFile(cssPath, item.css);
+	}
+};
+
+export { generateVariableCSS, packagerVariable };

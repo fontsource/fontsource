@@ -36,7 +36,7 @@ const CATEGORY_NAMES = [
 	'icons',
 	'other',
 ] as const;
-export type CategoryNames = typeof CATEGORY_NAMES[number];
+export type CategoryNames = (typeof CATEGORY_NAMES)[number];
 export const isCategoryName = (value: string): value is CategoryNames =>
 	CATEGORY_NAMES.includes(value as CategoryNames);
 
@@ -61,5 +61,11 @@ export interface Metadata {
 	source: string;
 	type: TypeNames;
 }
+interface CSSGenerateItem {
+	filename: string;
+	css: string;
+}
+
+export type CSSGenerate = CSSGenerateItem[];
 
 export type UnicodeRange = Record<string, string>;
