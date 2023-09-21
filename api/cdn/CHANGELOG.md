@@ -1,5 +1,14 @@
 # cdn
 
+## 0.2.4
+
+### Patch Changes
+
+- [#846](https://github.com/fontsource/fontsource/pull/846) [`50aa33349f`](https://github.com/fontsource/fontsource/commit/50aa33349f5b02bb236463a57d19c6897e93b36c) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): failing to generate icon css due to typo
+
+- [#844](https://github.com/fontsource/fontsource/pull/844) [`fea9a85290`](https://github.com/fontsource/fontsource/commit/fea9a8529051753cfa78605b6e337d13bde1bb7f) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): remove square brackets from generated CSS URLs.
+  fix(api): validate standard and full axes keys for CDN worker.
+
 ## 0.2.3
 
 ### Patch Changes
