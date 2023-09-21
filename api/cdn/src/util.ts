@@ -8,6 +8,10 @@ import { StatusError } from 'itty-router';
 const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'zip'] as const;
 type AcceptedExtension = (typeof ACCEPTED_EXTENSIONS)[number];
 
+const isNumeric = (num: any) =>
+	(typeof num === 'number' || (typeof num === 'string' && num.trim() !== '')) &&
+	!Number.isNaN(num as number);
+
 interface Tag {
 	id: string;
 	version: string;
@@ -119,7 +123,8 @@ export const validateFontFilename = (file: string, metadata: IDResponse) => {
 	// Accept id-subset-weight-style
 	if (
 		style &&
-		subsets.includes(subset) &&
+		// It could also be a numbered subset
+		(subsets.includes(subset) || isNumeric(subset)) &&
 		weights.includes(Number(weight)) &&
 		styles.includes(style)
 	) {
@@ -158,7 +163,7 @@ export const validateVariableFontFileName = (
 
 	// Accept id-subset-axes-style
 	if (
-		subsets.includes(subset) &&
+		(subsets.includes(subset) || isNumeric(subset)) &&
 		isValidAxesKey &&
 		style &&
 		styles.includes(style)
