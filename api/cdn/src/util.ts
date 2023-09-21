@@ -48,7 +48,7 @@ export const splitTag = async (
 	}
 
 	// Don't support version tags below v5
-	if (!versionTag.startsWith('5')) {
+	if (!versionTag.startsWith('5') && versionTag !== 'latest') {
 		throw new StatusError(
 			400,
 			'Bad Request. Version tags below @5 are not supported.',
@@ -151,11 +151,15 @@ export const validateVariableFontFileName = (
 	const axesKey = filenameArr.pop();
 	const subset = filenameArr.join('-');
 
+	const isValidAxesKey =
+		Boolean(axesKey && axes[axesKey]) ||
+		axesKey === 'standard' ||
+		axesKey === 'full';
+
 	// Accept id-subset-axes-style
 	if (
 		subsets.includes(subset) &&
-		axesKey &&
-		axes[axesKey] &&
+		isValidAxesKey &&
 		style &&
 		styles.includes(style)
 	) {

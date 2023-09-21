@@ -16,10 +16,12 @@ import {
 	getVariable,
 } from '@/utils/metadata/metadata.server';
 import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
+import { isStandardAxesKey } from '@/utils/utils.server';
 
 interface FontMetadata {
 	metadata: Metadata;
 	variable?: VariableData;
+	variableCssKey?: string;
 	axisRegistry?: AxisRegistryAll;
 	defSubsetText: string;
 	downloadCount: number;
@@ -37,9 +39,28 @@ export const loader = async ({ params }: LoaderArgs) => {
 		getStats(id),
 	]);
 
+	// If variable, determine the CSS key to use
+	let variableCssKey: string | undefined;
+	if (variable) {
+		const { axes } = variable;
+		// Remove ital from keys
+		const keys = Object.keys(axes).filter((key) => key !== 'ital');
+		if (keys.length === 1 && keys.includes('wght')) {
+			variableCssKey = 'wght';
+		} else if (keys.length === 1) {
+			// Some fonts have a single axis that is not wght
+			variableCssKey = keys[0].toLowerCase();
+		} else if (keys.every((key) => isStandardAxesKey(key))) {
+			variableCssKey = 'standard';
+		} else {
+			variableCssKey = 'full';
+		}
+	}
+
 	const res: FontMetadata = {
 		metadata,
 		variable,
+		variableCssKey,
 		axisRegistry,
 		defSubsetText,
 		downloadCount: stats.total.npmDownloadTotal,
@@ -78,14 +99,19 @@ const useStyles = createStyles((theme) => ({
 
 export default function Font() {
 	const data = useLoaderData<FontMetadata>();
-	const { metadata, variable, axisRegistry, defSubsetText } = data;
+	const { metadata, variable, axisRegistry, defSubsetText, variableCssKey } =
+		data;
 	const { classes } = useStyles();
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="preview">
 			<Grid className={classes.wrapperPreview}>
 				<Grid.Col span={12} md={8}>
-					<TextArea metadata={metadata} previewText={defSubsetText} />
+					<TextArea
+						metadata={metadata}
+						previewText={defSubsetText}
+						variableCssKey={variableCssKey}
+					/>
 				</Grid.Col>
 				<Grid.Col
 					span={12}

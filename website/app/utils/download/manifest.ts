@@ -75,7 +75,10 @@ export const generateVariableManifestItem = (
 ): ManifestVariable => {
 	const { id, version } = splitTag(tag);
 	const [filename, extension] = file.split('.');
-	const [subset, axes, style] = filename.split('-');
+	const filenameArr = filename.split('-');
+	const style = filenameArr.pop();
+	const axes = filenameArr.pop();
+	const subset = filenameArr.join('-');
 	if (!subset || !axes || !style) {
 		throw new Response('Bad Request. Invalid filename.', { status: 400 });
 	}
