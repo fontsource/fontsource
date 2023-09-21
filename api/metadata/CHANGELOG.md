@@ -1,5 +1,14 @@
 # api
 
+## 0.2.4
+
+### Patch Changes
+
+- [#840](https://github.com/fontsource/fontsource/pull/840) [`bbed1e08f5`](https://github.com/fontsource/fontsource/commit/bbed1e08f5db793bd73a00ec83e47a6d926da275) Thanks [@ayuhito](https://github.com/ayuhito)! - Add variable fonts and CSS support to the CDN Worker.
+  Also added variable data to the Version API.
+- Updated dependencies [[`bbed1e08f5`](https://github.com/fontsource/fontsource/commit/bbed1e08f5db793bd73a00ec83e47a6d926da275)]:
+  - common-api@0.1.5
+
 ## 0.2.3
 
 ### Patch Changes
