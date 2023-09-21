@@ -50,8 +50,9 @@ export const updateCss = async (
 ): Promise<string> => {
 	let css;
 	const { category } = metadata;
+	console.log(category);
 	// Icons are handled differently
-	if (category === 'icon') {
+	if (category === 'icons') {
 		// Static
 		const cssGenerate = generateIconStaticCSS(metadata, makeFontFilePath, tag);
 		for (const item of cssGenerate) {
@@ -112,7 +113,7 @@ export const updateVariableCSS = async (
 	const vfTag = `${id}:vf@${version}`;
 
 	// Icons are handled differently
-	if (category === 'icon') {
+	if (category === 'icons') {
 		const cssGenerate = generateIconVariableCSS(
 			variableMeta,
 			makeFontFileVariablePath,
