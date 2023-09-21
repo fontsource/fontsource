@@ -10,9 +10,9 @@ import {
 	useMantineTheme,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-import { useLoadFont } from '@/hooks/useLoadFont';
+import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import type { Metadata } from '@/utils/types';
 
 import { fontVariation, previewState } from './observables';
@@ -29,6 +29,7 @@ interface TextBoxProps {
 
 interface TextAreaProps {
 	metadata: Metadata;
+	variableCssKey?: string;
 	previewText: string;
 }
 
@@ -153,31 +154,51 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 	);
 };
 
-const TextArea = ({ metadata }: TextAreaProps) => {
+const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
 	const { classes } = useStyles();
-	const isVariable = Boolean(metadata.variable);
+	const { id, family, weights, variable } = metadata;
 
-	const [loading, setLoading] = useState(true);
+	const variableFamily = `${family} Variable`;
+	const isVariable = Boolean(variable);
 
-	useLoadFont(
-		metadata.id,
-		metadata.family,
-		isVariable ? 'variable' : 'all',
-		setLoading,
-		metadata.weights,
-	);
+	const isFontLoaded = useIsFontLoaded(isVariable ? variableFamily : family);
 
 	return (
 		<Flex direction="column">
 			<Text className={classes.header}>Font Preview</Text>
-			{metadata.weights.map((weight) => (
-				<TextBox
-					key={weight}
-					weight={weight}
-					family={isVariable ? `${metadata.family} Variable` : metadata.family}
-					loaded={loading}
+			{!isVariable &&
+				weights.map((weight) => (
+					<>
+						<link
+							key={`link-${weight}`}
+							rel="stylesheet"
+							href={`https://r2.fontsource.org/css/${id}@latest/index.css`}
+						/>
+						<TextBox
+							key={weight}
+							weight={weight}
+							family={family}
+							loaded={!isFontLoaded}
+						/>
+					</>
+				))}
+			{isVariable && (
+				<link
+					rel="stylesheet"
+					href={`https://r2.fontsource.org/css/${id}:vf@latest/${
+						variableCssKey ?? 'wght'
+					}.css`}
 				/>
-			))}
+			)}
+			{isVariable &&
+				weights.map((weight) => (
+					<TextBox
+						key={weight}
+						weight={weight}
+						family={variableFamily}
+						loaded={!isFontLoaded}
+					/>
+				))}
 		</Flex>
 	);
 };
