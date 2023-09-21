@@ -4,17 +4,30 @@ import PQueue from 'p-queue';
 import woff2ttf from 'woff2sfnt-sfnt2woff';
 
 import { type Metadata } from '../types';
-import { bucketPath, getBucket, listBucket, putBucket } from './bucket';
-import { generateManifest, type Manifest } from './manifest';
+import {
+	bucketPath,
+	bucketPathVariable,
+	getBucket,
+	listBucket,
+	putBucket,
+} from './bucket';
+import {
+	generateManifest,
+	type Manifest,
+	type ManifestVariable,
+} from './manifest';
 
 export const downloadFile = async (manifest: Manifest) => {
-	const { id, subset, weight, style, extension, version } = manifest;
-	const url = manifest.url;
+	const { id, subset, weight, style, extension, version, url } = manifest;
 
 	const res = await fetch(url);
 
 	if (!res.ok) {
-		throw new Response(`Could not find ${url}`, { status: 404 });
+		if (res.status === 404) {
+			throw new Response(`Could not find ${url}`, { status: 404 });
+		}
+
+		throw new Response(`Could not fetch ${url}`, { status: 500 });
 	}
 
 	const buffer = await res.arrayBuffer();
@@ -48,6 +61,24 @@ export const downloadFile = async (manifest: Manifest) => {
 			ttfBuffer,
 		);
 	}
+};
+
+export const downloadVariableFile = async (manifest: ManifestVariable) => {
+	const { url } = manifest;
+	const res = await fetch(url);
+
+	if (!res.ok) {
+		if (res.status === 404) {
+			throw new Response(`Could not find ${url}`, { status: 404 });
+		}
+
+		throw new Response(`Could not fetch ${url}`, { status: 500 });
+	}
+
+	const buffer = await res.arrayBuffer();
+
+	// Add to bucket
+	await putBucket(bucketPathVariable(manifest), buffer);
 };
 
 export const downloadManifest = async (manifest: Manifest[]) => {
@@ -89,7 +120,7 @@ export const generateZip = async (
 	const webfonts = zip.folder('webfonts');
 	const ttf = zip.folder('ttf');
 
-	const fullManifest = await generateManifest(`${id}@${version}`, metadata);
+	const fullManifest = generateManifest(`${id}@${version}`, metadata);
 	// For every woff file, generate an equivalent manifest entry for ttf
 	for (const file of fullManifest) {
 		if (file.extension === 'woff') {

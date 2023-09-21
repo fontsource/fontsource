@@ -53,7 +53,7 @@ export const action: ActionFunction = async ({ request, params }) => {
 		throw new Response('Not Found. Font does not exist.', { status: 404 });
 	}
 
-	const manifestItem = await generateManifestItem(tag, file, metadata);
+	const manifestItem = generateManifestItem(tag, file, metadata);
 	await downloadFile(manifestItem);
 
 	return new Response('Success!', { status: 201 });
