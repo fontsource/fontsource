@@ -49,10 +49,10 @@ export const updateCss = async (
 	ctx: ExecutionContext,
 ): Promise<string> => {
 	let css;
-	const { category } = metadata;
+	const { category, type } = metadata;
 
 	// Icons are handled differently
-	if (category === 'icons') {
+	if (category === 'icons' && type === 'google') {
 		// Static
 		const cssGenerate = generateIconStaticCSS(metadata, makeFontFilePath, tag);
 		for (const item of cssGenerate) {
@@ -108,12 +108,12 @@ export const updateVariableCSS = async (
 	ctx: ExecutionContext,
 ): Promise<string> => {
 	let css;
-	const { category } = metadata;
+	const { category, type } = metadata;
 	const tag = `${id}@${version}`;
 	const vfTag = `${id}:vf@${version}`;
 
 	// Icons are handled differently
-	if (category === 'icons') {
+	if (category === 'icons' && type === 'google') {
 		const cssGenerate = generateIconVariableCSS(
 			variableMeta,
 			makeFontFileVariablePath,
