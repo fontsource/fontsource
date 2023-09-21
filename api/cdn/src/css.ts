@@ -50,7 +50,7 @@ export const updateCss = async (
 ): Promise<string> => {
 	let css;
 	const { category } = metadata;
-	console.log(category);
+
 	// Icons are handled differently
 	if (category === 'icons') {
 		// Static
