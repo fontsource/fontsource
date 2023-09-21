@@ -1,5 +1,13 @@
 # cdn
 
+## 0.2.5
+
+### Patch Changes
+
+- [#847](https://github.com/fontsource/fontsource/pull/847) [`d75a6bd062`](https://github.com/fontsource/fontsource/commit/d75a6bd0628a848fa2a85314f96e03320be837cb) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): add numeric check for subset in file name validation
+
+- [#848](https://github.com/fontsource/fontsource/pull/848) [`9a813813e7`](https://github.com/fontsource/fontsource/commit/9a813813e7087724cc7d84fc8b77e7b803305515) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): only use icon generators for google icons
+
 ## 0.2.4
 
 ### Patch Changes
