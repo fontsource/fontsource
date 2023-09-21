@@ -1,5 +1,17 @@
 # @fontsource-utils/cli
 
+## 0.3.17
+
+### Patch Changes
+
+- [#838](https://github.com/fontsource/fontsource/pull/838) [`f09ea8eec4`](https://github.com/fontsource/fontsource/commit/f09ea8eec4459ff0e416ad9a1249b183443d75d3) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(cli): invalid urls generated for cdn and loosen types for CSS generators
+
+## 0.3.16
+
+### Patch Changes
+
+- [#836](https://github.com/fontsource/fontsource/pull/836) [`398284bc90`](https://github.com/fontsource/fontsource/commit/398284bc90c51a27868b0f617136ff13f40f9182) Thanks [@ayuhito](https://github.com/ayuhito)! - refactor(cli): expose css generation for each package
+
 ## 0.3.15
 
 ### Patch Changes
