@@ -1,22 +1,4 @@
-interface AxesData {
-	default: string;
-	min: string;
-	max: string;
-	step: string;
-}
-
-// axes: italic: link
-type VariableVariants = Record<string, Record<string, string>>;
-
-interface VariableMetadata {
-	family: string;
-	id: string;
-	axes: Record<string, AxesData>;
-}
-
-interface VariableMetadataWithVariants extends VariableMetadata {
-	variants: VariableVariants;
-}
+import { type VariableMetadata } from 'common-api/types';
 
 type VariableList = Record<string, VariableMetadata>;
 
@@ -38,12 +20,6 @@ type AxisRegistryQueries = (typeof axisRegistryQueries)[number];
 const isAxisRegistryQuery = (x: string): x is AxisRegistryQueries =>
 	axisRegistryQueries.includes(x as AxisRegistryQueries);
 
-export type {
-	AxisRegistry,
-	AxisRegistryDownload,
-	VariableList,
-	VariableMetadata,
-	VariableMetadataWithVariants,
-};
+export type { AxisRegistry, AxisRegistryDownload, VariableList };
 
 export { isAxisRegistryQuery };

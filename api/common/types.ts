@@ -40,7 +40,41 @@ interface StatusErrorObject {
 interface VersionResponse {
 	latest: string;
 	static: string[];
+	latestVariable?: string;
 	variable?: string[];
 }
 
-export type { FontVariants, IDResponse, StatusErrorObject, VersionResponse };
+interface AxesData {
+	default: string;
+	min: string;
+	max: string;
+	step: string;
+}
+
+// axes: italic: link
+interface VariableVariants {
+	[axes: string]: {
+		[style: string]: {
+			[subset: string]: string;
+		};
+	};
+}
+
+interface VariableMetadata {
+	family: string;
+	id: string;
+	axes: Record<string, AxesData>;
+}
+
+interface VariableMetadataWithVariants extends VariableMetadata {
+	variants: VariableVariants;
+}
+
+export type {
+	FontVariants,
+	IDResponse,
+	StatusErrorObject,
+	VersionResponse,
+	VariableMetadata,
+	VariableMetadataWithVariants,
+};

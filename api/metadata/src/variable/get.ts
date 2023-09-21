@@ -1,9 +1,7 @@
+import { type VariableMetadataWithVariants } from 'common-api/types';
+
 import { type TTLMetadata } from '../types';
-import {
-	type AxisRegistry,
-	type VariableList,
-	type VariableMetadataWithVariants,
-} from './types';
+import { type AxisRegistry, type VariableList } from './types';
 import {
 	updateAxisRegistry,
 	updateVariable,

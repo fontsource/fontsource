@@ -26,10 +26,15 @@ export const sortSemverList = (list: string[]): string[] => {
 	});
 };
 
-export const getAvailableVersions = async (id: string): Promise<string[]> => {
-	const resp = await fetch(
-		`https://data.jsdelivr.com/v1/packages/npm/@fontsource/${id}`,
-	);
+export const getAvailableVersions = async (
+	id: string,
+	isVariable?: boolean,
+): Promise<string[]> => {
+	const url = isVariable
+		? `https://data.jsdelivr.com/v1/packages/npm/@fontsource-variable/${id}`
+		: `https://data.jsdelivr.com/v1/packages/npm/@fontsource/${id}`;
+
+	const resp = await fetch(url);
 
 	if (!resp.ok) {
 		if (resp.status === 404) {

@@ -7,8 +7,16 @@ export interface Manifest {
 	subset: string;
 	weight: number;
 	style: string;
-	variable: boolean;
 	extension: string;
+	version: string;
+	url: string;
+}
+
+export interface ManifestVariable {
+	id: string;
+	subset: string;
+	axes: string;
+	style: string;
 	version: string;
 	url: string;
 }
@@ -24,12 +32,12 @@ type ManifestGenerator = Omit<
 	| 'category'
 >;
 
-export const generateManifestItem = async (
+export const generateManifestItem = (
 	tag: string,
 	file: string,
 	metadata: ManifestGenerator,
-): Promise<Manifest> => {
-	const { id, version } = await splitTag(tag);
+): Manifest => {
+	const { id, version } = splitTag(tag);
 	let [filename, extension] = file.split('.');
 	const [subset, weight, style] = filename.split('-');
 	if (!subset || !weight || !style) {
@@ -51,7 +59,6 @@ export const generateManifestItem = async (
 		subset,
 		weight: Number(weight),
 		style,
-		variable: metadata.variable,
 		extension,
 		version,
 		url: `https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/files/${id}-${file.replace(
@@ -61,11 +68,43 @@ export const generateManifestItem = async (
 	};
 };
 
-export const generateManifest = async (
+export const generateVariableManifestItem = (
+	tag: string,
+	file: string,
+	metadata: ManifestGenerator,
+): ManifestVariable => {
+	const { id, version } = splitTag(tag);
+	const [filename, extension] = file.split('.');
+	const [subset, axes, style] = filename.split('-');
+	if (!subset || !axes || !style) {
+		throw new Response('Bad Request. Invalid filename.', { status: 400 });
+	}
+	if (extension !== 'woff2') {
+		throw new Response('Bad Request. Invalid extension.', { status: 400 });
+	}
+
+	if (id !== metadata.id) {
+		throw new Response(
+			'Unprocessable Entity.. Provided tag does not match metadata ID.',
+			{ status: 422 },
+		);
+	}
+
+	return {
+		id,
+		subset,
+		axes,
+		style,
+		version,
+		url: `https://cdn.jsdelivr.net/npm/@fontsource-variable/${id}@${version}/files/${id}-${file}`,
+	};
+};
+
+export const generateManifest = (
 	tag: string,
 	metadata: ManifestGenerator,
-): Promise<Manifest[]> => {
-	const { id, version } = await splitTag(tag);
+): Manifest[] => {
+	const { id, version } = splitTag(tag);
 
 	if (id !== metadata.id) {
 		throw new Response(
@@ -96,11 +135,10 @@ export const generateManifest = async (
 						subset,
 						weight,
 						style,
-						variable: metadata.variable,
 						extension,
 						version,
 						// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-						url: `https://cdn.jsdelivr.net/npm/@fontsource/${metadata.id}@${version}/files/${metadata.id}-${subset}-${weight}-${style}.${extension}`,
+						url: `https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/files/${metadata.id}-${subset}-${weight}-${style}.${extension}`,
 					});
 				}
 			}
@@ -115,8 +153,11 @@ export const pruneManifest = async (
 	id: string,
 	version: string,
 	baseManifest: Manifest[],
+	isVariable?: boolean,
 ) => {
-	const prefix = `${id}@${version}/`;
+	const prefix = isVariable
+		? `${id}@${version}/variable/`
+		: `${id}@${version}/`;
 	const existingFiles = await listBucket(prefix);
 
 	const manifest = baseManifest.filter((file) => {

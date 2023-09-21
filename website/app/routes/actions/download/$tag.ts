@@ -1,8 +1,8 @@
 import type { ActionFunction, LoaderFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
 
-import { downloadFile } from '@/utils/download/download';
-import { generateManifestItem } from '@/utils/download/manifest';
+import { downloadManifest, generateZip } from '@/utils/download/download';
+import { generateManifest, pruneManifest } from '@/utils/download/manifest';
 import { getMetadata } from '@/utils/metadata/metadata.server';
 
 export const loader: LoaderFunction = async () => {
@@ -31,14 +31,9 @@ export const action: ActionFunction = async ({ request, params }) => {
 		});
 	}
 
-	const { tag, file } = params;
+	const tag = params.tag;
 	if (!tag) {
 		throw new Response('Bad Request. Missing font tag in URL.', {
-			status: 400,
-		});
-	}
-	if (!file) {
-		throw new Response('Bad Request. Missing file in URL.', {
 			status: 400,
 		});
 	}
@@ -53,8 +48,17 @@ export const action: ActionFunction = async ({ request, params }) => {
 		throw new Response('Not Found. Font does not exist.', { status: 404 });
 	}
 
-	const manifestItem = await generateManifestItem(tag, file, metadata);
-	await downloadFile(manifestItem);
+	const baseManifest = generateManifest(tag, metadata);
+	const manifest = await pruneManifest(id, version, baseManifest);
+
+	if (baseManifest[0].version !== version) {
+		throw new Response('Bad Request. Invalid font tag.', {
+			status: 400,
+		});
+	}
+
+	await downloadManifest(manifest);
+	await generateZip(id, version, metadata);
 
 	return new Response('Success!', { status: 201 });
 };

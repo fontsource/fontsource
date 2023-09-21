@@ -1,6 +1,17 @@
-import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
-import { type IDResponse } from 'common-api/types';
+import {
+	generateIconStaticCSS,
+	generateIconVariableCSS,
+	generateV1CSS,
+	generateV2CSS,
+	generateVariableCSS,
+} from '@fontsource-utils/cli';
+import {
+	type IDResponse,
+	type VariableMetadataWithVariants,
+} from 'common-api/types';
 import { StatusError } from 'itty-router';
+
+const CSS_TTL = 60 * 60 * 24; // 1 day
 
 const makeFontFilePath = (
 	tag: string,
@@ -12,62 +23,144 @@ const makeFontFilePath = (
 	return `https://r2.fontsource.org/fonts/${tag}/${subset}-${weight}-${style}.${extension}`;
 };
 
-// Insert a weight array to find the closest number given num - used for index.css gen
-const findClosest = (arr: number[], num: number): number => {
-	// Array of absolute values showing diff from target number
-	const indexArr = arr.map((weight) => Math.abs(Number(weight) - num));
-	// Find smallest diff
-	const min = Math.min(...indexArr);
-	const closest = arr[indexArr.indexOf(min)];
-
-	return closest;
+const makeFontFileVariablePath = (
+	tag: string,
+	subset: string,
+	axes: string,
+	style: string,
+) => {
+	return `https://r2.fontsource.org/fonts/${tag}/${subset}-${axes}-${style}.woff2`;
 };
 
-export const updateCss = (
+const keyGen = (tag: string, filename: string) => `${tag}:${filename}`;
+const keyGenV = (tag: string, filename: string) =>
+	`variable:${tag}:${filename}`;
+
+export const updateCss = async (
 	tag: string,
-	fileName: string,
+	file: string,
 	metadata: IDResponse,
-) => {
-	const { family, styles, subsets, weights, unicodeRange, defSubset } =
-		metadata;
-	const isIndex = fileName === 'index';
-	let [subset, weight, style] = fileName.split('-');
-	if (
-		!isIndex &&
-		(!subset ||
-			!weight ||
-			!style ||
-			!subsets.includes(subset) ||
-			!weights.includes(Number(weight)) ||
-			!styles.includes(style))
-	) {
+	env: Env,
+	ctx: ExecutionContext,
+): Promise<string> => {
+	let css;
+	const { category } = metadata;
+	// Icons are handled differently
+	if (category === 'icon') {
+		// Static
+		const cssGenerate = generateIconStaticCSS(metadata, makeFontFilePath, tag);
+		for (const item of cssGenerate) {
+			// Cache return value early as KV has slow writes
+			if (item.filename === file) {
+				css = item.css;
+			}
+
+			ctx.waitUntil(
+				env.CSS.put(keyGen(tag, item.filename), item.css, {
+					metadata: {
+						ttl: Date.now() + CSS_TTL,
+					},
+				}),
+			);
+		}
+	} else {
+		const cssGenerate = [
+			...generateV1CSS(metadata, makeFontFilePath, tag),
+			...generateV2CSS(metadata, makeFontFilePath, tag),
+		];
+
+		for (const item of cssGenerate) {
+			// Cache return value early as KV has slow writes
+			if (item.filename === file) {
+				css = item.css;
+			}
+
+			ctx.waitUntil(
+				env.CSS.put(keyGen(tag, item.filename), item.css, {
+					metadata: {
+						ttl: Date.now() + CSS_TTL,
+					},
+				}),
+			);
+		}
+	}
+
+	if (!css) {
 		throw new StatusError(404, 'Not Found. Invalid filename.');
 	}
 
-	if (isIndex) {
-		subset = defSubset;
-		weight = String(findClosest(weights, 400));
-		style = 'normal';
+	return css;
+};
+
+export const updateVariableCSS = async (
+	id: string,
+	version: string,
+	file: string,
+	metadata: IDResponse,
+	variableMeta: VariableMetadataWithVariants,
+	env: Env,
+	ctx: ExecutionContext,
+): Promise<string> => {
+	let css;
+	const { category } = metadata;
+	const tag = `${id}@${version}`;
+	const vfTag = `${id}:vf@${version}`;
+
+	// Icons are handled differently
+	if (category === 'icon') {
+		const cssGenerate = generateIconVariableCSS(
+			variableMeta,
+			makeFontFileVariablePath,
+			vfTag,
+		);
+		for (const item of cssGenerate) {
+			// Reject index.css for variable fonts
+			if (item.filename === 'index.css') {
+				continue;
+			}
+
+			if (item.filename === file) {
+				css = item.css;
+			}
+
+			ctx.waitUntil(
+				env.CSS.put(keyGenV(tag, item.filename), item.css, {
+					metadata: {
+						ttl: Date.now() + CSS_TTL,
+					},
+				}),
+			);
+		}
+	} else {
+		const cssGenerate = generateVariableCSS(
+			metadata,
+			variableMeta,
+			makeFontFileVariablePath,
+			vfTag,
+		);
+		for (const item of cssGenerate) {
+			// Reject index.css for variable fonts
+			if (item.filename === 'index.css') {
+				continue;
+			}
+
+			if (item.filename === file) {
+				css = item.css;
+			}
+
+			ctx.waitUntil(
+				env.CSS.put(keyGenV(tag, item.filename), item.css, {
+					metadata: {
+						ttl: Date.now() + CSS_TTL,
+					},
+				}),
+			);
+		}
 	}
 
-	const fontObj: FontObject = {
-		family,
-		style,
-		display: 'swap',
-		weight: Number(weight),
-		unicodeRange: unicodeRange[subset],
-		src: [
-			{
-				url: makeFontFilePath(tag, subset, weight, style, 'woff2'),
-				format: 'woff2' as const,
-			},
-			{
-				url: makeFontFilePath(tag, subset, weight, style, 'woff'),
-				format: 'woff' as const,
-			},
-		],
-		comment: `${subset}`,
-	};
+	if (!css) {
+		throw new StatusError(404, 'Not Found. Invalid filename.');
+	}
 
-	return generateFontFace(fontObj);
+	return css;
 };
