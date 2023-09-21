@@ -151,11 +151,15 @@ export const validateVariableFontFileName = (
 	const axesKey = filenameArr.pop();
 	const subset = filenameArr.join('-');
 
+	const isValidAxesKey =
+		Boolean(axesKey && axes[axesKey]) ||
+		axesKey === 'standard' ||
+		axesKey === 'full';
+
 	// Accept id-subset-axes-style
 	if (
 		subsets.includes(subset) &&
-		axesKey &&
-		axes[axesKey] &&
+		isValidAxesKey &&
 		style &&
 		styles.includes(style)
 	) {
