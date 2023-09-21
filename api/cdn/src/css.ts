@@ -1,10 +1,10 @@
 import {
 	generateIconStaticCSS,
 	generateIconVariableCSS,
-} from '@fontsource-utils/cli/src/google/packager-icons';
-import { generateV1CSS } from '@fontsource-utils/cli/src/google/packager-v1';
-import { generateV2CSS } from '@fontsource-utils/cli/src/google/packager-v2';
-import { generateVariableCSS } from '@fontsource-utils/cli/src/google/packager-variable';
+	generateV1CSS,
+	generateV2CSS,
+	generateVariableCSS,
+} from '@fontsource-utils/cli';
 import {
 	type IDResponse,
 	type VariableMetadataWithVariants,
