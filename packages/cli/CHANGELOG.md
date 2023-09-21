@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.18
+
+### Patch Changes
+
+- [#841](https://github.com/fontsource/fontsource/pull/841) [`c41767940e`](https://github.com/fontsource/fontsource/commit/c41767940e2518d43a354f2905cc8e7836f9be72) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(cli): export a browser bundle for generating css
+
 ## 0.3.17
 
 ### Patch Changes
