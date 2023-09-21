@@ -23,10 +23,6 @@ export const downloadFile = async (manifest: Manifest) => {
 	const res = await fetch(url);
 
 	if (!res.ok) {
-		if (res.status === 404) {
-			throw new Response(`Could not find ${url}`, { status: 404 });
-		}
-
 		throw new Response(`Could not fetch ${url}`, { status: 500 });
 	}
 
@@ -46,7 +42,7 @@ export const downloadFile = async (manifest: Manifest) => {
 			});
 		}
 		if (!ttfBuffer)
-			throw new Response('cCould not convert woff to ttf', { status: 500 });
+			throw new Response('Could not convert woff to ttf', { status: 500 });
 
 		// Add to bucket
 		await putBucket(
@@ -68,10 +64,6 @@ export const downloadVariableFile = async (manifest: ManifestVariable) => {
 	const res = await fetch(url);
 
 	if (!res.ok) {
-		if (res.status === 404) {
-			throw new Response(`Could not find ${url}`, { status: 404 });
-		}
-
 		throw new Response(`Could not fetch ${url}`, { status: 500 });
 	}
 
