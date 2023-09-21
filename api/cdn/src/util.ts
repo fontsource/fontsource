@@ -25,8 +25,8 @@ export const splitTag = async (
 	env: Env,
 ): Promise<Tag> => {
 	// Parse tag for version e.g roboto@1.1.1
-	const [id, versionVarTag] = tag.split('@');
-	const [versionTag, isVariable] = versionVarTag.split(':');
+	const [idTag, versionTag] = tag.split('@');
+	const [id, isVariable] = idTag.split(':');
 
 	if (!id) {
 		throw new StatusError(

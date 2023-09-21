@@ -93,7 +93,8 @@ export const updateCss = async (
 };
 
 export const updateVariableCSS = async (
-	tag: string,
+	id: string,
+	version: string,
 	file: string,
 	metadata: IDResponse,
 	variableMeta: VariableMetadataWithVariants,
@@ -102,13 +103,15 @@ export const updateVariableCSS = async (
 ): Promise<string> => {
 	let css;
 	const { category } = metadata;
+	const tag = `${id}@${version}`;
+	const vfTag = `${id}:vf@${version}`;
 
 	// Icons are handled differently
 	if (category === 'icon') {
 		const cssGenerate = generateIconVariableCSS(
 			variableMeta,
 			makeFontFileVariablePath,
-			tag,
+			vfTag,
 		);
 		for (const item of cssGenerate) {
 			// Reject index.css for variable fonts
@@ -133,7 +136,7 @@ export const updateVariableCSS = async (
 			metadata,
 			variableMeta,
 			makeFontFileVariablePath,
-			tag,
+			vfTag,
 		);
 		for (const item of cssGenerate) {
 			// Reject index.css for variable fonts

@@ -32,9 +32,6 @@ importers:
       '@fontsource-utils/cli':
         specifier: workspace:^
         version: link:../../packages/cli
-      '@fontsource-utils/generate':
-        specifier: workspace:*
-        version: link:../../packages/generate
       common-api:
         specifier: workspace:*
         version: link:../common

@@ -21,7 +21,6 @@
 	},
 	"dependencies": {
 		"@fontsource-utils/cli": "workspace:^",
-		"@fontsource-utils/generate": "workspace:*",
 		"common-api": "workspace:*"
 	}
 }

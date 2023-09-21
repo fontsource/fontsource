@@ -181,7 +181,8 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 		if (isVariable && variableMetadata) {
 			validateVCSSFilename(file, variableMetadata);
 			item = await updateVariableCSS(
-				fullTag,
+				id,
+				version,
 				file,
 				metadata,
 				variableMetadata,
