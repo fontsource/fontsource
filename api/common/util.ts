@@ -6,11 +6,6 @@ import {
 	VersionResponse,
 } from './types';
 
-interface Tag {
-	id: string;
-	version: string;
-}
-
 // Fetch latest metadata from metadata worker
 export const getMetadata = async (id: string, req: Request, env: Env) => {
 	const apiPathname = `/v1/fonts/${id}`;
@@ -164,67 +159,4 @@ export const getVersion = async (id: string, req: Request, env: Env) => {
 	}
 
 	return await metadata.json<VersionResponse>();
-};
-
-export const splitTag = async (
-	tag: string,
-	isVariable: boolean,
-	req: Request,
-	env: Env,
-): Promise<Tag> => {
-	// Parse tag for version e.g roboto@1.1.1
-	let [id, versionTag] = tag.split('@');
-	if (!id) {
-		throw new StatusError(
-			400,
-			'Bad Request. Unable to parse font ID from tag.',
-		);
-	}
-	if (!versionTag) {
-		versionTag = 'latest';
-	}
-
-	// Don't support version tags below v5
-	if (!versionTag.startsWith('5')) {
-		throw new StatusError(
-			400,
-			'Bad Request. Version tags below @5 are not supported.',
-		);
-	}
-
-	// Validate version tag
-
-	const {
-		static: staticVar,
-		variable,
-		latest,
-		latestVariable,
-	} = await getVersion(id, req, env);
-
-	if (versionTag === 'latest') {
-		if (isVariable) {
-			if (!latestVariable) {
-				throw new StatusError(
-					404,
-					`Not found. Version ${versionTag} not found for ${id}.`,
-				);
-			}
-			return { id, version: latestVariable };
-		}
-
-		return { id, version: latest };
-	}
-
-	if (isVariable) {
-		if (!variable) {
-			throw new StatusError(
-				404,
-				`Not found. Version ${versionTag} not found for ${id}.`,
-			);
-		}
-
-		return { id, version: findVersion(id, versionTag, variable) };
-	}
-
-	return { id, version: findVersion(id, versionTag, staticVar) };
 };
