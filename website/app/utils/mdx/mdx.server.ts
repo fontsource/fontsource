@@ -2,8 +2,6 @@ import * as fs from 'node:fs/promises';
 
 import * as path from 'pathe';
 
-import { getAllSlugsInDir } from '@/utils/utils.server';
-
 import type { Globals, SerialiseOutput } from './esbuild.server';
 import { serialise } from './esbuild.server';
 
@@ -61,17 +59,4 @@ const fetchMdx = async (slug: string): Promise<MdxResult | undefined> => {
 	return { code, frontmatter, globals };
 };
 
-const populateDocsCache = async () => {
-	// Get all mdx files in nested directories in the docs folder
-	const slugs = await getAllSlugsInDir(
-		// eslint-disable-next-line unicorn/prefer-module
-		path.join(__dirname, '../docs'),
-	);
-
-	// Run fetchMdx for each slug to put it in the db cache
-	for (const slug of slugs) {
-		await fetchMdx(slug);
-	}
-};
-
-export { fetchMdx, populateDocsCache };
+export { fetchMdx };
