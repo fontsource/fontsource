@@ -2,7 +2,7 @@ import type { ActionFunction, LoaderFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
 
 import { updateAlgoliaIndex } from '@/utils/algolia.server';
-import { populateDocsCache, resetDocsCache } from '@/utils/mdx/mdx.server';
+import { populateDocsCache } from '@/utils/mdx/mdx.server';
 
 interface UpdateData {
 	algolia?: boolean;
@@ -29,7 +29,6 @@ export const action: ActionFunction = async ({ request }) => {
 
 	if (data.docs) {
 		console.log('Resetting cache for docs');
-		await resetDocsCache();
 		await populateDocsCache();
 	}
 

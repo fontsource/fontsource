@@ -3,7 +3,7 @@ import { redirect } from '@remix-run/node';
 
 import { downloadManifest, generateZip } from '@/utils/download/download';
 import { generateManifest, pruneManifest } from '@/utils/download/manifest';
-import { getMetadata } from '@/utils/metadata/metadata.server';
+import { getMetadata } from '@/utils/metadata.server';
 
 export const loader: LoaderFunction = async () => {
 	return redirect('/');

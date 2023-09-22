@@ -25,6 +25,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 // TODO: Implement DocSearch
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const DocsSearchBar = ({ ...others }: TextInputProps) => {
 	const { classes } = useStyles();
 	const { ref, focused } = useFocusWithin();

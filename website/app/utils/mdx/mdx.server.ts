@@ -2,8 +2,6 @@ import * as fs from 'node:fs/promises';
 
 import * as path from 'pathe';
 
-import { knex } from '@/utils/db.server';
-import { ensurePrimary } from '@/utils/fly.server';
 import { getAllSlugsInDir } from '@/utils/utils.server';
 
 import type { Globals, SerialiseOutput } from './esbuild.server';
@@ -28,7 +26,7 @@ const getSource = async (slug: string) => {
 		// eslint-disable-next-line unicorn/prefer-module
 		__dirname,
 		'../docs',
-		slug + '.mdx'
+		slug + '.mdx',
 	);
 	try {
 		return await fs.readFile(filepath, 'utf8');
@@ -41,53 +39,33 @@ interface MdxResult extends SerialiseOutput {
 	globals: Globals;
 }
 
+const docsMap = new Map<string, MdxResult>();
+
 const fetchMdx = async (slug: string): Promise<MdxResult | undefined> => {
 	// If we're in production, we can just get the doc from the db cache.
 	if (process.env.NODE_ENV === 'production') {
-		const result = await knex('docs').where({ route: slug }).first();
-		if (result) {
-			return {
-				code: result.content,
-				frontmatter: {
-					description: result.description,
-					title: result.title,
-					section: result.section,
-				},
-				globals,
-			};
-		}
+		const result = docsMap.get(slug);
+		if (result) return result;
 	}
 
 	// If the doc doesn't exist in the db, we need to create it.
-	await ensurePrimary();
 	const source = await getSource(slug);
 	if (!source) return;
 
 	const { code, frontmatter } = await serialise(source, globals);
 
 	if (process.env.NODE_ENV === 'production') {
-		await knex('docs')
-			.insert({
-				route: slug,
-				content: code,
-				title: frontmatter.title,
-				description: frontmatter.description,
-				section: frontmatter.section,
-			})
-			.onConflict('route')
-			.merge();
+		docsMap.set(slug, { code, frontmatter, globals });
 	}
 
 	return { code, frontmatter, globals };
 };
 
 const populateDocsCache = async () => {
-	await ensurePrimary();
-
 	// Get all mdx files in nested directories in the docs folder
 	const slugs = await getAllSlugsInDir(
 		// eslint-disable-next-line unicorn/prefer-module
-		path.join(__dirname, '../docs')
+		path.join(__dirname, '../docs'),
 	);
 
 	// Run fetchMdx for each slug to put it in the db cache
@@ -96,9 +74,4 @@ const populateDocsCache = async () => {
 	}
 };
 
-const resetDocsCache = async () => {
-	await ensurePrimary();
-	await knex('docs').del();
-};
-
-export { fetchMdx, populateDocsCache, resetDocsCache };
+export { fetchMdx, populateDocsCache };

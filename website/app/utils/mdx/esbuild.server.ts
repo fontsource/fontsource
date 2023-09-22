@@ -31,7 +31,7 @@ export type Globals = Record<string, string>;
 
 const esbuildOptions = async (
 	source: VFile,
-	globals: Globals
+	globals: Globals,
 ): Promise<BuildOptions> => {
 	const absoluteFiles: Record<string, string> = {};
 
@@ -156,7 +156,7 @@ const esbuildOptions = async (
 
 const serialise = async (
 	source: VFileCompatible,
-	globals: Globals
+	globals: Globals,
 ): Promise<SerialiseOutput> => {
 	const file = new VFile(source);
 	matter(file, { strip: true });
@@ -169,7 +169,6 @@ const serialise = async (
 	}
 
 	const code = decoder.write(Buffer.from(bundled.outputFiles[0].contents));
-	console.log(code.length);
 
 	return {
 		code: `${code};return Component`,
