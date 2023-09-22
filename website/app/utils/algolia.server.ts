@@ -4,7 +4,7 @@ import {
 	getFontlist,
 	getFullMetadata,
 	getStats,
-} from '@/utils/metadata/metadata.server';
+} from '@/utils/metadata.server';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 const shuffleArray = (size: number) => {

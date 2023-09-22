@@ -14,7 +14,7 @@ import {
 	getMetadata,
 	getStats,
 	getVariable,
-} from '@/utils/metadata/metadata.server';
+} from '@/utils/metadata.server';
 import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 import { isStandardAxesKey } from '@/utils/utils.server';
 

@@ -7,11 +7,7 @@ import invariant from 'tiny-invariant';
 import { Install } from '@/components/preview/Install';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { ogMeta } from '@/utils/meta';
-import {
-	getMetadata,
-	getStats,
-	getVariable,
-} from '@/utils/metadata/metadata.server';
+import { getMetadata, getStats, getVariable } from '@/utils/metadata.server';
 import type { Metadata, VariableData } from '@/utils/types';
 
 interface FontMetadata {
