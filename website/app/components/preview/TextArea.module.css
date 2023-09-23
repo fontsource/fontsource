@@ -1,0 +1,41 @@
+/* TextArea */
+.header {
+	font-weight: 700;
+	font-size: rem(24px);
+	line-height: rem(30px);
+	margin-bottom: rem(20px);
+}
+
+.text-wrapper {
+	padding: rem(24px) 0 rem(10px) 0;
+}
+
+.horizontal {
+	width: 100%;
+
+	@mixin light {
+		border-bottom: rem(1px) solid var(--mantine-color-border.1);
+	}
+
+	@mixin dark {
+		border-bottom: rem(1px) solid var(--mantine-color-border.0);
+	}
+}
+
+.tag {
+	font-size: rem(13px);
+	padding: rem(4px) rem(8px);
+	border-radius: 4px 4px 0 0;
+	margin-left: auto;
+	line-height: rem(12px);
+
+	@mixin light {
+		color: var(--mantine-color-text.1);
+		background-color: var(--mantine-color-border.0);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text.0);
+		background-color: var(--mantine-color-border.1);
+	}
+}

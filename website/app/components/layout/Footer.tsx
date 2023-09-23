@@ -3,9 +3,7 @@ import {
 	ActionIcon,
 	Box,
 	Container,
-	createStyles,
 	Group,
-	rem,
 	Text,
 	Tooltip,
 } from '@mantine/core';
@@ -13,47 +11,7 @@ import { Link } from '@remix-run/react';
 
 import { IconDiscord, IconGithub, LogoText, ThemeButton } from '@/components';
 
-export const FOOTER_HEIGHT = 72;
-
-const useStyles = createStyles((theme) => ({
-	header: {
-		backgroundColor: theme.colors.text[1],
-	},
-
-	inner: {
-		maxWidth: rem(1440),
-		marginLeft: 'auto',
-		marginRight: 'auto',
-		height: rem(FOOTER_HEIGHT),
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		padding: `0 ${rem(64)}`,
-	},
-
-	links: {
-		paddingTop: theme.spacing.lg,
-		height: rem(FOOTER_HEIGHT),
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'space-between',
-
-		[theme.fn.smallerThan('sm')]: {
-			display: 'none',
-		},
-	},
-
-	link: {
-		fontSize: theme.fontSizes.sm,
-		color: theme.colors.text[0],
-		padding: `${rem(27)} ${theme.spacing.sm}`,
-		textDecoration: 'none',
-
-		'&:hover': {
-			textDecoration: 'underline',
-		},
-	},
-}));
+import classes from './Footer.module.css';
 
 interface IconProps extends ActionIconProps {
 	label: string;
@@ -79,7 +37,6 @@ interface FooterNavLinkProps {
 }
 
 const FooterNavLink = ({ label, to }: FooterNavLinkProps) => {
-	const { classes } = useStyles();
 	return (
 		<Text>
 			<Link to={to} className={classes.link}>
@@ -90,12 +47,11 @@ const FooterNavLink = ({ label, to }: FooterNavLinkProps) => {
 };
 
 export const Footer = ({ ...other }: ContainerProps) => {
-	const { classes } = useStyles();
-
 	// TODO: Sponsors
 	// <FooterNavLink label="Sponsors" to="/sponsors" />
 
 	return (
+		// @ts-expect-error - Mantine v7 typing errors
 		<Box component="footer" className={classes.header} {...other}>
 			<Container className={classes.inner}>
 				<Link to="/">
@@ -103,7 +59,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 				</Link>
 				<div className={classes.links}>
 					<Tooltip.Group openDelay={600} closeDelay={100}>
-						<Group spacing="md" position="right">
+						<Group gap="md" justify="right">
 							<FooterNavLink label="Fonts" to="/" />
 							<FooterNavLink label="Documentation" to="/docs" />
 

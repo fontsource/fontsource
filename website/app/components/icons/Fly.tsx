@@ -1,10 +1,10 @@
-import { useMantineTheme } from '@mantine/core';
+import { useMantineColorScheme } from '@mantine/core';
 
 import type { IconProps } from './types';
 
 const IconFly = ({ height, ...others }: IconProps) => {
-	const theme = useMantineTheme();
-	if (theme.colorScheme === 'dark') {
+	const { colorScheme } = useMantineColorScheme();
+	if (colorScheme === 'dark') {
 		return (
 			<svg
 				height={height ?? 100}

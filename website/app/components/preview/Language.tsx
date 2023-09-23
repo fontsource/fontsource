@@ -11,20 +11,23 @@ interface LanguageSelectorProps {
 	subsets: string[];
 }
 
+interface LanguageFetcher {
+	text: string;
+}
 const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	const language = useSelector(previewState.language);
-	const languageFetcher = useFetcher();
+	const languageFetcher = useFetcher<LanguageFetcher>();
 
 	const handleLanguage = (value: string) => {
 		previewState.language.set(
-			subsetsMap[value as keyof typeof subsetsMap] ?? value
+			subsetsMap[value as keyof typeof subsetsMap] ?? value,
 		);
 		languageFetcher.submit(
 			{ subset: value },
 			{
 				method: 'POST',
 				action: '/actions/language',
-			}
+			},
 		);
 	};
 

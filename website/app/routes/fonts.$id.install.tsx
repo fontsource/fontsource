@@ -1,6 +1,6 @@
-import type { LoaderArgs } from '@remix-run/node';
+import type { LoaderFunctionArgs } from '@remix-run/node';
 import { json } from '@remix-run/node';
-import type { V2_MetaFunction } from '@remix-run/react';
+import type { MetaFunction } from '@remix-run/react';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
@@ -16,7 +16,7 @@ interface FontMetadata {
 	downloadCount: number;
 }
 
-export const loader = async ({ params }: LoaderArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 
@@ -35,7 +35,7 @@ export const loader = async ({ params }: LoaderArgs) => {
 	return json(res);
 };
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const title = data?.metadata.family
 		? `${data.metadata.family} | Fontsource`
 		: 'Fontsource';

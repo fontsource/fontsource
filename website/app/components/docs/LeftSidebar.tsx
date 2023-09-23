@@ -1,7 +1,6 @@
 import sidebarConfigImport from '@docs/sidebar.json';
 import {
 	Box,
-	createStyles,
 	Divider,
 	Flex,
 	Group,
@@ -22,6 +21,8 @@ import {
 	IconGuide,
 	IconTool,
 } from '@/components/icons';
+
+import classes from './docs.module.css';
 
 interface SidebarConfig {
 	[slug: string]: {
@@ -64,63 +65,6 @@ const sections: SectionsData = {
 	},
 };
 
-const useStyles = createStyles((theme) => ({
-	wrapper: {
-		position: 'sticky',
-		top: rem(40),
-		display: 'flex',
-		flexDirection: 'column',
-		width: rem(240),
-		padding: `${rem(24)} 0`,
-		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0]
-		}`,
-		borderRadius: rem(4),
-
-		[theme.fn.smallerThan('sm')]: {
-			top: 0,
-			paddingTop: 0,
-			border: 'none',
-			width: '100%',
-		},
-	},
-
-	routeItem: {
-		display: 'flex',
-		borderRadius: 0,
-		padding: `${rem(10)} ${rem(24)}`,
-
-		'&:hover': {
-			color: theme.colors.purple[0],
-		},
-
-		[theme.fn.largerThan('sm')]: {
-			'&:hover': {
-				borderLeft: `${rem(1)} solid ${theme.colors.purple[0]}`,
-			},
-		},
-	},
-
-	sections: {
-		display: 'flex',
-		flexDirection: 'column',
-		padding: `${rem(8)} ${rem(24)}`,
-	},
-
-	sectionItem: {
-		alignItems: 'center',
-		padding: `${rem(8)} ${rem(16)}`,
-		marginBottom: rem(4),
-		borderRadius: rem(4),
-
-		'&:hover': {
-			backgroundColor: 'rgba(98, 91, 248, 0.1)',
-		},
-	},
-}));
-
 interface RouteItemProps {
 	slug: string;
 	title: string;
@@ -129,18 +73,17 @@ interface RouteItemProps {
 }
 
 const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
-	const { classes } = useStyles();
 	const { hovered, ref } = useHover<HTMLAnchorElement>();
 	const theme = useMantineTheme();
 	return (
 		<UnstyledButton
-			className={classes.routeItem}
-			sx={(theme) => ({
+			className={classes['route-item']}
+			style={(theme) => ({
 				color: active ? theme.colors.purple[0] : 'inherit',
-				[theme.fn.largerThan('sm')]: {
+				'@media (min-width: $mantine-breakpoint-sm)': {
 					borderLeft: active
 						? `${rem(1)} solid ${theme.colors.purple[0]}`
-						: `${rem(1)} solid transparent`,
+						: undefined,
 				},
 			})}
 			component={Link}
@@ -178,7 +121,6 @@ const SectionItem = ({
 	active,
 	toggle,
 }: SectionItemProps) => {
-	const { classes } = useStyles();
 	const theme = useMantineTheme();
 
 	const handleToggle = () => {
@@ -190,18 +132,18 @@ const SectionItem = ({
 
 	return (
 		<UnstyledButton
-			className={classes.sectionItem}
-			sx={() => ({
-				backgroundColor: active ? 'rgba(98, 91, 248, 0.1)' : 'inherit',
-			})}
+			className={classes['section-item']}
+			style={{
+				backgroundColor: active ? theme.colors.purple[0] : 'inherit',
+			}}
 			component={Link}
 			to={external ?? `/docs/${slug}`}
 			onClick={handleToggle}
 		>
-			<Group position="apart">
+			<Group justify="apart">
 				<Text
 					fw={active ? 700 : 400}
-					color={active ? theme.colors.purple[0] : 'inherit'}
+					c={active ? theme.colors.purple[0] : 'inherit'}
 				>
 					{title}
 				</Text>
@@ -216,7 +158,6 @@ interface LeftSidebarProps {
 }
 
 const LeftSidebar = ({ toggle }: LeftSidebarProps) => {
-	const { classes } = useStyles();
 	const params = useParams();
 	const route = params['*']?.split('/');
 	const routeSection = route?.[0] as keyof SidebarConfig;
@@ -237,15 +178,8 @@ const LeftSidebar = ({ toggle }: LeftSidebarProps) => {
 				<Flex className={classes.sections}>
 					{Object.keys(sidebarConfig[routeSection]).map((section) => (
 						<Fragment key={section}>
-							<Text
-								key={section}
-								fw={700}
-								fz={13}
-								mt="sm"
-								transform="uppercase"
-								mb="sm"
-							>
-								{section}
+							<Text key={section} fw={700} fz={13} mt="sm" mb="sm">
+								{section.toUpperCase()}
 							</Text>
 							<Divider mb="xs" />
 							{Object.entries(sidebarConfig[routeSection][section]).map(
@@ -260,7 +194,7 @@ const LeftSidebar = ({ toggle }: LeftSidebarProps) => {
 										active={sectionSlug === slug}
 										toggle={toggle}
 									/>
-								)
+								),
 							)}
 						</Fragment>
 					))}

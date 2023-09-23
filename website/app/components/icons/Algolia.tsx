@@ -1,10 +1,10 @@
-import { Stack, Text, useMantineTheme } from '@mantine/core';
+import { Stack, Text, useMantineColorScheme } from '@mantine/core';
 
 import type { IconProps } from './types';
 
 const IconAlgolia = ({ height, ...others }: IconProps) => {
-	const theme = useMantineTheme();
-	const stroke = theme.colorScheme === 'dark' ? '#FFF' : '#003dff';
+	const { colorScheme } = useMantineColorScheme();
+	const stroke = colorScheme === 'dark' ? '#FFF' : '#003dff';
 
 	return (
 		<svg
@@ -41,10 +41,11 @@ const IconAlgolia = ({ height, ...others }: IconProps) => {
 
 const SearchByAlgolia = (props: IconProps) => {
 	return (
-		<Stack spacing={0} sx={{ userSelect: 'none', opacity: '80%' }}>
+		<Stack gap={0} style={{ userSelect: 'none', opacity: '80%' }}>
 			<Text span fw={600} fz={8}>
 				Search by
 			</Text>
+			{/* @ts-expect-error - Mantine doesn't have a Text component */}
 			<IconAlgolia {...props} />
 		</Stack>
 	);

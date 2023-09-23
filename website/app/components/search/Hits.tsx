@@ -1,13 +1,5 @@
 import { useSelector } from '@legendapp/state/react';
-import {
-	Box,
-	createStyles,
-	Group,
-	rem,
-	SimpleGrid,
-	Skeleton,
-	Text,
-} from '@mantine/core';
+import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
 import { useFetcher } from '@remix-run/react';
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -18,6 +10,7 @@ import {
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import type { AlgoliaMetadata } from '@/utils/types';
 
+import classes from './Hits.module.css';
 import { display, previewValue, size } from './observables';
 import { Sort } from './Sort';
 
@@ -25,57 +18,14 @@ interface Hit {
 	hit: AlgoliaMetadata;
 }
 
-const useStyles = createStyles((theme) => ({
-	wrapper: {
-		display: 'flex',
-		width: '100%',
-		flexDirection: 'column',
-		alignItems: 'flex-start',
-		justifyContent: 'space-between',
-		padding: rem(24),
-		marginLeft: 'auto',
-		marginRight: 'auto',
-		overflowWrap: 'anywhere',
-
-		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0]
-		}`,
-		borderRadius: '4px',
-
-		// Remove a tag hyperlink styles
-		color: 'inherit',
-		textDecoration: 'inherit',
-
-		transition: 'transform 150ms ease-in-out',
-		'&:hover': {
-			color:
-				theme.colorScheme === 'dark'
-					? theme.colors.purple[1]
-					: theme.colors.purple[0],
-			border: `${rem(1)} solid ${
-				theme.colorScheme === 'dark'
-					? theme.colors.purple[1]
-					: theme.colors.purple[0]
-			}`,
-
-			boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.10)',
-			transform: 'scale(1.005)',
-		},
-	},
-
-	textGroup: {
-		paddingTop: rem(16),
-		width: '100%',
-	},
-}));
-
 interface HitComponentProps extends Hit {
 	fontSize: number;
 }
+
+interface PreviewFetcher {
+	text: string;
+}
 const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
-	const { classes } = useStyles();
 	const displaySelect = useSelector(display);
 
 	const isFontLoaded = useIsFontLoaded(hit.family);
@@ -83,7 +33,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	// Change preview text if hit.defSubset is not latin or if it's an icon
 	const previewValueSelect = useSelector(previewValue);
 	const [currentPreview, setCurrentPreview] = useState(previewValueSelect);
-	const previewFetcher = useFetcher();
+	const previewFetcher = useFetcher<PreviewFetcher>();
 	const isNotLatin =
 		hit.defSubset !== 'latin' ||
 		hit.category === 'icons' ||
@@ -122,16 +72,16 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 				href={`https://r2.fontsource.org/css/${hit.objectID}@latest/index.css`}
 			/>
 			<Skeleton visible={!isFontLoaded}>
-				<Text size={fontSize} style={{ fontFamily: `"${hit.family}"` }}>
+				<Text fz={fontSize} style={{ fontFamily: `"${hit.family}"` }}>
 					{currentPreview}
 				</Text>
 			</Skeleton>
-			<Group className={classes.textGroup} position="apart">
-				<Text size={18} weight={700} component="span">
+			<Group className={classes.textGroup} justify="apart">
+				<Text fz={18} fw={700} component="span">
 					{hit.family}
 				</Text>
 				{hit.variable && (
-					<Text size={15} weight={700} component="span">
+					<Text fz={15} fw={700} component="span">
 						Variable
 					</Text>
 				)}
@@ -140,8 +90,30 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	);
 };
 
-const InfiniteHits = () => {
+interface HitsMapProps {
+	hits: ReturnType<typeof useInfiniteHits>['hits'];
+	sentinelRef: React.MutableRefObject<HTMLDivElement | null>;
+}
+
+const HitsMap = ({ hits, sentinelRef }: HitsMapProps) => {
 	const sizeSelect = useSelector(size);
+
+	return (
+		<>
+			{hits.map((hit) => (
+				<HitComponent
+					key={hit.objectID}
+					// @ts-expect-error - hit prop is messed up cause of Algolia
+					hit={hit}
+					fontSize={sizeSelect}
+				/>
+			))}
+			<div ref={sentinelRef} aria-hidden="true" key="sentinel" />
+		</>
+	);
+};
+
+const InfiniteHits = () => {
 	const displaySelect = useSelector(display);
 
 	// Infinite Scrolling
@@ -180,28 +152,15 @@ const InfiniteHits = () => {
 	return (
 		<Box>
 			<Sort count={results.nbHits} />
-			<SimpleGrid
-				breakpoints={
-					displaySelect === 'grid'
-						? [
-								{ minWidth: 'xl', cols: 4, spacing: 16 },
-								{ minWidth: 'md', cols: 3, spacing: 16 },
-								{ minWidth: 'sm', cols: 2, spacing: 16 },
-								{ minWidth: 0, cols: 1, spacing: 16 },
-						  ]
-						: [{ minWidth: 0, cols: 1, spacing: 16 }]
-				}
-			>
-				{hits.map((hit) => (
-					<HitComponent
-						key={hit.objectID}
-						// @ts-expect-error - hit prop is messed up cause of Algolia
-						hit={hit}
-						fontSize={sizeSelect}
-					/>
-				))}
-				<div ref={sentinelRef} aria-hidden="true" key="sentinel" />
-			</SimpleGrid>
+			{displaySelect === 'grid' ? (
+				<SimpleGrid cols={{ base: 1, sm: 2, md: 3, xl: 4 }} spacing={16}>
+					<HitsMap hits={hits} sentinelRef={sentinelRef} />
+				</SimpleGrid>
+			) : (
+				<SimpleGrid cols={{ base: 1 }} spacing={16}>
+					<HitsMap hits={hits} sentinelRef={sentinelRef} />
+				</SimpleGrid>
+			)}
 		</Box>
 	);
 };

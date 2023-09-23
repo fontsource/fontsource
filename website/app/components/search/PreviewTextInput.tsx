@@ -2,93 +2,24 @@ import { useObserve, useSelector } from '@legendapp/state/react';
 import type { DividerProps } from '@mantine/core';
 import {
 	Button,
-	createStyles,
 	Divider as MantineDivider,
 	Menu,
-	rem,
 	TextInput,
+	useMantineColorScheme,
 } from '@mantine/core';
 
 import { IconCaret } from '@/components';
 
 import { previewInputView, previewLabel, previewValue } from './observables';
-
-const useStyles = createStyles((theme) => ({
-	wrapper: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		padding: `0 ${rem(24)}`,
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.background[4]
-				: theme.colors.background[0],
-		borderBottom: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
-		}`,
-		borderLeft: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
-		}`,
-		borderRight: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? '#2C3651' : '#E1E3EC'
-		}`,
-
-		'&:focus-within': {
-			borderBottomColor: theme.colors.purple[0],
-		},
-
-		[`@media (max-width: ${theme.breakpoints.md})`]: {
-			borderRight: 'none',
-		},
-
-		[`@media (max-width: ${theme.breakpoints.sm})`]: {
-			display: 'none',
-		},
-	},
-
-	button: {
-		padding: `${rem(2)} ${rem(16)}`,
-		height: rem(40),
-
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.background[4]
-				: theme.colors.background[0],
-
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.text[0]
-				: theme.colors.text[1],
-
-		fontWeight: 400,
-
-		'&:hover': {
-			backgroundColor: theme.colors.purpleHover[0],
-		},
-	},
-
-	separator: {
-		boxSizing: 'border-box',
-		textAlign: 'left',
-		width: '100%',
-		padding: `0 ${rem(2)}`,
-	},
-
-	separatorLabel: {
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.dark[3]
-				: theme.colors.gray[5],
-	},
-}));
+import classes from './PreviewTextInput.module.css';
 
 const Divider = ({ label, ...others }: DividerProps) => {
-	const { classes } = useStyles();
 	return (
 		<Menu.Item disabled>
 			<div className={classes.separator}>
+				{/* @ts-expect-error - Mantine v7 prop typing error */}
 				<MantineDivider
-					classNames={{ label: classes.separatorLabel }}
+					classNames={{ label: classes['separator-label'] }}
 					label={label}
 					{...others}
 				/>
@@ -118,9 +49,9 @@ const ItemButton = ({ label, setLabel, value, setValue }: ItemButtonProps) => {
 };
 
 const PreviewSelector = () => {
-	const { classes } = useStyles();
 	const labelSelect = useSelector(previewLabel);
 	const inputViewSelect = useSelector(previewInputView);
+	const { colorScheme } = useMantineColorScheme();
 
 	useObserve(() => {
 		if (previewLabel.get() !== 'Custom') {
@@ -134,7 +65,7 @@ const PreviewSelector = () => {
 				<Menu.Target>
 					<Button
 						className={classes.button}
-						rightIcon={<IconCaret />}
+						rightSection={<IconCaret />}
 						styles={{
 							inner: {
 								justifyContent: 'space-between',
@@ -200,7 +131,7 @@ const PreviewSelector = () => {
 					},
 					input: {
 						backgroundColor:
-							theme.colorScheme === 'dark'
+							colorScheme === 'dark'
 								? theme.colors.background[4]
 								: theme.colors.background[0],
 					},

@@ -1,10 +1,8 @@
 import { useSelector } from '@legendapp/state/react';
 import {
 	Center,
-	createStyles,
 	Group,
 	Menu,
-	rem,
 	SegmentedControl,
 	Text,
 	Tooltip,
@@ -14,44 +12,7 @@ import { useSortBy } from 'react-instantsearch-hooks-web';
 import { Dropdown, IconGrid, IconList } from '@/components';
 
 import { display, sort } from './observables';
-
-const useStyles = createStyles((theme) => ({
-	wrapper: {
-		display: 'flex',
-		height: rem(64),
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		paddingBottom: rem(10),
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.background[4]
-				: theme.colors.background[0],
-
-		'&:focus-within': {
-			borderBottomColor: theme.colors.purple[0],
-		},
-	},
-
-	displayGroup: {
-		display: 'flex',
-
-		[`@media (max-width: ${theme.breakpoints.sm})`]: {
-			display: 'none',
-		},
-	},
-
-	control: {
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.button[1]
-				: theme.colors.button[0],
-		borderRadius: '6px',
-
-		label: {
-			padding: rem(5),
-		},
-	},
-}));
+import classes from './Sort.module.css';
 
 interface SortItemProps {
 	value: string;
@@ -83,7 +44,6 @@ const indexMap = {
 };
 
 const Sort = ({ count }: SortProps) => {
-	const { classes } = useStyles();
 	const sortSelect = useSelector(sort);
 	const displaySelect = useSelector(display);
 
@@ -111,8 +71,8 @@ const Sort = ({ count }: SortProps) => {
 					<SortItem value="Name" setState={updateOrder} />
 					<SortItem value="Random" setState={updateOrder} />
 				</Dropdown>
-				<Group className={classes.displayGroup}>
-					<Text size={15}>Display</Text>
+				<Group className={classes['display=group']}>
+					<Text fz={15}>Display</Text>
 					<Tooltip
 						label={displaySelect === 'grid' ? 'Grid' : 'List'}
 						openDelay={600}

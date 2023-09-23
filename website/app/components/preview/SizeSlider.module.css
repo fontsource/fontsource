@@ -1,0 +1,47 @@
+/* SideSlider */
+.wrapper {
+	height: rem(40px);
+	padding: rem(2px) rem(14px);
+
+	border-radius: rem(4px);
+
+	&:focus-within {
+		border-color: var(--mantine-color-purple.0);
+	}
+
+	@mixin light {
+		background-color: var(--mantine-color-background.0);
+		border: rem(1px) solid var(--mantine-color-border.0);
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background.4);
+		border: rem(1px) solid var(--mantine-color-border.1);
+	}
+}
+
+.button {
+	font-weight: 400;
+	padding: rem(2px);
+	height: rem(20px);
+	border-radius: rem(4px);
+
+	@mixin light {
+		background-color: var(--mantine-color-background.0);
+		color: var(--mantine-color-text.1);
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background.4);
+		color: var(--mantine-color-text.0);
+	}
+}
+
+.slider {
+	width: rem(115px);
+}
+
+.italic {
+	width: rem(40px);
+	padding: 0;
+}

@@ -1,5 +1,5 @@
-import { createStyles, Grid } from '@mantine/core';
-import type { LoaderArgs, V2_MetaFunction } from '@remix-run/node';
+import { Grid } from '@mantine/core';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
@@ -18,6 +18,8 @@ import {
 import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 import { isStandardAxesKey } from '@/utils/utils.server';
 
+import classes from '../styles/global.module.css';
+
 interface FontMetadata {
 	metadata: Metadata;
 	variable?: VariableData;
@@ -27,7 +29,7 @@ interface FontMetadata {
 	downloadCount: number;
 }
 
-export const loader = async ({ params }: LoaderArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const metadata = await getMetadata(id);
@@ -69,7 +71,7 @@ export const loader = async ({ params }: LoaderArgs) => {
 	return json(res);
 };
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const title = data?.metadata.family
 		? `${data.metadata.family} | Fontsource`
 		: 'Fontsource';
@@ -80,33 +82,15 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
 	return ogMeta({ title, description });
 };
 
-const useStyles = createStyles((theme) => ({
-	wrapperPreview: {
-		maxWidth: '1440px',
-		marginLeft: 'auto',
-		marginRight: 'auto',
-		padding: '40px 64px',
-
-		[theme.fn.smallerThan('lg')]: {
-			padding: '40px 40px',
-		},
-
-		[theme.fn.smallerThan('xs')]: {
-			padding: '40px 24px',
-		},
-	},
-}));
-
 export default function Font() {
 	const data = useLoaderData<FontMetadata>();
 	const { metadata, variable, axisRegistry, defSubsetText, variableCssKey } =
 		data;
-	const { classes } = useStyles();
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="preview">
-			<Grid className={classes.wrapperPreview}>
-				<Grid.Col span={12} md={8}>
+			<Grid className={classes.container}>
+				<Grid.Col span={{ base: 12, md: 8 }}>
 					<TextArea
 						metadata={metadata}
 						previewText={defSubsetText}
@@ -114,13 +98,8 @@ export default function Font() {
 					/>
 				</Grid.Col>
 				<Grid.Col
-					span={12}
-					md={4}
-					sx={(theme) => ({
-						[theme.fn.smallerThan('md')]: {
-							display: 'none',
-						},
-					})}
+					className={classes['hide-less-than-md']}
+					span={{ base: 12, md: 4 }}
 				>
 					<Configure
 						metadata={metadata}

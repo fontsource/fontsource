@@ -1,14 +1,13 @@
-import { useMantineTheme } from '@mantine/core';
+import { useMantineColorScheme, useMantineTheme } from '@mantine/core';
 
 import type { IconProps } from './types';
 
 const IconDiscord = ({ height, stroke, ...others }: IconProps) => {
 	const theme = useMantineTheme();
+	const { colorScheme } = useMantineColorScheme();
 	const strokeNew =
 		stroke ??
-		(theme.colorScheme === 'dark'
-			? theme.colors.text[0]
-			: theme.colors.text[1]);
+		(colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1]);
 
 	return (
 		<svg

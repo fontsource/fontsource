@@ -1,4 +1,4 @@
-import { useMantineTheme } from '@mantine/core';
+import { useMantineColorScheme, useMantineTheme } from '@mantine/core';
 
 interface LogoProps extends React.ComponentPropsWithoutRef<'svg'> {
 	isHeader?: boolean;
@@ -6,8 +6,9 @@ interface LogoProps extends React.ComponentPropsWithoutRef<'svg'> {
 
 const LogoText = ({ height, isHeader, ...others }: LogoProps) => {
 	const theme = useMantineTheme();
+	const { colorScheme } = useMantineColorScheme();
 	const fill = isHeader
-		? theme.colorScheme === 'dark'
+		? colorScheme === 'dark'
 			? theme.colors.text[0]
 			: theme.colors.text[1]
 		: theme.colors.text[0];

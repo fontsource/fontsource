@@ -27,8 +27,10 @@
 		"@remix-run/react": "^2.0.1",
 		"@remix-run/serve": "^2.0.1",
 		"algoliasearch": "^4.20.0",
+		"clsx": "^2.0.0",
 		"esbuild": "^0.17.19",
 		"instantsearch.js": "^4.57.0",
+		"isbot": "latest",
 		"jszip": "^3.10.1",
 		"ky": "^0.33.3",
 		"millify": "^6.1.0",
@@ -61,6 +63,9 @@
 		"@types/react": "^18.2.22",
 		"@types/react-dom": "^18.2.7",
 		"eslint": "^8.49.0",
+		"postcss": "^8.4.30",
+		"postcss-preset-mantine": "^1.7.0",
+		"postcss-simple-vars": "^7.0.1",
 		"typescript": "^5.2.2"
 	},
 	"engines": {

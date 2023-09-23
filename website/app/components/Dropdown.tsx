@@ -1,6 +1,5 @@
-import type { DefaultProps } from '@mantine/core';
 import {
-	createStyles,
+	type BoxProps,
 	Menu,
 	rem,
 	ScrollArea,
@@ -10,11 +9,13 @@ import { useFocusWithin } from '@mantine/hooks';
 
 import { IconCaret } from '@/components';
 
+import classes from './Dropdown.module.css';
+
 interface DropdownProps {
 	label: string;
 	width?: number | string;
 	children: React.ReactNode;
-	className?: DefaultProps['className'];
+	className?: BoxProps['className'];
 	icon?: React.ReactNode;
 	capitalize?: boolean;
 	closeOnItemClick?: boolean;
@@ -26,50 +27,14 @@ interface DropdownItemProps {
 	setValue: (value: React.SetStateAction<any>) => void;
 }
 
-const useStyles = createStyles((theme) => ({
-	button: {
-		...theme.fn.focusStyles(),
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		padding: `${rem(2)} ${rem(16)}`,
-		height: rem(40),
-		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0]
-		}`,
-		borderRadius: '4px',
-
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.background[4]
-				: theme.colors.background[0],
-
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.text[0]
-				: theme.colors.text[1],
-
-		fontWeight: 400,
-
-		'&:hover': {
-			backgroundColor:
-				theme.colorScheme === 'dark'
-					? theme.fn.darken(theme.colors.background[4], 0.2)
-					: theme.fn.lighten(theme.colors.purple[0], 0.95),
-		},
-	},
-}));
-
 const DropdownItem = ({ label, value, setValue }: DropdownItemProps) => {
 	return (
 		<Menu.Item
+			className={classes.item}
 			component="button"
 			onClick={() => {
 				setValue(value);
 			}}
-			sx={{ textTransform: 'capitalize' }}
 		>
 			{label ?? value}
 		</Menu.Item>
@@ -85,7 +50,6 @@ const Dropdown = ({
 	capitalize,
 	children,
 }: DropdownProps) => {
-	const { classes } = useStyles();
 	const { ref, focused } = useFocusWithin();
 	return (
 		<Menu
@@ -97,7 +61,7 @@ const Dropdown = ({
 				<UnstyledButton
 					className={className ?? classes.button}
 					w={rem(width) ?? rem(240)}
-					sx={(theme) => ({
+					style={(theme) => ({
 						textTransform: capitalize ? 'capitalize' : undefined,
 						border: focused ? theme.colors.purple[0] : undefined,
 					})}

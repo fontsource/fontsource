@@ -2,10 +2,8 @@ import { useSelector } from '@legendapp/state/react';
 import {
 	Button,
 	ColorInput,
-	createStyles,
 	Group,
 	Popover,
-	rem,
 	Text,
 	Tooltip,
 } from '@mantine/core';
@@ -13,6 +11,7 @@ import {
 import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconEye, IconHorizontal, IconVertical } from '../icons';
+import classes from './Buttons.module.css';
 import { LanguageSelector } from './Language';
 import { previewState } from './observables';
 import { SizeSlider } from './SizeSlider';
@@ -33,48 +32,6 @@ interface SliderButtonProps {
 	max?: number;
 }
 
-const useStyles = createStyles((theme) => ({
-	button: {
-		padding: `${rem(2)} ${rem(2)}`,
-		height: rem(40),
-		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0]
-		}`,
-		borderRadius: '4px',
-
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.background[4]
-				: theme.colors.background[0],
-
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.text[0]
-				: theme.colors.text[1],
-
-		fontWeight: 400,
-
-		'&:not([data-disabled])': theme.fn.hover({
-			backgroundColor:
-				theme.colorScheme === 'dark'
-					? theme.fn.darken(theme.colors.background[4], 0.2)
-					: theme.fn.lighten(theme.colors.purple[0], 0.95),
-		}),
-	},
-
-	colorButton: {
-		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0]
-		}`,
-		borderRadius: rem(4),
-		paddingLeft: rem(12),
-	},
-}));
-
 const SliderButton = ({
 	label,
 	icon,
@@ -85,8 +42,6 @@ const SliderButton = ({
 	min,
 	max,
 }: SliderButtonProps) => {
-	const { classes } = useStyles();
-
 	return (
 		<Popover width={200} position="bottom" withArrow shadow="md">
 			<Popover.Target>
@@ -119,7 +74,6 @@ const SliderButton = ({
 };
 
 const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
-	const { classes } = useStyles();
 	const state = useSelector(previewState);
 
 	return (
@@ -145,7 +99,7 @@ const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
 			</Group>
 			<Group grow>
 				<ColorInput
-					className={classes.colorButton}
+					className={classes['color-button']}
 					variant="unstyled"
 					value={state.color}
 					onChange={previewState.color.set}
