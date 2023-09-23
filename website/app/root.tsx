@@ -25,6 +25,7 @@ import { AppShell } from '@/components';
 import { getThemeSession } from '@/utils/theme.server';
 
 import { ogMeta } from './utils/meta';
+import { theme } from './styles/theme';
 
 enableLegendStateReact();
 
@@ -93,7 +94,7 @@ export const Document = ({ children }: DocumentProps) => {
 				<Links />
 				<ColorSchemeScript />
 			</head>
-			<MantineProvider>
+			<MantineProvider theme={theme}>
 				<body
 					style={{
 						display: 'flex', // If content is smaller than viewport, footer will be at bottom
