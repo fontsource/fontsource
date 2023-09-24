@@ -9,7 +9,7 @@ import {
 } from '@mantine/core';
 import { useConfigure } from 'react-instantsearch-hooks-web';
 
-import { IconTrash } from '@/components';
+import { IconTrash } from '@/components/icons';
 
 import { CategoriesDropdown, LanguagesDropdown } from './Dropdowns';
 import classes from './Filters.module.css';

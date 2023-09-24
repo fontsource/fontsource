@@ -1,14 +1,13 @@
-import type { TextInputProps } from '@mantine/core';
 import { TextInput } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
 import { useState } from 'react';
 import { useSearchBox } from 'react-instantsearch-hooks-web';
 
-import { IconSearch, SearchByAlgolia } from '@/components';
+import { IconSearch, SearchByAlgolia } from '@/components/icons';
 
 import classes from './SearchTextInput.module.css';
 
-const SearchBar = ({ ...others }: TextInputProps) => {
+const SearchBar = () => {
 	const { ref, focused } = useFocusWithin();
 	const { query, refine } = useSearchBox();
 	const [inputValue, setInputValue] = useState(query);
@@ -31,7 +30,6 @@ const SearchBar = ({ ...others }: TextInputProps) => {
 	}
 
 	return (
-		// @ts-expect-error - Mantine v7 prop typings
 		<TextInput
 			value={inputValue}
 			onChange={onChange}
@@ -42,7 +40,6 @@ const SearchBar = ({ ...others }: TextInputProps) => {
 			ref={ref}
 			leftSection={<IconSearch active={focused} />}
 			rightSection={<SearchByAlgolia height={14} />}
-			{...others}
 		/>
 	);
 };

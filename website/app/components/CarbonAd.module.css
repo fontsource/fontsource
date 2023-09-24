@@ -10,11 +10,11 @@
 		text-decoration: none;
 
 		@mixin light {
-			color: var(--mantine-color-text.1);
+			color: var(--mantine-color-text-1);
 		}
 
 		@mixin dark {
-			color: var(--mantine-color-text.0);
+			color: var(--mantine-color-text-0);
 		}
 	}
 

@@ -8,7 +8,7 @@ import {
 	useMantineColorScheme,
 } from '@mantine/core';
 
-import { IconCaret } from '@/components';
+import { IconCaret } from '@/components/icons';
 
 import { previewInputView, previewLabel, previewValue } from './observables';
 import classes from './PreviewTextInput.module.css';

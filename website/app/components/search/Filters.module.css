@@ -4,11 +4,11 @@
 	border-radius: 4px;
 
 	@mixin light {
-		background-color: var(--mantine-color-background.0);
+		background-color: var(--mantine-color-background-0);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.4);
+		background-color: var(--mantine-color-background-4);
 	}
 }
 
@@ -24,15 +24,15 @@
 	overflow-y: hidden;
 
 	&:focus-within {
-		border-bottom-color: var(--mantine-color-purple.0);
+		border-bottom-color: var(--mantine-color-purple-0);
 	}
 
 	@mixin light {
-		background-color: var(--mantine-color-background.0);
+		background-color: var(--mantine-color-background-0);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.4);
+		background-color: var(--mantine-color-background-4);
 	}
 }
 
@@ -43,16 +43,16 @@
 	font-weight: 400;
 
 	&:hover {
-		background-color: var(--mantine-color-purpleHover.0);
+		background-color: var(--mantine-color-purpleHover-0);
 	}
 
 	@mixin light {
-		background-color: var(--mantine-color-background.0);
+		background-color: var(--mantine-color-background-0);
 		color: var(--mantine-color-text.1);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.4);
-		color: var(--mantine-color-text.0);
+		background-color: var(--mantine-color-background-4);
+		color: var(--mantine-color-text-0);
 	}
 }

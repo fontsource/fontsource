@@ -7,7 +7,7 @@ import {
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
 
-import { IconCaret } from '@/components';
+import { IconCaret } from '@/components/icons';
 
 import classes from './Dropdown.module.css';
 

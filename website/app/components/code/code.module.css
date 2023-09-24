@@ -25,7 +25,7 @@
 	border-radius: 0 0 rem(4) 0;
 	&,
 	&:hover {
-		background-color: var(--mantine-color-purple.0);
+		background-color: var(--mantine-color-purple-0);
 	}
 	height: rem(30);
 	width: rem(30);
@@ -33,7 +33,7 @@
 
 .language {
 	border-radius: rem(4) 0 0 0;
-	color: var(--mantine-color-text.0);
+	color: var(--mantine-color-text-0);
 	background: rgba(104, 118, 141, 0.5);
 	height: rem(30);
 	width: rem(30);
@@ -87,7 +87,7 @@
 
 	.tab {
 		&[data-active] {
-			border-bottom: rem(2) solid var(--mantine-color-purple.0);
+			border-bottom: rem(2) solid var(--mantine-color-purple-0);
 		}
 	}
 }

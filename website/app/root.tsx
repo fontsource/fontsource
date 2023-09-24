@@ -1,7 +1,7 @@
 import '@fontsource-variable/inter/wght.css';
 import '@fontsource-variable/source-code-pro/wght.css';
 import '@mantine/core/styles.css';
-import './styles/global.css';
+import './styles/global.module.css';
 
 import { enableLegendStateReact } from '@legendapp/state/react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';

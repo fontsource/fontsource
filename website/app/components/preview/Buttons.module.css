@@ -8,15 +8,15 @@
 	font-weight: 400;
 
 	@mixin light {
-		color: var(--mantine-color-text.1);
-		background-color: var(--mantine-color-background.0);
-		border: rem(1px) solid var(--mantine-color-border.0);
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-0);
+		border: rem(1px) solid var(--mantine-color-border-0);
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-text.0);
-		background-color: var(--mantine-color-background.4);
-		border: rem(1px) solid var(--mantine-color-border.1);
+		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-4);
+		border: rem(1px) solid var(--mantine-color-border-1);
 	}
 
 	&:not([data-disabled]) {
@@ -36,11 +36,11 @@
 		padding-left: rem(12px);
 
 		@mixin light {
-			border: rem(1px) solid var(--mantine-color-border.0);
+			border: rem(1px) solid var(--mantine-color-border-0);
 		}
 
 		@mixin dark {
-			border: rem(1px) solid var(--mantine-color-border.1);
+			border: rem(1px) solid var(--mantine-color-border-1);
 		}
 	}
 }

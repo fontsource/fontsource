@@ -1,7 +1,7 @@
 import { useSelector } from '@legendapp/state/react';
 import { Checkbox, Menu } from '@mantine/core';
 
-import { Dropdown } from '@/components';
+import { Dropdown } from '@/components/Dropdown';
 import { subsetsMap } from '@/utils/language/subsets';
 
 import { categoriesMap, category, language } from './observables';

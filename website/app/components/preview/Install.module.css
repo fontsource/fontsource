@@ -9,13 +9,13 @@
 	cursor: pointer;
 
 	@mixin light {
-		color: var(--mantine-color-text.1);
-		background-color: var(--mantine-color-background.2);
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-2);
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-text.0);
-		background-color: var(--mantine-color-background.3);
+		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-3);
 	}
 }
 
@@ -26,11 +26,11 @@
 	margin-left: auto;
 
 	@mixin light {
-		border: rem(1px) solid var(--mantine-color-border.0);
+		border: rem(1px) solid var(--mantine-color-border-0);
 	}
 
 	@mixin dark {
-		border: rem(1px) solid var(--mantine-color-border.1);
+		border: rem(1px) solid var(--mantine-color-border-1);
 	}
 
 	@media (max-width: $mantine-breakpoint-md) {
@@ -46,20 +46,20 @@
 	border-radius: rem(4px);
 
 	@mixin light {
-		border: rem(1px) solid var(--mantine-color-border.0);
+		border: rem(1px) solid var(--mantine-color-border-0);
 	}
 
 	@mixin dark {
-		border: rem(1px) solid var(--mantine-color-border.1);
+		border: rem(1px) solid var(--mantine-color-border-1);
 	}
 
 	&:hover {
 		@mixin light {
-			background-color: var(--mantine-color-background.4);
+			background-color: var(--mantine-color-background-4);
 		}
 
 		@mixin dark {
-			background-color: var(--mantine-color-background.4);
+			background-color: var(--mantine-color-background-4);
 		}
 	}
 }
@@ -78,7 +78,7 @@
 .tabs {
 	.tab {
 		&[data-active] {
-			borderbottom: rem(2) solid var(--mantine-color-purple.0);
+			borderbottom: rem(2) solid var(--mantine-color-purple-0);
 		}
 	}
 }
@@ -86,8 +86,8 @@
 .install-button {
 	padding: rem(8px) rem(16px);
 	border-radius: rem(4px);
-	background-color: var(--mantine-color-purple.0);
-	color: var(--mantine-color-text.0);
+	background-color: var(--mantine-color-purple-0);
+	color: var(--mantine-color-text-0);
 
 	&:hover {
 		background-color: darken("#625BF8", 0.2);

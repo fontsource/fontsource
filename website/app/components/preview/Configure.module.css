@@ -14,11 +14,11 @@
 	border-radius: 4px;
 
 	@mixin light {
-		border: 1px solid var(--mantine-color-border.0);
+		border: 1px solid var(--mantine-color-border-0);
 	}
 
 	@mixin dark {
-		border: 1px solid var(--mantine-color-border.1);
+		border: 1px solid var(--mantine-color-border-1);
 	}
 }
 
@@ -28,10 +28,10 @@
 	line-height: rem(18px);
 
 	@mixin light {
-		color: var(--mantine-color-text.1);
+		color: var(--mantine-color-text-1);
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-text.0);
+		color: var(--mantine-color-text-0);
 	}
 }

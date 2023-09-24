@@ -25,6 +25,7 @@ interface HitComponentProps extends Hit {
 interface PreviewFetcher {
 	text: string;
 }
+
 const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	const displaySelect = useSelector(display);
 
@@ -33,7 +34,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	// Change preview text if hit.defSubset is not latin or if it's an icon
 	const previewValueSelect = useSelector(previewValue);
 	const [currentPreview, setCurrentPreview] = useState(previewValueSelect);
-	const previewFetcher = useFetcher<PreviewFetcher>();
+	/* const previewFetcher = useFetcher<PreviewFetcher>();
 	const isNotLatin =
 		hit.defSubset !== 'latin' ||
 		hit.category === 'icons' ||
@@ -53,7 +54,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 		if (previewFetcher.state === 'idle' && previewFetcher.data?.text) {
 			setCurrentPreview(previewFetcher.data.text);
 		}
-	}, [previewFetcher, isNotLatin, hit.objectID, hit.defSubset]);
+	}, [previewFetcher, isNotLatin, hit.objectID, hit.defSubset]); */
 
 	// If previewValue changes, update currentPreview
 	useEffect(() => {
@@ -76,7 +77,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 					{currentPreview}
 				</Text>
 			</Skeleton>
-			<Group className={classes.textGroup} justify="apart">
+			<Group className={classes['text-group']} justify="apart">
 				<Text fz={18} fw={700} component="span">
 					{hit.family}
 				</Text>

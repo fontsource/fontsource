@@ -6,16 +6,16 @@
 	border-radius: 0 4px 0 0;
 
 	&:focus-within {
-		border-color: var(--mantine-color-purple.0);
+		border-color: var(--mantine-color-purple-0);
 	}
 
 	@mixin light {
-		background-color: var(--mantine-color-background.0);
+		background-color: var(--mantine-color-background-0);
 		border-bottom: 1px solid #e1e3ec;
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.4);
+		background-color: var(--mantine-color-background-4);
 		border-bottom: 1px solid #2c3651;
 	}
 
@@ -26,6 +26,6 @@
 
 .slider {
 	.bar {
-		background-color: var(--mantine-color-purple.0);
+		background-color: var(--mantine-color-purple-0);
 	}
 }

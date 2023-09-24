@@ -6,17 +6,17 @@
 	border-radius: rem(4px);
 
 	&:focus-within {
-		border-color: var(--mantine-color-purple.0);
+		border-color: var(--mantine-color-purple-0);
 	}
 
 	@mixin light {
-		background-color: var(--mantine-color-background.0);
-		border: rem(1px) solid var(--mantine-color-border.0);
+		background-color: var(--mantine-color-background-0);
+		border: rem(1px) solid var(--mantine-color-border-0);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.4);
-		border: rem(1px) solid var(--mantine-color-border.1);
+		background-color: var(--mantine-color-background-4);
+		border: rem(1px) solid var(--mantine-color-border-1);
 	}
 }
 
@@ -27,13 +27,13 @@
 	border-radius: rem(4px);
 
 	@mixin light {
-		background-color: var(--mantine-color-background.0);
-		color: var(--mantine-color-text.1);
+		background-color: var(--mantine-color-background-0);
+		color: var(--mantine-color-text-1);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.4);
-		color: var(--mantine-color-text.0);
+		background-color: var(--mantine-color-background-4);
+		color: var(--mantine-color-text-0);
 	}
 }
 

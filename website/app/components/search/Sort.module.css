@@ -8,15 +8,15 @@
 	padding-bottom: rem(10px);
 
 	&:focus-within {
-		border-bottom-color: var(--mantine-color-purple.0);
+		border-bottom-color: var(--mantine-color-purple-0);
 	}
 
 	@mixin light {
-		background-color: var(--mantine-color-background.0);
+		background-color: var(--mantine-color-background-0);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.4);
+		background-color: var(--mantine-color-background-4);
 	}
 }
 
@@ -32,11 +32,11 @@
 	border-radius: 6px;
 
 	@mixin light {
-		background-color: var(--mantine-color-button.0);
+		background-color: var(--mantine-color-button-0);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-button.1);
+		background-color: var(--mantine-color-button-1);
 	}
 
 	label {

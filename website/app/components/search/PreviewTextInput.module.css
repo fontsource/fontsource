@@ -6,18 +6,18 @@
 	padding: 0 rem(24px);
 
 	&:focus-within {
-		border-bottom-color: var(--mantine-color-purple.0);
+		border-bottom-color: var(--mantine-color-purple-0);
 	}
 
 	@mixin light {
-		background-color: var(--mantine-color-background.0);
+		background-color: var(--mantine-color-background-0);
 		border-bottom: 1px solid #e1e3ec;
 		border-left: 1px solid #e1e3ec;
 		border-right: 1px solid #e1e3ec;
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.4);
+		background-color: var(--mantine-color-background-4);
 		border-bottom: 1px solid #2c3651;
 		border-left: 1px solid #2c3651;
 		border-right: 1px solid #2c3651;
@@ -39,17 +39,17 @@
 	font-weight: 400;
 
 	&:hover {
-		background-color: var(--mantine-color-purpleHover.0);
+		background-color: var(--mantine-color-purpleHover-0);
 	}
 
 	@mixin light {
 		color: var(--mantine-color-text.1);
-		background-color: var(--mantine-color-background.0);
+		background-color: var(--mantine-color-background-0);
 	}
 
 	@mixin dark {
 		color: var(--mantine-color-text.0);
-		background-color: var(--mantine-color-background.4);
+		background-color: var(--mantine-color-background-4);
 	}
 }
 
@@ -62,10 +62,10 @@
 
 .separator-label {
 	@mixin light {
-		color: var(--mantine-color-gray.5);
+		color: var(--mantine-color-gray-5);
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-dark.3);
+		color: var(--mantine-color-dark-3);
 	}
 }

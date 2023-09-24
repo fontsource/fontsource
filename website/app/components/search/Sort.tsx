@@ -9,7 +9,8 @@ import {
 } from '@mantine/core';
 import { useSortBy } from 'react-instantsearch-hooks-web';
 
-import { Dropdown, IconGrid, IconList } from '@/components';
+import { IconGrid, IconList } from '@/components/icons';
+import { Dropdown } from '@/components/Dropdown';
 
 import { display, sort } from './observables';
 import classes from './Sort.module.css';

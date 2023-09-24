@@ -8,13 +8,13 @@
 	text-transform: lowercase;
 
 	@mixin light {
-		color: var(--mantine-color-text.1);
-		background-color: var(--mantine-color-background.2);
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-2);
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-text.0);
-		background-color: var(--mantine-color-background.3);
+		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-3);
 	}
 
 	@media (max-width: $mantine-breakpoint-md) {
@@ -36,15 +36,15 @@
 
 	&:hover {
 		background-color: rgba("#625BF8", 0.1);
-		color: var(--mantine-color-purple.0);
+		color: var(--mantine-color-purple-0);
 	}
 
 	@mixin light {
-		color: var(--mantine-color-text.1);
+		color: var(--mantine-color-text-1);
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-text.0);
+		color: var(--mantine-color-text-0);
 	}
 
 	@media (max-width: $mantine-breakpoint-sm) {
