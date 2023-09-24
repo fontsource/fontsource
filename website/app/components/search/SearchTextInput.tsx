@@ -35,11 +35,18 @@ const SearchBar = () => {
 			onChange={onChange}
 			placeholder="Search fonts"
 			variant="unstyled"
-			className={classes.wrapper}
+			// className={classes.wrapper}
+			classNames={{
+				root: classes.root,
+				wrapper: classes.wrapper,
+				input: classes.input,
+			}}
 			autoComplete="off"
 			ref={ref}
-			leftSection={<IconSearch active={focused} />}
+			leftSection={<IconSearch active={focused} className={classes.left} />}
+			leftSectionWidth={60}
 			rightSection={<SearchByAlgolia height={14} />}
+			rightSectionWidth={100}
 		/>
 	);
 };
