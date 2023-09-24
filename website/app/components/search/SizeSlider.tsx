@@ -13,19 +13,20 @@ const SizeSlider = () => {
 		<Grid
 			grow
 			gutter={0}
-			justify="center"
 			align="center"
 			className={classes.wrapper}
+			classNames={{ inner: classes.inner }}
 		>
-			<Grid.Col span={2}>
+			<Grid.Col span={1} className={classes.col}>
 				<Text>{size.get()} px</Text>
 			</Grid.Col>
-			<Grid.Col span={8}>
+			<Grid.Col span={9} className={classes.col}>
 				<MantineSlider
-					className={classes.slider}
+					classNames={{ bar: classes.bar }}
 					color="purple.0"
 					size="sm"
-					label={undefined}
+					thumbLabel="Change font size"
+					label={null}
 					value={sizeSelect}
 					onChange={size.set}
 				/>

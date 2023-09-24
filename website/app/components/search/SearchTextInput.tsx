@@ -34,10 +34,10 @@ const SearchBar = () => {
 			value={inputValue}
 			onChange={onChange}
 			placeholder="Search fonts"
+			aria-label="Search fonts"
 			variant="unstyled"
 			// className={classes.wrapper}
 			classNames={{
-				root: classes.root,
 				wrapper: classes.wrapper,
 				input: classes.input,
 			}}
