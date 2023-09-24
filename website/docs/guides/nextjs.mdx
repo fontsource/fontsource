@@ -1,0 +1,27 @@
+---
+title: Next.js
+section: Frameworks
+---
+
+# Next.js
+
+---
+
+To include Fontsource into your Next.js project, it is required to use a custom App component.
+[Next.js Documentation](https://nextjs.org/docs/advanced-features/custom-app).
+
+## Installation
+
+---
+
+To add Fontsource to your Next.js project, you can import it globally in the custom `_app.js` or `_app.tsx` file. Alternatively, you can choose to import it into a specific page component, but the CSS will only be present within that page and not globally.
+
+```jsx
+import "@fontsource-variable/open-sans/wght.css";
+
+function MyApp({ Component, pageProps }) {
+	return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```

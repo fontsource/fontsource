@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fontsource.org/sitemap.xml

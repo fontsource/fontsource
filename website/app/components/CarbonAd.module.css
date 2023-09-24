@@ -1,0 +1,51 @@
+/* CarbonAd */
+
+.wrapper {
+	display: flex;
+	margin-top: rem(24px);
+	margin-left: auto;
+	justify-content: center;
+
+	a {
+		text-decoration: none;
+
+		@mixin light {
+			color: var(--mantine-color-text.1);
+		}
+
+		@mixin dark {
+			color: var(--mantine-color-text.0);
+		}
+	}
+
+	#carbonads > span {
+		text-align: center;
+		display: grid;
+		padding: 1em;
+		box-sizing: border-box;
+		border-radius: 4px;
+		width: rem(238px);
+	}
+
+	#carbonads .carbon-wrap {
+		display: grid;
+		row-gap: rem(8px);
+	}
+
+	#carbonads .carbon-text {
+		font-size: rem(12px);
+		margin-bottom: rem(4px);
+	}
+
+	#carbonads .carbon-poweredby {
+		font-size: 0.75em;
+		opacity: 0.5;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+	}
+
+	@media (max-width: $mantine-breakpoint-md) {
+		display: none;
+	}
+}

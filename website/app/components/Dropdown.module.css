@@ -1,0 +1,37 @@
+/* Dropdown */
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: rem(2px) rem(16px);
+
+	border-radius: 4px;
+
+	font-weight: 400;
+
+	@mixin light {
+		color: var(--mantine-color-text.1);
+		background-color: var(--mantine-color-background.0);
+		border: 1px solid var(--mantine-color-border.0);
+
+		&:hover {
+			/* theme.fn.lighten(theme.colors.purple[0], 0.95), */
+			background-color: var(--mantine-color-purple.0);
+		}
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text.0);
+		background-color: var(--mantine-color-background.4);
+		border: 1px solid var(--mantine-color-border.1);
+
+		&:hover {
+			background-color: var(--mantine-color-background.3);
+		}
+	}
+}
+
+.item {
+	text-transform: capitalize;
+}

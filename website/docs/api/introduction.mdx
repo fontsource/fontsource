@@ -1,0 +1,34 @@
+---
+title: Getting Started API
+section: Setup
+---
+
+## Introduction
+
+---
+
+The Fontsource API provides developers with access to information about the fonts supported by the Fontsource repository.
+
+> **Note:** Please [sponsor](https://github.com/sponsors/ayuhito) the project if you use the API to support its development!
+
+## Usage
+
+---
+
+The Fontsource API is a read-only API that can be accessed by any HTTP client. An example URL that accepts a GET request is [`api.fontsource.org/v1/fonts`](https://api.fontsource.org/v1/fonts).
+
+### Errors
+
+| Code | Description                          |
+| ---- | ------------------------------------ |
+| 200  | The request was successful           |
+| 400  | The request was malformed            |
+| 404  | The requested resource was not found |
+| 422  | The request was unprocessable        |
+| 429  | The request was rate limited         |
+| 500  | An internal server error occurred    |
+
+### Limits
+
+- We reserve the right to add more properties to objects, but will never change or remove them.
+- While the intention is not to throttle the API, we reserve the right to do so if necessary under fair use. The current hard limit is 2500 requests per 10 seconds.

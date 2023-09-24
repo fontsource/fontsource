@@ -1,0 +1,46 @@
+/* Buttons */
+.button {
+	padding: rem(2px) rem(2px);
+	height: rem(40px);
+
+	border-radius: 4px;
+
+	font-weight: 400;
+
+	@mixin light {
+		color: var(--mantine-color-text.1);
+		background-color: var(--mantine-color-background.0);
+		border: rem(1px) solid var(--mantine-color-border.0);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text.0);
+		background-color: var(--mantine-color-background.4);
+		border: rem(1px) solid var(--mantine-color-border.1);
+	}
+
+	&:not([data-disabled]) {
+		&:hover {
+			@mixin light {
+				background-color: lighten("#625BF8", 0.95);
+			}
+
+			@mixin dark {
+				background-color: darken("#121B31", 0.2);
+			}
+		}
+	}
+
+	.color-button {
+		border-radius: 4px;
+		padding-left: rem(12px);
+
+		@mixin light {
+			border: rem(1px) solid var(--mantine-color-border.0);
+		}
+
+		@mixin dark {
+			border: rem(1px) solid var(--mantine-color-border.1);
+		}
+	}
+}

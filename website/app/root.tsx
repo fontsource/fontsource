@@ -1,7 +1,7 @@
 import '@fontsource-variable/inter/wght.css';
 import '@fontsource-variable/source-code-pro/wght.css';
 import '@mantine/core/styles.css';
-import './styles/global.module.css';
+import './styles/global.css';
 
 import { enableLegendStateReact } from '@legendapp/state/react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
@@ -15,21 +15,19 @@ import {
 	Links,
 	LiveReload,
 	Meta,
-	type MetaFunction,
+	type V2_MetaFunction,
 	Outlet,
 	Scripts,
 	ScrollRestoration,
 } from '@remix-run/react';
 
-import { AppShell } from '@/components';
-import { getThemeSession } from '@/utils/theme.server';
-
-import { ogMeta } from './utils/meta';
-import { theme } from './styles/theme';
+import { ogMeta } from '@/utils/meta';
+import { theme } from '@/styles/theme';
+import { AppShell } from '@/components/layout/AppShell';
 
 enableLegendStateReact();
 
-export const meta: MetaFunction = () => {
+export const meta: V2_MetaFunction = () => {
 	return ogMeta({
 		title: 'Fontsource',
 		description: 'Self-host Open Source fonts in neatly bundled packages.',
@@ -69,7 +67,7 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-export const loader: LoaderFunction = async ({ request }) => {
+/* export const loader: LoaderFunction = async ({ request }) => {
 	const themeSession = await getThemeSession(request);
 
 	const data = {
@@ -78,7 +76,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 	};
 
 	return data;
-};
+}; */
 
 interface DocumentProps {
 	children: React.ReactNode;
@@ -94,7 +92,6 @@ export const Document = ({ children }: DocumentProps) => {
 				<Links />
 				<ColorSchemeScript />
 			</head>
-
 			<body>
 				<MantineProvider theme={theme}>
 					<AppShell>{children}</AppShell>

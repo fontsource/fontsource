@@ -1,0 +1,91 @@
+---
+title: Fonts
+section: Reference
+---
+
+## Fonts
+
+---
+
+The Fonts endpoint provides an array of individual font objects.
+
+### HTTP Request
+
+- `GET [https://api.fontsource.org/v1/fonts](https://api.fontsource.org/v1/fonts)`
+- `GET https://api.fontsource.org/v1/fonts?{query}`
+
+### Response
+
+The API response for the Fonts endpoint is an array of font objects. Each font object represents a specific font and provides detailed information about it.
+
+#### Attributes:
+
+Returns an array of:
+
+| Attribute    | Type     | Description          |
+| ------------ | -------- | -------------------- |
+| id           | string   | The font ID          |
+| family       | string   | The font family      |
+| subsets      | string[] | Language subsets     |
+| weights      | number[] | Font weights         |
+| styles       | string[] | Font styles          |
+| defSubset    | string   | Default subset       |
+| variable     | boolean  | Is the font variable |
+| lastModified | string   | Last modified date   |
+| category     | string   | Font category        |
+| version      | string   | Font version         |
+| type         | string   | Font type            |
+
+#### Response example:
+
+```json
+[
+  {
+    "id": "abeezee",
+    "family": "ABeeZee",
+    "subsets": ["latin"],
+    "weights": [400],
+    "styles": ["italic", "normal"],
+    "defSubset": "latin",
+    "variable": false,
+    "lastModified": "2020-09-02",
+    "category": "sans-serif",
+    "version": "v14",
+    "type": "google"
+  }
+  ...
+]
+```
+
+### Queries
+
+The Fonts endpoint allows you to send queries to filter the list of fonts. Multiple queries can be combined using the & operator. Attributes in arrays can be separated using a comma separator `,` which acts as an AND operator.
+
+<br />
+
+You can include additional queries in the URL to filter the responses based on specific criteria. For example, [`api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`](https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true) will return fonts that match subsets `latin` and `latin-ext`, as well as if it is a variable font.
+
+#### Options
+
+You can use the following queries to filter the list of fonts:
+
+
+| Query        | Type     | Example                 |
+| ------------ | -------- | ----------------------- |
+| id           | string   | id=roboto               |
+| family       | string   | family=Roboto           |
+| subsets      | string   | subsets=latin,latin-ext |
+| weights      | number[] | weights=100,900         |
+| styles       | string[] | styles=normal,italic    |
+| defSubset    | string   | defSubset=arabic        |
+| variable     | boolean  | variable=true           |
+| lastModified | string   | lastModified=2020-09-02 |
+| category     | string   | category=display        |
+| version      | string   | version=v14             |
+| type         | string   | type=google             |
+
+#### Example:
+
+- `GET https://api.fontsource.org/v1/fonts?subsets=latin,latin-ext&variable=true`
+- `GET https://api.fontsource.org/v1/fonts?weights=400,900&styles=normal`
+- `GET https://api.fontsource.org/v1/fonts?lastModified=2022-09-22`

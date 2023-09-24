@@ -1,0 +1,95 @@
+.badge {
+	padding: rem(4px) rem(8px);
+	gap: rem(10px);
+
+	border-radius: rem(4px);
+	font-family: var(--mantine-font-family-monospace);
+	text-transform: lowercase;
+	user-select: none;
+	cursor: pointer;
+
+	@mixin light {
+		color: var(--mantine-color-text.1);
+		background-color: var(--mantine-color-background.2);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text.0);
+		background-color: var(--mantine-color-background.3);
+	}
+}
+
+.info-wrapper {
+	width: rem(332px);
+	padding: rem(24px);
+	border-radius: rem(4px);
+	margin-left: auto;
+
+	@mixin light {
+		border: rem(1px) solid var(--mantine-color-border.0);
+	}
+
+	@mixin dark {
+		border: rem(1px) solid var(--mantine-color-border.1);
+	}
+
+	@media (max-width: $mantine-breakpoint-md) {
+		width: 100%;
+	}
+}
+
+.info-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: rem(8px) rem(16px);
+	border-radius: rem(4px);
+
+	@mixin light {
+		border: rem(1px) solid var(--mantine-color-border.0);
+	}
+
+	@mixin dark {
+		border: rem(1px) solid var(--mantine-color-border.1);
+	}
+
+	&:hover {
+		@mixin light {
+			background-color: var(--mantine-color-background.4);
+		}
+
+		@mixin dark {
+			background-color: var(--mantine-color-background.4);
+		}
+	}
+}
+
+.info-button-group {
+	@media (max-width: $mantine-breakpoint-md) {
+		margin-top: rem(16px);
+	}
+}
+
+.install-wrapper {
+	padding: rem(24px) rem(40px) rem(24px) rem(24px);
+	width: 100%;
+}
+
+.tabs {
+	.tab {
+		&[data-active] {
+			borderbottom: rem(2) solid var(--mantine-color-purple.0);
+		}
+	}
+}
+
+.install-button {
+	padding: rem(8px) rem(16px);
+	border-radius: rem(4px);
+	background-color: var(--mantine-color-purple.0);
+	color: var(--mantine-color-text.0);
+
+	&:hover {
+		background-color: darken("#625BF8", 0.2);
+	}
+}

@@ -1,10 +1,10 @@
 header {
 	@mixin light {
-		background-color: var(--mantine-color-background.1);
+		background-color: var(--mantine-color-background-1);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.5);
+		background-color: var(--mantine-color-background-5);
 	}
 }
 
@@ -18,33 +18,33 @@ body {
 	line-height: 160%;
 
 	@mixin light {
-		color: var(--mantine-color-text.1);
-		background-color: var(--mantine-color-background.0);
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-0);
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-text.0);
-		background-color: var(--mantine-color-background.4);
+		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-4);
 	}
 }
 
 a {
 	@mixin light {
-		color: var(--mantine-color-text.7);
+		color: var(--mantine-color-text-7);
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-text.0);
+		color: var(--mantine-color-text-0);
 	}
 }
 
 .background {
 	@mixin light {
-		background-color: var(--mantine-color-background.1);
+		background-color: var(--mantine-color-background-1);
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background.5);
+		background-color: var(--mantine-color-background-5);
 	}
 }
 
