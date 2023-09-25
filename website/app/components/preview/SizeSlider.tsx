@@ -2,7 +2,7 @@ import { useSelector } from '@legendapp/state/react';
 import { ActionIcon, Group } from '@mantine/core';
 import { clsx } from 'clsx';
 
-import { Dropdown, DropdownItem } from '@/components';
+import { Dropdown, DropdownItem } from '@/components/Dropdown';
 import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconItalic } from '../icons/Italic';

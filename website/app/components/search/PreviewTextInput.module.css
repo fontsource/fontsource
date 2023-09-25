@@ -3,24 +3,28 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 rem(24px);
-
-	&:focus-within {
-		border-bottom-color: var(--mantine-color-purple-0);
-	}
+	padding: 0 24px;
 
 	@mixin light {
 		background-color: var(--mantine-color-background-0);
-		border-bottom: 1px solid #e1e3ec;
-		border-left: 1px solid #e1e3ec;
-		border-right: 1px solid #e1e3ec;
+		border-bottom: 1px solid var(--mantine-color-border-0);
+		border-left: 1px solid var(--mantine-color-border-0);
+		border-right: 1px solid var(--mantine-color-border-0);
+
+		&:focus-within {
+			border-bottom-color: var(--mantine-color-purple);
+		}
 	}
 
 	@mixin dark {
 		background-color: var(--mantine-color-background-4);
-		border-bottom: 1px solid #2c3651;
-		border-left: 1px solid #2c3651;
-		border-right: 1px solid #2c3651;
+		border-bottom: 1px solid var(--mantine-color-border-1);
+		border-left: 1px solid var(--mantine-color-border-1);
+		border-right: 1px solid var(--mantine-color-border-1);
+
+		&:focus-within {
+			border-bottom-color: var(--mantine-color-purple);
+		}
 	}
 
 	@media (max-width: $mantine-breakpoint-md) {
@@ -33,23 +37,27 @@
 }
 
 .button {
-	padding: rem(2px) rem(16px);
+	padding: 2px 16px;
 	height: 40px;
 
 	font-weight: 400;
 
-	&:hover {
-		background-color: var(--mantine-color-purpleHover-0);
-	}
-
 	@mixin light {
-		color: var(--mantine-color-text.1);
+		color: var(--mantine-color-text-1);
 		background-color: var(--mantine-color-background-0);
+
+		&:hover {
+			background-color: var(--mantine-color-purple-hover);
+		}
 	}
 
 	@mixin dark {
-		color: var(--mantine-color-text.0);
+		color: var(--mantine-color-text-0);
 		background-color: var(--mantine-color-background-4);
+
+		&:hover {
+			background-color: var(--mantine-color-purple-hover);
+		}
 	}
 }
 

@@ -32,6 +32,10 @@
 	}
 }
 
+.option {
+	text-transform: capitalize;
+}
+
 .item {
 	text-transform: capitalize;
 }

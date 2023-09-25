@@ -1,14 +1,14 @@
 /* SearchTextInput */
 
 .wrapper {
-	height: rem(64px);
+	height: 64px;
 	border-radius: 4px 0 0 0;
 
 	@mixin light {
 		border-bottom: 1px solid var(--mantine-color-border-0);
 
 		&:focus-within {
-			border-color: var(--mantine-color-purple-0);
+			border-color: var(--mantine-color-purple);
 		}
 	}
 
@@ -16,7 +16,7 @@
 		border-bottom: 1px solid var(--mantine-color-border-1);
 
 		&:focus-within {
-			border-color: var(--mantine-color-purple-0);
+			border-color: var(--mantine-color-purple);
 		}
 	}
 }

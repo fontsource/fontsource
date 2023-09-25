@@ -1,3 +1,10 @@
+/* Global CSS */
+
+:root {
+	--mantine-color-purple: #625bf8;
+	--mantine-color-purple-hover: rgba(98, 91, 248, 0.1);
+}
+
 header {
 	@mixin light {
 		background-color: var(--mantine-color-background-1);

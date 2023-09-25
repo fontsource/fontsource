@@ -1,7 +1,7 @@
 import { useSelector } from '@legendapp/state/react';
 import { Checkbox, Menu } from '@mantine/core';
 
-import { Dropdown } from '@/components/Dropdown';
+import { Dropdown, DropdownCheckbox } from '@/components/Dropdown';
 import { subsetsMap } from '@/utils/language/subsets';
 
 import { categoriesMap, category, language } from './observables';
@@ -58,6 +58,24 @@ const LanguagesDropdown = () => {
 };
 
 const CategoriesDropdown = () => {
+	const categorySelect = useSelector(category);
+	const label =
+		categorySelect === '' ? 'All categories' : categoriesMap[categorySelect];
+	const items = Object.entries(categoriesMap).map(([key, label]) => ({
+		label,
+		value: key,
+	}));
+
+	return (
+		<DropdownCheckbox
+			items={items}
+			currentState={categorySelect}
+			selector={category}
+		/>
+	);
+};
+
+const CategoriesDropdown2 = () => {
 	const categorySelect = useSelector(category);
 	const label =
 		categorySelect === '' ? 'All categories' : categoriesMap[categorySelect];

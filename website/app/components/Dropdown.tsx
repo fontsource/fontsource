@@ -4,12 +4,20 @@ import {
 	rem,
 	ScrollArea,
 	UnstyledButton,
+	Combobox,
+	useCombobox,
+	InputBase,
+	Input,
+	Group,
+	Checkbox,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
 
 import { IconCaret } from '@/components/icons';
 
 import classes from './Dropdown.module.css';
+import { useState } from 'react';
+import { ObservablePrimitiveBaseFns } from '@legendapp/state';
 
 interface DropdownProps {
 	label: string;
@@ -24,7 +32,13 @@ interface DropdownProps {
 interface DropdownItemProps {
 	label?: string;
 	value: any;
-	setValue: (value: React.SetStateAction<any>) => void;
+	setValue?: (value: React.SetStateAction<any>) => void;
+}
+
+interface DropdownCheckboxProps {
+	items: DropdownItemProps[];
+	currentState: string;
+	selector: ObservablePrimitiveBaseFns<any>;
 }
 
 const DropdownItem = ({ label, value, setValue }: DropdownItemProps) => {
@@ -33,7 +47,7 @@ const DropdownItem = ({ label, value, setValue }: DropdownItemProps) => {
 			className={classes.item}
 			component="button"
 			onClick={() => {
-				setValue(value);
+				setValue!(value);
 			}}
 		>
 			{label ?? value}
@@ -78,4 +92,75 @@ const Dropdown = ({
 	);
 };
 
-export { Dropdown, DropdownItem };
+const DropdownCheckbox = ({
+	items,
+	currentState,
+	selector,
+}: DropdownCheckboxProps) => {
+	const combobox = useCombobox({
+		onDropdownClose: () => combobox.resetSelectedOption(),
+		onDropdownOpen: () => combobox.updateSelectedOptionIndex('active'),
+	});
+
+	const handleValueSelect = (val: string) => selector.set(val);
+
+	const handleValueRemove = () => {
+		selector.set('');
+		combobox.resetSelectedOption();
+	};
+
+	const options = items.map((item) => (
+		<Combobox.Option
+			value={item.value}
+			key={item.value}
+			active={currentState === item.value}
+		>
+			<Group gap="sm" justify="flex-start">
+				<Checkbox
+					checked={currentState === item.value}
+					onChange={() => {
+						currentState !== item.value
+							? handleValueSelect(item.value)
+							: handleValueRemove();
+					}}
+					aria-hidden
+					tabIndex={-1}
+					style={{ pointerEvents: 'none' }}
+				/>
+				<span>{item.label ?? item.value}</span>
+			</Group>
+		</Combobox.Option>
+	));
+
+	return (
+		<Combobox
+			store={combobox}
+			onOptionSubmit={handleValueSelect}
+			withinPortal={false}
+			width={rem(240)}
+		>
+			<Combobox.DropdownTarget>
+				<InputBase
+					component="button"
+					pointer
+					rightSection={<IconCaret />}
+					onClick={() => combobox.toggleDropdown()}
+					rightSectionPointerEvents="none"
+					w={rem(240)}
+				>
+					{currentState || 'All categories'}
+				</InputBase>
+			</Combobox.DropdownTarget>
+
+			<Combobox.Dropdown>
+				<Combobox.Options>
+					<ScrollArea.Autosize type="scroll" mah={240}>
+						{options}
+					</ScrollArea.Autosize>
+				</Combobox.Options>
+			</Combobox.Dropdown>
+		</Combobox>
+	);
+};
+
+export { Dropdown, DropdownItem, DropdownCheckbox };
