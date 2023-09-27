@@ -59,15 +59,15 @@ export const updateCss = async (
 			// Cache return value early as KV has slow writes
 			if (item.filename === file) {
 				css = item.css;
-			}
 
-			ctx.waitUntil(
-				env.CSS.put(keyGen(tag, item.filename), item.css, {
-					metadata: {
-						ttl: Date.now() + CSS_TTL,
-					},
-				}),
-			);
+				ctx.waitUntil(
+					env.CSS.put(keyGen(tag, item.filename), item.css, {
+						metadata: {
+							ttl: Date.now() + CSS_TTL,
+						},
+					}),
+				);
+			}
 		}
 	} else {
 		const cssGenerate = [
@@ -79,15 +79,15 @@ export const updateCss = async (
 			// Cache return value early as KV has slow writes
 			if (item.filename === file) {
 				css = item.css;
-			}
 
-			ctx.waitUntil(
-				env.CSS.put(keyGen(tag, item.filename), item.css, {
-					metadata: {
-						ttl: Date.now() + CSS_TTL,
-					},
-				}),
-			);
+				ctx.waitUntil(
+					env.CSS.put(keyGen(tag, item.filename), item.css, {
+						metadata: {
+							ttl: Date.now() + CSS_TTL,
+						},
+					}),
+				);
+			}
 		}
 	}
 
@@ -127,15 +127,15 @@ export const updateVariableCSS = async (
 
 			if (item.filename === file) {
 				css = item.css;
-			}
 
-			ctx.waitUntil(
-				env.CSS.put(keyGenV(tag, item.filename), item.css, {
-					metadata: {
-						ttl: Date.now() + CSS_TTL,
-					},
-				}),
-			);
+				ctx.waitUntil(
+					env.CSS.put(keyGenV(tag, item.filename), item.css, {
+						metadata: {
+							ttl: Date.now() + CSS_TTL,
+						},
+					}),
+				);
+			}
 		}
 	} else {
 		const cssGenerate = generateVariableCSS(
@@ -152,15 +152,15 @@ export const updateVariableCSS = async (
 
 			if (item.filename === file) {
 				css = item.css;
-			}
 
-			ctx.waitUntil(
-				env.CSS.put(keyGenV(tag, item.filename), item.css, {
-					metadata: {
-						ttl: Date.now() + CSS_TTL,
-					},
-				}),
-			);
+				ctx.waitUntil(
+					env.CSS.put(keyGenV(tag, item.filename), item.css, {
+						metadata: {
+							ttl: Date.now() + CSS_TTL,
+						},
+					}),
+				);
+			}
 		}
 	}
 
