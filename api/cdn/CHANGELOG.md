@@ -1,5 +1,11 @@
 # cdn
 
+## 0.2.6
+
+### Patch Changes
+
+- [#852](https://github.com/fontsource/fontsource/pull/852) [`4ad759133a`](https://github.com/fontsource/fontsource/commit/4ad759133a5d5c44d1cc751a55bc7e602a4def72) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): add TTLs to CSS API to refresh content
+
 ## 0.2.5
 
 ### Patch Changes
