@@ -37,22 +37,26 @@
 }
 
 .button {
-	padding: rem(2px) rem(16px);
-	height: rem(40px);
+	padding: 2px 16px;
+	height: 40px;
 
 	font-weight: 400;
 
-	&:hover {
-		background-color: var(--mantine-color-purpleHover-0);
-	}
-
 	@mixin light {
+		color: var(--mantine-color-text-1);
 		background-color: var(--mantine-color-background-0);
-		color: var(--mantine-color-text.1);
+
+		&:hover {
+			background-color: var(--mantine-color-purple-hover);
+		}
 	}
 
 	@mixin dark {
-		background-color: var(--mantine-color-background-4);
 		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-4);
+
+		&:hover {
+			background-color: var(--mantine-color-purple-hover);
+		}
 	}
 }

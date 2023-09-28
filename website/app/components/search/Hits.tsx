@@ -77,7 +77,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 					{currentPreview}
 				</Text>
 			</Skeleton>
-			<Group className={classes['text-group']} justify="apart">
+			<Group className={classes['text-group']}>
 				<Text fz={18} fw={700} component="span">
 					{hit.family}
 				</Text>

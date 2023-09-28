@@ -44,4 +44,5 @@
 .text-group {
 	padding-top: rem(16px);
 	width: 100%;
+	justify-content: space-between;
 }
