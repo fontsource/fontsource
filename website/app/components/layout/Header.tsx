@@ -21,6 +21,8 @@ import { LogoText } from '@/components/logo/LogoText';
 import { LeftSidebar } from '@/components/docs/LeftSidebar';
 
 import classes from './Header.module.css';
+import cx from 'clsx';
+import { ThemeButton, ThemeButtonMobile } from './ThemeButton';
 
 interface IconProps extends ActionIconProps {
 	label: string;
@@ -59,7 +61,9 @@ const HeaderNavLink = ({ label, to, toggle }: HeaderNavLinkProps) => {
 			<NavLink
 				to={to}
 				prefetch="intent"
-				className={classes.link}
+				className={({ isActive }) =>
+					isActive ? cx(classes.link, classes.active) : classes.link
+				}
 				onClick={handleToggle}
 			>
 				{label}
@@ -100,7 +104,7 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 						<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
 						<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
 						<Divider />
-						{/* <ThemeButtonMobile /> */}
+						<ThemeButtonMobile />
 						<MobileExternalIcon
 							label="GitHub"
 							href="https://github.com/fontsource/fontsource"
@@ -140,7 +144,7 @@ export const Header = ({ ...other }: ContainerProps) => {
 							<Group gap="md" justify="right">
 								<HeaderNavLink label="Fonts" to="/" />
 								<HeaderNavLink label="Documentation" to="/docs" />
-								{/* <ThemeButton /> */}
+								<ThemeButton />
 								<Icon
 									label="GitHub"
 									href="https://github.com/fontsource/fontsource"

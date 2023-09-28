@@ -56,7 +56,7 @@
 		background-color: var(--mantine-color-background-4);
 
 		&:hover {
-			background-color: var(--mantine-color-purple-hover);
+			background-color: var(--mantine-color-background-6);
 		}
 	}
 }

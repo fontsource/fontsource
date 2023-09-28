@@ -5,13 +5,14 @@ import {
 	Text,
 	Tooltip,
 	UnstyledButton,
+	useComputedColorScheme,
 	useMantineColorScheme,
 	useMantineTheme,
 } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 
-import type { IconProps } from '@/components';
-import { IconMoon, IconSun } from '@/components';
+import type { IconProps } from '@/components/icons';
+import { IconMoon, IconSun } from '@/components/icons';
 
 export const ThemeButton = ({ ...others }: IconProps) => {
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -25,6 +26,7 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 					toggleColorScheme();
 				}}
 			>
+				{/* @ts-expect-error */}
 				{dark ? <IconSun {...others} /> : <IconMoon {...others} />}
 			</ActionIcon>
 		</Tooltip>
@@ -32,7 +34,9 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 };
 
 export const ThemeButtonMobile = ({ ...others }: IconProps) => {
-	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+	const { setColorScheme } = useMantineColorScheme();
+	const colorScheme = useComputedColorScheme('light');
+
 	const dark = colorScheme === 'dark';
 	const { hovered, ref } = useHover<HTMLButtonElement>();
 	const theme = useMantineTheme();
@@ -40,9 +44,9 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 	return (
 		<UnstyledButton
 			onClick={() => {
-				toggleColorScheme();
+				setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 			}}
-			sx={(theme) => ({
+			style={(theme) => ({
 				display: 'flex',
 				alignItems: 'center',
 				marginLeft: rem(-5),
@@ -52,17 +56,19 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 			})}
 			ref={ref}
 		>
-			<Group spacing="xs">
+			<Group gap="xs">
 				<ActionIcon
 					variant="transparent"
 					aria-label={dark ? 'Light mode' : 'Dark mode'}
 				>
 					{dark ? (
+						// @ts-expect-error
 						<IconSun
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}
 						/>
 					) : (
+						// @ts-expect-error
 						<IconMoon
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}

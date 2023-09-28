@@ -47,15 +47,6 @@
 		color 100ms ease;
 	text-decoration: none;
 
-	.active {
-		font-weight: 700;
-
-		@media (min-width: $mantine-breakpoint-sm) {
-			color: var(--mantine-color-purple-0);
-			border-bottom-color: var(--mantine-color-purple-0);
-		}
-	}
-
 	@mixin light {
 		color: var(--mantine-color-text-1);
 	}
@@ -69,8 +60,25 @@
 
 		&:hover {
 			text-decoration: none;
-			color: var(--mantine-color-purple-0);
+			color: var(--mantine-color-purple);
 		}
+	}
+}
+
+.active {
+	font-weight: 700;
+
+	@mixin light {
+		color: var(--mantine-color-purple);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-purple);
+	}
+
+	@media (min-width: $mantine-breakpoint-sm) {
+		color: var(--mantine-color-purple);
+		border-bottom-color: var(--mantine-color-purple);
 	}
 }
 

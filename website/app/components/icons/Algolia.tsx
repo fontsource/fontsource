@@ -1,4 +1,9 @@
-import { Stack, Text, useMantineColorScheme } from '@mantine/core';
+import {
+	Stack,
+	Text,
+	useComputedColorScheme,
+	useMantineColorScheme,
+} from '@mantine/core';
 
 import type { IconProps } from './types';
 
@@ -40,12 +45,13 @@ const IconAlgolia = ({ height, ...others }: IconProps) => {
 };
 
 const SearchByAlgolia = (props: IconProps) => {
+	const colorScheme = useComputedColorScheme('light');
 	return (
 		<Stack gap={0} style={{ userSelect: 'none', opacity: '80%' }}>
-			<Text span fw={600} fz={8}>
+			<Text span fw={600} fz={8} c={colorScheme === 'light' ? 'gray' : 'white'}>
 				Search by
 			</Text>
-			{/* @ts-expect-error - Mantine doesn't have a Text component */}
+			{/* @ts-expect-error - Mantine v7 typing errors */}
 			<IconAlgolia {...props} />
 		</Stack>
 	);

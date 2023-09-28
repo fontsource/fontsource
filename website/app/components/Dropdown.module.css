@@ -1,17 +1,20 @@
 /* Dropdown */
 
 .input {
-	border: 1px solid var(--mantine-color-border-0);
-
 	@mixin light {
+		border: 1px solid var(--mantine-color-border-0);
+
 		&:hover {
 			background-color: var(--mantine-color-purple-hover);
 		}
 	}
 
 	@mixin dark {
+		background-color: var(--mantine-color-background-4);
+		border: 1px solid var(--mantine-color-border-1);
+
 		&:hover {
-			background-color: #172138;
+			background-color: var(--mantine-color-background-6);
 		}
 	}
 }

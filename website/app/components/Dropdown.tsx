@@ -131,6 +131,7 @@ const DropdownCheckbox = ({
 					aria-hidden
 					tabIndex={-1}
 					style={{ pointerEvents: 'none' }}
+					readOnly
 				/>
 				<span className={classes.option}>{item.label ?? item.value}</span>
 			</Group>

@@ -47,7 +47,7 @@ export const theme = createTheme({
 			'#172138',
 			'#121B31',
 			'#0F1626',
-			'#fff',
+			'#172138',
 			'#F5F7F9',
 			'#E6EBF0',
 			'#172138',
