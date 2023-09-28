@@ -1,32 +1,24 @@
 import {
-	type BoxProps,
-	Menu,
 	rem,
 	ScrollArea,
-	UnstyledButton,
 	Combobox,
 	useCombobox,
 	InputBase,
-	Input,
 	Group,
 	Checkbox,
 } from '@mantine/core';
-import { useFocusWithin } from '@mantine/hooks';
 
 import { IconCaret } from '@/components/icons';
 
 import classes from './Dropdown.module.css';
-import { useState } from 'react';
 import { ObservablePrimitiveBaseFns } from '@legendapp/state';
 
-interface DropdownProps {
+interface DropdownBaseProps {
+	options: JSX.Element[];
 	label: string;
-	width?: number | string;
-	children: React.ReactNode;
-	className?: BoxProps['className'];
-	icon?: React.ReactNode;
-	capitalize?: boolean;
-	closeOnItemClick?: boolean;
+	currentState: string;
+	selector: ObservablePrimitiveBaseFns<any>;
+	w?: number;
 }
 
 interface DropdownItemProps {
@@ -35,120 +27,49 @@ interface DropdownItemProps {
 	setValue?: (value: React.SetStateAction<any>) => void;
 }
 
-interface DropdownCheckboxProps {
+interface DropdownProps {
+	label: string;
 	items: DropdownItemProps[];
 	currentState: string;
 	selector: ObservablePrimitiveBaseFns<any>;
+	w?: number;
 }
 
-const DropdownItem = ({ label, value, setValue }: DropdownItemProps) => {
-	return (
-		<Menu.Item
-			className={classes.item}
-			component="button"
-			onClick={() => {
-				setValue!(value);
-			}}
-		>
-			{label ?? value}
-		</Menu.Item>
-	);
-};
-
-const Dropdown = ({
+const DropdownBase = ({
 	label,
-	icon,
-	width,
-	className,
-	closeOnItemClick,
-	capitalize,
-	children,
-}: DropdownProps) => {
-	const { ref, focused } = useFocusWithin();
-	return (
-		<Menu
-			shadow="md"
-			width={rem(width) ?? rem(240)}
-			closeOnItemClick={closeOnItemClick ?? true}
-		>
-			<Menu.Target>
-				<UnstyledButton
-					className={className ?? classes.button}
-					w={rem(width) ?? rem(240)}
-					style={(theme) => ({
-						textTransform: capitalize ? 'capitalize' : undefined,
-						border: focused ? theme.colors.purple[0] : undefined,
-					})}
-				>
-					{label} {icon ?? <IconCaret />}
-				</UnstyledButton>
-			</Menu.Target>
-			<Menu.Dropdown>
-				<ScrollArea.Autosize ref={ref} mah={rem(240)}>
-					{children}
-				</ScrollArea.Autosize>
-			</Menu.Dropdown>
-		</Menu>
-	);
-};
-
-const DropdownCheckbox = ({
-	items,
+	options,
 	currentState,
 	selector,
-}: DropdownCheckboxProps) => {
+	w,
+}: DropdownBaseProps) => {
 	const combobox = useCombobox({
 		onDropdownClose: () => combobox.resetSelectedOption(),
 		onDropdownOpen: () => combobox.updateSelectedOptionIndex('active'),
 	});
 
-	const handleValueSelect = (val: string) => selector.set(val);
-
-	const handleValueRemove = () => {
-		selector.set('');
-		combobox.resetSelectedOption();
+	const handleValueSelect = (val: string) => {
+		currentState !== val ? selector.set(val) : selector.set('');
 	};
-
-	const options = items.map((item) => (
-		<Combobox.Option
-			value={item.value}
-			key={item.value}
-			active={currentState === item.value}
-		>
-			<Group gap="sm" justify="flex-start">
-				<Checkbox
-					checked={currentState === item.value}
-					onChange={() => {
-						currentState !== item.value
-							? handleValueSelect(item.value)
-							: handleValueRemove();
-					}}
-					aria-hidden
-					tabIndex={-1}
-					style={{ pointerEvents: 'none' }}
-				/>
-				<span>{item.label ?? item.value}</span>
-			</Group>
-		</Combobox.Option>
-	));
 
 	return (
 		<Combobox
 			store={combobox}
 			onOptionSubmit={handleValueSelect}
 			withinPortal={false}
-			width={rem(240)}
+			transitionProps={{ duration: 100, transition: 'fade' }}
+			width={w ?? rem(240)}
 		>
 			<Combobox.DropdownTarget>
 				<InputBase
 					component="button"
+					classNames={{ input: classes.input }}
 					pointer
 					rightSection={<IconCaret />}
 					onClick={() => combobox.toggleDropdown()}
 					rightSectionPointerEvents="none"
-					w={rem(240)}
+					w={w ?? rem(240)}
 				>
-					{currentState || 'All categories'}
+					{label}
 				</InputBase>
 			</Combobox.DropdownTarget>
 
@@ -163,4 +84,68 @@ const DropdownCheckbox = ({
 	);
 };
 
-export { Dropdown, DropdownItem, DropdownCheckbox };
+const DropdownSimple = ({
+	label,
+	items,
+	currentState,
+	selector,
+	w,
+}: DropdownProps) => {
+	const options = items.map((item) => (
+		<Combobox.Option
+			value={item.value}
+			key={item.value}
+			active={currentState === item.value}
+		>
+			{item.label ?? item.value}
+		</Combobox.Option>
+	));
+
+	return (
+		<DropdownBase
+			label={label}
+			options={options}
+			currentState={currentState}
+			selector={selector}
+			w={w}
+		/>
+	);
+};
+
+const DropdownCheckbox = ({
+	label,
+	items,
+	currentState,
+	selector,
+	w,
+}: DropdownProps) => {
+	const options = items.map((item) => (
+		<Combobox.Option
+			value={item.value}
+			key={item.value}
+			active={currentState === item.value}
+		>
+			<Group gap="sm" justify="flex-start">
+				<Checkbox
+					checked={currentState === item.value}
+					aria-hidden
+					tabIndex={-1}
+					style={{ pointerEvents: 'none' }}
+				/>
+				<span className={classes.option}>{item.label ?? item.value}</span>
+			</Group>
+		</Combobox.Option>
+	));
+
+	return (
+		<DropdownBase
+			label={label}
+			options={options}
+			currentState={currentState}
+			selector={selector}
+			w={w}
+		/>
+	);
+};
+
+export { DropdownSimple, DropdownCheckbox };

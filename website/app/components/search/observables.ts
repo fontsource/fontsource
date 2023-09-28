@@ -50,8 +50,8 @@ observe(() => {
 });
 
 // Sorting and display
-type SortValues = 'Most Popular' | 'Last Updated' | 'Name' | 'Random';
-export const sort = observable<SortValues>('Most Popular');
+type SortValues = 'prod_POPULAR' | 'prod_NEWEST' | 'prod_NAME' | 'prod_RANDOM';
+export const sort = observable<SortValues>('prod_POPULAR');
 
 type DisplayValues = 'list' | 'grid';
 export const display = observable<DisplayValues>('grid');

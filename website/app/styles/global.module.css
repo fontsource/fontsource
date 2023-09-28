@@ -2,7 +2,7 @@
 
 :root {
 	--mantine-color-purple: #625bf8;
-	--mantine-color-purple-hover: rgba(98, 91, 248, 0.1);
+	--mantine-color-purple-hover: rgba(98, 91, 248, 0.02);
 }
 
 header {

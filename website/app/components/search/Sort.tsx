@@ -10,10 +10,11 @@ import {
 import { useSortBy } from 'react-instantsearch-hooks-web';
 
 import { IconGrid, IconList } from '@/components/icons';
-import { Dropdown } from '@/components/Dropdown';
+import { DropdownSimple } from '@/components/Dropdown';
 
 import { display, sort } from './observables';
 import classes from './Sort.module.css';
+import { useEffect, useRef } from 'react';
 
 interface SortItemProps {
 	value: string;
@@ -38,42 +39,46 @@ interface SortProps {
 }
 
 const indexMap = {
-	'Most Popular': 'prod_POPULAR',
-	'Last Updated': 'prod_NEWEST',
-	Name: 'prod_NAME',
-	Random: 'prod_RANDOM',
+	prod_POPULAR: 'Most Popular',
+	prod_NEWEST: 'Last Updated',
+	prod_NAME: 'Name',
+	prod_RANDOM: 'Random',
 };
 
 const Sort = ({ count }: SortProps) => {
 	const sortSelect = useSelector(sort);
 	const displaySelect = useSelector(display);
 
+	const sortItems = [
+		{ value: 'prod_POPULAR', label: 'Most Popular' },
+		{ value: 'prod_NEWEST', label: 'Last Updated' },
+		{ value: 'prod_NAME', label: 'Name' },
+		{ value: 'prod_RANDOM', label: 'Random' },
+	];
+
 	const { refine } = useSortBy({
-		items: [
-			{ value: 'prod_POPULAR', label: 'Most Popular' },
-			{ value: 'prod_NEWEST', label: 'Last Updated' },
-			{ value: 'prod_NAME', label: 'Name' },
-			{ value: 'prod_RANDOM', label: 'Random' },
-		],
+		items: sortItems,
 	});
 
-	const updateOrder = (value: keyof typeof indexMap) => {
-		refine(indexMap[value]);
-		sort.set(value);
-	};
+	useEffect(() => {
+		refine(sortSelect);
+	}, [sortSelect]);
 
 	return (
 		<div className={classes.wrapper}>
 			<Text>{count} families loaded</Text>
 			<Group>
-				<Dropdown label={sortSelect} width={150}>
-					<SortItem value="Most Popular" setState={updateOrder} />
-					<SortItem value="Last Updated" setState={updateOrder} />
-					<SortItem value="Name" setState={updateOrder} />
-					<SortItem value="Random" setState={updateOrder} />
-				</Dropdown>
-				<Group className={classes['display=group']}>
-					<Text fz={15}>Display</Text>
+				<Group className={classes['display-group']}>
+					<DropdownSimple
+						label={indexMap[sortSelect]}
+						items={sortItems}
+						currentState={sortSelect}
+						selector={sort}
+						w={140}
+					/>
+					<Text span ml="xs" mr={-8} fz={14}>
+						Display
+					</Text>
 					<Tooltip
 						label={displaySelect === 'grid' ? 'Grid' : 'List'}
 						openDelay={600}
