@@ -1,3 +1,7 @@
 type CFRouterContext = [env: Env, ctx: ExecutionContext];
 
-export type { CFRouterContext };
+interface TTLMetadata {
+	ttl: number;
+}
+
+export type { CFRouterContext, TTLMetadata };

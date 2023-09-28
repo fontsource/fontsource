@@ -9,7 +9,7 @@ import {
 } from 'itty-router';
 
 import { updateCss, updateVariableCSS } from './css';
-import type { CFRouterContext } from './types';
+import type { CFRouterContext, TTLMetadata } from './types';
 import { updateFile, updateVariableFile, updateZip } from './update';
 import {
 	splitTag,
@@ -160,14 +160,14 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 	// Check KV for file
 	const key = isVariable ? `variable:${fullTag}:${file}` : `${fullTag}:${file}`;
 
-	let item = await env.CSS.get(key);
-	if (!item) {
+	let { value, metadata } = await env.CSS.getWithMetadata<TTLMetadata>(key);
+	if (!value) {
 		// Else query metadata for existence check
-		const [metadata, variableMetadata] = await Promise.all([
+		const [staticMetadata, variableMetadata] = await Promise.all([
 			getMetadata(id, request.clone(), env),
 			isVariable ? getVariableMetadata(id, request.clone(), env) : undefined,
 		]);
-		if (!metadata) {
+		if (!staticMetadata) {
 			throw new StatusError(404, 'Not Found. Font does not exist.');
 		}
 		if (isVariable && !variableMetadata) {
@@ -180,27 +180,61 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 		// Verify file name is valid before hitting download worker
 		if (isVariable && variableMetadata) {
 			validateVCSSFilename(file, variableMetadata);
-			item = await updateVariableCSS(
+			value = await updateVariableCSS(
 				id,
 				version,
 				file,
-				metadata,
+				staticMetadata,
 				variableMetadata,
 				env,
 				ctx,
 			);
 		} else {
-			validateCSSFilename(file, metadata);
-			item = await updateCss(fullTag, file, metadata, env, ctx);
+			validateCSSFilename(file, staticMetadata);
+			value = await updateCss(fullTag, file, staticMetadata, env, ctx);
 		}
 
-		if (!item) {
+		if (!value) {
 			// If file does not exist, return 404
 			throw new StatusError(404, 'Not Found. File does not exist.');
 		}
 	}
 
-	response = new Response(item, {
+	// If the ttl is not set or the cache expiry is less than the current time, then return old value
+	// while revalidating the cache
+	if (!metadata?.ttl || metadata.ttl < Date.now()) {
+		// Else query metadata for existence check
+		const [staticMetadata, variableMetadata] = await Promise.all([
+			getMetadata(id, request.clone(), env),
+			isVariable ? getVariableMetadata(id, request.clone(), env) : undefined,
+		]);
+		if (!staticMetadata) {
+			throw new StatusError(404, 'Not Found. Font does not exist.');
+		}
+		if (isVariable && !variableMetadata) {
+			throw new StatusError(
+				404,
+				'Not Found. Variable metadata for font does not exist.',
+			);
+		}
+
+		ctx.waitUntil(
+			isVariable
+				? updateVariableCSS(
+						id,
+						version,
+						file,
+						staticMetadata,
+						// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+						variableMetadata!,
+						env,
+						ctx,
+				  )
+				: updateCss(fullTag, file, staticMetadata, env, ctx),
+		);
+	}
+
+	response = new Response(value, {
 		status: 200,
 		headers,
 	});
