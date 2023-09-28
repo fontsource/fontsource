@@ -11,12 +11,15 @@ import {
 import { IconCaret } from '@/components/icons';
 
 import classes from './Dropdown.module.css';
-import { ObservablePrimitiveBaseFns } from '@legendapp/state';
+import {
+	ObservablePrimitiveBaseFns,
+	ObservablePrimitiveChildFns,
+} from '@legendapp/state';
 
 interface DropdownBaseProps {
 	options: JSX.Element[];
 	label: string;
-	currentState: string;
+	currentState: string | number;
 	selector: ObservablePrimitiveBaseFns<any>;
 	w?: number;
 }
@@ -30,8 +33,8 @@ interface DropdownItemProps {
 interface DropdownProps {
 	label: string;
 	items: DropdownItemProps[];
-	currentState: string;
-	selector: ObservablePrimitiveBaseFns<any>;
+	currentState: string | number;
+	selector: ObservablePrimitiveBaseFns<any> | ObservablePrimitiveChildFns<any>;
 	w?: number;
 }
 

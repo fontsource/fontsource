@@ -4,16 +4,17 @@ import {
 	Group,
 	Tabs,
 	Title,
-	useMantineColorScheme,
+	useComputedColorScheme,
 	useMantineTheme,
 } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { useNavigate } from '@remix-run/react';
 
-import { ContentHeader, IconDownload } from '@/components';
 import type { Metadata } from '@/utils/types';
 
 import classes from './Tabs.module.css';
+import { ContentHeader } from '@/components/layout/ContentHeader';
+import { IconDownload } from '@/components/icons';
 
 interface TabWrapperProps extends BoxProps {
 	metadata: Metadata;
@@ -29,7 +30,7 @@ export const TabsWrapper = ({
 	const navigate = useNavigate();
 	const theme = useMantineTheme();
 	const { hovered, ref } = useHover<HTMLAnchorElement>();
-	const { colorScheme } = useMantineColorScheme();
+	const colorScheme = useComputedColorScheme('light');
 
 	return (
 		<Tabs
@@ -72,7 +73,7 @@ export const TabsWrapper = ({
 					</Tabs.Tab>
 					<a
 						href={`https://api.fontsource.org/v1/download/${metadata.id}`}
-						className={classes.downloadButton}
+						className={classes['download-button']}
 						ref={ref}
 					>
 						<IconDownload

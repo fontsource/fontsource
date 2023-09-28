@@ -78,7 +78,7 @@
 .tabs {
 	.tab {
 		&[data-active] {
-			borderbottom: rem(2) solid var(--mantine-color-purple-0);
+			borderbottom: rem(2) solid var(--mantine-color-purple);
 		}
 	}
 }
@@ -86,10 +86,10 @@
 .install-button {
 	padding: rem(8px) rem(16px);
 	border-radius: rem(4px);
-	background-color: var(--mantine-color-purple-0);
+	background-color: var(--mantine-color-purple);
 	color: var(--mantine-color-text-0);
 
 	&:hover {
-		background-color: darken("#625BF8", 0.2);
+		background-color: var(--mantine-color-purple-hover);
 	}
 }

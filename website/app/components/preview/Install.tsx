@@ -19,7 +19,7 @@ import {
 	IconExternal,
 	IconGithub,
 	IconNpm,
-} from '@/components';
+} from '@/components/icons';
 import { Code } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import globalClasses from '@/styles/global.module.css';

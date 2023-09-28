@@ -2,7 +2,7 @@ import { useSelector } from '@legendapp/state/react';
 import { ActionIcon, Group } from '@mantine/core';
 import { clsx } from 'clsx';
 
-import { Dropdown, DropdownItem } from '@/components/Dropdown';
+import { DropdownSimple } from '@/components/Dropdown';
 import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconItalic } from '../icons/Italic';
@@ -26,22 +26,23 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 		}
 	};
 
+	const items = sizes.map((size) => ({
+		label: `${size}px`,
+		value: size,
+	}));
+
+	// className={classes.button}
 	return (
 		<Group justify="apart" gap="xs">
 			<Group className={classes.wrapper}>
-				<Dropdown
+				<DropdownSimple
 					label={`${previewState.size.get()} px`}
-					width={70}
-					className={classes.button}
-				>
-					{sizes.map((size) => (
-						<DropdownItem
-							key={size}
-							value={size}
-							setValue={previewState.size.set}
-						/>
-					))}
-				</Dropdown>
+					currentState={previewState.size.get()}
+					items={items}
+					selector={previewState.size}
+					w={70}
+				/>
+
 				<MantineSlider
 					color="purple.0"
 					size="sm"

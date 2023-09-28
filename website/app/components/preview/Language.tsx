@@ -2,7 +2,7 @@ import { useSelector } from '@legendapp/state/react';
 import { useFetcher } from '@remix-run/react';
 import { useEffect } from 'react';
 
-import { Dropdown, DropdownItem } from '@/components';
+import { DropdownSimple } from '@/components/Dropdown';
 import { subsetsMap } from '@/utils/language/subsets';
 
 import { previewState } from './observables';
@@ -37,17 +37,18 @@ const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 		}
 	}, [languageFetcher]);
 
+	const items = subsets.map((lang) => ({
+		label: subsetsMap[lang as keyof typeof subsetsMap],
+		value: lang,
+	}));
+
 	return (
-		<Dropdown label={language} width={284} capitalize>
-			{subsets.map((lang) => (
-				<DropdownItem
-					key={lang}
-					label={subsetsMap[lang as keyof typeof subsetsMap]}
-					value={lang}
-					setValue={handleLanguage}
-				/>
-			))}
-		</Dropdown>
+		<DropdownSimple
+			label={subsetsMap[language as keyof typeof subsetsMap]}
+			currentState={language}
+			items={items}
+			selector={previewState.language}
+		/>
 	);
 };
 
