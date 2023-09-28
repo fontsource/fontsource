@@ -1,38 +1,13 @@
 import { useSelector } from '@legendapp/state/react';
-import {
-	Center,
-	Group,
-	Menu,
-	SegmentedControl,
-	Text,
-	Tooltip,
-} from '@mantine/core';
+import { Center, Group, SegmentedControl, Text, Tooltip } from '@mantine/core';
+import { useEffect } from 'react';
 import { useSortBy } from 'react-instantsearch-hooks-web';
 
-import { IconGrid, IconList } from '@/components/icons';
 import { DropdownSimple } from '@/components/Dropdown';
+import { IconGrid, IconList } from '@/components/icons';
 
 import { display, sort } from './observables';
 import classes from './Sort.module.css';
-import { useEffect, useRef } from 'react';
-
-interface SortItemProps {
-	value: string;
-	setState: (value: any) => void;
-}
-
-const SortItem = ({ value, setState }: SortItemProps) => {
-	return (
-		<Menu.Item
-			style={{ width: '100%' }}
-			onClick={() => {
-				setState(value);
-			}}
-		>
-			{value}
-		</Menu.Item>
-	);
-};
 
 interface SortProps {
 	count: number;
@@ -62,6 +37,7 @@ const Sort = ({ count }: SortProps) => {
 
 	useEffect(() => {
 		refine(sortSelect);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sortSelect]);
 
 	return (

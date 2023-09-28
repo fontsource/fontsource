@@ -1,6 +1,6 @@
 import { Title } from '@mantine/core';
 
-import { ContentHeader } from '@/components';
+import { ContentHeader } from '@/components/layout/ContentHeader';
 
 import classes from './docs.module.css';
 

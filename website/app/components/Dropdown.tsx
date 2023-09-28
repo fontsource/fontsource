@@ -1,20 +1,20 @@
 import {
+	type ObservablePrimitiveBaseFns,
+	type ObservablePrimitiveChildFns,
+} from '@legendapp/state';
+import {
+	Checkbox,
+	Combobox,
+	Group,
+	InputBase,
 	rem,
 	ScrollArea,
-	Combobox,
 	useCombobox,
-	InputBase,
-	Group,
-	Checkbox,
 } from '@mantine/core';
 
 import { IconCaret } from '@/components/icons';
 
 import classes from './Dropdown.module.css';
-import {
-	ObservablePrimitiveBaseFns,
-	ObservablePrimitiveChildFns,
-} from '@legendapp/state';
 
 interface DropdownBaseProps {
 	options: JSX.Element[];
@@ -46,12 +46,16 @@ const DropdownBase = ({
 	w,
 }: DropdownBaseProps) => {
 	const combobox = useCombobox({
-		onDropdownClose: () => combobox.resetSelectedOption(),
-		onDropdownOpen: () => combobox.updateSelectedOptionIndex('active'),
+		onDropdownClose: () => {
+			combobox.resetSelectedOption();
+		},
+		onDropdownOpen: () => {
+			combobox.updateSelectedOptionIndex('active');
+		},
 	});
 
 	const handleValueSelect = (val: string) => {
-		currentState !== val ? selector.set(val) : selector.set('');
+		currentState === val ? selector.set('') : selector.set(val);
 	};
 
 	return (
@@ -68,7 +72,9 @@ const DropdownBase = ({
 					classNames={{ input: classes.input }}
 					pointer
 					rightSection={<IconCaret />}
-					onClick={() => combobox.toggleDropdown()}
+					onClick={() => {
+						combobox.toggleDropdown();
+					}}
 					rightSectionPointerEvents="none"
 					w={w ?? rem(240)}
 				>
@@ -152,4 +158,4 @@ const DropdownCheckbox = ({
 	);
 };
 
-export { DropdownSimple, DropdownCheckbox };
+export { DropdownCheckbox, DropdownSimple };

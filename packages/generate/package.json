@@ -27,9 +27,9 @@
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.4.1",
-		"@types/node": "^20.2.5",
-		"eslint": "^8.49.0",
+		"@ayuhito/eslint-config": "^0.6.2",
+		"@types/node": "^20.7.1",
+		"eslint": "^8.50.0",
 		"pkgroll": "^1.9.0",
 		"tsx": "^3.12.3",
 		"typescript": "^5.2.2"

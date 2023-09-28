@@ -60,6 +60,7 @@ export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 		</Box>
 	);
 };
+
 interface CodeHighlightProps {
 	code: string;
 	language: string;
@@ -107,7 +108,7 @@ export const CodeMdx = (props: CodeProps) => {
 
 	// Inline code
 	if (language === '')
-		// @ts-expect-error - Invalid typing for new v7
+		// @ts-expect-error - Mantine v7 typings bug
 		return <MantineCode className={classes['inline-code']} {...props} />;
 
 	const code = props.children?.toString().trim() ?? '';
@@ -127,12 +128,10 @@ export const Code = ({ language, children, ...others }: CodeDirectProps) => {
 	// Inline code
 	if (language === '')
 		return (
-			// @ts-expect-error - Invalid typing for new v7
-			<MantineCode
-				className={classes['inline-code']}
-				children={children}
-				{...others}
-			/>
+			// @ts-expect-error - Mantine v7 typings bug
+			<MantineCode className={classes['inline-code']} {...others}>
+				{children}
+			</MantineCode>
 		);
 
 	return (

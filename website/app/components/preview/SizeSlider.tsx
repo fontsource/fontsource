@@ -1,9 +1,8 @@
 import { useSelector } from '@legendapp/state/react';
-import { ActionIcon, Group } from '@mantine/core';
+import { ActionIcon, Group, Slider as MantineSlider } from '@mantine/core';
 import { clsx } from 'clsx';
 
 import { DropdownSimple } from '@/components/Dropdown';
-import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconItalic } from '../icons/Italic';
 import { previewState, variableState } from './observables';

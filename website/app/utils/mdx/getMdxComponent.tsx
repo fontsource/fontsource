@@ -80,17 +80,17 @@ const mdxComponents = {
 	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
 };
 
-const getMDXComponent = (code: string, globals?: Record<string, string>) => {
-	const mdxExport = getMDXExport(code, globals);
-	return mdxExport.default;
-};
-
 const getMDXExport = (code: string, globals?: Record<string, string>) => {
 	const scope = { React, ReactDOM, _jsx_runtime, ...globals };
 
 	// eslint-disable-next-line @typescript-eslint/no-implied-eval, no-new-func
 	const fn = new Function(...Object.keys(scope), code);
 	return fn(...Object.values(scope));
+};
+
+const getMDXComponent = (code: string, globals?: Record<string, string>) => {
+	const mdxExport = getMDXExport(code, globals);
+	return mdxExport.default;
 };
 
 export { getMDXComponent, getMDXExport, mdxComponents };

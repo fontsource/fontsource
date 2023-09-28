@@ -16,6 +16,10 @@ export interface LicenseData {
 	attribution: string;
 	url: string;
 }
+
+export interface UnicodeData {
+	[key: string]: string;
+}
 export interface Metadata {
 	id: string;
 	family: string;
@@ -33,20 +37,17 @@ export interface Metadata {
 	unicodeRange: UnicodeData;
 }
 
-export interface UnicodeData {
-	[key: string]: string;
+export interface AxesData {
+	default: string;
+	min: string;
+	max: string;
+	step: string;
 }
 
 export interface VariableData {
 	family: string;
 	id: string;
 	axes: Record<string, AxesData>;
-}
-export interface AxesData {
-	default: string;
-	min: string;
-	max: string;
-	step: string;
 }
 
 export interface AxisRegistry {

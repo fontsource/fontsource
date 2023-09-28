@@ -139,6 +139,7 @@ const esbuildOptions = async (
 			mdxPlugin({
 				remarkPlugins: [
 					(await import('remark-gfm')).default,
+					// @ts-expect-error - types are slightly out of sync
 					(await import('remark-smartypants')).default,
 				],
 				rehypePlugins: [

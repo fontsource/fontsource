@@ -4,8 +4,7 @@ import { InstantSearch } from 'react-instantsearch-hooks-web';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
-
-import classes from '../styles/global.module.css';
+import classes from '@/styles/global.module.css';
 
 const searchClient = algoliasearch(
 	'WNATE69PVR',

@@ -10,11 +10,11 @@ import {
 import { useHover } from '@mantine/hooks';
 import { useNavigate } from '@remix-run/react';
 
+import { IconDownload } from '@/components/icons';
+import { ContentHeader } from '@/components/layout/ContentHeader';
 import type { Metadata } from '@/utils/types';
 
 import classes from './Tabs.module.css';
-import { ContentHeader } from '@/components/layout/ContentHeader';
-import { IconDownload } from '@/components/icons';
 
 interface TabWrapperProps extends BoxProps {
 	metadata: Metadata;

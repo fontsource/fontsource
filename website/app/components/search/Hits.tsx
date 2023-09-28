@@ -1,6 +1,5 @@
 import { useSelector } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
-import { useFetcher } from '@remix-run/react';
 import { useEffect, useRef, useState } from 'react';
 import {
 	useInfiniteHits,
@@ -22,9 +21,9 @@ interface HitComponentProps extends Hit {
 	fontSize: number;
 }
 
-interface PreviewFetcher {
+/* interface PreviewFetcher {
 	text: string;
-}
+} */
 
 const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	const displaySelect = useSelector(display);
@@ -145,7 +144,7 @@ const InfiniteHits = () => {
 	if (!results.__isArtificial && results.nbHits === 0) {
 		return (
 			<Box>
-				<Text>No results found for "{indexUiState.query}"</Text>
+				<Text>No results found for &quot;{indexUiState.query}&quot;</Text>
 			</Box>
 		);
 	}

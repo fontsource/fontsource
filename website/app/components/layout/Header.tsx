@@ -1,4 +1,3 @@
-import { Global } from '@emotion/react';
 import type { ActionIconProps, ContainerProps } from '@mantine/core';
 import {
 	ActionIcon,
@@ -15,13 +14,13 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Link, NavLink, useLocation } from '@remix-run/react';
+import cx from 'clsx';
 
+import { LeftSidebar } from '@/components/docs/LeftSidebar';
 import { IconDiscord, IconGithub } from '@/components/icons';
 import { LogoText } from '@/components/logo/LogoText';
-import { LeftSidebar } from '@/components/docs/LeftSidebar';
 
 import classes from './Header.module.css';
-import cx from 'clsx';
 import { ThemeButton, ThemeButtonMobile } from './ThemeButton';
 
 interface IconProps extends ActionIconProps {
@@ -96,35 +95,32 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 	const isDocs = useLocation().pathname.startsWith('/docs');
 
 	return (
-		<>
-			<Global styles={{ body: { overflow: 'hidden' } }} />
-			<ScrollArea.Autosize mah="95vh" className={classes.mobileLinks}>
-				<Stack>
-					<Stack px={24}>
-						<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
-						<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
-						<Divider />
-						<ThemeButtonMobile />
-						<MobileExternalIcon
-							label="GitHub"
-							href="https://github.com/fontsource/fontsource"
-							icon={<IconGithub />}
-						/>
-						<MobileExternalIcon
-							label="Discord"
-							href="/discord"
-							icon={<IconDiscord />}
-						/>
-					</Stack>
-					{isDocs && (
-						<>
-							<Divider mx={24} />
-							<LeftSidebar toggle={toggle} />
-						</>
-					)}
+		<ScrollArea.Autosize mah="95vh" className={classes.mobileLinks}>
+			<Stack>
+				<Stack px={24}>
+					<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
+					<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
+					<Divider />
+					<ThemeButtonMobile />
+					<MobileExternalIcon
+						label="GitHub"
+						href="https://github.com/fontsource/fontsource"
+						icon={<IconGithub />}
+					/>
+					<MobileExternalIcon
+						label="Discord"
+						href="/discord"
+						icon={<IconDiscord />}
+					/>
 				</Stack>
-			</ScrollArea.Autosize>
-		</>
+				{isDocs && (
+					<>
+						<Divider mx={24} />
+						<LeftSidebar toggle={toggle} />
+					</>
+				)}
+			</Stack>
+		</ScrollArea.Autosize>
 	);
 };
 

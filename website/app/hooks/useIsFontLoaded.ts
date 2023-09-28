@@ -1,3 +1,4 @@
+// @ts-expect-error - The type definition is wrong
 import useFontFaceObserver from 'use-font-face-observer';
 
 export const useIsFontLoaded = (family: string, weights?: number[]) => {
@@ -7,7 +8,7 @@ export const useIsFontLoaded = (family: string, weights?: number[]) => {
 				family,
 			},
 		],
-		{ timeout: 15_000 }
+		{ timeout: 15_000 },
 	);
 	if (!weights || weights.length === 0) return isFontLoaded;
 
@@ -18,11 +19,10 @@ export const useIsFontLoaded = (family: string, weights?: number[]) => {
 			[
 				{
 					family,
-					// @ts-expect-error - weight is a number, but the type definition is wrong
 					weight: String(weight),
 				},
 			],
-			{ timeout: 15_000 }
+			{ timeout: 15_000 },
 		);
 	});
 	const getFontLoaded = loadingArray.every(Boolean);

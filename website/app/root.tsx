@@ -6,24 +6,20 @@ import './styles/global.module.css';
 import { enableLegendStateReact } from '@legendapp/state/react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { cssBundleHref } from '@remix-run/css-bundle';
-import type {
-	HeadersFunction,
-	LinksFunction,
-	LoaderFunction,
-} from '@remix-run/node';
+import type { HeadersFunction, LinksFunction } from '@remix-run/node';
 import {
 	Links,
 	LiveReload,
 	Meta,
-	type V2_MetaFunction,
 	Outlet,
 	Scripts,
 	ScrollRestoration,
+	type V2_MetaFunction,
 } from '@remix-run/react';
 
-import { ogMeta } from '@/utils/meta';
-import { theme } from '@/styles/theme';
 import { AppShell } from '@/components/layout/AppShell';
+import { theme } from '@/styles/theme';
+import { ogMeta } from '@/utils/meta';
 
 enableLegendStateReact();
 
@@ -67,17 +63,6 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-/* export const loader: LoaderFunction = async ({ request }) => {
-	const themeSession = await getThemeSession(request);
-
-	const data = {
-		colorScheme: themeSession.getTheme(),
-		headerColorScheme: request.headers.get('Sec-CH-Prefers-Color-Scheme'),
-	};
-
-	return data;
-}; */
-
 interface DocumentProps {
 	children: React.ReactNode;
 }
@@ -105,14 +90,9 @@ export const Document = ({ children }: DocumentProps) => {
 };
 
 export default function App() {
-	// const { colorScheme, headerColorScheme } = useLoaderData();
-	// const preferredColorScheme = colorScheme ?? headerColorScheme;
-
 	return (
 		<Document>
 			<Outlet />
 		</Document>
 	);
 }
-
-export const shouldRevalidate = () => false;

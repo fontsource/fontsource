@@ -1,8 +1,7 @@
 import { useSelector } from '@legendapp/state/react';
-import { ActionIcon, Box, Group, Text } from '@mantine/core';
+import { ActionIcon, Box, Group, Slider, Text } from '@mantine/core';
 
 import { IconRotate } from '@/components/icons';
-import { Slider } from '@/components/Slider';
 import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
 
 import { InfoTooltip } from '../InfoTooltip';

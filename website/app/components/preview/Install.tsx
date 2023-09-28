@@ -13,6 +13,8 @@ import { Link } from '@remix-run/react';
 import millify from 'millify';
 import { useState } from 'react';
 
+import { Code } from '@/components/code/Code';
+import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import {
 	IconDownload,
 	IconEdit,
@@ -20,8 +22,6 @@ import {
 	IconGithub,
 	IconNpm,
 } from '@/components/icons';
-import { Code } from '@/components/code/Code';
-import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import globalClasses from '@/styles/global.module.css';
 import type { Metadata, VariableData } from '@/utils/types';
 

@@ -4,11 +4,10 @@ import {
 	ColorInput,
 	Group,
 	Popover,
+	Slider as MantineSlider,
 	Text,
 	Tooltip,
 } from '@mantine/core';
-
-import { Slider as MantineSlider } from '@/components/Slider';
 
 import { IconEye, IconHorizontal, IconVertical } from '../icons';
 import classes from './Buttons.module.css';

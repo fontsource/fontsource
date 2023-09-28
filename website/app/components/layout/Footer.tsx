@@ -10,9 +10,9 @@ import {
 import { Link } from '@remix-run/react';
 
 import { IconDiscord, IconGithub } from '@/components/icons';
+import { LogoText } from '@/components/logo/LogoText';
 
 import classes from './Footer.module.css';
-import { LogoText } from '@/components/logo/LogoText';
 
 interface IconProps extends ActionIconProps {
 	label: string;
@@ -50,7 +50,7 @@ const FooterNavLink = ({ label, to }: FooterNavLinkProps) => {
 export const Footer = ({ ...other }: ContainerProps) => {
 	// TODO: Sponsors
 	// <FooterNavLink label="Sponsors" to="/sponsors" />
-	//<ThemeButton stroke="white" />
+	// <ThemeButton stroke="white" />
 
 	return (
 		// @ts-expect-error - Mantine v7 typing errors
