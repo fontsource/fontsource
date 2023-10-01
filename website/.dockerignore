@@ -1,7 +1,10 @@
-/node_modules
-*.log
-.DS_Store
-.env
-/.cache
-/public/build
-/build
+*
+!app/
+!docs/
+!public/
+public/build/
+!src/
+!package.json
+!postcss.config.cjs
+!remix.config.js
+!tsconfig.json
