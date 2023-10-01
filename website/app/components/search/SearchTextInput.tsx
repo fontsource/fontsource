@@ -43,7 +43,9 @@ const SearchBar = () => {
 			}}
 			autoComplete="off"
 			ref={ref}
-			leftSection={<IconSearch active={focused} className={classes.left} />}
+			leftSection={
+				<IconSearch data-active={focused} className={classes.left} />
+			}
 			leftSectionWidth={60}
 			rightSection={<SearchByAlgolia height={14} />}
 			rightSectionWidth={100}

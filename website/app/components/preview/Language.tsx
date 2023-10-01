@@ -14,22 +14,21 @@ interface LanguageSelectorProps {
 interface LanguageFetcher {
 	text: string;
 }
+
 const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	const language = useSelector(previewState.language);
 	const languageFetcher = useFetcher<LanguageFetcher>();
 
-	const handleLanguage = (value: string) => {
-		previewState.language.set(
-			subsetsMap[value as keyof typeof subsetsMap] ?? value,
-		);
+	useEffect(() => {
 		languageFetcher.submit(
-			{ subset: value },
+			{ subset: language },
 			{
 				method: 'POST',
 				action: '/actions/language',
 			},
 		);
-	};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [language]);
 
 	useEffect(() => {
 		if (languageFetcher.state === 'idle' && languageFetcher.data?.text) {
@@ -48,6 +47,7 @@ const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 			currentState={language}
 			items={items}
 			selector={previewState.language}
+			w={284}
 		/>
 	);
 };

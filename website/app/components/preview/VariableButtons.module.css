@@ -14,8 +14,7 @@
 
 		&:not([data-disabled]) {
 			&:hover {
-				/* theme.fn.lighten(theme.colors.purple[0], 0.95), */
-				background-color: var(--mantine-color-purple-0);
+				background-color: var(--mantine-color-purple-hover);
 			}
 		}
 	}
@@ -27,8 +26,7 @@
 
 		&:not([data-disabled]) {
 			&:hover {
-				/* theme.fn.darken(theme.colors.background[4], 0.2) */
-				background-color: var(--mantine-color-background-4);
+				background-color: var(--mantine-color-background-3);
 			}
 		}
 	}

@@ -30,17 +30,17 @@
 			}
 		}
 	}
+}
 
-	.color-button {
-		border-radius: 4px;
-		padding-left: rem(12px);
+.color-button {
+	border-radius: 4px;
+	padding-left: rem(12px);
 
-		@mixin light {
-			border: rem(1px) solid var(--mantine-color-border-0);
-		}
+	@mixin light {
+		border: rem(1px) solid var(--mantine-color-border-0);
+	}
 
-		@mixin dark {
-			border: rem(1px) solid var(--mantine-color-border-1);
-		}
+	@mixin dark {
+		border: rem(1px) solid var(--mantine-color-border-1);
 	}
 }

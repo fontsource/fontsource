@@ -1,35 +1,30 @@
-import { useMantineColorScheme, useMantineTheme } from '@mantine/core';
-
+import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
 const IconEdit = ({ height, ...others }: IconProps) => {
-	const theme = useMantineTheme();
-	const { colorScheme } = useMantineColorScheme();
-	const stroke =
-		colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1];
-
 	return (
 		<svg
-			height={height ?? 18}
+			xmlns="http://www.w3.org/2000/svg"
+			height={height ?? 20}
 			viewBox="0 0 20 20"
 			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
+			className={classes.icon}
 			{...others}
 		>
-			<path
-				d="M9.16666 3.33334H3.33332C2.8913 3.33334 2.46737 3.50894 2.15481 3.8215C1.84225 4.13406 1.66666 4.55798 1.66666 5.00001V16.6667C1.66666 17.1087 1.84225 17.5326 2.15481 17.8452C2.46737 18.1577 2.8913 18.3333 3.33332 18.3333H15C15.442 18.3333 15.8659 18.1577 16.1785 17.8452C16.4911 17.5326 16.6667 17.1087 16.6667 16.6667V10.8333"
-				stroke={stroke}
-				strokeWidth="1.5"
+			<g
 				strokeLinecap="round"
 				strokeLinejoin="round"
-			/>
-			<path
-				d="M15.4167 2.08332C15.7482 1.7518 16.1978 1.56555 16.6667 1.56555C17.1355 1.56555 17.5851 1.7518 17.9167 2.08332C18.2482 2.41484 18.4344 2.86448 18.4344 3.33332C18.4344 3.80216 18.2482 4.2518 17.9167 4.58332L9.99999 12.5L6.66666 13.3333L7.49999 9.99999L15.4167 2.08332Z"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
+				strokeWidth={1.5}
+				clipPath="url(#a)"
+			>
+				<path d="M9.167 3.333H3.333A1.667 1.667 0 0 0 1.667 5v11.667a1.667 1.667 0 0 0 1.666 1.666H15a1.667 1.667 0 0 0 1.667-1.666v-5.834" />
+				<path d="M15.417 2.083a1.768 1.768 0 1 1 2.5 2.5L10 12.5l-3.333.833L7.5 10l7.917-7.917Z" />
+			</g>
+			<defs>
+				<clipPath id="a">
+					<path fill="#fff" d="M0 0h20v20H0z" />
+				</clipPath>
+			</defs>
 		</svg>
 	);
 };

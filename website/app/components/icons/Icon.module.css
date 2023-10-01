@@ -1,0 +1,37 @@
+/* Icons */
+
+.icon {
+	@mixin light {
+		stroke: var(--mantine-color-text-1);
+
+		&[data-active="true"] {
+			stroke: var(--mantine-color-purple);
+		}
+	}
+
+	@mixin dark {
+		stroke: var(--mantine-color-text-0);
+
+		&[data-active="true"] {
+			stroke: var(--mantine-color-purple);
+		}
+	}
+}
+
+.icon-fill {
+	@mixin light {
+		fill: var(--mantine-color-text-1);
+
+		&[data-active="true"] {
+			fill: var(--mantine-color-purple);
+		}
+	}
+
+	@mixin dark {
+		fill: var(--mantine-color-text-0);
+
+		&[data-active="true"] {
+			fill: var(--mantine-color-purple);
+		}
+	}
+}

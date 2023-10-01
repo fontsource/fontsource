@@ -1,12 +1,12 @@
 /* SideSlider */
 .wrapper {
-	height: rem(40px);
-	padding: rem(2px) rem(14px);
+	height: 40px;
+	padding: rem(2px) rem(14px) rem(2px) rem(2px);
 
-	border-radius: rem(4px);
+	border-radius: 4px;
 
 	&:focus-within {
-		border-color: var(--mantine-color-purple-0);
+		border-color: var(--mantine-color-purple);
 	}
 
 	@mixin light {
@@ -37,11 +37,40 @@
 	}
 }
 
-.slider {
-	width: rem(115px);
-}
-
 .italic {
-	width: rem(40px);
+	height: 40px;
+	width: 40px;
 	padding: 0;
+
+	border-radius: 4px;
+
+	@mixin light {
+		background-color: var(--mantine-color-background-0);
+		border: rem(1px) solid var(--mantine-color-border-0);
+
+		&:disabled {
+			background-color: var(--mantine-color-background-2);
+			border-color: var(--mantine-color-border-2);
+			color: var(--mantine-color-text-2);
+		}
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-4);
+		border: rem(1px) solid var(--mantine-color-border-1);
+
+		&:disabled {
+			background-color: var(--mantine-color-background-3);
+			border-color: var(--mantine-color-border-3);
+			color: var(--mantine-color-text-3);
+		}
+	}
+
+	&:focus-within {
+		border-color: var(--mantine-color-purple-0);
+	}
+
+	&[data-active="true"] {
+		background-color: var(--mantine-color-purple-hover);
+	}
 }

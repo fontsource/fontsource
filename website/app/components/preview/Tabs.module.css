@@ -22,29 +22,81 @@
 	}
 }
 
-.donwload-button {
-	display: flex;
-	align-items: center;
-	gap: rem(10px);
+.tab {
 	background-color: transparent;
-
 	border: none;
-	border-radius: rem(4px);
+	border-radius: 4px;
 	padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
 	cursor: pointer;
-	text-decoration: none;
+	display: flex;
+	align-items: center;
 
-	&:hover {
-		background-color: rgba("#625BF8", 0.1);
-		color: var(--mantine-color-purple-0);
+	&[data-active] {
+		background-color: var(--mantine-color-button-hover);
+		font-weight: 700;
 	}
 
 	@mixin light {
 		color: var(--mantine-color-text-1);
+
+		&:hover {
+			color: var(--mantine-color-purple);
+			background-color: var(--mantine-color-button-hover);
+		}
+
+		&[data-active] {
+			color: var(--mantine-color-purple);
+		}
 	}
 
 	@mixin dark {
 		color: var(--mantine-color-text-0);
+
+		&:hover {
+			color: var(--mantine-color-purple);
+			background-color: var(--mantine-color-button-hover);
+		}
+
+		&[data-active] {
+			color: var(--mantine-color-purple);
+		}
+	}
+}
+
+.list {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.download-button {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background-color: transparent;
+
+	border: none;
+	border-radius: 4px;
+	padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+	cursor: pointer;
+	text-decoration: none;
+
+	@mixin light {
+		color: var(--mantine-color-text-1);
+
+		&:hover {
+			background-color: var(--mantine-color-button-hover);
+			color: var(--mantine-color-purple);
+		}
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+
+		&:hover {
+			background-color: var(--mantine-color-button-hover);
+			color: var(--mantine-color-purple);
+		}
 	}
 
 	@media (max-width: $mantine-breakpoint-sm) {

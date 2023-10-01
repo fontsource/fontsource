@@ -1,6 +1,5 @@
 import { useSelector } from '@legendapp/state/react';
 import { ActionIcon, Group, Slider as MantineSlider } from '@mantine/core';
-import { clsx } from 'clsx';
 
 import { DropdownSimple } from '@/components/Dropdown';
 
@@ -39,25 +38,26 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 					currentState={previewState.size.get()}
 					items={items}
 					selector={previewState.size}
-					w={70}
+					w={84}
+					noBorder
 				/>
 
 				<MantineSlider
 					color="purple.0"
 					size="sm"
-					label={undefined}
+					// eslint-disable-next-line unicorn/no-null
+					label={null}
 					value={previewState.size.get()}
 					onChange={previewState.size.set}
-					className={classes.slider}
+					w={116}
+					max={99}
 				/>
 			</Group>
 			<ActionIcon
-				className={clsx(classes.wrapper, classes.italic)}
-				style={(theme) => ({
-					backgroundColor: state.italic ? theme.colors.purple[0] : undefined,
-				})}
+				className={classes.italic}
 				onClick={handleItalic}
 				disabled={!hasItalic}
+				data-active={state.italic}
 			>
 				<IconItalic />
 			</ActionIcon>

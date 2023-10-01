@@ -1,0 +1,11 @@
+/* ThemeButton */
+
+.button {
+	display: flex;
+	align-items: center;
+	margin-left: rem(-5px);
+
+	&:hover {
+		color: var(--mantine-color-purple);
+	}
+}

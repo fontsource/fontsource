@@ -21,7 +21,8 @@ interface DropdownBaseProps {
 	label: string;
 	currentState: string | number;
 	selector: ObservablePrimitiveBaseFns<any>;
-	w?: number;
+	w?: number | string;
+	noBorder?: boolean;
 }
 
 interface DropdownItemProps {
@@ -35,7 +36,8 @@ interface DropdownProps {
 	items: DropdownItemProps[];
 	currentState: string | number;
 	selector: ObservablePrimitiveBaseFns<any> | ObservablePrimitiveChildFns<any>;
-	w?: number;
+	w?: number | string;
+	noBorder?: boolean;
 }
 
 const DropdownBase = ({
@@ -44,6 +46,7 @@ const DropdownBase = ({
 	currentState,
 	selector,
 	w,
+	noBorder,
 }: DropdownBaseProps) => {
 	const combobox = useCombobox({
 		onDropdownClose: () => {
@@ -77,6 +80,7 @@ const DropdownBase = ({
 					}}
 					rightSectionPointerEvents="none"
 					w={w ?? rem(240)}
+					data-no-border={noBorder}
 				>
 					{label}
 				</InputBase>
@@ -99,6 +103,7 @@ const DropdownSimple = ({
 	currentState,
 	selector,
 	w,
+	noBorder,
 }: DropdownProps) => {
 	const options = items.map((item) => (
 		<Combobox.Option
@@ -117,6 +122,7 @@ const DropdownSimple = ({
 			currentState={currentState}
 			selector={selector}
 			w={w}
+			noBorder={noBorder}
 		/>
 	);
 };
@@ -127,6 +133,7 @@ const DropdownCheckbox = ({
 	currentState,
 	selector,
 	w,
+	noBorder,
 }: DropdownProps) => {
 	const options = items.map((item) => (
 		<Combobox.Option
@@ -154,6 +161,7 @@ const DropdownCheckbox = ({
 			currentState={currentState}
 			selector={selector}
 			w={w}
+			noBorder={noBorder}
 		/>
 	);
 };

@@ -46,7 +46,7 @@ const VariableButton = ({
 
 	return (
 		<Box className={classes.button}>
-			<Group justify="apart" mb={5}>
+			<Group justify="space-between" mb={5}>
 				<Group align="center" gap={2}>
 					<Text fz="sm" fw={400}>
 						{label} <span>({tag})</span>
@@ -66,7 +66,7 @@ const VariableButton = ({
 				onChange={handleVariation}
 				value={variable[tag] ?? Number(axes.default)}
 			/>
-			<Group justify="apart" px={3} mt={8}>
+			<Group justify="space-between" px={3} mt={8}>
 				<Text fz="sm">{axes.min}</Text>
 				<Text fz="sm">{axes.max}</Text>
 			</Group>

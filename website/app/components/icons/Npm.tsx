@@ -1,29 +1,29 @@
-import { useMantineColorScheme, useMantineTheme } from '@mantine/core';
-
+import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
 const IconNpm = ({ height, stroke, ...others }: IconProps) => {
-	const theme = useMantineTheme();
-	const { colorScheme } = useMantineColorScheme();
-	const strokeNew =
-		stroke ??
-		(colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1]);
-
 	return (
 		<svg
-			height={height ?? 18}
+			xmlns="http://www.w3.org/2000/svg"
+			height={height ?? 20}
 			viewBox="0 0 20 20"
 			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
+			className={classes.icon}
 			{...others}
 		>
-			<path
-				d="M1 19H10V5.5H14.5V19H19V1H1V19Z"
-				stroke={strokeNew}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
+			<g clipPath="url(#a)">
+				<path
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					strokeWidth={1.5}
+					d="M1 19h9V5.5h4.5V19H19V1H1v18Z"
+				/>
+			</g>
+			<defs>
+				<clipPath id="a">
+					<path fill="#fff" d="M0 0h20v20H0z" />
+				</clipPath>
+			</defs>
 		</svg>
 	);
 };

@@ -40,7 +40,10 @@ export const TabsWrapper = ({
 				navigate(`/fonts/${metadata.id}/${String(value)}`);
 			}}
 			unstyled
-			className={classes['download-button']}
+			classNames={{
+				tab: classes.tab,
+				list: classes.list,
+			}}
 		>
 			<ContentHeader>
 				<Group align="center">

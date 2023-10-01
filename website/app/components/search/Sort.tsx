@@ -68,7 +68,10 @@ const Sort = ({ count }: SortProps) => {
 								{
 									label: (
 										<Center>
-											<IconGrid height={20} active={displaySelect === 'grid'} />
+											<IconGrid
+												height={20}
+												data-active={displaySelect === 'grid'}
+											/>
 										</Center>
 									),
 									value: 'grid',
@@ -76,7 +79,10 @@ const Sort = ({ count }: SortProps) => {
 								{
 									label: (
 										<Center>
-											<IconList height={20} active={displaySelect === 'list'} />
+											<IconList
+												height={20}
+												data-active={displaySelect === 'list'}
+											/>
 										</Center>
 									),
 									value: 'list',

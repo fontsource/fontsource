@@ -60,7 +60,8 @@ const SliderButton = ({
 				<MantineSlider
 					color="purple.0"
 					size="sm"
-					label={undefined}
+					// eslint-disable-next-line unicorn/no-null
+					label={null}
 					value={value}
 					onChange={setValue}
 					defaultValue={defaultValue}

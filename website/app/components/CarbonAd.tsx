@@ -9,6 +9,7 @@ import classes from './CarbonAd.module.css';
 export const CarbonAd = ({ ...props }: BoxProps) => {
 	const location = useLocation();
 
+	// We need to rerender the carbon ad when the route changes
 	useEffect(() => {
 		const script = document.createElement('script');
 		script.src =

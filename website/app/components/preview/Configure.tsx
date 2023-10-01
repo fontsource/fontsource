@@ -42,9 +42,9 @@ const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 					{variable && (
 						<>
 							<Divider mt="sm" />
-							<Group justify="apart">
+							<Group justify="space-between">
 								<Text className={classes.title}>Variable Axes</Text>
-								<ActionIcon onClick={resetVariation}>
+								<ActionIcon className={classes.button} onClick={resetVariation}>
 									<IconRotate />
 								</ActionIcon>
 							</Group>

@@ -1,63 +1,21 @@
-import { useMantineColorScheme, useMantineTheme } from '@mantine/core';
-
+import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
-const IconList = ({ height, active, ...others }: IconProps) => {
-	const theme = useMantineTheme();
-	const { colorScheme } = useMantineColorScheme();
-	const baseStroke =
-		colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1];
-	const stroke = active ? theme.colors.purple[0] : baseStroke;
-
+const IconList = ({ height, ...others }: IconProps) => {
 	return (
 		<svg
+			xmlns="http://www.w3.org/2000/svg"
 			height={height ?? 18}
 			viewBox="0 0 20 20"
 			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
+			className={classes.icon}
 			{...others}
 		>
 			<path
-				d="M6.66667 5H17.5"
-				stroke={stroke}
-				strokeWidth="1.5"
 				strokeLinecap="round"
 				strokeLinejoin="round"
-			/>
-			<path
-				d="M6.66667 10H17.5"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
-			<path
-				d="M6.66667 15H17.5"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
-			<path
-				d="M2.5 5H2.50833"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
-			<path
-				d="M2.5 10H2.50833"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
-			<path
-				d="M2.5 15H2.50833"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				strokeWidth={1.5}
+				d="M6.667 5H17.5M6.667 10H17.5M6.667 15H17.5M2.5 5h.008M2.5 10h.008M2.5 15h.008"
 			/>
 		</svg>
 	);

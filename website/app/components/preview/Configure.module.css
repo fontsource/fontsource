@@ -7,6 +7,31 @@
 	margin-left: auto;
 }
 
+.button {
+	font-weight: 400;
+	padding: 4px;
+	height: 20px;
+	border-radius: 4px;
+
+	@mixin light {
+		background-color: var(--mantine-color-background-0);
+		color: var(--mantine-color-text-1);
+
+		&:hover {
+			background-color: var(--mantine-color-background-1);
+		}
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-4);
+		color: var(--mantine-color-text-0);
+
+		&:hover {
+			background-color: var(--mantine-color-background-3);
+		}
+	}
+}
+
 .scroll-wrapper {
 	width: rem(332px);
 	margin-left: auto;

@@ -1,7 +1,6 @@
 import {
 	ActionIcon,
 	Group,
-	rem,
 	Text,
 	Tooltip,
 	UnstyledButton,
@@ -14,8 +13,11 @@ import { useHover } from '@mantine/hooks';
 import type { IconProps } from '@/components/icons';
 import { IconMoon, IconSun } from '@/components/icons';
 
+import classes from './ThemeButton.module.css';
+
 export const ThemeButton = ({ ...others }: IconProps) => {
-	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+	const { setColorScheme } = useMantineColorScheme();
+	const colorScheme = useComputedColorScheme('light');
 	const dark = colorScheme === 'dark';
 
 	return (
@@ -23,10 +25,10 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 			<ActionIcon
 				variant="transparent"
 				onClick={() => {
-					toggleColorScheme();
+					setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 				}}
 			>
-				{/* @ts-expect-error */}
+				{/* @ts-expect-error - Mantine v7 typings */}
 				{dark ? <IconSun {...others} /> : <IconMoon {...others} />}
 			</ActionIcon>
 		</Tooltip>
@@ -43,17 +45,10 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 
 	return (
 		<UnstyledButton
+			className={classes.button}
 			onClick={() => {
 				setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 			}}
-			style={(theme) => ({
-				display: 'flex',
-				alignItems: 'center',
-				marginLeft: rem(-5),
-				'&:hover': {
-					color: theme.colors.purple[0],
-				},
-			})}
 			ref={ref}
 		>
 			<Group gap="xs">
@@ -62,13 +57,13 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 					aria-label={dark ? 'Light mode' : 'Dark mode'}
 				>
 					{dark ? (
-						// @ts-expect-error
+						// @ts-expect-error - Mantine v7 typings
 						<IconSun
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}
 						/>
 					) : (
-						// @ts-expect-error
+						// @ts-expect-error - Mantine v7 typings
 						<IconMoon
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}

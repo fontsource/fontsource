@@ -1,11 +1,11 @@
 import { observable } from '@legendapp/state';
 
 export const previewState = observable({
-	language: 'Latin',
+	language: 'latin',
 	size: 32,
 	italic: false,
 	lineHeight: 2,
-	letterSpacing: 2,
+	letterSpacing: 0,
 	transparency: 100,
 	color: '#000000',
 

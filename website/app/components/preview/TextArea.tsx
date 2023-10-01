@@ -5,7 +5,7 @@ import {
 	Skeleton,
 	Text,
 	TextInput,
-	useMantineColorScheme,
+	useComputedColorScheme,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
 import { useEffect } from 'react';
@@ -47,21 +47,10 @@ const Tag = ({ weight, active }: TagProps) => {
 
 	return (
 		<>
-			<Box
-				className={classes.tag}
-				style={(theme) => ({
-					backgroundColor: active ? theme.colors.purple[0] : 'auto',
-					color: active ? theme.colors.text[0] : 'auto',
-				})}
-			>
+			<Box className={classes.tag} data-active={active}>
 				{weightMap[weight]} {weight}
 			</Box>
-			<Box
-				className={classes.horizontal}
-				style={(theme) => ({
-					borderColor: active ? theme.colors.purple[0] : 'auto',
-				})}
-			/>
+			<Box className={classes.horizontal} data-active={active} />
 		</>
 	);
 };
@@ -70,7 +59,7 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 	const { ref, focused } = useFocusWithin();
 	const state = useSelector(previewState);
 	const variation = useSelector(fontVariation);
-	const { colorScheme } = useMantineColorScheme();
+	const colorScheme = useComputedColorScheme('light');
 
 	useEffect(() => {
 		colorScheme === 'dark'
