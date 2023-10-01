@@ -42,6 +42,7 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 	// Remove ital from active axes and mark separate ital flag as true
 	const activeAxes = Object.keys(isActive).filter((axis) => axis !== 'ital');
 	const isItal = isActive.ital;
+	console.log(metadata);
 
 	// Determine if it is a standard axis e.g. only contains wght, wdth, slnt, opsz or ital
 	const isStandard = activeAxes.every((axis) =>
@@ -274,9 +275,9 @@ export const Install = ({
  */
 
 	return (
-		<Grid className={globalClasses.wrapper}>
+		<Grid className={globalClasses.container}>
 			<Grid.Col span={{ base: 12, md: 8 }}>
-				<Group justify="apart" mb={28}>
+				<Group justify="space-between" mb={28}>
 					<Title>Getting Started</Title>
 					<UnstyledButton
 						component={Link}
@@ -307,7 +308,7 @@ export const Install = ({
 				</Tabs>
 			</Grid.Col>
 			<Grid.Col span={{ base: 12, md: 4 }}>
-				<div className={classes.infoWrapper}>
+				<div className={classes['info-wrapper']}>
 					<Text fw={700} fz={15}>
 						Font Details
 					</Text>
@@ -328,12 +329,12 @@ export const Install = ({
 						</Group>
 						<Group
 							className={classes['info-button-group']}
-							justify="apart"
+							justify="space-between"
 							grow
 						>
 							<UnstyledButton
 								component="a"
-								className={classes.infoButton}
+								className={classes['info-button']}
 								href={`https://github.com/fontsource/font-files/tree/main/fonts/${
 									metadata.category === 'icons' ? 'icons' : metadata.type
 								}/${metadata.id}`}
@@ -346,7 +347,7 @@ export const Install = ({
 							</UnstyledButton>
 							<UnstyledButton
 								component="a"
-								className={classes.infoButton}
+								className={classes['info-button']}
 								href={`https://www.npmjs.com/package/@fontsource/${metadata.id}`}
 								target="_blank"
 							>

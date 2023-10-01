@@ -55,16 +55,18 @@
 
 	&:hover {
 		@mixin light {
-			background-color: var(--mantine-color-background-4);
+			background-color: var(--mantine-color-purple-hover);
 		}
 
 		@mixin dark {
-			background-color: var(--mantine-color-background-4);
+			background-color: var(--mantine-color-purple-hover);
 		}
 	}
 }
 
 .info-button-group {
+	margin-top: rem(8px);
+
 	@media (max-width: $mantine-breakpoint-md) {
 		margin-top: rem(16px);
 	}
@@ -85,11 +87,19 @@
 
 .install-button {
 	padding: rem(8px) rem(16px);
-	border-radius: rem(4px);
 	background-color: var(--mantine-color-purple);
-	color: var(--mantine-color-text-0);
+
+	border-radius: 4px;
+
+	@mixin light {
+		color: var(--mantine-color-text-0);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+	}
 
 	&:hover {
-		background-color: var(--mantine-color-purple-hover);
+		background-color: var(--mantine-color-purple-dark);
 	}
 }
