@@ -88,9 +88,9 @@ const IconFly = ({ height, ...others }: IconProps) => {
 					gradientUnits="userSpaceOnUse"
 					gradientTransform="translate(50.51 48.332) scale(68.9126)"
 				>
-					<stop offset="0" stop-color="#ba7bf0" />
-					<stop offset=".45" stop-color="#996bec" />
-					<stop offset="1" stop-color="#5046e4" />
+					<stop offset="0" stopColor="#ba7bf0" />
+					<stop offset=".45" stopColor="#996bec" />
+					<stop offset="1" stopColor="#5046e4" />
 				</radialGradient>
 				<radialGradient
 					id="_Radial2"
