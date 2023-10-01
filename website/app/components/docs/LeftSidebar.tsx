@@ -1,14 +1,5 @@
 import sidebarConfigImport from '@docs/sidebar.json';
-import {
-	Box,
-	Divider,
-	Flex,
-	Group,
-	rem,
-	Text,
-	UnstyledButton,
-	useMantineTheme,
-} from '@mantine/core';
+import { Box, Divider, Flex, Group, Text, UnstyledButton } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link, useParams } from '@remix-run/react';
 import { Fragment } from 'react';
@@ -22,7 +13,7 @@ import {
 	IconTool,
 } from '@/components/icons';
 
-import classes from './docs.module.css';
+import classes from './Docs.module.css';
 
 interface SidebarConfig {
 	[slug: string]: {
@@ -74,18 +65,10 @@ interface RouteItemProps {
 
 const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 	const { hovered, ref } = useHover<HTMLAnchorElement>();
-	const theme = useMantineTheme();
+
 	return (
 		<UnstyledButton
 			className={classes['route-item']}
-			style={(theme) => ({
-				color: active ? theme.colors.purple[0] : 'inherit',
-				'@media (min-width: $mantine-breakpoint-sm)': {
-					borderLeft: active
-						? `${rem(1)} solid ${theme.colors.purple[0]}`
-						: undefined,
-				},
-			})}
 			component={Link}
 			to={
 				slug === 'changelog'
@@ -94,12 +77,10 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 			}
 			ref={ref}
 			target={slug === 'changelog' ? '_blank' : undefined}
+			data-active={active}
 		>
 			<Group>
-				<Icon
-					height={18}
-					stroke={active ?? hovered ? theme.colors.purple[0] : undefined}
-				/>
+				<Icon height={18} data-active={active ?? hovered} />
 				<Text fw={active ? 700 : 400}>{title}</Text>
 			</Group>
 		</UnstyledButton>
@@ -121,8 +102,6 @@ const SectionItem = ({
 	active,
 	toggle,
 }: SectionItemProps) => {
-	const theme = useMantineTheme();
-
 	const handleToggle = () => {
 		// Wait to allow the browser to load new docs
 		setTimeout(() => {
@@ -133,20 +112,13 @@ const SectionItem = ({
 	return (
 		<UnstyledButton
 			className={classes['section-item']}
-			style={{
-				backgroundColor: active ? theme.colors.purple[0] : 'inherit',
-			}}
 			component={Link}
 			to={external ?? `/docs/${slug}`}
 			onClick={handleToggle}
+			data-active={active}
 		>
-			<Group justify="apart">
-				<Text
-					fw={active ? 700 : 400}
-					c={active ? theme.colors.purple[0] : 'inherit'}
-				>
-					{title}
-				</Text>
+			<Group justify="space-between">
+				<Text fw={active ? 700 : 400}>{title}</Text>
 				{external && <IconExternal />}
 			</Group>
 		</UnstyledButton>

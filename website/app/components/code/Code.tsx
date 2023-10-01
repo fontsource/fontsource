@@ -15,7 +15,7 @@ import { Highlight, Prism } from 'prism-react-renderer';
 
 import { IconCopy } from '@/components/icons';
 
-import classes from './code.module.css';
+import classes from './Code.module.css';
 import { themeDark, themeLight } from './theme';
 
 interface CodeWrapperProps {

@@ -49,7 +49,6 @@ const esbuildOptions = async (
 	}
 
 	// Import any imported components into esbuild resolver
-
 	const inMemoryPlugin: Plugin = {
 		name: 'inMemory',
 		setup(build) {
@@ -73,7 +72,15 @@ const esbuildOptions = async (
 					};
 				}
 
-				for (const ext of ['.js', '.ts', '.jsx', '.tsx', '.json', '.mdx']) {
+				for (const ext of [
+					'.js',
+					'.ts',
+					'.jsx',
+					'.tsx',
+					'.json',
+					'.mdx',
+					'.css',
+				]) {
 					const fullModulePath = `${modulePath}${ext}`;
 					if (fullModulePath in absoluteFiles) {
 						return {

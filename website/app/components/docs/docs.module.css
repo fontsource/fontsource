@@ -54,15 +54,23 @@
 .route-item {
 	display: flex;
 	border-radius: 0;
-	padding: rem(10px) rem(24px);
+	padding: 10px 24px;
 
 	&:hover {
-		color: var(--mantine-color-purple-0);
+		color: var(--mantine-color-purple);
+	}
+
+	&[data-active="true"] {
+		color: var(--mantine-color-purple);
 	}
 
 	@media (min-width: $mantine-breakpoint-sm) {
+		&[data-active="true"] {
+			border-left: 1px solid var(--mantine-color-purple);
+		}
+
 		&:hover {
-			border-left: 1px solid var(--mantine-color-purple-0);
+			border-left: 1px solid var(--mantine-color-purple);
 		}
 	}
 }
@@ -80,7 +88,12 @@
 	border-radius: rem(4px);
 
 	&:hover {
-		background-color: rgba(98, 91, 248, 0.1);
+		background-color: var(--mantine-color-purpleHover-0);
+	}
+
+	&[data-active="true"] {
+		color: var(--mantine-color-purple);
+		background-color: var(--mantine-color-purpleHover-0);
 	}
 }
 

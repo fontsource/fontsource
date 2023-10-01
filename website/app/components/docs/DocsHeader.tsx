@@ -2,7 +2,7 @@ import { Title } from '@mantine/core';
 
 import { ContentHeader } from '@/components/layout/ContentHeader';
 
-import classes from './docs.module.css';
+import classes from './Docs.module.css';
 
 // TODO: Implement DocSearch
 /* const DocsSearchBar = ({ ...others }: TextInputProps) => {

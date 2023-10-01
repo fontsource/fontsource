@@ -14,7 +14,7 @@ import type { HeadingsData } from '@/hooks/useHeadingsData';
 import { useHeadingsData } from '@/hooks/useHeadingsData';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
-import classes from './docs.module.css';
+import classes from './Docs.module.css';
 
 interface HeadingItemProps extends HeadingsData, TextProps {
 	active: string;

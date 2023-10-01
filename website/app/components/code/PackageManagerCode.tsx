@@ -2,7 +2,7 @@ import type { CodeProps } from '@mantine/core';
 import { Tabs } from '@mantine/core';
 
 import { CodeHighlight, CodeWrapper } from './Code';
-import classes from './code.module.css';
+import classes from './Code.module.css';
 
 interface PackageManagerProps extends Partial<CodeProps> {
 	cmd: string;
