@@ -14,7 +14,7 @@ import type { HeadingsData } from '@/hooks/useHeadingsData';
 import { useHeadingsData } from '@/hooks/useHeadingsData';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
-import classes from './Docs.module.css';
+import classes from './TableOfContents.module.css';
 
 interface HeadingItemProps extends HeadingsData, TextProps {
 	active: string;
@@ -41,7 +41,7 @@ const HeadingItem = (heading: HeadingItemProps) => {
 					</Text>
 				</UnstyledButton>
 			</Box>
-			<div className={classes['toc-nested-wrapper']}>
+			<div className={classes['nested-wrapper']}>
 				{heading.items &&
 					heading.items.length > 0 &&
 					heading.items.map((child) => (
@@ -67,9 +67,9 @@ export const TableOfContents = () => {
 	useIntersectionObserver(setActiveId, params?.['*'] ?? '');
 
 	return (
-		<nav className={classes['toc-nav']}>
+		<nav className={classes.nav}>
 			<Text fw={700}>On this page</Text>
-			<div className={classes['toc-wrapper']}>
+			<div className={classes.wrapper}>
 				{nestedHeadings.map((heading) => (
 					<HeadingItem key={heading.id} active={activeId} {...heading} />
 				))}

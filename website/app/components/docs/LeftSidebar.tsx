@@ -13,7 +13,7 @@ import {
 	IconTool,
 } from '@/components/icons';
 
-import classes from './Docs.module.css';
+import classes from './LeftSidebar.module.css';
 
 interface SidebarConfig {
 	[slug: string]: {

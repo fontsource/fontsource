@@ -1,28 +1,3 @@
-/* DocsHeader */
-
-.header {
-	border-radius: 4px;
-	padding: 1px 8px;
-
-	&:focus-within {
-		border-color: var(--mantine-color-purple-0);
-	}
-
-	@mixin light {
-		background-color: var(--mantine-color-background-2);
-		border: 1.5px solid var(--mantine-color-border-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-		border: 1.5px solid var(--mantine-color-border-1);
-	}
-}
-
-.title {
-	color: var(--mantine-color-purple-0);
-}
-
 /* LeftSidebar */
 
 .wrapper {
@@ -95,25 +70,4 @@
 		color: var(--mantine-color-purple);
 		background-color: var(--mantine-color-purpleHover-0);
 	}
-}
-
-/* TableOfContents */
-.toc-nav {
-	margin-top: rem(30px);
-	margin-left: auto;
-	position: sticky;
-	width: rem(240px);
-	top: rem(40px);
-	right: 0;
-}
-
-.toc-wrapper {
-	box-sizing: border-box;
-	position: sticky;
-	top: var(--mantine-spacing-xl);
-	margin-top: rem(10px);
-}
-
-.toc-nested-wrapper {
-	box-sizing: border-box;
 }

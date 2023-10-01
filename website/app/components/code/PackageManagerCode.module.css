@@ -1,0 +1,15 @@
+/* PackageManagerCode */
+
+.wrapper {
+	margin-top: rem(10);
+
+	.tab {
+		&[data-active] {
+			border-bottom: rem(2) solid var(--mantine-color-purple-0);
+		}
+	}
+}
+
+.panels {
+	margin-top: "-1rem";
+}
