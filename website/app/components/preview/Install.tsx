@@ -1,10 +1,8 @@
 import {
 	Badge,
-	createStyles,
 	Divider,
 	Grid,
 	Group,
-	rem,
 	Stack,
 	Tabs,
 	Text,
@@ -15,103 +13,20 @@ import { Link } from '@remix-run/react';
 import millify from 'millify';
 import { useState } from 'react';
 
+import { Code } from '@/components/code/Code';
+import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import {
 	IconDownload,
 	IconEdit,
 	IconExternal,
 	IconGithub,
 	IconNpm,
-} from '@/components';
-import { Code } from '@/components/code/Code';
-import { PackageManagerCode } from '@/components/code/PackageManagerCode';
+} from '@/components/icons';
+import globalClasses from '@/styles/global.module.css';
 import type { Metadata, VariableData } from '@/utils/types';
 
 import { CarbonAd } from '../CarbonAd';
-
-const useStyles = createStyles((theme) => ({
-	wrapper: {
-		maxWidth: '1440px',
-		marginLeft: 'auto',
-		marginRight: 'auto',
-		padding: '40px 64px',
-
-		[theme.fn.smallerThan('lg')]: {
-			padding: '40px 40px',
-		},
-
-		[theme.fn.smallerThan('xs')]: {
-			padding: '40px 24px',
-		},
-	},
-
-	badge: {
-		padding: `${rem(4)} ${rem(8)}`,
-		gap: rem(10),
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.text[0]
-				: theme.colors.text[1],
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.background[3]
-				: theme.colors.background[2],
-		borderRadius: rem(4),
-		fontFamily: theme.fontFamilyMonospace,
-		textTransform: 'lowercase',
-		userSelect: 'none',
-		cursor: 'pointer',
-	},
-
-	infoWrapper: {
-		width: rem(332),
-		padding: rem(24),
-		border:
-			theme.colorScheme === 'dark'
-				? `${rem(1)} solid ${theme.colors.border[1]}`
-				: `${rem(1)} solid ${theme.colors.border[0]}`,
-		borderRadius: rem(4),
-		marginLeft: 'auto',
-
-		[theme.fn.smallerThan('md')]: {
-			width: '100%',
-		},
-	},
-
-	infoButton: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		padding: `${rem(8)} ${rem(16)}`,
-		border:
-			theme.colorScheme === 'dark'
-				? `${rem(1)} solid ${theme.colors.border[1]}`
-				: `${rem(1)} solid ${theme.colors.border[0]}`,
-		borderRadius: rem(4),
-
-		'&:hover': {
-			backgroundColor:
-				theme.colorScheme === 'dark'
-					? theme.fn.darken(theme.colors.background[4], 0.5)
-					: theme.fn.lighten(theme.colors.purple[0], 0.98),
-		},
-	},
-
-	installWrapper: {
-		padding: `${rem(24)} ${rem(40)} ${rem(24)} ${rem(24)}`,
-		width: '100%',
-	},
-
-	installButton: {
-		padding: `${rem(8)} ${rem(16)}`,
-		borderRadius: rem(4),
-		backgroundColor: theme.colors.purple[0],
-		color: theme.colors.text[0],
-
-		'&:hover': {
-			backgroundColor: theme.fn.darken(theme.colors.purple[0], 0.2),
-		},
-	},
-}));
+import classes from './Install.module.css';
 
 interface InstallProps {
 	metadata: Metadata;
@@ -120,8 +35,6 @@ interface InstallProps {
 }
 
 const Variable = ({ metadata, variable }: InstallProps) => {
-	const { classes } = useStyles();
-
 	const [isActive, setActive] = useState<Record<string, boolean>>({
 		wght: true,
 	});
@@ -129,6 +42,7 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 	// Remove ital from active axes and mark separate ital flag as true
 	const activeAxes = Object.keys(isActive).filter((axis) => axis !== 'ital');
 	const isItal = isActive.ital;
+	console.log(metadata);
 
 	// Determine if it is a standard axis e.g. only contains wght, wdth, slnt, opsz or ital
 	const isStandard = activeAxes.every((axis) =>
@@ -207,7 +121,7 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 							onClick={() => {
 								handleActive(axis);
 							}}
-							sx={(theme) => ({
+							style={(theme) => ({
 								backgroundColor: isActive[axis]
 									? theme.colors.purple[0]
 									: undefined,
@@ -237,8 +151,6 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 };
 
 const Static = ({ metadata }: InstallProps) => {
-	const { classes } = useStyles();
-
 	const [isActive, setActive] = useState<Record<string, boolean>>({
 		400: true,
 	});
@@ -298,7 +210,7 @@ const Static = ({ metadata }: InstallProps) => {
 						onClick={() => {
 							handleActive(weight);
 						}}
-						sx={(theme) => ({
+						style={(theme) => ({
 							backgroundColor: isActive[weight]
 								? theme.colors.purple[0]
 								: undefined,
@@ -314,7 +226,7 @@ const Static = ({ metadata }: InstallProps) => {
 						onClick={() => {
 							setIsItal((prev) => !prev);
 						}}
-						sx={(theme) => ({
+						style={(theme) => ({
 							backgroundColor: isItal ? theme.colors.purple[0] : undefined,
 							color: isItal ? theme.colors.text[0] : undefined,
 						})}
@@ -345,8 +257,6 @@ export const Install = ({
 	variable,
 	downloadCount,
 }: InstallProps) => {
-	const { classes } = useStyles();
-
 	// TODO: Readd attribution to metadata
 	/**
 	// Replace any urls as well as () and <> with empty string
@@ -365,16 +275,16 @@ export const Install = ({
  */
 
 	return (
-		<Grid className={classes.wrapper}>
-			<Grid.Col span={12} md={8}>
-				<Group position="apart" mb={28}>
+		<Grid className={globalClasses.container}>
+			<Grid.Col span={{ base: 12, md: 8 }}>
+				<Group justify="space-between" mb={28}>
 					<Title>Getting Started</Title>
 					<UnstyledButton
 						component={Link}
-						className={classes.installButton}
+						className={classes['install-button']}
 						to="/docs/getting-started/install"
 					>
-						<Group spacing="xs">
+						<Group gap="xs">
 							Documentation
 							<IconExternal stroke="white" />
 						</Group>
@@ -382,13 +292,7 @@ export const Install = ({
 				</Group>
 				<Tabs
 					defaultValue={variable ? 'variable' : 'static'}
-					styles={(theme) => ({
-						tab: {
-							'&[data-active]': {
-								borderBottom: `${rem(2)} solid ${theme.colors.purple[0]}`,
-							},
-						},
-					})}
+					className={classes.tabs}
 				>
 					<Tabs.List>
 						{variable && <Tabs.Tab value="variable">Variable</Tabs.Tab>}
@@ -403,14 +307,14 @@ export const Install = ({
 					</Tabs.Panel>
 				</Tabs>
 			</Grid.Col>
-			<Grid.Col span={12} md={4}>
-				<div className={classes.infoWrapper}>
+			<Grid.Col span={{ base: 12, md: 4 }}>
+				<div className={classes['info-wrapper']}>
 					<Text fw={700} fz={15}>
 						Font Details
 					</Text>
 					<Divider my={12} />
-					<Stack spacing={8}>
-						<Group spacing="xs">
+					<Stack gap={8}>
+						<Group gap="xs">
 							<IconDownload />
 							<Text>
 								Downloads:{' '}
@@ -419,23 +323,18 @@ export const Install = ({
 									: 'N/A'}
 							</Text>
 						</Group>
-						<Group spacing="xs">
+						<Group gap="xs">
 							<IconEdit />
 							<Text>Last Modified: {metadata.lastModified}</Text>
 						</Group>
-
 						<Group
-							position="apart"
+							className={classes['info-button-group']}
+							justify="space-between"
 							grow
-							sx={(theme) => ({
-								[theme.fn.smallerThan('md')]: {
-									marginTop: rem(16),
-								},
-							})}
 						>
 							<UnstyledButton
 								component="a"
-								className={classes.infoButton}
+								className={classes['info-button']}
 								href={`https://github.com/fontsource/font-files/tree/main/fonts/${
 									metadata.category === 'icons' ? 'icons' : metadata.type
 								}/${metadata.id}`}
@@ -448,7 +347,7 @@ export const Install = ({
 							</UnstyledButton>
 							<UnstyledButton
 								component="a"
-								className={classes.infoButton}
+								className={classes['info-button']}
 								href={`https://www.npmjs.com/package/@fontsource/${metadata.id}`}
 								target="_blank"
 							>

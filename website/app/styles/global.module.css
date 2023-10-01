@@ -1,0 +1,92 @@
+/* Global CSS */
+
+:root {
+	--mantine-color-purple: #625bf8;
+	--mantine-color-purple-hover: rgba(98, 91, 248, 0.02);
+	--mantine-color-button-hover: rgba(98, 91, 248, 0.1);
+	--mantine-color-purple-dark: #473ef6;
+}
+
+header {
+	@mixin light {
+		background-color: var(--mantine-color-background-1);
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-5);
+	}
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	font-size: var(--mantine-font-size-md);
+	line-height: 160%;
+
+	@mixin light {
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-0);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-4);
+	}
+}
+
+a {
+	@mixin light {
+		color: var(--mantine-color-text-7);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+	}
+}
+
+.background {
+	@mixin light {
+		background-color: var(--mantine-color-background-1);
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-5);
+	}
+}
+
+.container {
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 40px 64px;
+
+	@media (max-width: $mantine-breakpoint-lg) {
+		padding: 40px 40px;
+	}
+
+	@media (max-width: $mantine-breakpoint-xs) {
+		padding: 40px 24px;
+	}
+}
+
+/* Docs */
+.hide-less-than-sm {
+	@media (max-width: $mantine-breakpoint-sm) {
+		display: none;
+	}
+}
+
+.hide-less-than-md {
+	@media (max-width: $mantine-breakpoint-md) {
+		display: none;
+	}
+}
+
+.hide-less-than-xl {
+	@media (max-width: $mantine-breakpoint-xl) {
+		display: none;
+	}
+}

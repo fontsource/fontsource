@@ -1,14 +1,11 @@
-import { Global } from '@emotion/react';
 import type { ActionIconProps, ContainerProps } from '@mantine/core';
 import {
 	ActionIcon,
 	Box,
 	Burger,
 	Container,
-	createStyles,
 	Divider,
 	Group,
-	rem,
 	ScrollArea,
 	Stack,
 	Text,
@@ -17,97 +14,14 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Link, NavLink, useLocation } from '@remix-run/react';
+import cx from 'clsx';
 
-import { IconDiscord, IconGithub, LogoText, ThemeButton } from '@/components';
+import { LeftSidebar } from '@/components/docs/LeftSidebar';
+import { IconDiscord, IconGithub } from '@/components/icons';
+import { LogoText } from '@/components/logo/LogoText';
 
-import { LeftSidebar } from '../docs/LeftSidebar';
-import { ThemeButtonMobile } from './ThemeButton';
-
-export const HEADER_HEIGHT = 72;
-
-const useStyles = createStyles((theme) => ({
-	header: {
-		borderBottom: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? '#151E34' : '#EDF0F3'
-		}`,
-	},
-
-	inner: {
-		maxWidth: rem(1440),
-		marginLeft: 'auto',
-		marginRight: 'auto',
-		height: rem(HEADER_HEIGHT),
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		padding: `0 ${rem(64)}`,
-	},
-
-	burger: {
-		[theme.fn.largerThan('sm')]: {
-			display: 'none',
-		},
-	},
-
-	links: {
-		paddingTop: theme.spacing.lg,
-		height: rem(HEADER_HEIGHT),
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'space-between',
-
-		[theme.fn.smallerThan('sm')]: {
-			display: 'none',
-		},
-	},
-
-	mobileLinks: {
-		height: '100vh',
-		padding: `${rem(24)} ${rem(16)}`,
-		alignContent: 'center',
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.background[5]
-				: theme.colors.background[1],
-	},
-
-	link: {
-		fontSize: theme.fontSizes.sm,
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.text[0]
-				: theme.colors.text[1],
-		borderBottom: `${rem(2)} solid transparent`,
-		transition: 'border-color 100ms ease, color 100ms ease',
-		textDecoration: 'none',
-
-		[theme.fn.largerThan('sm')]: {
-			padding: `${rem(27)} ${theme.spacing.sm}`,
-
-			'&:hover': {
-				textDecoration: 'none',
-				color: theme.colors.purple,
-			},
-		},
-	},
-
-	mobileLink: {
-		display: 'flex',
-
-		'&:hover': {
-			color: theme.colors.purple[0],
-		},
-	},
-
-	active: {
-		fontWeight: 700,
-
-		[theme.fn.largerThan('sm')]: {
-			color: theme.colors.purple,
-			borderBottomColor: theme.colors.purple,
-		},
-	},
-}));
+import classes from './Header.module.css';
+import { ThemeButton, ThemeButtonMobile } from './ThemeButton';
 
 interface IconProps extends ActionIconProps {
 	label: string;
@@ -134,8 +48,6 @@ interface HeaderNavLinkProps {
 }
 
 const HeaderNavLink = ({ label, to, toggle }: HeaderNavLinkProps) => {
-	const { classes, cx } = useStyles();
-
 	const handleToggle = () => {
 		// Wait to allow the browser to load new docs
 		setTimeout(() => {
@@ -149,7 +61,7 @@ const HeaderNavLink = ({ label, to, toggle }: HeaderNavLinkProps) => {
 				to={to}
 				prefetch="intent"
 				className={({ isActive }) =>
-					cx(classes.link, isActive ? classes.active : undefined)
+					isActive ? cx(classes.link, classes.active) : classes.link
 				}
 				onClick={handleToggle}
 			>
@@ -160,8 +72,6 @@ const HeaderNavLink = ({ label, to, toggle }: HeaderNavLinkProps) => {
 };
 
 const MobileExternalIcon = ({ icon, label, href }: IconProps) => {
-	const { classes } = useStyles();
-
 	return (
 		<UnstyledButton
 			component="a"
@@ -182,56 +92,52 @@ interface MobileHeaderProps {
 }
 
 const MobileHeader = ({ toggle }: MobileHeaderProps) => {
-	const { classes } = useStyles();
 	const isDocs = useLocation().pathname.startsWith('/docs');
 
 	return (
-		<>
-			<Global styles={{ body: { overflow: 'hidden' } }} />
-			<ScrollArea.Autosize mah="95vh" className={classes.mobileLinks}>
-				<Stack>
-					<Stack px={24}>
-						<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
-						<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
-						<Divider />
-						<ThemeButtonMobile />
-						<MobileExternalIcon
-							label="GitHub"
-							href="https://github.com/fontsource/fontsource"
-							icon={<IconGithub />}
-						/>
-						<MobileExternalIcon
-							label="Discord"
-							href="/discord"
-							icon={<IconDiscord />}
-						/>
-					</Stack>
-					{isDocs && (
-						<>
-							<Divider mx={24} />
-							<LeftSidebar toggle={toggle} />
-						</>
-					)}
+		<ScrollArea.Autosize mah="95vh" className={classes.mobileLinks}>
+			<Stack>
+				<Stack px={24}>
+					<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
+					<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
+					<Divider />
+					<ThemeButtonMobile />
+					<MobileExternalIcon
+						label="GitHub"
+						href="https://github.com/fontsource/fontsource"
+						icon={<IconGithub />}
+					/>
+					<MobileExternalIcon
+						label="Discord"
+						href="/discord"
+						icon={<IconDiscord />}
+					/>
 				</Stack>
-			</ScrollArea.Autosize>
-		</>
+				{isDocs && (
+					<>
+						<Divider mx={24} />
+						<LeftSidebar toggle={toggle} />
+					</>
+				)}
+			</Stack>
+		</ScrollArea.Autosize>
 	);
 };
 
 export const Header = ({ ...other }: ContainerProps) => {
 	const [opened, { toggle }] = useDisclosure(false);
-	const { classes } = useStyles();
 
 	return (
 		<>
 			<Box component="header" className={classes.header}>
+				{/* @ts-expect-error - Mantine v7 typing errors */}
 				<Container className={classes.inner} {...other}>
 					<Link to="/">
 						<LogoText height={31} isHeader />
 					</Link>
 					<div className={classes.links}>
 						<Tooltip.Group openDelay={600} closeDelay={100}>
-							<Group spacing="md" position="right">
+							<Group gap="md" justify="right">
 								<HeaderNavLink label="Fonts" to="/" />
 								<HeaderNavLink label="Documentation" to="/docs" />
 								<ThemeButton />

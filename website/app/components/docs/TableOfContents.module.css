@@ -1,0 +1,20 @@
+/* TableOfContents */
+.nav {
+	margin-top: rem(30px);
+	margin-left: auto;
+	position: sticky;
+	width: rem(240px);
+	top: rem(40px);
+	right: 0;
+}
+
+.wrapper {
+	box-sizing: border-box;
+	position: sticky;
+	top: var(--mantine-spacing-xl);
+	margin-top: rem(10px);
+}
+
+.nested-wrapper {
+	box-sizing: border-box;
+}

@@ -1,0 +1,15 @@
+/* LogoText */
+
+.header {
+	fill: var(--mantine-color-text-0);
+
+	&[data-is-header] {
+		@mixin light {
+			fill: var(--mantine-color-text-1);
+		}
+
+		@mixin dark {
+			fill: var(--mantine-color-text-0);
+		}
+	}
+}

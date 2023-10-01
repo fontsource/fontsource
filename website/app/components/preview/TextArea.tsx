@@ -1,13 +1,11 @@
 import { useSelector } from '@legendapp/state/react';
 import {
 	Box,
-	createStyles,
 	Flex,
-	rem,
 	Skeleton,
 	Text,
 	TextInput,
-	useMantineTheme,
+	useComputedColorScheme,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
 import { useEffect } from 'react';
@@ -16,6 +14,7 @@ import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import type { Metadata } from '@/utils/types';
 
 import { fontVariation, previewState } from './observables';
+import classes from './TextArea.module.css';
 
 interface TagProps {
 	weight: number;
@@ -33,47 +32,7 @@ interface TextAreaProps {
 	previewText: string;
 }
 
-const useStyles = createStyles((theme) => ({
-	header: {
-		fontWeight: 700,
-		fontSize: rem(24),
-		lineHeight: rem(30),
-		marginBottom: rem(20),
-	},
-
-	textWrapper: {
-		padding: `${rem(24)} 0 ${rem(10)} 0`,
-	},
-
-	horizontal: {
-		borderBottom: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0]
-		}`,
-		width: '100%',
-	},
-
-	tag: {
-		fontSize: rem(13),
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.text[0]
-				: theme.colors.text[1],
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0],
-		padding: `${rem(4)} ${rem(8)}`,
-		borderRadius: '4px 4px 0 0',
-		marginLeft: 'auto',
-		lineHeight: rem(12),
-	},
-}));
-
 const Tag = ({ weight, active }: TagProps) => {
-	const { classes } = useStyles();
-
 	const weightMap: Record<number, string> = {
 		100: 'Thin',
 		200: 'Extra Light',
@@ -88,45 +47,33 @@ const Tag = ({ weight, active }: TagProps) => {
 
 	return (
 		<>
-			<Box
-				className={classes.tag}
-				sx={(theme) => ({
-					backgroundColor: active ? theme.colors.purple[0] : 'auto',
-					color: active ? theme.colors.text[0] : 'auto',
-				})}
-			>
+			<Box className={classes.tag} data-active={active}>
 				{weightMap[weight]} {weight}
 			</Box>
-			<Box
-				className={classes.horizontal}
-				sx={(theme) => ({
-					borderColor: active ? theme.colors.purple[0] : 'auto',
-				})}
-			/>
+			<Box className={classes.horizontal} data-active={active} />
 		</>
 	);
 };
 
 const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
-	const { classes } = useStyles();
-	const theme = useMantineTheme();
 	const { ref, focused } = useFocusWithin();
 	const state = useSelector(previewState);
 	const variation = useSelector(fontVariation);
+	const colorScheme = useComputedColorScheme('light');
 
 	useEffect(() => {
-		theme.colorScheme === 'dark'
+		colorScheme === 'dark'
 			? previewState.color.set('#FFFFFF')
 			: previewState.color.set('#000000');
-	}, [theme.colorScheme]);
+	}, [colorScheme]);
 
 	return (
 		<>
 			<Skeleton visible={loaded}>
-				<Box className={classes.textWrapper}>
+				<Box className={classes['text-wrapper']}>
 					<TextInput
 						variant="unstyled"
-						sx={{
+						styles={{
 							input: {
 								fontFamily: `"${family}"`,
 								fontWeight: weight,
@@ -155,7 +102,6 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 };
 
 const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
-	const { classes } = useStyles();
 	const { id, family, weights, variable } = metadata;
 
 	const variableFamily = `${family} Variable`;

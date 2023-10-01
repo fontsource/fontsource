@@ -4,24 +4,25 @@ type HeadingIntersectionEntry = Record<string, IntersectionObserverEntry>;
 
 export const useIntersectionObserver = (
 	setActiveId: React.Dispatch<React.SetStateAction<string>>,
-	page: string
+	page: string,
 ) => {
 	const headingElementsRef = useRef<HeadingIntersectionEntry>({});
 
 	useEffect(() => {
 		headingElementsRef.current = {}; // Reset ref on page change to update active states
+		const headingElements = [...document.querySelectorAll('h2, h3')];
 
 		const callback = (headings: IntersectionObserverEntry[]) => {
 			// eslint-disable-next-line unicorn/no-array-reduce
 			headingElementsRef.current = headings.reduce(
 				(
 					map: HeadingIntersectionEntry,
-					headingElement: IntersectionObserverEntry
+					headingElement: IntersectionObserverEntry,
 				) => {
 					map[headingElement.target.id] = headingElement;
 					return map;
 				},
-				headingElementsRef.current
+				headingElementsRef.current,
 			);
 
 			const visibleHeadings: IntersectionObserverEntry[] = [];
@@ -40,7 +41,7 @@ export const useIntersectionObserver = (
 			} else if (visibleHeadings.length > 1) {
 				const sortedVisibleHeadings = visibleHeadings.sort(
 					// @ts-expect-error - Technically, booleans can't be compared, but this works
-					(a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id)
+					(a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id),
 				);
 				setActiveId(sortedVisibleHeadings[0].target.id);
 			}
@@ -49,8 +50,6 @@ export const useIntersectionObserver = (
 		const observer = new IntersectionObserver(callback, {
 			rootMargin: '0px 0px -40% 0px',
 		});
-
-		const headingElements = [...document.querySelectorAll('h2, h3')];
 
 		for (const element of headingElements) observer.observe(element);
 

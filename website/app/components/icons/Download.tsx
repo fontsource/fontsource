@@ -1,43 +1,22 @@
-import { useMantineTheme } from '@mantine/core';
-
+import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
 const IconDownload = ({ height, stroke, ...others }: IconProps) => {
-	const theme = useMantineTheme();
-	const strokeNew =
-		stroke ??
-		(theme.colorScheme === 'dark'
-			? theme.colors.text[0]
-			: theme.colors.text[1]);
-
 	return (
 		<svg
-			height={height ?? 18}
+			xmlns="http://www.w3.org/2000/svg"
+			height={height ?? 20}
 			viewBox="0 0 20 20"
 			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
+			className={classes.icon}
 			{...others}
 		>
 			<path
-				d="M17.8333 17.5H2.16666"
-				stroke={strokeNew}
-				strokeWidth="1.5"
+				stroke={stroke}
 				strokeLinecap="round"
 				strokeLinejoin="round"
-			/>
-			<path
-				d="M5.83334 8.33334L10 12.5L14.1667 8.33334"
-				stroke={strokeNew}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
-			<path
-				d="M10 12.5V2.5"
-				stroke={strokeNew}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				strokeWidth={1.5}
+				d="M17.833 17.5H2.167M5.833 8.333 10 12.5l4.167-4.167M10 12.5v-10"
 			/>
 		</svg>
 	);

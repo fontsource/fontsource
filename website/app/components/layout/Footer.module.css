@@ -1,0 +1,45 @@
+/* Footer */
+.header {
+	background-color: var(--mantine-color-text-1);
+}
+
+.inner {
+	max-width: rem(1440px);
+	margin-left: auto;
+	margin-right: auto;
+	height: rem(72px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 rem(64px);
+}
+
+.links {
+	padding-top: var(--mantine-spacing-lg);
+	height: rem(72px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@media (max-width: $mantine-breakpoint-sm) {
+		display: none;
+	}
+}
+
+.link {
+	font-size: var(--mantine-font-size-sm);
+	padding: rem(27px) var(--mantine-spacing-sm);
+	text-decoration: none;
+
+	@mixin light {
+		color: var(--mantine-color-text-0);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

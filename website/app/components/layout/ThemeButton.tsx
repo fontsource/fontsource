@@ -1,20 +1,23 @@
 import {
 	ActionIcon,
 	Group,
-	rem,
 	Text,
 	Tooltip,
 	UnstyledButton,
+	useComputedColorScheme,
 	useMantineColorScheme,
 	useMantineTheme,
 } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 
-import type { IconProps } from '@/components';
-import { IconMoon, IconSun } from '@/components';
+import type { IconProps } from '@/components/icons';
+import { IconMoon, IconSun } from '@/components/icons';
+
+import classes from './ThemeButton.module.css';
 
 export const ThemeButton = ({ ...others }: IconProps) => {
-	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+	const { setColorScheme } = useMantineColorScheme();
+	const colorScheme = useComputedColorScheme('light');
 	const dark = colorScheme === 'dark';
 
 	return (
@@ -22,9 +25,10 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 			<ActionIcon
 				variant="transparent"
 				onClick={() => {
-					toggleColorScheme();
+					setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 				}}
 			>
+				{/* @ts-expect-error - Mantine v7 typings */}
 				{dark ? <IconSun {...others} /> : <IconMoon {...others} />}
 			</ActionIcon>
 		</Tooltip>
@@ -32,37 +36,34 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 };
 
 export const ThemeButtonMobile = ({ ...others }: IconProps) => {
-	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+	const { setColorScheme } = useMantineColorScheme();
+	const colorScheme = useComputedColorScheme('light');
+
 	const dark = colorScheme === 'dark';
 	const { hovered, ref } = useHover<HTMLButtonElement>();
 	const theme = useMantineTheme();
 
 	return (
 		<UnstyledButton
+			className={classes.button}
 			onClick={() => {
-				toggleColorScheme();
+				setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 			}}
-			sx={(theme) => ({
-				display: 'flex',
-				alignItems: 'center',
-				marginLeft: rem(-5),
-				'&:hover': {
-					color: theme.colors.purple[0],
-				},
-			})}
 			ref={ref}
 		>
-			<Group spacing="xs">
+			<Group gap="xs">
 				<ActionIcon
 					variant="transparent"
 					aria-label={dark ? 'Light mode' : 'Dark mode'}
 				>
 					{dark ? (
+						// @ts-expect-error - Mantine v7 typings
 						<IconSun
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}
 						/>
 					) : (
+						// @ts-expect-error - Mantine v7 typings
 						<IconMoon
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}

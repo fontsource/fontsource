@@ -1,5 +1,11 @@
 import type { TextProps } from '@mantine/core';
-import { Box, createStyles, rem, Text, UnstyledButton } from '@mantine/core';
+import {
+	Box,
+	rem,
+	Text,
+	UnstyledButton,
+	useMantineColorScheme,
+} from '@mantine/core';
 import { Link, useParams } from '@remix-run/react';
 import { useState } from 'react';
 
@@ -8,43 +14,23 @@ import type { HeadingsData } from '@/hooks/useHeadingsData';
 import { useHeadingsData } from '@/hooks/useHeadingsData';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
-const useStyles = createStyles((theme) => ({
-	nav: {
-		marginTop: rem(30),
-		marginLeft: 'auto',
-		position: 'sticky',
-		width: rem(240),
-		top: rem(40),
-		right: 0,
-	},
-
-	wrapper: {
-		boxSizing: 'border-box',
-		position: 'sticky',
-		top: theme.spacing.xl,
-		marginTop: rem(10),
-	},
-
-	nestedWrapper: {
-		boxSizing: 'border-box',
-	},
-}));
+import classes from './TableOfContents.module.css';
 
 interface HeadingItemProps extends HeadingsData, TextProps {
 	active: string;
 }
 
 const HeadingItem = (heading: HeadingItemProps) => {
-	const { classes } = useStyles();
 	const isActive = heading.active === heading.id;
+	const { colorScheme } = useMantineColorScheme();
 
 	return (
 		<>
 			<Box
-				sx={(theme) => ({
+				style={(theme) => ({
 					borderLeft: isActive
 						? `${rem(1)} solid ${theme.colors.purple[0]}`
-						: theme.colorScheme === 'dark'
+						: colorScheme === 'dark'
 						? `${rem(1)} solid ${theme.colors.border[1]}`
 						: `${rem(1)} solid ${theme.colors.border[0]}`,
 				})}
@@ -55,7 +41,7 @@ const HeadingItem = (heading: HeadingItemProps) => {
 					</Text>
 				</UnstyledButton>
 			</Box>
-			<div className={classes.nestedWrapper}>
+			<div className={classes['nested-wrapper']}>
 				{heading.items &&
 					heading.items.length > 0 &&
 					heading.items.map((child) => (
@@ -72,8 +58,6 @@ const HeadingItem = (heading: HeadingItemProps) => {
 };
 
 export const TableOfContents = () => {
-	const { classes } = useStyles();
-
 	// Find all h2, h3 elements on the page
 	const params = useParams();
 	const { nestedHeadings } = useHeadingsData(params?.['*'] ?? '');

@@ -35,13 +35,13 @@
 		"semver": "^7.5.1"
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.4.1",
+		"@ayuhito/eslint-config": "^0.6.2",
 		"@types/folder-hash": "^4.0.2",
 		"@types/fs-extra": "^11.0.1",
-		"@types/node": "^20.2.5",
+		"@types/node": "^20.7.1",
 		"@types/parse-git-config": "^3.0.1",
 		"@types/semver": "^7.5.0",
-		"eslint": "^8.49.0",
+		"eslint": "^8.50.0",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.9.0",
 		"tsx": "^3.12.3",

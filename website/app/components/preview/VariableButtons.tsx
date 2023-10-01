@@ -1,12 +1,12 @@
 import { useSelector } from '@legendapp/state/react';
-import { ActionIcon, Box, createStyles, Group, rem, Text } from '@mantine/core';
+import { ActionIcon, Box, Group, Slider, Text } from '@mantine/core';
 
 import { IconRotate } from '@/components/icons';
-import { Slider } from '@/components/Slider';
 import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
 
 import { InfoTooltip } from '../InfoTooltip';
 import { previewState, variableState } from './observables';
+import classes from './VariableButtons.module.css';
 
 interface VariableButtonGroupProps {
 	variable: VariableData;
@@ -20,45 +20,12 @@ interface VariableButtonProps {
 	description: string;
 }
 
-const useStyles = createStyles((theme) => ({
-	button: {
-		marginTop: rem(2),
-		padding: `${rem(8)} ${rem(12)}`,
-		justifyContent: 'space-between',
-		height: rem(94),
-		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0]
-		}`,
-		borderRadius: '4px',
-
-		backgroundColor:
-			theme.colorScheme === 'dark'
-				? theme.colors.background[4]
-				: theme.colors.background[0],
-
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.text[0]
-				: theme.colors.text[1],
-
-		'&:not([data-disabled])': theme.fn.hover({
-			backgroundColor:
-				theme.colorScheme === 'dark'
-					? theme.fn.darken(theme.colors.background[4], 0.2)
-					: theme.fn.lighten(theme.colors.purple[0], 0.95),
-		}),
-	},
-}));
-
 const VariableButton = ({
 	tag,
 	label,
 	axes,
 	description,
 }: VariableButtonProps) => {
-	const { classes } = useStyles();
 	const variable = useSelector(variableState);
 
 	const handleVariation = (value: number) => {
@@ -79,8 +46,8 @@ const VariableButton = ({
 
 	return (
 		<Box className={classes.button}>
-			<Group position="apart" mb={5}>
-				<Group align="center" spacing={2}>
+			<Group justify="space-between" mb={5}>
+				<Group align="center" gap={2}>
 					<Text fz="sm" fw={400}>
 						{label} <span>({tag})</span>
 					</Text>
@@ -99,7 +66,7 @@ const VariableButton = ({
 				onChange={handleVariation}
 				value={variable[tag] ?? Number(axes.default)}
 			/>
-			<Group position="apart" px={3} mt={8}>
+			<Group justify="space-between" px={3} mt={8}>
 				<Text fz="sm">{axes.min}</Text>
 				<Text fz="sm">{axes.max}</Text>
 			</Group>

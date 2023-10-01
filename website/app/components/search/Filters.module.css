@@ -1,0 +1,62 @@
+/* Filters */
+.container {
+	height: rem(128px);
+	border-radius: 4px;
+
+	@mixin light {
+		background-color: var(--mantine-color-background-0);
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-4);
+	}
+}
+
+.filters {
+	display: flex;
+	height: rem(64px);
+	align-items: center;
+	gap: rem(24px);
+	justify-content: space-between;
+	padding: 0 rem(24px);
+
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	&:focus-within {
+		border-bottom-color: var(--mantine-color-purple-0);
+	}
+
+	@mixin light {
+		background-color: var(--mantine-color-background-0);
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-4);
+	}
+}
+
+.button {
+	padding: 2px 16px;
+	height: 40px;
+
+	font-weight: 400;
+
+	@mixin light {
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-0);
+
+		&:hover {
+			background-color: var(--mantine-color-purple-hover);
+		}
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-4);
+
+		&:hover {
+			background-color: var(--mantine-color-background-6);
+		}
+	}
+}

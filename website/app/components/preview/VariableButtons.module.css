@@ -1,0 +1,33 @@
+/* VariableButtons */
+.button {
+	margin-top: rem(2px);
+	padding: rem(8px) rem(12px);
+	justify-content: space-between;
+	height: rem(94px);
+
+	border-radius: rem(4px);
+
+	@mixin light {
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-0);
+		border: rem(1px) solid var(--mantine-color-border-0);
+
+		&:not([data-disabled]) {
+			&:hover {
+				background-color: var(--mantine-color-purple-hover);
+			}
+		}
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text.0);
+		background-color: var(--mantine-color-background-4);
+		border: rem(1px) solid var(--mantine-color-border-1);
+
+		&:not([data-disabled]) {
+			&:hover {
+				background-color: var(--mantine-color-background-3);
+			}
+		}
+	}
+}

@@ -1,48 +1,21 @@
-import { useMantineTheme } from '@mantine/core';
-
+import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
-const IconGrid = ({ height, active, ...others }: IconProps) => {
-	const theme = useMantineTheme();
-	const baseStroke =
-		theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1];
-	const stroke = active ? theme.colors.purple[0] : baseStroke;
-
+const IconGrid = ({ height, ...others }: IconProps) => {
 	return (
 		<svg
+			xmlns="http://www.w3.org/2000/svg"
 			height={height ?? 18}
 			viewBox="0 0 20 20"
 			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
+			className={classes.icon}
 			{...others}
 		>
 			<path
-				d="M8.33333 2.5H2.5V8.33333H8.33333V2.5Z"
-				stroke={stroke}
-				strokeWidth="1.5"
 				strokeLinecap="round"
 				strokeLinejoin="round"
-			/>
-			<path
-				d="M17.5 2.5H11.6667V8.33333H17.5V2.5Z"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
-			<path
-				d="M17.5 11.6667H11.6667V17.5H17.5V11.6667Z"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
-			<path
-				d="M8.33333 11.6667H2.5V17.5H8.33333V11.6667Z"
-				stroke={stroke}
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				strokeWidth={1.5}
+				d="M8.333 2.5H2.5v5.833h5.833V2.5ZM17.5 2.5h-5.833v5.833H17.5V2.5ZM17.5 11.667h-5.833V17.5H17.5v-5.833ZM8.333 11.667H2.5V17.5h5.833v-5.833Z"
 			/>
 		</svg>
 	);

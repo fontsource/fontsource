@@ -1,0 +1,42 @@
+/* SideSlider */
+
+.wrapper {
+	padding: 0 30px;
+
+	border-radius: 0 4px 0 0;
+
+	@mixin light {
+		background-color: var(--mantine-color-background-0);
+		border-bottom: 1px solid #e1e3ec;
+
+		&:focus-within {
+			border-color: var(--mantine-color-purple);
+		}
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-4);
+		border-bottom: 1px solid #2c3651;
+
+		&:focus-within {
+			border-color: var(--mantine-color-purple);
+		}
+	}
+
+	@media (max-width: $mantine-breakpoint-md) {
+		display: none;
+	}
+}
+
+.inner {
+	height: 100%;
+}
+
+.col {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.bar {
+	background-color: var(--mantine-color-purple-0);
+}

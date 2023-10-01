@@ -1,9 +1,5 @@
 module.exports = {
-	extends: [
-		'@ayuhito/eslint-config',
-		'@remix-run/eslint-config',
-		'@remix-run/eslint-config/node',
-	],
+	extends: ['@ayuhito/eslint-config'],
 	rules: {
 		'@typescript-eslint/consistent-indexed-object-style': 'off',
 		// Remix lets you throw other things than errors
@@ -15,5 +11,5 @@ module.exports = {
 		'import/no-default-export': 'off',
 		// Remix compile target doesn't support replaceAll
 		'unicorn/prefer-string-replace-all': 'off',
-	}
+	},
 };

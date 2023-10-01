@@ -2,7 +2,7 @@ import { useSelector } from '@legendapp/state/react';
 import { useFetcher } from '@remix-run/react';
 import { useEffect } from 'react';
 
-import { Dropdown, DropdownItem } from '@/components';
+import { DropdownSimple } from '@/components/Dropdown';
 import { subsetsMap } from '@/utils/language/subsets';
 
 import { previewState } from './observables';
@@ -11,22 +11,24 @@ interface LanguageSelectorProps {
 	subsets: string[];
 }
 
+interface LanguageFetcher {
+	text: string;
+}
+
 const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	const language = useSelector(previewState.language);
-	const languageFetcher = useFetcher();
+	const languageFetcher = useFetcher<LanguageFetcher>();
 
-	const handleLanguage = (value: string) => {
-		previewState.language.set(
-			subsetsMap[value as keyof typeof subsetsMap] ?? value
-		);
+	useEffect(() => {
 		languageFetcher.submit(
-			{ subset: value },
+			{ subset: language },
 			{
 				method: 'POST',
 				action: '/actions/language',
-			}
+			},
 		);
-	};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [language]);
 
 	useEffect(() => {
 		if (languageFetcher.state === 'idle' && languageFetcher.data?.text) {
@@ -34,17 +36,19 @@ const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 		}
 	}, [languageFetcher]);
 
+	const items = subsets.map((lang) => ({
+		label: subsetsMap[lang as keyof typeof subsetsMap],
+		value: lang,
+	}));
+
 	return (
-		<Dropdown label={language} width={284} capitalize>
-			{subsets.map((lang) => (
-				<DropdownItem
-					key={lang}
-					label={subsetsMap[lang as keyof typeof subsetsMap]}
-					value={lang}
-					setValue={handleLanguage}
-				/>
-			))}
-		</Dropdown>
+		<DropdownSimple
+			label={subsetsMap[language as keyof typeof subsetsMap]}
+			currentState={language}
+			items={items}
+			selector={previewState.language}
+			w={284}
+		/>
 	);
 };
 

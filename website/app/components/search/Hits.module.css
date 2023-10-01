@@ -1,0 +1,48 @@
+/* Hits */
+.wrapper {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: rem(24px);
+	margin-left: auto;
+	margin-right: auto;
+	overflow-wrap: anywhere;
+
+	border-radius: 4px;
+
+	@mixin light {
+		border: 1px solid var(--mantine-color-border-0);
+	}
+
+	@mixin dark {
+		border: 1px solid var(--mantine-color-border-1);
+	}
+
+	/* Remove a tag hyperlink styles */
+	color: inherit;
+	text-decoration: inherit;
+	transition: transform 150ms ease-in-out;
+
+	&:hover {
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+		transform: scale(1.005);
+
+		@mixin light {
+			border: 1px solid var(--mantine-color-purple-0);
+			color: var(--mantine-color-purple-0);
+		}
+
+		@mixin dark {
+			border: 1px solid var(--mantine-color-purple-1);
+			color: var(--mantine-color-purple-1);
+		}
+	}
+}
+
+.text-group {
+	padding-top: rem(16px);
+	width: 100%;
+	justify-content: space-between;
+}

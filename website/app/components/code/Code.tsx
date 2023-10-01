@@ -4,91 +4,19 @@ import {
 	ActionIcon,
 	Box,
 	Code as MantineCode,
-	createStyles,
 	Group,
-	rem,
 	ScrollArea,
 	Text,
 	Tooltip,
-	useMantineTheme,
+	useMantineColorScheme,
 } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
 import { Highlight, Prism } from 'prism-react-renderer';
 
 import { IconCopy } from '@/components/icons';
 
+import classes from './Code.module.css';
 import { themeDark, themeLight } from './theme';
-
-const useStyles = createStyles((theme) => ({
-	root: {
-		position: 'relative',
-		margin: `${rem(16)} 0`,
-	},
-
-	dots: {
-		color: '#34435C',
-		position: 'absolute',
-		top: rem(8),
-		left: rem(14),
-		zIndex: 2,
-		fontSize: rem(12),
-		letterSpacing: rem(2),
-		userSelect: 'none',
-	},
-
-	tools: {
-		position: 'absolute',
-		bottom: 0,
-		right: 0,
-		zIndex: 2,
-	},
-
-	copy: {
-		borderRadius: `0 0 ${rem(4)} 0`,
-		'&, &:hover': {
-			backgroundColor: theme.colors.purple[0],
-		},
-		height: rem(30),
-		width: rem(30),
-	},
-
-	language: {
-		borderRadius: `${rem(4)} 0 0 0`,
-		color: theme.colors.text[0],
-		background: 'rgba(104, 118, 141, 0.5)',
-		height: rem(30),
-		width: rem(30),
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		userSelect: 'none',
-	},
-
-	code: {
-		boxSizing: 'border-box',
-		position: 'relative',
-		fontFamily: theme.fontFamilyMonospace,
-		lineHeight: 1.7,
-		fontSize: rem(14),
-		borderRadius: rem(10),
-		padding: `${rem(34)} ${theme.spacing.md} ${theme.spacing.md} ${
-			theme.spacing.md
-		}`,
-		marginTop: 0,
-		marginBottom: 0,
-		overflowX: 'hidden',
-	},
-
-	line: {
-		width: '100%',
-	},
-
-	inlineCode: {
-		fontWeight: 500,
-		fontSize: rem(13),
-		borderRadius: rem(4),
-	},
-}));
 
 interface CodeWrapperProps {
 	children: React.ReactNode;
@@ -97,7 +25,6 @@ interface CodeWrapperProps {
 }
 
 export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
-	const { classes } = useStyles();
 	const clipboard = useClipboard();
 
 	const copyLabel = 'Copy code';
@@ -107,7 +34,7 @@ export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 		<Box className={classes.root}>
 			<Text className={classes.dots}>&#11044;&#11044;</Text>
 			{children}
-			<Group spacing={0} className={classes.tools}>
+			<Group gap={0} className={classes.tools}>
 				<Box className={classes.language}>
 					<Text fw={400} fz={13}>
 						{language}
@@ -133,6 +60,7 @@ export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 		</Box>
 	);
 };
+
 interface CodeHighlightProps {
 	code: string;
 	language: string;
@@ -145,13 +73,12 @@ require('prismjs/components/prism-json');
 require('prismjs/components/prism-bash');
 
 export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
-	const theme = useMantineTheme();
-	const { classes } = useStyles();
+	const { colorScheme } = useMantineColorScheme();
 
 	return (
 		<Highlight
 			prism={Prism}
-			theme={theme.colorScheme === 'dark' ? themeDark : themeLight}
+			theme={colorScheme === 'dark' ? themeDark : themeLight}
 			code={code}
 			language={language === 'sh' ? 'bash' : language}
 		>
@@ -160,20 +87,7 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 					<ScrollArea
 						type="auto"
 						offsetScrollbars
-						styles={{
-							scrollbar: {
-								'&:hover': {
-									backgroundColor: 'transparent',
-									'.___ref-thumb': {
-										backgroundColor: '#C2BFFF',
-									},
-								},
-							},
-
-							thumb: {
-								backgroundColor: theme.fn.darken('#C2BFFF', 0.2),
-							},
-						}}
+						className={classes['scroll-area']}
 					>
 						{tokens.map((line, i) => (
 							<div key={i} {...getLineProps({ line })} className={classes.line}>
@@ -190,11 +104,12 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 };
 
 export const CodeMdx = (props: CodeProps) => {
-	const { classes } = useStyles();
 	const language = props.className?.replace(/language-/, '') ?? '';
+
 	// Inline code
 	if (language === '')
-		return <MantineCode className={classes.inlineCode} {...props} />;
+		// @ts-expect-error - Mantine v7 typings bug
+		return <MantineCode className={classes['inline-code']} {...props} />;
 
 	const code = props.children?.toString().trim() ?? '';
 
@@ -210,15 +125,13 @@ interface CodeDirectProps extends CodeProps {
 }
 
 export const Code = ({ language, children, ...others }: CodeDirectProps) => {
-	const { classes } = useStyles();
 	// Inline code
 	if (language === '')
 		return (
-			<MantineCode
-				className={classes.inlineCode}
-				children={children}
-				{...others}
-			/>
+			// @ts-expect-error - Mantine v7 typings bug
+			<MantineCode className={classes['inline-code']} {...others}>
+				{children}
+			</MantineCode>
 		);
 
 	return (

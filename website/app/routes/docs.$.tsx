@@ -1,5 +1,5 @@
-import type { ErrorBoundaryComponent, LoaderFunction } from '@remix-run/node';
-import { json,redirect  } from '@remix-run/node';
+import type { LoaderFunction } from '@remix-run/node';
+import { json, redirect } from '@remix-run/node';
 import type { V2_MetaFunction } from '@remix-run/react';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 import { useMemo } from 'react';
@@ -59,7 +59,3 @@ export default function Docs() {
 		</>
 	);
 }
-
-export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
-	return <>{error.message}</>;
-};

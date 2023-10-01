@@ -1,15 +1,5 @@
 import sidebarConfigImport from '@docs/sidebar.json';
-import {
-	Box,
-	createStyles,
-	Divider,
-	Flex,
-	Group,
-	rem,
-	Text,
-	UnstyledButton,
-	useMantineTheme,
-} from '@mantine/core';
+import { Box, Divider, Flex, Group, Text, UnstyledButton } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link, useParams } from '@remix-run/react';
 import { Fragment } from 'react';
@@ -22,6 +12,8 @@ import {
 	IconGuide,
 	IconTool,
 } from '@/components/icons';
+
+import classes from './LeftSidebar.module.css';
 
 interface SidebarConfig {
 	[slug: string]: {
@@ -64,63 +56,6 @@ const sections: SectionsData = {
 	},
 };
 
-const useStyles = createStyles((theme) => ({
-	wrapper: {
-		position: 'sticky',
-		top: rem(40),
-		display: 'flex',
-		flexDirection: 'column',
-		width: rem(240),
-		padding: `${rem(24)} 0`,
-		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark'
-				? theme.colors.border[1]
-				: theme.colors.border[0]
-		}`,
-		borderRadius: rem(4),
-
-		[theme.fn.smallerThan('sm')]: {
-			top: 0,
-			paddingTop: 0,
-			border: 'none',
-			width: '100%',
-		},
-	},
-
-	routeItem: {
-		display: 'flex',
-		borderRadius: 0,
-		padding: `${rem(10)} ${rem(24)}`,
-
-		'&:hover': {
-			color: theme.colors.purple[0],
-		},
-
-		[theme.fn.largerThan('sm')]: {
-			'&:hover': {
-				borderLeft: `${rem(1)} solid ${theme.colors.purple[0]}`,
-			},
-		},
-	},
-
-	sections: {
-		display: 'flex',
-		flexDirection: 'column',
-		padding: `${rem(8)} ${rem(24)}`,
-	},
-
-	sectionItem: {
-		alignItems: 'center',
-		padding: `${rem(8)} ${rem(16)}`,
-		marginBottom: rem(4),
-		borderRadius: rem(4),
-
-		'&:hover': {
-			backgroundColor: 'rgba(98, 91, 248, 0.1)',
-		},
-	},
-}));
-
 interface RouteItemProps {
 	slug: string;
 	title: string;
@@ -129,20 +64,11 @@ interface RouteItemProps {
 }
 
 const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
-	const { classes } = useStyles();
 	const { hovered, ref } = useHover<HTMLAnchorElement>();
-	const theme = useMantineTheme();
+
 	return (
 		<UnstyledButton
-			className={classes.routeItem}
-			sx={(theme) => ({
-				color: active ? theme.colors.purple[0] : 'inherit',
-				[theme.fn.largerThan('sm')]: {
-					borderLeft: active
-						? `${rem(1)} solid ${theme.colors.purple[0]}`
-						: `${rem(1)} solid transparent`,
-				},
-			})}
+			className={classes['route-item']}
 			component={Link}
 			to={
 				slug === 'changelog'
@@ -151,12 +77,10 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 			}
 			ref={ref}
 			target={slug === 'changelog' ? '_blank' : undefined}
+			data-active={active}
 		>
 			<Group>
-				<Icon
-					height={18}
-					stroke={active ?? hovered ? theme.colors.purple[0] : undefined}
-				/>
+				<Icon height={18} data-active={active ?? hovered} />
 				<Text fw={active ? 700 : 400}>{title}</Text>
 			</Group>
 		</UnstyledButton>
@@ -178,9 +102,6 @@ const SectionItem = ({
 	active,
 	toggle,
 }: SectionItemProps) => {
-	const { classes } = useStyles();
-	const theme = useMantineTheme();
-
 	const handleToggle = () => {
 		// Wait to allow the browser to load new docs
 		setTimeout(() => {
@@ -190,21 +111,14 @@ const SectionItem = ({
 
 	return (
 		<UnstyledButton
-			className={classes.sectionItem}
-			sx={() => ({
-				backgroundColor: active ? 'rgba(98, 91, 248, 0.1)' : 'inherit',
-			})}
+			className={classes['section-item']}
 			component={Link}
 			to={external ?? `/docs/${slug}`}
 			onClick={handleToggle}
+			data-active={active}
 		>
-			<Group position="apart">
-				<Text
-					fw={active ? 700 : 400}
-					color={active ? theme.colors.purple[0] : 'inherit'}
-				>
-					{title}
-				</Text>
+			<Group justify="space-between">
+				<Text fw={active ? 700 : 400}>{title}</Text>
 				{external && <IconExternal />}
 			</Group>
 		</UnstyledButton>
@@ -216,7 +130,6 @@ interface LeftSidebarProps {
 }
 
 const LeftSidebar = ({ toggle }: LeftSidebarProps) => {
-	const { classes } = useStyles();
 	const params = useParams();
 	const route = params['*']?.split('/');
 	const routeSection = route?.[0] as keyof SidebarConfig;
@@ -237,15 +150,8 @@ const LeftSidebar = ({ toggle }: LeftSidebarProps) => {
 				<Flex className={classes.sections}>
 					{Object.keys(sidebarConfig[routeSection]).map((section) => (
 						<Fragment key={section}>
-							<Text
-								key={section}
-								fw={700}
-								fz={13}
-								mt="sm"
-								transform="uppercase"
-								mb="sm"
-							>
-								{section}
+							<Text key={section} fw={700} fz={13} mt="sm" mb="sm">
+								{section.toUpperCase()}
 							</Text>
 							<Divider mb="xs" />
 							{Object.entries(sidebarConfig[routeSection][section]).map(
@@ -260,7 +166,7 @@ const LeftSidebar = ({ toggle }: LeftSidebarProps) => {
 										active={sectionSlug === slug}
 										toggle={toggle}
 									/>
-								)
+								),
 							)}
 						</Fragment>
 					))}

@@ -1,0 +1,26 @@
+/* CarbonAd
+ * All other styles can be found in styles/global.css
+ */
+
+.wrapper {
+	display: flex;
+	margin-top: rem(24px);
+	margin-left: auto;
+	justify-content: center;
+
+	a {
+		text-decoration: none;
+
+		@mixin light {
+			color: var(--mantine-color-text-1);
+		}
+
+		@mixin dark {
+			color: var(--mantine-color-text-0);
+		}
+	}
+
+	@media (max-width: $mantine-breakpoint-md) {
+		display: none;
+	}
+}

@@ -1,29 +1,24 @@
-import { useMantineTheme } from '@mantine/core';
-
+import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
 const IconCaret = ({ height, ...others }: IconProps) => {
-  const theme = useMantineTheme();
-  const stroke =
-    theme.colorScheme === 'dark' ? theme.colors.text[0] : theme.colors.text[1];
-
-  return (
-    <svg
-      height={height ?? 6}
-      viewBox="0 0 10 6"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...others}
-    >
-      <path
-        d="M1 1L5 5L9 1"
-        stroke={stroke}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			height={height ?? 6}
+			viewBox="0 0 10 6"
+			fill="none"
+			className={classes.icon}
+			{...others}
+		>
+			<path
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth={2}
+				d="m1 1 4 4 4-4"
+			/>
+		</svg>
+	);
 };
 
 export { IconCaret };

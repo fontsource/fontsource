@@ -9,7 +9,7 @@ export const InfoTooltip = ({ label }: InfoTooltipProps) => {
 	return (
 		<Tooltip
 			multiline
-			width={240}
+			w={240}
 			withArrow
 			transitionProps={{ duration: 200 }}
 			label={label}

@@ -1,0 +1,30 @@
+/* SearchTextInput */
+
+.wrapper {
+	height: 64px;
+	border-radius: 4px 0 0 0;
+
+	@mixin light {
+		border-bottom: 1px solid var(--mantine-color-border-0);
+
+		&:focus-within {
+			border-color: var(--mantine-color-purple);
+		}
+	}
+
+	@mixin dark {
+		border-bottom: 1px solid var(--mantine-color-border-1);
+
+		&:focus-within {
+			border-color: var(--mantine-color-purple);
+		}
+	}
+}
+
+.left {
+	margin-right: -20px;
+}
+
+.input {
+	height: 100%;
+}

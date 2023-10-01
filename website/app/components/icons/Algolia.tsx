@@ -1,10 +1,15 @@
-import { Stack, Text, useMantineTheme } from '@mantine/core';
+import {
+	Stack,
+	Text,
+	useComputedColorScheme,
+	useMantineColorScheme,
+} from '@mantine/core';
 
 import type { IconProps } from './types';
 
 const IconAlgolia = ({ height, ...others }: IconProps) => {
-	const theme = useMantineTheme();
-	const stroke = theme.colorScheme === 'dark' ? '#FFF' : '#003dff';
+	const { colorScheme } = useMantineColorScheme();
+	const stroke = colorScheme === 'dark' ? '#FFF' : '#003dff';
 
 	return (
 		<svg
@@ -40,11 +45,13 @@ const IconAlgolia = ({ height, ...others }: IconProps) => {
 };
 
 const SearchByAlgolia = (props: IconProps) => {
+	const colorScheme = useComputedColorScheme('light');
 	return (
-		<Stack spacing={0} sx={{ userSelect: 'none', opacity: '80%' }}>
-			<Text span fw={600} fz={8}>
+		<Stack gap={0} style={{ userSelect: 'none', opacity: '80%' }}>
+			<Text span fw={600} fz={8} c={colorScheme === 'light' ? 'gray' : 'white'}>
 				Search by
 			</Text>
+			{/* @ts-expect-error - Mantine v7 typing errors */}
 			<IconAlgolia {...props} />
 		</Stack>
 	);
