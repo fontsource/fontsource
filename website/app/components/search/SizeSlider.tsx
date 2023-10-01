@@ -24,7 +24,8 @@ const SizeSlider = () => {
 					color="purple.0"
 					size="sm"
 					thumbLabel="Change font size"
-					label={undefined}
+					// eslint-disable-next-line unicorn/no-null
+					label={null}
 					value={sizeSelect}
 					onChange={size.set}
 				/>
