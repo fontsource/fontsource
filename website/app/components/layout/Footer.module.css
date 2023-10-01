@@ -28,9 +28,16 @@
 
 .link {
 	font-size: var(--mantine-font-size-sm);
-	color: var(--mantine-color-text.0);
 	padding: rem(27px) var(--mantine-spacing-sm);
 	text-decoration: none;
+
+	@mixin light {
+		color: var(--mantine-color-text-0);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+	}
 
 	&:hover {
 		text-decoration: underline;

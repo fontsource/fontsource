@@ -13,6 +13,7 @@ import { IconDiscord, IconGithub } from '@/components/icons';
 import { LogoText } from '@/components/logo/LogoText';
 
 import classes from './Footer.module.css';
+import { ThemeButton } from './ThemeButton';
 
 interface IconProps extends ActionIconProps {
 	label: string;
@@ -50,7 +51,6 @@ const FooterNavLink = ({ label, to }: FooterNavLinkProps) => {
 export const Footer = ({ ...other }: ContainerProps) => {
 	// TODO: Sponsors
 	// <FooterNavLink label="Sponsors" to="/sponsors" />
-	// <ThemeButton stroke="white" />
 
 	return (
 		// @ts-expect-error - Mantine v7 typing errors
@@ -64,7 +64,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 						<Group gap="md" justify="right">
 							<FooterNavLink label="Fonts" to="/" />
 							<FooterNavLink label="Documentation" to="/docs" />
-
+							<ThemeButton stroke="white" />
 							<Icon
 								label="GitHub"
 								href="https://github.com/fontsource/fontsource"
