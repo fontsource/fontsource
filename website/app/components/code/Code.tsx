@@ -13,9 +13,9 @@ import {
 import { useClipboard } from '@mantine/hooks';
 import { Highlight, Prism } from 'prism-react-renderer';
 
+import classes from '@/components/code/Code.module.css';
 import { IconCopy } from '@/components/icons';
 
-import classes from './Code.module.css';
 import { themeDark, themeLight } from './theme';
 
 interface CodeWrapperProps {

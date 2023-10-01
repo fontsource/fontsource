@@ -48,8 +48,8 @@ WORKDIR /website
 COPY --from=production-deps /website/node_modules /website/node_modules
 
 COPY --from=build /website/build /website/build
-COPY --from=build /website/public /website/public
 COPY --from=build /website/docs /website/docs
+COPY --from=build /website/public /website/public
 COPY package.json ./
 
 EXPOSE 8080
