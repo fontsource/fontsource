@@ -151,13 +151,15 @@ export const generateV2CSS = (
 	tag?: string,
 ): CSSGenerate => {
 	const cssGenerate: CSSGenerate = [];
-	const { id, family, styles, weights, variants, unicodeRange } = metadata;
+	const { id, family, styles, weights, variants, unicodeRange, subsets } =
+		metadata;
 
 	// Find the weight for index.css in the case weight 400 does not exist.
 	const indexWeight = findClosest(weights, 400);
 
 	// Generate CSS
-	const unicodeKeys = Object.keys(unicodeRange);
+	const hasUnicode = Object.keys(unicodeRange).length > 0;
+	const unicodeKeys = hasUnicode ? Object.keys(unicodeRange) : subsets;
 
 	for (const weight of weights) {
 		for (const style of styles) {
@@ -171,7 +173,7 @@ export const generateV2CSS = (
 						style,
 						display: 'swap',
 						weight,
-						unicodeRange: unicodeRange[subset],
+						unicodeRange: hasUnicode ? unicodeRange[subset] : undefined,
 						src: [
 							{
 								url: makeFontFilePath(
