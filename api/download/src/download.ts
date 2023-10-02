@@ -1,4 +1,3 @@
-import { type IDResponse } from 'common-api/types';
 import { StatusError } from 'itty-router';
 import JSZip from 'jszip';
 import PQueue from 'p-queue';
@@ -17,6 +16,7 @@ import {
 	type Manifest,
 	type ManifestVariable,
 } from './manifest';
+import { type IDResponse } from './types';
 
 export const downloadFile = async (manifest: Manifest) => {
 	const { id, subset, weight, style, extension, version, url } = manifest;

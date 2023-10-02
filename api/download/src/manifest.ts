@@ -1,7 +1,7 @@
-import { type IDResponse } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
 import { bucketPath, listBucket } from './bucket';
+import { type IDResponse } from './types';
 import { splitTag } from './util';
 
 export interface Manifest {

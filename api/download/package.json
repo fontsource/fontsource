@@ -12,6 +12,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.6.2",
+		"@flydotio/dockerfile": "^0.4.10",
 		"@types/node": "^20.8.0",
 		"bun-types": "^1.0.3",
 		"diary": "^0.4.4",
@@ -23,8 +24,5 @@
 		"pkgroll": "^2.0.0",
 		"typescript": "^5.2.2",
 		"woff2sfnt-sfnt2woff": "^1.0.0"
-	},
-	"dependencies": {
-		"common-api": "workspace:^"
 	}
 }
