@@ -1,0 +1,30 @@
+{
+	"name": "download",
+	"version": "0.1.0",
+	"main": "dist/index.mjs",
+	"type": "module",
+	"scripts": {
+		"dev": "bun --watch src/index.ts",
+		"build": "bun build src/index.ts --outfile dist/bin --compile --minify",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Ayuhito <hello@ayuhito.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@ayuhito/eslint-config": "^0.6.2",
+		"@types/node": "^20.8.0",
+		"bun-types": "^1.0.3",
+		"diary": "^0.4.4",
+		"eslint": "^8.50.0",
+		"isbot": "^3.7.0",
+		"itty-router": "^4.0.23",
+		"jszip": "^3.10.1",
+		"p-queue": "^7.4.1",
+		"pkgroll": "^2.0.0",
+		"typescript": "^5.2.2",
+		"woff2sfnt-sfnt2woff": "^1.0.0"
+	},
+	"dependencies": {
+		"common-api": "workspace:^"
+	}
+}
