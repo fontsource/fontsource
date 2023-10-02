@@ -6,7 +6,7 @@ import router from './router';
 enable('*');
 
 export default {
-	port: 3001,
+	port: process.env.PORT ?? 3001,
 	fetch: async (req: Request) => {
 		return await router
 			.handle(req)
