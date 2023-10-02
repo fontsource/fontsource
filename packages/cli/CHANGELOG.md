@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.3.19
+
+### Patch Changes
+
+- [#857](https://github.com/fontsource/fontsource/pull/857) [`9a680f3837`](https://github.com/fontsource/fontsource/commit/9a680f3837b9f4e58ab61a8addc8e0e72eea4c68) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): fallback missing unicode range keys to subsets
+
 ## 0.3.18
 
 ### Patch Changes
