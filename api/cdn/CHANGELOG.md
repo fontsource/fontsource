@@ -1,5 +1,11 @@
 # cdn
 
+## 0.2.9
+
+### Patch Changes
+
+- [#867](https://github.com/fontsource/fontsource/pull/867) [`0591a748f1`](https://github.com/fontsource/fontsource/commit/0591a748f134470b3b49abc435df115fad4ba9dd) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(api): use jsdelivr cdn for font files in css
+
 ## 0.2.8
 
 ### Patch Changes
