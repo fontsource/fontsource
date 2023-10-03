@@ -18,6 +18,9 @@ const keepAwake = (minutes: number) => {
 	sleepTimeout = setTimeout(() => process.exit(0), 1000 * 60 * minutes);
 };
 
+// Trigger the timeout on first load
+keepAwake(SLEEP_MINUTES);
+
 export default {
 	port: process.env.PORT ?? 3001,
 	fetch: async (req: Request) => {
