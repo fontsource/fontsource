@@ -2,7 +2,7 @@ import { StatusError } from 'itty-router';
 
 export const updateZip = async (tag: string, env: Env) => {
 	// Try calling download worker
-	const req = new Request(`https://fontsource.org/actions/download/${tag}`, {
+	const req = new Request(`https://download.fontsource.org/${tag}`, {
 		method: 'POST',
 		headers: {
 			Authorization: `Bearer ${env.UPLOAD_KEY}`,
@@ -33,15 +33,12 @@ export const updateZip = async (tag: string, env: Env) => {
 
 export const updateFile = async (tag: string, file: string, env: Env) => {
 	// Try calling download worker
-	const req = new Request(
-		`https://fontsource.org/actions/download/${tag}/${file}`,
-		{
-			method: 'POST',
-			headers: {
-				Authorization: `Bearer ${env.UPLOAD_KEY}`,
-			},
+	const req = new Request(`https://download.fontsource.org/${tag}/${file}`, {
+		method: 'POST',
+		headers: {
+			Authorization: `Bearer ${env.UPLOAD_KEY}`,
 		},
-	);
+	});
 
 	const resp = await fetch(req);
 	if (!resp.ok) {
@@ -66,15 +63,12 @@ export const updateVariableFile = async (
 	env: Env,
 ) => {
 	// Try calling download worker
-	const req = new Request(
-		`https://fontsource.org/actions/download/v/${tag}/${file}`,
-		{
-			method: 'POST',
-			headers: {
-				Authorization: `Bearer ${env.UPLOAD_KEY}`,
-			},
+	const req = new Request(`https://download.fontsource.org/v/${tag}/${file}`, {
+		method: 'POST',
+		headers: {
+			Authorization: `Bearer ${env.UPLOAD_KEY}`,
 		},
-	);
+	});
 
 	const resp = await fetch(req);
 	if (!resp.ok) {
