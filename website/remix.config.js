@@ -1,5 +1,4 @@
 /* eslint-disable unicorn/prefer-module */
-const { builtinModules } = require('node:module');
 
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
@@ -14,7 +13,4 @@ module.exports = {
 	],
 	serverModuleFormat: 'cjs',
 	watchPaths: ['./docs/**/*'],
-	browserNodeBuiltinsPolyfill: {
-		modules: builtinModules,
-	},
 };
