@@ -1,7 +1,7 @@
 import { useSelector } from '@legendapp/state/react';
 import { Center, Group, SegmentedControl, Text, Tooltip } from '@mantine/core';
 import { useEffect } from 'react';
-import { useSortBy } from 'react-instantsearch-hooks-web';
+import { useSortBy } from 'react-instantsearch';
 
 import { DropdownSimple } from '@/components/Dropdown';
 import { IconGrid, IconList } from '@/components/icons';

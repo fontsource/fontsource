@@ -7,7 +7,7 @@ import {
 	SimpleGrid,
 	UnstyledButton,
 } from '@mantine/core';
-import { useConfigure } from 'react-instantsearch-hooks-web';
+import { useConfigure } from 'react-instantsearch';
 
 import { IconTrash } from '@/components/icons';
 

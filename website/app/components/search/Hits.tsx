@@ -2,10 +2,7 @@ import { useSelector } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
 import { useFetcher } from '@remix-run/react';
 import { useEffect, useRef, useState } from 'react';
-import {
-	useInfiniteHits,
-	useInstantSearch,
-} from 'react-instantsearch-hooks-web';
+import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import type { AlgoliaMetadata } from '@/utils/types';

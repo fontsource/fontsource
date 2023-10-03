@@ -1,7 +1,7 @@
 import { TextInput } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
 import { useState } from 'react';
-import { useSearchBox } from 'react-instantsearch-hooks-web';
+import { useSearchBox } from 'react-instantsearch';
 
 import { IconSearch, SearchByAlgolia } from '@/components/icons';
 
