@@ -7,6 +7,7 @@ import router from './router';
 enable('*');
 
 // Have a sleep timer that kills the worker after 5 minutes
+const SLEEP_MINUTES = 2;
 let sleepTimeout: NodeJS.Timeout;
 const keepAwake = (minutes: number) => {
 	if (sleepTimeout) {
@@ -25,7 +26,7 @@ export default {
 			.then((res: Response) => {
 				const path = new URL(req.url).pathname;
 				info(`${req.method} ${path} ${res.status}`);
-				keepAwake(5);
+				keepAwake(SLEEP_MINUTES);
 				return json(res);
 			})
 			.catch((error_: StatusError) => {
@@ -38,7 +39,7 @@ export default {
 					info(`${req.method} ${path} ${error_.status} ${error_.message}`);
 				}
 
-				keepAwake(5);
+				keepAwake(SLEEP_MINUTES);
 				return errorRes(error_);
 			});
 	},
