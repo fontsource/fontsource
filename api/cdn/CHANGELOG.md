@@ -1,5 +1,11 @@
 # cdn
 
+## 0.2.8
+
+### Patch Changes
+
+- [#860](https://github.com/fontsource/fontsource/pull/860) [`5c1acb236f`](https://github.com/fontsource/fontsource/commit/5c1acb236f7157c23855fa75b4a4bb403b49681f) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(api): migrate over to new download vm
+
 ## 0.2.7
 
 ### Patch Changes
