@@ -1,6 +1,5 @@
-import type { LoaderFunction } from '@remix-run/node';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json, redirect } from '@remix-run/node';
-import type { V2_MetaFunction } from '@remix-run/react';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 import { useMemo } from 'react';
 
@@ -14,7 +13,7 @@ interface LoaderData {
 	frontmatter: FrontMatter;
 }
 
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const route = params['*'];
 	if (!route) {
 		throw new Response('Not found', { status: 404 });
@@ -36,7 +35,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 	return json<LoaderData>({ code: mdx.code, frontmatter: mdx.frontmatter });
 };
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const frontmatter = data?.frontmatter as FrontMatter | undefined;
 	const title = frontmatter?.title
 		? `${frontmatter.title} | Documentation | Fontsource`

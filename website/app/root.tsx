@@ -6,7 +6,11 @@ import './styles/global.css';
 import { enableLegendStateReact } from '@legendapp/state/react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { cssBundleHref } from '@remix-run/css-bundle';
-import type { HeadersFunction, LinksFunction } from '@remix-run/node';
+import type {
+	HeadersFunction,
+	LinksFunction,
+	MetaFunction,
+} from '@remix-run/node';
 import {
 	Links,
 	LiveReload,
@@ -14,7 +18,6 @@ import {
 	Outlet,
 	Scripts,
 	ScrollRestoration,
-	type V2_MetaFunction,
 } from '@remix-run/react';
 
 import { AppShell } from '@/components/layout/AppShell';
@@ -23,7 +26,7 @@ import { ogMeta } from '@/utils/meta';
 
 enableLegendStateReact();
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
 	return ogMeta({
 		title: 'Fontsource',
 		description: 'Self-host Open Source fonts in neatly bundled packages.',

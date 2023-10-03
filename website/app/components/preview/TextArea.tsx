@@ -8,7 +8,7 @@ import {
 	useComputedColorScheme,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import type { Metadata } from '@/utils/types';
@@ -84,7 +84,7 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 								opacity: state.transparency / 100,
 								height: 'auto',
 								fontStyle: state.italic ? 'italic' : 'normal',
-								fontVariationSettings: variation,
+								fontVariationSettings: variation || undefined,
 							},
 						}}
 						value={state.text}
@@ -114,19 +114,13 @@ const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
 			<Text className={classes.header}>Font Preview</Text>
 			{!isVariable &&
 				weights.map((weight) => (
-					<>
+					<Fragment key={`s-${weight}`}>
 						<link
-							key={`link-${weight}`}
 							rel="stylesheet"
 							href={`https://r2.fontsource.org/css/${id}@latest/index.css`}
 						/>
-						<TextBox
-							key={weight}
-							weight={weight}
-							family={family}
-							loaded={!isFontLoaded}
-						/>
-					</>
+						<TextBox weight={weight} family={family} loaded={!isFontLoaded} />
+					</Fragment>
 				))}
 			{isVariable && (
 				<link
@@ -139,7 +133,7 @@ const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
 			{isVariable &&
 				weights.map((weight) => (
 					<TextBox
-						key={weight}
+						key={`v-${weight}`}
 						weight={weight}
 						family={variableFamily}
 						loaded={!isFontLoaded}

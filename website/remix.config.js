@@ -1,7 +1,7 @@
-/// import { builtinModules } from 'module';
+/* eslint-disable unicorn/prefer-module */
+const { builtinModules } = require('node:module');
 
 /** @type {import('@remix-run/dev').AppConfig} */
-// eslint-disable-next-line unicorn/prefer-module
 module.exports = {
 	postcss: true,
 	ignoredRouteFiles: ['**/.*'],
@@ -12,13 +12,9 @@ module.exports = {
 		/^unist.*/,
 		/^vfile.*/,
 	],
+	serverModuleFormat: 'cjs',
 	watchPaths: ['./docs/**/*'],
-	future: {
-		v2_dev: true,
-		v2_meta: true,
-		v2_headers: true,
-		v2_errorBoundary: true,
-		v2_routeConvention: true,
-		v2_normalizeFormMethod: true,
+	browserNodeBuiltinsPolyfill: {
+		modules: builtinModules,
 	},
 };
