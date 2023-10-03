@@ -1,6 +1,7 @@
 import { StatusError } from 'itty-router';
 
 import { type Manifest, type ManifestVariable } from './manifest';
+import { keepAwake, SLEEP_MINUTES } from './sleep';
 
 type R2Object = string;
 
@@ -38,6 +39,8 @@ export const bucketPathVariable = ({
 	`${id}@${version}/variable/${subset}-${axes}-${style}.woff2`;
 
 export const listBucket = async (prefix: string) => {
+	keepAwake(SLEEP_MINUTES);
+
 	const resp = await fetch(`https://upload.fontsource.org/list/${prefix}`, {
 		headers: {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -58,6 +61,8 @@ export const putBucket = async (
 	bucketPath: string,
 	body: Uint8Array | ArrayBuffer,
 ) => {
+	keepAwake(SLEEP_MINUTES);
+
 	const resp = await fetch(`https://upload.fontsource.org/put/${bucketPath}`, {
 		method: 'PUT',
 		headers: {
@@ -76,6 +81,8 @@ export const putBucket = async (
 };
 
 export const getBucket = async (bucketPath: string) => {
+	keepAwake(SLEEP_MINUTES);
+
 	const resp = await fetch(`https://upload.fontsource.org/get/${bucketPath}`, {
 		headers: {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion

@@ -2,21 +2,10 @@ import { enable, error as errorDiary, info } from 'diary';
 import { error as errorRes, json, type StatusError } from 'itty-router';
 
 import router from './router';
+import { keepAwake, SLEEP_MINUTES } from './sleep';
 
 // Enable logging
 enable('*');
-
-// Have a sleep timer that kills the worker after 5 minutes
-const SLEEP_MINUTES = 2;
-let sleepTimeout: NodeJS.Timeout;
-const keepAwake = (minutes: number) => {
-	if (sleepTimeout) {
-		clearTimeout(sleepTimeout);
-	}
-
-	// eslint-disable-next-line unicorn/no-process-exit
-	sleepTimeout = setTimeout(() => process.exit(0), 1000 * 60 * minutes);
-};
 
 // Trigger the timeout on first load
 keepAwake(SLEEP_MINUTES);
