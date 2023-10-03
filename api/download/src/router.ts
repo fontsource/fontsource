@@ -28,6 +28,10 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest>();
 
+router.get('/ping', () =>
+	json({ status: 200, message: 'Pong.' }, { status: 200 }),
+);
+
 router.all('*', verifyAuth);
 
 /* Zip file download */

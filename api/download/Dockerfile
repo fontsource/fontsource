@@ -1,18 +1,23 @@
 # Install and build the app
-FROM oven/bun:latest as base
+FROM oven/bun:alpine as deps
+
+RUN mkdir /app
+WORKDIR /app
 
 COPY package.json ./
-COPY src/ ./src/
-
 RUN bun install
+
+FROM oven/bun:alpine as deploy
+
+ENV PORT=8080
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY package.json ./
+COPY ./src ./src
+COPY --from=deps /app/bun.lockb ./
+
+RUN bun install --production
 RUN bun run build
-
-# Build the production image with minimal footprint
-FROM scratch as deploy
-
-ENV PORT="3000"
-
-COPY --from=base /bin /bin
-
-EXPOSE 3000
-ENTRYPOINT [ "/bin" ]
+CMD bun run dist/server.js
