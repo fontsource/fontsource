@@ -3,6 +3,7 @@
 	"references": [
 		{ "path": "api/cdn" },
 		{ "path": "api/common" },
+		{ "path": "api/download" },
 		{ "path": "api/metadata" },
 		{ "path": "api/upload" },
 		{ "path": "packages/cli" },

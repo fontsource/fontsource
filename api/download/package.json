@@ -1,0 +1,27 @@
+{
+	"name": "download",
+	"version": "0.1.0",
+	"main": "dist/server.js",
+	"type": "module",
+	"scripts": {
+		"dev": "bun --watch src/server.ts",
+		"build": "bun build src/server.ts --outdir ./dist --minify",
+		"start": "bun run dist/server.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Ayuhito <hello@ayuhito.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@ayuhito/eslint-config": "^0.6.2",
+		"@types/node": "^20.8.0",
+		"bun-types": "^1.0.3",
+		"eslint": "^8.50.0"
+	},
+	"dependencies": {
+		"diary": "^0.4.4",
+		"itty-router": "^4.0.23",
+		"jszip": "^3.10.1",
+		"p-queue": "^7.4.1",
+		"woff2sfnt-sfnt2woff": "^1.0.0"
+	}
+}
