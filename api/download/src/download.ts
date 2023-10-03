@@ -1,3 +1,4 @@
+import { info } from 'diary';
 import { StatusError } from 'itty-router';
 import JSZip from 'jszip';
 import PQueue from 'p-queue';
@@ -22,6 +23,7 @@ export const downloadFile = async (manifest: Manifest) => {
 	const { id, subset, weight, style, extension, version, url } = manifest;
 
 	const res = await fetch(url);
+	info(`Downloading ${url}`);
 
 	if (!res.ok) {
 		throw new StatusError(500, `Could not fetch ${url}`);
