@@ -35,7 +35,7 @@ router.get('/ping', () =>
 router.all('*', verifyAuth);
 
 /* Zip file download */
-router.post('/download/:tag', withParams, async (request) => {
+router.post('/:tag', withParams, async (request) => {
 	const { tag } = request;
 	const [id, version] = tag.split('@');
 	if (!id || !version) {
@@ -57,7 +57,7 @@ router.post('/download/:tag', withParams, async (request) => {
 });
 
 /* Static font file download */
-router.post('/download/:tag/:file', withParams, async (request) => {
+router.post('/:tag/:file', withParams, async (request) => {
 	const { tag, file } = request;
 	const [id, version] = tag.split('@');
 	if (!id || !version) {
@@ -72,24 +72,20 @@ router.post('/download/:tag/:file', withParams, async (request) => {
 });
 
 /* Variable font file download */
-router.post(
-	'/download/v/:tag/:file',
-	withParams,
-	async (request, env, _ctx) => {
-		const { tag, file } = request;
-		const [id, version] = tag.split('@');
-		if (!id || !version) {
-			throw new StatusError(400, 'Bad Request. Invalid font tag in URL.');
-		}
+router.post('/v/:tag/:file', withParams, async (request, env, _ctx) => {
+	const { tag, file } = request;
+	const [id, version] = tag.split('@');
+	if (!id || !version) {
+		throw new StatusError(400, 'Bad Request. Invalid font tag in URL.');
+	}
 
-		const metadata = await getMetadata(id);
+	const metadata = await getMetadata(id);
 
-		const manifestItem = generateVariableManifestItem(tag, file, metadata);
-		await downloadVariableFile(manifestItem);
+	const manifestItem = generateVariableManifestItem(tag, file, metadata);
+	await downloadVariableFile(manifestItem);
 
-		return json({ status: 201, message: 'Success.' }, { status: 201 });
-	},
-);
+	return json({ status: 201, message: 'Success.' }, { status: 201 });
+});
 
 // 404 for everything else
 router.all('*', () =>
