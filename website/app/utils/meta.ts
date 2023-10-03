@@ -1,11 +1,11 @@
-import type { V2_MetaDescriptor } from '@remix-run/react';
+import type { MetaDescriptor } from '@remix-run/react';
 
 interface OGMeta {
 	title: string;
 	description: string;
 }
 
-export const ogMeta = ({ title, description }: OGMeta): V2_MetaDescriptor[] => {
+export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 	return [
 		{
 			title,

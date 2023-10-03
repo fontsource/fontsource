@@ -42,7 +42,6 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 	// Remove ital from active axes and mark separate ital flag as true
 	const activeAxes = Object.keys(isActive).filter((axis) => axis !== 'ital');
 	const isItal = isActive.ital;
-	console.log(metadata);
 
 	// Determine if it is a standard axis e.g. only contains wght, wdth, slnt, opsz or ital
 	const isStandard = activeAxes.every((axis) =>
