@@ -21,7 +21,7 @@ const makeFontFilePath = (
 	extension: string,
 ) => {
 	// We need to replace square brackets with empty spaces
-	return `https://r2.fontsource.org/fonts/${tag}/${subset}-${weight}-${style}.${extension}`
+	return `https://cdn.jsdelivr.net/fontsource/fonts/${tag}/${subset}-${weight}-${style}.${extension}`
 		.replace('[', '')
 		.replace(']', '');
 };
@@ -32,7 +32,7 @@ const makeFontFileVariablePath = (
 	axes: string,
 	style: string,
 ) => {
-	return `https://r2.fontsource.org/fonts/${tag}/${subset}-${axes}-${style}.woff2`
+	return `https://cdn.jsdelivr.net/fontsource/fonts/${tag}/${subset}-${axes}-${style}.woff2`
 		.replace('[', '')
 		.replace(']', '');
 };
