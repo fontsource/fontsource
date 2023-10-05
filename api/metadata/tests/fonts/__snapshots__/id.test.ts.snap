@@ -28,23 +28,23 @@ exports[`fonts id worker > should return normal id response 1`] = `
       "normal": {
         "devanagari": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/devanagari-300-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/devanagari-300-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/devanagari-300-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-300-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-300-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-300-normal.woff2",
           },
         },
         "latin": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-300-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-300-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-300-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-300-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-300-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-300-normal.woff2",
           },
         },
         "latin-ext": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-300-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-300-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-300-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-300-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-300-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-300-normal.woff2",
           },
         },
       },
@@ -53,23 +53,23 @@ exports[`fonts id worker > should return normal id response 1`] = `
       "normal": {
         "devanagari": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/devanagari-400-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/devanagari-400-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/devanagari-400-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-400-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-400-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-400-normal.woff2",
           },
         },
         "latin": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-400-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-400-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-400-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-400-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-400-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-400-normal.woff2",
           },
         },
         "latin-ext": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-400-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-400-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-400-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-400-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-400-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-400-normal.woff2",
           },
         },
       },
@@ -78,23 +78,23 @@ exports[`fonts id worker > should return normal id response 1`] = `
       "normal": {
         "devanagari": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/devanagari-500-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/devanagari-500-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/devanagari-500-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-500-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-500-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-500-normal.woff2",
           },
         },
         "latin": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-500-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-500-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-500-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-500-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-500-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-500-normal.woff2",
           },
         },
         "latin-ext": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-500-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-500-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-500-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-500-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-500-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-500-normal.woff2",
           },
         },
       },
@@ -103,23 +103,23 @@ exports[`fonts id worker > should return normal id response 1`] = `
       "normal": {
         "devanagari": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/devanagari-600-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/devanagari-600-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/devanagari-600-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-600-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-600-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-600-normal.woff2",
           },
         },
         "latin": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-600-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-600-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-600-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-600-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-600-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-600-normal.woff2",
           },
         },
         "latin-ext": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-600-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-600-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-600-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-600-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-600-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-600-normal.woff2",
           },
         },
       },
@@ -128,23 +128,23 @@ exports[`fonts id worker > should return normal id response 1`] = `
       "normal": {
         "devanagari": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/devanagari-700-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/devanagari-700-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/devanagari-700-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-700-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-700-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/devanagari-700-normal.woff2",
           },
         },
         "latin": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-700-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-700-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-700-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-700-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-700-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-700-normal.woff2",
           },
         },
         "latin-ext": {
           "url": {
-            "ttf": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-700-normal.ttf",
-            "woff": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-700-normal.woff",
-            "woff2": "https://api.fontsource.org/v1/fonts/akshar/latin-ext-700-normal.woff2",
+            "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-700-normal.ttf",
+            "woff": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-700-normal.woff",
+            "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/akshar@latest/latin-ext-700-normal.woff2",
           },
         },
       },

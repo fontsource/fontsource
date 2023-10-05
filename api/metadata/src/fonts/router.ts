@@ -115,7 +115,7 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 // This is a deprecated route, but we need to keep it for backwards compatibility
 router.get('/v1/fonts/:id/:file', withParams, async (request, _env, _ctx) => {
 	const { id, file } = request;
-	const url = `https://r2.fontsource.org/fonts/${id}@latest/${file}`;
+	const url = `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${file}`;
 	return Response.redirect(url, 302);
 });
 
