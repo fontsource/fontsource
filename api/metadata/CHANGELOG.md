@@ -1,5 +1,11 @@
 # api
 
+## 0.2.6
+
+### Patch Changes
+
+- [#869](https://github.com/fontsource/fontsource/pull/869) [`d5bfe10160`](https://github.com/fontsource/fontsource/commit/d5bfe10160ca61f623d3956496cbf394e278952c) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(api): use jsdelivr cache for redirects and metadata variants
+
 ## 0.2.5
 
 ### Patch Changes
