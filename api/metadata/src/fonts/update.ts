@@ -53,9 +53,9 @@ const generateFontVariants = ({
 			for (const subset of subsets) {
 				variants[weight][style][subset] = {
 					url: {
-						woff2: `https://api.fontsource.org/v1/fonts/${id}/${subset}-${weight}-${style}.woff2`,
-						woff: `https://api.fontsource.org/v1/fonts/${id}/${subset}-${weight}-${style}.woff`,
-						ttf: `https://api.fontsource.org/v1/fonts/${id}/${subset}-${weight}-${style}.ttf`,
+						woff2: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.woff2`,
+						woff: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.woff`,
+						ttf: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.ttf`,
 					},
 				};
 			}
