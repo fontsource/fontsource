@@ -22,7 +22,7 @@ export const getOrUpdateVersion = async (
 		return await updateVersion(id, isVariable, env, ctx);
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
 		ctx.waitUntil(updateVersion(id, isVariable, env, ctx));
 	}
 
@@ -46,7 +46,7 @@ export const getOrUpdatePackageStat = async (
 		return await updatePackageStat(id, env, ctx);
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
 		ctx.waitUntil(updatePackageStat(id, env, ctx));
 	}
 

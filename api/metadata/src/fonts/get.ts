@@ -16,7 +16,7 @@ const getOrUpdateArrayMetadata = async (env: Env, ctx: ExecutionContext) => {
 
 	// If the ttl is not set or the cache expiry is less than the current time, then return old value
 	// while revalidating the cache
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
 		ctx.waitUntil(updateArrayMetadata(env, ctx));
 	}
 
@@ -33,7 +33,7 @@ const getOrUpdateId = async (id: string, env: Env, ctx: ExecutionContext) => {
 		return await updateId(id, env, ctx);
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
 		ctx.waitUntil(updateId(id, env, ctx));
 	}
 
