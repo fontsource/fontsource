@@ -36,7 +36,7 @@ export const updateVersion = async (
 	ctx.waitUntil(
 		env.VARIABLE.put(key, JSON.stringify(resp), {
 			metadata: {
-				ttl: Date.now() + KV_TTL,
+				ttl: Date.now() / 1000 + KV_TTL,
 			},
 		}),
 	);
@@ -154,7 +154,7 @@ export const updatePackageStat = async (
 	ctx.waitUntil(
 		env.STATS.put(key, JSON.stringify(resp), {
 			metadata: {
-				ttl: Date.now() + STAT_TTL,
+				ttl: Date.now() / 1000 + STAT_TTL,
 			},
 		}),
 	);

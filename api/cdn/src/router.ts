@@ -202,7 +202,7 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 
 	// If the ttl is not set or the cache expiry is less than the current time, then return old value
 	// while revalidating the cache
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
 		// Else query metadata for existence check
 		const [staticMetadata, variableMetadata] = await Promise.all([
 			getMetadata(id, request.clone(), env),

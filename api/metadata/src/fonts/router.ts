@@ -116,7 +116,7 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 router.get('/v1/fonts/:id/:file', withParams, async (request, _env, _ctx) => {
 	const { id, file } = request;
 	const url = `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${file}`;
-	return Response.redirect(url, 302);
+	return Response.redirect(url, 301);
 });
 
 // 404 for everything else

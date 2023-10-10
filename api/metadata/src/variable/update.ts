@@ -30,7 +30,7 @@ export const updateVariableList = async (env: Env, ctx: ExecutionContext) => {
 		env.VARIABLE_LIST.put('metadata', JSON.stringify(noVariants), {
 			metadata: {
 				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() + KV_TTL,
+				ttl: Date.now() / 1000 + KV_TTL,
 			},
 		}),
 	);
@@ -64,7 +64,7 @@ export const updateVariable = async (
 		env.VARIABLE.put(id, JSON.stringify(dataId), {
 			metadata: {
 				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() + KV_TTL,
+				ttl: Date.now() / 1000 + KV_TTL,
 			},
 		}),
 	);
@@ -95,7 +95,7 @@ export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
 		env.VARIABLE.put('axis_registry', JSON.stringify(registry), {
 			metadata: {
 				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() + KV_TTL,
+				ttl: Date.now() / 1000 + KV_TTL,
 			},
 		}),
 	);

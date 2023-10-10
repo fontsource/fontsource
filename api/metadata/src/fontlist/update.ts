@@ -10,7 +10,7 @@ const updateMetadata = async (env: Env) => {
 	await env.FONTLIST.put('metadata', JSON.stringify(data), {
 		metadata: {
 			// We need to set a custom ttl for a stale-while-revalidate strategy
-			ttl: Date.now() + KV_TTL,
+			ttl: Date.now() / 1000 + KV_TTL,
 		},
 	});
 
@@ -33,7 +33,7 @@ const updateList = async (key: FontlistQueries, env: Env) => {
 	// Store the list in KV
 	await env.FONTLIST.put(key, JSON.stringify(list), {
 		metadata: {
-			ttl: Date.now() + KV_TTL,
+			ttl: Date.now() / 1000 + KV_TTL,
 		},
 	});
 	return list;

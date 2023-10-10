@@ -63,7 +63,7 @@ export const updateCss = async (
 				ctx.waitUntil(
 					env.CSS.put(keyGen(tag, item.filename), item.css, {
 						metadata: {
-							ttl: Date.now() + CSS_TTL,
+							ttl: Date.now() / 1000 + CSS_TTL,
 						},
 					}),
 				);
@@ -83,7 +83,7 @@ export const updateCss = async (
 				ctx.waitUntil(
 					env.CSS.put(keyGen(tag, item.filename), item.css, {
 						metadata: {
-							ttl: Date.now() + CSS_TTL,
+							ttl: Date.now() / 1000 + CSS_TTL,
 						},
 					}),
 				);
@@ -131,7 +131,7 @@ export const updateVariableCSS = async (
 				ctx.waitUntil(
 					env.CSS.put(keyGenV(tag, item.filename), item.css, {
 						metadata: {
-							ttl: Date.now() + CSS_TTL,
+							ttl: Date.now() / 1000 + CSS_TTL,
 						},
 					}),
 				);
@@ -156,7 +156,7 @@ export const updateVariableCSS = async (
 				ctx.waitUntil(
 					env.CSS.put(keyGenV(tag, item.filename), item.css, {
 						metadata: {
-							ttl: Date.now() + CSS_TTL,
+							ttl: Date.now() / 1000 + CSS_TTL,
 						},
 					}),
 				);

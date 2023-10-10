@@ -30,7 +30,7 @@ const updateArrayMetadata = async (env: Env, ctx: ExecutionContext) => {
 	await env.FONTLIST.put('metadata_arr', JSON.stringify(list), {
 		metadata: {
 			// We need to set a custom ttl for a stale-while-revalidate strategy
-			ttl: Date.now() + KV_TTL,
+			ttl: Date.now() / 1000 + KV_TTL,
 		},
 	});
 	return list;
@@ -96,7 +96,7 @@ const updateId = async (
 	await env.FONTS.put(id, JSON.stringify(value), {
 		metadata: {
 			// We need to set a custom ttl for a stale-while-revalidate strategy
-			ttl: Date.now() + KV_TTL,
+			ttl: Date.now() / 1000 + KV_TTL,
 		},
 	});
 	return value;

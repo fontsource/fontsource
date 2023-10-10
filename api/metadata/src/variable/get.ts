@@ -23,7 +23,7 @@ export const getOrUpdateVariableList = async (
 		return await updateVariableList(env, ctx);
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
 		ctx.waitUntil(updateVariableList(env, ctx));
 	}
 
@@ -68,7 +68,7 @@ export const getOrUpdateAxisRegistry = async (
 		return await updateAxisRegistry(env, ctx);
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
+	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
 		ctx.waitUntil(updateAxisRegistry(env, ctx));
 	}
 
