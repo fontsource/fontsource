@@ -63,6 +63,12 @@ router.get('/v1/stats/:id', withParams, async (request, env, ctx) => {
 		return response;
 	}
 
+	// Check if font exists
+	const metadata = await getOrUpdateId(id, env, ctx);
+	if (!metadata) {
+		throw new StatusError(404, 'Not found. Font does not exist.');
+	}
+
 	const stats = await getOrUpdatePackageStat(id, env, ctx);
 	if (!stats) {
 		throw new StatusError(500, 'Internal Server Error. Stats list empty.');
