@@ -1,5 +1,11 @@
 # cdn
 
+## 0.2.10
+
+### Patch Changes
+
+- [#871](https://github.com/fontsource/fontsource/pull/871) [`752ee7fc6d`](https://github.com/fontsource/fontsource/commit/752ee7fc6deb8332546b20bb99ef7d7c890d6761) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): correct ttls to use seconds everywhere
+
 ## 0.2.9
 
 ### Patch Changes
