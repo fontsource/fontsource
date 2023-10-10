@@ -1,5 +1,11 @@
 # api
 
+## 0.2.8
+
+### Patch Changes
+
+- [#874](https://github.com/fontsource/fontsource/pull/874) [`fb1e1fde07`](https://github.com/fontsource/fontsource/commit/fb1e1fde070331e1652bce1873c866313d82fc2b) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): should 404 unknown id for stats
+
 ## 0.2.7
 
 ### Patch Changes
