@@ -102,3 +102,9 @@
 		display: none;
 	}
 }
+
+.hide-tab {
+	@media (max-width: $mantine-breakpoint-xs) {
+		display: none;
+	}
+}

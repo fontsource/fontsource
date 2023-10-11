@@ -80,6 +80,7 @@ export const TabsWrapper = ({
 							navigate(`/fonts/${metadata.id}/cdn`);
 						}}
 						ref={refGlobe}
+						className={classes['hide-tab']}
 					>
 						<Group gap="xs">
 							<IconGlobe
