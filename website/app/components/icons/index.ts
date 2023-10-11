@@ -9,6 +9,7 @@ export { IconExternal } from './External';
 export { IconEye } from './Eye';
 export { IconGeneral } from './General';
 export { IconGithub } from './Github';
+export { IconGlobe } from './Globe';
 export { IconGrid } from './Grid';
 export { IconGuide } from './Guide';
 export { IconHorizontal } from './Horizontal';

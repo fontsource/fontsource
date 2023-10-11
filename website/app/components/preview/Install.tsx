@@ -1,31 +1,23 @@
 import {
 	Badge,
-	Divider,
 	Grid,
 	Group,
-	Stack,
 	Tabs,
 	Text,
 	Title,
 	UnstyledButton,
 } from '@mantine/core';
 import { Link } from '@remix-run/react';
-import millify from 'millify';
 import { useState } from 'react';
 
 import { Code } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
-import {
-	IconDownload,
-	IconEdit,
-	IconExternal,
-	IconGithub,
-	IconNpm,
-} from '@/components/icons';
+import { IconExternal } from '@/components/icons';
 import globalClasses from '@/styles/global.module.css';
 import type { Metadata, VariableData } from '@/utils/types';
 
 import { CarbonAd } from '../CarbonAd';
+import { InfoWrapper } from './Info';
 import classes from './Install.module.css';
 
 interface InstallProps {
@@ -50,7 +42,7 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 
 	const importComment =
 		metadata.weights.length === 1
-			? `// Supports only weight ${metadata.weights[0]}`
+			? `// Supports only weight ${metadata.weights[0]}\n`
 			: `// Supports weights ${metadata.weights[0]}-${
 					metadata.weights.at(-1) ?? 400
 			  }\n`;
@@ -120,12 +112,7 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 							onClick={() => {
 								handleActive(axis);
 							}}
-							style={(theme) => ({
-								backgroundColor: isActive[axis]
-									? theme.colors.purple[0]
-									: undefined,
-								color: isActive[axis] ? theme.colors.text[0] : undefined,
-							})}
+							data-active={Boolean(isActive[axis])}
 						>
 							{axis}
 						</Badge>
@@ -209,12 +196,7 @@ const Static = ({ metadata }: InstallProps) => {
 						onClick={() => {
 							handleActive(weight);
 						}}
-						style={(theme) => ({
-							backgroundColor: isActive[weight]
-								? theme.colors.purple[0]
-								: undefined,
-							color: isActive[weight] ? theme.colors.text[0] : undefined,
-						})}
+						data-active={Boolean(isActive[weight])}
 					>
 						{weight}
 					</Badge>
@@ -225,10 +207,7 @@ const Static = ({ metadata }: InstallProps) => {
 						onClick={() => {
 							setIsItal((prev) => !prev);
 						}}
-						style={(theme) => ({
-							backgroundColor: isItal ? theme.colors.purple[0] : undefined,
-							color: isItal ? theme.colors.text[0] : undefined,
-						})}
+						data-active={isItal}
 					>
 						italic
 					</Badge>
@@ -280,7 +259,7 @@ export const Install = ({
 					<Title>Getting Started</Title>
 					<UnstyledButton
 						component={Link}
-						className={classes['install-button']}
+						className={classes.button}
 						to="/docs/getting-started/install"
 					>
 						<Group gap="xs">
@@ -289,10 +268,7 @@ export const Install = ({
 						</Group>
 					</UnstyledButton>
 				</Group>
-				<Tabs
-					defaultValue={variable ? 'variable' : 'static'}
-					className={classes.tabs}
-				>
+				<Tabs defaultValue={variable ? 'variable' : 'static'}>
 					<Tabs.List>
 						{variable && <Tabs.Tab value="variable">Variable</Tabs.Tab>}
 						<Tabs.Tab value="static">Static</Tabs.Tab>
@@ -307,57 +283,7 @@ export const Install = ({
 				</Tabs>
 			</Grid.Col>
 			<Grid.Col span={{ base: 12, md: 4 }}>
-				<div className={classes['info-wrapper']}>
-					<Text fw={700} fz={15}>
-						Font Details
-					</Text>
-					<Divider my={12} />
-					<Stack gap={8}>
-						<Group gap="xs">
-							<IconDownload />
-							<Text>
-								Downloads:{' '}
-								{downloadCount
-									? millify(downloadCount, { precision: 2 })
-									: 'N/A'}
-							</Text>
-						</Group>
-						<Group gap="xs">
-							<IconEdit />
-							<Text>Last Modified: {metadata.lastModified}</Text>
-						</Group>
-						<Group
-							className={classes['info-button-group']}
-							justify="space-between"
-							grow
-						>
-							<UnstyledButton
-								component="a"
-								className={classes['info-button']}
-								href={`https://github.com/fontsource/font-files/tree/main/fonts/${
-									metadata.category === 'icons' ? 'icons' : metadata.type
-								}/${metadata.id}`}
-								target="_blank"
-							>
-								<Group>
-									<IconGithub />
-									Github
-								</Group>
-							</UnstyledButton>
-							<UnstyledButton
-								component="a"
-								className={classes['info-button']}
-								href={`https://www.npmjs.com/package/@fontsource/${metadata.id}`}
-								target="_blank"
-							>
-								<Group>
-									<IconNpm />
-									NPM
-								</Group>
-							</UnstyledButton>
-						</Group>
-					</Stack>
-				</div>
+				<InfoWrapper metadata={metadata} hits={downloadCount} />
 				<CarbonAd w={332} />
 			</Grid.Col>
 		</Grid>

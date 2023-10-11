@@ -1,0 +1,52 @@
+.wrapper {
+	width: rem(332px);
+	padding: rem(24px);
+	border-radius: rem(4px);
+	margin-left: auto;
+
+	@mixin light {
+		border: rem(1px) solid var(--mantine-color-border-0);
+	}
+
+	@mixin dark {
+		border: rem(1px) solid var(--mantine-color-border-1);
+	}
+
+	@media (max-width: $mantine-breakpoint-md) {
+		width: 100%;
+	}
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: rem(8px) rem(16px);
+	border-radius: rem(4px);
+
+	@mixin light {
+		border: rem(1px) solid var(--mantine-color-border-0);
+	}
+
+	@mixin dark {
+		border: rem(1px) solid var(--mantine-color-border-1);
+	}
+
+	&:hover {
+		@mixin light {
+			background-color: var(--mantine-color-purple-hover);
+		}
+
+		@mixin dark {
+			background-color: var(--mantine-color-purple-hover);
+		}
+	}
+}
+
+.button-group {
+	margin-top: rem(8px);
+
+	@media (max-width: $mantine-breakpoint-md) {
+		margin-top: rem(16px);
+	}
+}

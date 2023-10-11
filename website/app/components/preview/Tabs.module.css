@@ -71,8 +71,7 @@
 
 .download-button {
 	display: flex;
-	align-items: center;
-	gap: 10px;
+
 	background-color: transparent;
 
 	border: none;
@@ -100,6 +99,12 @@
 	}
 
 	@media (max-width: $mantine-breakpoint-sm) {
+		display: none;
+	}
+}
+
+.hide-tab {
+	@media (max-width: $mantine-breakpoint-xs) {
 		display: none;
 	}
 }

@@ -12,5 +12,5 @@ module.exports = {
 		/^vfile.*/,
 	],
 	serverModuleFormat: 'cjs',
-	watchPaths: ['./docs/**/*'],
+	watchPaths: ['./docs/*'],
 };

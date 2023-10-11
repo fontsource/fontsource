@@ -95,7 +95,7 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 	const isDocs = useLocation().pathname.startsWith('/docs');
 
 	return (
-		<ScrollArea.Autosize mah="95vh" className={classes.mobileLinks}>
+		<ScrollArea.Autosize mah="95vh" className={classes['mobile-links']}>
 			<Stack>
 				<Stack px={24}>
 					<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
