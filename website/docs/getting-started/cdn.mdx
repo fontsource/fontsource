@@ -1,0 +1,42 @@
+---
+title: CDN
+section: Contents
+---
+
+## CDN
+
+---
+
+Fontsource has partnered with [jsDelivr](https://www.jsdelivr.com/) for a custom proxy for all of its font files, allowing for niche use cases where a stable font file link is required. All files are versioned according to [Semver](https://semver.org/), and using a specific version tag will give you longer lived caches.
+
+### Usage
+
+To leverage the Fontsource CDN for your project, you can use the import generator provided on the install page of each font. For example, to use [Roboto Flex](/fonts/roboto-flex/cdn), you can access its import generator to generate the relevant URLs and CSS necessary for your projec
+
+## URL Formats
+
+---
+
+The Fontsource CDN provides two primary URL formats for accessing font files:
+
+#### Static URLs
+
+Static font URLs follow this pattern:
+- `https://cdn.jsdelivr.net/fontsource/fonts/{id}@{version}/{subset}-{weight}-{style}.{extension}`
+
+#### Variable Fonts URLs
+
+Variable fonts URLs have the format:
+- `https://cdn.jsdelivr.net/fontsource/fonts/{id}:vf@{version}/{subset}-{axes}-{style}.woff2`
+
+### Example URLs
+
+Here are some example URLs that demonstrate how to use Fontsource's CDN with different fonts and configurations:
+
+- Variable URL for the latest version of Roboto Flex with Latin subset, wght axis, and normal style: `https://cdn.jsdelivr.net/fontsource/fonts/roboto-flex:vf@latest/latin-wght-normal.woff2`
+
+- Variable URL for Roboto Flex version 5.0.8 with Cyrillic Extended subset, normal weight, and normal style: `https://cdn.jsdelivr.net/fontsource/fonts/roboto-flex@5.0.8/cyrillic-ext-wdth-normal.woff2`
+
+- Static URL for Inter version 5.0 with Vietnamese subset, 500 weight, and normal style: `https://cdn.jsdelivr.net/fontsource/fonts/inter@5.0/vietnamese-500-normal.woff2`
+
+- Static URL for Inter version 5 with Greek Extended subset, 400 weight, and italic style: `https://cdn.jsdelivr.net/fontsource/fonts/inter@5/greek-ext-400-italic.woff2`

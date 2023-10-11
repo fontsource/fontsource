@@ -4,8 +4,8 @@
 			"introduction": "Introduction",
 			"install": "Install",
 			"variable": "Variable Fonts",
-			"display": "Font Display",
-			"subsets": "Individual Subsets"
+			"subsets": "Individual Subsets",
+			"cdn": "CDN"
 		},
 		"Icons": {
 			"material-icons": "Material Icons",

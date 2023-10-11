@@ -22,6 +22,8 @@ To use the generator mixin, you need to import the Fontsource mixin module along
 
 ## Usage
 
+---
+
 The generator mixin allows you to generate CSS based on the provided properties. It uses a loop to iterate over the properties and generate CSS from the content block. Here's an example of using the generator mixin:
 
 ```scss
@@ -45,10 +47,11 @@ In this example, the `OpenSans.generator` mixin is called with the desired prope
 
 ### Arguments
 
----
 The generator mixin accepts the same arguments as the faces mixin. You can refer to the [arguments section](./faces-mixin#arguments) of the faces mixin documentation for a complete list of available arguments.
 
 ## Properties
+
+---
 
 The generator mixin provides several properties that can be accessed within the content block. These properties are passed into the content block and can be used to generate dynamic CSS. Here are the properties available:
 
@@ -68,17 +71,17 @@ All the arguments passed into the generator mixin are resolved to their final va
 }
 ```
 
-| Property   | Example                                                                                                  |
-| ---------- | -------------------------------------------------------------------------------------------------------- |
-| metadata   | [see here](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss) |
-| directory  | `~@fontsource/open-sans/files`                                                                           |
-| family     | Open Sans                                                                                                |
-| display    | `swap`                                                                                                   |
-| formats    | `(woff, woff2)`                                                                                          |
-| subsets    | `(latin)`                                                                                                |
-| weights    | `(400, 800)`                                                                                             |
-| styles     | `(normal)`                                                                                               |
-| axes       | `(wght, ital)`                                                                                           |
+| Property  | Example                                                                                                  |
+| --------- | -------------------------------------------------------------------------------------------------------- |
+| metadata  | [see here](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss) |
+| directory | `~@fontsource/open-sans/files`                                                                           |
+| family    | Open Sans                                                                                                |
+| display   | `swap`                                                                                                   |
+| formats   | `(woff, woff2)`                                                                                          |
+| subsets   | `(latin)`                                                                                                |
+| weights   | `(400, 800)`                                                                                             |
+| styles    | `(normal)`                                                                                               |
+| axes      | `(wght, ital)`                                                                                           |
 
 ### Loop Parameters
 
@@ -108,6 +111,8 @@ These are the CSS properties that are calculated and used by default in the face
 | unicode-range | `U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116`                                                                                |
 
 ## Example
+
+---
 
 Here's an example of how the faces mixin uses the generator mixin for its implementation:
 

@@ -426,7 +426,7 @@ export const CDN = ({ metadata, variable, hits }: CDNProps) => {
 					<UnstyledButton
 						component={Link}
 						className={classes.button}
-						to="/docs/getting-started/install"
+						to="/docs/getting-started/cdn"
 					>
 						<Group gap="xs">
 							Documentation

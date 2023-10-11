@@ -31,7 +31,7 @@ const mdxComponents = {
 
 	// Lists
 	ul: (props: any) => <List {...props} />,
-	li: (props: any) => <List.Item {...props} />,
+	li: (props: any) => <List.Item mt="md" {...props} />,
 
 	// Code
 	pre: (props: any) => <div {...props} />, // Unnecessary pre as we use Code component
