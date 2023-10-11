@@ -331,6 +331,9 @@ importers:
       '@fal-works/esbuild-plugin-global-externals':
         specifier: ^2.1.2
         version: 2.1.2
+      '@fontsource-utils/generate':
+        specifier: ^0.3.1
+        version: link:../packages/generate
       '@fontsource-variable/inter':
         specifier: ^5.0.8
         version: 5.0.8
