@@ -77,8 +77,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 		: 'Fontsource';
 
 	const description = data?.metadata.family
-		? `Self-host ${data.metadata.family} in a neatly bundled package.`
-		: 'Self-host Open Source fonts in neatly bundled packages.';
+		? `Download ${data.metadata.family} in a neatly bundled package.`
+		: 'Download Open Source fonts in neatly bundled packages.';
 	return ogMeta({ title, description });
 };
 

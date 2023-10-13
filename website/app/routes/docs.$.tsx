@@ -42,7 +42,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 		: 'Documentation | Fontsource';
 	const description =
 		frontmatter?.description ??
-		'Self-host Open Source fonts in neatly bundled packages.';
+		'Download Open Source fonts in neatly bundled packages.';
 
 	return ogMeta({ title, description });
 };

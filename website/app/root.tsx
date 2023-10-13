@@ -29,7 +29,7 @@ enableLegendStateReact();
 export const meta: MetaFunction = () => {
 	return ogMeta({
 		title: 'Fontsource',
-		description: 'Self-host Open Source fonts in neatly bundled packages.',
+		description: 'Download Open Source fonts in neatly bundled packages.',
 	});
 };
 
