@@ -40,7 +40,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 		: undefined;
 
 	const description = data?.metadata.family
-		? `Download ${data.metadata.family} in a neatly bundled package.`
+		? `Download and self-host the ${data.metadata.family} font in a neatly bundled package.`
 		: undefined;
 	return ogMeta({ title, description });
 };

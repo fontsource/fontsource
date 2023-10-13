@@ -14,7 +14,7 @@ export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 			name: 'description',
 			content:
 				description ??
-				'Download Open Source fonts in neatly bundled NPM packages.',
+				'Download and self-host Open Source fonts in neatly bundled NPM packages.',
 		},
 		{
 			property: 'og:title',
@@ -24,7 +24,7 @@ export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 			property: 'og:description',
 			content:
 				description ??
-				'Download Open Source fonts in neatly bundled NPM packages.',
+				'Download and self-host Open Source fonts in neatly bundled NPM packages.',
 		},
 		{
 			property: 'og:image',
@@ -54,7 +54,7 @@ export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 			name: 'twitter:description',
 			content:
 				description ??
-				'Download Open Source fonts in neatly bundled NPM packages.',
+				'Download and self-host Open Source fonts in neatly bundled NPM packages.',
 		},
 		{
 			name: 'twitter:image',
@@ -76,7 +76,7 @@ export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 				url: 'https://fontsource.org',
 				name: 'Fontsource',
 				description:
-					'Download Open Source fonts in neatly bundled NPM packages.',
+					'Download and self-host Open Source fonts in neatly bundled NPM packages.',
 			},
 		},
 	];
