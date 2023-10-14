@@ -18,5 +18,5 @@ jobs:
           url: "https://fontsource.org/actions/update"
           method: "POST"
           bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
-          data: '{"algolia": true, "download": true, "axisRegistry": true, "docs": true}'
+          data: '{"algolia": true}'
           timeout: 300000

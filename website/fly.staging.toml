@@ -28,10 +28,11 @@ force_https = true
 [[services.ports]]
 port = 443
 handlers = ["tls", "http"]
+
 [services.concurrency]
-type = "connections"
-hard_limit = 60
-soft_limit = 45
+type = "requests"
+hard_limit = 100
+soft_limit = 80
 
 [[services.tcp_checks]]
 interval = "15s"

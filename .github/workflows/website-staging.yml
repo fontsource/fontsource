@@ -46,15 +46,6 @@ jobs:
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_STAGING_TOKEN }}
 
-      - name: Trigger DB updates
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: "https://staging.fontsource.org/actions/update"
-          method: "POST"
-          bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
-          data: '{"download": true, "axisRegistry": true, "docs": true}'
-          timeout: 300000
-
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: "Deployed to staging: https://staging.fontsource.org/"

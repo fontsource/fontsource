@@ -6,7 +6,7 @@ Allow: /
 
 Sitemap: https://fontsource.org/sitemap.xml`;
 
-	if (process.env.NODE_ENV === 'production') {
+	if (process.env.FLY_APP_NAME === 'fontsource') {
 		return new Response(prod, {
 			headers: {
 				'Content-Type': 'text/plain',

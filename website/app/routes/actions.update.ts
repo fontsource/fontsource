@@ -5,9 +5,6 @@ import { updateAlgoliaIndex } from '@/utils/algolia.server';
 
 interface UpdateData {
 	algolia?: boolean;
-	download?: boolean;
-	axisRegistry?: boolean;
-	docs?: boolean;
 	force?: boolean;
 }
 
