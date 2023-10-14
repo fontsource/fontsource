@@ -38,12 +38,3 @@ jobs:
       - run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_PROD_TOKEN }}
-
-      - name: Trigger DB updates
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: "https://fontsource.org/actions/update"
-          method: "POST"
-          bearerToken: ${{ secrets.WEBSITE_UPDATE_TOKEN }}
-          data: '{"algolia": true, "download": true, "axisRegistry": true, "docs": true}'
-          timeout: 300000
