@@ -40,9 +40,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const title = frontmatter?.title
 		? `${frontmatter.title} | Documentation | Fontsource`
 		: 'Documentation | Fontsource';
-	const description =
-		frontmatter?.description ??
-		'Self-host Open Source fonts in neatly bundled packages.';
+	const description = frontmatter?.description;
 
 	return ogMeta({ title, description });
 };

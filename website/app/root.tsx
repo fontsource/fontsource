@@ -27,10 +27,7 @@ import { ogMeta } from '@/utils/meta';
 enableLegendStateReact();
 
 export const meta: MetaFunction = () => {
-	return ogMeta({
-		title: 'Fontsource',
-		description: 'Self-host Open Source fonts in neatly bundled packages.',
-	});
+	return ogMeta({});
 };
 
 export const headers: HeadersFunction = () => ({

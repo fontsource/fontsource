@@ -37,11 +37,11 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const title = data?.metadata.family
 		? `${data.metadata.family} | Fontsource`
-		: 'Fontsource';
+		: undefined;
 
 	const description = data?.metadata.family
-		? `Self-host ${data.metadata.family} in a neatly bundled package.`
-		: 'Self-host Open Source fonts in neatly bundled packages.';
+		? `Download and self-host the ${data.metadata.family} font in a neatly bundled package.`
+		: undefined;
 	return ogMeta({ title, description });
 };
 
