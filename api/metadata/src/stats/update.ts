@@ -1,6 +1,7 @@
 import { type VersionResponse } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
+import { getOrUpdateId } from '../fonts/get';
 import { KV_TTL, STAT_TTL } from '../utils';
 import {
 	type JSDelivrStat,
@@ -71,13 +72,25 @@ export const updatePackageStat = async (
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
+	const metadata = await getOrUpdateId(id, env, ctx);
+	const isVariable = Boolean(metadata?.variable);
+
 	const [
+		// Static stats
 		npmMonthResp,
 		npmTotalResp,
 		jsDelivrMonthResp,
 		jsDelivrYearResp,
 		jsDelivrLastYearResp,
+
+		// Variable stats
+		npmMonthRespVariable,
+		npmTotalRespVariable,
+		jsDelivrMonthRespVariable,
+		jsDelivrYearRespVariable,
+		jsDelivrLastYearRespVariable,
 	] = await Promise.all([
+		// Static stats
 		// NPM only stores last 18 months of data
 		fetch(npmMonth(id, 'static')),
 		fetch(npmTotal(id, 'static')),
@@ -85,9 +98,22 @@ export const updatePackageStat = async (
 		// We can't query total stats so we'll query last 24 months
 		fetch(jsDelivrYear(id, 'static', 'year')),
 		fetch(jsDelivrYear(id, 'static', 's-year')),
+
+		// Variable stats
+		isVariable ? fetch(npmMonth(id, 'variable')) : undefined,
+		isVariable ? fetch(npmTotal(id, 'variable')) : undefined,
+		isVariable ? fetch(jsDelivrMonth(id, 'variable')) : undefined,
+		isVariable ? fetch(jsDelivrYear(id, 'variable', 'year')) : undefined,
+		isVariable ? fetch(jsDelivrYear(id, 'variable', 's-year')) : undefined,
 	]);
 
-	if (!npmMonthResp.ok || !npmTotalResp.ok) {
+	if (
+		!npmMonthResp.ok ||
+		!npmTotalResp.ok ||
+		// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+		(npmMonthRespVariable && !npmMonthRespVariable.ok) ||
+		(npmTotalRespVariable && !npmTotalRespVariable.ok)
+	) {
 		console.log(await npmMonthResp.text());
 		console.log(await npmTotalResp.text());
 		throw new StatusError(
@@ -99,11 +125,21 @@ export const updatePackageStat = async (
 	if (
 		!jsDelivrMonthResp.ok ||
 		!jsDelivrYearResp.ok ||
-		!jsDelivrLastYearResp.ok
+		!jsDelivrLastYearResp.ok ||
+		// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+		(jsDelivrMonthRespVariable && !jsDelivrMonthRespVariable.ok) ||
+		// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+		(jsDelivrYearRespVariable && !jsDelivrYearRespVariable.ok) ||
+		(jsDelivrLastYearRespVariable && !jsDelivrLastYearRespVariable.ok)
 	) {
 		console.log(await jsDelivrMonthResp.text());
 		console.log(await jsDelivrYearResp.text());
 		console.log(await jsDelivrLastYearResp.text());
+		if (isVariable) {
+			console.log(await jsDelivrMonthRespVariable?.text());
+			console.log(await jsDelivrYearRespVariable?.text());
+			console.log(await jsDelivrLastYearRespVariable?.text());
+		}
 		throw new StatusError(
 			500,
 			'Internal Server Error. Unable to fetch download stats from jsDelivr.',
@@ -111,42 +147,82 @@ export const updatePackageStat = async (
 	}
 
 	const [
+		// Static stats
 		npmMonthData,
 		npmTotalData,
 		jsDelivrMonthData,
 		jsDelivrYearData,
 		jsDelivrLastYearData,
+
+		// Variable stats
+		npmMonthDataVariable,
+		npmTotalDataVariable,
+		jsDelivrMonthDataVariable,
+		jsDelivrYearDataVariable,
+		jsDelivrLastYearDataVariable,
 	] = await Promise.all([
 		npmMonthResp.json<NPMDownloadRegistry>(),
 		npmTotalResp.json<NPMDownloadRegistryRange>(),
 		jsDelivrMonthResp.json<JSDelivrStat>(),
 		jsDelivrYearResp.json<JSDelivrStat>(),
 		jsDelivrLastYearResp.json<JSDelivrStat>(),
+
+		// Variable stats
+		isVariable ? npmMonthRespVariable?.json<NPMDownloadRegistry>() : undefined,
+		isVariable
+			? npmTotalRespVariable?.json<NPMDownloadRegistryRange>()
+			: undefined,
+		isVariable ? jsDelivrMonthRespVariable?.json<JSDelivrStat>() : undefined,
+		isVariable ? jsDelivrYearRespVariable?.json<JSDelivrStat>() : undefined,
+		isVariable ? jsDelivrLastYearRespVariable?.json<JSDelivrStat>() : undefined,
 	]);
 
-	const npmTotalCount = npmTotalData.downloads.reduce(
+	const npmTotalCountStatic = npmTotalData.downloads.reduce(
 		(acc, curr) => acc + curr.downloads,
 		0,
 	);
 
+	// Variable stat type assertions
+	const npmTotalCountVariable = npmTotalDataVariable
+		? npmTotalDataVariable.downloads.reduce(
+				(acc, curr) => acc + curr.downloads,
+				0,
+		  )
+		: 0;
+	const npmTotalMonthVariable = npmMonthDataVariable?.downloads ?? 0;
+	const jsDelivrTotalHitsVariable =
+		(jsDelivrYearDataVariable?.hits.total ?? 0) +
+		(jsDelivrLastYearDataVariable?.hits.total ?? 0);
+	const jsDelivrMonthHitsVariable = jsDelivrMonthDataVariable?.hits.total ?? 0;
+
 	const resp: StatsResponseAll = {
 		total: {
-			npmDownloadTotal: npmTotalCount,
-			npmDownloadMonthly: npmMonthData.downloads,
+			npmDownloadTotal: npmTotalCountStatic + npmTotalCountVariable,
+			npmDownloadMonthly: npmMonthData.downloads + npmTotalMonthVariable,
 			jsDelivrHitsTotal:
-				jsDelivrYearData.hits.total + jsDelivrLastYearData.hits.total,
-			jsDelivrHitsMonthly: jsDelivrMonthData.hits.total,
+				jsDelivrYearData.hits.total +
+				jsDelivrLastYearData.hits.total +
+				jsDelivrTotalHitsVariable,
+			jsDelivrHitsMonthly:
+				jsDelivrMonthData.hits.total + jsDelivrMonthHitsVariable,
 		},
 
 		static: {
-			npmDownloadTotal: npmTotalCount,
+			npmDownloadTotal: npmTotalCountStatic,
 			npmDownloadMonthly: npmMonthData.downloads,
 			jsDelivrHitsTotal:
 				jsDelivrYearData.hits.total + jsDelivrLastYearData.hits.total,
 			jsDelivrHitsMonthly: jsDelivrMonthData.hits.total,
 		},
 
-		// TODO: Add variable stats when jsDelivr resolves the new scope
+		...(isVariable && {
+			variable: {
+				npmDownloadTotal: npmTotalCountVariable,
+				npmDownloadMonthly: npmTotalMonthVariable,
+				jsDelivrHitsTotal: jsDelivrTotalHitsVariable,
+				jsDelivrHitsMonthly: jsDelivrMonthHitsVariable,
+			},
+		}),
 	};
 
 	// Add to KV cache
