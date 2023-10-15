@@ -1,5 +1,11 @@
 # api
 
+## 0.2.9
+
+### Patch Changes
+
+- [#879](https://github.com/fontsource/fontsource/pull/879) [`3e923f117d`](https://github.com/fontsource/fontsource/commit/3e923f117d29853a05af0aa38b7f64f9f431c25b) Thanks [@ayuhito](https://github.com/ayuhito)! - feat(api): add variable data to stats api
+
 ## 0.2.8
 
 ### Patch Changes
