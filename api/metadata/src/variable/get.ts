@@ -1,4 +1,4 @@
-import { type VariableMetadataWithVariants } from 'common-api/types';
+import { type VariableMetadata } from 'common-api/types';
 
 import { type TTLMetadata } from '../types';
 import { type AxisRegistry, type VariableList } from './types';
@@ -36,7 +36,7 @@ export const getOrUpdateVariableId = async (
 	ctx: ExecutionContext,
 ) => {
 	const { value, metadata } = await env.VARIABLE.getWithMetadata<
-		VariableMetadataWithVariants,
+		VariableMetadata,
 		TTLMetadata
 	>(id, {
 		type: 'json',

@@ -21,8 +21,8 @@ export const updateVariableList = async (env: Env, ctx: ExecutionContext) => {
 	// Remove variants property from all fonts
 	const noVariants: Record<string, VariableMetadata> = {};
 	for (const [key, value] of Object.entries(data)) {
-		const { variants, ...rest } = value;
-		noVariants[key] = rest;
+		const { axes, family } = value;
+		noVariants[key] = { axes, family };
 	}
 
 	// Save entire metadata into KV first
@@ -59,9 +59,14 @@ export const updateVariable = async (
 		return null;
 	}
 
+	const noVariants: VariableMetadata = {
+		family: dataId.family,
+		axes: dataId.axes,
+	};
+
 	// Save entire metadata into KV first
 	ctx.waitUntil(
-		env.VARIABLE.put(id, JSON.stringify(dataId), {
+		env.VARIABLE.put(id, JSON.stringify(noVariants), {
 			metadata: {
 				// We need to set a custom ttl for a stale-while-revalidate strategy
 				ttl: Date.now() / 1000 + KV_TTL,
@@ -69,7 +74,7 @@ export const updateVariable = async (
 		}),
 	);
 
-	return dataId;
+	return noVariants;
 };
 
 export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
