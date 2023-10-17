@@ -24,8 +24,7 @@ interface CDNRequest extends IRequestStrict {
 	file: string;
 }
 
-// TODO: Replace with immutable once we migrate to jsdelivr proxy
-const IMMUTABLE_CACHE = 'public, max-age=86400, stale-while-revalidate=604800'; // 'public, max-age=31536000, immutable'
+const IMMUTABLE_CACHE = 'public, max-age=31536000, immutable';
 const STALE_CACHE = 'public, max-age=86400, stale-while-revalidate=604800';
 
 export const { preflight, corsify } = createCors();
