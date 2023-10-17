@@ -13,4 +13,4 @@ export const CF_EDGE_TTL = 60 * 60 * 6; // 6 hours
 
 export const KV_TTL = 60 * 60 * 24; // 24 hours
 
-export const STAT_TTL = 60 * 60 * 24; // 24 hours
+export const STAT_TTL = 60 * 60 * 6; // 6 hours

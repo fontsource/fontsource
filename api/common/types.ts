@@ -45,10 +45,10 @@ interface VersionResponse {
 }
 
 interface AxesData {
-	default: string;
-	min: string;
-	max: string;
-	step: string;
+	default: number;
+	min: number;
+	max: number;
+	step: number;
 }
 
 // axes: italic: link
@@ -62,7 +62,6 @@ interface VariableVariants {
 
 interface VariableMetadata {
 	family: string;
-	id: string;
 	axes: Record<string, AxesData>;
 }
 
