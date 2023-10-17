@@ -1,5 +1,14 @@
 # api
 
+## 0.2.10
+
+### Patch Changes
+
+- [#881](https://github.com/fontsource/fontsource/pull/881) [`cd2f04c871`](https://github.com/fontsource/fontsource/commit/cd2f04c871e1d7245e5453aa139db9efbfa2989d) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): remove variable variants
+
+- Updated dependencies [[`cd2f04c871`](https://github.com/fontsource/fontsource/commit/cd2f04c871e1d7245e5453aa139db9efbfa2989d)]:
+  - common-api@0.1.6
+
 ## 0.2.9
 
 ### Patch Changes
