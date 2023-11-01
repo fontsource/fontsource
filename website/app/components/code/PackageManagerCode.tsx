@@ -37,12 +37,8 @@ export const PackageManagerCode = ({ cmd, ...props }: PackageManagerProps) => {
 				</Tabs.Panel>
 				<Tabs.Panel value="pnpm" pt="xs">
 					{/* @ts-expect-error - Invalid typing for new v7 */}
-					<CodeWrapper
-						language={language}
-						code={'pnpm install ' + cmd}
-						{...props}
-					>
-						<CodeHighlight language={language} code={'pnpm install ' + cmd} />
+					<CodeWrapper language={language} code={'pnpm add ' + cmd} {...props}>
+						<CodeHighlight language={language} code={'pnpm add ' + cmd} />
 					</CodeWrapper>
 				</Tabs.Panel>
 			</div>
