@@ -35,7 +35,7 @@ export const updateVersion = async (
 
 	// Add to KV cache
 	ctx.waitUntil(
-		env.VARIABLE.put(key, JSON.stringify(resp), {
+		env.STATS.put(key, JSON.stringify(resp), {
 			metadata: {
 				ttl: Date.now() / 1000 + KV_TTL,
 			},
