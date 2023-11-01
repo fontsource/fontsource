@@ -1,5 +1,11 @@
 # api
 
+## 0.2.11
+
+### Patch Changes
+
+- [#886](https://github.com/fontsource/fontsource/pull/886) [`4883910a53`](https://github.com/fontsource/fontsource/commit/4883910a532c104b04d8e595a4679704c5571ea2) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): store version stats in correct kv cache
+
 ## 0.2.10
 
 ### Patch Changes
