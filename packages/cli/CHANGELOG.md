@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.4.1
+
+### Patch Changes
+
+- [#896](https://github.com/fontsource/fontsource/pull/896) [`e9dc0d13b0`](https://github.com/fontsource/fontsource/commit/e9dc0d13b01f5dcf108312743c4c93847ae41be4) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(cli)!: set gfm to be a peer dependency to fix metadata not being updated
+
 ## 0.3.19
 
 ### Patch Changes
