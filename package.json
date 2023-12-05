@@ -11,7 +11,7 @@
 		"lint": "pnpm -r run lint",
 		"test": "vitest",
 		"ci:lint": "pnpm -r run ci:lint",
-		"ci:test": "CI=true pnpm build && pnpm coverage",
+		"ci:test": "CI=true pnpm --filter \"./packages/*\" run build && pnpm --filter \"./packages/*\" --workspace-concurrency 1 coverage",
 		"ci:version": "changeset version",
 		"ci:publish": "pnpm --filter \"./packages/*\" run build && pnpm --filter \"./packages/*\" publish",
 		"ci:publish-api": "pnpm --filter \"./packages/*\" run build && pnpm --filter \"./api/*\" run deploy"

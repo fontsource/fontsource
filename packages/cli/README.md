@@ -5,7 +5,7 @@ The Fontsource CLI allows users to build fontsource packages locally as well as 
 ## Getting Started
 
 ```bash
-npm install @fontsource-utils/cli
+npm install @fontsource-utils/cli google-font-metadata
 ```
 
 # Commands

@@ -4,7 +4,7 @@ import { getChanged } from '../src/changed';
 
 describe('get changed packages', () => {
 	const config = {
-		packages: ['./packages/publish/tests/fixtures/'],
+		packages: ['./tests/fixtures/'],
 		ignoreExtension: [],
 		commitMessage: 'chore: release new versions',
 	};
@@ -16,13 +16,13 @@ describe('get changed packages', () => {
 		expect(packages).toEqual([
 			{
 				name: 'package1',
-				path: 'packages/publish/tests/fixtures/package1',
+				path: 'tests/fixtures/package1',
 				hash: '2d7f1808da1fa63c',
 				version: '0.1.0',
 			},
 			{
 				name: 'package3',
-				path: 'packages/publish/tests/fixtures/package3diff',
+				path: 'tests/fixtures/package3diff',
 				hash: 'd4a613dee558a143',
 				version: '0.3.0',
 			},
@@ -37,19 +37,19 @@ describe('get changed packages', () => {
 		expect(packages).toEqual([
 			{
 				name: 'package1',
-				path: 'packages/publish/tests/fixtures/package1',
+				path: 'tests/fixtures/package1',
 				hash: '2d7f1808da1fa63c',
 				version: '0.1.0',
 			},
 			{
 				name: 'package2',
-				path: 'packages/publish/tests/fixtures/package2',
+				path: 'tests/fixtures/package2',
 				hash: '2d7f1808da1fa63c',
 				version: '0.2.0',
 			},
 			{
 				name: 'package3',
-				path: 'packages/publish/tests/fixtures/package3diff',
+				path: 'tests/fixtures/package3diff',
 				hash: 'd4a613dee558a143',
 				version: '0.3.0',
 			},
