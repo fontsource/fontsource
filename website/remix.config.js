@@ -10,6 +10,7 @@ module.exports = {
 		'nanoid',
 		/^unist.*/,
 		/^vfile.*/,
+		'instantsearch.js',
 	],
 	serverModuleFormat: 'cjs',
 	watchPaths: ['./docs/*'],

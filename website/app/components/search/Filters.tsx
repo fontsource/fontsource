@@ -25,6 +25,7 @@ const Filters = () => {
 	useConfigure({
 		filters: filterSelect,
 		attributesToHighlight: [],
+		page: 0,
 		hitsPerPage: 24,
 	});
 
