@@ -117,7 +117,7 @@ const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
 					<Fragment key={`s-${weight}`}>
 						<link
 							rel="stylesheet"
-							href={`https://r2.fontsource.org/css/${id}@latest/index.css`}
+							href={`https://r2.fontsource.org/css/${id}@latest/${weight}.css`}
 						/>
 						<TextBox weight={weight} family={family} loaded={!isFontLoaded} />
 					</Fragment>
