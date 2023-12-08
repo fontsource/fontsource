@@ -1,8 +1,4 @@
 import {
-	type ObservablePrimitiveBaseFns,
-	type ObservablePrimitiveChildFns,
-} from '@legendapp/state';
-import {
 	Checkbox,
 	Combobox,
 	Group,
@@ -20,7 +16,7 @@ interface DropdownBaseProps {
 	options: JSX.Element[];
 	label: string;
 	currentState: string | number;
-	selector: ObservablePrimitiveBaseFns<any>;
+	refine?: (value: string) => void;
 	w?: number | string;
 	noBorder?: boolean;
 }
@@ -35,7 +31,7 @@ interface DropdownProps {
 	label: string;
 	items: DropdownItemProps[];
 	currentState: string | number;
-	selector: ObservablePrimitiveBaseFns<any> | ObservablePrimitiveChildFns<any>;
+	refine?: (value: string) => void;
 	w?: number | string;
 	noBorder?: boolean;
 }
@@ -43,10 +39,9 @@ interface DropdownProps {
 const DropdownBase = ({
 	label,
 	options,
-	currentState,
-	selector,
 	w,
 	noBorder,
+	refine,
 }: DropdownBaseProps) => {
 	const combobox = useCombobox({
 		onDropdownClose: () => {
@@ -58,7 +53,7 @@ const DropdownBase = ({
 	});
 
 	const handleValueSelect = (val: string) => {
-		currentState === val ? selector.set('') : selector.set(val);
+		if (refine) refine(val);
 	};
 
 	return (
@@ -101,9 +96,9 @@ const DropdownSimple = ({
 	label,
 	items,
 	currentState,
-	selector,
 	w,
 	noBorder,
+	refine,
 }: DropdownProps) => {
 	const options = items.map((item) => (
 		<Combobox.Option
@@ -120,7 +115,7 @@ const DropdownSimple = ({
 			label={label}
 			options={options}
 			currentState={currentState}
-			selector={selector}
+			refine={refine}
 			w={w}
 			noBorder={noBorder}
 		/>
@@ -131,7 +126,6 @@ const DropdownCheckbox = ({
 	label,
 	items,
 	currentState,
-	selector,
 	w,
 	noBorder,
 }: DropdownProps) => {
@@ -159,7 +153,6 @@ const DropdownCheckbox = ({
 			label={label}
 			options={options}
 			currentState={currentState}
-			selector={selector}
 			w={w}
 			noBorder={noBorder}
 		/>

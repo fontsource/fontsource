@@ -14,14 +14,7 @@ const LanguagesDropdown = () => {
 		value: key,
 	}));
 
-	return (
-		<DropdownCheckbox
-			label={label}
-			items={items}
-			currentState={subset}
-			selector={language}
-		/>
-	);
+	return <DropdownCheckbox label={label} items={items} currentState={subset} />;
 };
 
 const CategoriesDropdown = () => {
@@ -38,7 +31,6 @@ const CategoriesDropdown = () => {
 			label={label}
 			items={items}
 			currentState={categorySelect}
-			selector={category}
 		/>
 	);
 };

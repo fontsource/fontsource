@@ -17,8 +17,8 @@
 		"@fontsource-variable/inter": "^5.0.16",
 		"@fontsource-variable/source-code-pro": "^5.0.17",
 		"@legendapp/state": "^1.11.3",
-		"@mantine/core": "^7.3.0",
-		"@mantine/hooks": "^7.3.0",
+		"@mantine/core": "^7.3.1",
+		"@mantine/hooks": "^7.3.1",
 		"@mdx-js/esbuild": "^2.3.0",
 		"@mdx-js/react": "^2.3.0",
 		"@remix-run/css-bundle": "^2.3.1",
@@ -28,7 +28,7 @@
 		"algoliasearch": "^4.20.0",
 		"clsx": "^2.0.0",
 		"esbuild": "^0.19.8",
-		"instantsearch.js": "^4.61.0",
+		"instantsearch.js": "^4.62.0",
 		"isbot": "^3.7.1",
 		"ky": "^1.1.3",
 		"millify": "^6.1.0",
@@ -38,8 +38,8 @@
 		"prismjs": "^1.29.0",
 		"react": "18.3.0-canary-db69f95e4-20231002",
 		"react-dom": "18.3.0-canary-db69f95e4-20231002",
-		"react-instantsearch": "^7.4.0",
-		"react-instantsearch-core": "^7.4.0",
+		"react-instantsearch": "^7.4.1",
+		"react-instantsearch-core": "^7.4.1",
 		"react-wrap-balancer": "^1.1.0",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-slug": "^5.1.0",
@@ -54,14 +54,14 @@
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.6.2",
 		"@remix-run/dev": "^2.3.1",
-		"@types/node": "^20.10.3",
+		"@types/node": "^20.10.4",
 		"@types/react": "^18.2.42",
 		"@types/react-dom": "^18.2.17",
 		"eslint": "^8.55.0",
 		"postcss": "^8.4.32",
 		"postcss-preset-mantine": "^1.11.1",
 		"postcss-simple-vars": "^7.0.1",
-		"typescript": "^5.3.2"
+		"typescript": "^5.3.3"
 	},
 	"engines": {
 		"node": ">=18"

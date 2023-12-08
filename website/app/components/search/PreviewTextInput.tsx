@@ -17,7 +17,6 @@ const Divider = ({ label, ...others }: DividerProps) => {
 	return (
 		<Menu.Item disabled>
 			<div className={classes.separator}>
-				{/* @ts-expect-error - Mantine v7 prop typing error */}
 				<MantineDivider
 					classNames={{ label: classes['separator-label'] }}
 					label={label}
