@@ -31,6 +31,15 @@ const Sort = ({ count }: SortProps) => {
 		items: sortItems,
 	});
 
+	const sortMenuItems = sortItems.map((item, index) => {
+		return {
+			label: item.label,
+			value: item.value,
+			isRefined: item.value === currentRefinement,
+			count: index,
+		};
+	});
+
 	return (
 		<div className={classes.wrapper}>
 			<Text>{count} families loaded</Text>
@@ -38,8 +47,7 @@ const Sort = ({ count }: SortProps) => {
 				<Group className={classes['display-group']}>
 					<DropdownSimple
 						label={indexMap[currentRefinement]}
-						items={sortItems}
-						currentState={currentRefinement}
+						items={sortMenuItems}
 						refine={refine}
 						w={140}
 					/>

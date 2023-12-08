@@ -15,22 +15,18 @@ import classes from './Dropdown.module.css';
 interface DropdownBaseProps {
 	options: JSX.Element[];
 	label: string;
-	currentState: string | number;
 	refine?: (value: string) => void;
 	w?: number | string;
 	noBorder?: boolean;
 }
-
-interface DropdownItemProps {
-	label?: string;
-	value: any;
-	setValue?: (value: React.SetStateAction<any>) => void;
+interface DropdownItems {
+	label: string;
+	value: string;
+	isRefined: boolean;
 }
-
 interface DropdownProps {
 	label: string;
-	items: DropdownItemProps[];
-	currentState: string | number;
+	items: DropdownItems[];
 	refine?: (value: string) => void;
 	w?: number | string;
 	noBorder?: boolean;
@@ -95,7 +91,6 @@ const DropdownBase = ({
 const DropdownSimple = ({
 	label,
 	items,
-	currentState,
 	w,
 	noBorder,
 	refine,
@@ -104,7 +99,7 @@ const DropdownSimple = ({
 		<Combobox.Option
 			value={item.value}
 			key={item.value}
-			active={currentState === item.value}
+			active={item.isRefined}
 		>
 			{item.label ?? item.value}
 		</Combobox.Option>
@@ -114,7 +109,6 @@ const DropdownSimple = ({
 		<DropdownBase
 			label={label}
 			options={options}
-			currentState={currentState}
 			refine={refine}
 			w={w}
 			noBorder={noBorder}
@@ -125,19 +119,19 @@ const DropdownSimple = ({
 const DropdownCheckbox = ({
 	label,
 	items,
-	currentState,
 	w,
 	noBorder,
+	refine,
 }: DropdownProps) => {
 	const options = items.map((item) => (
 		<Combobox.Option
 			value={item.value}
 			key={item.value}
-			active={currentState === item.value}
+			active={item.isRefined}
 		>
 			<Group gap="sm" justify="flex-start">
 				<Checkbox
-					checked={currentState === item.value}
+					checked={item.isRefined}
 					aria-hidden
 					tabIndex={-1}
 					style={{ pointerEvents: 'none' }}
@@ -152,9 +146,9 @@ const DropdownCheckbox = ({
 		<DropdownBase
 			label={label}
 			options={options}
-			currentState={currentState}
 			w={w}
 			noBorder={noBorder}
+			refine={refine}
 		/>
 	);
 };

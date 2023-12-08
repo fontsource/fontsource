@@ -42,6 +42,9 @@ const SearchBar = () => {
 				input: classes.input,
 			}}
 			autoComplete="off"
+			autoCorrect="off"
+			spellCheck={false}
+			maxLength={512}
 			ref={ref}
 			leftSection={
 				<IconSearch data-active={focused} className={classes.left} />

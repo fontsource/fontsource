@@ -4,7 +4,6 @@ import { useLoaderData } from '@remix-run/react';
 import algoliasearch from 'algoliasearch/lite';
 import { type UiState } from 'instantsearch.js';
 import { type BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
-import { type RouterProps } from 'instantsearch.js/es/middlewares';
 import { renderToString } from 'react-dom/server';
 import {
 	getServerState,
@@ -55,22 +54,37 @@ const routing = (serverUrl: string): any => {
 			},
 		} satisfies Partial<BrowserHistoryArgs<UiState>>),
 		stateMapping: {
-			stateToRoute(uiState: UiState) {
-				console.log('STATE');
-				console.log(uiState);
+			stateToRoute(uiState: any) {
 				const index = uiState[indexName];
 				const result = {
 					query: index.query,
+					// RefinementList facets
+					...(index.refinementList?.subsets
+						? { subsets: index.refinementList.subsets.join(',') }
+						: {}),
+					// Menu facets
+					...(index.menu?.category ? { category: index.menu.category } : {}),
+					// Variable toggle
+					...(index.toggle?.variable === true ? { variable: true } : {}),
+					// Sortby map
 					...(index.sortBy ? { sort: sortMap[index.sortBy] } : {}),
 				};
-				console.log(result);
 				return result;
 			},
-			routeToState(routeState: UiState) {
-				console.log('ROUTE');
-				console.log(routeState);
+			routeToState(routeState: any) {
 				const state = {
 					query: routeState.query,
+					// RefinementList facets
+					...(routeState.subsets
+						? { refinementList: { subsets: routeState.subsets.split(',') } }
+						: {}),
+					// Menu facets
+					...(routeState.category
+						? { menu: { category: routeState.category } }
+						: {}),
+					// Variable toggle
+					...(routeState.variable ? { toggle: { variable: true } } : {}),
+					// Sortby map
 					...(routeState.sort
 						? {
 								sortBy: sortMap[String(routeState.sort)],
@@ -80,7 +94,6 @@ const routing = (serverUrl: string): any => {
 				const result = {
 					[indexName]: state,
 				};
-				console.log(result);
 				return result;
 			},
 		},
