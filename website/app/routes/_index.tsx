@@ -111,7 +111,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
 				<Filters />
-				<InfiniteHits />
 			</InstantSearch>
 		</MantineProvider>,
 		{

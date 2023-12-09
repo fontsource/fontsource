@@ -20,6 +20,7 @@ import classes from './Filters.module.css';
 import { PreviewSelector } from './PreviewTextInput';
 import { SearchBar } from './SearchTextInput';
 import { SizeSlider } from './SizeSlider';
+import { getSortItems } from './Sort';
 
 const Filters = () => {
 	const {
@@ -32,7 +33,7 @@ const Filters = () => {
 	const { refine: clearQueries } = useSearchBox();
 	const { refine: clearRefinements } = useClearRefinements();
 	const { refine: clearSortBy } = useSortBy({
-		items: [{ value: 'prod_POPULAR', label: 'Popular' }],
+		items: getSortItems(),
 	});
 
 	const handleClearRefinement = () => {

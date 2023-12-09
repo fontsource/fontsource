@@ -12,20 +12,24 @@ interface SortProps {
 	count: number;
 }
 
-const indexMap: Record<string, string> = {
+const sortMap: Record<string, string> = {
 	prod_POPULAR: 'Most Popular',
 	prod_NEWEST: 'Last Updated',
 	prod_NAME: 'Name',
 	prod_RANDOM: 'Random',
 };
 
-const Sort = ({ count }: SortProps) => {
-	const displaySelect = useSelector(display);
-
-	const sortItems = Object.entries(indexMap).map(([key, label]) => ({
+export const getSortItems = () => {
+	return Object.entries(sortMap).map(([key, label]) => ({
 		label,
 		value: key,
 	}));
+};
+
+const Sort = ({ count }: SortProps) => {
+	const displaySelect = useSelector(display);
+
+	const sortItems = getSortItems();
 
 	const { currentRefinement, refine } = useSortBy({
 		items: sortItems,
@@ -46,7 +50,7 @@ const Sort = ({ count }: SortProps) => {
 			<Group>
 				<Group className={classes['display-group']}>
 					<DropdownSimple
-						label={indexMap[currentRefinement]}
+						label={sortMap[currentRefinement]}
 						items={sortMenuItems}
 						refine={refine}
 						w={140}
