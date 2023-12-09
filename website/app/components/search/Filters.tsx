@@ -6,7 +6,11 @@ import {
 	SimpleGrid,
 	UnstyledButton,
 } from '@mantine/core';
-import { useClearRefinements, useToggleRefinement } from 'react-instantsearch';
+import {
+	useClearRefinements,
+	useSearchBox,
+	useToggleRefinement,
+} from 'react-instantsearch';
 
 import { IconTrash } from '@/components/icons';
 
@@ -24,7 +28,13 @@ const Filters = () => {
 	} = useToggleRefinement({
 		attribute: 'variable',
 	});
+	const { refine: clearQueries } = useSearchBox();
 	const { refine: clearRefinements } = useClearRefinements();
+
+	const handleClearRefinement = () => {
+		clearQueries('');
+		clearRefinements();
+	};
 
 	return (
 		<Box className={classes.container}>
@@ -63,7 +73,7 @@ const Filters = () => {
 						variant="subtle"
 						className={classes.button}
 						onClick={() => {
-							clearRefinements();
+							handleClearRefinement();
 						}}
 					>
 						Clear all filters

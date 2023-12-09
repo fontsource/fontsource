@@ -51,14 +51,10 @@ const DropdownBase = ({
 	const combobox = useCombobox({
 		onDropdownClose: () => {
 			combobox.resetSelectedOption();
-			combobox.focusTarget();
 			setSearchQuery('');
 		},
 		onDropdownOpen: () => {
 			combobox.updateSelectedOptionIndex('active');
-			if (search) {
-				combobox.focusSearchInput();
-			}
 		},
 	});
 
