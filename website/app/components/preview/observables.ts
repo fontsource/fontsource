@@ -1,5 +1,7 @@
 import { observable } from '@legendapp/state';
 
+import { getPreviewText } from '@/utils/language/language';
+
 export const previewState = observable({
 	language: 'latin',
 	size: 32,
@@ -10,6 +12,11 @@ export const previewState = observable({
 	color: '#000000',
 
 	text: 'Sphinx of black quartz, judge my vow.',
+});
+
+// If language changes, update text using getPreviewText
+previewState.language.onChange((e) => {
+	previewState.text.set(getPreviewText(e.value));
 });
 
 // Verify that the color is a valid hex code
