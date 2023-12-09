@@ -10,12 +10,15 @@ interface JSDelivrAPIVersion {
 
 export const sortSemverList = (list: string[]): string[] => {
 	return list.sort((a, b) => {
-		const aMajor = a.split('.')[0];
-		const bMajor = b.split('.')[0];
-		const aMinor = a.split('.')[1];
-		const bMinor = b.split('.')[1];
-		const aPatch = a.split('.')[2];
-		const bPatch = b.split('.')[2];
+		const aSplit = a.split('.');
+		const bSplit = b.split('.');
+
+		const aMajor = Number(aSplit[0]);
+		const bMajor = Number(bSplit[0]);
+		const aMinor = Number(aSplit[1]);
+		const bMinor = Number(bSplit[1]);
+		const aPatch = Number(aSplit[2]);
+		const bPatch = Number(bSplit[2]);
 		if (aMajor > bMajor) return -1;
 		if (aMajor < bMajor) return 1;
 		if (aMinor > bMinor) return -1;
