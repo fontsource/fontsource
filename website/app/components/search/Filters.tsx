@@ -9,6 +9,7 @@ import {
 import {
 	useClearRefinements,
 	useSearchBox,
+	useSortBy,
 	useToggleRefinement,
 } from 'react-instantsearch';
 
@@ -30,10 +31,14 @@ const Filters = () => {
 	});
 	const { refine: clearQueries } = useSearchBox();
 	const { refine: clearRefinements } = useClearRefinements();
+	const { refine: clearSortBy } = useSortBy({
+		items: [{ value: 'prod_POPULAR', label: 'Popular' }],
+	});
 
 	const handleClearRefinement = () => {
 		clearQueries('');
 		clearRefinements();
+		clearSortBy('prod_POPULAR');
 	};
 
 	return (
