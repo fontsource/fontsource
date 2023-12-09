@@ -29,30 +29,40 @@ const transformCategories = (items: MenuItem[]): MenuItem[] => {
 };
 
 const LanguagesDropdown = () => {
-	const { items, refine } = useRefinementList({
+	const { items, refine, searchForItems } = useRefinementList({
 		attribute: 'subsets',
 		operator: 'and',
-		sortBy: ['name:asc'],
+		sortBy: ['isRefined', 'count:desc'],
 		limit: 100,
 		transformItems: transformSubsets,
 	});
 
 	const label = items.find((item) => item.isRefined)?.label ?? 'All languages';
 
-	return <DropdownCheckbox label={label} items={items} refine={refine} />;
+	return (
+		<DropdownCheckbox
+			label={label}
+			items={items}
+			refine={refine}
+			showCount
+			search={searchForItems}
+		/>
+	);
 };
 
 const CategoriesDropdown = () => {
 	const { items, refine } = useMenu({
 		attribute: 'category',
-		sortBy: ['name:asc'],
+		sortBy: ['isRefined', 'count:desc'],
 		limit: 20,
 		transformItems: transformCategories,
 	});
 
 	const label = items.find((item) => item.isRefined)?.label ?? 'All categories';
 
-	return <DropdownCheckbox label={label} items={items} refine={refine} />;
+	return (
+		<DropdownCheckbox label={label} items={items} refine={refine} showCount />
+	);
 };
 
 export { CategoriesDropdown, LanguagesDropdown };

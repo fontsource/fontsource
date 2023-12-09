@@ -1,4 +1,5 @@
 import {
+	Badge,
 	Checkbox,
 	Combobox,
 	Group,
@@ -7,6 +8,7 @@ import {
 	ScrollArea,
 	useCombobox,
 } from '@mantine/core';
+import { useState } from 'react';
 
 import { IconCaret } from '@/components/icons';
 
@@ -18,11 +20,13 @@ interface DropdownBaseProps {
 	refine?: (value: string) => void;
 	w?: number | string;
 	noBorder?: boolean;
+	search?: (query: string) => void;
 }
 interface DropdownItems {
 	label: string;
 	value: string;
 	isRefined: boolean;
+	count?: number;
 }
 interface DropdownProps {
 	label: string;
@@ -30,6 +34,8 @@ interface DropdownProps {
 	refine?: (value: string) => void;
 	w?: number | string;
 	noBorder?: boolean;
+	showCount?: boolean;
+	search?: (query: string) => void;
 }
 
 const DropdownBase = ({
@@ -38,18 +44,33 @@ const DropdownBase = ({
 	w,
 	noBorder,
 	refine,
+	search,
 }: DropdownBaseProps) => {
+	const [searchQuery, setSearchQuery] = useState('');
+
 	const combobox = useCombobox({
 		onDropdownClose: () => {
 			combobox.resetSelectedOption();
+			combobox.focusTarget();
+			setSearchQuery('');
 		},
 		onDropdownOpen: () => {
 			combobox.updateSelectedOptionIndex('active');
+			if (search) {
+				combobox.focusSearchInput();
+			}
 		},
 	});
 
 	const handleValueSelect = (val: string) => {
 		if (refine) refine(val);
+	};
+
+	const handleSearchQuery = (query: string) => {
+		if (search) {
+			search(query);
+			setSearchQuery(query);
+		}
 	};
 
 	return (
@@ -58,7 +79,7 @@ const DropdownBase = ({
 			onOptionSubmit={handleValueSelect}
 			withinPortal={false}
 			transitionProps={{ duration: 100, transition: 'fade' }}
-			width={w ?? rem(240)}
+			width={w ?? rem(250)}
 		>
 			<Combobox.DropdownTarget>
 				<InputBase
@@ -70,7 +91,7 @@ const DropdownBase = ({
 						combobox.toggleDropdown();
 					}}
 					rightSectionPointerEvents="none"
-					w={w ?? rem(240)}
+					w={w ?? rem(250)}
 					data-no-border={noBorder}
 				>
 					{label}
@@ -78,6 +99,15 @@ const DropdownBase = ({
 			</Combobox.DropdownTarget>
 
 			<Combobox.Dropdown>
+				{search && (
+					<Combobox.Search
+						value={searchQuery}
+						onChange={(event) => {
+							handleSearchQuery(event.currentTarget.value);
+						}}
+						placeholder="Search languages"
+					/>
+				)}
 				<Combobox.Options>
 					<ScrollArea.Autosize type="scroll" mah={240}>
 						{options}
@@ -122,6 +152,8 @@ const DropdownCheckbox = ({
 	w,
 	noBorder,
 	refine,
+	showCount,
+	search,
 }: DropdownProps) => {
 	const options = items.map((item) => (
 		<Combobox.Option
@@ -138,6 +170,16 @@ const DropdownCheckbox = ({
 					readOnly
 				/>
 				<span className={classes.option}>{item.label ?? item.value}</span>
+				{showCount && item.count && (
+					<Badge
+						variant="light"
+						color="gray"
+						size="sm"
+						className={classes.count}
+					>
+						{item.count}
+					</Badge>
+				)}
 			</Group>
 		</Combobox.Option>
 	));
@@ -149,6 +191,7 @@ const DropdownCheckbox = ({
 			w={w}
 			noBorder={noBorder}
 			refine={refine}
+			search={search}
 		/>
 	);
 };
