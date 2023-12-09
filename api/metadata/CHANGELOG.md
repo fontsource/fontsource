@@ -1,5 +1,11 @@
 # api
 
+## 0.2.12
+
+### Patch Changes
+
+- [#902](https://github.com/fontsource/fontsource/pull/902) [`4ee5a5493c`](https://github.com/fontsource/fontsource/commit/4ee5a5493c5b32852c19a6296db19075cc746481) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): invalid version sorting
+
 ## 0.2.11
 
 ### Patch Changes
