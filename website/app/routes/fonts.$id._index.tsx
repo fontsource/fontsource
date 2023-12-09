@@ -7,7 +7,7 @@ import invariant from 'tiny-invariant';
 import { Configure } from '@/components/preview/Configure';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
-import { getPreviewText } from '@/utils/language/language.server';
+import { getPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
 import {
 	getAxisRegistry,

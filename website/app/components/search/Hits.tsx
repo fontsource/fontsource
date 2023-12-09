@@ -1,10 +1,10 @@
 import { useSelector } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
-import { useFetcher } from '@remix-run/react';
 import { useEffect, useRef, useState } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
+import { getPreviewText } from '@/utils/language/language';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 import classes from './Hits.module.css';
@@ -19,10 +19,6 @@ interface HitComponentProps extends Hit {
 	fontSize: number;
 }
 
-interface PreviewFetcher {
-	text: string;
-}
-
 const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 	const displaySelect = useSelector(display);
 
@@ -30,34 +26,24 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 
 	// Change preview text if hit.defSubset is not latin or if it's an icon
 	const previewValueSelect = useSelector(previewValue);
-	const [currentPreview, setCurrentPreview] = useState(previewValueSelect);
-
-	const previewFetcher = useFetcher<PreviewFetcher>();
 	const isNotLatin =
 		hit.defSubset !== 'latin' ||
 		hit.category === 'icons' ||
 		hit.category === 'other';
-	useEffect(() => {
-		if (
-			isNotLatin &&
-			previewFetcher.state === 'idle' &&
-			!previewFetcher.data?.text
-		) {
-			previewFetcher.submit(
-				{ id: hit.objectID, subset: hit.defSubset },
-				{ method: 'POST', action: '/actions/language' },
-			);
-		}
 
-		if (previewFetcher.state === 'idle' && previewFetcher.data?.text) {
-			setCurrentPreview(previewFetcher.data.text);
-		}
-	}, [previewFetcher, isNotLatin, hit.objectID, hit.defSubset]);
+	const [currentPreview, setCurrentPreview] = useState(previewValueSelect);
 
 	// If previewValue changes, update currentPreview
 	useEffect(() => {
 		setCurrentPreview(previewValueSelect);
 	}, [previewValueSelect]);
+
+	// If isNotLatin is true, update currentPreview to the correct preview text
+	useEffect(() => {
+		if (isNotLatin) {
+			setCurrentPreview(getPreviewText(hit.defSubset, hit.objectID));
+		}
+	}, [isNotLatin, hit.defSubset, hit.objectID]);
 
 	return (
 		<Box
