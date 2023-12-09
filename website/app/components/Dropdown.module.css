@@ -30,3 +30,7 @@
 .option {
 	text-transform: capitalize;
 }
+
+.count {
+	margin-left: auto;
+}

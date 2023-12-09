@@ -1,44 +1,48 @@
 import { useSelector } from '@legendapp/state/react';
 import { Center, Group, SegmentedControl, Text, Tooltip } from '@mantine/core';
-import { useEffect } from 'react';
 import { useSortBy } from 'react-instantsearch';
 
 import { DropdownSimple } from '@/components/Dropdown';
 import { IconGrid, IconList } from '@/components/icons';
 
-import { display, sort } from './observables';
+import { display } from './observables';
 import classes from './Sort.module.css';
 
 interface SortProps {
 	count: number;
 }
 
-const indexMap = {
+const sortMap: Record<string, string> = {
 	prod_POPULAR: 'Most Popular',
 	prod_NEWEST: 'Last Updated',
 	prod_NAME: 'Name',
 	prod_RANDOM: 'Random',
 };
 
+export const getSortItems = () => {
+	return Object.entries(sortMap).map(([key, label]) => ({
+		label,
+		value: key,
+	}));
+};
+
 const Sort = ({ count }: SortProps) => {
-	const sortSelect = useSelector(sort);
 	const displaySelect = useSelector(display);
 
-	const sortItems = [
-		{ value: 'prod_POPULAR', label: 'Most Popular' },
-		{ value: 'prod_NEWEST', label: 'Last Updated' },
-		{ value: 'prod_NAME', label: 'Name' },
-		{ value: 'prod_RANDOM', label: 'Random' },
-	];
+	const sortItems = getSortItems();
 
-	const { refine } = useSortBy({
+	const { currentRefinement, refine } = useSortBy({
 		items: sortItems,
 	});
 
-	useEffect(() => {
-		refine(sortSelect);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [sortSelect]);
+	const sortMenuItems = sortItems.map((item, index) => {
+		return {
+			label: item.label,
+			value: item.value,
+			isRefined: item.value === currentRefinement,
+			count: index,
+		};
+	});
 
 	return (
 		<div className={classes.wrapper}>
@@ -46,10 +50,9 @@ const Sort = ({ count }: SortProps) => {
 			<Group>
 				<Group className={classes['display-group']}>
 					<DropdownSimple
-						label={indexMap[sortSelect]}
-						items={sortItems}
-						currentState={sortSelect}
-						selector={sort}
+						label={sortMap[currentRefinement]}
+						items={sortMenuItems}
+						refine={refine}
 						w={140}
 					/>
 					<Text span ml="xs" mr={-8} fz={14}>

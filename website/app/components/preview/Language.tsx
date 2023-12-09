@@ -3,7 +3,7 @@ import { useFetcher } from '@remix-run/react';
 import { useEffect } from 'react';
 
 import { DropdownSimple } from '@/components/Dropdown';
-import { subsetsMap } from '@/utils/language/subsets';
+import { subsetToLanguage } from '@/utils/language/subsets';
 
 import { previewState } from './observables';
 
@@ -37,16 +37,16 @@ const LanguageSelector = ({ subsets }: LanguageSelectorProps) => {
 	}, [languageFetcher]);
 
 	const items = subsets.map((lang) => ({
-		label: subsetsMap[lang as keyof typeof subsetsMap],
+		label: subsetToLanguage(lang),
 		value: lang,
+		isRefined: lang === language,
 	}));
 
 	return (
 		<DropdownSimple
-			label={subsetsMap[language as keyof typeof subsetsMap]}
-			currentState={language}
+			label={subsetToLanguage(language)}
 			items={items}
-			selector={previewState.language}
+			refine={previewState.language.set}
 			w={284}
 		/>
 	);
