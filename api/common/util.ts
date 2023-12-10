@@ -2,7 +2,7 @@ import { StatusError } from 'itty-router';
 import {
 	IDResponse,
 	StatusErrorObject,
-	VariableMetadataWithVariants,
+	VariableMetadata,
 	VersionResponse,
 } from './types';
 
@@ -52,7 +52,7 @@ export const getVariableMetadata = async (
 		);
 	}
 
-	return await metadata.json<VariableMetadataWithVariants>();
+	return await metadata.json<VariableMetadata>();
 };
 
 export const findVersion = (
