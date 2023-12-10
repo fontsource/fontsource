@@ -8,21 +8,18 @@ export const getPreviewText = (subset: string, id?: string) => {
 			return '0123456789';
 		}
 
-		case 'material-icons': {
-			return 'photo_camerathumb_upassignmentcreate_new_folderinsert_invitationdraftscredit_cardtimercheck_boxclose';
-		}
-
+		case 'material-icons':
 		case 'material-icons-outlined':
 		case 'material-icons-round':
 		case 'material-icons-sharp':
 		case 'material-icons-two-tone': {
-			return 'photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close';
+			return 'photo_camerathumb_upassignmentcreate_new_folderinsert_invitationdraftscredit_cardtimercheck_boxclose';
 		}
 
 		case 'material-symbols-outlined':
 		case 'material-symbols-rounded':
 		case 'material-symbols-sharp': {
-			return 'search settings home person add shopping_cart favorite';
+			return 'searchsettingshomepersonaddshopping_cartcheck_circlefavoritelogouttrophy';
 		}
 
 		case 'yakuhanjp':
