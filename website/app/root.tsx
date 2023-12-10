@@ -1,5 +1,6 @@
 import '@fontsource-variable/inter/wght.css';
 import '@fontsource-variable/source-code-pro/wght.css';
+import 'fallback-font/fallback-outline.css';
 import '@mantine/core/styles.css';
 import './styles/global.css';
 

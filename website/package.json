@@ -28,6 +28,7 @@
 		"algoliasearch": "^4.20.0",
 		"clsx": "^2.0.0",
 		"esbuild": "^0.19.8",
+		"fallback-font": "^1.0.1",
 		"instantsearch.js": "^4.62.0",
 		"isbot": "^3.7.1",
 		"ky": "^1.1.3",
