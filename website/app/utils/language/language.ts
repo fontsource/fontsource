@@ -8,7 +8,10 @@ export const getPreviewText = (subset: string, id?: string) => {
 			return '0123456789';
 		}
 
-		case 'material-icons':
+		case 'material-icons': {
+			return 'photo_camerathumb_upassignmentcreate_new_folderinsert_invitationdraftscredit_cardtimercheck_boxclose';
+		}
+
 		case 'material-icons-outlined':
 		case 'material-icons-round':
 		case 'material-icons-sharp':
