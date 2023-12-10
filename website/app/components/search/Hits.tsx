@@ -54,7 +54,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 		>
 			<link
 				rel="stylesheet"
-				href={`https://r2.fontsource.org/css/${hit.objectID}@latest/index.css`}
+				href={`https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`}
 			/>
 			<Skeleton visible={!isFontLoaded}>
 				<Text fz={fontSize} style={{ fontFamily: `"${hit.family}"` }}>
