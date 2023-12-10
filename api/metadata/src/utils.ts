@@ -4,6 +4,9 @@ export const METADATA_URL =
 export const VARIABLE_URL =
 	'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/variable.json';
 
+export const VARIABLE_ICONS_URL =
+	'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/icons-variable.json';
+
 export const AXIS_REGISTRY_URL =
 	'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/axis-registry.json';
 
