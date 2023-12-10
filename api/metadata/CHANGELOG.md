@@ -1,5 +1,14 @@
 # api
 
+## 0.2.13
+
+### Patch Changes
+
+- [#906](https://github.com/fontsource/fontsource/pull/906) [`35d51de765`](https://github.com/fontsource/fontsource/commit/35d51de76586110383a8e1ff9c414204b62e367c) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): include variable icons metadata to variable api
+
+- Updated dependencies [[`35d51de765`](https://github.com/fontsource/fontsource/commit/35d51de76586110383a8e1ff9c414204b62e367c)]:
+  - common-api@0.1.7
+
 ## 0.2.12
 
 ### Patch Changes
