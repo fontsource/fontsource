@@ -75,7 +75,7 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 						variant="unstyled"
 						styles={{
 							input: {
-								fontFamily: `"${family}"`,
+								fontFamily: `"${family}", "Fallback Outline"`,
 								fontWeight: weight,
 								fontSize: state.size,
 								color: state.color,

@@ -57,7 +57,10 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 				href={`https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`}
 			/>
 			<Skeleton visible={!isFontLoaded}>
-				<Text fz={fontSize} style={{ fontFamily: `"${hit.family}"` }}>
+				<Text
+					fz={fontSize}
+					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
+				>
 					{currentPreview}
 				</Text>
 			</Skeleton>
