@@ -1,5 +1,14 @@
 # cdn
 
+## 0.2.14
+
+### Patch Changes
+
+- [#909](https://github.com/fontsource/fontsource/pull/909) [`c9796f8e94`](https://github.com/fontsource/fontsource/commit/c9796f8e945a20ee0418174104b7b25533d836a9) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): generate variable variants for css generator
+
+- Updated dependencies [[`c9796f8e94`](https://github.com/fontsource/fontsource/commit/c9796f8e945a20ee0418174104b7b25533d836a9)]:
+  - common-api@0.1.8
+
 ## 0.2.13
 
 ### Patch Changes
