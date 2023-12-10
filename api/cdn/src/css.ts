@@ -5,15 +5,14 @@ import {
 	generateV2CSS,
 	generateVariableCSS,
 } from '@fontsource-utils/cli';
-import {
-	type IDResponse,
-	type VariableMetadataWithVariants,
-} from 'common-api/types';
+import { type IDResponse, type VariableMetadata } from 'common-api/types';
 import { StatusError } from 'itty-router';
+
+import { generateVariableVariants } from './util';
 
 const CSS_TTL = 60 * 60 * 24; // 1 day
 
-const makeFontFilePath = (
+export const makeFontFilePath = (
 	tag: string,
 	subset: string,
 	weight: string,
@@ -26,7 +25,7 @@ const makeFontFilePath = (
 		.replace(']', '');
 };
 
-const makeFontFileVariablePath = (
+export const makeFontFileVariablePath = (
 	tag: string,
 	subset: string,
 	axes: string,
@@ -92,7 +91,7 @@ export const updateCss = async (
 	}
 
 	if (!css) {
-		throw new StatusError(404, 'Not Found. Invalid filename.');
+		throw new StatusError(404, 'Not Found. Unable to find filename.');
 	}
 
 	return css;
@@ -103,7 +102,7 @@ export const updateVariableCSS = async (
 	version: string,
 	file: string,
 	metadata: IDResponse,
-	variableMeta: VariableMetadataWithVariants,
+	variableMeta: VariableMetadata,
 	env: Env,
 	ctx: ExecutionContext,
 ): Promise<string> => {
@@ -112,10 +111,15 @@ export const updateVariableCSS = async (
 	const tag = `${id}@${version}`;
 	const vfTag = `${id}:vf@${version}`;
 
+	const generateMeta = {
+		id,
+		...generateVariableVariants(metadata, variableMeta),
+	};
+
 	// Icons are handled differently
 	if (category === 'icons' && type === 'google') {
 		const cssGenerate = generateIconVariableCSS(
-			variableMeta,
+			generateMeta,
 			makeFontFileVariablePath,
 			vfTag,
 		);
@@ -140,7 +144,7 @@ export const updateVariableCSS = async (
 	} else {
 		const cssGenerate = generateVariableCSS(
 			metadata,
-			variableMeta,
+			generateMeta,
 			makeFontFileVariablePath,
 			vfTag,
 		);
@@ -165,7 +169,7 @@ export const updateVariableCSS = async (
 	}
 
 	if (!css) {
-		throw new StatusError(404, 'Not Found. Invalid filename.');
+		throw new StatusError(440, 'Not Found. Unable to find filename.');
 	}
 
 	return css;

@@ -1,5 +1,13 @@
+import {
+	type IDResponse,
+	type VariableMetadata,
+	type VariableMetadataWithVariants,
+	type VariableVariants,
+} from 'common-api/types';
 import { findVersion, getVersion } from 'common-api/util';
 import { StatusError } from 'itty-router';
+
+import { makeFontFileVariablePath } from './css';
 
 const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'zip'] as const;
 type AcceptedExtension = (typeof ACCEPTED_EXTENSIONS)[number];
@@ -92,5 +100,76 @@ export const splitTag = async (
 		id,
 		version: findVersion(id, versionTag, staticVar),
 		isVariable: Boolean(isVariable),
+	};
+};
+
+export const generateVariableVariants = (
+	metadata: IDResponse,
+	variableMeta: VariableMetadata,
+): VariableMetadataWithVariants => {
+	const variants: VariableVariants = {};
+	// Remove ital from axes keys if it exists
+	const keys = Object.keys(variableMeta.axes).filter((key) => key !== 'ital');
+
+	for (const axis of keys) {
+		variants[axis] = {};
+
+		for (const style of metadata.styles) {
+			variants[axis][style] = {};
+
+			for (const subset of metadata.subsets) {
+				const value = makeFontFileVariablePath(
+					metadata.family,
+					style,
+					subset,
+					axis,
+				);
+				variants[axis][style][subset] = value;
+			}
+		}
+	}
+
+	// Check if axes have any of the following standard keys
+	const standardKeys = new Set(['wght', 'wdth', 'slnt', 'opsz']);
+	const isStandard = keys.some((key) => standardKeys.has(key));
+	if (isStandard) {
+		for (const style of metadata.styles) {
+			variants.standard = {};
+			variants.standard[style] = {};
+
+			for (const subset of metadata.subsets) {
+				const value = makeFontFileVariablePath(
+					metadata.family,
+					style,
+					subset,
+					'standard',
+				);
+				variants.standard[style][subset] = value;
+			}
+		}
+	}
+
+	// Check if axes do not match the standard keys
+	const isFull = keys.some((key) => !standardKeys.has(key));
+	if (isFull) {
+		for (const style of metadata.styles) {
+			variants.full = {};
+			variants.full[style] = {};
+
+			for (const subset of metadata.subsets) {
+				const value = makeFontFileVariablePath(
+					metadata.family,
+					style,
+					subset,
+					'full',
+				);
+				variants.full[style][subset] = value;
+			}
+		}
+	}
+
+	return {
+		...variableMeta,
+		variants,
 	};
 };

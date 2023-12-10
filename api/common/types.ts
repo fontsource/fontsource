@@ -45,10 +45,10 @@ interface VersionResponse {
 }
 
 interface AxesData {
-	default: number;
-	min: number;
-	max: number;
-	step: number;
+	default: string;
+	min: string;
+	max: string;
+	step: string;
 }
 
 // axes: italic: link
@@ -74,6 +74,7 @@ export type {
 	IDResponse,
 	StatusErrorObject,
 	VersionResponse,
+	VariableVariants,
 	VariableMetadata,
 	VariableMetadataWithVariants,
 };

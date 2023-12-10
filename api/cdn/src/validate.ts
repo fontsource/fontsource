@@ -1,7 +1,4 @@
-import {
-	type IDResponse,
-	type VariableMetadataWithVariants,
-} from 'common-api/types';
+import { type IDResponse, type VariableMetadata } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
 import { isAcceptedExtension } from './util';
@@ -44,7 +41,7 @@ export const validateFontFilename = (file: string, metadata: IDResponse) => {
 export const validateVariableFontFileName = (
 	file: string,
 	metadata: IDResponse,
-	variableMeta?: VariableMetadataWithVariants,
+	variableMeta?: VariableMetadata,
 ) => {
 	if (!variableMeta) {
 		throw new StatusError(400, 'Bad Request. Variable font not found.');
@@ -137,7 +134,7 @@ export const validateCSSFilename = (file: string, metadata: IDResponse) => {
 
 export const validateVCSSFilename = (
 	file: string,
-	variableMeta: VariableMetadataWithVariants,
+	variableMeta: VariableMetadata,
 ) => {
 	const [filename, extension] = file.split('.');
 	if (!extension || extension !== 'css') {
