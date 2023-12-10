@@ -11,13 +11,13 @@ import {
 import { updateCss, updateVariableCSS } from './css';
 import type { CFRouterContext, TTLMetadata } from './types';
 import { updateFile, updateVariableFile, updateZip } from './update';
+import { splitTag } from './util';
 import {
-	splitTag,
 	validateCSSFilename,
 	validateFontFilename,
 	validateVariableFontFileName,
 	validateVCSSFilename,
-} from './util';
+} from './validate';
 
 interface CDNRequest extends IRequestStrict {
 	tag: string;

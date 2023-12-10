@@ -1,16 +1,16 @@
 import {
 	type IDResponse,
+	type VariableMetadata,
 	type VariableMetadataWithVariants,
+	type VariableVariants,
 } from 'common-api/types';
 import { findVersion, getVersion } from 'common-api/util';
 import { StatusError } from 'itty-router';
 
+import { makeFontFileVariablePath } from './css';
+
 const ACCEPTED_EXTENSIONS = ['woff2', 'woff', 'ttf', 'zip'] as const;
 type AcceptedExtension = (typeof ACCEPTED_EXTENSIONS)[number];
-
-const isNumeric = (num: any) =>
-	(typeof num === 'number' || (typeof num === 'string' && num.trim() !== '')) &&
-	!Number.isNaN(num as number);
 
 interface Tag {
 	id: string;
@@ -103,162 +103,73 @@ export const splitTag = async (
 	};
 };
 
-export const validateFontFilename = (file: string, metadata: IDResponse) => {
-	const [filename, extension] = file.split('.');
-	if (!extension || !isAcceptedExtension(extension)) {
-		throw new StatusError(400, 'Bad Request. Invalid file extension.');
-	}
-
-	if (file === 'download.zip') {
-		return;
-	}
-
-	const { weights, styles, subsets } = metadata;
-
-	const filenameArr = filename.split('-');
-	const style = filenameArr.pop();
-	const weight = filenameArr.pop();
-	const subset = filenameArr.join('-');
-
-	// Accept id-subset-weight-style
-	if (
-		style &&
-		// It could also be a numbered subset
-		(subsets.includes(subset) || isNumeric(subset)) &&
-		weights.includes(Number(weight)) &&
-		styles.includes(style)
-	) {
-		return;
-	}
-
-	throw new StatusError(404, 'Not Found. Invalid filename.');
-};
-
-export const validateVariableFontFileName = (
-	file: string,
+export const generateVariableVariants = (
 	metadata: IDResponse,
-	variableMeta?: VariableMetadataWithVariants,
-) => {
-	if (!variableMeta) {
-		throw new StatusError(400, 'Bad Request. Variable font not found.');
+	variableMeta: VariableMetadata,
+): VariableMetadataWithVariants => {
+	const variants: VariableVariants = {};
+	// Remove ital from axes keys if it exists
+	const keys = Object.keys(variableMeta.axes).filter((key) => key !== 'ital');
+
+	for (const axis of keys) {
+		variants[axis] = {};
+
+		for (const style of metadata.styles) {
+			variants[axis][style] = {};
+
+			for (const subset of metadata.subsets) {
+				const value = makeFontFileVariablePath(
+					metadata.family,
+					style,
+					subset,
+					axis,
+				);
+				variants[axis][style][subset] = value;
+			}
+		}
 	}
 
-	const [filename, extension] = file.split('.');
-	if (!extension || extension !== 'woff2') {
-		throw new StatusError(400, 'Bad Request. Invalid file extension.');
+	// Check if axes have any of the following standard keys
+	const standardKeys = new Set(['wght', 'wdth', 'slnt', 'opsz']);
+	const isStandard = keys.some((key) => standardKeys.has(key));
+	if (isStandard) {
+		for (const style of metadata.styles) {
+			variants.standard = {};
+			variants.standard[style] = {};
+
+			for (const subset of metadata.subsets) {
+				const value = makeFontFileVariablePath(
+					metadata.family,
+					style,
+					subset,
+					'standard',
+				);
+				variants.standard[style][subset] = value;
+			}
+		}
 	}
 
-	const { subsets, styles } = metadata;
-	const { axes } = variableMeta;
+	// Check if axes do not match the standard keys
+	const isFull = keys.some((key) => !standardKeys.has(key));
+	if (isFull) {
+		for (const style of metadata.styles) {
+			variants.full = {};
+			variants.full[style] = {};
 
-	const filenameArr = filename.split('-');
-	const style = filenameArr.pop();
-	const axesKey = filenameArr.pop();
-	const subset = filenameArr.join('-');
-
-	const isValidAxesKey =
-		Boolean(axesKey && axes[axesKey]) ||
-		axesKey === 'standard' ||
-		axesKey === 'full';
-
-	// Accept id-subset-axes-style
-	if (
-		(subsets.includes(subset) || isNumeric(subset)) &&
-		isValidAxesKey &&
-		style &&
-		styles.includes(style)
-	) {
-		return;
+			for (const subset of metadata.subsets) {
+				const value = makeFontFileVariablePath(
+					metadata.family,
+					style,
+					subset,
+					'full',
+				);
+				variants.full[style][subset] = value;
+			}
+		}
 	}
 
-	throw new StatusError(404, 'Not Found. Invalid filename.');
-};
-
-export const validateCSSFilename = (file: string, metadata: IDResponse) => {
-	const [filename, extension] = file.split('.');
-	if (!extension || extension !== 'css') {
-		throw new StatusError(400, 'Bad Request. Invalid file extension.');
-	}
-
-	// Accept index.css
-	if (filename === 'index') {
-		return;
-	}
-
-	const { weights, styles, subsets } = metadata;
-
-	// Accept weight.css
-	if (weights.includes(Number(filename))) {
-		return;
-	}
-
-	// Accept weight-italic.css
-	let weight, style, subset;
-	[weight, style] = filename.split('-');
-	if (
-		weights.includes(Number(weight)) &&
-		style === 'italic' &&
-		styles.includes(style)
-	) {
-		return;
-	}
-
-	// Accept subset-weight.css
-	const subsetWeight = filename.split('-');
-	weight = subsetWeight.pop();
-	subset = subsetWeight.join('-');
-	if (subsets.includes(subset) && weights.includes(Number(weight))) {
-		return;
-	}
-
-	// Accept subset-weight-style.css
-	const subsetWeightStyle = filename.split('-');
-	style = subsetWeightStyle.pop();
-	weight = subsetWeightStyle.pop();
-	subset = subsetWeightStyle.join('-');
-	if (
-		style &&
-		subsets.includes(subset) &&
-		weights.includes(Number(weight)) &&
-		styles.includes(style)
-	) {
-		return;
-	}
-
-	throw new StatusError(404, 'Not Found. Invalid filename.');
-};
-
-export const validateVCSSFilename = (
-	file: string,
-	variableMeta: VariableMetadataWithVariants,
-) => {
-	const [filename, extension] = file.split('.');
-	if (!extension || extension !== 'css') {
-		throw new StatusError(400, 'Bad Request. Invalid file extension.');
-	}
-
-	const { axes } = variableMeta;
-	// Accept index.css
-	if (filename === 'index') {
-		return;
-	}
-
-	// Accept standard.css and full.css
-	if (filename === 'standard' || filename === 'full') {
-		return;
-	}
-
-	// Accept axes.css
-	const axesKeys = Object.keys(axes);
-	if (axesKeys.includes(filename)) {
-		return;
-	}
-
-	// Accept axes-italic.css
-	const [axesKey, italic] = filename.split('-');
-	if (italic === 'italic' && axesKeys.includes(axesKey)) {
-		return;
-	}
-
-	throw new StatusError(404, 'Not Found. Invalid filename.');
+	return {
+		...variableMeta,
+		variants,
+	};
 };
