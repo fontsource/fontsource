@@ -111,6 +111,7 @@ const uploadPart = async (
 	partNumber: number,
 	partData: Uint8Array | ArrayBuffer,
 ) => {
+	keepAwake(SLEEP_MINUTES);
 	const formData = new FormData();
 	formData.append('partNumber', partNumber.toString());
 	formData.append('uploadId', uploadId);

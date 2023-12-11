@@ -159,21 +159,6 @@ router.put(
 	},
 );
 
-router.put(
-	'/put/:path+',
-	withParams,
-	verifyAuth,
-	async (request, env, _ctx) => {
-		const { path } = request;
-		if (!path) return error(400, 'Bad Request. Path is required.');
-
-		const body = await request.arrayBuffer();
-
-		await env.BUCKET.put(path, body);
-		return json({ status: 200 }, { status: 200 });
-	},
-);
-
 router.delete(
 	'/multipart/:path+',
 	withParams,
@@ -208,6 +193,21 @@ router.delete(
 				return error(400, 'Bad Request. Invalid action.');
 			}
 		}
+	},
+);
+
+router.put(
+	'/put/:path+',
+	withParams,
+	verifyAuth,
+	async (request, env, _ctx) => {
+		const { path } = request;
+		if (!path) return error(400, 'Bad Request. Path is required.');
+
+		const body = await request.arrayBuffer();
+
+		await env.BUCKET.put(path, body);
+		return json({ status: 200, message: 'Success' }, { status: 200 });
 	},
 );
 
