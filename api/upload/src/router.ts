@@ -147,7 +147,7 @@ router.put(
 						ETag: uploadedPart.etag,
 					};
 
-					return json({ status: 200, resp }, { status: 200 });
+					return json({ status: 201, resp }, { status: 201 });
 				} catch (error: any) {
 					return error(400, error.message);
 				}
@@ -207,7 +207,7 @@ router.put(
 		const body = await request.arrayBuffer();
 
 		await env.BUCKET.put(path, body);
-		return json({ status: 200, message: 'Success' }, { status: 200 });
+		return json({ status: 201, message: 'Success.' }, { status: 201 });
 	},
 );
 
