@@ -57,6 +57,30 @@ export const listBucket = async (prefix: string) => {
 	return await resp.json<ListBucket>();
 };
 
+const abortMultiPartUpload = async (bucketPath: string, uploadId: string) => {
+	const resp = await fetch(
+		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-abort`,
+		{
+			method: 'POST',
+			headers: {
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+			},
+			body: JSON.stringify({
+				uploadId,
+			}),
+		},
+	);
+
+	if (!resp.ok) {
+		const error = await resp.text();
+		throw new StatusError(
+			500,
+			`Internal Server Error. Unable to abort multipart upload. ${error}`,
+		);
+	}
+};
+
 const initiateMultipartUpload = async (bucketPath: string) => {
 	const resp = await fetch(
 		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-create`,
@@ -105,6 +129,8 @@ const uploadPart = async (
 	);
 
 	if (!resp.ok) {
+		await abortMultiPartUpload(bucketPath, uploadId);
+
 		const error = await resp.text();
 		throw new StatusError(
 			500,
@@ -137,6 +163,8 @@ const completeMultipartUpload = async (
 	);
 
 	if (!resp.ok) {
+		await abortMultiPartUpload(bucketPath, uploadId);
+
 		const error = await resp.text();
 		throw new StatusError(
 			500,
@@ -151,7 +179,9 @@ export const putBucket = async (
 ) => {
 	keepAwake(SLEEP_MINUTES);
 
-	const partSize = 5 * 1024 * 1024; // 10MB parts
+	// We only use multipart uploads properly for files larger than 50MB since
+	// Cloudflare limits the maximum request size to 100MB
+	const partSize = 50 * 1024 * 1024;
 
 	const uploadId = await initiateMultipartUpload(bucketPath);
 
