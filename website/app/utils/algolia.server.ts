@@ -1,4 +1,6 @@
+import TTLCache from '@isaacs/ttlcache';
 import algoliasearch from 'algoliasearch';
+import { type InstantSearchServerState } from 'react-instantsearch';
 
 import {
 	getFontlist,
@@ -6,6 +8,23 @@ import {
 	getStats,
 } from '@/utils/metadata.server';
 import type { AlgoliaMetadata } from '@/utils/types';
+
+// Cache for Algolia SSR state to avoid re-fetching on every request
+const ALGOLIA_TTL = 6 * 60 * 60 * 1000; // 6 hours
+const ssrCache = new TTLCache({ ttl: ALGOLIA_TTL });
+
+const getSSRCache = (
+	serverUrl: string,
+): InstantSearchServerState | undefined => {
+	return ssrCache.get(serverUrl);
+};
+
+const setSSRCache = (serverUrl: string, state: InstantSearchServerState) => {
+	ssrCache.set(serverUrl, state);
+};
+
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const client = algoliasearch('WNATE69PVR', process.env.ALGOLIA_ADMIN_KEY!);
 
 const shuffleArray = (size: number) => {
 	// Generate array of numbers from 0 to size
@@ -18,9 +37,6 @@ const shuffleArray = (size: number) => {
 	}
 	return arr;
 };
-
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-const client = algoliasearch('WNATE69PVR', process.env.ALGOLIA_ADMIN_KEY!);
 
 const updateAlgoliaIndex = async (force?: boolean) => {
 	try {
@@ -77,4 +93,4 @@ const updateAlgoliaIndex = async (force?: boolean) => {
 	}
 };
 
-export { updateAlgoliaIndex };
+export { getSSRCache, setSSRCache, updateAlgoliaIndex };

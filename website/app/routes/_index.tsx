@@ -15,6 +15,7 @@ import {
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import classes from '@/styles/global.module.css';
+import { getSSRCache, setSSRCache } from '@/utils/algolia.server';
 
 import { theme } from '../styles/theme';
 
@@ -102,21 +103,37 @@ const routing = (serverUrl: string): any => {
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
 	const serverUrl = request.url;
-	const serverState = await getServerState(
+
+	// Check local cache for server state first to avoid unnecessary API calls
+	let serverState = getSSRCache(serverUrl);
+	if (serverState) {
+		return json<SearchProps>({
+			serverState,
+			serverUrl,
+		});
+	}
+
+	serverState = await getServerState(
 		<MantineProvider theme={theme}>
-			<InstantSearch
-				searchClient={searchClient}
-				indexName="prod_POPULAR"
-				routing={routing(serverUrl)}
-				future={{ preserveSharedStateOnUnmount: true }}
-			>
-				<Filters />
-			</InstantSearch>
+			<InstantSearchSSRProvider>
+				<InstantSearch
+					searchClient={searchClient}
+					indexName="prod_POPULAR"
+					routing={routing(serverUrl)}
+					future={{ preserveSharedStateOnUnmount: true }}
+				>
+					<Filters />
+					<InfiniteHits />
+				</InstantSearch>
+			</InstantSearchSSRProvider>
 		</MantineProvider>,
 		{
 			renderToString,
 		},
 	);
+
+	// Add server state to local cache before responding
+	setSSRCache(serverUrl, serverState);
 
 	return json<SearchProps>({
 		serverState,
