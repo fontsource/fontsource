@@ -167,6 +167,9 @@ export const generateZip = async (
 			});
 	}
 
+	// Wait for all files to be downloaded
+	await zipQueue.onIdle();
+
 	// Add LICENSE file
 	const license = await fetch(
 		`https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/LICENSE`,
