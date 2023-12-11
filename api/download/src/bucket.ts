@@ -179,9 +179,32 @@ export const putBucket = async (
 ) => {
 	keepAwake(SLEEP_MINUTES);
 
-	// We only use multipart uploads properly for files larger than 50MB since
-	// Cloudflare limits the maximum request size to 100MB
+	// We only use multipart uploads for files larger than 50MB since Cloudflare
+	// limits the maximum request size to 100MB
 	const partSize = 50 * 1024 * 1024;
+	if (body.byteLength < partSize) {
+		const resp = await fetch(
+			`https://upload.fontsource.org/put/${bucketPath}`,
+			{
+				method: 'PUT',
+				headers: {
+					// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+					Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+				},
+				body: new Blob([body]),
+			},
+		);
+
+		if (!resp.ok) {
+			const error = await resp.text();
+			throw new StatusError(
+				500,
+				`Internal Server Error. Unable to upload file. ${error}`,
+			);
+		}
+
+		return;
+	}
 
 	const uploadId = await initiateMultipartUpload(bucketPath);
 
