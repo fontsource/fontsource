@@ -1,5 +1,5 @@
-// Have a sleep timer that kills the worker after 5 minutes
-export const SLEEP_MINUTES = 4;
+// Have a sleep timer that kills the worker after 3 minutes
+export const SLEEP_MINUTES = 3;
 
 let sleepTimeout: NodeJS.Timeout;
 
