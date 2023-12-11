@@ -61,7 +61,7 @@ const abortMultiPartUpload = async (bucketPath: string, uploadId: string) => {
 	const resp = await fetch(
 		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-abort`,
 		{
-			method: 'POST',
+			method: 'DELETE',
 			headers: {
 				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
@@ -119,7 +119,7 @@ const uploadPart = async (
 	const resp = await fetch(
 		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-uploadpart`,
 		{
-			method: 'POST',
+			method: 'PUT',
 			headers: {
 				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
