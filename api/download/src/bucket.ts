@@ -39,6 +39,17 @@ export const bucketPathVariable = ({
 }: BucketPathVariable) =>
 	`${id}@${version}/variable/${subset}-${axes}-${style}.woff2`;
 
+const handleBucketError = (resp: Response, msg: string) => {
+	if (resp.status === 401) {
+		throw new StatusError(
+			401,
+			'Unauthorized. Please check your UPLOAD_KEY environment variable.',
+		);
+	}
+
+	throw new StatusError(500, `Internal Server Error. ${msg}`);
+};
+
 export const listBucket = async (prefix: string) => {
 	keepAwake(SLEEP_MINUTES);
 
@@ -49,10 +60,7 @@ export const listBucket = async (prefix: string) => {
 		},
 	});
 	if (!resp.ok) {
-		throw new StatusError(
-			500,
-			'Internal Server Error. Unable to fetch bucket.',
-		);
+		handleBucketError(resp, 'Unable to list bucket.');
 	}
 
 	return await resp.json<ListBucket>();
@@ -75,10 +83,7 @@ const abortMultiPartUpload = async (bucketPath: string, uploadId: string) => {
 
 	if (!resp.ok) {
 		const error = await resp.text();
-		throw new StatusError(
-			500,
-			`Internal Server Error. Unable to abort multipart upload. ${error}`,
-		);
+		handleBucketError(resp, `Unable to abort multipart upload. ${error}`);
 	}
 };
 
@@ -96,10 +101,7 @@ const initiateMultipartUpload = async (bucketPath: string) => {
 
 	if (!resp.ok) {
 		const error = await resp.text();
-		throw new StatusError(
-			500,
-			`Internal Server Error. Unable to initiate multipart upload. ${error}`,
-		);
+		handleBucketError(resp, `Unable to initiate multipart upload. ${error}`);
 	}
 
 	const { uploadId } = await resp.json();
@@ -132,12 +134,8 @@ const uploadPart = async (
 
 	if (!resp.ok) {
 		await abortMultiPartUpload(bucketPath, uploadId);
-
 		const error = await resp.text();
-		throw new StatusError(
-			500,
-			`Internal Server Error. Unable to upload part. ${error}`,
-		);
+		handleBucketError(resp, `Unable to upload part. ${error}`);
 	}
 
 	return resp.headers.get('ETag') ?? '';
@@ -166,12 +164,8 @@ const completeMultipartUpload = async (
 
 	if (!resp.ok) {
 		await abortMultiPartUpload(bucketPath, uploadId);
-
 		const error = await resp.text();
-		throw new StatusError(
-			500,
-			`Internal Server Error. Unable to complete multipart upload. ${error}`,
-		);
+		handleBucketError(resp, `Unable to complete multipart upload. ${error}`);
 	}
 };
 
@@ -199,10 +193,7 @@ export const putBucket = async (
 
 		if (!resp.ok) {
 			const error = await resp.text();
-			throw new StatusError(
-				500,
-				`Internal Server Error. Unable to upload file. ${error}`,
-			);
+			handleBucketError(resp, `Unable to upload file. ${error}`);
 		}
 
 		return;
@@ -246,10 +237,7 @@ export const getBucket = async (bucketPath: string) => {
 		},
 	});
 	if (!resp.ok) {
-		throw new StatusError(
-			500,
-			'Internal Server Error. Unable to fetch bucket.',
-		);
+		handleBucketError(resp, `Unable to fetch ${bucketPath}.`);
 	}
 
 	return resp;
