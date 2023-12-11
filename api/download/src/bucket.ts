@@ -57,27 +57,126 @@ export const listBucket = async (prefix: string) => {
 	return await resp.json<ListBucket>();
 };
 
+const initiateMultipartUpload = async (bucketPath: string) => {
+	const resp = await fetch(
+		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-create`,
+		{
+			method: 'POST',
+			headers: {
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+			},
+		},
+	);
+
+	if (!resp.ok) {
+		const error = await resp.text();
+		throw new StatusError(
+			500,
+			`Internal Server Error. Unable to initiate multipart upload. ${error}`,
+		);
+	}
+
+	const { uploadId } = await resp.json();
+	return uploadId;
+};
+
+const uploadPart = async (
+	bucketPath: string,
+	uploadId: string,
+	partNumber: number,
+	partData: Uint8Array | ArrayBuffer,
+) => {
+	const formData = new FormData();
+	formData.append('partNumber', partNumber.toString());
+	formData.append('uploadId', uploadId);
+	formData.append('file', new Blob([partData]));
+
+	const resp = await fetch(
+		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-uploadpart`,
+		{
+			method: 'POST',
+			headers: {
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+			},
+			body: formData,
+		},
+	);
+
+	if (!resp.ok) {
+		const error = await resp.text();
+		throw new StatusError(
+			500,
+			`Internal Server Error. Unable to upload part. ${error}`,
+		);
+	}
+
+	return resp.headers.get('ETag') ?? '';
+};
+
+const completeMultipartUpload = async (
+	bucketPath: string,
+	uploadId: string,
+	parts: any[],
+) => {
+	const resp = await fetch(
+		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-complete`,
+		{
+			method: 'POST',
+			headers: {
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				uploadId,
+				parts,
+			}),
+		},
+	);
+
+	if (!resp.ok) {
+		const error = await resp.text();
+		throw new StatusError(
+			500,
+			`Internal Server Error. Unable to complete multipart upload. ${error}`,
+		);
+	}
+};
+
 export const putBucket = async (
 	bucketPath: string,
 	body: Uint8Array | ArrayBuffer,
 ) => {
 	keepAwake(SLEEP_MINUTES);
 
-	const resp = await fetch(`https://upload.fontsource.org/put/${bucketPath}`, {
-		method: 'PUT',
-		headers: {
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
-		},
-		body,
-	});
-	if (!resp.ok) {
-		const error = await resp.text();
-		throw new StatusError(
-			500,
-			`Internal Server Error. Unable to upload to bucket. ${error}`,
-		);
+	const partSize = 5 * 1024 * 1024; // 10MB parts
+
+	const uploadId = await initiateMultipartUpload(bucketPath);
+
+	const parts = [];
+	let start = 0;
+	let partNumber = 1;
+
+	// Upload buffers in parts
+	while (start < body.byteLength) {
+		const end = Math.min(start + partSize, body.byteLength);
+		const partData = body.slice(start, end);
+
+		const etag = await uploadPart(bucketPath, uploadId, partNumber, partData);
+
+		parts.push({
+			ETag: etag,
+			PartNumber: partNumber,
+		});
+
+		start = end;
+		partNumber++;
 	}
+
+	// Complete multipart upload
+	await completeMultipartUpload(bucketPath, uploadId, parts);
 };
 
 export const getBucket = async (bucketPath: string) => {
