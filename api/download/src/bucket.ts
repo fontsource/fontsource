@@ -192,7 +192,7 @@ export const putBucket = async (
 					// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 					Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
 				},
-				body: new Blob([body]),
+				body,
 			},
 		);
 
