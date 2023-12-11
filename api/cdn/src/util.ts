@@ -117,7 +117,8 @@ export const generateVariableVariants = (
 		for (const style of metadata.styles) {
 			variants[axis][style] = {};
 
-			for (const subset of metadata.subsets) {
+			for (const unicodeKey of Object.keys(metadata.unicodeRange)) {
+				const subset = unicodeKey.replace('[', '').replace(']', '');
 				const value = makeFontFileVariablePath(
 					metadata.family,
 					style,
@@ -156,7 +157,8 @@ export const generateVariableVariants = (
 			variants.full = {};
 			variants.full[style] = {};
 
-			for (const subset of metadata.subsets) {
+			for (const unicodeKey of Object.keys(metadata.unicodeRange)) {
+				const subset = unicodeKey.replace('[', '').replace(']', '');
 				const value = makeFontFileVariablePath(
 					metadata.family,
 					style,
