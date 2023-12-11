@@ -1,3 +1,4 @@
+import { info } from 'diary';
 import { StatusError } from 'itty-router';
 
 import { type Manifest, type ManifestVariable } from './manifest';
@@ -206,6 +207,8 @@ export const putBucket = async (
 
 		return;
 	}
+
+	info(`Uploading ${bucketPath} in parts with size ${body.byteLength}`);
 
 	const uploadId = await initiateMultipartUpload(bucketPath);
 

@@ -1,6 +1,5 @@
 import { info } from 'diary';
 import { StatusError } from 'itty-router';
-import JSZip from 'jszip';
 import PQueue from 'p-queue';
 // @ts-expect-error - no types
 import woff2ttf from 'woff2sfnt-sfnt2woff';
@@ -17,6 +16,7 @@ import {
 	type Manifest,
 	type ManifestVariable,
 } from './manifest';
+import { keepAwake, SLEEP_MINUTES } from './sleep';
 import { type IDResponse } from './types';
 
 export const downloadFile = async (manifest: Manifest) => {
@@ -110,10 +110,7 @@ export const generateZip = async (
 	const zipFile = await listBucket(`${id}@${version}/download.zip`);
 	if (zipFile.objects.length > 0) return;
 
-	// Generate zip file of all fonts
-	const zip = new JSZip();
-	const webfonts = zip.folder('webfonts');
-	const ttf = zip.folder('ttf');
+	info(`Generating zip file for ${id}@${version}`);
 
 	const fullManifest = generateManifest(`${id}@${version}`, metadata);
 	// For every woff file, generate an equivalent manifest entry for ttf
@@ -126,28 +123,48 @@ export const generateZip = async (
 		}
 	}
 
+	// Generate zip file of all fonts
+	const zip = [];
+	const zipQueue = new PQueue({ concurrency: 32 });
+
+	// Download all files
 	for (const file of fullManifest) {
-		const item = await getBucket(bucketPath(file));
-		if (!item) {
-			throw new StatusError(500, `Could not find ${bucketPath(file)}`);
-		}
+		// eslint-disable-next-line @typescript-eslint/promise-function-async
+		zipQueue
+			.add(async () => {
+				keepAwake(SLEEP_MINUTES);
+				const item = await getBucket(bucketPath(file));
+				if (!item) {
+					throw new StatusError(500, `Could not find ${bucketPath(file)}`);
+				}
 
-		const buffer = await item.arrayBuffer();
+				const buffer = await item.arrayBuffer();
+				info(`Deflating ${bucketPath(file)}`);
+				const deflatedBuffer = Bun.deflateSync(new Uint8Array(buffer));
 
-		// Add to zip
-		if (file.extension === 'woff2' || file.extension === 'woff') {
-			webfonts?.file(
-				`${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`,
-				buffer,
-			);
-		} else if (file.extension === 'ttf') {
-			ttf?.file(
-				`${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`,
-				buffer,
-			);
-		} else {
-			throw new StatusError(500, `Invalid file extension ${file.extension}`);
-		}
+				// Add to zip
+				if (file.extension === 'woff2' || file.extension === 'woff') {
+					zip.push({
+						filename: `webfonts/${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`,
+						content: deflatedBuffer,
+					});
+				} else if (file.extension === 'ttf') {
+					zip.push({
+						filename: `ttf/${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`,
+						content: deflatedBuffer,
+					});
+				} else {
+					throw new StatusError(
+						500,
+						`Invalid file extension ${file.extension}`,
+					);
+				}
+			})
+			.catch((error) => {
+				zipQueue.pause();
+				zipQueue.clear();
+				throw error;
+			});
 	}
 
 	// Add LICENSE file
@@ -159,9 +176,24 @@ export const generateZip = async (
 	}
 
 	const licenseBuffer = await license.arrayBuffer();
-	zip.file('LICENSE', licenseBuffer);
+	const deflatedLicenseBuffer = Bun.deflateSync(new Uint8Array(licenseBuffer));
+	zip.push({
+		filename: 'LICENSE',
+		content: deflatedLicenseBuffer,
+	});
+
+	// Combine zip file
+	const zipLength = zip.reduce((total, file) => total + file.content.length, 0);
+	const zipBuffer = new Uint8Array(zipLength);
+
+	let offset = 0;
+	for (const file of zip) {
+		zipBuffer.set(file.content, offset);
+		offset += file.content.length;
+	}
 
 	// Add to bucket
-	const zipBuffer = await zip.generateAsync({ type: 'uint8array' });
+	info(`Uploading zip file for ${id}@${version}`);
 	await putBucket(`${id}@${version}/download.zip`, zipBuffer);
+	info(`Successfully generated zip file for ${id}@${version}`);
 };
