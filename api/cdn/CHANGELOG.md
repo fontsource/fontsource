@@ -1,5 +1,11 @@
 # cdn
 
+## 0.2.15
+
+### Patch Changes
+
+- [#913](https://github.com/fontsource/fontsource/pull/913) [`656390cb2e`](https://github.com/fontsource/fontsource/commit/656390cb2e50ac7e54615bd73ec931e66c2437a4) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): variable variants for numbered subsets
+
 ## 0.2.14
 
 ### Patch Changes
