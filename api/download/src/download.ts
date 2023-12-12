@@ -18,6 +18,7 @@ import {
 } from './manifest';
 import { keepAwake, SLEEP_MINUTES } from './sleep';
 import { type IDResponse } from './types';
+import { zip } from 'fflate';
 
 export const downloadFile = async (manifest: Manifest) => {
 	const { id, subset, weight, style, extension, version, url } = manifest;
@@ -123,8 +124,8 @@ export const generateZip = async (
 		}
 	}
 
-	// Generate zip file of all fonts
-	const zip = [];
+	// Download all files into memory
+	const files: Record<string, any> = {};
 	const zipQueue = new PQueue({ concurrency: 32 });
 
 	// Download all files
@@ -139,20 +140,16 @@ export const generateZip = async (
 				}
 
 				const buffer = await item.arrayBuffer();
-				info(`Deflating ${bucketPath(file)}`);
-				const deflatedBuffer = Bun.deflateSync(new Uint8Array(buffer));
 
 				// Add to zip
 				if (file.extension === 'woff2' || file.extension === 'woff') {
-					zip.push({
-						filename: `webfonts/${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`,
-						content: deflatedBuffer,
-					});
+					const filename = `webfonts/${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`;
+					// We do not need to compress woff2 files as they are already compressed
+					files[filename] = [new Uint8Array(buffer), { level: 0 }];
 				} else if (file.extension === 'ttf') {
-					zip.push({
-						filename: `ttf/${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`,
-						content: deflatedBuffer,
-					});
+					const filename = `ttf/${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`;
+					// We do want to compress ttf files as they are not compressed with deflate
+					files[filename] = new Uint8Array(buffer);
 				} else {
 					throw new StatusError(
 						500,
@@ -179,24 +176,21 @@ export const generateZip = async (
 	}
 
 	const licenseBuffer = await license.arrayBuffer();
-	const deflatedLicenseBuffer = Bun.deflateSync(new Uint8Array(licenseBuffer));
-	zip.push({
-		filename: 'LICENSE',
-		content: deflatedLicenseBuffer,
-	});
+	files['LICENSE'] = new Uint8Array(licenseBuffer);
 
-	// Combine zip file
-	const zipLength = zip.reduce((total, file) => total + file.content.length, 0);
-	const zipBuffer = new Uint8Array(zipLength);
-
-	let offset = 0;
-	for (const file of zip) {
-		zipBuffer.set(file.content, offset);
-		offset += file.content.length;
-	}
+	// Generate zip file of all fonts
+	const zipped: Uint8Array = await new Promise((resolve, reject) =>
+		zip(
+			{
+				files,
+			},
+			(err, result) => {
+				err ? reject(err) : resolve(result);
+			},
+		),
+	);
 
 	// Add to bucket
-	info(`Uploading zip file for ${id}@${version}`);
-	await putBucket(`${id}@${version}/download.zip`, zipBuffer);
+	await putBucket(`${id}@${version}/download.zip`, zipped);
 	info(`Successfully generated zip file for ${id}@${version}`);
 };
