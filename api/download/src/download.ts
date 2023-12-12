@@ -1,4 +1,4 @@
-import { info } from 'diary';
+import { info, error as errorDiary } from 'diary';
 import { StatusError } from 'itty-router';
 import PQueue from 'p-queue';
 // @ts-expect-error - no types
@@ -18,7 +18,7 @@ import {
 } from './manifest';
 import { keepAwake, SLEEP_MINUTES } from './sleep';
 import { type IDResponse } from './types';
-import { zip } from 'fflate';
+import { zipSync } from 'fflate';
 
 export const downloadFile = async (manifest: Manifest) => {
 	const { id, subset, weight, style, extension, version, url } = manifest;
@@ -111,8 +111,6 @@ export const generateZip = async (
 	const zipFile = await listBucket(`${id}@${version}/download.zip`);
 	if (zipFile.objects.length > 0) return;
 
-	info(`Generating zip file for ${id}@${version}`);
-
 	const fullManifest = generateManifest(`${id}@${version}`, metadata);
 	// For every woff file, generate an equivalent manifest entry for ttf
 	for (const file of fullManifest) {
@@ -126,7 +124,7 @@ export const generateZip = async (
 
 	// Download all files into memory
 	const files: Record<string, any> = {};
-	const zipQueue = new PQueue({ concurrency: 32 });
+	const zipQueue = new PQueue({ concurrency: 24 });
 
 	// Download all files
 	for (const file of fullManifest) {
@@ -134,9 +132,10 @@ export const generateZip = async (
 		zipQueue
 			.add(async () => {
 				keepAwake(SLEEP_MINUTES);
-				const item = await getBucket(bucketPath(file));
+				const path = bucketPath(file);
+				const item = await getBucket(path);
 				if (!item) {
-					throw new StatusError(500, `Could not find ${bucketPath(file)}`);
+					throw new StatusError(500, `Could not find ${path}`);
 				}
 
 				const buffer = await item.arrayBuffer();
@@ -160,6 +159,7 @@ export const generateZip = async (
 			.catch((error) => {
 				zipQueue.pause();
 				zipQueue.clear();
+				errorDiary(`Could not download ${bucketPath(file)}`);
 				throw error;
 			});
 	}
@@ -178,17 +178,12 @@ export const generateZip = async (
 	const licenseBuffer = await license.arrayBuffer();
 	files['LICENSE'] = new Uint8Array(licenseBuffer);
 
+	info(`Generating zip file for ${id}@${version}`);
+
 	// Generate zip file of all fonts
-	const zipped: Uint8Array = await new Promise((resolve, reject) =>
-		zip(
-			{
-				files,
-			},
-			(err, result) => {
-				err ? reject(err) : resolve(result);
-			},
-		),
-	);
+	// We can't use async zip as it relies on worker_threads eval which is not supported
+	// Bun (yet)
+	const zipped = zipSync(files);
 
 	// Add to bucket
 	await putBucket(`${id}@${version}/download.zip`, zipped);

@@ -173,12 +173,11 @@ export const putBucket = async (
 	bucketPath: string,
 	body: Uint8Array | ArrayBuffer,
 ) => {
-	keepAwake(SLEEP_MINUTES);
-
-	// We only use multipart uploads for files larger than 50MB since Cloudflare
+	// We only use multipart uploads for files larger than 20MB since Cloudflare
 	// limits the maximum request size to 100MB
-	const partSize = 50 * 1024 * 1024;
+	const partSize = 20 * 1024 * 1024;
 	if (body.byteLength < partSize) {
+		keepAwake(SLEEP_MINUTES);
 		const resp = await fetch(
 			`https://upload.fontsource.org/put/${bucketPath}`,
 			{
@@ -193,7 +192,7 @@ export const putBucket = async (
 
 		if (!resp.ok) {
 			const error = await resp.text();
-			handleBucketError(resp, `Unable to upload file. ${error}`);
+			handleBucketError(resp, `Unable to upload file ${bucketPath}. ${error}`);
 		}
 
 		return;

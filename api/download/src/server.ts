@@ -23,7 +23,7 @@ export default {
 			})
 			.catch((error_: StatusError) => {
 				const path = new URL(req.url).pathname;
-				if (error_.status >= 500) {
+				if (!error_.status || error_.status >= 500) {
 					errorDiary(
 						`${req.method} ${path} ${error_.status} ${error_.message}`,
 					);
