@@ -1,9 +1,9 @@
 import {
-	error,
+	error as routerError,
 	type IRequestStrict,
 	json,
 	Router,
-	withContent,
+	StatusError,
 	withParams,
 } from 'itty-router';
 
@@ -18,7 +18,6 @@ interface MultipartContent {
 interface DownloadRequest extends IRequestStrict {
 	path: string;
 	prefix: string;
-	content: MultipartContent;
 }
 
 const router = Router<DownloadRequest, CFRouterContext>();
@@ -29,7 +28,7 @@ router.get(
 	verifyAuth,
 	async (request, env, _ctx) => {
 		const { prefix } = request;
-		if (!prefix) return error(400, 'Bad Request. Prefix is required.');
+		if (!prefix) throw new StatusError(400, 'Bad Request. Prefix is required.');
 
 		const list = await env.BUCKET.list({ prefix });
 		const objects = list.objects.map((object) => object.key);
@@ -44,12 +43,11 @@ router.get(
 	verifyAuth,
 	async (request, env, _ctx) => {
 		const { path } = request;
-		if (!path) return error(400, 'Bad Request. Path is required.');
+		if (!path) throw new StatusError(400, 'Bad Request. Path is required.');
 
 		const object = await env.BUCKET.get(path);
-		if (!object) {
-			return error(404, `Not Found. Object ${path} does not exist.`);
-		}
+		if (!object)
+			throw new StatusError(404, `Not Found. Object ${path} does not exist.`);
 
 		return new Response(await object.arrayBuffer(), {
 			status: 200,
@@ -60,28 +58,30 @@ router.get(
 router.post(
 	'/multipart/:path+',
 	withParams,
-	withContent,
 	verifyAuth,
 	async (request, env, _ctx) => {
-		const { path, query, content } = request;
-		if (!path) return error(400, 'Bad Request. Path is required.');
+		const { path, query } = request;
+		if (!path) throw new StatusError(400, 'Bad Request. Path is required.');
 
 		const action = query.action;
-		if (!action) return error(400, 'Bad Request. Action is required.');
+		if (!action) throw new StatusError(400, 'Bad Request. Action is required.');
 
 		switch (action) {
 			case 'mpu-create': {
 				const multipartUpload = await env.BUCKET.createMultipartUpload(path);
-				const body = {
-					uploadId: multipartUpload.uploadId,
-				};
-
-				return json({ status: 200, body }, { status: 200 });
+				return json(
+					{ status: 200, uploadId: multipartUpload.uploadId },
+					{ status: 200 },
+				);
 			}
 			case 'mpu-complete': {
-				const { uploadId, parts } = content;
-				if (!uploadId) return error(400, 'Bad Request. Upload ID is required.');
-				if (!parts) return error(400, 'Bad Request. Parts are required.');
+				const data = await request.json<MultipartContent>();
+				const uploadId = data.uploadId;
+				if (!uploadId)
+					throw new StatusError(400, 'Bad Request. Upload ID is required.');
+				const parts = data.parts;
+				if (!parts)
+					throw new StatusError(400, 'Bad Request. Parts are required.');
 
 				const multipartUpload = env.BUCKET.resumeMultipartUpload(
 					path,
@@ -97,11 +97,15 @@ router.post(
 						},
 					});
 				} catch (error: any) {
-					return error(400, error.message);
+					if (error instanceof StatusError) throw error;
+					throw new StatusError(
+						500,
+						`Internal Server Error. Failed to complete multipart upload. ${error.message}`,
+					);
 				}
 			}
 			default: {
-				return error(400, 'Bad Request. Invalid action.');
+				throw new StatusError(400, 'Bad Request. Invalid action.');
 			}
 		}
 	},
@@ -113,10 +117,10 @@ router.put(
 	verifyAuth,
 	async (request, env, _ctx) => {
 		const { path, query } = request;
-		if (!path) return error(400, 'Bad Request. Path is required.');
+		if (!path) throw new StatusError(400, 'Bad Request. Path is required.');
 
 		const action = query.action;
-		if (!action) return error(400, 'Bad Request. Action is required.');
+		if (!action) throw new StatusError(400, 'Bad Request. Action is required.');
 
 		switch (action) {
 			case 'mpu-uploadpart': {
@@ -124,13 +128,14 @@ router.put(
 				const formData = await request.formData();
 				const partNumber = formData.get('partNumber');
 				if (!partNumber)
-					return error(400, 'Bad Request. Part number is required.');
+					throw new StatusError(400, 'Bad Request. Part number is required.');
 
 				const uploadId = formData.get('uploadId');
-				if (!uploadId) return error(400, 'Bad Request. Upload ID is required.');
+				if (!uploadId)
+					throw new StatusError(400, 'Bad Request. Upload ID is required.');
 
 				const file = formData.get('file');
-				if (!file) return error(400, 'Bad Request. File is required.');
+				if (!file) throw new StatusError(400, 'Bad Request. File is required.');
 
 				const multipartUpload = env.BUCKET.resumeMultipartUpload(
 					path,
@@ -143,17 +148,21 @@ router.put(
 						Number(partNumber),
 						file,
 					);
-					const resp = {
-						ETag: uploadedPart.etag,
-					};
 
-					return json({ status: 201, resp }, { status: 201 });
+					return json(
+						{ status: 201, etag: uploadedPart.etag },
+						{ status: 201 },
+					);
 				} catch (error: any) {
-					return error(400, error.message);
+					if (error instanceof StatusError) throw error;
+					throw new StatusError(
+						500,
+						`Internal Server Error. Failed to upload part. ${error.message}`,
+					);
 				}
 			}
 			default: {
-				return error(400, 'Bad Request. Invalid action.');
+				throw new StatusError(400, 'Bad Request. Invalid action.');
 			}
 		}
 	},
@@ -162,19 +171,20 @@ router.put(
 router.delete(
 	'/multipart/:path+',
 	withParams,
-	withContent,
 	verifyAuth,
 	async (request, env, _ctx) => {
-		const { path, content, query } = request;
-		if (!path) return error(400, 'Bad Request. Path is required.');
+		const { path, query } = request;
+		if (!path) throw new StatusError(400, 'Bad Request. Path is required.');
 
 		const action = query.action;
-		if (!action) return error(400, 'Bad Request. Action is required.');
+		if (!action) throw new StatusError(400, 'Bad Request. Action is required.');
 
 		switch (action) {
 			case 'mpu-abort': {
-				const { uploadId } = content;
-				if (!uploadId) return error(400, 'Bad Request. Upload ID is required.');
+				const data = await request.json<MultipartContent>();
+				const uploadId = data.uploadId;
+				if (!uploadId)
+					throw new StatusError(400, 'Bad Request. Upload ID is required.');
 
 				const multipartUpload = env.BUCKET.resumeMultipartUpload(
 					path,
@@ -184,13 +194,17 @@ router.delete(
 				// Error handling in case the multipart upload does not exist anymore
 				try {
 					await multipartUpload.abort();
+					console.log(`Aborted multipart upload for ${path}.`);
 					return json({ status: 200 }, { status: 200 });
 				} catch (error: any) {
-					return error(400, error.message);
+					throw new StatusError(
+						500,
+						`Internal Server Error. Failed to abort multipart upload. ${error.message}`,
+					);
 				}
 			}
 			default: {
-				return error(400, 'Bad Request. Invalid action.');
+				throw new StatusError(400, 'Bad Request. Invalid action.');
 			}
 		}
 	},
@@ -202,7 +216,7 @@ router.put(
 	verifyAuth,
 	async (request, env, _ctx) => {
 		const { path } = request;
-		if (!path) return error(400, 'Bad Request. Path is required.');
+		if (!path) throw new StatusError(400, 'Bad Request. Path is required.');
 
 		const body = await request.arrayBuffer();
 
@@ -213,7 +227,7 @@ router.put(
 
 // 404 for everything else
 router.all('*', () =>
-	error(
+	routerError(
 		404,
 		'Not Found. Please refer to the Fontsource API documentation: https://fontsource.org/docs/api',
 	),

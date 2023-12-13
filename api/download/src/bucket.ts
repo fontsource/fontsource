@@ -11,6 +11,11 @@ interface ListBucket {
 	objects: R2Object[];
 }
 
+interface R2UploadedPart {
+	etag: string;
+	partNumber: number;
+}
+
 type BucketPath = Pick<
 	Manifest,
 	'id' | 'subset' | 'weight' | 'style' | 'extension' | 'version'
@@ -66,7 +71,11 @@ export const listBucket = async (prefix: string) => {
 	return await resp.json<ListBucket>();
 };
 
-const abortMultiPartUpload = async (bucketPath: string, uploadId: string) => {
+const abortMultiPartUpload = async (
+	bucketPath: string,
+	uploadId: string,
+	msg?: string,
+) => {
 	const resp = await fetch(
 		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-abort`,
 		{
@@ -83,11 +92,12 @@ const abortMultiPartUpload = async (bucketPath: string, uploadId: string) => {
 
 	if (!resp.ok) {
 		const error = await resp.text();
-		handleBucketError(resp, `Unable to abort multipart upload. ${error}`);
+		const errorMsg = `Unable to abort multipart upload. ${error}`;
+		handleBucketError(resp, msg ? `${msg} ${errorMsg}` : errorMsg);
 	}
 };
 
-const initiateMultipartUpload = async (bucketPath: string) => {
+const initiateMultipartUpload = async (bucketPath: string): Promise<string> => {
 	const resp = await fetch(
 		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-create`,
 		{
@@ -104,8 +114,14 @@ const initiateMultipartUpload = async (bucketPath: string) => {
 		handleBucketError(resp, `Unable to initiate multipart upload. ${error}`);
 	}
 
-	const { uploadId } = await resp.json();
-	return uploadId;
+	const data = await resp.json();
+	if (!data.uploadId) {
+		throw new StatusError(
+			500,
+			`Internal Server Error. Upload ID is missing. ${JSON.stringify(data)}`,
+		);
+	}
+	return data.uploadId;
 };
 
 const uploadPart = async (
@@ -116,7 +132,7 @@ const uploadPart = async (
 ) => {
 	keepAwake(SLEEP_MINUTES);
 	const formData = new FormData();
-	formData.append('partNumber', partNumber.toString());
+	formData.append('partNumber', String(partNumber));
 	formData.append('uploadId', uploadId);
 	formData.append('file', new Blob([partData]));
 
@@ -133,18 +149,27 @@ const uploadPart = async (
 	);
 
 	if (!resp.ok) {
-		await abortMultiPartUpload(bucketPath, uploadId);
 		const error = await resp.text();
-		handleBucketError(resp, `Unable to upload part. ${error}`);
+		const msg = `Unable to upload part. ${error}`;
+
+		await abortMultiPartUpload(bucketPath, uploadId, msg);
+		handleBucketError(resp, msg);
 	}
 
-	return resp.headers.get('ETag') ?? '';
+	const data = await resp.json();
+	if (!data.etag) {
+		throw new StatusError(
+			500,
+			`Internal Server Error. ETag is missing. ${JSON.stringify(data)}`,
+		);
+	}
+	return data.etag;
 };
 
 const completeMultipartUpload = async (
 	bucketPath: string,
 	uploadId: string,
-	parts: any[],
+	parts: R2UploadedPart[],
 ) => {
 	const resp = await fetch(
 		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-complete`,
@@ -163,9 +188,11 @@ const completeMultipartUpload = async (
 	);
 
 	if (!resp.ok) {
-		await abortMultiPartUpload(bucketPath, uploadId);
 		const error = await resp.text();
-		handleBucketError(resp, `Unable to complete multipart upload. ${error}`);
+		const msg = `Unable to complete multipart upload. ${error}`;
+
+		await abortMultiPartUpload(bucketPath, uploadId, msg);
+		handleBucketError(resp, msg);
 	}
 };
 
@@ -202,23 +229,23 @@ export const putBucket = async (
 
 	const uploadId = await initiateMultipartUpload(bucketPath);
 
-	const parts = [];
-	let start = 0;
+	const parts: R2UploadedPart[] = [];
+	let offset = 0;
 	let partNumber = 1;
 
 	// Upload buffers in parts
-	while (start < body.byteLength) {
-		const end = Math.min(start + partSize, body.byteLength);
-		const partData = body.slice(start, end);
+	while (offset < body.byteLength) {
+		const end = Math.min(offset + partSize, body.byteLength);
+		const partData = body.slice(offset, end);
 
 		const etag = await uploadPart(bucketPath, uploadId, partNumber, partData);
 
 		parts.push({
-			ETag: etag,
-			PartNumber: partNumber,
+			etag,
+			partNumber,
 		});
 
-		start = end;
+		offset = end;
 		partNumber++;
 	}
 
