@@ -134,7 +134,10 @@ const uploadPart = async (
 	const formData = new FormData();
 	formData.append('partNumber', String(partNumber));
 	formData.append('uploadId', uploadId);
-	formData.append('file', new Blob([partData]));
+
+	const blob = new Blob([partData]);
+	const filename = `${bucketPath}-${partNumber}`;
+	formData.append('file', blob, filename);
 
 	const resp = await fetch(
 		`https://upload.fontsource.org/multipart/${bucketPath}?action=mpu-uploadpart`,
@@ -237,6 +240,7 @@ export const putBucket = async (
 	while (offset < body.byteLength) {
 		const end = Math.min(offset + partSize, body.byteLength);
 		const partData = body.slice(offset, end);
+		info(`Uploading part ${partNumber} with size ${partData.byteLength}`);
 
 		const etag = await uploadPart(bucketPath, uploadId, partNumber, partData);
 

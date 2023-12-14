@@ -134,8 +134,9 @@ router.put(
 				if (!uploadId)
 					throw new StatusError(400, 'Bad Request. Upload ID is required.');
 
-				const file = formData.get('file');
+				const file = formData.get('file') as unknown as Blob | undefined;
 				if (!file) throw new StatusError(400, 'Bad Request. File is required.');
+				const fileBuffer = await file.arrayBuffer();
 
 				const multipartUpload = env.BUCKET.resumeMultipartUpload(
 					path,
@@ -146,7 +147,7 @@ router.put(
 				try {
 					const uploadedPart: R2UploadedPart = await multipartUpload.uploadPart(
 						Number(partNumber),
-						file,
+						new Uint8Array(fileBuffer),
 					);
 
 					return json(
