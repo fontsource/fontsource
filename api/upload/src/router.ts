@@ -49,7 +49,11 @@ router.get(
 		if (!object)
 			throw new StatusError(404, `Not Found. Object ${path} does not exist.`);
 
-		return new Response(await object.arrayBuffer(), {
+		const headers = new Headers();
+		headers.set('etag', object.httpEtag);
+
+		return new Response(object.body, {
+			headers,
 			status: 200,
 		});
 	},
@@ -216,10 +220,8 @@ router.put(
 	withParams,
 	verifyAuth,
 	async (request, env, _ctx) => {
-		const { path } = request;
+		const { path, body } = request;
 		if (!path) throw new StatusError(400, 'Bad Request. Path is required.');
-
-		const body = await request.arrayBuffer();
 
 		await env.BUCKET.put(path, body);
 		return json({ status: 201, message: 'Success.' }, { status: 201 });

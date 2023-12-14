@@ -65,20 +65,20 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 			? IMMUTABLE_CACHE
 			: STALE_CACHE;
 
-	const headers = {
-		'Cache-Control': cacheControl,
-		'Content-Type': isZip ? 'application/zip' : `font/${extension}`,
-		'Content-Disposition': `attachment; filename="${
-			isZip ? `${id}_${version}.zip` : `${id}_${version}_${file}`
-		}"`,
-	};
+	const headers = new Headers();
+	headers.set('Cache-Control', cacheControl);
+	headers.set('Content-Type', isZip ? 'application/zip' : `font/${extension}`);
+	headers.set(
+		'Content-Disposition',
+		isZip ? `${id}_${version}.zip` : `${id}_${version}_${file}`,
+	);
 
 	// Check R2 bucket for file
 	const key = isVariable ? `${fullTag}/variable/${file}` : `${fullTag}/${file}`;
 	let item = await env.FONTS.get(key);
 	if (item !== null) {
-		const blob = await item.arrayBuffer();
-		const response = new Response(blob, {
+		headers.set('ETag', item.etag);
+		const response = new Response(item.body, {
 			status: 200,
 			headers,
 		});
@@ -115,8 +115,8 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 		item = await updateFile(fullTag, file, env);
 	}
 	if (item !== null) {
-		const blob = await item.arrayBuffer();
-		const response = new Response(blob, {
+		headers.set('ETag', item.etag);
+		const response = new Response(item.body, {
 			status: 200,
 			headers,
 		});
@@ -151,10 +151,9 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 			? IMMUTABLE_CACHE
 			: STALE_CACHE;
 
-	const headers = {
-		'Cache-Control': cacheControl,
-		'Content-Type': 'text/css',
-	};
+	const headers = new Headers();
+	headers.set('Cache-Control', cacheControl);
+	headers.set('Content-Type', 'text/css');
 
 	// Check KV for file
 	const key = isVariable ? `variable:${fullTag}:${file}` : `${fullTag}:${file}`;
