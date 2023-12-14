@@ -203,9 +203,9 @@ export const putBucket = async (
 	bucketPath: string,
 	body: Uint8Array | ArrayBuffer,
 ) => {
-	// We only use multipart uploads for files larger than 20MB since Cloudflare
+	// We only use multipart uploads for files larger than 80MB since Cloudflare
 	// limits the maximum request size to 100MB
-	const partSize = 20 * 1024 * 1024;
+	const partSize = 80 * 1024 * 1024;
 	if (body.byteLength < partSize) {
 		keepAwake(SLEEP_MINUTES);
 		const resp = await fetch(
