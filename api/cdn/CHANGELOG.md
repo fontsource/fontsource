@@ -1,5 +1,11 @@
 # cdn
 
+## 0.2.17
+
+### Patch Changes
+
+- [#918](https://github.com/fontsource/fontsource/pull/918) [`1dd9def116`](https://github.com/fontsource/fontsource/commit/1dd9def11613efc3ea288f7d34b3ff0d0b72f1b7) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): add retry logic when fetching updated file
+
 ## 0.2.16
 
 ### Patch Changes
