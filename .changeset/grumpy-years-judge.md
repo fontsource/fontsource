@@ -3,4 +3,4 @@
 "upload": minor
 ---
 
-fix(api): use multipart for uploads
+feat(api): use multipart for uploads
