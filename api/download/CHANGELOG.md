@@ -1,5 +1,11 @@
 # download
 
+## 0.2.1
+
+### Patch Changes
+
+- [#920](https://github.com/fontsource/fontsource/pull/920) [`9b32c26939`](https://github.com/fontsource/fontsource/commit/9b32c269393bdb9043de5bcf960f9e4d08b53c73) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): handle multi word subsets in download manifest
+
 ## 0.2.0
 
 ### Minor Changes
