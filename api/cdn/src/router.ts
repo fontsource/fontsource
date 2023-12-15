@@ -40,7 +40,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	const cacheKey = new Request(url, request.clone());
 	const cache = caches.default;
 
-	const response = await cache.match(cacheKey);
+	let response = await cache.match(cacheKey);
 	if (response) {
 		return response;
 	}
@@ -116,18 +116,14 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	} else {
 		item = await updateFile(fullTag, file, env);
 	}
-	if (item !== null) {
-		headers.set('ETag', item.etag);
-		const response = new Response(item.body, {
-			status: 200,
-			headers,
-		});
-		ctx.waitUntil(cache.put(cacheKey, response.clone()));
-		return response;
-	}
 
-	// If file does not exist, return 404
-	throw new StatusError(404, 'Not Found. File does not exist.');
+	headers.set('ETag', item.etag);
+	response = new Response(item.body, {
+		status: 200,
+		headers,
+	});
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
