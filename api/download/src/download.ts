@@ -1,4 +1,5 @@
-import { info, error as errorDiary } from 'diary';
+import { error as errorDiary, info } from 'diary';
+import { zipSync } from 'fflate';
 import { StatusError } from 'itty-router';
 import PQueue from 'p-queue';
 // @ts-expect-error - no types
@@ -18,7 +19,6 @@ import {
 } from './manifest';
 import { keepAwake, SLEEP_MINUTES } from './sleep';
 import { type IDResponse } from './types';
-import { zipSync } from 'fflate';
 
 export const downloadFile = async (manifest: Manifest) => {
 	const { id, subset, weight, style, extension, version, url } = manifest;
@@ -176,7 +176,7 @@ export const generateZip = async (
 	}
 
 	const licenseBuffer = await license.arrayBuffer();
-	files['LICENSE'] = new Uint8Array(licenseBuffer);
+	files.LICENSE = new Uint8Array(licenseBuffer);
 
 	info(`Generating zip file for ${id}@${version}`);
 
