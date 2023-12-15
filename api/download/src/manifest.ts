@@ -42,7 +42,10 @@ export const generateManifestItem = (
 ): Manifest => {
 	const { id, version } = splitTag(tag);
 	let [filename, extension] = file.split('.');
-	const [subset, weight, style] = filename.split('-');
+	const filenameArr = filename.split('-');
+	const style = filenameArr.pop();
+	const weight = filenameArr.pop();
+	const subset = filenameArr.join('-');
 	if (!subset || !weight || !style) {
 		throw new StatusError(400, 'Bad Request. Invalid filename.');
 	}
