@@ -3,6 +3,7 @@ import { StatusError } from 'itty-router';
 import { bucketPath, listBucket } from './bucket';
 import { type IDResponse } from './types';
 import { splitTag } from './util';
+import { info } from 'diary';
 
 export interface Manifest {
 	id: string;
@@ -165,13 +166,17 @@ export const pruneManifest = async (
 		: `${id}@${version}/`;
 	const existingFiles = await listBucket(prefix);
 
-	const manifest = baseManifest.filter((file) => {
-		const existingFile = existingFiles.objects.find((existingFile) => {
-			return existingFile === bucketPath(file);
-		});
+	// Filter out existing files
+	const manifest = [];
+	const existingSet = new Set(existingFiles.objects);
+	for (const file of baseManifest) {
+		if (!existingSet.has(bucketPath(file))) {
+			manifest.push(file);
+		}
+	}
 
-		return !existingFile;
-	});
-
+	info(
+		`Found ${manifest.length} new files to download out of ${baseManifest.length} from original manifest.`,
+	);
 	return manifest;
 };
