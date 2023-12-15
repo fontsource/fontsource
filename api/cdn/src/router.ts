@@ -70,7 +70,9 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	headers.set('Content-Type', isZip ? 'application/zip' : `font/${extension}`);
 	headers.set(
 		'Content-Disposition',
-		isZip ? `${id}_${version}.zip` : `${id}_${version}_${file}`,
+		`attachment; filename="${
+			isZip ? `${id}_${version}.zip` : `${id}_${version}_${file}`
+		}"`,
 	);
 
 	// Check R2 bucket for file

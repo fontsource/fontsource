@@ -50,6 +50,7 @@ router.get(
 			throw new StatusError(404, `Not Found. Object ${path} does not exist.`);
 
 		const headers = new Headers();
+		object.writeHttpMetadata(headers);
 		headers.set('etag', object.httpEtag);
 
 		return new Response(object.body, {
