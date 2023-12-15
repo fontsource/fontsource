@@ -2,4 +2,4 @@
 "download": patch
 ---
 
-fix(api): handle multi word subsets
+fix(api): handle multi word subsets in download manifest
