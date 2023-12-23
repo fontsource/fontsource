@@ -33,6 +33,7 @@ export const meta: MetaFunction = () => {
 
 export const headers: HeadersFunction = () => ({
 	'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
+	'Cache-Control': 'public, s-maxage=60',
 });
 
 export const links: LinksFunction = () => [
