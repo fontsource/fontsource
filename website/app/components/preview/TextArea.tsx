@@ -104,6 +104,9 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
 	const { id, family, weights, variable } = metadata;
 
+	const isItalic = useSelector(previewState.italic);
+	const italicTag = isItalic ? '-italic' : '';
+
 	const variableFamily = `${family} Variable`;
 	const isVariable = Boolean(variable);
 
@@ -114,10 +117,12 @@ const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
 			<Text className={classes.header}>Font Preview</Text>
 			{!isVariable &&
 				weights.map((weight) => (
-					<Fragment key={`s-${weight}`}>
+					<Fragment key={`s-${weight + italicTag}`}>
 						<link
 							rel="stylesheet"
-							href={`https://cdn.jsdelivr.net/fontsource/css/${id}@latest/${weight}.css`}
+							href={`https://cdn.jsdelivr.net/fontsource/css/${id}@latest/${
+								weight + italicTag
+							}.css`}
 						/>
 						<TextBox weight={weight} family={family} loaded={!isFontLoaded} />
 					</Fragment>
@@ -126,14 +131,14 @@ const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
 				<link
 					rel="stylesheet"
 					href={`https://cdn.jsdelivr.net/fontsource/css/${id}:vf@latest/${
-						variableCssKey ?? 'wght'
+						(variableCssKey ?? 'wght') + italicTag
 					}.css`}
 				/>
 			)}
 			{isVariable &&
 				weights.map((weight) => (
 					<TextBox
-						key={`v-${weight}`}
+						key={`v-${weight + italicTag}`}
 						weight={weight}
 						family={variableFamily}
 						loaded={!isFontLoaded}
