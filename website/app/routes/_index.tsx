@@ -135,10 +135,17 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 	// Add server state to local cache before responding
 	setSSRCache(serverUrl, serverState);
 
-	return json<SearchProps>({
-		serverState,
-		serverUrl,
-	});
+	return json<SearchProps>(
+		{
+			serverState,
+			serverUrl,
+		},
+		{
+			headers: {
+				'Cache-Control': 'public, max-age=300',
+			},
+		},
+	);
 };
 
 export default function Index() {

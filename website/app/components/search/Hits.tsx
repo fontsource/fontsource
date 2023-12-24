@@ -1,5 +1,6 @@
 import { useSelector } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
+import { Link as NavLink } from '@remix-run/react';
 import { useEffect, useRef, useState } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 
@@ -47,8 +48,9 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 
 	return (
 		<Box
-			component="a"
-			href={`/fonts/${hit.objectID}`}
+			renderRoot={({ ...others }) => (
+				<NavLink prefetch="intent" to={`/fonts/${hit.objectID}`} {...others} />
+			)}
 			className={classes.wrapper}
 			mih={{ base: '150px', sm: displaySelect === 'grid' ? '332px' : '150px' }}
 		>

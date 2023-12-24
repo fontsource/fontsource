@@ -32,7 +32,14 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		throw new Response('Not found', { status: 404 });
 	}
 
-	return json<LoaderData>({ code: mdx.code, frontmatter: mdx.frontmatter });
+	return json<LoaderData>(
+		{ code: mdx.code, frontmatter: mdx.frontmatter },
+		{
+			headers: {
+				'Cache-Control': 'public, max-age=300',
+			},
+		},
+	);
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
