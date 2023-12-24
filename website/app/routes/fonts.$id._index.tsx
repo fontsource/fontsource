@@ -9,6 +9,7 @@ import { Configure } from '@/components/preview/Configure';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
 import classes from '@/styles/global.module.css';
+import { getCSSCache, setCSSCache } from '@/utils/cache.server';
 import { ogMeta } from '@/utils/meta';
 import {
 	getAxisRegistry,
@@ -64,56 +65,66 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	);
 
 	// Generate static CSS
-	let staticCSS = '';
-	for (const weight of weights) {
-		for (const style of styles) {
-			staticCSS += unicodeKeys
-				.map((subset) =>
-					generateFontFace({
-						family,
-						display: 'block',
-						style,
-						weight,
-						src: [
-							{
-								url: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.woff2`,
-								format: 'woff2',
-							},
-						],
-						unicodeRange: unicodeRange[subset],
-					}),
-				)
-				.join('\n');
+	let staticCSS = getCSSCache(`s:${id}`) as string;
+	if (!staticCSS) {
+		for (const weight of weights) {
+			for (const style of styles) {
+				staticCSS += unicodeKeys
+					.map((subset) =>
+						generateFontFace({
+							family,
+							display: 'block',
+							style,
+							weight,
+							src: [
+								{
+									url: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.woff2`,
+									format: 'woff2',
+								},
+							],
+							unicodeRange: unicodeRange[subset],
+						}),
+					)
+					.join('\n');
+			}
 		}
+
+		// Cache in memory
+		if (staticCSS) setCSSCache(`s:${id}`, staticCSS);
 	}
 
 	// Generate variable CSS
 	let variableCSS: string | undefined;
 	if (variable) {
-		variableCSS = '';
-		for (const style of styles) {
-			variableCSS += unicodeKeys
-				.map((subset) =>
-					generateFontFace({
-						family,
-						display: 'block',
-						style,
-						weight: 400,
-						src: [
-							{
-								url: `https://cdn.jsdelivr.net/fontsource/fonts/${id}:vf@latest/${subset}-${variableCssKey}-${style}.woff2`,
-								format: 'woff2-variations',
+		variableCSS = getCSSCache(`v:${id}`);
+		if (!variableCSS) {
+			for (const style of styles) {
+				variableCSS += unicodeKeys
+					.map((subset) =>
+						generateFontFace({
+							family,
+							display: 'block',
+							style,
+							weight: 400,
+							src: [
+								{
+									url: `https://cdn.jsdelivr.net/fontsource/fonts/${id}:vf@latest/${subset}-${variableCssKey}-${style}.woff2`,
+									format: 'woff2-variations',
+								},
+							],
+							unicodeRange: unicodeRange[subset],
+							variable: {
+								wght: variable.axes.wght,
+								stretch: variable.axes.wdth,
+								slnt: variable.axes.slnt,
 							},
-						],
-						unicodeRange: unicodeRange[subset],
-						variable: {
-							wght: variable.axes.wght,
-							stretch: variable.axes.wdth,
-							slnt: variable.axes.slnt,
-						},
-					}),
-				)
-				.join('\n');
+						}),
+					)
+					.join('\n');
+
+				// Cache in memory
+				if (variableCSS) setCSSCache(`v:${id}`, variableCSS);
+			}
 		}
 	}
 
