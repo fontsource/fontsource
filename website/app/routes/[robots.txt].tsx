@@ -6,11 +6,14 @@ Allow: /
 
 Sitemap: https://fontsource.org/sitemap.xml`;
 
+	const headers = {
+		'Content-Type': 'text/plain',
+		'Cache-Control': 'public, max-age=86400', // 1 day
+	};
+
 	if (process.env.FLY_APP_NAME === 'fontsource') {
 		return new Response(prod, {
-			headers: {
-				'Content-Type': 'text/plain',
-			},
+			headers,
 		});
 	}
 
@@ -18,8 +21,6 @@ Sitemap: https://fontsource.org/sitemap.xml`;
 Disallow: /`;
 
 	return new Response(dev, {
-		headers: {
-			'Content-Type': 'text/plain',
-		},
+		headers,
 	});
 };
