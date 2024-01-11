@@ -58,11 +58,16 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		}
 	}
 
-	const { family, weights, unicodeRange, styles } = metadata;
+	const { family, weights, unicodeRange, styles, subsets } = metadata;
 
-	const unicodeKeys = Object.keys(unicodeRange).map((key) =>
+	let unicodeKeys = Object.keys(unicodeRange).map((key) =>
 		key.replace('[', '').replace(']', ''),
 	);
+
+	// Non-google fonts have no unicode keys stored, thus we need to use the subsets
+	if (unicodeKeys.length === 0) {
+		unicodeKeys = subsets;
+	}
 
 	// Generate static CSS
 	let staticCSS = getCSSCache(`s:${id}`) as string;
