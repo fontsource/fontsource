@@ -70,7 +70,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	}
 
 	// Generate static CSS
-	let staticCSS = getCSSCache(`s:${id}`) as string;
+	let staticCSS = getCSSCache(`s:${id}`) ?? '';
 	if (!staticCSS) {
 		for (const weight of weights) {
 			for (const style of styles) {
@@ -101,7 +101,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	// Generate variable CSS
 	let variableCSS: string | undefined;
 	if (variable) {
-		variableCSS = getCSSCache(`v:${id}`);
+		variableCSS = getCSSCache(`v:${id}`) ?? '';
 		if (!variableCSS) {
 			for (const style of styles) {
 				variableCSS += unicodeKeys

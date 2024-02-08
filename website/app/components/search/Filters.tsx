@@ -70,7 +70,6 @@ const Filters = () => {
 							readOnly
 							style={{
 								pointerEvents: 'none',
-								display: 'flex',
 							}}
 						/>
 					</UnstyledButton>
