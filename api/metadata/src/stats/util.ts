@@ -52,7 +52,7 @@ export const getAvailableVersions = async (
 		);
 	}
 
-	const list = await resp.json<JSDelivrAPIVersion>();
+	const list = (await resp.json()) as JSDelivrAPIVersion;
 	if (!list?.versions || list.versions.length === 0) {
 		throw new StatusError(404, `Not Found. No versions found for ${id}.`);
 	}

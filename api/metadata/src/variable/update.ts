@@ -6,7 +6,7 @@ import { StatusError } from 'itty-router';
 
 import {
 	AXIS_REGISTRY_URL,
-	KV_TTL,
+	METADATA_KEYS,
 	VARIABLE_ICONS_URL,
 	VARIABLE_URL,
 } from '../utils';
@@ -50,48 +50,7 @@ export const updateVariableList = async (env: Env, ctx: ExecutionContext) => {
 
 	// Save entire metadata into KV first
 	ctx.waitUntil(
-		env.VARIABLE_LIST.put('metadata', JSON.stringify(noVariants), {
-			metadata: {
-				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() / 1000 + KV_TTL,
-			},
-		}),
-	);
-
-	return noVariants;
-};
-
-export const updateVariable = async (
-	id: string,
-	env: Env,
-	ctx: ExecutionContext,
-) => {
-	// Fetch from KV store
-	let data = await env.VARIABLE_LIST.get<Record<string, VariableMetadata>>(id, {
-		type: 'json',
-	});
-	if (!data) {
-		data = await updateVariableList(env, ctx);
-	}
-
-	const dataId = data[id];
-	if (!dataId) {
-		throw new StatusError(404, `Variable ${id} not found.`);
-	}
-
-	const noVariants: VariableMetadata = {
-		family: dataId.family,
-		axes: dataId.axes,
-	};
-
-	// Save entire metadata into KV first
-	ctx.waitUntil(
-		env.VARIABLE.put(id, JSON.stringify(noVariants), {
-			metadata: {
-				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() / 1000 + KV_TTL,
-			},
-		}),
+		env.METADATA.put(METADATA_KEYS.variable_list, JSON.stringify(noVariants)),
 	);
 
 	return noVariants;
@@ -117,12 +76,7 @@ export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
 
 	// Save entire metadata into KV first
 	ctx.waitUntil(
-		env.VARIABLE.put('axis_registry', JSON.stringify(registry), {
-			metadata: {
-				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() / 1000 + KV_TTL,
-			},
-		}),
+		env.METADATA.put(METADATA_KEYS.axisRegistry, JSON.stringify(registry)),
 	);
 
 	return registry;
