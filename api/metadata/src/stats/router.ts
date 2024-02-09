@@ -10,7 +10,7 @@ import {
 import { getId } from '../fonts/get';
 import type { CFRouterContext } from '../types';
 import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
-import { getPackageStat, getVersion } from './get';
+import { getPackageStat, getPackageStatAll, getVersion } from './get';
 
 interface StatsRequest extends IRequestStrict {
 	id: string;
@@ -45,6 +45,32 @@ router.get('/v1/version/:id', withParams, async (request, env, ctx) => {
 			'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 		},
+	});
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
+});
+
+router.get('/v1/stats', async (request, env, ctx) => {
+	const url = new URL(request.url);
+
+	// Check cache first
+	const cacheKey = new Request(url.toString(), request.clone());
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
+
+	const headers = {
+		'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
+		'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
+	};
+	const data = await getPackageStatAll(env, ctx);
+
+	response = json(data, {
+		headers,
 	});
 
 	ctx.waitUntil(cache.put(cacheKey, response.clone()));

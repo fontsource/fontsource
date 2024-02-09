@@ -75,44 +75,37 @@ export const updatePackageStatAll = async (env: Env, ctx: ExecutionContext) => {
 			const isVariable = type === '@fontsource-variable';
 
 			// Initialise stats object
-			stats[id] =
-				stats[id] || isVariable
+			stats[id] = stats[id] || {
+				total: {
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
+				},
+				static: {
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
+				},
+				variable: isVariable
 					? {
-							total: {
-								npmDownloadMonthly: 0,
-								npmDownloadTotal: 0,
-								jsDelivrHitsMonthly: 0,
-								jsDelivrHitsTotal: 0,
-							},
-							static: {
-								npmDownloadMonthly: 0,
-								npmDownloadTotal: 0,
-								jsDelivrHitsMonthly: 0,
-								jsDelivrHitsTotal: 0,
-							},
-							variable: {
-								npmDownloadMonthly: 0,
-								npmDownloadTotal: 0,
-								jsDelivrHitsMonthly: 0,
-								jsDelivrHitsTotal: 0,
-							},
+							npmDownloadMonthly: 0,
+							npmDownloadTotal: 0,
+							jsDelivrHitsMonthly: 0,
+							jsDelivrHitsTotal: 0,
 					  }
-					: {
-							total: {
-								npmDownloadMonthly: 0,
-								npmDownloadTotal: 0,
-								jsDelivrHitsMonthly: 0,
-								jsDelivrHitsTotal: 0,
-							},
-							static: {
-								npmDownloadMonthly: 0,
-								npmDownloadTotal: 0,
-								jsDelivrHitsMonthly: 0,
-								jsDelivrHitsTotal: 0,
-							},
-					  };
+					: undefined,
+			};
 
 			if (isVariable) {
+				stats[id].variable = stats[id].variable ?? {
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
+				};
+
 				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 				stats[id].variable!.npmDownloadMonthly +=
 					npmMonthData[packageName] ?? 0;
@@ -135,37 +128,48 @@ export const updatePackageStatAll = async (env: Env, ctx: ExecutionContext) => {
 		} else {
 			// Handle unscoped deprecated packages
 			const id = packageName.replace('fontsource-', '');
-			stats[id] = {
+			stats[id] = stats[id] || {
 				total: {
-					npmDownloadMonthly: npmMonthData[packageName] ?? 0,
-					npmDownloadTotal: npmTotalData[packageName] ?? 0,
-					jsDelivrHitsMonthly: jsDelivrMonthData[packageName] ?? 0,
-					jsDelivrHitsTotal: jsDelivrTotalData[packageName] ?? 0,
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
 				},
 				static: {
-					npmDownloadMonthly: npmMonthData[packageName] ?? 0,
-					npmDownloadTotal: npmTotalData[packageName] ?? 0,
-					jsDelivrHitsMonthly: jsDelivrMonthData[packageName] ?? 0,
-					jsDelivrHitsTotal: jsDelivrTotalData[packageName] ?? 0,
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
 				},
 			};
+
+			stats[id].static.npmDownloadMonthly += npmMonthData[packageName] ?? 0;
+			stats[id].static.npmDownloadTotal += npmTotalData[packageName] ?? 0;
+			stats[id].static.jsDelivrHitsMonthly +=
+				jsDelivrMonthData[packageName] ?? 0;
+			stats[id].static.jsDelivrHitsTotal += jsDelivrTotalData[packageName] ?? 0;
 		}
 	}
 
 	// Calculate totals for all packages
 	for (const key of Object.keys(stats)) {
-		stats[key].total.npmDownloadMonthly +=
-			stats[key].static.npmDownloadMonthly +
-			(stats[key].variable?.npmDownloadMonthly ?? 0);
-		stats[key].total.npmDownloadTotal +=
-			stats[key].static.npmDownloadTotal +
-			(stats[key].variable?.npmDownloadTotal ?? 0);
+		stats[key].total.npmDownloadMonthly += stats[key].static.npmDownloadMonthly;
+		stats[key].total.npmDownloadTotal += stats[key].static.npmDownloadTotal;
 		stats[key].total.jsDelivrHitsMonthly +=
-			stats[key].static.jsDelivrHitsMonthly +
-			(stats[key].variable?.jsDelivrHitsMonthly ?? 0);
-		stats[key].total.jsDelivrHitsTotal +=
-			stats[key].static.jsDelivrHitsTotal +
-			(stats[key].variable?.jsDelivrHitsTotal ?? 0);
+			stats[key].static.jsDelivrHitsMonthly;
+		stats[key].total.jsDelivrHitsTotal += stats[key].static.jsDelivrHitsTotal;
+
+		// Add variable stats if available
+		if (stats[key].variable) {
+			stats[key].total.npmDownloadMonthly +=
+				stats[key].variable?.npmDownloadMonthly ?? 0;
+			stats[key].total.npmDownloadTotal +=
+				stats[key].variable?.npmDownloadTotal ?? 0;
+			stats[key].total.jsDelivrHitsMonthly +=
+				stats[key].variable?.jsDelivrHitsMonthly ?? 0;
+			stats[key].total.jsDelivrHitsTotal +=
+				stats[key].variable?.jsDelivrHitsTotal ?? 0;
+		}
 	}
 
 	// Add to KV cache
