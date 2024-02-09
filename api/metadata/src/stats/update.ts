@@ -1,14 +1,8 @@
 import { type VersionResponse } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
-import { getOrUpdateId } from '../fonts/get';
-import { KV_TTL, STAT_TTL } from '../utils';
-import {
-	type JSDelivrStat,
-	type NPMDownloadRegistry,
-	type NPMDownloadRegistryRange,
-	type StatsResponseAll,
-} from './types';
+import { KV_TTL, METADATA_KEYS } from '../utils';
+import { type StatsResponseAllRecord } from './types';
 import { getAvailableVersions } from './util';
 
 export const updateVersion = async (
@@ -17,7 +11,6 @@ export const updateVersion = async (
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
-	const key = `version:${id}`;
 	const [staticVal, variable] = await Promise.all([
 		getAvailableVersions(id),
 		isVariable ? getAvailableVersions(id, isVariable) : undefined,
@@ -35,205 +28,153 @@ export const updateVersion = async (
 
 	// Add to KV cache
 	ctx.waitUntil(
-		env.STATS.put(key, JSON.stringify(resp), {
-			metadata: {
-				ttl: Date.now() / 1000 + KV_TTL,
-			},
+		env.STATS.put(METADATA_KEYS.version(id), JSON.stringify(resp), {
+			expirationTtl: KV_TTL, // We want to expire these as we can't cron trigger these yet
 		}),
 	);
 
 	return resp;
 };
 
-type StatType = 'static' | 'variable';
+export const updatePackageStatAll = async (env: Env, ctx: ExecutionContext) => {
+	const [npmMonthlyResp, npmTotalResp, jsDelivrMonthlyResp, jsDelivrTotalResp] =
+		await Promise.all([
+			fetch(
+				'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/lastMonthPopular.json',
+			),
+			fetch(
+				'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/totalPopular.json',
+			),
+			fetch(
+				'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/jsDelivrMonthPopular.json',
+			),
+			fetch(
+				'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/jsDelivrTotalPopular.json',
+			),
+		]);
 
-const npmMonth = (id: string, type: StatType) =>
-	`https://api.npmjs.org/downloads/point/last-month/${
-		type === 'variable' ? '@fontsource-variable' : '@fontsource'
-	}/${id}`;
+	const [npmMonthData, npmTotalData, jsDelivrMonthData, jsDelivrTotalData] =
+		(await Promise.all([
+			npmMonthlyResp.json(),
+			npmTotalResp.json(),
+			jsDelivrMonthlyResp.json(),
+			jsDelivrTotalResp.json(),
+		])) as [
+			Record<string, number>,
+			Record<string, number>,
+			Record<string, number>,
+			Record<string, number>,
+		];
 
-const npmTotal = (id: string, type: StatType) =>
-	`https://api.npmjs.org/downloads/range/2020-01-01:3000-01-01/${
-		type === 'variable' ? '@fontsource-variable' : '@fontsource'
-	}/${id}`;
+	const stats: StatsResponseAllRecord = {};
 
-const jsDelivrMonth = (id: string, type: StatType) =>
-	`https://data.jsdelivr.com/v1/stats/packages/npm/${
-		type === 'variable' ? '@fontsource-variable' : '@fontsource'
-	}/${id}?period=month`;
+	for (const packageName of Object.keys(npmMonthData)) {
+		// Check for scoped packages
+		if (packageName.startsWith('@')) {
+			const [type, id] = packageName.split('/');
+			const isVariable = type === '@fontsource-variable';
 
-const jsDelivrYear = (id: string, type: StatType, period: string) =>
-	`https://data.jsdelivr.com/v1/stats/packages/npm/${
-		type === 'variable' ? '@fontsource-variable' : '@fontsource'
-	}/${id}?period=${period}`;
+			// Initialise stats object
+			stats[id] = stats[id] || {
+				total: {
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
+				},
+				static: {
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
+				},
+				variable: isVariable
+					? {
+							npmDownloadMonthly: 0,
+							npmDownloadTotal: 0,
+							jsDelivrHitsMonthly: 0,
+							jsDelivrHitsTotal: 0,
+					  }
+					: undefined,
+			};
 
-export const updatePackageStat = async (
-	id: string,
-	env: Env,
-	ctx: ExecutionContext,
-) => {
-	const metadata = await getOrUpdateId(id, env, ctx);
-	const isVariable = Boolean(metadata?.variable);
+			if (isVariable) {
+				stats[id].variable = stats[id].variable ?? {
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
+				};
 
-	const [
-		// Static stats
-		npmMonthResp,
-		npmTotalResp,
-		jsDelivrMonthResp,
-		jsDelivrYearResp,
-		jsDelivrLastYearResp,
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				stats[id].variable!.npmDownloadMonthly +=
+					npmMonthData[packageName] ?? 0;
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				stats[id].variable!.npmDownloadTotal += npmTotalData[packageName] ?? 0;
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				stats[id].variable!.jsDelivrHitsMonthly +=
+					jsDelivrMonthData[packageName] ?? 0;
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				stats[id].variable!.jsDelivrHitsTotal +=
+					jsDelivrTotalData[packageName] ?? 0;
+			} else {
+				stats[id].static.npmDownloadMonthly += npmMonthData[packageName] ?? 0;
+				stats[id].static.npmDownloadTotal += npmTotalData[packageName] ?? 0;
+				stats[id].static.jsDelivrHitsMonthly +=
+					jsDelivrMonthData[packageName] ?? 0;
+				stats[id].static.jsDelivrHitsTotal +=
+					jsDelivrTotalData[packageName] ?? 0;
+			}
+		} else {
+			// Handle unscoped deprecated packages
+			const id = packageName.replace('fontsource-', '');
+			stats[id] = stats[id] || {
+				total: {
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
+				},
+				static: {
+					npmDownloadMonthly: 0,
+					npmDownloadTotal: 0,
+					jsDelivrHitsMonthly: 0,
+					jsDelivrHitsTotal: 0,
+				},
+			};
 
-		// Variable stats
-		npmMonthRespVariable,
-		npmTotalRespVariable,
-		jsDelivrMonthRespVariable,
-		jsDelivrYearRespVariable,
-		jsDelivrLastYearRespVariable,
-	] = await Promise.all([
-		// Static stats
-		// NPM only stores last 18 months of data
-		fetch(npmMonth(id, 'static')),
-		fetch(npmTotal(id, 'static')),
-		fetch(jsDelivrMonth(id, 'static')),
-		// We can't query total stats so we'll query last 24 months
-		fetch(jsDelivrYear(id, 'static', 'year')),
-		fetch(jsDelivrYear(id, 'static', 's-year')),
-
-		// Variable stats
-		isVariable ? fetch(npmMonth(id, 'variable')) : undefined,
-		isVariable ? fetch(npmTotal(id, 'variable')) : undefined,
-		isVariable ? fetch(jsDelivrMonth(id, 'variable')) : undefined,
-		isVariable ? fetch(jsDelivrYear(id, 'variable', 'year')) : undefined,
-		isVariable ? fetch(jsDelivrYear(id, 'variable', 's-year')) : undefined,
-	]);
-
-	if (
-		!npmMonthResp.ok ||
-		!npmTotalResp.ok ||
-		// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-		(npmMonthRespVariable && !npmMonthRespVariable.ok) ||
-		(npmTotalRespVariable && !npmTotalRespVariable.ok)
-	) {
-		console.log(await npmMonthResp.text());
-		console.log(await npmTotalResp.text());
-		throw new StatusError(
-			500,
-			'Internal Server Error. Unable to fetch download stats from NPM registry.',
-		);
-	}
-
-	if (
-		!jsDelivrMonthResp.ok ||
-		!jsDelivrYearResp.ok ||
-		!jsDelivrLastYearResp.ok ||
-		// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-		(jsDelivrMonthRespVariable && !jsDelivrMonthRespVariable.ok) ||
-		// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-		(jsDelivrYearRespVariable && !jsDelivrYearRespVariable.ok) ||
-		(jsDelivrLastYearRespVariable && !jsDelivrLastYearRespVariable.ok)
-	) {
-		console.log(await jsDelivrMonthResp.text());
-		console.log(await jsDelivrYearResp.text());
-		console.log(await jsDelivrLastYearResp.text());
-		if (isVariable) {
-			console.log(await jsDelivrMonthRespVariable?.text());
-			console.log(await jsDelivrYearRespVariable?.text());
-			console.log(await jsDelivrLastYearRespVariable?.text());
+			stats[id].static.npmDownloadMonthly += npmMonthData[packageName] ?? 0;
+			stats[id].static.npmDownloadTotal += npmTotalData[packageName] ?? 0;
+			stats[id].static.jsDelivrHitsMonthly +=
+				jsDelivrMonthData[packageName] ?? 0;
+			stats[id].static.jsDelivrHitsTotal += jsDelivrTotalData[packageName] ?? 0;
 		}
-		throw new StatusError(
-			500,
-			'Internal Server Error. Unable to fetch download stats from jsDelivr.',
-		);
 	}
 
-	const [
-		// Static stats
-		npmMonthData,
-		npmTotalData,
-		jsDelivrMonthData,
-		jsDelivrYearData,
-		jsDelivrLastYearData,
+	// Calculate totals for all packages
+	for (const key of Object.keys(stats)) {
+		stats[key].total.npmDownloadMonthly += stats[key].static.npmDownloadMonthly;
+		stats[key].total.npmDownloadTotal += stats[key].static.npmDownloadTotal;
+		stats[key].total.jsDelivrHitsMonthly +=
+			stats[key].static.jsDelivrHitsMonthly;
+		stats[key].total.jsDelivrHitsTotal += stats[key].static.jsDelivrHitsTotal;
 
-		// Variable stats
-		npmMonthDataVariable,
-		npmTotalDataVariable,
-		jsDelivrMonthDataVariable,
-		jsDelivrYearDataVariable,
-		jsDelivrLastYearDataVariable,
-	] = await Promise.all([
-		npmMonthResp.json<NPMDownloadRegistry>(),
-		npmTotalResp.json<NPMDownloadRegistryRange>(),
-		jsDelivrMonthResp.json<JSDelivrStat>(),
-		jsDelivrYearResp.json<JSDelivrStat>(),
-		jsDelivrLastYearResp.json<JSDelivrStat>(),
-
-		// Variable stats
-		isVariable ? npmMonthRespVariable?.json<NPMDownloadRegistry>() : undefined,
-		isVariable
-			? npmTotalRespVariable?.json<NPMDownloadRegistryRange>()
-			: undefined,
-		isVariable ? jsDelivrMonthRespVariable?.json<JSDelivrStat>() : undefined,
-		isVariable ? jsDelivrYearRespVariable?.json<JSDelivrStat>() : undefined,
-		isVariable ? jsDelivrLastYearRespVariable?.json<JSDelivrStat>() : undefined,
-	]);
-
-	const npmTotalCountStatic = npmTotalData.downloads.reduce(
-		(acc, curr) => acc + curr.downloads,
-		0,
-	);
-
-	// Variable stat type assertions
-	const npmTotalCountVariable = npmTotalDataVariable
-		? npmTotalDataVariable.downloads.reduce(
-				(acc, curr) => acc + curr.downloads,
-				0,
-		  )
-		: 0;
-	const npmTotalMonthVariable = npmMonthDataVariable?.downloads ?? 0;
-	const jsDelivrTotalHitsVariable =
-		(jsDelivrYearDataVariable?.hits.total ?? 0) +
-		(jsDelivrLastYearDataVariable?.hits.total ?? 0);
-	const jsDelivrMonthHitsVariable = jsDelivrMonthDataVariable?.hits.total ?? 0;
-
-	const resp: StatsResponseAll = {
-		total: {
-			npmDownloadTotal: npmTotalCountStatic + npmTotalCountVariable,
-			npmDownloadMonthly: npmMonthData.downloads + npmTotalMonthVariable,
-			jsDelivrHitsTotal:
-				jsDelivrYearData.hits.total +
-				jsDelivrLastYearData.hits.total +
-				jsDelivrTotalHitsVariable,
-			jsDelivrHitsMonthly:
-				jsDelivrMonthData.hits.total + jsDelivrMonthHitsVariable,
-		},
-
-		static: {
-			npmDownloadTotal: npmTotalCountStatic,
-			npmDownloadMonthly: npmMonthData.downloads,
-			jsDelivrHitsTotal:
-				jsDelivrYearData.hits.total + jsDelivrLastYearData.hits.total,
-			jsDelivrHitsMonthly: jsDelivrMonthData.hits.total,
-		},
-
-		...(isVariable && {
-			variable: {
-				npmDownloadTotal: npmTotalCountVariable,
-				npmDownloadMonthly: npmTotalMonthVariable,
-				jsDelivrHitsTotal: jsDelivrTotalHitsVariable,
-				jsDelivrHitsMonthly: jsDelivrMonthHitsVariable,
-			},
-		}),
-	};
+		// Add variable stats if available
+		if (stats[key].variable) {
+			stats[key].total.npmDownloadMonthly +=
+				stats[key].variable?.npmDownloadMonthly ?? 0;
+			stats[key].total.npmDownloadTotal +=
+				stats[key].variable?.npmDownloadTotal ?? 0;
+			stats[key].total.jsDelivrHitsMonthly +=
+				stats[key].variable?.jsDelivrHitsMonthly ?? 0;
+			stats[key].total.jsDelivrHitsTotal +=
+				stats[key].variable?.jsDelivrHitsTotal ?? 0;
+		}
+	}
 
 	// Add to KV cache
-	const key = `package:${id}`;
 	ctx.waitUntil(
-		env.STATS.put(key, JSON.stringify(resp), {
-			metadata: {
-				ttl: Date.now() / 1000 + STAT_TTL,
-			},
-		}),
+		env.METADATA.put(METADATA_KEYS.downloads, JSON.stringify(stats)),
 	);
-
-	return resp;
+	return stats;
 };

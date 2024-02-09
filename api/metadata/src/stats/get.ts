@@ -1,54 +1,55 @@
 import { type VersionResponse } from 'common-api/types';
 
-import { type TTLMetadata } from '../types';
-import { type StatsResponseAll } from './types';
-import { updatePackageStat, updateVersion } from './update';
+import { KV_TTL, METADATA_KEYS } from '../utils';
+import { type StatsResponseAllRecord } from './types';
+import { updatePackageStatAll, updateVersion } from './update';
 
-export const getOrUpdateVersion = async (
+export const getVersion = async (
 	id: string,
 	isVariable: boolean,
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
-	const key = `version:${id}`;
-	const { value, metadata } = await env.STATS.getWithMetadata<
-		VersionResponse,
-		TTLMetadata
-	>(key, {
-		type: 'json',
-	});
+	const value = await env.STATS.get<VersionResponse>(
+		METADATA_KEYS.version(id),
+		{
+			type: 'json',
+			cacheTtl: KV_TTL,
+		},
+	);
 
 	if (!value) {
 		return await updateVersion(id, isVariable, env, ctx);
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
-		ctx.waitUntil(updateVersion(id, isVariable, env, ctx));
+	return value;
+};
+
+export const getPackageStatAll = async (env: Env, ctx: ExecutionContext) => {
+	const value = await env.METADATA.get<StatsResponseAllRecord>(
+		METADATA_KEYS.downloads,
+		{
+			type: 'json',
+			cacheTtl: KV_TTL,
+		},
+	);
+
+	if (!value) {
+		return await updatePackageStatAll(env, ctx);
 	}
 
 	return value;
 };
 
-export const getOrUpdatePackageStat = async (
+export const getPackageStat = async (
 	id: string,
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
-	const key = `package:${id}`;
-	const { value, metadata } = await env.STATS.getWithMetadata<
-		StatsResponseAll,
-		TTLMetadata
-	>(key, {
-		type: 'json',
-	});
-
-	if (!value) {
-		return await updatePackageStat(id, env, ctx);
+	const value = await getPackageStatAll(env, ctx);
+	if (!value[id]) {
+		return;
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
-		ctx.waitUntil(updatePackageStat(id, env, ctx));
-	}
-
-	return value;
+	return value[id];
 };

@@ -1,26 +1,69 @@
-import type { FontsourceMetadata } from '../types';
-import { KV_TTL, METADATA_URL } from '../utils';
-import type { Fontlist, FontlistQueries } from './types';
+import { type FontVariants } from '../fonts/types';
+import type { FontMetadata, FontsourceMetadata } from '../types';
+import { METADATA_KEYS, METADATA_URL } from '../utils';
+import type { Fontlist, FontlistQueries, MetadataList } from './types';
 
-const updateMetadata = async (env: Env) => {
+const generateFontVariants = ({
+	id,
+	subsets,
+	weights,
+	styles,
+}: FontMetadata): FontVariants => {
+	const variants: FontVariants = {};
+
+	for (const weight of weights) {
+		variants[weight] = variants[weight] || {};
+
+		for (const style of styles) {
+			variants[weight][style] = variants[weight][style] || {};
+
+			for (const subset of subsets) {
+				variants[weight][style][subset] = {
+					url: {
+						woff2: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.woff2`,
+						woff: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.woff`,
+						ttf: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.ttf`,
+					},
+				};
+			}
+		}
+	}
+
+	return variants;
+};
+
+const updateMetadata = async (env: Env, ctx: ExecutionContext) => {
 	const response = await fetch(METADATA_URL);
-	const data = await response.json<FontsourceMetadata>();
+	const data = (await response.json()) as FontsourceMetadata;
+
+	const dataWithVariants: MetadataList = {};
+
+	for (const [key, value] of Object.entries(data)) {
+		const variants = generateFontVariants(value);
+		// Add variants to the metadata
+		dataWithVariants[key] = {
+			...value,
+			variable: Boolean(value.variable),
+			license: value.license.type,
+			variants,
+		};
+	}
 
 	// Save entire metadata into KV first
-	await env.FONTLIST.put('metadata', JSON.stringify(data), {
-		metadata: {
-			// We need to set a custom ttl for a stale-while-revalidate strategy
-			ttl: Date.now() / 1000 + KV_TTL,
-		},
-	});
-
-	return data;
+	ctx.waitUntil(
+		env.METADATA.put(METADATA_KEYS.fonts, JSON.stringify(dataWithVariants)),
+	);
+	return dataWithVariants;
 };
 
 // This updates the fontlist dataset for a given key
-const updateList = async (key: FontlistQueries, env: Env) => {
+const updateList = async (
+	key: FontlistQueries,
+	env: Env,
+	ctx: ExecutionContext,
+) => {
 	const response = await fetch(METADATA_URL);
-	const data = await response.json<FontsourceMetadata>();
+	const data = (await response.json()) as FontsourceMetadata;
 
 	// Depending on key, generate a fontlist object with respective values
 	const list: Fontlist = {};
@@ -31,11 +74,9 @@ const updateList = async (key: FontlistQueries, env: Env) => {
 	}
 
 	// Store the list in KV
-	await env.FONTLIST.put(key, JSON.stringify(list), {
-		metadata: {
-			ttl: Date.now() / 1000 + KV_TTL,
-		},
-	});
+	ctx.waitUntil(
+		env.METADATA.put(METADATA_KEYS.fontlist(key), JSON.stringify(list)),
+	);
 	return list;
 };
 

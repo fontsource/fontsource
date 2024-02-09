@@ -7,10 +7,10 @@ import {
 	withParams,
 } from 'itty-router';
 
-import { getOrUpdateId } from '../fonts/get';
+import { getId } from '../fonts/get';
 import type { CFRouterContext } from '../types';
 import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
-import { getOrUpdatePackageStat, getOrUpdateVersion } from './get';
+import { getPackageStat, getPackageStatAll, getVersion } from './get';
 
 interface StatsRequest extends IRequestStrict {
 	id: string;
@@ -30,12 +30,12 @@ router.get('/v1/version/:id', withParams, async (request, env, ctx) => {
 		return response;
 	}
 
-	const metadata = await getOrUpdateId(id, env, ctx);
+	const metadata = await getId(id, env, ctx);
 	if (!metadata) {
 		throw new StatusError(404, 'Not found. Font does not exist.');
 	}
 
-	const versions = await getOrUpdateVersion(id, metadata.variable, env, ctx);
+	const versions = await getVersion(id, metadata.variable, env, ctx);
 	if (!versions) {
 		throw new StatusError(500, 'Internal Server Error. Version list empty.');
 	}
@@ -45,6 +45,32 @@ router.get('/v1/version/:id', withParams, async (request, env, ctx) => {
 			'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 			'CDN-Cache-Control': `public, max-age=${CF_EDGE_TTL}`,
 		},
+	});
+
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
+});
+
+router.get('/v1/stats', async (request, env, ctx) => {
+	const url = new URL(request.url);
+
+	// Check cache first
+	const cacheKey = new Request(url.toString(), request.clone());
+	const cache = caches.default;
+
+	let response = await cache.match(cacheKey);
+	if (response) {
+		return response;
+	}
+
+	const headers = {
+		'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
+		'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
+	};
+	const data = await getPackageStatAll(env, ctx);
+
+	response = json(data, {
+		headers,
 	});
 
 	ctx.waitUntil(cache.put(cacheKey, response.clone()));
@@ -64,12 +90,12 @@ router.get('/v1/stats/:id', withParams, async (request, env, ctx) => {
 	}
 
 	// Check if font exists
-	const metadata = await getOrUpdateId(id, env, ctx);
+	const metadata = await getId(id, env, ctx);
 	if (!metadata) {
 		throw new StatusError(404, 'Not found. Font does not exist.');
 	}
 
-	const stats = await getOrUpdatePackageStat(id, env, ctx);
+	const stats = await getPackageStat(id, env, ctx);
 	if (!stats) {
 		throw new StatusError(500, 'Internal Server Error. Stats list empty.');
 	}

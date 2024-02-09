@@ -8,6 +8,8 @@ exports[`fonts id worker > should return normal id response 1`] = `
   "id": "akshar",
   "lastModified": "2023-03-21",
   "license": "OFL-1.1",
+  "npmVersion": "5.0.0",
+  "source": "https://github.com/google/fonts",
   "styles": [
     "normal",
   ],
@@ -150,6 +152,7 @@ exports[`fonts id worker > should return normal id response 1`] = `
       },
     },
   },
+  "version": "v9",
   "weights": [
     300,
     400,
