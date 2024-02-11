@@ -1,5 +1,11 @@
 # api
 
+## 0.2.15
+
+### Patch Changes
+
+- [#935](https://github.com/fontsource/fontsource/pull/935) [`8ec7d3e3a2`](https://github.com/fontsource/fontsource/commit/8ec7d3e3a2af2906af1922500cce6a7d23a2d828) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(api): use cron triggers to update kv metadata
+
 ## 0.2.14
 
 ### Patch Changes
