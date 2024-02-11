@@ -95,9 +95,30 @@ router.get('/v1/stats/:id', withParams, async (request, env, ctx) => {
 		throw new StatusError(404, 'Not found. Font does not exist.');
 	}
 
-	const stats = await getPackageStat(id, env, ctx);
+	let stats = await getPackageStat(id, env, ctx);
 	if (!stats) {
-		throw new StatusError(500, 'Internal Server Error. Stats list empty.');
+		stats = {
+			total: {
+				npmDownloadMonthly: 0,
+				npmDownloadTotal: 0,
+				jsDelivrHitsMonthly: 0,
+				jsDelivrHitsTotal: 0,
+			},
+			static: {
+				npmDownloadMonthly: 0,
+				npmDownloadTotal: 0,
+				jsDelivrHitsMonthly: 0,
+				jsDelivrHitsTotal: 0,
+			},
+			variable: metadata.variable
+				? {
+						npmDownloadMonthly: 0,
+						npmDownloadTotal: 0,
+						jsDelivrHitsMonthly: 0,
+						jsDelivrHitsTotal: 0,
+				  }
+				: undefined,
+		};
 	}
 
 	response = json(stats, {
