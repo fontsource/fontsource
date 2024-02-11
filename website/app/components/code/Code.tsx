@@ -108,7 +108,6 @@ export const CodeMdx = (props: CodeProps) => {
 
 	// Inline code
 	if (language === '')
-		// @ts-expect-error - Mantine v7 typings bug
 		return <MantineCode className={classes['inline-code']} {...props} />;
 
 	const code = props.children?.toString().trim() ?? '';
@@ -128,7 +127,6 @@ export const Code = ({ language, children, ...others }: CodeDirectProps) => {
 	// Inline code
 	if (language === '')
 		return (
-			// @ts-expect-error - Mantine v7 typings bug
 			<MantineCode className={classes['inline-code']} {...others}>
 				{children}
 			</MantineCode>
