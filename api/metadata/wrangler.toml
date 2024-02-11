@@ -13,3 +13,6 @@ r2_buckets = [
 
 logpush = true
 workers_dev = false
+
+[triggers]
+crons = ["0 0 * * *"]
