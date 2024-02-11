@@ -20,6 +20,14 @@ import { CarbonAd } from '../CarbonAd';
 import { InfoWrapper } from './Info';
 import classes from './Install.module.css';
 
+const categoryMap: Record<string, string> = {
+	'sans-serif': 'sans-serif',
+	serif: 'serif',
+	monospace: 'monospace',
+	handwriting: 'cursive',
+	display: 'system-ui',
+};
+
 interface InstallProps {
 	metadata: Metadata;
 	variable?: VariableData;
@@ -129,7 +137,9 @@ const Variable = ({ metadata, variable }: InstallProps) => {
 			</Text>
 			<Code language="css">
 				{`body {
-  font-family: '${metadata.family} Variable', sans-serif;
+  font-family: '${metadata.family} Variable', ${
+		categoryMap[metadata.category] ?? 'sans-serif'
+	};
 }`}
 			</Code>
 		</>
@@ -223,7 +233,9 @@ const Static = ({ metadata }: InstallProps) => {
 			</Text>
 			<Code language="css">
 				{`body {
-  font-family: '${metadata.family}', sans-serif;
+  font-family: '${metadata.family}', ${
+		categoryMap[metadata.category] ?? 'sans-serif'
+	};
 }`}
 			</Code>
 		</>
