@@ -1,5 +1,13 @@
 # api
 
+## 0.2.16
+
+### Patch Changes
+
+- [#941](https://github.com/fontsource/fontsource/pull/941) [`4e666ae7c0`](https://github.com/fontsource/fontsource/commit/4e666ae7c08e602ff3d29da1801d86b8888788c0) Thanks [@ayuhito](https://github.com/ayuhito)! - chore: add cron triggers to wrangler toml
+
+- [#939](https://github.com/fontsource/fontsource/pull/939) [`0b94dd64f7`](https://github.com/fontsource/fontsource/commit/0b94dd64f70e360eee80c1c8c12b3ba6595f963b) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): return empty stats object if font exists but no stats
+
 ## 0.2.15
 
 ### Patch Changes
