@@ -1,5 +1,11 @@
 # api
 
+## 0.2.17
+
+### Patch Changes
+
+- [#943](https://github.com/fontsource/fontsource/pull/943) [`ed72d85a61`](https://github.com/fontsource/fontsource/commit/ed72d85a61b9b90e270b6080cc5f21ec467fa1f1) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): introduce separate versions kv space
+
 ## 0.2.16
 
 ### Patch Changes
