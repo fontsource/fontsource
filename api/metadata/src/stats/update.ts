@@ -28,7 +28,7 @@ export const updateVersion = async (
 
 	// Add to KV cache
 	ctx.waitUntil(
-		env.STATS.put(METADATA_KEYS.version(id), JSON.stringify(resp), {
+		env.VERSIONS.put(METADATA_KEYS.version(id), JSON.stringify(resp), {
 			expirationTtl: KV_TTL, // We want to expire these as we can't cron trigger these yet
 		}),
 	);

@@ -10,7 +10,7 @@ export const getVersion = async (
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
-	const value = await env.STATS.get<VersionResponse>(
+	const value = await env.VERSIONS.get<VersionResponse>(
 		METADATA_KEYS.version(id),
 		{
 			type: 'json',

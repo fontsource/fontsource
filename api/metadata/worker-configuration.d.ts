@@ -1,6 +1,6 @@
 interface Env {
 	METADATA: KVNamespace;
-	STATS: KVNamespace;
+	VERSIONS: KVNamespace;
 	BUCKET: R2Bucket;
 
 	// Secrets
