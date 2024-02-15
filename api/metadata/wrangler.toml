@@ -3,7 +3,7 @@ main = "src/worker.ts"
 compatibility_date = "2023-05-27"
 
 kv_namespaces = [
-  { binding = "STATS", id = "f1bd4c1a63df46d894f8030079597982" },
+  { binding = "VERSIONS", id = "722f0fadd97343ebb8a51c925d1d4316" },
   { binding = "METADATA", id = "49e9d329349446cf948f84af9828914f" },
 ]
 
@@ -15,4 +15,4 @@ logpush = true
 workers_dev = false
 
 [triggers]
-crons = ["0 0 * * *"]
+crons = ["0 */3 * * *"]
