@@ -83,7 +83,7 @@ describe('generate font face', () => {
 
 	it('should generate a single font face with variable wght', () => {
 		const font = {
-			family: 'Open Sans',
+			family: 'Open Sans Variable',
 			style: 'normal',
 			display: 'swap',
 			weight: 400,
@@ -104,7 +104,7 @@ describe('generate font face', () => {
 
 	it('should generate a single font face with font stretch', () => {
 		const font = {
-			family: 'Open Sans',
+			family: 'Open Sans Variable',
 			style: 'normal',
 			display: 'swap',
 			weight: 400,
@@ -128,7 +128,7 @@ describe('generate font face', () => {
 
 	it('should generate a single font face with slnt axis', () => {
 		const font = {
-			family: 'Open Sans',
+			family: 'Open Sans Variable',
 			style: 'normal',
 			display: 'swap',
 			weight: 400,
@@ -152,7 +152,7 @@ describe('generate font face', () => {
 
 	it('should generate a single font face with all variable axis', () => {
 		const font = {
-			family: 'Open Sans',
+			family: 'Open Sans Variable',
 			style: 'normal',
 			display: 'swap',
 			weight: 400,
