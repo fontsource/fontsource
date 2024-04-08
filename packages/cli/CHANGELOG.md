@@ -1,5 +1,14 @@
 # @fontsource-utils/cli
 
+## 0.4.2
+
+### Patch Changes
+
+- [#950](https://github.com/fontsource/fontsource/pull/950) [`759612d347`](https://github.com/fontsource/fontsource/commit/759612d3472729989e844c773d6a3eb2f8378726) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(cli): use explicit naming for variable font families
+
+- Updated dependencies [[`759612d347`](https://github.com/fontsource/fontsource/commit/759612d3472729989e844c773d6a3eb2f8378726)]:
+  - @fontsource-utils/generate@1.0.0
+
 ## 0.4.1
 
 ### Patch Changes
