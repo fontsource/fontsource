@@ -13,7 +13,7 @@
 	"dependencies": {
 		"@esbuild-plugins/node-resolve": "^0.2.2",
 		"@fal-works/esbuild-plugin-global-externals": "^2.1.2",
-		"@fontsource-utils/generate": "^0.3.1",
+		"@fontsource-utils/generate": "^1.0.0",
 		"@fontsource-variable/inter": "^5.0.16",
 		"@fontsource-variable/source-code-pro": "^5.0.17",
 		"@isaacs/ttlcache": "^1.4.1",
@@ -68,5 +68,6 @@
 	},
 	"engines": {
 		"node": ">=18"
-	}
+	},
+	"version": null
 }

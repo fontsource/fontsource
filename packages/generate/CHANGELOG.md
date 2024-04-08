@@ -1,5 +1,11 @@
 # @fontsource-utils/generate
 
+## 1.0.0
+
+### Major Changes
+
+- [#950](https://github.com/fontsource/fontsource/pull/950) [`759612d347`](https://github.com/fontsource/fontsource/commit/759612d3472729989e844c773d6a3eb2f8378726) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(generate)!: remove auto naming suffix of variable packages
+
 ## 0.3.1
 
 ### Patch Changes
