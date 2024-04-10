@@ -36,10 +36,6 @@
 				"external": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource"
 			},
 			"nextjs": "Next.js",
-			"obsidian": {
-				"name": "Obsidian",
-				"external": "https://github.com/fontsource/obsidian-fontsource"
-			},
 			"qwik": "Qwik",
 			"remix": "Remix",
 			"svelte": "SvelteKit",
@@ -55,7 +51,11 @@
 				"external": "https://mui.com/material-ui/react-typography/#install-with-npm"
 			}
 		},
-		"Bundlers": {
+		"Other": {
+			"obsidian": {
+				"name": "Obsidian",
+				"external": "https://github.com/fontsource/obsidian-fontsource"
+			},
 			"webpack": "Webpack"
 		}
 	},
