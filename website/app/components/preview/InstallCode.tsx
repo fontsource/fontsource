@@ -312,7 +312,10 @@ const VariableAdvanced = ({ metadata, variable }: InstallCodeProps) => {
 			<Title order={3} mt="lg" mb="md">
 				Copy CSS
 			</Title>
-			<Text>Import this into your global CSS file:</Text>
+			<Text>
+				Import this into your global CSS file. Your bundler will automatically
+				rewrite the URL into a useable asset:
+			</Text>
 			<Code language="css">{css.join('\n\n')}</Code>
 			<Text>Then include the following CSS in your project:</Text>
 			<Code language="css">{`body {
@@ -561,7 +564,10 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 			<Title order={3} mt="lg" mb="md">
 				Copy CSS
 			</Title>
-			<Text>Import this into your global CSS file:</Text>
+			<Text>
+				Import this into your global CSS file. Your bundler will automatically
+				rewrite the URL into a useable asset:
+			</Text>
 			<Code language="css">{css.join('\n\n')}</Code>
 			<Text>Then include the following CSS in your project:</Text>
 			<Code language="css">{`body {
