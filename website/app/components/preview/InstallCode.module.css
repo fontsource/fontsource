@@ -1,0 +1,40 @@
+.wrapper {
+	margin-top: rem(40);
+
+	.tab {
+		&[data-active] {
+			border-bottom: rem(2) solid var(--mantine-color-purple-0);
+		}
+	}
+}
+
+.badge {
+	padding: rem(4px) rem(8px);
+	gap: rem(10px);
+
+	border-radius: rem(4px);
+	font-family: var(--mantine-font-family-monospace);
+	text-transform: lowercase;
+	user-select: none;
+	cursor: pointer;
+
+	@mixin light {
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-2);
+
+		&[data-active="true"] {
+			color: var(--mantine-color-text-0);
+			background-color: var(--mantine-color-purple);
+		}
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-3);
+
+		&[data-active="true"] {
+			color: var(--mantine-color-text-0);
+			background-color: var(--mantine-color-purple);
+		}
+	}
+}
