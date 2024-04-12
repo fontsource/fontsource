@@ -51,7 +51,11 @@
 				"external": "https://mui.com/material-ui/react-typography/#install-with-npm"
 			}
 		},
-		"Bundlers": {
+		"Other": {
+			"obsidian": {
+				"name": "Obsidian",
+				"external": "https://github.com/fontsource/obsidian-fontsource"
+			},
 			"webpack": "Webpack"
 		}
 	},
