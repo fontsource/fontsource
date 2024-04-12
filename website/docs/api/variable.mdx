@@ -1,0 +1,66 @@
+---
+title: Variable
+section: Reference
+---
+
+## Variable
+
+---
+
+The Variable endpoint allows you get specific axis data for a variable font.
+
+### HTTP Request
+
+- `GET https://api.fontsource.org/v1/variable/{id}`
+
+### Response
+
+The API response for the Variable endpoint is a JSON object that provides axis data for a variable font.
+
+#### Attributes:
+
+Returns an object with:
+
+| Attribute | Type                           | Description |
+| --------- | ------------------------------ | ----------- |
+| family    | string                         | Font family |
+| axes      | Record&lt;string, AxesData&gt; | Axis data   |
+
+<br />
+
+**AxesData:**
+
+| Attribute | Type   | Description   |
+| --------- | ------ | ------------- |
+| default   | number | Default value |
+| min       | number | Minimum value |
+| max       | number | Maximum value |
+| step      | number | Step value    |
+
+#### Response example:
+
+```json
+{
+  "axes": {
+    "slnt": {
+      "default": "0",
+      "min": "-10",
+      "max": "0",
+      "step": "1"
+    },
+    "wght": {
+      "default": "400",
+      "min": "100",
+      "max": "900",
+      "step": "1"
+    }
+  },
+  "family": "Inter"
+}
+```
+
+#### Example:
+
+- `GET https://api.fontsource.org/v1/variable/inter`
+- `GET https://api.fontsource.org/v1/variable/roboto-flex`
+- `GET https://api.fontsource.org/v1/variable/wavefont`

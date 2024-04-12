@@ -1,0 +1,67 @@
+---
+title: Version
+section: Reference
+---
+
+## Version
+
+---
+
+The Version endpoint provides NPM version information for each package.
+
+### HTTP Request
+
+- `GET https://api.fontsource.org/v1/version/{id}`
+
+### Response
+
+The API response for the Version endpoint is a JSON object that provides NPM version information for each package.
+
+#### Attributes:
+
+Returns an object with:
+
+| Attribute      | Type                     | Description                                   |
+| -------------- | ------------------------ | --------------------------------------------- |
+| latest         | string                   | Latest static NPM version                     |
+| static         | string[]                 | Static NPM versions sorted newest to oldest   |
+| latestVariable | Optional&lt;string&gt;   | Latest variable NPM version                   |
+| variable       | Optional&lt;string[]&gt; | Variable NPM versions sorted newest to oldest |
+
+#### Response example:
+
+```json
+{
+  "latest": "5.0.4",
+  "static": [
+    "5.0.4",
+    "5.0.3",
+    "5.0.2",
+    "5.0.1",
+    "5.0.0",
+    "4.2.2",
+    "4.2.1",
+    "4.2.0",
+    "4.1.1",
+    "4.1.0",
+    "4.0.1",
+    "4.0.0"
+  ],
+  "latestVariable": "5.0.7",
+  "variable": [
+    "5.0.7",
+    "5.0.6",
+    "5.0.5",
+    "5.0.4",
+    "5.0.3",
+    "5.0.2",
+    "5.0.1",
+    "5.0.0"
+  ]
+}
+```
+
+#### Example:
+
+- `GET https://api.fontsource.org/v1/version/abel`
+- `GET https://api.fontsource.org/v1/version/open-sans`

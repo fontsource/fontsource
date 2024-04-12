@@ -1,0 +1,70 @@
+---
+title: Stats
+section: Reference
+---
+
+## Stats
+
+---
+
+The Stats endpoint provides download statistics for each font.
+
+### HTTP Request
+
+- `GET https://api.fontsource.org/v1/stats/{id}`
+
+### Response
+
+The API response for the Stats endpoint is a JSON object that provides download statistics for each font.
+
+#### Attributes:
+
+Returns an object with:
+
+| Attribute | Type                          | Description              |
+| --------- | ----------------------------- | ------------------------ |
+| total     | DownloadStats                 | Total download counts    |
+| static    | DownloadStats                 | Static download counts   |
+| variable  | Optional&lt;DownloadStats&gt; | Variable download counts |
+
+<br />
+
+
+**DownloadStats:**
+
+| Attribute           | Type   | Description                |
+| ------------------- | ------ | -------------------------- |
+| npmDownloadTotal    | number | Total NPM download count   |
+| npmDownloadMonthly  | number | Monthly NPM download count |
+| jsDelivrHitsTotal   | number | Total jsDelivr hits        |
+| jsDelivrHitsMonthly | number | Monthly jsDelivr hits      |
+
+#### Response example:
+
+```json
+{
+  "total":{
+    "npmDownloadTotal":8566215,
+    "npmDownloadMonthly":731202,
+    "jsDelivrHitsTotal":46488758,
+    "jsDelivrHitsMonthly":8210654
+  },
+  "static":{
+    "npmDownloadTotal":8288204,
+    "npmDownloadMonthly":637495,
+    "jsDelivrHitsTotal":46483427,
+    "jsDelivrHitsMonthly":8207141
+  },
+  "variable":{
+    "npmDownloadTotal":278011,
+    "npmDownloadMonthly":93707,
+    "jsDelivrHitsTotal":5331,
+    "jsDelivrHitsMonthly":3513
+  }
+}
+```
+
+#### Example:
+
+- `GET https://api.fontsource.org/v1/stats/abel`
+- `GET https://api.fontsource.org/v1/stats/open-sans`
