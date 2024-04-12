@@ -1,8 +1,5 @@
 import {
-	type ObservablePrimitiveBaseFns,
-	type ObservablePrimitiveChildFns,
-} from '@legendapp/state';
-import {
+	Badge,
 	Checkbox,
 	Combobox,
 	Group,
@@ -11,6 +8,7 @@ import {
 	ScrollArea,
 	useCombobox,
 } from '@mantine/core';
+import { useState } from 'react';
 
 import { IconCaret } from '@/components/icons';
 
@@ -19,38 +17,41 @@ import classes from './Dropdown.module.css';
 interface DropdownBaseProps {
 	options: JSX.Element[];
 	label: string;
-	currentState: string | number;
-	selector: ObservablePrimitiveBaseFns<any>;
+	refine?: (value: string) => void;
 	w?: number | string;
 	noBorder?: boolean;
+	search?: (query: string) => void;
 }
-
-interface DropdownItemProps {
-	label?: string;
-	value: any;
-	setValue?: (value: React.SetStateAction<any>) => void;
+interface DropdownItems {
+	label: string;
+	value: string;
+	isRefined: boolean;
+	count?: number;
 }
-
 interface DropdownProps {
 	label: string;
-	items: DropdownItemProps[];
-	currentState: string | number;
-	selector: ObservablePrimitiveBaseFns<any> | ObservablePrimitiveChildFns<any>;
+	items: DropdownItems[];
+	refine?: (value: string) => void;
 	w?: number | string;
 	noBorder?: boolean;
+	showCount?: boolean;
+	search?: (query: string) => void;
 }
 
 const DropdownBase = ({
 	label,
 	options,
-	currentState,
-	selector,
 	w,
 	noBorder,
+	refine,
+	search,
 }: DropdownBaseProps) => {
+	const [searchQuery, setSearchQuery] = useState('');
+
 	const combobox = useCombobox({
 		onDropdownClose: () => {
 			combobox.resetSelectedOption();
+			setSearchQuery('');
 		},
 		onDropdownOpen: () => {
 			combobox.updateSelectedOptionIndex('active');
@@ -58,7 +59,14 @@ const DropdownBase = ({
 	});
 
 	const handleValueSelect = (val: string) => {
-		currentState === val ? selector.set('') : selector.set(val);
+		if (refine) refine(val);
+	};
+
+	const handleSearchQuery = (query: string) => {
+		if (search) {
+			search(query);
+			setSearchQuery(query);
+		}
 	};
 
 	return (
@@ -67,7 +75,7 @@ const DropdownBase = ({
 			onOptionSubmit={handleValueSelect}
 			withinPortal={false}
 			transitionProps={{ duration: 100, transition: 'fade' }}
-			width={w ?? rem(240)}
+			width={w ?? rem(250)}
 		>
 			<Combobox.DropdownTarget>
 				<InputBase
@@ -79,7 +87,7 @@ const DropdownBase = ({
 						combobox.toggleDropdown();
 					}}
 					rightSectionPointerEvents="none"
-					w={w ?? rem(240)}
+					w={w ?? rem(250)}
 					data-no-border={noBorder}
 				>
 					{label}
@@ -87,6 +95,15 @@ const DropdownBase = ({
 			</Combobox.DropdownTarget>
 
 			<Combobox.Dropdown>
+				{search && (
+					<Combobox.Search
+						value={searchQuery}
+						onChange={(event) => {
+							handleSearchQuery(event.currentTarget.value);
+						}}
+						placeholder="Search languages"
+					/>
+				)}
 				<Combobox.Options>
 					<ScrollArea.Autosize type="scroll" mah={240}>
 						{options}
@@ -100,16 +117,15 @@ const DropdownBase = ({
 const DropdownSimple = ({
 	label,
 	items,
-	currentState,
-	selector,
 	w,
 	noBorder,
+	refine,
 }: DropdownProps) => {
 	const options = items.map((item) => (
 		<Combobox.Option
 			value={item.value}
 			key={item.value}
-			active={currentState === item.value}
+			active={item.isRefined}
 		>
 			{item.label ?? item.value}
 		</Combobox.Option>
@@ -119,8 +135,7 @@ const DropdownSimple = ({
 		<DropdownBase
 			label={label}
 			options={options}
-			currentState={currentState}
-			selector={selector}
+			refine={refine}
 			w={w}
 			noBorder={noBorder}
 		/>
@@ -130,26 +145,37 @@ const DropdownSimple = ({
 const DropdownCheckbox = ({
 	label,
 	items,
-	currentState,
-	selector,
 	w,
 	noBorder,
+	refine,
+	showCount,
+	search,
 }: DropdownProps) => {
 	const options = items.map((item) => (
 		<Combobox.Option
 			value={item.value}
 			key={item.value}
-			active={currentState === item.value}
+			active={item.isRefined}
 		>
 			<Group gap="sm" justify="flex-start">
 				<Checkbox
-					checked={currentState === item.value}
+					checked={item.isRefined}
 					aria-hidden
 					tabIndex={-1}
 					style={{ pointerEvents: 'none' }}
 					readOnly
 				/>
 				<span className={classes.option}>{item.label ?? item.value}</span>
+				{showCount && item.count && (
+					<Badge
+						variant="light"
+						color="gray"
+						size="sm"
+						className={classes.count}
+					>
+						{item.count}
+					</Badge>
+				)}
 			</Group>
 		</Combobox.Option>
 	));
@@ -158,10 +184,10 @@ const DropdownCheckbox = ({
 		<DropdownBase
 			label={label}
 			options={options}
-			currentState={currentState}
-			selector={selector}
 			w={w}
 			noBorder={noBorder}
+			refine={refine}
+			search={search}
 		/>
 	);
 };

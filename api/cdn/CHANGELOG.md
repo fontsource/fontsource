@@ -1,5 +1,65 @@
 # cdn
 
+## 0.2.18
+
+### Patch Changes
+
+- [#941](https://github.com/fontsource/fontsource/pull/941) [`4e666ae7c0`](https://github.com/fontsource/fontsource/commit/4e666ae7c08e602ff3d29da1801d86b8888788c0) Thanks [@ayuhito](https://github.com/ayuhito)! - chore: add cron triggers to wrangler toml
+
+- [#939](https://github.com/fontsource/fontsource/pull/939) [`0b94dd64f7`](https://github.com/fontsource/fontsource/commit/0b94dd64f70e360eee80c1c8c12b3ba6595f963b) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): return empty stats object if font exists but no stats
+
+## 0.2.17
+
+### Patch Changes
+
+- [#918](https://github.com/fontsource/fontsource/pull/918) [`1dd9def116`](https://github.com/fontsource/fontsource/commit/1dd9def11613efc3ea288f7d34b3ff0d0b72f1b7) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): add retry logic when fetching updated file
+
+## 0.2.16
+
+### Patch Changes
+
+- [#912](https://github.com/fontsource/fontsource/pull/912) [`247c3af1a8`](https://github.com/fontsource/fontsource/commit/247c3af1a89fc5ba603bbd728d99e3aa9c924aa7) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(api): stream responses instead of buffering
+
+## 0.2.15
+
+### Patch Changes
+
+- [#913](https://github.com/fontsource/fontsource/pull/913) [`656390cb2e`](https://github.com/fontsource/fontsource/commit/656390cb2e50ac7e54615bd73ec931e66c2437a4) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): variable variants for numbered subsets
+
+## 0.2.14
+
+### Patch Changes
+
+- [#909](https://github.com/fontsource/fontsource/pull/909) [`c9796f8e94`](https://github.com/fontsource/fontsource/commit/c9796f8e945a20ee0418174104b7b25533d836a9) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): generate variable variants for css generator
+
+- Updated dependencies [[`c9796f8e94`](https://github.com/fontsource/fontsource/commit/c9796f8e945a20ee0418174104b7b25533d836a9)]:
+  - common-api@0.1.8
+
+## 0.2.13
+
+### Patch Changes
+
+- [#906](https://github.com/fontsource/fontsource/pull/906) [`35d51de765`](https://github.com/fontsource/fontsource/commit/35d51de76586110383a8e1ff9c414204b62e367c) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): include variable icons metadata to variable api
+
+- Updated dependencies [[`35d51de765`](https://github.com/fontsource/fontsource/commit/35d51de76586110383a8e1ff9c414204b62e367c)]:
+  - common-api@0.1.7
+
+## 0.2.12
+
+### Patch Changes
+
+- Updated dependencies [[`e9dc0d13b0`](https://github.com/fontsource/fontsource/commit/e9dc0d13b01f5dcf108312743c4c93847ae41be4)]:
+  - @fontsource-utils/cli@0.4.1
+
+## 0.2.11
+
+### Patch Changes
+
+- [#881](https://github.com/fontsource/fontsource/pull/881) [`cd2f04c871`](https://github.com/fontsource/fontsource/commit/cd2f04c871e1d7245e5453aa139db9efbfa2989d) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): remove variable variants
+
+- Updated dependencies [[`cd2f04c871`](https://github.com/fontsource/fontsource/commit/cd2f04c871e1d7245e5453aa139db9efbfa2989d)]:
+  - common-api@0.1.6
+
 ## 0.2.10
 
 ### Patch Changes

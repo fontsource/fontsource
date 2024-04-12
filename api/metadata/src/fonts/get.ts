@@ -1,43 +1,28 @@
-import { type TTLMetadata } from '../types';
-import type { ArrayMetadata, IDResponse } from './types';
-import { updateArrayMetadata, updateId } from './update';
+import { getMetadata } from '../fontlist/get';
+import { KV_TTL, METADATA_KEYS } from '../utils';
+import type { ArrayMetadata } from './types';
+import { updateArrayMetadata } from './update';
 
-const getOrUpdateArrayMetadata = async (env: Env, ctx: ExecutionContext) => {
-	const { value, metadata } = await env.FONTLIST.getWithMetadata<
-		ArrayMetadata,
-		TTLMetadata
-	>('metadata_arr', {
+const getArrayMetadata = async (env: Env, ctx: ExecutionContext) => {
+	const value = await env.METADATA.get<ArrayMetadata>(METADATA_KEYS.fonts_arr, {
 		type: 'json',
+		cacheTtl: KV_TTL,
 	});
 
 	if (!value) {
 		return await updateArrayMetadata(env, ctx);
 	}
 
-	// If the ttl is not set or the cache expiry is less than the current time, then return old value
-	// while revalidating the cache
-	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
-		ctx.waitUntil(updateArrayMetadata(env, ctx));
-	}
-
 	return value;
 };
 
-const getOrUpdateId = async (id: string, env: Env, ctx: ExecutionContext) => {
-	const { value, metadata } = await env.FONTS.getWithMetadata<
-		IDResponse,
-		TTLMetadata
-	>(id, { type: 'json' });
-
-	if (!value) {
-		return await updateId(id, env, ctx);
+const getId = async (id: string, env: Env, ctx: ExecutionContext) => {
+	const data = await getMetadata(env, ctx);
+	if (!data[id]) {
+		return;
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
-		ctx.waitUntil(updateId(id, env, ctx));
-	}
-
-	return value;
+	return data[id];
 };
 
-export { getOrUpdateArrayMetadata, getOrUpdateId };
+export { getArrayMetadata, getId };

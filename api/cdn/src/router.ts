@@ -11,21 +11,20 @@ import {
 import { updateCss, updateVariableCSS } from './css';
 import type { CFRouterContext, TTLMetadata } from './types';
 import { updateFile, updateVariableFile, updateZip } from './update';
+import { splitTag } from './util';
 import {
-	splitTag,
 	validateCSSFilename,
 	validateFontFilename,
 	validateVariableFontFileName,
 	validateVCSSFilename,
-} from './util';
+} from './validate';
 
 interface CDNRequest extends IRequestStrict {
 	tag: string;
 	file: string;
 }
 
-// TODO: Replace with immutable once we migrate to jsdelivr proxy
-const IMMUTABLE_CACHE = 'public, max-age=86400, stale-while-revalidate=604800'; // 'public, max-age=31536000, immutable'
+const IMMUTABLE_CACHE = 'public, max-age=31536000, immutable';
 const STALE_CACHE = 'public, max-age=86400, stale-while-revalidate=604800';
 
 export const { preflight, corsify } = createCors();
@@ -41,7 +40,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	const cacheKey = new Request(url, request.clone());
 	const cache = caches.default;
 
-	const response = await cache.match(cacheKey);
+	let response = await cache.match(cacheKey);
 	if (response) {
 		return response;
 	}
@@ -66,20 +65,22 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 			? IMMUTABLE_CACHE
 			: STALE_CACHE;
 
-	const headers = {
-		'Cache-Control': cacheControl,
-		'Content-Type': isZip ? 'application/zip' : `font/${extension}`,
-		'Content-Disposition': `attachment; filename="${
+	const headers = new Headers();
+	headers.set('Cache-Control', cacheControl);
+	headers.set('Content-Type', isZip ? 'application/zip' : `font/${extension}`);
+	headers.set(
+		'Content-Disposition',
+		`attachment; filename="${
 			isZip ? `${id}_${version}.zip` : `${id}_${version}_${file}`
 		}"`,
-	};
+	);
 
 	// Check R2 bucket for file
 	const key = isVariable ? `${fullTag}/variable/${file}` : `${fullTag}/${file}`;
 	let item = await env.FONTS.get(key);
 	if (item !== null) {
-		const blob = await item.arrayBuffer();
-		const response = new Response(blob, {
+		headers.set('ETag', item.etag);
+		const response = new Response(item.body, {
 			status: 200,
 			headers,
 		});
@@ -115,18 +116,14 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	} else {
 		item = await updateFile(fullTag, file, env);
 	}
-	if (item !== null) {
-		const blob = await item.arrayBuffer();
-		const response = new Response(blob, {
-			status: 200,
-			headers,
-		});
-		ctx.waitUntil(cache.put(cacheKey, response.clone()));
-		return response;
-	}
 
-	// If file does not exist, return 404
-	throw new StatusError(404, 'Not Found. File does not exist.');
+	headers.set('ETag', item.etag);
+	response = new Response(item.body, {
+		status: 200,
+		headers,
+	});
+	ctx.waitUntil(cache.put(cacheKey, response.clone()));
+	return response;
 });
 
 router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
@@ -152,10 +149,9 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 			? IMMUTABLE_CACHE
 			: STALE_CACHE;
 
-	const headers = {
-		'Cache-Control': cacheControl,
-		'Content-Type': 'text/css',
-	};
+	const headers = new Headers();
+	headers.set('Cache-Control', cacheControl);
+	headers.set('Content-Type', 'text/css');
 
 	// Check KV for file
 	const key = isVariable ? `variable:${fullTag}:${file}` : `${fullTag}:${file}`;

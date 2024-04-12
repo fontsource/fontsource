@@ -13,13 +13,13 @@ export const getPreviewText = (subset: string, id?: string) => {
 		case 'material-icons-round':
 		case 'material-icons-sharp':
 		case 'material-icons-two-tone': {
-			return 'photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close';
+			return 'photo_camerathumb_upassignmentcreate_new_folderinsert_invitationdraftscredit_cardtimercheck_boxclose';
 		}
 
 		case 'material-symbols-outlined':
 		case 'material-symbols-rounded':
 		case 'material-symbols-sharp': {
-			return 'search settings home person add shopping_cart favorite';
+			return 'searchsettingshomepersonaddshopping_cartcheck_circlefavoritelogouttrophy';
 		}
 
 		case 'yakuhanjp':
@@ -524,6 +524,10 @@ export const getPreviewText = (subset: string, id?: string) => {
 
 		case 'siddham': {
 			return '𑖧𑖝𑖿𑖨 𑖕𑖐𑖝𑖰 𑖫𑖯𑖡𑖿𑖝𑖰𑖡𑖿𑖧𑖯𑖧𑖭𑖿𑖪𑖯𑖝𑖡𑖿𑖝𑖿𑖨𑖿𑖧𑖯𑖜𑖯𑖽 𑖁𑖠𑖯𑖨𑖾 𑖦𑖯𑖡𑖪𑖢𑖨𑖰𑖪𑖯𑖨𑖭𑖿𑖧 𑖭𑖨𑖿𑖪𑖸𑖬𑖯𑖦𑖢𑖰';
+		}
+
+		case 'signwriting': {
+			return '𝧿𝨊𝡝𝪜𝦦𝪬𝡝𝪩𝡝𝪡𝤅';
 		}
 
 		case 'sinhala': {

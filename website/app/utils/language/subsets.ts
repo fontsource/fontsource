@@ -1,31 +1,30 @@
 // A map of subset values which doesn't work with titlecase and is also options for the search bar
-export const subsetsMap = {
-	arabic: 'Arabic',
-	bengali: 'Bengali',
-	'chinese-hongkong': 'Chinese (Hong Kong)',
-	'chinese-simplified': 'Chinese (Simplified)',
-	'chinese-traditional': 'Chinese (Traditional)',
-	cyrillic: 'Cyrillic',
-	'cyrillic-ext': 'Cyrillic Extended',
-	devanagari: 'Devanagari',
-	greek: 'Greek',
-	'greek-ext': 'Greek Extended',
-	gujarati: 'Gujarati',
-	gurmukhi: 'Gurmukhi',
-	hebrew: 'Hebrew',
-	japanese: 'Japanese',
-	kannada: 'Kannada',
-	khmer: 'Khmer',
-	korean: 'Korean',
-	latin: 'Latin',
-	'latin-ext': 'Latin Extended',
-	malayalam: 'Malayalam',
-	myanmar: 'Myanmar',
-	oriya: 'Oriya',
-	sinhala: 'Sinhala',
-	tamil: 'Tamil',
-	telugu: 'Telugu',
-	thai: 'Thai',
-	tibetan: 'Tibetan',
-	vietnamese: 'Vietnamese',
+export const subsetToLanguage = (subset: string) => {
+	switch (subset) {
+		case 'chinese-hongkong': {
+			return 'Chinese (Hong Kong)';
+		}
+		case 'chinese-simplified': {
+			return 'Chinese (Simplified)';
+		}
+		case 'chinese-traditional': {
+			return 'Chinese (Traditional)';
+		}
+		case 'cyrillic-ext': {
+			return 'Cyrillic Extended';
+		}
+		case 'greek-ext': {
+			return 'Greek Extended';
+		}
+		case 'latin-ext': {
+			return 'Latin Extended';
+		}
+		default: {
+			// Convert to titlecase and replace all dashes with spaces
+			return subset
+				.split('-')
+				.map((word) => word[0].toUpperCase() + word.slice(1))
+				.join(' ');
+		}
+	}
 };

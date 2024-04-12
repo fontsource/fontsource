@@ -62,7 +62,6 @@ interface VariableVariants {
 
 interface VariableMetadata {
 	family: string;
-	id: string;
 	axes: Record<string, AxesData>;
 }
 
@@ -75,6 +74,7 @@ export type {
 	IDResponse,
 	StatusErrorObject,
 	VersionResponse,
+	VariableVariants,
 	VariableMetadata,
 	VariableMetadataWithVariants,
 };

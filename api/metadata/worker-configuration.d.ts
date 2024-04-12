@@ -1,10 +1,6 @@
 interface Env {
-	FONTLIST: KVNamespace;
-	FONTS: KVNamespace;
-	VARIABLE: KVNamespace;
-	VARIABLE_LIST: KVNamespace;
-	STATS: KVNamespace;
-
+	METADATA: KVNamespace;
+	VERSIONS: KVNamespace;
 	BUCKET: R2Bucket;
 
 	// Secrets

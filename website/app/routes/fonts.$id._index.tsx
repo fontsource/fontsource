@@ -1,3 +1,4 @@
+import { generateFontFace } from '@fontsource-utils/generate';
 import { Grid } from '@mantine/core';
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
@@ -7,7 +8,8 @@ import invariant from 'tiny-invariant';
 import { Configure } from '@/components/preview/Configure';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
-import { getPreviewText } from '@/utils/language/language.server';
+import classes from '@/styles/global.module.css';
+import { getCSSCache, setCSSCache } from '@/utils/cache.server';
 import { ogMeta } from '@/utils/meta';
 import {
 	getAxisRegistry,
@@ -18,14 +20,12 @@ import {
 import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 import { isStandardAxesKey } from '@/utils/utils.server';
 
-import classes from '../styles/global.module.css';
-
 interface FontMetadata {
 	metadata: Metadata;
 	variable?: VariableData;
-	variableCssKey?: string;
+	staticCSS: string;
+	variableCSS?: string;
 	axisRegistry?: AxisRegistryAll;
-	defSubsetText: string;
 	downloadCount: number;
 }
 
@@ -33,7 +33,6 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const metadata = await getMetadata(id);
-	const defSubsetText = getPreviewText(metadata.id, metadata.defSubset);
 
 	const [variable, axisRegistry, stats] = await Promise.all([
 		metadata.variable ? getVariable(id) : undefined,
@@ -59,16 +58,95 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		}
 	}
 
+	const { family, weights, unicodeRange, styles, subsets } = metadata;
+
+	let unicodeKeys = Object.keys(unicodeRange).map((key) =>
+		key.replace('[', '').replace(']', ''),
+	);
+
+	// Non-google fonts have no unicode keys stored, thus we need to use the subsets
+	if (unicodeKeys.length === 0) {
+		unicodeKeys = subsets;
+	}
+
+	// Generate static CSS
+	let staticCSS = getCSSCache(`s:${id}`) ?? '';
+	if (!staticCSS) {
+		for (const weight of weights) {
+			for (const style of styles) {
+				staticCSS += unicodeKeys
+					.map((subset) =>
+						generateFontFace({
+							family,
+							display: 'block',
+							style,
+							weight,
+							src: [
+								{
+									url: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.woff2`,
+									format: 'woff2',
+								},
+							],
+							unicodeRange: unicodeRange[subset],
+						}),
+					)
+					.join('\n');
+			}
+		}
+
+		// Cache in memory
+		if (staticCSS) setCSSCache(`s:${id}`, staticCSS);
+	}
+
+	// Generate variable CSS
+	let variableCSS: string | undefined;
+	if (variable) {
+		variableCSS = getCSSCache(`v:${id}`) ?? '';
+		if (!variableCSS) {
+			for (const style of styles) {
+				variableCSS += unicodeKeys
+					.map((subset) =>
+						generateFontFace({
+							family,
+							display: 'block',
+							style,
+							weight: 400,
+							src: [
+								{
+									url: `https://cdn.jsdelivr.net/fontsource/fonts/${id}:vf@latest/${subset}-${variableCssKey}-${style}.woff2`,
+									format: 'woff2-variations',
+								},
+							],
+							unicodeRange: unicodeRange[subset],
+							variable: {
+								wght: variable.axes.wght,
+								stretch: variable.axes.wdth,
+								slnt: variable.axes.slnt,
+							},
+						}),
+					)
+					.join('\n');
+
+				// Cache in memory
+				if (variableCSS) setCSSCache(`v:${id}`, variableCSS);
+			}
+		}
+	}
+
 	const res: FontMetadata = {
 		metadata,
 		variable,
-		variableCssKey,
+		staticCSS,
+		variableCSS,
 		axisRegistry,
-		defSubsetText,
 		downloadCount: stats.total.npmDownloadTotal,
 	};
 
-	return json(res);
+	return json(res, {
+		headers: {
+			'Cache-Control': 'public, max-age=300',
+		},
+	});
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -84,8 +162,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function Font() {
 	const data = useLoaderData<FontMetadata>();
-	const { metadata, variable, axisRegistry, defSubsetText, variableCssKey } =
-		data;
+	const { metadata, variable, axisRegistry, staticCSS, variableCSS } = data;
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="preview">
@@ -93,8 +170,8 @@ export default function Font() {
 				<Grid.Col span={{ base: 12, md: 8 }}>
 					<TextArea
 						metadata={metadata}
-						previewText={defSubsetText}
-						variableCssKey={variableCssKey}
+						staticCSS={staticCSS}
+						variableCSS={variableCSS}
 					/>
 				</Grid.Col>
 				<Grid.Col

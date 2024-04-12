@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/cli",
-	"version": "0.3.19",
+	"version": "0.4.1",
 	"description": "Fontsource CLI",
 	"bin": {
 		"fontsource": "./dist/cli.mjs"
@@ -53,7 +53,6 @@
 		"consola": "^3.1.0",
 		"dotenv": "^16.1.4",
 		"fs-extra": "^11.1.1",
-		"google-font-metadata": "^5.2.0",
 		"json-stringify-pretty-compact": "^4.0.0",
 		"p-queue": "^7.4.1",
 		"pathe": "^1.1.1",
@@ -64,11 +63,15 @@
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "^20.7.1",
 		"eslint": "^8.50.0",
+		"google-font-metadata": "^5.2.1",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.10.0",
 		"sass": "^1.62.1",
 		"tsx": "^3.12.7",
 		"typescript": "^5.2.2"
+	},
+	"peerDependencies": {
+		"google-font-metadata": "^5.2.1"
 	},
 	"files": [
 		"dist/*"

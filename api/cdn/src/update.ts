@@ -27,7 +27,22 @@ export const updateZip = async (tag: string, env: Env) => {
 	}
 
 	// Check again if download.zip exists in bucket
-	const zip = await env.FONTS.get(`${tag}/download.zip`);
+	let retries = 0;
+	let zip = await env.FONTS.get(`${tag}/download.zip`);
+	while (!zip && retries < 3) {
+		zip = await env.FONTS.get(`${tag}/download.zip`);
+		retries++;
+		// Exponential backoff
+		await new Promise((resolve) => setTimeout(resolve, retries * 300));
+	}
+
+	if (!zip) {
+		throw new StatusError(
+			500,
+			'Internal Server Error. Failed to update zip file.',
+		);
+	}
+
 	return zip;
 };
 
@@ -41,7 +56,7 @@ export const updateFile = async (tag: string, file: string, env: Env) => {
 	});
 
 	const resp = await fetch(req);
-	if (!resp.ok) {
+	if (resp.status !== 201) {
 		if (resp.status === 404) {
 			throw new StatusError(resp.status, 'Not Found. File does not exist.');
 		}
@@ -53,7 +68,19 @@ export const updateFile = async (tag: string, file: string, env: Env) => {
 		);
 	}
 	// Check again if file exists in bucket
-	const font = await env.FONTS.get(`${tag}/${file}`);
+	let retries = 0;
+	let font = await env.FONTS.get(`${tag}/${file}`);
+	while (!font && retries < 3) {
+		font = await env.FONTS.get(`${tag}/${file}`);
+		retries++;
+		// Exponential backoff
+		await new Promise((resolve) => setTimeout(resolve, retries * 300));
+	}
+
+	if (!font) {
+		throw new StatusError(500, 'Internal Server Error. Failed to update file.');
+	}
+
 	return font;
 };
 
@@ -71,7 +98,7 @@ export const updateVariableFile = async (
 	});
 
 	const resp = await fetch(req);
-	if (!resp.ok) {
+	if (resp.status !== 201) {
 		if (resp.status === 404) {
 			throw new StatusError(resp.status, 'Not Found. File does not exist.');
 		}
@@ -83,6 +110,18 @@ export const updateVariableFile = async (
 		);
 	}
 	// Check again if file exists in bucket
-	const font = await env.FONTS.get(`${tag}/variable/${file}`);
+	let retries = 0;
+	let font = await env.FONTS.get(`${tag}/variable/${file}`);
+	while (!font && retries < 3) {
+		font = await env.FONTS.get(`${tag}/variable/${file}`);
+		retries++;
+		// Exponential backoff
+		await new Promise((resolve) => setTimeout(resolve, retries * 300));
+	}
+
+	if (!font) {
+		throw new StatusError(500, 'Internal Server Error. Failed to update file.');
+	}
+
 	return font;
 };

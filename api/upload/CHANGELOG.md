@@ -1,5 +1,21 @@
 # upload
 
+## 0.2.0
+
+### Minor Changes
+
+- [#912](https://github.com/fontsource/fontsource/pull/912) [`247c3af1a8`](https://github.com/fontsource/fontsource/commit/247c3af1a89fc5ba603bbd728d99e3aa9c924aa7) Thanks [@ayuhito](https://github.com/ayuhito)! - feat(api): use multipart for uploads
+
+### Patch Changes
+
+- [#912](https://github.com/fontsource/fontsource/pull/912) [`247c3af1a8`](https://github.com/fontsource/fontsource/commit/247c3af1a89fc5ba603bbd728d99e3aa9c924aa7) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(api): stream responses instead of buffering
+
+## 0.1.3
+
+### Patch Changes
+
+- [#906](https://github.com/fontsource/fontsource/pull/906) [`35d51de765`](https://github.com/fontsource/fontsource/commit/35d51de76586110383a8e1ff9c414204b62e367c) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): include variable icons metadata to variable api
+
 ## 0.1.2
 
 ### Patch Changes

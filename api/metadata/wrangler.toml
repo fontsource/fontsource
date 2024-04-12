@@ -3,11 +3,8 @@ main = "src/worker.ts"
 compatibility_date = "2023-05-27"
 
 kv_namespaces = [
-  { binding = "FONTLIST", id = "ef03b5ef10034282a8e6220b9a5258c1" },
-  { binding = "FONTS", id = "3dfa82ada2204c49b2f317a63b72d93c" },
-  { binding = "VARIABLE_LIST", id = "669f1133f5144ab0822980b3d7e18559" },
-  { binding = "VARIABLE", id = "592f7cf6d10f4086ae421d538e3f9bfc" },
-  { binding = "STATS", id = "f1bd4c1a63df46d894f8030079597982" },
+  { binding = "VERSIONS", id = "722f0fadd97343ebb8a51c925d1d4316" },
+  { binding = "METADATA", id = "49e9d329349446cf948f84af9828914f" },
 ]
 
 r2_buckets = [
@@ -16,3 +13,6 @@ r2_buckets = [
 
 logpush = true
 workers_dev = false
+
+[triggers]
+crons = ["0 */3 * * *"]

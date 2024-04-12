@@ -9,11 +9,7 @@ import {
 
 import type { CFRouterContext } from '../types';
 import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
-import {
-	getOrUpdateAxisRegistry,
-	getOrUpdateVariableId,
-	getOrUpdateVariableList,
-} from './get';
+import { getAxisRegistry, getVariableId, getVariableList } from './get';
 import { type AxisRegistry, isAxisRegistryQuery } from './types';
 
 interface DownloadRequest extends IRequestStrict {
@@ -34,7 +30,7 @@ router.get('/v1/variable', async (request, env, ctx) => {
 		return response;
 	}
 
-	const variableList = await getOrUpdateVariableList(env, ctx);
+	const variableList = await getVariableList(env, ctx);
 	if (!variableList) {
 		throw new StatusError(500, 'Internal Server Error. Variable list empty.');
 	}
@@ -63,7 +59,7 @@ router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 		return response;
 	}
 
-	const variableId = await getOrUpdateVariableId(id, env, ctx);
+	const variableId = await getVariableId(id, env, ctx);
 	if (!variableId) {
 		throw new StatusError(
 			404,
@@ -95,7 +91,7 @@ router.get('/v1/axis-registry', async (request, env, ctx) => {
 		return response;
 	}
 
-	const registry = await getOrUpdateAxisRegistry(env, ctx);
+	const registry = await getAxisRegistry(env, ctx);
 	if (!registry) {
 		throw new StatusError(500, 'Internal Server Error. Axis registry empty.');
 	}

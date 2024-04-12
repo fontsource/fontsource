@@ -17,6 +17,7 @@ import { SizeSlider } from './SizeSlider';
 
 interface ButtonsProps {
 	subsets: string[];
+	defSubset: string;
 	hasItalic: boolean;
 }
 
@@ -73,12 +74,16 @@ const SliderButton = ({
 	);
 };
 
-const NormalButtonsGroup = ({ subsets, hasItalic }: ButtonsProps) => {
+const NormalButtonsGroup = ({
+	subsets,
+	hasItalic,
+	defSubset,
+}: ButtonsProps) => {
 	const state = useSelector(previewState);
 
 	return (
 		<>
-			<LanguageSelector subsets={subsets} />
+			<LanguageSelector subsets={subsets} defSubset={defSubset} />
 			<SizeSlider hasItalic={hasItalic} />
 			<Group grow>
 				<SliderButton

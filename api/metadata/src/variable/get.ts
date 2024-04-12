@@ -1,75 +1,48 @@
-import { type VariableMetadataWithVariants } from 'common-api/types';
-
-import { type TTLMetadata } from '../types';
+import { KV_TTL, METADATA_KEYS } from '../utils';
 import { type AxisRegistry, type VariableList } from './types';
-import {
-	updateAxisRegistry,
-	updateVariable,
-	updateVariableList,
-} from './update';
+import { updateAxisRegistry, updateVariableList } from './update';
 
-export const getOrUpdateVariableList = async (
-	env: Env,
-	ctx: ExecutionContext,
-) => {
-	const { value, metadata } = await env.VARIABLE_LIST.getWithMetadata<
-		VariableList,
-		TTLMetadata
-	>('variable_list', {
-		type: 'json',
-	});
+export const getVariableList = async (env: Env, ctx: ExecutionContext) => {
+	const value = await env.METADATA.get<VariableList>(
+		METADATA_KEYS.variable_list,
+		{
+			type: 'json',
+			cacheTtl: KV_TTL,
+		},
+	);
 
 	if (!value) {
 		return await updateVariableList(env, ctx);
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
-		ctx.waitUntil(updateVariableList(env, ctx));
-	}
-
 	return value;
 };
 
-export const getOrUpdateVariableId = async (
+export const getVariableId = async (
 	id: string,
 	env: Env,
 	ctx: ExecutionContext,
 ) => {
-	const { value, metadata } = await env.VARIABLE.getWithMetadata<
-		VariableMetadataWithVariants,
-		TTLMetadata
-	>(id, {
-		type: 'json',
-	});
+	const data = await getVariableList(env, ctx);
 
-	if (!value) {
-		return await updateVariable(id, env, ctx);
+	if (!data[id]) {
+		return;
 	}
 
-	if (!metadata?.ttl || metadata.ttl < Date.now()) {
-		ctx.waitUntil(updateVariable(id, env, ctx));
-	}
-
-	return value;
+	return data[id];
 };
 
-export const getOrUpdateAxisRegistry = async (
-	env: Env,
-	ctx: ExecutionContext,
-) => {
-	const { value, metadata } = await env.VARIABLE_LIST.getWithMetadata<
-		AxisRegistry,
-		TTLMetadata
-	>('axis_registry', {
-		type: 'json',
-	});
+export const getAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
+	const value = await env.METADATA.get<AxisRegistry>(
+		METADATA_KEYS.axisRegistry,
+		{
+			type: 'json',
+			cacheTtl: KV_TTL,
+		},
+	);
 
 	if (!value) {
 		return await updateAxisRegistry(env, ctx);
-	}
-
-	if (!metadata?.ttl || metadata.ttl < Date.now() / 1000) {
-		ctx.waitUntil(updateAxisRegistry(env, ctx));
 	}
 
 	return value;

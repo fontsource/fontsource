@@ -4,7 +4,12 @@ import {
 } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
-import { AXIS_REGISTRY_URL, KV_TTL, VARIABLE_URL } from '../utils';
+import {
+	AXIS_REGISTRY_URL,
+	METADATA_KEYS,
+	VARIABLE_ICONS_URL,
+	VARIABLE_URL,
+} from '../utils';
 import { type AxisRegistry, type AxisRegistryDownload } from './types';
 
 export const updateVariableList = async (env: Env, ctx: ExecutionContext) => {
@@ -13,63 +18,42 @@ export const updateVariableList = async (env: Env, ctx: ExecutionContext) => {
 		const text = await resp.text();
 		throw new StatusError(
 			resp.status,
-			`Failed to fetch variable metadata. ${text}`,
+			`Failed to fetch variable metadata list. ${text}`,
 		);
 	}
-	const data = await resp.json<Record<string, VariableMetadataWithVariants>>();
+	const data = (await resp.json()) as Record<
+		string,
+		VariableMetadataWithVariants
+	>;
+
+	const respIcons = await fetch(VARIABLE_ICONS_URL);
+	if (!respIcons.ok) {
+		const text = await respIcons.text();
+		throw new StatusError(
+			respIcons.status,
+			`Failed to fetch variable icons metadata list. ${text}`,
+		);
+	}
+	const dataIcons = (await respIcons.json()) as Record<
+		string,
+		VariableMetadataWithVariants
+	>;
+
+	const dataMerged = { ...data, ...dataIcons };
 
 	// Remove variants property from all fonts
 	const noVariants: Record<string, VariableMetadata> = {};
-	for (const [key, value] of Object.entries(data)) {
-		const { variants, ...rest } = value;
-		noVariants[key] = rest;
+	for (const [key, value] of Object.entries(dataMerged)) {
+		const { axes, family } = value;
+		noVariants[key] = { axes, family };
 	}
 
 	// Save entire metadata into KV first
 	ctx.waitUntil(
-		env.VARIABLE_LIST.put('metadata', JSON.stringify(noVariants), {
-			metadata: {
-				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() / 1000 + KV_TTL,
-			},
-		}),
+		env.METADATA.put(METADATA_KEYS.variable_list, JSON.stringify(noVariants)),
 	);
 
 	return noVariants;
-};
-
-export const updateVariable = async (
-	id: string,
-	env: Env,
-	ctx: ExecutionContext,
-) => {
-	const resp = await fetch(VARIABLE_URL);
-	if (!resp.ok) {
-		const text = await resp.text();
-		throw new StatusError(
-			resp.status,
-			`Failed to fetch variable item metadata. ${text}`,
-		);
-	}
-	const data = await resp.json<Record<string, VariableMetadataWithVariants>>();
-	const dataId = data[id];
-
-	if (!dataId) {
-		// eslint-disable-next-line unicorn/no-null
-		return null;
-	}
-
-	// Save entire metadata into KV first
-	ctx.waitUntil(
-		env.VARIABLE.put(id, JSON.stringify(dataId), {
-			metadata: {
-				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() / 1000 + KV_TTL,
-			},
-		}),
-	);
-
-	return dataId;
 };
 
 export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
@@ -81,7 +65,7 @@ export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
 			`Failed to fetch axis registry metadata. ${text}`,
 		);
 	}
-	const data = await resp.json<AxisRegistryDownload>();
+	const data = (await resp.json()) as AxisRegistryDownload;
 
 	const registry: AxisRegistry = {};
 	// Remove tag property from all fonts and use it as a key
@@ -92,12 +76,7 @@ export const updateAxisRegistry = async (env: Env, ctx: ExecutionContext) => {
 
 	// Save entire metadata into KV first
 	ctx.waitUntil(
-		env.VARIABLE.put('axis_registry', JSON.stringify(registry), {
-			metadata: {
-				// We need to set a custom ttl for a stale-while-revalidate strategy
-				ttl: Date.now() / 1000 + KV_TTL,
-			},
-		}),
+		env.METADATA.put(METADATA_KEYS.axisRegistry, JSON.stringify(registry)),
 	);
 
 	return registry;

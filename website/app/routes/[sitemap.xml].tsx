@@ -1,5 +1,3 @@
-
-
 import type { LoaderFunction } from '@remix-run/node';
 import path from 'pathe';
 import { SitemapStream, streamToPromise } from 'sitemap';
@@ -14,7 +12,7 @@ export const loader: LoaderFunction = async () => {
 
 	// Pipe each font to stream
 	const fontlist: Record<string, string> = await kya(
-		'https://api.fontsource.org/fontlist?family'
+		'https://api.fontsource.org/fontlist?family',
 	);
 
 	for (const id of Object.keys(fontlist)) {
@@ -26,8 +24,7 @@ export const loader: LoaderFunction = async () => {
 	}
 
 	// Pipe all docs to stream
-	// eslint-disable-next-line unicorn/prefer-module
-	const slugs = await getAllSlugsInDir(path.join(__dirname+ '../docs'));
+	const slugs = await getAllSlugsInDir(path.join(process.cwd(), 'docs'));
 
 	for (const slug of slugs) {
 		smStream.write({
@@ -45,6 +42,7 @@ export const loader: LoaderFunction = async () => {
 	return new Response(sitemap, {
 		headers: {
 			'Content-Type': 'application/xml',
+			'Cache-Control': 'public, max-age=86400', // 1 day
 		},
 	});
 };

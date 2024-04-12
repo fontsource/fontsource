@@ -9,7 +9,7 @@ import {
 
 import { type CFRouterContext } from '../types';
 import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
-import { getOrUpdateArrayMetadata, getOrUpdateId } from './get';
+import { getArrayMetadata, getId } from './get';
 import { isFontsQueries } from './types';
 
 interface FontRequest extends IRequestStrict {
@@ -35,7 +35,7 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 		'Cache-Control': `public, max-age=${API_BROWSER_TTL}`,
 		'CDN-Cache-Control': `max-age=${CF_EDGE_TTL}`,
 	};
-	const data = await getOrUpdateArrayMetadata(env, ctx);
+	const data = await getArrayMetadata(env, ctx);
 
 	// If no query string, return the entire list
 	if (url.searchParams.toString().length === 0) {
@@ -96,7 +96,7 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 		return response;
 	}
 
-	const data = await getOrUpdateId(id, env, ctx);
+	const data = await getId(id, env, ctx);
 	if (!data) {
 		return error(404, 'Not Found. Font does not exist.');
 	}

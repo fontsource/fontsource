@@ -16,11 +16,11 @@ export const PackageManagerCode = ({ cmd, ...props }: PackageManagerProps) => {
 				<Tabs.Tab value="npm">npm</Tabs.Tab>
 				<Tabs.Tab value="yarn">yarn</Tabs.Tab>
 				<Tabs.Tab value="pnpm">pnpm</Tabs.Tab>
+				<Tabs.Tab value="bun">bun</Tabs.Tab>
 			</Tabs.List>
 
 			<div className={classes.panels}>
 				<Tabs.Panel value="npm" pt="xs">
-					{/* @ts-expect-error - Invalid typing for new v7 */}
 					<CodeWrapper
 						language={language}
 						code={'npm install ' + cmd}
@@ -30,19 +30,18 @@ export const PackageManagerCode = ({ cmd, ...props }: PackageManagerProps) => {
 					</CodeWrapper>
 				</Tabs.Panel>
 				<Tabs.Panel value="yarn" pt="xs">
-					{/* @ts-expect-error - Invalid typing for new v7 */}
 					<CodeWrapper language={language} code={'yarn add ' + cmd} {...props}>
 						<CodeHighlight language={language} code={'yarn add ' + cmd} />
 					</CodeWrapper>
 				</Tabs.Panel>
 				<Tabs.Panel value="pnpm" pt="xs">
-					{/* @ts-expect-error - Invalid typing for new v7 */}
-					<CodeWrapper
-						language={language}
-						code={'pnpm install ' + cmd}
-						{...props}
-					>
-						<CodeHighlight language={language} code={'pnpm install ' + cmd} />
+					<CodeWrapper language={language} code={'pnpm add ' + cmd} {...props}>
+						<CodeHighlight language={language} code={'pnpm add ' + cmd} />
+					</CodeWrapper>
+				</Tabs.Panel>
+				<Tabs.Panel value="bun" pt="xs">
+					<CodeWrapper language={language} code={'bun add ' + cmd} {...props}>
+						<CodeHighlight language={language} code={'bun add ' + cmd} />
 					</CodeWrapper>
 				</Tabs.Panel>
 			</div>

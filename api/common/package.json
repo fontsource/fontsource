@@ -1,6 +1,6 @@
 {
 	"name": "common-api",
-	"version": "0.1.5",
+	"version": "0.1.8",
 	"private": true,
 	"description": "Shared utilities for the workers",
 	"author": "Ayuhito <hello@ayuhito.com>",
@@ -9,7 +9,7 @@
 		"deploy": "echo 'Common Package'"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20230914.0",
+		"@cloudflare/workers-types": "^4.20231121.0",
 		"itty-router": "^4.0.22"
 	}
 }

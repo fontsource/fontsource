@@ -1,18 +1,21 @@
 // @ts-expect-error - The type definition is wrong
 import useFontFaceObserver from 'use-font-face-observer';
 
-export const useIsFontLoaded = (family: string, weights?: number[]) => {
-	const isFontLoaded = useFontFaceObserver(
-		[
-			{
-				family,
-			},
-		],
-		{ timeout: 15_000 },
-	);
-	if (!weights || weights.length === 0) return isFontLoaded;
+interface ObserverOptions {
+	weights?: number[];
+	style?: string;
+}
 
-	const loadingArray = weights.map((weight) => {
+export const useIsFontLoaded = (family: string, options?: ObserverOptions) => {
+	if (!options?.weights || options.weights.length === 0)
+		return useFontFaceObserver(
+			[{ family, style: options?.style ?? 'normal' }],
+			{
+				timeout: 15_000,
+			},
+		);
+
+	const loadingArray = options?.weights.map((weight) => {
 		// Loop loading order is guaranteed to be consistent, so we can disable the rule
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		return useFontFaceObserver(
@@ -20,6 +23,7 @@ export const useIsFontLoaded = (family: string, weights?: number[]) => {
 				{
 					family,
 					weight: String(weight),
+					style: options.style ?? 'normal',
 				},
 			],
 			{ timeout: 15_000 },

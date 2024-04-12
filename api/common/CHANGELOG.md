@@ -1,5 +1,23 @@
 # common-api
 
+## 0.1.8
+
+### Patch Changes
+
+- [#909](https://github.com/fontsource/fontsource/pull/909) [`c9796f8e94`](https://github.com/fontsource/fontsource/commit/c9796f8e945a20ee0418174104b7b25533d836a9) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): generate variable variants for css generator
+
+## 0.1.7
+
+### Patch Changes
+
+- [#906](https://github.com/fontsource/fontsource/pull/906) [`35d51de765`](https://github.com/fontsource/fontsource/commit/35d51de76586110383a8e1ff9c414204b62e367c) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): include variable icons metadata to variable api
+
+## 0.1.6
+
+### Patch Changes
+
+- [#881](https://github.com/fontsource/fontsource/pull/881) [`cd2f04c871`](https://github.com/fontsource/fontsource/commit/cd2f04c871e1d7245e5453aa139db9efbfa2989d) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): remove variable variants
+
 ## 0.1.5
 
 ### Patch Changes

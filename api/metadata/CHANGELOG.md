@@ -1,5 +1,62 @@
 # api
 
+## 0.2.17
+
+### Patch Changes
+
+- [#943](https://github.com/fontsource/fontsource/pull/943) [`ed72d85a61`](https://github.com/fontsource/fontsource/commit/ed72d85a61b9b90e270b6080cc5f21ec467fa1f1) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): introduce separate versions kv space
+
+## 0.2.16
+
+### Patch Changes
+
+- [#941](https://github.com/fontsource/fontsource/pull/941) [`4e666ae7c0`](https://github.com/fontsource/fontsource/commit/4e666ae7c08e602ff3d29da1801d86b8888788c0) Thanks [@ayuhito](https://github.com/ayuhito)! - chore: add cron triggers to wrangler toml
+
+- [#939](https://github.com/fontsource/fontsource/pull/939) [`0b94dd64f7`](https://github.com/fontsource/fontsource/commit/0b94dd64f70e360eee80c1c8c12b3ba6595f963b) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): return empty stats object if font exists but no stats
+
+## 0.2.15
+
+### Patch Changes
+
+- [#935](https://github.com/fontsource/fontsource/pull/935) [`8ec7d3e3a2`](https://github.com/fontsource/fontsource/commit/8ec7d3e3a2af2906af1922500cce6a7d23a2d828) Thanks [@ayuhito](https://github.com/ayuhito)! - perf(api): use cron triggers to update kv metadata
+
+## 0.2.14
+
+### Patch Changes
+
+- Updated dependencies [[`c9796f8e94`](https://github.com/fontsource/fontsource/commit/c9796f8e945a20ee0418174104b7b25533d836a9)]:
+  - common-api@0.1.8
+
+## 0.2.13
+
+### Patch Changes
+
+- [#906](https://github.com/fontsource/fontsource/pull/906) [`35d51de765`](https://github.com/fontsource/fontsource/commit/35d51de76586110383a8e1ff9c414204b62e367c) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): include variable icons metadata to variable api
+
+- Updated dependencies [[`35d51de765`](https://github.com/fontsource/fontsource/commit/35d51de76586110383a8e1ff9c414204b62e367c)]:
+  - common-api@0.1.7
+
+## 0.2.12
+
+### Patch Changes
+
+- [#902](https://github.com/fontsource/fontsource/pull/902) [`4ee5a5493c`](https://github.com/fontsource/fontsource/commit/4ee5a5493c5b32852c19a6296db19075cc746481) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): invalid version sorting
+
+## 0.2.11
+
+### Patch Changes
+
+- [#886](https://github.com/fontsource/fontsource/pull/886) [`4883910a53`](https://github.com/fontsource/fontsource/commit/4883910a532c104b04d8e595a4679704c5571ea2) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): store version stats in correct kv cache
+
+## 0.2.10
+
+### Patch Changes
+
+- [#881](https://github.com/fontsource/fontsource/pull/881) [`cd2f04c871`](https://github.com/fontsource/fontsource/commit/cd2f04c871e1d7245e5453aa139db9efbfa2989d) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(api): remove variable variants
+
+- Updated dependencies [[`cd2f04c871`](https://github.com/fontsource/fontsource/commit/cd2f04c871e1d7245e5453aa139db9efbfa2989d)]:
+  - common-api@0.1.6
+
 ## 0.2.9
 
 ### Patch Changes

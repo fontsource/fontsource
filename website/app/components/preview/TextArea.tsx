@@ -8,9 +8,10 @@ import {
 	useComputedColorScheme,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
+import { getPreviewText } from '@/utils/language/language';
 import type { Metadata } from '@/utils/types';
 
 import { fontVariation, previewState } from './observables';
@@ -23,13 +24,13 @@ interface TagProps {
 interface TextBoxProps {
 	family: string;
 	weight: number;
-	loaded: boolean;
+	style: string;
 }
 
 interface TextAreaProps {
 	metadata: Metadata;
-	variableCssKey?: string;
-	previewText: string;
+	staticCSS: string;
+	variableCSS?: string;
 }
 
 const Tag = ({ weight, active }: TagProps) => {
@@ -55,7 +56,7 @@ const Tag = ({ weight, active }: TagProps) => {
 	);
 };
 
-const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
+const TextBox = ({ family, weight, style }: TextBoxProps) => {
 	const { ref, focused } = useFocusWithin();
 	const state = useSelector(previewState);
 	const variation = useSelector(fontVariation);
@@ -67,15 +68,18 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 			: previewState.color.set('#000000');
 	}, [colorScheme]);
 
+	const isFontLoaded = useIsFontLoaded(family, { weights: [weight], style });
+
 	return (
 		<>
-			<Skeleton visible={loaded}>
-				<Box className={classes['text-wrapper']}>
+			<Box className={classes['text-wrapper']}>
+				<Skeleton visible={!isFontLoaded}>
 					<TextInput
 						variant="unstyled"
+						className={classes.text}
 						styles={{
 							input: {
-								fontFamily: `"${family}"`,
+								fontFamily: `"${family}", "Fallback Outline"`,
 								fontWeight: weight,
 								fontSize: state.size,
 								color: state.color,
@@ -94,49 +98,61 @@ const TextBox = ({ family, weight, loaded }: TextBoxProps) => {
 						autoComplete="off"
 						ref={ref}
 					/>
-				</Box>
-			</Skeleton>
+				</Skeleton>
+			</Box>
 			<Tag weight={weight} active={focused} />
 		</>
 	);
 };
 
-const TextArea = ({ metadata, variableCssKey }: TextAreaProps) => {
-	const { id, family, weights, variable } = metadata;
-
-	const variableFamily = `${family} Variable`;
+const TextArea = ({ metadata, staticCSS, variableCSS }: TextAreaProps) => {
+	const { id, family, weights, variable, defSubset, category } = metadata;
 	const isVariable = Boolean(variable);
 
-	const isFontLoaded = useIsFontLoaded(isVariable ? variableFamily : family);
+	const isItal = useSelector(previewState.italic);
+	const style = isItal ? 'italic' : 'normal';
+
+	const isNotLatin =
+		defSubset !== 'latin' || category === 'icons' || category === 'other';
+	useEffect(() => {
+		if (isNotLatin) {
+			previewState.text.set(getPreviewText(defSubset, id));
+		}
+	}, [isNotLatin, defSubset, id]);
 
 	return (
 		<Flex direction="column">
 			<Text className={classes.header}>Font Preview</Text>
+			{!isVariable && (
+				<style
+					dangerouslySetInnerHTML={{
+						__html: staticCSS,
+					}}
+				/>
+			)}
 			{!isVariable &&
 				weights.map((weight) => (
-					<Fragment key={`s-${weight}`}>
-						<link
-							rel="stylesheet"
-							href={`https://r2.fontsource.org/css/${id}@latest/index.css`}
-						/>
-						<TextBox weight={weight} family={family} loaded={!isFontLoaded} />
-					</Fragment>
+					<TextBox
+						key={`s-${weight}-${style}`}
+						family={family}
+						weight={weight}
+						style={style}
+					/>
 				))}
-			{isVariable && (
-				<link
-					rel="stylesheet"
-					href={`https://r2.fontsource.org/css/${id}:vf@latest/${
-						variableCssKey ?? 'wght'
-					}.css`}
+			{isVariable && variableCSS && (
+				<style
+					dangerouslySetInnerHTML={{
+						__html: variableCSS,
+					}}
 				/>
 			)}
 			{isVariable &&
 				weights.map((weight) => (
 					<TextBox
-						key={`v-${weight}`}
+						key={`v-${weight}-${style}`}
+						family={`${family} Variable`}
 						weight={weight}
-						family={variableFamily}
-						loaded={!isFontLoaded}
+						style={style}
 					/>
 				))}
 		</Flex>

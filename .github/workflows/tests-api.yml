@@ -38,6 +38,33 @@ jobs:
       - name: Run tests
         run: pnpm run coverage
 
+  cdn:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api/cdn
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Enable PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Set node version to 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install
+
+      - name: Run lints
+        run: pnpm run ci:lint
+
+      ## - name: Run tests
+      ##  run: pnpm run coverage
+
   upload:
     runs-on: ubuntu-latest
     defaults:
@@ -64,3 +91,27 @@ jobs:
 
       - name: Run tests
         run: pnpm run coverage
+
+  download:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api/download
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Enable PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Set node version to 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install
+
+      - name: Run lints
+        run: pnpm run ci:lint

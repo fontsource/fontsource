@@ -26,8 +26,13 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 
 	const items = sizes.map((size) => ({
 		label: `${size}px`,
-		value: size,
+		value: String(size),
+		isRefined: size === state.size,
 	}));
+
+	const setSize = (size: string) => {
+		previewState.size.set(Number(size));
+	};
 
 	// className={classes.button}
 	return (
@@ -35,9 +40,8 @@ const SizeSlider = ({ hasItalic }: SizeSliderProps) => {
 			<Group className={classes.wrapper}>
 				<DropdownSimple
 					label={`${previewState.size.get()} px`}
-					currentState={previewState.size.get()}
 					items={items}
-					selector={previewState.size}
+					refine={setSize}
 					w={84}
 					noBorder
 				/>

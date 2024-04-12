@@ -270,7 +270,7 @@ export const generateVariableCSS = (
 
 			for (const subset of Object.keys(variant[style])) {
 				const fontObj: FontObject = {
-					family,
+					family: `${family} Variable`,
 					style,
 					display: 'swap',
 					weight: findClosest(weights, 400),
@@ -459,7 +459,7 @@ export const generateIconVariableCSS = (
 
 			for (const subset of Object.keys(variant[style])) {
 				const fontObj: FontObject = {
-					family,
+					family: `${family} Variable`,
 					style,
 					display: 'swap',
 					weight: Number(axes.wght.default),

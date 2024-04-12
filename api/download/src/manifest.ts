@@ -1,3 +1,4 @@
+import { info } from 'diary';
 import { StatusError } from 'itty-router';
 
 import { bucketPath, listBucket } from './bucket';
@@ -41,7 +42,10 @@ export const generateManifestItem = (
 ): Manifest => {
 	const { id, version } = splitTag(tag);
 	let [filename, extension] = file.split('.');
-	const [subset, weight, style] = filename.split('-');
+	const filenameArr = filename.split('-');
+	const style = filenameArr.pop();
+	const weight = filenameArr.pop();
+	const subset = filenameArr.join('-');
 	if (!subset || !weight || !style) {
 		throw new StatusError(400, 'Bad Request. Invalid filename.');
 	}
@@ -165,13 +169,17 @@ export const pruneManifest = async (
 		: `${id}@${version}/`;
 	const existingFiles = await listBucket(prefix);
 
-	const manifest = baseManifest.filter((file) => {
-		const existingFile = existingFiles.objects.find((existingFile) => {
-			return existingFile === bucketPath(file);
-		});
+	// Filter out existing files
+	const manifest = [];
+	const existingSet = new Set(existingFiles.objects);
+	for (const file of baseManifest) {
+		if (!existingSet.has(bucketPath(file))) {
+			manifest.push(file);
+		}
+	}
 
-		return !existingFile;
-	});
-
+	info(
+		`Found ${manifest.length} new files to download out of ${baseManifest.length} from original manifest.`,
+	);
 	return manifest;
 };

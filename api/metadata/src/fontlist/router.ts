@@ -2,7 +2,7 @@ import { error, type IRequestStrict, json, Router } from 'itty-router';
 
 import type { CFRouterContext } from '../types';
 import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
-import { getOrUpdateList } from './get';
+import { getList } from './get';
 import { type Fontlist, isFontlistQuery } from './types';
 
 const router = Router<IRequestStrict, CFRouterContext>();
@@ -30,7 +30,7 @@ router.get('/fontlist', async (request, env, ctx) => {
 	// If there is no query string, then return the type list
 	let list: Fontlist | undefined;
 	if (queryString.length === 0) {
-		list = await getOrUpdateList('type', env, ctx);
+		list = await getList('type', env, ctx);
 	}
 
 	// If there is a query string, then return the respective list
@@ -44,11 +44,11 @@ router.get('/fontlist', async (request, env, ctx) => {
 		}
 
 		// Get or update the list
-		list = await getOrUpdateList(query, env, ctx);
+		list = await getList(query, env, ctx);
 	}
 
 	if (!list) {
-		return error(500, 'Internal server error.');
+		return error(500, 'Unable to determine query type.');
 	}
 
 	response = json(list, {

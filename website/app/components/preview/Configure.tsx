@@ -37,6 +37,7 @@ const Configure = ({ metadata, variable, axisRegistry }: ConfigureProps) => {
 					</Text>
 					<NormalButtonsGroup
 						subsets={metadata.subsets}
+						defSubset={metadata.defSubset}
 						hasItalic={metadata.styles.includes('italic')}
 					/>
 					{variable && (

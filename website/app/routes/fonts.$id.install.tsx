@@ -31,7 +31,11 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		downloadCount: stats.total.npmDownloadTotal,
 	};
 
-	return json(res);
+	return json(res, {
+		headers: {
+			'Cache-Control': 'public, max-age=300',
+		},
+	});
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {

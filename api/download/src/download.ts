@@ -1,6 +1,6 @@
-import { info } from 'diary';
+import { error as errorDiary, info } from 'diary';
+import { zipSync } from 'fflate';
 import { StatusError } from 'itty-router';
-import JSZip from 'jszip';
 import PQueue from 'p-queue';
 // @ts-expect-error - no types
 import woff2ttf from 'woff2sfnt-sfnt2woff';
@@ -17,6 +17,7 @@ import {
 	type Manifest,
 	type ManifestVariable,
 } from './manifest';
+import { keepAwake, SLEEP_MINUTES } from './sleep';
 import { type IDResponse } from './types';
 
 export const downloadFile = async (manifest: Manifest) => {
@@ -110,11 +111,6 @@ export const generateZip = async (
 	const zipFile = await listBucket(`${id}@${version}/download.zip`);
 	if (zipFile.objects.length > 0) return;
 
-	// Generate zip file of all fonts
-	const zip = new JSZip();
-	const webfonts = zip.folder('webfonts');
-	const ttf = zip.folder('ttf');
-
 	const fullManifest = generateManifest(`${id}@${version}`, metadata);
 	// For every woff file, generate an equivalent manifest entry for ttf
 	for (const file of fullManifest) {
@@ -126,29 +122,50 @@ export const generateZip = async (
 		}
 	}
 
+	// Download all files into memory
+	const files: Record<string, any> = {};
+	const zipQueue = new PQueue({ concurrency: 24 });
+
+	// Download all files
 	for (const file of fullManifest) {
-		const item = await getBucket(bucketPath(file));
-		if (!item) {
-			throw new StatusError(500, `Could not find ${bucketPath(file)}`);
-		}
+		// eslint-disable-next-line @typescript-eslint/promise-function-async
+		zipQueue
+			.add(async () => {
+				keepAwake(SLEEP_MINUTES);
+				const path = bucketPath(file);
+				const item = await getBucket(path);
+				if (!item) {
+					throw new StatusError(500, `Could not find ${path}`);
+				}
 
-		const buffer = await item.arrayBuffer();
+				const buffer = await item.arrayBuffer();
 
-		// Add to zip
-		if (file.extension === 'woff2' || file.extension === 'woff') {
-			webfonts?.file(
-				`${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`,
-				buffer,
-			);
-		} else if (file.extension === 'ttf') {
-			ttf?.file(
-				`${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`,
-				buffer,
-			);
-		} else {
-			throw new StatusError(500, `Invalid file extension ${file.extension}`);
-		}
+				// Add to zip
+				if (file.extension === 'woff2' || file.extension === 'woff') {
+					const filename = `webfonts/${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`;
+					// We do not need to compress woff2 files as they are already compressed
+					files[filename] = [new Uint8Array(buffer), { level: 0 }];
+				} else if (file.extension === 'ttf') {
+					const filename = `ttf/${file.id}-${file.subset}-${file.weight}-${file.style}.${file.extension}`;
+					// We do want to compress ttf files as they are not compressed with deflate
+					files[filename] = new Uint8Array(buffer);
+				} else {
+					throw new StatusError(
+						500,
+						`Invalid file extension ${file.extension}`,
+					);
+				}
+			})
+			.catch((error) => {
+				zipQueue.pause();
+				zipQueue.clear();
+				errorDiary(`Could not download ${bucketPath(file)}`);
+				throw error;
+			});
 	}
+
+	// Wait for all files to be downloaded
+	await zipQueue.onIdle();
 
 	// Add LICENSE file
 	const license = await fetch(
@@ -159,9 +176,16 @@ export const generateZip = async (
 	}
 
 	const licenseBuffer = await license.arrayBuffer();
-	zip.file('LICENSE', licenseBuffer);
+	files.LICENSE = new Uint8Array(licenseBuffer);
+
+	info(`Generating zip file for ${id}@${version}`);
+
+	// Generate zip file of all fonts
+	// We can't use async zip as it relies on worker_threads eval which is not supported
+	// Bun (yet)
+	const zipped = zipSync(files);
 
 	// Add to bucket
-	const zipBuffer = await zip.generateAsync({ type: 'uint8array' });
-	await putBucket(`${id}@${version}/download.zip`, zipBuffer);
+	await putBucket(`${id}@${version}/download.zip`, zipped);
+	info(`Successfully generated zip file for ${id}@${version}`);
 };
