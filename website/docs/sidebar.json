@@ -64,9 +64,13 @@
 			"introduction": "Introduction"
 		},
 		"Reference": {
+			"axis-registry": "Axis Registry",
 			"fontlist": "Fontlist",
+			"fonts": "Fonts",
 			"font-id": "Font ID",
-			"fonts": "Fonts"
+			"stats": "Stats",
+			"variable": "Variable",
+			"version": "Version"
 		}
 	}
 }

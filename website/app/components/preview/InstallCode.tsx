@@ -1,36 +1,26 @@
 import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
-import {
-	Badge,
-	Divider,
-	Grid,
-	Group,
-	Tabs,
-	Text,
-	Title,
-	UnstyledButton,
-} from '@mantine/core';
-import { Link } from '@remix-run/react';
+import { Badge, Divider, Group, Tabs, Text, Title } from '@mantine/core';
 import { useState } from 'react';
 
+import { Blockquote } from '@/components/Blockquote';
 import { Code } from '@/components/code/Code';
-import { IconExternal } from '@/components/icons';
-import globalClasses from '@/styles/global.module.css';
-import type { Metadata, VariableData } from '@/utils/types';
+import { type Metadata, type VariableData } from '@/utils/types';
 
-import { CarbonAd } from '../CarbonAd';
-import classes from './CDN.module.css';
-import { InfoWrapper } from './Info';
+import classes from './InstallCode.module.css';
 
-interface CDNProps {
-	metadata: Metadata;
-	variable?: VariableData;
-	hits?: number;
-}
+const categoryMap: Record<string, string> = {
+	'sans-serif': 'sans-serif',
+	serif: 'serif',
+	monospace: 'monospace',
+	handwriting: 'cursive',
+	display: 'system-ui',
+};
 
 interface BadgeGroupProps {
 	items: string[];
 	onClick: (value: string) => void;
 	isActive: (value: string) => boolean;
+	mt?: string;
 }
 
 interface ActiveVariants {
@@ -40,11 +30,16 @@ interface ActiveVariants {
 	ital?: boolean;
 }
 
+interface InstallCodeProps {
+	metadata: Metadata;
+	variable?: VariableData;
+}
+
 // Accepted display values
 const DISPLAYS = ['auto', 'swap', 'block', 'fallback', 'optional'];
 
-const BadgeGroup = ({ items, onClick, isActive }: BadgeGroupProps) => (
-	<Group>
+const BadgeGroup = ({ items, onClick, isActive, mt }: BadgeGroupProps) => (
+	<Group mt={mt}>
 		{items.map((item) => (
 			<Badge
 				key={item}
@@ -60,7 +55,102 @@ const BadgeGroup = ({ items, onClick, isActive }: BadgeGroupProps) => (
 	</Group>
 );
 
-const Variable = ({ metadata, variable }: CDNProps) => {
+const VariableSimple = ({ metadata, variable }: InstallCodeProps) => {
+	const [isActive, setActive] = useState<Record<string, boolean>>({
+		wght: true,
+	});
+
+	// Remove ital from active axes and mark separate ital flag as true
+	const activeAxes = Object.keys(isActive).filter((axis) => axis !== 'ital');
+	const isItal = isActive.ital;
+
+	// Determine if it is a standard axis e.g. only contains wght, wdth, slnt, opsz or ital
+	const isStandard = activeAxes.every((axis) =>
+		['wght', 'wdth', 'slnt', 'opsz'].includes(axis),
+	);
+
+	const importComment =
+		metadata.weights.length === 1
+			? `// Supports only weight ${metadata.weights[0]}\n`
+			: `// Supports weights ${metadata.weights[0]}-${
+					metadata.weights.at(-1) ?? 400
+			  }\n`;
+
+	const generateImports = () => {
+		if (activeAxes.length === 1 && isActive.wght) {
+			if (isItal)
+				return `import '@fontsource-variable/${metadata.id}/wght-italic.css';`;
+			return `import '@fontsource-variable/${metadata.id}';`;
+		}
+
+		// If it is only wght and another axes, return axes.css
+		if (activeAxes.length === 2 && isActive.wght) {
+			const selected =
+				activeAxes.find((axis) => axis !== 'wght')?.toLowerCase() ?? 'wght';
+			if (isItal)
+				return `import '@fontsource-variable/${metadata.id}/${selected}-italic.css';`;
+			return `import '@fontsource-variable/${metadata.id}/${selected}.css';`;
+		}
+
+		// If the selected axes is within standard, only return standard
+		if (isStandard)
+			return `import '@fontsource-variable/${metadata.id}/standard.css';`;
+
+		// If the selected axes is not within standard, return full
+		return `import '@fontsource-variable/${metadata.id}/full.css';`;
+	};
+
+	const handleActive = (value: string | number) => {
+		setActive((prev) => {
+			if (prev[value]) {
+				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+				delete prev[value];
+				return {
+					...prev,
+					wght: true,
+				};
+			}
+
+			return {
+				...prev,
+				[value]: !prev[value],
+				wght: true,
+			};
+		});
+	};
+
+	return (
+		<>
+			{variable && (
+				<>
+					<BadgeGroup
+						items={Object.keys(variable.axes)}
+						onClick={handleActive}
+						isActive={(value) => isActive[value]}
+						mt="xs"
+					/>
+				</>
+			)}
+			<Code language="jsx">{importComment + generateImports()}</Code>
+			<Title order={3} mt="xl" mb="md">
+				CSS
+			</Title>
+			<Text>
+				Include the CSS in your project by adding the following line to your
+				project:
+			</Text>
+			<Code language="css">
+				{`body {
+  font-family: '${metadata.family} Variable', ${
+		categoryMap[metadata.category] ?? 'sans-serif'
+	};
+}`}
+			</Code>
+		</>
+	);
+};
+
+const VariableAdvanced = ({ metadata, variable }: InstallCodeProps) => {
 	const [isActive, setActive] = useState<ActiveVariants>({
 		axes: {
 			wght: true,
@@ -165,7 +255,7 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 	// Generate CSS
 	const css: string[] = [];
 	for (const subset of isActive.subsets) {
-		const url = `https://cdn.jsdelivr.net/fontsource/fonts/${metadata.id}:vf@latest/${subset}-${fileAxes}.woff2`;
+		const url = `@fontsource-variable/${metadata.id}/files/${metadata.id}-${subset}-${fileAxes}.woff2`;
 
 		const fontObj: FontObject = {
 			family: `${metadata.family} Variable`,
@@ -184,7 +274,7 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 				slnt: isActive.axes.slnt ? variable.axes.slnt : undefined,
 			},
 			unicodeRange: metadata.unicodeRange[subset],
-			comment: `${metadata.id}-${subset}-wght-normal`,
+			comment: `${metadata.id}-${subset}-wght-${isItal ? 'italic' : 'normal'}`,
 		};
 
 		css.push(generateFontFace(fontObj));
@@ -222,13 +312,107 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 			<Title order={3} mt="lg" mb="md">
 				Copy CSS
 			</Title>
-			<Text>Import this into your global CSS file:</Text>
+			<Text>
+				Import this into your global CSS file. Your bundler will automatically
+				rewrite the URL into a useable asset:
+			</Text>
 			<Code language="css">{css.join('\n\n')}</Code>
+			<Text>Then include the following CSS in your project:</Text>
+			<Code language="css">{`body {
+  font-family: '${metadata.family} Variable', ${
+		categoryMap[metadata.category] ?? 'sans-serif'
+	};
+}`}</Code>
 		</>
 	);
 };
 
-const Static = ({ metadata }: CDNProps) => {
+const StaticSimple = ({ metadata }: InstallCodeProps) => {
+	const [isActive, setActive] = useState<Record<string, boolean>>({
+		400: true,
+	});
+	const keys = Object.keys(isActive);
+	const handleActive = (value: string | number) => {
+		setActive((prev) => {
+			if (keys.length === 1 && prev[value]) return prev;
+			if (prev[value]) {
+				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+				delete prev[value];
+				return {
+					...prev,
+				};
+			}
+
+			return {
+				...prev,
+				[value]: !prev[value],
+			};
+		});
+	};
+
+	const [isItal, setIsItal] = useState(false);
+	const generateImports = () => {
+		let imports = '';
+		if (keys.length === 1 && isActive[400]) {
+			if (isItal) return `import '@fontsource/${metadata.id}/400-italic.css';`;
+			return `import '@fontsource/${metadata.id}';`;
+		}
+
+		for (const weight of keys) {
+			imports += isItal
+				? `import '@fontsource/${metadata.id}/${weight}-italic.css';\n`
+				: `import '@fontsource/${metadata.id}/${weight}.css';\n`;
+		}
+		return imports.trim();
+	};
+
+	return (
+		<>
+			<Group>
+				{metadata.weights.map((weight) => (
+					<Badge
+						key={weight}
+						className={classes.badge}
+						onClick={() => {
+							handleActive(weight);
+						}}
+						data-active={Boolean(isActive[weight])}
+					>
+						{weight}
+					</Badge>
+				))}
+				{metadata.styles.includes('italic') && (
+					<Badge
+						className={classes.badge}
+						onClick={() => {
+							setIsItal((prev) => !prev);
+						}}
+						data-active={isItal}
+					>
+						italic
+					</Badge>
+				)}
+			</Group>
+			<Code language="jsx">{generateImports()}</Code>
+			<Title order={3} mt="xl" mb="md">
+				CSS
+			</Title>
+			<Text>
+				Include the CSS in your project by adding the following line to your
+				project:
+			</Text>
+			<Code language="css">
+				{`body {
+  font-family: '${metadata.family}', ${
+		categoryMap[metadata.category] ?? 'sans-serif'
+	};
+}`}
+			</Code>
+		</>
+	);
+};
+
+const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 	// Active weights
 	const [isActiveWeight, setActiveWeight] = useState<Record<string, boolean>>({
 		400: true,
@@ -276,7 +460,7 @@ const Static = ({ metadata }: CDNProps) => {
 	};
 
 	// Choose formats
-	const FORMATS = ['woff2', 'woff', 'ttf'];
+	const FORMATS = ['woff2', 'woff'];
 	const [formats, setFormat] = useState(['woff2', 'woff']);
 	const handleFormat = (value: string) => {
 		if (formats.length === 1 && formats.includes(value)) return;
@@ -294,13 +478,13 @@ const Static = ({ metadata }: CDNProps) => {
 	const css: string[] = [];
 	for (const subset of subsets) {
 		for (const weight of Object.keys(isActiveWeight)) {
-			const url = `https://cdn.jsdelivr.net/fontsource/fonts/${
+			const url = `@fontsource/${metadata.id}/files/${
 				metadata.id
-			}@latest/${subset}-${weight}-${isItal ? 'italic' : 'normal'}`;
+			}-${subset}-${weight}-${isItal ? 'italic' : 'normal'}`;
 
 			const src = formats.map((format) => ({
 				url: `${url}.${format}`,
-				format: format === 'ttf' ? 'truetype' : format,
+				format,
 			}));
 
 			const fontObj: FontObject = {
@@ -310,8 +494,8 @@ const Static = ({ metadata }: CDNProps) => {
 				weight: Number(weight),
 				src,
 				unicodeRange: metadata.unicodeRange[subset],
-				comment: `${metadata.id}-${subset}-${weight}${
-					isItal ? '-italic' : '-normal'
+				comment: `${metadata.id}-${subset}-${weight}-${
+					isItal ? 'italic' : 'normal'
 				}`,
 			};
 
@@ -380,47 +564,56 @@ const Static = ({ metadata }: CDNProps) => {
 			<Title order={3} mt="lg" mb="md">
 				Copy CSS
 			</Title>
-			<Text>Import this into your global CSS file:</Text>
+			<Text>
+				Import this into your global CSS file. Your bundler will automatically
+				rewrite the URL into a useable asset:
+			</Text>
 			<Code language="css">{css.join('\n\n')}</Code>
+			<Text>Then include the following CSS in your project:</Text>
+			<Code language="css">{`body {
+  font-family: '${metadata.family}', ${
+		categoryMap[metadata.category] ?? 'sans-serif'
+	};
+}`}</Code>
 		</>
 	);
 };
 
-export const CDN = ({ metadata, variable, hits }: CDNProps) => {
+export const InstallCode = ({ metadata, variable }: InstallCodeProps) => {
 	return (
-		<Grid className={globalClasses.container}>
-			<Grid.Col span={{ base: 12, md: 8 }}>
-				<Group justify="space-between" mb={28}>
-					<Title>CDN</Title>
-					<UnstyledButton
-						component={Link}
-						className={classes.button}
-						to="/docs/getting-started/cdn"
-					>
-						<Group gap="xs">
-							Documentation
-							<IconExternal stroke="white" />
-						</Group>
-					</UnstyledButton>
-				</Group>
-				<Tabs defaultValue={variable ? 'variable' : 'static'}>
-					<Tabs.List>
-						{variable && <Tabs.Tab value="variable">Variable</Tabs.Tab>}
-						<Tabs.Tab value="static">Static</Tabs.Tab>
-					</Tabs.List>
+		<Tabs defaultValue="simple" className={classes.wrapper}>
+			<Tabs.List>
+				<Tabs.Tab value="simple">Simple</Tabs.Tab>
+				<Tabs.Tab value="advanced">Advanced</Tabs.Tab>
+			</Tabs.List>
 
-					<Tabs.Panel value="variable">
-						<Variable metadata={metadata} variable={variable} />
-					</Tabs.Panel>
-					<Tabs.Panel value="static">
-						<Static metadata={metadata} />
-					</Tabs.Panel>
-				</Tabs>
-			</Grid.Col>
-			<Grid.Col span={{ base: 12, md: 4 }}>
-				<InfoWrapper metadata={metadata} hits={hits} isCDN />
-				<CarbonAd w={332} />
-			</Grid.Col>
-		</Grid>
+			<Tabs.Panel value="simple" pt="md">
+				<Title order={3} mt="xs" mb="md">
+					Import
+				</Title>
+				<Text mb="md">
+					Include the following line in the root layout of your project to
+					import the font:
+				</Text>
+				{variable ? (
+					<VariableSimple metadata={metadata} variable={variable} />
+				) : (
+					<StaticSimple metadata={metadata} />
+				)}
+			</Tabs.Panel>
+			<Tabs.Panel value="advanced" pt="xs">
+				{/* @ts-expect-error - BoxProps technically does take in children props	*/}
+				<Blockquote>
+					<b>Note:</b> Advanced usage is recommended for users who explicitly
+					need to control their <code>@font-face</code> declarations and is only
+					compatible with <b>Vite</b>-based frameworks or similar.
+				</Blockquote>
+				{variable ? (
+					<VariableAdvanced metadata={metadata} variable={variable} />
+				) : (
+					<StaticAdvanced metadata={metadata} />
+				)}
+			</Tabs.Panel>
+		</Tabs>
 	);
 };
