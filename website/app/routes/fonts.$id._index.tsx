@@ -113,7 +113,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 				variableCSS += unicodeKeys
 					.map((subset) =>
 						generateFontFace({
-							family,
+							family: `${family} Variable`,
 							display: 'block',
 							style,
 							weight: 400,
