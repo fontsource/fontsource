@@ -1,11 +1,15 @@
-import { useSelector } from '@legendapp/state/react';
+import { observer } from '@legendapp/state/react';
 import { Grid, Slider as MantineSlider, Text } from '@mantine/core';
 
-import { size } from './observables';
+import { type SearchState } from './observables';
 import classes from './SizeSlider.module.css';
 
-const SizeSlider = () => {
-	const sizeSelect = useSelector(size);
+interface SizeSliderProps {
+	state$: SearchState;
+}
+
+const SizeSlider = observer(({ state$ }: SizeSliderProps) => {
+	const size = state$.size.get();
 
 	return (
 		<Grid
@@ -16,7 +20,7 @@ const SizeSlider = () => {
 			classNames={{ inner: classes.inner }}
 		>
 			<Grid.Col span={1} className={classes.col}>
-				<Text>{size.get()} px</Text>
+				<Text>{size} px</Text>
 			</Grid.Col>
 			<Grid.Col span={9} className={classes.col}>
 				<MantineSlider
@@ -26,12 +30,12 @@ const SizeSlider = () => {
 					thumbLabel="Change font size"
 					// eslint-disable-next-line unicorn/no-null
 					label={null}
-					value={sizeSelect}
-					onChange={size.set}
+					value={size}
+					onChange={state$.size.set}
 				/>
 			</Grid.Col>
 		</Grid>
 	);
-};
+});
 
 export { SizeSlider };
