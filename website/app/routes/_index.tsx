@@ -1,3 +1,5 @@
+import { observable } from '@legendapp/state';
+import { useObservable } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
@@ -14,6 +16,7 @@ import {
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
+import { type SearchObject } from '@/components/search/observables';
 import classes from '@/styles/global.module.css';
 import { getSSRCache, setSSRCache } from '@/utils/algolia.server';
 
@@ -104,6 +107,17 @@ const routing = (serverUrl: string): any => {
 export const loader = async ({ request }: LoaderFunctionArgs) => {
 	const serverUrl = request.url;
 
+	// Generate default state object for ssr
+	const state$ = observable<SearchObject>({
+		size: 32,
+		preview: {
+			label: 'Sentence',
+			value: 'Sphinx of black quartz, judge my vow.',
+			inputView: '',
+		},
+		display: 'grid',
+	});
+
 	// Check local cache for server state first to avoid unnecessary API calls
 	let serverState = getSSRCache(serverUrl);
 	if (serverState) {
@@ -122,8 +136,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 					routing={routing(serverUrl)}
 					future={{ preserveSharedStateOnUnmount: true }}
 				>
-					<Filters />
-					<InfiniteHits />
+					<Filters state$={state$} />
+					<InfiniteHits state$={state$} />
 				</InstantSearch>
 			</InstantSearchSSRProvider>
 		</MantineProvider>,
@@ -150,6 +164,17 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
 export default function Index() {
 	const { serverState, serverUrl } = useLoaderData<typeof loader>();
+
+	const state$ = useObservable<SearchObject>({
+		size: 32,
+		preview: {
+			label: 'Sentence',
+			value: 'Sphinx of black quartz, judge my vow.',
+			inputView: '',
+		},
+		display: 'grid',
+	});
+
 	return (
 		<InstantSearchSSRProvider {...serverState}>
 			<InstantSearch
@@ -160,11 +185,11 @@ export default function Index() {
 			>
 				<Box className={classes.background}>
 					<Box className={classes.container}>
-						<Filters />
+						<Filters state$={state$} />
 					</Box>
 				</Box>
 				<Box className={classes.container}>
-					<InfiniteHits />
+					<InfiniteHits state$={state$} />
 				</Box>
 			</InstantSearch>
 		</InstantSearchSSRProvider>

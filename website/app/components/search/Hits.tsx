@@ -1,7 +1,7 @@
-import { useSelector } from '@legendapp/state/react';
+import { observer, useComputed } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
 import { Link as NavLink } from '@remix-run/react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
@@ -9,42 +9,39 @@ import { getPreviewText } from '@/utils/language/language';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 import classes from './Hits.module.css';
-import { display, previewValue, size } from './observables';
+import { type SearchState } from './observables';
 import { Sort } from './Sort';
 
-interface Hit {
+interface HitComponentProps {
+	state$: SearchState;
 	hit: AlgoliaMetadata;
 }
 
-interface HitComponentProps extends Hit {
-	fontSize: number;
+interface InfiniteHitsProps {
+	state$: SearchState;
 }
 
-const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
-	const displaySelect = useSelector(display);
-
+const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	const isFontLoaded = useIsFontLoaded(hit.family);
+	const display = state$.display.get();
+	const size = state$.size.get();
 
-	// Change preview text if hit.defSubset is not latin or if it's an icon
-	const previewValueSelect = useSelector(previewValue);
+	// Change preview text if hit.defSubset is not latin or if it's an ico
 	const isNotLatin =
 		hit.defSubset !== 'latin' ||
 		hit.category === 'icons' ||
 		hit.category === 'other';
 
-	const [currentPreview, setCurrentPreview] = useState(previewValueSelect);
+	// We want a unique preview text for each font if it's not latin
 
-	// If previewValue changes, update currentPreview
-	useEffect(() => {
-		setCurrentPreview(previewValueSelect);
-	}, [previewValueSelect]);
-
-	// If isNotLatin is true, update currentPreview to the correct preview text
-	useEffect(() => {
-		if (isNotLatin) {
-			setCurrentPreview(getPreviewText(hit.defSubset, hit.objectID));
+	const currentPreview$ = useComputed(() => {
+		// If isNotLatin is true, update currentPreview to the correct preview text
+		if (state$.preview.inputView.get() === '' && isNotLatin) {
+			return getPreviewText(hit.defSubset, hit.objectID);
 		}
-	}, [isNotLatin, hit.defSubset, hit.objectID]);
+
+		return state$.preview.value.get();
+	});
 
 	return (
 		<Box
@@ -52,7 +49,7 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 				<NavLink prefetch="intent" to={`/fonts/${hit.objectID}`} {...others} />
 			)}
 			className={classes.wrapper}
-			mih={{ base: '150px', sm: displaySelect === 'grid' ? '332px' : '150px' }}
+			mih={{ base: '150px', sm: display === 'grid' ? '332px' : '150px' }}
 		>
 			<link
 				rel="stylesheet"
@@ -60,10 +57,10 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 			/>
 			<Skeleton visible={!isFontLoaded}>
 				<Text
-					fz={fontSize}
+					fz={size}
 					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
 				>
-					{currentPreview}
+					{currentPreview$.get()}
 				</Text>
 			</Skeleton>
 			<Group className={classes['text-group']}>
@@ -78,37 +75,31 @@ const HitComponent = ({ hit, fontSize }: HitComponentProps) => {
 			</Group>
 		</Box>
 	);
-};
+});
 
 interface HitsMapProps {
-	hits: ReturnType<typeof useInfiniteHits>['hits'];
+	hits: AlgoliaMetadata[];
 	sentinelRef: React.MutableRefObject<HTMLDivElement | null>;
+	state$: SearchState;
 }
 
-const HitsMap = ({ hits, sentinelRef }: HitsMapProps) => {
-	const sizeSelect = useSelector(size);
-
+const HitsMap = ({ hits, sentinelRef, state$ }: HitsMapProps) => {
 	return (
 		<>
 			{hits.map((hit) => (
-				<HitComponent
-					key={hit.objectID}
-					// @ts-expect-error - hit prop is messed up cause of Algolia
-					hit={hit}
-					fontSize={sizeSelect}
-				/>
+				<HitComponent key={hit.objectID} state$={state$} hit={hit} />
 			))}
 			<div ref={sentinelRef} aria-hidden="true" key="sentinel" />
 		</>
 	);
 };
 
-const InfiniteHits = () => {
-	const displaySelect = useSelector(display);
+const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
+	const display = state$.display.get();
 
 	// Infinite Scrolling
 	const { results, indexUiState } = useInstantSearch();
-	const { hits, isLastPage, showMore } = useInfiniteHits();
+	const { hits, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
 	const sentinelRef = useRef(null);
 
 	useEffect(() => {
@@ -141,18 +132,18 @@ const InfiniteHits = () => {
 
 	return (
 		<Box>
-			<Sort count={results.nbHits} />
-			{displaySelect === 'grid' ? (
+			<Sort state$={state$} count={results.nbHits} />
+			{display === 'grid' ? (
 				<SimpleGrid cols={{ base: 1, sm: 2, md: 3, xl: 4 }} spacing={16}>
-					<HitsMap hits={hits} sentinelRef={sentinelRef} />
+					<HitsMap state$={state$} hits={hits} sentinelRef={sentinelRef} />
 				</SimpleGrid>
 			) : (
 				<SimpleGrid cols={{ base: 1 }} spacing={16}>
-					<HitsMap hits={hits} sentinelRef={sentinelRef} />
+					<HitsMap state$={state$} hits={hits} sentinelRef={sentinelRef} />
 				</SimpleGrid>
 			)}
 		</Box>
 	);
-};
+});
 
 export { InfiniteHits };

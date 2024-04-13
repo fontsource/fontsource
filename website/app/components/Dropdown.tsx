@@ -73,7 +73,6 @@ const DropdownBase = ({
 		<Combobox
 			store={combobox}
 			onOptionSubmit={handleValueSelect}
-			withinPortal={false}
 			transitionProps={{ duration: 100, transition: 'fade' }}
 			width={w ?? rem(250)}
 		>
@@ -105,7 +104,7 @@ const DropdownBase = ({
 					/>
 				)}
 				<Combobox.Options>
-					<ScrollArea.Autosize type="scroll" mah={240}>
+					<ScrollArea.Autosize type="scroll" mah={240} scrollbars="y">
 						{options}
 					</ScrollArea.Autosize>
 				</Combobox.Options>

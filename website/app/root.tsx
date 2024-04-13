@@ -4,7 +4,6 @@ import 'fallback-font/fallback-outline.css';
 import '@mantine/core/styles.css';
 import '@/styles/global.css';
 
-import { enableLegendStateReact } from '@legendapp/state/react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { cssBundleHref } from '@remix-run/css-bundle';
 import type {
@@ -24,8 +23,6 @@ import {
 import { AppShell } from '@/components/layout/AppShell';
 import { theme } from '@/styles/theme';
 import { ogMeta } from '@/utils/meta';
-
-enableLegendStateReact();
 
 export const meta: MetaFunction = () => {
 	return ogMeta({});
