@@ -17,7 +17,7 @@
 		"@fontsource-variable/inter": "^5.0.16",
 		"@fontsource-variable/source-code-pro": "^5.0.17",
 		"@isaacs/ttlcache": "^1.4.1",
-		"@legendapp/state": "^1.11.3",
+		"@legendapp/state": "^2.1.12",
 		"@mantine/core": "^7.3.1",
 		"@mantine/hooks": "^7.3.1",
 		"@mdx-js/esbuild": "^2.3.0",
