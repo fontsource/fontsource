@@ -132,40 +132,43 @@ const TextArea = ({
 	return (
 		<Flex direction="column">
 			<Text className={classes.header}>Font Preview</Text>
-			{!isVariable && (
-				<style
-					dangerouslySetInnerHTML={{
-						__html: staticCSS,
-					}}
-				/>
-			)}
-			{!isVariable &&
-				weights.map((weight) => (
-					<TextBox
-						key={`s-${weight}-${style}`}
-						state$={state$}
-						family={family}
-						weight={weight}
-						style={style}
-					/>
-				))}
 			{isVariable && variableCSS && (
-				<style
-					dangerouslySetInnerHTML={{
-						__html: variableCSS,
-					}}
-				/>
-			)}
-			{isVariable &&
-				weights.map((weight) => (
-					<TextBox
-						key={`v-${weight}-${style}`}
-						state$={state$}
-						family={`${family} Variable`}
-						weight={weight}
-						style={style}
+				<>
+					<style
+						dangerouslySetInnerHTML={{
+							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+							__html: variableCSS,
+						}}
 					/>
-				))}
+					{weights.map((weight) => (
+						<TextBox
+							key={`v-${weight}-${style}`}
+							state$={state$}
+							family={`${family} Variable`}
+							weight={weight}
+							style={style}
+						/>
+					))}
+				</>
+			)}
+			{!isVariable && (
+				<>
+					<style
+						dangerouslySetInnerHTML={{
+							__html: staticCSS,
+						}}
+					/>
+					{weights.map((weight) => (
+						<TextBox
+							key={`s-${weight}-${style}`}
+							state$={state$}
+							family={family}
+							weight={weight}
+							style={style}
+						/>
+					))}
+				</>
+			)}
 		</Flex>
 	);
 };

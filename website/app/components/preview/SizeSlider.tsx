@@ -16,7 +16,7 @@ const SizeSlider = observer(({ state$, hasItalic }: SizeSliderProps) => {
 	const sizes = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64];
 
 	const handleItalic = () => {
-		state$.preview.italic.set(!state$.preview.italic.get());
+		state$.preview.italic.toggle();
 		if (state$.variable.ital.get() === 1) {
 			state$.variable.ital.set(0);
 		} else {

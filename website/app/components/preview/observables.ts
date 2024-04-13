@@ -28,4 +28,4 @@ const createFontVariation = (axes: Record<string, number | undefined>) => {
 };
 
 
-export {createFontVariation,type FontIDObject,type FontIDState};
+export { createFontVariation, type FontIDObject, type FontIDState };
