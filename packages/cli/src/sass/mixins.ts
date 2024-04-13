@@ -76,7 +76,7 @@ $displayVar: null !default;
         ($subset == $unicodeSubset) or
           (
             // Is numeric subset
-            ($subset == map.get($metadata, defaults, subset)) and not
+            list.index(map.get($metadata, subsets), $subset) and not
               list.index(map.get($metadata, subsets), $unicodeSubset)
           )
       ) {
