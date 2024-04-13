@@ -1,4 +1,4 @@
-import { useSelector } from '@legendapp/state/react';
+import { observer } from '@legendapp/state/react';
 import {
 	Button,
 	ColorInput,
@@ -12,10 +12,11 @@ import {
 import { IconEye, IconHorizontal, IconVertical } from '../icons';
 import classes from './Buttons.module.css';
 import { LanguageSelector } from './Language';
-import { previewState } from './observables';
+import { type FontIDState } from './observables';
 import { SizeSlider } from './SizeSlider';
 
 interface ButtonsProps {
+	state$: FontIDState;
 	subsets: string[];
 	defSubset: string;
 	hasItalic: boolean;
@@ -74,52 +75,57 @@ const SliderButton = ({
 	);
 };
 
-const NormalButtonsGroup = ({
-	subsets,
-	hasItalic,
-	defSubset,
-}: ButtonsProps) => {
-	const state = useSelector(previewState);
+const NormalButtonsGroup = observer(
+	({ state$, subsets, hasItalic, defSubset }: ButtonsProps) => {
+		const lineHeight = state$.preview.lineHeight.get();
+		const letterSpacing = state$.preview.letterSpacing.get();
+		const color = state$.preview.color.get();
+		const transparency = state$.preview.transparency.get();
 
-	return (
-		<>
-			<LanguageSelector subsets={subsets} defSubset={defSubset} />
-			<SizeSlider hasItalic={hasItalic} />
-			<Group grow>
-				<SliderButton
-					label="Line Height"
-					icon={<IconVertical />}
-					value={state.lineHeight}
-					setValue={previewState.lineHeight.set}
-					max={10}
+		return (
+			<>
+				<LanguageSelector
+					state$={state$}
+					subsets={subsets}
+					defSubset={defSubset}
 				/>
-				<SliderButton
-					label="Letter Spacing"
-					icon={<IconHorizontal />}
-					value={state.letterSpacing}
-					setValue={previewState.letterSpacing.set}
-					min={-20}
-					max={80}
-				/>
-			</Group>
-			<Group grow>
-				<ColorInput
-					className={classes['color-button']}
-					variant="unstyled"
-					value={state.color}
-					onChange={previewState.color.set}
-					withEyeDropper={false}
-				/>
-				<SliderButton
-					label="Transparency"
-					icon={<IconEye />}
-					value={state.transparency}
-					setValue={previewState.transparency.set}
-					suffix="%"
-				/>
-			</Group>
-		</>
-	);
-};
+				<SizeSlider state$={state$} hasItalic={hasItalic} />
+				<Group grow>
+					<SliderButton
+						label="Line Height"
+						icon={<IconVertical />}
+						value={lineHeight}
+						setValue={state$.preview.lineHeight.set}
+						max={10}
+					/>
+					<SliderButton
+						label="Letter Spacing"
+						icon={<IconHorizontal />}
+						value={letterSpacing}
+						setValue={state$.preview.letterSpacing.set}
+						min={-20}
+						max={80}
+					/>
+				</Group>
+				<Group grow>
+					<ColorInput
+						className={classes['color-button']}
+						variant="unstyled"
+						value={color}
+						onChange={state$.preview.color.set}
+						withEyeDropper={false}
+					/>
+					<SliderButton
+						label="Transparency"
+						icon={<IconEye />}
+						value={transparency}
+						setValue={state$.preview.transparency.set}
+						suffix="%"
+					/>
+				</Group>
+			</>
+		);
+	},
+);
 
 export { NormalButtonsGroup, SliderButton };

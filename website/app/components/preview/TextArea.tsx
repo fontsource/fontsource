@@ -1,4 +1,4 @@
-import { useSelector } from '@legendapp/state/react';
+import { observer } from '@legendapp/state/react';
 import {
 	Box,
 	Flex,
@@ -14,7 +14,7 @@ import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
 import type { Metadata } from '@/utils/types';
 
-import { fontVariation, previewState } from './observables';
+import { type FontIDState } from './observables';
 import classes from './TextArea.module.css';
 
 interface TagProps {
@@ -22,12 +22,14 @@ interface TagProps {
 	active: boolean;
 }
 interface TextBoxProps {
+	state$: FontIDState;
 	family: string;
 	weight: number;
 	style: string;
 }
 
 interface TextAreaProps {
+	state$: FontIDState;
 	metadata: Metadata;
 	staticCSS: string;
 	variableCSS?: string;
@@ -56,16 +58,17 @@ const Tag = ({ weight, active }: TagProps) => {
 	);
 };
 
-const TextBox = ({ family, weight, style }: TextBoxProps) => {
+const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	const { ref, focused } = useFocusWithin();
-	const state = useSelector(previewState);
-	const variation = useSelector(fontVariation);
+	const preview = state$.preview.get();
+	const variation = state$.fontVariation.get();
 	const colorScheme = useComputedColorScheme('light');
 
 	useEffect(() => {
 		colorScheme === 'dark'
-			? previewState.color.set('#FFFFFF')
-			: previewState.color.set('#000000');
+			? state$.preview.color.set('#FFFFFF')
+			: state$.preview.color.set('#000000');
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [colorScheme]);
 
 	const isFontLoaded = useIsFontLoaded(family, { weights: [weight], style });
@@ -81,19 +84,19 @@ const TextBox = ({ family, weight, style }: TextBoxProps) => {
 							input: {
 								fontFamily: `"${family}", "Fallback Outline"`,
 								fontWeight: weight,
-								fontSize: state.size,
-								color: state.color,
-								letterSpacing: state.letterSpacing,
-								lineHeight: state.lineHeight,
-								opacity: state.transparency / 100,
+								fontSize: preview.size,
+								color: preview.color,
+								letterSpacing: preview.letterSpacing,
+								lineHeight: preview.lineHeight,
+								opacity: preview.transparency / 100,
 								height: 'auto',
-								fontStyle: state.italic ? 'italic' : 'normal',
+								fontStyle: preview.italic ? 'italic' : 'normal',
 								fontVariationSettings: variation || undefined,
 							},
 						}}
-						value={state.text}
+						value={preview.text}
 						onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-							previewState.text.set(event.currentTarget.value)
+							state$.preview.text.set(event.currentTarget.value)
 						}
 						autoComplete="off"
 						ref={ref}
@@ -103,21 +106,27 @@ const TextBox = ({ family, weight, style }: TextBoxProps) => {
 			<Tag weight={weight} active={focused} />
 		</>
 	);
-};
+});
 
-const TextArea = ({ metadata, staticCSS, variableCSS }: TextAreaProps) => {
+const TextArea = ({
+	state$,
+	metadata,
+	staticCSS,
+	variableCSS,
+}: TextAreaProps) => {
 	const { id, family, weights, variable, defSubset, category } = metadata;
 	const isVariable = Boolean(variable);
 
-	const isItal = useSelector(previewState.italic);
+	const isItal = state$.preview.italic.get();
 	const style = isItal ? 'italic' : 'normal';
 
 	const isNotLatin =
 		defSubset !== 'latin' || category === 'icons' || category === 'other';
 	useEffect(() => {
 		if (isNotLatin) {
-			previewState.text.set(getPreviewText(defSubset, id));
+			state$.preview.text.set(getPreviewText(defSubset, id));
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isNotLatin, defSubset, id]);
 
 	return (
@@ -134,6 +143,7 @@ const TextArea = ({ metadata, staticCSS, variableCSS }: TextAreaProps) => {
 				weights.map((weight) => (
 					<TextBox
 						key={`s-${weight}-${style}`}
+						state$={state$}
 						family={family}
 						weight={weight}
 						style={style}
@@ -150,6 +160,7 @@ const TextArea = ({ metadata, staticCSS, variableCSS }: TextAreaProps) => {
 				weights.map((weight) => (
 					<TextBox
 						key={`v-${weight}-${style}`}
+						state$={state$}
 						family={`${family} Variable`}
 						weight={weight}
 						style={style}
