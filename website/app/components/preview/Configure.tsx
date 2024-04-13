@@ -37,7 +37,14 @@ const Configure = ({
 }: ConfigureProps) => {
 	return (
 		<>
-			<ScrollArea.Autosize mah="50vh" className={classes['scroll-wrapper']}>
+			<ScrollArea.Autosize
+				mah="50vh"
+				className={classes['scroll-wrapper']}
+				style={{
+					overflowX: 'hidden',
+				}}
+				scrollbars="y"
+			>
 				<Flex gap="xs" className={classes.wrapper}>
 					<Text className={classes.title} mb={4}>
 						Settings
