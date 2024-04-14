@@ -18,13 +18,7 @@ export default defineConfig(({ isSsrBuild }) => ({
 			postcss: true,
 		}),
 		cjsInterop({
-			dependencies: [
-				'fontfaceobserver',
-				'prismjs/components/prism-scss',
-				'prismjs/components/prism-json',
-				'prismjs/components/prism-bash',
-				'react-wrap-balancer',
-			],
+			dependencies: ['fontfaceobserver', 'react-wrap-balancer'],
 		}),
 		tsconfigPaths(),
 	],
