@@ -2,9 +2,8 @@
 !app/
 !docs/
 !public/
-public/build/
 !src/
 !package.json
 !postcss.config.cjs
-!remix.config.js
+!vite.config.mjs
 !tsconfig.json
