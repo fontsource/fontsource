@@ -9,15 +9,8 @@ import { serialise } from './esbuild.server';
 const globals: Globals = {
 	react: 'React',
 	'react-dom': 'ReactDOM',
+	'react/jsx-runtime': '_jsx_runtime',
 };
-
-process.env.NODE_ENV === 'production'
-	? Object.assign(globals, {
-			'react/jsx-runtime': '_jsx_runtime',
-	  })
-	: Object.assign(globals, {
-			'react/jsx-dev-runtime': '_jsx_runtime',
-	  });
 
 const getSource = async (slug: string) => {
 	const filepath = path.join(process.cwd(), `docs/${slug}.mdx`);
