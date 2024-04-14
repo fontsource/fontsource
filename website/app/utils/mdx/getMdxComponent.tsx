@@ -10,8 +10,8 @@ import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const _jsx_runtime =
 	process.env.NODE_ENV === 'development'
-		? require('react/jsx-dev-runtime')
-		: require('react/jsx-runtime');
+		? await import('react/jsx-dev-runtime')
+		: await import('react/jsx-runtime');
 
 const mdxComponents = {
 	// Typography

@@ -1,10 +1,45 @@
-// @ts-expect-error - The type definition is wrong
-import useFontFaceObserver from 'use-font-face-observer';
+import FontFaceObserver from 'fontfaceobserver';
+import { useEffect, useState } from 'react';
 
 interface ObserverOptions {
 	weights?: number[];
 	style?: string;
 }
+
+interface FontFace {
+	family: string;
+	weight?: number;
+	style?: string;
+}
+
+interface Options {
+	timeout?: number;
+}
+
+const useFontFaceObserver = (
+	fontFaces: FontFace[] = [],
+	{ timeout }: Options = {},
+): boolean => {
+	const [isResolved, setIsResolved] = useState(false);
+	const fontFacesString = JSON.stringify(fontFaces);
+
+	useEffect(() => {
+		const promises = JSON.parse(fontFacesString).map(
+			async ({ family, weight, style }: FontFace) => {
+				await new FontFaceObserver(family, {
+					weight,
+					style,
+				}).load(undefined, timeout);
+			},
+		);
+
+		Promise.all(promises).then(() => {
+			setIsResolved(true);
+		});
+	}, [fontFacesString, timeout]);
+
+	return isResolved;
+};
 
 export const useIsFontLoaded = (family: string, options?: ObserverOptions) => {
 	if (!options?.weights || options.weights.length === 0)
@@ -22,7 +57,7 @@ export const useIsFontLoaded = (family: string, options?: ObserverOptions) => {
 			[
 				{
 					family,
-					weight: String(weight),
+					weight,
 					style: options.style ?? 'normal',
 				},
 			],

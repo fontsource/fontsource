@@ -1,4 +1,5 @@
 import * as fs from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 
 import * as path from 'pathe';
 
@@ -21,11 +22,11 @@ process.env.NODE_ENV === 'production'
 
 const getSource = async (slug: string) => {
 	const filepath = path.join(
-		// eslint-disable-next-line unicorn/prefer-module
-		__dirname,
-		'../docs',
+		path.dirname(fileURLToPath(import.meta.url)),
+		'../../../docs',
 		slug + '.mdx',
 	);
+
 	try {
 		return await fs.readFile(filepath, 'utf8');
 	} catch {

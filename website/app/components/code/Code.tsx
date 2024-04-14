@@ -68,9 +68,12 @@ interface CodeHighlightProps {
 
 // Add support for additional languagaes
 (typeof global === 'undefined' ? window : global).Prism = Prism;
-require('prismjs/components/prism-scss');
-require('prismjs/components/prism-json');
-require('prismjs/components/prism-bash');
+// @ts-expect-error - No types for prism themes
+await import('prismjs/components/prism-scss');
+// @ts-expect-error - No types for prism themes
+await import('prismjs/components/prism-json');
+// @ts-expect-error - No types for prism themes
+await import('prismjs/components/prism-bash');
 
 export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 	const { colorScheme } = useMantineColorScheme();

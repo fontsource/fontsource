@@ -5,6 +5,8 @@ import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import algoliasearch from 'algoliasearch/lite';
 import { type UiState } from 'instantsearch.js';
+// @ts-expect-error - No type definitions available
+import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
 import { type BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
 import { renderToString } from 'react-dom/server';
 import {
@@ -21,9 +23,6 @@ import classes from '@/styles/global.module.css';
 import { getSSRCache, setSSRCache } from '@/utils/algolia.server';
 
 import { theme } from '../styles/theme';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires, unicorn/prefer-module
-const { history } = require('instantsearch.js/cjs/lib/routers/index.js');
 
 const searchClient = algoliasearch(
 	'WNATE69PVR',
