@@ -5,7 +5,6 @@ import '@mantine/core/styles.css';
 import '@/styles/global.css';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { cssBundleHref } from '@remix-run/css-bundle';
 import type {
 	HeadersFunction,
 	LinksFunction,
@@ -13,7 +12,6 @@ import type {
 } from '@remix-run/node';
 import {
 	Links,
-	LiveReload,
 	Meta,
 	Outlet,
 	Scripts,
@@ -33,7 +31,6 @@ export const headers: HeadersFunction = () => ({
 });
 
 export const links: LinksFunction = () => [
-	...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 	{
 		rel: 'preconnect',
 		href: 'https://cdn.jsdelivr.net/',
@@ -80,7 +77,6 @@ export const Document = ({ children }: DocumentProps) => {
 					<AppShell>{children}</AppShell>
 					<ScrollRestoration />
 					<Scripts />
-					<LiveReload />
 				</MantineProvider>
 			</body>
 		</html>

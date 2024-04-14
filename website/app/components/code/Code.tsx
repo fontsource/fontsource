@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prefer-module */
 import type { CodeProps } from '@mantine/core';
 import {
 	ActionIcon,
@@ -12,6 +11,7 @@ import {
 } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
 import { Highlight, Prism } from 'prism-react-renderer';
+import { Suspense, use } from 'react';
 
 import { IconCopy } from '@/components/icons';
 
@@ -68,11 +68,17 @@ interface CodeHighlightProps {
 
 // Add support for additional languagaes
 (typeof global === 'undefined' ? window : global).Prism = Prism;
-require('prismjs/components/prism-scss');
-require('prismjs/components/prism-json');
-require('prismjs/components/prism-bash');
+const extraLanguages = Promise.all([
+	// @ts-expect-error - No types for prism themes
+	import('prismjs/components/prism-scss'),
+	// @ts-expect-error - No types for prism themes
+	import('prismjs/components/prism-json'),
+	// @ts-expect-error - No types for prism themes
+	import('prismjs/components/prism-bash'),
+]);
 
 export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
+	use(extraLanguages);
 	const { colorScheme } = useMantineColorScheme();
 
 	return (
@@ -134,7 +140,9 @@ export const Code = ({ language, children, ...others }: CodeDirectProps) => {
 
 	return (
 		<CodeWrapper language={language} code={children?.toString() ?? ''}>
-			<CodeHighlight code={children?.toString() ?? ''} language={language} />
+			<Suspense fallback={undefined}>
+				<CodeHighlight code={children?.toString() ?? ''} language={language} />
+			</Suspense>
 		</CodeWrapper>
 	);
 };

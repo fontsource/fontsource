@@ -1,5 +1,5 @@
 import sidebarConfigImport from '@docs/sidebar.json';
-import { Box, Divider, Flex, Group, Text, UnstyledButton } from '@mantine/core';
+import { Box, Divider, Flex, Group, Text } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link, useParams } from '@remix-run/react';
 import { Fragment } from 'react';
@@ -67,7 +67,7 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 	const { hovered, ref } = useHover<HTMLAnchorElement>();
 
 	return (
-		<UnstyledButton
+		<Flex
 			className={classes['route-item']}
 			component={Link}
 			to={
@@ -83,7 +83,7 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 				<Icon height={18} data-active={active ?? hovered} />
 				<Text fw={active ? 700 : 400}>{title}</Text>
 			</Group>
-		</UnstyledButton>
+		</Flex>
 	);
 };
 
@@ -110,7 +110,7 @@ const SectionItem = ({
 	};
 
 	return (
-		<UnstyledButton
+		<Flex
 			className={classes['section-item']}
 			component={Link}
 			to={external ?? `/docs/${slug}`}
@@ -121,7 +121,7 @@ const SectionItem = ({
 				<Text fw={active ? 700 : 400}>{title}</Text>
 				{external && <IconExternal />}
 			</Group>
-		</UnstyledButton>
+		</Flex>
 	);
 };
 
@@ -136,43 +136,41 @@ const LeftSidebar = ({ toggle }: LeftSidebarProps) => {
 	const sectionSlug = route?.[1] as keyof SidebarConfig[typeof routeSection];
 
 	return (
-		<>
-			<Box component="nav" className={classes.wrapper}>
-				{Object.entries(sections).map(([slug, { title, icon }]) => (
-					<RouteItem
-						key={slug}
-						slug={slug}
-						title={title}
-						Icon={icon}
-						active={route?.[0] === slug}
-					/>
+		<Box component="nav" className={classes.wrapper}>
+			{Object.entries(sections).map(([slug, { title, icon }]) => (
+				<RouteItem
+					key={slug}
+					slug={slug}
+					title={title}
+					Icon={icon}
+					active={route?.[0] === slug}
+				/>
+			))}
+			<Flex className={classes.sections}>
+				{Object.keys(sidebarConfig[routeSection]).map((section) => (
+					<Fragment key={section}>
+						<Text key={section} fw={700} fz={13} mt="sm" mb="sm">
+							{section.toUpperCase()}
+						</Text>
+						<Divider mb="xs" />
+						{Object.entries(sidebarConfig[routeSection][section]).map(
+							([slug, item]) => (
+								<SectionItem
+									key={slug}
+									slug={`${routeSection}/${slug}`}
+									title={typeof item === 'string' ? item : item.name}
+									external={
+										typeof item === 'string' ? undefined : item.external
+									}
+									active={sectionSlug === slug}
+									toggle={toggle}
+								/>
+							),
+						)}
+					</Fragment>
 				))}
-				<Flex className={classes.sections}>
-					{Object.keys(sidebarConfig[routeSection]).map((section) => (
-						<Fragment key={section}>
-							<Text key={section} fw={700} fz={13} mt="sm" mb="sm">
-								{section.toUpperCase()}
-							</Text>
-							<Divider mb="xs" />
-							{Object.entries(sidebarConfig[routeSection][section]).map(
-								([slug, item]) => (
-									<SectionItem
-										key={slug}
-										slug={`${routeSection}/${slug}`}
-										title={typeof item === 'string' ? item : item.name}
-										external={
-											typeof item === 'string' ? undefined : item.external
-										}
-										active={sectionSlug === slug}
-										toggle={toggle}
-									/>
-								),
-							)}
-						</Fragment>
-					))}
-				</Flex>
-			</Box>
-		</>
+			</Flex>
+		</Box>
 	);
 };
 
