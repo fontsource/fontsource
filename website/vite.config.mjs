@@ -6,13 +6,13 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 installGlobals();
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
 	server: {
 		port: 8080,
 	},
-	build: {
-		target: 'ES2022',
-	},
+	// We only need to target ES2022 for the server build
+	// for top-level await support
+	build: isSsrBuild ? { target: 'ES2022' } : {},
 	plugins: [
 		remix({
 			postcss: true,
@@ -28,4 +28,4 @@ export default defineConfig({
 		}),
 		tsconfigPaths(),
 	],
-});
+}));
