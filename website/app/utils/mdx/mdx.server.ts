@@ -1,5 +1,4 @@
 import * as fs from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
 
 import * as path from 'pathe';
 
