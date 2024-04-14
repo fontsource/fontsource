@@ -68,6 +68,7 @@
 		"typescript": "^5.3.3",
 		"vite": "^5.2.8",
 		"vite-plugin-cjs-interop": "^2.1.0",
+		"vite-plugin-top-level-await": "^1.4.1",
 		"vite-tsconfig-paths": "^4.3.2"
 	},
 	"engines": {
