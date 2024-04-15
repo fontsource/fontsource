@@ -1,5 +1,5 @@
 import { TextInput } from '@mantine/core';
-import { useFocusWithin } from '@mantine/hooks';
+import { useDebouncedCallback, useFocusWithin } from '@mantine/hooks';
 import { useState } from 'react';
 import { useSearchBox } from 'react-instantsearch';
 
@@ -12,13 +12,13 @@ const SearchBar = () => {
 	const { query, refine } = useSearchBox();
 	const [inputValue, setInputValue] = useState(query);
 
-	const setQuery = (newQuery: string) => {
-		setInputValue(newQuery);
-		refine(newQuery);
-	};
+	const handleSearch = useDebouncedCallback((value: string) => {
+		refine(value);
+	}, 300);
 
 	const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setQuery(event.currentTarget.value);
+		setInputValue(event.currentTarget.value);
+		handleSearch(event.currentTarget.value);
 	};
 
 	// Track when the InstantSearch query changes to synchronize it with
