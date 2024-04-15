@@ -10,8 +10,8 @@ describe('sass metadata', () => {
 			sassMetadata(
 				mockSassMetadata.carlito.metadata as Metadata,
 				mockSassMetadata.carlito.unicode,
-				false
-			)
+				false,
+			),
 		).toMatchSnapshot();
 	});
 
@@ -20,8 +20,8 @@ describe('sass metadata', () => {
 			sassMetadata(
 				mockSassMetadata.notoSansJp.metadata as Metadata,
 				mockSassMetadata.notoSansJp.unicode,
-				false
-			)
+				false,
+			),
 		).toMatchSnapshot();
 	});
 
@@ -30,8 +30,8 @@ describe('sass metadata', () => {
 			sassMetadata(
 				mockSassMetadata.recursive.metadata as Metadata,
 				mockSassMetadata.recursive.unicode,
-				true
-			)
+				true,
+			),
 		).toMatchSnapshot();
 	});
 });

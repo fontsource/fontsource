@@ -7,53 +7,53 @@ import type { Metadata } from '../../src/types';
 import mockSassMetadata from './fixtures/sass-metadata.json';
 
 const compileSass = (metadata: string, options = '') => {
-  const metadataMap = `(${metadata
-    .replaceAll('$', '')
-    .replaceAll(' !default;', ',')})`;
+	const metadataMap = `(${metadata
+		.replaceAll('$', '')
+		.replaceAll(' !default;', ',')})`;
 
-  return compileString(
-    sassMixins
-      .replace("@use 'metadata';", '')
-      .replace('meta.module-variables(metadata) !default', metadataMap) +
-    `@include faces(${options})`
-  );
+	return compileString(
+		sassMixins
+			.replace("@use 'metadata';", '')
+			.replace('meta.module-variables(metadata) !default', metadataMap) +
+			`@include faces(${options})`,
+	);
 };
 
 describe('sass mixins', () => {
-  it('should compile sass for non unicode range font successfully', async () => {
-    expect(
-      compileSass(
-        sassMetadata(
-          mockSassMetadata.carlito.metadata as Metadata,
-          mockSassMetadata.carlito.unicode,
-          false
-        )
-      )
-    ).toMatchSnapshot();
-  });
+	it('should compile sass for non unicode range font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.carlito.metadata as Metadata,
+					mockSassMetadata.carlito.unicode,
+					false,
+				),
+			),
+		).toMatchSnapshot();
+	});
 
-  it('should compile sass for numeric subset font successfully', async () => {
-    expect(
-      compileSass(
-        sassMetadata(
-          mockSassMetadata.notoSansJp.metadata as Metadata,
-          mockSassMetadata.notoSansJp.unicode,
-          false
-        ),
-        '$subsets: japanese'
-      )
-    ).toMatchSnapshot();
-  });
+	it('should compile sass for numeric subset font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.notoSansJp.metadata as Metadata,
+					mockSassMetadata.notoSansJp.unicode,
+					false,
+				),
+				'$subsets: japanese',
+			),
+		).toMatchSnapshot();
+	});
 
-  it('should compile sass for variable font successfully', async () => {
-    expect(
-      compileSass(
-        sassMetadata(
-          mockSassMetadata.recursive.metadata as Metadata,
-          mockSassMetadata.recursive.unicode,
-          true
-        )
-      )
-    ).toMatchSnapshot();
-  });
+	it('should compile sass for variable font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.recursive.metadata as Metadata,
+					mockSassMetadata.recursive.unicode,
+					true,
+				),
+			),
+		).toMatchSnapshot();
+	});
 });
