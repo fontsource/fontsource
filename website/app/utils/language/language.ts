@@ -22,6 +22,18 @@ export const getPreviewText = (subset: string, id?: string) => {
 			return 'searchsettingshomepersonaddshopping_cartcheck_circlefavoritelogouttrophy';
 		}
 
+		case 'noto-sans-symbols': {
+			return '⛾⛿☯☸ ⛩⛰⛱⛴⛷⛸ ♸⚥☊☍☓☤ 🄰🄱🆈🆉 ⚖♇♪♬';
+		}
+
+		case 'noto-sans-symbols-2': {
+			return '⌚✋⯧☔🛪🏟⛅🞽🕖 🚲🡽🨄 🡢🡱🏠💻🐿👁📽';
+		}
+
+		case 'noto-sans-math': {
+			return '𝞉𝞩𝟃𞻰⟥⦀⦁ 𝚢𝚣𝚤𝖿𝗀𝗁𝗂 𝑻𝑼𝑽𝗔𝗕𝗖𝗗 ϑϕϰϱϵℊℎ ⊰⊱⊲⊳⊴⊵⫕ 𞹴𞹵𞹶𞹷𞹹𞹺𞹻';
+		}
+
 		case 'yakuhanjp':
 		case 'yakuhanrp': {
 			return '、。！？〈〉《》「」『』【】〔〕・（）：；［］｛｝';
@@ -354,10 +366,6 @@ export const getPreviewText = (subset: string, id?: string) => {
 			return '𑴥𑴰 𑴓𑴎𑴛𑴲 𑴩𑴱𑴟𑵅𑴛𑴲𑴟𑵅𑴥𑴱𑴥𑴫𑵅𑴨𑴱𑴛𑴟𑵄𑴰𑵅𑴥𑴱𑴚𑴱𑵀 𑴁𑴞𑴱𑴦𑵁';
 		}
 
-		case 'math': {
-			return '𝞉𝞩𝟃𞻰⟥⦀⦁ 𝚢𝚣𝚤𝖿𝗀𝗁𝗂 𝑻𝑼𝑽𝗔𝗕𝗖𝗗 ϑϕϰϱϵℊℎ ⊰⊱⊲⊳⊴⊵⫕ 𞹴𞹵𞹶𞹷𞹹𞹺𞹻';
-		}
-
 		case 'mayan-numerals': {
 			return '𝋠𝋡𝋢𝋣𝋤𝋥𝋦 𝋧𝋨𝋩𝋪𝋫𝋬𝋭';
 		}
@@ -552,10 +560,6 @@ export const getPreviewText = (subset: string, id?: string) => {
 
 		case 'syloti-nagri': {
 			return 'ꠎꠔ꠆ꠞ ꠎꠉꠔꠤ ꠡꠣꠘ꠆ꠔꠤꠘ꠆ꠎꠣꠎꠡ꠆ꠛꠣꠔꠘ꠆ꠔ꠆ꠞ꠆ꠎꠣꠘꠣꠋ ꠀꠗꠣꠞꠢ꠆ ꠝꠣꠘꠛꠙꠞꠤꠛꠣꠞꠡ꠆ꠎ ꠡꠞ꠆ꠛꠦꠡꠣꠝꠙꠤ';
-		}
-
-		case 'symbols': {
-			return '⛾⛿☯☸ ⛩⛰⛱⛴⛷⛸ ♸⚥☊☍☓☤ 🄰🄱🆈🆉 ⚖♇♪♬';
 		}
 
 		case 'syriac': {
