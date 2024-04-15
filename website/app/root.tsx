@@ -34,15 +34,16 @@ import '@mantine/core/styles/Tabs.css';
 // Feedback
 import '@mantine/core/styles/Skeleton.css';
 // Overlays
+import '@mantine/core/styles/Menu.css';
 import '@mantine/core/styles/Tooltip.css';
-import '@mantine/core/styles/Badge.css';
 // Typography
 import '@mantine/core/styles/Code.css';
 import '@mantine/core/styles/Table.css';
 // Misc
+import '@mantine/core/styles/Badge.css';
+import '@mantine/core/styles/Divider.css';
 import '@mantine/core/styles/Text.css';
 import '@mantine/core/styles/Title.css';
-import '@mantine/core/styles/Divider.css';
 import '@/styles/global.css';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
