@@ -47,13 +47,6 @@ const Filters = ({ state$ }: FilterProps) => {
 		clearSortBy('prod_POPULAR');
 	};
 
-	state$.preview.inputView.onChange((e) => {
-		if (e.value !== '') {
-			state$.preview.label.set('Custom');
-			state$.preview.value.set(e.value ?? '');
-		}
-	});
-
 	return (
 		<Box className={classes.container}>
 			<SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={0}>
@@ -64,7 +57,7 @@ const Filters = ({ state$ }: FilterProps) => {
 			<Box className={classes.filters}>
 				<Group justify="center" wrap="nowrap">
 					<CategoriesDropdown />
-					<LanguagesDropdown />
+					<LanguagesDropdown state$={state$} />
 				</Group>
 				<Group justify="center" wrap="nowrap">
 					<UnstyledButton

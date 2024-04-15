@@ -21,6 +21,7 @@ import { InfiniteHits } from '@/components/search/Hits';
 import { type SearchObject } from '@/components/search/observables';
 import classes from '@/styles/global.module.css';
 import { getSSRCache, setSSRCache } from '@/utils/algolia.server';
+import { getPreviewText } from '@/utils/language/language';
 
 import { theme } from '../styles/theme';
 
@@ -115,6 +116,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 			value: 'Sphinx of black quartz, judge my vow.',
 			inputView: '',
 		},
+		language: 'latin',
 		display: 'grid',
 	});
 
@@ -172,7 +174,25 @@ export default function Index() {
 			value: 'Sphinx of black quartz, judge my vow.',
 			inputView: '',
 		},
+		language: 'latin',
 		display: 'grid',
+	});
+
+	// Update the preset preview label to custom if
+	// a manual input is detected
+	state$.preview.inputView.onChange((e) => {
+		if (e.value !== '') {
+			state$.preview.label.set('Custom');
+			state$.preview.value.set(e.value ?? '');
+		}
+	});
+
+	// Update the preview value to a language specific sentence
+	// if the language is changed and preset is not custom
+	state$.language.onChange((e) => {
+		if (state$.preview.label.get() !== 'Custom') {
+			state$.preview.value.set(getPreviewText(e.value));
+		}
 	});
 
 	return (

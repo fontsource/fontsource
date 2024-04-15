@@ -6,7 +6,8 @@ interface SearchObject {
 		label: string;
 		value: string;
 		inputView: string;
-	}
+	};
+	language: string;
 	display: 'list' | 'grid';
 }
 
