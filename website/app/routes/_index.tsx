@@ -55,6 +55,7 @@ const routing = (serverUrl: string): any => {
 					? (new URL(serverUrl) as unknown as Location)
 					: window.location;
 			},
+			cleanUrlOnDispose: true,
 		} satisfies Partial<BrowserHistoryArgs<UiState>>),
 		stateMapping: {
 			stateToRoute(uiState: any) {
