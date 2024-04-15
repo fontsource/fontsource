@@ -46,6 +46,8 @@ import '@mantine/core/styles/Text.css';
 import '@mantine/core/styles/Title.css';
 import '@/styles/global.css';
 
+import interLatinURL from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import sourceCodeProLatinURL from '@fontsource-variable/source-code-pro/files/source-code-pro-latin-wght-normal.woff2?url';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import type {
 	HeadersFunction,
@@ -76,6 +78,20 @@ export const links: LinksFunction = () => [
 	{
 		rel: 'preconnect',
 		href: 'https://cdn.jsdelivr.net/',
+	},
+	{
+		rel: 'preload',
+		as: 'font',
+		type: 'font/woff2',
+		crossOrigin: 'anonymous',
+		href: interLatinURL,
+	},
+	{
+		rel: 'preload',
+		as: 'font',
+		type: 'font/woff2',
+		crossOrigin: 'anonymous',
+		href: sourceCodeProLatinURL,
 	},
 	{
 		rel: 'apple-touch-icon',
