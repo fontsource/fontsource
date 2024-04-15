@@ -1,4 +1,10 @@
-import { Center, Group, SegmentedControl, Text, Tooltip } from '@mantine/core';
+import {
+	Group,
+	SegmentedControl,
+	Text,
+	Tooltip,
+	VisuallyHidden,
+} from '@mantine/core';
 import { useSortBy } from 'react-instantsearch';
 
 import { DropdownSimple } from '@/components/Dropdown';
@@ -19,7 +25,7 @@ const sortMap: Record<string, string> = {
 	prod_RANDOM: 'Random',
 };
 
-export const getSortItems = () => {
+const getSortItems = () => {
 	return Object.entries(sortMap).map(([key, label]) => ({
 		label,
 		value: key,
@@ -69,17 +75,19 @@ const Sort = ({ count, state$ }: SortProps) => {
 							data={[
 								{
 									label: (
-										<Center>
+										<>
 											<IconGrid height={20} data-active={display === 'grid'} />
-										</Center>
+											<VisuallyHidden>Grid View</VisuallyHidden>
+										</>
 									),
 									value: 'grid',
 								},
 								{
 									label: (
-										<Center>
+										<>
 											<IconList height={20} data-active={display === 'list'} />
-										</Center>
+											<VisuallyHidden>List View</VisuallyHidden>
+										</>
 									),
 									value: 'list',
 								},
@@ -92,4 +100,4 @@ const Sort = ({ count, state$ }: SortProps) => {
 	);
 };
 
-export { Sort };
+export { getSortItems, Sort };

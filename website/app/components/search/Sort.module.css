@@ -41,5 +41,11 @@
 
 	label {
 		padding: rem(5px);
+
+		span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 }
