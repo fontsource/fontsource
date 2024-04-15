@@ -1,0 +1,37 @@
+---
+title: Preloading Fonts
+section: Contents
+---
+
+## Preloading Fonts
+
+---
+
+Preloading fonts is a technique that allows you to load fonts before they are needed, which can help improve the performance of your website. However, it is important to note that preloading fonts can also increase the initial load time of your website if you are including unused font files, so you should use it for critical fonts and its subsets only.
+
+Preloading fonts is a technique used to load fonts before they're required, which can improve your website's performance. However, it's essential to preload only critical fonts and subsets to avoid unnecessarily increasing initial load times.
+
+> **Note:** You can learn more about the `preload` link relation type in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload).
+
+To preload a font, you can use the `preload` link relation type in the `<head>` of your HTML document. However, due to bundler constraints, you must manually import the URL to your font file. This is typically challenging since bundlers like Vite rewrite URLs to hashed filenames.
+
+Instead, you can use the Vite static asset directive `?url` to import the font file URL. For example, to preload the Open Sans font, you can use the following code:
+
+Instead, you can use the Vite [static asset directive](https://vitejs.dev/guide/assets.html#explicit-url-imports) `?url` to import the font file URL. For instance, the following code highlights how to preload the Open Sans font:
+
+```jsx
+import '@fontsource-variable/open-sans';
+import openSansWoff2 from '@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2?url';
+
+const App = () => {
+	return (
+		<html lang="en">
+			<head>
+				<link rel="preload" as="font" type="font/woff2" href={openSansWoff2} crossorigin/>
+			</head>
+		</html>
+	);
+};
+```
+
+> **Note:** Avoid preloading all font files in your project, as this may lead to increased initial load times. Only preload critical fonts and subsets that are essential for the initial page display, such as the latin subset.

@@ -1,0 +1,35 @@
+---
+title: Font Display
+section: Contents
+---
+
+## Font Display
+
+---
+
+Font display is a CSS property that controls how fonts appear on your website. By default, Fontsource uses the `swap` value for the `font-display` property. This means that while a custom font is loading, the browser displays a fallback font. Once the custom font is ready, the browser swaps it in place of the fallback font.
+
+> **Note:** You can learn more about the `font-display` property in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+
+To customise the `font-display` property for a specific font, you can use the **Advanced** tab on each **Install** page to generate custom `@font-face` rules with your preferred `font-display` value. For example, let's say you want to set the `font-display` property to `optional` for Open Sans. You can create the following `@font-face` rule:
+
+```css
+@font-face {
+  font-family: 'Open Sans Variable';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 300 800;
+  src: url(@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+```
+
+> **Note:**  This method is compatible with **Vite-based** frameworks or similar setups that support CSS bundling with `url()` rewrites.
+
+You can then include this rule in your global CSS file and apply it to your components using the following CSS:
+
+```css
+body {
+  font-family: 'Open Sans Variable', sans-serif;
+}
+```
