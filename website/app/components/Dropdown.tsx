@@ -21,6 +21,7 @@ interface DropdownBaseProps {
 	w?: number | string;
 	noBorder?: boolean;
 	search?: (query: string) => void;
+	disabled?: boolean;
 }
 interface DropdownItems {
 	label: string;
@@ -45,6 +46,7 @@ const DropdownBase = ({
 	noBorder,
 	refine,
 	search,
+	disabled,
 }: DropdownBaseProps) => {
 	const [searchQuery, setSearchQuery] = useState('');
 
@@ -75,6 +77,7 @@ const DropdownBase = ({
 			onOptionSubmit={handleValueSelect}
 			transitionProps={{ duration: 100, transition: 'fade' }}
 			width={w ?? rem(250)}
+			disabled={disabled}
 		>
 			<Combobox.DropdownTarget>
 				<InputBase
@@ -88,6 +91,7 @@ const DropdownBase = ({
 					rightSectionPointerEvents="none"
 					w={w ?? rem(250)}
 					data-no-border={noBorder}
+					disabled={disabled}
 				>
 					{label}
 				</InputBase>
@@ -187,6 +191,7 @@ const DropdownCheckbox = ({
 			noBorder={noBorder}
 			refine={refine}
 			search={search}
+			disabled={items.length === 0}
 		/>
 	);
 };

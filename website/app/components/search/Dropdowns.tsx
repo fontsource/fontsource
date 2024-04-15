@@ -48,9 +48,16 @@ const LanguagesDropdown = ({ state$ }: LanguagesDropdownProps) => {
 	const label = () => {
 		if (refinedItems.length === 1) {
 			return refinedItems[0].label;
-		} else if (refinedItems.length > 1) {
+		}
+
+		if (refinedItems.length > 1) {
 			return `${refinedItems[0].label} + ${refinedItems.length - 1}`;
 		}
+
+		if (items.length === 0) {
+			return 'No languages';
+		}
+
 		return 'All languages';
 	};
 
@@ -80,10 +87,26 @@ const CategoriesDropdown = () => {
 		transformItems: transformCategories,
 	});
 
-	const label = items.find((item) => item.isRefined)?.label ?? 'All categories';
+	const refinedItems = items.filter((item) => item.isRefined);
+
+	const label = () => {
+		if (refinedItems.length === 1) {
+			return refinedItems[0].label;
+		}
+
+		if (refinedItems.length > 1) {
+			return `${refinedItems[0].label} + ${refinedItems.length - 1}`;
+		}
+
+		if (items.length === 0) {
+			return 'No categories';
+		}
+
+		return 'All categories';
+	};
 
 	return (
-		<DropdownCheckbox label={label} items={items} refine={refine} showCount />
+		<DropdownCheckbox label={label()} items={items} refine={refine} showCount />
 	);
 };
 
