@@ -33,7 +33,6 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 		hit.category === 'other';
 
 	// We want a unique preview text for each font if it's not latin
-
 	const currentPreview$ = useComputed(() => {
 		// If isNotLatin is true, update currentPreview to the correct preview text
 		if (state$.preview.inputView.get() === '' && isNotLatin) {
@@ -41,6 +40,14 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 		}
 
 		return state$.preview.value.get();
+	});
+
+	// Update the preview value to a language specific sentence
+	// if the language is changed and preset is not custom
+	state$.language.onChange((e) => {
+		if (state$.preview.label.get() !== 'Custom') {
+			state$.preview.value.set(getPreviewText(e.value, hit.objectID));
+		}
 	});
 
 	return (

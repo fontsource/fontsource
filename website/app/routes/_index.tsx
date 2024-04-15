@@ -115,6 +115,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 			value: 'Sphinx of black quartz, judge my vow.',
 			inputView: '',
 		},
+		language: 'latin',
 		display: 'grid',
 	});
 
@@ -172,7 +173,17 @@ export default function Index() {
 			value: 'Sphinx of black quartz, judge my vow.',
 			inputView: '',
 		},
+		language: 'latin',
 		display: 'grid',
+	});
+
+	// Update the preset preview label to custom if
+	// a manual input is detected
+	state$.preview.inputView.onChange((e) => {
+		if (e.value !== '') {
+			state$.preview.label.set('Custom');
+			state$.preview.value.set(e.value ?? '');
+		}
 	});
 
 	return (
