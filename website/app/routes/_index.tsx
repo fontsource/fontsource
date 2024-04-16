@@ -8,6 +8,7 @@ import { type UiState } from 'instantsearch.js';
 // @ts-expect-error - No type definitions available
 import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
 import { type BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
+import { useRef } from 'react';
 import { renderToString } from 'react-dom/server';
 import {
 	getServerState,
@@ -19,6 +20,7 @@ import {
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { type SearchObject } from '@/components/search/observables';
+import { ScrollToTop } from '@/components/search/ScrollToTop';
 import classes from '@/styles/global.module.css';
 import { getSSRCache, setSSRCache } from '@/utils/algolia.server';
 
@@ -165,6 +167,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
 export default function Index() {
 	const { serverState, serverUrl } = useLoaderData<typeof loader>();
+	const searchRef = useRef(null);
 
 	const state$ = useObservable<SearchObject>({
 		size: 32,
@@ -195,12 +198,13 @@ export default function Index() {
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
 				<Box className={classes.background}>
-					<Box className={classes.container}>
+					<Box className={classes.container} ref={searchRef}>
 						<Filters state$={state$} />
 					</Box>
 				</Box>
 				<Box className={classes.container}>
 					<InfiniteHits state$={state$} />
+					<ScrollToTop containerId="#hits" targetRef={searchRef} />
 				</Box>
 			</InstantSearch>
 		</InstantSearchSSRProvider>
