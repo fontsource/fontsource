@@ -1,4 +1,5 @@
 import { generateFontFace } from '@fontsource-utils/generate';
+import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
@@ -6,10 +7,15 @@ import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
 import { Configure } from '@/components/preview/Configure';
+import {
+	createFontVariation,
+	type FontIDObject,
+} from '@/components/preview/observables';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
 import classes from '@/styles/global.module.css';
 import { getCSSCache, setCSSCache } from '@/utils/cache.server';
+import { getPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
 import {
 	getAxisRegistry,
@@ -107,7 +113,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 				variableCSS += unicodeKeys
 					.map((subset) =>
 						generateFontFace({
-							family,
+							family: `${family} Variable`,
 							display: 'block',
 							style,
 							weight: 400,
@@ -164,11 +170,44 @@ export default function Font() {
 	const data = useLoaderData<FontMetadata>();
 	const { metadata, variable, axisRegistry, staticCSS, variableCSS } = data;
 
+	const state$ = useObservable<FontIDObject>({
+		preview: {
+			language: 'latin',
+			size: 32,
+			italic: false,
+			lineHeight: 2,
+			letterSpacing: 0,
+			transparency: 100,
+			color: '#000000',
+
+			text: 'Sphinx of black quartz, judge my vow.',
+		},
+		variable: {},
+		fontVariation: '',
+	});
+
+	// If language changes, update text using getPreviewText
+	state$.preview.language.onChange((e) => {
+		state$.preview.text.set(getPreviewText(e.value));
+	});
+
+	// Verify that the color is a valid hex code
+	const COLOR_REGEX = /^#[\dA-Fa-f]{0,6}$/;
+	state$.preview.color.onChange((e) => {
+		if (!COLOR_REGEX.test(e.value)) state$.preview.color.set(e.getPrevious());
+	});
+
+	// Update fontVariation when variableState changes
+	state$.variable.onChange(() => {
+		state$.fontVariation.set(createFontVariation(state$.variable.get()));
+	});
+
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="preview">
 			<Grid className={classes.container}>
 				<Grid.Col span={{ base: 12, md: 8 }}>
 					<TextArea
+						state$={state$}
 						metadata={metadata}
 						staticCSS={staticCSS}
 						variableCSS={variableCSS}
@@ -179,6 +218,7 @@ export default function Font() {
 					span={{ base: 12, md: 4 }}
 				>
 					<Configure
+						state$={state$}
 						metadata={metadata}
 						variable={variable}
 						axisRegistry={axisRegistry}

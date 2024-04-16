@@ -1,3 +1,5 @@
+import { type BaseHit } from 'instantsearch.js';
+
 export interface FontList {
 	[key: string]: string;
 }
@@ -77,4 +79,18 @@ export interface StatsResponseAll {
 
 export interface PackageJson {
 	version: string;
+}
+
+export interface AlgoliaMetadata extends BaseHit {
+	objectID: string;
+	family: string;
+	subsets: string[];
+	weights: number[];
+	styles: string[];
+	defSubset: string;
+	category: string;
+	variable: boolean;
+	lastModified: number;
+	downloadMonth: number;
+	randomIndex: number;
 }

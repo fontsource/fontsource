@@ -1,17 +1,11 @@
-/* eslint-disable unicorn/prefer-module */
 import { Divider, List, Table, Text, Title } from '@mantine/core';
 import * as React from 'react';
+import * as _jsx_runtime from 'react/jsx-runtime';
 import * as ReactDOM from 'react-dom';
 
 import { Blockquote } from '@/components/Blockquote';
 import { CodeMdx } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
-
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const _jsx_runtime =
-	process.env.NODE_ENV === 'development'
-		? require('react/jsx-dev-runtime')
-		: require('react/jsx-runtime');
 
 const mdxComponents = {
 	// Typography

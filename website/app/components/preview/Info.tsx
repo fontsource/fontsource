@@ -1,5 +1,5 @@
 import { Divider, Group, Stack, Text, UnstyledButton } from '@mantine/core';
-import millify from 'millify';
+import { millify } from 'millify';
 
 import {
 	IconDownload,

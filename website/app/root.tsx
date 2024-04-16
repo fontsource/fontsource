@@ -1,12 +1,54 @@
 import '@fontsource-variable/inter/wght.css';
 import '@fontsource-variable/source-code-pro/wght.css';
 import 'fallback-font/fallback-outline.css';
-import '@mantine/core/styles.css';
+// Common
+import '@mantine/core/styles/global.css';
+import '@mantine/core/styles/ScrollArea.css';
+import '@mantine/core/styles/UnstyledButton.css';
+import '@mantine/core/styles/VisuallyHidden.css';
+import '@mantine/core/styles/Popover.css';
+import '@mantine/core/styles/Group.css';
+import '@mantine/core/styles/Input.css';
+import '@mantine/core/styles/Flex.css';
+import '@mantine/core/styles/InlineInput.css';
+import '@mantine/core/styles/FloatingIndicator.css';
+import '@mantine/core/styles/ColorSwatch.css';
+import '@mantine/core/styles/ColorPicker.css';
+// Layout
+import '@mantine/core/styles/Grid.css';
+import '@mantine/core/styles/SimpleGrid.css';
+import '@mantine/core/styles/Container.css';
+import '@mantine/core/styles/Stack.css';
+// Inputs
+import '@mantine/core/styles/Checkbox.css';
+import '@mantine/core/styles/ColorInput.css';
+import '@mantine/core/styles/SegmentedControl.css';
+import '@mantine/core/styles/Slider.css';
+import '@mantine/core/styles/Combobox.css';
+// Buttons
+import '@mantine/core/styles/ActionIcon.css';
+import '@mantine/core/styles/Button.css';
+// Navigation
+import '@mantine/core/styles/NavLink.css';
+import '@mantine/core/styles/Tabs.css';
+// Feedback
+import '@mantine/core/styles/Skeleton.css';
+// Overlays
+import '@mantine/core/styles/Menu.css';
+import '@mantine/core/styles/Tooltip.css';
+// Typography
+import '@mantine/core/styles/Code.css';
+import '@mantine/core/styles/Table.css';
+// Misc
+import '@mantine/core/styles/Badge.css';
+import '@mantine/core/styles/Divider.css';
+import '@mantine/core/styles/Text.css';
+import '@mantine/core/styles/Title.css';
 import '@/styles/global.css';
 
-import { enableLegendStateReact } from '@legendapp/state/react';
+import interLatinURL from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import sourceCodeProLatinURL from '@fontsource-variable/source-code-pro/files/source-code-pro-latin-wght-normal.woff2?url';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { cssBundleHref } from '@remix-run/css-bundle';
 import type {
 	HeadersFunction,
 	LinksFunction,
@@ -14,7 +56,6 @@ import type {
 } from '@remix-run/node';
 import {
 	Links,
-	LiveReload,
 	Meta,
 	Outlet,
 	Scripts,
@@ -25,8 +66,6 @@ import { AppShell } from '@/components/layout/AppShell';
 import { theme } from '@/styles/theme';
 import { ogMeta } from '@/utils/meta';
 
-enableLegendStateReact();
-
 export const meta: MetaFunction = () => {
 	return ogMeta({});
 };
@@ -36,10 +75,23 @@ export const headers: HeadersFunction = () => ({
 });
 
 export const links: LinksFunction = () => [
-	...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 	{
 		rel: 'preconnect',
 		href: 'https://cdn.jsdelivr.net/',
+	},
+	{
+		rel: 'preload',
+		as: 'font',
+		type: 'font/woff2',
+		crossOrigin: 'anonymous',
+		href: interLatinURL,
+	},
+	{
+		rel: 'preload',
+		as: 'font',
+		type: 'font/woff2',
+		crossOrigin: 'anonymous',
+		href: sourceCodeProLatinURL,
 	},
 	{
 		rel: 'apple-touch-icon',
@@ -83,7 +135,6 @@ export const Document = ({ children }: DocumentProps) => {
 					<AppShell>{children}</AppShell>
 					<ScrollRestoration />
 					<Scripts />
-					<LiveReload />
 				</MantineProvider>
 			</body>
 		</html>

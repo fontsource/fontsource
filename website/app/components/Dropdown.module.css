@@ -8,7 +8,7 @@
 			border: none;
 		}
 
-		&:hover {
+		&:hover:not(:disabled) {
 			background-color: var(--mantine-color-purple-hover);
 		}
 	}
@@ -21,7 +21,7 @@
 			border: none;
 		}
 
-		&:hover {
+		&:hover:not(:disabled) {
 			background-color: var(--mantine-color-background-6);
 		}
 	}

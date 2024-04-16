@@ -1,4 +1,4 @@
-import { useObserve, useSelector } from '@legendapp/state/react';
+import { observer } from '@legendapp/state/react';
 import type { DividerProps } from '@mantine/core';
 import {
 	Button,
@@ -10,8 +10,12 @@ import {
 
 import { IconCaret } from '@/components/icons';
 
-import { previewInputView, previewLabel, previewValue } from './observables';
+import { type SearchState } from './observables';
 import classes from './PreviewTextInput.module.css';
+
+interface PreviewProps {
+	state$: SearchState;
+}
 
 const Divider = ({ label, ...others }: DividerProps) => {
 	return (
@@ -29,34 +33,27 @@ const Divider = ({ label, ...others }: DividerProps) => {
 
 interface ItemButtonProps {
 	label: string;
-	setLabel: (label: React.SetStateAction<string>) => void;
 	value: string;
-	setValue: (value: React.SetStateAction<string>) => void;
+	state$: SearchState;
 }
-const ItemButton = ({ label, setLabel, value, setValue }: ItemButtonProps) => {
+const ItemButton = observer(({ label, value, state$ }: ItemButtonProps) => {
 	return (
 		<Menu.Item
 			component="button"
 			onClick={() => {
-				setLabel(label);
-				setValue(value);
+				state$.preview.label.set(label);
+				state$.preview.value.set(value);
+				state$.preview.inputView.set('');
 			}}
 		>
 			{value}
 		</Menu.Item>
 	);
-};
+});
 
-const PreviewSelector = () => {
-	const labelSelect = useSelector(previewLabel);
-	const inputViewSelect = useSelector(previewInputView);
+const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 	const { colorScheme } = useMantineColorScheme();
-
-	useObserve(() => {
-		if (previewLabel.get() !== 'Custom') {
-			previewInputView.set('');
-		}
-	});
+	const label = state$.preview.label.get();
 
 	return (
 		<div className={classes.wrapper}>
@@ -71,7 +68,7 @@ const PreviewSelector = () => {
 							},
 						}}
 					>
-						{labelSelect}
+						{label}
 					</Button>
 				</Menu.Target>
 				<Menu.Dropdown>
@@ -79,48 +76,38 @@ const PreviewSelector = () => {
 					<ItemButton
 						label="Sentence"
 						value="The quick brown fox jumps over the lazy dog."
-						setLabel={previewLabel.set}
-						setValue={previewValue.set}
+						state$={state$}
 					/>
 					<ItemButton
 						label="Sentence"
 						value="Sphinx of black quartz, judge my vow."
-						setLabel={previewLabel.set}
-						setValue={previewValue.set}
+						state$={state$}
 					/>
 					<Divider label="Alphabets" />
 					<ItemButton
 						label="Alphabet"
 						value="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-						setLabel={previewLabel.set}
-						setValue={previewValue.set}
+						state$={state$}
 					/>
 					<ItemButton
 						label="Alphabet"
 						value="abcdefghijklmnopqrstuvwxyz"
-						setLabel={previewLabel.set}
-						setValue={previewValue.set}
+						state$={state$}
 					/>
 					<Divider label="Numbers" />
-					<ItemButton
-						label="Number"
-						value="0123456789"
-						setLabel={previewLabel.set}
-						setValue={previewValue.set}
-					/>
+					<ItemButton label="Number" value="0123456789" state$={state$} />
 					<Divider label="Symbols" />
 					<ItemButton
 						label="Symbol"
 						value="!@#$%^&*()_+-=[]{}|;':,./<>?"
-						setLabel={previewLabel.set}
-						setValue={previewValue.set}
+						state$={state$}
 					/>
 				</Menu.Dropdown>
 			</Menu>
 			<TextInput
-				value={inputViewSelect}
+				value={state$.preview.inputView.get()}
 				onChange={(e) => {
-					previewInputView.set(e.currentTarget.value);
+					state$.preview.inputView.set(e.currentTarget.value);
 				}}
 				placeholder="Type something"
 				variant="unstyled"
@@ -138,6 +125,6 @@ const PreviewSelector = () => {
 			/>
 		</div>
 	);
-};
+});
 
 export { PreviewSelector };

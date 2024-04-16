@@ -17,12 +17,17 @@ import { IconTrash } from '@/components/icons';
 
 import { CategoriesDropdown, LanguagesDropdown } from './Dropdowns';
 import classes from './Filters.module.css';
+import { type SearchState } from './observables';
 import { PreviewSelector } from './PreviewTextInput';
 import { SearchBar } from './SearchTextInput';
 import { SizeSlider } from './SizeSlider';
 import { getSortItems } from './Sort';
 
-const Filters = () => {
+interface FilterProps {
+	state$: SearchState;
+}
+
+const Filters = ({ state$ }: FilterProps) => {
 	const {
 		value: variableValue,
 		refine: variableRefine,
@@ -46,13 +51,13 @@ const Filters = () => {
 		<Box className={classes.container}>
 			<SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={0}>
 				<SearchBar />
-				<PreviewSelector />
-				<SizeSlider />
+				<PreviewSelector state$={state$} />
+				<SizeSlider state$={state$} />
 			</SimpleGrid>
 			<Box className={classes.filters}>
 				<Group justify="center" wrap="nowrap">
 					<CategoriesDropdown />
-					<LanguagesDropdown />
+					<LanguagesDropdown state$={state$} />
 				</Group>
 				<Group justify="center" wrap="nowrap">
 					<UnstyledButton

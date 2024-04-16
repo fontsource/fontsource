@@ -30,6 +30,7 @@
 	display: flex;
 	border-radius: 0;
 	padding: 10px 24px;
+	text-decoration: none;
 
 	&:hover {
 		color: var(--mantine-color-purple);
@@ -61,6 +62,7 @@
 	padding: rem(8px) rem(16px);
 	margin-bottom: rem(4px);
 	border-radius: rem(4px);
+	text-decoration: none;
 
 	&:hover {
 		background-color: var(--mantine-color-purpleHover-0);

@@ -1,14 +1,20 @@
-import { useSelector } from '@legendapp/state/react';
-import { Center, Group, SegmentedControl, Text, Tooltip } from '@mantine/core';
+import {
+	Group,
+	SegmentedControl,
+	Text,
+	Tooltip,
+	VisuallyHidden,
+} from '@mantine/core';
 import { useSortBy } from 'react-instantsearch';
 
 import { DropdownSimple } from '@/components/Dropdown';
 import { IconGrid, IconList } from '@/components/icons';
 
-import { display } from './observables';
+import { type SearchState } from './observables';
 import classes from './Sort.module.css';
 
 interface SortProps {
+	state$: SearchState;
 	count: number;
 }
 
@@ -19,16 +25,15 @@ const sortMap: Record<string, string> = {
 	prod_RANDOM: 'Random',
 };
 
-export const getSortItems = () => {
+const getSortItems = () => {
 	return Object.entries(sortMap).map(([key, label]) => ({
 		label,
 		value: key,
 	}));
 };
 
-const Sort = ({ count }: SortProps) => {
-	const displaySelect = useSelector(display);
-
+const Sort = ({ count, state$ }: SortProps) => {
+	const display = state$.display.get();
 	const sortItems = getSortItems();
 
 	const { currentRefinement, refine } = useSortBy({
@@ -59,34 +64,30 @@ const Sort = ({ count }: SortProps) => {
 						Display
 					</Text>
 					<Tooltip
-						label={displaySelect === 'grid' ? 'Grid' : 'List'}
+						label={display === 'grid' ? 'Grid' : 'List'}
 						openDelay={600}
 						closeDelay={100}
 					>
 						<SegmentedControl
 							className={classes.control}
-							value={displaySelect}
-							onChange={display.set as (value: string) => void}
+							value={display}
+							onChange={state$.display.set as (value: string) => void}
 							data={[
 								{
 									label: (
-										<Center>
-											<IconGrid
-												height={20}
-												data-active={displaySelect === 'grid'}
-											/>
-										</Center>
+										<>
+											<IconGrid height={20} data-active={display === 'grid'} />
+											<VisuallyHidden>Grid View</VisuallyHidden>
+										</>
 									),
 									value: 'grid',
 								},
 								{
 									label: (
-										<Center>
-											<IconList
-												height={20}
-												data-active={displaySelect === 'list'}
-											/>
-										</Center>
+										<>
+											<IconList height={20} data-active={display === 'list'} />
+											<VisuallyHidden>List View</VisuallyHidden>
+										</>
 									),
 									value: 'list',
 								},
@@ -99,4 +100,4 @@ const Sort = ({ count }: SortProps) => {
 	);
 };
 
-export { Sort };
+export { getSortItems, Sort };
