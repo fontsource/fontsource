@@ -11,7 +11,11 @@ Font display is a CSS property that controls how fonts appear on your website. B
 
 > **Note:** You can learn more about the `font-display` property in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
 
-To customise the `font-display` property for a specific font, you can use the **Advanced** tab on each **Install** page to generate custom `@font-face` rules with your preferred `font-display` value. For example, let's say you want to set the `font-display` property to `optional` for Open Sans. You can create the following `@font-face` rule:
+To customise the `font-display` property for a specific font, you can use the **Advanced** tab on each **Install** page to generate custom `@font-face` rules with your preferred value.
+
+<br />
+
+For example, to set the `font-display` property to `optional` for Open Sans. You can create the following `@font-face` rule:
 
 ```css
 @font-face {
@@ -24,7 +28,7 @@ To customise the `font-display` property for a specific font, you can use the **
 }
 ```
 
-> **Note:**  This method is compatible with **Vite-based** frameworks or similar setups that support CSS bundling with `url()` rewrites.
+> **Note:**  This method is only compatible with **Vite-based** frameworks or similar setups that support CSS bundling with `url()` rewrites.
 
 You can then include this rule in your global CSS file and apply it to your components using the following CSS:
 
