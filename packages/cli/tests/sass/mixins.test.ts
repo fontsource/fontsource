@@ -78,6 +78,7 @@ describe('sass mixins', () => {
 					mockSassMetadata.recursive.unicode,
 					true,
 				),
+				'$subsets: latin'
 			),
 		).toMatchSnapshot();
 	});
