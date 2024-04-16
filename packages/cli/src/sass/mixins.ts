@@ -34,6 +34,7 @@ $displayVar: null !default;
   // Deprecated
   $displayVar: $displayVar
 ) {
+
   @if $displayVar != null {
     @warn "$displayVar is deprecated due to the limitation of using css variables in @font-face (https://github.com/fontsource/fontsource/issues/726).";
   }
@@ -72,13 +73,20 @@ $displayVar: null !default;
 
   @each $subset in $subsets {
     @each $unicodeSubset, $unicodeRange in map.get($metadata, unicode) {
+      // If condition is true, generate faces for the current subset
       @if (
-        ($subset == $unicodeSubset) or
-          (
-            // Is numeric subset
-            list.index(map.get($metadata, subsets), $subset) and not
-              list.index(map.get($metadata, subsets), $unicodeSubset)
-          )
+      	// If there is no unicode information for the font
+        ($unicodeSubset == null) or
+        	// If the subset match a unicode subset
+        	($subset == $unicodeSubset) or
+						(
+							// If $unicodeSubset is a numeric unicode subset
+							// and current subset exists in the list of font subsets and there is not matching unicode subset
+							// then use this numeric unicode subset as it is representing part of the current subset
+							list.index(map.get($metadata, subsets), $subset) and not
+								map.has-key($metadata, unicode, $subset) and not
+									list.index(map.get($metadata, subsets), $unicodeSubset)
+						)
       ) {
         @each $weight in if($axes, null, $weights) {
           @each $axis in $axes {

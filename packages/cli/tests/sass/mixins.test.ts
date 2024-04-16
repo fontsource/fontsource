@@ -32,7 +32,20 @@ describe('sass mixins', () => {
 		).toMatchSnapshot();
 	});
 
-	it('should compile sass for numeric subset font successfully', async () => {
+	it('should compile sass for numeric and non numeric unicode subset font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.notoSansJp.metadata as Metadata,
+					mockSassMetadata.notoSansJp.unicode,
+					false,
+				),
+				'$subsets: all'
+			),
+		).toMatchSnapshot();
+	});
+
+	it('should compile sass for only japanese numeric unicode subsets font successfully', async () => {
 		expect(
 			compileSass(
 				sassMetadata(
@@ -41,6 +54,19 @@ describe('sass mixins', () => {
 					false,
 				),
 				'$subsets: japanese',
+			),
+		).toMatchSnapshot();
+	});
+
+	it('should compile sass for only latin non numeric unicode subset font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.notoSansJp.metadata as Metadata,
+					mockSassMetadata.notoSansJp.unicode,
+					false,
+				),
+				'$subsets: latin',
 			),
 		).toMatchSnapshot();
 	});
