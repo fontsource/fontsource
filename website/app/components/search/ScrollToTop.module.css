@@ -1,0 +1,31 @@
+.button {
+	position: fixed;
+
+	bottom: 30px;
+	right: 55px;
+
+	height: 56px;
+	width: 56px;
+	border-radius: 48px;
+
+	@media (min-width: $mantine-breakpoint-xs) {
+		right: 60px;
+	}
+
+	@media (min-width: $mantine-breakpoint-sm) {
+		bottom: 24px;
+		right: 56px;
+	}
+
+	@media (min-width: $mantine-breakpoint-md) {
+		right: 56px;
+	}
+
+	@media (min-width: $mantine-breakpoint-lg) {
+		right: 100px;
+	}
+
+	@media (min-width: $mantine-breakpoint-xl) {
+		right: 80px;
+	}
+}

@@ -138,7 +138,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	}
 
 	return (
-		<Box>
+		<div id="hits">
 			<Sort state$={state$} count={results.nbHits} />
 			{display === 'grid' ? (
 				<SimpleGrid cols={{ base: 1, sm: 2, md: 3, xl: 4 }} spacing={16}>
@@ -149,7 +149,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 					<HitsMap state$={state$} hits={hits} sentinelRef={sentinelRef} />
 				</SimpleGrid>
 			)}
-		</Box>
+		</div>
 	);
 });
 
