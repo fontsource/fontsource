@@ -75,14 +75,14 @@ $displayVar: null !default;
     @each $unicodeSubset, $unicodeRange in map.get($metadata, unicode) {
       // If condition is true, generate faces for the current subset
       @if (
-      	// If there is no unicode information for the font
+      	// If there is no unicode information for the font or
         ($unicodeSubset == null) or
-        	// If the subset match a unicode subset
+        	// If the subset match a unicode subset or
         	($subset == $unicodeSubset) or
 						(
 							// If $unicodeSubset is a numeric unicode subset
-							// and current subset exists in the list of font subsets and there is not matching unicode subset
-							// then use this numeric unicode subset as it is representing part of the current subset
+							// and current subset exists in the list of font subsets but does not match any unicode subset
+							// then generate faces for this numeric unicode subset as it is representing part of the current subset
 							list.index(map.get($metadata, subsets), $subset) and not
 								map.has-key($metadata, unicode, $subset) and not
 									list.index(map.get($metadata, subsets), $unicodeSubset)
