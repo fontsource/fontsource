@@ -130,7 +130,6 @@ export const Header = ({ ...other }: ContainerProps) => {
 	return (
 		<>
 			<Box component="header" className={classes.header}>
-				{/* @ts-expect-error - Mantine v7 typing errors */}
 				<Container className={classes.inner} {...other}>
 					<Link to="/">
 						<LogoText height={31} isHeader />
