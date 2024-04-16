@@ -40,7 +40,6 @@ describe('sass mixins', () => {
 					mockSassMetadata.notoSansJp.unicode,
 					false,
 				),
-				'$subsets: all'
 			),
 		).toMatchSnapshot();
 	});

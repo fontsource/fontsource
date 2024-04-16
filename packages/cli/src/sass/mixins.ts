@@ -53,7 +53,7 @@ $displayVar: null !default;
   $subsets: if(
     $subsets,
     if($subsets == all, map.get($metadata, subsets), $subsets),
-    map.get($metadata, defaults, subset)
+    map.get($metadata, subsets)
   );
   $weights: if(
     $weights,
