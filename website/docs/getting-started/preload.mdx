@@ -1,0 +1,37 @@
+---
+title: Preloading Fonts
+section: Contents
+---
+
+## Preloading Fonts
+
+---
+
+Preloading fonts is a technique used to load fonts before they're required, which can improve your website's performance. However, it's essential to preload only critical fonts and subsets to avoid unnecessarily increasing initial load times.
+
+> **Note:** You can learn more about the `preload` link relation type in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload).
+
+To preload a font, you can use the `preload` link relation type in the `<head>` of your HTML document. However, due to bundler constraints, you must manually import the URL to your font file. This is typically challenging since bundlers like Vite rewrite URLs to hashed filenames.
+
+<br />
+
+Instead, you can use the Vite [static asset directive](https://vitejs.dev/guide/assets.html#explicit-url-imports) `?url` to import the font file URL. For instance, the following code highlights how to preload the Open Sans font:
+
+```jsx
+import '@fontsource-variable/open-sans';
+import openSansWoff2 from '@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2?url';
+
+const App = () => {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="preload" as="font" type="font/woff2" href={openSansWoff2} crossorigin/>
+      </head>
+    </html>
+  );
+};
+```
+
+> **Note:** Avoid preloading all font files in your project, as this may lead to increased initial load times. Only preload critical fonts and subsets that are essential for the initial page display, such as the latin subset only.
+> <br />
+> Additionally, preloading can have negative effects on Core Web Vitals if not used correctly. See the [Web Vitals](https://web.dev/articles/preload-critical-assets#effects_of_preloading_on_core_web_vitals) article for more information.

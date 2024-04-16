@@ -5,6 +5,8 @@
 			"install": "Install",
 			"variable": "Variable Fonts",
 			"subsets": "Individual Subsets",
+			"display": "Font Display",
+			"preload": "Preload",
 			"cdn": "CDN"
 		},
 		"Icons": {
