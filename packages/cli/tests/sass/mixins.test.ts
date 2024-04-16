@@ -6,7 +6,7 @@ import { sassMixins } from '../../src/sass/mixins';
 import type { Metadata } from '../../src/types';
 import mockSassMetadata from './fixtures/sass-metadata.json';
 
-const compileSass = (metadata: string) => {
+const compileSass = (metadata: string, options = '') => {
 	const metadataMap = `(${metadata
 		.replaceAll('$', '')
 		.replaceAll(' !default;', ',')})`;
@@ -15,7 +15,7 @@ const compileSass = (metadata: string) => {
 		sassMixins
 			.replace("@use 'metadata';", '')
 			.replace('meta.module-variables(metadata) !default', metadataMap) +
-			'@include faces()'
+			`@include faces(${options})`,
 	);
 };
 
@@ -26,21 +26,47 @@ describe('sass mixins', () => {
 				sassMetadata(
 					mockSassMetadata.carlito.metadata as Metadata,
 					mockSassMetadata.carlito.unicode,
-					false
-				)
-			)
+					false,
+				),
+			),
 		).toMatchSnapshot();
 	});
 
-	it('should compile sass for numeric subset font successfully', async () => {
+	it('should compile sass for numeric and non numeric unicode subset font successfully', async () => {
 		expect(
 			compileSass(
 				sassMetadata(
 					mockSassMetadata.notoSansJp.metadata as Metadata,
 					mockSassMetadata.notoSansJp.unicode,
-					false
-				)
-			)
+					false,
+				),
+			),
+		).toMatchSnapshot();
+	});
+
+	it('should compile sass for only japanese numeric unicode subsets font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.notoSansJp.metadata as Metadata,
+					mockSassMetadata.notoSansJp.unicode,
+					false,
+				),
+				'$subsets: japanese',
+			),
+		).toMatchSnapshot();
+	});
+
+	it('should compile sass for only latin non numeric unicode subset font successfully', async () => {
+		expect(
+			compileSass(
+				sassMetadata(
+					mockSassMetadata.notoSansJp.metadata as Metadata,
+					mockSassMetadata.notoSansJp.unicode,
+					false,
+				),
+				'$subsets: latin',
+			),
 		).toMatchSnapshot();
 	});
 
@@ -50,9 +76,10 @@ describe('sass mixins', () => {
 				sassMetadata(
 					mockSassMetadata.recursive.metadata as Metadata,
 					mockSassMetadata.recursive.unicode,
-					true
-				)
-			)
+					true,
+				),
+				'$subsets: latin'
+			),
 		).toMatchSnapshot();
 	});
 });
