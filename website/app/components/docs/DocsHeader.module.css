@@ -1,5 +1,104 @@
 /* DocsHeader */
-
 .title {
 	color: var(--mantine-color-purple-0);
+}
+
+.search-button {
+	height: 40px;
+	width: 240px;
+
+	padding: 8px 16px;
+	gap: 10px;
+
+	border-radius: 4px;
+
+	font-size: 15px;
+
+	@mixin light {
+		background-color: var(--mantine-color-background-2);
+		color: var(--mantine-color-text-1);
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-6);
+		color: var(--mantine-color-text-0);
+	}
+
+	p {
+		opacity: 0.5;
+	}
+
+	@media (max-width: $mantine-breakpoint-sm) {
+		display: none;
+	}
+}
+
+.docsearch {
+	--docsearch-primary-color: var(--mantine-color-purple-0);
+	--docsearch-container-background: rgba(52, 58, 70, 0.8);
+	--docsearch-modal-shadow: none;
+	--docsearch-searchbox-shadow: 0 0 0 2px var(--mantine-color-purpleHover-5);
+	--docsearch-hit-height: 48px;
+	--docsearch-searchbox-height: 72px;
+
+	@mixin light {
+		--docsearch-modal-background: var(--mantine-color-background-0);
+		--docsearch-highlight-color: var(--mantine-color-purple-0);
+		--docsearch-hit-background: var(--mantine-color-background-1);
+
+		--docsearch-text-color: var(--mantine-color-text-1);
+	}
+
+	@mixin dark {
+		--docsearch-modal-background: var(--mantine-color-background-5);
+		--docsearch-hit-background: var(--mantine-color-background-6);
+		--docsearch-highlight-color: var(--mantine-color-purple-0);
+
+		--docsearch-text-color: var(--mantine-color-text-0);
+		--docsearch-hit-color: rgba(255, 255, 255, 0.7);
+	}
+
+	header {
+		border-radius: 16px 16px 0 0;
+		padding-bottom: 16px;
+		background-color: var(--docsearch-modal-background);
+
+		form {
+			@mixin light {
+				background-color: var(--mantine-color-background-0);
+				color: var(--mantine-color-text-1);
+			}
+
+			@mixin dark {
+				background-color: var(--mantine-color-background-5);
+				color: var(--mantine-color-text-0);
+			}
+		}
+	}
+
+	li {
+		padding-bottom: 10px;
+
+		a {
+			box-shadow: none;
+		}
+	}
+
+	footer {
+		@mixin light {
+			background-color: var(--mantine-color-background-0);
+			color: var(--mantine-color-text-1);
+		}
+
+		@mixin dark {
+			border-top: 2px solid var(--mantine-color-background-3);
+			box-shadow: none;
+			background-color: var(--mantine-color-background-5);
+			color: var(--mantine-color-text-0);
+		}
+
+		li {
+			padding-bottom: 0;
+		}
+	}
 }

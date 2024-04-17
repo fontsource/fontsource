@@ -1,7 +1,7 @@
 import '@docsearch/css';
 
 import { type DocSearchModal as DocSearchModalComponent } from '@docsearch/react';
-import { Modal, Text, Title, UnstyledButton } from '@mantine/core';
+import { Group, Modal, Text, Title, UnstyledButton } from '@mantine/core';
 import { useDisclosure, useMounted } from '@mantine/hooks';
 import { Link, useNavigate } from '@remix-run/react';
 import { lazy, type LazyExoticComponent, useRef } from 'react';
@@ -23,7 +23,7 @@ export function Hit({ hit, children }: HitProps) {
 const DocSearchModal: LazyExoticComponent<typeof DocSearchModalComponent> =
 	lazy(
 		async () =>
-			// @ts-expect-error allow dynamic import
+			// @ts-expect-error allow dynamic import with no type declarations
 			await import('@docsearch/react/modal').then((mod) => ({
 				default: mod.DocSearchModal,
 			})),
@@ -58,12 +58,15 @@ export const DocsHeader = () => {
 			<UnstyledButton
 				ref={searchButtonRef}
 				onClick={open}
-				className={classes.wrapper}
+				className={classes['search-button']}
 			>
-				<IconSearch />
-				<Text>Search documentation</Text>
+				<Group>
+					<IconSearch />
+					<Text>Search documentation</Text>
+				</Group>
 			</UnstyledButton>
 			<Modal.Root
+				className={classes.docsearch}
 				opened={searchOpen}
 				onClose={close}
 				centered
@@ -77,6 +80,7 @@ export const DocsHeader = () => {
 								appId="YWR9D3OTR6"
 								apiKey="c9e0707b51c2712b86c1725c9ab09237"
 								indexName="fontsource"
+								placeholder="Search documentation..."
 								onClose={close}
 								initialScrollY={window.scrollY}
 								hitComponent={Hit}
