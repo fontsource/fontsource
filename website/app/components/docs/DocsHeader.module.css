@@ -39,7 +39,7 @@
 	--docsearch-modal-shadow: none;
 	--docsearch-searchbox-shadow: 0 0 0 2px var(--mantine-color-purpleHover-5);
 	--docsearch-hit-height: 48px;
-	--docsearch-searchbox-height: 72px;
+	--docsearch-searchbox-height: 64px;
 
 	@mixin light {
 		--docsearch-modal-background: var(--mantine-color-background-0);
