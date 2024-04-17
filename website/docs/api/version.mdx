@@ -3,21 +3,19 @@ title: Version
 section: Reference
 ---
 
-## Version
-
----
+# Version
 
 The Version endpoint provides NPM version information for each package.
 
-### HTTP Request
+## HTTP Request
 
 - `GET https://api.fontsource.org/v1/version/{id}`
 
-### Response
+## Response
 
 The API response for the Version endpoint is a JSON object that provides NPM version information for each package.
 
-#### Attributes:
+### Attributes
 
 Returns an object with:
 
@@ -28,7 +26,7 @@ Returns an object with:
 | latestVariable | Optional&lt;string&gt;   | Latest variable NPM version                   |
 | variable       | Optional&lt;string[]&gt; | Variable NPM versions sorted newest to oldest |
 
-#### Response example:
+### Response example
 
 ```json
 {
@@ -61,7 +59,7 @@ Returns an object with:
 }
 ```
 
-#### Example:
+### Example
 
 - `GET https://api.fontsource.org/v1/version/abel`
 - `GET https://api.fontsource.org/v1/version/open-sans`

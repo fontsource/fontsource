@@ -3,22 +3,20 @@ title: Fontlist
 section: Reference
 ---
 
-## Fontlist
-
----
+# Fontlist
 
 The Fontlist endpoint provides an object that contains a list of fonts and their associated properties.
 
-### HTTP Request
+## HTTP Request
 
 - `GET https://api.fontsource.org/fontlist`
 - `GET https://api.fontsource.org/fontlist?{query}`
 
-### Response
+## Response
 
 The API response for the Fontlist endpoint is a JSON object that represents the available fonts and their corresponding types.
 
-#### Attributes:
+### Attributes
 
 Returns an object of:
 
@@ -27,7 +25,7 @@ Returns an object of:
 | [id]      | string                           | The font ID   |
 | type      | google &#124; icons &#124; other | The font type |
 
-#### Response example:
+### Response example
 
 ```json
 {
@@ -39,7 +37,7 @@ Returns an object of:
 }
 ```
 
-### Queries
+## Queries
 
 The Fontlist API supports the following queries without values:
 
@@ -55,7 +53,7 @@ The Fontlist API supports the following queries without values:
 | version      | Font version        | string        |
 | type         | Font type           | string        |
 
-#### Example:
+### Example
 
 - `GET https://api.fontsource.org/fontlist?family`
 - `GET https://api.fontsource.org/fontlist?subsets`

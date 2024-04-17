@@ -10,16 +10,22 @@ import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 const mdxComponents = {
 	// Typography
 	h1: (props: any) => (
-		<Title order={1} fw={700} fz={28} mt="lg" mb="sm" {...props} />
+		<>
+			<Title order={1} fw={700} fz={28} mt="lg" mb="sm" {...props} />
+			<Divider mb="sm" {...props} />
+		</>
 	),
 	h2: (props: any) => (
-		<Title order={2} fw={700} fz={24} mt="lg" mb="sm" {...props} />
+		<>
+			<Title order={2} fw={700} fz={22} mt="lg" mb="sm" {...props} />
+			<Divider mb="sm" {...props} />
+		</>
 	),
 	h3: (props: any) => (
-		<Title order={3} fw={700} fz={18} mt="lg" mb="sm" {...props} />
+		<Title order={3} fw={700} fz={16} mt="lg" mb="sm" {...props} />
 	),
 	h4: (props: any) => (
-		<Title order={4} fw={700} fz={16} mt="lg" mb="sm" {...props} />
+		<Title order={4} fw={700} fz={15} mt="lg" mb="sm" {...props} />
 	),
 	p: (props: any) => <Text fw={400} fz={15} {...props} />,
 

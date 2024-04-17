@@ -3,21 +3,19 @@ title: Stats
 section: Reference
 ---
 
-## Stats
-
----
+# Stats
 
 The Stats endpoint provides download statistics for each font.
 
-### HTTP Request
+## HTTP Request
 
 - `GET https://api.fontsource.org/v1/stats/{id}`
 
-### Response
+## Response
 
 The API response for the Stats endpoint is a JSON object that provides download statistics for each font.
 
-#### Attributes:
+### Attributes
 
 Returns an object with:
 
@@ -29,8 +27,7 @@ Returns an object with:
 
 <br />
 
-
-**DownloadStats:**
+#### DownloadStats
 
 | Attribute           | Type   | Description                |
 | ------------------- | ------ | -------------------------- |
@@ -39,7 +36,7 @@ Returns an object with:
 | jsDelivrHitsTotal   | number | Total jsDelivr hits        |
 | jsDelivrHitsMonthly | number | Monthly jsDelivr hits      |
 
-#### Response example:
+### Response example
 
 ```json
 {
@@ -64,7 +61,7 @@ Returns an object with:
 }
 ```
 
-#### Example:
+### Example
 
 - `GET https://api.fontsource.org/v1/stats/abel`
 - `GET https://api.fontsource.org/v1/stats/open-sans`

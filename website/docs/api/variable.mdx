@@ -3,21 +3,19 @@ title: Variable
 section: Reference
 ---
 
-## Variable
-
----
+# Variable
 
 The Variable endpoint allows you get specific axis data for a variable font.
 
-### HTTP Request
+## HTTP Request
 
 - `GET https://api.fontsource.org/v1/variable/{id}`
 
-### Response
+## Response
 
 The API response for the Variable endpoint is a JSON object that provides axis data for a variable font.
 
-#### Attributes:
+### Attributes
 
 Returns an object with:
 
@@ -28,7 +26,7 @@ Returns an object with:
 
 <br />
 
-**AxesData:**
+#### AxesData
 
 | Attribute | Type   | Description   |
 | --------- | ------ | ------------- |
@@ -37,7 +35,7 @@ Returns an object with:
 | max       | number | Maximum value |
 | step      | number | Step value    |
 
-#### Response example:
+### Response example
 
 ```json
 {
@@ -59,7 +57,7 @@ Returns an object with:
 }
 ```
 
-#### Example:
+### Example
 
 - `GET https://api.fontsource.org/v1/variable/inter`
 - `GET https://api.fontsource.org/v1/variable/roboto-flex`

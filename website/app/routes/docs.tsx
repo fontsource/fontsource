@@ -21,7 +21,7 @@ export default function Docs() {
 						<LeftSidebar />
 					</Grid.Col>
 					<Grid.Col span={{ base: 12, sm: 8, md: 9, xl: 6 }}>
-						<Container>
+						<Container component="article">
 							<Outlet context={mdxComponents} />
 						</Container>
 					</Grid.Col>
