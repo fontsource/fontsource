@@ -56,7 +56,12 @@ export const DocsHeader = () => {
 	const navigator = useRef({
 		navigate({ itemUrl }: { itemUrl?: string }) {
 			if (itemUrl) {
-				navigate(itemUrl);
+				const url = new URL(itemUrl);
+				if (url.hostname === 'fontsource.org') {
+					navigate(url.pathname);
+				} else {
+					window.open(itemUrl, '_blank');
+				}
 			}
 		},
 	}).current;
