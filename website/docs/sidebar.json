@@ -51,6 +51,10 @@
 			"material-ui": {
 				"name": "Material UI",
 				"external": "https://mui.com/material-ui/react-typography/#install-with-npm"
+			},
+			"panda-css": {
+				"name": "Panda CSS",
+				"external": "https://panda-css.com/docs/guides/fonts#fontsource"
 			}
 		},
 		"Other": {
