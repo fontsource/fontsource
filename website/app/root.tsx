@@ -8,6 +8,7 @@ import '@mantine/core/styles/UnstyledButton.css';
 import '@mantine/core/styles/VisuallyHidden.css';
 import '@mantine/core/styles/Popover.css';
 import '@mantine/core/styles/Group.css';
+import '@mantine/core/styles/ModalBase.css';
 import '@mantine/core/styles/Input.css';
 import '@mantine/core/styles/Flex.css';
 import '@mantine/core/styles/InlineInput.css';
@@ -29,12 +30,14 @@ import '@mantine/core/styles/Combobox.css';
 import '@mantine/core/styles/ActionIcon.css';
 import '@mantine/core/styles/Button.css';
 // Navigation
+import '@mantine/core/styles/Burger.css';
 import '@mantine/core/styles/NavLink.css';
 import '@mantine/core/styles/Tabs.css';
 // Feedback
 import '@mantine/core/styles/Skeleton.css';
 // Overlays
 import '@mantine/core/styles/Menu.css';
+import '@mantine/core/styles/Modal.css';
 import '@mantine/core/styles/Tooltip.css';
 // Typography
 import '@mantine/core/styles/Code.css';
@@ -47,7 +50,6 @@ import '@mantine/core/styles/Title.css';
 import '@/styles/global.css';
 
 import interLatinURL from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import sourceCodeProLatinURL from '@fontsource-variable/source-code-pro/files/source-code-pro-latin-wght-normal.woff2?url';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import type {
 	HeadersFunction,
@@ -85,13 +87,6 @@ export const links: LinksFunction = () => [
 		type: 'font/woff2',
 		crossOrigin: 'anonymous',
 		href: interLatinURL,
-	},
-	{
-		rel: 'preload',
-		as: 'font',
-		type: 'font/woff2',
-		crossOrigin: 'anonymous',
-		href: sourceCodeProLatinURL,
 	},
 	{
 		rel: 'apple-touch-icon',

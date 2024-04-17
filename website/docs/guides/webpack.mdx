@@ -3,19 +3,17 @@ title: Webpack
 section: Bundlers
 ---
 
-## Webpack
-
----
+# Webpack
 
 To use Fontsource with Webpack, you'll need to configure your Webpack project to handle font files and include Fontsource in the bundle. Follow the steps below to set it up.
 
-### Installation
+## Installation
 
-## 1. Install the loaders
+### 1. Install the loaders
 
 <PackageManagerCode cmd="css-loader file-loader" />
 
-## 2. Configure the loaders
+### 2. Configure the loaders
 
 Modify `webpack.config.js` to include the following configuration:
 
@@ -36,7 +34,7 @@ module.exports = {
 };
 ```
 
-## 3. Import the font
+### 3. Import the font
 
 Import the font in your entry file or component:
 

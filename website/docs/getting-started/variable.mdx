@@ -3,19 +3,17 @@ title: Variable Fonts
 section: Contents
 ---
 
-## Variable Fonts
-
----
+# Variable Fonts
 
 Variable fonts allow designers and developers to use a single font file that contains multiple variations of the same font, such as different weights, widths, and styles. This can result in **smaller file sizes** and **more flexible design options**. Here's how you can use variable fonts with Fontsource:
 
-### 1. Install Package
+## 1. Install Package
 
 To use a variable font with Fontsource, you need to install the corresponding variable font package. For example, if you want to use the Roboto Flex variable font, you would install the `@fontsource-variable/roboto-flex` package:
 
 <PackageManagerCode cmd="@fontsource-variable/roboto-flex" />
 
-### 2. Import the Font
+## 2. Import the Font
 
 After installing the package, you can import the font into your project like this:
 
@@ -31,7 +29,7 @@ This will import the standard weight of the font. If you want to use a specific 
 import "@fontsource-variable/roboto-flex/wght-italic.css";
 ```
 
-### 3. CSS
+## 3. CSS
 
 Once the font is imported, you can use it in your CSS stylesheets just like any other font. The difference with variable fonts is that you can specify the specific axis values you want to use. Here's an example:
 
@@ -45,7 +43,7 @@ body {
 
 In this example, we are setting the font weight to `500` and the width axis to `75%` of the maximum width. Note that not all axes are supported by all variable fonts, so you will need to consult the font documentation to see which axes are available.
 
-### 4. Fallbacks
+## 4. Fallbacks
 
 Optionally, if you want to use variable fonts but also support browsers that do not support them, you can use the `@supports` rule to provide a fallback. You will also need to import `@fontsource/roboto-flex` or any other font as the fallback, however, it is also fine to rely on default system fonts for this. Here's an example:
 
@@ -67,8 +65,6 @@ body {
 This will only apply the font styles if the browser supports variable fonts (`font-variation-settings`). Otherwise, it will use the fallback font.
 
 ## Understanding Variable Axes
-
----
 
 Variable axes in fonts refer to the ability to adjust various visual characteristics of a font along a continuous spectrum. This allows for greater flexibility and control in fine-tuning the appearance of typography.
 

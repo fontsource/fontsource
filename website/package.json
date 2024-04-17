@@ -12,6 +12,8 @@
 		"ci:lint": "eslint ."
 	},
 	"dependencies": {
+		"@docsearch/css": "^3.6.0",
+		"@docsearch/react": "^3.6.0",
 		"@esbuild-plugins/node-resolve": "^0.2.2",
 		"@fal-works/esbuild-plugin-global-externals": "^2.1.2",
 		"@fontsource-utils/generate": "0.4.0",

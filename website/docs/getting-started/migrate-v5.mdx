@@ -3,15 +3,11 @@ title: Migrating to V5
 section: Migration
 ---
 
-## Migration Guide V5
-
----
+# Migration Guide V5
 
 Fontsource V5 introduces several breaking changes that may require modifications to your existing codebase. This guide will help you migrate from the previous version to the latest version of Fontsource. Please review the following breaking changes and apply the necessary updates.
 
 ## Breaking Changes
-
----
 
 ### Variable Font Package Names
 
@@ -36,7 +32,7 @@ import "@fontsource-variable/roboto-flex/full-italic.css";
 ```
 
 > **Note:** Please note that if you were previously using the `full` variant, it may no longer be available. We have introduced a new `standard` axis that is generated with a smaller subset of variable axes for improved performance and compatibility.
-> ####
+> <br />
 > For more information about the new `standard` axis and its characteristics, you can refer to the [**Variable Fonts**](/docs/getting-started/variable#understanding-variable-axes) guide. Additionally, on each font's page in the search directory, you can explore the import generator to see the available variants specific to that font.
 
 ### Variable Font Family Names
@@ -47,7 +43,7 @@ A mistake made the `font-family` names for variable fonts inconsistent with the 
 
 ```css
 body {
-	font-family: "Roboto FlexVariable", sans-serif;
+ font-family: "Roboto FlexVariable", sans-serif;
 }
 ```
 
@@ -55,7 +51,7 @@ body {
 
 ```css
 body {
-	font-family: "Roboto Flex Variable", sans-serif;
+ font-family: "Roboto Flex Variable", sans-serif;
 }
 ```
 
@@ -121,4 +117,3 @@ A small change to the `metadata.json` file changes the `license` property from t
   ...
 }
 ```
-

@@ -3,35 +3,33 @@ title: CDN
 section: Contents
 ---
 
-## CDN
-
----
+# CDN
 
 Fontsource has partnered with [jsDelivr](https://www.jsdelivr.com/) for a custom proxy for all of its font files, allowing for niche use cases where a stable font file link is required. All files are versioned according to [Semver](https://semver.org/), and using a specific version tag will give you longer lived caches.
 
 > **Note:** We recommend self-hosting your fonts if possible, but we understand there are suitable use cases for a CDN.
 
-### Usage
+## Usage
 
 To leverage the Fontsource CDN for your project, you can use the import generator provided on the install page of each font. For example, to use [Roboto Flex](/fonts/roboto-flex/cdn), you can access its import generator to generate the relevant URLs and CSS necessary for your projec
 
 ## URL Formats
 
----
-
 The Fontsource CDN provides two primary URL formats for accessing font files:
 
-#### Static URLs
+### Static URLs
 
 Static font URLs follow this pattern:
+
 - `https://cdn.jsdelivr.net/fontsource/fonts/{id}@{version}/{subset}-{weight}-{style}.{extension}`
 
-#### Variable Fonts URLs
+### Variable Fonts URLs
 
 Variable fonts URLs have the format:
+
 - `https://cdn.jsdelivr.net/fontsource/fonts/{id}:vf@{version}/{subset}-{axes}-{style}.woff2`
 
-### Example URLs
+## Example URLs
 
 Here are some example URLs that demonstrate how to use Fontsource's CDN with different fonts and configurations:
 
