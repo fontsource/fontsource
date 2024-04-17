@@ -17,7 +17,18 @@ interface HitProps {
 }
 
 const Hit = ({ hit, children }: HitProps) => {
-	return <Link to={hit.url}>{children}</Link>;
+	const url = new URL(hit.url);
+	// If URL comes from fontsource.org, use the pathname
+	// else, become an external link
+	if (url.hostname === 'fontsource.org') {
+		return <Link to={url.pathname}>{children}</Link>;
+	}
+
+	return (
+		<a href={hit.url} target="_blank" rel="noopener noreferrer">
+			{children}
+		</a>
+	);
 };
 
 const DocSearchModal: LazyExoticComponent<typeof DocSearchModalComponent> =
