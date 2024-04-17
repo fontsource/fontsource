@@ -16,9 +16,9 @@ interface HitProps {
 	children: React.ReactNode;
 }
 
-export function Hit({ hit, children }: HitProps) {
+const Hit = ({ hit, children }: HitProps) => {
 	return <Link to={hit.url}>{children}</Link>;
-}
+};
 
 const DocSearchModal: LazyExoticComponent<typeof DocSearchModalComponent> =
 	lazy(
