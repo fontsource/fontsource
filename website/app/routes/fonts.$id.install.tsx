@@ -56,7 +56,7 @@ const generateDescription = (metadata: Metadata) => {
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const title = data?.metadata.family
-		? `${data.metadata.family} | Fontsource`
+		? `${data.metadata.family} | Install | Fontsource`
 		: undefined;
 
 	const description = data?.metadata
