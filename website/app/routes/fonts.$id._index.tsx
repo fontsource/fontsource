@@ -156,7 +156,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 };
 
 const generateDescription = (metadata: Metadata) => {
-	const { family, category, weights, styles } = metadata;
+	const { family, category, weights, styles, variable } = metadata;
 	const weightDesc =
 		weights.length > 1
 			? `weights ranging from ${weights[0]} to ${weights.at(-1)}`
@@ -166,7 +166,9 @@ const generateDescription = (metadata: Metadata) => {
 		? ' including italic variants'
 		: '';
 
-	return `The ${family} font family is a versatile ${category} web typeface offering ${weightDesc}${italicDesc} for free. Download and self-host via an NPM package for performance and privacy, enhancing your website's typography and user experience.`;
+	const variableDesc = variable ? 'variable ' : '';
+
+	return `The ${family} ${variableDesc}font family is a versatile ${category} web typeface offering ${weightDesc}${italicDesc} for free. Download and self-host via an NPM package for performance and privacy, enhancing your website's typography and user experience.`;
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
