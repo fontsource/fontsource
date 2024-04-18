@@ -155,13 +155,29 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	});
 };
 
+const generateDescription = (metadata: Metadata) => {
+	const { family, category, weights, styles, variable } = metadata;
+	const weightDesc =
+		weights.length > 1
+			? `weights ranging from ${weights[0]} to ${weights.at(-1)}`
+			: `a single weight of ${weights[0]}`;
+
+	const italicDesc = styles.includes('italic')
+		? ' including italic variants'
+		: '';
+
+	const variableDesc = variable ? 'variable ' : '';
+
+	return `The ${family} ${variableDesc}font family is a versatile ${category} web typeface offering ${weightDesc}${italicDesc} for free. Download and self-host via an NPM package for performance and privacy, enhancing your website's typography and user experience.`;
+};
+
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const title = data?.metadata.family
 		? `${data.metadata.family} | Fontsource`
 		: 'Fontsource';
 
-	const description = data?.metadata.family
-		? `Download and self-host the ${data.metadata.family} font in a neatly bundled NPM package.`
+	const description = data?.metadata
+		? generateDescription(data.metadata)
 		: undefined;
 	return ogMeta({ title, description });
 };
