@@ -38,13 +38,27 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	});
 };
 
+const generateDescription = (metadata: Metadata) => {
+	const { family, category, weights, styles } = metadata;
+	const weightDesc =
+		weights.length > 1
+			? `weights ranging from ${weights[0]} to ${weights.at(-1)}`
+			: `a single weight of ${weights[0]}`;
+
+	const italicDesc = styles.includes('italic')
+		? ' including italic variants'
+		: '';
+
+	return `The ${family} font family is a versatile ${category} web typeface offering ${weightDesc}${italicDesc} for free. Hosted on a privacy-friendly CDN that is free to use and simple to integrate into your website.`;
+};
+
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const title = data?.metadata.family
-		? `${data.metadata.family} | Fontsource`
+		? `${data.metadata.family} | CDN | Fontsource`
 		: undefined;
 
-	const description = data?.metadata.family
-		? `Download and self-host the ${data.metadata.family} font in a neatly bundled NPM package.`
+	const description = data?.metadata
+		? generateDescription(data.metadata)
 		: undefined;
 	return ogMeta({ title, description });
 };
