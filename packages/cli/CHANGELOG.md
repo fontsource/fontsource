@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.4.2
+
+### Patch Changes
+
+- [#961](https://github.com/fontsource/fontsource/pull/961) [`ae1188580d`](https://github.com/fontsource/fontsource/commit/ae1188580d3e3cabfdc5dbec617f7e9c90900d90) Thanks [@RBilly](https://github.com/RBilly)! - fix(sass): correctly generate numeric unicode subset faces
+
 ## 0.4.1
 
 ### Patch Changes
