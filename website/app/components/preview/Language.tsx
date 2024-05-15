@@ -24,11 +24,14 @@ const LanguageSelector = observer(
 
 		const language = state$.preview.language.get();
 
-		const items = subsets.map((lang) => ({
-			label: subsetToLanguage(lang),
-			value: lang,
-			isRefined: lang === language,
-		}));
+		const items = subsets
+			// Remove latin-ext from results as it's not a valid preview language
+			.filter((lang) => lang !== 'latin-ext')
+			.map((lang) => ({
+				label: subsetToLanguage(lang),
+				value: lang,
+				isRefined: lang === language,
+			}));
 
 		return (
 			<DropdownSimple
