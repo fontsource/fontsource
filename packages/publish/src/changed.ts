@@ -33,7 +33,7 @@ const getChanged = async (ctx: Context) => {
 
 			// Check if package.json exists
 			const packageJson: PackageJson = await fs.readJson(
-				path.join(process.cwd(), packagePath, 'package.json')
+				path.join(process.cwd(), packagePath, 'package.json'),
 			);
 
 			// eslint-disable-next-line @typescript-eslint/promise-function-async
@@ -57,7 +57,7 @@ const changed = async (options: ChangedFlags) => {
 			consola.info(item.name);
 		}
 		consola.info(
-			colors.bold(colors.magenta(`${diff.length} packages changed.`))
+			colors.bold(colors.magenta(`${diff.length} packages changed.`)),
 		);
 	} else {
 		consola.info(colors.bold(colors.red('No packages changed.')));

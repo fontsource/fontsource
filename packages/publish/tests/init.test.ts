@@ -14,7 +14,7 @@ describe('init command', () => {
 			stringify({
 				packages: ['./packages/'],
 				commitMessage: 'chore: release new versions',
-			})
+			}),
 		);
 	});
 });

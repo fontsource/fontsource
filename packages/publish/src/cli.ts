@@ -9,7 +9,7 @@ import { bump } from './bump';
 import { changed } from './changed';
 import { init } from './init';
 import { publishPackages } from './publish';
-import { type BumpFlags, type ChangedFlags, type PublishFlags } from './types';
+import type { BumpFlags, ChangedFlags, PublishFlags } from './types';
 
 dotenv.config();
 
@@ -30,7 +30,7 @@ cli
 cli
 	.command(
 		'changed',
-		'Calculates hashes and lists all packages that have changes made to them'
+		'Calculates hashes and lists all packages that have changes made to them',
 	)
 	.option('--force', 'Force publish ALL packages regardless if changed or not')
 	.option('--commit-message', 'Change commit message')
@@ -49,7 +49,7 @@ cli
 	.option('--force', 'Force bump ALL packages regardless if changed or not')
 	.option(
 		'--yes',
-		'Skips confirmation to write the bump changes to package.json. Useful in CI'
+		'Skips confirmation to write the bump changes to package.json. Useful in CI',
 	)
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
@@ -57,7 +57,7 @@ cli
 		try {
 			await bump(version, opts);
 			consola.success(
-				colors.green(colors.bold('Successfully bumped packages.'))
+				colors.green(colors.bold('Successfully bumped packages.')),
 			);
 		} catch (error) {
 			consola.error(error);
@@ -71,7 +71,7 @@ cli
 	.option('--force', 'Force bump ALL packages regardless if changed or not')
 	.option(
 		'--yes',
-		'Skips confirmation to write the bump changes to package.json. Useful in CI'
+		'Skips confirmation to write the bump changes to package.json. Useful in CI',
 	)
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
@@ -79,7 +79,7 @@ cli
 		try {
 			await publishPackages(version, opts);
 			consola.success(
-				colors.green(colors.bold('Successfully published all packages.'))
+				colors.green(colors.bold('Successfully published all packages.')),
 			);
 		} catch (error) {
 			consola.error(error);

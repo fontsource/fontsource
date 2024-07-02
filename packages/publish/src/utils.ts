@@ -31,16 +31,16 @@ const getPackages = async (dir: string): Promise<string[]> => {
 };
 
 const mergeFlags = async (options: Flags): Promise<Context> => {
-	const flags: any = {};
+	const flags: Partial<Context> = {};
 	// CLI args come in string format
 	if (options.packages) {
 		flags.packages = options.packages.split(',');
-		delete options.packages;
+		options.packages = undefined;
 	}
 
 	Object.assign(flags, options);
 
-	return defu(flags, await fs.readJson('font-publish.json'));
+	return defu(flags, await fs.readJson('font-publish.json')) as Context;
 };
 
 export { getPackages, mergeFlags };

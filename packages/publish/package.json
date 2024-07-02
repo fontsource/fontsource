@@ -8,11 +8,13 @@
 	"scripts": {
 		"build": "pkgroll --target=node14 && tsx ./scripts/add-hashbang.ts",
 		"dev": "pnpm run build && node ./dist/cli.mjs",
-		"lint": "eslint . --fix",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "pnpm run build",
-		"ci:lint": "eslint ."
+		"format": "biome format --write .",
+		"ci:format": "biome format .",
+		"lint": "biome lint --write .",
+		"ci:lint": "biome lint ."
 	},
 	"keywords": [],
 	"author": "Ayuhito <hello@ayuhito.com>",
@@ -35,13 +37,11 @@
 		"semver": "^7.5.1"
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.6.2",
 		"@types/folder-hash": "^4.0.2",
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "^20.7.1",
 		"@types/parse-git-config": "^3.0.1",
 		"@types/semver": "^7.5.0",
-		"eslint": "^8.50.0",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.9.0",
 		"tsx": "^3.12.3",

@@ -42,8 +42,10 @@ export const gitRemoteAdd = async (name: string): Promise<void> => {
 	const strippedURL = new URL(remoteURL.stdout).host;
 
 	// git remote add origin https://username:access-token@github.com/username/repo.git
-	const publishURL = `https://${name}:${process.env
-		.GITHUB_TOKEN!}@${strippedURL}`;
+	const publishURL = `https://${name}:${
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
+		process.env.GITHUB_TOKEN!
+	}@${strippedURL}`;
 	try {
 		await execa('git', ['remote', 'add', 'origin', publishURL]);
 	} catch {
@@ -57,7 +59,7 @@ export const gitPush = async (): Promise<void> => {
 
 export const getCommitMessage = (
 	config: Context,
-	pkgs: BumpObject[]
+	pkgs: BumpObject[],
 ): string => {
 	let { commitMessage } = config;
 
