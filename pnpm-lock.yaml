@@ -195,15 +195,9 @@ importers:
 
   packages/generate:
     devDependencies:
-      '@ayuhito/eslint-config':
-        specifier: ^0.6.2
-        version: 0.6.2(eslint@8.50.0)(typescript@5.3.3)(vitest@0.34.6)
       '@types/node':
         specifier: ^20.7.1
         version: 20.7.1
-      eslint:
-        specifier: ^8.50.0
-        version: 8.50.0
       pkgroll:
         specifier: ^1.9.0
         version: 1.10.0(typescript@5.3.3)
