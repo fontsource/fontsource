@@ -1,128 +1,128 @@
 {
-  "material-symbols-outlined": {
-    "family": "Material Symbols Outlined",
-    "id": "material-symbols-outlined",
-    "axes": {
-      "FILL": {"min": "0", "max": "1", "default": "0", "step": "1"},
-      "wght": {"min": "100", "max": "700", "default": "400", "step": "1"},
-      "GRAD": {"min": "-25", "max": "200", "default": "0", "step": "1"},
-      "opsz": {"default": "48", "min": "30", "max": "48", "step": "0.1"}
-    },
-    "variants": {
-      "opsz": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEPBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNO1Q.woff2"
-        }
-      },
-      "FILL": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEPBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzBwG-RpA6RzaxHMPdY40KH8nGzv3fzfVJO1Q.woff2"
-        }
-      },
-      "GRAD": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEPBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY40KH8nGzv3fzfVJO1Q.woff2"
-        }
-      },
-      "wght": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJF4BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p5Y0.woff2"
-        }
-      },
-      "full": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2"
-        }
-      },
-      "standard": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEPBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNO1Q.woff2"
-        }
-      }
-    }
-  },
-  "material-symbols-rounded": {
-    "family": "Material Symbols Rounded",
-    "id": "material-symbols-rounded",
-    "axes": {
-      "FILL": {"min": "0", "max": "1", "default": "0", "step": "1"},
-      "wght": {"min": "100", "max": "700", "default": "400", "step": "1"},
-      "GRAD": {"min": "-25", "max": "200", "default": "0", "step": "1"},
-      "opsz": {"default": "48", "min": "30", "max": "48", "step": "0.1"}
-    },
-    "variants": {
-      "opsz": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUSzq3wzLK-P0J-UXX.woff2"
-        }
-      },
-      "FILL": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvLgyidOK7BDB_Qb9vUdV6_gjDK-P3JuEXX.woff2"
-        }
-      },
-      "GRAD": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUdV6_gjDK-P3JuEXX.woff2"
-        }
-      },
-      "wght": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/syl7-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUSzq3wzLK-P0J-V_Zs-QtQth3-jOcbTCPqw.woff2"
-        }
-      },
-      "full": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2"
-        }
-      },
-      "standard": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUSzq3wzLK-P0J-UXX.woff2"
-        }
-      }
-    }
-  },
-  "material-symbols-sharp": {
-    "family": "Material Symbols Sharp",
-    "id": "material-symbols-sharp",
-    "axes": {
-      "FILL": {"min": "0", "max": "1", "default": "0", "step": "1"},
-      "wght": {"min": "100", "max": "700", "default": "400", "step": "1"},
-      "GRAD": {"min": "-25", "max": "200", "default": "0", "step": "1"},
-      "opsz": {"default": "48", "min": "30", "max": "48", "step": "0.1"}
-    },
-    "variants": {
-      "opsz": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1r3w.woff2"
-        }
-      },
-      "FILL": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_wjOOEa9ruReaU4bHmz4BC2dgEH-VBoaxr3w.woff2"
-        }
-      },
-      "GRAD": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz4BC2dgEH-VBoaxr3w.woff2"
-        }
-      },
-      "wght": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNMyW2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1x0TV6x4yFH8F-H5Od1kw.woff2"
-        }
-      },
-      "full": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNMVW2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4aWE.woff2"
-        }
-      },
-      "standard": {
-        "normal": {
-          "latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1r3w.woff2"
-        }
-      }
-    }
-  }
+	"material-symbols-outlined": {
+		"family": "Material Symbols Outlined",
+		"id": "material-symbols-outlined",
+		"axes": {
+			"FILL": { "min": "0", "max": "1", "default": "0", "step": "1" },
+			"wght": { "min": "100", "max": "700", "default": "400", "step": "1" },
+			"GRAD": { "min": "-25", "max": "200", "default": "0", "step": "1" },
+			"opsz": { "default": "48", "min": "30", "max": "48", "step": "0.1" }
+		},
+		"variants": {
+			"opsz": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEPBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNO1Q.woff2"
+				}
+			},
+			"FILL": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEPBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzBwG-RpA6RzaxHMPdY40KH8nGzv3fzfVJO1Q.woff2"
+				}
+			},
+			"GRAD": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEPBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY40KH8nGzv3fzfVJO1Q.woff2"
+				}
+			},
+			"wght": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJF4BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p5Y0.woff2"
+				}
+			},
+			"full": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2"
+				}
+			},
+			"standard": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v108/kJEPBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNO1Q.woff2"
+				}
+			}
+		}
+	},
+	"material-symbols-rounded": {
+		"family": "Material Symbols Rounded",
+		"id": "material-symbols-rounded",
+		"axes": {
+			"FILL": { "min": "0", "max": "1", "default": "0", "step": "1" },
+			"wght": { "min": "100", "max": "700", "default": "400", "step": "1" },
+			"GRAD": { "min": "-25", "max": "200", "default": "0", "step": "1" },
+			"opsz": { "default": "48", "min": "30", "max": "48", "step": "0.1" }
+		},
+		"variants": {
+			"opsz": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUSzq3wzLK-P0J-UXX.woff2"
+				}
+			},
+			"FILL": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvLgyidOK7BDB_Qb9vUdV6_gjDK-P3JuEXX.woff2"
+				}
+			},
+			"GRAD": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUdV6_gjDK-P3JuEXX.woff2"
+				}
+			},
+			"wght": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/syl7-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUSzq3wzLK-P0J-V_Zs-QtQth3-jOcbTCPqw.woff2"
+				}
+			},
+			"full": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2"
+				}
+			},
+			"standard": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolsrounded/v107/sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUSzq3wzLK-P0J-UXX.woff2"
+				}
+			}
+		}
+	},
+	"material-symbols-sharp": {
+		"family": "Material Symbols Sharp",
+		"id": "material-symbols-sharp",
+		"axes": {
+			"FILL": { "min": "0", "max": "1", "default": "0", "step": "1" },
+			"wght": { "min": "100", "max": "700", "default": "400", "step": "1" },
+			"GRAD": { "min": "-25", "max": "200", "default": "0", "step": "1" },
+			"opsz": { "default": "48", "min": "30", "max": "48", "step": "0.1" }
+		},
+		"variants": {
+			"opsz": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1r3w.woff2"
+				}
+			},
+			"FILL": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_wjOOEa9ruReaU4bHmz4BC2dgEH-VBoaxr3w.woff2"
+				}
+			},
+			"GRAD": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz4BC2dgEH-VBoaxr3w.woff2"
+				}
+			},
+			"wght": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNMyW2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1x0TV6x4yFH8F-H5Od1kw.woff2"
+				}
+			},
+			"full": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNMVW2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4aWE.woff2"
+				}
+			},
+			"standard": {
+				"normal": {
+					"latin": "https://fonts.gstatic.com/s/materialsymbolssharp/v104/gNM_W2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1r3w.woff2"
+				}
+			}
+		}
+	}
 }

@@ -31,7 +31,7 @@ describe('download google', () => {
 		it('should generate APIVariable pairs', () => {
 			const { APIVariableVariant, APIVariableResult } = testData;
 			expect(getVariableVariantList(APIVariableVariant)).toEqual(
-				APIVariableResult
+				APIVariableResult,
 			);
 		});
 	});
@@ -42,7 +42,7 @@ describe('download google', () => {
 		vi.spyOn(gfm, 'APIVariable', 'get').mockReturnValue(APIVariableMock);
 		vi.spyOn(gfm, 'APIIconStatic', 'get').mockReturnValue(APIIconStaticMock);
 		vi.spyOn(gfm, 'APIIconVariable', 'get').mockReturnValue(
-			APIIconVariableMock
+			APIIconVariableMock,
 		);
 
 		it('should generate links for base font (abel)', () => {
@@ -96,7 +96,7 @@ describe('download google', () => {
 				isIcon: true,
 			};
 			expect(
-				variableLinks('material-symbols-sharp', buildOpts)
+				variableLinks('material-symbols-sharp', buildOpts),
 			).toMatchSnapshot();
 		});
 

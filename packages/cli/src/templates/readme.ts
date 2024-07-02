@@ -2,7 +2,7 @@ import type { Metadata } from '../types';
 
 const standardReadme = (
 	{ id, family, version, weights, styles, subsets, license }: Metadata,
-	isVariable: boolean
+	isVariable: boolean,
 ) => `# Fontsource ${family}
 
 [![npm (scoped)](https://img.shields.io/npm/v/@fontsource/${id}?color=brightgreen)](https://www.npmjs.com/package/@fontsource/${id}) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/${id})](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/${id})](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)

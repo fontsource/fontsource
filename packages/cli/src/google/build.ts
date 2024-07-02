@@ -16,7 +16,7 @@ import { changelog } from '../templates/changelog';
 import { npmIgnore } from '../templates/npmignore';
 import { packageJson } from '../templates/package';
 import { readme } from '../templates/readme';
-import { type BuildOptions, type Metadata } from '../types';
+import type { BuildOptions, Metadata } from '../types';
 import { licenseShort } from '../utils';
 import { download } from './download';
 import { generateLicense } from './license';
@@ -60,7 +60,7 @@ const build = async (id: string, opts: BuildOptions) => {
 	try {
 		await fs.access(path.join(opts.dir, 'metadata.json'));
 		const metadata = JSON.parse(
-			await fs.readFile(path.join(opts.dir, 'metadata.json'), 'utf8')
+			await fs.readFile(path.join(opts.dir, 'metadata.json'), 'utf8'),
 		);
 		changed = metadata.lastModified !== font.lastModified;
 	} catch {
@@ -74,7 +74,7 @@ const build = async (id: string, opts: BuildOptions) => {
 			const pkgJsonPath = path.join(opts.dir, 'package.json');
 			const tempPath = path.join(
 				opts.tmpDir,
-				opts.isVariable ? `${id}-variable.json` : `${id}.json`
+				opts.isVariable ? `${id}-variable.json` : `${id}.json`,
 			);
 
 			await fs.access(pkgJsonPath);
@@ -135,7 +135,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		}
 		await fs.writeFile(
 			path.join(opts.dir, 'scss/metadata.scss'),
-			sassMetadata(metadata, font.unicodeRange, opts.isVariable)
+			sassMetadata(metadata, font.unicodeRange, opts.isVariable),
 		);
 
 		// Write mixins.scss
@@ -144,13 +144,13 @@ const build = async (id: string, opts: BuildOptions) => {
 		// Write README.md
 		await fs.writeFile(
 			path.join(opts.dir, 'README.md'),
-			readme(metadata, opts.isVariable)
+			readme(metadata, opts.isVariable),
 		);
 
 		// Write unicode.json
 		await fs.writeFile(
 			path.join(opts.dir, 'unicode.json'),
-			stringify(font.unicodeRange)
+			stringify(font.unicodeRange),
 		);
 
 		// Write CHANGELOG.md
@@ -167,7 +167,7 @@ const build = async (id: string, opts: BuildOptions) => {
 		// Write metadata.json
 		await fs.writeFile(
 			path.join(opts.dir, 'metadata.json'),
-			stringify(metadata)
+			stringify(metadata),
 		);
 
 		// Write package.json

@@ -33,17 +33,15 @@
 	"scripts": {
 		"build": "pkgroll --target=node18 && tsx ./scripts/add-hashbang.ts",
 		"cli": "tsx ./src/cli.ts",
-		"lint": "eslint . --fix",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "pnpm run build",
-		"ci:lint": "eslint ."
+		"format": "biome format --write .",
+		"ci:format": "biome format .",
+		"lint": "biome lint --write .",
+		"ci:lint": "biome lint ."
 	},
-	"keywords": [
-		"fontsource",
-		"fonts",
-		"google fonts"
-	],
+	"keywords": ["fontsource", "fonts", "google fonts"],
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
@@ -59,10 +57,8 @@
 		"picocolors": "^1.0.0"
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.6.2",
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "^20.7.1",
-		"eslint": "^8.50.0",
 		"google-font-metadata": "^5.2.1",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.10.0",
@@ -73,9 +69,7 @@
 	"peerDependencies": {
 		"google-font-metadata": "^5.2.1"
 	},
-	"files": [
-		"dist/*"
-	],
+	"files": ["dist/*"],
 	"publishConfig": {
 		"access": "public"
 	},

@@ -168,18 +168,12 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
     devDependencies:
-      '@ayuhito/eslint-config':
-        specifier: ^0.6.2
-        version: 0.6.2(eslint@8.50.0)(typescript@5.3.3)(vitest@0.34.6)
       '@types/fs-extra':
         specifier: ^11.0.1
         version: 11.0.1
       '@types/node':
         specifier: ^20.7.1
         version: 20.7.1
-      eslint:
-        specifier: ^8.50.0
-        version: 8.50.0
       google-font-metadata:
         specifier: ^5.2.1
         version: 5.2.1(typescript@5.3.3)

@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import path from 'pathe';
 import colors from 'picocolors';
 
-import { type Metadata } from '../types';
+import type { Metadata } from '../types';
 import { getDirectories } from './utils';
 
 export const verifyFilenames = async (metadata: Metadata, dir: string) => {
@@ -29,7 +29,7 @@ export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 				// Add the expected filename to the list
 				expectedFilenames.push(
 					`${metadata.id}-${subset}-${weight}-${style}.woff2`,
-					`${metadata.id}-${subset}-${weight}-${style}.woff`
+					`${metadata.id}-${subset}-${weight}-${style}.woff`,
 				);
 			}
 		}
@@ -37,33 +37,33 @@ export const verifyFilenames = async (metadata: Metadata, dir: string) => {
 
 	// Check if all expected filenames are present and show all missing or non-matching filenames
 	const missingFilenames = expectedFilenames.filter(
-		(filename) => !filenames.includes(filename)
+		(filename) => !filenames.includes(filename),
 	);
 	if (missingFilenames.length > 0) {
 		throw new Error(
 			`The following files are missing: ${missingFilenames.join(
-				', '
+				', ',
 			)}\n\n\tPlease ensure the file names match the format "${
 				metadata.id
 			}-subset-weight-style.extension"\n\tExample: "${
 				metadata.id
-			}-latin-400-normal.woff2" or "${metadata.id}-latin-ext-700-italic.woff"`
+			}-latin-400-normal.woff2" or "${metadata.id}-latin-ext-700-italic.woff"`,
 		);
 	}
 
 	// Check if all filenames are expected and show all non-matching filenames
 	const nonMatchingFilenames = filenames.filter(
-		(filename) => !expectedFilenames.includes(filename)
+		(filename) => !expectedFilenames.includes(filename),
 	);
 	if (nonMatchingFilenames.length > 0) {
 		throw new Error(
 			`The following files are not expected: ${nonMatchingFilenames.join(
-				', '
+				', ',
 			)}\n\n\tPlease ensure the file names match the format "${
 				metadata.id
 			}-subset-weight-style.extension"\n\tExample: "${
 				metadata.id
-			}-latin-400-normal.woff2" or "${metadata.id}-latin-ext-700-italic.woff"`
+			}-latin-400-normal.woff2" or "${metadata.id}-latin-ext-700-italic.woff"`,
 		);
 	}
 };
@@ -135,15 +135,22 @@ export const verify = async ({ font, ci, cwd }: VerifyProps): Promise<void> => {
 	try {
 		// Read metadata.json
 		const metadata: Metadata = await fs.readJson(
-			path.join(fontDir, 'metadata.json')
+			path.join(fontDir, 'metadata.json'),
 		);
 		await verifyFilenames(metadata, fontDir);
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	} catch (error: any) {
-		if (ci) {
-			throw new Error(error.message);
+	} catch (error: unknown) {
+		if (error instanceof Error) {
+			if (ci) {
+				throw new Error(error.message);
+			}
+			cancel(error.message);
+			return;
 		}
-		cancel(error.message);
+
+		if (ci) {
+			throw new Error(String(error));
+		}
+		cancel(String(error));
 		return;
 	}
 
@@ -152,8 +159,8 @@ export const verify = async ({ font, ci, cwd }: VerifyProps): Promise<void> => {
 	} else {
 		outro(
 			colors.green(
-				'All checks passed! Feel free to send a PR over to the main repo adding the package to the appropriate fonts directory.'
-			)
+				'All checks passed! Feel free to send a PR over to the main repo adding the package to the appropriate fonts directory.',
+			),
 		);
 	}
 };
