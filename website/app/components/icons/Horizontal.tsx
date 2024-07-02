@@ -10,6 +10,7 @@ const IconHorizontal = ({ height, ...others }: IconProps) => {
 			xmlns="http://www.w3.org/2000/svg"
 			{...others}
 		>
+			<title>Horizontal Icon</title>
 			<path
 				className={classes.icon}
 				d="M1 17L1 1"

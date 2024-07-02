@@ -7,7 +7,7 @@ import {
 	IconGithub,
 	IconNpm,
 } from '@/components/icons';
-import { type Metadata } from '@/utils/types';
+import type { Metadata } from '@/utils/types';
 
 import classes from './Info.module.css';
 

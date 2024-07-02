@@ -4,22 +4,23 @@ import { Box, MantineProvider } from '@mantine/core';
 import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import algoliasearch from 'algoliasearch/lite';
-import { type UiState } from 'instantsearch.js';
+import type { UiState } from 'instantsearch.js';
 // @ts-expect-error - No type definitions available
 import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
-import { type BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
+import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
+import type { RouterProps } from 'instantsearch.js/es/middlewares';
 import { useRef } from 'react';
 import { renderToString } from 'react-dom/server';
 import {
 	getServerState,
 	InstantSearch,
-	type InstantSearchServerState,
 	InstantSearchSSRProvider,
+	type InstantSearchServerState,
 } from 'react-instantsearch';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
-import { type SearchObject } from '@/components/search/observables';
+import type { SearchObject } from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
 import classes from '@/styles/global.module.css';
 import { getSSRCache, setSSRCache } from '@/utils/algolia.server';
@@ -48,7 +49,7 @@ const sortMap: Record<string, string> = {
 	random: 'prod_RANDOM',
 };
 
-const routing = (serverUrl: string): any => {
+const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 	const indexName = 'prod_POPULAR';
 	return {
 		router: history({
@@ -60,7 +61,8 @@ const routing = (serverUrl: string): any => {
 			cleanUrlOnDispose: true,
 		} satisfies Partial<BrowserHistoryArgs<UiState>>),
 		stateMapping: {
-			stateToRoute(uiState: any) {
+			// @ts-expect-error - This is a valid function signature
+			stateToRoute(uiState) {
 				const index = uiState[indexName];
 				const result = {
 					query: index.query,
@@ -77,12 +79,14 @@ const routing = (serverUrl: string): any => {
 				};
 				return result;
 			},
-			routeToState(routeState: any) {
+			// @ts-expect-error - This is a valid function signature
+			routeToState(routeState) {
 				const state = {
 					query: routeState.query,
 					// RefinementList facets
 					...(routeState.subsets
-						? { refinementList: { subsets: routeState.subsets.split(',') } }
+						? // @ts-expect-error - This is a valid object
+							{ refinementList: { subsets: routeState.subsets.split(',') } }
 						: {}),
 					// Menu facets
 					...(routeState.category
@@ -94,7 +98,7 @@ const routing = (serverUrl: string): any => {
 					...(routeState.sort
 						? {
 								sortBy: sortMap[String(routeState.sort)],
-						  }
+							}
 						: {}),
 				};
 				const result = {

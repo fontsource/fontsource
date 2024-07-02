@@ -11,6 +11,7 @@ const IconEdit = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Edit Icon</title>
 			<g
 				strokeLinecap="round"
 				strokeLinejoin="round"

@@ -11,6 +11,7 @@ const IconCaret = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Caret Icon</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

@@ -1,7 +1,7 @@
 import { observer } from '@legendapp/state/react';
 import { Grid, Slider as MantineSlider, Text } from '@mantine/core';
 
-import { type SearchState } from './observables';
+import type { SearchState } from './observables';
 import classes from './SizeSlider.module.css';
 
 interface SizeSliderProps {

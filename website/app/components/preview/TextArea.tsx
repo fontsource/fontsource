@@ -14,7 +14,7 @@ import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
 import type { Metadata } from '@/utils/types';
 
-import { type FontIDState } from './observables';
+import type { FontIDState } from './observables';
 import classes from './TextArea.module.css';
 
 interface TagProps {
@@ -64,11 +64,11 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	const variation = state$.fontVariation.get();
 	const colorScheme = useComputedColorScheme('light');
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		colorScheme === 'dark'
 			? state$.preview.color.set('#FFFFFF')
 			: state$.preview.color.set('#000000');
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [colorScheme]);
 
 	const isFontLoaded = useIsFontLoaded(family, { weights: [weight], style });
@@ -122,11 +122,11 @@ const TextArea = ({
 
 	const isNotLatin =
 		defSubset !== 'latin' || category === 'icons' || category === 'other';
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (isNotLatin) {
 			state$.preview.text.set(getPreviewText(defSubset, id));
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isNotLatin, defSubset, id]);
 
 	return (
@@ -135,8 +135,8 @@ const TextArea = ({
 			{isVariable && variableCSS && (
 				<>
 					<style
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: Safe to use
 						dangerouslySetInnerHTML={{
-							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 							__html: variableCSS,
 						}}
 					/>
@@ -154,6 +154,7 @@ const TextArea = ({
 			{!isVariable && (
 				<>
 					<style
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: Safe to use
 						dangerouslySetInnerHTML={{
 							__html: staticCSS,
 						}}

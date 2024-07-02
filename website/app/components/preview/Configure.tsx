@@ -13,7 +13,7 @@ import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 import { CarbonAd } from '../CarbonAd';
 import { NormalButtonsGroup } from './Buttons';
 import classes from './Configure.module.css';
-import { type FontIDState } from './observables';
+import type { FontIDState } from './observables';
 import { VariableButtonsGroup } from './VariableButtons';
 
 interface ConfigureProps {

@@ -37,11 +37,12 @@ const getNestedHeadings = (headingElements: HTMLHeadElement[]) => {
 export const useHeadingsData = (page: string) => {
 	const [nestedHeadings, setNestedHeadings] = useState<HeadingsData[]>([]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const headingElements = [...document.querySelectorAll('h2, h3')];
 
 		const newNestedHeadings = getNestedHeadings(
-			headingElements as HTMLHeadElement[]
+			headingElements as HTMLHeadElement[],
 		);
 		setNestedHeadings(newNestedHeadings);
 	}, [page]);

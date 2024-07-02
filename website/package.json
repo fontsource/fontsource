@@ -8,8 +8,10 @@
 		"dev": "remix vite:dev",
 		"build": "remix vite:build",
 		"start": "remix-serve ./build/server/index.js",
-		"lint": "eslint . --fix",
-		"ci:lint": "eslint ."
+		"format": "biome format --write .",
+		"ci:format": "biome format .",
+		"lint": "biome lint --write .",
+		"ci:lint": "biome lint ."
 	},
 	"dependencies": {
 		"@docsearch/css": "^3.6.0",
@@ -57,13 +59,11 @@
 		"vfile-matter": "^5.0.0"
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.6.2",
 		"@remix-run/dev": "^2.8.1",
 		"@types/fontfaceobserver": "^2.1.3",
 		"@types/node": "^20.12.7",
 		"@types/react": "^18.2.78",
 		"@types/react-dom": "^18.2.25",
-		"eslint": "^8.55.0",
 		"postcss": "^8.4.38",
 		"postcss-preset-mantine": "^1.14.4",
 		"postcss-simple-vars": "^7.0.1",

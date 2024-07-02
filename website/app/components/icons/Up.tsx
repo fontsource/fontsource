@@ -11,6 +11,7 @@ const IconUp = ({ stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Up Arrow Icon</title>
 			<path
 				stroke={stroke ?? '#fff'}
 				strokeLinecap="round"

@@ -11,6 +11,7 @@ export const IconCopy = ({ height, stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Copy Icon</title>
 			<g
 				stroke={stroke}
 				strokeLinecap="round"

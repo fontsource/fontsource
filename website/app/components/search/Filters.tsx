@@ -17,7 +17,7 @@ import { IconTrash } from '@/components/icons';
 
 import { CategoriesDropdown, LanguagesDropdown } from './Dropdowns';
 import classes from './Filters.module.css';
-import { type SearchState } from './observables';
+import type { SearchState } from './observables';
 import { PreviewSelector } from './PreviewTextInput';
 import { SearchBar } from './SearchTextInput';
 import { SizeSlider } from './SizeSlider';

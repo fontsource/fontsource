@@ -11,6 +11,7 @@ const IconList = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>List Icon</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

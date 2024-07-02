@@ -11,6 +11,7 @@ const IconGrid = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Grid Icon</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

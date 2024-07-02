@@ -1,4 +1,4 @@
-import { type ObservableObject } from '@legendapp/state';
+import type { ObservableObject } from '@legendapp/state';
 
 interface SearchObject {
 	size: number;

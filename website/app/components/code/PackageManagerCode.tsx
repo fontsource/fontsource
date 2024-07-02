@@ -23,25 +23,25 @@ export const PackageManagerCode = ({ cmd, ...props }: PackageManagerProps) => {
 				<Tabs.Panel value="npm" pt="xs">
 					<CodeWrapper
 						language={language}
-						code={'npm install ' + cmd}
+						code={`npm install ${cmd}`}
 						{...props}
 					>
-						<CodeHighlight language={language} code={'npm install ' + cmd} />
+						<CodeHighlight language={language} code={`npm install ${cmd}`} />
 					</CodeWrapper>
 				</Tabs.Panel>
 				<Tabs.Panel value="yarn" pt="xs">
-					<CodeWrapper language={language} code={'yarn add ' + cmd} {...props}>
-						<CodeHighlight language={language} code={'yarn add ' + cmd} />
+					<CodeWrapper language={language} code={`yarn add ${cmd}`} {...props}>
+						<CodeHighlight language={language} code={`yarn add ${cmd}`} />
 					</CodeWrapper>
 				</Tabs.Panel>
 				<Tabs.Panel value="pnpm" pt="xs">
-					<CodeWrapper language={language} code={'pnpm add ' + cmd} {...props}>
-						<CodeHighlight language={language} code={'pnpm add ' + cmd} />
+					<CodeWrapper language={language} code={`pnpm add ${cmd}`} {...props}>
+						<CodeHighlight language={language} code={`pnpm add ${cmd}`} />
 					</CodeWrapper>
 				</Tabs.Panel>
 				<Tabs.Panel value="bun" pt="xs">
-					<CodeWrapper language={language} code={'bun add ' + cmd} {...props}>
-						<CodeHighlight language={language} code={'bun add ' + cmd} />
+					<CodeWrapper language={language} code={`bun add ${cmd}`} {...props}>
+						<CodeHighlight language={language} code={`bun add ${cmd}`} />
 					</CodeWrapper>
 				</Tabs.Panel>
 			</div>

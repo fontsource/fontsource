@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { Blockquote } from '@/components/Blockquote';
 import { Code } from '@/components/code/Code';
-import { type Metadata, type VariableData } from '@/utils/types';
+import type { Metadata, VariableData } from '@/utils/types';
 
 import classes from './InstallCode.module.css';
 
@@ -74,7 +74,7 @@ const VariableSimple = ({ metadata, variable }: InstallCodeProps) => {
 			? `// Supports only weight ${metadata.weights[0]}\n`
 			: `// Supports weights ${metadata.weights[0]}-${
 					metadata.weights.at(-1) ?? 400
-			  }\n`;
+				}\n`;
 
 	const generateImports = () => {
 		if (activeAxes.length === 1 && isActive.wght) {

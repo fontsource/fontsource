@@ -11,6 +11,7 @@ const IconEye = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Eye Icon</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

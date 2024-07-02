@@ -19,6 +19,7 @@ const LogoText = ({ height, isHeader, ...others }: LogoProps) => {
 			xmlns="http://www.w3.org/2000/svg"
 			{...others}
 		>
+			<title>Fontsource Logo</title>
 			<rect y="0.5" width="30" height="30" rx="4" fill={markWrapFill} />
 			<path
 				fillRule="evenodd"

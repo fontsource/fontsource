@@ -11,6 +11,7 @@ const IconDownload = ({ height, stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Download Icon</title>
 			<path
 				stroke={stroke}
 				strokeLinecap="round"

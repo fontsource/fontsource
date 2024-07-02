@@ -10,7 +10,7 @@ import { useSortBy } from 'react-instantsearch';
 import { DropdownSimple } from '@/components/Dropdown';
 import { IconGrid, IconList } from '@/components/icons';
 
-import { type SearchState } from './observables';
+import type { SearchState } from './observables';
 import classes from './Sort.module.css';
 
 interface SortProps {

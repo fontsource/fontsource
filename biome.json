@@ -1,15 +1,14 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
 	"files": {
-		"ignore": ["**/coverage/**", "**/dist/**"]
+		"ignore": ["**/coverage/**", "**/dist/**", "**/build/**"]
 	},
 	"organizeImports": {
 		"enabled": true
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "single",
-			"jsxQuoteStyle": "single"
+			"quoteStyle": "single"
 		}
 	},
 	"linter": {

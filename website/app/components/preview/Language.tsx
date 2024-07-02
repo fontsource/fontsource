@@ -3,7 +3,7 @@ import { observer, useMountOnce } from '@legendapp/state/react';
 import { DropdownSimple } from '@/components/Dropdown';
 import { subsetToLanguage } from '@/utils/language/subsets';
 
-import { type FontIDState } from './observables';
+import type { FontIDState } from './observables';
 
 interface LanguageSelectorProps {
 	state$: FontIDState;

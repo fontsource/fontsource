@@ -11,6 +11,7 @@ const IconInfo = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Info Icon</title>
 			<g
 				strokeLinecap="round"
 				strokeLinejoin="round"

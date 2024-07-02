@@ -4,6 +4,7 @@ import type { IconProps } from './types';
 const IconSun = ({ height, stroke, ...others }: IconProps) => {
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" height={height ?? 20} fill="none">
+			<title>Sun Icon</title>
 			<g
 				className={classes.icon}
 				stroke={stroke}

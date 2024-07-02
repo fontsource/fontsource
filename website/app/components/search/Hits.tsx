@@ -9,7 +9,7 @@ import { getPreviewText } from '@/utils/language/language';
 import type { AlgoliaMetadata } from '@/utils/types';
 
 import classes from './Hits.module.css';
-import { type SearchState } from './observables';
+import type { SearchState } from './observables';
 import { Sort } from './Sort';
 
 interface HitComponentProps {

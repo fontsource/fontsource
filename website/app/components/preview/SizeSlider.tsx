@@ -4,7 +4,7 @@ import { ActionIcon, Group, Slider as MantineSlider } from '@mantine/core';
 import { DropdownSimple } from '@/components/Dropdown';
 
 import { IconItalic } from '../icons/Italic';
-import { type FontIDState } from './observables';
+import type { FontIDState } from './observables';
 import classes from './SizeSlider.module.css';
 
 interface SizeSliderProps {

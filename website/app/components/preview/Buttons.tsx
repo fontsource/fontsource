@@ -12,7 +12,7 @@ import {
 import { IconEye, IconHorizontal, IconVertical } from '../icons';
 import classes from './Buttons.module.css';
 import { LanguageSelector } from './Language';
-import { type FontIDState } from './observables';
+import type { FontIDState } from './observables';
 import { SizeSlider } from './SizeSlider';
 
 interface ButtonsProps {
@@ -25,7 +25,9 @@ interface ButtonsProps {
 interface SliderButtonProps {
 	label: string;
 	icon: React.ReactNode;
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	value: any;
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	setValue: (value: React.SetStateAction<any>) => void;
 	suffix?: string;
 	defaultValue?: number;
@@ -62,7 +64,6 @@ const SliderButton = ({
 				<MantineSlider
 					color="purple.0"
 					size="sm"
-					// eslint-disable-next-line unicorn/no-null
 					label={null}
 					value={value}
 					onChange={setValue}

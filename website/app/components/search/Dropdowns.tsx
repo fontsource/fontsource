@@ -1,10 +1,10 @@
-import { type MenuItem } from 'instantsearch.js/es/connectors/menu/connectMenu';
+import type { MenuItem } from 'instantsearch.js/es/connectors/menu/connectMenu';
 import { useMenu, useRefinementList } from 'react-instantsearch';
 
 import { DropdownCheckbox } from '@/components/Dropdown';
 import { subsetToLanguage } from '@/utils/language/subsets';
 
-import { type SearchState } from './observables';
+import type { SearchState } from './observables';
 
 interface LanguagesDropdownProps {
 	state$: SearchState;

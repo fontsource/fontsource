@@ -1,4 +1,4 @@
-import { type ObservableObject } from '@legendapp/state';
+import type { ObservableObject } from '@legendapp/state';
 
 interface FontIDObject {
 	preview: {
@@ -26,6 +26,5 @@ const createFontVariation = (axes: Record<string, number | undefined>) => {
 	// Remove trailing comma and space
 	return fontVariation.slice(0, -2);
 };
-
 
 export { createFontVariation, type FontIDObject, type FontIDState };

@@ -11,6 +11,7 @@ const IconGuide = ({ height, stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Guide Icon</title>
 			<path
 				stroke={stroke}
 				strokeLinecap="round"

@@ -11,6 +11,7 @@ const IconTrash = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Trash Icon</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

@@ -10,7 +10,7 @@ import {
 
 import { IconCaret } from '@/components/icons';
 
-import { type SearchState } from './observables';
+import type { SearchState } from './observables';
 import classes from './PreviewTextInput.module.css';
 
 interface PreviewProps {

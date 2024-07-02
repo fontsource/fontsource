@@ -10,6 +10,7 @@ const IconVertical = ({ height, ...others }: IconProps) => {
 			fill="none"
 			{...others}
 		>
+			<title>Vertical Icon</title>
 			<path
 				className={classes.icon}
 				strokeLinecap="round"

@@ -96,8 +96,10 @@ export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
 						className={classes['scroll-area']}
 					>
 						{tokens.map((line, i) => (
+							// biome-ignore lint/suspicious/noArrayIndexKey: It's the official way to do it
 							<div key={i} {...getLineProps({ line })} className={classes.line}>
 								{line.map((token, key) => (
+									// biome-ignore lint/suspicious/noArrayIndexKey: It's the official way to do it
 									<span key={key} {...getTokenProps({ token })} />
 								))}
 							</div>
