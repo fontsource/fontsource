@@ -8,7 +8,7 @@ import {
 } from 'itty-router';
 
 import { verifyAuth } from './auth';
-import { type CFRouterContext } from './types';
+import type { CFRouterContext } from './types';
 
 interface MultipartContent {
 	uploadId?: string;
@@ -101,11 +101,11 @@ router.post(
 							etag: object.httpEtag,
 						},
 					});
-				} catch (error: any) {
+				} catch (error: unknown) {
 					if (error instanceof StatusError) throw error;
 					throw new StatusError(
 						500,
-						`Internal Server Error. Failed to complete multipart upload. ${error.message}`,
+						`Internal Server Error. Failed to complete multipart upload. ${error instanceof Error || error instanceof StatusError ? error.message : String(error)}`,
 					);
 				}
 			}
@@ -159,11 +159,11 @@ router.put(
 						{ status: 201, etag: uploadedPart.etag },
 						{ status: 201 },
 					);
-				} catch (error: any) {
+				} catch (error: unknown) {
 					if (error instanceof StatusError) throw error;
 					throw new StatusError(
 						500,
-						`Internal Server Error. Failed to upload part. ${error.message}`,
+						`Internal Server Error. Failed to upload part. ${error instanceof Error || error instanceof StatusError ? error.message : String(error)}`,
 					);
 				}
 			}
@@ -202,10 +202,10 @@ router.delete(
 					await multipartUpload.abort();
 					console.log(`Aborted multipart upload for ${path}.`);
 					return json({ status: 200 }, { status: 200 });
-				} catch (error: any) {
+				} catch (error: unknown) {
 					throw new StatusError(
 						500,
-						`Internal Server Error. Failed to abort multipart upload. ${error.message}`,
+						`Internal Server Error. Failed to abort multipart upload. ${error instanceof Error || error instanceof StatusError ? error.message : String(error)}`,
 					);
 				}
 			}

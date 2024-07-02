@@ -116,15 +116,9 @@ importers:
 
   api/upload:
     devDependencies:
-      '@ayuhito/eslint-config':
-        specifier: ^0.6.2
-        version: 0.6.2(eslint@8.50.0)(typescript@5.3.3)(vitest@0.34.6)
       '@cloudflare/workers-types':
         specifier: ^4.20231121.0
         version: 4.20231121.0
-      eslint:
-        specifier: ^8.50.0
-        version: 8.50.0
       itty-router:
         specifier: ^4.0.23
         version: 4.0.23
@@ -133,7 +127,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^0.34.4
-        version: 0.34.6(sass@1.62.1)
+        version: 0.34.6
       vitest-environment-miniflare:
         specifier: ^2.14.1
         version: 2.14.1(vitest@0.34.6)
