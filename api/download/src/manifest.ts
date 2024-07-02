@@ -2,7 +2,7 @@ import { info } from 'diary';
 import { StatusError } from 'itty-router';
 
 import { bucketPath, listBucket } from './bucket';
-import { type IDResponse } from './types';
+import type { IDResponse } from './types';
 import { splitTag } from './util';
 
 export interface Manifest {

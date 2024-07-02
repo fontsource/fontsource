@@ -1,5 +1,5 @@
 import { StatusError } from 'itty-router';
-import {
+import type {
 	IDResponse,
 	StatusErrorObject,
 	VariableMetadata,

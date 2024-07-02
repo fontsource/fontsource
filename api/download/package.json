@@ -6,23 +6,26 @@
 	"scripts": {
 		"dev": "bun --watch src/server.ts",
 		"build": "bun build src/server.ts --outdir ./dist --minify",
-		"lint": "eslint . --fix",
 		"start": "bun run dist/server.js",
-		"ci:lint": "eslint ."
+		"format": "biome format --write .",
+		"ci:format": "biome format .",
+		"lint": "biome lint --write .",
+		"ci:lint": "biome lint ."
 	},
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"devDependencies": {
 		"@ayuhito/eslint-config": "^0.6.2",
 		"@types/node": "^20.8.0",
-		"bun-types": "^1.0.3",
-		"eslint": "^8.50.0"
+		"bun-types": "^1.0.3"
 	},
 	"dependencies": {
+		"@biomejs/biome": "^1.8.3",
 		"diary": "^0.4.4",
 		"fflate": "^0.8.1",
 		"itty-router": "^4.0.23",
 		"p-queue": "^7.4.1",
 		"woff2sfnt-sfnt2woff": "^1.0.0"
-	}
+	},
+	"trustedDependencies": ["@biomejs/biome"]
 }
