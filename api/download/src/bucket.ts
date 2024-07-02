@@ -1,7 +1,7 @@
 import { info } from 'diary';
 import { StatusError } from 'itty-router';
 
-import { type Manifest, type ManifestVariable } from './manifest';
+import type { Manifest, ManifestVariable } from './manifest';
 import { keepAwake, SLEEP_MINUTES } from './sleep';
 
 type R2Object = string;
@@ -60,8 +60,10 @@ export const listBucket = async (prefix: string) => {
 
 	const resp = await fetch(`https://upload.fontsource.org/list/${prefix}`, {
 		headers: {
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+			Authorization: `Bearer ${
+				// biome-ignore lint/style/noNonNullAssertion: <explanation>
+				process.env.UPLOAD_KEY!
+			}`,
 		},
 	});
 	if (!resp.ok) {
@@ -81,8 +83,10 @@ const abortMultiPartUpload = async (
 		{
 			method: 'DELETE',
 			headers: {
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+				Authorization: `Bearer ${
+					// biome-ignore lint/style/noNonNullAssertion: <explanation>
+					process.env.UPLOAD_KEY!
+				}`,
 			},
 			body: JSON.stringify({
 				uploadId,
@@ -103,8 +107,10 @@ const initiateMultipartUpload = async (bucketPath: string): Promise<string> => {
 		{
 			method: 'POST',
 			headers: {
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+				Authorization: `Bearer ${
+					// biome-ignore lint/style/noNonNullAssertion: <explanation>
+					process.env.UPLOAD_KEY!
+				}`,
 			},
 		},
 	);
@@ -144,8 +150,10 @@ const uploadPart = async (
 		{
 			method: 'PUT',
 			headers: {
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+				Authorization: `Bearer ${
+					// biome-ignore lint/style/noNonNullAssertion: <explanation>
+					process.env.UPLOAD_KEY!
+				}`,
 			},
 			body: formData,
 		},
@@ -179,8 +187,10 @@ const completeMultipartUpload = async (
 		{
 			method: 'POST',
 			headers: {
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-				Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+				Authorization: `Bearer ${
+					// biome-ignore lint/style/noNonNullAssertion: <explanation>
+					process.env.UPLOAD_KEY!
+				}`,
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
@@ -213,8 +223,10 @@ export const putBucket = async (
 			{
 				method: 'PUT',
 				headers: {
-					// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-					Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+					Authorization: `Bearer ${
+						// biome-ignore lint/style/noNonNullAssertion: <explanation>
+						process.env.UPLOAD_KEY!
+					}`,
 				},
 				body,
 			},
@@ -262,8 +274,10 @@ export const getBucket = async (bucketPath: string) => {
 
 	const resp = await fetch(`https://upload.fontsource.org/get/${bucketPath}`, {
 		headers: {
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			Authorization: `Bearer ${process.env.UPLOAD_KEY!}`,
+			Authorization: `Bearer ${
+				// biome-ignore lint/style/noNonNullAssertion: <explanation>
+				process.env.UPLOAD_KEY!
+			}`,
 		},
 	});
 	if (!resp.ok) {

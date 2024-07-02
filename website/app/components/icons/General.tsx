@@ -11,6 +11,7 @@ const IconGeneral = ({ height, stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>General Icon</title>
 			<g
 				stroke={stroke}
 				strokeLinecap="round"

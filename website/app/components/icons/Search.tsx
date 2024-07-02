@@ -11,6 +11,7 @@ const IconSearch = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Search Icon</title>
 			<path
 				className={classes.icon}
 				strokeLinecap="round"

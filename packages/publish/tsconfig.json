@@ -8,7 +8,6 @@
 		"tests/**/*.json",
 		"vitest.config.ts"
 	],
-	"exclude": [".eslintrc.cjs"],
 	"compilerOptions": {
 		/* Projects */
 		//"incremental": true,

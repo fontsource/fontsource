@@ -1,4 +1,4 @@
-import { type BaseHit } from 'instantsearch.js';
+import type { BaseHit } from 'instantsearch.js';
 
 export interface FontList {
 	[key: string]: string;

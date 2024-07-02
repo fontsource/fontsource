@@ -8,12 +8,12 @@ export const useIntersectionObserver = (
 ) => {
 	const headingElementsRef = useRef<HeadingIntersectionEntry>({});
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		headingElementsRef.current = {}; // Reset ref on page change to update active states
 		const headingElements = [...document.querySelectorAll('h2, h3')];
 
 		const callback = (headings: IntersectionObserverEntry[]) => {
-			// eslint-disable-next-line unicorn/no-array-reduce
 			headingElementsRef.current = headings.reduce(
 				(
 					map: HeadingIntersectionEntry,
@@ -26,13 +26,11 @@ export const useIntersectionObserver = (
 			);
 
 			const visibleHeadings: IntersectionObserverEntry[] = [];
-			// eslint-disable-next-line unicorn/no-array-for-each
-			Object.keys(headingElementsRef.current).forEach((key: any) => {
+			for (const key of Object.keys(headingElementsRef.current)) {
 				const headingElement = headingElementsRef.current[key];
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
-			});
+			}
 
-			// eslint-disable-next-line unicorn/consistent-function-scoping
 			const getIndexFromId = (id: string) =>
 				headingElements.findIndex((heading) => heading.id === id);
 

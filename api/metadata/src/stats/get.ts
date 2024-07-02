@@ -1,7 +1,7 @@
-import { type VersionResponse } from 'common-api/types';
+import type { VersionResponse } from 'common-api/types';
 
 import { KV_TTL, METADATA_KEYS } from '../utils';
-import { type StatsResponseAllRecord } from './types';
+import type { StatsResponseAllRecord } from './types';
 import { updatePackageStatAll, updateVersion } from './update';
 
 export const getVersion = async (

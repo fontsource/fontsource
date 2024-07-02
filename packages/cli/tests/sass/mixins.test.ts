@@ -12,10 +12,12 @@ const compileSass = (metadata: string, options = '') => {
 		.replaceAll(' !default;', ',')})`;
 
 	return compileString(
-		sassMixins
+		`${sassMixins
 			.replace("@use 'metadata';", '')
-			.replace('meta.module-variables(metadata) !default', metadataMap) +
-			`@include faces(${options})`,
+			.replace(
+				'meta.module-variables(metadata) !default',
+				metadataMap,
+			)}@include faces(${options})`,
 	);
 };
 
@@ -78,7 +80,7 @@ describe('sass mixins', () => {
 					mockSassMetadata.recursive.unicode,
 					true,
 				),
-				'$subsets: latin'
+				'$subsets: latin',
 			),
 		).toMatchSnapshot();
 	});

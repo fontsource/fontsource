@@ -11,6 +11,7 @@ const IconChangelog = ({ height, stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Changelog Icon</title>
 			<path
 				stroke={stroke}
 				strokeLinecap="round"

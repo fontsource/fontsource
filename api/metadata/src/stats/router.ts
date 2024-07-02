@@ -116,7 +116,7 @@ router.get('/v1/stats/:id', withParams, async (request, env, ctx) => {
 						npmDownloadTotal: 0,
 						jsDelivrHitsMonthly: 0,
 						jsDelivrHitsTotal: 0,
-				  }
+					}
 				: undefined,
 		};
 	}

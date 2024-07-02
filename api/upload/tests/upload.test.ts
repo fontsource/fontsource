@@ -4,6 +4,14 @@ import worker from '../src/worker';
 
 const describe = setupMiniflareIsolatedStorage();
 
+interface RespError {
+	error: string;
+}
+
+interface RespSuccess {
+	objects: string[];
+}
+
 describe('auth', () => {
 	const env = getMiniflareBindings() satisfies Env;
 	const ctx = new ExecutionContext();
@@ -13,7 +21,7 @@ describe('auth', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(401);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespError>();
 		expect(body.error).toBe('Unauthorized. Missing authorization header.');
 	});
 
@@ -26,7 +34,7 @@ describe('auth', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(400);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespError>();
 		expect(body.error).toBe('Bad Request. Malformed authorization header.');
 	});
 
@@ -39,7 +47,7 @@ describe('auth', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(401);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespError>();
 		expect(body.error).toBe('Unauthorized. Invalid authorization token.');
 	});
 });
@@ -60,7 +68,7 @@ describe('list', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(200);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespSuccess>();
 		expect(body.objects).toEqual(['list@1.0.0/file.ttf']);
 
 		await env.BUCKET.delete('list@1.0.0/file.ttf');
@@ -76,7 +84,7 @@ describe('list', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(200);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespSuccess>();
 		expect(body.objects).toEqual([]);
 	});
 
@@ -90,7 +98,7 @@ describe('list', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(400);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespError>();
 		expect(body.error).toBe('Bad Request. Prefix is required.');
 	});
 });
@@ -127,7 +135,7 @@ describe('get', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(404);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespError>();
 		expect(body.error).toBe('Not Found. Object does-not-exist does not exist.');
 	});
 
@@ -141,7 +149,7 @@ describe('get', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(400);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespError>();
 		expect(body.error).toBe('Bad Request. Path is required.');
 	});
 });
@@ -205,7 +213,7 @@ describe('put', () => {
 		const resp = await worker.fetch(req, env, ctx);
 
 		expect(resp.status).toBe(400);
-		const body = await resp.json<any>();
+		const body = await resp.json<RespError>();
 		expect(body.error).toBe('Bad Request. Path is required.');
 	});
 });

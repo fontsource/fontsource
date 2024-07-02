@@ -1,6 +1,6 @@
 import { StatusError } from 'itty-router';
 
-import { type IDResponse } from './types';
+import type { IDResponse } from './types';
 
 export const getMetadata = async (id: string) => {
 	const resp = await fetch(`https://api.fontsource.org/v1/fonts/${id}`);

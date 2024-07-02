@@ -221,11 +221,11 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 						version,
 						file,
 						staticMetadata,
-						// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+						// biome-ignore lint/style/noNonNullAssertion: <explanation>
 						variableMetadata!,
 						env,
 						ctx,
-				  )
+					)
 				: updateCss(fullTag, file, staticMetadata, env, ctx),
 		);
 	}

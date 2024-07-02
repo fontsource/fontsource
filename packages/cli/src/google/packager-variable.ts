@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import fs from 'fs-extra';
 import { APIv2, APIVariable } from 'google-font-metadata';
 import * as path from 'pathe';

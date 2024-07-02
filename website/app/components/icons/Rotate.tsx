@@ -11,6 +11,7 @@ const IconRotate = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Rotate Icon</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

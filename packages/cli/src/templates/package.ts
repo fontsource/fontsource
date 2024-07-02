@@ -13,7 +13,7 @@ interface ExistingData {
 const template = (
 	{ id, family, license, type }: Metadata,
 	isVariable: boolean,
-	existing?: ExistingData
+	existing?: ExistingData,
 ) => ({
 	name: isVariable ? `@fontsource-variable/${id}` : `@fontsource/${id}`,
 	version: existing?.oldVersion ?? BASE_VERSION,
@@ -47,8 +47,8 @@ const template = (
 });
 
 const packageJson = async (metadata: Metadata, opts: BuildOptions) => {
-	let oldVersion;
-	let oldPublishHash;
+	let oldVersion: string | undefined;
+	let oldPublishHash: string | undefined;
 	try {
 		await fs.access(path.join(opts.dir, 'package.json'));
 		const file = await fs.readJson(path.join(opts.dir, 'package.json'));

@@ -10,7 +10,7 @@ import {
 import PQueue from 'p-queue';
 import * as path from 'pathe';
 
-import { type BuildOptions } from '../types';
+import type { BuildOptions } from '../types';
 import {
 	assertNever,
 	makeFontDownloadPath,
@@ -48,7 +48,7 @@ const isAbsoluteURL = (url: string): boolean => {
 
 const getStaticVariantList = (
 	variants: FontVariants,
-	ttf?: boolean
+	ttf?: boolean,
 ): StaticVariant[] => {
 	const variantList: StaticVariant[] = [];
 	for (const [weight, styles] of Object.entries(variants)) {
@@ -98,7 +98,7 @@ const getStaticVariantList = (
 };
 
 const getVariableVariantList = (
-	variants: FontVariantsVariable
+	variants: FontVariantsVariable,
 ): VariableVariant[] => {
 	const variantList: VariableVariant[] = [];
 	for (const [axes, styles] of Object.entries(variants)) {
@@ -128,7 +128,7 @@ interface DownloadLinks {
 const getDownloadPath = (
 	id: string,
 	variant: Variant,
-	opts: BuildOptions
+	opts: BuildOptions,
 ): string => {
 	if (variant.kind === 'static') {
 		return makeFontDownloadPath(
@@ -137,7 +137,7 @@ const getDownloadPath = (
 			variant.subset,
 			variant.weight,
 			variant.style,
-			variant.extension
+			variant.extension,
 		);
 	}
 	if (variant.kind === 'variable') {
@@ -146,7 +146,7 @@ const getDownloadPath = (
 			id,
 			variant.subset,
 			variant.axes,
-			variant.style
+			variant.style,
 		);
 	}
 	return assertNever(variant);
@@ -155,7 +155,7 @@ const getDownloadPath = (
 const variantsToLinks = (
 	id: string,
 	variants: Variant[],
-	opts: BuildOptions
+	opts: BuildOptions,
 ): DownloadLinks[] => {
 	// Map of destination paths to download URLs
 	const linkMap = new Map<string, string>();
@@ -218,7 +218,6 @@ const download = async (id: string, opts: BuildOptions) => {
 
 	// Download all font files
 	for (const link of links) {
-		// eslint-disable-next-line @typescript-eslint/return-await
 		void queue.add(async () => writeDownload(link.url, link.dest));
 	}
 

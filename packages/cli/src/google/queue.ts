@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import consola from 'consola';
 import fs from 'fs-extra';
 import {
@@ -11,7 +10,7 @@ import PQueue from 'p-queue';
 import * as path from 'pathe';
 import colors from 'picocolors';
 
-import { type BuildOptions, type CLIOptions } from '../types';
+import type { BuildOptions, CLIOptions } from '../types';
 import { build } from './build';
 
 const queue = new PQueue({ concurrency: 3 });
@@ -19,10 +18,10 @@ const queue = new PQueue({ concurrency: 3 });
 // @ts-ignore - dts thinks there is a typing error here
 queue.on('idle', () => {
 	consola.success(
-		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`
+		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`,
 	);
 	consola.success(
-		`${Object.keys(APIVariable).length} variable fonts have been processed.`
+		`${Object.keys(APIVariable).length} variable fonts have been processed.`,
 	);
 });
 
@@ -46,7 +45,7 @@ const buildVariablePackage = async (id: string, opts: BuildOptions) => {
 	};
 	await build(id, optsNew);
 	consola.success(
-		`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE]'))}`
+		`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE]'))}`,
 	);
 };
 
@@ -58,13 +57,13 @@ const buildIconPackage = async (id: string, opts: BuildOptions) => {
 	};
 	await build(id, optsNew);
 	consola.success(
-		`Finished processing ${id} ${colors.bold(colors.green('[ICON]'))}`
+		`Finished processing ${id} ${colors.bold(colors.green('[ICON]'))}`,
 	);
 };
 
 const buildVariableIconPackage = async (id: string, opts: BuildOptions) => {
 	consola.info(
-		`Downloading ${id} ${colors.bold(colors.yellow('[VARIABLE ICON]'))}`
+		`Downloading ${id} ${colors.bold(colors.yellow('[VARIABLE ICON]'))}`,
 	);
 	const optsNew = {
 		...opts,
@@ -73,7 +72,7 @@ const buildVariableIconPackage = async (id: string, opts: BuildOptions) => {
 	};
 	await build(id, optsNew);
 	consola.success(
-		`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE ICON]'))}`
+		`Finished processing ${id} ${colors.bold(colors.yellow('[VARIABLE ICON]'))}`,
 	);
 };
 
@@ -125,7 +124,6 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 		if (id in APIv2) {
 			// Create base font package
 			void queue
-				// eslint-disable-next-line @typescript-eslint/promise-function-async
 				.add(() => buildPackage(id, buildOpts))
 				.catch((error) => {
 					consola.error(`Error processing ${id}.`);
@@ -135,7 +133,6 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 			// Build separate package for variable fonts
 			if (APIVariable[id] !== undefined) {
 				void queue
-					// eslint-disable-next-line @typescript-eslint/promise-function-async
 					.add(() => buildVariablePackage(id, buildOpts))
 					.catch((error) => {
 						consola.error(`Error processing ${id} [VARIABLE].`);
@@ -166,7 +163,6 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 		if (id in APIIconStatic) {
 			// Create base font package
 			void queue
-				// eslint-disable-next-line @typescript-eslint/promise-function-async
 				.add(() => buildIconPackage(id, buildOpts))
 				.catch((error) => {
 					consola.error(`Error processing ${id}.`);
@@ -175,7 +171,6 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 
 			if (APIIconVariable[id] !== undefined) {
 				void queue
-					// eslint-disable-next-line @typescript-eslint/promise-function-async
 					.add(() => buildVariableIconPackage(id, buildOpts))
 					.catch((error) => {
 						consola.error(`Error processing ${id} [VARIABLE].`);

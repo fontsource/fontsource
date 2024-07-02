@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-return */ // Else we get a ts-error for unfulilled codepaths
 import {
 	cancel,
 	confirm,
@@ -41,7 +40,7 @@ export const create = async () => {
 			weights: async () =>
 				await text({
 					message: colors.bold(
-						'What are the weights of the font? (separate by commas)'
+						'What are the weights of the font? (separate by commas)',
 					),
 					placeholder: '100, 200, 300, 400, 500, 600, 700, 800, 900',
 					validate(value) {
@@ -122,7 +121,7 @@ export const create = async () => {
 			licenseAttribution: async () =>
 				await text({
 					message: colors.bold(
-						'What is the author name or attribution of the font?'
+						'What is the author name or attribution of the font?',
 					),
 					validate(value) {
 						if (!value) return 'Please enter a name or attribution';
@@ -132,7 +131,7 @@ export const create = async () => {
 			sourceUrl: async () =>
 				await text({
 					message: colors.bold(
-						'What is the URL of the source files? GitHub repositories are preferred'
+						'What is the URL of the source files? GitHub repositories are preferred',
 					),
 					validate(value) {
 						if (!value) return 'Please enter a URL';
@@ -143,10 +142,10 @@ export const create = async () => {
 		{
 			onCancel: () => {
 				cancel('Package creation cancelled');
-				// eslint-disable-next-line unicorn/no-process-exit
+
 				process.exit(0);
 			},
-		}
+		},
 	);
 
 	if (!isCategoryName(cfg.category)) {
@@ -177,13 +176,13 @@ export const create = async () => {
 
 	const confirmCreate = await confirm({
 		message: colors.bold(
-			`Create package in current directory? ./${metadata.id}`
+			`Create package in current directory? ./${metadata.id}`,
 		),
 	});
 
 	if (typeof confirmCreate === 'boolean' && !confirmCreate) {
 		cancel('Package creation cancelled.');
-		// eslint-disable-next-line unicorn/no-process-exit
+
 		process.exit(0);
 	}
 
@@ -197,7 +196,7 @@ export const create = async () => {
 
 	outro(
 		colors.green(
-			`You're all set!\n\n\tNow copy all the font files into the files directory and run "fontsource create-verify" to verify your package.\n\n\tPlease ensure the file names match the format "${metadata.id}-subset-weight-style.extension"\n\tExample: "${metadata.id}-latin-400-normal.woff2" or "${metadata.id}-latin-ext-700-italic.woff"\n\n\tPlease also copy the appropriate LICENSE file from your license URL to the root directory of the package.`
-		)
+			`You're all set!\n\n\tNow copy all the font files into the files directory and run "fontsource create-verify" to verify your package.\n\n\tPlease ensure the file names match the format "${metadata.id}-subset-weight-style.extension"\n\tExample: "${metadata.id}-latin-400-normal.woff2" or "${metadata.id}-latin-ext-700-italic.woff"\n\n\tPlease also copy the appropriate LICENSE file from your license URL to the root directory of the package.`,
+		),
 	);
 };

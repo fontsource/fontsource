@@ -11,6 +11,7 @@ const IconMoon = ({ height, stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Moon Icon</title>
 			<path
 				stroke={stroke}
 				strokeLinecap="round"

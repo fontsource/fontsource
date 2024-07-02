@@ -11,6 +11,7 @@ const IconVersion = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Version Icon</title>
 			<g strokeWidth={1.5} clipPath="url(#a)">
 				<path d="M6.75 2c0-.69.56-1.25 1.25-1.25h10c.69 0 1.25.56 1.25 1.25v16c0 .69-.56 1.25-1.25 1.25H8c-.69 0-1.25-.56-1.25-1.25V2Z" />
 				<path

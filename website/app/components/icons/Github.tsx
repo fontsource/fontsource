@@ -12,6 +12,7 @@ const IconGithub = ({ height, stroke, ...others }: IconProps) => {
 			style={{ marginBottom: '-1px' }}
 			{...others}
 		>
+			<title>GitHub Icon</title>
 			<path
 				stroke={stroke}
 				strokeLinecap="round"

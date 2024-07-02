@@ -18,7 +18,6 @@ const getNestedHeadings = (headingElements: HTMLHeadElement[]) => {
 		} else if (nodeName === 'H3' && nestedHeadings.length > 0) {
 			// If items array is undefined, create it
 			if (!nestedHeadings.at(-1)?.items) {
-				// eslint-disable-next-line unicorn/prefer-at
 				nestedHeadings[nestedHeadings.length - 1].items = [];
 			}
 
@@ -37,11 +36,12 @@ const getNestedHeadings = (headingElements: HTMLHeadElement[]) => {
 export const useHeadingsData = (page: string) => {
 	const [nestedHeadings, setNestedHeadings] = useState<HeadingsData[]>([]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const headingElements = [...document.querySelectorAll('h2, h3')];
 
 		const newNestedHeadings = getNestedHeadings(
-			headingElements as HTMLHeadElement[]
+			headingElements as HTMLHeadElement[],
 		);
 		setNestedHeadings(newNestedHeadings);
 	}, [page]);

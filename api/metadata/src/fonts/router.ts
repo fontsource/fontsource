@@ -7,7 +7,7 @@ import {
 	withParams,
 } from 'itty-router';
 
-import { type CFRouterContext } from '../types';
+import type { CFRouterContext } from '../types';
 import { API_BROWSER_TTL, CF_EDGE_TTL } from '../utils';
 import { getArrayMetadata, getId } from './get';
 import { isFontsQueries } from './types';

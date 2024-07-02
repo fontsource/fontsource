@@ -5,7 +5,7 @@ import {
 	generateV2CSS,
 	generateVariableCSS,
 } from '@fontsource-utils/cli';
-import { type IDResponse, type VariableMetadata } from 'common-api/types';
+import type { IDResponse, VariableMetadata } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
 import { generateVariableVariants } from './util';
@@ -47,7 +47,7 @@ export const updateCss = async (
 	env: Env,
 	ctx: ExecutionContext,
 ): Promise<string> => {
-	let css;
+	let css: string | undefined;
 	const { category, type } = metadata;
 
 	// Icons are handled differently
@@ -106,7 +106,7 @@ export const updateVariableCSS = async (
 	env: Env,
 	ctx: ExecutionContext,
 ): Promise<string> => {
-	let css;
+	let css: string | undefined;
 	const { category, type } = metadata;
 	const tag = `${id}@${version}`;
 	const vfTag = `${id}:vf@${version}`;

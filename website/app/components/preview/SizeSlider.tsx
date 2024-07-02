@@ -4,7 +4,7 @@ import { ActionIcon, Group, Slider as MantineSlider } from '@mantine/core';
 import { DropdownSimple } from '@/components/Dropdown';
 
 import { IconItalic } from '../icons/Italic';
-import { type FontIDState } from './observables';
+import type { FontIDState } from './observables';
 import classes from './SizeSlider.module.css';
 
 interface SizeSliderProps {
@@ -51,7 +51,6 @@ const SizeSlider = observer(({ state$, hasItalic }: SizeSliderProps) => {
 				<MantineSlider
 					color="purple.0"
 					size="sm"
-					// eslint-disable-next-line unicorn/no-null
 					label={null}
 					value={size}
 					onChange={state$.preview.size.set}

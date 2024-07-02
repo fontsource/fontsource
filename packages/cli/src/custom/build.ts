@@ -33,7 +33,7 @@ export const buildCustom = async (metadata: Metadata, opts?: CustomOptions) => {
 	}
 	await fs.writeFile(
 		path.join(dir, 'scss/metadata.scss'),
-		sassMetadata(metadata, {}, false)
+		sassMetadata(metadata, {}, false),
 	);
 
 	// Write mixins.scss

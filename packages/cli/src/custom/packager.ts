@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import { generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
 import path from 'pathe';
@@ -12,7 +11,7 @@ interface PackagerOptions {
 
 export const packagerCustom = async (
 	metadata: Metadata,
-	opts?: PackagerOptions
+	opts?: PackagerOptions,
 ) => {
 	const { id, family, subsets, weights, styles } = metadata;
 	const dir = opts?.dir ?? `./${id}`;
@@ -63,7 +62,7 @@ export const packagerCustom = async (
 					await fs.writeFile(path.join(dir, `${weight}-${style}.css`), css);
 					await fs.writeFile(
 						path.join(dir, `${subset}-${weight}-${style}.css`),
-						css
+						css,
 					);
 
 					// Write index.css if there is no normal style
@@ -83,7 +82,7 @@ export const packagerCustom = async (
 		if (cssSubsetItalic.length > 0) {
 			await fs.writeFile(
 				path.join(dir, `${subset}-italic.css`),
-				cssSubsetItalic.join('\n\n')
+				cssSubsetItalic.join('\n\n'),
 			);
 		}
 	}

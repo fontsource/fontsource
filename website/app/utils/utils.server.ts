@@ -29,8 +29,10 @@ export const kya = async (url: string, opts?: KyaOpts) => {
 		},
 	});
 
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	if (opts?.text) return data.text() as any;
 
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	return data.json() as any;
 };
 
@@ -47,12 +49,12 @@ export const getAllSlugsInDir = async (dir: string) => {
 
 	const getFilesRecursively = async (
 		directory: string,
-		currentSlug?: string
+		currentSlug?: string,
 	) => {
 		const filesInDirectory = await fs.readdir(directory);
 		for (const file of filesInDirectory) {
 			const absolute = path.join(directory, file);
-			const newSlug = currentSlug ? currentSlug + '/' + file : file;
+			const newSlug = currentSlug ? `${currentSlug}/${file}` : file;
 
 			const stat = await fs.stat(absolute);
 			if (stat.isDirectory()) {

@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { Blockquote } from '@/components/Blockquote';
 import { Code } from '@/components/code/Code';
-import { type Metadata, type VariableData } from '@/utils/types';
+import type { Metadata, VariableData } from '@/utils/types';
 
 import classes from './InstallCode.module.css';
 
@@ -74,7 +74,7 @@ const VariableSimple = ({ metadata, variable }: InstallCodeProps) => {
 			? `// Supports only weight ${metadata.weights[0]}\n`
 			: `// Supports weights ${metadata.weights[0]}-${
 					metadata.weights.at(-1) ?? 400
-			  }\n`;
+				}\n`;
 
 	const generateImports = () => {
 		if (activeAxes.length === 1 && isActive.wght) {
@@ -103,7 +103,6 @@ const VariableSimple = ({ metadata, variable }: InstallCodeProps) => {
 	const handleActive = (value: string | number) => {
 		setActive((prev) => {
 			if (prev[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,
@@ -192,7 +191,6 @@ const VariableAdvanced = ({ metadata, variable }: InstallCodeProps) => {
 	const handleActiveVariant = (value: string | number) => {
 		setActive((prev) => {
 			if (prev.axes[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev.axes[value];
 				return {
 					...prev,
@@ -336,7 +334,6 @@ const StaticSimple = ({ metadata }: InstallCodeProps) => {
 		setActive((prev) => {
 			if (keys.length === 1 && prev[value]) return prev;
 			if (prev[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,
@@ -422,7 +419,6 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 		setActiveWeight((prev) => {
 			if (keys.length === 1 && prev[value]) return prev;
 			if (prev[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,

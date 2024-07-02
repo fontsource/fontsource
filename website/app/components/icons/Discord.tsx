@@ -11,6 +11,7 @@ const IconDiscord = ({ height, stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Discord Icon</title>
 			<path
 				stroke={stroke}
 				strokeLinecap="round"

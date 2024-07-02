@@ -11,6 +11,7 @@ const IconItalic = ({ height, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>Italic Icon</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

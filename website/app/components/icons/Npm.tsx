@@ -11,6 +11,7 @@ const IconNpm = ({ height, stroke, ...others }: IconProps) => {
 			className={classes.icon}
 			{...others}
 		>
+			<title>NPM Icon</title>
 			<g clipPath="url(#a)">
 				<path
 					strokeLinecap="round"

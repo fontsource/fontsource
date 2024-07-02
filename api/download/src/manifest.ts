@@ -2,7 +2,7 @@ import { info } from 'diary';
 import { StatusError } from 'itty-router';
 
 import { bucketPath, listBucket } from './bucket';
-import { type IDResponse } from './types';
+import type { IDResponse } from './types';
 import { splitTag } from './util';
 
 export interface Manifest {
@@ -146,7 +146,7 @@ export const generateManifest = (
 						style,
 						extension,
 						version,
-						// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+
 						url: `https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/files/${metadata.id}-${subset}-${weight}-${style}.${extension}`,
 					});
 				}

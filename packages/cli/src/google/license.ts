@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import { APILicense } from 'google-font-metadata';
+import type { APILicense } from 'google-font-metadata';
 import * as path from 'pathe';
 
 import { apache } from '../templates/apache';
@@ -10,12 +10,12 @@ import type { BuildOptions } from '../types';
 // Download license from Google Fonts Github repo and save to package
 const generateLicense = async (
 	fontLicense: (typeof APILicense)[string],
-	opts: BuildOptions
+	opts: BuildOptions,
 ) => {
 	const licensePath = path.join(opts.dir, 'LICENSE');
 	const copyright = fontLicense.original;
 
-	let txt;
+	let txt: string | undefined;
 	switch (fontLicense.license.type.toLowerCase()) {
 		case 'apache license, version 2.0': {
 			txt = apache(copyright);

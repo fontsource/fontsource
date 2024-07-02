@@ -33,7 +33,7 @@ cli
 			}
 			if (options.force) {
 				consola.info(
-					`Parsing all metadata... ${colors.bold(colors.red('[FORCE]'))}`
+					`Parsing all metadata... ${colors.bold(colors.red('[FORCE]'))}`,
 				);
 			} else {
 				consola.info('Parsing all metadata...');
@@ -60,7 +60,7 @@ cli
 			consola.info(
 				`Building packages... ${
 					options.force ? colors.bold(colors.red('[FORCE]')) : ''
-				}`
+				}`,
 			);
 			await processGoogle(options, fonts);
 			if (options.force) {

@@ -10,6 +10,7 @@ export const CarbonAd = ({ ...props }: BoxProps) => {
 	const location = useLocation();
 
 	// We need to rerender the carbon ad when the route changes
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const script = document.createElement('script');
 		script.src =

@@ -33,7 +33,7 @@ describe('generate license', () => {
 
 		expect(vi.mocked(fs.writeFile)).toBeCalledWith(
 			'test/noto-sans-jp/LICENSE',
-			expect.anything()
+			expect.anything(),
 		);
 	});
 
@@ -54,7 +54,7 @@ describe('generate license', () => {
 
 		expect(vi.mocked(fs.writeFile)).toBeCalledWith(
 			'test/noto-sans-jp/LICENSE',
-			expect.anything()
+			expect.anything(),
 		);
 	});
 
@@ -75,7 +75,7 @@ describe('generate license', () => {
 
 		expect(vi.mocked(fs.writeFile)).toBeCalledWith(
 			'test/noto-sans-jp/LICENSE',
-			expect.anything()
+			expect.anything(),
 		);
 	});
 

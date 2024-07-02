@@ -1,5 +1,5 @@
 import { error as errorDiary, info } from 'diary';
-import { zipSync } from 'fflate';
+import { zipSync, type Zippable } from 'fflate';
 import { StatusError } from 'itty-router';
 import PQueue from 'p-queue';
 // @ts-expect-error - no types
@@ -17,8 +17,8 @@ import {
 	type Manifest,
 	type ManifestVariable,
 } from './manifest';
-import { keepAwake, SLEEP_MINUTES } from './sleep';
-import { type IDResponse } from './types';
+import { SLEEP_MINUTES, keepAwake } from './sleep';
+import type { IDResponse } from './types';
 
 export const downloadFile = async (manifest: Manifest) => {
 	const { id, subset, weight, style, extension, version, url } = manifest;
@@ -37,7 +37,7 @@ export const downloadFile = async (manifest: Manifest) => {
 
 	// If woff, decompress and add to ttf folder
 	if (extension === 'woff') {
-		let ttfBuffer;
+		let ttfBuffer: ArrayBuffer | undefined;
 		try {
 			ttfBuffer = await woff2ttf.toSfnt(new Uint8Array(buffer));
 		} catch (error) {
@@ -84,12 +84,10 @@ export const downloadManifest = async (manifest: Manifest[]) => {
 
 	// Download all files
 	for (const file of manifest) {
-		// eslint-disable-next-line @typescript-eslint/promise-function-async
 		queue
 			.add(async () => {
 				await downloadFile(file);
 			})
-			// eslint-disable-next-line no-loop-func
 			.catch((error) => {
 				queue.pause();
 				queue.clear();
@@ -123,12 +121,11 @@ export const generateZip = async (
 	}
 
 	// Download all files into memory
-	const files: Record<string, any> = {};
+	const files: Zippable = {};
 	const zipQueue = new PQueue({ concurrency: 24 });
 
 	// Download all files
 	for (const file of fullManifest) {
-		// eslint-disable-next-line @typescript-eslint/promise-function-async
 		zipQueue
 			.add(async () => {
 				keepAwake(SLEEP_MINUTES);

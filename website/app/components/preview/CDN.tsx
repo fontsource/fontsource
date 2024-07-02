@@ -102,7 +102,6 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 	const handleActiveVariant = (value: string | number) => {
 		setActive((prev) => {
 			if (prev.axes[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev.axes[value];
 				return {
 					...prev,
@@ -238,7 +237,6 @@ const Static = ({ metadata }: CDNProps) => {
 		setActiveWeight((prev) => {
 			if (keys.length === 1 && prev[value]) return prev;
 			if (prev[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,

@@ -1,4 +1,4 @@
-import { type FontVariants } from '../fonts/types';
+import type { FontVariants } from '../fonts/types';
 import type { FontMetadata, FontsourceMetadata } from '../types';
 import { METADATA_KEYS, METADATA_URL } from '../utils';
 import type { Fontlist, FontlistQueries, MetadataList } from './types';

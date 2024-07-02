@@ -1,9 +1,9 @@
 import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
-import {
-	type APIIconResponse,
-	type FontObjectV1,
-	type FontObjectV2,
-	type FontObjectVariable,
+import type {
+	APIIconResponse,
+	FontObjectV1,
+	FontObjectV2,
+	FontObjectVariable,
 } from 'google-font-metadata';
 
 import type { CSSGenerate } from '../types';

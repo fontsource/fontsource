@@ -1,8 +1,8 @@
-import {
-	type IDResponse,
-	type VariableMetadata,
-	type VariableMetadataWithVariants,
-	type VariableVariants,
+import type {
+	IDResponse,
+	VariableMetadata,
+	VariableMetadataWithVariants,
+	VariableVariants,
 } from 'common-api/types';
 import { findVersion, getVersion } from 'common-api/util';
 import { StatusError } from 'itty-router';

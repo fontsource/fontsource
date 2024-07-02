@@ -1,11 +1,11 @@
-import { type IDResponse, type VariableMetadata } from 'common-api/types';
+import type { IDResponse, VariableMetadata } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
 import { isAcceptedExtension } from './util';
 
-const isNumeric = (num: any) =>
+const isNumeric = <T>(num: T): boolean =>
 	(typeof num === 'number' || (typeof num === 'string' && num.trim() !== '')) &&
-	!Number.isNaN(num as number);
+	!Number.isNaN(Number(num));
 
 export const validateFontFilename = (file: string, metadata: IDResponse) => {
 	const [filename, extension] = file.split('.');
@@ -97,7 +97,9 @@ export const validateCSSFilename = (file: string, metadata: IDResponse) => {
 	}
 
 	// Accept weight-italic.css
-	let weight, style, subset;
+	let weight: string | undefined;
+	let style: string | undefined;
+	let subset: string | undefined;
 	[weight, style] = filename.split('-');
 	if (
 		weights.includes(Number(weight)) &&

@@ -47,7 +47,7 @@ const defaultAxis = (metadata: Metadata) => {
 export const sassMetadata = (
 	metadata: Metadata,
 	unicode: UnicodeRange,
-	isVariable: boolean
+	isVariable: boolean,
 ) => {
 	let out = '';
 
@@ -65,7 +65,7 @@ export const sassMetadata = (
   weight: ${findClosest(metadata.weights, 400)},
   style: normal,
   axis: ${isVariable ? defaultAxis(metadata) : 'null'},
-)`
+)`,
 	);
 	out += sassVar('unicode', unicodeValue(unicode));
 

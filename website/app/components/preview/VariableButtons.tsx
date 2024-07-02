@@ -5,7 +5,7 @@ import { IconRotate } from '@/components/icons';
 import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
 
 import { InfoTooltip } from '../InfoTooltip';
-import { type FontIDState } from './observables';
+import type { FontIDState } from './observables';
 import classes from './VariableButtons.module.css';
 
 interface VariableButtonGroupProps {

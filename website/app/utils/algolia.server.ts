@@ -1,5 +1,5 @@
 import TTLCache from '@isaacs/ttlcache';
-import { type InstantSearchServerState } from 'react-instantsearch';
+import type { InstantSearchServerState } from 'react-instantsearch';
 
 // Cache for Algolia SSR state to avoid re-fetching on every request
 const ALGOLIA_TTL = 6 * 60 * 60 * 1000; // 6 hours

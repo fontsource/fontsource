@@ -1,9 +1,8 @@
-/* eslint-disable no-await-in-loop */
 import { consola } from 'consola';
 import fs from 'fs-extra';
 import path from 'pathe';
 
-import { type Metadata } from '../types';
+import type { Metadata } from '../types';
 import { buildCustom } from './build';
 import { getDirectories } from './utils';
 import { verifyAll } from './verify';

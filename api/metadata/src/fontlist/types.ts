@@ -1,4 +1,4 @@
-import { type IDResponse } from 'common-api/types';
+import type { IDResponse } from 'common-api/types';
 
 import type { FontMetadata } from '../types';
 
