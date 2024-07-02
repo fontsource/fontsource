@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 interface ArrayMetadataItem {
 	id: string;
 	family: string;

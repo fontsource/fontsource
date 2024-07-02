@@ -10,6 +10,8 @@
 		"coverage": "vitest run --coverage",
 		"lint": "pnpm -r run lint",
 		"test": "vitest",
+		"format": "biome format --write .",
+		"ci:format": "biome format .",
 		"ci:lint": "pnpm -r run ci:lint",
 		"ci:test": "CI=true pnpm --filter \"./packages/*\" run build && pnpm --filter \"./packages/*\" --workspace-concurrency 1 coverage",
 		"ci:version": "changeset version",

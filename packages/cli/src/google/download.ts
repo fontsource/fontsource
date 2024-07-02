@@ -218,7 +218,6 @@ const download = async (id: string, opts: BuildOptions) => {
 
 	// Download all font files
 	for (const link of links) {
-		// eslint-disable-next-line @typescript-eslint/return-await
 		void queue.add(async () => writeDownload(link.url, link.dest));
 	}
 

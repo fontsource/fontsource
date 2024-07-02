@@ -146,7 +146,7 @@ export const generateManifest = (
 						style,
 						extension,
 						version,
-						// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+
 						url: `https://cdn.jsdelivr.net/npm/@fontsource/${id}@${version}/files/${metadata.id}-${subset}-${weight}-${style}.${extension}`,
 					});
 				}

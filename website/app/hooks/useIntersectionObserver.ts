@@ -31,7 +31,6 @@ export const useIntersectionObserver = (
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
 			}
 
-			// eslint-disable-next-line unicorn/consistent-function-scoping
 			const getIndexFromId = (id: string) =>
 				headingElements.findIndex((heading) => heading.id === id);
 

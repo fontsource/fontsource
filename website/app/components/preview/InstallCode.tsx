@@ -103,7 +103,6 @@ const VariableSimple = ({ metadata, variable }: InstallCodeProps) => {
 	const handleActive = (value: string | number) => {
 		setActive((prev) => {
 			if (prev[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,
@@ -192,7 +191,6 @@ const VariableAdvanced = ({ metadata, variable }: InstallCodeProps) => {
 	const handleActiveVariant = (value: string | number) => {
 		setActive((prev) => {
 			if (prev.axes[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev.axes[value];
 				return {
 					...prev,
@@ -336,7 +334,6 @@ const StaticSimple = ({ metadata }: InstallCodeProps) => {
 		setActive((prev) => {
 			if (keys.length === 1 && prev[value]) return prev;
 			if (prev[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,
@@ -422,7 +419,6 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 		setActiveWeight((prev) => {
 			if (keys.length === 1 && prev[value]) return prev;
 			if (prev[value]) {
-				// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
 				delete prev[value];
 				return {
 					...prev,

@@ -74,7 +74,7 @@ const packPublish = async (
 		const npmrc = path.join(pkg.path, '.npmrc');
 		await fs.writeFile(
 			npmrc,
-			// eslint-disable-next-line no-template-curly-in-string
+
 			'//registry.npmjs.org/:_authToken=${NPM_TOKEN}',
 		);
 
@@ -146,7 +146,6 @@ export const publishPackages = async (
 	for (const pkg of bumped) {
 		if (pkg && !pkg.noPublish) {
 			const newPkg = queue
-				// eslint-disable-next-line @typescript-eslint/promise-function-async
 				.add(() => packPublish(pkg, { name, config, bumped }))
 				.catch((error) => {
 					// Empty queue when we hit the error limit

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import consola from 'consola';
 import fs from 'fs-extra';
 import {
@@ -125,7 +124,6 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 		if (id in APIv2) {
 			// Create base font package
 			void queue
-				// eslint-disable-next-line @typescript-eslint/promise-function-async
 				.add(() => buildPackage(id, buildOpts))
 				.catch((error) => {
 					consola.error(`Error processing ${id}.`);
@@ -135,7 +133,6 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 			// Build separate package for variable fonts
 			if (APIVariable[id] !== undefined) {
 				void queue
-					// eslint-disable-next-line @typescript-eslint/promise-function-async
 					.add(() => buildVariablePackage(id, buildOpts))
 					.catch((error) => {
 						consola.error(`Error processing ${id} [VARIABLE].`);
@@ -166,7 +163,6 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 		if (id in APIIconStatic) {
 			// Create base font package
 			void queue
-				// eslint-disable-next-line @typescript-eslint/promise-function-async
 				.add(() => buildIconPackage(id, buildOpts))
 				.catch((error) => {
 					consola.error(`Error processing ${id}.`);
@@ -175,7 +171,6 @@ export const processGoogle = async (opts: CLIOptions, fonts?: string[]) => {
 
 			if (APIIconVariable[id] !== undefined) {
 				void queue
-					// eslint-disable-next-line @typescript-eslint/promise-function-async
 					.add(() => buildVariableIconPackage(id, buildOpts))
 					.catch((error) => {
 						consola.error(`Error processing ${id} [VARIABLE].`);

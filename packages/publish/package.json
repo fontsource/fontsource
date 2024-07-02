@@ -47,9 +47,7 @@
 		"tsx": "^3.12.3",
 		"typescript": "^5.2.2"
 	},
-	"files": [
-		"dist/*"
-	],
+	"files": ["dist/*"],
 	"publishConfig": {
 		"access": "public"
 	},

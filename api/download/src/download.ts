@@ -84,12 +84,10 @@ export const downloadManifest = async (manifest: Manifest[]) => {
 
 	// Download all files
 	for (const file of manifest) {
-		// eslint-disable-next-line @typescript-eslint/promise-function-async
 		queue
 			.add(async () => {
 				await downloadFile(file);
 			})
-			// eslint-disable-next-line no-loop-func
 			.catch((error) => {
 				queue.pause();
 				queue.clear();
@@ -128,7 +126,6 @@ export const generateZip = async (
 
 	// Download all files
 	for (const file of fullManifest) {
-		// eslint-disable-next-line @typescript-eslint/promise-function-async
 		zipQueue
 			.add(async () => {
 				keepAwake(SLEEP_MINUTES);

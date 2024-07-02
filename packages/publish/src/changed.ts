@@ -36,7 +36,6 @@ const getChanged = async (ctx: Context) => {
 				path.join(process.cwd(), packagePath, 'package.json'),
 			);
 
-			// eslint-disable-next-line @typescript-eslint/promise-function-async
 			void queue.add(() => handleHash(packagePath, packageJson));
 		}
 	}

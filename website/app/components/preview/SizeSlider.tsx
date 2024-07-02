@@ -51,7 +51,6 @@ const SizeSlider = observer(({ state$, hasItalic }: SizeSliderProps) => {
 				<MantineSlider
 					color="purple.0"
 					size="sm"
-					// eslint-disable-next-line unicorn/no-null
 					label={null}
 					value={size}
 					onChange={state$.preview.size.set}

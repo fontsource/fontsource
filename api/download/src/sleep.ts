@@ -8,6 +8,5 @@ export const keepAwake = (minutes: number) => {
 		clearTimeout(sleepTimeout);
 	}
 
-	// eslint-disable-next-line unicorn/no-process-exit
 	sleepTimeout = setTimeout(() => process.exit(0), 1000 * 60 * minutes);
 };

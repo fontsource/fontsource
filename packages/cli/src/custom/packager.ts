@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import { generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
 import path from 'pathe';

@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-return */ // Else we get a ts-error for unfulilled codepaths
 import {
 	cancel,
 	confirm,
@@ -143,7 +142,7 @@ export const create = async () => {
 		{
 			onCancel: () => {
 				cancel('Package creation cancelled');
-				// eslint-disable-next-line unicorn/no-process-exit
+
 				process.exit(0);
 			},
 		},
@@ -183,7 +182,7 @@ export const create = async () => {
 
 	if (typeof confirmCreate === 'boolean' && !confirmCreate) {
 		cancel('Package creation cancelled.');
-		// eslint-disable-next-line unicorn/no-process-exit
+
 		process.exit(0);
 	}
 

@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import { cancel, group, intro, outro, text } from '@clack/prompts';
 import { consola } from 'consola';
 import fs from 'fs-extra';
@@ -94,7 +93,7 @@ export const verify = async ({ font, ci, cwd }: VerifyProps): Promise<void> => {
 					placeholder: 'noto-sans-jp',
 					validate(value) {
 						if (!value) return 'Please enter an ID.';
-						// eslint-disable-next-line no-useless-return
+
 						return;
 					},
 				}),
@@ -172,7 +171,6 @@ export const verifyAll = async (): Promise<void> => {
 
 	for (const directory of directories) {
 		try {
-			// eslint-disable-next-line no-await-in-loop
 			await verify({ font: directory, ci: true, cwd: fontDir });
 		} catch (error) {
 			consola.warn(`Error verifying ${directory}.`);
@@ -183,7 +181,7 @@ export const verifyAll = async (): Promise<void> => {
 
 	if (hasErrors) {
 		consola.error('Errors found. Exiting.');
-		// eslint-disable-next-line unicorn/no-process-exit
+
 		process.exit(1);
 	}
 };

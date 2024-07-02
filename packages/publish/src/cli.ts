@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-process-exit */
 import { cac } from 'cac';
 import { consola } from 'consola';
 import * as dotenv from 'dotenv';

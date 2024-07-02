@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import { consola } from 'consola';
 import fs from 'fs-extra';
 import path from 'pathe';

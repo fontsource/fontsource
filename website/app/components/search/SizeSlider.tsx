@@ -28,7 +28,6 @@ const SizeSlider = observer(({ state$ }: SizeSliderProps) => {
 					color="purple.0"
 					size="sm"
 					thumbLabel="Change font size"
-					// eslint-disable-next-line unicorn/no-null
 					label={null}
 					value={size}
 					onChange={state$.size.set}

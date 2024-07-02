@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-await-expression-member */
 import { StringDecoder } from 'node:string_decoder';
 
 import { NodeResolvePlugin } from '@esbuild-plugins/node-resolve';

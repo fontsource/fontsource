@@ -18,7 +18,7 @@ const getAllFiles = async (dir: string): Promise<string[]> => {
 			return dirent.isDirectory() ? await getAllFiles(res) : res;
 		}),
 	);
-	// eslint-disable-next-line unicorn/prefer-spread
+
 	return Array.prototype.concat(...files);
 };
 
