@@ -1,4 +1,4 @@
-import { type VariableMetadata } from 'common-api/types';
+import type { VariableMetadata } from 'common-api/types';
 
 type VariableList = Record<string, VariableMetadata>;
 

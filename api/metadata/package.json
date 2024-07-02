@@ -5,15 +5,15 @@
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
-		"lint": "eslint . --fix",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
-		"ci:lint": "eslint ."
+		"format": "biome format --write .",
+		"ci:format": "biome format .",
+		"lint": "biome lint --write .",
+		"ci:lint": "biome lint ."
 	},
 	"devDependencies": {
-		"@ayuhito/eslint-config": "^0.6.2",
 		"@cloudflare/workers-types": "^4.20231121.0",
-		"eslint": "^8.50.0",
 		"itty-router": "^4.0.23",
 		"typescript": "^5.3.3",
 		"vitest": "^0.34.4",

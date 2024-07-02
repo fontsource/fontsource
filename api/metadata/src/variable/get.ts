@@ -1,5 +1,5 @@
 import { KV_TTL, METADATA_KEYS } from '../utils';
-import { type AxisRegistry, type VariableList } from './types';
+import type { AxisRegistry, VariableList } from './types';
 import { updateAxisRegistry, updateVariableList } from './update';
 
 export const getVariableList = async (env: Env, ctx: ExecutionContext) => {

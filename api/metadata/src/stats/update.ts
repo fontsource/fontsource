@@ -1,8 +1,8 @@
-import { type VersionResponse } from 'common-api/types';
+import type { VersionResponse } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
 import { KV_TTL, METADATA_KEYS } from '../utils';
-import { type StatsResponseAllRecord } from './types';
+import type { StatsResponseAllRecord } from './types';
 import { getAvailableVersions } from './util';
 
 export const updateVersion = async (
@@ -94,7 +94,7 @@ export const updatePackageStatAll = async (env: Env, ctx: ExecutionContext) => {
 							npmDownloadTotal: 0,
 							jsDelivrHitsMonthly: 0,
 							jsDelivrHitsTotal: 0,
-					  }
+						}
 					: undefined,
 			};
 
@@ -106,15 +106,17 @@ export const updatePackageStatAll = async (env: Env, ctx: ExecutionContext) => {
 					jsDelivrHitsTotal: 0,
 				};
 
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				// biome-ignore lint/style/noNonNullAssertion: <explanation>
 				stats[id].variable!.npmDownloadMonthly +=
 					npmMonthData[packageName] ?? 0;
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
+				// biome-ignore lint/style/noNonNullAssertion: <explanation>
 				stats[id].variable!.npmDownloadTotal += npmTotalData[packageName] ?? 0;
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
+				// biome-ignore lint/style/noNonNullAssertion: <explanation>
 				stats[id].variable!.jsDelivrHitsMonthly +=
 					jsDelivrMonthData[packageName] ?? 0;
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				// biome-ignore lint/style/noNonNullAssertion: <explanation>
 				stats[id].variable!.jsDelivrHitsTotal +=
 					jsDelivrTotalData[packageName] ?? 0;
 			} else {

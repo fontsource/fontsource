@@ -1,6 +1,6 @@
-import {
-	type VariableMetadata,
-	type VariableMetadataWithVariants,
+import type {
+	VariableMetadata,
+	VariableMetadataWithVariants,
 } from 'common-api/types';
 import { StatusError } from 'itty-router';
 
@@ -10,7 +10,7 @@ import {
 	VARIABLE_ICONS_URL,
 	VARIABLE_URL,
 } from '../utils';
-import { type AxisRegistry, type AxisRegistryDownload } from './types';
+import type { AxisRegistry, AxisRegistryDownload } from './types';
 
 export const updateVariableList = async (env: Env, ctx: ExecutionContext) => {
 	const resp = await fetch(VARIABLE_URL);
