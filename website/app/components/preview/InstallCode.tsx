@@ -1,5 +1,6 @@
-import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
+import { generateFontFace, type FontObject } from '@fontsource-utils/generate';
 import { Badge, Divider, Group, Tabs, Text, Title } from '@mantine/core';
+import { Link } from '@remix-run/react';
 import { useState } from 'react';
 
 import { Blockquote } from '@/components/Blockquote';
@@ -576,6 +577,8 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 };
 
 export const InstallCode = ({ metadata, variable }: InstallCodeProps) => {
+	const isMaterialIcons = metadata.id.includes('material-icons');
+	const isMaterialSymbols = metadata.id.includes('material-symbols');
 	return (
 		<Tabs defaultValue="simple" className={classes.wrapper}>
 			<Tabs.List>
@@ -595,6 +598,28 @@ export const InstallCode = ({ metadata, variable }: InstallCodeProps) => {
 					<VariableSimple metadata={metadata} variable={variable} />
 				) : (
 					<StaticSimple metadata={metadata} />
+				)}
+				{isMaterialIcons && (
+					// @ts-expect-error - BoxProps technically does take in children props
+					<Blockquote>
+						<b>Note:</b> Using Material Icons on your website with Fontsource
+						requires additional steps. Please refer to the{' '}
+						<Link to="/docs/getting-started/material-icons">
+							Material Icons documentation
+						</Link>{' '}
+						for more information.
+					</Blockquote>
+				)}
+				{isMaterialSymbols && (
+					// @ts-expect-error - BoxProps technically does take in children props
+					<Blockquote>
+						<b>Note:</b> Using Material Symbols on your website with Fontsource
+						requires additional steps. Please refer to the{' '}
+						<Link to="/docs/getting-started/material-symbols">
+							Material Symbols documentation
+						</Link>{' '}
+						for more information.
+					</Blockquote>
 				)}
 			</Tabs.Panel>
 			<Tabs.Panel value="advanced" pt="xs">
