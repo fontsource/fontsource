@@ -124,6 +124,7 @@ export const Document = ({ children }: DocumentProps) => {
 				<Meta />
 				<Links />
 				<ColorSchemeScript />
+				<script defer src="https://demo.medama.io/script.js" />
 			</head>
 			<body>
 				<MantineProvider theme={theme}>
