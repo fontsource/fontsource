@@ -16,14 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'fontsource/fontsource'
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v4
 
       - name: Enable PNPM
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
 
       - name: Set node version to 20
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "pnpm"
