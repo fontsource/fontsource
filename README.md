@@ -2,7 +2,7 @@
 
 [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly NPM Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Ffontsource%2Fdownload-stat-aggregator%2Fmain%2Fdata%2FbadgeMonth.json)](https://github.com/fontsource/download-stat-aggregator) [![Total NPM Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Ffontsource%2Fdownload-stat-aggregator%2Fmain%2Fdata%2FbadgeTotal.json)](https://github.com/fontsource/download-stat-aggregator) [![Monthly jsDelivr Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Ffontsource%2Fdownload-stat-aggregator%2Fmain%2Fdata%2FbadgejsDelivrMonth.json)](https://github.com/fontsource/download-stat-aggregator) [![Total jsDelivr Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Ffontsource%2Fdownload-stat-aggregator%2Fmain%2Fdata%2FbadgejsDelivrTotal.json)](https://github.com/fontsource/download-stat-aggregator) [![License](https://badgen.net/badge/license/MIT/green)](https://github.com/fontsource/fontsource/blob/main/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
 
-
+> **Looking for privacy-focused website analytics?** Check out [Medama](https://github.com/medama-io/medama), an open-source, lightweight and self-hostable analytics solution designed to respect user privacy. 
 
 An updating monorepo full of self-hostable Open Source fonts bundled into individual NPM packages!
 
