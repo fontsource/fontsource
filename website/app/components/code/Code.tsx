@@ -31,7 +31,7 @@ export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 	const copiedLabel = 'Copied';
 
 	return (
-		<Box className={classes.root}>
+		<Box className={classes.root} translate="no">
 			<Text className={classes.dots}>&#11044;&#11044;</Text>
 			{children}
 			<Group gap={0} className={classes.tools}>
