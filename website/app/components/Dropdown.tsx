@@ -191,7 +191,7 @@ const DropdownCheckbox = ({
 			noBorder={noBorder}
 			refine={refine}
 			search={search}
-			disabled={items.length === 0}
+			disabled={items.length === 0 && !search}
 		/>
 	);
 };
