@@ -53,6 +53,7 @@ export const TabsWrapper = ({
 						onClick={() => {
 							navigate(`/fonts/${metadata.id}`);
 						}}
+						data-medama-view-tab="preview"
 					>
 						Preview
 					</Tabs.Tab>
@@ -61,6 +62,7 @@ export const TabsWrapper = ({
 						onClick={() => {
 							navigate(`/fonts/${metadata.id}/install`);
 						}}
+						data-medama-view-tab="install"
 					>
 						Install
 					</Tabs.Tab>
@@ -68,6 +70,7 @@ export const TabsWrapper = ({
 						href={`https://api.fontsource.org/v1/download/${metadata.id}`}
 						className={classes['download-button']}
 						ref={refDownload}
+						data-medama-download={metadata.id}
 					>
 						<Group gap="xs">
 							<IconDownload height={19} data-active={hoveredDownload} />
@@ -81,6 +84,7 @@ export const TabsWrapper = ({
 						}}
 						ref={refGlobe}
 						className={classes['hide-tab']}
+						data-medama-view-tab="cdn"
 					>
 						<Group gap="xs">
 							<IconGlobe
