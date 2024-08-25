@@ -10,7 +10,6 @@
 
 .badge {
 	padding: rem(4px) rem(8px);
-	gap: rem(10px);
 
 	border-radius: rem(4px);
 	font-family: var(--mantine-font-family-monospace);
