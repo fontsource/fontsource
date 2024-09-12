@@ -14,6 +14,10 @@ These will always contain changes from Fontsource's end.
 
 # 5.x Release
 
+## 5.1.x
+
+- All packages now publish to NPM with a [provenance attestation](https://github.blog/security/supply-chain-security/introducing-npm-package-provenance/). [#994](https://github.com/fontsource/fontsource/pull/994)
+
 ## 5.0.x
 
 For a full migration guide, please visit the [documentation](https://fontsource.org/docs/getting-started/migrate-v5).

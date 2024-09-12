@@ -1,6 +1,6 @@
 {
 	"name": "fontsource",
-	"version": "5.0.0",
+	"version": "5.1.0",
 	"packageManager": "pnpm@8.3.1",
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
