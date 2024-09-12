@@ -1,5 +1,11 @@
 # @fontsource-utils/publish
 
+## 0.3.0
+
+### Minor Changes
+
+- [#994](https://github.com/fontsource/fontsource/pull/994) [`f70ddfb594`](https://github.com/fontsource/fontsource/commit/f70ddfb5948367cd64405dbab3717fe790c37be3) Thanks [@ayuhito](https://github.com/ayuhito)! - feat(publish): include npm provenance flag
+
 ## 0.2.8
 
 ### Patch Changes

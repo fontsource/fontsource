@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/publish",
-	"version": "0.2.8",
+	"version": "0.3.0",
 	"description": "Fontsource Publish CLI",
 	"bin": {
 		"fontsource-publish": "./dist/cli.mjs"
@@ -47,7 +47,9 @@
 		"tsx": "^3.12.3",
 		"typescript": "^5.2.2"
 	},
-	"files": ["dist/*"],
+	"files": [
+		"dist/*"
+	],
 	"publishConfig": {
 		"access": "public"
 	},
