@@ -74,6 +74,7 @@ cli
 	)
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
+	.option('--provenance', 'Include NPM provenance attestations')
 	.action(async (version: string, opts: PublishFlags) => {
 		try {
 			await publishPackages(version, opts);

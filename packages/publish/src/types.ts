@@ -38,7 +38,9 @@ export interface BumpFlags extends ChangedFlags {
 	yes?: boolean;
 }
 
-export type PublishFlags = BumpFlags;
+export interface PublishFlags extends BumpFlags {
+	provenance?: boolean;
+}
 
 export type Flags = ChangedFlags | BumpFlags | PublishFlags;
 

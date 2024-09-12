@@ -65,18 +65,19 @@ let errorCount = 0;
 
 const packPublish = async (
 	pkg: BumpObject,
+	provenance: boolean,
 	gitOpts: DoGitOptions,
 ): Promise<PublishObject> => {
 	const npmVersion = `${pkg.name}@${pkg.bumpVersion}`;
 	const publishFlags = ['--access', 'public', '--tag', 'latest'];
+	if (provenance) {
+		publishFlags.push('--provenance');
+	}
+
 	try {
 		// Setup .npmrc
 		const npmrc = path.join(pkg.path, '.npmrc');
-		await fs.writeFile(
-			npmrc,
-
-			'//registry.npmjs.org/:_authToken=${NPM_TOKEN}',
-		);
+		await fs.writeFile(npmrc, '//registry.npmjs.org/:_authToken=${NPM_TOKEN}');
 
 		// Update version, then publish, then hash
 		await writeUpdate(pkg, { version: true });
@@ -146,7 +147,13 @@ export const publishPackages = async (
 	for (const pkg of bumped) {
 		if (pkg && !pkg.noPublish) {
 			const newPkg = queue
-				.add(() => packPublish(pkg, { name, config, bumped }))
+				.add(() =>
+					packPublish(pkg, Boolean(options.provenance), {
+						name,
+						config,
+						bumped,
+					}),
+				)
 				.catch((error) => {
 					// Empty queue when we hit the error limit
 					queue.pause();
