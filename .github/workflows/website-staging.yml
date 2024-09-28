@@ -27,20 +27,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: Enable PNPM
-        uses: pnpm/action-setup@v4
-
-      - name: Set node version to 20
-        uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: "20"
-          cache: "pnpm"
+          bun-version: latest
 
       - name: Install
-        run: pnpm install
+        run: bun install
 
       - name: Run lints
-        run: pnpm run lint
+        run: bun run lint
 
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only --config fly.staging.toml

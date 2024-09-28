@@ -34,59 +34,41 @@ You can file issues by filling out an [issue form](https://github.com/fontsource
 2. Fork the fontsource/fontsource repository (click the <kbd>Fork</kbd> button at the top right of this page).
 3. Clone the repository locally before creating your own branch.
 
-   ```shell
-   git clone https://github.com/fontsource/fontsource.git
-   git checkout -b my-pr-branch main
-   ```
+    ```shell
+    git clone https://github.com/fontsource/fontsource.git
+    git checkout -b my-pr-branch main
+    ```
 
 4. Create your patch or feature addition, **including appropriate test cases in the tests directory**.
 5. Ensure all tests and lints pass.
-6. Create a Changeset using `pnpm exec changeset` and follow the prompts.
-7. On GitHub, send a pull request to fontsource:main.
-   - If we suggest changes then:
-     - Make the required updates.
-     - Re-run the test suites to ensure tests are still passing.
-     - Rebase your branch and force push to your GitHub repository (this will update your PR):
+6. On GitHub, send a pull request to fontsource:main.
 
-     ```shell
-     git rebase main -i
-     git push -f
-     ```
+    - If we suggest changes then:
 
-8. After your pull request is merged, you can safely delete your branch and pull changes from the main repository.
+        - Make the required updates.
+        - Re-run the test suites to ensure tests are still passing.
+        - Rebase your branch and force push to your GitHub repository (this will update your PR):
+
+        ```shell
+        git rebase main -i
+        git push -f
+        ```
+
+7. After your pull request is merged, you can safely delete your branch and pull changes from the main repository.
 
 ## Development
 
-Fontsource is built completely with Typescript which extends to both the API and website.
+Fontsource is built completely with Typescript which extends to both the API and website. It uses [Bun](https://bun.sh/) as its package manager.
 
-- [Google Font Metadata](https://github.com/fontsource/google-font-metadata) as the upstream source of Google Fonts data.
-- [mass-publish](https://github.com/fontsource/mass-publish) for publishing packages.
-- [Jest](https://jestjs.io/) for testing.
-- [Fastify NestJS](https://nestjs.com/) for the API architecture.
-- [Next.js](https://nextjs.org/) and [Chakra UI](https://chakra-ui.com/) for the website.
-
-After cloning the repo, run:
-
-Ensure you have Corepack enabled:
-```js
-// Node <16
-npm i corepack -g
-corepack enable
-
-// Node >16 (comes installed already)
-corepack enable
-```
-
-Install packages:
 ```shell
-pnpm i
+bun install
 ```
 
-The project uses PNPM Workspaces, thus the packager, API and website should install in one command.
+The project uses Bun Workspaces, thus the packager, API and website should install in one command.
 
 ### Useful Scripts
 
-- `pnpm run test` - Runs tests.
+-   `bun run test` - Runs tests.
 
 ### Website Development
 

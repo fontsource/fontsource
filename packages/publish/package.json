@@ -7,10 +7,10 @@
 	},
 	"scripts": {
 		"build": "pkgroll --target=node14 && tsx ./scripts/add-hashbang.ts",
-		"dev": "pnpm run build && node ./dist/cli.mjs",
+		"dev": "bun run build && bun ./dist/cli.mjs",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
-		"prepublish": "pnpm run build",
+		"prepublish": "bun run build",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
@@ -47,9 +47,7 @@
 		"tsx": "^3.12.3",
 		"typescript": "^5.2.2"
 	},
-	"files": [
-		"dist/*"
-	],
+	"files": ["dist/*"],
 	"publishConfig": {
 		"access": "public"
 	},

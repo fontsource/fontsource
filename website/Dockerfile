@@ -1,28 +1,17 @@
 # base node image
-FROM node:20-bullseye-slim as base
-
-## Add PNPM
-RUN npm install -g pnpm
-RUN pnpm --version
+FROM oven/bun:1 AS base
 
 # Install all node_modules, including dev dependencies
 FROM base AS deps
 
-RUN mkdir /website
-WORKDIR /website
+RUN mkdir -p /temp/dev
+COPY package.json bun.lockb /temp/dev/
+RUN cd /temp/dev && bun install --frozen-lockfile
 
-COPY package.json ./
-RUN pnpm install
-
-# Setup production node_modules
-FROM base AS production-deps
-
-RUN mkdir /website
-WORKDIR /website
-
-COPY --from=deps /website/node_modules /website/node_modules
-COPY package.json ./
-RUN pnpm prune --prod
+# Install all node_modules, excluding dev dependencies
+RUN mkdir -p /temp/prod
+COPY package.json bun.lockb /temp/prod/
+RUN cd /temp/prod && bun install --frozen-lockfile --production
 
 # Build the app
 FROM base AS build
@@ -32,10 +21,9 @@ ENV NODE_ENV=production
 RUN mkdir /website
 WORKDIR /website
 
-COPY --from=deps /website/node_modules /website/node_modules
-
-ADD . .
-RUN pnpm run build
+COPY --from=deps /temp/dev/node_modules node_modules
+COPY . .
+RUN bun run build
 
 # Build the production image with minimal footprint
 FROM base
@@ -43,14 +31,16 @@ FROM base
 ENV PORT="8080"
 ENV NODE_ENV=production
 
+RUN mkdir /website
 WORKDIR /website
 
-COPY --from=production-deps /website/node_modules /website/node_modules
+COPY --from=deps /temp/prod/node_modules node_modules
 
 COPY --from=build /website/docs /website/docs
 COPY --from=build /website/build/server /website/build/server
 COPY --from=build /website/build/client /website/build/client
 COPY package.json ./
 
-EXPOSE 8080
-CMD ["npm", "run", "start"]
+USER bun
+EXPOSE 8080/tcp
+CMD ["bun", "run", "start"]
