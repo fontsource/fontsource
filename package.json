@@ -27,5 +27,6 @@
 	"workspaces": ["packages/*", "api/*", "website"],
 	"publishConfig": {
 		"access": "public"
-	}
+	},
+	"trustedDependencies": ["esbuild", "puppeteer", "workerd"]
 }
