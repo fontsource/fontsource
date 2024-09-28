@@ -10,7 +10,7 @@ RUN cd /temp/dev && bun install
 
 # Install all node_modules, excluding dev dependencies
 RUN mkdir -p /temp/prod
-COPY package.json bun.lockb /temp/prod/
+COPY package.json /temp/prod/
 RUN cd /temp/prod && bun install --production
 
 # Build the app
