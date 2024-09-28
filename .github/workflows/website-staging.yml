@@ -36,13 +36,13 @@ jobs:
 
       - name: Run lints
         run: bun run lint
-
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only --config fly.staging.toml
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_STAGING_TOKEN }}
-
-      - uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          message: "Deployed to staging: https://staging.fontsource.org/"
-          only_create: true
+# Disabled for now. We're going to be switching to a different deployment method soon.
+#      - uses: superfly/flyctl-actions/setup-flyctl@master
+#      - run: flyctl deploy --remote-only --config fly.staging.toml
+#        env:
+#          FLY_API_TOKEN: ${{ secrets.FLY_STAGING_TOKEN }}
+#
+#      - uses: marocchino/sticky-pull-request-comment@v2
+#        with:
+#          message: "Deployed to staging: https://staging.fontsource.org/"
+#          only_create: true
