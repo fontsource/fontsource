@@ -43,7 +43,7 @@
 		"@types/parse-git-config": "^3.0.1",
 		"@types/semver": "^7.5.0",
 		"magic-string": "^0.30.0",
-		"pkgroll": "^1.9.0",
+		"pkgroll": "^2.5.0",
 		"typescript": "^5.2.2"
 	},
 	"files": ["dist/*"],
