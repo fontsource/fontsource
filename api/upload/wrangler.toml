@@ -9,4 +9,4 @@ r2_buckets = [
 logpush = true
 workers_dev = false
 
-compatibility_flags = [ "nodejs_compat" ]
+compatibility_flags = ["nodejs_compat"]

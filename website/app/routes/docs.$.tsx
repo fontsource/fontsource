@@ -1,19 +1,26 @@
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare';
 import { json, redirect } from '@remix-run/cloudflare';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
-import { useMemo } from 'react';
+import { SafeMdxRenderer } from 'safe-mdx';
 
-import type { FrontMatter } from '@/utils/mdx/esbuild.server';
-import { getMDXComponent } from '@/utils/mdx/getMdxComponent';
 import { fetchMdx } from '@/utils/mdx/mdx.server';
 import { ogMeta } from '@/utils/meta';
 
-interface LoaderData {
-	code: string;
-	frontmatter: FrontMatter;
+export interface FrontMatter {
+	title: string;
+	section: string;
+	description?: string;
 }
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+interface LoaderData {
+	code: string;
+}
+
+export const loader = async ({
+	request,
+	params,
+	context,
+}: LoaderFunctionArgs) => {
 	const route = params['*'];
 	if (!route) {
 		throw new Response('Not found', { status: 404 });
@@ -27,13 +34,18 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	if (route === 'api' || route === 'api/')
 		return redirect('/docs/api/introduction');
 
-	const mdx = await fetchMdx(route);
+	const mdx = await fetchMdx(
+		route,
+		request,
+		context.cloudflare.env,
+		context.cloudflare.ctx,
+	);
 	if (!mdx) {
 		throw new Response('Not found', { status: 404 });
 	}
 
 	return json<LoaderData>(
-		{ code: mdx.code, frontmatter: mdx.frontmatter },
+		{ code: mdx },
 		{
 			headers: {
 				'Cache-Control': 'public, max-age=300',
@@ -42,7 +54,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	);
 };
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
+/*export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const frontmatter = data?.frontmatter as FrontMatter | undefined;
 	const title = frontmatter?.title
 		? `${frontmatter.title} | Documentation | Fontsource`
@@ -50,16 +62,15 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const description = frontmatter?.description;
 
 	return ogMeta({ title, description });
-};
+}; */
 
 export default function Docs() {
 	const mdxComponents = useOutletContext();
 	const { code } = useLoaderData<LoaderData>();
 
-	const Content = useMemo(() => getMDXComponent(code), [code]);
 	return (
 		<>
-			<Content components={mdxComponents} />
+			<SafeMdxRenderer code={code} components={mdxComponents} />
 		</>
 	);
 }

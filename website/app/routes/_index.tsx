@@ -128,7 +128,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	});
 
 	// Check local cache for server state first to avoid unnecessary API calls
-	let serverState = await ALGOLIA.get<InstantSearchServerState | undefined>(
+	let serverState = await ALGOLIA.get<InstantSearchServerState>(
 		serverUrl,
 		'json',
 	);

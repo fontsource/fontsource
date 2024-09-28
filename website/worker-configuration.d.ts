@@ -2,4 +2,6 @@
 
 interface Env {
 	ALGOLIA: KVNamespace;
+	DOCS: KVNamespace;
+	ASSETS: Fetcher;
 }

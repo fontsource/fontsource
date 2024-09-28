@@ -11,6 +11,7 @@
 	],
 	"compilerOptions": {
 		"lib": ["DOM", "DOM.Iterable", "ES2022"],
+		"module": "ES2022",
 		"types": [
 			"@remix-run/cloudflare",
 			"@cloudflare/workers-types",
@@ -28,7 +29,7 @@
 		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
 		"paths": {
-			"@docs/*": ["./docs/*"],
+			"@/docs/*": ["./docs/*"],
 			"@/*": ["./app/*"]
 		},
 

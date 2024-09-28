@@ -1,51 +1,36 @@
-import * as fs from 'node:fs/promises';
-
-import * as path from 'pathe';
-
-import type { Globals, SerialiseOutput } from './esbuild.server';
-import { serialise } from './esbuild.server';
-
-// We need to add the globals to the esbuild config so that it doesn't try to bundle them.
-const globals: Globals = {
-	react: 'React',
-	'react-dom': 'ReactDOM',
-	'react/jsx-runtime': '_jsx_runtime',
-};
-
-const getSource = async (slug: string) => {
-	const filepath = path.join(process.cwd(), `docs/${slug}.mdx`);
-
-	try {
-		return await fs.readFile(filepath, 'utf8');
-	} catch {
-		// Return undefined
-	}
-};
-
-interface MdxResult extends SerialiseOutput {
-	globals: Globals;
-}
-
-const docsMap = new Map<string, MdxResult>();
-
-const fetchMdx = async (slug: string): Promise<MdxResult | undefined> => {
-	// If we're in production, we can just get the doc from the db cache.
+const fetchMdx = async (
+	slug: string,
+	req: Request,
+	env: Env,
+	ctx: ExecutionContext,
+): Promise<string | undefined> => {
+	const { ASSETS, DOCS } = env;
+	// If we're in production, we can just get the doc from the KV cache.
 	if (process.env.NODE_ENV === 'production') {
-		const result = docsMap.get(slug);
+		const result = await DOCS.get(slug);
 		if (result) return result;
 	}
 
-	// If the doc doesn't exist in the db, we need to create it.
-	const source = await getSource(slug);
-	if (!source) return;
-
-	const { code, frontmatter } = await serialise(source, globals);
-
-	if (process.env.NODE_ENV === 'production') {
-		docsMap.set(slug, { code, frontmatter, globals });
+	// If the doc doesn't exist in the KV, we need to create it.
+	const url = new URL(req.url);
+	url.pathname = `/docs/${slug}.mdx`;
+	const sourceResp = await ASSETS.fetch(url.toString());
+	if (!sourceResp.ok) {
+		return;
 	}
 
-	return { code, frontmatter, globals };
+	const source = await sourceResp.text();
+	if (!source) return;
+
+	if (process.env.NODE_ENV === 'production') {
+		ctx.waitUntil(
+			DOCS.put(slug, source, {
+				expirationTtl: 60 * 60 * 24 * 7, // 1 week
+			}),
+		);
+	}
+
+	return source;
 };
 
 export { fetchMdx };

@@ -7,6 +7,7 @@ compatibility_flags = ["nodejs_compat"]
 compatibility_date = "2024-09-26"
 
 [assets]
+binding = "ASSETS"
 directory = "./build/client"
 
 [build]
@@ -15,3 +16,7 @@ command = "bun run build"
 [[kv_namespaces]]
 binding = "ALGOLIA"
 id = "1705b67984ae42a29a2c7cb8102ff730"
+
+[[kv_namespaces]]
+binding = "DOCS"
+id = "214c0947c37e450088e3dc15698f174b"
