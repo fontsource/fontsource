@@ -3,7 +3,7 @@ import { useObservable } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import algoliasearch from 'algoliasearch/lite';
+import { algoliasearch } from 'algoliasearch';
 import type { UiState } from 'instantsearch.js';
 // @ts-expect-error - No type definitions available
 import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
