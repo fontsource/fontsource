@@ -13,4 +13,3 @@ RUN bun run build
 USER bun
 EXPOSE 8080/tcp
 CMD ["bun", "run", "dist/server.js"]
-
