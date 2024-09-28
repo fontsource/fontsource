@@ -1,9 +1,0 @@
-*
-!app/
-!docs/
-!public/
-!src/
-!package.json
-!postcss.config.cjs
-!vite.config.mjs
-!tsconfig.json
