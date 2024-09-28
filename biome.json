@@ -6,6 +6,14 @@
 	"organizeImports": {
 		"enabled": true
 	},
+	"css": {
+		"formatter": {
+			"enabled": false
+		},
+		"linter": {
+			"enabled": false
+		}
+	},
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "single"
