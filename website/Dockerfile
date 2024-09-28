@@ -42,5 +42,5 @@ COPY --from=build /website/build/client /website/build/client
 COPY package.json ./
 
 USER bun
-EXPOSE 8080/tcp
+EXPOSE 8080
 CMD ["bun", "run", "start"]

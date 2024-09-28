@@ -11,5 +11,5 @@ RUN bun install
 RUN bun run build
 
 USER bun
-EXPOSE 8080/tcp
+EXPOSE 8080
 CMD ["bun", "run", "dist/server.js"]
