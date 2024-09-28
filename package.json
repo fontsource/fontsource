@@ -5,17 +5,17 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"build": "bun --filter \"./packages/*\" run build",
+		"build": "bun --filter './packages/*' build",
 		"coverage": "vitest run --coverage",
 		"lint": "bun --filter '*' lint",
 		"test": "vitest",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"ci:lint": "bun --filter '*' ci:lint",
-		"ci:test": "CI=true bun --filter \"./packages/*\" build && bun --filter \"./packages/*\" --workspace-concurrency 1 coverage",
+		"ci:test": "CI=true bun --filter './packages/*' build && bun --filter './packages/*' coverage",
 		"ci:version": "changeset version",
-		"ci:publish": "bun --filter \"./packages/*\" run build && bun --filter \"./packages/*\" publish",
-		"ci:publish-api": "bun --filter \"./packages/*\" run build && bun --filter \"./api/*\" run deploy"
+		"ci:publish": "bun --filter './packages/*' build && bun --filter './packages/*' publish",
+		"ci:publish-api": "bun --filter './packages/*' build && bun --filter './api/*' deploy"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^1.8.3",
