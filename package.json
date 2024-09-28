@@ -7,12 +7,12 @@
 	"scripts": {
 		"build": "bun --filter \"./packages/*\" run build",
 		"coverage": "vitest run --coverage",
-		"lint": "bun -r run lint",
+		"lint": "bun --filter '*' lint",
 		"test": "vitest",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
-		"ci:lint": "bun -r run ci:lint",
-		"ci:test": "CI=true bun --filter \"./packages/*\" run build && bun --filter \"./packages/*\" --workspace-concurrency 1 coverage",
+		"ci:lint": "bun --filter '*' ci:lint",
+		"ci:test": "CI=true bun --filter \"./packages/*\" build && bun --filter \"./packages/*\" --workspace-concurrency 1 coverage",
 		"ci:version": "changeset version",
 		"ci:publish": "bun --filter \"./packages/*\" run build && bun --filter \"./packages/*\" publish",
 		"ci:publish-api": "bun --filter \"./packages/*\" run build && bun --filter \"./api/*\" run deploy"
