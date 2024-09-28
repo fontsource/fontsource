@@ -14,8 +14,8 @@
 		"ci:lint": "bun --filter '*' ci:lint",
 		"ci:test": "CI=true bun run build && bun --filter './packages/*' coverage",
 		"ci:version": "changeset version",
-		"ci:publish": "bun --filter './packages/*' build && bun --filter './packages/*' publish",
-		"ci:publish-api": "bun --filter './packages/*' build && bun --filter './api/*' deploy"
+		"ci:publish": "bun run build && bun --filter './packages/*' publish",
+		"ci:publish-api": "bun run build && bun --filter './api/*' deploy"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^1.8.3",
@@ -28,5 +28,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"trustedDependencies": ["esbuild", "puppeteer", "workerd"]
+	"trustedDependencies": ["esbuild", "workerd"]
 }
