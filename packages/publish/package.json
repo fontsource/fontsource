@@ -6,7 +6,7 @@
 		"fontsource-publish": "./dist/cli.mjs"
 	},
 	"scripts": {
-		"build": "pkgroll --target=node14 && tsx ./scripts/add-hashbang.ts",
+		"build": "pkgroll --target=node14 && bun run ./scripts/add-hashbang.ts",
 		"dev": "bun run build && bun ./dist/cli.mjs",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
@@ -44,7 +44,6 @@
 		"@types/semver": "^7.5.0",
 		"magic-string": "^0.30.0",
 		"pkgroll": "^1.9.0",
-		"tsx": "^3.12.3",
 		"typescript": "^5.2.2"
 	},
 	"files": ["dist/*"],

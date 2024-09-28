@@ -31,7 +31,6 @@
 	"devDependencies": {
 		"@types/node": "^20.7.1",
 		"pkgroll": "^1.9.0",
-		"tsx": "^3.12.3",
 		"typescript": "^5.2.2"
 	},
 	"files": ["dist/*"],
