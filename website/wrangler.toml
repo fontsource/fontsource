@@ -11,3 +11,7 @@ directory = "./build/client"
 
 [build]
 command = "bun run build"
+
+[[kv_namespaces]]
+binding = "ALGOLIA"
+id = "1705b67984ae42a29a2c7cb8102ff730"

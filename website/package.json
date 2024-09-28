@@ -23,7 +23,6 @@
 		"@fontsource-utils/generate": "0.4.0",
 		"@fontsource-variable/inter": "^5.0.18",
 		"@fontsource-variable/source-code-pro": "^5.0.19",
-		"@isaacs/ttlcache": "^1.4.1",
 		"@legendapp/state": "^2.1.14",
 		"@mantine/core": "^7.11.1",
 		"@mantine/hooks": "^7.11.1",

@@ -1,8 +1,8 @@
 import { generateFontFace } from '@fontsource-utils/generate';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
-import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
-import { json } from '@remix-run/node';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare';
+import { json } from '@remix-run/cloudflare';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
