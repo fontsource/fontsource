@@ -1,22 +1,21 @@
 {
 	"name": "fontsource",
 	"version": "5.1.0",
-	"packageManager": "pnpm@8.3.1",
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"build": "pnpm --filter \"./packages/*\" run build",
+		"build": "bun --filter './packages/generate' build && bun --filter './packages/*' build",
 		"coverage": "vitest run --coverage",
-		"lint": "pnpm -r run lint",
+		"lint": "bun --filter '*' lint",
 		"test": "vitest",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
-		"ci:lint": "pnpm -r run ci:lint",
-		"ci:test": "CI=true pnpm --filter \"./packages/*\" run build && pnpm --filter \"./packages/*\" --workspace-concurrency 1 coverage",
+		"ci:lint": "bun --filter '*' ci:lint",
+		"ci:test": "CI=true bun run build && bun --filter './packages/*' coverage",
 		"ci:version": "changeset version",
-		"ci:publish": "pnpm --filter \"./packages/*\" run build && pnpm --filter \"./packages/*\" publish",
-		"ci:publish-api": "pnpm --filter \"./packages/*\" run build && pnpm --filter \"./api/*\" run deploy"
+		"ci:publish": "bun run build && bun --filter './packages/*' publish",
+		"ci:publish-api": "bun run build && bun --filter './api/*' deploy"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^1.8.3",
@@ -25,7 +24,9 @@
 		"@vitest/coverage-v8": "^0.34.4",
 		"vitest": "^0.34.4"
 	},
+	"workspaces": ["packages/*", "api/*", "website"],
 	"publishConfig": {
 		"access": "public"
-	}
+	},
+	"trustedDependencies": ["esbuild", "workerd"]
 }

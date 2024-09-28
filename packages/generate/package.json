@@ -19,7 +19,7 @@
 		"build": "pkgroll --target=node14",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
-		"prepublish": "pnpm run build",
+		"prepublish": "bun run build",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
@@ -30,8 +30,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@types/node": "^20.7.1",
-		"pkgroll": "^1.9.0",
-		"tsx": "^3.12.3",
+		"pkgroll": "^2.5.0",
 		"typescript": "^5.2.2"
 	},
 	"files": ["dist/*"],

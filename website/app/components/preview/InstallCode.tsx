@@ -122,14 +122,12 @@ const VariableSimple = ({ metadata, variable }: InstallCodeProps) => {
 	return (
 		<>
 			{variable && (
-				<>
-					<BadgeGroup
-						items={Object.keys(variable.axes)}
-						onClick={handleActive}
-						isActive={(value) => isActive[value]}
-						mt="xs"
-					/>
-				</>
+				<BadgeGroup
+					items={Object.keys(variable.axes)}
+					onClick={handleActive}
+					isActive={(value) => isActive[value]}
+					mt="xs"
+				/>
 			)}
 			<Code language="jsx">{importComment + generateImports()}</Code>
 			<Title order={3} mt="xl" mb="md">

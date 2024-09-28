@@ -31,11 +31,11 @@
 		}
 	},
 	"scripts": {
-		"build": "pkgroll --target=node18 && tsx ./scripts/add-hashbang.ts",
-		"cli": "tsx ./src/cli.ts",
+		"build": "pkgroll --target=node18 && bun run ./scripts/add-hashbang.ts",
+		"cli": "bun run ./src/cli.ts",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
-		"prepublish": "pnpm run build",
+		"prepublish": "bun run build",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
@@ -61,9 +61,8 @@
 		"@types/node": "^20.7.1",
 		"google-font-metadata": "^5.2.1",
 		"magic-string": "^0.30.0",
-		"pkgroll": "^1.10.0",
+		"pkgroll": "^2.5.0",
 		"sass": "^1.62.1",
-		"tsx": "^3.12.7",
 		"typescript": "^5.2.2"
 	},
 	"peerDependencies": {

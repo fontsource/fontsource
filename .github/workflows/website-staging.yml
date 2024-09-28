@@ -27,27 +27,22 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: Enable PNPM
-        uses: pnpm/action-setup@v4
-
-      - name: Set node version to 20
-        uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: "20"
-          cache: "pnpm"
+          bun-version: latest
 
       - name: Install
-        run: pnpm install
+        run: bun install
 
       - name: Run lints
-        run: pnpm run lint
-
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only --config fly.staging.toml
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_STAGING_TOKEN }}
-
-      - uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          message: "Deployed to staging: https://staging.fontsource.org/"
-          only_create: true
+        run: bun run lint
+# Disabled for now. We're going to be switching to a different deployment method soon.
+#      - uses: superfly/flyctl-actions/setup-flyctl@master
+#      - run: flyctl deploy --remote-only --config fly.staging.toml
+#        env:
+#          FLY_API_TOKEN: ${{ secrets.FLY_STAGING_TOKEN }}
+#
+#      - uses: marocchino/sticky-pull-request-comment@v2
+#        with:
+#          message: "Deployed to staging: https://staging.fontsource.org/"
+#          only_create: true

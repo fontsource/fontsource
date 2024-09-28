@@ -19,24 +19,19 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: Enable PNPM
-        uses: pnpm/action-setup@v4
-
-      - name: Set node version to 20
-        uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: "20"
-          cache: "pnpm"
+          bun-version: latest
 
       - name: Install
-        run: pnpm install
+        run: bun install
 
       - name: Create Release Pull Request or Publish Cloudflare
         id: cs
         uses: changesets/action@v1
         with:
-          version: "pnpm run ci:version"
-          publish: "pnpm run ci:publish-api"
+          version: "bun run ci:version"
+          publish: "bun run ci:publish-api"
           commit: "chore(api): release versions"
           title: "Release API 🤖"
         env:
