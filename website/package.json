@@ -18,7 +18,7 @@
 	"dependencies": {
 		"@docsearch/css": "^3.6.0",
 		"@docsearch/react": "^3.6.0",
-		"@fontsource-utils/generate": "0.4.0",
+		"@fontsource-utils/generate": "workspace:*",
 		"@fontsource-variable/inter": "^5.0.18",
 		"@fontsource-variable/source-code-pro": "^5.0.19",
 		"@legendapp/state": "^2.1.14",

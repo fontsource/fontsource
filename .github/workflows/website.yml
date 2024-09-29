@@ -12,9 +12,6 @@ jobs:
     name: Deploy app
     runs-on: ubuntu-latest
     if: github.repository == 'fontsource/fontsource'
-    defaults:
-      run:
-        working-directory: website
 
     steps:
       - name: checkout
@@ -29,9 +26,11 @@ jobs:
 
       - name: Run lints
         run: bun run lint
+        working-directory: website
 
       - name: Build & Deploy Worker
         run: bun run deploy
+        working-directory: website
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
