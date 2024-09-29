@@ -5,6 +5,8 @@ import { SafeMdxRenderer } from 'safe-mdx';
 
 import { fetchMdx } from '@/utils/mdx/mdx.server';
 import { ogMeta } from '@/utils/meta';
+import type { Root } from 'mdast';
+import { MdxRenderer } from '@/utils/mdx/render';
 
 export interface FrontMatter {
 	title: string;
@@ -13,7 +15,7 @@ export interface FrontMatter {
 }
 
 interface LoaderData {
-	code: string;
+	mdx: Root;
 }
 
 export const loader = async ({
@@ -45,7 +47,7 @@ export const loader = async ({
 	}
 
 	return json<LoaderData>(
-		{ code: mdx },
+		{ mdx },
 		{
 			headers: {
 				'Cache-Control': 'public, max-age=300',
@@ -65,12 +67,8 @@ export const loader = async ({
 }; */
 
 export default function Docs() {
-	const mdxComponents = useOutletContext();
-	const { code } = useLoaderData<LoaderData>();
+	const { mdx } = useLoaderData<LoaderData>();
+	const [Component, _] = MdxRenderer({ mdast: mdx });
 
-	return (
-		<>
-			<SafeMdxRenderer code={code} components={mdxComponents} />
-		</>
-	);
+	return Component;
 }
