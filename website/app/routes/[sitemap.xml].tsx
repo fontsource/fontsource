@@ -1,8 +1,13 @@
 import type { LoaderFunction } from '@remix-run/cloudflare';
-import path from 'pathe';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
-import { getAllSlugsInDir, kya } from '@/utils/utils.server';
+import { kya } from '@/utils/utils.server';
+
+const docSlugs = Object.keys(
+	import.meta.glob('../../docs/**/*.mdx', {
+		eager: true,
+	}),
+).map((slug) => slug.replace('../../docs/', '').replace('.mdx', ''));
 
 export const loader: LoaderFunction = async () => {
 	const smStream = new SitemapStream({ hostname: 'https://fontsource.org' });
@@ -24,9 +29,7 @@ export const loader: LoaderFunction = async () => {
 	}
 
 	// Pipe all docs to stream
-	const slugs = await getAllSlugsInDir(path.join(process.cwd(), 'docs'));
-
-	for (const slug of slugs) {
+	for (const slug of docSlugs) {
 		smStream.write({
 			url: `/docs/${slug}`,
 			changefreq: 'weekly',
