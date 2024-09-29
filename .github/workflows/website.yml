@@ -24,6 +24,9 @@ jobs:
       - name: Install
         run: bun install
 
+      - name: Build Packages
+        run: bun run build
+
       - name: Run lints
         run: bun run lint
         working-directory: website
