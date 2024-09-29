@@ -3,7 +3,8 @@ import { useObservable } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import algoliasearch from 'algoliasearch/lite';
+// TODO: Use lite client - https://github.com/algolia/algoliasearch-client-javascript/issues/1548#issuecomment-2380488738
+import { algoliasearch } from 'algoliasearch';
 import type { UiState } from 'instantsearch.js';
 // @ts-expect-error - No type definitions available
 import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
@@ -22,20 +23,21 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import type { SearchObject } from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
+
 import classes from '@/styles/global.module.css';
-import { getSSRCache, setSSRCache } from '@/utils/algolia.server';
-
-import { theme } from '../styles/theme';
-
-const searchClient = algoliasearch(
-	'WNATE69PVR',
-	'8b36fe56fca654afaeab5e6f822c14bd',
-);
+import { theme } from '@/styles/theme';
 
 interface SearchProps {
 	serverState?: InstantSearchServerState;
 	serverUrl: string;
 }
+
+const ALGOLIA_TTL = 6 * 60 * 60 * 1000; // 6 hours
+
+const searchClient = algoliasearch(
+	'WNATE69PVR',
+	'8b36fe56fca654afaeab5e6f822c14bd',
+);
 
 const sortMap: Record<string, string> = {
 	prod_POPULAR: 'popular',
@@ -110,7 +112,8 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 	};
 };
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
+export const loader = async ({ request, context }: LoaderFunctionArgs) => {
+	const { ALGOLIA } = context.cloudflare.env;
 	const serverUrl = request.url;
 
 	// Generate default state object for ssr
@@ -126,7 +129,10 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 	});
 
 	// Check local cache for server state first to avoid unnecessary API calls
-	let serverState = getSSRCache(serverUrl);
+	let serverState = await ALGOLIA.get<InstantSearchServerState>(
+		serverUrl,
+		'json',
+	);
 	if (serverState) {
 		return json<SearchProps>({
 			serverState,
@@ -154,7 +160,11 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 	);
 
 	// Add server state to local cache before responding
-	setSSRCache(serverUrl, serverState);
+	context.cloudflare.ctx.waitUntil(
+		ALGOLIA.put(serverUrl, JSON.stringify(serverState), {
+			expirationTtl: ALGOLIA_TTL,
+		}),
+	);
 
 	return json<SearchProps>(
 		{

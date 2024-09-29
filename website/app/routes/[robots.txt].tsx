@@ -1,4 +1,4 @@
-import type { LoaderFunction } from '@remix-run/node';
+import type { LoaderFunction } from '@remix-run/cloudflare';
 
 export const loader: LoaderFunction = async () => {
 	const prod = `User-agent: *

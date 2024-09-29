@@ -1,10 +1,19 @@
-import { vitePlugin as remix } from '@remix-run/dev';
-import { installGlobals } from '@remix-run/node';
+import mdx from '@mdx-js/rollup';
+import {
+	cloudflareDevProxyVitePlugin,
+	vitePlugin as remix,
+} from '@remix-run/dev';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkGfm from 'remark-gfm';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import remarkSmartypants from 'remark-smartypants';
 import { defineConfig } from 'vite';
 import { cjsInterop } from 'vite-plugin-cjs-interop';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-installGlobals();
+import { getLoadContext } from './load-context';
 
 export default defineConfig(({ isSsrBuild }) => ({
 	server: {
@@ -12,8 +21,21 @@ export default defineConfig(({ isSsrBuild }) => ({
 	},
 	// We only need to target ES2022 for the server build
 	// for top-level await support
-	build: isSsrBuild ? { target: 'ES2022' } : {},
+	build: isSsrBuild ? { target: 'ES2022', minify: true } : { minify: true },
 	plugins: [
+		cloudflareDevProxyVitePlugin({
+			getLoadContext,
+		}),
+		mdx({
+			providerImportSource: '@mdx-js/react',
+			remarkPlugins: [
+				remarkFrontmatter,
+				remarkMdxFrontmatter,
+				remarkGfm,
+				remarkSmartypants,
+			],
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+		}),
 		remix({
 			postcss: true,
 		}),
@@ -22,4 +44,12 @@ export default defineConfig(({ isSsrBuild }) => ({
 		}),
 		tsconfigPaths(),
 	],
+	ssr: {
+		resolve: {
+			conditions: ['workerd', 'worker', 'browser'],
+		},
+	},
+	resolve: {
+		mainFields: ['browser', 'module', 'main'],
+	},
 }));

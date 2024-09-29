@@ -1,4 +1,3 @@
-import sidebarConfigImport from '@docs/sidebar.json';
 import { Box, Divider, Flex, Group, Text } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link, useParams } from '@remix-run/react';
@@ -12,6 +11,7 @@ import {
 	IconGuide,
 	IconTool,
 } from '@/components/icons';
+import sidebarConfigImport from '@/docs/sidebar.json';
 
 import classes from './LeftSidebar.module.css';
 

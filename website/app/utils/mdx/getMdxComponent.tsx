@@ -21,9 +21,6 @@ import {
 	Title,
 	type TitleProps,
 } from '@mantine/core';
-import * as React from 'react';
-import * as _jsx_runtime from 'react/jsx-runtime';
-import * as ReactDOM from 'react-dom';
 
 import { Blockquote } from '@/components/Blockquote';
 import { CodeMdx } from '@/components/code/Code';
@@ -77,16 +74,4 @@ const mdxComponents = {
 	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
 };
 
-const getMDXExport = (code: string, globals?: Record<string, string>) => {
-	const scope = { React, ReactDOM, _jsx_runtime, ...globals };
-
-	const fn = new Function(...Object.keys(scope), code);
-	return fn(...Object.values(scope));
-};
-
-const getMDXComponent = (code: string, globals?: Record<string, string>) => {
-	const mdxExport = getMDXExport(code, globals);
-	return mdxExport.default;
-};
-
-export { getMDXComponent, getMDXExport, mdxComponents };
+export { mdxComponents };

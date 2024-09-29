@@ -4,7 +4,6 @@ import { Outlet } from '@remix-run/react';
 import { DocsHeader } from '@/components/docs/DocsHeader';
 import { LeftSidebar } from '@/components/docs/LeftSidebar';
 import { TableOfContents } from '@/components/docs/TableOfContents';
-import { mdxComponents } from '@/utils/mdx/getMdxComponent';
 
 import classes from '../styles/global.module.css';
 
@@ -22,7 +21,7 @@ export default function Docs() {
 					</Grid.Col>
 					<Grid.Col span={{ base: 12, sm: 8, md: 9, xl: 6 }}>
 						<Container component="article">
-							<Outlet context={mdxComponents} />
+							<Outlet />
 						</Container>
 					</Grid.Col>
 					<Grid.Col

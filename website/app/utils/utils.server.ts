@@ -1,8 +1,5 @@
-import * as fs from 'node:fs/promises';
-
 import type { HTTPError } from 'ky';
 import ky from 'ky';
-import * as path from 'pathe';
 
 interface KyaOpts {
 	text?: boolean;
@@ -42,32 +39,3 @@ type StandardAxes = (typeof STANDARD_AXES)[number];
 
 export const isStandardAxesKey = (axesKey: string): axesKey is StandardAxes =>
 	STANDARD_AXES.includes(axesKey as StandardAxes);
-
-// Return all slugs in a directory recursively
-export const getAllSlugsInDir = async (dir: string) => {
-	const files: string[] = [];
-
-	const getFilesRecursively = async (
-		directory: string,
-		currentSlug?: string,
-	) => {
-		const filesInDirectory = await fs.readdir(directory);
-		for (const file of filesInDirectory) {
-			const absolute = path.join(directory, file);
-			const newSlug = currentSlug ? `${currentSlug}/${file}` : file;
-
-			const stat = await fs.stat(absolute);
-			if (stat.isDirectory()) {
-				await getFilesRecursively(absolute, newSlug);
-			} else {
-				// We only want to add mdx files
-				if (file.endsWith('.mdx')) {
-					files.push(newSlug.replace(/\.mdx$/, ''));
-				}
-			}
-		}
-	};
-
-	await getFilesRecursively(dir);
-	return files;
-};

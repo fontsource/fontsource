@@ -1,17 +1,26 @@
-import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
-import { json, redirect } from '@remix-run/node';
-import { useLoaderData, useOutletContext } from '@remix-run/react';
-import { useMemo } from 'react';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare';
+import { json, redirect } from '@remix-run/cloudflare';
+import { useParams } from '@remix-run/react';
+import { MDXProvider } from '@mdx-js/react';
 
-import type { FrontMatter } from '@/utils/mdx/esbuild.server';
-import { getMDXComponent } from '@/utils/mdx/getMdxComponent';
-import { fetchMdx } from '@/utils/mdx/mdx.server';
+import { mdxComponents } from '@/utils/mdx/getMdxComponent';
 import { ogMeta } from '@/utils/meta';
 
+interface FrontMatter {
+	title: string;
+	section: string;
+	description?: string;
+}
+
 interface LoaderData {
-	code: string;
 	frontmatter: FrontMatter;
 }
+
+const matches = import.meta.glob('../../docs/**/*.mdx', {
+	eager: true,
+}) as Record<string, { default: () => JSX.Element; frontmatter: FrontMatter }>;
+
+const slug = (route: string) => `../../docs/${route}.mdx`;
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const route = params['*'];
@@ -27,13 +36,10 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	if (route === 'api' || route === 'api/')
 		return redirect('/docs/api/introduction');
 
-	const mdx = await fetchMdx(route);
-	if (!mdx) {
-		throw new Response('Not found', { status: 404 });
-	}
+	const frontmatter = matches[slug(route)].frontmatter;
 
 	return json<LoaderData>(
-		{ code: mdx.code, frontmatter: mdx.frontmatter },
+		{ frontmatter },
 		{
 			headers: {
 				'Cache-Control': 'public, max-age=300',
@@ -43,7 +49,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
-	const frontmatter = data?.frontmatter as FrontMatter | undefined;
+	const frontmatter = data?.frontmatter;
 	const title = frontmatter?.title
 		? `${frontmatter.title} | Documentation | Fontsource`
 		: 'Documentation | Fontsource';
@@ -53,13 +59,18 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 };
 
 export default function Docs() {
-	const mdxComponents = useOutletContext();
-	const { code } = useLoaderData<LoaderData>();
+	const params = useParams();
+	const route = params['*'];
+	if (!route) {
+		return null;
+	}
 
-	const Content = useMemo(() => getMDXComponent(code), [code]);
+	const Component = matches[slug(route)].default;
+
 	return (
-		<>
-			<Content components={mdxComponents} />
-		</>
+		// @ts-ignore
+		<MDXProvider components={mdxComponents}>
+			<Component />
+		</MDXProvider>
 	);
 }
