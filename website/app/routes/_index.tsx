@@ -3,6 +3,7 @@ import { useObservable } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+// TODO: Use lite client - https://github.com/algolia/algoliasearch-client-javascript/issues/1548#issuecomment-2380488738
 import { algoliasearch } from 'algoliasearch';
 import type { UiState } from 'instantsearch.js';
 // @ts-expect-error - No type definitions available

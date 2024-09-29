@@ -25,88 +25,6 @@ import {
 import { Blockquote } from '@/components/Blockquote';
 import { CodeMdx } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
-import type { ComponentType } from 'react';
-
-const nativeComponentMap = {
-	blockquote: (props: React.HTMLAttributes<HTMLElement>) => (
-		<blockquote {...props} />
-	),
-	strong: (props: React.HTMLAttributes<HTMLElement>) => <strong {...props} />,
-	em: (props: React.HTMLAttributes<HTMLElement>) => <em {...props} />,
-	del: (props: React.HTMLAttributes<HTMLElement>) => <del {...props} />,
-	hr: (props: React.HTMLAttributes<HTMLHRElement>) => <hr {...props} />,
-	a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => <a {...props} />,
-	b: (props: React.HTMLAttributes<HTMLElement>) => <b {...props} />,
-	br: (props: React.HTMLAttributes<HTMLElement>) => <br {...props} />,
-	button: (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-		<button {...props} />
-	),
-	div: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
-	form: (props: React.FormHTMLAttributes<HTMLFormElement>) => (
-		<form {...props} />
-	),
-	h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h1 {...props} />,
-	h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h2 {...props} />,
-	h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h3 {...props} />,
-	h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h4 {...props} />,
-	head: (props: React.HTMLAttributes<HTMLElement>) => <head {...props} />,
-	iframe: (props: React.IframeHTMLAttributes<HTMLIFrameElement>) => (
-		<iframe {...props} />
-	),
-	// biome-ignore lint/a11y/useAltText: <explanation>
-	img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => <img {...props} />,
-	input: (props: React.InputHTMLAttributes<HTMLInputElement>) => (
-		<input {...props} />
-	),
-	label: (props: React.LabelHTMLAttributes<HTMLLabelElement>) => (
-		// biome-ignore lint/a11y/noLabelWithoutControl: <explanation>
-		<label {...props} />
-	),
-	li: (props: React.LiHTMLAttributes<HTMLLIElement>) => <li {...props} />,
-	link: (props: React.LinkHTMLAttributes<HTMLLinkElement>) => (
-		<link {...props} />
-	),
-	ol: (props: React.OlHTMLAttributes<HTMLOListElement>) => <ol {...props} />,
-	p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <p {...props} />,
-	path: (props: React.SVGAttributes<SVGPathElement>) => <path {...props} />,
-	picture: (props: React.HTMLAttributes<HTMLElement>) => <picture {...props} />,
-	script: (props: React.ScriptHTMLAttributes<HTMLScriptElement>) => (
-		<script {...props} />
-	),
-	section: (props: React.HTMLAttributes<HTMLElement>) => <section {...props} />,
-	source: (props: React.SourceHTMLAttributes<HTMLSourceElement>) => (
-		<source {...props} />
-	),
-	span: (props: React.HTMLAttributes<HTMLSpanElement>) => <span {...props} />,
-	sub: (props: React.HTMLAttributes<HTMLElement>) => <sub {...props} />,
-	sup: (props: React.HTMLAttributes<HTMLElement>) => <sup {...props} />,
-	svg: (props: React.SVGAttributes<SVGSVGElement>) => <svg {...props} />,
-	table: (props: React.TableHTMLAttributes<HTMLTableElement>) => (
-		<table {...props} />
-	),
-	tbody: (props: React.HTMLAttributes<HTMLTableSectionElement>) => (
-		<tbody {...props} />
-	),
-	td: (props: React.TdHTMLAttributes<HTMLTableDataCellElement>) => (
-		<td {...props} />
-	),
-	tfoot: (props: React.HTMLAttributes<HTMLTableSectionElement>) => (
-		<tfoot {...props} />
-	),
-	th: (props: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => (
-		<th {...props} />
-	),
-	thead: (props: React.HTMLAttributes<HTMLTableSectionElement>) => (
-		<thead {...props} />
-	),
-	tr: (props: React.HTMLAttributes<HTMLTableRowElement>) => <tr {...props} />,
-	ul: (props: React.HTMLAttributes<HTMLUListElement>) => <ul {...props} />,
-	video: (props: React.VideoHTMLAttributes<HTMLVideoElement>) => (
-		<video {...props} />
-	),
-	code: (props: React.HTMLAttributes<HTMLElement>) => <code {...props} />,
-	pre: (props: React.HTMLAttributes<HTMLPreElement>) => <pre {...props} />,
-};
 
 const mdxComponents = {
 	// Typography
@@ -156,4 +74,4 @@ const mdxComponents = {
 	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
 };
 
-export { nativeComponentMap, mdxComponents };
+export { mdxComponents };

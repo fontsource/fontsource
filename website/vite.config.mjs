@@ -1,7 +1,14 @@
+import mdx from '@mdx-js/rollup';
 import {
-	vitePlugin as remix,
 	cloudflareDevProxyVitePlugin,
+	vitePlugin as remix,
 } from '@remix-run/dev';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkGfm from 'remark-gfm';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import remarkSmartypants from 'remark-smartypants';
 import { defineConfig } from 'vite';
 import { cjsInterop } from 'vite-plugin-cjs-interop';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -18,6 +25,16 @@ export default defineConfig(({ isSsrBuild }) => ({
 	plugins: [
 		cloudflareDevProxyVitePlugin({
 			getLoadContext,
+		}),
+		mdx({
+			providerImportSource: '@mdx-js/react',
+			remarkPlugins: [
+				remarkFrontmatter,
+				remarkMdxFrontmatter,
+				remarkGfm,
+				remarkSmartypants,
+			],
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
 		}),
 		remix({
 			postcss: true,
