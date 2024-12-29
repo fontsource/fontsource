@@ -106,6 +106,10 @@ export const links: LinksFunction = () => [
 		href: '/favicon-16x16.png',
 	},
 	{
+		rel: 'icon',
+		href: '/favicon.ico',
+	},
+	{
 		rel: 'manifest',
 		href: '/site.webmanifest',
 	},

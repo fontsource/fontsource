@@ -146,19 +146,11 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 };
 
 const generateDescription = (metadata: Metadata) => {
-	const { family, category, weights, styles, variable } = metadata;
-	const weightDesc =
-		weights.length > 1
-			? `weights ranging from ${weights[0]} to ${weights.at(-1)}`
-			: `a single weight of ${weights[0]}`;
-
-	const italicDesc = styles.includes('italic')
-		? ' including italic variants'
-		: '';
+	const { family, category, variable } = metadata;
 
 	const variableDesc = variable ? 'variable ' : '';
 
-	return `The ${family} ${variableDesc}font family is a versatile ${category} web typeface offering ${weightDesc}${italicDesc} for free. Download and self-host via an NPM package for performance and privacy, enhancing your website's typography and user experience.`;
+	return `Download the ${family} ${variableDesc}${category}font family web typeface. Self-host typography for your website.`;
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
