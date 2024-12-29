@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.5.0
+
+### Minor Changes
+
+- [#1006](https://github.com/fontsource/fontsource/pull/1006) [`23db6a8850533f5ae3ee1fe586e6df9376352744`](https://github.com/fontsource/fontsource/commit/23db6a8850533f5ae3ee1fe586e6df9376352744) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(deps): upgrade google-font-metadata to v6
+
 ## 0.4.2
 
 ### Patch Changes
