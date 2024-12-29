@@ -31,7 +31,7 @@
 		}
 	},
 	"scripts": {
-		"build": "pkgroll --target=node18 && bun run ./scripts/add-hashbang.ts",
+		"build": "pkgroll --target=node20 && bun run ./scripts/add-hashbang.ts",
 		"cli": "bun run ./src/cli.ts",
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
@@ -59,14 +59,14 @@
 	"devDependencies": {
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "^20.7.1",
-		"google-font-metadata": "^5.2.1",
+		"google-font-metadata": "^6.0.0",
 		"magic-string": "^0.30.0",
-		"pkgroll": "^2.5.0",
+		"pkgroll": "^2.6.0",
 		"sass": "^1.62.1",
 		"typescript": "^5.2.2"
 	},
 	"peerDependencies": {
-		"google-font-metadata": "^5.2.1"
+		"google-font-metadata": "^6.0.0"
 	},
 	"files": ["dist/*"],
 	"publishConfig": {
