@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"build": "bun --filter './packages/*' build",
+		"build": "bun --filter './packages/generate' build && bun --filter './packages/*' build",
 		"coverage": "vitest run --coverage",
 		"lint": "bun --filter '*' lint",
 		"test": "vitest",
@@ -14,7 +14,7 @@
 		"ci:lint": "bun --filter '*' ci:lint",
 		"ci:test": "CI=true bun run build && bun --filter './packages/*' coverage",
 		"ci:version": "changeset version",
-		"ci:publish": "bun run build && bun run build && bun --filter './packages/*' publish",
+		"ci:publish": "bun run build && bun --filter './packages/*' publish",
 		"ci:publish-api": "bun run build && bun --filter './api/*' deploy"
 	},
 	"dependencies": {
