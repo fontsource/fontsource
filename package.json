@@ -14,7 +14,7 @@
 		"ci:lint": "bun --filter '*' ci:lint",
 		"ci:test": "CI=true bun run build && bun --filter './packages/*' coverage",
 		"ci:version": "changeset version",
-		"ci:publish": "bun run build && bun --filter './packages/*' publish",
+		"ci:publish": "bun run build && bun run build && bun --filter './packages/*' publish",
 		"ci:publish-api": "bun run build && bun --filter './api/*' deploy"
 	},
 	"dependencies": {
@@ -28,5 +28,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"trustedDependencies": ["esbuild", "workerd"]
+	"trustedDependencies": ["esbuild", "puppeteer", "workerd"]
 }
