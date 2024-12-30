@@ -1,0 +1,39 @@
+{
+	"name": "@fontsource-utils/scss",
+	"description": "Fontsource SCSS Mixins",
+	"version": "0.1.0",
+	"author": "Ayuhito <hello@ayuhito.com>",
+	"exports": {
+		".": {
+			"sass": "./src/mixins.scss"
+		}
+	},
+	"devDependencies": {
+		"@fontsource-variable/recursive": "5.1.1",
+		"@fontsource/carlito": "5.1.1",
+		"@fontsource/noto-sans-jp": "5.1.1",
+		"sass": "^1.62.1",
+		"typescript": "^5.7.2",
+		"vitest": "^2.1.8"
+	},
+	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/scss",
+	"keywords": ["fontsource", "fonts", "google fonts", "sass", "scss"],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"coverage": "vitest run",
+		"test": "vitest",
+		"prepublish": "bun run build",
+		"format": "biome format --write .",
+		"ci:format": "biome format .",
+		"lint": "biome lint --write .",
+		"ci:lint": "biome lint ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/fontsource/fontsource.git",
+		"directory": "packages/scss"
+	}
+}

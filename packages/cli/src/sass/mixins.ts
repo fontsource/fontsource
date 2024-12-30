@@ -6,7 +6,7 @@ export const sassMixins = `@use 'sass:list';
 
 @use 'metadata';
 
-$metadata: meta.module-variables(metadata) !default;
+$metadata: metadata.$metadata !default;
 $directory: null !default;
 
 $family: null !default;

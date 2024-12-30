@@ -65,9 +65,6 @@ const licenseMap = {
 export const licenseShort = (license: string): string | undefined =>
 	licenseMap[license.toLowerCase() as keyof typeof licenseMap];
 
-export const sassVar = (key: string, value: string) =>
-	`$${key}: ${value} !default;\n`;
-
 // `assertNever` will result in a type error at compile time, or an exception at runtime,
 // if the passed in value is not of type `never`. Useful for exhaustiveness checking.
 // The result of this function can be used in place of any value (as it will never return).
