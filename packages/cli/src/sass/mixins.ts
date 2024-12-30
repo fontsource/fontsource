@@ -34,7 +34,7 @@ $displayVar: null !default;
   // Deprecated
   $displayVar: $displayVar
 ) {
-	@warn "Importing mixins via the fontsource package is deprecated and will be removed in the next major release. Please use the @fontsource-utils/scss package instead.";
+  @warn "Importing mixins via the fontsource package is deprecated and will be removed in the next major release. Please use the @fontsource-utils/scss package instead.";
 
   @if $displayVar != null {
     @warn "$displayVar is deprecated due to the limitation of using css variables in @font-face (https://github.com/fontsource/fontsource/issues/726).";
