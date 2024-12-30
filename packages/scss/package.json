@@ -17,13 +17,7 @@
 		"vitest": "^2.1.8"
 	},
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/scss",
-	"keywords": [
-		"fontsource",
-		"fonts",
-		"google fonts",
-		"sass",
-		"scss"
-	],
+	"keywords": ["fontsource", "fonts", "google fonts", "sass", "scss"],
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
@@ -32,7 +26,7 @@
 		"build": "echo 'No build step required for SCSS package.'",
 		"coverage": "vitest run",
 		"test": "vitest",
-		"publish": "bun publish",
+		"publish": "npm publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",

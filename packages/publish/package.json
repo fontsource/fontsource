@@ -11,7 +11,7 @@
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "bun run build",
-		"publish": "bun run prepublish && bun publish",
+		"publish": "bun run prepublish && npm publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
@@ -47,9 +47,7 @@
 		"pkgroll": "^2.5.0",
 		"typescript": "^5.2.2"
 	},
-	"files": [
-		"dist/*"
-	],
+	"files": ["dist/*"],
 	"publishConfig": {
 		"access": "public"
 	},
