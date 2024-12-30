@@ -3,7 +3,7 @@
 	"version": "0.6.0",
 	"description": "Fontsource CLI",
 	"bin": {
-		"fontsource": "./dist/cli.mjs"
+		"fontsource": "dist/cli.mjs"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
@@ -36,7 +36,7 @@
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "bun run build",
-		"publish": "bun run prepublish && npm publish",
+		"publish": "npm publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
@@ -76,7 +76,7 @@
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/cli",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/fontsource/fontsource.git",
+		"url": "git+https://github.com/fontsource/fontsource.git",
 		"directory": "packages/cli"
 	}
 }

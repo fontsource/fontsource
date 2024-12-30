@@ -3,7 +3,7 @@
 	"version": "0.3.1",
 	"description": "Fontsource Publish CLI",
 	"bin": {
-		"fontsource-publish": "./dist/cli.mjs"
+		"fontsource-publish": "dist/cli.mjs"
 	},
 	"scripts": {
 		"build": "pkgroll --target=node14 && bun run ./scripts/add-hashbang.ts",
@@ -11,7 +11,7 @@
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "bun run build",
-		"publish": "bun run prepublish && npm publish",
+		"publish": "npm publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
@@ -54,7 +54,7 @@
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/utils/publish",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/fontsource/fontsource.git",
+		"url": "git+https://github.com/fontsource/fontsource.git",
 		"directory": "utils/publish"
 	}
 }

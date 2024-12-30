@@ -34,7 +34,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/fontsource/fontsource.git",
+		"url": "git+https://github.com/fontsource/fontsource.git",
 		"directory": "packages/scss"
 	}
 }

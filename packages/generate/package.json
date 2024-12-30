@@ -20,7 +20,7 @@
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "bun run build",
-		"publish": "bun run prepublish && npm publish",
+		"publish": "npm publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
@@ -41,7 +41,7 @@
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/utils/generate",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/fontsource/fontsource.git",
+		"url": "git+https://github.com/fontsource/fontsource.git",
 		"directory": "utils/generate"
 	}
 }
