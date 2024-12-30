@@ -23,6 +23,7 @@
 		"access": "public"
 	},
 	"scripts": {
+		"build": "echo 'No build step required for SCSS package.'",
 		"coverage": "vitest run",
 		"test": "vitest",
 		"publish": "bun publish",
