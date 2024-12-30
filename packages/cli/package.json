@@ -41,11 +41,7 @@
 		"lint": "biome lint --write .",
 		"ci:lint": "biome lint ."
 	},
-	"keywords": [
-		"fontsource",
-		"fonts",
-		"google fonts"
-	],
+	"keywords": ["fontsource", "fonts", "google fonts"],
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
@@ -72,16 +68,14 @@
 	"peerDependencies": {
 		"google-font-metadata": "^6.0.0"
 	},
-	"files": [
-		"dist/*"
-	],
+	"files": ["dist/*"],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://github.com/fontsource/fontsource/tree/main/utils/cli",
+	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/cli",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/fontsource/fontsource.git",
-		"directory": "utils/cli"
+		"directory": "packages/cli"
 	}
 }
