@@ -34,6 +34,11 @@ const template = (
 		'typeface',
 		'variable',
 	],
+	exports: {
+		'.': {
+			sass: './scss/metadata.scss',
+		},
+	},
 	author: type === 'other' ? license.attribution : 'Google Inc.',
 	license: license.type,
 	homepage: `https://fontsource.org/fonts/${id}`,
