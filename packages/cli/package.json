@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/cli",
-	"version": "0.6.0",
+	"version": "0.6.1",
 	"description": "Fontsource CLI",
 	"bin": {
 		"fontsource": "dist/cli.mjs"
@@ -36,7 +36,7 @@
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "bun run build",
-		"publish": "npm publish",
+		"publish": "bun run prepublish && bun publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
