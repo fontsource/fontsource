@@ -30,6 +30,10 @@ $axes: null !default;
 		@error '$metadata is required for Fontsource mixin.';
 	}
 
+	@if meta.type-of($metadata) != map {
+		@error '$metadata must be a map for Fontsource mixin.';
+	}
+
 	$isVariable: map.get($metadata, axes) != null;
 
 	$directory: if(

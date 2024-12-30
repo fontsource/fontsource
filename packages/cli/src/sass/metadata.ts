@@ -1,5 +1,5 @@
 import type { Axes, Metadata, UnicodeRange } from '../types';
-import { findClosest, sassVar } from '../utils';
+import { findClosest } from '../utils';
 
 const axesValue = (metadata: Metadata) => {
 	let out = '(\n';
@@ -49,25 +49,20 @@ export const sassMetadata = (
 	unicode: UnicodeRange,
 	isVariable: boolean,
 ) => {
-	let out = '';
-
-	out += sassVar('id', `'${metadata.id}'`);
-	out += sassVar('family', `'${metadata.family}'`);
-	out += sassVar('category', `${metadata.category}`);
-	out += sassVar('subsets', `(${metadata.subsets.join(', ')})`);
-	out += sassVar('weights', `(${metadata.weights.join(', ')})`);
-	out += sassVar('styles', `(${metadata.styles.join(', ')})`);
-	out += sassVar('axes', isVariable ? axesValue(metadata) : 'null');
-	out += sassVar(
-		'defaults',
-		`(
-  subset: ${metadata.defSubset},
-  weight: ${findClosest(metadata.weights, 400)},
-  style: normal,
-  axis: ${isVariable ? defaultAxis(metadata) : 'null'},
-)`,
-	);
-	out += sassVar('unicode', unicodeValue(unicode));
-
-	return out;
+	return `$metadata: (
+  id: '${metadata.id}',
+  family: '${metadata.family}',
+  category: ${metadata.category},
+  subsets: (${metadata.subsets.join(', ')}),
+  weights: (${metadata.weights.join(', ')}),
+  styles: (${metadata.styles.join(', ')}),
+  axes: ${isVariable ? axesValue(metadata) : 'null'},
+  defaults: (
+    subset: ${metadata.defSubset},
+    weight: ${findClosest(metadata.weights, 400)},
+    style: normal,
+    axis: ${isVariable ? defaultAxis(metadata) : 'null'},
+  ),
+  unicode: ${unicodeValue(unicode)}
+) !default;`;
 };
