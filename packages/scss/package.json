@@ -23,7 +23,7 @@
 		"access": "public"
 	},
 	"scripts": {
-		"coverage": "vitest run --coverage",
+		"coverage": "vitest run",
 		"test": "vitest",
 		"prepublish": "bun run build",
 		"format": "biome format --write .",
