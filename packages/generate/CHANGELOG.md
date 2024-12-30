@@ -1,5 +1,11 @@
 # @fontsource-utils/generate
 
+## 0.4.1
+
+### Patch Changes
+
+- [#1013](https://github.com/fontsource/fontsource/pull/1013) [`6599f356ec06d24b9dc740b09ba6120f61611762`](https://github.com/fontsource/fontsource/commit/6599f356ec06d24b9dc740b09ba6120f61611762) Thanks [@ayuhito](https://github.com/ayuhito)! - docs: add license to each individual package
+
 ## 0.3.1
 
 ### Patch Changes
