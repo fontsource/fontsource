@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const sassMixins = fs.readFileSync(
-	path.join(__dirname, '../mixins.scss'),
+	path.join(__dirname, '../src/mixins.scss'),
 	'utf-8',
 );
 

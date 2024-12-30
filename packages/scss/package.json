@@ -3,16 +3,9 @@
 	"description": "Fontsource SCSS Mixins",
 	"version": "0.1.0",
 	"author": "Ayuhito <hello@ayuhito.com>",
-	"main": "./mixins.scss",
-	"module": "./mixins.scss",
 	"exports": {
-		"default": {
-			"require": {
-				"default": "./mixins.scss"
-			},
-			"import": {
-				"default": "./mixins.scss"
-			}
+		".": {
+			"sass": "./src/mixins.scss"
 		}
 	},
 	"devDependencies": {
