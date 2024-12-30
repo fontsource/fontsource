@@ -17,9 +17,11 @@ const compileSass = (family: string, params?: string[]) => {
 		...(params ?? []),
 	].join(', ');
 
-	return compileString(`${metadata}${mixins}@include faces(${options})`, {
+	const res = compileString(`${metadata}${mixins}@include faces(${options})`, {
 		importers: [new NodePackageImporter()],
 	});
+
+	return res.css.toString();
 };
 
 describe('sass mixins', () => {
