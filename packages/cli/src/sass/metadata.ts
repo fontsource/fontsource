@@ -24,12 +24,12 @@ const unicodeValue = (unicode: UnicodeRange) => {
 		for (const unicodeKey of Object.keys(unicode)) {
 			const unicodeVal = unicode[unicodeKey];
 
-			out += `  ${unicodeKey
+			out += `    ${unicodeKey
 				.replace('[', '')
 				.replace(']', '')}: (${unicodeVal}),\n`;
 		}
 
-		out += ')';
+		out += '  )';
 
 		return out;
 	}
