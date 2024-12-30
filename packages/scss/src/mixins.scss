@@ -26,47 +26,36 @@ $axes: null !default;
 	$styles: $styles,
 	$axes: $axes
 ) {
-	@if $metadata == null {
-		@error '$metadata is required for Fontsource mixin.';
-	}
-
-	@if meta.type-of($metadata) != map {
-		@error '$metadata must be a map for Fontsource mixin.';
+	@if $metadata == null or meta.type-of($metadata) != map {
+		@error '$metadata is a required variable and must be a map for the Fontsource mixin.';
 	}
 
 	$isVariable: map.get($metadata, axes) != null;
 
-	$directory: if(
-		$directory,
-		$directory,
-		'@fontsource#{if($isVariable, '-variable', '')}/#{map.get($metadata, id)}/files'
-	);
-
-	$family: if(
-		$family,
-		$family,
-		map.get($metadata, family) + if($isVariable, ' Variable', '')
-	);
-	$display: if($display, $display, swap);
+	// Set default values.
+	$directory: $directory or '@fontsource#{if($isVariable, '-variable', '')}/#{map.get($metadata, id)}/files';
+	$family: $family or map.get($metadata, family) +
+		if($isVariable, ' Variable', '');
+	$display: $display or swap;
 	$formats: if(
 		not $formats or $formats == all,
 		if($isVariable, woff2, (woff2, woff)),
 		$formats
 	);
 	$subsets: if(
-		$subsets,
-		if($subsets == all, map.get($metadata, subsets), $subsets),
-		map.get($metadata, subsets)
+		$subsets == all,
+		map.get($metadata, subsets),
+		$subsets or map.get($metadata, subsets)
 	);
 	$weights: if(
-		$weights,
-		if($weights == all, map.get($metadata, weights), $weights),
-		map.get($metadata, defaults, weight)
+		$weights == all,
+		map.get($metadata, weights),
+		$weights or map.get($metadata, defaults, weight)
 	);
 	$styles: if(
-		$styles,
-		if($styles == all, map.get($metadata, styles), $styles),
-		map.get($metadata, defaults, style)
+		$styles == all,
+		map.get($metadata, styles),
+		$styles or map.get($metadata, defaults, style)
 	);
 	$axes: if(
 		$axes,
