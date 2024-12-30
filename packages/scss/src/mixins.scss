@@ -27,7 +27,7 @@ $axes: null !default;
 	$axes: $axes
 ) {
 	@if $metadata == null or meta.type-of($metadata) != map {
-		@error '$metadata must be a map. It is required for the Fontsource mixin.';
+		@error '$metadata is a required variable and must be a map for the Fontsource mixin.';
 	}
 
 	$isVariable: map.get($metadata, axes) != null;
