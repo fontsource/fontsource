@@ -16,9 +16,9 @@
 		}
 	},
 	"devDependencies": {
-		"@fontsource-variable/recursive": "^5.1.1",
-		"@fontsource/carlito": "^5.1.1",
-		"@fontsource/noto-sans-jp": "^5.1.1",
+		"@fontsource-variable/recursive": "5.1.1",
+		"@fontsource/carlito": "5.1.1",
+		"@fontsource/noto-sans-jp": "5.1.1",
 		"sass": "^1.62.1",
 		"typescript": "^5.7.2",
 		"vitest": "^2.1.8"
