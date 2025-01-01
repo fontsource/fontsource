@@ -49,20 +49,30 @@ export const sassMetadata = (
 	unicode: UnicodeRange,
 	isVariable: boolean,
 ) => {
-	return `$metadata: (
-  id: '${metadata.id}',
-  family: '${metadata.family}',
-  category: ${metadata.category},
-  subsets: (${metadata.subsets.join(', ')}),
-  weights: (${metadata.weights.join(', ')}),
-  styles: (${metadata.styles.join(', ')}),
-  axes: ${isVariable ? axesValue(metadata) : 'null'},
-  defaults: (
-    subset: ${metadata.defSubset},
-    weight: ${findClosest(metadata.weights, 400)},
-    style: normal,
-    axis: ${isVariable ? defaultAxis(metadata) : 'null'},
-  ),
-  unicode: ${unicodeValue(unicode)}
+	return `$id: '${metadata.id}';
+$family: '${metadata.family}';
+$category: ${metadata.category};
+$subsets: (${metadata.subsets.join(', ')});
+$weights: (${metadata.weights.join(', ')});
+$styles: (${metadata.styles.join(', ')});
+$axes: ${isVariable ? axesValue(metadata) : 'null'};
+$defaults: (
+	subset: ${metadata.defSubset},
+	weight: ${findClosest(metadata.weights, 400)},
+	style: normal,
+	axis: ${isVariable ? defaultAxis(metadata) : 'null'},
+);
+$unicode: ${unicodeValue(unicode)};
+
+$metadata: (
+  id: $id,
+  family: $family,
+  category: $category,
+  subsets: $subsets,
+  weights: $weights,
+  styles: $styles,
+  axes: $axes,
+  defaults: $defaults,
+  unicode: $unicode,
 ) !default;`;
 };
