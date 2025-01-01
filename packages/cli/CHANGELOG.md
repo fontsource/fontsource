@@ -1,5 +1,13 @@
 # @fontsource-utils/cli
 
+## 0.6.2
+
+### Patch Changes
+
+- [#1014](https://github.com/fontsource/fontsource/pull/1014) [`0c73e634211239f98992e7a2a9285f5bb807c488`](https://github.com/fontsource/fontsource/commit/0c73e634211239f98992e7a2a9285f5bb807c488) Thanks [@ayuhito](https://github.com/ayuhito)! - style(sass): update warn indentation
+
+- [#1017](https://github.com/fontsource/fontsource/pull/1017) [`a983627461dc3a666ac92dd496c555a3bcb4aedc`](https://github.com/fontsource/fontsource/commit/a983627461dc3a666ac92dd496c555a3bcb4aedc) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(sass): expose individual variables in metadata
+
 ## 0.6.0
 
 ### Minor Changes
