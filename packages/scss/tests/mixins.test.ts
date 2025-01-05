@@ -3,19 +3,15 @@ import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const sassMixins = fs.readFileSync(
+const mixins = fs.readFileSync(
 	path.join(__dirname, '../src/mixins.scss'),
 	'utf-8',
 );
 
 const compileSass = (family: string, params?: string[]) => {
-	const metadata = `@use 'pkg:${family}/scss/metadata';`;
-	const mixins = sassMixins.replace('$metadata: null !default;', '');
+	const metadata = `@use 'pkg:${family}' as font;`;
 
-	const options = [
-		'$metadata: meta.module-variables(metadata)',
-		...(params ?? []),
-	].join(', ');
+	const options = ['$metadata: font.$metadata', ...(params ?? [])].join(', ');
 
 	const res = compileString(`${metadata}${mixins}@include faces(${options})`, {
 		importers: [new NodePackageImporter()],
