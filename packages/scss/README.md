@@ -8,7 +8,7 @@ This is a helper library to use [Fontsource](https://fontsource.org) with SCSS.
 npm install @fontsource-utils/scss
 ```
 
-## Usage
+## Import
 
 Import the mixins and font metadata. This example uses the "Recursive" font family.
 
@@ -22,7 +22,9 @@ Import the mixins and font metadata. This example uses the "Recursive" font fami
 @use "../node_modules/@fontsource-variable/recursive/scss/metadata.scss" as recursive;
 ```
 
-- `pkg` import reference: [`sass-lang.com`](https://sass-lang.com/documentation/at-rules/use/#pkg-ur-ls)
+- `NodePackageImporter()` reference: [`sass-lang.com`](https://sass-lang.com/documentation/at-rules/use/#pkg-ur-ls)
+
+### Usage
 
 Use the `faces` mixin to generate `@font-face` rules:
 
