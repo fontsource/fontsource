@@ -36,6 +36,10 @@ const template = (
 	],
 	exports: {
 		'.': {
+			sass: './index.css',
+			default: './index.css',
+		},
+		scss: {
 			sass: './scss/metadata.scss',
 		},
 	},
