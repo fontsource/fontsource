@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.6.4
+
+### Patch Changes
+
+- [#1021](https://github.com/fontsource/fontsource/pull/1021) [`109bd65fb8be44e5d7e9259d47c5063eee767515`](https://github.com/fontsource/fontsource/commit/109bd65fb8be44e5d7e9259d47c5063eee767515) Thanks [@ayuhito](https://github.com/ayuhito)! - fix: invalid export path
+
 ## 0.6.3
 
 ### Patch Changes
