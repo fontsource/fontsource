@@ -1,5 +1,12 @@
 # cdn
 
+## 0.2.24
+
+### Patch Changes
+
+- Updated dependencies [[`109bd65fb8be44e5d7e9259d47c5063eee767515`](https://github.com/fontsource/fontsource/commit/109bd65fb8be44e5d7e9259d47c5063eee767515)]:
+  - @fontsource-utils/cli@0.6.4
+
 ## 0.2.23
 
 ### Patch Changes
