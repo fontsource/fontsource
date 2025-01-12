@@ -39,7 +39,7 @@ const template = (
 			sass: './index.css',
 			default: './index.css',
 		},
-		scss: {
+		'./scss': {
 			sass: './scss/metadata.scss',
 		},
 	},
