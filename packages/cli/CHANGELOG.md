@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.6.3
+
+### Patch Changes
+
+- [#1019](https://github.com/fontsource/fontsource/pull/1019) [`00f36b1bf95303865015d8776859be7586e603b4`](https://github.com/fontsource/fontsource/commit/00f36b1bf95303865015d8776859be7586e603b4) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(sass): update exports field for importers
+
 ## 0.6.2
 
 ### Patch Changes
