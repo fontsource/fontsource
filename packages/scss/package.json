@@ -1,7 +1,7 @@
 {
 	"name": "@fontsource-utils/scss",
 	"description": "Fontsource SCSS Mixins",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"exports": {
 		".": {
@@ -17,7 +17,13 @@
 		"vitest": "^2.1.8"
 	},
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/scss",
-	"keywords": ["fontsource", "fonts", "google fonts", "sass", "scss"],
+	"keywords": [
+		"fontsource",
+		"fonts",
+		"google fonts",
+		"sass",
+		"scss"
+	],
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
