@@ -9,19 +9,19 @@ When using Fontsource in a Sass/SCSS project, you can import the font stylesheet
 
 ## Installation
 
-For the most basic usage of Fontsource stylesheets, you can use the `@import` rule in your Sass/SCSS file. Here's an example of importing the Open Sans font:
+For the most basic usage of Fontsource stylesheets, you can use the `@use` rule in your Sass/SCSS file. Here's an example of importing the Open Sans font:
 
 ```scss
-@import "~@fontsource/open-sans";
+@use "pkg:@fontsource/open-sans";
 ```
 
-The `~` symbol before the font package name is a shortcut that tells the Sass compiler to resolve the import path based on your project's configuration.
+> **Note:** The `pkg:` prefix is required to import packages from the npm registry. You must use the `NodePackageImporter()` in your Sass compiler to resolve these imports.
 
 You can also import specific font variations if needed:
 
 ```scss
-@import "~@fontsource/open-sans/300.css";
-@import "~@fontsource/open-sans/700-italic.css";
+@use "pkg:@fontsource/open-sans/300.css" as OpenSansLight;
+@use "pkg:@fontsource/open-sans/700-italic.css" as OpenSansBoldItalic;
 ```
 
 ## Usage

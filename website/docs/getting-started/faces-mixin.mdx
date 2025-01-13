@@ -12,17 +12,19 @@ The Faces mixin in Fontsource allows you to generate a highly customizable CSS f
 To use the Faces mixin, you need to import the mixin file from the specific font package. Here's an example for the Open Sans font:
 
 ```scss
-@use "@fontsource/open-sans/scss/mixins" as OpenSans;
+@use "pkg:@fontsource-utils/scss" as fontsource;
+@use "pkg:@fontsource-variable/recursive/scss" as recursive;
 ```
 
 > **Note:** Make sure to adjust the import path and the name alias (as) according to the font package you are using.
 
 ## Usage
 
-Once you have imported the mixin, you can use it to generate a CSS file with customized font variations. Here's an example that generates a CSS file similar to `open-sans/latin-500-italic.css`:
+Once you have imported the mixin, you can use it to generate a CSS file with customized font variations. Here's an example that generates a CSS file similar to `recursive/latin-500-italic.css`:
 
 ```scss
-@include OpenSans.faces(
+@include fontsource.faces(
+  $metadata: recursive.$metadata,
   $subsets: latin,
   $weights: 500,
   $styles: italic
@@ -32,7 +34,8 @@ Once you have imported the mixin, you can use it to generate a CSS file with cus
 You can customize the font variations by specifying different subsets, weights, and styles. Use the all option if you want to include all available options for a specific property. Here's an example that includes multiple subsets, weights, and all available styles:
 
 ```scss
-@include OpenSans.faces(
+@include fontsource.faces(
+  $metadata: recursive.$metadata,
   $subsets: (
     latin,
     greek,
@@ -51,7 +54,7 @@ You can customize the font variations by specifying different subsets, weights, 
 The Faces mixin accepts several properties as arguments, allowing you to customize various aspects of the font. Here are the available arguments::
 
 | Variable | Description                                                                                                                                       | Options                                                                         | Default                                  |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------- |
+|----------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|------------------------------------------|
 | $family  | Font family name (see [font-family](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family))                                     | Any string                                                                      | Metadata default used (e.g. "Open Sans") |
 | $display | How the font is displayed when loading (see [font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display))             | One of: `auto`, `block`, `swap`, `fallback`, `optional`                         | `swap`                                   |
 | $formats | List of included font file formats (see [src](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src))                                   | `all`, or any of: `woff`, `woff2`                                               | `all`                                    |
@@ -63,7 +66,7 @@ The Faces mixin accepts several properties as arguments, allowing you to customi
 The following advanced properties shouldn't need to be modified as often, but are still available for use:
 
 | Variable   | Description                                                                                                                                                                                       | Default                                                    |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
 | $metadata  | [Metadata map](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss), which is used for resolving default options, available properties, and source paths | Default package metadata (located in `scss/metadata.scss`) |
 | $directory | Base directory used for the font source paths                                                                                                                                                     | Default package path (e.g. `~@fontsource/open-sans/files`) |
 
@@ -72,17 +75,18 @@ The following advanced properties shouldn't need to be modified as often, but ar
 The arguments for the Faces mixin can also be set directly on module import, which will set the new defaults throughout different uses of the mixin. Here's an example:
 
 ```scss
-@use "@fontsource/open-sans/scss/mixins" as OpenSans with (
+@use "@fontsource-utils/scss" as fontsource with (
   $weights: (
     300,
     700,
   ),
-  $family: "Open Sans Custom"
+  $family: "Fontsource Custom"
 );
 
-@include OpenSans.faces(
+@include fontsource.faces(
+  $metadata: recursive.$metadata
   // The global configuration can still be overwritten through arguments
-  $family: "Open Sans Other"
+  $family: "Recursive Other"
 );
 ```
 

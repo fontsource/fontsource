@@ -13,7 +13,7 @@ To use the generator mixin, you need to import the Fontsource mixin module along
 
 ```scss
 @use "sass:map";
-@use "@fontsource/open-sans/scss/mixins" as OpenSans;
+@use "@fontsource-utils/scss" as fontsource;
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ To use the generator mixin, you need to import the Fontsource mixin module along
 The generator mixin allows you to generate CSS based on the provided properties. It uses a loop to iterate over the properties and generate CSS from the content block. Here's an example of using the generator mixin:
 
 ```scss
-@include OpenSans.generator(
+@include fontsource.generator(
   $weights: (
     400,
     800,
@@ -37,7 +37,7 @@ The generator mixin allows you to generate CSS based on the provided properties.
 }
 ```
 
-In this example, the `OpenSans.generator` mixin is called with the desired properties, and the content block is used to generate CSS dynamically based on those properties.
+In this example, the `fontsource.generator` mixin is called with the desired properties, and the content block is used to generate CSS dynamically based on those properties.
 
 ### Arguments
 
@@ -64,9 +64,9 @@ All the arguments passed into the generator mixin are resolved to their final va
 ```
 
 | Property  | Example                                                                                                  |
-| --------- | -------------------------------------------------------------------------------------------------------- |
+|-----------|----------------------------------------------------------------------------------------------------------|
 | metadata  | [see here](https://github.com/fontsource/font-files/blob/main/fonts/google/open-sans/scss/metadata.scss) |
-| directory | `~@fontsource/open-sans/files`                                                                           |
+| directory | `@fontsource/open-sans/files`                                                                            |
 | family    | Open Sans                                                                                                |
 | display   | `swap`                                                                                                   |
 | formats   | `(woff, woff2)`                                                                                          |
@@ -80,7 +80,7 @@ All the arguments passed into the generator mixin are resolved to their final va
 These variables change on each iteration of the content block:
 
 | Property      | Example                                               |
-| ------------- | ----------------------------------------------------- |
+|---------------|-------------------------------------------------------|
 | variant       | `open-sans-latin-800-italic`                          |
 | unicodeSubset | `cyrillic`                                            |
 | unicodeRange  | `(U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116)` |
@@ -93,10 +93,10 @@ These variables change on each iteration of the content block:
 These are the CSS properties that are calculated and used by default in the faces mixin:
 
 | Property      | Example                                                                                                                            |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------|
 | font-family   | `"Open Sans"`                                                                                                                      |
 | font-style    | `italic`                                                                                                                           |
-| font-display  | `var(--fontsource-display, swap)`                                                                                                  |
+| font-display  | `swap`                                                                                                                             |
 | font-weight   | `800`                                                                                                                              |
 | font-stretch  | `300 800`                                                                                                                          |
 | src           | `url(./files/open-sans-cyrillic-800-italic.woff2) format('woff2'), url(./files/open-sans-cyrillic-800-italic.woff) format('woff')` |
