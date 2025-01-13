@@ -11,12 +11,22 @@ const compileSass = (path: string) => {
 
 describe('scss imports', () => {
 	it('should import with default path', async () => {
+		expect(compileSass("'pkg:@fontsource/carlito'")).toMatchSnapshot();
+	});
+
+	it('should import with default path and namespace', async () => {
+		expect(
+			compileSass("'pkg:@fontsource/carlito' as carlito"),
+		).toMatchSnapshot();
+	});
+
+	it('should import with default css path', async () => {
 		expect(
 			compileSass("'pkg:@fontsource/carlito/index.css'"),
 		).toMatchSnapshot();
 	});
 
-	it('should import with default and namespace', async () => {
+	it('should import with default css path and namespace', async () => {
 		expect(
 			compileSass("'pkg:@fontsource/carlito/index.css' as carlito"),
 		).toMatchSnapshot();
