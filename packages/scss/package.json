@@ -9,21 +9,15 @@
 		}
 	},
 	"devDependencies": {
-		"@fontsource-variable/recursive": "5.2.0-alpha.0",
-		"@fontsource/carlito": "5.2.0-alpha.0",
-		"@fontsource/noto-sans-jp": "5.2.0-alpha.0",
+		"@fontsource-variable/recursive": "5.2.0-alpha.1",
+		"@fontsource/carlito": "5.2.0-alpha.1",
+		"@fontsource/noto-sans-jp": "5.2.0-alpha.1",
 		"sass": "^1.62.1",
 		"typescript": "^5.7.2",
 		"vitest": "^2.1.8"
 	},
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/scss",
-	"keywords": [
-		"fontsource",
-		"fonts",
-		"google fonts",
-		"sass",
-		"scss"
-	],
+	"keywords": ["fontsource", "fonts", "google fonts", "sass", "scss"],
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
