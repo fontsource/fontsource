@@ -20,7 +20,7 @@
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "bun run build",
-		"publish": "bun run prepublish && bun publish",
+		"ci:publish": "bun run prepublish && bun publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",

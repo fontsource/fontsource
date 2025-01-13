@@ -26,7 +26,7 @@
 		"build": "echo 'No build step required for SCSS package.'",
 		"coverage": "vitest run",
 		"test": "vitest",
-		"publish": "bun publish",
+		"ci:publish": "bun publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",

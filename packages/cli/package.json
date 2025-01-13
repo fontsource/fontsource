@@ -36,17 +36,13 @@
 		"coverage": "vitest run --coverage",
 		"test": "vitest",
 		"prepublish": "bun run build",
-		"publish": "bun run prepublish && bun publish",
+		"ci:publish": "bun run prepublish && bun publish",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"lint": "biome lint --write .",
 		"ci:lint": "biome lint ."
 	},
-	"keywords": [
-		"fontsource",
-		"fonts",
-		"google fonts"
-	],
+	"keywords": ["fontsource", "fonts", "google fonts"],
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
@@ -73,9 +69,7 @@
 	"peerDependencies": {
 		"google-font-metadata": "^6.0.0"
 	},
-	"files": [
-		"dist/*"
-	],
+	"files": ["dist/*"],
 	"publishConfig": {
 		"access": "public"
 	},
