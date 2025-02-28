@@ -5,18 +5,20 @@ section: Sass
 
 # Faces Mixin
 
-The Faces mixin in Fontsource allows you to generate a highly customizable CSS file for your font by modifying various [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) variables. This guide explains how to use the Faces mixin in your Sass/SCSS projects.
+The font faces mixin allows you to generate a highly customizable CSS file for your font by modifying various [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) variables. This guide explains how to use the Faces mixin in your Sass/SCSS projects.
 
 ## Installation
 
-To use the Faces mixin, you need to import the mixin file from the specific font package. Here's an example for the Open Sans font:
+To use the Faces mixin, you must install the `@fontsource-utils/scss` helper package and the specific font package you want to customize:
+
+<PackageManagerCode cmd="@fontsource-utils/scss" />
+
+Then, import the Fontsource mixins in your Sass/SCSS file using the `@use` rule:
 
 ```scss
 @use "pkg:@fontsource-utils/scss" as fontsource;
 @use "pkg:@fontsource-variable/recursive/scss" as recursive;
 ```
-
-> **Note:** Make sure to adjust the import path and the name alias (as) according to the font package you are using.
 
 ## Usage
 

@@ -5,17 +5,17 @@ section: Sass
 
 # Sass Import
 
-When using Fontsource in a Sass/SCSS project, you can import the font stylesheets using the `@use` rule. This guide explains how to import Fontsource in your Sass/SCSS files.
+When using Fontsource in a Sass/SCSS project, you can import the font CSS stylesheets using the `@use` rule.
 
 ## Installation
 
 For the most basic usage of Fontsource stylesheets, you can use the `@use` rule in your Sass/SCSS file. Here's an example of importing the Open Sans font:
 
 ```scss
-@use "pkg:@fontsource/open-sans";
+@use "pkg:@fontsource/open-sans/index.css";
 ```
 
-> **Note:** The `pkg:` prefix is required to import packages from the npm registry. You must use the `NodePackageImporter()` in your Sass compiler to resolve these imports.
+> **Note:** The `pkg:` prefix is required to import packages from the npm registry. You must use the `NodePackageImporter()` in your Sass compiler to resolve these imports. Learn more in the [Sass Introduction](/docs/getting-started/sass-introduction) guide.
 
 You can also import specific font variations if needed:
 
@@ -33,10 +33,3 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 ```
-
-### Mixins
-
-For more advanced usage, you can use the Fontsource Sass mixins to generate a highly customizable CSS file for your font.
-
-- [Faces Mixin](/docs/getting-started/faces-mixin)
-- [Generator Mixin](/docs/getting-started/generator-mixin)

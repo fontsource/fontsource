@@ -1,0 +1,43 @@
+---
+title: Sass Introduction
+section: Sass
+---
+
+# Introduction
+
+When using Fontsource in a Sass/SCSS project, you will need to configure your Sass compiler to resolve the [`pkg:`](https://sass-lang.com/documentation/at-rules/use/#pkg-ur-ls) import directive to resolve the font stylesheets from the NPM package.
+
+## Configuration
+
+It is required to use Dart Sass v1.71.0 or later to resolve the `pkg:` import directive.
+
+### Command Line
+
+If you are using the command line to compile your Sass files, you can use the [`--pkg-importer=node`](https://sass-lang.com/documentation/cli/dart-sass/#pkg-importer-node) flag to resolve the imports. Here's an example of how to compile a Sass file using the command line flag:
+
+```bash
+sass --pkg-importer=node style.scss style.css
+```
+
+### JavaScript API
+
+If you are using the JavaScript API to compile your Sass files, you can use the [`NodePackageImporter()`](https://sass-lang.com/documentation/js-api/classes/nodepackageimporter/) to resolve the imports. Here's an example of how to configure the Sass compiler:
+
+```javascript
+const sass = require('sass');
+
+sass.compileString('@use "pkg:@fontsource-variable/roboto', {
+  importers: [new sass.NodePackageImporter()]
+});
+```
+
+### Usage
+
+Once configured, you can import Fontsource stylesheets using the `@use` rule in your Sass/SCSS files.
+
+- [Import Stylesheets](/docs/getting-started/sass-import)
+
+For more advanced usage, you can use the mixins to generate a highly customizable CSS file for your font.
+
+- [Faces Mixin](/docs/getting-started/faces-mixin)
+- [Generator Mixin](/docs/getting-started/generator-mixin)

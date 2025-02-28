@@ -7,13 +7,17 @@ section: Sass
 
 The generator mixin in Fontsource is a powerful tool that allows for advanced use cases in Sass. It provides a way to dynamically generate CSS based on the specified properties. Please note that the generator mixin is more advanced and is recommended for users who require fine-grained control over their font styles. For most use cases, the [Faces mixin](./faces-mixin) is sufficient.
 
-## Import
+## Installation
 
-To use the generator mixin, you need to import the Fontsource mixin module along with the `sass:map` module to extract generator properties. Here's an example of how to import the generator mixin for the Open Sans font:
+To use the Generator mixin, you must install the `@fontsource-utils/scss` helper package and the specific font package you want to customize:
+
+<PackageManagerCode cmd="@fontsource-utils/scss" />
+
+Then, import the Fontsource mixins along with the `sass:map` module to extract the generator properties. Here's an example of how to import the generator mixin for the Open Sans font:
 
 ```scss
 @use "sass:map";
-@use "@fontsource-utils/scss" as fontsource;
+@use "pkg:@fontsource-utils/scss" as fontsource;
 ```
 
 ## Usage

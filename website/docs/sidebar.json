@@ -1,82 +1,83 @@
 {
-	"getting-started": {
-		"Contents": {
-			"introduction": "Introduction",
-			"install": "Install",
-			"variable": "Variable Fonts",
-			"subsets": "Individual Subsets",
-			"display": "Font Display",
-			"preload": "Preload",
-			"cdn": "CDN"
-		},
-		"Icons": {
-			"material-icons": "Material Icons",
-			"material-symbols": "Material Symbols"
-		},
-		"Sass": {
-			"sass-import": "Import",
-			"faces-mixin": "Faces Mixin",
-			"generator-mixin": "Generator Mixin"
-		},
-		"Migration": {
-			"migrate-v5": "Migrating to V5"
-		}
-	},
-	"guides": {
-		"Frameworks": {
-			"astro": {
-				"name": "Astro",
-				"external": "https://docs.astro.build/en/guides/fonts/#using-fontsource"
-			},
-			"angular": "Angular",
-			"flutter": {
-				"name": "Flutter",
-				"external": "https://pub.dev/packages/fontsource"
-			},
-			"gatsby": {
-				"name": "Gatsby",
-				"external": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource"
-			},
-			"nextjs": "Next.js",
-			"qwik": "Qwik",
-			"remix": "Remix",
-			"svelte": "SvelteKit",
-			"vue": "Vue"
-		},
-		"Component Libraries": {
-			"chakra-ui": {
-				"name": "Chakra UI",
-				"external": "https://chakra-ui.com/community/recipes/using-fonts"
-			},
-			"material-ui": {
-				"name": "Material UI",
-				"external": "https://mui.com/material-ui/react-typography/#install-with-npm"
-			},
-			"panda-css": {
-				"name": "Panda CSS",
-				"external": "https://panda-css.com/docs/guides/fonts#fontsource"
-			}
-		},
-		"Other": {
-			"obsidian": {
-				"name": "Obsidian",
-				"external": "https://github.com/fontsource/obsidian-fontsource"
-			},
-			"webpack": "Webpack"
-		}
-	},
-	"api": {
-		"Setup": {
-			"introduction": "Introduction"
-		},
-		"Reference": {
-			"axis-registry": "Axis Registry",
-			"fontlist": "Fontlist",
-			"fonts": "Fonts",
-			"font-id": "Font ID",
-			"stats": "Stats",
-			"variable": "Variable",
-			"version": "Version"
-		}
-	}
+  "getting-started": {
+    "Contents": {
+      "introduction": "Introduction",
+      "install": "Install",
+      "variable": "Variable Fonts",
+      "subsets": "Individual Subsets",
+      "display": "Font Display",
+      "preload": "Preload",
+      "cdn": "CDN"
+    },
+    "Icons": {
+      "material-icons": "Material Icons",
+      "material-symbols": "Material Symbols"
+    },
+    "Sass": {
+      "sass-introduction": "Introduction",
+      "sass-import": "CSS Import",
+      "faces-mixin": "Faces Mixin",
+      "generator-mixin": "Generator Mixin"
+    },
+    "Migration": {
+      "migrate-v5": "Migrating to V5"
+    }
+  },
+  "guides": {
+    "Frameworks": {
+      "astro": {
+        "name": "Astro",
+        "external": "https://docs.astro.build/en/guides/fonts/#using-fontsource"
+      },
+      "angular": "Angular",
+      "flutter": {
+        "name": "Flutter",
+        "external": "https://pub.dev/packages/fontsource"
+      },
+      "gatsby": {
+        "name": "Gatsby",
+        "external": "https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource"
+      },
+      "nextjs": "Next.js",
+      "qwik": "Qwik",
+      "remix": "Remix",
+      "svelte": "SvelteKit",
+      "vue": "Vue"
+    },
+    "Component Libraries": {
+      "chakra-ui": {
+        "name": "Chakra UI",
+        "external": "https://chakra-ui.com/community/recipes/using-fonts"
+      },
+      "material-ui": {
+        "name": "Material UI",
+        "external": "https://mui.com/material-ui/react-typography/#install-with-npm"
+      },
+      "panda-css": {
+        "name": "Panda CSS",
+        "external": "https://panda-css.com/docs/guides/fonts#fontsource"
+      }
+    },
+    "Other": {
+      "obsidian": {
+        "name": "Obsidian",
+        "external": "https://github.com/fontsource/obsidian-fontsource"
+      },
+      "webpack": "Webpack"
+    }
+  },
+  "api": {
+    "Setup": {
+      "introduction": "Introduction"
+    },
+    "Reference": {
+      "axis-registry": "Axis Registry",
+      "fontlist": "Fontlist",
+      "fonts": "Fonts",
+      "font-id": "Font ID",
+      "stats": "Stats",
+      "variable": "Variable",
+      "version": "Version"
+    }
+  }
 }
