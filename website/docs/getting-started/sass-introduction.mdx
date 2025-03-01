@@ -15,7 +15,7 @@ It is required to use Dart Sass `v1.71.0` or later to resolve the [`pkg:`](https
 
 If you are using the command line to compile your Sass files, you can use the [`--pkg-importer=node`](https://sass-lang.com/documentation/cli/dart-sass/#pkg-importer-node) flag to resolve the imports. Here's an example of how to compile a Sass file using the command line flag:
 
-```bash
+```sh
 sass --pkg-importer=node style.scss style.css
 ```
 
@@ -23,7 +23,7 @@ sass --pkg-importer=node style.scss style.css
 
 If you are using the JavaScript API to compile your Sass files, you can use the [`NodePackageImporter()`](https://sass-lang.com/documentation/js-api/classes/nodepackageimporter/) to resolve the imports. Here's an example of how to configure the Sass compiler:
 
-```javascript
+```js
 const sass = require('sass');
 
 sass.compileString('@use "pkg:@fontsource-variable/roboto', {
