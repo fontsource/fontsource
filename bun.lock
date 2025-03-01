@@ -155,9 +155,9 @@
       "name": "@fontsource-utils/scss",
       "version": "0.2.1",
       "devDependencies": {
-        "@fontsource-variable/recursive": "5.2.0-alpha.0",
-        "@fontsource/carlito": "5.2.0-alpha.0",
-        "@fontsource/noto-sans-jp": "5.2.0-alpha.0",
+        "@fontsource-variable/recursive": "5.2.0-alpha.1",
+        "@fontsource/carlito": "5.2.0-alpha.1",
+        "@fontsource/noto-sans-jp": "5.2.0-alpha.1",
         "sass": "^1.62.1",
         "typescript": "^5.7.2",
         "vitest": "^2.1.8",
@@ -488,13 +488,13 @@
 
     "@fontsource-variable/inter": ["@fontsource-variable/inter@5.1.1", "", {}, "sha512-OpXFTmiH6tHkYijMvQTycFKBLK4X+SRV6tet1m4YOUH7SzIIlMqDja+ocDtiCA72UthBH/vF+3ZtlMr2rN/wIw=="],
 
-    "@fontsource-variable/recursive": ["@fontsource-variable/recursive@5.2.0-alpha.0", "", {}, "sha512-zvmuJxaa6HIzsoLUYNrbwqwIA7PQYCv9yipog1UJs8B00awOtPXQCp5YnE9CjnxPksR+5dmJ5xH9Nn79NiQm8w=="],
+    "@fontsource-variable/recursive": ["@fontsource-variable/recursive@5.2.0-alpha.1", "", {}, "sha512-MSEXV0j5tPCx8A3NUMXTfA2Yhfu5Od52RlfWLeVG0O9lu4EnKwil44YEIlPvpeYsrHuSW4p8t9uNJVmxTrleug=="],
 
     "@fontsource-variable/source-code-pro": ["@fontsource-variable/source-code-pro@5.1.1", "", {}, "sha512-3mNN0zSV2HgZGbQjn/vlsVx8vzi6FU2kWGaqKGsXsO6I8TCMTKyE/uxg1cxSHttZh29KgwnhbBIoIeDtS8eLVw=="],
 
-    "@fontsource/carlito": ["@fontsource/carlito@5.2.0-alpha.0", "", {}, "sha512-VN2IaUk2JEXhHuUCvUv5+cw6u0vU3qRSs/an4gGHkjll3KmyHPtynKyj0+njZJZU5UvpXzD1f9apkFn11A9uMA=="],
+    "@fontsource/carlito": ["@fontsource/carlito@5.2.0-alpha.1", "", {}, "sha512-bivVH5NBPU5nr/rEFkbE+0V+qBRfm9EEpCQOTl5W1jow8xyYyq4XaC1+5vNOawg/Zsfc0a4NOo/o6CNueM8Tqg=="],
 
-    "@fontsource/noto-sans-jp": ["@fontsource/noto-sans-jp@5.2.0-alpha.0", "", {}, "sha512-ZzcnXva2I6mjlR2jQbLyKDtmD0h95jLpTs+mjqva3QY6l5DfEdcCVlBVzADlwcBiAljmsgz2X5hG73La5fg2Rg=="],
+    "@fontsource/noto-sans-jp": ["@fontsource/noto-sans-jp@5.2.0-alpha.1", "", {}, "sha512-DNAFscIl7fWr9xS1Fgs3wRYCgCE84oV9L5zlElSARVpMpjfT0vA6qDVXENfoTnX4GJSZ2O4TqlloTjyogQu1Yw=="],
 
     "@iarna/toml": ["@iarna/toml@2.2.5", "", {}, "sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg=="],
 
