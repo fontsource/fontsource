@@ -9,7 +9,7 @@ When using Fontsource in a Sass/SCSS project, you will need to configure your Sa
 
 ## Configuration
 
-It is required to use Dart Sass v1.71.0 or later to resolve the `pkg:` import directive.
+It is required to use Dart Sass `v1.71.0` or later to resolve the [`pkg:`](https://sass-lang.com/documentation/at-rules/use/#pkg-ur-ls) import directive.
 
 ### Command Line
 
@@ -31,7 +31,17 @@ sass.compileString('@use "pkg:@fontsource-variable/roboto', {
 });
 ```
 
-### Usage
+### Direct URLs
+
+If you cannot use the `pkg:` import directive, you can still import the Fontsource stylesheets using the direct URI to the CSS file. Here's an example of importing the Open Sans font using the direct URL:
+
+```scss
+// Adjust path as necessary.
+@use "../node_modules/@fontsource-utils/src/mixins.scss" as fontsource;
+@use "../node_modules/@fontsource-variable/recursive/scss/metadata.scss" as recursive;
+```
+
+## Usage
 
 Once configured, you can import Fontsource stylesheets using the `@use` rule in your Sass/SCSS files.
 
