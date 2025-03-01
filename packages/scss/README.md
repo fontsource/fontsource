@@ -15,7 +15,7 @@ Import the mixins and font metadata. This example uses the "Recursive" font fami
 ```scss
 // Recommended: Use NodePackageImporter().
 @use "pkg:@fontsource-utils/scss" as fontsource;
-@use "pkg:@fontsource-variable/recursive" as recursive;
+@use "pkg:@fontsource-variable/recursive/scss" as recursive;
 
 // Direct import: Adjust the path to `node_modules` if necessary.
 @use "../node_modules/@fontsource-utils/src/mixins.scss" as fontsource;

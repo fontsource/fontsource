@@ -96,7 +96,7 @@ $displayVar: null !default;
 
               $src: ();
               @each $format in $formats {
-                $src: append(
+                $src: list.append(
                   $src,
                   url('#{$directory}/#{$variant}.#{$format}')
                     format('#{$format}#{if($axis, '-variations', '')}'),

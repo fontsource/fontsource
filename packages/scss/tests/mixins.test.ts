@@ -9,7 +9,7 @@ const mixins = fs.readFileSync(
 );
 
 const compileSass = (family: string, params?: string[]) => {
-	const metadata = `@use 'pkg:${family}' as font;`;
+	const metadata = `@use 'pkg:${family}/scss' as font;`;
 
 	const options = ['$metadata: font.$metadata', ...(params ?? [])].join(', ');
 
