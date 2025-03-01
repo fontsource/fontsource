@@ -14,6 +14,26 @@ These will always contain changes from Fontsource's end.
 
 # 5.x Release
 
+## 5.2.x
+
+This update primarily focuses on modernizing the SCSS integration with Fontsource.
+
+### Features
+
+- A new `@fontsource-utils/scss` package has been added to host all future mixin code. This allows us to push updates to SCSS mixins without needing to update thousands of font packages.
+- All SCSS code now rely on the [`pkg:`](https://sass-lang.com/documentation/at-rules/use/#pkg-ur-ls) import directive to simplify resolving imports in the future.
+
+To learn more about these changes, please visit the new [documentation](https://fontsource.org/docs/getting-started/sass-introduction).
+
+### Fixes
+
+- Replaced the deprecated global function `append` with `list.append` in SCSS mixins. [#1000](https://github.com/fontsource/fontsource/issues/1000)
+- The new SCSS package drops the Webpack `~` directory prefix in favor of no prefix to support newer bundlers. The old mixins will continue to rely on the `~` prefix. [#798](https://github.com/fontsource/fontsource/issues/798)
+
+### Deprecations
+
+- The old SCSS mixins in each font package have been deprecated in favor of the new `@fontsource-utils/scss` package.
+
 ## 5.1.x
 
 - All packages now publish to NPM with a [provenance attestation](https://github.blog/security/supply-chain-security/introducing-npm-package-provenance/). [#994](https://github.com/fontsource/fontsource/pull/994)
