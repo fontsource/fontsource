@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.6.5
+
+### Patch Changes
+
+- [#1027](https://github.com/fontsource/fontsource/pull/1027) [`2d27803`](https://github.com/fontsource/fontsource/commit/2d27803cf8c7e3f5754bb6815d01e28e24cd2904) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(sass): also use list modules in old mixins
+
 ## 0.6.4
 
 ### Patch Changes

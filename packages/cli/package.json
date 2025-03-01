@@ -1,6 +1,6 @@
 {
 	"name": "@fontsource-utils/cli",
-	"version": "0.6.4",
+	"version": "0.6.5",
 	"description": "Fontsource CLI",
 	"bin": {
 		"fontsource": "dist/cli.mjs"
@@ -42,7 +42,11 @@
 		"lint": "biome lint --write .",
 		"ci:lint": "biome lint ."
 	},
-	"keywords": ["fontsource", "fonts", "google fonts"],
+	"keywords": [
+		"fontsource",
+		"fonts",
+		"google fonts"
+	],
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
@@ -69,7 +73,9 @@
 	"peerDependencies": {
 		"google-font-metadata": "^6.0.0"
 	},
-	"files": ["dist/*"],
+	"files": [
+		"dist/*"
+	],
 	"publishConfig": {
 		"access": "public"
 	},
