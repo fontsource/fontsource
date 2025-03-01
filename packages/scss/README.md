@@ -32,7 +32,7 @@ Use the `faces` mixin to generate `@font-face` rules:
 @include fontsource.faces($metadata: recursive.$metadata);
 ```
 
-Learn more in the [Fontsource SCSS documentation](https://fontsource.org/docs/getting-started/sass-import).
+Learn more in the [Fontsource SCSS documentation](https://fontsource.org/docs/getting-started/sass-introduction).
 
 ## License
 
