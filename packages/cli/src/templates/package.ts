@@ -39,6 +39,17 @@ const template = (
 			sass: './index.css',
 			default: './index.css',
 		},
+		'./*': {
+			sass: './*.css',
+			default: './*.css',
+		},
+		'./files/*': {
+			sass: './files/*',
+			default: './files/*',
+		},
+		'./package.json': './package.json',
+		'./metadata.json': './metadata.json',
+		'./unicode.json': './unicode.json',
 		'./scss': {
 			sass: './scss/metadata.scss',
 		},
@@ -46,9 +57,10 @@ const template = (
 	author: type === 'other' ? license.attribution : 'Google Inc.',
 	license: license.type,
 	homepage: `https://fontsource.org/fonts/${id}`,
+	funding: 'https://github.com/sponsors/ayuhito',
 	repository: {
 		type: 'git',
-		url: 'https://github.com/fontsource/font-files.git',
+		url: 'git+https://github.com/fontsource/font-files.git',
 		directory: `fonts/${isVariable ? 'variable' : type}/${id}`,
 	},
 	// If publish hash exists, add it to the package.json
