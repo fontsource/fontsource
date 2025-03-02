@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.6.6
+
+### Patch Changes
+
+- [#1033](https://github.com/fontsource/fontsource/pull/1033) [`56f6a89`](https://github.com/fontsource/fontsource/commit/56f6a898ffc6abd84d20129f4bed49faebf06ae7) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(template): widen exports field to support all CSS imports
+
 ## 0.6.5
 
 ### Patch Changes
