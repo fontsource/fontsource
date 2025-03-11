@@ -1,5 +1,11 @@
 # @fontsource-utils/cli
 
+## 0.6.7
+
+### Patch Changes
+
+- [#1040](https://github.com/fontsource/fontsource/pull/1040) [`3bc8913`](https://github.com/fontsource/fontsource/commit/3bc89134d9e7c43cb610ae3f15bb4c5783031285) Thanks [@aloisklink](https://github.com/aloisklink)! - fix(template): widen exports field to support LICENSE import
+
 ## 0.6.6
 
 ### Patch Changes
