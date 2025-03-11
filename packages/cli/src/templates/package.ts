@@ -39,6 +39,7 @@ const template = (
 			sass: './index.css',
 			default: './index.css',
 		},
+		'./LICENSE': './LICENSE',
 		'./*': {
 			sass: './*.css',
 			default: './*.css',
