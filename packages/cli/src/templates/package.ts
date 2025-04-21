@@ -44,9 +44,21 @@ const template = (
 			sass: './*.css',
 			default: './*.css',
 		},
+		'./*.css': {
+			sass: './*.css',
+			default: './*.css',
+		},
 		'./files/*': {
 			sass: './files/*',
 			default: './files/*',
+		},
+		'./files/*.woff': {
+			sass: './files/*.woff',
+			default: './files/*.woff',
+		},
+		'./files/*.woff2': {
+			sass: './files/*.woff2',
+			default: './files/*.woff2',
 		},
 		'./package.json': './package.json',
 		'./metadata.json': './metadata.json',
