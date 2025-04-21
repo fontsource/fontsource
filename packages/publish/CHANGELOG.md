@@ -1,5 +1,11 @@
 # @fontsource-utils/publish
 
+## 0.4.0
+
+### Minor Changes
+
+- [#1045](https://github.com/fontsource/fontsource/pull/1045) [`7a80852`](https://github.com/fontsource/fontsource/commit/7a80852b2b60468f72fc64baf780ed3a833c4eed) Thanks [@ayuhito](https://github.com/ayuhito)! - fix(packager): include extensions in exports fields
+
 ## 0.3.1
 
 ### Patch Changes
