@@ -101,10 +101,12 @@ const packPublish = async (
 			throw error;
 		}
 
-		// If errorCount exceeds 5, throw an error to stop the queue
-		errorCount++;
-		if (errorCount > 5) {
-			throw error;
+		if (
+			!errorString.includes(
+				'You cannot publish over the previously published versions',
+			)
+		) {
+			errorCount++;
 		}
 
 		// Otherwise, just reject the promise and store the error message so we can print it later
@@ -155,10 +157,12 @@ export const publishPackages = async (
 					}),
 				)
 				.catch((error) => {
-					// Empty queue when we hit the error limit
-					queue.pause();
-					queue.clear();
-					throw error;
+					// Empty queue when we hit the error limit.
+					if (errorCount > 10) {
+						queue.pause();
+						queue.clear();
+						throw error;
+					}
 				});
 			publishArr.push(newPkg);
 		}
