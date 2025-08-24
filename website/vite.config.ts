@@ -15,6 +15,14 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 import { getLoadContext } from './load-context';
 
+declare module '@remix-run/cloudflare' {
+	// or cloudflare, deno, etc.
+	interface Future {
+		v3_singleFetch: true;
+	}
+}
+
+// @ts-expect-error - Works for now.
 export default defineConfig(({ isSsrBuild }) => ({
 	server: {
 		port: 8080,
@@ -37,6 +45,7 @@ export default defineConfig(({ isSsrBuild }) => ({
 			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
 		}),
 		remix({
+			// @ts-expect-error - Will fix in react-router v7.
 			postcss: true,
 			future: {
 				v3_fetcherPersist: true,
