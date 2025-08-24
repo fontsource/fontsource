@@ -1,39 +1,48 @@
 {
 	"include": [
-		"worker-configuration.d.ts",
-		"env.d.ts",
+		".react-router/types/**/*",
 		"**/*.ts",
 		"**/*.tsx",
 		"**/.server/**/*.ts",
 		"**/.server/**/*.tsx",
 		"**/.client/**/*.ts",
-		"**/.client/**/*.tsx"
+		"**/.client/**/*.tsx",
+		"worker-configuration.d.ts",
+		"vite.config.ts"
 	],
 	"compilerOptions": {
-		"lib": ["DOM", "DOM.Iterable", "ES2022"],
-		"module": "ES2022",
+		"checkJs": true,
+		"verbatimModuleSyntax": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"noEmit": true,
+		"composite": true,
+		"lib": [
+			"DOM",
+			"DOM.Iterable",
+			"ES2022"
+		],
 		"types": [
-			"@remix-run/cloudflare",
-			"@cloudflare/workers-types",
 			"vite/client"
 		],
-		"isolatedModules": true,
-		"esModuleInterop": true,
-		"jsx": "react-jsx",
-		"moduleResolution": "Bundler",
-		"resolveJsonModule": true,
 		"target": "ES2022",
-		"strict": true,
-		"allowJs": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
+		"module": "ES2022",
+		"moduleResolution": "bundler",
+		"jsx": "react-jsx",
 		"baseUrl": ".",
+		"rootDirs": [
+			".",
+			"./.react-router/types"
+		],
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
 		"paths": {
-			"@/docs/*": ["./docs/*"],
-			"@/*": ["./app/*"]
+			"@/docs/*": [
+				"./docs/*"
+			],
+			"@/*": [
+				"./app/*"
+			]
 		},
-
-		// Remix takes care of building everything in `remix build`.
-		"noEmit": true
 	}
 }

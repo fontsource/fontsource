@@ -6,7 +6,7 @@ import {
 	UnstyledButton,
 	useMantineColorScheme,
 } from '@mantine/core';
-import { Link, useParams } from '@remix-run/react';
+import { Link, useParams } from 'react-router';
 import { useState } from 'react';
 
 import { CarbonAd } from '@/components/CarbonAd';

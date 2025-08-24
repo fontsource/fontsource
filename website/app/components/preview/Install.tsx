@@ -1,5 +1,5 @@
 import { Grid, Group, Tabs, Text, Title, UnstyledButton } from '@mantine/core';
-import { Link } from '@remix-run/react';
+import { Link } from 'react-router';
 
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import { IconExternal } from '@/components/icons';

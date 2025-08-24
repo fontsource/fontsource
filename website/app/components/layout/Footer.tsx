@@ -7,7 +7,7 @@ import {
 	Text,
 	Tooltip,
 } from '@mantine/core';
-import { Link } from '@remix-run/react';
+import { Link } from 'react-router';
 
 import { IconDiscord, IconGithub } from '@/components/icons';
 import { LogoText } from '@/components/logo/LogoText';
@@ -53,7 +53,6 @@ export const Footer = ({ ...other }: ContainerProps) => {
 	// <FooterNavLink label="Sponsors" to="/sponsors" />
 
 	return (
-		// @ts-expect-error - Mantine v7 typing errors
 		<Box component="footer" className={classes.header} {...other}>
 			<Container className={classes.inner}>
 				<Link to="/">

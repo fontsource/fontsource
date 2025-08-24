@@ -9,7 +9,7 @@ import {
 	Title,
 	UnstyledButton,
 } from '@mantine/core';
-import { Link } from '@remix-run/react';
+import { Link } from 'react-router';
 import { useState } from 'react';
 
 import { Code } from '@/components/code/Code';

@@ -55,14 +55,8 @@ import type {
 	HeadersFunction,
 	LinksFunction,
 	MetaFunction,
-} from '@remix-run/node';
-import {
-	Links,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
-} from '@remix-run/react';
+} from 'react-router';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import { AppShell } from '@/components/layout/AppShell';
 import { theme } from '@/styles/theme';
