@@ -77,6 +77,7 @@ const packPublish = async (
 	try {
 		// Setup .npmrc
 		const npmrc = path.join(pkg.path, '.npmrc');
+		// biome-ignore lint/suspicious/noTemplateCurlyInString: Intentional environment variable.
 		await fs.writeFile(npmrc, '//registry.npmjs.org/:_authToken=${NPM_TOKEN}');
 
 		// Update version, then publish, then hash

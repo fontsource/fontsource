@@ -26,10 +26,10 @@ export const kya = async (url: string, opts?: KyaOpts) => {
 		},
 	});
 
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: Selective.
 	if (opts?.text) return data.text() as any;
 
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: Selective.
 	return data.json() as any;
 };
 

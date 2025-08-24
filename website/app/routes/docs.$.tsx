@@ -68,7 +68,7 @@ export default function Docs() {
 	const Component = matches[slug(route)].default;
 
 	return (
-		// @ts-ignore
+		// @ts-expect-error
 		<MDXProvider components={mdxComponents}>
 			<Component />
 		</MDXProvider>

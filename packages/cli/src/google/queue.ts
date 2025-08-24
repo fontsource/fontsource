@@ -15,7 +15,7 @@ import { build } from './build';
 
 const queue = new PQueue({ concurrency: 3 });
 
-// @ts-ignore - dts thinks there is a typing error here
+// @ts-expect-error - dts thinks there is a typing error here
 queue.on('idle', () => {
 	consola.success(
 		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`,

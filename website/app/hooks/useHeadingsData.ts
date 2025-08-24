@@ -36,7 +36,7 @@ const getNestedHeadings = (headingElements: HTMLHeadElement[]) => {
 export const useHeadingsData = (page: string) => {
 	const [nestedHeadings, setNestedHeadings] = useState<HeadingsData[]>([]);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
 	useEffect(() => {
 		const headingElements = [...document.querySelectorAll('h2, h3')];
 

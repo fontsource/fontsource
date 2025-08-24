@@ -43,7 +43,7 @@ export const gitRemoteAdd = async (name: string): Promise<void> => {
 
 	// git remote add origin https://username:access-token@github.com/username/repo.git
 	const publishURL = `https://${name}:${
-		// biome-ignore lint/style/noNonNullAssertion: <explanation>
+		// biome-ignore lint/style/noNonNullAssertion: It is guaranteed to be there.
 		process.env.GITHUB_TOKEN!
 	}@${strippedURL}`;
 	try {

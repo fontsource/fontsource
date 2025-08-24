@@ -3,8 +3,8 @@ import {
 	Button,
 	ColorInput,
 	Group,
-	Popover,
 	Slider as MantineSlider,
+	Popover,
 	Text,
 	Tooltip,
 } from '@mantine/core';
@@ -25,9 +25,9 @@ interface ButtonsProps {
 interface SliderButtonProps {
 	label: string;
 	icon: React.ReactNode;
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: Selective.
 	value: any;
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: Selective.
 	setValue: (value: React.SetStateAction<any>) => void;
 	suffix?: string;
 	defaultValue?: number;
