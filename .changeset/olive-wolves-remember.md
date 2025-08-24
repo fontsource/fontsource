@@ -6,7 +6,6 @@
 "cdn": patch
 "download": patch
 "api": patch
-"website": patch
 ---
 
 chore(biome): upgrade dependency and fix lints
