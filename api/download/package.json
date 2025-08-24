@@ -26,5 +26,7 @@
 		"p-queue": "^7.4.1",
 		"woff2sfnt-sfnt2woff": "^1.0.0"
 	},
-	"trustedDependencies": ["@biomejs/biome"]
+	"trustedDependencies": [
+		"@biomejs/biome"
+	]
 }

@@ -17,7 +17,13 @@
 		"vitest": "^2.1.8"
 	},
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/scss",
-	"keywords": ["fontsource", "fonts", "google fonts", "sass", "scss"],
+	"keywords": [
+		"fontsource",
+		"fonts",
+		"google fonts",
+		"sass",
+		"scss"
+	],
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
