@@ -15,9 +15,6 @@ export default defineConfig({
 	build: {
 		minify: 'terser',
 	},
-	server: {
-		port: 8080,
-	},
 	plugins: [
 		cloudflare({ viteEnvironment: { name: 'ssr' } }),
 		mdx({
