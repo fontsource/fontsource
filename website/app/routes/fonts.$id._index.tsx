@@ -2,7 +2,7 @@ import { generateFontFace } from '@fontsource-utils/generate';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare';
-import { json } from '@remix-run/cloudflare';
+import { data } from '@remix-run/cloudflare';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
@@ -138,7 +138,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		downloadCount: stats.total.npmDownloadTotal,
 	};
 
-	return json(res, {
+	return data(res, {
 		headers: {
 			'Cache-Control': 'public, max-age=300',
 		},
