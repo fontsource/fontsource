@@ -64,7 +64,7 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	const variation = state$.fontVariation.get();
 	const colorScheme = useComputedColorScheme('light');
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
 	useEffect(() => {
 		colorScheme === 'dark'
 			? state$.preview.color.set('#FFFFFF')
@@ -122,7 +122,7 @@ const TextArea = ({
 
 	const isNotLatin =
 		defSubset !== 'latin' || category === 'icons' || category === 'other';
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
 	useEffect(() => {
 		if (isNotLatin) {
 			state$.preview.text.set(getPreviewText(defSubset, id));

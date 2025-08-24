@@ -1,11 +1,9 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
 	"files": {
-		"ignore": ["**/coverage/**", "**/dist/**", "**/build/**"]
+		"includes": ["**", "!**/coverage", "!**/dist", "!**/build"]
 	},
-	"organizeImports": {
-		"enabled": true
-	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"css": {
 		"formatter": {
 			"enabled": false
@@ -22,7 +20,10 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"correctness": {
+				"useUniqueElementIds": "off"
+			}
 		}
 	}
 }

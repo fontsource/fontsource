@@ -34,7 +34,9 @@
 		"pkgroll": "^2.5.0",
 		"typescript": "^5.2.2"
 	},
-	"files": ["dist/*"],
+	"files": [
+		"dist/*"
+	],
 	"publishConfig": {
 		"access": "public"
 	},

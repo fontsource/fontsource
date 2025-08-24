@@ -1,9 +1,9 @@
 import { createRequestHandler, type ServerBuild } from '@remix-run/cloudflare';
-// @ts-ignore This file won’t exist if it hasn’t yet been built
+// @ts-expect-error This file won’t exist if it hasn’t yet been built
 import * as build from './build/server';
 import { getLoadContext } from './load-context';
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: Selective.
 const handleRemixRequest = createRequestHandler(build as any as ServerBuild);
 
 export default {

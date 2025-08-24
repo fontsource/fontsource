@@ -221,7 +221,7 @@ router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
 						version,
 						file,
 						staticMetadata,
-						// biome-ignore lint/style/noNonNullAssertion: <explanation>
+						// biome-ignore lint/style/noNonNullAssertion: Selective.
 						variableMetadata!,
 						env,
 						ctx,

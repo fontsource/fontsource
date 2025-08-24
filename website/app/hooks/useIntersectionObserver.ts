@@ -8,7 +8,7 @@ export const useIntersectionObserver = (
 ) => {
 	const headingElementsRef = useRef<HeadingIntersectionEntry>({});
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
 	useEffect(() => {
 		headingElementsRef.current = {}; // Reset ref on page change to update active states
 		const headingElements = [...document.querySelectorAll('h2, h3')];

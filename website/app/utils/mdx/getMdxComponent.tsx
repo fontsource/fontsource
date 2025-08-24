@@ -13,8 +13,8 @@ import {
 	type TableTbodyProps,
 	type TableTdProps,
 	type TableTfootProps,
-	type TableThProps,
 	type TableTheadProps,
+	type TableThProps,
 	type TableTrProps,
 	Text,
 	type TextProps,
@@ -70,7 +70,7 @@ const mdxComponents = {
 	// Other
 	hr: (props: DividerProps) => <Divider mb="md" {...props} />,
 	blockquote: (props: BlockquoteProps) => <Blockquote {...props} />,
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: Selective.
 	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
 };
 

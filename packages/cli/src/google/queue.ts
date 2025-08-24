@@ -3,8 +3,8 @@ import fs from 'fs-extra';
 import {
 	APIIconStatic,
 	APIIconVariable,
-	APIv2,
 	APIVariable,
+	APIv2,
 } from 'google-font-metadata';
 import PQueue from 'p-queue';
 import * as path from 'pathe';
@@ -15,7 +15,6 @@ import { build } from './build';
 
 const queue = new PQueue({ concurrency: 3 });
 
-// @ts-ignore - dts thinks there is a typing error here
 queue.on('idle', () => {
 	consola.success(
 		`All ${Object.keys(APIv2).length} Google Fonts have been processed.`,

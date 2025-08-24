@@ -1,7 +1,7 @@
 import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
-const IconSun = ({ height, stroke, ...others }: IconProps) => {
+const IconSun = ({ height, stroke }: IconProps) => {
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" height={height ?? 20} fill="none">
 			<title>Sun Icon</title>

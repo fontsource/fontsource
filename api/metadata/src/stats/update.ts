@@ -106,17 +106,17 @@ export const updatePackageStatAll = async (env: Env, ctx: ExecutionContext) => {
 					jsDelivrHitsTotal: 0,
 				};
 
-				// biome-ignore lint/style/noNonNullAssertion: <explanation>
+				// biome-ignore lint/style/noNonNullAssertion: Selective.
 				stats[id].variable!.npmDownloadMonthly +=
 					npmMonthData[packageName] ?? 0;
 
-				// biome-ignore lint/style/noNonNullAssertion: <explanation>
+				// biome-ignore lint/style/noNonNullAssertion: Selective.
 				stats[id].variable!.npmDownloadTotal += npmTotalData[packageName] ?? 0;
 
-				// biome-ignore lint/style/noNonNullAssertion: <explanation>
+				// biome-ignore lint/style/noNonNullAssertion: Selective.
 				stats[id].variable!.jsDelivrHitsMonthly +=
 					jsDelivrMonthData[packageName] ?? 0;
-				// biome-ignore lint/style/noNonNullAssertion: <explanation>
+				// biome-ignore lint/style/noNonNullAssertion: Selective.
 				stats[id].variable!.jsDelivrHitsTotal +=
 					jsDelivrTotalData[packageName] ?? 0;
 			} else {
