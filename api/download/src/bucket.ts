@@ -61,7 +61,7 @@ export const listBucket = async (prefix: string) => {
 	const resp = await fetch(`https://upload.fontsource.org/list/${prefix}`, {
 		headers: {
 			Authorization: `Bearer ${
-				// biome-ignore lint/style/noNonNullAssertion: <explanation>
+				// biome-ignore lint/style/noNonNullAssertion: Selective.
 				process.env.UPLOAD_KEY!
 			}`,
 		},

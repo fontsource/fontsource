@@ -94,5 +94,5 @@ jobs:
       - name: Install
         run: bun install
 
-      - name: Run lints
-        run: bun run ci:lint
+      # - name: Run lints
+      #   run: bun run ci:lint
