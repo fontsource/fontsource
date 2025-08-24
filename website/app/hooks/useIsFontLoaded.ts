@@ -1,5 +1,5 @@
 import FontFaceObserver from 'fontfaceobserver';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 interface ObserverOptions {
 	weights?: number[];
@@ -12,58 +12,43 @@ interface FontFace {
 	style?: string;
 }
 
-interface Options {
-	timeout?: number;
-}
-
-const useFontFaceObserver = (
-	fontFaces: FontFace[] = [],
-	{ timeout }: Options = {},
-): boolean => {
+export const useIsFontLoaded = (family: string, options?: ObserverOptions) => {
 	const [isResolved, setIsResolved] = useState(false);
-	const fontFacesString = JSON.stringify(fontFaces);
+
+	// Memoize the font faces array to avoid unnecessary re-renders.
+	const fontFaces = useMemo(() => {
+		if (!options?.weights || options.weights.length === 0) {
+			return [{ family, style: options?.style ?? 'normal' }];
+		}
+
+		return options.weights.map((weight) => ({
+			family,
+			weight,
+			style: options.style ?? 'normal',
+		}));
+	}, [family, options?.weights, options?.style]);
 
 	useEffect(() => {
-		const promises = JSON.parse(fontFacesString).map(
+		setIsResolved(false);
+
+		const promises = fontFaces.map(
 			async ({ family, weight, style }: FontFace) => {
 				await new FontFaceObserver(family, {
 					weight,
 					style,
-				}).load(undefined, timeout);
+				}).load(undefined, 15_000);
 			},
 		);
 
-		Promise.all(promises).then(() => {
-			setIsResolved(true);
-		});
-	}, [fontFacesString, timeout]);
+		Promise.all(promises)
+			.then(() => {
+				setIsResolved(true);
+			})
+			.catch(() => {
+				// Font loading failed, but we don't want to throw
+				// Just leave isResolved as false
+			});
+	}, [fontFaces]);
 
 	return isResolved;
-};
-
-export const useIsFontLoaded = (family: string, options?: ObserverOptions) => {
-	if (!options?.weights || options.weights.length === 0)
-		return useFontFaceObserver(
-			[{ family, style: options?.style ?? 'normal' }],
-			{
-				timeout: 15_000,
-			},
-		);
-
-	const loadingArray = options?.weights.map((weight) => {
-		// Loop loading order is guaranteed to be consistent, so we can disable the rule
-		return useFontFaceObserver(
-			[
-				{
-					family,
-					weight,
-					style: options.style ?? 'normal',
-				},
-			],
-			{ timeout: 15_000 },
-		);
-	});
-	const getFontLoaded = loadingArray.every(Boolean);
-
-	return getFontLoaded;
 };
