@@ -1,8 +1,8 @@
 import { observer, useComputed } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
-import { Link as NavLink } from 'react-router';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
+import { Link as NavLink } from 'react-router';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
@@ -21,6 +21,35 @@ interface InfiniteHitsProps {
 	state$: SearchState;
 }
 
+function useInfiniteScroll(isLastPage: boolean, showMore: () => void) {
+	const sentinelRef = useRef<HTMLDivElement | null>(null);
+
+	const handleIntersection = useCallback(
+		(entries: IntersectionObserverEntry[]) => {
+			for (const entry of entries) {
+				if (entry.isIntersecting && !isLastPage) {
+					showMore();
+				}
+			}
+		},
+		[isLastPage, showMore],
+	);
+
+	useEffect(() => {
+		const sentinel = sentinelRef.current;
+		if (!sentinel) return;
+
+		const observer = new IntersectionObserver(handleIntersection);
+		observer.observe(sentinel);
+
+		return () => {
+			observer.disconnect();
+		};
+	}, [handleIntersection]);
+
+	return sentinelRef;
+}
+
 const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	const isFontLoaded = useIsFontLoaded(hit.family);
 	const display = state$.display.get();
@@ -34,20 +63,15 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 
 	// We want a unique preview text for each font if it's not latin
 	const currentPreview$ = useComputed(() => {
-		// If isNotLatin is true, update currentPreview to the correct preview text
-		if (state$.preview.inputView.get() === '' && isNotLatin) {
+		const previewValue = state$.preview.value.get();
+		const inputView = state$.preview.inputView.get();
+
+		// Use language-specific preview for non-latin fonts when no custom input
+		if (inputView === '' && isNotLatin) {
 			return getPreviewText(hit.defSubset, hit.objectID);
 		}
 
-		return state$.preview.value.get();
-	});
-
-	// Update the preview value to a language specific sentence
-	// if the language is changed and preset is not custom
-	state$.language.onChange((e) => {
-		if (state$.preview.label.get() !== 'Custom') {
-			state$.preview.value.set(getPreviewText(e.value, hit.objectID));
-		}
+		return previewValue;
 	});
 
 	return (
@@ -84,48 +108,29 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	);
 });
 
-interface HitsMapProps {
-	hits: AlgoliaMetadata[];
-	sentinelRef: React.MutableRefObject<HTMLDivElement | null>;
-	state$: SearchState;
-}
-
-const HitsMap = ({ hits, sentinelRef, state$ }: HitsMapProps) => {
-	return (
-		<>
-			{hits.map((hit) => (
-				<HitComponent key={hit.objectID} state$={state$} hit={hit} />
-			))}
-			<div ref={sentinelRef} aria-hidden="true" key="sentinel" />
-		</>
-	);
-};
-
 const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const display = state$.display.get();
 
 	// Infinite Scrolling
 	const { results, indexUiState } = useInstantSearch();
-	const { hits, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
-	const sentinelRef = useRef(null);
+	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
+
+	const sentinelRef = useInfiniteScroll(isLastPage, showMore);
 
 	useEffect(() => {
-		if (sentinelRef.current !== null) {
-			const observer = new IntersectionObserver((entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting && !isLastPage) {
-						showMore();
-					}
+		const unsubscribe = state$.language.onChange((e) => {
+			if (state$.preview.label.get() !== 'Custom') {
+				// For global preview updates, use the first hit or a default
+				const firstHit = items[0];
+				if (firstHit) {
+					const newPreview = getPreviewText(e.value, firstHit.objectID);
+					state$.preview.value.set(newPreview);
 				}
-			});
+			}
+		});
 
-			observer.observe(sentinelRef.current);
-
-			return () => {
-				observer.disconnect();
-			};
-		}
-	}, [isLastPage, showMore]);
+		return unsubscribe;
+	}, [state$.preview, state$.language, items]);
 
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
@@ -142,11 +147,17 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 			<Sort state$={state$} count={results.nbHits} />
 			{display === 'grid' ? (
 				<SimpleGrid cols={{ base: 1, sm: 2, md: 3, xl: 4 }} spacing={16}>
-					<HitsMap state$={state$} hits={hits} sentinelRef={sentinelRef} />
+					{items.map((item) => (
+						<HitComponent key={item.objectID} state$={state$} hit={item} />
+					))}
+					<div ref={sentinelRef} aria-hidden="true" />
 				</SimpleGrid>
 			) : (
 				<SimpleGrid cols={{ base: 1 }} spacing={16}>
-					<HitsMap state$={state$} hits={hits} sentinelRef={sentinelRef} />
+					{items.map((item) => (
+						<HitComponent key={item.objectID} state$={state$} hit={item} />
+					))}
+					<div ref={sentinelRef} aria-hidden="true" />
 				</SimpleGrid>
 			)}
 		</div>
