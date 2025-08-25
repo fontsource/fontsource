@@ -6,7 +6,7 @@ import classes from './ScrollToTop.module.css';
 
 interface ScrollToTopProps {
 	containerId: string;
-	targetRef: React.RefObject<HTMLElement>;
+	targetRef: React.RefObject<HTMLElement | null>;
 }
 
 const scrollUp = () => {

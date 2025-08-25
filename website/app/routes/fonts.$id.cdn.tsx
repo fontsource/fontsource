@@ -1,6 +1,5 @@
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
-import { data } from 'react-router';
-import { useLoaderData } from 'react-router';
+import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import { CDN } from '@/components/preview/CDN';
@@ -19,9 +18,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 
-	const metadata = await getMetadata(id);
-	const [variable, stats] = await Promise.all([
-		metadata.variable ? getVariable(id) : undefined,
+	const [metadata, variable, stats] = await Promise.all([
+		getMetadata(id),
+		getVariable(id).catch(() => undefined), // Always try to load, fail gracefully
 		getStats(id),
 	]);
 

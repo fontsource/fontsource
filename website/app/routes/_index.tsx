@@ -180,7 +180,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 
 export default function Index() {
 	const { serverState, serverUrl } = useLoaderData<typeof loader>();
-	const searchRef = useRef(null);
+	const searchRef = useRef<HTMLDivElement>(null);
 
 	const state$ = useObservable<SearchObject>({
 		size: 32,

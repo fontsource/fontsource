@@ -2,8 +2,7 @@ import { generateFontFace } from '@fontsource-utils/generate';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
-import { data } from 'react-router';
-import { useLoaderData } from 'react-router';
+import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import { Configure } from '@/components/preview/Configure';
