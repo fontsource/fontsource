@@ -46,14 +46,14 @@ const mdxComponents = {
 	h4: (props: TitleProps) => (
 		<Title order={4} fw={700} fz={15} mt="lg" mb="sm" {...props} />
 	),
-	p: (props: TextProps) => <Text fw={400} fz={15} {...props} />,
+	p: (props: TextProps) => <Text fw={400} fz={15} my="md" {...props} />,
 
 	// Lists
+	ol: (props: ListProps) => <List type="ordered" {...props} />,
 	ul: (props: ListProps) => <List {...props} />,
-	li: (props: ListItemProps) => <List.Item mt="md" {...props} />,
+	li: (props: ListItemProps) => <List.Item {...props} />,
 
 	// Code
-
 	pre: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />, // Unnecessary pre as we use Code component
 	code: (props: CodeProps) => <CodeMdx {...props} />,
 
