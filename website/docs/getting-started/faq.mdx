@@ -1,0 +1,84 @@
+---
+title: FAQ
+section: Contents
+---
+
+# Frequently Asked Questions
+
+This page addresses common issues and questions that users encounter when working with Fontsource.
+
+## TypeScript Errors
+
+### Cannot find module '@fontsource/[font-name]' or its corresponding type declarations
+
+If you're encountering TypeScript errors like:
+
+```sh
+Cannot find module '@fontsource/inter' or its corresponding type declarations.
+Cannot find module '@fontsource-variable/open-sans' or its corresponding type declarations.
+```
+
+This is due to TypeScript's [`noUncheckedSideEffects`](https://www.typescriptlang.org/tsconfig/#noUncheckedSideEffectImports) flag rejecting CSS files as having side effects. To resolve this, add ambient module declarations to your project:
+
+Create a global TypeScript declaration file (e.g., `src/globals.d.ts`) and include:
+
+```ts
+// ./src/globals.d.ts
+declare module "*.css";
+declare module "@fontsource/*" {}
+declare module "@fontsource-variable/*" {}
+```
+
+This tells TypeScript to allow imports from CSS files and Fontsource packages without type checking.
+
+## Performance Issues
+
+### Large bundle sizes
+
+If your bundle size is larger than expected:
+
+- **Use variable fonts**: When available, variable fonts can significantly reduce bundle size compared to importing multiple static weights.
+
+```jsx
+// Instead of multiple static weights
+import "@fontsource/open-sans/300.css";
+import "@fontsource/open-sans/400.css";
+import "@fontsource/open-sans/500.css";
+import "@fontsource/open-sans/700.css";
+
+// Use variable fonts
+import "@fontsource-variable/open-sans";
+```
+
+- **Import only needed weights**: Only import the specific weights and styles you actually use.
+
+```jsx
+import "@fontsource/open-sans/400.css"; // Only import weight 400
+import "@fontsource/open-sans/700.css"; // Only import weight 700
+```
+
+## Variable Fonts
+
+### Variable font not working
+
+If variable fonts aren't working as expected:
+
+- **Check browser support**: Ensure the target browsers support variable fonts.
+- **Verify font-family name**: Variable fonts typically have "Variable" in their font-family name:
+
+```css
+body {
+  font-family: "Open Sans Variable", sans-serif;
+}
+```
+
+- **Use CSS custom properties**: For variable fonts, you can use CSS custom properties or `font-variation-settings`:
+
+```css
+.heading {
+  font-family: "Open Sans Variable", sans-serif;
+  font-weight: 600;
+  /* Or use variation settings directly */
+  font-variation-settings: "wght" 600;
+}
+```

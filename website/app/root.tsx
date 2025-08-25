@@ -43,6 +43,7 @@ import '@mantine/core/styles/Modal.css';
 import '@mantine/core/styles/Tooltip.css';
 // Typography
 import '@mantine/core/styles/Code.css';
+import '@mantine/core/styles/List.css';
 import '@mantine/core/styles/Table.css';
 // Misc
 import '@mantine/core/styles/Badge.css';

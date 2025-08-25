@@ -50,7 +50,22 @@ import "@fontsource/open-sans/900-italic.css"; // Italic variant.
 
 > **Note:** Each font package will provide information on the supported weights and styles in the directory listing or package README.
 
-### 5. CSS
+### 5. TypeScript Configuration
+
+If you're using TypeScript, you may encounter errors when importing CSS files due to TypeScript's [`noUncheckedSideEffects`](https://www.typescriptlang.org/tsconfig/#noUncheckedSideEffectImports) flag rejecting CSS files as having side effects. To resolve this, you need to add ambient module declarations to your project.
+
+Create a global TypeScript declaration file (e.g., `src/globals.d.ts`) and include the following:
+
+```typescript
+// ./src/globals.d.ts
+declare module "*.css";
+declare module "@fontsource/*" {}
+declare module "@fontsource-variable/*" {}
+```
+
+This tells TypeScript to allow imports from CSS files and Fontsource packages without type checking, which is the recommended approach for handling font imports.
+
+### 6. CSS
 
 Once the font is imported, you can reference it in your CSS stylesheets, CSS Modules, or CSS-in-JS. Use the font family name associated with the font package you installed. For example:
 
