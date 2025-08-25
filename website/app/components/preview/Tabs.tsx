@@ -1,7 +1,7 @@
 import type { BoxProps } from '@mantine/core';
 import { Badge, Group, Tabs, Title } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
-import { useNavigate } from '@remix-run/react';
+import { useNavigate } from 'react-router';
 
 import { IconDownload, IconGlobe } from '@/components/icons';
 import { ContentHeader } from '@/components/layout/ContentHeader';
@@ -67,6 +67,7 @@ export const TabsWrapper = ({
 					<a
 						href={`https://api.fontsource.org/v1/download/${metadata.id}`}
 						className={classes['download-button']}
+						// @ts-expect-error - TODO: fix react 19
 						ref={refDownload}
 						data-m:click={`download=${metadata.id}`}
 					>
@@ -80,6 +81,7 @@ export const TabsWrapper = ({
 						onClick={() => {
 							navigate(`/fonts/${metadata.id}/cdn`);
 						}}
+						// @ts-expect-error - TODO: fix react 19
 						ref={refGlobe}
 						className={classes['hide-tab']}
 					>

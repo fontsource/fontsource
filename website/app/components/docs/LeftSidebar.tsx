@@ -1,7 +1,7 @@
 import { Box, Divider, Flex, Group, Text } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
-import { Link, useParams } from '@remix-run/react';
 import { Fragment } from 'react';
+import { Link, useParams } from 'react-router';
 
 import type { IconProps } from '@/components/icons';
 import {
@@ -75,6 +75,7 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 					? 'https://github.com/fontsource/fontsource/blob/main/CHANGELOG.md'
 					: `/docs/${slug}`
 			}
+			// @ts-expect-error - TODO: fix react 19
 			ref={ref}
 			target={slug === 'changelog' ? '_blank' : undefined}
 			data-active={active}

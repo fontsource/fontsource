@@ -1,7 +1,13 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
 	"files": {
-		"includes": ["**", "!**/coverage", "!**/dist", "!**/build"]
+		"includes": [
+			"**",
+			"!**/coverage",
+			"!**/dist",
+			"!**/build",
+			"!**/worker-configuration.d.ts"
+		]
 	},
 	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"css": {

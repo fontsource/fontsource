@@ -1,5 +1,5 @@
 import { Box, Container, Grid } from '@mantine/core';
-import { Outlet } from '@remix-run/react';
+import { Outlet } from 'react-router';
 
 import { DocsHeader } from '@/components/docs/DocsHeader';
 import { LeftSidebar } from '@/components/docs/LeftSidebar';

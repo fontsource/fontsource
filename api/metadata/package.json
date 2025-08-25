@@ -17,8 +17,7 @@
 		"itty-router": "^4.0.23",
 		"typescript": "^5.3.3",
 		"vitest": "^0.34.4",
-		"vitest-environment-miniflare": "^2.14.1",
-		"wrangler": "^3.19.0"
+		"vitest-environment-miniflare": "^2.14.1"
 	},
 	"dependencies": {
 		"common-api": "workspace:*"

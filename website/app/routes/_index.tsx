@@ -1,10 +1,8 @@
+import { createFetchRequester } from '@algolia/requester-fetch';
 import { observable } from '@legendapp/state';
 import { useObservable } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
-import { json, type LoaderFunctionArgs } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
-// TODO: Use lite client - https://github.com/algolia/algoliasearch-client-javascript/issues/1548#issuecomment-2380488738
-import { algoliasearch } from 'algoliasearch';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { UiState } from 'instantsearch.js';
 // @ts-expect-error - No type definitions available
 import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
@@ -15,9 +13,10 @@ import { renderToString } from 'react-dom/server';
 import {
 	getServerState,
 	InstantSearch,
-	InstantSearchSSRProvider,
 	type InstantSearchServerState,
+	InstantSearchSSRProvider,
 } from 'react-instantsearch';
+import { data, type LoaderFunctionArgs, useLoaderData } from 'react-router';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
@@ -37,6 +36,9 @@ const ALGOLIA_TTL = 6 * 60 * 60 * 1000; // 6 hours
 const searchClient = algoliasearch(
 	'WNATE69PVR',
 	'8b36fe56fca654afaeab5e6f822c14bd',
+	{
+		requester: createFetchRequester(),
+	},
 );
 
 const sortMap: Record<string, string> = {
@@ -129,12 +131,9 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	});
 
 	// Check local cache for server state first to avoid unnecessary API calls
-	let serverState = await ALGOLIA.get<InstantSearchServerState>(
-		serverUrl,
-		'json',
-	);
+	let serverState = await ALGOLIA.get(serverUrl, 'json');
 	if (serverState) {
-		return json<SearchProps>({
+		return data<SearchProps>({
 			serverState,
 			serverUrl,
 		});
@@ -166,7 +165,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 		}),
 	);
 
-	return json<SearchProps>(
+	return data<SearchProps>(
 		{
 			serverState,
 			serverUrl,

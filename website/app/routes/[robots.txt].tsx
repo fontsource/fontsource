@@ -1,4 +1,4 @@
-import type { LoaderFunction } from '@remix-run/cloudflare';
+import type { LoaderFunction } from 'react-router';
 
 const prod = `User-agent: *
 Allow: /

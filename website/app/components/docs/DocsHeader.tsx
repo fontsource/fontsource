@@ -3,7 +3,7 @@ import '@docsearch/css';
 import type { DocSearchModal as DocSearchModalComponent } from '@docsearch/react';
 import { Group, Modal, Text, Title, UnstyledButton } from '@mantine/core';
 import { useDisclosure, useMounted } from '@mantine/hooks';
-import { Link, useNavigate } from '@remix-run/react';
+import { Link, useNavigate } from 'react-router';
 import { lazy, type LazyExoticComponent, useRef } from 'react';
 
 import { ContentHeader } from '@/components/layout/ContentHeader';

@@ -28,7 +28,6 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 					setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 				}}
 			>
-				{/* @ts-expect-error - Mantine v7 typings */}
 				{dark ? <IconSun {...others} /> : <IconMoon {...others} />}
 			</ActionIcon>
 		</Tooltip>
@@ -49,6 +48,7 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 			onClick={() => {
 				setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 			}}
+			// @ts-expect-error - TODO: fix react 19
 			ref={ref}
 		>
 			<Group gap="xs">
@@ -57,13 +57,11 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 					aria-label={dark ? 'Light mode' : 'Dark mode'}
 				>
 					{dark ? (
-						// @ts-expect-error - Mantine v7 typings
 						<IconSun
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}
 						/>
 					) : (
-						// @ts-expect-error - Mantine v7 typings
 						<IconMoon
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}

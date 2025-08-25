@@ -1,7 +1,6 @@
-import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/cloudflare';
-import { json, redirect } from '@remix-run/cloudflare';
-import { useParams } from '@remix-run/react';
 import { MDXProvider } from '@mdx-js/react';
+import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
+import { data, redirect, useParams } from 'react-router';
 
 import { mdxComponents } from '@/utils/mdx/getMdxComponent';
 import { ogMeta } from '@/utils/meta';
@@ -38,7 +37,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
 	const frontmatter = matches[slug(route)].frontmatter;
 
-	return json<LoaderData>(
+	return data<LoaderData>(
 		{ frontmatter },
 		{
 			headers: {

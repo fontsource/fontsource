@@ -1,6 +1,6 @@
 import type { BoxProps } from '@mantine/core';
 import { Box } from '@mantine/core';
-import { useLocation } from '@remix-run/react';
+import { useLocation } from 'react-router';
 import { useEffect } from 'react';
 import Balancer from 'react-wrap-balancer';
 

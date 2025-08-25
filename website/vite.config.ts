@@ -1,8 +1,6 @@
+import { cloudflare } from '@cloudflare/vite-plugin';
 import mdx from '@mdx-js/rollup';
-import {
-	cloudflareDevProxyVitePlugin,
-	vitePlugin as remix,
-} from '@remix-run/dev';
+import { reactRouter } from '@react-router/dev/vite';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkFrontmatter from 'remark-frontmatter';
@@ -10,30 +8,15 @@ import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import remarkSmartypants from 'remark-smartypants';
 import { defineConfig } from 'vite';
-import { cjsInterop } from 'vite-plugin-cjs-interop';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-import { getLoadContext } from './load-context';
-
-declare module '@remix-run/cloudflare' {
-	// or cloudflare, deno, etc.
-	interface Future {
-		v3_singleFetch: true;
-	}
-}
-
-// @ts-expect-error - Works for now.
-export default defineConfig(({ isSsrBuild }) => ({
-	server: {
-		port: 8080,
+export default defineConfig({
+	css: { postcss: './postcss.config.cjs' },
+	build: {
+		minify: 'terser',
 	},
-	// We only need to target ES2022 for the server build
-	// for top-level await support
-	build: isSsrBuild ? { target: 'ES2022', minify: true } : { minify: true },
 	plugins: [
-		cloudflareDevProxyVitePlugin({
-			getLoadContext,
-		}),
+		cloudflare({ viteEnvironment: { name: 'ssr' } }),
 		mdx({
 			providerImportSource: '@mdx-js/react',
 			remarkPlugins: [
@@ -44,29 +27,21 @@ export default defineConfig(({ isSsrBuild }) => ({
 			],
 			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
 		}),
-		remix({
-			// @ts-expect-error - Will fix in react-router v7.
-			postcss: true,
-			future: {
-				v3_fetcherPersist: true,
-				v3_relativeSplatPath: true,
-				v3_throwAbortReason: true,
-				v3_routeConfig: true,
-				v3_singleFetch: true,
-				v3_lazyRouteDiscovery: true,
-			},
-		}),
-		cjsInterop({
-			dependencies: ['fontfaceobserver', 'react-wrap-balancer'],
-		}),
+		reactRouter(),
 		tsconfigPaths(),
 	],
 	ssr: {
+		target: 'webworker',
+		noExternal: true,
 		resolve: {
-			conditions: ['workerd', 'worker', 'browser'],
+			conditions: ['worker', 'workerd', 'browser'],
 		},
 	},
 	resolve: {
 		mainFields: ['browser', 'module', 'main'],
+		alias: {
+			react: 'react',
+			'react-dom': 'react-dom',
+		},
 	},
-}));
+});

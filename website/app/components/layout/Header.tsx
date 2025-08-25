@@ -13,7 +13,7 @@ import {
 	UnstyledButton,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Link, NavLink, useLocation } from '@remix-run/react';
+import { Link, NavLink, useLocation } from 'react-router';
 import cx from 'clsx';
 
 import { LeftSidebar } from '@/components/docs/LeftSidebar';

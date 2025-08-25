@@ -16,8 +16,7 @@
 		"@cloudflare/workers-types": "^4.20231121.0",
 		"itty-router": "^4.0.22",
 		"typescript": "^5.3.3",
-		"vitest-environment-miniflare": "^2.14.1",
-		"wrangler": "^3.19.0"
+		"vitest-environment-miniflare": "^2.14.1"
 	},
 	"dependencies": {
 		"@fontsource-utils/cli": "workspace:^",

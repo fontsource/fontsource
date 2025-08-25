@@ -1,6 +1,6 @@
 import { observer, useComputed } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
-import { Link as NavLink } from '@remix-run/react';
+import { Link as NavLink } from 'react-router';
 import { useEffect, useRef } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 
