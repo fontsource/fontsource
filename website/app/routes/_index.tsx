@@ -1,8 +1,8 @@
+import { createFetchRequester } from '@algolia/requester-fetch';
 import { observable } from '@legendapp/state';
 import { useObservable } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
-// TODO: Use lite client - https://github.com/algolia/algoliasearch-client-javascript/issues/1548#issuecomment-2380488738
-import { algoliasearch } from 'algoliasearch';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { UiState } from 'instantsearch.js';
 // @ts-expect-error - No type definitions available
 import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
@@ -36,6 +36,9 @@ const ALGOLIA_TTL = 6 * 60 * 60 * 1000; // 6 hours
 const searchClient = algoliasearch(
 	'WNATE69PVR',
 	'8b36fe56fca654afaeab5e6f822c14bd',
+	{
+		requester: createFetchRequester(),
+	},
 );
 
 const sortMap: Record<string, string> = {

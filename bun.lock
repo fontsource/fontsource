@@ -163,6 +163,7 @@
     "website": {
       "name": "website",
       "dependencies": {
+        "@algolia/requester-fetch": "^5.35.0",
         "@docsearch/css": "^3.6.0",
         "@docsearch/react": "^3.6.0",
         "@fontsource-utils/generate": "workspace:*",

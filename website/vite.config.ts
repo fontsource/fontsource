@@ -39,5 +39,9 @@ export default defineConfig({
 	},
 	resolve: {
 		mainFields: ['browser', 'module', 'main'],
+		alias: {
+			react: 'react',
+			'react-dom': 'react-dom',
+		},
 	},
 });
