@@ -47,7 +47,11 @@ export const TabsWrapper = ({
 					</Badge>
 				</Group>
 				<Tabs.List>
-					<Link to={`/fonts/${metadata.id}`} style={{ textDecoration: 'none' }}>
+					<Link
+						to={`/fonts/${metadata.id}`}
+						style={{ textDecoration: 'none' }}
+						prefetch="intent"
+					>
 						<Tabs.Tab value="preview">Preview</Tabs.Tab>
 					</Link>
 					<Link
