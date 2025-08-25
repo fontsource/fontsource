@@ -48,7 +48,6 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 			onClick={() => {
 				setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 			}}
-			// @ts-expect-error - TODO: fix react 19
 			ref={ref}
 		>
 			<Group gap="xs">

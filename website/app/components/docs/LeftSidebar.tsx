@@ -75,7 +75,6 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 					? 'https://github.com/fontsource/fontsource/blob/main/CHANGELOG.md'
 					: `/docs/${slug}`
 			}
-			// @ts-expect-error - TODO: fix react 19
 			ref={ref}
 			target={slug === 'changelog' ? '_blank' : undefined}
 			data-active={active}

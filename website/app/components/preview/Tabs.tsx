@@ -67,7 +67,6 @@ export const TabsWrapper = ({
 					<a
 						href={`https://api.fontsource.org/v1/download/${metadata.id}`}
 						className={classes['download-button']}
-						// @ts-expect-error - TODO: fix react 19
 						ref={refDownload}
 						data-m:click={`download=${metadata.id}`}
 					>
@@ -81,7 +80,6 @@ export const TabsWrapper = ({
 						onClick={() => {
 							navigate(`/fonts/${metadata.id}/cdn`);
 						}}
-						// @ts-expect-error - TODO: fix react 19
 						ref={refGlobe}
 						className={classes['hide-tab']}
 					>

@@ -11,7 +11,6 @@ import {
 } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
 import { Highlight, Prism } from 'prism-react-renderer';
-// @ts-expect-error - use isn't officially typed here yet.
 import { Suspense, use } from 'react';
 
 import { IconCopy } from '@/components/icons';
