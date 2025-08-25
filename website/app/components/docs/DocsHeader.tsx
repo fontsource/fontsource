@@ -1,10 +1,10 @@
-import '@docsearch/css';
+import '@docsearch/css/dist/style.css';
 
 import type { DocSearchModal as DocSearchModalComponent } from '@docsearch/react';
 import { Group, Modal, Text, Title, UnstyledButton } from '@mantine/core';
 import { useDisclosure, useMounted } from '@mantine/hooks';
+import { type LazyExoticComponent, lazy, useRef } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { lazy, type LazyExoticComponent, useRef } from 'react';
 
 import { ContentHeader } from '@/components/layout/ContentHeader';
 

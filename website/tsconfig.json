@@ -17,6 +17,7 @@
 		"strict": true,
 		"noEmit": true,
 		"composite": true,
+		"noUncheckedSideEffectImports": true,
 		"lib": [
 			"DOM",
 			"DOM.Iterable",

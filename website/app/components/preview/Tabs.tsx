@@ -1,7 +1,7 @@
 import type { BoxProps } from '@mantine/core';
 import { Badge, Group, Tabs, Title } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router';
 
 import { IconDownload, IconGlobe } from '@/components/icons';
 import { ContentHeader } from '@/components/layout/ContentHeader';
@@ -20,7 +20,6 @@ export const TabsWrapper = ({
 	tabsValue,
 	children,
 }: TabWrapperProps) => {
-	const navigate = useNavigate();
 	const { hovered: hoveredDownload, ref: refDownload } =
 		useHover<HTMLAnchorElement>();
 	const { hovered: hoveredGlobe, ref: refGlobe } =
@@ -48,22 +47,19 @@ export const TabsWrapper = ({
 					</Badge>
 				</Group>
 				<Tabs.List>
-					<Tabs.Tab
-						value="preview"
-						onClick={() => {
-							navigate(`/fonts/${metadata.id}`);
-						}}
+					<Link
+						to={`/fonts/${metadata.id}`}
+						style={{ textDecoration: 'none' }}
+						prefetch="intent"
 					>
-						Preview
-					</Tabs.Tab>
-					<Tabs.Tab
-						value="install"
-						onClick={() => {
-							navigate(`/fonts/${metadata.id}/install`);
-						}}
+						<Tabs.Tab value="preview">Preview</Tabs.Tab>
+					</Link>
+					<Link
+						to={`/fonts/${metadata.id}/install`}
+						style={{ textDecoration: 'none' }}
 					>
-						Install
-					</Tabs.Tab>
+						<Tabs.Tab value="install">Install</Tabs.Tab>
+					</Link>
 					<a
 						href={`https://api.fontsource.org/v1/download/${metadata.id}`}
 						className={classes['download-button']}
@@ -75,22 +71,24 @@ export const TabsWrapper = ({
 							Download
 						</Group>
 					</a>
-					<Tabs.Tab
-						value="cdn"
-						onClick={() => {
-							navigate(`/fonts/${metadata.id}/cdn`);
-						}}
-						ref={refGlobe}
-						className={classes['hide-tab']}
+					<Link
+						to={`/fonts/${metadata.id}/cdn`}
+						style={{ textDecoration: 'none' }}
 					>
-						<Group gap="xs">
-							<IconGlobe
-								height={19}
-								data-active={tabsValue === 'cdn' || hoveredGlobe}
-							/>
-							CDN
-						</Group>
-					</Tabs.Tab>
+						<Tabs.Tab
+							value="cdn"
+							ref={refGlobe}
+							className={classes['hide-tab']}
+						>
+							<Group gap="xs">
+								<IconGlobe
+									height={19}
+									data-active={tabsValue === 'cdn' || hoveredGlobe}
+								/>
+								CDN
+							</Group>
+						</Tabs.Tab>
+					</Link>
 				</Tabs.List>
 			</ContentHeader>
 			{children}
