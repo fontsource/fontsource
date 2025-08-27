@@ -20,7 +20,7 @@
 		}
 	}
 
-	@media (max-width: $mantine-breakpoint-md) {
+	@media (--lt-md) {
 		display: none;
 	}
 }

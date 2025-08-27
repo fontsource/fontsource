@@ -21,7 +21,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }

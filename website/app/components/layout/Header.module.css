@@ -21,7 +21,7 @@
 }
 
 .burger {
-	@media (min-width: $mantine-breakpoint-sm) {
+	@media (--gt-sm) {
 		display: none;
 	}
 }
@@ -33,7 +33,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }
@@ -55,7 +55,7 @@
 		color: var(--mantine-color-text-0);
 	}
 
-	@media (min-width: $mantine-breakpoint-sm) {
+	@media (--gt-sm) {
 		padding: rem(27px) var(--mantine-spacing-sm);
 
 		&:hover {
@@ -76,7 +76,7 @@
 		color: var(--mantine-color-purple);
 	}
 
-	@media (min-width: $mantine-breakpoint-sm) {
+	@media (--gt-sm) {
 		color: var(--mantine-color-purple);
 		border-bottom-color: var(--mantine-color-purple);
 	}

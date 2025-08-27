@@ -23,7 +23,7 @@
 .display-group {
 	display: flex;
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }

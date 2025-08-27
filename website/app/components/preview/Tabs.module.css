@@ -16,7 +16,7 @@
 		background-color: var(--mantine-color-background-3);
 	}
 
-	@media (max-width: $mantine-breakpoint-md) {
+	@media (--lt-md) {
 		display: none;
 	}
 }
@@ -97,13 +97,13 @@
 		}
 	}
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }
 
 .hide-tab {
-	@media (max-width: $mantine-breakpoint-xs) {
+	@media (--lt-xs) {
 		display: none;
 	}
 }

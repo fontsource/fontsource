@@ -12,7 +12,7 @@
 		border: rem(1px) solid var(--mantine-color-border-1);
 	}
 
-	@media (max-width: $mantine-breakpoint-md) {
+	@media (--lt-md) {
 		width: 100%;
 	}
 }
@@ -46,7 +46,7 @@
 .button-group {
 	margin-top: rem(8px);
 
-	@media (max-width: $mantine-breakpoint-md) {
+	@media (--lt-md) {
 		margin-top: rem(16px);
 	}
 }

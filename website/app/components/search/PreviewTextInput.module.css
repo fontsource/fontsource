@@ -27,11 +27,11 @@
 		}
 	}
 
-	@media (max-width: $mantine-breakpoint-md) {
+	@media (--lt-md) {
 		border-right: none;
 	}
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }

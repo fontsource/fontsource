@@ -1,0 +1,11 @@
+/* Custom Media Breakpoints */
+@custom-media --gt-xs (min-width: 36em);
+@custom-media --gt-sm (min-width: 48em);
+@custom-media --gt-md (min-width: 62em);
+@custom-media --gt-lg (min-width: 75em);
+@custom-media --gt-xl (min-width: 88em);
+@custom-media --lt-xs (max-width: 36em);
+@custom-media --lt-sm (max-width: 48em);
+@custom-media --lt-md (max-width: 62em);
+@custom-media --lt-lg (max-width: 75em);
+@custom-media --lt-xl (max-width: 88em);

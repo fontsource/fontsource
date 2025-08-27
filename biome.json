@@ -17,6 +17,9 @@
 		},
 		"linter": {
 			"enabled": false
+		},
+		"parser": {
+			"cssModules": true
 		}
 	},
 	"javascript": {
@@ -29,7 +32,11 @@
 		"rules": {
 			"recommended": true,
 			"correctness": {
-				"useUniqueElementIds": "off"
+				"useUniqueElementIds": "off",
+				"noUnknownMediaFeatureName": "off"
+			},
+			"suspicious": {
+				"noUnknownAtRules": "off"
 			}
 		}
 	}

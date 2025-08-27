@@ -28,7 +28,7 @@
 		opacity: 0.5;
 	}
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }

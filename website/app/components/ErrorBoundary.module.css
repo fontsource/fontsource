@@ -119,13 +119,13 @@
 	line-height: 1.4;
 }
 
-@media (max-width: 1024px) {
+@media (--lt-lg) {
 	.container {
 		padding: 40px 40px;
 	}
 }
 
-@media (max-width: 768px) {
+@media (--lt-sm) {
 	.container {
 		padding: 40px 24px;
 	}
