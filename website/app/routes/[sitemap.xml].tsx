@@ -1,8 +1,6 @@
 import type { LoaderFunction } from 'react-router';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
-import { kya } from '@/utils/utils.server';
-
 const docSlugs = Object.keys(
 	import.meta.glob('../../docs/**/*.mdx', {
 		eager: true,
@@ -16,9 +14,9 @@ export const loader: LoaderFunction = async () => {
 	smStream.write({ url: '/', changefreq: 'daily', priority: 0.9 });
 
 	// Pipe each font to stream
-	const fontlist: Record<string, string> = await kya(
+	const fontlist: Record<string, string> = await fetch(
 		'https://api.fontsource.org/fontlist?family',
-	);
+	).then((res) => res.json());
 
 	for (const id of Object.keys(fontlist)) {
 		smStream.write({

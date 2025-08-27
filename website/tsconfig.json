@@ -18,32 +18,19 @@
 		"noEmit": true,
 		"composite": true,
 		"noUncheckedSideEffectImports": true,
-		"lib": [
-			"DOM",
-			"DOM.Iterable",
-			"ES2022"
-		],
-		"types": [
-			"vite/client"
-		],
+		"lib": ["DOM", "DOM.Iterable", "ES2022"],
+		"types": ["vite/client"],
 		"target": "ES2022",
 		"module": "ES2022",
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
 		"baseUrl": ".",
-		"rootDirs": [
-			".",
-			"./.react-router/types"
-		],
+		"rootDirs": [".", "./.react-router/types"],
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"paths": {
-			"@/docs/*": [
-				"./docs/*"
-			],
-			"@/*": [
-				"./app/*"
-			]
-		},
+			"@/docs/*": ["./docs/*"],
+			"@/*": ["./app/*"]
+		}
 	}
 }

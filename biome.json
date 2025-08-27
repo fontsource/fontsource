@@ -6,7 +6,8 @@
 			"!**/coverage",
 			"!**/dist",
 			"!**/build",
-			"!**/worker-configuration.d.ts"
+			"!**/worker-configuration.d.ts",
+			"!**/.react-router"
 		]
 	},
 	"assist": { "actions": { "source": { "organizeImports": "on" } } },
