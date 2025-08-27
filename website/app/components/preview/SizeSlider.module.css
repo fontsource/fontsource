@@ -1,7 +1,7 @@
 /* SideSlider */
 .wrapper {
 	height: 40px;
-	padding: rem(2px) rem(14px) rem(2px) rem(2px);
+	padding: 2px 14px 2px 2px;
 
 	border-radius: 4px;
 
@@ -11,20 +11,20 @@
 
 	@mixin light {
 		background-color: var(--mantine-color-background-0);
-		border: rem(1px) solid var(--mantine-color-border-0);
+		border: 1px solid var(--mantine-color-border-0);
 	}
 
 	@mixin dark {
 		background-color: var(--mantine-color-background-4);
-		border: rem(1px) solid var(--mantine-color-border-1);
+		border: 1px solid var(--mantine-color-border-1);
 	}
 }
 
 .button {
 	font-weight: 400;
-	padding: rem(2px);
-	height: rem(20px);
-	border-radius: rem(4px);
+	padding: 2px;
+	height: 20px;
+	border-radius: 4px;
 
 	@mixin light {
 		background-color: var(--mantine-color-background-0);
@@ -46,7 +46,7 @@
 
 	@mixin light {
 		background-color: var(--mantine-color-background-0);
-		border: rem(1px) solid var(--mantine-color-border-0);
+		border: 1px solid var(--mantine-color-border-0);
 
 		&:disabled {
 			background-color: var(--mantine-color-background-2);
@@ -57,7 +57,7 @@
 
 	@mixin dark {
 		background-color: var(--mantine-color-background-4);
-		border: rem(1px) solid var(--mantine-color-border-1);
+		border: 1px solid var(--mantine-color-border-1);
 
 		&:disabled {
 			background-color: var(--mantine-color-background-3);

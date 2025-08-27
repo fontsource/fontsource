@@ -1,7 +1,7 @@
 .badge {
-	padding: rem(4px) rem(8px);
+	padding: 4px 8px;
 
-	border-radius: rem(4px);
+	border-radius: 4px;
 	font-family: var(--mantine-font-family-monospace);
 	text-transform: lowercase;
 	user-select: none;
@@ -29,7 +29,7 @@
 }
 
 .button {
-	padding: rem(8px) rem(16px);
+	padding: 8px 16px;
 	background-color: var(--mantine-color-purple);
 
 	border-radius: 4px;

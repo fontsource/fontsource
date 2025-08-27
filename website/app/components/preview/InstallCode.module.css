@@ -1,17 +1,17 @@
 .wrapper {
-	margin-top: rem(40);
+	margin-top: 40px;
 
 	.tab {
 		&[data-active] {
-			border-bottom: rem(2) solid var(--mantine-color-purple-0);
+			border-bottom: 2px solid var(--mantine-color-purple-0);
 		}
 	}
 }
 
 .badge {
-	padding: rem(4px) rem(8px);
+	padding: 4px 8px;
 
-	border-radius: rem(4px);
+	border-radius: 4px;
 	font-family: var(--mantine-font-family-monospace);
 	text-transform: lowercase;
 	user-select: none;

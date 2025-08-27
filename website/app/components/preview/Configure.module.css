@@ -2,8 +2,8 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	width: rem(332px);
-	padding: rem(24px);
+	width: 332px;
+	padding: 24px;
 	margin-left: auto;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .scroll-wrapper {
-	width: rem(332px);
+	width: 332px;
 	margin-left: auto;
 	overflow-x: hidden;
 
@@ -51,7 +51,7 @@
 .title {
 	font-size: var(--mantine-font-size-sm);
 	font-weight: 700;
-	line-height: rem(18px);
+	line-height: 18px;
 
 	@mixin light {
 		color: var(--mantine-color-text-1);

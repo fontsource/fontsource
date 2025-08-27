@@ -4,7 +4,7 @@
 
 .wrapper {
 	display: flex;
-	margin-top: rem(24px);
+	margin-top: 24px;
 	margin-left: auto;
 	justify-content: center;
 

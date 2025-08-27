@@ -6,17 +6,17 @@
 	padding: 1em;
 	box-sizing: border-box;
 	border-radius: 4px;
-	width: rem(238px);
+	width: 238px;
 }
 
 #carbonads .carbon-wrap {
 	display: grid;
-	row-gap: rem(8px);
+	row-gap: 8px;
 }
 
 #carbonads .carbon-text {
-	font-size: rem(12px);
-	margin-bottom: rem(4px);
+	font-size: 12px;
+	margin-bottom: 4px;
 }
 
 #carbonads .carbon-poweredby {

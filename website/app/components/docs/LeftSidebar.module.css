@@ -2,13 +2,13 @@
 
 .wrapper {
 	position: sticky;
-	top: rem(40px);
+	top: 40px;
 	display: flex;
 	flex-direction: column;
-	width: rem(240px);
-	padding: rem(24px) 0;
+	width: 240px;
+	padding: 24px 0;
 
-	border-radius: rem(4px);
+	border-radius: 4px;
 
 	@mixin light {
 		border: 1px solid var(--mantine-color-border-0);
@@ -54,14 +54,14 @@
 .sections {
 	display: flex;
 	flex-direction: column;
-	padding: rem(8px) rem(24px);
+	padding: 8px 24px;
 }
 
 .section-item {
 	align-items: center;
-	padding: rem(8px) rem(16px);
-	margin-bottom: rem(4px);
-	border-radius: rem(4px);
+	padding: 8px 16px;
+	margin-bottom: 4px;
+	border-radius: 4px;
 	text-decoration: none;
 
 	&:hover {

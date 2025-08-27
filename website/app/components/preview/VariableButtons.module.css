@@ -1,16 +1,16 @@
 /* VariableButtons */
 .button {
-	margin-top: rem(2px);
-	padding: rem(8px) rem(12px);
+	margin-top: 2px;
+	padding: 8px 12px;
 	justify-content: space-between;
-	height: rem(94px);
+	height: 94px;
 
-	border-radius: rem(4px);
+	border-radius: 4px;
 
 	@mixin light {
 		color: var(--mantine-color-text-1);
 		background-color: var(--mantine-color-background-0);
-		border: rem(1px) solid var(--mantine-color-border-0);
+		border: 1px solid var(--mantine-color-border-0);
 
 		&:not([data-disabled]) {
 			&:hover {
@@ -22,7 +22,7 @@
 	@mixin dark {
 		color: var(--mantine-color-text.0);
 		background-color: var(--mantine-color-background-4);
-		border: rem(1px) solid var(--mantine-color-border-1);
+		border: 1px solid var(--mantine-color-border-1);
 
 		&:not([data-disabled]) {
 			&:hover {

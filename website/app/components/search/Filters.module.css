@@ -1,6 +1,6 @@
 /* Filters */
 .container {
-	height: rem(128px);
+	height: 128px;
 	border-radius: 4px;
 
 	@mixin light {
@@ -14,11 +14,11 @@
 
 .filters {
 	display: flex;
-	height: rem(64px);
+	height: 64px;
 	align-items: center;
-	gap: rem(24px);
+	gap: 24px;
 	justify-content: space-between;
-	padding: 0 rem(24px);
+	padding: 0 24px;
 
 	overflow-x: auto;
 	overflow-y: hidden;

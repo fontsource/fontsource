@@ -1,8 +1,8 @@
 /* Blockquote */
 
 .wrapper {
-	margin: rem(20px) 0;
-	padding: rem(16px);
+	margin: 20px 0;
+	padding: 16px;
 	border-radius: 0 4px 4px 0;
 	border-left: 3px solid var(--mantine-color-purple-0);
 

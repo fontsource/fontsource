@@ -17,7 +17,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 rem(64px);
+	padding: 0 64px;
 }
 
 .burger {
@@ -41,7 +41,7 @@
 .link {
 	font-size: var(--mantine-font-size-sm);
 
-	border-bottom: rem(2px) solid transparent;
+	border-bottom: 2px solid transparent;
 	transition:
 		border-color 100ms ease,
 		color 100ms ease;
@@ -56,7 +56,7 @@
 	}
 
 	@media (--gt-sm) {
-		padding: rem(27px) var(--mantine-spacing-sm);
+		padding: 27px var(--mantine-spacing-sm);
 
 		&:hover {
 			text-decoration: none;
@@ -84,7 +84,7 @@
 
 .mobile-links {
 	height: 100vh;
-	padding: rem(24) rem(16);
+	padding: 24px 16px;
 	align-content: center;
 
 	@mixin light {

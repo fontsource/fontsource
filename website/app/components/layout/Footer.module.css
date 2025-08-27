@@ -4,19 +4,19 @@
 }
 
 .inner {
-	max-width: rem(1440px);
+	max-width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
-	height: rem(72px);
+	height: 72px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 rem(64px);
+	padding: 0 64px;
 }
 
 .links {
 	padding-top: var(--mantine-spacing-lg);
-	height: rem(72px);
+	height: 72px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -28,7 +28,7 @@
 
 .link {
 	font-size: var(--mantine-font-size-sm);
-	padding: rem(27px) var(--mantine-spacing-sm);
+	padding: 27px var(--mantine-spacing-sm);
 	text-decoration: none;
 
 	@mixin light {
