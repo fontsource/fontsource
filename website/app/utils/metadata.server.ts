@@ -1,3 +1,4 @@
+import { fetchApiData } from '@/utils/api.server';
 import type {
 	AxisRegistryAll,
 	Metadata,
@@ -14,14 +15,14 @@ const AXIS_REGISTRY_URL = 'https://api.fontsource.org/v1/axis-registry';
 const STATS_URL = (id: string) => `https://api.fontsource.org/v1/stats/${id}`;
 
 const getFontlist = async (): Promise<Record<string, string>> =>
-	await fetch(FONTLIST_URL).then((res) => res.json());
+	await fetchApiData<Record<string, string>>(FONTLIST_URL);
+
 const getMetadata = async (id: string): Promise<Metadata> =>
-	await fetch(METADATA_URL + id).then((res) => res.json());
+	await fetchApiData<Metadata>(METADATA_URL + id);
 
 const getFullMetadata = async (): Promise<Record<string, Metadata>> => {
-	const metadataArr: Metadata[] = await fetch(FULL_METADATA_URL).then((res) =>
-		res.json(),
-	);
+	const metadataArr: Metadata[] =
+		await fetchApiData<Metadata[]>(FULL_METADATA_URL);
 	const metadata: Record<string, Metadata> = {};
 
 	for (const item of metadataArr) {
@@ -32,13 +33,13 @@ const getFullMetadata = async (): Promise<Record<string, Metadata>> => {
 };
 
 const getVariable = async (id: string): Promise<VariableData> =>
-	await fetch(VARIABLE_URL(id)).then((res) => res.json());
+	await fetchApiData<VariableData>(VARIABLE_URL(id));
 
 const getAxisRegistry = async (): Promise<AxisRegistryAll> =>
-	await fetch(AXIS_REGISTRY_URL).then((res) => res.json());
+	await fetchApiData<AxisRegistryAll>(AXIS_REGISTRY_URL);
 
 const getStats = async (id: string): Promise<StatsResponseAll> =>
-	await fetch(STATS_URL(id)).then((res) => res.json());
+	await fetchApiData<StatsResponseAll>(STATS_URL(id));
 
 export {
 	getAxisRegistry,

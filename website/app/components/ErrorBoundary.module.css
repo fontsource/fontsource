@@ -1,0 +1,148 @@
+.container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 64px;
+	font-family: "Inter Variable", sans-serif;
+
+	@mixin light {
+		color: var(--mantine-color-text-1);
+		background-color: var(--mantine-color-background-0);
+	}
+
+	@mixin dark {
+		color: var(--mantine-color-text-0);
+		background-color: var(--mantine-color-background-4);
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2.5rem;
+	max-width: 480px;
+	width: 100%;
+	text-align: center;
+}
+
+.errorInfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.statusCode {
+	font-size: 4rem;
+	font-weight: 700;
+	color: var(--mantine-color-gray-6);
+	line-height: 1;
+	margin: 0;
+}
+
+.title {
+	font-size: 2rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+.description {
+	font-size: var(--mantine-font-size-md);
+	line-height: 160%;
+	margin: 0;
+	opacity: 0.7;
+}
+
+.actions {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	width: 100%;
+}
+
+.primaryButton {
+	color: white !important;
+}
+
+.outlineButton {
+	@mixin light {
+		border-color: var(--mantine-color-border-0);
+	}
+
+	@mixin dark {
+		border-color: var(--mantine-color-border-1);
+	}
+
+	&:hover {
+		@mixin light {
+			background-color: var(--mantine-color-background-1);
+		}
+
+		@mixin dark {
+			background-color: var(--mantine-color-background-5);
+		}
+	}
+}
+
+.devError {
+	margin-top: 2rem;
+	padding: 1.5rem;
+	border-radius: 8px;
+	width: 100%;
+
+	@mixin light {
+		background-color: var(--mantine-color-background-1);
+		border: 1px solid var(--mantine-color-border-0);
+	}
+
+	@mixin dark {
+		background-color: var(--mantine-color-background-5);
+		border: 1px solid var(--mantine-color-border-1);
+	}
+}
+
+.devErrorTitle {
+	font-size: 0.875rem;
+	font-weight: 500;
+	margin: 0 0 0.75rem 0;
+	opacity: 0.6;
+}
+
+.devErrorContent {
+	font-size: 0.75rem;
+	font-family: "Source Code Pro Variable", monospace;
+	white-space: pre-wrap;
+	margin: 0;
+	word-break: break-word;
+	line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+	.container {
+		padding: 40px 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 40px 24px;
+	}
+
+	.statusCode {
+		font-size: 3rem;
+	}
+
+	.title {
+		font-size: 1.5rem;
+	}
+
+	.description {
+		font-size: 0.875rem;
+	}
+
+	.content {
+		gap: 2rem;
+	}
+}

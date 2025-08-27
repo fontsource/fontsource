@@ -61,6 +61,7 @@ import type {
 } from 'react-router';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
+import { ErrorBoundary as ErrorBoundaryComponent } from '@/components/ErrorBoundary';
 import { AppShell } from '@/components/layout/AppShell';
 import { theme } from '@/styles/theme';
 import { ogMeta } from '@/utils/meta';
@@ -142,6 +143,14 @@ export default function App() {
 	return (
 		<Document>
 			<Outlet />
+		</Document>
+	);
+}
+
+export function ErrorBoundary() {
+	return (
+		<Document>
+			<ErrorBoundaryComponent />
 		</Document>
 	);
 }
