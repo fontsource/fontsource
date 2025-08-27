@@ -23,6 +23,7 @@ const getMetadata = async (id: string): Promise<Metadata> =>
 const getFullMetadata = async (): Promise<Record<string, Metadata>> => {
 	const metadataArr: Metadata[] =
 		await fetchApiData<Metadata[]>(FULL_METADATA_URL);
+
 	const metadata: Record<string, Metadata> = {};
 
 	for (const item of metadataArr) {
