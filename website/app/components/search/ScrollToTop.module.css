@@ -8,24 +8,24 @@
 	width: 56px;
 	border-radius: 48px;
 
-	@media (min-width: $mantine-breakpoint-xs) {
+	@media (--gt-xs) {
 		right: 60px;
 	}
 
-	@media (min-width: $mantine-breakpoint-sm) {
+	@media (--gt-sm) {
 		bottom: 24px;
 		right: 56px;
 	}
 
-	@media (min-width: $mantine-breakpoint-md) {
+	@media (--gt-md) {
 		right: 56px;
 	}
 
-	@media (min-width: $mantine-breakpoint-lg) {
+	@media (--gt-lg) {
 		right: 100px;
 	}
 
-	@media (min-width: $mantine-breakpoint-xl) {
+	@media (--gt-xl) {
 		right: 80px;
 	}
 }

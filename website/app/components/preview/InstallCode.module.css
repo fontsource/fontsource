@@ -1,39 +1,27 @@
 .wrapper {
-	margin-top: rem(40);
+	margin-top: 40px;
 
 	.tab {
 		&[data-active] {
-			border-bottom: rem(2) solid var(--mantine-color-purple-0);
+			border-bottom: 2px solid var(--mantine-color-purple-0);
 		}
 	}
 }
 
 .badge {
-	padding: rem(4px) rem(8px);
+	padding: 4px 8px;
 
-	border-radius: rem(4px);
+	border-radius: 4px;
 	font-family: var(--mantine-font-family-monospace);
 	text-transform: lowercase;
 	user-select: none;
 	cursor: pointer;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
-		background-color: var(--mantine-color-background-2);
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-3));
 
-		&[data-active="true"] {
-			color: var(--mantine-color-text-0);
-			background-color: var(--mantine-color-purple);
-		}
-	}
-
-	@mixin dark {
+	&[data-active="true"] {
 		color: var(--mantine-color-text-0);
-		background-color: var(--mantine-color-background-3);
-
-		&[data-active="true"] {
-			color: var(--mantine-color-text-0);
-			background-color: var(--mantine-color-purple);
-		}
+		background-color: var(--mantine-color-purple);
 	}
 }

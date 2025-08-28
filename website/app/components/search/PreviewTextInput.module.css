@@ -5,33 +5,20 @@
 	justify-content: space-between;
 	padding: 0 24px;
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-		border-bottom: 1px solid var(--mantine-color-border-0);
-		border-left: 1px solid var(--mantine-color-border-0);
-		border-right: 1px solid var(--mantine-color-border-0);
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	border-bottom: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
+	border-left: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
+	border-right: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 
-		&:focus-within {
-			border-bottom-color: var(--mantine-color-purple);
-		}
+	&:focus-within {
+		border-bottom-color: var(--mantine-color-purple);
 	}
 
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-		border-bottom: 1px solid var(--mantine-color-border-1);
-		border-left: 1px solid var(--mantine-color-border-1);
-		border-right: 1px solid var(--mantine-color-border-1);
-
-		&:focus-within {
-			border-bottom-color: var(--mantine-color-purple);
-		}
-	}
-
-	@media (max-width: $mantine-breakpoint-md) {
+	@media (--lt-md) {
 		border-right: none;
 	}
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }
@@ -42,22 +29,11 @@
 
 	font-weight: 400;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
-		background-color: var(--mantine-color-background-0);
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 
-		&:hover {
-			background-color: var(--mantine-color-purple-hover);
-		}
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-		background-color: var(--mantine-color-background-4);
-
-		&:hover {
-			background-color: var(--mantine-color-background-6);
-		}
+	&:hover {
+		background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-6));
 	}
 }
 
@@ -65,15 +41,9 @@
 	box-sizing: border-box;
 	text-align: left;
 	width: 100%;
-	padding: 0 rem(2px);
+	padding: 0 2px;
 }
 
 .separator-label {
-	@mixin light {
-		color: var(--mantine-color-gray-5);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-dark-3);
-	}
+	color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-3));
 }

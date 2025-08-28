@@ -1,16 +1,16 @@
 .root {
 	position: relative;
-	margin: rem(16) 0;
+	margin: 16px 0;
 }
 
 .dots {
 	color: #34435c;
 	position: absolute;
-	top: rem(8);
-	left: rem(14);
+	top: 8px;
+	left: 14px;
 	z-index: 2;
-	font-size: rem(12);
-	letter-spacing: rem(2);
+	font-size: 12px;
+	letter-spacing: 2px;
 	user-select: none;
 }
 
@@ -22,21 +22,21 @@
 }
 
 .copy {
-	border-radius: 0 0 rem(4) 0;
+	border-radius: 0 0 4px 0;
 	&,
 	&:hover {
 		background-color: var(--mantine-color-purple-0);
 	}
-	height: rem(30);
-	width: rem(30);
+	height: 30px;
+	width: 30px;
 }
 
 .language {
-	border-radius: rem(4) 0 0 0;
+	border-radius: 4px 0 0 0;
 	color: var(--mantine-color-text-0);
 	background: rgba(104, 118, 141, 0.5);
-	height: rem(30);
-	width: rem(30);
+	height: 30px;
+	width: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -48,9 +48,9 @@
 	position: relative;
 	font-family: var(--mantine-font-family-monospace);
 	line-height: 1.7;
-	font-size: rem(14);
-	border-radius: rem(10);
-	padding: rem(34) var(--mantine-spacing-md) var(--mantine-spacing-md)
+	font-size: 14px;
+	border-radius: 10px;
+	padding: 34px var(--mantine-spacing-md) var(--mantine-spacing-md)
 		var(--mantine-spacing-md);
 	margin-top: 0;
 	margin-bottom: 0;
@@ -78,6 +78,6 @@
 
 .inline-code {
 	font-weight: 500;
-	font-size: rem(13);
-	border-radius: rem(4);
+	font-size: 13px;
+	border-radius: 4px;
 }

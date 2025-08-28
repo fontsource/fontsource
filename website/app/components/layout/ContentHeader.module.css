@@ -1,12 +1,6 @@
 /* ContentHeader */
 .header {
-	@mixin light {
-		background: var(--mantine-color-background-1);
-	}
-
-	@mixin dark {
-		background: var(--mantine-color-background-5);
-	}
+	background: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
 }
 
 .inner {

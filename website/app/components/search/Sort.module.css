@@ -2,28 +2,22 @@
 
 .wrapper {
 	display: flex;
-	height: rem(64px);
+	height: 64px;
 	align-items: center;
 	justify-content: space-between;
-	padding-bottom: rem(10px);
+	padding-bottom: 10px;
 
 	&:focus-within {
 		border-bottom-color: var(--mantine-color-purple-0);
 	}
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-	}
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 }
 
 .display-group {
 	display: flex;
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }
@@ -31,16 +25,10 @@
 .control {
 	border-radius: 6px;
 
-	@mixin light {
-		background-color: var(--mantine-color-button-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-button-1);
-	}
+	background-color: light-dark(var(--mantine-color-button-0), var(--mantine-color-button-1));
 
 	label {
-		padding: rem(5px);
+		padding: 5px;
 
 		span {
 			display: flex;

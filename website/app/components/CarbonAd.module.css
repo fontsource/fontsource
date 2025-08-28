@@ -4,23 +4,16 @@
 
 .wrapper {
 	display: flex;
-	margin-top: rem(24px);
+	margin-top: 24px;
 	margin-left: auto;
 	justify-content: center;
 
 	a {
 		text-decoration: none;
-
-		@mixin light {
-			color: var(--mantine-color-text-1);
-		}
-
-		@mixin dark {
-			color: var(--mantine-color-text-0);
-		}
+		color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 	}
 
-	@media (max-width: $mantine-breakpoint-md) {
+	@media (--lt-md) {
 		display: none;
 	}
 }

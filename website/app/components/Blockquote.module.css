@@ -1,16 +1,10 @@
 /* Blockquote */
 
 .wrapper {
-	margin: rem(20px) 0;
-	padding: rem(16px);
+	margin: 20px 0;
+	padding: 16px;
 	border-radius: 0 4px 4px 0;
 	border-left: 3px solid var(--mantine-color-purple-0);
 
-	@mixin light {
-		background-color: var(--mantine-color-background-1);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-5);
-	}
+	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
 }

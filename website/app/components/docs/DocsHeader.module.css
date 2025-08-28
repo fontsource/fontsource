@@ -14,21 +14,14 @@
 
 	font-size: 15px;
 
-	@mixin light {
-		background-color: var(--mantine-color-background-2);
-		color: var(--mantine-color-text-1);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-6);
-		color: var(--mantine-color-text-0);
-	}
+	background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-6));
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 
 	p {
 		opacity: 0.5;
 	}
 
-	@media (max-width: $mantine-breakpoint-sm) {
+	@media (--lt-sm) {
 		display: none;
 	}
 }
@@ -41,22 +34,11 @@
 	--docsearch-hit-height: 48px;
 	--docsearch-searchbox-height: 64px;
 
-	@mixin light {
-		--docsearch-modal-background: var(--mantine-color-background-0);
-		--docsearch-highlight-color: var(--mantine-color-purple-0);
-		--docsearch-hit-background: var(--mantine-color-background-1);
-
-		--docsearch-text-color: var(--mantine-color-text-1);
-	}
-
-	@mixin dark {
-		--docsearch-modal-background: var(--mantine-color-background-5);
-		--docsearch-hit-background: var(--mantine-color-background-6);
-		--docsearch-highlight-color: var(--mantine-color-purple-0);
-
-		--docsearch-text-color: var(--mantine-color-text-0);
-		--docsearch-hit-color: rgba(255, 255, 255, 0.7);
-	}
+	--docsearch-modal-background: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-5));
+	--docsearch-highlight-color: var(--mantine-color-purple-0);
+	--docsearch-hit-background: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-6));
+	--docsearch-text-color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	--docsearch-hit-color: light-dark(var(--mantine-color-text-1), rgba(255, 255, 255, 0.7));
 
 	header {
 		border-radius: 16px 16px 0 0;
@@ -64,15 +46,8 @@
 		background-color: var(--docsearch-modal-background);
 
 		form {
-			@mixin light {
-				background-color: var(--mantine-color-background-0);
-				color: var(--mantine-color-text-1);
-			}
-
-			@mixin dark {
-				background-color: var(--mantine-color-background-5);
-				color: var(--mantine-color-text-0);
-			}
+			background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-5));
+			color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 		}
 	}
 
@@ -85,17 +60,10 @@
 	}
 
 	footer {
-		@mixin light {
-			background-color: var(--mantine-color-background-0);
-			color: var(--mantine-color-text-1);
-		}
-
-		@mixin dark {
-			border-top: 2px solid var(--mantine-color-background-3);
-			box-shadow: none;
-			background-color: var(--mantine-color-background-5);
-			color: var(--mantine-color-text-0);
-		}
+		background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-5));
+		color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+		border-top: light-dark(none, 2px solid var(--mantine-color-background-3));
+		box-shadow: light-dark(initial, none);
 
 		li {
 			padding-bottom: 0;

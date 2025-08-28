@@ -2,8 +2,8 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	width: rem(332px);
-	padding: rem(24px);
+	width: 332px;
+	padding: 24px;
 	margin-left: auto;
 }
 
@@ -13,51 +13,28 @@
 	height: 20px;
 	border-radius: 4px;
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-		color: var(--mantine-color-text-1);
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 
-		&:hover {
-			background-color: var(--mantine-color-background-1);
-		}
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-		color: var(--mantine-color-text-0);
-
-		&:hover {
-			background-color: var(--mantine-color-background-3);
-		}
+	&:hover {
+		background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-3));
 	}
 }
 
 .scroll-wrapper {
-	width: rem(332px);
+	width: 332px;
 	margin-left: auto;
 	overflow-x: hidden;
 
 	border-radius: 4px;
 
-	@mixin light {
-		border: 1px solid var(--mantine-color-border-0);
-	}
-
-	@mixin dark {
-		border: 1px solid var(--mantine-color-border-1);
-	}
+	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 }
 
 .title {
 	font-size: var(--mantine-font-size-sm);
 	font-weight: 700;
-	line-height: rem(18px);
+	line-height: 18px;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-	}
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 }

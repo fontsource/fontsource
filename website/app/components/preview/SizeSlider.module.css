@@ -1,7 +1,7 @@
 /* SideSlider */
 .wrapper {
 	height: 40px;
-	padding: rem(2px) rem(14px) rem(2px) rem(2px);
+	padding: 2px 14px 2px 2px;
 
 	border-radius: 4px;
 
@@ -9,32 +9,18 @@
 		border-color: var(--mantine-color-purple);
 	}
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-		border: rem(1px) solid var(--mantine-color-border-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-		border: rem(1px) solid var(--mantine-color-border-1);
-	}
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 }
 
 .button {
 	font-weight: 400;
-	padding: rem(2px);
-	height: rem(20px);
-	border-radius: rem(4px);
+	padding: 2px;
+	height: 20px;
+	border-radius: 4px;
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-		color: var(--mantine-color-text-1);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-		color: var(--mantine-color-text-0);
-	}
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 }
 
 .italic {
@@ -44,26 +30,13 @@
 
 	border-radius: 4px;
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-		border: rem(1px) solid var(--mantine-color-border-0);
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 
-		&:disabled {
-			background-color: var(--mantine-color-background-2);
-			border-color: var(--mantine-color-border-2);
-			color: var(--mantine-color-text-2);
-		}
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-		border: rem(1px) solid var(--mantine-color-border-1);
-
-		&:disabled {
-			background-color: var(--mantine-color-background-3);
-			border-color: var(--mantine-color-border-3);
-			color: var(--mantine-color-text-3);
-		}
+	&:disabled {
+		background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-3));
+		border-color: light-dark(var(--mantine-color-border-2), var(--mantine-color-border-3));
+		color: light-dark(var(--mantine-color-text-2), var(--mantine-color-text-3));
 	}
 
 	&:focus-within {
