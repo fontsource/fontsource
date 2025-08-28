@@ -5,16 +5,8 @@
 	justify-content: center;
 	padding: 40px 64px;
 	font-family: "Inter Variable", sans-serif;
-
-	@mixin light {
-		color: var(--mantine-color-text-1);
-		background-color: var(--mantine-color-background-0);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-		background-color: var(--mantine-color-background-4);
-	}
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 }
 
 .content {
@@ -67,22 +59,10 @@
 }
 
 .outlineButton {
-	@mixin light {
-		border-color: var(--mantine-color-border-0);
-	}
-
-	@mixin dark {
-		border-color: var(--mantine-color-border-1);
-	}
+	border-color: light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
 
 	&:hover {
-		@mixin light {
-			background-color: var(--mantine-color-background-1);
-		}
-
-		@mixin dark {
-			background-color: var(--mantine-color-background-5);
-		}
+		background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
 	}
 }
 
@@ -91,16 +71,8 @@
 	padding: 1.5rem;
 	border-radius: 8px;
 	width: 100%;
-
-	@mixin light {
-		background-color: var(--mantine-color-background-1);
-		border: 1px solid var(--mantine-color-border-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-5);
-		border: 1px solid var(--mantine-color-border-1);
-	}
+	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
+	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 }
 
 .devErrorTitle {

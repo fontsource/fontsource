@@ -8,13 +8,7 @@
 }
 
 header {
-	@mixin light {
-		background-color: var(--mantine-color-background-1);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-5);
-	}
+	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
 }
 
 body {
@@ -26,35 +20,16 @@ body {
 	font-size: var(--mantine-font-size-md);
 	line-height: 160%;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
-		background-color: var(--mantine-color-background-0);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-		background-color: var(--mantine-color-background-4);
-	}
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 }
 
 a {
-	@mixin light {
-		color: var(--mantine-color-text-7);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-	}
+	color: light-dark(var(--mantine-color-text-7), var(--mantine-color-text-0));
 }
 
 .background {
-	@mixin light {
-		background-color: var(--mantine-color-background-1);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-5);
-	}
+	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
 }
 
 .container {

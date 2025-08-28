@@ -1,29 +1,15 @@
 /* Dropdown */
 
 .input {
-	@mixin light {
-		border: 1px solid var(--mantine-color-border-0);
+	background-color: light-dark(transparent, var(--mantine-color-background-4));
+	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 
-		&[data-no-border="true"] {
-			border: none;
-		}
-
-		&:hover:not(:disabled) {
-			background-color: var(--mantine-color-purple-hover);
-		}
+	&[data-no-border="true"] {
+		border: none;
 	}
 
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-		border: 1px solid var(--mantine-color-border-1);
-
-		&[data-no-border="true"] {
-			border: none;
-		}
-
-		&:hover:not(:disabled) {
-			background-color: var(--mantine-color-background-6);
-		}
+	&:hover:not(:disabled) {
+		background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-6));
 	}
 }
 

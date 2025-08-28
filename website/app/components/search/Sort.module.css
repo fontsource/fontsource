@@ -11,13 +11,7 @@
 		border-bottom-color: var(--mantine-color-purple-0);
 	}
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-	}
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 }
 
 .display-group {
@@ -31,13 +25,7 @@
 .control {
 	border-radius: 6px;
 
-	@mixin light {
-		background-color: var(--mantine-color-button-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-button-1);
-	}
+	background-color: light-dark(var(--mantine-color-button-0), var(--mantine-color-button-1));
 
 	label {
 		padding: 5px;

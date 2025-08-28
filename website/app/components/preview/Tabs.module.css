@@ -6,15 +6,8 @@
 	font-family: var(--mantine-font-family-monospace);
 	text-transform: lowercase;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
-		background-color: var(--mantine-color-background-2);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-		background-color: var(--mantine-color-background-3);
-	}
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-3));
 
 	@media (--lt-md) {
 		display: none;
@@ -35,30 +28,15 @@
 		font-weight: 700;
 	}
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 
-		&:hover {
-			color: var(--mantine-color-purple);
-			background-color: var(--mantine-color-button-hover);
-		}
-
-		&[data-active] {
-			color: var(--mantine-color-purple);
-		}
+	&:hover {
+		color: var(--mantine-color-purple);
+		background-color: var(--mantine-color-button-hover);
 	}
 
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-
-		&:hover {
-			color: var(--mantine-color-purple);
-			background-color: var(--mantine-color-button-hover);
-		}
-
-		&[data-active] {
-			color: var(--mantine-color-purple);
-		}
+	&[data-active] {
+		color: var(--mantine-color-purple);
 	}
 }
 
@@ -79,22 +57,11 @@
 	cursor: pointer;
 	text-decoration: none;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 
-		&:hover {
-			background-color: var(--mantine-color-button-hover);
-			color: var(--mantine-color-purple);
-		}
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-
-		&:hover {
-			background-color: var(--mantine-color-button-hover);
-			color: var(--mantine-color-purple);
-		}
+	&:hover {
+		background-color: var(--mantine-color-button-hover);
+		color: var(--mantine-color-purple);
 	}
 
 	@media (--lt-sm) {

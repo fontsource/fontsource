@@ -7,27 +7,13 @@
 
 	font-weight: 400;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
-		background-color: var(--mantine-color-background-0);
-		border: 1px solid var(--mantine-color-border-0);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-		background-color: var(--mantine-color-background-4);
-		border: 1px solid var(--mantine-color-border-1);
-	}
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 
 	&:not([data-disabled]) {
 		&:hover {
-			@mixin light {
-				background-color: lighten("#625BF8", 0.95);
-			}
-
-			@mixin dark {
-				background-color: darken("#121B31", 0.2);
-			}
+			background-color: light-dark(lighten("#625BF8", 0.95), darken("#121B31", 0.2));
 		}
 	}
 }
@@ -36,11 +22,5 @@
 	border-radius: 4px;
 	padding-left: 12px;
 
-	@mixin light {
-		border: 1px solid var(--mantine-color-border-0);
-	}
-
-	@mixin dark {
-		border: 1px solid var(--mantine-color-border-1);
-	}
+	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 }

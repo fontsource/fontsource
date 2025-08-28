@@ -1,12 +1,6 @@
 /* Header */
 .header {
-	@mixin light {
-		border-bottom: 1px solid #edf0f3;
-	}
-
-	@mixin dark {
-		border-bottom: 1px solid #151e34;
-	}
+	border-bottom: light-dark(1px solid #edf0f3, 1px solid #151e34);
 }
 
 .inner {
@@ -47,13 +41,7 @@
 		color 100ms ease;
 	text-decoration: none;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-	}
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 
 	@media (--gt-sm) {
 		padding: 27px var(--mantine-spacing-sm);
@@ -68,13 +56,7 @@
 .active {
 	font-weight: 700;
 
-	@mixin light {
-		color: var(--mantine-color-purple);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-purple);
-	}
+	color: var(--mantine-color-purple);
 
 	@media (--gt-sm) {
 		color: var(--mantine-color-purple);
@@ -87,13 +69,7 @@
 	padding: 24px 16px;
 	align-content: center;
 
-	@mixin light {
-		background-color: var(--mantine-color-background-1);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-5);
-	}
+	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
 }
 
 .mobile-link {

@@ -1,3 +1,15 @@
+html {
+  color-scheme: light dark;
+}
+
+[data-mantine-color-scheme='light'] {
+  color-scheme: light;
+}
+
+[data-mantine-color-scheme='dark'] {
+  color-scheme: dark;
+}
+
 /* CarbonAds */
 
 #carbonads > span {

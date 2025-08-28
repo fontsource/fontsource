@@ -31,13 +31,7 @@
 	padding: 27px var(--mantine-spacing-sm);
 	text-decoration: none;
 
-	@mixin light {
-		color: var(--mantine-color-text-0);
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-	}
+	color: var(--mantine-color-text-0);
 
 	&:hover {
 		text-decoration: underline;

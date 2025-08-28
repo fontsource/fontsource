@@ -3,13 +3,7 @@
 	height: 128px;
 	border-radius: 4px;
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-	}
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 }
 
 .filters {
@@ -27,13 +21,7 @@
 		border-bottom-color: var(--mantine-color-purple-0);
 	}
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-	}
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 }
 
 .button {
@@ -42,21 +30,10 @@
 
 	font-weight: 400;
 
-	@mixin light {
-		color: var(--mantine-color-text-1);
-		background-color: var(--mantine-color-background-0);
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 
-		&:hover {
-			background-color: var(--mantine-color-purple-hover);
-		}
-	}
-
-	@mixin dark {
-		color: var(--mantine-color-text-0);
-		background-color: var(--mantine-color-background-4);
-
-		&:hover {
-			background-color: var(--mantine-color-background-6);
-		}
+	&:hover {
+		background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-6));
 	}
 }

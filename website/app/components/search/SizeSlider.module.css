@@ -5,22 +5,11 @@
 
 	border-radius: 0 4px 0 0;
 
-	@mixin light {
-		background-color: var(--mantine-color-background-0);
-		border-bottom: 1px solid #e1e3ec;
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	border-bottom: light-dark(1px solid #e1e3ec, 1px solid #2c3651);
 
-		&:focus-within {
-			border-color: var(--mantine-color-purple);
-		}
-	}
-
-	@mixin dark {
-		background-color: var(--mantine-color-background-4);
-		border-bottom: 1px solid #2c3651;
-
-		&:focus-within {
-			border-color: var(--mantine-color-purple);
-		}
+	&:focus-within {
+		border-color: var(--mantine-color-purple);
 	}
 
 	@media (--lt-md) {
