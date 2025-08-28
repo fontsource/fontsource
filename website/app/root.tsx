@@ -125,7 +125,10 @@ export const Document = ({ children }: DocumentProps) => {
 				<meta name="viewport" content="width=device-width,initial-scale=1" />
 				<Meta />
 				<Links />
-				<ColorSchemeScript />
+				<ColorSchemeScript
+					defaultColorScheme="light"
+					suppressHydrationWarning
+				/>
 				<script defer src="https://demo.medama.io/script.js" />
 			</head>
 			<body>
