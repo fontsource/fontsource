@@ -1,6 +1,8 @@
 import type { LoaderFunction } from 'react-router';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
+import { fetchApiData } from '@/utils/api.server';
+
 const docSlugs = Object.keys(
 	import.meta.glob('../../docs/**/*.mdx', {
 		eager: true,
@@ -14,7 +16,7 @@ export const loader: LoaderFunction = async () => {
 	smStream.write({ url: '/', changefreq: 'daily', priority: 0.9 });
 
 	// Pipe each font to stream
-	const fontlist: Record<string, string> = await fetch(
+	const fontlist: Record<string, string> = await fetchApiData(
 		'https://api.fontsource.org/fontlist?family',
 	).then((res) => res.json());
 
