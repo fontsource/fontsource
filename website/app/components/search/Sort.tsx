@@ -1,3 +1,4 @@
+import { observer } from '@legendapp/state/react';
 import {
 	Group,
 	SegmentedControl,
@@ -32,7 +33,7 @@ const getSortItems = () => {
 	}));
 };
 
-const Sort = ({ count, state$ }: SortProps) => {
+const Sort = observer(({ count, state$ }: SortProps) => {
 	const display = state$.display.get();
 	const sortItems = getSortItems();
 
@@ -98,6 +99,6 @@ const Sort = ({ count, state$ }: SortProps) => {
 			</Group>
 		</div>
 	);
-};
+});
 
 export { getSortItems, Sort };
