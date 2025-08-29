@@ -14,7 +14,12 @@ export const FileUpload = ({ onDrop, disabled }: FileUploadProps) => {
 		<Dropzone
 			onDrop={onDrop}
 			maxSize={250 * 1024 ** 2} // 250MB
-			accept={['font/ttf', 'font/otf', 'font/woff', 'font/woff2']}
+			accept={{
+				'font/ttf': ['.ttf'],
+				'font/otf': ['.otf'],
+				'font/woff': ['.woff'],
+				'font/woff2': ['.woff2'],
+			}}
 			disabled={disabled}
 		>
 			<Group

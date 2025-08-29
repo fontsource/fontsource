@@ -140,7 +140,7 @@ export const Header = ({ ...other }: ContainerProps) => {
 							<Group gap="md" justify="right">
 								<HeaderNavLink label="Fonts" to="/" />
 								<HeaderNavLink label="Documentation" to="/docs" />
-								<HeaderNavLink label="Converter" to="/tools/converter" />
+								<HeaderNavLink label="Tools" to="/tools/converter" />
 								<ThemeButton />
 								<Icon
 									label="GitHub"
