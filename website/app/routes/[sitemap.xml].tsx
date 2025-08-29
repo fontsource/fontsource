@@ -16,7 +16,7 @@ export const loader: LoaderFunction = async () => {
 	smStream.write({ url: '/', changefreq: 'daily', priority: 0.9 });
 
 	// Pipe each font to stream
-	const fontlist: Record<string, string> = await fetchApiData(
+	const fontlist: Record<string, string> = await fetchApiData<any>(
 		'https://api.fontsource.org/fontlist?family',
 	).then((res) => res.json());
 

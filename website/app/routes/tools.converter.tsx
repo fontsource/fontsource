@@ -1,5 +1,5 @@
 import type { MetaFunction } from 'react-router';
-import { FontConverter } from '@/components/fontConverter/FontConverter';
+import { FontConverter } from '@/components/tools/FontConverter';
 import { ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
