@@ -1,5 +1,6 @@
 import { Box, Button, Group, Stack, Table, Text, Title } from '@mantine/core';
 import { IconX } from '@tabler/icons-react';
+import { formatFileSize } from './utils';
 
 interface BaseFileEntry {
 	id: number;
@@ -86,12 +87,4 @@ export const FileList = ({
 			</Table>
 		</Stack>
 	);
-};
-
-const formatFileSize = (bytes: number): string => {
-	if (bytes === 0) return '0 Bytes';
-	const k = 1024;
-	const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-	const i = Math.floor(Math.log(bytes) / Math.log(k));
-	return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 };
