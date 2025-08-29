@@ -70,6 +70,9 @@ export default defineConfig({
 		}),
 		tsconfigPaths(),
 	],
+	optimizeDeps: {
+		exclude: ['@glypht/core'],
+	},
 	ssr: {
 		target: 'webworker',
 		noExternal: true,
