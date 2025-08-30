@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Stack, Table, Text, Title } from '@mantine/core';
+import { Box, Button, Stack, Table, Text, Title } from '@mantine/core';
 import { IconFileDownload } from '@tabler/icons-react';
 import { formatFileSize } from './utils';
 
@@ -46,14 +46,16 @@ export const ResultsTable = ({
 							<Table.Td>{result.format}</Table.Td>
 							<Table.Td>{formatFileSize(result.data.byteLength)}</Table.Td>
 							<Table.Td style={{ textAlign: 'right' }}>
-								<ActionIcon
-									variant="subtle"
-									onClick={() => onDownloadSingle(index)}
-									title="Download file"
-									disabled={disabled}
-								>
-									<IconFileDownload size={18} />
-								</ActionIcon>
+								<Box style={{ textAlign: 'right' }}>
+									<Button
+										variant="subtle"
+										onClick={() => onDownloadSingle(index)}
+										title="Download file"
+										disabled={disabled}
+									>
+										<IconFileDownload size={18} />
+									</Button>
+								</Box>
 							</Table.Td>
 						</Table.Tr>
 					))}

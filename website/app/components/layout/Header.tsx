@@ -6,6 +6,7 @@ import {
 	Container,
 	Divider,
 	Group,
+	HoverCard,
 	ScrollArea,
 	Stack,
 	Text,
@@ -100,7 +101,7 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 				<Stack px={24}>
 					<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
 					<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
-					<HeaderNavLink label="Tools" to="/tools/converter" toggle={toggle} />
+					<HeaderNavLink label="Tools" to="/tools" toggle={toggle} />
 					<Divider />
 					<ThemeButtonMobile />
 					<MobileExternalIcon
@@ -127,6 +128,8 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 
 export const Header = ({ ...other }: ContainerProps) => {
 	const [opened, { toggle }] = useDisclosure(false);
+	const location = useLocation();
+	const isToolsActive = location.pathname.startsWith('/tools');
 
 	return (
 		<>
@@ -140,7 +143,40 @@ export const Header = ({ ...other }: ContainerProps) => {
 							<Group gap="md" justify="right">
 								<HeaderNavLink label="Fonts" to="/" />
 								<HeaderNavLink label="Documentation" to="/docs" />
-								<HeaderNavLink label="Tools" to="/tools/converter" />
+
+								<HoverCard
+									shadow="md"
+									position="bottom"
+									withArrow
+									openDelay={100}
+									closeDelay={200}
+									offset={8}
+								>
+									<HoverCard.Target>
+										<Text>
+											<NavLink
+												to="/tools"
+												prefetch="intent"
+												className={cx(classes.link, {
+													[classes.active]: isToolsActive,
+												})}
+											>
+												Tools
+											</NavLink>
+										</Text>
+									</HoverCard.Target>
+									<HoverCard.Dropdown>
+										<Text
+											component={Link}
+											to="/tools/converter"
+											size="sm"
+											style={{ textDecoration: 'none', color: 'inherit' }}
+										>
+											TTF/WOFF/WOFF2 Converter
+										</Text>
+									</HoverCard.Dropdown>
+								</HoverCard>
+
 								<ThemeButton />
 								<Icon
 									label="GitHub"

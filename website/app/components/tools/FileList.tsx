@@ -53,6 +53,7 @@ export const FileList = ({
 				<Table.Thead>
 					<Table.Tr>
 						<Table.Th>Filename</Table.Th>
+						<Table.Th>Format</Table.Th>
 						<Table.Th>Size</Table.Th>
 						<Table.Th />
 					</Table.Tr>
@@ -67,6 +68,10 @@ export const FileList = ({
 										{fileEntry.error}
 									</Text>
 								)}
+							</Table.Td>
+							<Table.Td>
+								{fileEntry.file.name.split('.').pop()?.toUpperCase() ||
+									'Unknown'}
 							</Table.Td>
 							<Table.Td>{formatFileSize(fileEntry.file.size)}</Table.Td>
 							<Table.Td>

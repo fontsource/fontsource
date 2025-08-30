@@ -48,6 +48,7 @@ import '@mantine/core/styles/List.css';
 import '@mantine/core/styles/Table.css';
 // Misc
 import '@mantine/core/styles/Badge.css';
+import '@mantine/core/styles/Card.css';
 import '@mantine/core/styles/Divider.css';
 import '@mantine/core/styles/Text.css';
 import '@mantine/core/styles/Title.css';

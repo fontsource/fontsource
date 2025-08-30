@@ -1,7 +1,6 @@
-import { Container, Stack } from '@mantine/core';
+import { Stack } from '@mantine/core';
 import type { MetaFunction } from 'react-router';
 import { FontConverter } from '@/components/tools/FontConverter';
-import globalClasses from '@/styles/global.module.css';
 import { ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
@@ -14,11 +13,9 @@ export const meta: MetaFunction = () => {
 
 export const ConverterPage = () => {
 	return (
-		<Container className={globalClasses.container}>
-			<Stack gap="xl">
-				<FontConverter />
-			</Stack>
-		</Container>
+		<Stack gap="xl">
+			<FontConverter />
+		</Stack>
 	);
 };
 

@@ -82,13 +82,27 @@ export const useFontConverter = () => {
 
 	const handleFileChange = useCallback(
 		async (newFiles: File[]) => {
+			// Filter out duplicate files based on name and size.
+			const existingFiles = state$.files.get();
+			const uniqueNewFiles = newFiles.filter(
+				(newFile) =>
+					!existingFiles.some(
+						(existingEntry) =>
+							existingEntry.file.name === newFile.name &&
+							existingEntry.file.size === newFile.size,
+					),
+			);
+
+			// Clear previous results when new files are added.
+			state$.results.set([]);
+
 			// If no new files or contexts, do nothing.
-			if (!newFiles.length || !contexts.current) return;
+			if (!uniqueNewFiles.length || !contexts.current) return;
 
 			const { glyphtContext, compressionContext } = contexts.current;
 
 			// Decompress files in parallel.
-			const decompressionPromises = newFiles.map(async (file) => {
+			const decompressionPromises = uniqueNewFiles.map(async (file) => {
 				const buffer = new Uint8Array(await file.arrayBuffer());
 				const type = WoffCompressionContext.compressionType(buffer);
 
@@ -151,7 +165,7 @@ export const useFontConverter = () => {
 				}
 			}
 
-			state$.files.push(...allNewEntries);
+			state$.files.set((currentFiles) => [...currentFiles, ...allNewEntries]);
 		},
 		[state$],
 	);
@@ -247,6 +261,9 @@ export const useFontConverter = () => {
 				}
 
 				state$.files.splice(index, 1);
+
+				// Clear results on file removal to avoid confusion.
+				state$.results.set([]);
 			}
 		},
 		[state$],

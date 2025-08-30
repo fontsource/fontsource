@@ -1,6 +1,7 @@
-import { Group, Text, useMantineTheme } from '@mantine/core';
+import { Group, Text } from '@mantine/core';
 import { Dropzone } from '@mantine/dropzone';
 import { IconUpload, IconX } from '@tabler/icons-react';
+import classes from './FileUpload.module.css';
 
 interface FileUploadProps {
 	onDrop: (files: File[]) => void;
@@ -8,8 +9,6 @@ interface FileUploadProps {
 }
 
 export const FileUpload = ({ onDrop, disabled }: FileUploadProps) => {
-	const theme = useMantineTheme();
-
 	return (
 		<Dropzone
 			onDrop={onDrop}
@@ -21,6 +20,7 @@ export const FileUpload = ({ onDrop, disabled }: FileUploadProps) => {
 				'font/woff2': ['.woff2'],
 			}}
 			disabled={disabled}
+			className={classes.dropzone}
 		>
 			<Group
 				justify="center"
@@ -29,22 +29,13 @@ export const FileUpload = ({ onDrop, disabled }: FileUploadProps) => {
 				style={{ pointerEvents: 'none' }}
 			>
 				<Dropzone.Accept>
-					<IconUpload
-						style={{ width: 52, height: 52, color: theme.colors.blue[6] }}
-						stroke={1.5}
-					/>
+					<IconUpload className={classes.acceptIcon} stroke={1.5} />
 				</Dropzone.Accept>
 				<Dropzone.Reject>
-					<IconX
-						style={{ width: 52, height: 52, color: theme.colors.red[6] }}
-						stroke={1.5}
-					/>
+					<IconX className={classes.rejectIcon} stroke={1.5} />
 				</Dropzone.Reject>
 				<Dropzone.Idle>
-					<IconUpload
-						style={{ width: 52, height: 52, color: theme.colors.text[1] }}
-						stroke={1.5}
-					/>
+					<IconUpload className={classes.idleIcon} stroke={1.5} />
 				</Dropzone.Idle>
 				<div>
 					<Text size="xl" inline>
