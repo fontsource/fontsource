@@ -1,17 +1,25 @@
+import { Container, Stack } from '@mantine/core';
 import type { MetaFunction } from 'react-router';
 import { FontConverter } from '@/components/tools/FontConverter';
+import globalClasses from '@/styles/global.module.css';
 import { ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
-	const title = 'Font Converter Tool | Fontsource';
+	const title = 'Free Font Converter - WOFF2, WOFF, TTF & OTF | Fontsource';
 	const description =
-		'Convert TTF, WOFF, and WOFF2 files quickly and securely in your browser. A free tool for optimizing web fonts.';
+		'A free tool for web developers to convert TTF, OTF, WOFF, and WOFF2 files to optimized web formats. All processing is done client-side in your browser for speed and privacy. No server uploads.';
 
 	return ogMeta({ title, description });
 };
 
 export const ConverterPage = () => {
-	return <FontConverter />;
+	return (
+		<Container className={globalClasses.container}>
+			<Stack gap="xl">
+				<FontConverter />
+			</Stack>
+		</Container>
+	);
 };
 
 export default ConverterPage;
