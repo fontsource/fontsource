@@ -6,7 +6,6 @@ import {
 	Container,
 	Divider,
 	Group,
-	HoverCard,
 	ScrollArea,
 	Stack,
 	Text,
@@ -128,8 +127,6 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 
 export const Header = ({ ...other }: ContainerProps) => {
 	const [opened, { toggle }] = useDisclosure(false);
-	const location = useLocation();
-	const isToolsActive = location.pathname.startsWith('/tools');
 
 	return (
 		<>
@@ -144,38 +141,7 @@ export const Header = ({ ...other }: ContainerProps) => {
 								<HeaderNavLink label="Fonts" to="/" />
 								<HeaderNavLink label="Documentation" to="/docs" />
 
-								<HoverCard
-									shadow="md"
-									position="bottom"
-									withArrow
-									openDelay={100}
-									closeDelay={200}
-									offset={8}
-								>
-									<HoverCard.Target>
-										<Text>
-											<NavLink
-												to="/tools"
-												prefetch="intent"
-												className={cx(classes.link, {
-													[classes.active]: isToolsActive,
-												})}
-											>
-												Tools
-											</NavLink>
-										</Text>
-									</HoverCard.Target>
-									<HoverCard.Dropdown>
-										<Text
-											component={Link}
-											to="/tools/converter"
-											size="sm"
-											style={{ textDecoration: 'none', color: 'inherit' }}
-										>
-											TTF/WOFF/WOFF2 Converter
-										</Text>
-									</HoverCard.Dropdown>
-								</HoverCard>
+								<HeaderNavLink label="Tools" to="/tools" />
 
 								<ThemeButton />
 								<Icon
