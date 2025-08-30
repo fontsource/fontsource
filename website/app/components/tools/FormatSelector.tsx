@@ -12,7 +12,7 @@ interface FormatSelectorProps {
 }
 
 const formatOptions = [
-	{ key: 'ttf', label: 'TTF' },
+	{ key: 'ttf', label: 'TTF/OTF' },
 	{ key: 'woff', label: 'WOFF' },
 	{ key: 'woff2', label: 'WOFF2' },
 ] as const;
