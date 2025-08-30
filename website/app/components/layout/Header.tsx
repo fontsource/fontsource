@@ -13,8 +13,8 @@ import {
 	UnstyledButton,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Link, NavLink, useLocation } from 'react-router';
 import cx from 'clsx';
+import { Link, NavLink, useLocation } from 'react-router';
 
 import { LeftSidebar } from '@/components/docs/LeftSidebar';
 import { IconDiscord, IconGithub } from '@/components/icons';
@@ -100,6 +100,7 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 				<Stack px={24}>
 					<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
 					<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
+					<HeaderNavLink label="Tools" to="/tools" toggle={toggle} />
 					<Divider />
 					<ThemeButtonMobile />
 					<MobileExternalIcon
@@ -139,6 +140,9 @@ export const Header = ({ ...other }: ContainerProps) => {
 							<Group gap="md" justify="right">
 								<HeaderNavLink label="Fonts" to="/" />
 								<HeaderNavLink label="Documentation" to="/docs" />
+
+								<HeaderNavLink label="Tools" to="/tools" />
+
 								<ThemeButton />
 								<Icon
 									label="GitHub"

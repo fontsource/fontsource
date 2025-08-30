@@ -36,6 +36,7 @@ import '@mantine/core/styles/Burger.css';
 import '@mantine/core/styles/NavLink.css';
 import '@mantine/core/styles/Tabs.css';
 // Feedback
+import '@mantine/core/styles/Progress.css';
 import '@mantine/core/styles/Skeleton.css';
 // Overlays
 import '@mantine/core/styles/Menu.css';
@@ -47,9 +48,12 @@ import '@mantine/core/styles/List.css';
 import '@mantine/core/styles/Table.css';
 // Misc
 import '@mantine/core/styles/Badge.css';
+import '@mantine/core/styles/Card.css';
 import '@mantine/core/styles/Divider.css';
 import '@mantine/core/styles/Text.css';
 import '@mantine/core/styles/Title.css';
+// Extensions
+import '@mantine/dropzone/styles.css';
 import '@/styles/global.css';
 
 import interLatinURL from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';

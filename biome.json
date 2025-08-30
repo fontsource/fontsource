@@ -29,11 +29,15 @@
 	},
 	"linter": {
 		"enabled": true,
+		"domains": {
+			"react": "all"
+		},
 		"rules": {
 			"recommended": true,
 			"correctness": {
 				"useUniqueElementIds": "off",
-				"noUnknownMediaFeatureName": "off"
+				"noUnknownMediaFeatureName": "off",
+				"noUnknownProperty": "off"
 			},
 			"suspicious": {
 				"noUnknownAtRules": "off"

@@ -1,0 +1,21 @@
+.toolCard {
+	text-decoration: none;
+	color: inherit;
+	transition: all 150ms ease;
+	border: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+	border-radius: var(--mantine-radius-lg);
+	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-4));
+
+	svg {
+		height: 32px;
+		width: 32px;
+		stroke-width: 1.5;
+		color: var(--mantine-color-purple);
+	}
+
+	&:hover {
+		text-decoration: none;
+		background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-5));
+		transform: translateY(-1px);
+	}
+}
