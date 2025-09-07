@@ -1,6 +1,6 @@
 import { observer, useComputed } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { Link as NavLink } from 'react-router';
 
@@ -20,6 +20,9 @@ interface HitComponentProps {
 interface InfiniteHitsProps {
 	state$: SearchState;
 }
+
+// Global cache to track loaded stylesheets and avoid redundant checks.
+const loadedStylesheetsCache = new Set<string>();
 
 function useInfiniteScroll(isLastPage: boolean, showMore: () => void) {
 	const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -55,26 +58,36 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 
 	// State to track if the font's CSS stylesheet has loaded.
 	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
-
-	// Conditionally enable the font check only after the stylesheet is ready.
 	const isFontLoaded = useIsFontLoaded(hit.family, isStylesheetLoaded);
 
+	// Memoized check to prevent expensive DOM operations on every render.
+	const isStylesheetAlreadyLoaded = useMemo(() => {
+		if (typeof document === 'undefined') {
+			return false;
+		}
+
+		if (loadedStylesheetsCache.has(stylesheetHref)) {
+			return true;
+		}
+
+		for (const sheet of document.styleSheets) {
+			if (sheet.href === stylesheetHref) {
+				loadedStylesheetsCache.add(stylesheetHref);
+				return true;
+			}
+		}
+		return false;
+	}, [stylesheetHref]);
+
 	useEffect(() => {
-		// If the stylesheet is already marked as loaded we don't need to do anything.
 		if (isStylesheetLoaded) {
 			return;
 		}
 
-		// After the component mounts, check if the browser has already loaded the stylesheet from the initial
-		// SSR'd HTML by looking.
-		const existingLink = document.querySelector(
-			`link[rel="stylesheet"][href="${stylesheetHref}"]`,
-		);
-
-		if (existingLink) {
+		if (isStylesheetAlreadyLoaded) {
 			setStylesheetLoaded(true);
 		}
-	}, [isStylesheetLoaded, stylesheetHref]);
+	}, [isStylesheetLoaded, isStylesheetAlreadyLoaded]);
 
 	const display = state$.display.get();
 	const size = state$.size.get();
@@ -109,8 +122,10 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 			<link
 				rel="stylesheet"
 				href={stylesheetHref}
-				// This onLoad is still critical for new items added by infinite scroll.
-				onLoad={() => setStylesheetLoaded(true)}
+				onLoad={() => {
+					loadedStylesheetsCache.add(stylesheetHref);
+					setStylesheetLoaded(true);
+				}}
 				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton.
 			/>
 			<Skeleton visible={!isFontLoaded}>
