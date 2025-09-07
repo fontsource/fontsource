@@ -1,6 +1,6 @@
 import { observer, useComputed } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { Link as NavLink } from 'react-router';
 
@@ -20,6 +20,9 @@ interface HitComponentProps {
 interface InfiniteHitsProps {
 	state$: SearchState;
 }
+
+// Global cache to track loaded stylesheets and avoid redundant checks.
+const loadedStylesheetsCache = new Set<string>();
 
 function useInfiniteScroll(isLastPage: boolean, showMore: () => void) {
 	const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -51,7 +54,41 @@ function useInfiniteScroll(isLastPage: boolean, showMore: () => void) {
 }
 
 const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
-	const isFontLoaded = useIsFontLoaded(hit.family);
+	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`;
+
+	// State to track if the font's CSS stylesheet has loaded.
+	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
+	const isFontLoaded = useIsFontLoaded(hit.family, isStylesheetLoaded);
+
+	// Memoized check to prevent expensive DOM operations on every render.
+	const isStylesheetAlreadyLoaded = useMemo(() => {
+		if (typeof document === 'undefined') {
+			return false;
+		}
+
+		if (loadedStylesheetsCache.has(stylesheetHref)) {
+			return true;
+		}
+
+		for (const sheet of document.styleSheets) {
+			if (sheet.href === stylesheetHref) {
+				loadedStylesheetsCache.add(stylesheetHref);
+				return true;
+			}
+		}
+		return false;
+	}, [stylesheetHref]);
+
+	useEffect(() => {
+		if (isStylesheetLoaded) {
+			return;
+		}
+
+		if (isStylesheetAlreadyLoaded) {
+			setStylesheetLoaded(true);
+		}
+	}, [isStylesheetLoaded, isStylesheetAlreadyLoaded]);
+
 	const display = state$.display.get();
 	const size = state$.size.get();
 
@@ -84,7 +121,12 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 		>
 			<link
 				rel="stylesheet"
-				href={`https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`}
+				href={stylesheetHref}
+				onLoad={() => {
+					loadedStylesheetsCache.add(stylesheetHref);
+					setStylesheetLoaded(true);
+				}}
+				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton.
 			/>
 			<Skeleton visible={!isFontLoaded}>
 				<Text

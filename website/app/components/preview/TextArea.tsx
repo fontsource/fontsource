@@ -71,7 +71,10 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 			: state$.preview.color.set('#000000');
 	}, [colorScheme]);
 
-	const isFontLoaded = useIsFontLoaded(family, { weights: [weight], style });
+	const isFontLoaded = useIsFontLoaded(family, true, {
+		weights: [weight],
+		style,
+	});
 
 	return (
 		<>
