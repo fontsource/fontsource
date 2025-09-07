@@ -41,7 +41,7 @@ interface FooterNavLinkProps {
 const FooterNavLink = ({ label, to }: FooterNavLinkProps) => {
 	return (
 		<Text>
-			<Link to={to} className={classes.link}>
+			<Link to={to} className={classes.link} prefetch="intent">
 				{label}
 			</Link>
 		</Text>
@@ -55,7 +55,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 	return (
 		<Box component="footer" className={classes.header} {...other}>
 			<Container className={classes.inner}>
-				<Link to="/">
+				<Link to="/" prefetch="intent">
 					<LogoText height={31} />
 				</Link>
 				<div className={classes.links}>

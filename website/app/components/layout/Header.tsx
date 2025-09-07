@@ -132,7 +132,7 @@ export const Header = ({ ...other }: ContainerProps) => {
 		<>
 			<Box component="header" className={classes.header}>
 				<Container className={classes.inner} {...other}>
-					<Link to="/">
+					<Link to="/" prefetch="intent">
 						<LogoText height={31} isHeader />
 					</Link>
 					<div className={classes.links}>
