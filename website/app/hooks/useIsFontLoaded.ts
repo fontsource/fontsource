@@ -98,6 +98,7 @@ const triggerFontLoad = (cacheKey: string, fontFaces: FontFace[]) => {
 
 export const useFontStatus = (
 	family: string,
+	enabled = true,
 	options?: ObserverOptions,
 ): FontStatus => {
 	const fontFaces = useMemo<FontFace[]>(() => {
@@ -116,13 +117,13 @@ export const useFontStatus = (
 
 	// Load the font on mount or when font faces change.
 	useEffect(() => {
-		// Skip font loading during SSR.
-		if (!isClient) {
+		// Skip font loading during SSR or if the hook is not enabled.
+		if (!isClient || !enabled) {
 			return;
 		}
 
 		triggerFontLoad(cacheKey, fontFaces);
-	}, [cacheKey, fontFaces]);
+	}, [cacheKey, fontFaces, enabled]);
 
 	const status = useSyncExternalStore(
 		(callback) => {
@@ -148,9 +149,18 @@ export const useFontStatus = (
 		() => undefined, // Server snapshot should always be undefined (no fonts loaded on server).
 	);
 
+	// If not enabled, the font is neither loading nor loaded yet.
+	if (!enabled) {
+		return undefined;
+	}
+
 	return status;
 };
 
-export const useIsFontLoaded = (family: string, options?: ObserverOptions) => {
-	return useFontStatus(family, options) === 'loaded';
+export const useIsFontLoaded = (
+	family: string,
+	enabled = true,
+	options?: ObserverOptions,
+) => {
+	return useFontStatus(family, enabled, options) === 'loaded';
 };

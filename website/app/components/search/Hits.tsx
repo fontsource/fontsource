@@ -1,6 +1,6 @@
 import { observer, useComputed } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { Link as NavLink } from 'react-router';
 
@@ -51,7 +51,11 @@ function useInfiniteScroll(isLastPage: boolean, showMore: () => void) {
 }
 
 const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
-	const isFontLoaded = useIsFontLoaded(hit.family);
+	// State to track if the font's CSS stylesheet has loaded.
+	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
+
+	// Conditionally enable the font check only after the stylesheet is ready.
+	const isFontLoaded = useIsFontLoaded(hit.family, isStylesheetLoaded);
 	const display = state$.display.get();
 	const size = state$.size.get();
 
@@ -85,6 +89,8 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 			<link
 				rel="stylesheet"
 				href={`https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`}
+				onLoad={() => setStylesheetLoaded(true)}
+				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton
 			/>
 			<Skeleton visible={!isFontLoaded}>
 				<Text
