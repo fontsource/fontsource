@@ -30,6 +30,10 @@ export default defineConfig({
 		cssMinify: 'lightningcss',
 		minify: 'terser',
 	},
+	worker: {
+		format: 'es',
+		plugins: () => [],
+	},
 	css: {
 		transformer: 'lightningcss',
 		lightningcss: {
@@ -72,6 +76,7 @@ export default defineConfig({
 	],
 	optimizeDeps: {
 		exclude: ['@glypht/core'],
+		include: ['@glypht/web-worker'],
 	},
 	ssr: {
 		target: 'webworker',

@@ -16,43 +16,45 @@ interface ObserverOptions {
 const fontStatusCache = new Map<string, FontStatus>();
 const subscribers = new Map<string, Set<() => void>>();
 
-const loadFont = (
+const loadFont = async (
 	{ family, weight = 'normal', style = 'normal' }: FontFace,
 	text = 'BESbswy', // Default text to test font loading.
 	timeout = 15_000,
-): Promise<void> => {
+) => {
 	// e.g., "italic 700 100px 'Roboto'"
 	const fontShorthand = `${style} ${weight} 100px "${family}"`;
 
 	// We check for `document.fonts` to prevent errors in non-browser environments (like SSR).
-	if (!document.fonts) {
+	if (!document?.fonts) {
 		// Resolve immediately on the server or in unsupported environments.
 		console.warn('Font Loading API not supported. Skipping font load.');
 		return Promise.resolve();
 	}
 
-	return new Promise((resolve, reject) => {
-		const loaderPromise = document.fonts
-			.load(fontShorthand, text)
-			.then((fonts) => {
-				if (fonts.length >= 1) {
-					resolve();
-				} else {
-					reject(new Error(`Font '${family}' not found.`));
-				}
-			});
+	let timeoutId: number | undefined;
 
-		const timeoutPromise = new Promise<void>((_, reject) => {
-			setTimeout(
-				() =>
-					reject(new Error(`Font '${family}' timed out after ${timeout}ms.`)),
-				timeout,
-			);
+	const loaderPromise = document.fonts
+		.load(fontShorthand, text)
+		.then((fonts) => {
+			if (fonts.length === 0) {
+				throw new Error(`Font '${family}' failed to load or was not found.`);
+			}
 		});
 
-		// Race the font loading against the timeout.
-		Promise.race([loaderPromise, timeoutPromise]).then(resolve).catch(reject);
+	const timeoutPromise = new Promise((_, reject) => {
+		timeoutId = window.setTimeout(() => {
+			reject(new Error(`Font '${family}' timed out after ${timeout}ms.`));
+		}, timeout);
 	});
+
+	try {
+		return await Promise.race([loaderPromise, timeoutPromise]);
+	} finally {
+		// Cleanup to prevent memory leaks.
+		if (timeoutId) {
+			window.clearTimeout(timeoutId);
+		}
+	}
 };
 
 const notify = (cacheKey: string) => {
