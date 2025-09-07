@@ -16,6 +16,8 @@ interface ObserverOptions {
 const fontStatusCache = new Map<string, FontStatus>();
 const subscribers = new Map<string, Set<() => void>>();
 
+const isClient = typeof window !== 'undefined';
+
 const loadFont = async (
 	{ family, weight = 'normal', style = 'normal' }: FontFace,
 	text = 'BESbswy', // Default text to test font loading.
@@ -25,7 +27,7 @@ const loadFont = async (
 	const fontShorthand = `${style} ${weight} 100px "${family}"`;
 
 	// We check for `document.fonts` to prevent errors in non-browser environments (like SSR).
-	if (!document?.fonts) {
+	if (!isClient || !document?.fonts) {
 		// Resolve immediately on the server or in unsupported environments.
 		console.warn('Font Loading API not supported. Skipping font load.');
 		return Promise.resolve();
@@ -42,16 +44,21 @@ const loadFont = async (
 		});
 
 	const timeoutPromise = new Promise((_, reject) => {
-		timeoutId = window.setTimeout(() => {
-			reject(new Error(`Font '${family}' timed out after ${timeout}ms.`));
-		}, timeout);
+		if (isClient) {
+			timeoutId = window.setTimeout(() => {
+				reject(new Error(`Font '${family}' timed out after ${timeout}ms.`));
+			}, timeout);
+		} else {
+			// On server, immediately reject to avoid hanging promises.
+			reject();
+		}
 	});
 
 	try {
 		return await Promise.race([loaderPromise, timeoutPromise]);
 	} finally {
 		// Cleanup to prevent memory leaks.
-		if (timeoutId) {
+		if (timeoutId && isClient) {
 			window.clearTimeout(timeoutId);
 		}
 	}
@@ -70,7 +77,7 @@ const triggerFontLoad = (cacheKey: string, fontFaces: FontFace[]) => {
 
 	fontStatusCache.set(cacheKey, 'loading');
 
-	// Initial notification for the 'loading' state
+	// Initial notification for the 'loading' state.
 	notify(cacheKey);
 
 	const promises = fontFaces.map((font) => loadFont(font));
@@ -109,6 +116,11 @@ export const useFontStatus = (
 
 	// Load the font on mount or when font faces change.
 	useEffect(() => {
+		// Skip font loading during SSR.
+		if (!isClient) {
+			return;
+		}
+
 		triggerFontLoad(cacheKey, fontFaces);
 	}, [cacheKey, fontFaces]);
 
