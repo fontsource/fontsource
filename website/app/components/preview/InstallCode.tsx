@@ -1,7 +1,7 @@
-import { generateFontFace, type FontObject } from '@fontsource-utils/generate';
+import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
 import { Badge, Divider, Group, Tabs, Text, Title } from '@mantine/core';
-import { Link } from 'react-router';
 import { useState } from 'react';
+import { Link } from 'react-router';
 
 import { Blockquote } from '@/components/Blockquote';
 import { Code } from '@/components/code/Code';
@@ -601,7 +601,7 @@ export const InstallCode = ({ metadata, variable }: InstallCodeProps) => {
 					<Blockquote>
 						<b>Note:</b>Using Material Icons on your website with Fontsource
 						requires additional steps. Please refer to the{' '}
-						<Link to="/docs/getting-started/material-icons">
+						<Link to="/docs/getting-started/material-icons" prefetch="intent">
 							Material Icons documentation
 						</Link>{' '}
 						for more information.
@@ -612,7 +612,7 @@ export const InstallCode = ({ metadata, variable }: InstallCodeProps) => {
 					<Blockquote>
 						<b>Note:</b>Using Material Symbols on your website with Fontsource
 						requires additional steps. Please refer to the{' '}
-						<Link to="/docs/getting-started/material-symbols">
+						<Link to="/docs/getting-started/material-symbols" prefetch="intent">
 							Material Symbols documentation
 						</Link>{' '}
 						for more information.

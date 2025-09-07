@@ -9,8 +9,8 @@ import {
 	Title,
 	UnstyledButton,
 } from '@mantine/core';
-import { Link } from 'react-router';
 import { useState } from 'react';
+import { Link } from 'react-router';
 
 import { Code } from '@/components/code/Code';
 import { IconExternal } from '@/components/icons';
@@ -394,6 +394,7 @@ export const CDN = ({ metadata, variable, hits }: CDNProps) => {
 						component={Link}
 						className={classes.button}
 						to="/docs/getting-started/cdn"
+						prefetch="intent"
 					>
 						<Group gap="xs">
 							Documentation

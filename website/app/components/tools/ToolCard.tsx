@@ -23,6 +23,7 @@ export const ToolCard = ({
 			padding="xl"
 			radius="md"
 			className={styles.toolCard}
+			prefetch="intent"
 		>
 			<Group>
 				<Icon />

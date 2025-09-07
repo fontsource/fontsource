@@ -80,6 +80,7 @@ export const Install = ({
 						component={Link}
 						className={classes.button}
 						to="/docs/getting-started/install"
+						prefetch="intent"
 					>
 						<Group gap="xs">
 							Documentation

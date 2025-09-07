@@ -57,6 +57,7 @@ export const TabsWrapper = ({
 					<Link
 						to={`/fonts/${metadata.id}/install`}
 						style={{ textDecoration: 'none' }}
+						prefetch="intent"
 					>
 						<Tabs.Tab value="install">Install</Tabs.Tab>
 					</Link>
@@ -74,6 +75,7 @@ export const TabsWrapper = ({
 					<Link
 						to={`/fonts/${metadata.id}/cdn`}
 						style={{ textDecoration: 'none' }}
+						prefetch="intent"
 					>
 						<Tabs.Tab
 							value="cdn"

@@ -77,6 +77,7 @@ const RouteItem = ({ slug, title, Icon, active }: RouteItemProps) => {
 			}
 			ref={ref}
 			target={slug === 'changelog' ? '_blank' : undefined}
+			prefetch="intent"
 			data-active={active}
 		>
 			<Group>
@@ -115,6 +116,7 @@ const SectionItem = ({
 			component={Link}
 			to={external ?? `/docs/${slug}`}
 			onClick={handleToggle}
+			prefetch="intent"
 			data-active={active}
 		>
 			<Group justify="space-between">
