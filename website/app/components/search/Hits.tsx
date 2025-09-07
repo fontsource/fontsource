@@ -51,11 +51,31 @@ function useInfiniteScroll(isLastPage: boolean, showMore: () => void) {
 }
 
 const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
+	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`;
+
 	// State to track if the font's CSS stylesheet has loaded.
 	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
 
 	// Conditionally enable the font check only after the stylesheet is ready.
 	const isFontLoaded = useIsFontLoaded(hit.family, isStylesheetLoaded);
+
+	useEffect(() => {
+		// If the stylesheet is already marked as loaded we don't need to do anything.
+		if (isStylesheetLoaded) {
+			return;
+		}
+
+		// After the component mounts, check if the browser has already loaded the stylesheet from the initial
+		// SSR'd HTML by looking.
+		const existingLink = document.querySelector(
+			`link[rel="stylesheet"][href="${stylesheetHref}"]`,
+		);
+
+		if (existingLink) {
+			setStylesheetLoaded(true);
+		}
+	}, [isStylesheetLoaded, stylesheetHref]);
+
 	const display = state$.display.get();
 	const size = state$.size.get();
 
@@ -88,9 +108,10 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 		>
 			<link
 				rel="stylesheet"
-				href={`https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`}
+				href={stylesheetHref}
+				// This onLoad is still critical for new items added by infinite scroll.
 				onLoad={() => setStylesheetLoaded(true)}
-				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton
+				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton.
 			/>
 			<Skeleton visible={!isFontLoaded}>
 				<Text
