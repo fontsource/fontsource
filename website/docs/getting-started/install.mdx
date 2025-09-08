@@ -11,17 +11,17 @@ Fontsource provides a straightforward process for installing fonts into your web
 
 Before proceeding with the installation, ensure that you are using a bundler, such as Vite or Webpack, to handle importing CSS into your final bundle. Please refer to the [Fontsource Guides](/docs/guides) section to see detailed instructions for your preferred framework.
 
-### Variable Fonts
-
-If your chosen font supports variable fonts, Fontsource **highly recommends** using them, especially when working with multiple weights, as it helps reduce bundle sizes. To learn more about using variable fonts, refer to the dedicated [Variable Fonts](/docs/getting-started/variable) guide.
+> **Variable Fonts**
+>
+> If your chosen font supports variable fonts, Fontsource **highly recommends** using them, especially when working with multiple weights, as it helps reduce bundle sizes. To learn more about using variable fonts, refer to the dedicated [Variable Fonts](/docs/getting-started/variable) guide.
 
 ## Setup
 
-To install a font from Fontsource, follow the steps below:
+To install a font from Fontsource, follow the steps below.
 
 ### 1. Choose a Package
 
-Select the font package you wish to install. You can find a list of available fonts in the Fontsource directory. Each font package corresponds to a specific font.
+Select the font package you wish to install. Each font package corresponds to a specific font.
 
 ### 2. Install the Package
 
@@ -33,26 +33,40 @@ Use your preferred package manager to install the font package. For example, to 
 
 ### 3. Import the Font
 
-In your application's entry file, page, or site component, import the font package using the package name. For example, to import Open Sans into index.jsx, add the following code:
+In your application's entry file, page, or site component, import the font package. The import method determines which font files are included.
+
+#### Default Import
+
+The most straightforward way to import a font is using its package name directly. This will import the most common weight, which is **400** for most fonts.
 
 ```jsx
 import "@fontsource/open-sans"; // Defaults to weight 400.
 ```
 
-### 4. Weights and Styles
+#### Specific Weights and Styles
 
- If you only need specific font weights or styles, you can import them individually to reduce the payload size. Fontsource allows you to select weights and styles precisely. To import a specific weight or style, use the corresponding imports. For example:
+To minimize your bundle size, it is recommended to import only the specific weights and styles you need. A single import statement will load **one** font file.
 
 ```jsx
-import "@fontsource/open-sans/500.css"; // Weight 500.
-import "@fontsource/open-sans/900-italic.css"; // Italic variant.
+import "@fontsource/open-sans/300.css"; // Includes weight 300.
+import "@fontsource/open-sans/900-italic.css"; // Includes weight 900 in italic style.
 ```
+
+
+If you need both a regular and an italic style for the same weight, you'll need two separate imports. The import for a normal style **does not** include its italic variant.
+
+```jsx
+import "@fontsource/open-sans/900.css"; // Includes weight 900.
+import "@fontsource/open-sans/900-italic.css"; // Includes weight 900 in italic style.
+```
+
+If you need to use **all** available weights and styles, you must import each one individually. Due to the large file size, this is generally not recommended unless you have a specific use case.
 
 > **Note:** Each font package will provide information on the supported weights and styles in the directory listing or package README.
 
-### 5. TypeScript Configuration
+### 4. TypeScript Configuration
 
-If you're using TypeScript, you may encounter errors when importing CSS files due to TypeScript's [`noUncheckedSideEffects`](https://www.typescriptlang.org/tsconfig/#noUncheckedSideEffectImports) flag rejecting CSS files as having side effects. To resolve this, you need to add ambient module declarations to your project.
+If you're using TypeScript, you may encounter errors when importing CSS files due to TypeScript's [`noUncheckedSideEffects`](https://www.typescriptlang.org/tsconfig/#noUncheckedSideEffectImports) flag. To resolve this, add ambient module declarations to your project.
 
 Create a global TypeScript declaration file (e.g., `src/globals.d.ts`) and include the following:
 
@@ -63,11 +77,13 @@ declare module "@fontsource/*" {}
 declare module "@fontsource-variable/*" {}
 ```
 
-This tells TypeScript to allow imports from CSS files and Fontsource packages without type checking, which is the recommended approach for handling font imports.
+This tells TypeScript to allow imports from CSS files and Fontsource packages without type checking.
 
-### 6. CSS
+> **Note:** If you're using a bundler like **Vite** or a framework that handles CSS imports automatically, you likely won't need to do this.
 
-Once the font is imported, you can reference it in your CSS stylesheets, CSS Modules, or CSS-in-JS. Use the font family name associated with the font package you installed. For example:
+### 5. CSS
+
+Once the font is imported, you can reference it in your CSS stylesheets, CSS Modules, or CSS-in-JS using the font family name.
 
 ```css
 body {
