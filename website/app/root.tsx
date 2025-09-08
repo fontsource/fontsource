@@ -1,4 +1,4 @@
-import '@fontsource-variable/inter/wght.css';
+import '@fontsource-variable/ibm-plex-sans/wght.css';
 import '@fontsource-variable/source-code-pro/wght.css';
 import 'fallback-font/fallback-outline.css';
 // Common
@@ -56,7 +56,7 @@ import '@mantine/core/styles/Title.css';
 import '@mantine/dropzone/styles.css';
 import '@/styles/global.css';
 
-import interLatinURL from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import ibmLatinURL from '@fontsource-variable/ibm-plex-sans/files/ibm-plex-sans-latin-wght-normal.woff2?url';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import type {
 	HeadersFunction,
@@ -88,7 +88,7 @@ export const links: LinksFunction = () => [
 		as: 'font',
 		type: 'font/woff2',
 		crossOrigin: 'anonymous',
-		href: interLatinURL,
+		href: ibmLatinURL,
 	},
 	{
 		rel: 'apple-touch-icon',

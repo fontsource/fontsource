@@ -33,6 +33,7 @@
 	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 
 	&:hover {
+		color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 		background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-6));
 	}
 }

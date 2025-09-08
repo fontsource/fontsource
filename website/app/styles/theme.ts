@@ -81,7 +81,7 @@ export const theme = createTheme({
 	},
 	primaryColor: 'purple',
 
-	fontFamily: '"Inter Variable", sans-serif',
+	fontFamily: '"IBM Plex Sans Variable", sans-serif',
 	fontFamilyMonospace: '"Source Code Pro Variable", monospace',
 
 	fontSizes: {

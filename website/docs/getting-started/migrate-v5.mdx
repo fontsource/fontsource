@@ -16,19 +16,19 @@ Variable fonts are now split into separate packages to provide more flexibility 
 #### Before
 
 ```js
-import "@fontsource/roboto-flex/variable.css";
-import "@fontsource/roboto-flex/variable-italic.css";
-import "@fontsource/roboto-flex/variable-full.css";
-import "@fontsource/roboto-flex/variable-full-italic.css";
+import "@fontsource/nunito-sans/variable.css";
+import "@fontsource/nunito-sans/variable-italic.css";
+import "@fontsource/nunito-sans/variable-full.css";
+import "@fontsource/nunito-sans/variable-full-italic.css";
 ```
 
 #### After
 
 ```js
-import "@fontsource-variable/roboto-flex";
-import "@fontsource-variable/roboto-flex/wght-italic.css";
-import "@fontsource-variable/roboto-flex/full.css";
-import "@fontsource-variable/roboto-flex/full-italic.css";
+import "@fontsource-variable/nunito-sans";
+import "@fontsource-variable/nunito-sans/wght-italic.css";
+import "@fontsource-variable/nunito-sans/full.css";
+import "@fontsource-variable/nunito-sans/full-italic.css";
 ```
 
 > **Note:** Please note that if you were previously using the `full` variant, it may no longer be available. We have introduced a new `standard` axis that is generated with a smaller subset of variable axes for improved performance and compatibility.
@@ -43,7 +43,7 @@ A mistake made the `font-family` names for variable fonts inconsistent with the 
 
 ```css
 body {
- font-family: "Roboto FlexVariable", sans-serif;
+ font-family: "Nunito SansVariable", sans-serif;
 }
 ```
 
@@ -51,7 +51,7 @@ body {
 
 ```css
 body {
- font-family: "Roboto Flex Variable", sans-serif;
+ font-family: "Nunito Sans Variable", sans-serif;
 }
 ```
 

@@ -7,38 +7,98 @@ section: Frameworks
 
 To integrate Fontsource into your Angular project, follow the steps below.
 
-## 1. Entry File
+## 1. Installation
 
-Open `app.component.ts` and modify the `@Component` decorator accordingly.
+First, install the font package you want to use:
+
+<PackageManagerCode cmd="@fontsource-variable/open-sans" />
+
+## 2. Import in Main Entry File
+
+For Angular 17+ projects, the recommended approach is to import fonts in your main entry file (`main.ts`):
 
 ```ts
-import { Component } from "@angular/core";
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+
+import '@fontsource-variable/open-sans/wght.css';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    // ...
+  ]
+}).catch(err => console.error(err));
+```
+
+## 3. Alternative: Component-Level Import
+
+You can also import fonts directly in individual components:
+
+```ts
+import { Component } from '@angular/core';
+
+import '@fontsource-variable/open-sans/wght.css';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  // File with Fontsource imports
-  styleUrls: ["./app.component.css"],
+  selector: 'app-root',
+  standalone: true,
+  template: `
+    <h1>Welcome to {{ title }}!</h1>
+  `,
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = "my-app";
+  title = 'my-app';
 }
 ```
 
-## 2. CSS Imports
+## 4. Legacy Installation
 
-Open `app.component.css` and import the desired font weights.
+If you're using the traditional module-based Angular architecture (pre-Angular 17), you can import fonts in your `AppModule`:
 
-```css
-@import "~@fontsource-variable/open-sans/wght.css";
+```ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import '@fontsource-variable/open-sans/wght.css';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 ```
 
-## 3. Usage
+## 5. CSS Usage
 
-You can now use the imported fonts in your Angular project.
+Once imported, you can use the font in your component stylesheets:
 
 ```css
+/* app.component.css */
 h1 {
   font-family: "Open Sans Variable", sans-serif;
+  font-weight: 600;
+}
+
+.content {
+  font-family: "Open Sans Variable", sans-serif;
+  font-weight: 400;
+}
+```
+
+## 6. Global Styles
+
+For application-wide font usage, add the font family to your global styles (`styles.css`):
+
+```css
+/* styles.css */
+body {
+  font-family: "Open Sans Variable", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 ```

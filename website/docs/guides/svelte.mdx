@@ -7,31 +7,94 @@ section: Frameworks
 
 To include Fontsource into your Svelte / SvelteKit project and apply it to your application's typography, follow the steps below.
 
-## 1. Entry File
+## Installation
 
-To apply the imported font to the typography of your Svelte / SvelteKit application, you can import the library into `+layout.svelte` file.
+First, install your chosen font package:
 
-```html
-<script>
-  import "@fontsource-variable/open-sans";
-</script>
-```
+<PackageManagerCode cmd="@fontsource-variable/inter" />
 
-## 2. Usage
+## 1. Layout Import
 
-To apply the imported font to the typography of your Svelte / SvelteKit application, you can modify the `body` selector within the `+layout.svelte` file.
+Import fonts in your root layout for application-wide availability:
 
 ```html
-<!-- +layout.svelte -->
+<!-- src/routes/+layout.svelte -->
 <script>
-  import "@fontsource-variable/open-sans";
+  import '@fontsource-variable/inter/wght.css';
 </script>
+
+<main>
+  <slot />
+</main>
 
 <style>
   :global(body) {
-    font-family: "Open Sans Variable", sans-serif;
+    font-family: 'Inter Variable', sans-serif;
+    margin: 0;
+  }
+
+  :global(h1, h2, h3, h4, h5, h6) {
+    font-family: 'Inter Variable', sans-serif;
+    font-weight: 600;
   }
 </style>
 ```
 
-> **Note:** The font will be applied to all elements within your application's body. If you need to apply the font selectively, you can modify the CSS rules accordingly.
+## 2. CSS File Import
+
+Create a global CSS file and import it in your layout:
+
+```css
+/* src/styles/global.css */
+@import '@fontsource-variable/inter/wght.css';
+
+body {
+  font-family: 'Inter Variable', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter Variable', sans-serif;
+  font-weight: 600;
+}
+```
+
+```html
+<!-- src/routes/+layout.svelte -->
+<script>
+  import '../styles/global.css';
+</script>
+
+<main>
+  <slot />
+</main>
+```
+
+## 3. Component-Level Import
+
+For better code splitting, import fonts in specific components or routes:
+
+```html
+<!-- src/routes/blog/+layout.svelte -->
+<script>
+  import '@fontsource/playfair-display/700.css';
+  import '@fontsource-variable/inter/wght.css';
+</script>
+
+<article>
+  <slot />
+</article>
+
+<style>
+  article :global(h1) {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  article :global(p) {
+    font-family: 'Inter Variable', sans-serif;
+    font-weight: 400;
+  }
+</style>
+```

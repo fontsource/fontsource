@@ -20,7 +20,7 @@
 		"@docsearch/css": "^3.9.0",
 		"@docsearch/react": "^3.9.0",
 		"@fontsource-utils/generate": "workspace:*",
-		"@fontsource-variable/inter": "^5.2.6",
+		"@fontsource-variable/ibm-plex-sans": "^5.2.6",
 		"@fontsource-variable/source-code-pro": "^5.2.6",
 		"@glypht/core": "^0.0.6",
 		"@legendapp/state": "^2.1.15",

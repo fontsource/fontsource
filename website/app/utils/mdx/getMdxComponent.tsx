@@ -41,17 +41,17 @@ const mdxComponents = {
 		</>
 	),
 	h3: (props: TitleProps) => (
-		<Title order={3} fw={700} fz={16} mt="lg" mb="sm" {...props} />
+		<Title order={3} fw={700} fz={20} mt="lg" mb="sm" {...props} />
 	),
 	h4: (props: TitleProps) => (
-		<Title order={4} fw={700} fz={15} mt="lg" mb="sm" {...props} />
+		<Title order={4} fw={600} fz={18} mt="lg" mb="sm" {...props} />
 	),
-	p: (props: TextProps) => <Text fw={400} fz={15} my="md" {...props} />,
+	p: (props: TextProps) => <Text fw={400} fz={16} my="lg" {...props} />,
 
 	// Lists
 	ol: (props: ListProps) => <List type="ordered" {...props} />,
 	ul: (props: ListProps) => <List {...props} />,
-	li: (props: ListItemProps) => <List.Item {...props} />,
+	li: (props: ListItemProps) => <List.Item fz={16} {...props} />,
 
 	// Code
 	pre: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />, // Unnecessary pre as we use Code component
@@ -69,7 +69,7 @@ const mdxComponents = {
 
 	// Other
 	hr: (props: DividerProps) => <Divider mb="md" {...props} />,
-	blockquote: (props: BlockquoteProps) => <Blockquote {...props} />,
+	blockquote: (props: BlockquoteProps) => <Blockquote fz={16} {...props} />,
 	// biome-ignore lint/suspicious/noExplicitAny: Selective.
 	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
 };
