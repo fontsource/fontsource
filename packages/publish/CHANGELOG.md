@@ -1,5 +1,11 @@
 # @fontsource-utils/publish
 
+## 0.4.1
+
+### Patch Changes
+
+- [#1053](https://github.com/fontsource/fontsource/pull/1053) [`53d3103`](https://github.com/fontsource/fontsource/commit/53d31039607a8fb5c2a6478c74ae81cee23aa132) Thanks [@ayuhito](https://github.com/ayuhito)! - chore(biome): upgrade dependency and fix lints
+
 ## 0.4.0
 
 ### Minor Changes
