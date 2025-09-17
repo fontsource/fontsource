@@ -1,5 +1,14 @@
 # cdn
 
+## 0.2.28
+
+### Patch Changes
+
+- [#1053](https://github.com/fontsource/fontsource/pull/1053) [`53d3103`](https://github.com/fontsource/fontsource/commit/53d31039607a8fb5c2a6478c74ae81cee23aa132) Thanks [@ayuhito](https://github.com/ayuhito)! - chore(biome): upgrade dependency and fix lints
+
+- Updated dependencies [[`53d3103`](https://github.com/fontsource/fontsource/commit/53d31039607a8fb5c2a6478c74ae81cee23aa132), [`f0ff410`](https://github.com/fontsource/fontsource/commit/f0ff410d148b8a58771e5aec573e7ccacdc798a5)]:
+  - @fontsource-utils/cli@0.7.1
+
 ## 0.2.27
 
 ### Patch Changes
