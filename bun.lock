@@ -95,14 +95,14 @@
       "devDependencies": {
         "@types/fs-extra": "^11.0.1",
         "@types/node": "^20.7.1",
-        "google-font-metadata": "^6.0.0",
+        "google-font-metadata": "^6.0.4",
         "magic-string": "^0.30.0",
         "pkgroll": "^2.6.0",
         "sass": "^1.62.1",
         "typescript": "^5.2.2",
       },
       "peerDependencies": {
-        "google-font-metadata": "^6.0.0",
+        "google-font-metadata": "^6.0.4",
       },
     },
     "packages/generate": {
@@ -1113,7 +1113,7 @@
 
     "globrex": ["globrex@0.1.2", "", {}, "sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg=="],
 
-    "google-font-metadata": ["google-font-metadata@6.0.3", "", { "dependencies": { "@evan/concurrency": "^0.0.3", "@octokit/core": "^6.1.2", "cac": "^6.7.14", "consola": "^3.3.3", "deepmerge": "^4.3.1", "json-stringify-pretty-compact": "^4.0.0", "linkedom": "^0.18.6", "pathe": "^1.1.2", "picocolors": "^1.1.1", "playwright": "^1.49.1", "stylis": "^4.3.4", "zod": "^3.24.1" }, "bin": { "gfm": "dist/cli.mjs" } }, "sha512-62+QB+nmBKppHrxwvILZkV/EvKctEAdzkKBIJY26TtwZkUjeEqmAQnE5uHvtMTdB8odqGpQu5LAKPqqUYHI9wA=="],
+    "google-font-metadata": ["google-font-metadata@6.0.4", "", { "dependencies": { "@evan/concurrency": "^0.0.3", "@octokit/core": "^6.1.2", "cac": "^6.7.14", "consola": "^3.3.3", "deepmerge": "^4.3.1", "json-stringify-pretty-compact": "^4.0.0", "linkedom": "^0.18.6", "pathe": "^1.1.2", "picocolors": "^1.1.1", "playwright": "^1.49.1", "stylis": "^4.3.4", "zod": "^3.24.1" }, "bin": { "gfm": "dist/cli.mjs" } }, "sha512-10thPdMO8iG9knlF7HMurnyb6vBRWiRRO/2b5Lxix0ONJ5NA55ZwHKgZoQFxCp9F/NjKcIy3U/wuQwyksyr4Lw=="],
 
     "graceful-fs": ["graceful-fs@4.2.11", "", {}, "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ=="],
 
