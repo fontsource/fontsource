@@ -1,16 +1,16 @@
 import 'dotenv/config';
 
 import { cac } from 'cac';
-import consola from 'consola';
+import { consola } from 'consola';
 import {
 	fetchAPI,
 	fetchVariable,
 	generateAxis,
 	parseIcons,
 	parseLicenses,
+	parseVariable,
 	parsev1,
 	parsev2,
-	parseVariable,
 } from 'google-font-metadata';
 import colors from 'picocolors';
 

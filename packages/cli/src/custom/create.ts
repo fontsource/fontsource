@@ -8,7 +8,7 @@ import {
 	select,
 	text,
 } from '@clack/prompts';
-import consola from 'consola';
+import { consola } from 'consola';
 import colors from 'picocolors';
 
 import { isCategoryName, type Metadata } from '../types';

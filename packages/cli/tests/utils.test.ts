@@ -16,7 +16,7 @@ describe('utils', () => {
 		});
 
 		it('should generate font file paths', () => {
-			expect(makeFontFilePath('font', 'subset', 400, 'normal', 'woff2')).toBe(
+			expect(makeFontFilePath('font', 'subset', '400', 'normal', 'woff2')).toBe(
 				'./files/font-subset-400-normal.woff2',
 			);
 		});

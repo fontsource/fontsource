@@ -1,11 +1,11 @@
-import consola from 'consola';
+import { consola } from 'consola';
 import fs from 'fs-extra';
 import {
 	APIIconStatic as APIIconStaticImport,
 	APIIconVariable as APIIconVariableImport,
 	APILicense as APILicenseImport,
-	APIv2 as APIv2Import,
 	APIVariable as APIVariableImport,
+	APIv2 as APIv2Import,
 } from 'google-font-metadata';
 import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';

@@ -34,11 +34,11 @@ export const packagerCustom = async (
 					weight,
 					src: [
 						{
-							url: makeFontFilePath(id, subset, weight, style, 'woff2'),
+							url: makeFontFilePath(id, subset, String(weight), style, 'woff2'),
 							format: 'woff2' as const,
 						},
 						{
-							url: makeFontFilePath(id, subset, weight, style, 'woff'),
+							url: makeFontFilePath(id, subset, String(weight), style, 'woff'),
 							format: 'woff' as const,
 						},
 					],

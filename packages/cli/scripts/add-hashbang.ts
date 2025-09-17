@@ -17,4 +17,3 @@ const addHashbang = (filepath: string) => {
 };
 
 addHashbang('dist/cli.mjs');
-addHashbang('dist/cli.cjs');
