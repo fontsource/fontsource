@@ -12,11 +12,12 @@ on:
 
 jobs:
   packager:
+    name: Packager
     runs-on: ubuntu-latest
 
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -30,3 +31,27 @@ jobs:
 
       - name: Run tests
         run: bun run ci:test
+
+  core:
+    name: Core
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/core
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install
+
+      - name: Run lints
+        run: bun run ci:lint
+
+      - name: Run tests
+        run: bun run coverage

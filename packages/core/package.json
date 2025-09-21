@@ -28,6 +28,7 @@
 		"lfi": "^4.1.1"
 	},
 	"devDependencies": {
+		"@vitest/coverage-v8": "^3.2.4",
 		"bumpp": "^10.2.3",
 		"tsdown": "^0.15.4",
 		"typescript": "^5.9.2",
@@ -40,8 +41,10 @@
 		"test:unit": "vitest tests --exclude tests/integration",
 		"test:integration": "vitest tests/integration",
 		"test:all": "vitest",
+		"coverage": "vitest run --coverage",
 		"typecheck": "tsc --noEmit",
 		"check": "biome check --write",
+		"ci:lint": "biome check",
 		"release": "bumpp && bun publish"
 	},
 	"publishConfig": {

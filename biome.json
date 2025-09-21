@@ -4,6 +4,7 @@
 		"includes": [
 			"**",
 			"!**/coverage",
+			"!**/__snapshots__",
 			"!**/dist",
 			"!**/build",
 			"!**/worker-configuration.d.ts",
