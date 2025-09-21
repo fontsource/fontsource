@@ -1,0 +1,9 @@
+/* testfont-latin-slnt-italic */
+@font-face {
+  font-family: 'TestFont Variable';
+  font-style: oblique 10deg 10deg;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/testfont-latin-slnt-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}

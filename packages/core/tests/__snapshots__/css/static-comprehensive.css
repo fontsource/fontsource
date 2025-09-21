@@ -1,0 +1,36 @@
+/* inter-latin-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-latin-400-normal.woff2) format('woff2'), url(./files/inter-latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF;
+}
+/* inter-latin-ext-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-024F;
+}
+/* inter-japanese-400-normal-1 */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-japanese-400-normal-1.woff2) format('woff2');
+  unicode-range: U+3041-3042;
+}
+/* inter-japanese-400-normal-2 */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-japanese-400-normal-2.woff2) format('woff2');
+  unicode-range: U+3044-3045;
+}

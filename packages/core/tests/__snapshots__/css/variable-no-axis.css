@@ -1,0 +1,9 @@
+/* inter-latin-none-normal */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/no-axis.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}

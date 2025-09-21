@@ -1,0 +1,53 @@
+{
+	"name": "@fontsource-utils/core",
+	"version": "0.1.0",
+	"description": "A library for processing fonts for the Fontsource ecosystem.",
+	"type": "module",
+	"license": "MIT",
+	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/core#readme",
+	"bugs": {
+		"url": "https://github.com/fontsource/fontsource/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fontsource/fontsource.git"
+	},
+	"author": "Ayuhito <hello@ayuhito.com>",
+	"files": [
+		"dist"
+	],
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": "./dist/index.js",
+		"./package.json": "./package.json"
+	},
+	"dependencies": {
+		"@glypht/core": "^0.0.6",
+		"lfi": "^4.1.1"
+	},
+	"devDependencies": {
+		"bumpp": "^10.2.3",
+		"tsdown": "^0.15.4",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"test": "vitest",
+		"test:unit": "vitest tests --exclude tests/integration",
+		"test:integration": "vitest tests/integration",
+		"test:all": "vitest",
+		"typecheck": "tsc --noEmit",
+		"check": "biome check --write",
+		"release": "bumpp && bun publish"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	}
+}

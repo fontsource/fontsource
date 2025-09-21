@@ -1,0 +1,36 @@
+/* inter-latin-wght-normal */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/inter-latin-variable.woff2) format('woff2-variations'), url(./files/inter-latin-variable-full.woff2) format('woff2-variations'), url(./files/inter-latin-variable-italic.woff2) format('woff2-variations'), url(./files/inter-latin-variable-wdth.woff2) format('woff2-variations'), url(./files/inter-latin-variable-multi.woff2) format('woff2-variations'), url(./files/inter-latin-variable-multi.woff) format('woff');
+  unicode-range: U+0000-00FF;
+}
+/* inter-latin-ext-slnt-italic */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: oblique 10deg 10deg;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-latin-ext-variable-slnt.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F;
+}
+/* inter-japanese-wght-normal-1 */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url(./files/inter-japanese-variable-1.woff2) format('woff2-variations');
+  unicode-range: U+3041-3042;
+}
+/* inter-japanese-wght-normal-2 */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url(./files/inter-japanese-variable-2.woff2) format('woff2-variations');
+  unicode-range: U+3044-3045;
+}

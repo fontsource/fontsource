@@ -1,0 +1,10 @@
+/* testfont-latin-wdth-normal */
+@font-face {
+  font-family: 'TestFont Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(./files/testfont-latin-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
