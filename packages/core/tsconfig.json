@@ -2,6 +2,7 @@
 	"compilerOptions": {
 		"target": "esnext",
 		"lib": ["es2023"],
+		"composite": true,
 		"moduleDetection": "force",
 		"module": "preserve",
 		"moduleResolution": "bundler",

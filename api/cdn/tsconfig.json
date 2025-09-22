@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"composite": true,
 		/* Language and Environment */
 		"target": "es2021",
 		"lib": ["es2021"],
@@ -18,7 +19,7 @@
 		"checkJs": false,
 
 		/* Emit */
-		"noEmit": true,
+		// "noEmit": true,
 
 		/* Interop Constraints */
 		"isolatedModules": true,

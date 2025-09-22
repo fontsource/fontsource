@@ -15,7 +15,7 @@
 		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,
 		"strict": true,
-		"noEmit": true,
+		// "noEmit": true,
 		"composite": true,
 		"noUncheckedSideEffectImports": true,
 		"lib": ["DOM", "DOM.Iterable", "ES2022"],

@@ -1,43 +1,22 @@
 {
-	/* Visit https://aka.ms/tsconfig.json to read more about this file */
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.json",
-		"scripts/**/*.ts",
-		"tests/**/*.ts",
-		"tests/**/*.json",
-		"version.ts",
-		"vitest.config.ts"
-	],
+	"include": ["src"],
 	"compilerOptions": {
-		/* Projects */
-		//"incremental": true,
-
-		/* Language and Environment */
 		"target": "esnext",
-		"useDefineForClassFields": true,
-
-		/* Modules */
-		"module": "esnext",
-		"moduleResolution": "node",
+		"lib": ["es2023"],
+		"composite": true,
+		"moduleDetection": "force",
+		"module": "preserve",
+		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
-
-		/* Interop Constraints */
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-
-		/* Type Checking */
+		"types": ["node"],
 		"strict": true,
-		"types": ["vitest/importMeta", "node"],
-		"isolatedModules": true,
 		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-
-		/* Completeness */
-		"skipLibCheck": true // Skip type checking all .d.ts files.
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"skipLibCheck": true
 	},
 	"$schema": "https://json.schemastore.org/tsconfig"
 }

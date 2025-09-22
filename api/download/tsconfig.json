@@ -10,7 +10,7 @@
 
 		// if TS 5.x+
 		"moduleResolution": "bundler",
-		"noEmit": true,
+		// "noEmit": true,
 		"allowImportingTsExtensions": true,
 		"moduleDetection": "force",
 		// if TS 4.x or earlier
