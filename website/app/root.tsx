@@ -115,6 +115,12 @@ export const links: LinksFunction = () => [
 		rel: 'manifest',
 		href: '/site.webmanifest',
 	},
+	{
+		rel: 'search',
+		type: 'application/opensearchdescription+xml',
+		title: 'Fontsource',
+		href: '/opensearch.xml',
+	},
 ];
 
 interface DocumentProps {
