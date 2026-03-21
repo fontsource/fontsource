@@ -31,7 +31,7 @@ interface SearchProps {
 	serverUrl: string;
 }
 
-const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours; Cloudflare KV expects seconds
+const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 
 const searchClient = algoliasearch(
 	'WNATE69PVR',
