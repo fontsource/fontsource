@@ -2,10 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { createFontContext } from '../src/context';
 import { buildFont } from '../src/processor';
 import type { FontBuildConfig, FontPackage } from '../src/types';
-import {
-	loadStaticFontFixture,
-	loadVariableFontFixture,
-} from './font-fixture';
+import { loadStaticFontFixture, loadVariableFontFixture } from './font-fixture';
 
 const latinRangeSubset = '0x0020\n0x0021\n0x0022';
 const latinSlicingSubset = `subsets {
@@ -29,13 +26,13 @@ const buildWithFixture = async (
 	buffer: Uint8Array,
 	config: FontBuildConfig,
 ): Promise<FontPackage> => {
-		const ctx = createFontContext();
+	const ctx = createFontContext();
 
-		try {
-			return await buildFont(ctx, [buffer], config);
-		} finally {
-			ctx.destroy();
-		}
+	try {
+		return await buildFont(ctx, [buffer], config);
+	} finally {
+		ctx.destroy();
+	}
 };
 
 describe('buildFont integration with real fixtures', () => {
@@ -101,7 +98,9 @@ describe('buildFont integration with real fixtures', () => {
 			},
 		});
 
-		expect(result.faces.every((face) => face.axisKey === 'standard')).toBe(true);
+		expect(result.faces.every((face) => face.axisKey === 'standard')).toBe(
+			true,
+		);
 		expect(result.faces.map((face) => face.sliceIndex)).toEqual([1, 2]);
 		expect(serialisePackage(result)).toMatchSnapshot();
 	});
