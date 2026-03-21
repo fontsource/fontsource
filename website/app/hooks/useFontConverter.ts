@@ -32,9 +32,6 @@ const formatToMimeType: Record<string, string> = {
 	woff2: 'font/woff2',
 };
 
-const getFileFingerprint = (file: File) =>
-	`${file.name}:${file.size}:${file.lastModified}`;
-
 const triggerDownload = (filename: string, blob: Blob) => {
 	const url = URL.createObjectURL(blob);
 	const link = document.createElement('a');
@@ -44,33 +41,6 @@ const triggerDownload = (filename: string, blob: Blob) => {
 	link.click();
 	link.remove();
 	URL.revokeObjectURL(url);
-};
-
-// Resolve filename collisions once so every download path uses the same names.
-const resolveResultFilenames = (results: ConversionResult[]) => {
-	const usedFilenames = new Set<string>();
-	const nextSuffixByFilename = new Map<string, number>();
-
-	return results.map((result) => {
-		const originalFilename = result.filename;
-		let filename = originalFilename;
-		let nextSuffix = nextSuffixByFilename.get(originalFilename) ?? 2;
-
-		// If a filename has already been used, append a suffix to the name.
-		while (usedFilenames.has(filename)) {
-			const extensionIndex = originalFilename.lastIndexOf('.');
-			filename =
-				extensionIndex === -1
-					? `${originalFilename}-${nextSuffix}`
-					: `${originalFilename.slice(0, extensionIndex)}-${nextSuffix}${originalFilename.slice(extensionIndex)}`;
-			nextSuffix += 1;
-		}
-
-		usedFilenames.add(filename);
-		nextSuffixByFilename.set(originalFilename, nextSuffix);
-
-		return filename === originalFilename ? result : { ...result, filename };
-	});
 };
 
 export const useFontConverter = () => {
@@ -89,12 +59,14 @@ export const useFontConverter = () => {
 		(newFiles: File[]) => {
 			// Use a compact fingerprint so duplicate checks stay linear as the list grows.
 			const seenFiles = new Set(
-				state$.files.get().map(({ file }) => getFileFingerprint(file)),
+				state$.files
+					.get()
+					.map(({ file }) => `${file.name}:${file.size}:${file.lastModified}`),
 			);
 			const uniqueNewFiles: FileEntry[] = [];
 
 			for (const file of newFiles) {
-				const fingerprint = getFileFingerprint(file);
+				const fingerprint = `${file.name}:${file.size}:${file.lastModified}`;
 				if (seenFiles.has(fingerprint)) {
 					continue;
 				}
@@ -162,6 +134,7 @@ export const useFontConverter = () => {
 							fileId: id,
 							status: 'fulfilled' as const,
 							results,
+							fileName: file.name,
 						};
 					} catch (error) {
 						console.error(`Conversion failed for ${file.name}:`, error);
@@ -181,15 +154,47 @@ export const useFontConverter = () => {
 			);
 
 			const fileErrors = new Map<number, string>();
-			const successfulResults: ConversionResult[] = [];
+			const bestResultsByFilename = new Map<
+				string,
+				{ result: ConversionResult; priority: number }
+			>();
 
 			for (const result of settledResults) {
-				if (result.status === 'fulfilled') {
-					successfulResults.push(...result.results);
+				if (result.status === 'rejected') {
+					fileErrors.set(result.fileId, result.error);
 					continue;
 				}
 
-				fileErrors.set(result.fileId, result.error);
+				const extensionIndex = result.fileName.lastIndexOf('.');
+				const sourceFormat =
+					extensionIndex === -1
+						? ''
+						: result.fileName.slice(extensionIndex + 1).toLowerCase();
+				const normalizedSourceFormat =
+					sourceFormat === 'otf' ? 'ttf' : sourceFormat;
+				const sourceQuality =
+					normalizedSourceFormat === 'ttf'
+						? 3
+						: normalizedSourceFormat === 'woff'
+							? 2
+							: normalizedSourceFormat === 'woff2'
+								? 1
+								: 0;
+
+				// Keep one winner per filename, preferring native-format uploads first.
+				for (const conversionResult of result.results) {
+					const priority =
+						(normalizedSourceFormat === conversionResult.format ? 10 : 0) +
+						sourceQuality;
+					const current = bestResultsByFilename.get(conversionResult.filename);
+
+					if (!current || priority > current.priority) {
+						bestResultsByFilename.set(conversionResult.filename, {
+							result: conversionResult,
+							priority,
+						});
+					}
+				}
 			}
 
 			if (fileErrors.size > 0) {
@@ -198,18 +203,19 @@ export const useFontConverter = () => {
 						...fileEntry,
 						error: fileErrors.get(fileEntry.id),
 					})),
-				);
+					);
 			}
 
-			const resolvedResults = resolveResultFilenames(successfulResults);
+			const dedupedResults = [...bestResultsByFilename.values()].map(
+				({ result }) => result,
+			);
 
-			// Resolve collisions once so the UI, single downloads, and ZIP stay consistent.
-			state$.results.set(resolvedResults);
+			state$.results.set(dedupedResults);
 			state$.progress.set({ value: 100, text: 'Conversion complete!' });
 
 			if (fileErrors.size > 0) {
 				state$.downloadError.set(
-					resolvedResults.length > 0
+					dedupedResults.length > 0
 						? 'Some files could not be converted. Check the file list for details.'
 						: 'Font conversion failed. One or more files may be invalid.',
 				);
