@@ -6,8 +6,8 @@ import {
 	UnstyledButton,
 	useMantineColorScheme,
 } from '@mantine/core';
-import { Link, useParams } from 'react-router';
 import { useState } from 'react';
+import { Link, useParams } from 'react-router';
 
 import { CarbonAd } from '@/components/CarbonAd';
 import type { HeadingsData } from '@/hooks/useHeadingsData';

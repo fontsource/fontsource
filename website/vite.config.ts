@@ -12,7 +12,6 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import remarkSmartypants from 'remark-smartypants';
 import { defineConfig } from 'vite';
 import babel from 'vite-plugin-babel';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 const targets = browserslistToTargets(
 	browserslist([
@@ -72,20 +71,20 @@ export default defineConfig({
 				plugins: [['babel-plugin-react-compiler', {}]],
 			},
 		}),
-		tsconfigPaths(),
 	],
 	optimizeDeps: {
-		exclude: ['@glypht/core'],
+		exclude: ['@fontsource-utils/core', '@glypht/core'],
 		include: ['@glypht/web-worker'],
 	},
 	ssr: {
 		target: 'webworker',
-		noExternal: true,
+		noExternal: [/^(?!@fontsource-utils\/core).*$/],
 		resolve: {
 			conditions: ['worker', 'workerd', 'browser'],
 		},
 	},
 	resolve: {
+		tsconfigPaths: true,
 		mainFields: ['browser', 'module', 'main'],
 		alias: {
 			react: 'react',

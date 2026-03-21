@@ -129,4 +129,4 @@ const NormalButtonsGroup = observer(
 	},
 );
 
-export { NormalButtonsGroup, SliderButton };
+export { NormalButtonsGroup };

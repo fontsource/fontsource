@@ -1,12 +1,7 @@
+import type { ConversionResult } from '@fontsource-utils/core';
 import { Box, Button, Stack, Table, Text, Title } from '@mantine/core';
 import { IconFileDownload } from '@tabler/icons-react';
 import { formatFileSize } from './utils';
-
-interface ConversionResult {
-	name: string;
-	format: string;
-	data: Uint8Array;
-}
 
 interface ResultsTableProps {
 	results: ConversionResult[];
@@ -41,9 +36,9 @@ export const ResultsTable = ({
 				</Table.Thead>
 				<Table.Tbody>
 					{results.map((result, index) => (
-						<Table.Tr key={result.name}>
-							<Table.Td>{result.name}</Table.Td>
-							<Table.Td>{result.format}</Table.Td>
+						<Table.Tr key={result.filename}>
+							<Table.Td>{result.filename}</Table.Td>
+							<Table.Td>{result.format.toUpperCase()}</Table.Td>
 							<Table.Td>{formatFileSize(result.data.byteLength)}</Table.Td>
 							<Table.Td style={{ textAlign: 'right' }}>
 								<Box style={{ textAlign: 'right' }}>

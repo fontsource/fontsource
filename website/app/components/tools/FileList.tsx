@@ -1,23 +1,7 @@
 import { Box, Button, Group, Stack, Table, Text, Title } from '@mantine/core';
 import { IconX } from '@tabler/icons-react';
+import type { FileEntry } from '@/hooks/useFontConverter';
 import { formatFileSize } from './utils';
-
-interface BaseFileEntry {
-	id: number;
-	file: File;
-}
-
-interface SuccessFileEntry extends BaseFileEntry {
-	font: unknown;
-	error?: never;
-}
-
-interface ErrorFileEntry extends BaseFileEntry {
-	font?: never;
-	error: string;
-}
-
-type FileEntry = SuccessFileEntry | ErrorFileEntry;
 
 interface FileListProps {
 	files: FileEntry[];

@@ -1,4 +1,8 @@
-import { generateFontFace } from '@fontsource-utils/generate';
+import {
+	type FontStyle,
+	generateCSS,
+	type UrlResolver,
+} from '@fontsource-utils/core';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
@@ -22,7 +26,6 @@ import {
 	getVariable,
 } from '@/utils/metadata.server';
 import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
-import { isStandardAxesKey } from '@/utils/utils.server';
 
 interface FontMetadata {
 	metadata: Metadata;
@@ -44,89 +47,59 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		getStats(id),
 	]);
 
-	// If variable, determine the CSS key to use
-	let variableCssKey: string | undefined;
-	if (variable) {
-		const { axes } = variable;
-		// Remove ital from keys
-		const keys = Object.keys(axes).filter((key) => key !== 'ital');
-		if (keys.length === 1 && keys.includes('wght')) {
-			variableCssKey = 'wght';
-		} else if (keys.length === 1) {
-			// Some fonts have a single axis that is not wght
-			variableCssKey = keys[0].toLowerCase();
-		} else if (keys.every((key) => isStandardAxesKey(key))) {
-			variableCssKey = 'standard';
-		} else {
-			variableCssKey = 'full';
-		}
-	}
-
 	const { family, weights, unicodeRange, styles, subsets } = metadata;
 
 	let unicodeKeys = Object.keys(unicodeRange).map((key) =>
 		key.replace('[', '').replace(']', ''),
 	);
 
-	// Non-google fonts have no unicode keys stored, thus we need to use the subsets
+	// Some custom families do not store unicode keys.
 	if (unicodeKeys.length === 0) {
 		unicodeKeys = subsets;
 	}
 
-	// Generate static CSS
-	let staticCSS = '';
-	for (const weight of weights) {
-		for (const style of styles) {
-			staticCSS += unicodeKeys
-				.map((subset) =>
-					generateFontFace({
-						family,
-						display: 'block',
-						style,
-						weight,
-						src: [
-							{
-								url: `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${subset}-${weight}-${style}.woff2`,
-								format: 'woff2',
-							},
-						],
-						unicodeRange: unicodeRange[subset],
-					}),
-				)
-				.join('\n');
-		}
-	}
+	const jsDelivrResolver =
+		(isVariable = false): UrlResolver =>
+		({ source }) => {
+			const prefix = `${id}-`;
+			// This route serves CDN filenames without the package id prefix.
+			const cdnFilename = source.filename.startsWith(prefix)
+				? source.filename.slice(prefix.length)
+				: source.filename;
 
-	// Generate variable CSS
-	let variableCSS: string | undefined;
-	if (variable) {
-		variableCSS = '';
+			return `https://cdn.jsdelivr.net/fontsource/fonts/${id}${isVariable ? ':vf' : ''}@latest/${cdnFilename}`;
+		};
 
-		for (const style of styles) {
-			variableCSS += unicodeKeys
-				.map((subset) =>
-					generateFontFace({
-						family: `${family} Variable`,
-						display: 'block',
-						style,
-						weight: 400,
-						src: [
-							{
-								url: `https://cdn.jsdelivr.net/fontsource/fonts/${id}:vf@latest/${subset}-${variableCssKey}-${style}.woff2`,
-								format: 'woff2-variations',
-							},
-						],
-						unicodeRange: unicodeRange[subset],
-						variable: {
-							wght: variable.axes.wght,
-							stretch: variable.axes.wdth,
-							slnt: variable.axes.slnt,
-						},
-					}),
-				)
-				.join('\n');
-		}
-	}
+	const cssConfig = {
+		id,
+		family,
+		subsets: unicodeKeys,
+		weights,
+		styles: styles as FontStyle[],
+		unicodeRange,
+	};
+
+	const staticCSS = generateCSS(cssConfig, {
+		resolver: jsDelivrResolver(),
+		display: 'block',
+	})
+		.map((asset) => asset.content)
+		.join('\n');
+
+	const variableCSS = variable
+		? generateCSS(
+				{
+					...cssConfig,
+					variable: variable.axes,
+				},
+				{
+					resolver: jsDelivrResolver(true),
+					display: 'block',
+				},
+			)
+				.map((asset) => asset.content)
+				.join('\n')
+		: undefined;
 
 	const res: FontMetadata = {
 		metadata,
