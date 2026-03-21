@@ -18,13 +18,11 @@ interface FontIDObject {
 type FontIDState = ObservableObject<FontIDObject>;
 
 // Generate font-variation-settings string from axes object e.g. "wght" 400, "wdth" 100
-const createFontVariation = (axes: Record<string, number | undefined>) => {
-	let fontVariation = '';
-	for (const [key, value] of Object.entries(axes)) {
-		if (value !== undefined) fontVariation += `"${key}" ${value}, `;
-	}
-	// Remove trailing comma and space
-	return fontVariation.slice(0, -2);
-};
+const createFontVariation = (axes: Record<string, number | undefined>) =>
+	Object.entries(axes)
+		.flatMap(([key, value]) =>
+			value === undefined ? [] : [`"${key}" ${value}`],
+		)
+		.join(', ');
 
 export { createFontVariation, type FontIDObject, type FontIDState };

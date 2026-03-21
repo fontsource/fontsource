@@ -1,4 +1,4 @@
-import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
+import { generateFontFace, type UrlResolver } from '@fontsource-utils/core';
 import { Badge, Divider, Group, Tabs, Text, Title } from '@mantine/core';
 import { useState } from 'react';
 import { Link } from 'react-router';
@@ -251,30 +251,43 @@ const VariableAdvanced = ({ metadata, variable }: InstallCodeProps) => {
 
 	// Generate CSS
 	const css: string[] = [];
+	const resolver: UrlResolver = ({ source }) =>
+		`@fontsource-variable/${metadata.id}/files/${source.filename}`;
+
 	for (const subset of isActive.subsets) {
-		const url = `@fontsource-variable/${metadata.id}/files/${metadata.id}-${subset}-${fileAxes}.woff2`;
-
-		const fontObj: FontObject = {
-			family: `${metadata.family} Variable`,
-			display: isActive.display,
-			style: isItal ? 'italic' : 'normal',
-			weight: 400,
-			src: [
+		css.push(
+			generateFontFace(
 				{
-					url,
-					format: 'woff2-variations',
+					subset,
+					weight: isActive.axes.wght
+						? variable.axes.wght.min === variable.axes.wght.max
+							? `${variable.axes.wght.min}`
+							: `${variable.axes.wght.min} ${variable.axes.wght.max}`
+						: '400',
+					style: isItal ? 'italic' : 'normal',
+					isVariable: true,
+					sliceIndex: 0,
+					unicodeRange: metadata.unicodeRange[subset] ?? '',
+					sources: [
+						{
+							format: 'woff2',
+							filename: `${metadata.id}-${subset}-${fileAxes}.woff2`,
+						},
+					],
+					stretch: isActive.axes.wdth
+						? variable.axes.wdth.min === variable.axes.wdth.max
+							? `${variable.axes.wdth.min}%`
+							: `${variable.axes.wdth.min}% ${variable.axes.wdth.max}%`
+						: null,
+					axisKey: fileAxes.split('-')[0],
 				},
-			],
-			variable: {
-				wght: isActive.axes.wght ? variable.axes.wght : undefined,
-				stretch: isActive.axes.wdth ? variable.axes.wdth : undefined,
-				slnt: isActive.axes.slnt ? variable.axes.slnt : undefined,
-			},
-			unicodeRange: metadata.unicodeRange[subset],
-			comment: `${metadata.id}-${subset}-wght-${isItal ? 'italic' : 'normal'}`,
-		};
-
-		css.push(generateFontFace(fontObj));
+				metadata.family,
+				{
+					display: isActive.display,
+					resolver,
+				},
+			),
+		);
 	}
 
 	return (
@@ -455,46 +468,56 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 	};
 
 	// Choose formats
-	const FORMATS = ['woff2', 'woff'];
-	const [formats, setFormat] = useState(['woff2', 'woff']);
+	const FORMATS = ['woff2', 'woff'] as const;
+	const [formats, setFormat] = useState<(typeof FORMATS)[number][]>([
+		'woff2',
+		'woff',
+	]);
 	const handleFormat = (value: string) => {
-		if (formats.length === 1 && formats.includes(value)) return;
+		if (!FORMATS.includes(value as (typeof FORMATS)[number])) return;
+		const selectedFormat = value as (typeof FORMATS)[number];
+
+		if (formats.length === 1 && formats.includes(selectedFormat)) return;
 
 		setFormat((prev) => {
-			if (prev.includes(value)) {
-				return prev.filter((item) => item !== value);
+			if (prev.includes(selectedFormat)) {
+				return prev.filter((item) => item !== selectedFormat);
 			}
 
-			return [...prev, value];
+			return [...prev, selectedFormat];
 		});
 	};
 
 	// Generate CSS
 	const css: string[] = [];
+	const resolver: UrlResolver = ({ source }) =>
+		`@fontsource/${metadata.id}/files/${source.filename}`;
+
 	for (const subset of subsets) {
 		for (const weight of Object.keys(isActiveWeight)) {
-			const url = `@fontsource/${metadata.id}/files/${
-				metadata.id
-			}-${subset}-${weight}-${isItal ? 'italic' : 'normal'}`;
-
-			const src = formats.map((format) => ({
-				url: `${url}.${format}`,
-				format,
-			}));
-
-			const fontObj: FontObject = {
-				family: metadata.family,
-				display: displayCurrent,
-				style: isItal ? 'italic' : 'normal',
-				weight: Number(weight),
-				src,
-				unicodeRange: metadata.unicodeRange[subset],
-				comment: `${metadata.id}-${subset}-${weight}-${
-					isItal ? 'italic' : 'normal'
-				}`,
-			};
-
-			css.push(generateFontFace(fontObj));
+			css.push(
+				generateFontFace(
+					{
+						subset,
+						weight: Number(weight),
+						style: isItal ? 'italic' : 'normal',
+						isVariable: false,
+						sliceIndex: 0,
+						unicodeRange: metadata.unicodeRange[subset] ?? '',
+						sources: formats.map((format) => ({
+							format,
+							filename: `${metadata.id}-${subset}-${weight}-${
+								isItal ? 'italic' : 'normal'
+							}.${format}`,
+						})),
+					},
+					metadata.family,
+					{
+						display: displayCurrent,
+						resolver,
+					},
+				),
+			);
 		}
 	}
 
@@ -551,9 +574,11 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 				Formats
 			</Title>
 			<BadgeGroup
-				items={FORMATS}
+				items={Array.from(FORMATS)}
 				onClick={handleFormat}
-				isActive={(value) => formats.includes(value)}
+				isActive={(value) =>
+					formats.includes(value as (typeof FORMATS)[number])
+				}
 			/>
 			<Divider mt="xl" />
 			<Title order={3} mt="lg" mb="md">

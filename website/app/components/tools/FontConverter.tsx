@@ -33,7 +33,7 @@ export const FontConverter = observer(() => {
 	const progress = state$.progress.get();
 	const downloadError = state$.downloadError.get();
 
-	const hasValidFiles = files.some((f) => !!f.font);
+	const hasValidFiles = files.some((f) => !f.error);
 
 	// Scroll to the file list when new files are added.
 	useEffect(() => {

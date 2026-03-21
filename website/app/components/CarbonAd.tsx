@@ -1,7 +1,7 @@
 import type { BoxProps } from '@mantine/core';
 import { Box } from '@mantine/core';
-import { useLocation } from 'react-router';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router';
 import Balancer from 'react-wrap-balancer';
 
 import classes from './CarbonAd.module.css';
