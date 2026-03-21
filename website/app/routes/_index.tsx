@@ -31,7 +31,7 @@ interface SearchProps {
 	serverUrl: string;
 }
 
-const ALGOLIA_TTL = 6 * 60 * 60 * 1000; // 6 hours
+const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours; Cloudflare KV expects seconds
 
 const searchClient = algoliasearch(
 	'WNATE69PVR',
@@ -161,7 +161,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	// Add server state to local cache before responding
 	context.cloudflare.ctx.waitUntil(
 		ALGOLIA.put(serverUrl, JSON.stringify(serverState), {
-			expirationTtl: ALGOLIA_TTL,
+			expirationTtl: ALGOLIA_TTL_SECONDS,
 		}),
 	);
 
