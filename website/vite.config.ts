@@ -15,10 +15,10 @@ import babel from 'vite-plugin-babel';
 
 const targets = browserslistToTargets(
 	browserslist([
-		'chrome >= 107',
-		'edge >= 107',
-		'firefox >= 104',
-		'safari >= 16',
+		'chrome >= 111',
+		'edge >= 111',
+		'firefox >= 114',
+		'safari >= 16.4',
 	]),
 );
 
