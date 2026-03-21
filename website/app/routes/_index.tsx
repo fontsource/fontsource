@@ -53,6 +53,15 @@ const sortMap: Record<string, string> = {
 	random: 'prod_RANDOM',
 };
 
+const parseSubsets = (value: unknown): string[] | undefined => {
+	const subsets = (Array.isArray(value) ? value : [value])
+		.filter((subset): subset is string => typeof subset === 'string')
+		// Split comma-separated values and flatten the resulting arrays.
+		.flatMap((subset) => subset.split(',').filter(Boolean));
+
+	return subsets.length > 0 ? subsets : undefined;
+};
+
 const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 	const indexName = 'prod_POPULAR';
 	return {
@@ -85,13 +94,12 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 			},
 			// @ts-expect-error - This is a valid function signature
 			routeToState(routeState) {
+				const subsets = parseSubsets(routeState.subsets);
+
 				const state = {
 					query: routeState.query,
 					// RefinementList facets
-					...(routeState.subsets
-						? // @ts-expect-error - This is a valid object
-							{ refinementList: { subsets: routeState.subsets.split(',') } }
-						: {}),
+					...(subsets?.length ? { refinementList: { subsets } } : {}),
 					// Menu facets
 					...(routeState.category
 						? { menu: { category: routeState.category } }
