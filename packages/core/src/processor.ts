@@ -1,51 +1,39 @@
-import type { FontRef, SubsetAxisSetting } from '@glypht/core';
-import { asConcur, flatMap, mapConcur, pipe, reduceConcur, toArray } from 'lfi';
+import {
+	exportFonts,
+	type FamilySettings,
+	type SubsetAxisSetting,
+	sortFontsIntoFamilies,
+} from '@glypht/bundler-utils';
+import type { StyleValues } from '@glypht/core';
 import type { FontContext } from './context';
-import { generateStaticCSS, generateVariableCSS } from './css';
+import { generateCSSFromFaces } from './css';
 import { generateStaticFilename, generateVariableFilename } from './filename';
 import { generateSubsetData } from './subsets';
 import type {
+	FontAsset,
 	FontBuildConfig,
+	FontFace,
 	FontPackage,
 	FontStyle,
 	Format,
-	OutputAsset,
-	ProcessedVariant,
-	ProcessingContext,
-	SubsetDefinition,
-	VariableAxisConfig,
 } from './types';
-import { extractStyleValue, normalizeKebabCase } from './utils';
+import {
+	codepointsToRangeString,
+	determineAxisKey,
+	extractStyleValue,
+	formatAxisValue,
+	formatStretchValue,
+	normalizeKebabCase,
+} from './utils';
 
-// ProcessingJob represents a single unit of work to process a font slice in a specific format.
-interface ProcessingJob {
-	font: FontRef;
-	subsetName: string;
-	codepoints: number[];
-	sliceIndex: number;
-	weight: number;
-	style: FontStyle;
-	format: Format;
-	targetWeight?: number;
-	variableConfig?: VariableAxisConfig;
-	axisKey?: string;
-}
-
-/**
- * Extracts weight and style information from a font reference.
- */
+/** Convert Glypht style values into Fontsource weight/style metadata. */
 const extractFontStyle = (
-	font: FontRef,
+	styleValues: StyleValues,
 ): { weight: number; style: FontStyle } => {
-	const weight =
-		font.styleValues.weight.type === 'single'
-			? font.styleValues.weight.value
-			: extractStyleValue(font.styleValues.weight.value);
+	const weight = extractStyleValue(styleValues.weight);
+	const italicValue = extractStyleValue(styleValues.italic);
+	const slantValue = extractStyleValue(styleValues.slant);
 
-	const italicValue = extractStyleValue(font.styleValues.italic.value);
-	const slantValue = extractStyleValue(font.styleValues.slant.value);
-
-	// Determine style with priority italic > oblique > normal
 	const style: FontStyle =
 		italicValue > 0
 			? 'italic'
@@ -57,332 +45,10 @@ const extractFontStyle = (
 };
 
 /**
- * Determines the weights and styles to process based on config and available fonts.
- */
-const determineProcessingTargets = (
-	fontRefs: FontRef[],
-	config: FontBuildConfig,
-): { weightsToProcess: number[]; stylesToProcess: FontStyle[] } => {
-	if (
-		config.type === 'static' &&
-		config.weights?.length &&
-		config.styles?.length
-	) {
-		return {
-			weightsToProcess: config.weights,
-			stylesToProcess: config.styles,
-		};
-	}
-
-	const availableWeights: Set<number> = new Set();
-	const availableStyles: Set<FontStyle> = new Set();
-
-	for (const font of fontRefs) {
-		const { style } = extractFontStyle(font);
-		availableStyles.add(style);
-
-		if (font.styleValues.weight.type === 'single') {
-			availableWeights.add(font.styleValues.weight.value);
-		} else {
-			const { min, max, defaultValue } = font.styleValues.weight.value;
-			availableWeights.add(min);
-			availableWeights.add(max);
-
-			if (defaultValue) {
-				availableWeights.add(defaultValue);
-			}
-
-			// Add standard CSS weights (100-1000) within the font's range
-			for (let w = 100; w <= 1000; w += 100) {
-				if (w >= min && w <= max) {
-					availableWeights.add(w);
-				}
-			}
-		}
-	}
-
-	return {
-		weightsToProcess:
-			config.type === 'static' && config.weights?.length
-				? config.weights
-				: Array.from(availableWeights).sort((a, b) => a - b),
-
-		stylesToProcess:
-			config.type === 'static' && config.styles?.length
-				? config.styles
-				: Array.from(availableStyles),
-	};
-};
-
-/**
- * Determines the axis key for variable font filename generation.
- */
-const determineAxisKey = (
-	variableConfig: VariableAxisConfig,
-	configAxisKey?: string,
-): string => {
-	if (configAxisKey) return configAxisKey.toLowerCase();
-
-	const standardAxisSet = new Set(['wght', 'wdth', 'slnt', 'opsz', 'ital']);
-	const standard: string[] = [];
-	const custom: string[] = [];
-
-	for (const axis in variableConfig) {
-		if (variableConfig[axis]) {
-			if (standardAxisSet.has(axis)) {
-				standard.push(axis);
-			} else {
-				custom.push(axis);
-			}
-		}
-	}
-
-	if (standard.length === 0 && custom.length === 0) return 'wght'; // Fallback
-
-	if (custom.length > 0) {
-		// If custom axes are present, the key is 'full' or the single custom axis name.
-		return standard.length > 0 || custom.length > 1 ? 'full' : custom[0];
-	}
-
-	// Otherwise, the key is 'standard' or the single standard axis name.
-	return standard.length > 1 ? 'standard' : standard[0];
-};
-
-const standardAxisPropertyMap: Record<string, keyof FontRef['styleValues']> = {
-	wght: 'weight',
-	slnt: 'slant',
-	wdth: 'width',
-	ital: 'italic',
-};
-
-const buildAxisValues = (
-	font: FontRef,
-	variableConfig?: VariableAxisConfig,
-	targetWeight?: number,
-): SubsetAxisSetting[] => {
-	const axisValues: SubsetAxisSetting[] = [];
-
-	if (variableConfig) {
-		for (const [tag, config] of Object.entries(variableConfig)) {
-			if (config) {
-				let defaultValue = config.min;
-
-				const styleKey = standardAxisPropertyMap[tag];
-				if (styleKey) {
-					const styleValue = font.styleValues[styleKey];
-					if (styleValue?.type === 'variable') {
-						defaultValue = styleValue.value.defaultValue;
-					}
-				}
-
-				axisValues.push({
-					type: 'variable',
-					tag,
-					value: {
-						min: config.min,
-						defaultValue,
-						max: config.max,
-					},
-				});
-			}
-		}
-	} else if (targetWeight && font.styleValues.weight.type === 'variable') {
-		// Static processing of a variable font at a single weight
-		axisValues.push({ type: 'single', tag: 'wght', value: targetWeight });
-	}
-
-	return axisValues;
-};
-
-/**
- * Processes a single font slice for a specific format and generates a variant.
- */
-const processSlice = async (
-	ctx: ProcessingContext,
-	font: FontRef,
-	subsetName: string,
-	codepoints: number[],
-	sliceIndex: number,
-	weight: number,
-	style: FontStyle,
-	format: Format,
-	targetWeight?: number,
-	variableConfig?: VariableAxisConfig,
-	axisKey?: string,
-): Promise<ProcessedVariant> => {
-	const { compressionContext, familyId } = ctx;
-	const axisValues = buildAxisValues(font, variableConfig, targetWeight);
-
-	const subsettedFont = await font.subset({
-		axisValues,
-		features: ctx.config.featureSettings,
-		unicodeRanges: { named: [], custom: codepoints },
-	});
-
-	const content = await compressionContext.compressFromTTF(
-		subsettedFont.data,
-		format,
-		11,
-	);
-
-	if (variableConfig && axisKey) {
-		return {
-			type: 'variable',
-			weight,
-			style,
-			subset: subsetName,
-			sliceIndex,
-			content,
-			filename: generateVariableFilename(
-				familyId,
-				subsetName,
-				axisKey,
-				style,
-				sliceIndex,
-				format as Format,
-			),
-			variable: variableConfig,
-			axisKey,
-		} as ProcessedVariant;
-	} else {
-		return {
-			type: 'static',
-			weight,
-			style,
-			subset: subsetName,
-			sliceIndex,
-			content,
-			filename: generateStaticFilename(
-				familyId,
-				subsetName,
-				weight,
-				style,
-				sliceIndex,
-				format as Format,
-			),
-		} as ProcessedVariant;
-	}
-};
-
-/**
- * Creates processing jobs for a subset and its potential slices across all formats.
- */
-const createJobsForSubset = (
-	font: FontRef,
-	subsetName: string,
-	subsetDef: SubsetDefinition,
-	weight: number,
-	style: FontStyle,
-	formats: Format[],
-	targetWeight?: number,
-	variableConfig?: VariableAxisConfig,
-	axisKey?: string,
-): ProcessingJob[] => {
-	const baseJob = {
-		font,
-		subsetName,
-		weight,
-		style,
-		targetWeight,
-		variableConfig,
-		axisKey,
-	};
-
-	const sliceJobs =
-		subsetDef.type === 'sliced'
-			? subsetDef.slices.map((slice) => ({
-					...baseJob,
-					codepoints: slice.codepoints,
-					sliceIndex: slice.index,
-				}))
-			: [{ ...baseJob, codepoints: subsetDef.codepoints, sliceIndex: 0 }];
-
-	// Expand each slice job across all formats using flatMap.
-	//
-	// e.g. for 2 slices and 2 formats, this creates 4 jobs [slice1-format1, slice1-format2, slice2-format1, slice2-format2]
-	return pipe(
-		sliceJobs,
-		flatMap((job) =>
-			formats.map((format) => ({
-				...job,
-				format,
-			})),
-		),
-		Array.from,
-	) as ProcessingJob[];
-};
-
-/**
- * Generates all CSS assets for the processed variants.
- */
-const generateAllCssAssets = (
-	ctx: ProcessingContext,
-	allVariants: ProcessedVariant[],
-	weightsToProcess: number[],
-	stylesToProcess: FontStyle[],
-): OutputAsset[] => {
-	const { config, subsets } = ctx;
-	const cssAssets: OutputAsset[] = [];
-
-	if (config.type === 'variable') {
-		const cssContent = generateVariableCSS(config.family, allVariants, subsets);
-		if (cssContent) {
-			cssAssets.push({
-				filename: 'index.css',
-				content: new TextEncoder().encode(cssContent),
-			});
-		}
-	} else {
-		for (const weight of weightsToProcess) {
-			for (const style of stylesToProcess) {
-				const cssContent = generateStaticCSS(
-					config.family,
-					weight,
-					style,
-					allVariants,
-					subsets,
-				);
-				if (cssContent) {
-					const filename =
-						style === 'normal' ? `${weight}.css` : `${weight}-italic.css`;
-					cssAssets.push({
-						filename,
-						content: new TextEncoder().encode(cssContent),
-					});
-				}
-			}
-		}
-
-		// Add index.css pointing to the weight closest to 400
-		if (weightsToProcess.length > 0) {
-			const defaultWeight = weightsToProcess.reduce((closest, current) => {
-				const closestDiff = Math.abs(closest - 400);
-				const currentDiff = Math.abs(current - 400);
-
-				// If current is closer, or equally close and heavier, it's the new best.
-				if (
-					currentDiff < closestDiff ||
-					(currentDiff === closestDiff && current > closest)
-				) {
-					return current;
-				}
-				return closest;
-			});
-
-			const indexCss = cssAssets.find(
-				(asset) => asset.filename === `${defaultWeight}.css`,
-			);
-
-			if (indexCss) {
-				cssAssets.push({ filename: 'index.css', content: indexCss.content });
-			}
-		}
-	}
-	return cssAssets;
-};
-
-/**
- * Processes font files and generates web-optimized font assets with CSS.
+ * Build packaged font assets and matching CSS from raw font buffers.
+ *
+ * This is the high-level packaging entrypoint for callers that already have
+ * font binaries in memory.
  */
 export const buildFont = async (
 	ctx: FontContext,
@@ -392,120 +58,225 @@ export const buildFont = async (
 	const { glyphtContext, compressionContext } = ctx;
 
 	const fontRefs = await glyphtContext.loadFonts(fontBuffers);
-	const familyId = normalizeKebabCase(config.family);
+	const familyId = config.id ?? normalizeKebabCase(config.family);
 	const subsets = generateSubsetData(config);
 	const isVariableFont = config.type === 'variable';
 
-	const processingCtx: ProcessingContext = {
-		familyId,
-		config,
-		compressionContext,
-		subsets,
-	};
+	const families = sortFontsIntoFamilies(fontRefs);
 
-	const { weightsToProcess, stylesToProcess } = determineProcessingTargets(
-		fontRefs,
-		config,
-	);
+	const familySettings: FamilySettings[] = families.map((family) => {
+		const includeCharacters = config.subsets.flatMap((subsetName) => {
+			const def = subsets.get(subsetName);
+			if (!def) return [];
 
-	// Pre-calculate the axis key once if it's a variable font build
-	const variableConfig = isVariableFont ? config.variable : undefined;
-	const resolvedAxisKey = isVariableFont
-		? determineAxisKey(config.variable, config.axisKey)
-		: undefined;
+			if (def.type === 'range') {
+				return [{ name: subsetName, includeUnicodeRanges: def.codepoints }];
+			}
+			return def.slices.map((slice) => ({
+				name: `${subsetName}-${slice.index}`,
+				includeUnicodeRanges: slice.codepoints,
+			}));
+		});
 
-	// Create a flat list of all processing jobs to be done
-	const allProcessingJobs = fontRefs.flatMap((font) => {
-		const { weight: fontWeight, style: fontStyle } = extractFontStyle(font);
+		const styleValues: Partial<Record<string, SubsetAxisSetting>> = {};
+		const axes: Partial<Record<string, SubsetAxisSetting>> = {};
 
-		// Skip this font file if its style is not requested
-		if (!stylesToProcess.includes(fontStyle)) {
-			return [];
+		if (isVariableFont && config.variable) {
+			const axisMap: Record<string, string> = {
+				wght: 'weight',
+				wdth: 'width',
+				ital: 'italic',
+				slnt: 'slant',
+			};
+
+			for (const [tag, axis] of Object.entries(config.variable)) {
+				if (!axis) continue;
+				const styleKey = axisMap[tag];
+				const setting: SubsetAxisSetting = {
+					type: 'variable',
+					value: { min: Number(axis.min), max: Number(axis.max) },
+				};
+				if (styleKey) {
+					styleValues[styleKey] = setting;
+				} else {
+					axes[tag] = setting;
+				}
+			}
+		} else {
+			const weights = config.weights?.length
+				? config.weights
+				: Array.from(
+						new Set(
+							family.fonts.map((f) => {
+								const w = f.font.styleValues.weight;
+								return w.type === 'single' ? w.value : w.value.defaultValue;
+							}),
+						),
+					);
+
+			const styles =
+				config.type === 'static' && config.styles?.length
+					? config.styles
+					: Array.from(
+							new Set(
+								family.fonts.map(
+									(f) => extractFontStyle(f.font.styleValues).style,
+								),
+							),
+						);
+
+			styleValues.weight = {
+				type: 'multiple',
+				value: { ranges: weights },
+			};
+
+			const hasItalic = styles.some(
+				(s) => s === 'italic' || s.startsWith('oblique'),
+			);
+			const hasNormal = styles.includes('normal');
+
+			if (hasItalic && hasNormal) {
+				styleValues.italic = { type: 'multiple', value: { ranges: [0, 1] } };
+			} else if (hasItalic) {
+				styleValues.italic = { type: 'single', value: 1 };
+			} else {
+				styleValues.italic = { type: 'single', value: 0 };
+			}
 		}
 
-		// Determine which target weights this font file can satisfy
-		const applicableWeights = isVariableFont
-			? [{ weight: fontWeight, style: fontStyle, targetWeight: undefined }]
-			: weightsToProcess
-					.filter(
-						(w) =>
-							font.styleValues.weight.type === 'variable' ||
-							font.styleValues.weight.value === w,
-					)
-					.map((targetWeight) => ({
-						weight: targetWeight,
-						style: fontStyle,
-						targetWeight,
-					}));
-
-		// For each applicable combination, create jobs for all subsets
-		return applicableWeights.flatMap(({ weight, style, targetWeight }) =>
-			config.subsets.flatMap((subsetName) => {
-				const subsetDef = subsets.get(subsetName);
-				return subsetDef
-					? createJobsForSubset(
-							font,
-							subsetName,
-							subsetDef,
-							weight,
-							style,
-							config.formats,
-							targetWeight,
-							variableConfig,
-							resolvedAxisKey,
-						)
-					: [];
-			}),
-		);
+		return {
+			fonts: family.fonts,
+			enableSubsetting: true,
+			styleValues,
+			axes,
+			features: config.featureSettings,
+			includeCharacters,
+		};
 	});
 
-	// Execute all jobs concurrently using lfi
-	const processJob = async (
-		job: ProcessingJob,
-	): Promise<ProcessedVariant | null> => {
-		try {
-			return await processSlice(
-				processingCtx,
-				job.font,
-				job.subsetName,
-				job.codepoints,
-				job.sliceIndex,
-				job.weight,
-				job.style,
-				job.format,
-				job.targetWeight,
-				job.variableConfig,
-				job.axisKey,
-			);
-		} catch (error) {
-			const sliceInfo = job.sliceIndex > 0 ? ` slice ${job.sliceIndex}` : '';
-			console.warn(
-				`Failed to process ${job.variableConfig ? 'variable' : 'static'} font${sliceInfo} for ${job.subsetName} (${job.format}):`,
-				error,
-			);
-			return null; // Return null for failed jobs
+	const exportedFonts = await exportFonts(compressionContext, familySettings, {
+		formats: {
+			woff: config.formats?.includes('woff') ?? false,
+			woff2: config.formats?.includes('woff2') ?? true,
+		},
+		woff2Compression: 11,
+		woffCompression: 15,
+	});
+
+	// Resolve variable metadata once per build.
+	const resolvedAxisKey =
+		config.type === 'variable' && config.variable
+			? determineAxisKey(config.variable, config.axisKey)
+			: undefined;
+
+	const variableWeight =
+		config.type === 'variable' && config.variable?.wght
+			? formatAxisValue(config.variable.wght)
+			: undefined;
+
+	const variableStretch =
+		config.type === 'variable' && config.variable?.wdth
+			? formatStretchValue(config.variable.wdth)
+			: undefined;
+
+	const getFaceKey = (
+		face: Pick<
+			FontFace,
+			'subset' | 'weight' | 'style' | 'axisKey' | 'sliceIndex'
+		>,
+	) =>
+		[
+			face.subset,
+			face.weight,
+			face.style,
+			face.axisKey ?? '',
+			face.sliceIndex,
+		].join('|');
+
+	const fontAssets: FontAsset[] = [];
+	const faceMap = new Map<string, FontFace>();
+
+	for (const exported of exportedFonts) {
+		const { weight, style } = extractFontStyle(exported.font.styleValues);
+
+		const charsetName = (exported.charsetNameOrIndex ??
+			config.subsets[0]) as string;
+		if (!charsetName) continue;
+
+		const sliceMatch = charsetName.match(/^(.+)-(\d+)$/);
+		const subsetName = sliceMatch
+			? (sliceMatch[1] ?? charsetName)
+			: charsetName;
+		const sliceIndex = sliceMatch ? parseInt(sliceMatch[2] ?? '0', 10) : 0;
+
+		const subsetDef = subsets.get(subsetName);
+		if (!subsetDef) continue;
+
+		const unicodeRange =
+			subsetDef.type === 'range'
+				? subsetDef.unicodeRange
+				: codepointsToRangeString(
+						subsetDef.slices.find((s) => s.index === sliceIndex)?.codepoints,
+					);
+
+		const formats: Format[] = ['woff2', 'woff'];
+		for (const format of formats) {
+			const content = exported.data[format];
+			if (!content) continue;
+
+			const filename =
+				isVariableFont && resolvedAxisKey
+					? generateVariableFilename(
+							familyId,
+							subsetName,
+							resolvedAxisKey,
+							style,
+							sliceIndex,
+							format,
+						)
+					: generateStaticFilename(
+							familyId,
+							subsetName,
+							weight,
+							style,
+							sliceIndex,
+							format,
+						);
+
+			fontAssets.push({ filename: `files/${filename}`, format, content });
+
+			const faceWeight = isVariableFont
+				? (variableWeight ?? `${weight}`)
+				: weight;
+			// Collapse per-format exports back into one CSS face.
+			const faceKey = getFaceKey({
+				subset: subsetName,
+				weight: faceWeight,
+				style,
+				axisKey: resolvedAxisKey,
+				sliceIndex,
+			});
+			const face = faceMap.get(faceKey) ?? {
+				subset: subsetName,
+				weight: faceWeight,
+				style,
+				isVariable: isVariableFont,
+				unicodeRange: unicodeRange ?? '',
+				sources: [],
+				axisKey: resolvedAxisKey,
+				stretch: variableStretch ?? null,
+				sliceIndex,
+			};
+
+			face.sources.push({ format, filename });
+			faceMap.set(faceKey, face);
 		}
-	};
+	}
 
-	const allVariants = (
-		await pipe(
-			asConcur(allProcessingJobs),
-			mapConcur(processJob),
-			reduceConcur(toArray()),
-		)
-	).filter((variant): variant is ProcessedVariant => variant !== null);
+	const faces = Array.from(faceMap.values());
+	const cssAssets = generateCSSFromFaces(config.family, faces, {
+		variable: config.type === 'variable' ? config.variable : undefined,
+	});
 
-	const cssAssets = generateAllCssAssets(
-		processingCtx,
-		allVariants,
-		weightsToProcess,
-		stylesToProcess,
-	);
-
-	const fontAssets = allVariants.map((variant) => ({
-		filename: `files/${variant.filename}`,
-		content: variant.content,
-	}));
-
-	return { css: cssAssets, fonts: fontAssets };
+	return { css: cssAssets, fonts: fontAssets, faces };
 };

@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`convertFont smoke tests > can round-trip from compressed input and derive the basename from font metadata 1`] = `
+{
+  "compressed": {
+    "filename": "fixture.woff2",
+    "format": "woff2",
+    "header": "774f4632",
+  },
+  "roundTripped": {
+    "filename": "abel-regular.woff2",
+    "format": "woff2",
+    "header": "774f4632",
+  },
+}
+`;
+
+exports[`convertFont smoke tests > converts a TTF fixture into multiple output formats 1`] = `
+[
+  {
+    "filename": "custom-name.woff2",
+    "format": "woff2",
+    "header": "774f4632",
+    "size": 9588,
+  },
+  {
+    "filename": "custom-name.woff",
+    "format": "woff",
+    "header": "774f4646",
+    "size": 12640,
+  },
+  {
+    "filename": "custom-name.ttf",
+    "format": "ttf",
+    "header": "00010000",
+    "size": 29152,
+  },
+]
+`;

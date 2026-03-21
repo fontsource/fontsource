@@ -1,19 +1,26 @@
+export { createFontContext, type FontContext } from './context';
+export { type ConversionResult, convertFont } from './conversion';
 export {
-	createFontContext,
-	type FontContext,
-} from './context';
-
-export {
-	generateStaticCSS,
-	generateVariableCSS,
+	type GenerateCSSOptions,
+	generateCSS,
+	generateFontFace,
+	type UrlResolver,
 } from './css';
-
 export { buildFont } from './processor';
 
 export type {
+	CSSAsset,
+	FontAsset,
 	FontBuildConfig,
+	FontConfig,
+	FontFace,
+	FontFormat,
 	FontPackage,
-	OutputAsset,
+	FontSource,
+	FontStyle,
+	Format,
 	StaticFontBuildConfig,
+	VariableAxisConfig,
+	VariableFontAxis,
 	VariableFontBuildConfig,
 } from './types';

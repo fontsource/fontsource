@@ -1,0 +1,72 @@
+/* wght.css */
+/* inter-latin-wght-normal */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/inter-latin-wght-normal.woff2) format('woff2-variations'),
+       url(./files/inter-latin-wght-normal.woff) format('woff');
+  unicode-range: U+0000-00FF;
+}
+
+/* inter-japanese-wght-normal-1 */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url(./files/inter-japanese-wght-normal-1.woff2) format('woff2-variations');
+  unicode-range: U+3041-3042;
+}
+
+/* inter-japanese-wght-normal-2 */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url(./files/inter-japanese-wght-normal-2.woff2) format('woff2-variations');
+  unicode-range: U+3044-3045;
+}
+/* slnt-oblique 10deg 10deg.css */
+/* inter-latin-ext-slnt-italic */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: oblique 10deg 10deg;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-latin-ext-slnt-italic.woff2) format('woff2-variations');
+  unicode-range: U+0100-024F;
+}
+/* index.css */
+/* inter-latin-wght-normal */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/inter-latin-wght-normal.woff2) format('woff2-variations'),
+       url(./files/inter-latin-wght-normal.woff) format('woff');
+  unicode-range: U+0000-00FF;
+}
+
+/* inter-japanese-wght-normal-1 */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url(./files/inter-japanese-wght-normal-1.woff2) format('woff2-variations');
+  unicode-range: U+3041-3042;
+}
+
+/* inter-japanese-wght-normal-2 */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url(./files/inter-japanese-wght-normal-2.woff2) format('woff2-variations');
+  unicode-range: U+3044-3045;
+}

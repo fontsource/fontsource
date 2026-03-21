@@ -1,0 +1,377 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`buildFont integration with real fixtures > builds variable slices for real standard-axis data 1`] = `
+{
+  "css": [
+    {
+      "content": "/* recursive-latin-standard-normal-1 */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-standard-normal-1.woff2) format('woff2-variations');
+  unicode-range: U+42;
+}
+
+/* recursive-latin-standard-normal-2 */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-standard-normal-2.woff2) format('woff2-variations');
+  unicode-range: U+41;
+}",
+      "filename": "standard.css",
+    },
+    {
+      "content": "/* recursive-latin-standard-normal-1 */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-standard-normal-1.woff2) format('woff2-variations');
+  unicode-range: U+42;
+}
+
+/* recursive-latin-standard-normal-2 */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-standard-normal-2.woff2) format('woff2-variations');
+  unicode-range: U+41;
+}",
+      "filename": "index.css",
+    },
+  ],
+  "faces": [
+    {
+      "axisKey": "standard",
+      "isVariable": true,
+      "sliceIndex": 1,
+      "sources": [
+        {
+          "filename": "recursive-latin-standard-normal-1.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+42",
+      "weight": "300 1000",
+    },
+    {
+      "axisKey": "standard",
+      "isVariable": true,
+      "sliceIndex": 2,
+      "sources": [
+        {
+          "filename": "recursive-latin-standard-normal-2.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+41",
+      "weight": "300 1000",
+    },
+  ],
+  "fonts": [
+    {
+      "filename": "files/recursive-latin-standard-normal-1.woff2",
+      "format": "woff2",
+      "size": 7720,
+    },
+    {
+      "filename": "files/recursive-latin-standard-normal-2.woff2",
+      "format": "woff2",
+      "size": 8368,
+    },
+  ],
+}
+`;
+
+exports[`buildFont integration with real fixtures > infers static metadata and groups multiple output formats into one face 1`] = `
+{
+  "css": [
+    {
+      "content": "/* abel-latin-400-normal */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal.woff) format('woff');
+  unicode-range: U+20-22;
+}",
+      "filename": "400.css",
+    },
+    {
+      "content": "/* abel-latin-400-normal */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal.woff) format('woff');
+  unicode-range: U+20-22;
+}",
+      "filename": "latin.css",
+    },
+    {
+      "content": "/* abel-latin-400-normal */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal.woff) format('woff');
+  unicode-range: U+20-22;
+}",
+      "filename": "index.css",
+    },
+  ],
+  "faces": [
+    {
+      "axisKey": undefined,
+      "isVariable": false,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "abel-latin-400-normal.woff2",
+          "format": "woff2",
+        },
+        {
+          "filename": "abel-latin-400-normal.woff",
+          "format": "woff",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+20-22",
+      "weight": 400,
+    },
+  ],
+  "fonts": [
+    {
+      "filename": "files/abel-latin-400-normal.woff2",
+      "format": "woff2",
+      "size": 548,
+    },
+    {
+      "filename": "files/abel-latin-400-normal.woff",
+      "format": "woff",
+      "size": 896,
+    },
+  ],
+}
+`;
+
+exports[`buildFont integration with real fixtures > preserves sliced static subsets as separate faces 1`] = `
+{
+  "css": [
+    {
+      "content": "/* abel-latin-400-normal-1 */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal-1.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal-1.woff) format('woff');
+  unicode-range: U+42;
+}
+
+/* abel-latin-400-normal-2 */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal-2.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal-2.woff) format('woff');
+  unicode-range: U+41;
+}",
+      "filename": "400.css",
+    },
+    {
+      "content": "/* abel-latin-400-normal-1 */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal-1.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal-1.woff) format('woff');
+  unicode-range: U+42;
+}
+
+/* abel-latin-400-normal-2 */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal-2.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal-2.woff) format('woff');
+  unicode-range: U+41;
+}",
+      "filename": "latin.css",
+    },
+    {
+      "content": "/* abel-latin-400-normal-1 */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal-1.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal-1.woff) format('woff');
+  unicode-range: U+42;
+}
+
+/* abel-latin-400-normal-2 */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal-2.woff2) format('woff2'),
+       url(./files/abel-latin-400-normal-2.woff) format('woff');
+  unicode-range: U+41;
+}",
+      "filename": "index.css",
+    },
+  ],
+  "faces": [
+    {
+      "axisKey": undefined,
+      "isVariable": false,
+      "sliceIndex": 1,
+      "sources": [
+        {
+          "filename": "abel-latin-400-normal-1.woff2",
+          "format": "woff2",
+        },
+        {
+          "filename": "abel-latin-400-normal-1.woff",
+          "format": "woff",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+42",
+      "weight": 400,
+    },
+    {
+      "axisKey": undefined,
+      "isVariable": false,
+      "sliceIndex": 2,
+      "sources": [
+        {
+          "filename": "abel-latin-400-normal-2.woff2",
+          "format": "woff2",
+        },
+        {
+          "filename": "abel-latin-400-normal-2.woff",
+          "format": "woff",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+41",
+      "weight": 400,
+    },
+  ],
+  "fonts": [
+    {
+      "filename": "files/abel-latin-400-normal-1.woff2",
+      "format": "woff2",
+      "size": 612,
+    },
+    {
+      "filename": "files/abel-latin-400-normal-1.woff",
+      "format": "woff",
+      "size": 944,
+    },
+    {
+      "filename": "files/abel-latin-400-normal-2.woff2",
+      "format": "woff2",
+      "size": 528,
+    },
+    {
+      "filename": "files/abel-latin-400-normal-2.woff",
+      "format": "woff",
+      "size": 872,
+    },
+  ],
+}
+`;
+
+exports[`buildFont integration with real fixtures > uses the full axis bucket when custom axes are enabled 1`] = `
+{
+  "css": [
+    {
+      "content": "/* recursive-latin-full-normal */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+20-22;
+}",
+      "filename": "full.css",
+    },
+    {
+      "content": "/* recursive-latin-full-normal */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+20-22;
+}",
+      "filename": "index.css",
+    },
+  ],
+  "faces": [
+    {
+      "axisKey": "full",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "recursive-latin-full-normal.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+20-22",
+      "weight": "300 1000",
+    },
+  ],
+  "fonts": [
+    {
+      "filename": "files/recursive-latin-full-normal.woff2",
+      "format": "woff2",
+      "size": 8440,
+    },
+  ],
+}
+`;

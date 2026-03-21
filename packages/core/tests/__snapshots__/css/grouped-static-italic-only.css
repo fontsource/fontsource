@@ -1,0 +1,40 @@
+/* 400-italic.css */
+/* inter-latin-400-italic */
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF;
+}
+/* latin.css */
+/* inter-latin-400-italic */
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF;
+}
+/* latin-italic.css */
+/* inter-latin-400-italic */
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF;
+}
+/* index.css */
+/* inter-latin-400-italic */
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/inter-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF;
+}
