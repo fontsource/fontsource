@@ -30,6 +30,9 @@
 		"api/*",
 		"website"
 	],
+	"overrides": {
+		"vite": "^8.0.1"
+	},
 	"publishConfig": {
 		"access": "public"
 	},
