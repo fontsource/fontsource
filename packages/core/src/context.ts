@@ -1,15 +1,13 @@
 import { GlyphtContext, WoffCompressionContext } from '@glypht/core';
 
 /**
- * Holds the expensive, reusable WASM contexts for font processing.
- * The consumer is responsible for calling destroy() when finished.
+ * Shared Glypht and WOFF contexts for font work.
+ *
+ * Reuse one instance across multiple operations, then call `destroy()`.
  */
 export interface FontContext {
 	readonly glyphtContext: GlyphtContext;
 	readonly compressionContext: WoffCompressionContext;
-	/**
-	 * Destroys the underlying WASM instances to free up memory.
-	 */
 	destroy: () => void;
 }
 

@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { generateSubsetData } from '../src/subsets';
 import type { FontBuildConfig } from '../src/types';
 
@@ -85,8 +85,7 @@ SlicingStrategy {
 	});
 
 	describe('edge cases', () => {
-		it('should warn and skip if subset content is missing', () => {
-			const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+		it('should fail if subset content is missing', () => {
 			const config: FontBuildConfig = {
 				type: 'static',
 				family: 'Test Font',
@@ -101,18 +100,12 @@ SlicingStrategy {
 				},
 			};
 
-			const result = generateSubsetData(config);
-			expect(result.size).toBe(1);
-			expect(result.has('latin')).toBe(true);
-			expect(result.has('cyrillic')).toBe(false);
-			expect(consoleSpy).toHaveBeenCalledWith(
-				'WARN: No subset file content provided for cyrillic',
+			expect(() => generateSubsetData(config)).toThrow(
+				'Missing subset source content for "cyrillic"',
 			);
-			consoleSpy.mockRestore();
 		});
 
-		it('should warn and skip subsets with empty file content', () => {
-			const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+		it('should fail if subset content is empty', () => {
 			const config: FontBuildConfig = {
 				type: 'static',
 				family: 'Test Font',
@@ -126,12 +119,9 @@ SlicingStrategy {
 				},
 			};
 
-			const result = generateSubsetData(config);
-			expect(result.size).toBe(0);
-			expect(consoleSpy).toHaveBeenCalledWith(
-				'WARN: No subset file content provided for empty',
+			expect(() => generateSubsetData(config)).toThrow(
+				'Missing subset source content for "empty"',
 			);
-			consoleSpy.mockRestore();
 		});
 
 		it('should handle whitespace-only content as an empty range', () => {

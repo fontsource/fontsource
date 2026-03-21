@@ -19,3 +19,46 @@ exports[`codepointsToRangeString snapshots > should generate correct range for t
 "Typical Latin font subset codepoint range:
 U+20-7E, U+A0-105, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20AC, U+2122"
 `;
+
+exports[`resolveFontFaces > resolves static and variable configs into canonical face records 1`] = `
+{
+  "static": [
+    {
+      "isVariable": false,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "inter-latin-400-normal.woff2",
+          "format": "woff2",
+        },
+        {
+          "filename": "inter-latin-400-normal.woff",
+          "format": "woff",
+        },
+      ],
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF",
+      "weight": 400,
+    },
+  ],
+  "variable": [
+    {
+      "axisKey": "full",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "inter-latin-full-italic.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": "75% 100%",
+      "style": "italic",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF",
+      "weight": "100 900",
+    },
+  ],
+}
+`;

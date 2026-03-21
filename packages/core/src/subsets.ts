@@ -1,4 +1,3 @@
-import { filter, map, pipe, reduce, toArray } from 'lfi';
 import type { FontBuildConfig, SubsetDefinition } from './types';
 import { codepointsToRangeString } from './utils';
 
@@ -6,13 +5,11 @@ import { codepointsToRangeString } from './utils';
  * Parses the simple .nam file format which contains one codepoint per line.
  */
 const parseNamFile = (content: string): number[] => {
-	return pipe(
-		content.split('\n'),
-		map((line) => line.trim()),
-		filter((line) => line.startsWith('0x')),
-		map((line) => parseInt(line.split(' ')[0], 16)),
-		reduce(toArray()),
-	);
+	return content
+		.split('\n')
+		.map((line) => line.trim())
+		.filter((line) => line.startsWith('0x'))
+		.map((line) => parseInt(line.split(' ')[0] ?? '0', 16));
 };
 
 /**
@@ -30,7 +27,7 @@ const parseSlicingStrategy = (fileContent: string): number[][] => {
 		} else if (trimmedLine.startsWith('codepoints:')) {
 			const codepointMatch = trimmedLine.match(/codepoints: (\d+)/);
 			if (codepointMatch && currentSlice) {
-				currentSlice.push(parseInt(codepointMatch[1], 10));
+				currentSlice.push(parseInt(codepointMatch[1] ?? '0', 10));
 			}
 		} else if (trimmedLine === '}') {
 			if (currentSlice && currentSlice.length > 0) {
@@ -54,8 +51,8 @@ export const generateSubsetData = (
 	for (const name of config.subsets) {
 		const fileContent = config.subsetSources?.[name];
 		if (!fileContent) {
-			console.warn(`WARN: No subset file content provided for ${name}`);
-			continue;
+			// Missing subset sources make the build nondeterministic.
+			throw new Error(`Missing subset source content for "${name}"`);
 		}
 
 		// A slicing strategy file will contain "subsets {" blocks.

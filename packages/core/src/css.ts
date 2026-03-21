@@ -1,176 +1,93 @@
-import type {
-	FontStyle,
-	ProcessedVariant,
-	StaticProcessedVariant,
-	SubsetDefinition,
-	VariableProcessedVariant,
-} from './types';
-import { codepointsToRangeString, normalizeKebabCase } from './utils';
+import {
+	buildFontFaceRule,
+	type FaceRuleBuildOptions,
+	renderFontFaceRule,
+	type UrlResolver,
+} from './css/face-rule';
+import {
+	groupFacesByAssetFilename,
+	pickStaticIndexFile,
+	pickVariableIndexFile,
+} from './css/planner';
+import type { CSSAsset, FontConfig, FontFace } from './types';
+import { resolveFontFaces } from './utils';
+
+type GenerateCSSOptions = FaceRuleBuildOptions;
+
+interface GenerateCSSFromFacesOptions extends GenerateCSSOptions {
+	// Used to determine the index.css default key.
+	variable?: FontConfig['variable'];
+}
 
 /**
- * Generates the `src` property for a @font-face rule.
- */
-const generateFontSrc = (variants: ProcessedVariant[]): string => {
-	if (variants.length === 0) return '';
-
-	const isVariable = variants[0]?.type === 'variable';
-
-	return variants
-		.map((variant) => {
-			const url = `./files/${variant.filename}`;
-			const format = variant.filename.endsWith('woff2')
-				? isVariable
-					? 'woff2-variations'
-					: 'woff2'
-				: 'woff';
-
-			return `url(${url}) format('${format}')`;
-		})
-		.join(', ');
-};
-
-/**
- * Generates a single @font-face rule.
+ * Render one `@font-face` block from a resolved face definition.
  */
 const generateFontFace = (
+	face: FontFace,
 	family: string,
-	variants: ProcessedVariant[],
-	subset: SubsetDefinition,
+	options: GenerateCSSOptions = {},
 ): string => {
-	if (variants.length === 0) return '';
-
-	// All variants in a group share the same subset and slice index.
-	const firstVariant = variants[0];
-	const sliceIndex = firstVariant.sliceIndex;
-
-	// Get unicode range from subset definition.
-	const unicodeRange =
-		subset.type === 'range'
-			? subset.unicodeRange
-			: subset.slices.find((s) => s.index === sliceIndex)
-				? codepointsToRangeString(
-						subset.slices.find((s) => s.index === sliceIndex)?.codepoints,
-					)
-				: '';
-
-	if (!unicodeRange) return '';
-
-	let style: FontStyle | string;
-	let weight: number | string;
-	let stretch: string | null = null;
-	let comment: string;
-
-	if (firstVariant.type === 'variable') {
-		const { wght, slnt, wdth } = firstVariant.variable;
-
-		// Default to wght axis if no axes are configured.
-		weight = wght
-			? wght.min === wght.max
-				? `${wght.min}`
-				: `${wght.min} ${wght.max}`
-			: Object.keys(firstVariant.variable).length === 0
-				? '100 900'
-				: '400';
-
-		style =
-			slnt && (slnt.min !== 0 || slnt.max !== 0)
-				? slnt.min === slnt.max
-					? `oblique ${Math.abs(slnt.min)}deg`
-					: `oblique ${Math.abs(slnt.max)}deg ${Math.abs(slnt.min)}deg`
-				: 'normal';
-
-		if (wdth) {
-			stretch = `\n  font-stretch: ${wdth.min === wdth.max ? `${wdth.min}%` : `${wdth.min}% ${wdth.max}%`};`;
-		}
-
-		const normalizedStyle = style.startsWith('oblique ') ? 'italic' : style;
-		comment = `${normalizeKebabCase(family)}-${firstVariant.subset}-${firstVariant.axisKey}-${normalizedStyle}`;
-	} else {
-		style = firstVariant.style;
-		weight = firstVariant.weight;
-		const normalizedStyle = style.startsWith('oblique ') ? 'italic' : style;
-		comment = `${normalizeKebabCase(family)}-${firstVariant.subset}-${weight}-${normalizedStyle}`;
-	}
-
-	if (sliceIndex > 0) {
-		comment += `-${sliceIndex}`;
-	}
-
-	const src = generateFontSrc(variants);
-
-	const fontFamily =
-		firstVariant.type === 'variable' ? `${family} Variable` : family;
-
-	return `/* ${comment} */
-@font-face {
-  font-family: '${fontFamily}';
-  font-style: ${style};
-  font-display: swap;
-  font-weight: ${weight};${stretch ?? ''}
-  src: ${src};
-  unicode-range: ${unicodeRange};
-}
-`;
+	return renderFontFaceRule(buildFontFaceRule(face, family, options));
 };
 
 /**
- * A CSS generator that groups variants by subset and slice index to create @font-face rules.
+ * Group resolved faces into published CSS assets.
+ *
+ * Each face becomes one `@font-face` rule, even when it exposes multiple source
+ * files.
  */
-const generateCSS = (
+const generateCSSFromFaces = (
 	family: string,
-	variants: ProcessedVariant[],
-	subsets: Map<string, SubsetDefinition>,
-): string => {
-	// Group variants by a composite key of subset and slice index.
-	const groupedVariants = new Map<string, ProcessedVariant[]>();
+	faces: FontFace[],
+	options: GenerateCSSFromFacesOptions = {},
+): CSSAsset[] => {
+	const { variable, ...fontFaceOptions } = options;
 
-	for (const variant of variants) {
-		const key = `${variant.subset}-${variant.sliceIndex}`;
-		const group = groupedVariants.get(key) ?? [];
+	// A face can contribute to more than one published file.
+	const facesByAssetFilename = groupFacesByAssetFilename(faces);
 
-		group.push(variant);
-		groupedVariants.set(key, group);
-	}
-
-	// Generate the CSS string from the grouped variants.
-	let css = '';
-	for (const group of groupedVariants.values()) {
-		const subset = subsets.get(group[0].subset);
-
-		if (subset) {
-			css += generateFontFace(family, group, subset);
+	const indexAssetFilename = variable
+		? pickVariableIndexFile(variable, facesByAssetFilename)
+		: pickStaticIndexFile(faces);
+	if (indexAssetFilename) {
+		const indexFaces = facesByAssetFilename.get(indexAssetFilename);
+		if (indexFaces) {
+			// `index.css` aliases an existing planned file.
+			facesByAssetFilename.set('index.css', indexFaces);
 		}
 	}
 
-	return css;
+	return Array.from(facesByAssetFilename.entries()).map(
+		([filename, assetFaces]) => ({
+			filename,
+			// One stylesheet per planned filename.
+			content: assetFaces
+				.map((face) => generateFontFace(face, family, fontFaceOptions))
+				.join('\n\n'),
+		}),
+	);
 };
 
-export const generateStaticCSS = (
-	family: string,
-	weight: number,
-	style: FontStyle,
-	variants: ProcessedVariant[],
-	subsets: Map<string, SubsetDefinition>,
-): string => {
-	const staticVariants = variants.filter(
-		(variant): variant is StaticProcessedVariant =>
-			variant.type === 'static' &&
-			variant.weight === weight &&
-			variant.style === style,
-	);
-
-	return generateCSS(family, staticVariants, subsets);
+/**
+ * Generate published CSS assets from the public `FontConfig` shape.
+ * Wrappers should prefer this metadata-driven entrypoint.
+ */
+const generateCSS = (
+	config: FontConfig,
+	options: GenerateCSSOptions = {},
+): CSSAsset[] => {
+	// Expand config once, then reuse the face-based pipeline.
+	const faces = resolveFontFaces(config);
+	return generateCSSFromFaces(config.family, faces, {
+		...options,
+		variable: config.variable,
+	});
 };
 
-export const generateVariableCSS = (
-	family: string,
-	variants: ProcessedVariant[],
-	subsets: Map<string, SubsetDefinition>,
-): string => {
-	const variableVariants = variants.filter(
-		(variant): variant is VariableProcessedVariant =>
-			variant.type === 'variable',
-	);
-
-	return generateCSS(family, variableVariants, subsets);
+export {
+	type GenerateCSSOptions,
+	type UrlResolver,
+	generateFontFace,
+	generateCSS,
+	generateCSSFromFaces,
 };

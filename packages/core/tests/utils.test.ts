@@ -1,5 +1,14 @@
+import type { StyleValue } from '@glypht/core';
 import { describe, expect, it } from 'vitest';
-import { codepointsToRangeString, extractStyleValue } from '../src/utils';
+import {
+	codepointsToRangeString,
+	determineAxisKey,
+	extractStyleValue,
+	findClosestWeight,
+	formatAxisValue,
+	formatStretchValue,
+	resolveFontFaces,
+} from '../src/utils';
 
 describe('codepointsToRangeString', () => {
 	it('should return an empty string for an empty array', () => {
@@ -39,8 +48,74 @@ describe('extractStyleValue', () => {
 	});
 
 	it('should return the defaultValue if the input is an object', () => {
-		const styleValue = { min: 100, defaultValue: 400, max: 900 };
+		const styleValue: StyleValue = {
+			type: 'variable',
+			value: { min: 100, defaultValue: 400, max: 900 },
+		};
 		expect(extractStyleValue(styleValue)).toBe(400);
+	});
+});
+
+describe('variable axis helpers', () => {
+	it('determineAxisKey respects explicit overrides and Fontsource axis bucketing', () => {
+		expect(determineAxisKey({ wght: { min: 100, max: 900 } }, 'OPSZ')).toBe(
+			'opsz',
+		);
+		expect(determineAxisKey({})).toBe('wght');
+		expect(determineAxisKey({ XTRA: { min: 300, max: 700 } })).toBe('XTRA');
+		expect(
+			determineAxisKey({
+				wght: { min: 100, max: 900 },
+				wdth: { min: 75, max: 100 },
+			}),
+		).toBe('standard');
+		expect(
+			determineAxisKey({
+				wght: { min: 100, max: 900 },
+				XTRA: { min: 300, max: 700 },
+			}),
+		).toBe('full');
+	});
+
+	it('formats fixed and ranged axis values for CSS', () => {
+		expect(formatAxisValue({ min: 400, max: 400 })).toBe('400');
+		expect(formatAxisValue({ min: 100, max: 900 })).toBe('100 900');
+		expect(formatStretchValue({ min: 100, max: 100 })).toBe('100%');
+		expect(formatStretchValue({ min: 75, max: 125 })).toBe('75% 125%');
+	});
+
+	it('prefers the heavier weight when both weights are equally close to the target', () => {
+		expect(findClosestWeight([300, 500], 400)).toBe(500);
+	});
+});
+
+describe('resolveFontFaces', () => {
+	it('resolves static and variable configs into canonical face records', () => {
+		expect({
+			static: resolveFontFaces({
+				id: 'inter',
+				family: 'Inter',
+				subsets: ['latin'],
+				weights: [400],
+				styles: ['normal'],
+				unicodeRange: { latin: 'U+0000-00FF' },
+				formats: ['woff2', 'woff'],
+			}),
+			variable: resolveFontFaces({
+				id: 'inter',
+				family: 'Inter',
+				subsets: ['latin'],
+				weights: [],
+				styles: ['italic'],
+				unicodeRange: { latin: 'U+0000-00FF' },
+				formats: ['woff2'],
+				variable: {
+					wght: { min: 100, max: 900 },
+					wdth: { min: 75, max: 100 },
+					XTRA: { min: 300, max: 700 },
+				},
+			}),
+		}).toMatchSnapshot();
 	});
 });
 
