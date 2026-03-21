@@ -2,25 +2,31 @@ import type { LoaderFunction } from 'react-router';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
 import { fetchApiData } from '@/utils/api.server';
+import { SITE_ORIGIN } from '@/utils/meta';
 
-const docSlugs = Object.keys(
-	import.meta.glob('../../docs/**/*.mdx', {
-		eager: true,
-	}),
-).map((slug) => slug.replace('../../docs/', '').replace('.mdx', ''));
+const CACHE_CONTROL = 'public, max-age=86400, s-maxage=86400';
+const STATIC_ROUTES = [
+	{ url: '/', changefreq: 'daily' as const, priority: 0.9 },
+	{ url: '/tools', changefreq: 'weekly' as const, priority: 0.7 },
+	{ url: '/tools/converter', changefreq: 'weekly' as const, priority: 0.8 },
+];
+
+const docSlugs = Object.keys(import.meta.glob('../../docs/**/*.mdx'))
+	.map((slug) => slug.replace('../../docs/', '').replace('.mdx', ''))
+	.sort();
 
 export const loader: LoaderFunction = async () => {
-	const smStream = new SitemapStream({ hostname: 'https://fontsource.org' });
+	const smStream = new SitemapStream({ hostname: SITE_ORIGIN });
 
-	// Pipe base urls to stream
-	smStream.write({ url: '/', changefreq: 'daily', priority: 0.9 });
+	for (const route of STATIC_ROUTES) {
+		smStream.write(route);
+	}
 
-	// Pipe each font to stream
 	const fontlist = await fetchApiData<Record<string, string>>(
 		'https://api.fontsource.org/fontlist?family',
 	);
 
-	for (const id of Object.keys(fontlist)) {
+	for (const id of Object.keys(fontlist).sort()) {
 		smStream.write({
 			url: `/fonts/${id}`,
 			changefreq: 'weekly',
@@ -37,15 +43,13 @@ export const loader: LoaderFunction = async () => {
 		});
 	}
 
-	// End stream
 	smStream.end();
 
-	// Return response
 	const sitemap = await streamToPromise(smStream).then((sm) => sm.toString());
 	return new Response(sitemap, {
 		headers: {
 			'Content-Type': 'application/xml',
-			'Cache-Control': 'public, max-age=86400', // 1 day
+			'Cache-Control': CACHE_CONTROL,
 		},
 	});
 };

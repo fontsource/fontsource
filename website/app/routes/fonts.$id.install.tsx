@@ -61,7 +61,10 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const description = data?.metadata
 		? generateDescription(data.metadata)
 		: undefined;
-	return ogMeta({ title, description });
+	const canonicalPath = data?.metadata.id
+		? `/fonts/${data.metadata.id}`
+		: undefined;
+	return ogMeta({ title, description, canonicalPath });
 };
 
 export default function InstallPage() {

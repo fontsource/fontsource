@@ -1,9 +1,11 @@
 import type { LoaderFunction } from 'react-router';
 
+import { toAbsoluteUrl } from '@/utils/meta';
+
 const prod = `User-agent: *
 Allow: /
 
-Sitemap: https://fontsource.org/sitemap.xml`;
+Sitemap: ${toAbsoluteUrl('/sitemap.xml')}`;
 
 export const loader: LoaderFunction = async () => {
 	return new Response(prod, {
