@@ -2,7 +2,7 @@
  * Toggle one active key in a sparse selection map where only enabled entries
  * are stored.
  */
-export const toggleActiveKey = (
+export const toggleKey = (
 	values: Record<string, boolean>,
 	value: string | number,
 ): Record<string, boolean> => {
@@ -21,11 +21,11 @@ export const toggleActiveKey = (
 /**
  * Toggle one active key while ensuring at least one key stays selected.
  */
-export const toggleActiveKeyKeepingOne = (
+export const toggleKeyKeepOne = (
 	values: Record<string, boolean>,
 	value: string | number,
 ): Record<string, boolean> => {
-	const next = toggleActiveKey(values, value);
+	const next = toggleKey(values, value);
 	return Object.keys(next).length === 0 ? values : next;
 };
 
@@ -37,6 +37,6 @@ export const toggleVariableAxis = (
 	axes: Record<string, boolean>,
 	value: string | number,
 ): Record<string, boolean> => ({
-	...toggleActiveKey(axes, value),
+	...toggleKey(axes, value),
 	wght: true,
 });

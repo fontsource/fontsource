@@ -11,7 +11,7 @@ import {
 	getVariableImport,
 } from './font-styles';
 import classes from './InstallCode.module.css';
-import { toggleActiveKeyKeepingOne, toggleVariableAxis } from './toggles';
+import { toggleKeyKeepOne, toggleVariableAxis } from './toggles';
 
 const categoryMap: Record<string, string> = {
 	'sans-serif': 'sans-serif',
@@ -234,7 +234,7 @@ const StaticSimple = ({ metadata }: InstallCodeProps) => {
 	});
 	const keys = Object.keys(isActive);
 	const handleActive = (value: string | number) => {
-		setActive((prev) => toggleActiveKeyKeepingOne(prev, value));
+		setActive((prev) => toggleKeyKeepOne(prev, value));
 	};
 
 	const [isItal, setIsItal] = useState(false);
@@ -304,9 +304,8 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 	const [isActiveWeight, setActiveWeight] = useState<Record<string, boolean>>({
 		400: true,
 	});
-	const keys = Object.keys(isActiveWeight);
 	const handleActiveWeight = (value: string | number) => {
-		setActiveWeight((prev) => toggleActiveKeyKeepingOne(prev, value));
+		setActiveWeight((prev) => toggleKeyKeepOne(prev, value));
 	};
 
 	// Active italics

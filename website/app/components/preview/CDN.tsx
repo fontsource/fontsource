@@ -20,7 +20,7 @@ import { CarbonAd } from '../CarbonAd';
 import classes from './CDN.module.css';
 import { buildStaticPreviewCSS, buildVariablePreviewCSS } from './font-styles';
 import { InfoWrapper } from './Info';
-import { toggleActiveKeyKeepingOne, toggleVariableAxis } from './toggles';
+import { toggleKeyKeepOne, toggleVariableAxis } from './toggles';
 
 interface CDNProps {
 	metadata: Metadata;
@@ -165,7 +165,7 @@ const Static = ({ metadata }: CDNProps) => {
 		400: true,
 	});
 	const handleActiveWeight = (value: string | number) => {
-		setActiveWeight((prev) => toggleActiveKeyKeepingOne(prev, value));
+		setActiveWeight((prev) => toggleKeyKeepOne(prev, value));
 	};
 
 	// Active italics
