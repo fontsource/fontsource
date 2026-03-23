@@ -12,7 +12,7 @@
 		"format": "biome format --write .",
 		"ci:format": "biome format .",
 		"ci:lint": "bun --filter '*' ci:lint",
-		"ci:test": "CI=true bun run build && bun --filter './packages/*' coverage",
+		"ci:test": "CI=true bun run build && bun --filter '@fontsource-utils/core' coverage && bun --filter '@fontsource-utils/generate' coverage && bun --filter '@fontsource-utils/publish' coverage && bun --filter '@fontsource-utils/scss' coverage",
 		"ci:version": "changeset version",
 		"ci:publish": "bun run build && bun --filter './packages/*' ci:publish",
 		"ci:publish-api": "bun run build && bun --filter './api/*' deploy"

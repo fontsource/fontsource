@@ -3,22 +3,14 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - "packages/core/**"
-      - "packages/generate/**"
-      - "packages/publish/**"
-      - "packages/scss/**"
-      - "package.json"
-      - "bun.lock"
+      - "packages/**"
+      - "!packages/cli/**"
 
   push:
     branches: [main]
     paths:
-      - "packages/core/**"
-      - "packages/generate/**"
-      - "packages/publish/**"
-      - "packages/scss/**"
-      - "package.json"
-      - "bun.lock"
+      - "packages/**"
+      - "!packages/cli/**"
 
 jobs:
   packager:
@@ -37,16 +29,10 @@ jobs:
         run: bun install
 
       - name: Run lints
-        run: |
-          bun --filter '@fontsource-utils/generate' ci:lint
-          bun --filter '@fontsource-utils/publish' ci:lint
-          bun --filter '@fontsource-utils/scss' ci:lint
+        run: bun run ci:lint
 
       - name: Run tests
-        run: |
-          bun --filter '@fontsource-utils/generate' coverage
-          bun --filter '@fontsource-utils/publish' coverage
-          bun --filter '@fontsource-utils/scss' coverage
+        run: bun run ci:test
 
   core:
     name: Core
