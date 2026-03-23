@@ -1,25 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import {
-	generateStaticFilename,
-	generateVariableFilename,
-	normalizeStyleForFilename,
-} from '../src/filename';
+import { generateStaticFilename, generateVariableFilename } from '../src/utils';
 
 describe('filename generation', () => {
-	describe('normalizeStyleForFilename', () => {
-		it('should normalize normal to normal', () => {
-			expect(normalizeStyleForFilename('normal')).toBe('normal');
-		});
-
-		it('should normalize italic to italic', () => {
-			expect(normalizeStyleForFilename('italic')).toBe('italic');
-		});
-
-		it('should normalize oblique to italic', () => {
-			expect(normalizeStyleForFilename('oblique 10deg')).toBe('italic');
-		});
-	});
-
 	describe('static filenames', () => {
 		it('should generate standard static filename', () => {
 			expect(

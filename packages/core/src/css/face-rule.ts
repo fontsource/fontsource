@@ -1,40 +1,18 @@
 import type { FontFace, FontSource } from '../types';
-import { normalizeKebabCase } from '../utils';
+import { formatStyle, normalizeKebabCase } from '../utils';
 
 export type UrlResolver = (input: {
 	face: FontFace;
 	source: FontSource;
 }) => string;
 
-export type CssDeclarationValue = string | string[];
-
-export interface FontFaceRule {
-	comment?: string;
-	declarations: Array<readonly [property: string, value: CssDeclarationValue]>;
-}
-
-export interface FaceRuleBuildOptions {
+export interface FontFaceOptions {
 	display?: string;
 	resolver?: UrlResolver;
 }
 
 const declarationIndent = '  ';
-
-// Match Fontsource's variable family naming.
-const getResolvedFamilyName = (family: string, isVariable: boolean): string =>
-	isVariable && !family.endsWith(' Variable') ? `${family} Variable` : family;
-
-const getSourceFormat = (source: FontSource, isVariable: boolean): string => {
-	if (source.format === 'woff2') {
-		return isVariable ? 'woff2-variations' : 'woff2';
-	}
-
-	if (source.format === 'ttf') {
-		return 'truetype';
-	}
-
-	return 'woff';
-};
+type CSSValue = string | string[];
 
 // Build one `src` entry per source file.
 const getSourceValue = (
@@ -46,16 +24,19 @@ const getSourceValue = (
 		? resolver({ face, source })
 		: `./files/${source.filename}`;
 
-	const format = getSourceFormat(source, face.isVariable);
+	let format = 'woff';
+	if (source.format === 'woff2') {
+		// Special format to make it clear to browsers that this is a variable font.
+		format = face.isVariable ? 'woff2-variations' : 'woff2';
+	} else if (source.format === 'ttf') {
+		format = 'truetype';
+	}
+
 	return `url(${url}) format('${format}')`;
 };
 
 const getFaceComment = (family: string, face: FontFace): string => {
-	const normalizedStyle = face.style.startsWith('oblique')
-		? 'italic'
-		: face.style;
-
-	let comment = `${normalizeKebabCase(family)}-${face.subset}-${face.axisKey ?? face.weight}-${normalizedStyle}`;
+	let comment = `${normalizeKebabCase(family)}-${face.subset}-${face.axisKey ?? face.weight}-${formatStyle(face.style)}`;
 
 	if (face.sliceIndex > 0) {
 		comment += `-${face.sliceIndex}`;
@@ -64,18 +45,35 @@ const getFaceComment = (family: string, face: FontFace): string => {
 	return comment;
 };
 
-const buildFontFaceRule = (
+// Variable fonts get a "Variable" suffix in their family name to avoid conflicts with static faces.
+// We need it when variable fonts are included and static files are present as a fallback.
+const getResolvedFamilyName = (family: string, isVariable: boolean): string =>
+	isVariable && !family.endsWith(' Variable') ? `${family} Variable` : family;
+
+const renderDeclaration = (property: string, value: CSSValue): string => {
+	if (!Array.isArray(value)) {
+		return `${declarationIndent}${property}: ${value};`;
+	}
+
+	const continuationIndent = ' '.repeat(
+		`${declarationIndent + property}: `.length,
+	);
+
+	return `${declarationIndent}${property}: ${value.join(`,\n${continuationIndent}`)};`;
+};
+
+const renderFontFace = (
 	face: FontFace,
 	family: string,
-	options: FaceRuleBuildOptions = {},
-): FontFaceRule => {
+	options: FontFaceOptions = {},
+): string => {
 	const { display = 'swap', resolver } = options;
 
 	if (face.sources.length === 0) {
-		throw new Error('generateFontFace requires at least one source');
+		throw new Error('renderFontFace requires at least one source');
 	}
 
-	const declarations: FontFaceRule['declarations'] = [
+	const declarations: Array<readonly [property: string, value: CSSValue]> = [
 		['font-family', `'${getResolvedFamilyName(family, face.isVariable)}'`],
 		['font-style', face.style],
 		['font-display', display],
@@ -96,39 +94,12 @@ const buildFontFaceRule = (
 		declarations.push(['unicode-range', face.unicodeRange]);
 	}
 
-	return {
-		comment: getFaceComment(family, face),
-		declarations,
-	};
-};
-
-const renderDeclarationValue = (
-	property: string,
-	value: CssDeclarationValue,
-): string => {
-	if (!Array.isArray(value)) {
-		return `${declarationIndent}${property}: ${value};`;
-	}
-
-	const continuationIndent = ' '.repeat(
-		`${declarationIndent + property}: `.length,
-	);
-
-	return `${declarationIndent}${property}: ${value.join(`,\n${continuationIndent}`)};`;
-};
-
-const renderFontFaceRule = (rule: FontFaceRule): string => {
-	const comment = rule.comment ? `/* ${rule.comment} */\n` : '';
-	const declarations = rule.declarations
-		.map(([property, value]) => renderDeclarationValue(property, value))
+	const comment = getFaceComment(family, face);
+	const content = declarations
+		.map(([property, value]) => renderDeclaration(property, value))
 		.join('\n');
 
-	return `${comment}@font-face {\n${declarations}\n}`;
+	return `${comment ? `/* ${comment} */\n` : ''}@font-face {\n${content}\n}`;
 };
 
-export {
-	getFaceComment,
-	getSourceFormat,
-	buildFontFaceRule,
-	renderFontFaceRule,
-};
+export { renderFontFace };

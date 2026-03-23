@@ -82,9 +82,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const staticCSS = generateCSS(cssConfig, {
 		resolver: jsDelivrResolver(),
 		display: 'block',
-	})
-		.map((asset) => asset.content)
-		.join('\n');
+	});
 
 	const variableCSS = variable
 		? generateCSS(
@@ -97,8 +95,6 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 					display: 'block',
 				},
 			)
-				.map((asset) => asset.content)
-				.join('\n')
 		: undefined;
 
 	const res: FontMetadata = {

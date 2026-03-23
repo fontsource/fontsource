@@ -44,6 +44,70 @@ exports[`resolveFontFaces > resolves static and variable configs into canonical 
   ],
   "variable": [
     {
+      "axisKey": "wght",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "inter-latin-wght-italic.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "italic",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF",
+      "weight": "100 900",
+    },
+    {
+      "axisKey": "wdth",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "inter-latin-wdth-italic.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": "75% 100%",
+      "style": "italic",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF",
+      "weight": "100 900",
+    },
+    {
+      "axisKey": "XTRA",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "inter-latin-xtra-italic.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "italic",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF",
+      "weight": "100 900",
+    },
+    {
+      "axisKey": "standard",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "inter-latin-standard-italic.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": "75% 100%",
+      "style": "italic",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF",
+      "weight": "100 900",
+    },
+    {
       "axisKey": "full",
       "isVariable": true,
       "sliceIndex": 0,

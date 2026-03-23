@@ -4,42 +4,86 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
 {
   "css": [
     {
-      "content": "/* recursive-latin-standard-normal-1 */
+      "content": "/* recursive-latin-wght-normal-1 */
 @font-face {
   font-family: 'Recursive Variable';
   font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-wght-normal-1.woff2) format('woff2-variations');
+  unicode-range: U+42;
+}
+
+/* recursive-latin-wght-normal-2 */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-wght-normal-2.woff2) format('woff2-variations');
+  unicode-range: U+41;
+}",
+      "filename": "wght.css",
+    },
+    {
+      "content": "/* recursive-latin-slnt-italic-1 */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-slnt-normal-1.woff2) format('woff2-variations');
+  unicode-range: U+42;
+}
+
+/* recursive-latin-slnt-italic-2 */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-slnt-normal-2.woff2) format('woff2-variations');
+  unicode-range: U+41;
+}",
+      "filename": "slnt-italic.css",
+    },
+    {
+      "content": "/* recursive-latin-standard-italic-1 */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
   src: url(./files/recursive-latin-standard-normal-1.woff2) format('woff2-variations');
   unicode-range: U+42;
 }
 
-/* recursive-latin-standard-normal-2 */
+/* recursive-latin-standard-italic-2 */
 @font-face {
   font-family: 'Recursive Variable';
-  font-style: normal;
+  font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
   src: url(./files/recursive-latin-standard-normal-2.woff2) format('woff2-variations');
   unicode-range: U+41;
 }",
-      "filename": "standard.css",
+      "filename": "standard-italic.css",
     },
     {
-      "content": "/* recursive-latin-standard-normal-1 */
+      "content": "/* recursive-latin-standard-italic-1 */
 @font-face {
   font-family: 'Recursive Variable';
-  font-style: normal;
+  font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
   src: url(./files/recursive-latin-standard-normal-1.woff2) format('woff2-variations');
   unicode-range: U+42;
 }
 
-/* recursive-latin-standard-normal-2 */
+/* recursive-latin-standard-italic-2 */
 @font-face {
   font-family: 'Recursive Variable';
-  font-style: normal;
+  font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
   src: url(./files/recursive-latin-standard-normal-2.woff2) format('woff2-variations');
@@ -49,6 +93,70 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
     },
   ],
   "faces": [
+    {
+      "axisKey": "wght",
+      "isVariable": true,
+      "sliceIndex": 1,
+      "sources": [
+        {
+          "filename": "recursive-latin-wght-normal-1.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+42",
+      "weight": "300 1000",
+    },
+    {
+      "axisKey": "wght",
+      "isVariable": true,
+      "sliceIndex": 2,
+      "sources": [
+        {
+          "filename": "recursive-latin-wght-normal-2.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+41",
+      "weight": "300 1000",
+    },
+    {
+      "axisKey": "slnt",
+      "isVariable": true,
+      "sliceIndex": 1,
+      "sources": [
+        {
+          "filename": "recursive-latin-slnt-normal-1.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "oblique 0deg 15deg",
+      "subset": "latin",
+      "unicodeRange": "U+42",
+      "weight": "300 1000",
+    },
+    {
+      "axisKey": "slnt",
+      "isVariable": true,
+      "sliceIndex": 2,
+      "sources": [
+        {
+          "filename": "recursive-latin-slnt-normal-2.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "oblique 0deg 15deg",
+      "subset": "latin",
+      "unicodeRange": "U+41",
+      "weight": "300 1000",
+    },
     {
       "axisKey": "standard",
       "isVariable": true,
@@ -60,7 +168,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
         },
       ],
       "stretch": null,
-      "style": "normal",
+      "style": "oblique 0deg 15deg",
       "subset": "latin",
       "unicodeRange": "U+42",
       "weight": "300 1000",
@@ -76,13 +184,33 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
         },
       ],
       "stretch": null,
-      "style": "normal",
+      "style": "oblique 0deg 15deg",
       "subset": "latin",
       "unicodeRange": "U+41",
       "weight": "300 1000",
     },
   ],
   "fonts": [
+    {
+      "filename": "files/recursive-latin-wght-normal-1.woff2",
+      "format": "woff2",
+      "size": 7704,
+    },
+    {
+      "filename": "files/recursive-latin-wght-normal-2.woff2",
+      "format": "woff2",
+      "size": 8408,
+    },
+    {
+      "filename": "files/recursive-latin-slnt-normal-1.woff2",
+      "format": "woff2",
+      "size": 7720,
+    },
+    {
+      "filename": "files/recursive-latin-slnt-normal-2.woff2",
+      "format": "woff2",
+      "size": 8368,
+    },
     {
       "filename": "files/recursive-latin-standard-normal-1.woff2",
       "format": "woff2",
@@ -92,6 +220,194 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
       "filename": "files/recursive-latin-standard-normal-2.woff2",
       "format": "woff2",
       "size": 8368,
+    },
+  ],
+}
+`;
+
+exports[`buildFont integration with real fixtures > emits every published axis key when custom axes are enabled 1`] = `
+{
+  "css": [
+    {
+      "content": "/* recursive-latin-wght-normal */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+20-22;
+}",
+      "filename": "wght.css",
+    },
+    {
+      "content": "/* recursive-latin-slnt-italic */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-slnt-normal.woff2) format('woff2-variations');
+  unicode-range: U+20-22;
+}",
+      "filename": "slnt-italic.css",
+    },
+    {
+      "content": "/* recursive-latin-CASL-normal */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-casl-normal.woff2) format('woff2-variations');
+  unicode-range: U+20-22;
+}",
+      "filename": "CASL.css",
+    },
+    {
+      "content": "/* recursive-latin-standard-italic */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+20-22;
+}",
+      "filename": "standard-italic.css",
+    },
+    {
+      "content": "/* recursive-latin-full-italic */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+20-22;
+}",
+      "filename": "full-italic.css",
+    },
+    {
+      "content": "/* recursive-latin-full-italic */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 1000;
+  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+20-22;
+}",
+      "filename": "index.css",
+    },
+  ],
+  "faces": [
+    {
+      "axisKey": "wght",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "recursive-latin-wght-normal.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+20-22",
+      "weight": "300 1000",
+    },
+    {
+      "axisKey": "slnt",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "recursive-latin-slnt-normal.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "oblique 0deg 15deg",
+      "subset": "latin",
+      "unicodeRange": "U+20-22",
+      "weight": "300 1000",
+    },
+    {
+      "axisKey": "CASL",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "recursive-latin-casl-normal.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "normal",
+      "subset": "latin",
+      "unicodeRange": "U+20-22",
+      "weight": "300 1000",
+    },
+    {
+      "axisKey": "standard",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "recursive-latin-standard-normal.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "oblique 0deg 15deg",
+      "subset": "latin",
+      "unicodeRange": "U+20-22",
+      "weight": "300 1000",
+    },
+    {
+      "axisKey": "full",
+      "isVariable": true,
+      "sliceIndex": 0,
+      "sources": [
+        {
+          "filename": "recursive-latin-full-normal.woff2",
+          "format": "woff2",
+        },
+      ],
+      "stretch": null,
+      "style": "oblique 0deg 15deg",
+      "subset": "latin",
+      "unicodeRange": "U+20-22",
+      "weight": "300 1000",
+    },
+  ],
+  "fonts": [
+    {
+      "filename": "files/recursive-latin-wght-normal.woff2",
+      "format": "woff2",
+      "size": 8472,
+    },
+    {
+      "filename": "files/recursive-latin-slnt-normal.woff2",
+      "format": "woff2",
+      "size": 8440,
+    },
+    {
+      "filename": "files/recursive-latin-casl-normal.woff2",
+      "format": "woff2",
+      "size": 8472,
+    },
+    {
+      "filename": "files/recursive-latin-standard-normal.woff2",
+      "format": "woff2",
+      "size": 8440,
+    },
+    {
+      "filename": "files/recursive-latin-full-normal.woff2",
+      "format": "woff2",
+      "size": 8440,
     },
   ],
 }
@@ -315,62 +631,6 @@ exports[`buildFont integration with real fixtures > preserves sliced static subs
       "filename": "files/abel-latin-400-normal-2.woff",
       "format": "woff",
       "size": 872,
-    },
-  ],
-}
-`;
-
-exports[`buildFont integration with real fixtures > uses the full axis bucket when custom axes are enabled 1`] = `
-{
-  "css": [
-    {
-      "content": "/* recursive-latin-full-normal */
-@font-face {
-  font-family: 'Recursive Variable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 300 1000;
-  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
-  unicode-range: U+20-22;
-}",
-      "filename": "full.css",
-    },
-    {
-      "content": "/* recursive-latin-full-normal */
-@font-face {
-  font-family: 'Recursive Variable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 300 1000;
-  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
-  unicode-range: U+20-22;
-}",
-      "filename": "index.css",
-    },
-  ],
-  "faces": [
-    {
-      "axisKey": "full",
-      "isVariable": true,
-      "sliceIndex": 0,
-      "sources": [
-        {
-          "filename": "recursive-latin-full-normal.woff2",
-          "format": "woff2",
-        },
-      ],
-      "stretch": null,
-      "style": "normal",
-      "subset": "latin",
-      "unicodeRange": "U+20-22",
-      "weight": "300 1000",
-    },
-  ],
-  "fonts": [
-    {
-      "filename": "files/recursive-latin-full-normal.woff2",
-      "format": "woff2",
-      "size": 8440,
     },
   ],
 }

@@ -6,25 +6,39 @@ import {
 } from '@glypht/bundler-utils';
 import type { StyleValues } from '@glypht/core';
 import type { FontContext } from './context';
-import { generateCSSFromFaces } from './css';
-import { generateStaticFilename, generateVariableFilename } from './filename';
+import { generateFaceCSSAssets } from './css/assets';
 import { generateSubsetData } from './subsets';
 import type {
 	FontAsset,
 	FontBuildConfig,
+	FontBuildResult,
 	FontFace,
-	FontPackage,
 	FontStyle,
-	Format,
+	VariableAxisConfig,
+	WebFontFormat,
 } from './types';
 import {
 	codepointsToRangeString,
-	determineAxisKey,
 	extractStyleValue,
 	formatAxisValue,
-	formatStretchValue,
+	formatSlantValue,
+	generateStaticFilename,
+	generateVariableFilename,
 	normalizeKebabCase,
 } from './utils';
+import {
+	getFaceStretch,
+	getFaceStyle,
+	getRequestedAxisKeys,
+	pickAxisConfig,
+} from './utils/variable';
+
+const VARIABLE_STYLE_AXIS_MAP: Partial<Record<string, string>> = {
+	wght: 'weight',
+	wdth: 'width',
+	ital: 'italic',
+	slnt: 'slant',
+};
 
 /** Convert Glypht style values into Fontsource weight/style metadata. */
 const extractFontStyle = (
@@ -34,27 +48,30 @@ const extractFontStyle = (
 	const italicValue = extractStyleValue(styleValues.italic);
 	const slantValue = extractStyleValue(styleValues.slant);
 
-	const style: FontStyle =
-		italicValue > 0
-			? 'italic'
-			: slantValue !== 0
-				? (`oblique ${Math.round(Math.abs(slantValue) * 10) / 10}deg` as FontStyle)
-				: 'normal';
+	if (italicValue > 0) {
+		return { weight, style: 'italic' };
+	}
 
-	return { weight, style };
+	if (slantValue !== 0) {
+		const style = `oblique ${formatSlantValue({
+			min: slantValue,
+			max: slantValue,
+		})}` as FontStyle;
+
+		return { weight, style };
+	}
+
+	return { weight, style: 'normal' };
 };
 
 /**
  * Build packaged font assets and matching CSS from raw font buffers.
- *
- * This is the high-level packaging entrypoint for callers that already have
- * font binaries in memory.
  */
 export const buildFont = async (
 	ctx: FontContext,
 	fontBuffers: Uint8Array[],
 	config: FontBuildConfig,
-): Promise<FontPackage> => {
+): Promise<FontBuildResult> => {
 	const { glyphtContext, compressionContext } = ctx;
 
 	const fontRefs = await glyphtContext.loadFonts(fontBuffers);
@@ -63,49 +80,82 @@ export const buildFont = async (
 	const isVariableFont = config.type === 'variable';
 
 	const families = sortFontsIntoFamilies(fontRefs);
+	const defaultSubset = config.subsets[0];
+	const requestedFormats = new Set(config.formats ?? ['woff2']);
+	const exportFormats = {
+		woff: requestedFormats.has('woff'),
+		woff2: requestedFormats.has('woff2'),
+	};
 
-	const familySettings: FamilySettings[] = families.map((family) => {
-		const includeCharacters = config.subsets.flatMap((subsetName) => {
-			const def = subsets.get(subsetName);
-			if (!def) return [];
+	// Determine which formats to export based on config and availability.
+	const assetFormats: WebFontFormat[] = [];
+	if (exportFormats.woff2) {
+		assetFormats.push('woff2');
+	}
+	if (exportFormats.woff) {
+		assetFormats.push('woff');
+	}
 
-			if (def.type === 'range') {
-				return [{ name: subsetName, includeUnicodeRanges: def.codepoints }];
-			}
-			return def.slices.map((slice) => ({
-				name: `${subsetName}-${slice.index}`,
-				includeUnicodeRanges: slice.codepoints,
-			}));
-		});
+	// Build `unicode-range` character sets.
+	const includeCharacters = config.subsets.flatMap((subsetName) => {
+		const def = subsets.get(subsetName);
+		if (!def) return [];
 
-		const styleValues: Partial<Record<string, SubsetAxisSetting>> = {};
-		const axes: Partial<Record<string, SubsetAxisSetting>> = {};
+		if (def.type === 'range') {
+			return [{ name: subsetName, includeUnicodeRanges: def.codepoints }];
+		}
 
-		if (isVariableFont && config.variable) {
-			const axisMap: Record<string, string> = {
-				wght: 'weight',
-				wdth: 'width',
-				ital: 'italic',
-				slnt: 'slant',
-			};
+		return def.slices.map((slice) => ({
+			name: `${subsetName}-${slice.index}`,
+			includeUnicodeRanges: slice.codepoints,
+		}));
+	});
+	const subsetUnicodeRanges = new Map<string, string>();
 
-			for (const [tag, axis] of Object.entries(config.variable)) {
-				if (!axis) continue;
-				const styleKey = axisMap[tag];
-				const setting: SubsetAxisSetting = {
-					type: 'variable',
-					value: { min: Number(axis.min), max: Number(axis.max) },
-				};
-				if (styleKey) {
-					styleValues[styleKey] = setting;
-				} else {
-					axes[tag] = setting;
+	for (const [subsetName, subsetDef] of subsets) {
+		if (subsetDef.type === 'range') {
+			subsetUnicodeRanges.set(subsetName, subsetDef.unicodeRange);
+			continue;
+		}
+
+		for (const slice of subsetDef.slices) {
+			subsetUnicodeRanges.set(
+				`${subsetName}-${slice.index}`,
+				codepointsToRangeString(slice.codepoints),
+			);
+		}
+	}
+
+	// Build Glypht FamilySettings for each family.
+	const buildFamilySettings = (
+		variableConfig?: VariableAxisConfig,
+	): FamilySettings[] =>
+		families.map((family) => {
+			const styleValues: Partial<Record<string, SubsetAxisSetting>> = {};
+			const axes: Partial<Record<string, SubsetAxisSetting>> = {};
+
+			if (isVariableFont && variableConfig) {
+				for (const [tag, axis] of Object.entries(variableConfig)) {
+					if (!axis) continue;
+
+					const styleKey = VARIABLE_STYLE_AXIS_MAP[tag];
+					const setting: SubsetAxisSetting = {
+						type: 'variable',
+						value: { min: Number(axis.min), max: Number(axis.max) },
+					};
+
+					// If this is a known axis, map it to a style value. Otherwise, treat it as a custom axis.
+					if (styleKey) {
+						styleValues[styleKey] = setting;
+					} else {
+						axes[tag] = setting;
+					}
 				}
-			}
-		} else {
-			const weights = config.weights?.length
-				? config.weights
-				: Array.from(
+			} else {
+				// If weights aren't explicitly configured, extract them from the font metadata.
+				let weights = config.weights;
+				if (!weights) {
+					weights = Array.from(
 						new Set(
 							family.fonts.map((f) => {
 								const w = f.font.styleValues.weight;
@@ -113,72 +163,61 @@ export const buildFont = async (
 							}),
 						),
 					);
+				}
 
-			const styles =
-				config.type === 'static' && config.styles?.length
-					? config.styles
-					: Array.from(
-							new Set(
-								family.fonts.map(
-									(f) => extractFontStyle(f.font.styleValues).style,
-								),
+				// If styles aren't explicitly configured, extract them from the font metadata. Variable fonts need to be treated differently
+				// since style axes like italic/slant may be represented as variable axes rather than discrete styles.
+				let styles = config.styles;
+				if (!styles || styles.length === 0 || config.type === 'variable') {
+					styles = Array.from(
+						new Set(
+							family.fonts.map(
+								(f) => extractFontStyle(f.font.styleValues).style,
 							),
-						);
+						),
+					);
+				}
 
-			styleValues.weight = {
-				type: 'multiple',
-				value: { ranges: weights },
-			};
+				styleValues.weight = {
+					type: 'multiple',
+					value: { ranges: weights },
+				};
 
-			const hasItalic = styles.some(
-				(s) => s === 'italic' || s.startsWith('oblique'),
-			);
-			const hasNormal = styles.includes('normal');
+				const hasItalic = styles.some(
+					(s) => s === 'italic' || s.startsWith('oblique'),
+				);
+				const hasNormal = styles.includes('normal');
 
-			if (hasItalic && hasNormal) {
-				styleValues.italic = { type: 'multiple', value: { ranges: [0, 1] } };
-			} else if (hasItalic) {
-				styleValues.italic = { type: 'single', value: 1 };
-			} else {
-				styleValues.italic = { type: 'single', value: 0 };
+				// If both italic and normal styles are present, we can use a single 'italic' axis with values 0 and 1.
+				if (hasItalic && hasNormal) {
+					styleValues.italic = {
+						type: 'multiple',
+						value: { ranges: [0, 1] },
+					};
+				} else if (hasItalic) {
+					styleValues.italic = { type: 'single', value: 1 };
+				} else {
+					styleValues.italic = { type: 'single', value: 0 };
+				}
 			}
-		}
 
-		return {
-			fonts: family.fonts,
-			enableSubsetting: true,
-			styleValues,
-			axes,
-			features: config.featureSettings,
-			includeCharacters,
-		};
-	});
+			return {
+				fonts: family.fonts,
+				enableSubsetting: true,
+				styleValues,
+				axes,
+				features: config.featureSettings,
+				includeCharacters,
+			};
+		});
 
-	const exportedFonts = await exportFonts(compressionContext, familySettings, {
-		formats: {
-			woff: config.formats?.includes('woff') ?? false,
-			woff2: config.formats?.includes('woff2') ?? true,
-		},
-		woff2Compression: 11,
-		woffCompression: 15,
-	});
-
-	// Resolve variable metadata once per build.
-	const resolvedAxisKey =
+	// For variable fonts, determine which axis combinations to export based on the config. For static fonts, just export once.
+	const variableAxisKeys =
 		config.type === 'variable' && config.variable
-			? determineAxisKey(config.variable, config.axisKey)
-			: undefined;
+			? getRequestedAxisKeys(config.variable, config.axisKeys)
+			: [undefined];
 
-	const variableWeight =
-		config.type === 'variable' && config.variable?.wght
-			? formatAxisValue(config.variable.wght)
-			: undefined;
-
-	const variableStretch =
-		config.type === 'variable' && config.variable?.wdth
-			? formatStretchValue(config.variable.wdth)
-			: undefined;
-
+	// Generate a unique key for each face based on its defining properties.
 	const getFaceKey = (
 		face: Pick<
 			FontFace,
@@ -193,88 +232,122 @@ export const buildFont = async (
 			face.sliceIndex,
 		].join('|');
 
+	// Export fonts for each axis combination and build corresponding CSS faces.
 	const fontAssets: FontAsset[] = [];
 	const faceMap = new Map<string, FontFace>();
 
-	for (const exported of exportedFonts) {
-		const { weight, style } = extractFontStyle(exported.font.styleValues);
+	for (const axisKey of variableAxisKeys) {
+		const axisConfig =
+			isVariableFont && config.variable && axisKey
+				? pickAxisConfig(config.variable, axisKey)
+				: undefined;
 
-		const charsetName = (exported.charsetNameOrIndex ??
-			config.subsets[0]) as string;
-		if (!charsetName) continue;
+		const familySettings = buildFamilySettings(axisConfig);
+		const exportedFonts = await exportFonts(
+			compressionContext,
+			familySettings,
+			{
+				formats: exportFormats,
+				woff2Compression: 11, // Max
+				woffCompression: 15, // Max
+			},
+		);
 
-		const sliceMatch = charsetName.match(/^(.+)-(\d+)$/);
-		const subsetName = sliceMatch
-			? (sliceMatch[1] ?? charsetName)
-			: charsetName;
-		const sliceIndex = sliceMatch ? parseInt(sliceMatch[2] ?? '0', 10) : 0;
+		const variableWeight = axisConfig?.wght
+			? formatAxisValue(axisConfig.wght)
+			: undefined;
 
-		const subsetDef = subsets.get(subsetName);
-		if (!subsetDef) continue;
+		const variableStretch =
+			axisKey && axisConfig ? getFaceStretch(axisKey, axisConfig) : null;
 
-		const unicodeRange =
-			subsetDef.type === 'range'
-				? subsetDef.unicodeRange
-				: codepointsToRangeString(
-						subsetDef.slices.find((s) => s.index === sliceIndex)?.codepoints,
-					);
+		for (const exported of exportedFonts) {
+			const { weight, style } = extractFontStyle(exported.font.styleValues);
 
-		const formats: Format[] = ['woff2', 'woff'];
-		for (const format of formats) {
-			const content = exported.data[format];
-			if (!content) continue;
+			const charsetName = (exported.charsetNameOrIndex ??
+				defaultSubset) as string;
+			if (!charsetName) continue;
 
-			const filename =
-				isVariableFont && resolvedAxisKey
-					? generateVariableFilename(
-							familyId,
-							subsetName,
-							resolvedAxisKey,
-							style,
-							sliceIndex,
-							format,
-						)
-					: generateStaticFilename(
-							familyId,
-							subsetName,
-							weight,
-							style,
-							sliceIndex,
-							format,
-						);
+			// Handle sliced subsets by extracting the base subset name and slice index.
+			const sliceMatch = charsetName.match(/^(.+)-(\d+)$/);
+			const subsetName = sliceMatch
+				? (sliceMatch[1] ?? charsetName)
+				: charsetName;
+			const sliceIndex = sliceMatch
+				? Number.parseInt(sliceMatch[2] ?? '0', 10)
+				: 0;
 
-			fontAssets.push({ filename: `files/${filename}`, format, content });
+			const subsetDef = subsets.get(subsetName);
+			if (!subsetDef) continue;
 
-			const faceWeight = isVariableFont
-				? (variableWeight ?? `${weight}`)
-				: weight;
-			// Collapse per-format exports back into one CSS face.
-			const faceKey = getFaceKey({
-				subset: subsetName,
-				weight: faceWeight,
-				style,
-				axisKey: resolvedAxisKey,
-				sliceIndex,
-			});
-			const face = faceMap.get(faceKey) ?? {
-				subset: subsetName,
-				weight: faceWeight,
-				style,
-				isVariable: isVariableFont,
-				unicodeRange: unicodeRange ?? '',
-				sources: [],
-				axisKey: resolvedAxisKey,
-				stretch: variableStretch ?? null,
-				sliceIndex,
-			};
+			const unicodeRange =
+				subsetUnicodeRanges.get(charsetName) ??
+				subsetUnicodeRanges.get(subsetName);
 
-			face.sources.push({ format, filename });
-			faceMap.set(faceKey, face);
+			const faceStyle =
+				axisKey && axisConfig
+					? getFaceStyle(axisKey, style, axisConfig)
+					: style;
+
+			for (const format of assetFormats) {
+				const content = exported.data[format];
+				if (!content) continue;
+
+				const filename =
+					isVariableFont && axisKey
+						? generateVariableFilename(
+								familyId,
+								subsetName,
+								axisKey,
+								style,
+								sliceIndex,
+								format,
+							)
+						: generateStaticFilename(
+								familyId,
+								subsetName,
+								weight,
+								style,
+								sliceIndex,
+								format,
+							);
+
+				fontAssets.push({ filename: `files/${filename}`, format, content });
+
+				const faceWeight = isVariableFont
+					? (variableWeight ?? `${weight}`)
+					: weight;
+
+				// Collapse per-format exports back into one CSS face.
+				const faceKey = getFaceKey({
+					subset: subsetName,
+					weight: faceWeight,
+					style: faceStyle,
+					axisKey,
+					sliceIndex,
+				});
+
+				const face: FontFace = faceMap.get(faceKey) ?? {
+					subset: subsetName,
+					weight: faceWeight,
+					style: faceStyle,
+					isVariable: isVariableFont,
+					unicodeRange: unicodeRange ?? '',
+					sources: [],
+					axisKey,
+					stretch: variableStretch,
+					sliceIndex,
+				};
+
+				face.sources.push({ format, filename });
+				faceMap.set(faceKey, face);
+			}
 		}
 	}
 
+	// Convert the face map into an array for CSS generation.
 	const faces = Array.from(faceMap.values());
-	const cssAssets = generateCSSFromFaces(config.family, faces, {
+
+	const cssAssets = generateFaceCSSAssets(config.family, faces, {
 		variable: config.type === 'variable' ? config.variable : undefined,
 	});
 

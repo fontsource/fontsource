@@ -7,7 +7,6 @@
 		"module": "preserve",
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
-		"types": ["node", "rolldown-plugin-wasm/types"],
 		"strict": true,
 		"noUnusedLocals": true,
 		"declaration": true,

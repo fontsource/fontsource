@@ -1,4 +1,3 @@
-import { generateFontFace, type UrlResolver } from '@fontsource-utils/core';
 import {
 	Badge,
 	Divider,
@@ -19,7 +18,9 @@ import type { Metadata, VariableData } from '@/utils/types';
 
 import { CarbonAd } from '../CarbonAd';
 import classes from './CDN.module.css';
+import { buildStaticPreviewCSS, buildVariablePreviewCSS } from './font-styles';
 import { InfoWrapper } from './Info';
+import { toggleActiveKeyKeepingOne, toggleVariableAxis } from './toggles';
 
 interface CDNProps {
 	metadata: Metadata;
@@ -70,7 +71,7 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 	});
 
 	// Return early if no variable data
-	if (!variable) return;
+	if (!variable) return null;
 
 	const handleActiveSubset = (value: string) => {
 		// Return early if only one subset is selected and it is the current one
@@ -100,107 +101,25 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 	};
 
 	const handleActiveVariant = (value: string | number) => {
-		setActive((prev) => {
-			if (prev.axes[value]) {
-				delete prev.axes[value];
-				return {
-					...prev,
-					axes: {
-						...prev.axes,
-						wght: true,
-					},
-				};
-			}
-
-			return {
-				...prev,
-				axes: {
-					...prev.axes,
-					[value]: true,
-					wght: true,
-				},
-			};
-		});
+		setActive((prev) => ({
+			...prev,
+			axes: toggleVariableAxis(prev.axes, value),
+		}));
 	};
 
 	// Remove ital from active axes and mark separate ital flag as true
-	const activeAxes = Object.keys(isActive.axes).filter(
-		(axis) => axis !== 'ital',
-	);
 	const isItal = isActive.axes.ital;
 
-	// Determine if it is a standard axis e.g. only contains wght, wdth, slnt, opsz or ital
-	const isStandard = activeAxes.every((axis) =>
-		['wght', 'wdth', 'slnt', 'opsz'].includes(axis),
-	);
-
-	// Choose which axes file to serve based on active axes
-	const getFileAxes = (): string => {
-		if (activeAxes.length === 1 && isActive.axes.wght) {
-			if (isItal) return 'wght-italic';
-			return 'wght-normal';
-		}
-
-		// If it is only wght and another axes, return axes.woff2
-		if (activeAxes.length === 2 && isActive.axes.wght) {
-			const selected =
-				activeAxes.find((axis) => axis !== 'wght')?.toLowerCase() ?? 'wght';
-			if (isItal) return `${selected}-italic`;
-			return `${selected}-normal`;
-		}
-
-		// If the selected axes is within standard, only return standard
-		if (isStandard) {
-			if (isItal) return 'standard-italic';
-			return 'standard-normal';
-		}
-
-		// If the selected axes is not within standard, return full
-		if (isItal) return 'full-italic';
-		return 'full-normal';
-	};
-	const fileAxes = getFileAxes();
-
-	// Generate CSS
-	const css: string[] = [];
-	const resolver: UrlResolver = ({ source }) =>
-		`https://cdn.jsdelivr.net/fontsource/fonts/${metadata.id}:vf@latest/${source.filename}`;
-
-	for (const subset of isActive.subsets) {
-		css.push(
-			generateFontFace(
-				{
-					subset,
-					weight: isActive.axes.wght
-						? variable.axes.wght.min === variable.axes.wght.max
-							? `${variable.axes.wght.min}`
-							: `${variable.axes.wght.min} ${variable.axes.wght.max}`
-						: '400',
-					style: isItal ? 'italic' : 'normal',
-					isVariable: true,
-					sliceIndex: 0,
-					unicodeRange: metadata.unicodeRange[subset] ?? '',
-					sources: [
-						{
-							format: 'woff2',
-							filename: `${subset}-${fileAxes}.woff2`,
-						},
-					],
-					stretch: isActive.axes.wdth
-						? variable.axes.wdth.min === variable.axes.wdth.max
-							? `${variable.axes.wdth.min}%`
-							: `${variable.axes.wdth.min}% ${variable.axes.wdth.max}%`
-						: null,
-					axisKey: fileAxes.split('-')[0],
-				},
-				metadata.family,
-				{
-					display: isActive.display,
-					resolver,
-				},
-			),
-		);
-	}
+	const css = buildVariablePreviewCSS(metadata, variable, {
+		activeAxes: Object.keys(isActive.axes).filter(
+			(axis) => isActive.axes[axis],
+		),
+		subsets: isActive.subsets,
+		style: isItal ? 'italic' : 'normal',
+		display: isActive.display,
+		resolver: ({ source }) =>
+			`https://cdn.jsdelivr.net/fontsource/fonts/${metadata.id}:vf@latest/${source.filename}`,
+	});
 
 	return (
 		<>
@@ -235,7 +154,7 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 				Copy CSS
 			</Title>
 			<Text>Import this into your global CSS file:</Text>
-			<Code language="css">{css.join('\n\n')}</Code>
+			<Code language="css">{css}</Code>
 		</>
 	);
 };
@@ -245,22 +164,8 @@ const Static = ({ metadata }: CDNProps) => {
 	const [isActiveWeight, setActiveWeight] = useState<Record<string, boolean>>({
 		400: true,
 	});
-	const keys = Object.keys(isActiveWeight);
 	const handleActiveWeight = (value: string | number) => {
-		setActiveWeight((prev) => {
-			if (keys.length === 1 && prev[value]) return prev;
-			if (prev[value]) {
-				delete prev[value];
-				return {
-					...prev,
-				};
-			}
-
-			return {
-				...prev,
-				[value]: !prev[value],
-			};
-		});
+		setActiveWeight((prev) => toggleActiveKeyKeepingOne(prev, value));
 	};
 
 	// Active italics
@@ -307,36 +212,15 @@ const Static = ({ metadata }: CDNProps) => {
 		});
 	};
 
-	// Generate CSS
-	const css: string[] = [];
-	const resolver: UrlResolver = ({ source }) =>
-		`https://cdn.jsdelivr.net/fontsource/fonts/${metadata.id}@latest/${source.filename}`;
-
-	for (const subset of subsets) {
-		for (const weight of Object.keys(isActiveWeight)) {
-			css.push(
-				generateFontFace(
-					{
-						subset,
-						weight: Number(weight),
-						style: isItal ? 'italic' : 'normal',
-						isVariable: false,
-						sliceIndex: 0,
-						unicodeRange: metadata.unicodeRange[subset] ?? '',
-						sources: formats.map((format) => ({
-							format,
-							filename: `${subset}-${weight}-${isItal ? 'italic' : 'normal'}.${format}`,
-						})),
-					},
-					metadata.family,
-					{
-						display: displayCurrent,
-						resolver,
-					},
-				),
-			);
-		}
-	}
+	const css = buildStaticPreviewCSS(metadata, {
+		subsets,
+		weights: Object.keys(isActiveWeight).map((weight) => Number(weight)),
+		style: isItal ? 'italic' : 'normal',
+		formats,
+		display: displayCurrent,
+		resolver: ({ source }) =>
+			`https://cdn.jsdelivr.net/fontsource/fonts/${metadata.id}@latest/${source.filename}`,
+	});
 
 	return (
 		<>
@@ -402,7 +286,7 @@ const Static = ({ metadata }: CDNProps) => {
 				Copy CSS
 			</Title>
 			<Text>Import this into your global CSS file:</Text>
-			<Code language="css">{css.join('\n\n')}</Code>
+			<Code language="css">{css}</Code>
 		</>
 	);
 };

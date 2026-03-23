@@ -1,38 +1,40 @@
 import type { FontConfig, FontFace } from '../types';
-import { determineAxisKey, findClosestWeight } from '../utils';
+import { determineAxisKey, findClosestWeight, formatStyle } from '../utils';
 
 type StaticFace = FontFace & { isVariable: false; weight: number };
 
 const isStaticFace = (face: FontFace): face is StaticFace =>
 	!face.isVariable && typeof face.weight === 'number';
 
-const pickStaticIndexFile = (faces: FontFace[]): string | undefined => {
-	const staticFaces = faces.filter(isStaticFace);
+// Packages prefer a 400 weight normal face for `index.css`, but there are fonts
+// which do not have weight 400, or are only italic.
+const pickStaticIndexCSS = (faces: FontFace[]): string | undefined => {
+	const findClosestFace = (candidates: readonly StaticFace[]) => {
+		if (candidates.length === 0) {
+			return undefined;
+		}
 
-	if (staticFaces.length === 0) {
+		const weight = findClosestWeight(candidates.map((face) => face.weight));
+		return candidates.find((face) => face.weight === weight);
+	};
+
+	const staticFaces = faces.filter(isStaticFace);
+	const normalFaces = staticFaces.filter((face) => face.style === 'normal');
+
+	const index = findClosestFace(normalFaces) ?? findClosestFace(staticFaces);
+
+	if (!index) {
 		return undefined;
 	}
 
-	// Prefer a normal face for `index.css`, but sometimes there may only be italic only families.
-	const normalFaces = staticFaces.filter((face) => face.style === 'normal');
-	const candidates = normalFaces.length > 0 ? normalFaces : staticFaces;
-
-	// Find the face with the closest weight to 400, which is the most common default weight.
-	const preferredWeight = findClosestWeight(
-		candidates.map((face) => face.weight),
-	);
-
-	const defaultFace =
-		candidates.find((face) => face.weight === preferredWeight) ?? candidates[0];
-
-	return defaultFace.style === 'normal'
-		? `${defaultFace.weight}.css`
-		: `${defaultFace.weight}-${defaultFace.style}.css`;
+	return index.style === 'normal'
+		? `${index.weight}.css`
+		: `${index.weight}-${index.style}.css`;
 };
 
-const pickVariableIndexFile = (
+const pickVariableIndexCSS = (
 	variable: FontConfig['variable'],
-	facesByAssetFilename: ReadonlyMap<string, readonly FontFace[]>,
+	facesByCSSFile: ReadonlyMap<string, readonly FontFace[]>,
 ): string | undefined => {
 	if (!variable) {
 		return undefined;
@@ -42,56 +44,51 @@ const pickVariableIndexFile = (
 	const axisKey = determineAxisKey(variable);
 	const normalKey = `${axisKey}.css`;
 
-	if (facesByAssetFilename.has(normalKey)) {
+	if (facesByCSSFile.has(normalKey)) {
 		return normalKey;
 	}
 
 	const italicKey = `${axisKey}-italic.css`;
-	return facesByAssetFilename.has(italicKey) ? italicKey : undefined;
+	return facesByCSSFile.has(italicKey) ? italicKey : undefined;
 };
 
-// A face can belong to multiple published files.
-const groupFacesByAssetFilename = (
-	faces: FontFace[],
-): Map<string, FontFace[]> => {
-	const facesByAssetFilename = new Map<string, FontFace[]>();
+// One resolved face can feed multiple published CSS files, for example a static
+// italic face contributes to both `400-italic.css` and `latin-italic.css`.
+const groupFacesByCSSFile = (faces: FontFace[]): Map<string, FontFace[]> => {
+	const facesByCSSFile = new Map<string, FontFace[]>();
 
+	// Iterate over each face and assign it to the appropriate CSS files based on its properties.
 	for (const face of faces) {
-		for (const assetFilename of getAssetFilenames(face)) {
-			const assetFaces = facesByAssetFilename.get(assetFilename);
+		for (const cssFile of getCSSFiles(face)) {
+			const cssFaces = facesByCSSFile.get(cssFile);
 
-			if (assetFaces) {
-				assetFaces.push(face);
+			if (cssFaces) {
+				cssFaces.push(face);
 			} else {
-				facesByAssetFilename.set(assetFilename, [face]);
+				facesByCSSFile.set(cssFile, [face]);
 			}
 		}
 	}
 
-	return facesByAssetFilename;
+	return facesByCSSFile;
 };
 
-const getAssetFilenames = (face: FontFace): string[] => {
+const getCSSFiles = (face: FontFace): string[] => {
+	const style = formatStyle(face.style);
+
 	if (face.isVariable) {
-		// Variable packages group by axis bucket + style.
 		const axisKey = face.axisKey ?? 'wght';
-		return [
-			face.style === 'normal'
-				? `${axisKey}.css`
-				: `${axisKey}-${face.style}.css`,
-		];
+		return [style === 'normal' ? `${axisKey}.css` : `${axisKey}-${style}.css`];
 	}
 
 	// Static packages publish both weight and subset entrypoints.
 	const assetFilenames = [
-		face.style === 'normal'
-			? `${face.weight}.css`
-			: `${face.weight}-${face.style}.css`,
+		style === 'normal' ? `${face.weight}.css` : `${face.weight}-${style}.css`,
 		`${face.subset}.css`,
 	];
 
 	// Keep the legacy subset italic entrypoint.
-	if (face.style !== 'normal') {
+	if (style !== 'normal') {
 		assetFilenames.push(`${face.subset}-italic.css`);
 	}
 
@@ -99,8 +96,8 @@ const getAssetFilenames = (face: FontFace): string[] => {
 };
 
 export {
-	getAssetFilenames,
-	groupFacesByAssetFilename,
-	pickStaticIndexFile,
-	pickVariableIndexFile,
+	getCSSFiles,
+	groupFacesByCSSFile,
+	pickStaticIndexCSS,
+	pickVariableIndexCSS,
 };

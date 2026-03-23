@@ -1,18 +1,5 @@
 import type { BaseHit } from 'instantsearch.js';
 
-export interface FontList {
-	[key: string]: string;
-}
-
-export const FONT_DIRS = [
-	'google',
-	'variable',
-	'icons',
-	'variable-icons',
-	'other',
-] as const;
-export type FontDirectory = (typeof FONT_DIRS)[number];
-
 export interface LicenseData {
 	type: string;
 	attribution: string;
@@ -75,10 +62,6 @@ export interface StatsResponseAll {
 	total: StatsResponse;
 	static: StatsResponse;
 	variable?: StatsResponse;
-}
-
-export interface PackageJson {
-	version: string;
 }
 
 export interface AlgoliaMetadata extends BaseHit {

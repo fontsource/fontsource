@@ -1,5 +1,10 @@
-export type Format = 'woff' | 'woff2';
-export type FontFormat = Format | 'ttf';
+/** Compressed webfont formats emitted by package builds. */
+export type WebFontFormat = 'woff' | 'woff2';
+
+/** Any font file format that a public config or asset reference may expose. */
+export type FontFileFormat = WebFontFormat | 'ttf';
+
+type UnicodeRangeMap = Record<string, string>;
 
 export interface VariableFontAxis {
 	default?: string | number;
@@ -17,23 +22,20 @@ export interface VariableAxisConfig {
 	[key: string]: VariableFontAxis | undefined;
 }
 
-export interface SubsetSlice {
-	index: number;
-	codepoints: number[];
-}
+type CustomVariableAxisKey = string & {};
 
-export type SubsetDefinition =
-	| {
-			name: string;
-			type: 'range';
-			unicodeRange: string;
-			codepoints: number[];
-	  }
-	| {
-			name: string;
-			type: 'sliced';
-			slices: SubsetSlice[];
-	  };
+/**
+ * Published variable axis keys include the direct standard tags, aggregate
+ * package keys, and any custom OpenType axis tag such as `MONO` or `CASL`.
+ */
+export type VariableAxisKey =
+	| 'wght'
+	| 'wdth'
+	| 'slnt'
+	| 'opsz'
+	| 'standard'
+	| 'full'
+	| CustomVariableAxisKey;
 
 export type FontStyle =
 	| 'normal'
@@ -42,36 +44,58 @@ export type FontStyle =
 	| `oblique ${number}deg ${number}deg`;
 
 export interface FontSource {
-	format: FontFormat;
+	format: FontFileFormat;
 	filename: string;
 }
 
-export interface FontFace {
+interface FontFaceBase {
 	subset: string;
 	weight: number | string;
 	style: FontStyle;
-	isVariable: boolean;
 	unicodeRange: string;
-	sources: FontSource[];
-	axisKey?: string;
-	stretch?: string | null;
 	sliceIndex: number;
 }
 
-export interface FontConfig {
+export interface FontFace extends FontFaceBase {
+	isVariable: boolean;
+	sources: FontSource[];
+	axisKey?: VariableAxisKey;
+	stretch?: string | null;
+}
+
+interface FontIdentity {
 	id?: string;
 	family: string;
+}
+
+interface FontSelection {
 	subsets: string[];
 	weights: number[];
 	styles: FontStyle[];
-	unicodeRange?: Record<string, string>;
-	variable?: VariableAxisConfig;
-	formats?: Format[];
+	unicodeRange?: UnicodeRangeMap;
 }
 
-interface BaseFontBuildConfig extends FontConfig {
+interface FormatOptions<TFormat extends FontFileFormat> {
+	formats?: TFormat[];
+}
+
+export interface FontConfig
+	extends FontIdentity,
+		FontSelection,
+		FormatOptions<FontFileFormat> {
+	variable?: VariableAxisConfig;
+}
+
+interface FontBuildFeatures {
 	featureSettings: Record<string, boolean>;
-	subsetSources: Partial<Record<string, string>>;
+	subsetSources: Partial<UnicodeRangeMap>;
+}
+
+interface BaseFontBuildConfig
+	extends FontIdentity,
+		FontSelection,
+		FontBuildFeatures {
+	formats?: WebFontFormat[];
 }
 
 export interface StaticFontBuildConfig extends BaseFontBuildConfig {
@@ -80,7 +104,8 @@ export interface StaticFontBuildConfig extends BaseFontBuildConfig {
 
 export interface VariableFontBuildConfig extends BaseFontBuildConfig {
 	type: 'variable';
-	axisKey?: string;
+	variable: VariableAxisConfig;
+	axisKeys?: VariableAxisKey[];
 }
 
 export type FontBuildConfig = StaticFontBuildConfig | VariableFontBuildConfig;
@@ -94,7 +119,14 @@ export interface CSSAsset {
 	content: string;
 }
 
-export interface FontPackage {
+export interface CSSBuildOptions {
+	/**
+	 * Variable axis-key outputs to include explicitly. When omitted, expand to every published axis key.
+	 */
+	axisKeys?: VariableAxisKey[];
+}
+
+export interface FontBuildResult {
 	css: CSSAsset[];
 	fonts: FontAsset[];
 	faces: FontFace[];

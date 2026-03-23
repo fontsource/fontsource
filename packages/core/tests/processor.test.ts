@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { createFontContext } from '../src/context';
 import { buildFont } from '../src/processor';
-import type { FontBuildConfig, FontPackage } from '../src/types';
+import type { FontBuildConfig, FontBuildResult } from '../src/types';
 import { loadStaticFontFixture, loadVariableFontFixture } from './font-fixture';
 
 const latinRangeSubset = '0x0020\n0x0021\n0x0022';
@@ -12,7 +12,7 @@ subsets {
   codepoints: 66
 }`;
 
-const serialisePackage = (result: FontPackage) => ({
+const serialisePackage = (result: FontBuildResult) => ({
 	css: result.css,
 	faces: result.faces,
 	fonts: result.fonts.map((font) => ({
@@ -25,7 +25,7 @@ const serialisePackage = (result: FontPackage) => ({
 const buildWithFixture = async (
 	buffer: Uint8Array,
 	config: FontBuildConfig,
-): Promise<FontPackage> => {
+): Promise<FontBuildResult> => {
 	const ctx = createFontContext();
 
 	try {
@@ -98,14 +98,16 @@ describe('buildFont integration with real fixtures', () => {
 			},
 		});
 
-		expect(result.faces.every((face) => face.axisKey === 'standard')).toBe(
-			true,
+		expect(new Set(result.faces.map((face) => face.axisKey))).toEqual(
+			new Set(['wght', 'slnt', 'standard']),
 		);
-		expect(result.faces.map((face) => face.sliceIndex)).toEqual([1, 2]);
+		expect(result.faces.map((face) => face.sliceIndex)).toEqual([
+			1, 2, 1, 2, 1, 2,
+		]);
 		expect(serialisePackage(result)).toMatchSnapshot();
 	});
 
-	it('uses the full axis bucket when custom axes are enabled', async () => {
+	it('emits every published axis key when custom axes are enabled', async () => {
 		const result = await buildWithFixture(loadVariableFontFixture(), {
 			type: 'variable',
 			id: 'recursive',
@@ -125,11 +127,59 @@ describe('buildFont integration with real fixtures', () => {
 			},
 		});
 
-		expect(result.faces).toHaveLength(1);
-		expect(result.faces[0]?.axisKey).toBe('full');
-		expect(result.fonts[0]?.filename).toBe(
-			'files/recursive-latin-full-normal.woff2',
+		expect(new Set(result.faces.map((face) => face.axisKey))).toEqual(
+			new Set(['wght', 'slnt', 'CASL', 'standard', 'full']),
+		);
+		expect(result.fonts.map((font) => font.filename)).toEqual(
+			expect.arrayContaining([
+				'files/recursive-latin-wght-normal.woff2',
+				'files/recursive-latin-slnt-normal.woff2',
+				'files/recursive-latin-casl-normal.woff2',
+				'files/recursive-latin-standard-normal.woff2',
+				'files/recursive-latin-full-normal.woff2',
+			]),
 		);
 		expect(serialisePackage(result)).toMatchSnapshot();
+	});
+
+	it('can emit multiple variable axis keys in one build', async () => {
+		const result = await buildWithFixture(loadVariableFontFixture(), {
+			type: 'variable',
+			id: 'recursive',
+			family: 'Recursive',
+			subsets: ['latin'],
+			weights: [],
+			styles: ['normal'],
+			formats: ['woff2'],
+			featureSettings: {},
+			axisKeys: ['MONO', 'standard', 'full'],
+			variable: {
+				MONO: { min: 0, max: 1 },
+				wght: { min: 300, max: 1000 },
+				slnt: { min: -15, max: 0 },
+			},
+			subsetSources: {
+				latin: latinRangeSubset,
+			},
+		});
+
+		expect(result.faces.map((face) => face.axisKey)).toEqual([
+			'MONO',
+			'standard',
+			'full',
+		]);
+		expect(result.fonts.map((font) => font.filename)).toEqual([
+			'files/recursive-latin-mono-normal.woff2',
+			'files/recursive-latin-standard-normal.woff2',
+			'files/recursive-latin-full-normal.woff2',
+		]);
+		expect(result.css.map((asset) => asset.filename)).toEqual(
+			expect.arrayContaining([
+				'MONO.css',
+				'standard-italic.css',
+				'full-italic.css',
+				'index.css',
+			]),
+		);
 	});
 });

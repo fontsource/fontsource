@@ -6,8 +6,11 @@ import {
 	extractStyleValue,
 	findClosestWeight,
 	formatAxisValue,
+	formatSlantValue,
 	formatStretchValue,
+	getVariableAxisKeys,
 	resolveFontFaces,
+	selectVariableAxisKey,
 } from '../src/utils';
 
 describe('codepointsToRangeString', () => {
@@ -57,10 +60,7 @@ describe('extractStyleValue', () => {
 });
 
 describe('variable axis helpers', () => {
-	it('determineAxisKey respects explicit overrides and Fontsource axis bucketing', () => {
-		expect(determineAxisKey({ wght: { min: 100, max: 900 } }, 'OPSZ')).toBe(
-			'opsz',
-		);
+	it('determineAxisKey follows Fontsource axis-key semantics', () => {
 		expect(determineAxisKey({})).toBe('wght');
 		expect(determineAxisKey({ XTRA: { min: 300, max: 700 } })).toBe('XTRA');
 		expect(
@@ -82,6 +82,50 @@ describe('variable axis helpers', () => {
 		expect(formatAxisValue({ min: 100, max: 900 })).toBe('100 900');
 		expect(formatStretchValue({ min: 100, max: 100 })).toBe('100%');
 		expect(formatStretchValue({ min: 75, max: 125 })).toBe('75% 125%');
+		expect(formatSlantValue({ min: -12, max: -12 })).toBe('12deg');
+		expect(formatSlantValue({ min: -15, max: 0 })).toBe('0deg 15deg');
+		expect(formatSlantValue({ min: 0, max: 15 })).toBe('0deg 15deg');
+	});
+
+	it('derives all published variable axis keys', () => {
+		expect(
+			getVariableAxisKeys({
+				wght: { min: 100, max: 900 },
+			}),
+		).toEqual(['wght']);
+		expect(
+			getVariableAxisKeys({
+				MONO: { min: 0, max: 1 },
+			}),
+		).toEqual(['MONO', 'full']);
+		expect(
+			getVariableAxisKeys({
+				MONO: { min: 0, max: 1 },
+				wght: { min: 100, max: 900 },
+			}),
+		).toEqual(['MONO', 'wght', 'full']);
+		expect(
+			getVariableAxisKeys({
+				wght: { min: 100, max: 900 },
+				slnt: { min: -15, max: 0 },
+			}),
+		).toEqual(['wght', 'slnt', 'standard']);
+	});
+
+	it('selects the smallest published axis key that satisfies active axes', () => {
+		const variable = {
+			MONO: { min: 0, max: 1 },
+			wght: { min: 300, max: 700 },
+			slnt: { min: -15, max: 0 },
+		};
+
+		expect(selectVariableAxisKey(variable, [])).toBe('full');
+		expect(selectVariableAxisKey(variable, ['wght'])).toBe('wght');
+		expect(selectVariableAxisKey(variable, ['wght', 'slnt'])).toBe('slnt');
+		expect(selectVariableAxisKey(variable, ['wght', 'MONO'])).toBe('MONO');
+		expect(selectVariableAxisKey(variable, ['wght', 'slnt', 'MONO'])).toBe(
+			'full',
+		);
 	});
 
 	it('prefers the heavier weight when both weights are equally close to the target', () => {
@@ -116,6 +160,85 @@ describe('resolveFontFaces', () => {
 				},
 			}),
 		}).toMatchSnapshot();
+	});
+
+	it('maps variable slant configs to oblique face styles', () => {
+		const face = resolveFontFaces({
+			id: 'inter',
+			family: 'Inter',
+			subsets: ['latin'],
+			weights: [],
+			styles: ['normal'],
+			unicodeRange: { latin: 'U+0000-00FF' },
+			formats: ['woff2'],
+			variable: {
+				wght: { min: 100, max: 900 },
+				slnt: { min: -15, max: 0 },
+			},
+		}).find((candidate) => candidate.axisKey === 'standard');
+
+		expect(face).toMatchObject({
+			style: 'oblique 0deg 15deg',
+			axisKey: 'standard',
+		});
+	});
+
+	it('maps width-aware axis keys to font-stretch values', () => {
+		const [face] = resolveFontFaces(
+			{
+				id: 'inter',
+				family: 'Inter',
+				subsets: ['latin'],
+				weights: [],
+				styles: ['normal'],
+				unicodeRange: { latin: 'U+0000-00FF' },
+				formats: ['woff2'],
+				variable: {
+					wght: { min: 100, max: 900 },
+					wdth: { min: 75, max: 100 },
+				},
+			},
+			{ axisKeys: ['standard'] },
+		);
+
+		expect(face).toMatchObject({
+			style: 'normal',
+			stretch: '75% 100%',
+			axisKey: 'standard',
+		});
+	});
+
+	it('can resolve multiple variable axis keys for CSS planning', () => {
+		const faces = resolveFontFaces(
+			{
+				id: 'recursive',
+				family: 'Recursive',
+				subsets: ['latin'],
+				weights: [300, 700],
+				styles: ['normal'],
+				unicodeRange: { latin: 'U+0000-00FF' },
+				formats: ['woff2'],
+				variable: {
+					MONO: { min: 0, max: 1 },
+					wght: { min: 300, max: 700 },
+					slnt: { min: -15, max: 0 },
+				},
+			},
+			{ axisKeys: ['MONO', 'standard', 'full'] },
+		);
+
+		expect(faces.map((face) => face.axisKey)).toEqual([
+			'MONO',
+			'standard',
+			'full',
+		]);
+		expect(faces.map((face) => face.sources[0]?.filename)).toEqual([
+			'recursive-latin-mono-normal.woff2',
+			'recursive-latin-standard-normal.woff2',
+			'recursive-latin-full-normal.woff2',
+		]);
+		expect(faces[1]?.style).toBe('oblique 0deg 15deg');
+		expect(faces[0]?.style).toBe('normal');
 	});
 });
 

@@ -1,13 +1,41 @@
-import { type FontRef, WoffCompressionContext } from '@glypht/core';
+import { WoffCompressionContext } from '@glypht/core';
 import type { FontContext } from './context';
-import type { FontFormat } from './types';
+import type { FontFileFormat } from './types';
 import { normalizeKebabCase } from './utils';
 
 export interface ConversionResult {
 	filename: string;
-	format: FontFormat;
+	format: FontFileFormat;
 	data: Uint8Array;
 }
+
+const stripExtension = (name: string): string => {
+	const lastDot = name.lastIndexOf('.');
+	return lastDot === -1 ? name : name.slice(0, lastDot);
+};
+
+const deriveBaseName = async (
+	glyphtContext: FontContext['glyphtContext'],
+	ttfBuffer: Uint8Array,
+): Promise<string> => {
+	const fontRefs = await glyphtContext.loadFonts([ttfBuffer]);
+
+	try {
+		const [fontRef] = fontRefs;
+
+		if (!fontRef) {
+			return 'font';
+		}
+
+		const family = normalizeKebabCase(fontRef.familyName);
+		const subFamily = normalizeKebabCase(fontRef.subfamilyName);
+		return `${family}-${subFamily}`;
+	} finally {
+		for (const fontRef of fontRefs) {
+			fontRef.destroy();
+		}
+	}
+};
 
 /**
  * Converts a font buffer into multiple webfont formats (TTF, WOFF, WOFF2).
@@ -21,10 +49,11 @@ export interface ConversionResult {
 export const convertFont = async (
 	ctx: FontContext,
 	buffer: Uint8Array,
-	formats: FontFormat[],
+	formats: FontFileFormat[],
 	name?: string,
 ): Promise<ConversionResult[]> => {
 	const { glyphtContext, compressionContext } = ctx;
+	const uniqueFormats = [...new Set(formats)];
 
 	// Identify and decompress compressed inputs to get a raw TTF buffer.
 	const type = WoffCompressionContext.compressionType(buffer);
@@ -32,28 +61,12 @@ export const convertFont = async (
 		? await compressionContext.decompressToTTF(buffer)
 		: buffer;
 
-	let baseName: string;
-	let fontRef: FontRef | undefined;
-
-	// Determine the base filename using the provided name or font metadata.
-	if (name) {
-		const lastDot = name.lastIndexOf('.');
-		baseName = lastDot === -1 ? name : name.slice(0, lastDot);
-	} else {
-		[fontRef] = await glyphtContext.loadFonts([ttfBuffer]);
-
-		// If we can't load the font to extract metadata, fall back to a generic name.
-		if (fontRef) {
-			const family = normalizeKebabCase(fontRef.familyName);
-			const subFamily = normalizeKebabCase(fontRef.subfamilyName);
-			baseName = `${family}-${subFamily}`;
-		} else {
-			baseName = 'font';
-		}
-	}
+	const baseName = name
+		? stripExtension(name)
+		: await deriveBaseName(glyphtContext, ttfBuffer);
 
 	return Promise.all(
-		formats.map(async (format): Promise<ConversionResult> => {
+		uniqueFormats.map(async (format): Promise<ConversionResult> => {
 			if (format === 'ttf') {
 				return {
 					filename: `${baseName}.ttf`,
