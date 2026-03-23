@@ -253,7 +253,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
       "filename": "slnt-italic.css",
     },
     {
-      "content": "/* recursive-latin-CASL-normal */
+      "content": "/* recursive-latin-casl-normal */
 @font-face {
   font-family: 'Recursive Variable';
   font-style: normal;

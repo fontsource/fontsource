@@ -154,7 +154,7 @@ export const buildFont = async (
 			} else {
 				// If weights aren't explicitly configured, extract them from the font metadata.
 				let weights = config.weights;
-				if (!weights) {
+				if (!weights || weights.length === 0) {
 					weights = Array.from(
 						new Set(
 							family.fonts.map((f) => {

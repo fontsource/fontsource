@@ -36,7 +36,10 @@ const getSourceValue = (
 };
 
 const getFaceComment = (family: string, face: FontFace): string => {
-	let comment = `${normalizeKebabCase(family)}-${face.subset}-${face.axisKey ?? face.weight}-${formatStyle(face.style)}`;
+	const axisOrWeight =
+		typeof face.axisKey === 'string' ? face.axisKey.toLowerCase() : face.weight;
+
+	let comment = `${normalizeKebabCase(family)}-${face.subset}-${axisOrWeight}-${formatStyle(face.style)}`;
 
 	if (face.sliceIndex > 0) {
 		comment += `-${face.sliceIndex}`;
