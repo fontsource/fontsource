@@ -1,0 +1,37 @@
+name: CLI Tests
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/cli/**"
+      - "package.json"
+      - "bun.lock"
+
+  push:
+    branches: [main]
+    paths:
+      - "packages/cli/**"
+      - "package.json"
+      - "bun.lock"
+
+jobs:
+  cli:
+    name: CLI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install
+
+      - name: Run lints
+        run: bun --filter '@fontsource-utils/cli' ci:lint
+
+      - name: Run tests
+        run: bun --filter '@fontsource-utils/cli' coverage
