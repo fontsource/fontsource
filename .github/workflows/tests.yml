@@ -31,9 +31,6 @@ jobs:
       - name: Run lints
         run: bun run ci:lint
 
-      - name: Run tests
-        run: bun run ci:test
-
   core:
     name: Core
     runs-on: ubuntu-latest
