@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import {
-	getAssetFilenames,
-	groupFacesByAssetFilename,
-	pickStaticIndexFile,
-	pickVariableIndexFile,
+	getCSSFiles,
+	groupFacesByCSSFile,
+	pickStaticIndexCSS,
+	pickVariableIndexCSS,
 } from '../src/css/planner';
 import type { FontFace } from '../src/types';
 
@@ -49,7 +49,7 @@ const variableFace = (
 describe('css planner', () => {
 	it('assigns static faces to weight and subset assets', () => {
 		expect(
-			getAssetFilenames(
+			getCSSFiles(
 				staticFace({
 					subset: 'latin',
 					weight: 400,
@@ -58,7 +58,7 @@ describe('css planner', () => {
 		).toEqual(['400.css', 'latin.css']);
 
 		expect(
-			getAssetFilenames(
+			getCSSFiles(
 				staticFace({
 					subset: 'latin',
 					weight: 400,
@@ -70,7 +70,7 @@ describe('css planner', () => {
 
 	it('assigns variable faces to axis assets', () => {
 		expect(
-			getAssetFilenames(
+			getCSSFiles(
 				variableFace({
 					subset: 'latin',
 				}),
@@ -78,13 +78,34 @@ describe('css planner', () => {
 		).toEqual(['wght.css']);
 
 		expect(
-			getAssetFilenames(
+			getCSSFiles(
 				variableFace({
 					subset: 'latin',
 					style: 'italic',
 				}),
 			),
 		).toEqual(['wght-italic.css']);
+
+		expect(
+			getCSSFiles(
+				variableFace({
+					subset: 'latin',
+					style: 'oblique 0deg 15deg',
+				}),
+			),
+		).toEqual(['wght-italic.css']);
+	});
+
+	it('normalizes oblique static faces onto italic asset filenames', () => {
+		expect(
+			getCSSFiles(
+				staticFace({
+					subset: 'latin',
+					weight: 400,
+					style: 'oblique 12deg',
+				}),
+			),
+		).toEqual(['400-italic.css', 'latin.css', 'latin-italic.css']);
 	});
 
 	it('groups sliced faces into the same planned asset', () => {
@@ -101,7 +122,7 @@ describe('css planner', () => {
 			}),
 		];
 
-		const assetPlan = groupFacesByAssetFilename(faces);
+		const assetPlan = groupFacesByCSSFile(faces);
 
 		expect(assetPlan.get('wght.css')).toEqual(faces);
 	});
@@ -119,7 +140,7 @@ describe('css planner', () => {
 			}),
 		];
 
-		expect(pickStaticIndexFile(faces)).toBe('700.css');
+		expect(pickStaticIndexCSS(faces)).toBe('700.css');
 	});
 
 	it('falls back to the italic variable asset for index.css when normal is missing', () => {
@@ -131,9 +152,9 @@ describe('css planner', () => {
 		];
 
 		expect(
-			pickVariableIndexFile(
+			pickVariableIndexCSS(
 				{ wght: { min: 100, max: 900 } },
-				groupFacesByAssetFilename(faces),
+				groupFacesByCSSFile(faces),
 			),
 		).toBe('wght-italic.css');
 	});

@@ -1,4 +1,3 @@
-import { generateFontFace, type UrlResolver } from '@fontsource-utils/core';
 import { Badge, Divider, Group, Tabs, Text, Title } from '@mantine/core';
 import { useState } from 'react';
 import { Link } from 'react-router';
@@ -6,8 +5,13 @@ import { Link } from 'react-router';
 import { Blockquote } from '@/components/Blockquote';
 import { Code } from '@/components/code/Code';
 import type { Metadata, VariableData } from '@/utils/types';
-
+import {
+	buildStaticPreviewCSS,
+	buildVariablePreviewCSS,
+	getVariableImport,
+} from './font-styles';
 import classes from './InstallCode.module.css';
+import { toggleKeyKeepOne, toggleVariableAxis } from './toggles';
 
 const categoryMap: Record<string, string> = {
 	'sans-serif': 'sans-serif',
@@ -61,14 +65,9 @@ const VariableSimple = ({ metadata, variable }: InstallCodeProps) => {
 		wght: true,
 	});
 
-	// Remove ital from active axes and mark separate ital flag as true
-	const activeAxes = Object.keys(isActive).filter((axis) => axis !== 'ital');
-	const isItal = isActive.ital;
+	if (!variable) return null;
 
-	// Determine if it is a standard axis e.g. only contains wght, wdth, slnt, opsz or ital
-	const isStandard = activeAxes.every((axis) =>
-		['wght', 'wdth', 'slnt', 'opsz'].includes(axis),
-	);
+	const isItal = isActive.ital;
 
 	const importComment =
 		metadata.weights.length === 1
@@ -78,45 +77,20 @@ const VariableSimple = ({ metadata, variable }: InstallCodeProps) => {
 				}\n`;
 
 	const generateImports = () => {
-		if (activeAxes.length === 1 && isActive.wght) {
-			if (isItal)
-				return `import '@fontsource-variable/${metadata.id}/wght-italic.css';`;
-			return `import '@fontsource-variable/${metadata.id}';`;
-		}
-
-		// If it is only wght and another axes, return axes.css
-		if (activeAxes.length === 2 && isActive.wght) {
-			const selected =
-				activeAxes.find((axis) => axis !== 'wght')?.toLowerCase() ?? 'wght';
-			if (isItal)
-				return `import '@fontsource-variable/${metadata.id}/${selected}-italic.css';`;
-			return `import '@fontsource-variable/${metadata.id}/${selected}.css';`;
-		}
-
-		// If the selected axes is within standard, only return standard
-		if (isStandard)
-			return `import '@fontsource-variable/${metadata.id}/standard.css';`;
-
-		// If the selected axes is not within standard, return full
-		return `import '@fontsource-variable/${metadata.id}/full.css';`;
+		const activeAxisTags = Object.keys(isActive).filter(
+			(axis) => isActive[axis],
+		);
+		const importSpecifier = getVariableImport(
+			metadata,
+			variable,
+			activeAxisTags,
+			isItal ? 'italic' : 'normal',
+		);
+		return `import '${importSpecifier}';`;
 	};
 
 	const handleActive = (value: string | number) => {
-		setActive((prev) => {
-			if (prev[value]) {
-				delete prev[value];
-				return {
-					...prev,
-					wght: true,
-				};
-			}
-
-			return {
-				...prev,
-				[value]: !prev[value],
-				wght: true,
-			};
-		});
+		setActive((prev) => toggleVariableAxis(prev, value));
 	};
 
 	return (
@@ -158,7 +132,7 @@ const VariableAdvanced = ({ metadata, variable }: InstallCodeProps) => {
 	});
 
 	// Return early if no variable data
-	if (!variable) return;
+	if (!variable) return null;
 
 	const handleActiveSubset = (value: string) => {
 		// Return early if only one subset is selected and it is the current one
@@ -188,107 +162,24 @@ const VariableAdvanced = ({ metadata, variable }: InstallCodeProps) => {
 	};
 
 	const handleActiveVariant = (value: string | number) => {
-		setActive((prev) => {
-			if (prev.axes[value]) {
-				delete prev.axes[value];
-				return {
-					...prev,
-					axes: {
-						...prev.axes,
-						wght: true,
-					},
-				};
-			}
-
-			return {
-				...prev,
-				axes: {
-					...prev.axes,
-					[value]: true,
-					wght: true,
-				},
-			};
-		});
+		setActive((prev) => ({
+			...prev,
+			axes: toggleVariableAxis(prev.axes, value),
+		}));
 	};
 
-	// Remove ital from active axes and mark separate ital flag as true
-	const activeAxes = Object.keys(isActive.axes).filter(
-		(axis) => axis !== 'ital',
-	);
 	const isItal = isActive.axes.ital;
 
-	// Determine if it is a standard axis e.g. only contains wght, wdth, slnt, opsz or ital
-	const isStandard = activeAxes.every((axis) =>
-		['wght', 'wdth', 'slnt', 'opsz'].includes(axis),
-	);
-
-	// Choose which axes file to serve based on active axes
-	const getFileAxes = (): string => {
-		if (activeAxes.length === 1 && isActive.axes.wght) {
-			if (isItal) return 'wght-italic';
-			return 'wght-normal';
-		}
-
-		// If it is only wght and another axes, return axes.woff2
-		if (activeAxes.length === 2 && isActive.axes.wght) {
-			const selected =
-				activeAxes.find((axis) => axis !== 'wght')?.toLowerCase() ?? 'wght';
-			if (isItal) return `${selected}-italic`;
-			return `${selected}-normal`;
-		}
-
-		// If the selected axes is within standard, only return standard
-		if (isStandard) {
-			if (isItal) return 'standard-italic';
-			return 'standard-normal';
-		}
-
-		// If the selected axes is not within standard, return full
-		if (isItal) return 'full-italic';
-		return 'full-normal';
-	};
-	const fileAxes = getFileAxes();
-
-	// Generate CSS
-	const css: string[] = [];
-	const resolver: UrlResolver = ({ source }) =>
-		`@fontsource-variable/${metadata.id}/files/${source.filename}`;
-
-	for (const subset of isActive.subsets) {
-		css.push(
-			generateFontFace(
-				{
-					subset,
-					weight: isActive.axes.wght
-						? variable.axes.wght.min === variable.axes.wght.max
-							? `${variable.axes.wght.min}`
-							: `${variable.axes.wght.min} ${variable.axes.wght.max}`
-						: '400',
-					style: isItal ? 'italic' : 'normal',
-					isVariable: true,
-					sliceIndex: 0,
-					unicodeRange: metadata.unicodeRange[subset] ?? '',
-					sources: [
-						{
-							format: 'woff2',
-							filename: `${metadata.id}-${subset}-${fileAxes}.woff2`,
-						},
-					],
-					stretch: isActive.axes.wdth
-						? variable.axes.wdth.min === variable.axes.wdth.max
-							? `${variable.axes.wdth.min}%`
-							: `${variable.axes.wdth.min}% ${variable.axes.wdth.max}%`
-						: null,
-					axisKey: fileAxes.split('-')[0],
-				},
-				metadata.family,
-				{
-					display: isActive.display,
-					resolver,
-				},
-			),
-		);
-	}
+	const css = buildVariablePreviewCSS(metadata, variable, {
+		activeAxes: Object.keys(isActive.axes).filter(
+			(axis) => isActive.axes[axis],
+		),
+		subsets: isActive.subsets,
+		style: isItal ? 'italic' : 'normal',
+		display: isActive.display,
+		resolver: ({ source }) =>
+			`@fontsource-variable/${metadata.id}/files/${source.filename}`,
+	});
 
 	return (
 		<>
@@ -326,7 +217,7 @@ const VariableAdvanced = ({ metadata, variable }: InstallCodeProps) => {
 				Import this into your global CSS file. Your bundler will automatically
 				rewrite the URL into a useable asset:
 			</Text>
-			<Code language="css">{css.join('\n\n')}</Code>
+			<Code language="css">{css}</Code>
 			<Text>Then include the following CSS in your project:</Text>
 			<Code language="css">{`body {
   font-family: '${metadata.family} Variable', ${
@@ -343,20 +234,7 @@ const StaticSimple = ({ metadata }: InstallCodeProps) => {
 	});
 	const keys = Object.keys(isActive);
 	const handleActive = (value: string | number) => {
-		setActive((prev) => {
-			if (keys.length === 1 && prev[value]) return prev;
-			if (prev[value]) {
-				delete prev[value];
-				return {
-					...prev,
-				};
-			}
-
-			return {
-				...prev,
-				[value]: !prev[value],
-			};
-		});
+		setActive((prev) => toggleKeyKeepOne(prev, value));
 	};
 
 	const [isItal, setIsItal] = useState(false);
@@ -426,22 +304,8 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 	const [isActiveWeight, setActiveWeight] = useState<Record<string, boolean>>({
 		400: true,
 	});
-	const keys = Object.keys(isActiveWeight);
 	const handleActiveWeight = (value: string | number) => {
-		setActiveWeight((prev) => {
-			if (keys.length === 1 && prev[value]) return prev;
-			if (prev[value]) {
-				delete prev[value];
-				return {
-					...prev,
-				};
-			}
-
-			return {
-				...prev,
-				[value]: !prev[value],
-			};
-		});
+		setActiveWeight((prev) => toggleKeyKeepOne(prev, value));
 	};
 
 	// Active italics
@@ -488,38 +352,15 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 		});
 	};
 
-	// Generate CSS
-	const css: string[] = [];
-	const resolver: UrlResolver = ({ source }) =>
-		`@fontsource/${metadata.id}/files/${source.filename}`;
-
-	for (const subset of subsets) {
-		for (const weight of Object.keys(isActiveWeight)) {
-			css.push(
-				generateFontFace(
-					{
-						subset,
-						weight: Number(weight),
-						style: isItal ? 'italic' : 'normal',
-						isVariable: false,
-						sliceIndex: 0,
-						unicodeRange: metadata.unicodeRange[subset] ?? '',
-						sources: formats.map((format) => ({
-							format,
-							filename: `${metadata.id}-${subset}-${weight}-${
-								isItal ? 'italic' : 'normal'
-							}.${format}`,
-						})),
-					},
-					metadata.family,
-					{
-						display: displayCurrent,
-						resolver,
-					},
-				),
-			);
-		}
-	}
+	const css = buildStaticPreviewCSS(metadata, {
+		subsets,
+		weights: Object.keys(isActiveWeight).map((weight) => Number(weight)),
+		style: isItal ? 'italic' : 'normal',
+		formats,
+		display: displayCurrent,
+		resolver: ({ source }) =>
+			`@fontsource/${metadata.id}/files/${source.filename}`,
+	});
 
 	return (
 		<>
@@ -588,7 +429,7 @@ const StaticAdvanced = ({ metadata }: InstallCodeProps) => {
 				Import this into your global CSS file. Your bundler will automatically
 				rewrite the URL into a useable asset:
 			</Text>
-			<Code language="css">{css.join('\n\n')}</Code>
+			<Code language="css">{css}</Code>
 			<Text>Then include the following CSS in your project:</Text>
 			<Code language="css">{`body {
   font-family: '${metadata.family}', ${

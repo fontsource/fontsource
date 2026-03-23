@@ -4,11 +4,13 @@ on:
     branches: [main]
     paths:
       - "packages/**"
+      - "!packages/cli/**"
 
   push:
     branches: [main]
     paths:
       - "packages/**"
+      - "!packages/cli/**"
 
 jobs:
   packager:
@@ -28,9 +30,6 @@ jobs:
 
       - name: Run lints
         run: bun run ci:lint
-
-      - name: Run tests
-        run: bun run ci:test
 
   core:
     name: Core

@@ -1,5 +1,23 @@
-import type { FontBuildConfig, SubsetDefinition } from './types';
+import type { FontBuildConfig } from './types';
 import { codepointsToRangeString } from './utils';
+
+interface SubsetSlice {
+	index: number;
+	codepoints: number[];
+}
+
+type SubsetDefinition =
+	| {
+			name: string;
+			type: 'range';
+			unicodeRange: string;
+			codepoints: number[];
+	  }
+	| {
+			name: string;
+			type: 'sliced';
+			slices: SubsetSlice[];
+	  };
 
 /**
  * Parses the simple .nam file format which contains one codepoint per line.

@@ -203,7 +203,7 @@ export const useFontConverter = () => {
 						...fileEntry,
 						error: fileErrors.get(fileEntry.id),
 					})),
-					);
+				);
 			}
 
 			const dedupedResults = [...bestResultsByFilename.values()].map(

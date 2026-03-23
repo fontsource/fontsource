@@ -1,12 +1,9 @@
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import {
-	generateCSS,
-	generateCSSFromFaces,
-	generateFontFace,
-} from '../src/css';
-import type { FontFace, FontFormat, FontSource } from '../src/types';
+import { generateCSS, generateCSSAssets } from '../src/css';
+import { generateFaceCSSAssets, renderFontFace } from '../src/css/assets';
+import type { FontFace, FontFileFormat, FontSource } from '../src/types';
 
 const snapshotDir = resolve(
 	fileURLToPath(import.meta.url),
@@ -15,7 +12,7 @@ const snapshotDir = resolve(
 
 type FaceOverrides = Partial<Omit<FontFace, 'sources'>> & {
 	filename?: string;
-	format?: FontFormat;
+	format?: FontFileFormat;
 	sources?: FontSource[];
 };
 
@@ -65,9 +62,9 @@ const serialiseAssets = (
 	assets: { filename: string; content: string }[],
 ): string => assets.map((a) => `/* ${a.filename} */\n${a.content}`).join('\n');
 
-describe('generateFontFace', () => {
+describe('renderFontFace', () => {
 	it('static font-face', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -83,7 +80,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('static bold font-face', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin',
 				weight: 700,
@@ -99,7 +96,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('static italic font-face', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -116,7 +113,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('static oblique with decimal degrees', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin-ext',
 				weight: 700,
@@ -133,7 +130,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('static oblique with integer degrees', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin-ext',
 				weight: 700,
@@ -150,7 +147,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('variable font-face with wght axis', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'latin',
 				unicodeRange: 'U+0000-00FF',
@@ -165,7 +162,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('variable font-face with width stretch', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'latin',
 				weight: '400',
@@ -183,7 +180,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('variable font-face with fixed width value', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'latin',
 				weight: '400',
@@ -201,7 +198,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('variable font-face with slant axis and oblique style', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'latin',
 				weight: '400 700',
@@ -219,7 +216,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('sliced subset with slice index', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'japanese',
 				weight: '300 800',
@@ -236,7 +233,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('resolver overrides url', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -256,7 +253,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('custom display value', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -273,7 +270,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('omits unicode-range when empty', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -288,7 +285,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('does not double-append Variable to family name', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'latin',
 				unicodeRange: 'U+0000-00FF',
@@ -303,7 +300,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('woff format detection', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -320,7 +317,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('ttf format detection', () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -335,7 +332,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('variable font-face with fixed slant value', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'latin',
 				weight: '300 600',
@@ -353,7 +350,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('variable font-face with slant axis only', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'latin',
 				weight: '400',
@@ -371,7 +368,7 @@ describe('generateFontFace', () => {
 	});
 
 	it('variable font-face with no recognized axis', async () => {
-		const css = generateFontFace(
+		const css = renderFontFace(
 			variableFace({
 				subset: 'latin',
 				weight: '100 900',
@@ -389,7 +386,7 @@ describe('generateFontFace', () => {
 
 	it('throws when no backing source is provided', () => {
 		expect(() =>
-			generateFontFace(
+			renderFontFace(
 				{
 					subset: 'latin',
 					weight: 400,
@@ -401,15 +398,15 @@ describe('generateFontFace', () => {
 				},
 				'Inter',
 			),
-		).toThrow('generateFontFace requires at least one source');
+		).toThrow('renderFontFace requires at least one source');
 	});
 });
 
 // ---------------------------------------------------------------------------
-// generateCSSFromFaces — grouped file output snapshots
+// generateFaceCSSAssets — grouped file output snapshots
 // ---------------------------------------------------------------------------
 
-describe('generateCSSFromFaces', () => {
+describe('generateFaceCSSAssets', () => {
 	it('static: two subsets, two weights, two styles', async () => {
 		const variants: FontFace[] = ['latin', 'latin-ext'].flatMap((subset) => {
 			const ur = subset === 'latin' ? 'U+0000-00FF' : 'U+0100-024F';
@@ -426,7 +423,7 @@ describe('generateCSSFromFaces', () => {
 			);
 		});
 
-		const assets = generateCSSFromFaces('Inter', variants);
+		const assets = generateFaceCSSAssets('Inter', variants);
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-static-full.css'),
@@ -434,7 +431,7 @@ describe('generateCSSFromFaces', () => {
 	});
 
 	it('returns no assets when no faces are provided', () => {
-		expect(generateCSSFromFaces('Inter', [])).toEqual([]);
+		expect(generateFaceCSSAssets('Inter', [])).toEqual([]);
 	});
 
 	it('static: asymmetric variants (400+400i+700, no 700i)', async () => {
@@ -460,7 +457,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants);
+		const assets = generateFaceCSSAssets('Inter', variants);
 		const filenames = assets.map((a) => a.filename);
 
 		// The key structural assertion — no phantom 700-italic
@@ -482,7 +479,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants);
+		const assets = generateFaceCSSAssets('Inter', variants);
 		const filenames = assets.map((a) => a.filename);
 
 		expect(filenames).toContain('index.css');
@@ -510,7 +507,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants);
+		const assets = generateFaceCSSAssets('Inter', variants);
 		const indexCss = assets.find(
 			(asset) => asset.filename === 'index.css',
 		)?.content;
@@ -540,7 +537,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants, {
+		const assets = generateFaceCSSAssets('Inter', variants, {
 			variable: { wght: { min: 100, max: 900 } },
 		});
 
@@ -559,7 +556,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants, {
+		const assets = generateFaceCSSAssets('Inter', variants, {
 			variable: { wght: { min: 100, max: 900 } },
 		});
 
@@ -589,7 +586,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants, {
+		const assets = generateFaceCSSAssets('Inter', variants, {
 			variable: { wght: { min: 300, max: 800 } },
 		});
 
@@ -610,7 +607,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('TestFont', variants, {
+		const assets = generateFaceCSSAssets('TestFont', variants, {
 			variable: { wdth: { min: 75, max: 125 } },
 		});
 
@@ -638,7 +635,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants, {
+		const assets = generateFaceCSSAssets('Inter', variants, {
 			variable: { wght: { min: 400, max: 600 } },
 		});
 
@@ -689,7 +686,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants);
+		const assets = generateFaceCSSAssets('Inter', variants);
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-static-comprehensive.css'),
@@ -740,7 +737,7 @@ describe('generateCSSFromFaces', () => {
 			}),
 		];
 
-		const assets = generateCSSFromFaces('Inter', variants, {
+		const assets = generateFaceCSSAssets('Inter', variants, {
 			variable: { wght: { min: 100, max: 900 } },
 		});
 
@@ -756,7 +753,7 @@ describe('generateCSSFromFaces', () => {
 
 describe('generateCSS', () => {
 	it('static config expands correctly', async () => {
-		const assets = generateCSS({
+		const assets = generateCSSAssets({
 			id: 'inter',
 			family: 'Inter',
 			subsets: ['latin', 'latin-ext'],
@@ -774,7 +771,7 @@ describe('generateCSS', () => {
 	});
 
 	it('variable config expands correctly', async () => {
-		const assets = generateCSS({
+		const assets = generateCSSAssets({
 			id: 'inter',
 			family: 'Inter',
 			subsets: ['latin'],
@@ -789,5 +786,88 @@ describe('generateCSS', () => {
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'config-variable.css'),
 		);
+	});
+
+	it('variable config can emit multiple published axis keys', () => {
+		const assets = generateCSSAssets(
+			{
+				id: 'recursive',
+				family: 'Recursive',
+				subsets: ['latin'],
+				weights: [300, 700],
+				styles: ['normal', 'italic'],
+				unicodeRange: { latin: 'U+0000-00FF' },
+				variable: {
+					MONO: { min: 0, max: 1 },
+					wght: { min: 300, max: 700 },
+					slnt: { min: -15, max: 0 },
+				},
+			},
+			{
+				axisKeys: ['MONO', 'standard', 'full'],
+			},
+		);
+
+		expect(assets.map((asset) => asset.filename)).toEqual(
+			expect.arrayContaining([
+				'MONO.css',
+				'MONO-italic.css',
+				'standard-italic.css',
+				'full-italic.css',
+				'index.css',
+			]),
+		);
+		expect(assets.map((asset) => asset.filename)).not.toEqual(
+			expect.arrayContaining(['standard.css', 'full.css']),
+		);
+		expect(
+			assets.find((asset) => asset.filename === 'MONO.css')?.content,
+		).toContain('recursive-latin-mono-normal.woff2');
+		expect(
+			assets.find((asset) => asset.filename === 'standard-italic.css')?.content,
+		).toContain('font-style: oblique 0deg 15deg;');
+		expect(
+			assets.find((asset) => asset.filename === 'index.css')?.content,
+		).toContain('recursive-latin-full-normal.woff2');
+	});
+});
+
+describe('generateCSS', () => {
+	it('renders one deduplicated stylesheet for preview callers', () => {
+		const css = generateCSS({
+			id: 'inter',
+			family: 'Inter',
+			subsets: ['latin'],
+			weights: [400],
+			styles: ['normal'],
+			unicodeRange: { latin: 'U+0000-00FF' },
+			formats: ['woff2', 'woff'],
+		});
+
+		expect(css.match(/@font-face/g)).toHaveLength(1);
+		expect(css).toContain('./files/inter-latin-400-normal.woff2');
+		expect(css).toContain('./files/inter-latin-400-normal.woff');
+	});
+
+	it('uses every published variable axis key in one combined stylesheet by default', () => {
+		const css = generateCSS({
+			id: 'recursive',
+			family: 'Recursive',
+			subsets: ['latin'],
+			weights: [300, 700],
+			styles: ['normal'],
+			unicodeRange: { latin: 'U+0000-00FF' },
+			formats: ['woff2'],
+			variable: {
+				wght: { min: 300, max: 700 },
+				slnt: { min: -15, max: 0 },
+			},
+		});
+
+		expect(css.match(/@font-face/g)).toHaveLength(3);
+		expect(css).toContain('./files/recursive-latin-wght-normal.woff2');
+		expect(css).toContain('./files/recursive-latin-slnt-normal.woff2');
+		expect(css).toContain('./files/recursive-latin-standard-normal.woff2');
+		expect(css).toContain('font-style: oblique 0deg 15deg;');
 	});
 });
