@@ -1,8 +1,4 @@
-import {
-	type FontStyle,
-	generateCSS,
-	type UrlResolver,
-} from '@fontsource-utils/core';
+import { type FontStyle, generateCSS } from '@fontsource-utils/core';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
@@ -17,6 +13,7 @@ import {
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
 import classes from '@/styles/global.module.css';
+import { jsDelivrResolver } from '@/utils/cdn';
 import { getPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
 import {
@@ -58,18 +55,6 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		unicodeKeys = subsets;
 	}
 
-	const jsDelivrResolver =
-		(isVariable = false): UrlResolver =>
-		({ source }) => {
-			const prefix = `${id}-`;
-			// This route serves CDN filenames without the package id prefix.
-			const cdnFilename = source.filename.startsWith(prefix)
-				? source.filename.slice(prefix.length)
-				: source.filename;
-
-			return `https://cdn.jsdelivr.net/fontsource/fonts/${id}${isVariable ? ':vf' : ''}@latest/${cdnFilename}`;
-		};
-
 	const cssConfig = {
 		id,
 		family,
@@ -80,7 +65,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	};
 
 	const staticCSS = generateCSS(cssConfig, {
-		resolver: jsDelivrResolver(),
+		resolver: jsDelivrResolver(id),
 		display: 'block',
 	});
 
@@ -91,7 +76,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 					variable: variable.axes,
 				},
 				{
-					resolver: jsDelivrResolver(true),
+					resolver: jsDelivrResolver(id, true),
 					display: 'block',
 				},
 			)
