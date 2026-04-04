@@ -14,6 +14,7 @@ import { Link } from 'react-router';
 import { Code } from '@/components/code/Code';
 import { IconExternal } from '@/components/icons';
 import globalClasses from '@/styles/global.module.css';
+import { jsDelivrResolver } from '@/utils/cdn';
 import type { Metadata, VariableData } from '@/utils/types';
 
 import { CarbonAd } from '../CarbonAd';
@@ -117,8 +118,7 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 		subsets: isActive.subsets,
 		style: isItal ? 'italic' : 'normal',
 		display: isActive.display,
-		resolver: ({ source }) =>
-			`https://cdn.jsdelivr.net/fontsource/fonts/${metadata.id}:vf@latest/${source.filename}`,
+		resolver: jsDelivrResolver(metadata.id, true),
 	});
 
 	return (
@@ -218,8 +218,7 @@ const Static = ({ metadata }: CDNProps) => {
 		style: isItal ? 'italic' : 'normal',
 		formats,
 		display: displayCurrent,
-		resolver: ({ source }) =>
-			`https://cdn.jsdelivr.net/fontsource/fonts/${metadata.id}@latest/${source.filename}`,
+		resolver: jsDelivrResolver(metadata.id),
 	});
 
 	return (
