@@ -27,7 +27,7 @@ COPY packages/core ./packages/core
 RUN bun --filter '@fontsource-utils/core' build
 RUN bun run ./api/worker/container/build.ts
 
-FROM gcr.io/distroless/base-debian13:nonroot AS runtime
+FROM gcr.io/distroless/cc-debian13:nonroot AS runtime
 
 WORKDIR /app
 
