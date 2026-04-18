@@ -41,6 +41,8 @@ const resp500Tagged = (tag: BuildVersionTag, error: unknown): Response => {
 	);
 };
 
+console.log(`[container] listening on port ${PORT}`);
+
 Bun.serve({
 	port: PORT,
 	routes: {
@@ -57,10 +59,26 @@ Bun.serve({
 						);
 					}
 
+					console.log(
+						`[container] POST /build-version ${payload.tag.id}@${payload.tag.version}`,
+					);
+
 					const snapshot = await ensureBuilt(payload);
+
+					console.log(
+						`[container] build complete ${snapshot.buildKey} — ${snapshot.artifactCount} artifacts in ${snapshot.durationMs}ms`,
+					);
 
 					return Response.json(snapshot, { status: 200 });
 				} catch (error) {
+					console.error(
+						`[container] build failed`,
+						payload
+							? `${payload.tag.id}@${payload.tag.version}`
+							: '(no payload)',
+						error,
+					);
+
 					if (payload) {
 						return resp500Tagged(payload.tag, error);
 					}
@@ -70,5 +88,10 @@ Bun.serve({
 			},
 		},
 	},
-	fetch: () => resp404(),
+	fetch: (request) => {
+		console.warn(
+			`[container] unmatched request ${request.method} ${new URL(request.url).pathname}`,
+		);
+		return resp404();
+	},
 });

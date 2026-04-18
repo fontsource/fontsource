@@ -19,8 +19,14 @@ export const ensureBuilt = async (
 	request: BuildVersionRequest,
 ): Promise<BuildSnapshot> => {
 	if (buildFlight) {
+		console.log(
+			`[builder] dedup — joining existing in-flight build for ${getBuildKey(request.tag)}`,
+		);
 		return await buildFlight;
 	}
+
+	const buildKey = getBuildKey(request.tag);
+	console.log(`[builder] starting build ${buildKey}`);
 
 	// No existing build in-flight. Start a new one and share the promise for
 	// concurrent requests until it settles.
@@ -42,12 +48,17 @@ const executeBuild = async (
 	const startedAt = Date.now();
 	const buildKey = getBuildKey(request.tag);
 	const artifactCount = await buildArtifacts(request);
+	const durationMs = Date.now() - startedAt;
+
+	console.log(
+		`[builder] finished ${buildKey} — ${artifactCount} artifacts, ${durationMs}ms`,
+	);
 
 	return {
 		state: 'ready',
 		buildKey,
 		artifactCount,
-		durationMs: Date.now() - startedAt,
+		durationMs,
 		builtAt: new Date().toISOString(),
 	};
 };

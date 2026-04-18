@@ -23,7 +23,7 @@ import {
 	type StaticArtifactPlanItem,
 	type VariableArtifactPlanItem,
 } from './manifest';
-import { putObject } from './r2';
+import { getObjectBytes, listKeys, putObject } from './r2';
 
 interface BuiltArtifact {
 	archivePath: string;
@@ -91,6 +91,10 @@ const buildStaticArtifacts = async (
 		(item) => item.buildMode === 'convert-woff-to-ttf',
 	);
 
+	console.log(
+		`[artifacts] static plan — ${copyPlan.length} copy, ${convertPlan.length} convert`,
+	);
+
 	const copied = await Promise.all(
 		copyPlan.map(
 			limitConcur(8, async (item) =>
@@ -143,6 +147,8 @@ const buildVariableArtifacts = async (
 		return [];
 	}
 
+	console.log(`[artifacts] variable plan — ${manifest.length} items`);
+
 	return Promise.all(
 		manifest.map(
 			limitConcur(8, async (item) =>
@@ -162,7 +168,8 @@ const buildVariableArtifacts = async (
 };
 
 /**
- * Builds the full exact-version artifact set and stores one combined family zip.
+ * Builds the exact-version artifact set, skipping anything that already exists
+ * in R2 and creating the combined family zip only when it is missing.
  */
 export const buildArtifacts = async (
 	request: BuildVersionRequest,
@@ -171,49 +178,181 @@ export const buildArtifacts = async (
 	const staticManifest = generateStaticManifest(metadata);
 	const variableManifest = axes ? generateVariableManifest(metadata, axes) : [];
 
-	const staticArtifacts =
-		(await ignoreUpstream404(buildStaticArtifacts(tag, staticManifest))) ?? [];
-	const variableArtifacts =
-		(await ignoreUpstream404(buildVariableArtifacts(tag, variableManifest))) ??
+	console.log(
+		`[artifacts] ${tag.id}@${tag.version} — manifest: ${staticManifest.length} static, ${variableManifest.length} variable`,
+	);
+
+	// Resolve R2 keys for every individual artifact and the download zip.
+	const staticKeys = staticManifest.map((item) =>
+		getStaticAssetKey(tag.id, tag.version, item.filename),
+	);
+	const variableKeys = variableManifest.map((item) =>
+		getVariableAssetKey(tag.id, tag.version, item.filename),
+	);
+	const downloadKey = getDownloadKey(tag.id, tag.version);
+
+	// One listing call to discover everything already stored for this version.
+	const existing = await listKeys(`${tag.id}@${tag.version}/`);
+
+	const totalCount = staticKeys.length + variableKeys.length + 1;
+
+	// Fast path: every artifact and the zip already exist.
+	if (
+		existing.has(downloadKey) &&
+		staticKeys.every((k) => existing.has(k)) &&
+		variableKeys.every((k) => existing.has(k))
+	) {
+		console.log(
+			`[artifacts] fast path — all ${totalCount} artifacts already in R2`,
+		);
+		return totalCount;
+	}
+
+	// Build only the missing individual artifacts.
+	const missingStatic = staticManifest.filter(
+		(_, i) => !existing.has(staticKeys[i]),
+	);
+	const missingVariable = variableManifest.filter(
+		(_, i) => !existing.has(variableKeys[i]),
+	);
+
+	console.log(
+		`[artifacts] missing: ${missingStatic.length} static, ${missingVariable.length} variable, zip=${!existing.has(downloadKey) ? 'yes' : 'no'}`,
+	);
+
+	const newStaticArtifacts =
+		(await ignoreUpstream404(buildStaticArtifacts(tag, missingStatic))) ?? [];
+	const newVariableArtifacts =
+		(await ignoreUpstream404(buildVariableArtifacts(tag, missingVariable))) ??
 		[];
+	const newArtifacts = [...newStaticArtifacts, ...newVariableArtifacts];
 
-	const allArtifacts = [...staticArtifacts, ...variableArtifacts];
+	console.log(`[artifacts] built ${newArtifacts.length} new artifacts`);
 
-	if (allArtifacts.length === 0) {
+	if (
+		newArtifacts.length === 0 &&
+		missingStatic.length + missingVariable.length > 0
+	) {
 		throw new Error(`No artifacts published for ${tag.id}@${tag.version}`);
 	}
 
-	// Resolve LICENSE from the static or variable package.
-	const license =
-		(staticArtifacts.length > 0
-			? await ignoreUpstream404(
-					fetchPackageLicenseBytes(tag.id, tag.version, false),
-				)
-			: undefined) ??
-		(variableArtifacts.length > 0
-			? await ignoreUpstream404(
-					fetchPackageLicenseBytes(tag.id, tag.version, true),
-				)
-			: undefined);
+	// Build the download zip only when it is missing.
+	if (!existing.has(downloadKey)) {
+		console.log(`[artifacts] assembling download zip`);
 
-	if (!license) {
-		throw new Error(`Missing LICENSE for ${tag.id}@${tag.version}`);
+		// Index freshly-built bytes by R2 key for quick lookup.
+		const builtByKey = new Map<string, BuiltArtifact>();
+		for (let i = 0; i < newStaticArtifacts.length; i++) {
+			builtByKey.set(
+				getStaticAssetKey(
+					tag.id,
+					tag.version,
+					missingStatic[i].filename,
+				),
+				newStaticArtifacts[i],
+			);
+		}
+		for (let i = 0; i < newVariableArtifacts.length; i++) {
+			builtByKey.set(
+				getVariableAssetKey(
+					tag.id,
+					tag.version,
+					missingVariable[i].filename,
+				),
+				newVariableArtifacts[i],
+			);
+		}
+
+		// Collect every artifact for the archive: freshly built from memory,
+		// pre-existing from R2.
+		const allManifestEntries = [
+			...staticManifest.map((item, i) => ({ item, key: staticKeys[i] })),
+			...variableManifest.map((item, i) => ({
+				item,
+				key: variableKeys[i],
+			})),
+		];
+
+		let fetchedFromR2 = 0;
+
+		const allArtifactEntries = await Promise.all(
+			allManifestEntries.map(
+				limitConcur(16, async ({ item, key }) => {
+					const built = builtByKey.get(key);
+					if (built) return built;
+
+					// Pre-existing artifact — download from R2.
+					fetchedFromR2++;
+					const bytes = await getObjectBytes(key);
+					if (!bytes) {
+						throw new Error(
+							`Expected artifact ${key} not found in R2`,
+						);
+					}
+
+					return {
+						archivePath: item.archivePath,
+						bytes,
+						compress: item.buildMode === 'copy',
+					} as BuiltArtifact;
+				}),
+			),
+		);
+
+		if (fetchedFromR2 > 0) {
+			console.log(
+				`[artifacts] fetched ${fetchedFromR2} pre-existing artifacts from R2 for zip`,
+			);
+		}
+
+		if (allArtifactEntries.length === 0) {
+			throw new Error(`No artifacts for zip: ${tag.id}@${tag.version}`);
+		}
+
+		// Resolve LICENSE from the static or variable package.
+		const license =
+			(staticManifest.length > 0
+				? await ignoreUpstream404(
+						fetchPackageLicenseBytes(tag.id, tag.version, false),
+					)
+				: undefined) ??
+			(variableManifest.length > 0
+				? await ignoreUpstream404(
+						fetchPackageLicenseBytes(tag.id, tag.version, true),
+					)
+				: undefined);
+
+		if (!license) {
+			throw new Error(`Missing LICENSE for ${tag.id}@${tag.version}`);
+		}
+
+		const archiveFiles: Zippable = Object.fromEntries([
+			...allArtifactEntries.map((artifact) => [
+				artifact.archivePath,
+				artifact.compress
+					? [artifact.bytes, { level: 0 }]
+					: artifact.bytes,
+			]),
+			['LICENSE', license],
+		]);
+
+		await putObject(
+			getDownloadKey(tag.id, tag.version),
+			zipSync(archiveFiles),
+			{
+				cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
+				contentDisposition: getDownloadContentDisposition(
+					tag.id,
+					tag.version,
+				),
+				contentType: BINARY_CONTENT_TYPES.zip,
+			},
+		);
+
+		console.log(
+			`[artifacts] zip uploaded (${allArtifactEntries.length} entries + LICENSE)`,
+		);
 	}
 
-	// Build the combined zip archive.
-	const archiveFiles: Zippable = Object.fromEntries([
-		...allArtifacts.map((artifact) => [
-			artifact.archivePath,
-			artifact.compress ? [artifact.bytes, { level: 0 }] : artifact.bytes,
-		]),
-		['LICENSE', license],
-	]);
-
-	await putObject(getDownloadKey(tag.id, tag.version), zipSync(archiveFiles), {
-		cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-		contentDisposition: getDownloadContentDisposition(tag.id, tag.version),
-		contentType: BINARY_CONTENT_TYPES.zip,
-	});
-
-	return allArtifacts.length + 1;
+	return totalCount;
 };

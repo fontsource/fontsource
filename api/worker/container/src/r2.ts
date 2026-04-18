@@ -69,4 +69,67 @@ export const putObject = async (
 			`Failed to upload ${key}: ${response.status} ${text || response.statusText}`,
 		);
 	}
+
+	console.log(`[r2] PUT ${key} (${body.byteLength} bytes)`);
+};
+
+/**
+ * Lists all object keys under a given prefix via S3 ListObjectsV2.
+ * Handles pagination automatically.
+ */
+export const listKeys = async (prefix: string): Promise<Set<string>> => {
+	const keys = new Set<string>();
+	let token: string | undefined;
+	let pages = 0;
+
+	do {
+		const url = new URL(`${client.endpoint}/${client.bucket}`);
+		url.searchParams.set('list-type', '2');
+		url.searchParams.set('prefix', prefix);
+		if (token) {
+			url.searchParams.set('continuation-token', token);
+		}
+
+		const response = await client.client.fetch(url.toString());
+		if (!response.ok) {
+			console.warn(
+				`[r2] ListObjectsV2 failed for prefix="${prefix}": ${response.status}`,
+			);
+			break;
+		}
+
+		pages++;
+		const xml = await response.text();
+		for (const [, key] of xml.matchAll(/<Key>([^<]+)<\/Key>/g)) {
+			keys.add(key);
+		}
+
+		token = /<IsTruncated>true<\/IsTruncated>/.test(xml)
+			? xml.match(
+					/<NextContinuationToken>([^<]+)<\/NextContinuationToken>/,
+				)?.[1]
+			: undefined;
+	} while (token);
+
+	console.log(
+		`[r2] LIST prefix="${prefix}" found ${keys.size} keys (${pages} page${pages !== 1 ? 's' : ''})`,
+	);
+
+	return keys;
+};
+
+/**
+ * Downloads an object's bytes from R2. Returns null when the key does not exist.
+ */
+export const getObjectBytes = async (
+	key: string,
+): Promise<Uint8Array | null> => {
+	const response = await client.client.fetch(buildObjectUrl(key));
+	if (!response.ok) {
+		console.log(`[r2] GET ${key} — not found`);
+		return null;
+	}
+	const bytes = new Uint8Array(await response.arrayBuffer());
+	console.log(`[r2] GET ${key} (${bytes.byteLength} bytes)`);
+	return bytes;
 };

@@ -28,6 +28,7 @@ export class ArtifactBuilder extends Container<Env> {
 			},
 		});
 
+		// Timeout guards against a hung container stalling the worker request.
 		const response = await this.containerFetch(
 			`http://localhost:${this.defaultPort}/build-version`,
 			{
@@ -36,6 +37,7 @@ export class ArtifactBuilder extends Container<Env> {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(request),
+				signal: AbortSignal.timeout(120_000),
 			},
 		);
 

@@ -1,6 +1,5 @@
 import { fromHono } from 'chanfana';
 import { Hono } from 'hono';
-import { HTTPException } from 'hono/http-exception';
 import { cors } from 'hono/cors';
 import { etag, RETAINED_304_HEADERS } from 'hono/etag';
 
@@ -134,37 +133,6 @@ app.notFound((c) =>
 
 app.onError(async (error, c) => {
 	console.error(error);
-
-	// Chanfana v3 wraps validation/API errors as HTTPException with a pre-built
-	// response body (no .message). Parse and reformat into our { status, error }
-	// envelope so the API surface stays consistent.
-	if (error instanceof HTTPException && error.res) {
-		try {
-			const body = (await error.res.clone().json()) as {
-				errors?: Array<{ message: string; path?: string[] | null }>;
-			};
-			if (Array.isArray(body.errors) && body.errors.length > 0) {
-				const parts = body.errors.map(({ message, path }) =>
-					Array.isArray(path) && path.length > 0
-						? `${path.join('.')}: ${message}`
-						: message,
-				);
-				return c.json(
-					{
-						status: error.status,
-						error:
-							error.status === 400
-								? `Bad Request. ${parts.join('; ')}.`
-								: parts[0],
-					},
-					error.status as 400 | 404 | 500 | 502,
-				);
-			}
-		} catch {
-			// fall through to default handling
-		}
-	}
-
 	return toErrorResponse(c, error);
 });
 
