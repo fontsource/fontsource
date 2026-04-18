@@ -1,0 +1,15 @@
+{
+	"extends": "../worker/tsconfig.json",
+	"compilerOptions": {
+		"types": ["@cloudflare/vitest-pool-workers", "vite/client"]
+	},
+	"include": [
+		"./**/*.ts",
+		"./**/*.d.ts",
+		"../worker/src/**/*.ts",
+		"../worker/src/**/*.d.ts",
+		"../shared/**/*.ts",
+		"../shared/**/*.d.ts",
+		"../worker-configuration.d.ts"
+	]
+}

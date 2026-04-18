@@ -31,7 +31,7 @@
 		"website"
 	],
 	"overrides": {
-		"vite": "^8.0.1"
+		"vite": "^8.0.3"
 	},
 	"publishConfig": {
 		"access": "public"

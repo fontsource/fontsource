@@ -1,0 +1,110 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = `
+{
+  "body": "/* abel-latin-400-normal */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abel@1.0.0/latin-400-normal.woff2) format('woff2'),
+       url(https://cdn.jsdelivr.net/fontsource/fonts/abel@1.0.0/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF;
+}",
+  "headers": {
+    "cacheControl": "public, max-age=300, stale-while-revalidate=86400",
+    "contentType": "text/css; charset=utf-8",
+    "etag": "<etag>",
+    "lastModified": "<last-modified>",
+  },
+  "status": 200,
+}
+`;
+
+exports[`cdn routes > public asset outputs > serves zip archives with correct file listings 1`] = `
+{
+  "abel": {
+    "files": [
+      "LICENSE",
+      "static/ttf/abel-latin-400-normal.ttf",
+      "static/webfonts/abel-latin-400-normal.woff",
+      "static/webfonts/abel-latin-400-normal.woff2",
+    ],
+    "headers": {
+      "cacheControl": "public, max-age=31536000, immutable",
+      "contentDisposition": "attachment; filename="abel_1.0.0.zip"",
+      "contentType": "application/zip",
+      "etag": "<etag>",
+      "lastModified": "<last-modified>",
+    },
+    "status": 200,
+  },
+  "recursive": {
+    "files": [
+      "LICENSE",
+      "static/ttf/recursive-latin-400-normal.ttf",
+      "static/webfonts/recursive-latin-400-normal.woff",
+      "static/webfonts/recursive-latin-400-normal.woff2",
+      "variable/webfonts/recursive-latin-full-normal.woff2",
+      "variable/webfonts/recursive-latin-mono-normal.woff2",
+    ],
+    "headers": {
+      "cacheControl": "public, max-age=31536000, immutable",
+      "contentDisposition": "attachment; filename="recursive_1.0.0.zip"",
+      "contentType": "application/zip",
+      "etag": "<etag>",
+      "lastModified": "<last-modified>",
+    },
+    "status": 200,
+  },
+}
+`;
+
+exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
+{
+  "body": {
+    "error": "Bad Gateway. Artifact build failed for build:abel@1.0.0: Mocked builder failure for build:abel@1.0.0",
+    "status": 502,
+  },
+  "headers": {
+    "contentType": "application/json",
+  },
+  "status": 502,
+}
+`;
+
+exports[`cdn routes > returns 502 when version lookup upstream fails 1`] = `
+{
+  "body": {
+    "error": "Bad Gateway. Failed to fetch https://data.jsdelivr.com/v1/packages/npm/@fontsource/recursive: 500",
+    "status": 502,
+  },
+  "headers": {
+    "contentType": "application/json",
+    "etag": "<etag>",
+  },
+  "status": 502,
+}
+`;
+
+exports[`cdn routes > stores HTTP metadata on built binaries and download archives 1`] = `
+{
+  "buildCalls": 1,
+  "static": {
+    "cacheControl": "public, max-age=31536000, immutable",
+    "contentDisposition": "",
+    "contentType": "font/woff2",
+  },
+  "variable": {
+    "cacheControl": "public, max-age=31536000, immutable",
+    "contentDisposition": "",
+    "contentType": "font/woff2",
+  },
+  "zip": {
+    "cacheControl": "public, max-age=31536000, immutable",
+    "contentDisposition": "attachment; filename="recursive_1.0.0.zip"",
+    "contentType": "application/zip",
+  },
+}
+`;

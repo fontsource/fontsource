@@ -402,10 +402,6 @@ describe('renderFontFace', () => {
 	});
 });
 
-// ---------------------------------------------------------------------------
-// generateFaceCSSAssets — grouped file output snapshots
-// ---------------------------------------------------------------------------
-
 describe('generateFaceCSSAssets', () => {
 	it('static: two subsets, two weights, two styles', async () => {
 		const variants: FontFace[] = ['latin', 'latin-ext'].flatMap((subset) => {
@@ -746,10 +742,6 @@ describe('generateFaceCSSAssets', () => {
 		);
 	});
 });
-
-// ---------------------------------------------------------------------------
-// generateCSS — convenience wrapper
-// ---------------------------------------------------------------------------
 
 describe('generateCSS', () => {
 	it('static config expands correctly', async () => {

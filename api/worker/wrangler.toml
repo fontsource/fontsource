@@ -1,0 +1,69 @@
+name = "fontsource-worker-api"
+main = "worker/src/index.ts"
+compatibility_date = "2026-04-05"
+compatibility_flags = ["nodejs_compat"]
+
+kv_namespaces = [
+  { binding = "METADATA", id = "49e9d329349446cf948f84af9828914f" },
+]
+
+r2_buckets = [
+  { binding = "FONTS", bucket_name = "fonts", preview_bucket_name = "fonts-preview" },
+]
+
+[[durable_objects.bindings]]
+name = "ARTIFACT_BUILDER"
+class_name = "ArtifactBuilder"
+
+[[migrations]]
+tag = "artifact-builder-v1"
+new_sqlite_classes = ["ArtifactBuilder"]
+
+[[containers]]
+class_name = "ArtifactBuilder"
+image = "./container/Dockerfile"
+image_build_context = "../.."
+instance_type = "standard-3"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = true
+invocation_logs = false
+
+[triggers]
+crons = ["0 */3 * * *"]
+
+[vars]
+FONTS_BUCKET_NAME = "fonts"
+
+[env.staging]
+name = "fontsource-worker-api-staging"
+
+[env.staging.triggers]
+crons = []
+
+[env.staging.vars]
+FONTS_BUCKET_NAME = "fonts-preview"
+
+[[env.staging.kv_namespaces]]
+binding = "METADATA"
+id = "49e9d329349446cf948f84af9828914f"
+
+[[env.staging.r2_buckets]]
+binding = "FONTS"
+bucket_name = "fonts-preview"
+preview_bucket_name = "fonts-preview"
+
+[[env.staging.durable_objects.bindings]]
+name = "ARTIFACT_BUILDER"
+class_name = "ArtifactBuilder"
+
+[[env.staging.containers]]
+name = "fontsource-worker-api-artifactbuilder-staging"
+class_name = "ArtifactBuilder"
+image = "./container/Dockerfile"
+image_build_context = "../.."
+instance_type = "standard-3"
