@@ -1,4 +1,4 @@
-import { contentJson } from 'chanfana';
+import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
 import type { AppEnv } from '../env';
@@ -29,11 +29,10 @@ import {
 	VariableFontDetailSchema,
 	VersionResponseSchema,
 } from '../schemas/metadata';
-import { FontsourceRoute } from './base';
 
 type AppContext = Context<AppEnv>;
 
-export class ListFontValuesRoute extends FontsourceRoute {
+export class ListFontValuesRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'listFontValues',
@@ -61,7 +60,7 @@ export class ListFontValuesRoute extends FontsourceRoute {
 	}
 }
 
-export class ListFontsRoute extends FontsourceRoute {
+export class ListFontsRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'listFonts',
@@ -85,7 +84,7 @@ export class ListFontsRoute extends FontsourceRoute {
 	}
 }
 
-export class GetFontRoute extends FontsourceRoute {
+export class GetFontRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'getFont',
@@ -113,7 +112,7 @@ export class GetFontRoute extends FontsourceRoute {
 	}
 }
 
-export class ListVariableFontsRoute extends FontsourceRoute {
+export class ListVariableFontsRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'listVariableFonts',
@@ -133,7 +132,7 @@ export class ListVariableFontsRoute extends FontsourceRoute {
 	}
 }
 
-export class GetVariableFontRoute extends FontsourceRoute {
+export class GetVariableFontRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'getVariableFont',
@@ -160,7 +159,7 @@ export class GetVariableFontRoute extends FontsourceRoute {
 	}
 }
 
-export class ListAxisRegistryRoute extends FontsourceRoute {
+export class ListAxisRegistryRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'listAxisRegistry',
@@ -189,7 +188,7 @@ export class ListAxisRegistryRoute extends FontsourceRoute {
 	}
 }
 
-export class ListStatsRoute extends FontsourceRoute {
+export class ListStatsRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'listStats',
@@ -209,7 +208,7 @@ export class ListStatsRoute extends FontsourceRoute {
 	}
 }
 
-export class GetFontStatsRoute extends FontsourceRoute {
+export class GetFontStatsRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'getFontStats',
@@ -237,7 +236,7 @@ export class GetFontStatsRoute extends FontsourceRoute {
 	}
 }
 
-export class GetFontVersionsRoute extends FontsourceRoute {
+export class GetFontVersionsRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Metadata'],
 		operationId: 'getFontVersions',

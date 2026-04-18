@@ -28,13 +28,16 @@ export class ArtifactBuilder extends Container<Env> {
 			},
 		});
 
-		const response = await this.containerFetch('/build-version', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+		const response = await this.containerFetch(
+			`http://localhost:${this.defaultPort}/build-version`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(request),
 			},
-			body: JSON.stringify(request),
-		});
+		);
 
 		if (!response.ok) {
 			let message = response.statusText;

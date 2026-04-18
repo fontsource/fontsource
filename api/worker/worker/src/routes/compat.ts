@@ -1,4 +1,4 @@
-import { contentJson } from 'chanfana';
+import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
 import { CACHE_HEADERS, UPSTREAM_URLS } from '../constants';
@@ -9,11 +9,10 @@ import {
 	FileRedirectParamSchema,
 	IdParamSchema,
 } from '../schemas/common';
-import { FontsourceRoute } from './base';
 
 type AppContext = Context<AppEnv>;
 
-export class DownloadFontRoute extends FontsourceRoute {
+export class DownloadFontRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Downloads'],
 		operationId: 'downloadFont',
@@ -52,7 +51,7 @@ export class DownloadFontRoute extends FontsourceRoute {
 	}
 }
 
-export class LegacyFontFileRedirectRoute extends FontsourceRoute {
+export class LegacyFontFileRedirectRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Compatibility'],
 		operationId: 'legacyFontFileRedirect',

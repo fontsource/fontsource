@@ -1,4 +1,4 @@
-import { contentJson } from 'chanfana';
+import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
 import { CACHE_HEADERS, UPSTREAM_URLS } from '../constants';
@@ -6,11 +6,10 @@ import type { AppEnv } from '../env';
 import { getBinaryAsset, getCssFile } from '../features/cdn/handler';
 import { parseFontTag } from '../features/font-tag';
 import { ErrorResponseSchema, TagFileParamSchema } from '../schemas/common';
-import { FontsourceRoute } from './base';
 
 type AppContext = Context<AppEnv>;
 
-export class GetBinaryAssetRoute extends FontsourceRoute {
+export class GetBinaryAssetRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['CDN'],
 		operationId: 'getBinaryAsset',
@@ -97,7 +96,7 @@ export class GetBinaryAssetRoute extends FontsourceRoute {
 	}
 }
 
-export class GetCssFileRoute extends FontsourceRoute {
+export class GetCssFileRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['CDN'],
 		operationId: 'getCssFile',
