@@ -97,7 +97,7 @@ describe('metadata routes', () => {
 		);
 	});
 
-	it('redirects legacy font download aliases to the canonical download endpoint', async () => {
+	it('redirects legacy font download aliases to jsDelivr like the public API', async () => {
 		const { response, settle } = await dispatch(
 			new Request('https://fontsource.test/v1/fonts/abel/download.zip', {
 				redirect: 'manual',
@@ -105,9 +105,9 @@ describe('metadata routes', () => {
 		);
 		await settle();
 
-		expect(response.status).toBe(302);
+		expect(response.status).toBe(301);
 		expect(response.headers.get('Location')).toBe(
-			'https://api.fontsource.org/v1/download/abel',
+			'https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/download.zip',
 		);
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
@@ -127,6 +127,28 @@ describe('metadata routes', () => {
 		expect(response.headers.get('Location')).toBe(
 			'https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff2',
 		);
+	});
+
+	it('describes the current deployment and production servers in openapi', async () => {
+		const { response, settle } = await dispatch(
+			'https://fontsource.test/openapi.json',
+		);
+		const document = (await response.json()) as {
+			servers: Array<{ url: string; description: string }>;
+		};
+		await settle();
+
+		expect(response.status).toBe(200);
+		expect(document.servers).toEqual([
+			{
+				url: '/',
+				description: 'Current deployment',
+			},
+			{
+				url: 'https://api.fontsource.org',
+				description: 'Production',
+			},
+		]);
 	});
 
 	it('refreshes scheduled metadata caches from upstream', async () => {

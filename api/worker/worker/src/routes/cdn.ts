@@ -1,7 +1,7 @@
 import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
-import { CACHE_HEADERS, UPSTREAM_URLS } from '../constants';
+import { CACHE_HEADERS } from '../constants';
 import type { AppEnv } from '../env';
 import { getBinaryAsset, getCssFile } from '../features/cdn/handler';
 import { parseFontTag } from '../features/font-tag';
@@ -72,13 +72,14 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 		// pre-built archive without stale-cache issues.
 		if (file === 'download.zip') {
 			const parsedTag = parseFontTag(tag);
+			const deploymentOrigin = new URL(c.req.url).origin;
 
 			if (parsedTag.isVariable) {
 				c.header('Cache-Control', CACHE_HEADERS.redirect);
 				return c.redirect(
 					parsedTag.version === 'latest'
-						? `${UPSTREAM_URLS.publicApi}/v1/download/${parsedTag.id}`
-						: `${UPSTREAM_URLS.publicApi}/fonts/${parsedTag.id}@${parsedTag.version}/download.zip`,
+						? `${deploymentOrigin}/v1/download/${parsedTag.id}`
+						: `${deploymentOrigin}/fonts/${parsedTag.id}@${parsedTag.version}/download.zip`,
 					302,
 				);
 			}
@@ -86,7 +87,7 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 			if (parsedTag.version === 'latest') {
 				c.header('Cache-Control', CACHE_HEADERS.redirect);
 				return c.redirect(
-					`${UPSTREAM_URLS.publicApi}/v1/download/${parsedTag.id}`,
+					`${deploymentOrigin}/v1/download/${parsedTag.id}`,
 					302,
 				);
 			}

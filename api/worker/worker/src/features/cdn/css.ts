@@ -1,7 +1,9 @@
 import {
 	type CSSAsset,
 	type CSSOptions,
+	type FontConfig,
 	generateCSSAssets,
+	resolvePublishedFaces,
 } from '@fontsource-utils/core';
 import type { Context } from 'hono';
 import type {
@@ -25,6 +27,16 @@ const PUBLIC_CDN_BASE = new URL(`${UPSTREAM_URLS.publicCdn}/`);
 const buildPublicUrl = (path: string): string =>
 	new URL(path, PUBLIC_CDN_BASE).toString();
 
+const getPublicFilenameMap = (
+	config: FontConfig,
+	options: CSSOptions,
+): Map<string, string> =>
+	new Map(
+		resolvePublishedFaces(config, options).flatMap((face) =>
+			face.sources.map((source) => [source.filename, source.publicFilename]),
+		),
+	);
+
 const createCssResponse = (
 	content: string,
 	requestedVersion: string,
@@ -43,70 +55,43 @@ const createCssResponse = (
 };
 
 /**
- * Generates all CSS assets for a static font package and returns the one
- * matching `filename`, or `undefined` if no asset by that name exists.
+ * Generates all CSS assets for a font package (static or variable) and returns
+ * the one matching `filename`, or `undefined` if no asset by that name exists.
  */
-const findStaticCssAsset = (
+const findCssAsset = (
 	metadata: SourceFontMetadata,
 	filename: string,
-	options: CSSOptions & {
-		resolveUrl: (input: {
-			subset: string;
-			weight: number;
-			style: string;
-			extension: 'woff2' | 'woff';
-		}) => string;
+	resolvedTag: string,
+	options: {
+		display: CSSOptions['display'];
+		axes?: VariableAxes;
 	},
-) =>
-	generateCSSAssets(buildFontConfig(metadata, { formats: ['woff2', 'woff'] }), {
+): CSSAsset | undefined => {
+	const formats: FontConfig['formats'] = options.axes
+		? ['woff2']
+		: ['woff2', 'woff'];
+	const config = buildFontConfig(metadata, { formats, axes: options.axes });
+	const publicFilenameMap = getPublicFilenameMap(config, options);
+
+	return generateCSSAssets(config, {
 		...options,
 		resolver: ({ face, source }) => {
-			if (
-				typeof face.weight !== 'number' ||
-				(source.format !== 'woff2' && source.format !== 'woff')
-			) {
-				throw new Error(`Invalid static CSS source "${source.filename}"`);
+			if (options.axes) {
+				if (!face.axisKey || source.format !== 'woff2') {
+					throw new Error(`Invalid variable CSS source "${source.filename}"`);
+				}
+			} else {
+				if (source.format !== 'woff2' && source.format !== 'woff') {
+					throw new Error(`Invalid static CSS source "${source.filename}"`);
+				}
 			}
 
-			return options.resolveUrl({
-				subset: face.subset,
-				weight: face.weight,
-				style: face.style,
-				extension: source.format,
-			});
+			const publicFilename =
+				publicFilenameMap.get(source.filename) ?? source.filename;
+			return buildPublicUrl(`fonts/${resolvedTag}/${publicFilename}`);
 		},
 	}).find((asset) => asset.filename === filename);
-
-/**
- * Generates all CSS assets for a variable font package and returns the one
- * matching `filename`, or `undefined` if no asset by that name exists.
- */
-const findVariableCssAsset = (
-	metadata: SourceFontMetadata,
-	axes: VariableAxes,
-	filename: string,
-	options: CSSOptions & {
-		resolveUrl: (input: {
-			subset: string;
-			axisKey: string;
-			style: string;
-		}) => string;
-	},
-) =>
-	generateCSSAssets(buildFontConfig(metadata, { formats: ['woff2'], axes }), {
-		...options,
-		resolver: ({ face, source }) => {
-			if (!face.axisKey || source.format !== 'woff2') {
-				throw new Error(`Invalid variable CSS source "${source.filename}"`);
-			}
-
-			return options.resolveUrl({
-				subset: face.subset,
-				axisKey: face.axisKey,
-				style: face.style,
-			});
-		},
-	}).find((asset) => asset.filename === filename);
+};
 
 /**
  * Builds one CSS response for the public CDN route.
@@ -117,31 +102,19 @@ export const getCssAsset = async (
 	filename: string,
 ): Promise<Response> => {
 	const { tag, metadata, axes } = await resolveFontRequest(c, rawTag);
+
+	if (tag.isVariable && !axes) {
+		throw notFound(`Not Found. Variable metadata for ${tag.id} not found.`);
+	}
+
 	const resolvedTag = tag.isVariable
 		? `${tag.id}:vf@${tag.version}`
 		: `${tag.id}@${tag.version}`;
-	let asset: CSSAsset | undefined;
-	if (tag.isVariable) {
-		if (!axes) {
-			throw notFound(`Not Found. Variable metadata for ${tag.id} not found.`);
-		}
 
-		asset = findVariableCssAsset(metadata, axes, filename, {
-			display: CSS_DISPLAY,
-			resolveUrl: ({ subset, axisKey, style }) =>
-				buildPublicUrl(
-					`fonts/${resolvedTag}/${subset}-${axisKey.toLowerCase()}-${style}.woff2`,
-				),
-		});
-	} else {
-		asset = findStaticCssAsset(metadata, filename, {
-			display: CSS_DISPLAY,
-			resolveUrl: ({ subset, weight, style, extension }) =>
-				buildPublicUrl(
-					`fonts/${resolvedTag}/${subset}-${weight}-${style}.${extension}`,
-				),
-		});
-	}
+	const asset = findCssAsset(metadata, filename, resolvedTag, {
+		display: CSS_DISPLAY,
+		axes: tag.isVariable ? axes : undefined,
+	});
 
 	if (!asset) {
 		throw notFound('Not Found. File does not exist.');

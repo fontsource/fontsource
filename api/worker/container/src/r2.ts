@@ -59,7 +59,7 @@ export const putObject = async (
 
 	const response = await client.client.fetch(buildObjectUrl(key), {
 		method: 'PUT',
-		body: body as unknown as BodyInit,
+		body: body.slice(),
 		headers,
 	});
 

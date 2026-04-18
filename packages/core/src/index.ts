@@ -17,6 +17,8 @@ export type {
 	FontFileFormat,
 	FontSource,
 	FontStyle,
+	PublishedFontFace,
+	PublishedFontSource,
 	StaticFontBuildConfig,
 	VariableAxisConfig,
 	VariableAxisKey,
@@ -27,6 +29,7 @@ export type {
 export {
 	determineAxisKey,
 	resolveFontFaces,
+	resolvePublishedFaces,
 	getVariableAxisKeys,
 	selectVariableAxisKey,
 } from './utils';

@@ -18,11 +18,10 @@ import {
 	UpstreamNotFoundError,
 } from '../../shared/upstream';
 import {
-	generateStaticManifest,
-	generateVariableManifest,
-	type StaticArtifactPlanItem,
-	type VariableArtifactPlanItem,
-} from './manifest';
+	resolveFontPackageManifest,
+	type StaticFontEntry,
+	type VariableFontEntry,
+} from '../../shared/font-package-manifest';
 import { getObjectBytes, listKeys, putObject } from './r2';
 
 interface BuiltArtifact {
@@ -66,7 +65,7 @@ const storeArtifact = async (
 
 const buildStaticArtifacts = async (
 	tag: BuildVersionTag,
-	manifest: readonly StaticArtifactPlanItem[],
+	manifest: readonly StaticFontEntry[],
 ): Promise<BuiltArtifact[]> => {
 	if (manifest.length === 0) {
 		return [];
@@ -141,7 +140,7 @@ const buildStaticArtifacts = async (
 
 const buildVariableArtifacts = async (
 	tag: BuildVersionTag,
-	manifest: readonly VariableArtifactPlanItem[],
+	manifest: readonly VariableFontEntry[],
 ): Promise<BuiltArtifact[]> => {
 	if (manifest.length === 0) {
 		return [];
@@ -175,8 +174,7 @@ export const buildArtifacts = async (
 	request: BuildVersionRequest,
 ): Promise<number> => {
 	const { tag, metadata, axes } = request;
-	const staticManifest = generateStaticManifest(metadata);
-	const variableManifest = axes ? generateVariableManifest(metadata, axes) : [];
+	const { static: staticManifest, variable: variableManifest } = resolveFontPackageManifest(metadata, axes);
 
 	console.log(
 		`[artifacts] ${tag.id}@${tag.version} — manifest: ${staticManifest.length} static, ${variableManifest.length} variable`,

@@ -12,6 +12,7 @@ export interface ParsedFontTag {
 
 const VERSION_PREFIX_PATTERN = /^v/i;
 const EXACT_VERSION_PATTERN = /^\d+\.\d+\.\d+$/;
+const PUBLISHED_VERSION_PATTERN = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/;
 const MAJOR_ONLY_PATTERN = /^(\d+)$/;
 const MAJOR_MINOR_PATTERN = /^(\d+)\.(\d+)$/;
 
@@ -28,6 +29,30 @@ export const sortVersionsDesc = (versions: readonly string[]): string[] => {
 	return versions
 		.map(normalizeVersion)
 		.filter((value) => EXACT_VERSION_PATTERN.test(value))
+		.filter((value) => {
+			if (seen.has(value)) {
+				return false;
+			}
+
+			seen.add(value);
+			return true;
+		})
+		.sort((left, right) => compareVersions(right, left));
+};
+
+/**
+ * Normalises, deduplicates, and sorts the published version list for metadata
+ * responses. Unlike `sortVersionsDesc`, this retains prerelease entries so the
+ * public `/v1/version` payload matches the published registry.
+ */
+export const sortPublishedVersionsDesc = (
+	versions: readonly string[],
+): string[] => {
+	const seen = new Set<string>();
+
+	return versions
+		.map(normalizeVersion)
+		.filter((value) => PUBLISHED_VERSION_PATTERN.test(value))
 		.filter((value) => {
 			if (seen.has(value)) {
 				return false;

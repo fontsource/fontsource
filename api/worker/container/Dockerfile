@@ -27,11 +27,21 @@ COPY packages/core ./packages/core
 RUN bun --filter '@fontsource-utils/core' build
 RUN bun run ./api/worker/container/build.ts
 
+# Bun's compiled binary leaves @glypht/core worker-script and WASM URLs pointed
+# at the build-time node_modules path. Preserve that dist tree verbatim so the
+# runtime worker threads can resolve their sibling assets.
+RUN mkdir -p /runtime-assets && \
+    find /app/node_modules/.bun -path '*/node_modules/@glypht/core/dist' -type d | while read d; do \
+      mkdir -p "/runtime-assets$d" && \
+      cp -R "$d/." "/runtime-assets$d/"; \
+    done
+
 FROM gcr.io/distroless/cc-debian13:nonroot AS runtime
 
 WORKDIR /app
 
 COPY --from=build /app/api/worker/bin/artifact-builder /app/artifact-builder
+COPY --from=build /runtime-assets/app/ /app/
 
 EXPOSE 3000
 

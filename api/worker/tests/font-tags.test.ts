@@ -43,13 +43,13 @@ describe('font tag utilities', () => {
 		expect(
 			buildVersionResponse(
 				['1.0.0', '1.5.0', 'v1.2.0', '1.2.0', 'invalid'],
-				['v2.0.0', '1.7.0'],
+				['v2.0.0', '1.7.0', '1.7.0-alpha.1', 'invalid'],
 			),
 		).toEqual({
 			latest: '1.5.0',
 			static: ['1.5.0', '1.2.0', '1.0.0'],
 			latestVariable: '2.0.0',
-			variable: ['2.0.0', '1.7.0'],
+			variable: ['2.0.0', '1.7.0', '1.7.0-alpha.1'],
 		});
 	});
 

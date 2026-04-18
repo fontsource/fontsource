@@ -79,6 +79,10 @@ const openapi = fromHono(app, {
 		},
 		servers: [
 			{
+				url: '/',
+				description: 'Current deployment',
+			},
+			{
 				url: 'https://api.fontsource.org',
 				description: 'Production',
 			},

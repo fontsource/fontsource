@@ -13,7 +13,7 @@ import {
 	KV_KEYS,
 } from '../../constants';
 import type { AppEnv } from '../../env';
-import { sortVersionsDesc } from '../font-tag';
+import { sortPublishedVersionsDesc } from '../font-tag';
 import { buildFontIndex, buildVariableIndex } from './catalog-views';
 import { refreshAxisRegistry, refreshCatalog, refreshStats } from './refresh';
 
@@ -28,9 +28,9 @@ export const buildVersionResponse = (
 	staticVersions: readonly string[],
 	variableVersions?: readonly string[],
 ): VersionResponse => {
-	const sortedStatic = sortVersionsDesc(staticVersions);
+	const sortedStatic = sortPublishedVersionsDesc(staticVersions);
 	const sortedVariable = variableVersions
-		? sortVersionsDesc(variableVersions)
+		? sortPublishedVersionsDesc(variableVersions)
 		: undefined;
 
 	return {

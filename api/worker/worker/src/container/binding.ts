@@ -6,6 +6,28 @@ import type {
 } from '../../../shared/build';
 import { getBuilderStartupEnv } from '../env';
 
+export const readBuildErrorMessage = async (
+	response: Response,
+): Promise<string> => {
+	const fallback = response.statusText;
+	const body = await response.text();
+
+	if (!body) {
+		return fallback;
+	}
+
+	try {
+		const payload = JSON.parse(body) as {
+			error?: string;
+			message?: string;
+		};
+
+		return payload.error ?? payload.message ?? body;
+	} catch {
+		return body;
+	}
+};
+
 /**
  * Named container binding used to build one exact font version on demand.
  *
@@ -42,19 +64,7 @@ export class ArtifactBuilder extends Container<Env> {
 		);
 
 		if (!response.ok) {
-			let message = response.statusText;
-
-			try {
-				const payload = (await response.json()) as {
-					error?: string;
-					message?: string;
-				};
-				message = payload.error ?? payload.message ?? message;
-			} catch {
-				message = (await response.text()) || message;
-			}
-
-			throw new Error(message);
+			throw new Error(await readBuildErrorMessage(response));
 		}
 
 		const payload = (await response.json()) as BuildVersionResponse;
@@ -64,6 +74,9 @@ export class ArtifactBuilder extends Container<Env> {
 				payload.error ?? 'Artifact build did not complete successfully.',
 			);
 		}
+
+		// Stop the container immediately instead of waiting for the idle timeout.
+		this.stop().catch(() => {});
 
 		return payload;
 	}

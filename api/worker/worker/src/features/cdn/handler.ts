@@ -1,13 +1,10 @@
 import type { Context } from 'hono';
-import {
-	generateStaticManifest,
-	generateVariableManifest,
-} from '../../../../container/src/manifest';
 import type {
 	SourceFontMetadata,
 	VariableAxes,
 } from '../../../../shared/catalog';
 import { getDownloadAttachmentFilename } from '../../../../shared/http-metadata';
+import { resolveFontPackageManifest } from '../../../../shared/font-package-manifest';
 import { getBinaryKey } from '../../../../shared/storage';
 import { CACHE_HEADERS, CONTENT_TYPES } from '../../constants';
 import { ensureVersionBuilt } from '../../container/client';
@@ -203,24 +200,6 @@ const respondWithBinary = (
 	return new Response(body.body, { status: 200, headers });
 };
 
-/** Returns true when `file` is a valid output filename for the given static font package. */
-const isKnownStaticFile = (
-	file: string,
-	metadata: SourceFontMetadata,
-): boolean =>
-	file === 'download.zip' ||
-	generateStaticManifest(metadata).some((item) => item.filename === file);
-
-/** Returns true when `file` is a valid output filename for the given variable font package. */
-const isKnownVariableFile = (
-	file: string,
-	metadata: SourceFontMetadata,
-	axes: VariableAxes,
-): boolean =>
-	generateVariableManifest(metadata, axes).some(
-		(item) => item.filename === file,
-	);
-
 /**
  * Serves public binary assets from R2, building the exact version on demand if
  * the requested file has not been warmed yet.
@@ -255,20 +234,26 @@ export const getBinaryAsset = async (
 
 	// Resolve version (for floating) or validate font exists (for pinned)
 	const resolved = await resolveFontRequest(c, parsedTag);
+	const packageManifest = resolveFontPackageManifest(
+		resolved.metadata,
+		resolved.axes,
+	);
 
 	// Validate that the requested filename belongs to this package.
-	if (file !== 'download.zip' && resolved.tag.isVariable) {
-		if (!resolved.axes) {
-			throw notFound(
-				`Not Found. Variable metadata for ${resolved.tag.id} not found.`,
-			);
-		}
+	if (file !== 'download.zip') {
+		if (resolved.tag.isVariable) {
+			if (!resolved.axes) {
+				throw notFound(
+					`Not Found. Variable metadata for ${resolved.tag.id} not found.`,
+				);
+			}
 
-		if (!isKnownVariableFile(file, resolved.metadata, resolved.axes)) {
+			if (!packageManifest.variable.some((item) => item.filename === file)) {
+				throw notFound('Not Found. File does not exist.');
+			}
+		} else if (!packageManifest.static.some((item) => item.filename === file)) {
 			throw notFound('Not Found. File does not exist.');
 		}
-	} else if (!isKnownStaticFile(file, resolved.metadata)) {
-		throw notFound('Not Found. File does not exist.');
 	}
 
 	// For pinned versions, the fast-path already checked R2 and missed,

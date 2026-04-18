@@ -9,6 +9,7 @@ import {
 	formatSlantValue,
 	formatStretchValue,
 	getVariableAxisKeys,
+	resolvePublishedFaces,
 	resolveFontFaces,
 	selectVariableAxisKey,
 } from '../src/utils';
@@ -239,6 +240,66 @@ describe('resolveFontFaces', () => {
 		]);
 		expect(faces[1]?.style).toBe('oblique 0deg 15deg');
 		expect(faces[0]?.style).toBe('normal');
+	});
+});
+
+describe('resolvePublishedFaces', () => {
+	it('preserves CSS face fields while exposing static public filenames', () => {
+		const [face] = resolvePublishedFaces({
+			id: 'inter',
+			family: 'Inter',
+			subsets: ['latin'],
+			weights: [400],
+			styles: ['normal'],
+			unicodeRange: { latin: 'U+0000-00FF' },
+			formats: ['woff2', 'woff'],
+		});
+
+		expect(face).toMatchObject({
+			style: 'normal',
+			weight: 400,
+			sources: [
+				{
+					filename: 'inter-latin-400-normal.woff2',
+					publicFilename: 'latin-400-normal.woff2',
+				},
+				{
+					filename: 'inter-latin-400-normal.woff',
+					publicFilename: 'latin-400-normal.woff',
+				},
+			],
+		});
+	});
+
+	it('keeps oblique CSS styles while exposing canonical published filenames', () => {
+		const face = resolvePublishedFaces(
+			{
+				id: 'recursive',
+				family: 'Recursive',
+				subsets: ['latin'],
+				weights: [300, 700],
+				styles: ['normal'],
+				unicodeRange: { latin: 'U+0000-00FF' },
+				formats: ['woff2'],
+				variable: {
+					MONO: { min: 0, max: 1 },
+					wght: { min: 300, max: 700 },
+					slnt: { min: -15, max: 0 },
+				},
+			},
+			{ axisKeys: ['standard', 'full'] },
+		)[0];
+
+		expect(face).toMatchObject({
+			style: 'oblique 0deg 15deg',
+			axisKey: 'standard',
+			sources: [
+				{
+					filename: 'recursive-latin-standard-normal.woff2',
+					publicFilename: 'latin-standard-normal.woff2',
+				},
+			],
+		});
 	});
 });
 

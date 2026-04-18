@@ -57,19 +57,14 @@ export class LegacyFontFileRedirectRoute extends OpenAPIRoute {
 		operationId: 'legacyFontFileRedirect',
 		summary: 'Legacy font file redirect',
 		description:
-			'Backward-compatible redirect from the old `/v1/fonts/:id/:file` layout. ' +
-			'Requests for `download.zip` redirect (302) to the canonical download endpoint. ' +
-			'All other files redirect (301) to the CDN.',
+			'Backward-compatible redirect from the old `/v1/fonts/:id/:file` layout ' +
+			'to the public jsDelivr CDN.',
 		request: {
 			params: FileRedirectParamSchema,
 		},
 		responses: {
 			'301': {
-				description: 'Permanent redirect to the CDN for font asset files',
-			},
-			'302': {
-				description:
-					'Temporary redirect to the download endpoint for download.zip',
+				description: 'Permanent redirect to the public jsDelivr font asset URL',
 			},
 		},
 	};
@@ -77,11 +72,6 @@ export class LegacyFontFileRedirectRoute extends OpenAPIRoute {
 	async handle(c: AppContext) {
 		const data = await this.getValidatedData<typeof this.schema>();
 		const { id, file } = data.params;
-
-		if (file === 'download.zip') {
-			c.header('Cache-Control', CACHE_HEADERS.redirect);
-			return c.redirect(`${UPSTREAM_URLS.publicApi}/v1/download/${id}`, 302);
-		}
 
 		c.header('Cache-Control', CACHE_HEADERS.redirect);
 		return c.redirect(

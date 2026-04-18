@@ -6,10 +6,7 @@ import { env } from 'cloudflare:workers';
 import type { Zippable } from 'fflate';
 import { zipSync } from 'fflate';
 import { vi } from 'vitest';
-import {
-	generateStaticManifest,
-	generateVariableManifest,
-} from '../container/src/manifest';
+import { resolveFontPackageManifest } from '../shared/font-package-manifest';
 import type { AxisRegistry } from '../shared/axis-registry';
 import {
 	type BuildVersionRequest,
@@ -354,7 +351,7 @@ const putStaticArtifacts = async (
 ): Promise<number> => {
 	let artifactCount = 0;
 
-	for (const item of generateStaticManifest(metadata)) {
+	for (const item of resolveFontPackageManifest(metadata).static) {
 		const bytes =
 			item.extension === 'woff2'
 				? staticWoff2Bytes
@@ -387,7 +384,7 @@ const putVariableArtifacts = async (
 ): Promise<number> => {
 	let artifactCount = 0;
 
-	for (const item of generateVariableManifest(metadata, axes)) {
+	for (const item of resolveFontPackageManifest(metadata, axes).variable) {
 		await putBuiltObject(
 			env,
 			getVariableAssetKey(metadata.id, version, item.filename),

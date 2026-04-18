@@ -1,7 +1,8 @@
 import { unzipSync, zipSync } from 'fflate';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { UPSTREAM_URLS } from '../worker/src/constants';
+import { KV_KEYS, UPSTREAM_URLS } from '../worker/src/constants';
 import { clearMetadataCachesForTest } from '../worker/src/features/metadata/store';
+import type { SourceFontMetadata } from '../shared/catalog';
 import {
 	dispatch,
 	installArtifactBuilderMock,
@@ -10,11 +11,54 @@ import {
 	serializeHeaders,
 	setupWorkerTest,
 	staticTtfBytes,
+	testCatalog,
 	staticWoff2Bytes,
 	testEnv,
 	textSnapshot,
 	variableWoff2Bytes,
 } from './helpers';
+
+const slantedMetadata: SourceFontMetadata = {
+	id: 'slanted',
+	family: 'Slanted',
+	subsets: ['latin'],
+	weights: [400],
+	styles: ['normal'],
+	defSubset: 'latin',
+	variable: {
+		MONO: {
+			default: '0',
+			min: '0',
+			max: '1',
+			step: '0.01',
+		},
+		slnt: {
+			default: '0',
+			min: '-15',
+			max: '0',
+			step: '1',
+		},
+		wght: {
+			default: '400',
+			min: '300',
+			max: '900',
+			step: '1',
+		},
+	},
+	lastModified: '2024-01-04',
+	version: 'v1',
+	category: 'sans-serif',
+	license: {
+		type: 'OFL-1.1',
+		url: 'https://example.com/ofl',
+		attribution: 'Example',
+	},
+	source: 'https://example.com',
+	type: 'google',
+	unicodeRange: {
+		latin: 'U+0000-00FF',
+	},
+};
 
 describe('cdn routes', () => {
 	beforeEach(async () => {
@@ -199,6 +243,63 @@ describe('cdn routes', () => {
 			expect(css).toContain('.woff2');
 		});
 
+		it('uses published variable filenames in CSS for slanted axis combinations', async () => {
+			await testEnv.METADATA.put(
+				KV_KEYS.catalog,
+				JSON.stringify({
+					...testCatalog,
+					slanted: slantedMetadata,
+				}),
+			);
+			clearMetadataCachesForTest();
+
+			const { response, settle } = await dispatch(
+				'https://fontsource.test/css/slanted:vf@1.0.0/index.css',
+			);
+			const css = await response.text();
+			await settle();
+
+			expect(response.status).toBe(200);
+			expect(css).toContain('font-style: oblique 0deg 15deg;');
+			expect(css).toContain('slanted:vf@1.0.0/latin-full-normal.woff2');
+			expect(css).not.toContain('oblique%200deg%2015deg');
+		});
+
+		it('builds canonical download zips for slanted variable families', async () => {
+			const builder = installArtifactBuilderMock(testEnv);
+			await testEnv.METADATA.put(
+				KV_KEYS.catalog,
+				JSON.stringify({
+					...testCatalog,
+					slanted: slantedMetadata,
+				}),
+			);
+			clearMetadataCachesForTest();
+
+			const result = await dispatch(
+				'https://fontsource.test/fonts/slanted@1.0.0/download.zip',
+			);
+			const archive = unzipSync(new Uint8Array(await result.response.arrayBuffer()));
+			await result.settle();
+
+			expect(result.response.status).toBe(200);
+			expect(builder.calls).toHaveBeenCalledTimes(1);
+			expect(Object.keys(archive)).toEqual(
+				expect.arrayContaining([
+					'static/webfonts/slanted-latin-400-normal.woff2',
+					'variable/webfonts/slanted-latin-mono-normal.woff2',
+					'variable/webfonts/slanted-latin-wght-normal.woff2',
+					'variable/webfonts/slanted-latin-slnt-normal.woff2',
+					'variable/webfonts/slanted-latin-standard-normal.woff2',
+					'variable/webfonts/slanted-latin-full-normal.woff2',
+					'LICENSE',
+				]),
+			);
+			expect(Object.keys(archive).some((key) => key.includes('oblique'))).toBe(
+				false,
+			);
+		});
+
 		it('serves static font assets with immutable caching', async () => {
 			const url =
 				'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
@@ -346,7 +447,7 @@ describe('cdn routes', () => {
 		// Variable zip alias redirects to the shared archive
 		expect(variableZipResult.response.status).toBe(302);
 		expect(variableZipResult.response.headers.get('Location')).toBe(
-			'https://api.fontsource.org/fonts/recursive@1.0.0/download.zip',
+			'https://fontsource.test/fonts/recursive@1.0.0/download.zip',
 		);
 
 		// Only one build was triggered
@@ -363,7 +464,7 @@ describe('cdn routes', () => {
 
 		expect(response.status).toBe(302);
 		expect(response.headers.get('Location')).toBe(
-			'https://api.fontsource.org/fonts/abel@1.0.0/download.zip',
+			'https://fontsource.test/fonts/abel@1.0.0/download.zip',
 		);
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
@@ -456,7 +557,7 @@ describe('cdn routes', () => {
 
 		expect(variableLatestResponse.status).toBe(302);
 		expect(variableLatestResponse.headers.get('Location')).toBe(
-			'https://api.fontsource.org/v1/download/recursive',
+			'https://fontsource.test/v1/download/recursive',
 		);
 	});
 
@@ -471,7 +572,7 @@ describe('cdn routes', () => {
 
 		expect(response.status).toBe(302);
 		expect(response.headers.get('Location')).toBe(
-			'https://api.fontsource.org/v1/download/recursive',
+			'https://fontsource.test/v1/download/recursive',
 		);
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
@@ -486,7 +587,7 @@ describe('cdn routes', () => {
 
 		expect(response.status).toBe(302);
 		expect(response.headers.get('Location')).toBe(
-			'https://api.fontsource.org/v1/download/abel',
+			'https://fontsource.test/v1/download/abel',
 		);
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
