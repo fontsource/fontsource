@@ -14,12 +14,16 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => (
 		{items.map((item, index) => (
 			<span key={item.url ?? item.name}>
 				{item.url && index < items.length - 1 ? (
-					<Link to={item.url}>{item.name}</Link>
+					<Link to={item.url} prefetch="render">
+						{item.name}
+					</Link>
 				) : (
-					<span>{item.name}</span>
+					<span aria-current={index === items.length - 1 ? 'page' : undefined}>
+						{item.name}
+					</span>
 				)}
 				{index < items.length - 1 && (
-					<IconChevronRight size={14} stroke={1.8} />
+					<IconChevronRight size={14} stroke={1.8} aria-hidden="true" />
 				)}
 			</span>
 		))}

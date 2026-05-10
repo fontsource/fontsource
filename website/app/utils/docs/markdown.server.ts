@@ -3,7 +3,7 @@ import { source } from './source.server';
 
 const docsPrefix = '/docs/';
 const markdownSuffix = '.md';
-const packageManagerComponent =
+const packageManagerCodeComponent =
 	/<PackageManagerCode\s+cmd=(["'])(.*?)\1\s*\/>/g;
 const cacheDocsMarkdown = import.meta.env.PROD;
 
@@ -18,14 +18,27 @@ interface MarkdownPage {
 const markdownCache = new Map<string, Promise<string>>();
 let allDocsMarkdown: Promise<string> | undefined;
 
-const renderDocsPageMarkdown = async (page: MarkdownPage) => {
-	const text = await page.data.getText('processed');
+const renderPackageManagerCode = (cmd: string) =>
+	`\`\`\`sh\n${packageManagerCommandBlock(cmd)}\n\`\`\``;
 
-	return text.replace(
-		packageManagerComponent,
-		(_match, _quote, cmd: string) => {
-			return `\`\`\`sh\n${packageManagerCommandBlock(cmd)}\n\`\`\``;
-		},
+const normalizeProcessedMarkdown = (markdown: string) =>
+	markdown
+		.trimStart()
+		.replaceAll(
+			packageManagerCodeComponent,
+			(_component, _quote, cmd: string) => renderPackageManagerCode(cmd),
+		);
+
+const renderDocsPageMarkdown = async (page: MarkdownPage) =>
+	normalizeProcessedMarkdown(await page.data.getText('processed'));
+
+const getMarkdownRoute = (pathname: string) => {
+	if (!pathname.startsWith(docsPrefix) || !pathname.endsWith(markdownSuffix)) {
+		return null;
+	}
+
+	return decodeURIComponent(
+		pathname.slice(docsPrefix.length, pathname.length - markdownSuffix.length),
 	);
 };
 
@@ -61,13 +74,9 @@ export const getAllDocsMarkdown = () => {
 };
 
 export const getDocsMarkdownResponse = async (pathname: string) => {
-	if (!pathname.startsWith(docsPrefix) || !pathname.endsWith(markdownSuffix)) {
-		return null;
-	}
+	const route = getMarkdownRoute(pathname);
+	if (!route) return null;
 
-	const route = decodeURIComponent(
-		pathname.slice(docsPrefix.length, -markdownSuffix.length),
-	);
 	const page = source.getPage(route.split('/').filter(Boolean));
 
 	if (!page) {

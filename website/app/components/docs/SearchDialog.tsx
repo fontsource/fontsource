@@ -50,6 +50,14 @@ export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 	const [results, setResults] = useState<SearchResult[]>([]);
 	const [loading, setLoading] = useState(false);
 	const trimmedQuery = query.trim();
+	const statusMessage =
+		trimmedQuery.length < 2
+			? 'Search by page title, heading, or text.'
+			: loading
+				? 'Searching...'
+				: results.length === 0
+					? 'No results found.'
+					: undefined;
 
 	useEffect(() => {
 		if (!open) return;
@@ -120,7 +128,7 @@ export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 					type="search"
 					autoComplete="off"
 					aria-controls={resultsId}
-					aria-describedby={statusId}
+					aria-describedby={statusMessage ? statusId : undefined}
 					value={query}
 					onChange={(event) => {
 						setQuery(event.currentTarget.value);
@@ -129,19 +137,9 @@ export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 				/>
 			</label>
 			<div className={classes.results} id={resultsId}>
-				{trimmedQuery.length < 2 && (
+				{statusMessage && (
 					<p className={classes.empty} id={statusId} role="status">
-						Search by page title, heading, or text.
-					</p>
-				)}
-				{loading && (
-					<p className={classes.empty} id={statusId} role="status">
-						Searching...
-					</p>
-				)}
-				{!loading && trimmedQuery.length >= 2 && results.length === 0 && (
-					<p className={classes.empty} id={statusId} role="status">
-						No results found.
+						{statusMessage}
 					</p>
 				)}
 				{results.length > 0 && (
@@ -151,6 +149,7 @@ export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 								<Link
 									to={result.url}
 									className={classes.result}
+									prefetch="intent"
 									onClick={onClose}
 								>
 									<span className={classes.breadcrumbs}>

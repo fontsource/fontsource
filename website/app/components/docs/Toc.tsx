@@ -2,6 +2,7 @@ import { Stack } from '@mantine/core';
 import { IconExternalLink } from '@tabler/icons-react';
 import type { TOCItemType } from 'fumadocs-core/toc';
 import { AnchorProvider, TOCItem } from 'fumadocs-core/toc';
+import type { CSSProperties } from 'react';
 
 import classes from './Toc.module.css';
 
@@ -24,7 +25,7 @@ export const Toc = ({ toc, editUrl }: TocProps) => (
 							style={
 								{
 									'--depth': Math.max(item.depth - 2, 0),
-								} as React.CSSProperties
+								} as CSSProperties
 							}
 						>
 							{item.title}
@@ -41,7 +42,7 @@ export const Toc = ({ toc, editUrl }: TocProps) => (
 				className={classes.action}
 			>
 				<span>Edit this page on GitHub</span>
-				<IconExternalLink size={14} stroke={1.8} />
+				<IconExternalLink size={14} stroke={1.8} aria-hidden="true" />
 			</a>
 		</Stack>
 	</aside>

@@ -18,6 +18,7 @@
 	min-width: 0;
 	width: min(100%, 920px);
 	padding: 28px 32px 72px;
+	color: light-dark(#18243b, #eef2ff);
 
 	@media (--lt-xl) {
 		padding: 28px 32px 64px;

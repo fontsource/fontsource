@@ -19,23 +19,6 @@ interface LeftSidebarProps {
 	toggle?: () => void;
 }
 
-const nodeName = (node: { name?: React.ReactNode }) => node.name ?? null;
-
-const nodeKey = (node: PageTree.Node) => {
-	if (node.$id) return node.$id;
-	if (isPage(node)) return node.url;
-	return `${node.type}-${String(node.name ?? node.type)}`;
-};
-
-const isPage = (node: PageTree.Node): node is PageTree.Item =>
-	node.type === 'page';
-
-const isFolder = (node: PageTree.Node): node is PageTree.Folder =>
-	node.type === 'folder';
-
-const isSeparator = (node: PageTree.Node): node is PageTree.Separator =>
-	node.type === 'separator';
-
 const usePageTree = (tree?: PageTree.Root) => {
 	const matches = useMatches();
 	const serialized = matches.find((match) => match.id === 'routes/docs')
@@ -48,28 +31,33 @@ const usePageTree = (tree?: PageTree.Root) => {
 	}, [serialized?.pageTree, tree]);
 };
 
-const isActiveUrl = (currentPath: string, url: string) => currentPath === url;
+const nodeKey = (node: PageTree.Node) =>
+	node.$id ??
+	(node.type === 'page'
+		? node.url
+		: `${node.type}-${String(node.name ?? node.type)}`);
 
-const containsCurrentPath = (
+const containsCurrentPage = (
 	node: PageTree.Node,
 	currentPath: string,
 ): boolean => {
-	if (isPage(node)) return currentPath === node.url;
-	if (!isFolder(node)) return false;
+	if (node.type === 'page') return currentPath === node.url;
+	if (node.type !== 'folder') return false;
 
-	return node.children.some((child) => containsCurrentPath(child, currentPath));
+	return node.children.some((child) => containsCurrentPage(child, currentPath));
 };
 
 const activeRootFolder = (tree: PageTree.Root, currentPath: string) => {
 	return tree.children.find(
 		(node): node is PageTree.Folder =>
-			isFolder(node) && containsCurrentPath(node, currentPath),
+			node.type === 'folder' && containsCurrentPage(node, currentPath),
 	);
 };
 
 const firstInternalPageUrl = (node: PageTree.Node): string | undefined => {
-	if (isPage(node)) return node.external ? undefined : node.url;
-	if (!isFolder(node)) return undefined;
+	if (node.type === 'page') return node.external ? undefined : node.url;
+	if (node.type !== 'folder') return undefined;
+	if (node.index && !node.index.external) return node.index.url;
 
 	for (const child of node.children) {
 		const url = firstInternalPageUrl(child);
@@ -77,33 +65,31 @@ const firstInternalPageUrl = (node: PageTree.Node): string | undefined => {
 	}
 };
 
-const SidebarPage = ({
+const PageLink = ({
 	node,
-	currentPath,
+	className,
+	active = false,
+	iconClassName,
 	toggle,
 }: {
 	node: PageTree.Item;
-	currentPath: string;
+	className: string;
+	active?: boolean;
+	iconClassName?: string;
 	toggle?: () => void;
 }) => {
-	const active = isActiveUrl(currentPath, node.url);
-	const external = Boolean(node.external);
-	const label = nodeName(node);
 	const content = (
 		<>
-			<span>{label}</span>
-			{external && <IconExternalLink size={14} stroke={1.8} />}
+			<span>{node.name}</span>
+			{node.external && (
+				<IconExternalLink className={iconClassName} size={14} stroke={1.8} />
+			)}
 		</>
 	);
 
-	if (external) {
+	if (node.external) {
 		return (
-			<a
-				className={classes.page}
-				href={node.url}
-				target="_blank"
-				rel="noreferrer"
-			>
+			<a className={className} href={node.url} target="_blank" rel="noreferrer">
 				{content}
 			</a>
 		);
@@ -111,9 +97,9 @@ const SidebarPage = ({
 
 	return (
 		<Link
-			className={classes.page}
+			className={className}
 			to={node.url}
-			prefetch="intent"
+			prefetch="render"
 			data-active={active}
 			aria-current={active ? 'page' : undefined}
 			onClick={toggle}
@@ -134,45 +120,43 @@ const SidebarNodes = ({
 }) => (
 	<>
 		{nodes.map((node) => {
-			if (isSeparator(node)) {
-				return (
-					<Text
-						component="div"
-						className={classes.separator}
-						key={nodeKey(node)}
-					>
-						{nodeName(node)}
-					</Text>
-				);
-			}
-
-			if (isPage(node)) {
-				return (
-					<SidebarPage
-						key={node.$id ?? node.url}
-						node={node}
-						currentPath={currentPath}
-						toggle={toggle}
-					/>
-				);
-			}
-
-			if (isFolder(node)) {
-				return (
-					<Stack className={classes.folder} gap={3} key={nodeKey(node)}>
-						<Text component="div" className={classes.folderTitle}>
-							{nodeName(node)}
+			switch (node.type) {
+				case 'separator':
+					return (
+						<Text
+							component="div"
+							className={classes.separator}
+							key={nodeKey(node)}
+						>
+							{node.name}
 						</Text>
-						<SidebarNodes
-							nodes={node.children}
-							currentPath={currentPath}
+					);
+				case 'page':
+					return (
+						<PageLink
+							key={node.$id ?? node.url}
+							node={node}
+							className={classes.page}
+							active={currentPath === node.url}
 							toggle={toggle}
 						/>
-					</Stack>
-				);
+					);
+				case 'folder':
+					return (
+						<Stack className={classes.folder} gap={3} key={nodeKey(node)}>
+							<Text component="div" className={classes.folderTitle}>
+								{node.name}
+							</Text>
+							<SidebarNodes
+								nodes={node.children}
+								currentPath={currentPath}
+								toggle={toggle}
+							/>
+						</Stack>
+					);
+				default:
+					return null;
 			}
-
-			return null;
 		})}
 	</>
 );
@@ -186,90 +170,40 @@ const RootSection = ({
 	currentPath: string;
 	toggle?: () => void;
 }) => {
-	if (isSeparator(node)) return null;
-
-	if (isPage(node)) {
-		const active = isActiveUrl(currentPath, node.url);
-		const content = (
-			<>
-				<span>{nodeName(node)}</span>
-				{node.external && (
-					<IconExternalLink
-						className={classes.rootSectionIcon}
-						size={14}
-						stroke={1.8}
-					/>
-				)}
-			</>
-		);
-
-		if (node.external) {
+	switch (node.type) {
+		case 'page':
 			return (
-				<a
+				<PageLink
+					node={node}
 					className={classes.rootSection}
-					href={node.url}
-					target="_blank"
-					rel="noreferrer"
+					active={currentPath === node.url}
+					iconClassName={classes.rootSectionIcon}
+					toggle={toggle}
+				/>
+			);
+		case 'folder': {
+			const url = firstInternalPageUrl(node);
+			if (!url) return null;
+
+			const active = containsCurrentPage(node, currentPath);
+
+			return (
+				<Link
+					className={classes.rootSection}
+					to={url}
+					prefetch="render"
+					data-active={active}
+					aria-current={active ? 'location' : undefined}
+					onClick={toggle}
 				>
-					{content}
-				</a>
+					<span>{node.name}</span>
+				</Link>
 			);
 		}
-
-		return (
-			<Link
-				className={classes.rootSection}
-				to={node.url}
-				prefetch="intent"
-				data-active={active}
-				aria-current={active ? 'page' : undefined}
-				onClick={toggle}
-			>
-				{content}
-			</Link>
-		);
+		default:
+			return null;
 	}
-
-	if (!isFolder(node)) return null;
-
-	const active = containsCurrentPath(node, currentPath);
-	const url = firstInternalPageUrl(node);
-	if (!url) return null;
-
-	return (
-		<Link
-			className={classes.rootSection}
-			to={url}
-			prefetch="intent"
-			data-active={active}
-			aria-current={active ? 'location' : undefined}
-			onClick={toggle}
-		>
-			<span>{nodeName(node)}</span>
-		</Link>
-	);
 };
-
-const RootSections = ({
-	nodes,
-	currentPath,
-	toggle,
-}: {
-	nodes: PageTree.Node[];
-	currentPath: string;
-	toggle?: () => void;
-}) => (
-	<Stack className={classes.rootSections} gap={1}>
-		{nodes.map((node) => (
-			<RootSection
-				key={nodeKey(node)}
-				node={node}
-				currentPath={currentPath}
-				toggle={toggle}
-			/>
-		))}
-	</Stack>
-);
 
 const LeftSidebar = ({ tree, toggle }: LeftSidebarProps) => {
 	const pageTree = usePageTree(tree);
@@ -281,11 +215,16 @@ const LeftSidebar = ({ tree, toggle }: LeftSidebarProps) => {
 
 	return (
 		<nav className={classes.wrapper} aria-label="Documentation">
-			<RootSections
-				nodes={pageTree.children}
-				currentPath={location.pathname}
-				toggle={toggle}
-			/>
+			<Stack className={classes.rootSections} gap={1}>
+				{pageTree.children.map((node) => (
+					<RootSection
+						key={nodeKey(node)}
+						node={node}
+						currentPath={location.pathname}
+						toggle={toggle}
+					/>
+				))}
+			</Stack>
 			{activeFolder && (
 				<Stack className={classes.activeSection} gap={3}>
 					<SidebarNodes

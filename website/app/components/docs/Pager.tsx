@@ -12,7 +12,7 @@ interface PagerProps {
 export const Pager = ({ pager }: PagerProps) => (
 	<nav className={classes.pager} aria-label="Documentation pagination">
 		{pager.previous ? (
-			<Link to={pager.previous.url} className={classes.card}>
+			<Link to={pager.previous.url} className={classes.card} prefetch="render">
 				<IconArrowLeft size={18} stroke={1.8} aria-hidden="true" />
 				<span>
 					<small>Previous</small>
@@ -23,7 +23,12 @@ export const Pager = ({ pager }: PagerProps) => (
 			<span />
 		)}
 		{pager.next ? (
-			<Link to={pager.next.url} className={classes.card} data-align="end">
+			<Link
+				to={pager.next.url}
+				className={classes.card}
+				prefetch="render"
+				data-align="end"
+			>
 				<span>
 					<small>Next</small>
 					<strong>{pager.next.name}</strong>

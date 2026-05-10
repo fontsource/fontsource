@@ -1,4 +1,5 @@
 import type * as PageTree from 'fumadocs-core/page-tree';
+import type { ReactNode } from 'react';
 
 export interface PageLink {
 	name: string;
@@ -16,13 +17,25 @@ export interface Breadcrumb {
 	url?: string;
 }
 
-const nodeName = (node: { name?: React.ReactNode }) => String(node.name ?? '');
+const nodeName = (node: { name?: ReactNode }) => String(node.name ?? '');
 
 const isPage = (node: PageTree.Node): node is PageTree.Item =>
 	node.type === 'page';
 
 const isFolder = (node: PageTree.Node): node is PageTree.Folder =>
 	node.type === 'folder';
+
+const firstInternalPageUrl = (node: PageTree.Node): string | undefined => {
+	if (isPage(node)) return node.external ? undefined : node.url;
+	if (!isFolder(node)) return undefined;
+
+	if (node.index && !node.index.external) return node.index.url;
+
+	for (const child of node.children) {
+		const url = firstInternalPageUrl(child);
+		if (url) return url;
+	}
+};
 
 export const flattenPages = (tree: PageTree.Root): PageLink[] => {
 	const pages: PageLink[] = [];
@@ -79,7 +92,10 @@ export const getBreadcrumbs = (
 			}
 
 			if (isFolder(node)) {
-				const folderPath = [...parents, { name: nodeName(node) }];
+				const folderPath = [
+					...parents,
+					{ name: nodeName(node), url: firstInternalPageUrl(node) },
+				];
 				if (node.index?.url === url) {
 					path.push(...folderPath, {
 						name: nodeName(node.index),
