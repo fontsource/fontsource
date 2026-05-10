@@ -51,10 +51,10 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 	});
 
 	return (
-		<div className={classes.wrapper}>
+		<Group className={classes.wrapper} justify="space-between" wrap="nowrap">
 			<Text>{count} families loaded</Text>
 			<Group>
-				<Group className={classes['display-group']}>
+				<Group visibleFrom="sm">
 					<DropdownSimple
 						label={sortMap[currentRefinement]}
 						items={sortMenuItems}
@@ -97,7 +97,7 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 					</Tooltip>
 				</Group>
 			</Group>
-		</div>
+		</Group>
 	);
 });
 

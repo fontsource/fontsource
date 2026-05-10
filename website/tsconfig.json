@@ -1,6 +1,8 @@
 {
 	"include": [
 		".react-router/types/**/*",
+		".source/**/*.ts",
+		"../packages/core/src/**/*.ts",
 		"**/*.ts",
 		"**/*.tsx",
 		"**/.server/**/*.ts",
@@ -12,6 +14,7 @@
 	],
 	"compilerOptions": {
 		"checkJs": true,
+		"ignoreDeprecations": "6.0",
 		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,
 		"strict": true,
@@ -29,6 +32,8 @@
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"paths": {
+			"@fontsource-utils/core": ["../packages/core/src/index.ts"],
+			"collections/*": ["./.source/*"],
 			"@/docs/*": ["./docs/*"],
 			"@/*": ["./app/*"]
 		}

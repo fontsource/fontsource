@@ -1,22 +1,9 @@
 import type { CodeProps } from '@mantine/core';
-import {
-	ActionIcon,
-	Box,
-	Group,
-	Code as MantineCode,
-	ScrollArea,
-	Text,
-	Tooltip,
-	useMantineColorScheme,
-} from '@mantine/core';
-import { useClipboard } from '@mantine/hooks';
-import { Highlight, Prism } from 'prism-react-renderer';
-import { Suspense, use } from 'react';
-
-import { IconCopy } from '@/components/icons';
+import { Group, Code as MantineCode, UnstyledButton } from '@mantine/core';
+import { IconCopy } from '@tabler/icons-react';
+import { useState } from 'react';
 
 import classes from './Code.module.css';
-import { themeDark, themeLight } from './theme';
 
 interface CodeWrapperProps {
 	children: React.ReactNode;
@@ -25,96 +12,49 @@ interface CodeWrapperProps {
 }
 
 export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
-	const clipboard = useClipboard();
+	const [copied, setCopied] = useState(false);
 
-	const copyLabel = 'Copy code';
-	const copiedLabel = 'Copied';
+	const copy = async () => {
+		await navigator.clipboard.writeText(code);
+		setCopied(true);
+		window.setTimeout(() => {
+			setCopied(false);
+		}, 1500);
+	};
 
 	return (
-		<Box className={classes.root} translate="no">
-			<Text className={classes.dots}>&#11044;&#11044;</Text>
-			{children}
-			<Group gap={0} className={classes.tools}>
-				<Box className={classes.language}>
-					<Text fw={400} fz={13}>
-						{language}
-					</Text>
-				</Box>
-				<Tooltip
-					label={clipboard.copied ? copiedLabel : copyLabel}
-					withArrow
-					arrowSize={6}
-					offset={6}
-				>
-					<ActionIcon
-						className={classes.copy}
-						aria-label={clipboard.copied ? copiedLabel : copyLabel}
-						onClick={() => {
-							clipboard.copy(code);
-						}}
-					>
-						<IconCopy stroke="white" />
-					</ActionIcon>
-				</Tooltip>
+		<figure className={classes.root} translate="no">
+			<Group
+				component="figcaption"
+				className={classes.header}
+				gap={12}
+				justify="space-between"
+				wrap="nowrap"
+			>
+				<span>{language || 'text'}</span>
+				<UnstyledButton type="button" onClick={copy}>
+					<IconCopy size={15} stroke={1.8} />
+					{copied ? 'Copied' : 'Copy'}
+				</UnstyledButton>
 			</Group>
-		</Box>
+			{children}
+		</figure>
 	);
 };
 
 interface CodeHighlightProps {
 	code: string;
-	language: string;
 }
 
-// Add support for additional languagaes
-(typeof global === 'undefined' ? window : global).Prism = Prism;
-const extraLanguages = Promise.all([
-	// @ts-expect-error - No types for prism themes
-	import('prismjs/components/prism-scss'),
-	// @ts-expect-error - No types for prism themes
-	import('prismjs/components/prism-json'),
-	// @ts-expect-error - No types for prism themes
-	import('prismjs/components/prism-bash'),
-]);
-
-export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
-	use(extraLanguages);
-	const { colorScheme } = useMantineColorScheme();
-
-	return (
-		<Highlight
-			prism={Prism}
-			theme={colorScheme === 'dark' ? themeDark : themeLight}
-			code={code}
-			language={language === 'sh' ? 'bash' : language}
-		>
-			{({ style, tokens, getLineProps, getTokenProps }) => (
-				<pre className={classes.code} style={style}>
-					<ScrollArea
-						type="auto"
-						offsetScrollbars
-						className={classes['scroll-area']}
-					>
-						{tokens.map((line, i) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: It's the official way to do it
-							<div key={i} {...getLineProps({ line })} className={classes.line}>
-								{line.map((token, key) => (
-									// biome-ignore lint/suspicious/noArrayIndexKey: It's the official way to do it
-									<span key={key} {...getTokenProps({ token })} />
-								))}
-							</div>
-						))}
-					</ScrollArea>
-				</pre>
-			)}
-		</Highlight>
-	);
-};
+export const CodeHighlight = ({ code }: CodeHighlightProps) => (
+	<pre className={classes.code}>
+		<code>{code}</code>
+	</pre>
+);
 
 export const CodeMdx = (props: CodeProps) => {
 	const language = props.className?.replace(/language-/, '') ?? '';
 
-	// Inline code
 	if (language === '')
 		return <MantineCode className={classes['inline-code']} {...props} />;
 
@@ -122,7 +62,7 @@ export const CodeMdx = (props: CodeProps) => {
 
 	return (
 		<CodeWrapper language={language} code={code}>
-			<CodeHighlight code={code} language={language} />
+			<CodeHighlight code={code} />
 		</CodeWrapper>
 	);
 };
@@ -132,7 +72,6 @@ interface CodeDirectProps extends CodeProps {
 }
 
 export const Code = ({ language, children, ...others }: CodeDirectProps) => {
-	// Inline code
 	if (language === '')
 		return (
 			<MantineCode className={classes['inline-code']} {...others}>
@@ -140,11 +79,11 @@ export const Code = ({ language, children, ...others }: CodeDirectProps) => {
 			</MantineCode>
 		);
 
+	const code = children?.toString() ?? '';
+
 	return (
-		<CodeWrapper language={language} code={children?.toString() ?? ''}>
-			<Suspense fallback={undefined}>
-				<CodeHighlight code={children?.toString() ?? ''} language={language} />
-			</Suspense>
+		<CodeWrapper language={language} code={code}>
+			<CodeHighlight code={code} />
 		</CodeWrapper>
 	);
 };

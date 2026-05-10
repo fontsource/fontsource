@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router';
-
+import classes from './AppShell.module.css';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
@@ -12,8 +12,13 @@ export const AppShell = ({ children }: AppShellProps) => {
 
 	return (
 		<>
+			<a className={classes.skipLink} href="#main-content">
+				Skip to content
+			</a>
 			<Header />
-			<main>{children}</main>
+			<main id="main-content" tabIndex={-1}>
+				{children}
+			</main>
 			{isNotHome && <Footer style={{ marginTop: 'auto' }} />}
 		</>
 	);

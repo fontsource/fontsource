@@ -7,6 +7,8 @@
 			"!**/__snapshots__",
 			"!**/dist",
 			"!**/build",
+			"!**/.source",
+			"!**/.wrangler",
 			"!**/worker-configuration.d.ts",
 			"!**/.react-router"
 		]
@@ -39,6 +41,25 @@
 				"useUniqueElementIds": "off",
 				"noUnknownMediaFeatureName": "off",
 				"noUnknownProperty": "off"
+			},
+			"style": {
+				"useComponentExportOnlyModules": {
+					"options": {
+						"allowExportNames": [
+							"action",
+							"clientAction",
+							"clientLoader",
+							"clientMiddleware",
+							"handle",
+							"headers",
+							"links",
+							"loader",
+							"meta",
+							"middleware",
+							"shouldRevalidate"
+						]
+					}
+				}
 			},
 			"suspicious": {
 				"noUnknownAtRules": "off"

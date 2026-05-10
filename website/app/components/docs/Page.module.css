@@ -1,0 +1,50 @@
+.page {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 260px;
+	min-width: 0;
+	min-height: calc(100vh - 130px);
+
+	@media (--lt-xl) {
+		grid-template-columns: minmax(0, 1fr) 220px;
+	}
+
+	@media (--lt-lg) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.article {
+	box-sizing: border-box;
+	min-width: 0;
+	width: min(100%, 920px);
+	padding: 28px 32px 72px;
+
+	@media (--lt-xl) {
+		padding: 28px 32px 64px;
+	}
+
+	@media (--lt-sm) {
+		padding: 24px 24px 56px;
+	}
+}
+
+.title {
+	margin: 0 0 16px;
+	color: light-dark(#101a2f, var(--mantine-color-text-0));
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 1.12;
+
+	@media (--lt-sm) {
+		font-size: 38px;
+	}
+
+	@media (--lt-xs) {
+		font-size: 34px;
+	}
+}
+
+.article :global(.shiki) {
+	max-width: 100%;
+	overflow-x: auto;
+}

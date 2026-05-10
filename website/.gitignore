@@ -1,6 +1,7 @@
 node_modules
 
 /.react-router
+/.source
 /.wrangler
 /.cache
 /build

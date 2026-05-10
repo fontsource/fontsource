@@ -1,83 +1,60 @@
 .root {
 	position: relative;
-	margin: 16px 0;
+	max-width: 100%;
+	margin: 18px 0;
+	border: 1px solid light-dark(#d9deea, #2b3650);
+	border-radius: 6px;
+	overflow: hidden;
+	background: #071125;
+	box-shadow: 0 12px 36px rgba(5, 13, 31, 0.12);
 }
 
-.dots {
-	color: #34435c;
-	position: absolute;
-	top: 8px;
-	left: 14px;
-	z-index: 2;
-	font-size: 12px;
-	letter-spacing: 2px;
-	user-select: none;
-}
+.header {
+	min-height: 40px;
+	padding: 0 10px 0 14px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	background: #0b1730;
+	color: #aab5c8;
+	font-size: 13px;
 
-.tools {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: 2;
-}
+	button {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		height: 28px;
+		padding: 0 10px;
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		border-radius: 4px;
+		background: rgba(255, 255, 255, 0.04);
+		color: #f2f5ff;
+		font: inherit;
+		cursor: pointer;
 
-.copy {
-	border-radius: 0 0 4px 0;
-	&,
-	&:hover {
-		background-color: var(--mantine-color-purple-0);
+		&:hover,
+		&:focus-visible {
+			outline: 2px solid rgba(98, 91, 248, 0.42);
+			background: rgba(98, 91, 248, 0.18);
+		}
 	}
-	height: 30px;
-	width: 30px;
-}
-
-.language {
-	border-radius: 4px 0 0 0;
-	color: var(--mantine-color-text-0);
-	background: rgba(104, 118, 141, 0.5);
-	height: 30px;
-	width: 30px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	user-select: none;
 }
 
 .code {
 	box-sizing: border-box;
-	position: relative;
+	max-width: 100%;
 	font-family: var(--mantine-font-family-monospace);
 	line-height: 1.7;
 	font-size: 14px;
-	border-radius: 10px;
-	padding: 34px var(--mantine-spacing-md) var(--mantine-spacing-md)
-		var(--mantine-spacing-md);
-	margin-top: 0;
-	margin-bottom: 0;
-	overflow-x: hidden;
-}
-
-.scroll-area {
-	.scrollbar {
-		&:hover {
-			background-color: transparent;
-			.___ref-thumb {
-				background-color: #c2bfff;
-			}
-		}
-	}
-
-	.thumb {
-		background-color: darken("#c2bfff", 0.2);
-	}
-}
-
-.line {
-	width: 100%;
+	padding: 16px;
+	margin: 0;
+	overflow-x: auto;
+	color: #f2f5ff;
+	background: #071125;
+	tab-size: 2;
 }
 
 .inline-code {
 	font-weight: 500;
 	font-size: 13px;
 	border-radius: 4px;
+	overflow-wrap: anywhere;
 }

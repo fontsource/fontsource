@@ -1,0 +1,29 @@
+.shell {
+	display: grid;
+	grid-template-columns: 260px minmax(0, 1fr);
+	box-sizing: border-box;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 64px;
+
+	@media (--lt-xl) {
+		grid-template-columns: 220px minmax(0, 1fr);
+	}
+
+	@media (--lt-md) {
+		grid-template-columns: 1fr;
+		padding: 0;
+	}
+}
+
+.sidebar {
+	min-width: 0;
+
+	@media (--lt-md) {
+		display: none;
+	}
+}
+
+.content {
+	min-width: 0;
+}

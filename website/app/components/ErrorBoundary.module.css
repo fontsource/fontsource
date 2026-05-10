@@ -1,8 +1,5 @@
 .container {
 	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	padding: 40px 64px;
 	font-family: "IBM Plex Sans Variable", sans-serif;
 	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
@@ -10,9 +7,6 @@
 }
 
 .content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	gap: 2.5rem;
 	max-width: 480px;
 	width: 100%;
@@ -20,9 +14,6 @@
 }
 
 .errorInfo {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	gap: 1rem;
 }
 
@@ -48,9 +39,6 @@
 }
 
 .actions {
-	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
 	width: 100%;
 }
 

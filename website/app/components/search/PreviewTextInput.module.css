@@ -1,8 +1,5 @@
 /* PreviewTextInput */
 .wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	padding: 0 24px;
 
 	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
@@ -16,10 +13,6 @@
 
 	@media (--lt-md) {
 		border-right: none;
-	}
-
-	@media (--lt-sm) {
-		display: none;
 	}
 }
 

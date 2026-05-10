@@ -1,10 +1,7 @@
 /* Sort */
 
 .wrapper {
-	display: flex;
 	height: 64px;
-	align-items: center;
-	justify-content: space-between;
 	padding-bottom: 10px;
 
 	&:focus-within {
@@ -12,14 +9,6 @@
 	}
 
 	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
-}
-
-.display-group {
-	display: flex;
-
-	@media (--lt-sm) {
-		display: none;
-	}
 }
 
 .control {

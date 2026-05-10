@@ -24,6 +24,7 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 		<Tooltip label={dark ? 'Light mode' : 'Dark mode'}>
 			<ActionIcon
 				variant="transparent"
+				aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
 				onClick={() => {
 					setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 				}}
@@ -45,16 +46,14 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 	return (
 		<UnstyledButton
 			className={classes.button}
+			aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
 			onClick={() => {
 				setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
 			}}
 			ref={ref}
 		>
 			<Group gap="xs">
-				<ActionIcon
-					variant="transparent"
-					aria-label={dark ? 'Light mode' : 'Dark mode'}
-				>
+				<span className={classes.mobileIcon} aria-hidden="true">
 					{dark ? (
 						<IconSun
 							stroke={hovered ? theme.colors.purple[0] : undefined}
@@ -64,10 +63,9 @@ export const ThemeButtonMobile = ({ ...others }: IconProps) => {
 						<IconMoon
 							stroke={hovered ? theme.colors.purple[0] : undefined}
 							{...others}
-							{...others}
 						/>
 					)}
-				</ActionIcon>
+				</span>
 				<Text>{dark ? 'Light Mode' : 'Dark Mode'}</Text>
 			</Group>
 		</UnstyledButton>
