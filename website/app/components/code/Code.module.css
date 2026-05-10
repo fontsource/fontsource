@@ -51,7 +51,8 @@
 	}
 }
 
-.code {
+.code,
+.highlight :global(pre) {
 	box-sizing: border-box;
 	position: relative;
 	max-width: 100%;
@@ -72,31 +73,49 @@
 		color: #c2bfff !important;
 		background: #01112c !important;
 	}
+}
 
-	code {
-		display: grid;
-		min-width: max-content;
-	}
+.highlight {
+	--ch-background: #01112c;
+}
 
-	:global(.line) {
-		min-height: 1.4875rem;
-	}
+.code :global(span),
+.highlight :global(span) {
+	color: var(--shiki-light, inherit);
+}
 
-	:global(.highlighted) {
-		display: inline-block;
-		width: calc(100% + var(--mantine-spacing-md) * 2);
-		margin-inline: calc(var(--mantine-spacing-md) * -1);
-		padding-inline: var(--mantine-spacing-md);
-		background: rgba(98, 91, 248, 0.16);
-	}
+.code code,
+.highlight :global(code) {
+	display: grid;
+	min-width: max-content;
+	padding: 0;
+	background: transparent;
+	font-size: inherit;
+	line-height: inherit;
+}
 
-	:global(.diff.add) {
-		background: rgba(187, 233, 220, 0.12);
-	}
+.code :global(.line),
+.highlight :global(.line) {
+	min-height: 1.4875rem;
+}
 
-	:global(.diff.remove) {
-		background: rgba(242, 194, 89, 0.12);
-	}
+.code :global(.highlighted),
+.highlight :global(.highlighted) {
+	display: inline-block;
+	width: calc(100% + var(--mantine-spacing-md) * 2);
+	margin-inline: calc(var(--mantine-spacing-md) * -1);
+	padding-inline: var(--mantine-spacing-md);
+	background: rgba(98, 91, 248, 0.16);
+}
+
+.code :global(.diff.add),
+.highlight :global(.diff.add) {
+	background: rgba(187, 233, 220, 0.12);
+}
+
+.code :global(.diff.remove),
+.highlight :global(.diff.remove) {
+	background: rgba(242, 194, 89, 0.12);
 }
 
 .code-inner {
@@ -104,12 +123,18 @@
 	min-width: max-content;
 }
 
-:global([data-mantine-color-scheme='dark']) .code:global(.shiki) {
+.scrollarea {
+	border-radius: 0.625rem;
+}
+
+:global([data-mantine-color-scheme='dark']) .code:global(.shiki),
+:global([data-mantine-color-scheme='dark']) .highlight :global(.shiki) {
 	background: var(--shiki-dark-bg, #01112c) !important;
 }
 
-:global([data-mantine-color-scheme='dark']) .code :global(span) {
-	color: var(--shiki-dark) !important;
+:global([data-mantine-color-scheme='dark']) .code :global(span),
+:global([data-mantine-color-scheme='dark']) .highlight :global(span) {
+	color: var(--shiki-dark, var(--shiki-light, inherit)) !important;
 }
 
 .inline-code {

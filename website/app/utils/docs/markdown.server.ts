@@ -1,10 +1,13 @@
-import { packageManagerCommandBlock } from './packageManagers';
+import {
+	type PlaceholderData,
+	renderPlaceholder,
+} from 'fumadocs-core/mdx-plugins/remark-llms.runtime';
+
+import { getPackageManagerCommandBlock } from './packageManagers';
 import { source } from './source.server';
 
 const docsPrefix = '/docs/';
 const markdownSuffix = '.md';
-const packageManagerCodeComponent =
-	/<PackageManagerCode\s+cmd=(["'])(.*?)\1\s*\/>/g;
 const cacheDocsMarkdown = import.meta.env.PROD;
 
 interface MarkdownPage {
@@ -18,16 +21,23 @@ interface MarkdownPage {
 const markdownCache = new Map<string, Promise<string>>();
 let allDocsMarkdown: Promise<string> | undefined;
 
-const renderPackageManagerCode = (cmd: string) =>
-	`\`\`\`sh\n${packageManagerCommandBlock(cmd)}\n\`\`\``;
+const markdownFence = '```';
+
+const renderMarkdownCodeBlock = (language: string, code: string) =>
+	[`${markdownFence}${language}`, code, markdownFence].join('\n');
+
+const renderPackageManagerCode = ({ attributes }: PlaceholderData) => {
+	const cmd = attributes.cmd;
+
+	return typeof cmd === 'string'
+		? renderMarkdownCodeBlock('sh', getPackageManagerCommandBlock(cmd))
+		: '';
+};
 
 const normalizeProcessedMarkdown = (markdown: string) =>
-	markdown
-		.trimStart()
-		.replaceAll(
-			packageManagerCodeComponent,
-			(_component, _quote, cmd: string) => renderPackageManagerCode(cmd),
-		);
+	renderPlaceholder(markdown.trimStart(), {
+		PackageManagerCode: renderPackageManagerCode,
+	});
 
 const renderDocsPageMarkdown = async (page: MarkdownPage) =>
 	normalizeProcessedMarkdown(await page.data.getText('processed'));

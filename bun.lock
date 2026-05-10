@@ -184,6 +184,7 @@
         "@fontsource-variable/ibm-plex-sans": "^5.2.8",
         "@fontsource-variable/source-code-pro": "^5.2.7",
         "@legendapp/state": "^2.1.15",
+        "@mantine/code-highlight": "^9.1.1",
         "@mantine/core": "^9.1.1",
         "@mantine/dropzone": "^9.1.1",
         "@mantine/hooks": "^9.1.1",
@@ -582,6 +583,8 @@
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
     "@legendapp/state": ["@legendapp/state@2.1.15", "", { "dependencies": { "use-sync-external-store": "^1.2.0" }, "peerDependencies": { "react": ">=16.8.0" }, "optionalPeers": ["react"] }, "sha512-7/8Rgg7m38eznupr36QJeSkrtbhVxaRtQvRMjdBigSm+HW3ZIFgMtUX1DqZ2hJxbPqqAJamw5s+TLs8dRstUNw=="],
+
+    "@mantine/code-highlight": ["@mantine/code-highlight@9.1.1", "", { "dependencies": { "clsx": "^2.1.1" }, "peerDependencies": { "@mantine/core": "9.1.1", "@mantine/hooks": "9.1.1", "react": "^19.2.0", "react-dom": "^19.2.0" } }, "sha512-+NS5RwozXQZacKc1MzKwFf5auueyIPGpi9CTz0VWeefMeKhvtwfG1HUJbQGZa3YLdFTT7MzU6Id9M8vjzBdDPA=="],
 
     "@mantine/core": ["@mantine/core@9.1.1", "", { "dependencies": { "@floating-ui/react": "^0.27.19", "clsx": "^2.1.1", "react-number-format": "^5.4.5", "react-remove-scroll": "^2.7.2", "type-fest": "^5.6.0" }, "peerDependencies": { "@mantine/hooks": "9.1.1", "react": "^19.2.0", "react-dom": "^19.2.0" } }, "sha512-vClOZdCeZ4oLYuA/3jAOgKGQ6dXbF6ZkzpYz09Gied9nZpB7HcQeb3dcMh8UPBE4f+EM7KlYWk6dch7GoASeaA=="],
 

@@ -9,7 +9,9 @@ export const docs = defineDocs({
 	docs: {
 		schema: pageSchema,
 		postprocess: {
-			includeProcessedMarkdown: true,
+			includeProcessedMarkdown: {
+				mdxAsPlaceholder: ['PackageManagerCode'],
+			},
 		},
 	},
 });

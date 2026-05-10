@@ -1,3 +1,15 @@
+const palette = {
+	background: '#01112c',
+	foreground: '#c2bfff',
+	comment: '#68768d',
+	punctuation: '#7c86a3',
+	purple: '#8b83ff',
+	purpleStrong: '#625bf8',
+	purpleSoft: '#b8b4ff',
+	lavender: '#dad5ff',
+	white: '#eff5fe',
+};
+
 const settings = [
 	{
 		scope: [
@@ -6,7 +18,7 @@ const settings = [
 			'punctuation.definition.comment',
 			'string.comment',
 		],
-		settings: { foreground: '#68768d' },
+		settings: { foreground: palette.comment },
 	},
 	{
 		scope: [
@@ -15,7 +27,7 @@ const settings = [
 			'meta.delimiter',
 			'punctuation.definition.tag',
 		],
-		settings: { foreground: '#68768d' },
+		settings: { foreground: palette.punctuation },
 	},
 	{
 		scope: [
@@ -25,34 +37,40 @@ const settings = [
 			'storage.modifier',
 			'support.type.property-name.css',
 			'entity.other.attribute-name',
+			'entity.other.attribute-name.jsx',
+			'entity.other.attribute-name.tsx',
 		],
-		settings: { foreground: '#625bf8' },
+		settings: { foreground: palette.purple },
 	},
 	{
 		scope: ['string', 'punctuation.definition.string', 'string.quoted'],
-		settings: { foreground: '#eff5fe' },
+		settings: { foreground: palette.white },
 	},
 	{
 		scope: ['constant.numeric', 'constant.language', 'constant.character'],
-		settings: { foreground: '#dad5ff' },
+		settings: { foreground: palette.purpleSoft },
 	},
 	{
 		scope: [
 			'entity.name.function',
 			'support.function',
+			'support.function.builtin',
+			'support.function.builtin.shell',
 			'variable.function',
 			'meta.function-call',
 		],
-		settings: { foreground: '#f2c259' },
+		settings: { foreground: palette.lavender },
 	},
 	{
 		scope: [
 			'entity.name.tag',
+			'entity.name.tag.jsx',
+			'entity.name.tag.tsx',
 			'entity.name.type',
 			'entity.name.class',
 			'entity.name.namespace',
 		],
-		settings: { foreground: '#d1d1d1' },
+		settings: { foreground: palette.white },
 	},
 	{
 		scope: [
@@ -62,15 +80,67 @@ const settings = [
 			'meta.property-name',
 			'support.type.vendored.property-name',
 		],
-		settings: { foreground: '#ffffff' },
+		settings: { foreground: palette.foreground },
 	},
 	{
 		scope: ['keyword.operator', 'constant.other.color', 'entity.other'],
-		settings: { foreground: '#bbe9dc' },
+		settings: { foreground: palette.punctuation },
 	},
 	{
 		scope: ['markup.inserted', 'punctuation.definition.inserted'],
-		settings: { foreground: '#a3a3a3' },
+		settings: { foreground: palette.purpleSoft },
+	},
+	{
+		scope: ['markup.deleted', 'punctuation.definition.deleted'],
+		settings: { foreground: palette.purpleSoft },
+	},
+	{
+		scope: [
+			'meta.object-literal.key',
+			'variable.other.property',
+			'support.type.property-name',
+			'support.type.property-name.json',
+			'support.type.property-name.css',
+		],
+		settings: { foreground: palette.foreground },
+	},
+	{
+		scope: [
+			'string.unquoted',
+			'string.unquoted.shell',
+			'variable.other.normal.shell',
+			'variable.other.bracket.shell',
+			'support.variable',
+		],
+		settings: { foreground: palette.purpleSoft },
+	},
+	{
+		scope: [
+			'string.unquoted.css',
+			'support.constant.property-value.css',
+			'support.constant.font-name.css',
+		],
+		settings: { foreground: palette.white },
+	},
+	{
+		scope: [
+			'support.function.builtin.shell',
+			'entity.name.command.shell',
+			'meta.function-call.shell',
+		],
+		settings: { foreground: palette.foreground },
+	},
+	{
+		scope: [
+			'keyword.control.at-rule.css',
+			'keyword.control.at-rule.scss',
+			'keyword.control.directive.scss',
+		],
+		settings: { foreground: palette.purple },
+	},
+	{
+		scope: ['variable.other.scss', 'variable.scss', 'variable.parameter.scss'],
+		settings: { foreground: palette.purpleSoft },
 	},
 ];
 
@@ -78,12 +148,12 @@ export const fontsourceCodeTheme = {
 	name: 'fontsource',
 	displayName: 'Fontsource',
 	type: 'dark' as const,
-	fg: '#c2bfff',
-	bg: '#01112c',
+	fg: palette.foreground,
+	bg: palette.background,
 	colors: {
-		'editor.background': '#01112c',
-		'editor.foreground': '#c2bfff',
-		'editorLineNumber.foreground': '#68768d',
+		'editor.background': palette.background,
+		'editor.foreground': palette.foreground,
+		'editorLineNumber.foreground': palette.comment,
 		'editor.selectionBackground': '#625bf84d',
 	},
 	settings,

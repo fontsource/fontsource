@@ -70,6 +70,7 @@ import '@mantine/core/styles/Text.css';
 import '@mantine/core/styles/Title.css';
 
 // Extensions
+import '@mantine/code-highlight/styles.css';
 import '@mantine/dropzone/styles.css';
 import '@/styles/global.css';
 

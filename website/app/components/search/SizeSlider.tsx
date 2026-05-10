@@ -13,12 +13,12 @@ const SizeSlider = observer(({ state$ }: SizeSliderProps) => {
 
 	return (
 		<Group className={classes.wrapper} gap={12} visibleFrom="md" wrap="nowrap">
-			<Box w={72} miw={0}>
+			<Box className={classes.value}>
 				<Text>{size} px</Text>
 			</Box>
 			<Box flex={1} miw={0}>
 				<MantineSlider
-					classNames={{ bar: classes.bar }}
+					classNames={{ root: classes.slider, bar: classes.bar }}
 					color="purple.0"
 					size="sm"
 					thumbLabel="Change font size"

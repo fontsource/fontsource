@@ -5,5 +5,13 @@ export const packageManagers = [
 	{ value: 'bun', command: (cmd: string) => `bun add ${cmd}` },
 ];
 
-export const packageManagerCommandBlock = (cmd: string) =>
-	packageManagers.map(({ command }) => command(cmd)).join('\n');
+export const getPackageManagerCommands = (cmd: string) =>
+	packageManagers.map(({ command, value }) => ({
+		value,
+		command: command(cmd),
+	}));
+
+export const getPackageManagerCommandBlock = (cmd: string) =>
+	getPackageManagerCommands(cmd)
+		.map(({ command }) => command)
+		.join('\n');

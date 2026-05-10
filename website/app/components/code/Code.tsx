@@ -6,6 +6,10 @@ import {
 	Text,
 	Tooltip,
 } from '@mantine/core';
+import {
+	CodeHighlight as MantineCodeHighlight,
+	CodeHighlightAdapterProvider,
+} from '@mantine/code-highlight';
 import { useClipboard } from '@mantine/hooks';
 import cx from 'clsx';
 import {
@@ -14,16 +18,14 @@ import {
 	isValidElement,
 	type ReactElement,
 	type ReactNode,
-	Suspense,
-	use,
 } from 'react';
 
 import { IconCopy } from '@/components/icons';
 
 import classes from './Code.module.css';
 import {
+	codeHighlightAdapter,
 	displayLanguage,
-	getHighlightedTokens,
 	highlightLanguage,
 } from './highlight';
 
@@ -100,39 +102,20 @@ interface CodeHighlightProps {
 	language: string;
 }
 
-const CodeFallback = ({ code }: Pick<CodeHighlightProps, 'code'>) => (
-	<pre className={classes.code}>
-		<code className={classes['code-inner']}>{code}</code>
-	</pre>
-);
-
-const HighlightedCode = ({ code, language }: CodeHighlightProps) => {
-	const tokens = use(getHighlightedTokens(code, language));
-
-	return (
-		<pre className={classes.code}>
-			<code className={classes['code-inner']}>
-				{tokens.map((line) => (
-					<span className="line" key={line.key}>
-						{line.tokens.map((token) => (
-							<span
-								key={token.key}
-								style={token.htmlStyle ?? { color: token.color }}
-							>
-								{token.content}
-							</span>
-						))}
-					</span>
-				))}
-			</code>
-		</pre>
-	);
-};
-
 export const CodeHighlight = ({ code, language }: CodeHighlightProps) => (
-	<Suspense fallback={<CodeFallback code={code} />}>
-		<HighlightedCode code={code} language={language} />
-	</Suspense>
+	<CodeHighlightAdapterProvider adapter={codeHighlightAdapter}>
+		<MantineCodeHighlight
+			className={classes.highlight}
+			classNames={{
+				code: classes['code-inner'],
+				pre: classes.code,
+				scrollarea: classes.scrollarea,
+			}}
+			code={code}
+			language={highlightLanguage(language)}
+			withCopyButton={false}
+		/>
+	</CodeHighlightAdapterProvider>
 );
 
 type CodePreProps = ComponentProps<'pre'> & {

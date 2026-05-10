@@ -14,6 +14,15 @@
 	}
 }
 
+.value {
+	flex: 0 0 auto;
+	min-width: 52px;
+}
+
+.slider {
+	padding-inline: 0;
+}
+
 .bar {
 	background-color: var(--mantine-color-purple-0);
 }

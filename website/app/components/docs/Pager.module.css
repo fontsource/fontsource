@@ -23,7 +23,6 @@
 	color: light-dark(#33405a, #d3dbec);
 	transition:
 		border-color 100ms ease,
-		box-shadow 100ms ease,
 		color 100ms ease;
 
 	&[data-align="end"] {
@@ -37,7 +36,6 @@
 		outline-offset: 2px;
 		color: var(--mantine-color-purple-0);
 		border-color: var(--mantine-color-purple-0);
-		box-shadow: 0 10px 28px light-dark(rgba(98, 91, 248, 0.1), rgba(0, 0, 0, 0.16));
 	}
 }
 
