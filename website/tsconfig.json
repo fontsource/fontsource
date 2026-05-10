@@ -14,7 +14,6 @@
 	],
 	"compilerOptions": {
 		"checkJs": true,
-		"ignoreDeprecations": "6.0",
 		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,
 		"strict": true,
@@ -27,7 +26,6 @@
 		"module": "ES2022",
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
-		"baseUrl": ".",
 		"rootDirs": [".", "./.react-router/types"],
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
