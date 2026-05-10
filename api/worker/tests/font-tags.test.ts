@@ -11,8 +11,8 @@ describe('font tag utilities', () => {
 	it.each([
 		['abel@latest', { id: 'abel', isVariable: false, version: 'latest' }],
 		[
-			'recursive:vf@1.2.3',
-			{ id: 'recursive', isVariable: true, version: '1.2.3' },
+			'recursive:vf@5.2.3',
+			{ id: 'recursive', isVariable: true, version: '5.2.3' },
 		],
 	])('parseFontTag(%s)', (input, expected) => {
 		expect(parseFontTag(input)).toEqual(expected);
@@ -24,6 +24,8 @@ describe('font tag utilities', () => {
 			'recursive:vf:extra@1.0.0',
 			'Invalid font tag: unsupported variable suffix',
 		],
+		['abel@4.0.0', 'Bad Request. Version tags below @5 are not supported.'],
+		['abel@4', 'Bad Request. Version tags below @5 are not supported.'],
 	])('parseFontTag(%s) throws', (input, message) => {
 		expect(() => parseFontTag(input)).toThrow(message);
 	});
@@ -35,7 +37,7 @@ describe('font tag utilities', () => {
 		['2', '2.0.1'],
 		['1.2', '1.2.0'],
 		['1.0.0', '1.0.0'],
-	])('resolveVersionTag(%s) → %s', (input, expected) => {
+	])('resolveVersionTag(%s) returns %s', (input, expected) => {
 		expect(resolveVersionTag(input, versions)).toBe(expected);
 	});
 
@@ -60,7 +62,7 @@ describe('font tag utilities', () => {
 		['1.2.3+meta', false],
 		['1.2', false],
 		['latest', false],
-	] as const)('isPinnedVersion(%s) → %s', (input, expected) => {
+	] as const)('isPinnedVersion(%s) returns %s', (input, expected) => {
 		expect(isPinnedVersion(input)).toBe(expected);
 	});
 });

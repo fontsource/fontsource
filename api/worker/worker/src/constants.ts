@@ -15,8 +15,9 @@ export { UPSTREAM_URLS } from '../../shared/upstream';
  * Cache policy for the public API and CDN routes.
  */
 export const CACHE_HEADERS = {
-	api: 'public, max-age=300, stale-while-revalidate=3600',
-	floatingAsset: 'public, max-age=300, stale-while-revalidate=86400',
+	api: 'public, max-age=300',
+	apiEdge: 'max-age=86400',
+	floatingAsset: 'public, max-age=86400, stale-while-revalidate=604800',
 	immutableAsset: IMMUTABLE_ASSET_CACHE_CONTROL,
 	redirect: 'public, max-age=3600',
 } as const;

@@ -59,6 +59,9 @@ export interface FontListItem extends SourceFontSummary {
 }
 
 export interface FontDetail extends FontListItem {
+	version: string;
+	source: string;
+	npmVersion?: string;
 	unicodeRange: UnicodeRangeMap;
 	variants: FontVariants;
 }

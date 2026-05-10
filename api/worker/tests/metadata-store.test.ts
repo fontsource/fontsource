@@ -8,6 +8,7 @@ import type { AppEnv } from '../worker/src/env';
 import {
 	clearMetadataCachesForTest,
 	getFontIndex,
+	getFontlist,
 	getVariableCatalog,
 } from '../worker/src/features/metadata/store';
 import {
@@ -20,8 +21,6 @@ import {
 const createStoreContext = (): Context<AppEnv> =>
 	({ env: testEnv }) as unknown as Context<AppEnv>;
 
-/** Tests the in-memory derived metadata cache layer that sits in front of KV,
- *  verifying warm-hit reuse, explicit invalidation, and TTL-based expiry. */
 describe('metadata store derived cache', () => {
 	beforeEach(async () => {
 		clearMetadataCachesForTest();
@@ -63,6 +62,21 @@ describe('metadata store derived cache', () => {
 		const refreshedCatalog = await getVariableCatalog(createStoreContext());
 
 		expect(refreshedCatalog).toEqual({});
+	});
+
+	it('reuses projected fontlist views by key', async () => {
+		const warmFamilyMap = await getFontlist(createStoreContext(), 'family');
+		await testEnv.METADATA.put(
+			KV_KEYS.catalog,
+			JSON.stringify(scheduledCatalog),
+		);
+
+		const cachedFamilyMap = await getFontlist(createStoreContext(), 'family');
+		const typeMap = await getFontlist(createStoreContext(), 'type');
+
+		expect(cachedFamilyMap).toEqual(warmFamilyMap);
+		expect(Object.keys(cachedFamilyMap)).toHaveLength(3);
+		expect(Object.keys(typeMap)).toHaveLength(1);
 	});
 
 	it('expires the derived cache after the configured ttl', async () => {

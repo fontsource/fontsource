@@ -12,6 +12,8 @@ import {
 	type BuildVersionRequest,
 	type BuildVersionResponse,
 	getBuildKey,
+	getBuildRequestKey,
+	getFamilyBuildRequestKey,
 } from '../shared/build';
 import type {
 	FontCatalog,
@@ -86,6 +88,7 @@ export const serializeHeaders = (
 ): Record<string, string> => {
 	const result: Record<string, string> = {};
 	const cacheControl = response.headers.get('Cache-Control');
+	const cdnCacheControl = response.headers.get('CDN-Cache-Control');
 	const contentDisposition = response.headers.get('Content-Disposition');
 	const contentType = response.headers.get('Content-Type');
 	const etag = response.headers.get('ETag');
@@ -93,6 +96,7 @@ export const serializeHeaders = (
 	const lastModified = response.headers.get('Last-Modified');
 
 	if (cacheControl) result.cacheControl = cacheControl;
+	if (cdnCacheControl) result.cdnCacheControl = cdnCacheControl;
 	if (contentDisposition) result.contentDisposition = contentDisposition;
 	if (contentType) result.contentType = contentType;
 	if (etag) result.etag = '<etag>';
@@ -183,10 +187,6 @@ export const scheduledCatalog = {
 	abel: testCatalog.abel,
 } satisfies FontCatalog;
 
-/**
- * Convenience aliases for individual metadata entries used across test files.
- * Import these instead of redefining the same fixture objects locally.
- */
 export const staticMetadata: SourceFontMetadata = testCatalog.abel;
 export const variableMetadata: SourceFontMetadata = testCatalog.recursive;
 export const variableAxes = testCatalog.recursive.variable as VariableAxes;
@@ -253,18 +253,18 @@ export const testStats: Record<string, StatsResponse> = {
 
 export const testVersions: Record<string, VersionResponse> = {
 	abel: {
-		latest: '1.0.0',
-		static: ['1.0.0'],
+		latest: '5.0.0',
+		static: ['5.0.0'],
 	},
 	recursive: {
-		latest: '1.0.0',
-		static: ['1.0.0'],
-		latestVariable: '1.0.0',
-		variable: ['1.0.0'],
+		latest: '5.0.0',
+		static: ['5.0.0'],
+		latestVariable: '5.0.0',
+		variable: ['5.0.0'],
 	},
 	familypack: {
-		latest: '1.0.0',
-		static: ['1.0.0'],
+		latest: '5.0.0',
+		static: ['5.0.0'],
 	},
 };
 
@@ -567,16 +567,25 @@ export const installArtifactBuilderMock = (
 	const failBuilds = options.failBuilds ?? [];
 	const buildDelayMs = options.buildDelayMs ?? 0;
 	const calls = vi.fn<(request: BuildVersionRequest) => void>();
-	const flights = new Map<string, Promise<BuildVersionResponse>>();
+	const activeBuilds = new Map<string, Promise<BuildVersionResponse>>();
 
 	const ensureBuilt = async (
 		request: BuildVersionRequest,
 	): Promise<BuildVersionResponse> => {
 		const buildKey = getBuildKey(request.tag);
-		const inFlight = flights.get(buildKey);
+		const activeFamilyBuild = activeBuilds.get(
+			getFamilyBuildRequestKey(request.tag),
+		);
 
-		if (inFlight) {
-			return await inFlight;
+		if (request.mode === 'file' && activeFamilyBuild) {
+			return await activeFamilyBuild;
+		}
+
+		const requestKey = getBuildRequestKey(request);
+		const activeBuild = activeBuilds.get(requestKey);
+
+		if (activeBuild) {
+			return await activeBuild;
 		}
 
 		calls(request);
@@ -622,10 +631,10 @@ export const installArtifactBuilderMock = (
 			} satisfies BuildVersionResponse;
 			return response;
 		})().finally(() => {
-			flights.delete(buildKey);
+			activeBuilds.delete(requestKey);
 		});
 
-		flights.set(buildKey, buildPromise);
+		activeBuilds.set(requestKey, buildPromise);
 		return await buildPromise;
 	};
 

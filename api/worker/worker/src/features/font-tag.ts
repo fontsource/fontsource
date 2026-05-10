@@ -15,6 +15,7 @@ const EXACT_VERSION_PATTERN = /^\d+\.\d+\.\d+$/;
 const PUBLISHED_VERSION_PATTERN = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/;
 const MAJOR_ONLY_PATTERN = /^(\d+)$/;
 const MAJOR_MINOR_PATTERN = /^(\d+)\.(\d+)$/;
+const MIN_SUPPORTED_CDN_MAJOR = 5;
 
 const normalizeVersion = (version: string): string =>
 	version.replace(VERSION_PREFIX_PATTERN, '');
@@ -68,12 +69,19 @@ export const sortPublishedVersionsDesc = (
 export const isPinnedVersion = (version: string): boolean =>
 	EXACT_VERSION_PATTERN.test(normalizeVersion(version));
 
+const isBelowSupportedCdnMajor = (version: string): boolean => {
+	const requested = normalizeVersion(version);
+	const match = /^(\d+)(?:\.\d+){0,2}$/.exec(requested);
+
+	return match ? Number(match[1]) < MIN_SUPPORTED_CDN_MAJOR : false;
+};
+
 /**
  * Parses a CDN font tag into its constituent parts.
  *
  * The accepted formats are:
- *   - `{id}@{version}`      — static package, e.g. `roboto@1.2.3` or `roboto@latest`
- *   - `{id}:vf@{version}`   — variable package, e.g. `roboto:vf@latest`
+ *   - Static package: `{id}@{version}`, e.g. `roboto@1.2.3` or `roboto@latest`
+ *   - Variable package: `{id}:vf@{version}`, e.g. `roboto:vf@latest`
  *
  * Throws 400 for any structurally invalid tag.
  */
@@ -101,10 +109,16 @@ export const parseFontTag = (tag: string): ParsedFontTag => {
 		throw badRequest('Invalid font tag: unsupported variable suffix');
 	}
 
+	const version = normalizeVersion(rawVersion);
+
+	if (version !== 'latest' && isBelowSupportedCdnMajor(version)) {
+		throw badRequest('Bad Request. Version tags below @5 are not supported.');
+	}
+
 	return {
 		id,
 		isVariable: variableSuffix === 'vf',
-		version: normalizeVersion(rawVersion),
+		version,
 	};
 };
 
@@ -112,9 +126,9 @@ export const parseFontTag = (tag: string): ParsedFontTag => {
  * Resolves a floating version specifier against a published version list.
  *
  * Accepts:
- *   - `"latest"`            → the highest available version
- *   - `"1.2.3"`             → an exact pinned version (must exist)
- *   - `"1.2"` / `"1"`       → the highest patch/minor within that range
+ *   - `"latest"`: the highest available version
+ *   - `"1.2.3"`: an exact pinned version (must exist)
+ *   - `"1.2"` / `"1"`: the highest patch/minor within that range
  *
  * Throws 404 when no version satisfies the request, and 400 for unrecognised
  * specifier formats.

@@ -11,7 +11,6 @@
 		"deploy:staging": "CLOUDFLARE_ENV=staging bun run deploy",
 		"dev": "bun --filter '@fontsource-utils/core' build && vite dev",
 		"preview": "bun run build && vite preview",
-		"coverage": "bun --filter '@fontsource-utils/core' build && vitest run --coverage",
 		"test": "bun --filter '@fontsource-utils/core' build && vitest run",
 		"typecheck": "bun --filter '@fontsource-utils/core' build && bun x tsc -p worker/tsconfig.json --noEmit && bun x tsc -p tests/tsconfig.json --noEmit && bun x tsc -p container/tsconfig.json --noEmit",
 		"format": "biome format --write .",
@@ -28,7 +27,7 @@
 		"fflate": "^0.8.2",
 		"hono": "^4.12.18",
 		"limit-concur": "^4.0.0",
-		"zod": "^4.4.3"
+		"zod": "4.3.6"
 	},
 	"devDependencies": {
 		"@cloudflare/vite-plugin": "^1.36.3",

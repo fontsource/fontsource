@@ -79,6 +79,31 @@ describe('metadata routes', () => {
 		}).toMatchSnapshot();
 	});
 
+	it('keeps API cache headers on conditional metadata responses', async () => {
+		const first = await dispatch('https://fontsource.test/v1/fonts/abel');
+		await first.settle();
+		const etag = first.response.headers.get('ETag');
+
+		expect(etag).toBeTruthy();
+
+		const second = await dispatch(
+			new Request('https://fontsource.test/v1/fonts/abel', {
+				headers: {
+					'If-None-Match': etag ?? '',
+				},
+			}),
+		);
+		await second.settle();
+
+		expect(second.response.status).toBe(304);
+		expect(second.response.headers.get('Cache-Control')).toBe(
+			'public, max-age=300',
+		);
+		expect(second.response.headers.get('CDN-Cache-Control')).toBe(
+			'max-age=86400',
+		);
+	});
+
 	it('serves canonical download requests directly', async () => {
 		const { response, settle } = await dispatch(
 			new Request('https://fontsource.test/v1/download/abel', {
@@ -90,10 +115,10 @@ describe('metadata routes', () => {
 		expect(response.status).toBe(200);
 		expect(response.headers.get('Location')).toBeNull();
 		expect(response.headers.get('Content-Disposition')).toBe(
-			'attachment; filename="abel_1.0.0.zip"',
+			'attachment; filename="abel_5.0.0.zip"',
 		);
 		expect(response.headers.get('Cache-Control')).toBe(
-			'public, max-age=300, stale-while-revalidate=86400',
+			'public, max-age=86400, stale-while-revalidate=604800',
 		);
 	});
 
@@ -151,6 +176,62 @@ describe('metadata routes', () => {
 		]);
 	});
 
+	it('documents every public route in openapi', async () => {
+		const { response, settle } = await dispatch(
+			'https://fontsource.test/openapi.json',
+		);
+		const document = (await response.json()) as {
+			paths: Record<
+				string,
+				Record<string, { responses: Record<string, unknown> }>
+			>;
+		};
+		await settle();
+
+		expect(response.status).toBe(200);
+		expect(Object.keys(document.paths).sort()).toEqual([
+			'/css/{tag}/{file}',
+			'/fontlist',
+			'/fonts/{tag}/{file}',
+			'/v1/axis-registry',
+			'/v1/download/{id}',
+			'/v1/fonts',
+			'/v1/fonts/{id}',
+			'/v1/fonts/{id}/{file}',
+			'/v1/stats',
+			'/v1/stats/{id}',
+			'/v1/variable',
+			'/v1/variable/{id}',
+			'/v1/version/{id}',
+		]);
+		expect(document.paths['/v1/download/{id}']?.get.responses).toHaveProperty(
+			'200',
+		);
+		expect(document.paths['/v1/download/{id}']?.get.responses).toHaveProperty(
+			'304',
+		);
+		expect(document.paths['/fonts/{tag}/{file}']?.get.responses).toHaveProperty(
+			'302',
+		);
+		expect(document.paths['/v1/fonts']?.get.responses).toHaveProperty('400');
+		expect(document.paths['/v1/axis-registry']?.get.responses).toHaveProperty(
+			'400',
+		);
+		expect(
+			document.paths['/v1/fonts/{id}/{file}']?.get.responses,
+		).toHaveProperty('301');
+	});
+
+	it('serves docs that load the generated openapi document', async () => {
+		const { response, settle } = await dispatch('https://fontsource.test/docs');
+		const body = await response.text();
+		await settle();
+
+		expect(response.status).toBe(200);
+		expect(response.headers.get('Content-Type')).toContain('text/html');
+		expect(body).toContain('/openapi.json');
+	});
+
 	it('refreshes scheduled metadata caches from upstream', async () => {
 		const ctrl = createScheduledController({
 			cron: '0 */3 * * *',
@@ -190,13 +271,50 @@ describe('metadata routes', () => {
 
 	it.each([
 		[
+			'/fontlist rejects unknown query parameters',
+			'https://fontsource.test/fontlist?unknown',
+		],
+		[
+			'/fontlist rejects unknown query parameters even with a valid key',
+			'https://fontsource.test/fontlist?unknown&family',
+		],
+		[
+			'/fontlist rejects multiple query parameters',
+			'https://fontsource.test/fontlist?family&subsets',
+		],
+		[
+			'/v1/fonts rejects unknown query parameters',
+			'https://fontsource.test/v1/fonts?unknown=abel',
+		],
+		[
+			'/v1/fonts rejects unknown query parameters even with a valid filter',
+			'https://fontsource.test/v1/fonts?unknown=abel&id=abel',
+		],
+	] as const)('%s', async (_label, url) => {
+		const { response, settle } = await dispatch(url);
+		const body = (await response.json()) as { status: number; error: string };
+		await settle();
+
+		expect(response.status).toBe(400);
+		expect(body.status).toBe(400);
+		expect(body.error).toMatch(/^Bad Request\./);
+	});
+
+	it.each([
+		[
 			'returns the full registry when no query is provided',
 			'',
 			false,
 			200,
 			testAxisRegistry,
 		],
-		['ignores invalid query keys', '?axis=mono', false, 200, testAxisRegistry],
+		[
+			'rejects invalid query keys',
+			'?axis=mono',
+			false,
+			400,
+			{ status: 400, error: 'Bad Request. Invalid query parameter.' },
+		],
 		[
 			'filters by tag',
 			'?tag=mono',
@@ -226,11 +344,11 @@ describe('metadata routes', () => {
 			expandedAxisRegistry,
 		],
 		[
-			'ignores invalid keys when valid filters are present',
+			'rejects invalid keys when valid filters are present',
 			'?axis=mono&tag=opsz',
 			true,
-			200,
-			{ OPSZ: expandedAxisRegistry.OPSZ },
+			400,
+			{ status: 400, error: 'Bad Request. Invalid query parameter.' },
 		],
 		[
 			'preserves legacy query semantics',
@@ -260,24 +378,7 @@ describe('metadata routes', () => {
 	});
 
 	it.each([
-		[
-			'ignores invalid query keys',
-			'?axis=mono',
-			200,
-			['abel', 'recursive', 'familypack'],
-		],
-		[
-			'ignores invalid keys when valid filters are present',
-			'?axis=mono&id=recursive',
-			200,
-			['recursive'],
-		],
-		[
-			'uses the last repeated filter value',
-			'?id=abel&id=recursive',
-			200,
-			['recursive'],
-		],
+		['applies repeated filters sequentially', '?id=abel&id=recursive', 200, []],
 	])('font filters: %s', async (_label, query, expectedStatus, expectedIds) => {
 		const { response, settle } = await dispatch(
 			`https://fontsource.test/v1/fonts${query}`,
@@ -294,18 +395,6 @@ describe('metadata routes', () => {
 			'',
 			200,
 			{ abel: 'google', recursive: 'google', familypack: 'google' },
-		],
-		[
-			'ignores invalid query keys',
-			'?axis=mono',
-			200,
-			{ abel: 'google', recursive: 'google', familypack: 'google' },
-		],
-		[
-			'ignores invalid keys when a valid key is present',
-			'?axis=mono&family=1',
-			200,
-			{ abel: 'Abel', recursive: 'Recursive', familypack: 'Family Pack' },
 		],
 		[
 			'rejects multiple query parameters',

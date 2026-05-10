@@ -1,0 +1,9 @@
+.git
+**/node_modules
+**/.dev.vars
+**/.wrangler
+**/coverage
+**/dist
+**/build
+**/*.tsbuildinfo
+api/worker/bin

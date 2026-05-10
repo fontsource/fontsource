@@ -38,7 +38,7 @@ export class DownloadFontRoute extends OpenAPIRoute {
 				...contentJson(ErrorResponseSchema),
 			},
 			'502': {
-				description: 'Bad gateway \u2014 build failed to produce the archive',
+				description: 'Build failed to produce the archive',
 				...contentJson(ErrorResponseSchema),
 			},
 		},

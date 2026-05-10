@@ -15,8 +15,6 @@ const buildVersion = async (
 	requestBody: BuildVersionRequest,
 ): Promise<BuildVersionResponse> => {
 	const buildKey = getBuildKey(requestBody.tag);
-	// `getByName(buildKey)` guarantees that concurrent misses for the same exact
-	// version share the same named container instance.
 	try {
 		return await c.env.ARTIFACT_BUILDER.getByName(buildKey).buildVersion(
 			requestBody,

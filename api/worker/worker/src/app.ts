@@ -2,6 +2,7 @@ import { fromHono } from 'chanfana';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { etag, RETAINED_304_HEADERS } from 'hono/etag';
+import { HTTPException } from 'hono/http-exception';
 
 import { CACHE_HEADERS } from './constants';
 import type { AppEnv } from './env';
@@ -37,6 +38,14 @@ app.use('*', async (c, next) => {
 	if (c.res.status < 400 && !c.res.headers.has('Cache-Control')) {
 		c.header('Cache-Control', CACHE_HEADERS.api);
 	}
+	if (
+		c.res.status < 400 &&
+		!c.res.headers.has('CDN-Cache-Control') &&
+		(c.res.headers.get('Content-Type')?.includes('application/json') ||
+			c.res.headers.get('Cache-Control') === CACHE_HEADERS.api)
+	) {
+		c.header('CDN-Cache-Control', CACHE_HEADERS.apiEdge);
+	}
 });
 
 // Registered on the Hono app before chanfana so that route classes don't need
@@ -44,14 +53,27 @@ app.use('*', async (c, next) => {
 // only accepts two arguments: path + endpoint class).
 
 const apiEtag = etag({
-	retainedHeaders: ['content-type', 'last-modified', ...RETAINED_304_HEADERS],
+	retainedHeaders: [
+		'cdn-cache-control',
+		'content-type',
+		'last-modified',
+		...RETAINED_304_HEADERS,
+	],
 });
 
-// Metadata routes — all paths under /v1/* and /fontlist get etag.
-// The etag middleware is harmless on compat redirects (empty body → no-op)
-// and on download routes (R2 already sets ETag, middleware reuses it).
-app.use('/fontlist', apiEtag);
-app.use('/v1/*', apiEtag);
+for (const path of [
+	'/fontlist',
+	'/v1/fonts',
+	'/v1/fonts/:id',
+	'/v1/variable',
+	'/v1/variable/:id',
+	'/v1/axis-registry',
+	'/v1/stats',
+	'/v1/stats/:id',
+	'/v1/version/:id',
+] as const) {
+	app.use(path, apiEtag);
+}
 
 app.use('/css/*', apiEtag);
 
@@ -66,8 +88,7 @@ const openapi = fromHono(app, {
 		info: {
 			title: 'Fontsource API',
 			version: '1.0.0',
-			description:
-				'Public API for Fontsource — self-hostable, performance-optimized font distribution.',
+			description: 'Public API for Fontsource self-hosted font distribution.',
 			contact: {
 				name: 'Fontsource',
 				url: 'https://fontsource.org',
@@ -136,7 +157,9 @@ app.notFound((c) =>
 );
 
 app.onError(async (error, c) => {
-	console.error(error);
+	if (!(error instanceof HTTPException) || error.status >= 500) {
+		console.error(error);
+	}
 	return toErrorResponse(c, error);
 });
 

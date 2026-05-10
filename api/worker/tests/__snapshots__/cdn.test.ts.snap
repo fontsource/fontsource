@@ -8,12 +8,12 @@ exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = 
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abel@1.0.0/latin-400-normal.woff2) format('woff2'),
-       url(https://cdn.jsdelivr.net/fontsource/fonts/abel@1.0.0/latin-400-normal.woff) format('woff');
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2) format('woff2'),
+       url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff) format('woff');
   unicode-range: U+0000-00FF;
 }",
   "headers": {
-    "cacheControl": "public, max-age=300, stale-while-revalidate=86400",
+    "cacheControl": "public, max-age=86400, stale-while-revalidate=604800",
     "contentType": "text/css; charset=utf-8",
     "etag": "<etag>",
     "lastModified": "<last-modified>",
@@ -33,7 +33,7 @@ exports[`cdn routes > public asset outputs > serves zip archives with correct fi
     ],
     "headers": {
       "cacheControl": "public, max-age=31536000, immutable",
-      "contentDisposition": "attachment; filename="abel_1.0.0.zip"",
+      "contentDisposition": "attachment; filename="abel_5.0.0.zip"",
       "contentType": "application/zip",
       "etag": "<etag>",
       "lastModified": "<last-modified>",
@@ -51,7 +51,7 @@ exports[`cdn routes > public asset outputs > serves zip archives with correct fi
     ],
     "headers": {
       "cacheControl": "public, max-age=31536000, immutable",
-      "contentDisposition": "attachment; filename="recursive_1.0.0.zip"",
+      "contentDisposition": "attachment; filename="recursive_5.0.0.zip"",
       "contentType": "application/zip",
       "etag": "<etag>",
       "lastModified": "<last-modified>",
@@ -64,7 +64,7 @@ exports[`cdn routes > public asset outputs > serves zip archives with correct fi
 exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
 {
   "body": {
-    "error": "Bad Gateway. Artifact build failed for build:abel@1.0.0: Mocked builder failure for build:abel@1.0.0",
+    "error": "Bad Gateway. Artifact build failed for build:abel@5.0.0: Mocked builder failure for build:abel@5.0.0",
     "status": 502,
   },
   "headers": {
@@ -103,7 +103,7 @@ exports[`cdn routes > stores HTTP metadata on built binaries and download archiv
   },
   "zip": {
     "cacheControl": "public, max-age=31536000, immutable",
-    "contentDisposition": "attachment; filename="recursive_1.0.0.zip"",
+    "contentDisposition": "attachment; filename="recursive_5.0.0.zip"",
     "contentType": "application/zip",
   },
 }

@@ -1,6 +1,6 @@
 name = "fontsource-worker-api"
 main = "worker/src/index.ts"
-compatibility_date = "2026-04-05"
+compatibility_date = "2026-05-10"
 compatibility_flags = ["nodejs_compat"]
 
 kv_namespaces = [

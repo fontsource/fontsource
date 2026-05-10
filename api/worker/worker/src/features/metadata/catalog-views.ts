@@ -25,8 +25,8 @@ const buildFontListItem = (metadata: SourceFontMetadata): FontListItem => ({
 });
 
 /**
- * Builds the full font detail response, including the three-level variant map
- * (weight → style → subset) with CDN URLs for each format.
+ * Builds the full font detail response, including the nested variant map keyed
+ * by weight, style, and subset.
  *
  * The `buildUrl` callback is injected by the caller so the URL shape can vary
  * between the metadata API (latest tag) and any future uses.
@@ -81,6 +81,9 @@ export const buildFontDetail = (
 
 	return {
 		...buildFontListItem(metadata),
+		version: metadata.version,
+		source: metadata.source,
+		...(metadata.npmVersion ? { npmVersion: metadata.npmVersion } : {}),
 		unicodeRange: metadata.unicodeRange,
 		variants,
 	};
@@ -95,33 +98,30 @@ export const buildFontIndex = (catalog: FontCatalog): FontListItem[] =>
  */
 export const filterFontIndex = (
 	items: readonly FontListItem[],
-	queries: Partial<Record<FontFilterQueryKey, string>>,
+	key: FontFilterQueryKey,
+	rawValue: string,
 ): FontListItem[] =>
-	items.filter((item) =>
-		Object.entries(queries).every(([key, rawValue]) => {
-			if (!rawValue) {
-				return true;
-			}
+	items.filter((item) => {
+		if (!rawValue) {
+			return true;
+		}
 
-			const values = rawValue.split(',');
-			switch (key as FontFilterQueryKey) {
-				case 'subsets':
-				case 'styles':
-					return values.some((value) =>
-						item[key as 'subsets' | 'styles'].includes(value),
-					);
-				case 'weights':
-					return values.some((value) => item.weights.includes(Number(value)));
-				case 'variable':
-					return values.includes(String(item.variable));
-				default:
-					return values.includes(String(item[key as keyof FontListItem]));
-			}
-		}),
-	);
+		const values = rawValue.split(',');
+		switch (key) {
+			case 'subsets':
+			case 'styles':
+				return values.some((value) => item[key].includes(value));
+			case 'weights':
+				return values.some((value) => item.weights.includes(Number(value)));
+			case 'variable':
+				return values.includes(String(item.variable));
+			default:
+				return values.includes(String(item[key]));
+		}
+	});
 
 /**
- * Projects one field from the catalog into a flat `{ id → value }` map.
+ * Projects one field from the catalog into a flat record keyed by font ID.
  *
  * This is the legacy `/fontlist` response shape: a single field across every
  * family so clients can build lookup tables without fetching the full catalog.

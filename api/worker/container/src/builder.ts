@@ -2,7 +2,11 @@ import type {
 	BuildVersionRequest,
 	BuildVersionResponse,
 } from '../../shared/build';
-import { getBuildKey } from '../../shared/build';
+import {
+	getBuildKey,
+	getBuildRequestKey,
+	getFamilyBuildRequestKey,
+} from '../../shared/build';
 import { buildArtifacts } from './artifacts';
 
 type BuildSnapshot = BuildVersionResponse & {
@@ -10,36 +14,44 @@ type BuildSnapshot = BuildVersionResponse & {
 };
 
 /**
- * Each container is mapped to a specific build key (a unique font and version),
- * so a single in-flight build promise is enough to dedupe concurrent requests.
+ * Each container is mapped to a specific font/version. Family builds can satisfy
+ * file requests, but family requests must not join a narrower file build.
  */
-let buildFlight: Promise<BuildSnapshot> | undefined;
+const activeBuilds = new Map<string, Promise<BuildSnapshot>>();
 
 export const ensureBuilt = async (
 	request: BuildVersionRequest,
 ): Promise<BuildSnapshot> => {
-	if (buildFlight) {
-		console.log(
-			`[builder] dedup — joining existing in-flight ${request.mode} build for ${getBuildKey(request.tag)}`,
-		);
-		return await buildFlight;
+	const buildKey = getBuildKey(request.tag);
+	const activeFamilyBuild = activeBuilds.get(
+		getFamilyBuildRequestKey(request.tag),
+	);
+
+	if (request.mode === 'file' && activeFamilyBuild) {
+		console.log(`[builder] joined active family build for ${buildKey}`);
+		return await activeFamilyBuild;
 	}
 
-	const buildKey = getBuildKey(request.tag);
+	const requestKey = getBuildRequestKey(request);
+	const activeBuild = activeBuilds.get(requestKey);
+
+	if (activeBuild) {
+		console.log(
+			`[builder] joined active ${request.mode} build for ${buildKey}`,
+		);
+		return await activeBuild;
+	}
+
 	console.log(`[builder] starting ${request.mode} build ${buildKey}`);
 
-	// No existing build in-flight. Start a new one and share the promise for
-	// concurrent requests until it settles.
-	const flight = executeBuild(request).finally(() => {
-		if (buildFlight === flight) {
-			// Clear the shared slot once this build settles so a later cold miss can
-			// start a fresh build instead of reusing a completed promise.
-			buildFlight = undefined;
+	const build = executeBuild(request).finally(() => {
+		if (activeBuilds.get(requestKey) === build) {
+			activeBuilds.delete(requestKey);
 		}
 	});
 
-	buildFlight = flight;
-	return await flight;
+	activeBuilds.set(requestKey, build);
+	return await build;
 };
 
 const executeBuild = async (
@@ -51,7 +63,7 @@ const executeBuild = async (
 	const durationMs = Date.now() - startedAt;
 
 	console.log(
-		`[builder] finished ${request.mode} build ${buildKey} — ${artifactCount} artifacts, ${durationMs}ms`,
+		`[builder] finished ${request.mode} build ${buildKey} - ${artifactCount} artifacts, ${durationMs}ms`,
 	);
 
 	return {

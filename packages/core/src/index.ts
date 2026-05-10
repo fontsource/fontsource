@@ -28,8 +28,8 @@ export type {
 } from './types';
 export {
 	determineAxisKey,
+	getVariableAxisKeys,
 	resolveFontFaces,
 	resolvePublishedFaces,
-	getVariableAxisKeys,
 	selectVariableAxisKey,
 } from './utils';

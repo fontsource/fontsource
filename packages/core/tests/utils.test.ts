@@ -9,8 +9,8 @@ import {
 	formatSlantValue,
 	formatStretchValue,
 	getVariableAxisKeys,
-	resolvePublishedFaces,
 	resolveFontFaces,
+	resolvePublishedFaces,
 	selectVariableAxisKey,
 } from '../src/utils';
 

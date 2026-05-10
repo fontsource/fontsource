@@ -192,7 +192,7 @@ const ensurePublishedPinnedSource = async (
 		}
 
 		console.warn(
-			`[cdn] skipping published-file preflight for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}`,
+			`[cdn] published-file preflight skipped for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}`,
 			error,
 		);
 	}
@@ -330,16 +330,8 @@ export const getBinaryAsset = async (
 	};
 
 	if (file !== 'download.zip') {
-		let build = await ensureFileBuilt(c, resolved, file);
-		let built = await readBuiltAsset();
-
-		// Multiple requests for the same exact-version build key can join an
-		// in-flight build for a different file. Retry once with the requested
-		// file so cold single-file requests still succeed.
-		if (!built) {
-			build = await ensureFileBuilt(c, resolved, file);
-			built = await readBuiltAsset();
-		}
+		const build = await ensureFileBuilt(c, resolved, file);
+		const built = await readBuiltAsset();
 
 		if (!built) {
 			throw notFound('Not Found. File does not exist.');
@@ -352,17 +344,8 @@ export const getBinaryAsset = async (
 		return respond(built);
 	}
 
-	// Cold zip miss — trigger the exact-version family build then re-fetch.
 	await ensureVersionBuilt(c, resolved);
-	let built = await readBuiltAsset();
-
-	// We may have joined an in-flight single-file build on the same exact-version
-	// DO, so retry once to escalate to the family build when the zip is still
-	// missing after the joined build settles.
-	if (!built) {
-		await ensureVersionBuilt(c, resolved);
-		built = await readBuiltAsset();
-	}
+	const built = await readBuiltAsset();
 
 	if (!built) {
 		throw badGateway(

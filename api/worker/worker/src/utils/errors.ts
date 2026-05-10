@@ -16,7 +16,7 @@ export const badGateway = (message: string): HTTPException =>
 /**
  * Normalizes thrown errors into the { status, error } JSON envelope.
  *
- * Chanfana v3 wraps validation errors as HTTPException({ res }) â the details
+ * Chanfana v3 wraps validation errors as HTTPException({ res }); the details
  * live in the response body. We parse those out so the API surface stays
  * consistent.
  */

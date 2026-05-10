@@ -47,7 +47,7 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 				description: 'Not modified (conditional request)',
 			},
 			'400': {
-				description: 'Bad request \u2014 invalid file extension or font tag',
+				description: 'Invalid file extension or font tag',
 				...contentJson(ErrorResponseSchema),
 			},
 			'404': {
@@ -55,8 +55,7 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 				...contentJson(ErrorResponseSchema),
 			},
 			'502': {
-				description:
-					'Bad gateway \u2014 artifact build failed to persist the requested file',
+				description: 'Artifact build did not persist the requested file',
 				...contentJson(ErrorResponseSchema),
 			},
 		},
@@ -66,10 +65,8 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 		const data = await this.getValidatedData<typeof this.schema>();
 		const { tag, file } = data.params;
 
-		// download.zip on a variable or "latest" floating tag is served through the
-		// canonical download endpoint rather than directly from R2. This avoids storing
-		// a separate copy per-tag and ensures the client always receives the latest
-		// pre-built archive without stale-cache issues.
+		// Route floating zip aliases through the canonical download endpoint so
+		// they share one cached archive.
 		if (file === 'download.zip') {
 			const parsedTag = parseFontTag(tag);
 			const deploymentOrigin = new URL(c.req.url).origin;
@@ -118,7 +115,7 @@ export class GetCssFileRoute extends OpenAPIRoute {
 				},
 			},
 			'400': {
-				description: 'Bad request \u2014 invalid file extension',
+				description: 'Invalid file extension',
 				...contentJson(ErrorResponseSchema),
 			},
 			'404': {

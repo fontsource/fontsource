@@ -1,4 +1,4 @@
-FROM oven/bun:latest AS build
+FROM oven/bun:1.3.13 AS build
 
 WORKDIR /app
 
@@ -18,10 +18,11 @@ COPY packages/publish/package.json ./packages/publish/package.json
 COPY packages/scss/package.json ./packages/scss/package.json
 COPY website/package.json ./website/package.json
 
-RUN bun install
+RUN bun install --frozen-lockfile
 
 COPY tsconfig.json ./
-COPY api/worker ./api/worker
+COPY api/worker/container ./api/worker/container
+COPY api/worker/shared ./api/worker/shared
 COPY packages/core ./packages/core
 
 RUN bun --filter '@fontsource-utils/core' build

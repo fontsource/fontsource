@@ -73,7 +73,7 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 		const fetchSpy = installUpstreamFetchMock();
 		await testEnv.FONTS.put(
-			'recursive@1.0.0/latin-400-normal.woff2',
+			'recursive@5.0.0/latin-400-normal.woff2',
 			staticWoff2Bytes,
 		);
 
@@ -102,7 +102,7 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 		const fetchSpy = installUpstreamFetchMock();
 		await testEnv.FONTS.put(
-			'recursive@1.0.0/variable/latin-full-normal.woff2',
+			'recursive@5.0.0/variable/latin-full-normal.woff2',
 			variableWoff2Bytes,
 		);
 
@@ -129,9 +129,9 @@ describe('cdn routes', () => {
 
 	it('serves 304 responses for If-Modified-Since through R2 preconditions', async () => {
 		const url =
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
 		await testEnv.FONTS.put(
-			'abel@1.0.0/latin-400-normal.woff2',
+			'abel@5.0.0/latin-400-normal.woff2',
 			staticWoff2Bytes,
 		);
 
@@ -162,12 +162,12 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 		const fetchSpy = installUpstreamFetchMock();
 		await testEnv.FONTS.put(
-			'abel@1.0.0/latin-400-normal.woff2',
+			'abel@5.0.0/latin-400-normal.woff2',
 			staticWoff2Bytes,
 		);
 
 		const result = await dispatch(
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2',
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2',
 		);
 		await result.response.arrayBuffer();
 		await result.settle();
@@ -188,15 +188,15 @@ describe('cdn routes', () => {
 	describe('public asset outputs', () => {
 		beforeEach(async () => {
 			await testEnv.FONTS.put(
-				'abel@1.0.0/latin-400-normal.woff2',
+				'abel@5.0.0/latin-400-normal.woff2',
 				staticWoff2Bytes,
 			);
 			await testEnv.FONTS.put(
-				'recursive@1.0.0/variable/latin-full-normal.woff2',
+				'recursive@5.0.0/variable/latin-full-normal.woff2',
 				variableWoff2Bytes,
 			);
 			await testEnv.FONTS.put(
-				'recursive@1.0.0/download.zip',
+				'recursive@5.0.0/download.zip',
 				zipSync({
 					'static/webfonts/recursive-latin-400-normal.woff2': staticWoff2Bytes,
 					'static/webfonts/recursive-latin-400-normal.woff': new Uint8Array([
@@ -211,7 +211,7 @@ describe('cdn routes', () => {
 				}),
 			);
 			await testEnv.FONTS.put(
-				'abel@1.0.0/download.zip',
+				'abel@5.0.0/download.zip',
 				zipSync({
 					'static/webfonts/abel-latin-400-normal.woff2': staticWoff2Bytes,
 					'static/webfonts/abel-latin-400-normal.woff': new Uint8Array([1]),
@@ -239,7 +239,7 @@ describe('cdn routes', () => {
 				'text/css; charset=utf-8',
 			);
 			expect(css).toContain("font-family: 'Recursive Variable'");
-			expect(css).toContain('recursive:vf@1.0.0/');
+			expect(css).toContain('recursive:vf@5.0.0/');
 			expect(css).toContain('.woff2');
 		});
 
@@ -254,14 +254,14 @@ describe('cdn routes', () => {
 			clearMetadataCachesForTest();
 
 			const { response, settle } = await dispatch(
-				'https://fontsource.test/css/slanted:vf@1.0.0/index.css',
+				'https://fontsource.test/css/slanted:vf@5.0.0/index.css',
 			);
 			const css = await response.text();
 			await settle();
 
 			expect(response.status).toBe(200);
 			expect(css).toContain('font-style: oblique 0deg 15deg;');
-			expect(css).toContain('slanted:vf@1.0.0/latin-full-normal.woff2');
+			expect(css).toContain('slanted:vf@5.0.0/latin-full-normal.woff2');
 			expect(css).not.toContain('oblique%200deg%2015deg');
 		});
 
@@ -277,7 +277,7 @@ describe('cdn routes', () => {
 			clearMetadataCachesForTest();
 
 			const result = await dispatch(
-				'https://fontsource.test/fonts/slanted@1.0.0/download.zip',
+				'https://fontsource.test/fonts/slanted@5.0.0/download.zip',
 			);
 			const archive = unzipSync(
 				new Uint8Array(await result.response.arrayBuffer()),
@@ -304,7 +304,7 @@ describe('cdn routes', () => {
 
 		it('serves static font assets with immutable caching', async () => {
 			const url =
-				'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+				'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
 
 			const cold = await dispatch(url);
 			const coldBytes = await cold.response.arrayBuffer();
@@ -326,7 +326,7 @@ describe('cdn routes', () => {
 
 		it('handles conditional requests with ETag', async () => {
 			const url =
-				'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+				'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
 			const warm = await dispatch(url);
 			await warm.response.arrayBuffer();
 			await warm.settle();
@@ -355,7 +355,7 @@ describe('cdn routes', () => {
 
 		it('serves zip archives with correct file listings', async () => {
 			const recursiveResult = await dispatch(
-				'https://fontsource.test/fonts/recursive@1.0.0/download.zip',
+				'https://fontsource.test/fonts/recursive@5.0.0/download.zip',
 			);
 			const recursiveArchive = unzipSync(
 				new Uint8Array(await recursiveResult.response.arrayBuffer()),
@@ -363,7 +363,7 @@ describe('cdn routes', () => {
 			await recursiveResult.settle();
 
 			const abelResult = await dispatch(
-				'https://fontsource.test/fonts/abel@1.0.0/download.zip',
+				'https://fontsource.test/fonts/abel@5.0.0/download.zip',
 			);
 			const abelArchive = unzipSync(
 				new Uint8Array(await abelResult.response.arrayBuffer()),
@@ -389,7 +389,7 @@ describe('cdn routes', () => {
 		const builder = installArtifactBuilderMock(testEnv);
 
 		const result = await dispatch(
-			'https://fontsource.test/fonts/recursive@1.0.0/download.zip',
+			'https://fontsource.test/fonts/recursive@5.0.0/download.zip',
 		);
 		const archive = unzipSync(
 			new Uint8Array(await result.response.arrayBuffer()),
@@ -428,10 +428,10 @@ describe('cdn routes', () => {
 	it('redirects exact variable zip aliases to the shared exact-version archive', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		const [staticZipResult, variableZipResult] = await Promise.all([
-			dispatch('https://fontsource.test/fonts/recursive@1.0.0/download.zip'),
+			dispatch('https://fontsource.test/fonts/recursive@5.0.0/download.zip'),
 			dispatch(
 				new Request(
-					'https://fontsource.test/fonts/recursive:vf@1.0.0/download.zip',
+					'https://fontsource.test/fonts/recursive:vf@5.0.0/download.zip',
 					{ redirect: 'manual' },
 				),
 			),
@@ -449,7 +449,7 @@ describe('cdn routes', () => {
 		// Variable zip alias redirects to the shared archive
 		expect(variableZipResult.response.status).toBe(302);
 		expect(variableZipResult.response.headers.get('Location')).toBe(
-			'https://fontsource.test/fonts/recursive@1.0.0/download.zip',
+			'https://fontsource.test/fonts/recursive@5.0.0/download.zip',
 		);
 
 		// Only one build was triggered
@@ -458,7 +458,7 @@ describe('cdn routes', () => {
 
 	it('redirects exact variable zip aliases for static families to the shared archive route', async () => {
 		const { response, settle } = await dispatch(
-			new Request('https://fontsource.test/fonts/abel:vf@1.0.0/download.zip', {
+			new Request('https://fontsource.test/fonts/abel:vf@5.0.0/download.zip', {
 				redirect: 'manual',
 			}),
 		);
@@ -466,7 +466,7 @@ describe('cdn routes', () => {
 
 		expect(response.status).toBe(302);
 		expect(response.headers.get('Location')).toBe(
-			'https://fontsource.test/fonts/abel@1.0.0/download.zip',
+			'https://fontsource.test/fonts/abel@5.0.0/download.zip',
 		);
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
@@ -474,7 +474,7 @@ describe('cdn routes', () => {
 	it('stores HTTP metadata on built binaries and download archives', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		const zipResult = await dispatch(
-			'https://fontsource.test/fonts/recursive@1.0.0/download.zip',
+			'https://fontsource.test/fonts/recursive@5.0.0/download.zip',
 		);
 		await zipResult.response.arrayBuffer();
 		await zipResult.settle();
@@ -487,13 +487,13 @@ describe('cdn routes', () => {
 
 		expect({
 			buildCalls: builder.calls.mock.calls.length,
-			zip: pick(await testEnv.FONTS.head('recursive@1.0.0/download.zip')),
+			zip: pick(await testEnv.FONTS.head('recursive@5.0.0/download.zip')),
 			static: pick(
-				await testEnv.FONTS.head('recursive@1.0.0/latin-400-normal.woff2'),
+				await testEnv.FONTS.head('recursive@5.0.0/latin-400-normal.woff2'),
 			),
 			variable: pick(
 				await testEnv.FONTS.head(
-					'recursive@1.0.0/variable/latin-full-normal.woff2',
+					'recursive@5.0.0/variable/latin-full-normal.woff2',
 				),
 			),
 		}).toMatchSnapshot();
@@ -504,7 +504,7 @@ describe('cdn routes', () => {
 		installUpstreamFetchMock({
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/recursive`]: new Response(
 				JSON.stringify({
-					versions: [{ version: '1.0.0' }],
+					versions: [{ version: '5.0.0' }],
 				}),
 			),
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource-variable/recursive`]:
@@ -516,7 +516,7 @@ describe('cdn routes', () => {
 		});
 		clearMetadataCachesForTest();
 		await testEnv.FONTS.put(
-			'recursive@1.0.0/download.zip',
+			'recursive@5.0.0/download.zip',
 			zipSync({
 				'static/webfonts/recursive-latin-400-normal.woff2': staticWoff2Bytes,
 				LICENSE: new TextEncoder().encode('static latest'),
@@ -597,7 +597,7 @@ describe('cdn routes', () => {
 	it('triggers one version build on cold ttf miss and serves cached files afterwards', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		const ttfUrl =
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.ttf';
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.ttf';
 
 		// Cold miss triggers build
 		const cold = await dispatch(ttfUrl);
@@ -636,7 +636,7 @@ describe('cdn routes', () => {
 
 	it('joins concurrent cold requests for the same build key', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
-		const url = 'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.ttf';
+		const url = 'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.ttf';
 
 		const [first, second] = await Promise.all([dispatch(url), dispatch(url)]);
 		const firstBytes = await first.response.arrayBuffer();
@@ -653,7 +653,7 @@ describe('cdn routes', () => {
 	it('builds cold static file misses synchronously then warms the family in background', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		const url =
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
 
 		const cold = await dispatch(url);
 		const coldBytes = await cold.response.arrayBuffer();
@@ -665,13 +665,13 @@ describe('cdn routes', () => {
 			'file',
 			'family',
 		]);
-		expect(await testEnv.FONTS.head('abel@1.0.0/download.zip')).not.toBeNull();
+		expect(await testEnv.FONTS.head('abel@5.0.0/download.zip')).not.toBeNull();
 	});
 
 	it('builds cold variable file misses synchronously then warms the family in background', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		const url =
-			'https://fontsource.test/fonts/recursive:vf@1.0.0/latin-full-normal.woff2';
+			'https://fontsource.test/fonts/recursive:vf@5.0.0/latin-full-normal.woff2';
 
 		const cold = await dispatch(url);
 		const coldBytes = await cold.response.arrayBuffer();
@@ -684,14 +684,14 @@ describe('cdn routes', () => {
 			'family',
 		]);
 		expect(
-			await testEnv.FONTS.head('recursive@1.0.0/download.zip'),
+			await testEnv.FONTS.head('recursive@5.0.0/download.zip'),
 		).not.toBeNull();
 	});
 
 	it('does not schedule additional family warming on warm binary hits', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		const url =
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
 
 		const cold = await dispatch(url);
 		await cold.response.arrayBuffer();
@@ -708,10 +708,10 @@ describe('cdn routes', () => {
 
 	it('swallows background family warm failures after serving a cold file request', async () => {
 		const builder = installArtifactBuilderMock(testEnv, {
-			failBuilds: [{ buildKey: 'build:abel@1.0.0', mode: 'family' }],
+			failBuilds: [{ buildKey: 'build:abel@5.0.0', mode: 'family' }],
 		});
 		const url =
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
 
 		const result = await dispatch(url);
 		const bytes = await result.response.arrayBuffer();
@@ -723,16 +723,16 @@ describe('cdn routes', () => {
 			'file',
 			'family',
 		]);
-		expect(await testEnv.FONTS.head('abel@1.0.0/download.zip')).toBeNull();
+		expect(await testEnv.FONTS.head('abel@5.0.0/download.zip')).toBeNull();
 	});
 
-	it('retries canonical zip builds after joining an in-flight single-file build', async () => {
+	it('builds canonical zips while a single-file build is active', async () => {
 		const builder = installArtifactBuilderMock(testEnv, {
 			buildDelayMs: 25,
 		});
 		const fileUrl =
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
-		const zipUrl = 'https://fontsource.test/fonts/abel@1.0.0/download.zip';
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
+		const zipUrl = 'https://fontsource.test/fonts/abel@5.0.0/download.zip';
 
 		const fileRequest = dispatch(fileUrl);
 		for (let attempts = 0; attempts < 100; attempts += 1) {
@@ -768,11 +768,11 @@ describe('cdn routes', () => {
 
 	it('returns 502 when the artifact builder fails', async () => {
 		installArtifactBuilderMock(testEnv, {
-			failBuildKeys: ['build:abel@1.0.0'],
+			failBuildKeys: ['build:abel@5.0.0'],
 		});
 		expect(
 			await jsonSnapshot(
-				'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.ttf',
+				'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.ttf',
 			),
 		).toMatchSnapshot();
 	});
@@ -781,7 +781,7 @@ describe('cdn routes', () => {
 		installArtifactBuilderMock(testEnv, {
 			failBuilds: [
 				{
-					buildKey: 'build:abel@1.0.0',
+					buildKey: 'build:abel@5.0.0',
 					mode: 'file',
 					status: 404,
 				},
@@ -789,7 +789,7 @@ describe('cdn routes', () => {
 		});
 
 		const result = await dispatch(
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2',
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2',
 		);
 		const payload = (await result.response.json()) as {
 			status: number;
@@ -799,7 +799,7 @@ describe('cdn routes', () => {
 
 		expect(result.response.status).toBe(404);
 		expect(payload.error).toContain(
-			'Mocked builder failure for build:abel@1.0.0',
+			'Mocked builder failure for build:abel@5.0.0',
 		);
 	});
 
@@ -807,7 +807,7 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 		const builder = installArtifactBuilderMock(testEnv);
 		installUpstreamFetchMock({
-			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@1.0.0/flat`]:
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0/flat`]:
 				new Response(
 					JSON.stringify({
 						files: [],
@@ -817,7 +817,7 @@ describe('cdn routes', () => {
 		});
 
 		const result = await dispatch(
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2',
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2',
 		);
 		const payload = (await result.response.json()) as {
 			status: number;
@@ -827,7 +827,7 @@ describe('cdn routes', () => {
 
 		expect(result.response.status).toBe(404);
 		expect(payload.error).toBe(
-			'Requested file latin-400-normal.woff2 not found for abel@1.0.0',
+			'Requested file latin-400-normal.woff2 not found for abel@5.0.0',
 		);
 		expect(builder.calls).not.toHaveBeenCalled();
 	});
@@ -836,12 +836,12 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 		const builder = installArtifactBuilderMock(testEnv);
 		installUpstreamFetchMock({
-			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@1.0.0/flat`]:
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0/flat`]:
 				new Response('boom', { status: 500 }),
 		});
 
 		const result = await dispatch(
-			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2',
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2',
 		);
 		const bytes = await result.response.arrayBuffer();
 		await result.settle();

@@ -7,12 +7,6 @@ const builderStartupEnvSchema = z.object({
 	R2_SECRET_ACCESS_KEY: z.string(),
 });
 
-const workerBindingSchema = z.object({
-	METADATA: z.unknown(),
-	FONTS: z.unknown(),
-	ARTIFACT_BUILDER: z.unknown(),
-});
-
 export type BuilderStartupEnv = z.infer<typeof builderStartupEnvSchema>;
 
 export type AppEnv = {
@@ -20,7 +14,11 @@ export type AppEnv = {
 };
 
 export const parseEnv = (env: Env): void => {
-	workerBindingSchema.parse(env);
+	for (const binding of ['METADATA', 'FONTS', 'ARTIFACT_BUILDER'] as const) {
+		if (env[binding] === undefined) {
+			throw new Error(`Missing Worker binding: ${binding}`);
+		}
+	}
 };
 
 /**

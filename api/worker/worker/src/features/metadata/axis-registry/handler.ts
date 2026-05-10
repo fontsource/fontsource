@@ -1,28 +1,34 @@
 import type { Context } from 'hono';
 
 import type { AppEnv } from '../../../env';
-import { notFound } from '../../../utils/errors';
+import { badRequest, notFound } from '../../../utils/errors';
 import { getAxisRegistry } from '../store';
 
 type QueryMap = Record<string, string[]>;
 
 /**
- * Filters query params to the allowed keys and normalises values by splitting
+ * Validates query params against the allowed keys and normalises values by splitting
  * on commas and stripping empty strings. This lets callers pass either repeated
  * params (`?tag=WGHT&tag=OPSZ`) or a comma-separated list (`?tag=WGHT,OPSZ`).
  */
 const normalizeQueryValues = <Key extends string>(
 	queries: QueryMap,
 	allowedKeys: ReadonlySet<Key>,
-): Partial<Record<Key, string[]>> =>
-	Object.fromEntries(
-		Object.entries(queries)
-			.filter(([key]) => allowedKeys.has(key as Key))
-			.map(([key, values]) => [
-				key,
-				values.flatMap((value) => value.split(',')).filter(Boolean),
-			]),
-	) as Partial<Record<Key, string[]>>;
+): Partial<Record<Key, string[]>> => {
+	const normalized: Partial<Record<Key, string[]>> = {};
+
+	for (const [key, values] of Object.entries(queries)) {
+		if (!allowedKeys.has(key as Key)) {
+			throw badRequest('Bad Request. Invalid query parameter.');
+		}
+
+		normalized[key as Key] = values
+			.flatMap((value) => value.split(','))
+			.filter(Boolean);
+	}
+
+	return normalized;
+};
 
 const AXIS_REGISTRY_QUERY_KEYS = new Set(['name', 'tag'] as const);
 

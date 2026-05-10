@@ -1,7 +1,5 @@
 import { z } from 'zod';
 
-// Catalog types
-
 export const AxisValueSchema = z.object({
 	default: z.string(),
 	min: z.string(),
@@ -40,6 +38,9 @@ export const FontVariantsSchema = z.record(
 );
 
 export const FontDetailSchema = FontListItemSchema.extend({
+	version: z.string(),
+	source: z.string(),
+	npmVersion: z.string().optional(),
 	unicodeRange: z.record(z.string(), z.string()),
 	variants: FontVariantsSchema,
 });
@@ -53,8 +54,6 @@ export const VariableCatalogSchema = z.record(
 	z.string(),
 	VariableFontDetailSchema,
 );
-
-// Stats types
 
 export const DownloadStatsSchema = z.object({
 	npmDownloadTotal: z.number().int(),
@@ -71,8 +70,6 @@ export const StatsResponseSchema = z.object({
 
 export const StatsMapSchema = z.record(z.string(), StatsResponseSchema);
 
-// Axis-registry types
-
 export const AxisRegistryEntrySchema = z.object({
 	name: z.string(),
 	description: z.string(),
@@ -87,8 +84,6 @@ export const AxisRegistryCatalogSchema = z.record(
 	AxisRegistryEntrySchema,
 );
 
-// Versions
-
 export const VersionResponseSchema = z.object({
 	latest: z.string(),
 	static: z.array(z.string()),
@@ -96,17 +91,10 @@ export const VersionResponseSchema = z.object({
 	variable: z.array(z.string()).optional(),
 });
 
-// /fontlist response
-
 export const FontlistResponseSchema = z.record(
 	z.string(),
 	z.union([z.string(), z.array(z.string()), z.array(z.number()), z.boolean()]),
 );
-
-// ---------------------------------------------------------------------------
-// Query parameter schemas (for OpenAPI documentation only — the handlers
-// perform their own validation so these are all optional)
-// ---------------------------------------------------------------------------
 
 export const FontlistQuerySchema = z
 	.object({

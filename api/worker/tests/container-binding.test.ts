@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readBuildErrorMessage } from '../worker/src/container/binding';
+import { parseEnv } from '../worker/src/env';
+import { testEnv } from './helpers';
 
 describe('container binding error parsing', () => {
 	it('prefers structured JSON error messages', async () => {
@@ -36,6 +38,17 @@ describe('container binding error parsing', () => {
 
 		await expect(readBuildErrorMessage(response)).resolves.toBe(
 			'Internal Server Error',
+		);
+	});
+
+	it('fails fast when a required Worker binding is missing', () => {
+		const missingFontsEnv = {
+			...testEnv,
+			FONTS: undefined,
+		} as unknown as Env;
+
+		expect(() => parseEnv(missingFontsEnv)).toThrow(
+			'Missing Worker binding: FONTS',
 		);
 	});
 });

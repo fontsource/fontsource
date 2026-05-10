@@ -10,6 +10,7 @@ import type {
 } from '../../shared/build';
 import {
 	type FontPackageEntry,
+	type FontPackageManifest,
 	filterPublishedManifest,
 	findFontPackageEntry,
 	resolveFontPackageManifest,
@@ -103,7 +104,7 @@ const buildStaticArtifacts = async (
 	);
 
 	console.log(
-		`[artifacts] static plan — ${copyPlan.length} copy, ${convertPlan.length} convert`,
+		`[artifacts] static build plan: copy=${copyPlan.length}, convert=${convertPlan.length}`,
 	);
 
 	const copied = (
@@ -170,7 +171,7 @@ const buildVariableArtifacts = async (
 		return [];
 	}
 
-	console.log(`[artifacts] variable plan — ${manifest.length} items`);
+	console.log(`[artifacts] variable build plan: files=${manifest.length}`);
 
 	return (
 		await Promise.all(
@@ -199,26 +200,27 @@ const buildVariableArtifacts = async (
 const isStaticEntry = (item: FontPackageEntry): item is StaticFontEntry =>
 	!('axisKey' in item);
 
-const buildSingleArtifact = async (
-	request: BuildFileRequest,
-): Promise<number> => {
-	const baseManifest = resolveFontPackageManifest(
-		request.metadata,
-		request.axes,
-	);
-	const publishedStaticFiles = await fetchPackageFileList(
-		request.tag.id,
-		request.tag.version,
-		false,
-	);
-	const publishedVariableFiles = request.axes
-		? await fetchPackageFileList(request.tag.id, request.tag.version, true)
-		: undefined;
-	const manifest = filterPublishedManifest(
-		baseManifest,
+const getPublishedManifest = async (
+	request: BuildVersionRequest,
+): Promise<FontPackageManifest> => {
+	const [publishedStaticFiles, publishedVariableFiles] = await Promise.all([
+		fetchPackageFileList(request.tag.id, request.tag.version, false),
+		request.axes
+			? fetchPackageFileList(request.tag.id, request.tag.version, true)
+			: Promise.resolve(undefined),
+	]);
+
+	return filterPublishedManifest(
+		resolveFontPackageManifest(request.metadata, request.axes),
 		publishedStaticFiles,
 		publishedVariableFiles,
 	);
+};
+
+const buildSingleArtifact = async (
+	request: BuildFileRequest,
+): Promise<number> => {
+	const manifest = await getPublishedManifest(request);
 	const entry = findFontPackageEntry(manifest, request.target);
 
 	if (!entry) {
@@ -251,25 +253,12 @@ const buildSingleArtifact = async (
 const buildFamilyArtifacts = async (
 	request: BuildFamilyRequest,
 ): Promise<number> => {
-	const { tag, metadata, axes } = request;
-	const baseManifest = resolveFontPackageManifest(metadata, axes);
-	const publishedStaticFiles = await fetchPackageFileList(
-		tag.id,
-		tag.version,
-		false,
-	);
-	const publishedVariableFiles = axes
-		? await fetchPackageFileList(tag.id, tag.version, true)
-		: undefined;
+	const { tag } = request;
 	const { static: staticManifest, variable: variableManifest } =
-		filterPublishedManifest(
-			baseManifest,
-			publishedStaticFiles,
-			publishedVariableFiles,
-		);
+		await getPublishedManifest(request);
 
 	console.log(
-		`[artifacts] ${tag.id}@${tag.version} — manifest: ${staticManifest.length} static, ${variableManifest.length} variable`,
+		`[artifacts] family manifest ${tag.id}@${tag.version}: static=${staticManifest.length}, variable=${variableManifest.length}`,
 	);
 
 	// Resolve R2 keys for every individual artifact and the download zip.
@@ -286,14 +275,14 @@ const buildFamilyArtifacts = async (
 
 	const totalCount = staticKeys.length + variableKeys.length + 1;
 
-	// Fast path: every artifact and the zip already exist.
+	// If every artifact exists already, no build work is needed.
 	if (
 		existing.has(downloadKey) &&
 		staticKeys.every((k) => existing.has(k)) &&
 		variableKeys.every((k) => existing.has(k))
 	) {
 		console.log(
-			`[artifacts] fast path — all ${totalCount} artifacts already in R2`,
+			`[artifacts] family build skipped: all ${totalCount} artifacts already exist in R2`,
 		);
 		return totalCount;
 	}
@@ -310,11 +299,12 @@ const buildFamilyArtifacts = async (
 		`[artifacts] missing: ${missingStatic.length} static, ${missingVariable.length} variable, zip=${!existing.has(downloadKey) ? 'yes' : 'no'}`,
 	);
 
-	const newStaticArtifacts =
-		(await ignoreUpstream404(buildStaticArtifacts(tag, missingStatic))) ?? [];
-	const newVariableArtifacts =
-		(await ignoreUpstream404(buildVariableArtifacts(tag, missingVariable))) ??
-		[];
+	const [maybeStaticArtifacts, maybeVariableArtifacts] = await Promise.all([
+		ignoreUpstream404(buildStaticArtifacts(tag, missingStatic)),
+		ignoreUpstream404(buildVariableArtifacts(tag, missingVariable)),
+	]);
+	const newStaticArtifacts = maybeStaticArtifacts ?? [];
+	const newVariableArtifacts = maybeVariableArtifacts ?? [];
 	const newArtifacts = [...newStaticArtifacts, ...newVariableArtifacts];
 
 	console.log(`[artifacts] built ${newArtifacts.length} new artifacts`);
@@ -332,15 +322,12 @@ const buildFamilyArtifacts = async (
 
 		// Index freshly-built bytes by R2 key for quick lookup.
 		const builtByKey = new Map<string, BuiltArtifact>();
-		for (const artifact of newStaticArtifacts) {
-			builtByKey.set(artifact.key, artifact);
-		}
-		for (const artifact of newVariableArtifacts) {
+		for (const artifact of newArtifacts) {
 			builtByKey.set(artifact.key, artifact);
 		}
 
-		// Collect every artifact for the archive: freshly built from memory,
-		// pre-existing from R2.
+		// Collect every artifact for the archive, using fresh bytes first and
+		// loading existing objects from R2 when needed.
 		const allManifestEntries = [
 			...staticManifest.map((item, i) => ({ item, key: staticKeys[i] })),
 			...variableManifest.map((item, i) => ({
@@ -357,7 +344,7 @@ const buildFamilyArtifacts = async (
 					const built = builtByKey.get(key);
 					if (built) return built;
 
-					// Pre-existing artifact — download from R2.
+					// Load the existing artifact from R2 for the zip.
 					fetchedFromR2++;
 					const bytes = await getObjectBytes(key);
 					if (!bytes) {
@@ -376,7 +363,7 @@ const buildFamilyArtifacts = async (
 
 		if (fetchedFromR2 > 0) {
 			console.log(
-				`[artifacts] fetched ${fetchedFromR2} pre-existing artifacts from R2 for zip`,
+				`[artifacts] fetched ${fetchedFromR2} existing artifacts from R2 for zip`,
 			);
 		}
 

@@ -2,6 +2,7 @@ import type { Context } from 'hono';
 import type { AxisRegistry } from '../../../../shared/axis-registry';
 import type {
 	FontCatalog,
+	FontListQueryKey,
 	SourceFontMetadata,
 	VariableCatalog,
 } from '../../../../shared/catalog';
@@ -14,7 +15,11 @@ import {
 } from '../../constants';
 import type { AppEnv } from '../../env';
 import { sortPublishedVersionsDesc } from '../font-tag';
-import { buildFontIndex, buildVariableIndex } from './catalog-views';
+import {
+	buildFontIndex,
+	buildFontlist,
+	buildVariableIndex,
+} from './catalog-views';
 import { refreshAxisRegistry, refreshCatalog, refreshStats } from './refresh';
 
 export interface VersionResponse {
@@ -82,15 +87,16 @@ const getDerivedView = async <T>(
 	build: (catalog: FontCatalog) => T,
 ): Promise<T> => {
 	const cached = derivedMetadataCache.get(cacheKey);
+	const now = Date.now();
 
-	if (cached && cached.expiresAt > Date.now()) {
+	if (cached && cached.expiresAt > now) {
 		return cached.value as T;
 	}
 
 	const value = build(await getCatalog(c));
 	derivedMetadataCache.set(cacheKey, {
 		value,
-		expiresAt: Date.now() + DERIVED_METADATA_CACHE_TTL_MS,
+		expiresAt: now + DERIVED_METADATA_CACHE_TTL_MS,
 	});
 
 	return value;
@@ -110,6 +116,17 @@ export const getFontIndex = (
 	c: Context<AppEnv>,
 ): Promise<ReturnType<typeof buildFontIndex>> =>
 	getDerivedView(c, 'metadata:font_index', buildFontIndex);
+
+/**
+ * Returns one projected `/fontlist` view.
+ */
+export const getFontlist = (
+	c: Context<AppEnv>,
+	key: FontListQueryKey,
+): Promise<ReturnType<typeof buildFontlist>> =>
+	getDerivedView(c, `metadata:fontlist:${key}`, (catalog) =>
+		buildFontlist(catalog, key),
+	);
 
 /**
  * Returns the variable-only view derived from the catalog.

@@ -7,12 +7,8 @@ import { UPSTREAM_URLS } from '../../../constants';
 import type { AppEnv } from '../../../env';
 import { toHttpDate } from '../../../utils/cache';
 import { badRequest, notFound } from '../../../utils/errors';
-import {
-	buildFontDetail,
-	buildFontlist,
-	filterFontIndex,
-} from '../catalog-views';
-import { getCatalog, getFontById, getFontIndex } from '../store';
+import { buildFontDetail, filterFontIndex } from '../catalog-views';
+import { getFontById, getFontIndex, getFontlist } from '../store';
 
 type QueryMap = Record<string, string[]>;
 
@@ -46,6 +42,17 @@ const FONT_FILTER_QUERY_KEYS = new Set<FontFilterQueryKey>([
 	'type',
 ]);
 
+const assertAllowedQueryKeys = <Key extends string>(
+	queries: QueryMap,
+	allowedKeys: ReadonlySet<Key>,
+): void => {
+	for (const key of Object.keys(queries)) {
+		if (!allowedKeys.has(key as Key)) {
+			throw badRequest('Bad Request. Invalid query parameter.');
+		}
+	}
+};
+
 /**
  * Enforces the legacy /fontlist contract: only one query parameter is allowed
  * per request. Throws 400 if the caller supplied more than one value across
@@ -57,11 +64,10 @@ const getSingleQueryKey = <Key extends string>(
 	allowedKeys: ReadonlySet<Key>,
 	defaultKey: Key,
 ): Key => {
-	const filteredQueries = Object.fromEntries(
-		Object.entries(queries).filter(([key]) => allowedKeys.has(key as Key)),
-	);
-	const keys = Object.keys(filteredQueries) as Key[];
-	const queryCount = Object.values(filteredQueries).reduce(
+	assertAllowedQueryKeys(queries, allowedKeys);
+
+	const keys = Object.keys(queries) as Key[];
+	const queryCount = Object.values(queries).reduce(
 		(total, values: string[]) => total + values.length,
 		0,
 	);
@@ -75,25 +81,6 @@ const getSingleQueryKey = <Key extends string>(
 };
 
 /**
- * Collapses each allowed query key to a single string value.
- *
- * The legacy /v1/fonts endpoint was backed by a system that collapsed repeated
- * params to the last occurrence, so this preserves that behaviour: if a client
- * sends `?family=Roboto&family=Open+Sans`, the result is `{ family: "Open Sans" }`.
- */
-const collapseQueryValues = <Key extends string>(
-	queries: QueryMap,
-	allowedKeys: ReadonlySet<Key>,
-): Partial<Record<Key, string>> =>
-	Object.fromEntries(
-		Object.entries(queries)
-			.filter(
-				([key, values]) => allowedKeys.has(key as Key) && values.length > 0,
-			)
-			.map(([key, values]) => [key, values.at(-1)]),
-	) as Partial<Record<Key, string>>;
-
-/**
  * Lists one projected field from the catalog via `/fontlist`.
  *
  * The old metadata API only accepted one query key at a time, so this keeps
@@ -103,20 +90,25 @@ export const listFontValues = async (c: Context<AppEnv>): Promise<Response> => {
 	// The old `/fontlist` route defaults to `type` when no query parameter is
 	// supplied.
 	const key = getSingleQueryKey(c.req.queries(), FONTLIST_QUERY_KEYS, 'type');
-	const catalog = await getCatalog(c);
 
-	return c.json(buildFontlist(catalog, key), 200);
+	return c.json(await getFontlist(c, key), 200);
 };
 
 /**
  * Lists fonts from the catalog filtering endpoint.
  */
 export const listFonts = async (c: Context<AppEnv>): Promise<Response> => {
-	// Repeated params collapse to the last value, which matches the old endpoint.
-	const queries = collapseQueryValues(c.req.queries(), FONT_FILTER_QUERY_KEYS);
-	const index = await getFontIndex(c);
+	const queries = c.req.queries();
+	assertAllowedQueryKeys(queries, FONT_FILTER_QUERY_KEYS);
 
-	return c.json(filterFontIndex(index, queries), 200);
+	let index = await getFontIndex(c);
+	for (const key of FONT_FILTER_QUERY_KEYS) {
+		for (const value of queries[key] ?? []) {
+			index = filterFontIndex(index, key, value);
+		}
+	}
+
+	return c.json(index, 200);
 };
 
 /**
@@ -134,11 +126,10 @@ export const getFont = async (
 	const lastModified = toHttpDate(font.lastModified);
 
 	return c.json(
-		buildFontDetail(font, ({ id: fontId, subset, weight, style, extension }) =>
-			new URL(
-				`fonts/${fontId}@latest/${subset}-${weight}-${style}.${extension}`,
-				`${UPSTREAM_URLS.publicCdn}/`,
-			).toString(),
+		buildFontDetail(
+			font,
+			({ id: fontId, subset, weight, style, extension }) =>
+				`${UPSTREAM_URLS.publicCdn}/fonts/${fontId}@latest/${subset}-${weight}-${style}.${extension}`,
 		),
 		200,
 		lastModified ? { 'Last-Modified': lastModified } : {},

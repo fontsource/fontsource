@@ -49,7 +49,8 @@ export class ListFontValuesRoute extends OpenAPIRoute {
 				...contentJson(FontlistResponseSchema),
 			},
 			'400': {
-				description: 'Bad request — more than one query parameter was supplied',
+				description:
+					'Invalid query parameter or more than one query parameter was supplied',
 				...contentJson(ErrorResponseSchema),
 			},
 		},
@@ -67,7 +68,7 @@ export class ListFontsRoute extends OpenAPIRoute {
 		summary: 'List fonts with optional filtering',
 		description:
 			'Returns an array of font summaries from the catalog. ' +
-			'Multiple filter query parameters may be combined; repeated params collapse to the last value.',
+			'Multiple filter query parameters may be combined; repeated params are applied sequentially.',
 		request: {
 			query: FontFilterQuerySchema,
 		},
@@ -75,6 +76,10 @@ export class ListFontsRoute extends OpenAPIRoute {
 			'200': {
 				description: 'Array of font summary objects',
 				...contentJson(z.array(FontListItemSchema)),
+			},
+			'400': {
+				description: 'Invalid query parameter',
+				...contentJson(ErrorResponseSchema),
 			},
 		},
 	};
@@ -178,6 +183,10 @@ export class ListAxisRegistryRoute extends OpenAPIRoute {
 			},
 			'404': {
 				description: 'No matching axes found',
+				...contentJson(ErrorResponseSchema),
+			},
+			'400': {
+				description: 'Invalid query parameter',
 				...contentJson(ErrorResponseSchema),
 			},
 		},

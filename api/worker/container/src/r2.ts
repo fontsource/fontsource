@@ -92,10 +92,10 @@ export const listKeys = async (prefix: string): Promise<Set<string>> => {
 
 		const response = await client.client.fetch(url.toString());
 		if (!response.ok) {
-			console.warn(
-				`[r2] ListObjectsV2 failed for prefix="${prefix}": ${response.status}`,
+			const text = await response.text();
+			throw new Error(
+				`Failed to list R2 objects for prefix "${prefix}": ${response.status} ${text || response.statusText}`,
 			);
-			break;
 		}
 
 		pages++;
@@ -125,9 +125,15 @@ export const getObjectBytes = async (
 	key: string,
 ): Promise<Uint8Array | null> => {
 	const response = await client.client.fetch(buildObjectUrl(key));
-	if (!response.ok) {
-		console.log(`[r2] GET ${key} — not found`);
+	if (response.status === 404) {
+		console.log(`[r2] GET ${key} - not found`);
 		return null;
+	}
+	if (!response.ok) {
+		const text = await response.text();
+		throw new Error(
+			`Failed to download ${key}: ${response.status} ${text || response.statusText}`,
+		);
 	}
 	const bytes = new Uint8Array(await response.arrayBuffer());
 	console.log(`[r2] GET ${key} (${bytes.byteLength} bytes)`);

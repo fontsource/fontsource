@@ -3,7 +3,6 @@ import {
 	type CSSOptions,
 	type FontConfig,
 	generateCSSAssets,
-	resolvePublishedFaces,
 } from '@fontsource-utils/core';
 import type { Context } from 'hono';
 import type {
@@ -22,20 +21,14 @@ import { getAssetCacheControl, resolveFontRequest } from './handler';
  * match the public package defaults.
  */
 const CSS_DISPLAY = 'swap';
-const PUBLIC_CDN_BASE = new URL(`${UPSTREAM_URLS.publicCdn}/`);
+const PUBLIC_CDN_BASE = `${UPSTREAM_URLS.publicCdn}/`;
 
-const buildPublicUrl = (path: string): string =>
-	new URL(path, PUBLIC_CDN_BASE).toString();
+const buildPublicUrl = (path: string): string => `${PUBLIC_CDN_BASE}${path}`;
 
-const getPublicFilenameMap = (
-	config: FontConfig,
-	options: CSSOptions,
-): Map<string, string> =>
-	new Map(
-		resolvePublishedFaces(config, options).flatMap((face) =>
-			face.sources.map((source) => [source.filename, source.publicFilename]),
-		),
-	);
+const getPublicFilename = (id: string, filename: string): string => {
+	const prefix = `${id}-`;
+	return filename.startsWith(prefix) ? filename.slice(prefix.length) : filename;
+};
 
 const createCssResponse = (
 	content: string,
@@ -71,7 +64,6 @@ const findCssAsset = (
 		? ['woff2']
 		: ['woff2', 'woff'];
 	const config = buildFontConfig(metadata, { formats, axes: options.axes });
-	const publicFilenameMap = getPublicFilenameMap(config, options);
 
 	return generateCSSAssets(config, {
 		...options,
@@ -86,8 +78,7 @@ const findCssAsset = (
 				}
 			}
 
-			const publicFilename =
-				publicFilenameMap.get(source.filename) ?? source.filename;
+			const publicFilename = getPublicFilename(metadata.id, source.filename);
 			return buildPublicUrl(`fonts/${resolvedTag}/${publicFilename}`);
 		},
 	}).find((asset) => asset.filename === filename);

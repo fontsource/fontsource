@@ -20,24 +20,13 @@ const resp404 = (): Response =>
 const errorStatus = (error: unknown): number =>
 	error instanceof HTTPException ? error.status : 500;
 
-const respError = (error: unknown): Response =>
-	Response.json(
-		{
-			state: 'failed',
-			buildKey: 'unknown',
-			error: error instanceof Error ? error.message : String(error),
-		},
-		{ status: errorStatus(error) },
-	);
-
-const respErrorTagged = (tag: BuildVersionTag, error: unknown): Response => {
-	const buildKey = getBuildKey(tag);
+const respError = (error: unknown, tag?: BuildVersionTag): Response => {
 	const message = error instanceof Error ? error.message : String(error);
 
 	return Response.json(
 		{
 			state: 'failed',
-			buildKey,
+			buildKey: tag ? getBuildKey(tag) : 'unknown',
 			error: message,
 			builtAt: new Date().toISOString(),
 		},
@@ -70,7 +59,7 @@ Bun.serve({
 					const snapshot = await ensureBuilt(payload);
 
 					console.log(
-						`[container] build complete ${snapshot.buildKey} — ${snapshot.artifactCount} artifacts in ${snapshot.durationMs}ms`,
+						`[container] build complete ${snapshot.buildKey} - ${snapshot.artifactCount} artifacts in ${snapshot.durationMs}ms`,
 					);
 
 					return Response.json(snapshot, { status: 200 });
@@ -84,7 +73,7 @@ Bun.serve({
 					);
 
 					if (payload) {
-						return respErrorTagged(payload.tag, error);
+						return respError(error, payload.tag);
 					}
 
 					return respError(error);

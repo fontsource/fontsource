@@ -44,3 +44,16 @@ export interface BuildVersionResponse {
  */
 export const getBuildKey = (tag: BuildVersionTag): string =>
 	`build:${tag.id}@${tag.version}`;
+
+export const getFamilyBuildRequestKey = (tag: BuildVersionTag): string =>
+	`${getBuildKey(tag)}:family`;
+
+export const getBuildRequestKey = (request: BuildVersionRequest): string =>
+	request.mode === 'family'
+		? getFamilyBuildRequestKey(request.tag)
+		: [
+				getBuildKey(request.tag),
+				'file',
+				request.target.isVariable ? 'variable' : 'static',
+				request.target.file,
+			].join(':');

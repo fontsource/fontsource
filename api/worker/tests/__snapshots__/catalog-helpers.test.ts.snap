@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`builds font detail without leaking internal fields 1`] = `
+exports[`builds font detail with public metadata fields 1`] = `
 {
   "category": "sans-serif",
   "defSubset": "latin",
@@ -8,6 +8,7 @@ exports[`builds font detail without leaking internal fields 1`] = `
   "id": "abel",
   "lastModified": "2024-01-01",
   "license": "OFL-1.1",
+  "source": "https://example.com",
   "styles": [
     "normal",
   ],
@@ -32,6 +33,7 @@ exports[`builds font detail without leaking internal fields 1`] = `
       },
     },
   },
+  "version": "v1",
   "weights": [
     400,
   ],
