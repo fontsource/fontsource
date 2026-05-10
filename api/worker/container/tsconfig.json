@@ -4,5 +4,5 @@
 		"lib": ["es2022", "dom"],
 		"types": ["bun-types", "node"]
 	},
-	"include": ["./build.ts", "./server.ts", "./src/**/*.ts", "../shared/**/*.ts"]
+	"include": ["./server.ts", "./src/**/*.ts", "../shared/**/*.ts"]
 }
