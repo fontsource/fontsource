@@ -4,14 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 
 import classes from './PageActions.module.css';
 
-type CopyStatus = 'idle' | 'copying' | 'copied' | 'failed';
+type CopyStatus = 'idle' | 'copied' | 'failed';
 
 interface PageActionsProps {
 	markdownUrl: string;
 }
 
 const copyLabel = (status: CopyStatus) => {
-	if (status === 'copying') return 'Copying...';
 	if (status === 'copied') return 'Copied Markdown';
 	if (status === 'failed') return 'Copy failed';
 	return 'Copy Markdown';
@@ -37,10 +36,6 @@ export const PageActions = ({ markdownUrl }: PageActionsProps) => {
 	};
 
 	const copyPage = async () => {
-		if (copyStatus === 'copying') return;
-
-		setCopyStatus('copying');
-
 		try {
 			const response = await fetch(markdownUrl);
 			if (!response.ok) throw new Error('Markdown request failed');
@@ -64,8 +59,6 @@ export const PageActions = ({ markdownUrl }: PageActionsProps) => {
 				type="button"
 				className={classes.action}
 				onClick={copyPage}
-				disabled={copyStatus === 'copying'}
-				aria-busy={copyStatus === 'copying'}
 			>
 				<IconCopy size={16} stroke={1.8} aria-hidden="true" />
 				<span aria-live="polite" aria-atomic="true">
