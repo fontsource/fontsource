@@ -3,8 +3,7 @@
 	top: 0;
 	z-index: 20;
 	border-bottom: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	background: light-dark(rgba(255, 255, 255, 0.92), rgba(18, 27, 49, 0.92));
-	backdrop-filter: blur(14px);
+	background: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 }
 
 .inner {
