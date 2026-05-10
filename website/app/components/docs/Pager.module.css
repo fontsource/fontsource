@@ -1,0 +1,55 @@
+.pager {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+	margin-top: 32px;
+	padding-top: 24px;
+	border-top: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+
+	@media (--lt-sm) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.card {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	min-height: 74px;
+	padding: 16px;
+	border: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+	border-radius: 6px;
+	text-decoration: none;
+	color: light-dark(#33405a, #d3dbec);
+	transition:
+		border-color 100ms ease,
+		color 100ms ease;
+
+	&[data-align="end"] {
+		justify-content: flex-end;
+		text-align: right;
+	}
+
+	&:hover,
+	&:focus-visible {
+		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline-offset: 2px;
+		color: var(--mantine-color-purple-0);
+		border-color: var(--mantine-color-purple-0);
+	}
+}
+
+.card span {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.card small {
+	color: light-dark(#667086, #a9b3ca);
+	font-size: 13px;
+}
+
+.card strong {
+	font-size: 15px;
+}

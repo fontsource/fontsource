@@ -1,0 +1,9 @@
+{
+	"title": "Documentation",
+	"pages": [
+		"getting-started",
+		"guides",
+		"api",
+		"external:[Changelog](https://github.com/fontsource/fontsource/blob/main/CHANGELOG.md)"
+	]
+}

@@ -2,6 +2,7 @@
 
 .wrapper {
 	padding: 0 30px;
+	min-height: 54px;
 
 	border-radius: 0 4px 0 0;
 
@@ -11,19 +12,15 @@
 	&:focus-within {
 		border-color: var(--mantine-color-purple);
 	}
-
-	@media (--lt-md) {
-		display: none;
-	}
 }
 
-.inner {
-	height: 100%;
+.value {
+	flex: 0 0 auto;
+	min-width: 52px;
 }
 
-.col {
-	margin-top: auto;
-	margin-bottom: auto;
+.slider {
+	padding-inline: 0;
 }
 
 .bar {

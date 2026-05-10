@@ -1,13 +1,7 @@
 import type { LoaderFunction } from 'react-router';
 import { SitemapStream, streamToPromise } from 'sitemap';
-
 import { fetchApiData } from '@/utils/api.server';
-
-const docSlugs = Object.keys(
-	import.meta.glob('../../docs/**/*.mdx', {
-		eager: true,
-	}),
-).map((slug) => slug.replace('../../docs/', '').replace('.mdx', ''));
+import { source } from '@/utils/docs/source.server';
 
 export const loader: LoaderFunction = async () => {
 	const smStream = new SitemapStream({ hostname: 'https://fontsource.org' });
@@ -28,10 +22,9 @@ export const loader: LoaderFunction = async () => {
 		});
 	}
 
-	// Pipe all docs to stream
-	for (const slug of docSlugs) {
+	for (const page of source.getPages()) {
 		smStream.write({
-			url: `/docs/${slug}`,
+			url: page.url,
 			changefreq: 'weekly',
 			priority: 0.7,
 		});

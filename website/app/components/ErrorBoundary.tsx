@@ -1,4 +1,4 @@
-import { Button, Stack, Text, Title } from '@mantine/core';
+import { Button, Center, Flex, Stack, Text, Title } from '@mantine/core';
 import { isRouteErrorResponse, Link, useRouteError } from 'react-router';
 import styles from './ErrorBoundary.module.css';
 import { IconGithub } from './icons/Github';
@@ -22,17 +22,17 @@ export function ErrorBoundary() {
 	}
 
 	return (
-		<div className={styles.container}>
-			<div className={styles.content}>
-				<div className={styles.errorInfo}>
+		<Center className={styles.container}>
+			<Flex align="center" className={styles.content} direction="column">
+				<Flex align="center" className={styles.errorInfo} direction="column">
 					<Text className={styles.statusCode}>{status}</Text>
 					<Title order={1} className={styles.title}>
 						{title}
 					</Title>
 					<Text className={styles.description}>{description}</Text>
-				</div>
+				</Flex>
 
-				<Stack className={styles.actions}>
+				<Stack className={styles.actions} gap={12}>
 					<Button
 						component={Link}
 						to="/"
@@ -63,7 +63,7 @@ export function ErrorBoundary() {
 						<Text className={styles.devErrorContent}>{error.stack}</Text>
 					</div>
 				)}
-			</div>
-		</div>
+			</Flex>
+		</Center>
 	);
 }

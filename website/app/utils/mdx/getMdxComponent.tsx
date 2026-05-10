@@ -8,7 +8,6 @@ import {
 	type ListItemProps,
 	type ListProps,
 	Table,
-	type TableCaptionProps,
 	type TableProps,
 	type TableTbodyProps,
 	type TableTdProps,
@@ -21,32 +20,40 @@ import {
 	Title,
 	type TitleProps,
 } from '@mantine/core';
+import cx from 'clsx';
+import type { ComponentProps } from 'react';
+import { Link } from 'react-router';
 
 import { Blockquote } from '@/components/Blockquote';
-import { CodeMdx } from '@/components/code/Code';
+import { CodeMdx, CodePre } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
+import docsMdxClasses from '@/components/docs/Mdx.module.css';
+
+const documentResourceExtension = /\.(?:md|txt)$/;
+
+const getHrefPathname = (href: string) => href.split(/[?#]/, 1)[0] ?? href;
+
+const shouldUseDocumentNavigation = (href: string) => {
+	if (href.startsWith('#')) return true;
+
+	return documentResourceExtension.test(getHrefPathname(href));
+};
 
 const mdxComponents = {
 	// Typography
-	h1: (props: BoxProps) => (
-		<>
-			<Title order={1} fw={700} fz={28} mt="lg" mb="sm" {...props} />
-			<Divider mb="sm" {...props} />
-		</>
-	),
+	h1: () => null,
 	h2: (props: BoxProps) => (
-		<>
-			<Title order={2} fw={700} fz={22} mt="lg" mb="sm" {...props} />
-			<Divider mb="sm" {...props} />
-		</>
+		<Title order={2} fw={700} fz={24} lh={1.25} mt={42} mb="sm" {...props} />
 	),
 	h3: (props: TitleProps) => (
-		<Title order={3} fw={700} fz={20} mt="lg" mb="sm" {...props} />
+		<Title order={3} fw={700} fz={19} lh={1.35} mt="xl" mb="sm" {...props} />
 	),
 	h4: (props: TitleProps) => (
-		<Title order={4} fw={600} fz={18} mt="lg" mb="sm" {...props} />
+		<Title order={4} fw={700} fz={17} lh={1.4} mt="lg" mb="xs" {...props} />
 	),
-	p: (props: TextProps) => <Text fw={400} fz={16} my="lg" {...props} />,
+	p: (props: TextProps) => (
+		<Text fw={400} fz={16} lh={1.75} my="md" {...props} />
+	),
 
 	// Lists
 	ol: (props: ListProps) => <List type="ordered" {...props} />,
@@ -54,7 +61,7 @@ const mdxComponents = {
 	li: (props: ListItemProps) => <List.Item fz={16} {...props} />,
 
 	// Code
-	pre: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />, // Unnecessary pre as we use Code component
+	pre: (props: ComponentProps<'pre'>) => <CodePre {...props} />,
 	code: (props: CodeProps) => <CodeMdx {...props} />,
 
 	// Table
@@ -64,14 +71,41 @@ const mdxComponents = {
 	tr: (props: TableTrProps) => <Table.Tr {...props} />,
 	th: (props: TableThProps) => <Table.Th {...props} />,
 	td: (props: TableTdProps) => <Table.Td {...props} />,
-	caption: (props: TableCaptionProps) => <Table.Caption {...props} />,
+	caption: (props: ComponentProps<'caption'>) => <caption {...props} />,
 	tfoot: (props: TableTfootProps) => <Table.Tfoot {...props} />,
 
 	// Other
 	hr: (props: DividerProps) => <Divider mb="md" {...props} />,
 	blockquote: (props: BlockquoteProps) => <Blockquote fz={16} {...props} />,
-	// biome-ignore lint/suspicious/noExplicitAny: Selective.
-	PackageManagerCode: (props: any) => <PackageManagerCode {...props} />,
+	a: ({ href = '', children, className, ...props }: ComponentProps<'a'>) => {
+		if (href.startsWith('/') && !shouldUseDocumentNavigation(href)) {
+			return (
+				<Link
+					to={href}
+					className={cx(docsMdxClasses.link, className)}
+					{...props}
+				>
+					{children}
+				</Link>
+			);
+		}
+
+		const externalProps = href.startsWith('http')
+			? { target: '_blank', rel: 'noreferrer' }
+			: {};
+
+		return (
+			<a
+				href={href}
+				className={cx(docsMdxClasses.link, className)}
+				{...externalProps}
+				{...props}
+			>
+				{children}
+			</a>
+		);
+	},
+	PackageManagerCode,
 };
 
 export { mdxComponents };

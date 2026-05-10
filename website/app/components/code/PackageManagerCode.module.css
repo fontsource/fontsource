@@ -1,7 +1,7 @@
 /* PackageManagerCode */
 
 .wrapper {
-	margin-top: 10px;
+	margin: 16px 0 20px;
 
 	.tab {
 		&[data-active] {
@@ -11,5 +11,5 @@
 }
 
 .panels {
-	margin-top: "-1rem";
+	margin-top: -1px;
 }

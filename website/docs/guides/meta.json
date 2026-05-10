@@ -1,0 +1,23 @@
+{
+	"title": "Guides",
+	"defaultOpen": true,
+	"pages": [
+		"---Frameworks---",
+		"external:[Astro](https://docs.astro.build/en/guides/fonts/#using-fontsource)",
+		"angular",
+		"external:[Flutter](https://pub.dev/packages/fontsource)",
+		"external:[Gatsby](https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource)",
+		"nextjs",
+		"qwik",
+		"remix",
+		"svelte",
+		"vue",
+		"---Component Libraries---",
+		"external:[Chakra UI](https://chakra-ui.com/community/recipes/using-fonts)",
+		"external:[Material UI](https://mui.com/material-ui/react-typography/#install-with-npm)",
+		"external:[Panda CSS](https://panda-css.com/docs/guides/fonts#fontsource)",
+		"---Other---",
+		"external:[Obsidian](https://github.com/fontsource/obsidian-fontsource)",
+		"webpack"
+	]
+}
