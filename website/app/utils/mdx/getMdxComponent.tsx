@@ -21,12 +21,23 @@ import {
 	type TitleProps,
 } from '@mantine/core';
 import cx from 'clsx';
+import type { ComponentProps } from 'react';
 import { Link } from 'react-router';
 
 import { Blockquote } from '@/components/Blockquote';
-import { CodeMdx } from '@/components/code/Code';
+import { CodeMdx, CodePre } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import docsMdxClasses from '@/components/docs/Mdx.module.css';
+
+const documentResourceExtension = /\.(?:md|txt)$/;
+
+const getHrefPathname = (href: string) => href.split(/[?#]/, 1)[0] ?? href;
+
+const shouldUseDocumentNavigation = (href: string) => {
+	if (href.startsWith('#')) return true;
+
+	return documentResourceExtension.test(getHrefPathname(href));
+};
 
 const mdxComponents = {
 	// Typography
@@ -50,7 +61,7 @@ const mdxComponents = {
 	li: (props: ListItemProps) => <List.Item fz={16} {...props} />,
 
 	// Code
-	pre: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />, // Unnecessary pre as we use Code component
+	pre: (props: ComponentProps<'pre'>) => <CodePre {...props} />,
 	code: (props: CodeProps) => <CodeMdx {...props} />,
 
 	// Table
@@ -60,19 +71,14 @@ const mdxComponents = {
 	tr: (props: TableTrProps) => <Table.Tr {...props} />,
 	th: (props: TableThProps) => <Table.Th {...props} />,
 	td: (props: TableTdProps) => <Table.Td {...props} />,
-	caption: (props: React.ComponentProps<'caption'>) => <caption {...props} />,
+	caption: (props: ComponentProps<'caption'>) => <caption {...props} />,
 	tfoot: (props: TableTfootProps) => <Table.Tfoot {...props} />,
 
 	// Other
 	hr: (props: DividerProps) => <Divider mb="md" {...props} />,
 	blockquote: (props: BlockquoteProps) => <Blockquote fz={16} {...props} />,
-	a: ({
-		href = '',
-		children,
-		className,
-		...props
-	}: React.ComponentProps<'a'>) => {
-		if (href.startsWith('/') || href.startsWith('#')) {
+	a: ({ href = '', children, className, ...props }: ComponentProps<'a'>) => {
+		if (href.startsWith('/') && !shouldUseDocumentNavigation(href)) {
 			return (
 				<Link
 					to={href}

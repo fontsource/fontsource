@@ -10,7 +10,11 @@ export interface PackageManagerProps {
 }
 
 export const PackageManagerCode = ({ cmd }: PackageManagerProps) => (
-	<Tabs defaultValue="npm" className={classes.wrapper}>
+	<Tabs
+		defaultValue="npm"
+		className={classes.wrapper}
+		classNames={{ tab: classes.tab }}
+	>
 		<Tabs.List>
 			{packageManagers.map(({ value }) => (
 				<Tabs.Tab value={value} key={value}>
@@ -26,7 +30,7 @@ export const PackageManagerCode = ({ cmd }: PackageManagerProps) => (
 				return (
 					<Tabs.Panel value={value} pt="xs" key={value}>
 						<CodeWrapper language="sh" code={code}>
-							<CodeHighlight code={code} />
+							<CodeHighlight code={code} language="sh" />
 						</CodeWrapper>
 					</Tabs.Panel>
 				);
