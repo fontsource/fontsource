@@ -2,6 +2,7 @@ import type {
 	CSSBuildOptions,
 	FontConfig,
 	FontFace,
+	PublishedFontFace,
 	WebFontFormat,
 } from '../types';
 import { generateStaticFilename, generateVariableFilename } from './filename';
@@ -16,6 +17,9 @@ import {
 
 type ResolveFontFaceOptions = CSSBuildOptions;
 
+const resolveFamilyId = ({ id, family }: FontConfig): string =>
+	id ?? normalizeKebabCase(family);
+
 /**
  * Get the full list of font faces to generate for a given font configuration.
  */
@@ -24,8 +28,6 @@ export const resolveFontFaces = (
 	options: ResolveFontFaceOptions = {},
 ): FontFace[] => {
 	const {
-		id,
-		family,
 		subsets,
 		weights,
 		styles,
@@ -36,7 +38,7 @@ export const resolveFontFaces = (
 
 	const faces: FontFace[] = [];
 	const isVariable = !!variable;
-	const familyId = id ?? normalizeKebabCase(family);
+	const familyId = resolveFamilyId(config);
 
 	if (isVariable) {
 		const axisKeys = getRequestedAxisKeys(variable, options.axisKeys);
@@ -111,4 +113,26 @@ export const resolveFontFaces = (
 	}
 
 	return faces;
+};
+
+/**
+ * Returns the canonical published face/source records for a config, preserving
+ * CSS-facing fields while exposing the public package filenames separately.
+ */
+export const resolvePublishedFaces = (
+	config: FontConfig,
+	options: ResolveFontFaceOptions = {},
+): PublishedFontFace[] => {
+	const familyId = resolveFamilyId(config);
+	const idPrefix = `${familyId}-`;
+
+	return resolveFontFaces(config, options).map((face) => ({
+		...face,
+		sources: face.sources.map((source) => ({
+			...source,
+			publicFilename: source.filename.startsWith(idPrefix)
+				? source.filename.slice(idPrefix.length)
+				: source.filename,
+		})),
+	}));
 };

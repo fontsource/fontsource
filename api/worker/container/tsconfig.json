@@ -1,0 +1,8 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"lib": ["es2022", "dom"],
+		"types": ["bun-types", "node"]
+	},
+	"include": ["./server.ts", "./src/**/*.ts", "../shared/**/*.ts"]
+}

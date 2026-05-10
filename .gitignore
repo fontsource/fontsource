@@ -68,6 +68,9 @@ yarn-error.log
 .idea
 
 api/dist
+api/worker/bin/
+.dev.vars
+.wrangler
 dist
 .npmrc
 *.tsbuildinfo
@@ -77,5 +80,4 @@ mise.local.toml
 # AI
 .serena
 .zed
-AGENT.md
 *.xml

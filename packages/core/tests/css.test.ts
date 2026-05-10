@@ -402,10 +402,6 @@ describe('renderFontFace', () => {
 	});
 });
 
-// ---------------------------------------------------------------------------
-// generateFaceCSSAssets — grouped file output snapshots
-// ---------------------------------------------------------------------------
-
 describe('generateFaceCSSAssets', () => {
 	it('static: two subsets, two weights, two styles', async () => {
 		const variants: FontFace[] = ['latin', 'latin-ext'].flatMap((subset) => {
@@ -460,7 +456,6 @@ describe('generateFaceCSSAssets', () => {
 		const assets = generateFaceCSSAssets('Inter', variants);
 		const filenames = assets.map((a) => a.filename);
 
-		// The key structural assertion — no phantom 700-italic
 		expect(filenames).not.toContain('700-italic.css');
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
@@ -646,7 +641,6 @@ describe('generateFaceCSSAssets', () => {
 
 	it('static: comprehensive (multi-subset, sliced, multi-format)', async () => {
 		const variants: FontFace[] = [
-			// latin with woff2 + woff
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -662,14 +656,12 @@ describe('generateFaceCSSAssets', () => {
 					},
 				],
 			}),
-			// latin-ext with woff2 only
 			staticFace({
 				subset: 'latin-ext',
 				weight: 400,
 				unicodeRange: 'U+0100-024F',
 				filename: 'inter-latin-ext-400-normal.woff2',
 			}),
-			// japanese sliced subsets
 			staticFace({
 				subset: 'japanese',
 				weight: 400,
@@ -695,7 +687,6 @@ describe('generateFaceCSSAssets', () => {
 
 	it('variable: comprehensive (multi-subset, mixed axes, sliced)', async () => {
 		const variants: FontFace[] = [
-			// latin — wght normal (woff2 + woff)
 			variableFace({
 				subset: 'latin',
 				weight: '100 900',
@@ -711,7 +702,6 @@ describe('generateFaceCSSAssets', () => {
 					},
 				],
 			}),
-			// latin-ext — slnt italic
 			variableFace({
 				subset: 'latin-ext',
 				weight: '400',
@@ -720,7 +710,6 @@ describe('generateFaceCSSAssets', () => {
 				unicodeRange: 'U+0100-024F',
 				filename: 'inter-latin-ext-slnt-italic.woff2',
 			}),
-			// japanese — wght normal, sliced
 			variableFace({
 				subset: 'japanese',
 				weight: '300 800',
@@ -747,11 +736,7 @@ describe('generateFaceCSSAssets', () => {
 	});
 });
 
-// ---------------------------------------------------------------------------
-// generateCSS — convenience wrapper
-// ---------------------------------------------------------------------------
-
-describe('generateCSS', () => {
+describe('generateCSSAssets', () => {
 	it('static config expands correctly', async () => {
 		const assets = generateCSSAssets({
 			id: 'inter',

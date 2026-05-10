@@ -1,0 +1,354 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`metadata routes > lists all stats 1`] = `
+{
+  "body": {
+    "abel": {
+      "static": {
+        "jsDelivrHitsMonthly": 20,
+        "jsDelivrHitsTotal": 200,
+        "npmDownloadMonthly": 10,
+        "npmDownloadTotal": 100,
+      },
+      "total": {
+        "jsDelivrHitsMonthly": 20,
+        "jsDelivrHitsTotal": 200,
+        "npmDownloadMonthly": 10,
+        "npmDownloadTotal": 100,
+      },
+    },
+    "recursive": {
+      "static": {
+        "jsDelivrHitsMonthly": 10,
+        "jsDelivrHitsTotal": 100,
+        "npmDownloadMonthly": 5,
+        "npmDownloadTotal": 50,
+      },
+      "total": {
+        "jsDelivrHitsMonthly": 25,
+        "jsDelivrHitsTotal": 250,
+        "npmDownloadMonthly": 15,
+        "npmDownloadTotal": 150,
+      },
+      "variable": {
+        "jsDelivrHitsMonthly": 15,
+        "jsDelivrHitsTotal": 150,
+        "npmDownloadMonthly": 10,
+        "npmDownloadTotal": 100,
+      },
+    },
+  },
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "max-age=86400",
+    "contentType": "application/json",
+    "etag": "<etag>",
+  },
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > lists all variable fonts 1`] = `
+{
+  "body": {
+    "recursive": {
+      "axes": {
+        "MONO": {
+          "default": "0",
+          "max": "1",
+          "min": "0",
+          "step": "1",
+        },
+      },
+      "family": "Recursive",
+    },
+  },
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "max-age=86400",
+    "contentType": "application/json",
+    "etag": "<etag>",
+  },
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > matches public metadata responses 1`] = `
+{
+  "axisRegistry": {
+    "body": {
+      "MONO": {
+        "default": 0,
+        "description": "Monospace axis",
+        "max": 1,
+        "min": 0,
+        "name": "Monospace",
+        "precision": 1,
+      },
+    },
+    "headers": {
+      "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "max-age=86400",
+      "contentType": "application/json",
+      "etag": "<etag>",
+    },
+    "status": 200,
+  },
+  "font": {
+    "body": {
+      "category": "sans-serif",
+      "defSubset": "latin",
+      "family": "Abel",
+      "id": "abel",
+      "lastModified": "2024-01-01",
+      "license": "OFL-1.1",
+      "source": "https://example.com",
+      "styles": [
+        "normal",
+      ],
+      "subsets": [
+        "latin",
+      ],
+      "type": "google",
+      "unicodeRange": {
+        "latin": "U+0000-00FF",
+      },
+      "variable": false,
+      "variants": {
+        "400": {
+          "normal": {
+            "latin": {
+              "url": {
+                "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.ttf",
+                "woff": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff",
+                "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff2",
+              },
+            },
+          },
+        },
+      },
+      "version": "v1",
+      "weights": [
+        400,
+      ],
+    },
+    "headers": {
+      "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "max-age=86400",
+      "contentType": "application/json",
+      "etag": "<etag>",
+      "lastModified": "<last-modified>",
+    },
+    "status": 200,
+  },
+  "fontlist": {
+    "body": {
+      "abel": "google",
+      "familypack": "google",
+      "recursive": "google",
+    },
+    "headers": {
+      "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "max-age=86400",
+      "contentType": "application/json",
+      "etag": "<etag>",
+    },
+    "status": 200,
+  },
+  "redirect": {
+    "headers": {
+      "cacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+      "contentDisposition": "attachment; filename="abel_5.0.0.zip"",
+      "contentType": "application/zip",
+      "etag": "<etag>",
+      "lastModified": "<last-modified>",
+    },
+    "status": 200,
+  },
+  "stats": {
+    "body": {
+      "static": {
+        "jsDelivrHitsMonthly": 10,
+        "jsDelivrHitsTotal": 100,
+        "npmDownloadMonthly": 5,
+        "npmDownloadTotal": 50,
+      },
+      "total": {
+        "jsDelivrHitsMonthly": 25,
+        "jsDelivrHitsTotal": 250,
+        "npmDownloadMonthly": 15,
+        "npmDownloadTotal": 150,
+      },
+      "variable": {
+        "jsDelivrHitsMonthly": 15,
+        "jsDelivrHitsTotal": 150,
+        "npmDownloadMonthly": 10,
+        "npmDownloadTotal": 100,
+      },
+    },
+    "headers": {
+      "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "max-age=86400",
+      "contentType": "application/json",
+      "etag": "<etag>",
+    },
+    "status": 200,
+  },
+  "variable": {
+    "body": {
+      "axes": {
+        "MONO": {
+          "default": "0",
+          "max": "1",
+          "min": "0",
+          "step": "1",
+        },
+      },
+      "family": "Recursive",
+    },
+    "headers": {
+      "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "max-age=86400",
+      "contentType": "application/json",
+      "etag": "<etag>",
+    },
+    "status": 200,
+  },
+  "version": {
+    "body": {
+      "latest": "5.0.0",
+      "latestVariable": "5.0.0",
+      "static": [
+        "5.0.0",
+      ],
+      "variable": [
+        "5.0.0",
+      ],
+    },
+    "headers": {
+      "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "max-age=86400",
+      "contentType": "application/json",
+      "etag": "<etag>",
+    },
+    "status": 200,
+  },
+}
+`;
+
+exports[`metadata routes > rebuilds stats when upstream datasets are sparse 1`] = `
+{
+  "body": {
+    "abel": {
+      "static": {
+        "jsDelivrHitsMonthly": 4,
+        "jsDelivrHitsTotal": 40,
+        "npmDownloadMonthly": 3,
+        "npmDownloadTotal": 30,
+      },
+      "total": {
+        "jsDelivrHitsMonthly": 4,
+        "jsDelivrHitsTotal": 40,
+        "npmDownloadMonthly": 3,
+        "npmDownloadTotal": 30,
+      },
+    },
+    "familypack": {
+      "static": {
+        "jsDelivrHitsMonthly": 0,
+        "jsDelivrHitsTotal": 0,
+        "npmDownloadMonthly": 2,
+        "npmDownloadTotal": 0,
+      },
+      "total": {
+        "jsDelivrHitsMonthly": 0,
+        "jsDelivrHitsTotal": 0,
+        "npmDownloadMonthly": 2,
+        "npmDownloadTotal": 0,
+      },
+    },
+  },
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "max-age=86400",
+    "contentType": "application/json",
+    "etag": "<etag>",
+  },
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > refreshes scheduled metadata caches from upstream 1`] = `
+{
+  "axisRegistry": {
+    "MONO": {
+      "default": 0,
+      "description": "Monospace axis",
+      "max": 1,
+      "min": 0,
+      "name": "Monospace",
+      "precision": 1,
+    },
+  },
+  "catalog": {
+    "abel": {
+      "category": "sans-serif",
+      "defSubset": "latin",
+      "family": "Abel",
+      "id": "abel",
+      "lastModified": "2024-01-01",
+      "license": {
+        "attribution": "Example",
+        "type": "OFL-1.1",
+        "url": "https://example.com/ofl",
+      },
+      "source": "https://example.com",
+      "styles": [
+        "normal",
+      ],
+      "subsets": [
+        "latin",
+      ],
+      "type": "google",
+      "unicodeRange": {
+        "latin": "U+0000-00FF",
+      },
+      "variable": false,
+      "version": "v1",
+      "weights": [
+        400,
+      ],
+    },
+  },
+  "stats": {
+    "abel": {
+      "static": {
+        "jsDelivrHitsMonthly": 4,
+        "jsDelivrHitsTotal": 40,
+        "npmDownloadMonthly": 3,
+        "npmDownloadTotal": 30,
+      },
+      "total": {
+        "jsDelivrHitsMonthly": 4,
+        "jsDelivrHitsTotal": 40,
+        "npmDownloadMonthly": 3,
+        "npmDownloadTotal": 30,
+      },
+    },
+    "familypack": {
+      "static": {
+        "jsDelivrHitsMonthly": 0,
+        "jsDelivrHitsTotal": 0,
+        "npmDownloadMonthly": 2,
+        "npmDownloadTotal": 0,
+      },
+      "total": {
+        "jsDelivrHitsMonthly": 0,
+        "jsDelivrHitsTotal": 0,
+        "npmDownloadMonthly": 2,
+        "npmDownloadTotal": 0,
+      },
+    },
+  },
+}
+`;

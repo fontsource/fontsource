@@ -6,6 +6,7 @@
 		{ "path": "api/download" },
 		{ "path": "api/metadata" },
 		{ "path": "api/upload" },
+		{ "path": "api/worker" },
 		{ "path": "packages/cli" },
 		{ "path": "packages/core" },
 		{ "path": "packages/generate" },

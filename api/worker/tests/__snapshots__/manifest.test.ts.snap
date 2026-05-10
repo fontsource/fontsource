@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`generates static manifest entries 1`] = `
+[
+  {
+    "archivePath": "static/webfonts/abel-latin-400-normal.woff2",
+    "buildMode": "copy",
+    "extension": "woff2",
+    "filename": "latin-400-normal.woff2",
+    "sourceFilename": "latin-400-normal.woff2",
+    "style": "normal",
+    "subset": "latin",
+    "weight": 400,
+  },
+  {
+    "archivePath": "static/webfonts/abel-latin-400-normal.woff",
+    "buildMode": "copy",
+    "extension": "woff",
+    "filename": "latin-400-normal.woff",
+    "sourceFilename": "latin-400-normal.woff",
+    "style": "normal",
+    "subset": "latin",
+    "weight": 400,
+  },
+  {
+    "archivePath": "static/ttf/abel-latin-400-normal.ttf",
+    "buildMode": "convert-woff-to-ttf",
+    "extension": "ttf",
+    "filename": "latin-400-normal.ttf",
+    "sourceFilename": "latin-400-normal.woff",
+    "style": "normal",
+    "subset": "latin",
+    "weight": 400,
+  },
+]
+`;
+
+exports[`generates variable manifest entries 1`] = `
+[
+  {
+    "archivePath": "variable/webfonts/recursive-latin-mono-normal.woff2",
+    "axisKey": "MONO",
+    "buildMode": "copy",
+    "extension": "woff2",
+    "filename": "latin-mono-normal.woff2",
+    "sourceFilename": "latin-mono-normal.woff2",
+    "style": "normal",
+    "subset": "latin",
+  },
+  {
+    "archivePath": "variable/webfonts/recursive-latin-full-normal.woff2",
+    "axisKey": "full",
+    "buildMode": "copy",
+    "extension": "woff2",
+    "filename": "latin-full-normal.woff2",
+    "sourceFilename": "latin-full-normal.woff2",
+    "style": "normal",
+    "subset": "latin",
+  },
+]
+`;
