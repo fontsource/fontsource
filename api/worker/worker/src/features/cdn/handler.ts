@@ -1,13 +1,19 @@
 import type { Context } from 'hono';
+import { HTTPException } from 'hono/http-exception';
 import type {
 	SourceFontMetadata,
 	VariableAxes,
 } from '../../../../shared/catalog';
+import {
+	type FontPackageEntry,
+	findFontPackageEntry,
+	resolveFontPackageManifest,
+} from '../../../../shared/font-package-manifest';
 import { getDownloadAttachmentFilename } from '../../../../shared/http-metadata';
-import { resolveFontPackageManifest } from '../../../../shared/font-package-manifest';
 import { getBinaryKey } from '../../../../shared/storage';
+import { fetchPackageFileList } from '../../../../shared/upstream';
 import { CACHE_HEADERS, CONTENT_TYPES } from '../../constants';
-import { ensureVersionBuilt } from '../../container/client';
+import { ensureFileBuilt, ensureVersionBuilt } from '../../container/client';
 import type { AppEnv } from '../../env';
 import { toHttpDate } from '../../utils/cache';
 import { badGateway, badRequest, notFound } from '../../utils/errors';
@@ -163,6 +169,35 @@ const toAttachmentFilename = (
 		? getDownloadAttachmentFilename(id, version)
 		: `${id}_${version}_${file}`;
 
+const ensurePublishedPinnedSource = async (
+	entry: FontPackageEntry,
+	resolved: ResolvedFontRequest,
+	file: string,
+): Promise<void> => {
+	try {
+		const publishedFiles = await fetchPackageFileList(
+			resolved.tag.id,
+			resolved.tag.version,
+			resolved.tag.isVariable,
+		);
+
+		if (!publishedFiles.has(entry.sourceFilename)) {
+			throw notFound(
+				`Requested file ${file} not found for ${resolved.tag.id}@${resolved.tag.version}`,
+			);
+		}
+	} catch (error) {
+		if (error instanceof HTTPException && error.status === 404) {
+			throw error;
+		}
+
+		console.warn(
+			`[cdn] skipping published-file preflight for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}`,
+			error,
+		);
+	}
+};
+
 /**
  * Builds the binary CDN response, including conditional requests and stable
  * download filenames.
@@ -238,26 +273,36 @@ export const getBinaryAsset = async (
 		resolved.metadata,
 		resolved.axes,
 	);
+	let requestedEntry: FontPackageEntry | undefined;
 
 	// Validate that the requested filename belongs to this package.
 	if (file !== 'download.zip') {
-		if (resolved.tag.isVariable) {
-			if (!resolved.axes) {
-				throw notFound(
-					`Not Found. Variable metadata for ${resolved.tag.id} not found.`,
-				);
-			}
-
-			if (!packageManifest.variable.some((item) => item.filename === file)) {
-				throw notFound('Not Found. File does not exist.');
-			}
-		} else if (!packageManifest.static.some((item) => item.filename === file)) {
+		requestedEntry = findFontPackageEntry(packageManifest, {
+			file,
+			isVariable: resolved.tag.isVariable,
+		});
+		if (!requestedEntry) {
 			throw notFound('Not Found. File does not exist.');
+		}
+
+		if (isPinnedVersion(parsedTag.version)) {
+			await ensurePublishedPinnedSource(requestedEntry, resolved, file);
 		}
 	}
 
 	// For pinned versions, the fast-path already checked R2 and missed,
 	// so skip straight to build. For floating versions, try R2 with the resolved version.
+	const respond = (asset: StoredBinaryAsset) =>
+		respondWithBinary(asset, {
+			cacheControl: getAssetCacheControl(resolved.tag.requestedVersion),
+			contentType,
+			filename: toAttachmentFilename(
+				resolved.tag.id,
+				resolved.tag.version,
+				file,
+			),
+		});
+
 	if (!isPinnedVersion(parsedTag.version)) {
 		const existing = await getStoredBinaryAsset(
 			c,
@@ -267,42 +312,65 @@ export const getBinaryAsset = async (
 		);
 
 		if (existing) {
-			return respondWithBinary(existing, {
-				cacheControl: getAssetCacheControl(resolved.tag.requestedVersion),
-				contentType,
-				filename: toAttachmentFilename(
-					resolved.tag.id,
-					resolved.tag.version,
-					file,
-				),
-			});
+			return respond(existing);
 		}
 	}
 
-	// Cold miss — trigger an on-demand build then re-fetch.
-	await ensureVersionBuilt(c, resolved);
-	const built = await getStoredBinaryAsset(
-		c,
-		resolved.tag,
-		file,
-		c.req.raw.headers,
-	);
+	const readBuiltAsset = async () =>
+		await getStoredBinaryAsset(c, resolved.tag, file, c.req.raw.headers);
+	const scheduleFamilyWarm = () => {
+		c.executionCtx.waitUntil(
+			ensureVersionBuilt(c, resolved).catch((error) => {
+				console.error(
+					`[cdn] background family warm failed for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}`,
+					error,
+				);
+			}),
+		);
+	};
 
-	if (!built) {
-		if (file !== 'download.zip') {
+	if (file !== 'download.zip') {
+		let build = await ensureFileBuilt(c, resolved, file);
+		let built = await readBuiltAsset();
+
+		// Multiple requests for the same exact-version build key can join an
+		// in-flight build for a different file. Retry once with the requested
+		// file so cold single-file requests still succeed.
+		if (!built) {
+			build = await ensureFileBuilt(c, resolved, file);
+			built = await readBuiltAsset();
+		}
+
+		if (!built) {
 			throw notFound('Not Found. File does not exist.');
 		}
 
+		if (build.mode === 'file') {
+			scheduleFamilyWarm();
+		}
+
+		return respond(built);
+	}
+
+	// Cold zip miss — trigger the exact-version family build then re-fetch.
+	await ensureVersionBuilt(c, resolved);
+	let built = await readBuiltAsset();
+
+	// We may have joined an in-flight single-file build on the same exact-version
+	// DO, so retry once to escalate to the family build when the zip is still
+	// missing after the joined build settles.
+	if (!built) {
+		await ensureVersionBuilt(c, resolved);
+		built = await readBuiltAsset();
+	}
+
+	if (!built) {
 		throw badGateway(
 			`Bad Gateway. Artifact build completed without persisting "${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}".`,
 		);
 	}
 
-	return respondWithBinary(built, {
-		cacheControl: getAssetCacheControl(resolved.tag.requestedVersion),
-		contentType,
-		filename: toAttachmentFilename(resolved.tag.id, resolved.tag.version, file),
-	});
+	return respond(built);
 };
 
 export const getCssFile = async (

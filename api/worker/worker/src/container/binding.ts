@@ -1,4 +1,6 @@
 import { Container } from '@cloudflare/containers';
+import { HTTPException } from 'hono/http-exception';
+import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
 import type {
 	BuildVersionRequest,
@@ -51,33 +53,38 @@ export class ArtifactBuilder extends Container<Env> {
 		});
 
 		// Timeout guards against a hung container stalling the worker request.
-		const response = await this.containerFetch(
-			`http://localhost:${this.defaultPort}/build-version`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
+		try {
+			const response = await this.containerFetch(
+				`http://localhost:${this.defaultPort}/build-version`,
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(request),
+					signal: AbortSignal.timeout(120_000),
 				},
-				body: JSON.stringify(request),
-				signal: AbortSignal.timeout(120_000),
-			},
-		);
-
-		if (!response.ok) {
-			throw new Error(await readBuildErrorMessage(response));
-		}
-
-		const payload = (await response.json()) as BuildVersionResponse;
-
-		if (payload.state !== 'ready') {
-			throw new Error(
-				payload.error ?? 'Artifact build did not complete successfully.',
 			);
+
+			if (!response.ok) {
+				throw new HTTPException(response.status as ContentfulStatusCode, {
+					message: await readBuildErrorMessage(response),
+				});
+			}
+
+			const payload = (await response.json()) as BuildVersionResponse;
+
+			if (payload.state !== 'ready') {
+				throw new Error(
+					payload.error ?? 'Artifact build did not complete successfully.',
+				);
+			}
+
+			return payload;
+		} finally {
+			// Stop the container immediately instead of waiting for the idle timeout,
+			// even when the build fails.
+			this.stop().catch(() => {});
 		}
-
-		// Stop the container immediately instead of waiting for the idle timeout.
-		this.stop().catch(() => {});
-
-		return payload;
 	}
 }

@@ -4,6 +4,10 @@ interface JsDelivrPackageResponse {
 	versions?: Array<{ version: string }>;
 }
 
+interface JsDelivrFlatResponse {
+	files?: Array<{ name: string }>;
+}
+
 export class UpstreamNotFoundError extends Error {
 	constructor(url: string) {
 		super(`Upstream resource not found: ${url}`);
@@ -81,6 +85,9 @@ const fetchBinaryBytes = async (url: string): Promise<Uint8Array> =>
 const packageScope = (isVariable: boolean): string =>
 	isVariable ? '@fontsource-variable' : '@fontsource';
 
+const packageName = (id: string, isVariable: boolean): string =>
+	`${packageScope(isVariable)}/${id}`;
+
 export const fetchCachedJson = async <T>(
 	url: string,
 	cacheTtl: number,
@@ -98,11 +105,30 @@ export const fetchPackageVersions = async (
 	isVariable = false,
 ): Promise<string[]> => {
 	const payload = await fetchCachedJson<JsDelivrPackageResponse>(
-		`${UPSTREAM_URLS.jsdelivrPackage}/${packageScope(isVariable)}/${id}`,
+		`${UPSTREAM_URLS.jsdelivrPackage}/${packageName(id, isVariable)}`,
 		cacheTtl,
 	);
 
 	return (payload.versions ?? []).map((item) => item.version);
+};
+
+export const fetchPackageFileList = async (
+	id: string,
+	version: string,
+	isVariable = false,
+): Promise<Set<string>> => {
+	const payload = await fetchCachedJson<JsDelivrFlatResponse>(
+		`${UPSTREAM_URLS.jsdelivrPackage}/${packageName(id, isVariable)}@${version}/flat`,
+		86400,
+	);
+	const prefix = `/files/${id}-`;
+
+	return new Set(
+		(payload.files ?? [])
+			.map((item) => item.name)
+			.filter((name) => name.startsWith(prefix))
+			.map((name) => name.slice(prefix.length)),
+	);
 };
 
 export const fetchPackageAssetBytes = async (
@@ -112,7 +138,7 @@ export const fetchPackageAssetBytes = async (
 	isVariable = false,
 ): Promise<Uint8Array> =>
 	fetchBinaryBytes(
-		`${UPSTREAM_URLS.jsdelivrNpm}/${packageScope(isVariable)}/${id}@${version}/files/${id}-${file}`,
+		`${UPSTREAM_URLS.jsdelivrNpm}/${packageName(id, isVariable)}@${version}/files/${id}-${file}`,
 	);
 
 export const fetchPackageLicenseBytes = async (
@@ -121,5 +147,5 @@ export const fetchPackageLicenseBytes = async (
 	isVariable = false,
 ): Promise<Uint8Array> =>
 	fetchBinaryBytes(
-		`${UPSTREAM_URLS.jsdelivrNpm}/${packageScope(isVariable)}/${id}@${version}/LICENSE`,
+		`${UPSTREAM_URLS.jsdelivrNpm}/${packageName(id, isVariable)}@${version}/LICENSE`,
 	);

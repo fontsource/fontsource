@@ -6,6 +6,8 @@
 	"include": [
 		"./**/*.ts",
 		"./**/*.d.ts",
+		"../container/src/**/*.ts",
+		"../container/src/**/*.d.ts",
 		"../worker/src/**/*.ts",
 		"../worker/src/**/*.d.ts",
 		"../shared/**/*.ts",

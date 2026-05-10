@@ -1,8 +1,8 @@
 import { unzipSync, zipSync } from 'fflate';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import type { SourceFontMetadata } from '../shared/catalog';
 import { KV_KEYS, UPSTREAM_URLS } from '../worker/src/constants';
 import { clearMetadataCachesForTest } from '../worker/src/features/metadata/store';
-import type { SourceFontMetadata } from '../shared/catalog';
 import {
 	dispatch,
 	installArtifactBuilderMock,
@@ -11,8 +11,8 @@ import {
 	serializeHeaders,
 	setupWorkerTest,
 	staticTtfBytes,
-	testCatalog,
 	staticWoff2Bytes,
+	testCatalog,
 	testEnv,
 	textSnapshot,
 	variableWoff2Bytes,
@@ -279,7 +279,9 @@ describe('cdn routes', () => {
 			const result = await dispatch(
 				'https://fontsource.test/fonts/slanted@1.0.0/download.zip',
 			);
-			const archive = unzipSync(new Uint8Array(await result.response.arrayBuffer()));
+			const archive = unzipSync(
+				new Uint8Array(await result.response.arrayBuffer()),
+			);
 			await result.settle();
 
 			expect(result.response.status).toBe(200);
@@ -624,8 +626,12 @@ describe('cdn routes', () => {
 		await notModified.settle();
 		expect(notModified.response.status).toBe(304);
 
-		// Only one build was triggered
-		expect(builder.calls).toHaveBeenCalledTimes(1);
+		// Cold file request builds the file, then warms the family in background.
+		expect(builder.calls).toHaveBeenCalledTimes(2);
+		expect(builder.calls.mock.calls.map(([request]) => request.mode)).toEqual([
+			'file',
+			'family',
+		]);
 	});
 
 	it('joins concurrent cold requests for the same build key', async () => {
@@ -641,7 +647,123 @@ describe('cdn routes', () => {
 		expect(second.response.status).toBe(200);
 		expect(firstBytes.byteLength).toBe(staticTtfBytes.byteLength);
 		expect(secondBytes.byteLength).toBe(staticTtfBytes.byteLength);
-		expect(builder.calls).toHaveBeenCalledTimes(1);
+		expect(builder.calls).toHaveBeenCalledTimes(2);
+	});
+
+	it('builds cold static file misses synchronously then warms the family in background', async () => {
+		const builder = installArtifactBuilderMock(testEnv);
+		const url =
+			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+
+		const cold = await dispatch(url);
+		const coldBytes = await cold.response.arrayBuffer();
+		await cold.settle();
+
+		expect(cold.response.status).toBe(200);
+		expect(coldBytes.byteLength).toBe(staticWoff2Bytes.byteLength);
+		expect(builder.calls.mock.calls.map(([request]) => request.mode)).toEqual([
+			'file',
+			'family',
+		]);
+		expect(await testEnv.FONTS.head('abel@1.0.0/download.zip')).not.toBeNull();
+	});
+
+	it('builds cold variable file misses synchronously then warms the family in background', async () => {
+		const builder = installArtifactBuilderMock(testEnv);
+		const url =
+			'https://fontsource.test/fonts/recursive:vf@1.0.0/latin-full-normal.woff2';
+
+		const cold = await dispatch(url);
+		const coldBytes = await cold.response.arrayBuffer();
+		await cold.settle();
+
+		expect(cold.response.status).toBe(200);
+		expect(coldBytes.byteLength).toBe(variableWoff2Bytes.byteLength);
+		expect(builder.calls.mock.calls.map(([request]) => request.mode)).toEqual([
+			'file',
+			'family',
+		]);
+		expect(
+			await testEnv.FONTS.head('recursive@1.0.0/download.zip'),
+		).not.toBeNull();
+	});
+
+	it('does not schedule additional family warming on warm binary hits', async () => {
+		const builder = installArtifactBuilderMock(testEnv);
+		const url =
+			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+
+		const cold = await dispatch(url);
+		await cold.response.arrayBuffer();
+		await cold.settle();
+		expect(builder.calls).toHaveBeenCalledTimes(2);
+
+		const warm = await dispatch(url);
+		await warm.response.arrayBuffer();
+		await warm.settle();
+
+		expect(warm.response.status).toBe(200);
+		expect(builder.calls).toHaveBeenCalledTimes(2);
+	});
+
+	it('swallows background family warm failures after serving a cold file request', async () => {
+		const builder = installArtifactBuilderMock(testEnv, {
+			failBuilds: [{ buildKey: 'build:abel@1.0.0', mode: 'family' }],
+		});
+		const url =
+			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+
+		const result = await dispatch(url);
+		const bytes = await result.response.arrayBuffer();
+		await result.settle();
+
+		expect(result.response.status).toBe(200);
+		expect(bytes.byteLength).toBe(staticWoff2Bytes.byteLength);
+		expect(builder.calls.mock.calls.map(([request]) => request.mode)).toEqual([
+			'file',
+			'family',
+		]);
+		expect(await testEnv.FONTS.head('abel@1.0.0/download.zip')).toBeNull();
+	});
+
+	it('retries canonical zip builds after joining an in-flight single-file build', async () => {
+		const builder = installArtifactBuilderMock(testEnv, {
+			buildDelayMs: 25,
+		});
+		const fileUrl =
+			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2';
+		const zipUrl = 'https://fontsource.test/fonts/abel@1.0.0/download.zip';
+
+		const fileRequest = dispatch(fileUrl);
+		for (let attempts = 0; attempts < 100; attempts += 1) {
+			if (builder.calls.mock.calls.length > 0) {
+				break;
+			}
+			await new Promise((resolve) => setTimeout(resolve, 0));
+		}
+		expect(builder.calls.mock.calls.map(([request]) => request.mode)).toEqual([
+			'file',
+		]);
+		const zipRequest = dispatch(zipUrl);
+
+		const [fileResult, zipResult] = await Promise.all([
+			fileRequest,
+			zipRequest,
+		]);
+		const [fileBytes, zipBytes] = await Promise.all([
+			fileResult.response.arrayBuffer(),
+			zipResult.response.arrayBuffer(),
+		]);
+		await Promise.all([fileResult.settle(), zipResult.settle()]);
+
+		expect(fileResult.response.status).toBe(200);
+		expect(zipResult.response.status).toBe(200);
+		expect(fileBytes.byteLength).toBe(staticWoff2Bytes.byteLength);
+		expect(zipBytes.byteLength).toBeGreaterThan(0);
+		expect(builder.calls.mock.calls.map(([request]) => request.mode)).toEqual([
+			'file',
+			'family',
+		]);
 	});
 
 	it('returns 502 when the artifact builder fails', async () => {
@@ -653,6 +775,83 @@ describe('cdn routes', () => {
 				'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.ttf',
 			),
 		).toMatchSnapshot();
+	});
+
+	it('returns 404 when the requested exact-version file is not published', async () => {
+		installArtifactBuilderMock(testEnv, {
+			failBuilds: [
+				{
+					buildKey: 'build:abel@1.0.0',
+					mode: 'file',
+					status: 404,
+				},
+			],
+		});
+
+		const result = await dispatch(
+			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2',
+		);
+		const payload = (await result.response.json()) as {
+			status: number;
+			error: string;
+		};
+		await result.settle();
+
+		expect(result.response.status).toBe(404);
+		expect(payload.error).toContain(
+			'Mocked builder failure for build:abel@1.0.0',
+		);
+	});
+
+	it('short-circuits unpublished exact-version files before the builder runs', async () => {
+		vi.restoreAllMocks();
+		const builder = installArtifactBuilderMock(testEnv);
+		installUpstreamFetchMock({
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@1.0.0/flat`]:
+				new Response(
+					JSON.stringify({
+						files: [],
+					}),
+					{ status: 200 },
+				),
+		});
+
+		const result = await dispatch(
+			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2',
+		);
+		const payload = (await result.response.json()) as {
+			status: number;
+			error: string;
+		};
+		await result.settle();
+
+		expect(result.response.status).toBe(404);
+		expect(payload.error).toBe(
+			'Requested file latin-400-normal.woff2 not found for abel@1.0.0',
+		);
+		expect(builder.calls).not.toHaveBeenCalled();
+	});
+
+	it('falls back to the builder when the published-file preflight fails', async () => {
+		vi.restoreAllMocks();
+		const builder = installArtifactBuilderMock(testEnv);
+		installUpstreamFetchMock({
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@1.0.0/flat`]:
+				new Response('boom', { status: 500 }),
+		});
+
+		const result = await dispatch(
+			'https://fontsource.test/fonts/abel@1.0.0/latin-400-normal.woff2',
+		);
+		const bytes = await result.response.arrayBuffer();
+		await result.settle();
+
+		expect(result.response.status).toBe(200);
+		expect(bytes.byteLength).toBe(staticWoff2Bytes.byteLength);
+		expect(builder.calls.mock.calls.map(([request]) => request.mode)).toEqual([
+			'file',
+			'family',
+		]);
 	});
 
 	it('returns 502 when version lookup upstream fails', async () => {

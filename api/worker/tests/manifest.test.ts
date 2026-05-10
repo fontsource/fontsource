@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest';
-import { resolveFontPackageManifest } from '../shared/font-package-manifest';
 import type { SourceFontMetadata, VariableAxes } from '../shared/catalog';
+import { resolveFontPackageManifest } from '../shared/font-package-manifest';
 import { staticMetadata, variableAxes, variableMetadata } from './helpers';
 
 it('generates static manifest entries', () => {

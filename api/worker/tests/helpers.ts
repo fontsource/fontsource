@@ -5,8 +5,8 @@ import {
 import { env } from 'cloudflare:workers';
 import type { Zippable } from 'fflate';
 import { zipSync } from 'fflate';
+import { HTTPException } from 'hono/http-exception';
 import { vi } from 'vitest';
-import { resolveFontPackageManifest } from '../shared/font-package-manifest';
 import type { AxisRegistry } from '../shared/axis-registry';
 import {
 	type BuildVersionRequest,
@@ -18,6 +18,11 @@ import type {
 	SourceFontMetadata,
 	VariableAxes,
 } from '../shared/catalog';
+import {
+	type FontPackageEntry,
+	findFontPackageEntry,
+	resolveFontPackageManifest,
+} from '../shared/font-package-manifest';
 import {
 	BINARY_CONTENT_TYPES,
 	getDownloadContentDisposition,
@@ -280,6 +285,11 @@ export const staticWoffBytes = decodeInlineAsset(staticWoffUrl);
 export const variableWoff2Bytes = decodeInlineAsset(variableWoff2Url);
 export const staticTtfBytes = new Uint8Array([0, 1, 2, 3]);
 
+const isStaticEntry = (
+	item: FontPackageEntry,
+): item is ReturnType<typeof resolveFontPackageManifest>['static'][number] =>
+	!('axisKey' in item);
+
 const toResponse = (body: BodyInit, init?: ResponseInit): Response =>
 	new Response(body, {
 		status: 200,
@@ -308,6 +318,36 @@ const staticBinaryResponse = (url: string): Response => {
 	}
 
 	throw new Error(`Unexpected static asset URL: ${url}`);
+};
+
+const packageFileMetaResponse = (
+	packageName: string,
+	_version: string,
+): Response => {
+	const isVariable = packageName.startsWith('@fontsource-variable/');
+	const id = packageName.replace(/^@fontsource(?:-variable)?\//, '');
+	const metadata = testCatalog[id];
+
+	if (!metadata) {
+		throw new Error(`Unexpected package file metadata fetch: ${packageName}`);
+	}
+
+	const manifest = resolveFontPackageManifest(
+		metadata,
+		isVariable ? (metadata.variable as VariableAxes | undefined) : undefined,
+	);
+	const entries = isVariable ? manifest.variable : manifest.static;
+	const files = Array.from(
+		new Set(entries.map((item) => item.sourceFilename)),
+	).map((name) => ({
+		name: `/files/${id}-${name}`,
+	}));
+
+	return toResponse(
+		JSON.stringify({
+			files,
+		}),
+	);
 };
 
 export const seedMetadata = async (env: Env): Promise<void> => {
@@ -343,6 +383,49 @@ const putBuiltObject = async (
 	});
 };
 
+const putStaticArtifact = async (
+	env: Env,
+	metadata: SourceFontMetadata,
+	version: string,
+	item: ReturnType<typeof resolveFontPackageManifest>['static'][number],
+): Promise<Uint8Array> => {
+	const bytes =
+		item.extension === 'woff2'
+			? staticWoff2Bytes
+			: item.extension === 'woff'
+				? staticWoffBytes
+				: staticTtfBytes;
+
+	await putBuiltObject(
+		env,
+		getStaticAssetKey(metadata.id, version, item.filename),
+		bytes,
+		{
+			contentType: item.extension,
+		},
+	);
+
+	return bytes;
+};
+
+const putVariableArtifact = async (
+	env: Env,
+	metadata: SourceFontMetadata,
+	version: string,
+	item: ReturnType<typeof resolveFontPackageManifest>['variable'][number],
+): Promise<Uint8Array> => {
+	await putBuiltObject(
+		env,
+		getVariableAssetKey(metadata.id, version, item.filename),
+		variableWoff2Bytes,
+		{
+			contentType: item.extension,
+		},
+	);
+
+	return variableWoff2Bytes;
+};
+
 const putStaticArtifacts = async (
 	env: Env,
 	metadata: SourceFontMetadata,
@@ -352,21 +435,7 @@ const putStaticArtifacts = async (
 	let artifactCount = 0;
 
 	for (const item of resolveFontPackageManifest(metadata).static) {
-		const bytes =
-			item.extension === 'woff2'
-				? staticWoff2Bytes
-				: item.extension === 'woff'
-					? staticWoffBytes
-					: staticTtfBytes;
-
-		await putBuiltObject(
-			env,
-			getStaticAssetKey(metadata.id, version, item.filename),
-			bytes,
-			{
-				contentType: item.extension,
-			},
-		);
+		const bytes = await putStaticArtifact(env, metadata, version, item);
 		zipFiles[item.archivePath] =
 			item.buildMode === 'copy' ? [bytes, { level: 0 }] : bytes;
 		artifactCount += 1;
@@ -385,15 +454,8 @@ const putVariableArtifacts = async (
 	let artifactCount = 0;
 
 	for (const item of resolveFontPackageManifest(metadata, axes).variable) {
-		await putBuiltObject(
-			env,
-			getVariableAssetKey(metadata.id, version, item.filename),
-			variableWoff2Bytes,
-			{
-				contentType: item.extension,
-			},
-		);
-		zipFiles[item.archivePath] = [variableWoff2Bytes, { level: 0 }];
+		const bytes = await putVariableArtifact(env, metadata, version, item);
+		zipFiles[item.archivePath] = [bytes, { level: 0 }];
 		artifactCount += 1;
 	}
 
@@ -446,50 +508,118 @@ const putCombinedArtifacts = async (
 	return artifactCount + 1;
 };
 
+const putRequestedArtifact = async (
+	env: Env,
+	request: BuildVersionRequest,
+): Promise<number> => {
+	if (request.mode !== 'file') {
+		return await putCombinedArtifacts(env, request);
+	}
+
+	const manifest = resolveFontPackageManifest(request.metadata, request.axes);
+	const entry = findFontPackageEntry(manifest, request.target);
+
+	if (!entry) {
+		throw new Error(
+			`Mocked build produced no artifact for ${request.tag.id}@${request.tag.version}/${request.target.file}`,
+		);
+	}
+
+	if (request.target.isVariable) {
+		if (isStaticEntry(entry)) {
+			throw new Error(
+				`Mocked build resolved a static artifact for variable target ${request.target.file}`,
+			);
+		}
+
+		await putVariableArtifact(
+			env,
+			request.metadata,
+			request.tag.version,
+			entry,
+		);
+		return 1;
+	}
+
+	if (!isStaticEntry(entry)) {
+		throw new Error(
+			`Mocked build resolved a variable artifact for static target ${request.target.file}`,
+		);
+	}
+
+	await putStaticArtifact(env, request.metadata, request.tag.version, entry);
+	return 1;
+};
+
 export const installArtifactBuilderMock = (
 	env: Env,
 	options: {
 		failBuildKeys?: string[];
+		failBuilds?: Array<{
+			buildKey: string;
+			mode?: BuildVersionRequest['mode'];
+			status?: number;
+		}>;
+		buildDelayMs?: number;
 	} = {},
 ) => {
 	const failBuildKeys = new Set(options.failBuildKeys ?? []);
-	const calls = vi.fn<(buildKey: string) => void>();
-	const ready = new Map<string, BuildVersionResponse>();
+	const failBuilds = options.failBuilds ?? [];
+	const buildDelayMs = options.buildDelayMs ?? 0;
+	const calls = vi.fn<(request: BuildVersionRequest) => void>();
 	const flights = new Map<string, Promise<BuildVersionResponse>>();
 
 	const ensureBuilt = async (
 		request: BuildVersionRequest,
 	): Promise<BuildVersionResponse> => {
 		const buildKey = getBuildKey(request.tag);
-		const existing = ready.get(buildKey);
-
-		if (existing) {
-			return existing;
-		}
-
 		const inFlight = flights.get(buildKey);
 
 		if (inFlight) {
 			return await inFlight;
 		}
 
-		calls(buildKey);
+		calls(request);
 
-		if (failBuildKeys.has(buildKey)) {
+		if (
+			failBuildKeys.has(buildKey) ||
+			failBuilds.some(
+				(item) =>
+					item.buildKey === buildKey &&
+					(!item.mode || item.mode === request.mode),
+			)
+		) {
+			const matchingFailure = failBuilds.find(
+				(item) =>
+					item.buildKey === buildKey &&
+					(!item.mode || item.mode === request.mode),
+			);
+
+			if (matchingFailure?.status) {
+				return await Promise.reject(
+					new HTTPException(matchingFailure.status === 404 ? 404 : 500, {
+						message: `Mocked builder failure for ${buildKey}`,
+					}),
+				);
+			}
+
 			return await Promise.reject(
 				new Error(`Mocked builder failure for ${buildKey}`),
 			);
 		}
 
 		const buildPromise = (async () => {
-			const artifactCount = await putCombinedArtifacts(env, request);
+			if (buildDelayMs > 0) {
+				await new Promise((resolve) => setTimeout(resolve, buildDelayMs));
+			}
+
+			const artifactCount = await putRequestedArtifact(env, request);
 			const response = {
 				state: 'ready',
 				buildKey,
+				mode: request.mode,
 				artifactCount,
 			} satisfies BuildVersionResponse;
-
-			ready.set(buildKey, response);
 			return response;
 		})().finally(() => {
 			flights.delete(buildKey);
@@ -508,6 +638,10 @@ export const installArtifactBuilderMock = (
 					try {
 						return await ensureBuilt(payload);
 					} catch (error) {
+						if (error instanceof HTTPException) {
+							throw error;
+						}
+
 						throw new Error(
 							error instanceof Error
 								? error.message
@@ -561,11 +695,21 @@ export const installUpstreamFetchMock = (
 			}
 
 			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`)) {
-				const packageName = url.replace(
-					`${UPSTREAM_URLS.jsdelivrPackage}/`,
-					'',
-				);
-				const versions = versionPayloads[packageName];
+				const path = url.slice(`${UPSTREAM_URLS.jsdelivrPackage}/`.length);
+
+				if (path.endsWith('/flat')) {
+					const withoutFlat = path.slice(0, -'/flat'.length);
+					const packageRef = withoutFlat.replace(/@([^@/]+)$/, '');
+					const version = withoutFlat.match(/@([^@/]+)$/)?.[1];
+
+					if (!version) {
+						throw new Error(`Unexpected jsDelivr flat URL: ${url}`);
+					}
+
+					return packageFileMetaResponse(packageRef, version);
+				}
+
+				const versions = versionPayloads[path];
 
 				if (!versions) {
 					throw new Error(`Unexpected package metadata fetch: ${url}`);

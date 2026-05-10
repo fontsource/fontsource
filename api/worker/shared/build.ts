@@ -1,4 +1,5 @@
 import type { SourceFontMetadata, VariableAxes } from './catalog';
+import type { FontPackageTarget } from './font-package-manifest';
 
 /**
  * Version target shared by the Worker and container.
@@ -11,15 +12,27 @@ export interface BuildVersionTag {
 /**
  * Worker-to-container build request.
  */
-export interface BuildVersionRequest {
+export interface BuildVersionRequestBase {
 	tag: BuildVersionTag;
 	metadata: SourceFontMetadata;
 	axes?: VariableAxes;
 }
 
+export interface BuildFamilyRequest extends BuildVersionRequestBase {
+	mode: 'family';
+}
+
+export interface BuildFileRequest extends BuildVersionRequestBase {
+	mode: 'file';
+	target: FontPackageTarget;
+}
+
+export type BuildVersionRequest = BuildFamilyRequest | BuildFileRequest;
+
 export interface BuildVersionResponse {
 	state: 'ready' | 'failed';
 	buildKey: string;
+	mode?: BuildVersionRequest['mode'];
 	artifactCount?: number;
 	durationMs?: number;
 	error?: string;

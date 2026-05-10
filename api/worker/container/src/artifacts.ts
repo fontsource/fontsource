@@ -1,7 +1,21 @@
 import { convertFont, createFontContext } from '@fontsource-utils/core';
 import { type Zippable, zipSync } from 'fflate';
+import { HTTPException } from 'hono/http-exception';
 import limitConcur from 'limit-concur';
-import type { BuildVersionRequest, BuildVersionTag } from '../../shared/build';
+import type {
+	BuildFamilyRequest,
+	BuildFileRequest,
+	BuildVersionRequest,
+	BuildVersionTag,
+} from '../../shared/build';
+import {
+	type FontPackageEntry,
+	filterPublishedManifest,
+	findFontPackageEntry,
+	resolveFontPackageManifest,
+	type StaticFontEntry,
+	type VariableFontEntry,
+} from '../../shared/font-package-manifest';
 import {
 	BINARY_CONTENT_TYPES,
 	getDownloadContentDisposition,
@@ -14,17 +28,14 @@ import {
 } from '../../shared/storage';
 import {
 	fetchPackageAssetBytes,
+	fetchPackageFileList,
 	fetchPackageLicenseBytes,
 	UpstreamNotFoundError,
 } from '../../shared/upstream';
-import {
-	resolveFontPackageManifest,
-	type StaticFontEntry,
-	type VariableFontEntry,
-} from '../../shared/font-package-manifest';
 import { getObjectBytes, listKeys, putObject } from './r2';
 
 interface BuiltArtifact {
+	key: string;
 	archivePath: string;
 	bytes: Uint8Array;
 	compress: boolean;
@@ -32,10 +43,10 @@ interface BuiltArtifact {
 
 /** Catches `UpstreamNotFoundError` and returns `undefined` instead of throwing. */
 const ignoreUpstream404 = async <T>(
-	promise: Promise<T>,
+	input: Promise<T> | (() => Promise<T>),
 ): Promise<T | undefined> => {
 	try {
-		return await promise;
+		return await (typeof input === 'function' ? input() : input);
 	} catch (error) {
 		if (error instanceof UpstreamNotFoundError) {
 			return undefined;
@@ -57,6 +68,7 @@ const storeArtifact = async (
 	});
 
 	return {
+		key,
 		archivePath: item.archivePath,
 		bytes,
 		compress: item.buildMode === 'copy',
@@ -94,17 +106,23 @@ const buildStaticArtifacts = async (
 		`[artifacts] static plan — ${copyPlan.length} copy, ${convertPlan.length} convert`,
 	);
 
-	const copied = await Promise.all(
-		copyPlan.map(
-			limitConcur(8, async (item) =>
-				storeArtifact(
-					getStaticAssetKey(tag.id, tag.version, item.filename),
-					await getStaticBytes(item.sourceFilename),
-					item,
+	const copied = (
+		await Promise.all(
+			copyPlan.map(
+				limitConcur(
+					8,
+					async (item) =>
+						await ignoreUpstream404(
+							storeArtifact(
+								getStaticAssetKey(tag.id, tag.version, item.filename),
+								await getStaticBytes(item.sourceFilename),
+								item,
+							),
+						),
 				),
 			),
-		),
-	);
+		)
+	).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
 
 	if (convertPlan.length === 0) {
 		return copied;
@@ -113,24 +131,30 @@ const buildStaticArtifacts = async (
 	const ctx = createFontContext();
 
 	try {
-		const converted = await Promise.all(
-			convertPlan.map(
-				limitConcur(8, async (item) => {
-					const [{ data }] = await convertFont(
-						ctx,
-						await getStaticBytes(item.sourceFilename),
-						['ttf'],
-						`${tag.id}-${item.sourceFilename}`,
-					);
+		const converted = (
+			await Promise.all(
+				convertPlan.map(
+					limitConcur(
+						8,
+						async (item) =>
+							await ignoreUpstream404(async () => {
+								const [{ data }] = await convertFont(
+									ctx,
+									await getStaticBytes(item.sourceFilename),
+									['ttf'],
+									`${tag.id}-${item.sourceFilename}`,
+								);
 
-					return storeArtifact(
-						getStaticAssetKey(tag.id, tag.version, item.filename),
-						data,
-						item,
-					);
-				}),
-			),
-		);
+								return storeArtifact(
+									getStaticAssetKey(tag.id, tag.version, item.filename),
+									data,
+									item,
+								);
+							}),
+					),
+				),
+			)
+		).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
 
 		return [...copied, ...converted];
 	} finally {
@@ -148,33 +172,101 @@ const buildVariableArtifacts = async (
 
 	console.log(`[artifacts] variable plan — ${manifest.length} items`);
 
-	return Promise.all(
-		manifest.map(
-			limitConcur(8, async (item) =>
-				storeArtifact(
-					getVariableAssetKey(tag.id, tag.version, item.filename),
-					await fetchPackageAssetBytes(
-						tag.id,
-						tag.version,
-						item.sourceFilename,
-						true,
-					),
-					item,
+	return (
+		await Promise.all(
+			manifest.map(
+				limitConcur(
+					8,
+					async (item) =>
+						await ignoreUpstream404(
+							storeArtifact(
+								getVariableAssetKey(tag.id, tag.version, item.filename),
+								await fetchPackageAssetBytes(
+									tag.id,
+									tag.version,
+									item.sourceFilename,
+									true,
+								),
+								item,
+							),
+						),
 				),
 			),
-		),
+		)
+	).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
+};
+
+const isStaticEntry = (item: FontPackageEntry): item is StaticFontEntry =>
+	!('axisKey' in item);
+
+const buildSingleArtifact = async (
+	request: BuildFileRequest,
+): Promise<number> => {
+	const baseManifest = resolveFontPackageManifest(
+		request.metadata,
+		request.axes,
 	);
+	const publishedStaticFiles = await fetchPackageFileList(
+		request.tag.id,
+		request.tag.version,
+		false,
+	);
+	const publishedVariableFiles = request.axes
+		? await fetchPackageFileList(request.tag.id, request.tag.version, true)
+		: undefined;
+	const manifest = filterPublishedManifest(
+		baseManifest,
+		publishedStaticFiles,
+		publishedVariableFiles,
+	);
+	const entry = findFontPackageEntry(manifest, request.target);
+
+	if (!entry) {
+		throw new HTTPException(404, {
+			message: `Requested file ${request.target.file} not found for ${request.tag.id}@${request.tag.version}`,
+		});
+	}
+
+	const built = isStaticEntry(entry)
+		? await buildStaticArtifacts(request.tag, [entry])
+		: await buildVariableArtifacts(request.tag, [entry]);
+
+	if (built.length === 0) {
+		throw new HTTPException(404, {
+			message: `No artifact published for ${request.tag.id}@${request.tag.version}/${request.target.file}`,
+		});
+	}
+
+	console.log(
+		`[artifacts] built single file ${request.tag.id}@${request.tag.version}/${request.target.file}`,
+	);
+
+	return built.length;
 };
 
 /**
  * Builds the exact-version artifact set, skipping anything that already exists
  * in R2 and creating the combined family zip only when it is missing.
  */
-export const buildArtifacts = async (
-	request: BuildVersionRequest,
+const buildFamilyArtifacts = async (
+	request: BuildFamilyRequest,
 ): Promise<number> => {
 	const { tag, metadata, axes } = request;
-	const { static: staticManifest, variable: variableManifest } = resolveFontPackageManifest(metadata, axes);
+	const baseManifest = resolveFontPackageManifest(metadata, axes);
+	const publishedStaticFiles = await fetchPackageFileList(
+		tag.id,
+		tag.version,
+		false,
+	);
+	const publishedVariableFiles = axes
+		? await fetchPackageFileList(tag.id, tag.version, true)
+		: undefined;
+	const { static: staticManifest, variable: variableManifest } =
+		filterPublishedManifest(
+			baseManifest,
+			publishedStaticFiles,
+			publishedVariableFiles,
+		);
 
 	console.log(
 		`[artifacts] ${tag.id}@${tag.version} — manifest: ${staticManifest.length} static, ${variableManifest.length} variable`,
@@ -240,25 +332,11 @@ export const buildArtifacts = async (
 
 		// Index freshly-built bytes by R2 key for quick lookup.
 		const builtByKey = new Map<string, BuiltArtifact>();
-		for (let i = 0; i < newStaticArtifacts.length; i++) {
-			builtByKey.set(
-				getStaticAssetKey(
-					tag.id,
-					tag.version,
-					missingStatic[i].filename,
-				),
-				newStaticArtifacts[i],
-			);
+		for (const artifact of newStaticArtifacts) {
+			builtByKey.set(artifact.key, artifact);
 		}
-		for (let i = 0; i < newVariableArtifacts.length; i++) {
-			builtByKey.set(
-				getVariableAssetKey(
-					tag.id,
-					tag.version,
-					missingVariable[i].filename,
-				),
-				newVariableArtifacts[i],
-			);
+		for (const artifact of newVariableArtifacts) {
+			builtByKey.set(artifact.key, artifact);
 		}
 
 		// Collect every artifact for the archive: freshly built from memory,
@@ -283,12 +361,11 @@ export const buildArtifacts = async (
 					fetchedFromR2++;
 					const bytes = await getObjectBytes(key);
 					if (!bytes) {
-						throw new Error(
-							`Expected artifact ${key} not found in R2`,
-						);
+						throw new Error(`Expected artifact ${key} not found in R2`);
 					}
 
 					return {
+						key,
 						archivePath: item.archivePath,
 						bytes,
 						compress: item.buildMode === 'copy',
@@ -327,9 +404,7 @@ export const buildArtifacts = async (
 		const archiveFiles: Zippable = Object.fromEntries([
 			...allArtifactEntries.map((artifact) => [
 				artifact.archivePath,
-				artifact.compress
-					? [artifact.bytes, { level: 0 }]
-					: artifact.bytes,
+				artifact.compress ? [artifact.bytes, { level: 0 }] : artifact.bytes,
 			]),
 			['LICENSE', license],
 		]);
@@ -339,10 +414,7 @@ export const buildArtifacts = async (
 			zipSync(archiveFiles),
 			{
 				cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-				contentDisposition: getDownloadContentDisposition(
-					tag.id,
-					tag.version,
-				),
+				contentDisposition: getDownloadContentDisposition(tag.id, tag.version),
 				contentType: BINARY_CONTENT_TYPES.zip,
 			},
 		);
@@ -354,3 +426,10 @@ export const buildArtifacts = async (
 
 	return totalCount;
 };
+
+export const buildArtifacts = async (
+	request: BuildVersionRequest,
+): Promise<number> =>
+	request.mode === 'file'
+		? await buildSingleArtifact(request)
+		: await buildFamilyArtifacts(request);

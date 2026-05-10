@@ -1,3 +1,4 @@
+import { HTTPException } from 'hono/http-exception';
 import {
 	type BuildVersionRequest,
 	type BuildVersionTag,
@@ -16,17 +17,20 @@ const resp404 = (): Response =>
 		{ status: 404 },
 	);
 
-const resp500 = (error: unknown): Response =>
+const errorStatus = (error: unknown): number =>
+	error instanceof HTTPException ? error.status : 500;
+
+const respError = (error: unknown): Response =>
 	Response.json(
 		{
 			state: 'failed',
 			buildKey: 'unknown',
 			error: error instanceof Error ? error.message : String(error),
 		},
-		{ status: 500 },
+		{ status: errorStatus(error) },
 	);
 
-const resp500Tagged = (tag: BuildVersionTag, error: unknown): Response => {
+const respErrorTagged = (tag: BuildVersionTag, error: unknown): Response => {
 	const buildKey = getBuildKey(tag);
 	const message = error instanceof Error ? error.message : String(error);
 
@@ -37,7 +41,7 @@ const resp500Tagged = (tag: BuildVersionTag, error: unknown): Response => {
 			error: message,
 			builtAt: new Date().toISOString(),
 		},
-		{ status: 500 },
+		{ status: errorStatus(error) },
 	);
 };
 
@@ -54,13 +58,13 @@ Bun.serve({
 				try {
 					payload = await request.json();
 					if (!payload) {
-						return resp500(
+						return respError(
 							new Error('Invalid request payload. Expected JSON body.'),
 						);
 					}
 
 					console.log(
-						`[container] POST /build-version ${payload.tag.id}@${payload.tag.version}`,
+						`[container] POST /build-version ${payload.mode} ${payload.tag.id}@${payload.tag.version}`,
 					);
 
 					const snapshot = await ensureBuilt(payload);
@@ -80,10 +84,10 @@ Bun.serve({
 					);
 
 					if (payload) {
-						return resp500Tagged(payload.tag, error);
+						return respErrorTagged(payload.tag, error);
 					}
 
-					return resp500(error);
+					return respError(error);
 				}
 			},
 		},
