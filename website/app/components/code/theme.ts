@@ -4,7 +4,6 @@ const palette = {
 	comment: '#68768d',
 	punctuation: '#7c86a3',
 	purple: '#8b83ff',
-	purpleStrong: '#625bf8',
 	purpleSoft: '#b8b4ff',
 	lavender: '#dad5ff',
 	white: '#eff5fe',
