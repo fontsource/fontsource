@@ -20,24 +20,24 @@
 		"ci:lint": "biome lint ."
 	},
 	"dependencies": {
-		"@cloudflare/containers": "^0.3.2",
+		"@cloudflare/containers": "^0.3.3",
 		"@fontsource-utils/core": "workspace:*",
 		"aws4fetch": "^1.0.20",
 		"chanfana": "^3.3.0",
 		"compare-versions": "^6.1.1",
 		"fflate": "^0.8.2",
-		"hono": "^4.12.14",
+		"hono": "^4.12.18",
 		"limit-concur": "^4.0.0",
-		"zod": "^4.3.6"
+		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@cloudflare/vite-plugin": "^1.32.3",
-		"@cloudflare/vitest-pool-workers": "^0.14.7",
-		"@types/node": "^25.6.0",
-		"bun-types": "^1.3.12",
+		"@cloudflare/vite-plugin": "^1.36.3",
+		"@cloudflare/vitest-pool-workers": "^0.16.3",
+		"@types/node": "^25.6.2",
+		"bun-types": "^1.3.13",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.8",
-		"vitest": "^4.1.4",
-		"wrangler": "^4.83.0"
+		"vite": "^8.0.11",
+		"vitest": "^4.1.5",
+		"wrangler": "^4.90.0"
 	}
 }
