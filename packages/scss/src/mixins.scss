@@ -33,35 +33,61 @@ $axes: null !default;
 	$isVariable: map.get($metadata, axes) != null;
 
 	// Set default values.
-	$directory: $directory or '@fontsource#{if($isVariable, '-variable', '')}/#{map.get($metadata, id)}/files';
-	$family: $family or map.get($metadata, family) +
-		if($isVariable, ' Variable', '');
+	$variable-suffix: '';
+	@if $isVariable {
+		$variable-suffix: '-variable';
+	}
+	$directory: $directory or '@fontsource#{$variable-suffix}/#{map.get($metadata, id)}/files';
+
+	$family-suffix: '';
+	@if $isVariable {
+		$family-suffix: ' Variable';
+	}
+	$family: $family or map.get($metadata, family) + $family-suffix;
+
 	$display: $display or swap;
-	$formats: if(
-		not $formats or $formats == all,
-		if($isVariable, woff2, (woff2, woff)),
-		$formats
-	);
-	$subsets: if(
-		$subsets == all,
-		map.get($metadata, subsets),
-		$subsets or map.get($metadata, subsets)
-	);
-	$weights: if(
-		$weights == all,
-		map.get($metadata, weights),
-		$weights or map.get($metadata, defaults, weight)
-	);
-	$styles: if(
-		$styles == all,
-		map.get($metadata, styles),
-		$styles or map.get($metadata, defaults, style)
-	);
-	$axes: if(
-		$axes,
-		if($axes == all, full, $axes),
-		if($isVariable, if(map.has-key($metadata, axes, wght), wght, full), null)
-	);
+
+	@if not $formats or $formats == all {
+		@if $isVariable {
+			$formats: woff2;
+		} @else {
+			$formats: (woff2, woff);
+		}
+	}
+
+	@if $subsets == all {
+		$subsets: map.get($metadata, subsets);
+	} @else {
+		$subsets: $subsets or map.get($metadata, subsets);
+	}
+
+	@if $weights == all {
+		$weights: map.get($metadata, weights);
+	} @else {
+		$weights: $weights or map.get($metadata, defaults, weight);
+	}
+
+	@if $styles == all {
+		$styles: map.get($metadata, styles);
+	} @else {
+		$styles: $styles or map.get($metadata, defaults, style);
+	}
+
+	$axes-value: null;
+	@if $axes {
+		@if $axes == all {
+			$axes-value: full;
+		} @else {
+			$axes-value: $axes;
+		}
+	} @else if $isVariable {
+		@if map.has-key($metadata, axes, wght) {
+			$axes-value: wght;
+		} @else {
+			$axes-value: full;
+		}
+	}
+	$axes: $axes-value;
 
 	@each $subset in $subsets {
 		@each $unicodeSubset, $unicodeRange in map.get($metadata, unicode) {
@@ -80,19 +106,54 @@ $axes: null !default;
 							list.index(map.get($metadata, subsets), $unicodeSubset)
 					)
 			) {
-				@each $weight in if($axes, null, $weights) {
+				$weight-list: $weights;
+				@if $axes {
+					$weight-list: null;
+				}
+
+				@each $weight in $weight-list {
 					@each $axis in $axes {
 						@each $style in $styles {
-							$variant: '#{map.get($metadata, id)}-#{if($unicodeSubset, $unicodeSubset, $subset)}-#{if($axis, $axis, $weight)}-#{$style}';
+							$subset-label: $subset;
+							@if $unicodeSubset {
+								$subset-label: $unicodeSubset;
+							}
+
+							$axis-or-weight: $weight;
+							@if $axis {
+								$axis-or-weight: $axis;
+							}
+
+							$variant: '#{map.get($metadata, id)}-#{$subset-label}-#{$axis-or-weight}-#{$style}';
 
 							$src: ();
 							@each $format in $formats {
+								$format-suffix: '';
+								@if $axis {
+									$format-suffix: '-variations';
+								}
+
 								$src: list.append(
 									$src,
 									url('#{$directory}/#{$variant}.#{$format}')
-										format('#{$format}#{if($axis, '-variations', '')}'),
+										format('#{$format}#{$format-suffix}'),
 									comma
 								);
+							}
+
+							$computed-font-style: $style;
+							@if (($axis == full) or ($axis == slnt)) and map.has-key($metadata, axes, slnt) {
+								$computed-font-style: oblique map.get($metadata, axes, slnt, min) + deg map.get($metadata, axes, slnt, max) + deg;
+							}
+
+							$computed-font-weight: $weight;
+							@if (($axis == full) or ($axis == wght)) and map.has-key($metadata, axes, wght) {
+								$computed-font-weight: map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max);
+							}
+
+							$computed-font-stretch: null;
+							@if (($axis == full) or ($axis == wdth)) and map.has-key($metadata, axes, wdth) {
+								$computed-font-stretch: '#{map.get($metadata, axes, wdth, min)}% #{map.get($metadata, axes, wdth, max)}%';
 							}
 
 							@content ((
@@ -115,22 +176,10 @@ $axes: null !default;
                 style: $style,
 
                 font-family: string.quote($family),
-                font-style: if(
-                  (($axis == full) or ($axis == slnt)) and map.has-key($metadata, axes, slnt),
-                  oblique map.get($metadata, axes, slnt, min) + deg map.get($metadata, axes, slnt, max) + deg,
-                  $style
-                ),
+                font-style: $computed-font-style,
                 font-display: $display,
-                font-weight: if(
-                  (($axis == full) or ($axis == wght)) and map.has-key($metadata, axes, wght),
-                  map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max),
-                  $weight
-                ),
-                font-stretch: if(
-                  (($axis == full) or ($axis == wdth)) and map.has-key($metadata, axes, wdth),
-                  '#{map.get($metadata, axes, wdth, min)}% #{map.get($metadata, axes, wdth, max)}%',
-                  null
-                ),
+                font-weight: $computed-font-weight,
+                font-stretch: $computed-font-stretch,
                 src: $src,
                 unicode-range: $unicodeRange,
               ));
