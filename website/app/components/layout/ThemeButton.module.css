@@ -7,5 +7,43 @@
 
 	&:hover {
 		color: var(--mantine-color-purple);
+
+		:global(svg),
+		:global(g),
+		:global(path) {
+			stroke: var(--mantine-color-purple);
+		}
+	}
+}
+
+.mobileIcon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+}
+
+.moonIcon,
+.sunIcon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sunIcon,
+.darkLabel {
+	display: none;
+}
+
+:global([data-mantine-color-scheme='dark']) {
+	.moonIcon,
+	.lightLabel {
+		display: none;
+	}
+
+	.sunIcon,
+	.darkLabel {
+		display: inline-flex;
 	}
 }

@@ -35,8 +35,13 @@ export const TabsWrapper = ({
 			}}
 		>
 			<ContentHeader>
-				<Group align="center" data-m:load={`view-tab=${tabsValue}`}>
-					<Title order={1} c="purple.0" pr="lg">
+				<Group
+					align="center"
+					gap="sm"
+					className={classes.heading}
+					data-m:load={`view-tab=${tabsValue}`}
+				>
+					<Title order={1} c="purple.0" className={classes.title}>
 						{metadata.family}
 					</Title>
 					<Badge color="gray" variant="light" className={classes.badge}>
@@ -49,14 +54,14 @@ export const TabsWrapper = ({
 				<Tabs.List>
 					<Link
 						to={`/fonts/${metadata.id}`}
-						style={{ textDecoration: 'none' }}
+						className={classes.link}
 						prefetch="intent"
 					>
 						<Tabs.Tab value="preview">Preview</Tabs.Tab>
 					</Link>
 					<Link
 						to={`/fonts/${metadata.id}/install`}
-						style={{ textDecoration: 'none' }}
+						className={classes.link}
 						prefetch="intent"
 					>
 						<Tabs.Tab value="install">Install</Tabs.Tab>
@@ -74,7 +79,7 @@ export const TabsWrapper = ({
 					</a>
 					<Link
 						to={`/fonts/${metadata.id}/cdn`}
-						style={{ textDecoration: 'none' }}
+						className={classes.link}
 						prefetch="intent"
 					>
 						<Tabs.Tab

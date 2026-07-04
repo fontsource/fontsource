@@ -1,0 +1,65 @@
+---
+title: AI and LLMs
+description: Use Fontsource documentation with AI coding assistants and LLM tools.
+---
+
+# AI and LLMs
+
+Fontsource publishes AI-readable documentation so coding assistants can reference the current docs without crawling HTML pages. These routes are useful when working with tools such as Cursor, Windsurf, GitHub Copilot, ChatGPT, Claude, or local agent workflows.
+
+## Available Files
+
+### `/llms.txt`
+
+Use [`/llms.txt`](/llms.txt) as the primary entry point for AI tools. It is a compact index of the Fontsource documentation and links to the relevant docs pages.
+
+### `/llms-full.txt`
+
+Use [`/llms-full.txt`](/llms-full.txt) when a tool needs the full documentation content in one Markdown file. This file is larger, so `/llms.txt` is usually the better first choice for agents with limited context.
+
+### Page Markdown
+
+Every documentation page is also available as Markdown by adding `.md` to the page URL. For example, this page is available at [`/docs/getting-started/ai-and-llms.md`](/docs/getting-started/ai-and-llms.md).
+
+Use page-level Markdown when an AI tool only needs one focused topic, such as installation, variable fonts, or a framework guide.
+
+## What's Included
+
+The AI-readable docs include the human-maintained documentation pages, guides, and API reference pages. Generated font catalogue pages are intentionally excluded so the export stays focused on how to use Fontsource rather than listing every available font package.
+
+## Usage Examples
+
+### Cursor
+
+Add `https://fontsource.org/llms.txt` with Cursor's docs feature, then ask questions against the indexed Fontsource docs.
+
+Example prompt:
+
+```txt
+Using Fontsource, show me the recommended way to install and import IBM Plex Sans in a Vite app.
+Use https://fontsource.org/llms.txt as the documentation source.
+```
+
+### ChatGPT, Claude, and Agent Workflows
+
+Ask the assistant to read `/llms.txt` first, then fetch the specific Markdown page it needs.
+
+Example prompt:
+
+```txt
+Read https://fontsource.org/llms.txt, then use the most relevant Fontsource Markdown docs page to explain how variable fonts should be imported.
+```
+
+### Limited Context Tools
+
+For tools with small context windows, prefer a focused page-level Markdown URL instead of `/llms-full.txt`.
+
+Example:
+
+```txt
+Use https://fontsource.org/docs/getting-started/install.md to answer this question about installing Fontsource packages.
+```
+
+## Update Cadence
+
+These files are generated from the docs source during the website build, so they stay aligned with the documentation shipped on the website.

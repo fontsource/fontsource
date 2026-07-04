@@ -1,5 +1,7 @@
 import { createRequestHandler } from 'react-router';
 
+import { getDocsMarkdownResponse } from '../app/utils/docs/markdown.server';
+
 declare module 'react-router' {
 	export interface AppLoadContext {
 		cloudflare: {
@@ -16,6 +18,11 @@ const requestHandler = createRequestHandler(
 
 export default {
 	async fetch(request, env, ctx) {
+		const url = new URL(request.url);
+		const markdownResponse = await getDocsMarkdownResponse(url.pathname);
+
+		if (markdownResponse) return markdownResponse;
+
 		return requestHandler(request, {
 			cloudflare: { env, ctx },
 		});

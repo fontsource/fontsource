@@ -2,6 +2,7 @@ import { observer } from '@legendapp/state/react';
 import type { DividerProps } from '@mantine/core';
 import {
 	Button,
+	Group,
 	Divider as MantineDivider,
 	Menu,
 	TextInput,
@@ -17,7 +18,7 @@ interface PreviewProps {
 	state$: SearchState;
 }
 
-const Divider = ({ label, ...others }: DividerProps) => {
+export const PreviewMenuDivider = ({ label, ...others }: DividerProps) => {
 	return (
 		<Menu.Item disabled>
 			<div className={classes.separator}>
@@ -56,7 +57,13 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 	const label = state$.preview.label.get();
 
 	return (
-		<div className={classes.wrapper}>
+		<Group
+			className={classes.wrapper}
+			gap={0}
+			justify="space-between"
+			visibleFrom="sm"
+			wrap="nowrap"
+		>
 			<Menu shadow="md">
 				<Menu.Target>
 					<Button
@@ -72,7 +79,7 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 					</Button>
 				</Menu.Target>
 				<Menu.Dropdown>
-					<Divider label="Sentences" />
+					<PreviewMenuDivider label="Sentences" />
 					<ItemButton
 						label="Sentence"
 						value="The quick brown fox jumps over the lazy dog."
@@ -83,7 +90,7 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 						value="Sphinx of black quartz, judge my vow."
 						state$={state$}
 					/>
-					<Divider label="Alphabets" />
+					<PreviewMenuDivider label="Alphabets" />
 					<ItemButton
 						label="Alphabet"
 						value="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -94,9 +101,9 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 						value="abcdefghijklmnopqrstuvwxyz"
 						state$={state$}
 					/>
-					<Divider label="Numbers" />
+					<PreviewMenuDivider label="Numbers" />
 					<ItemButton label="Number" value="0123456789" state$={state$} />
-					<Divider label="Symbols" />
+					<PreviewMenuDivider label="Symbols" />
 					<ItemButton
 						label="Symbol"
 						value="!@#$%^&*()_+-=[]{}|;':,./<>?"
@@ -123,7 +130,7 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 					},
 				})}
 			/>
-		</div>
+		</Group>
 	);
 });
 

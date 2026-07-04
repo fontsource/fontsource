@@ -35,7 +35,7 @@ interface SliderButtonProps {
 	max?: number;
 }
 
-const SliderButton = ({
+export const SliderButton = ({
 	label,
 	icon,
 	value,

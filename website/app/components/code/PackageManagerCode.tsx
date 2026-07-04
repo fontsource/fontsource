@@ -1,49 +1,39 @@
-import type { CodeProps } from '@mantine/core';
 import { Tabs } from '@mantine/core';
+
+import { getPackageManagerCommands } from '@/utils/docs/packageManagers';
 
 import { CodeHighlight, CodeWrapper } from './Code';
 import classes from './PackageManagerCode.module.css';
 
-interface PackageManagerProps extends Partial<CodeProps> {
+export interface PackageManagerProps {
 	cmd: string;
 }
 
-export const PackageManagerCode = ({ cmd, ...props }: PackageManagerProps) => {
-	const language = 'sh';
+export const PackageManagerCode = ({ cmd }: PackageManagerProps) => {
+	const commands = getPackageManagerCommands(cmd);
+
 	return (
-		<Tabs defaultValue="npm" className={classes.wrapper}>
+		<Tabs
+			defaultValue="npm"
+			className={classes.wrapper}
+			classNames={{ tab: classes.tab }}
+		>
 			<Tabs.List>
-				<Tabs.Tab value="npm">npm</Tabs.Tab>
-				<Tabs.Tab value="yarn">yarn</Tabs.Tab>
-				<Tabs.Tab value="pnpm">pnpm</Tabs.Tab>
-				<Tabs.Tab value="bun">bun</Tabs.Tab>
+				{commands.map(({ value }) => (
+					<Tabs.Tab value={value} key={value}>
+						{value}
+					</Tabs.Tab>
+				))}
 			</Tabs.List>
 
 			<div className={classes.panels}>
-				<Tabs.Panel value="npm" pt="xs">
-					<CodeWrapper
-						language={language}
-						code={`npm install ${cmd}`}
-						{...props}
-					>
-						<CodeHighlight language={language} code={`npm install ${cmd}`} />
-					</CodeWrapper>
-				</Tabs.Panel>
-				<Tabs.Panel value="yarn" pt="xs">
-					<CodeWrapper language={language} code={`yarn add ${cmd}`} {...props}>
-						<CodeHighlight language={language} code={`yarn add ${cmd}`} />
-					</CodeWrapper>
-				</Tabs.Panel>
-				<Tabs.Panel value="pnpm" pt="xs">
-					<CodeWrapper language={language} code={`pnpm add ${cmd}`} {...props}>
-						<CodeHighlight language={language} code={`pnpm add ${cmd}`} />
-					</CodeWrapper>
-				</Tabs.Panel>
-				<Tabs.Panel value="bun" pt="xs">
-					<CodeWrapper language={language} code={`bun add ${cmd}`} {...props}>
-						<CodeHighlight language={language} code={`bun add ${cmd}`} />
-					</CodeWrapper>
-				</Tabs.Panel>
+				{commands.map(({ value, command }) => (
+					<Tabs.Panel value={value} pt="xs" key={value}>
+						<CodeWrapper language="sh" code={command}>
+							<CodeHighlight code={command} language="sh" />
+						</CodeWrapper>
+					</Tabs.Panel>
+				))}
 			</div>
 		</Tabs>
 	);

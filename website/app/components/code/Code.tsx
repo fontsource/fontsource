@@ -1,63 +1,99 @@
-import type { CodeProps } from '@mantine/core';
 import {
 	ActionIcon,
-	Box,
+	type CodeProps,
 	Group,
 	Code as MantineCode,
-	ScrollArea,
 	Text,
 	Tooltip,
-	useMantineColorScheme,
 } from '@mantine/core';
+import {
+	CodeHighlight as MantineCodeHighlight,
+	CodeHighlightAdapterProvider,
+} from '@mantine/code-highlight';
 import { useClipboard } from '@mantine/hooks';
-import { Highlight, Prism } from 'prism-react-renderer';
-import { Suspense, use } from 'react';
+import cx from 'clsx';
+import {
+	Children,
+	type ComponentProps,
+	isValidElement,
+	type ReactElement,
+	type ReactNode,
+} from 'react';
 
 import { IconCopy } from '@/components/icons';
 
 import classes from './Code.module.css';
-import { themeDark, themeLight } from './theme';
+import {
+	codeHighlightAdapter,
+	displayLanguage,
+	highlightLanguage,
+} from './highlight';
+
+type ElementWithCodeProps = {
+	children?: ReactNode;
+	className?: string;
+};
+
+const getNodeText = (node: ReactNode): string => {
+	if (typeof node === 'string' || typeof node === 'number') return String(node);
+
+	if (Array.isArray(node)) return node.map(getNodeText).join('');
+
+	if (isValidElement<ElementWithCodeProps>(node)) {
+		return getNodeText(node.props.children);
+	}
+
+	return '';
+};
+
+const getLanguageFromClassName = (className?: string) =>
+	className
+		?.split(' ')
+		.find((name) => name.startsWith('language-'))
+		?.replace('language-', '') ?? '';
+
+const getCodeChild = (children: ReactNode) =>
+	Children.toArray(children).find((child) =>
+		isValidElement<ElementWithCodeProps>(child),
+	) as ReactElement<ElementWithCodeProps> | undefined;
 
 interface CodeWrapperProps {
-	children: React.ReactNode;
-	language: string;
+	children: ReactNode;
+	language?: string;
 	code: string;
 }
 
 export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
-	const clipboard = useClipboard();
-
-	const copyLabel = 'Copy code';
-	const copiedLabel = 'Copied';
+	const clipboard = useClipboard({ timeout: 1500 });
+	const copyLabel = clipboard.copied ? 'Copied' : 'Copy code';
 
 	return (
-		<Box className={classes.root} translate="no">
-			<Text className={classes.dots}>&#11044;&#11044;</Text>
+		<figure className={classes.root} translate="no">
+			<Text component="span" className={classes.dots} aria-hidden="true">
+				&#11044;&#11044;
+			</Text>
 			{children}
-			<Group gap={0} className={classes.tools}>
-				<Box className={classes.language}>
-					<Text fw={400} fz={13}>
-						{language}
-					</Text>
-				</Box>
-				<Tooltip
-					label={clipboard.copied ? copiedLabel : copyLabel}
-					withArrow
-					arrowSize={6}
-					offset={6}
-				>
+			<Group gap={0} className={classes.tools} component="figcaption">
+				{language ? (
+					<div className={classes.language}>
+						<Text component="span" fw={400} fz={13}>
+							{displayLanguage(language)}
+						</Text>
+					</div>
+				) : null}
+				<Tooltip label={copyLabel} withArrow arrowSize={6} offset={6}>
 					<ActionIcon
 						className={classes.copy}
-						aria-label={clipboard.copied ? copiedLabel : copyLabel}
+						aria-label={copyLabel}
 						onClick={() => {
 							clipboard.copy(code);
 						}}
 					>
-						<IconCopy stroke="white" />
+						<IconCopy aria-hidden="true" stroke="white" />
 					</ActionIcon>
 				</Tooltip>
 			</Group>
-		</Box>
+		</figure>
 	);
 };
 
@@ -66,62 +102,60 @@ interface CodeHighlightProps {
 	language: string;
 }
 
-// Add support for additional languagaes
-(typeof global === 'undefined' ? window : global).Prism = Prism;
-const extraLanguages = Promise.all([
-	// @ts-expect-error - No types for prism themes
-	import('prismjs/components/prism-scss'),
-	// @ts-expect-error - No types for prism themes
-	import('prismjs/components/prism-json'),
-	// @ts-expect-error - No types for prism themes
-	import('prismjs/components/prism-bash'),
-]);
+export const CodeHighlight = ({ code, language }: CodeHighlightProps) => (
+	<CodeHighlightAdapterProvider adapter={codeHighlightAdapter}>
+		<MantineCodeHighlight
+			className={classes.highlight}
+			classNames={{
+				code: classes['code-inner'],
+				pre: classes.code,
+				scrollarea: classes.scrollarea,
+			}}
+			code={code}
+			language={highlightLanguage(language)}
+			withCopyButton={false}
+		/>
+	</CodeHighlightAdapterProvider>
+);
 
-export const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
-	use(extraLanguages);
-	const { colorScheme } = useMantineColorScheme();
+type CodePreProps = ComponentProps<'pre'> & {
+	icon?: string;
+};
+
+export const CodePre = ({
+	children,
+	className,
+	icon: _icon,
+	...props
+}: CodePreProps) => {
+	const codeChild = getCodeChild(children);
+	const codeChildren = codeChild?.props.children ?? children;
+	const language =
+		getLanguageFromClassName(codeChild?.props.className) ||
+		getLanguageFromClassName(className);
+	const code = getNodeText(codeChildren).trimEnd();
 
 	return (
-		<Highlight
-			prism={Prism}
-			theme={colorScheme === 'dark' ? themeDark : themeLight}
-			code={code}
-			language={language === 'sh' ? 'bash' : language}
-		>
-			{({ style, tokens, getLineProps, getTokenProps }) => (
-				<pre className={classes.code} style={style}>
-					<ScrollArea
-						type="auto"
-						offsetScrollbars
-						className={classes['scroll-area']}
-					>
-						{tokens.map((line, i) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: It's the official way to do it
-							<div key={i} {...getLineProps({ line })} className={classes.line}>
-								{line.map((token, key) => (
-									// biome-ignore lint/suspicious/noArrayIndexKey: It's the official way to do it
-									<span key={key} {...getTokenProps({ token })} />
-								))}
-							</div>
-						))}
-					</ScrollArea>
-				</pre>
-			)}
-		</Highlight>
+		<CodeWrapper language={highlightLanguage(language)} code={code}>
+			<pre {...props} className={cx(classes.code, className)}>
+				<code className={cx(classes['code-inner'], codeChild?.props.className)}>
+					{codeChildren}
+				</code>
+			</pre>
+		</CodeWrapper>
 	);
 };
 
 export const CodeMdx = (props: CodeProps) => {
-	const language = props.className?.replace(/language-/, '') ?? '';
+	const language = getLanguageFromClassName(props.className);
 
-	// Inline code
 	if (language === '')
 		return <MantineCode className={classes['inline-code']} {...props} />;
 
 	const code = props.children?.toString().trim() ?? '';
 
 	return (
-		<CodeWrapper language={language} code={code}>
+		<CodeWrapper language={highlightLanguage(language)} code={code}>
 			<CodeHighlight code={code} language={language} />
 		</CodeWrapper>
 	);
@@ -132,7 +166,6 @@ interface CodeDirectProps extends CodeProps {
 }
 
 export const Code = ({ language, children, ...others }: CodeDirectProps) => {
-	// Inline code
 	if (language === '')
 		return (
 			<MantineCode className={classes['inline-code']} {...others}>
@@ -140,11 +173,11 @@ export const Code = ({ language, children, ...others }: CodeDirectProps) => {
 			</MantineCode>
 		);
 
+	const code = children?.toString() ?? '';
+
 	return (
-		<CodeWrapper language={language} code={children?.toString() ?? ''}>
-			<Suspense fallback={undefined}>
-				<CodeHighlight code={children?.toString() ?? ''} language={language} />
-			</Suspense>
+		<CodeWrapper language={highlightLanguage(language)} code={code}>
+			<CodeHighlight code={code} language={language} />
 		</CodeWrapper>
 	);
 };

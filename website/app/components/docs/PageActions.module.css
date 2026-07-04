@@ -1,0 +1,48 @@
+.actions {
+	margin: -4px 0 30px;
+	color: light-dark(#59657c, #a9b3ca);
+	font-size: 14px;
+	line-height: 1;
+}
+
+.action {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 4px 12px;
+	border: 0;
+	border-left: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:first-child {
+		padding-left: 0;
+		border-left: 0;
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: var(--mantine-color-purple-0);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline-offset: 3px;
+		border-radius: 3px;
+	}
+
+	&:disabled {
+		color: light-dark(#8b96aa, #6f7788);
+		cursor: default;
+	}
+
+	@media (--lt-sm) {
+		padding: 6px 14px 6px 0;
+		border-left: 0;
+	}
+}

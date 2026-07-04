@@ -7,11 +7,24 @@
 	max-width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
-	height: 144px;
+	min-height: 144px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 64px 64px 40px;
+
+	@media (--lt-md) {
+		padding: 56px 32px 36px;
+	}
+
+	@media (--lt-sm) {
+		min-height: 168px;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 22px;
+		padding: 40px 24px 28px;
+	}
 }
 
 /* Footer */

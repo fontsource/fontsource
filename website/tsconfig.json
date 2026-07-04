@@ -1,6 +1,8 @@
 {
 	"include": [
 		".react-router/types/**/*",
+		".source/**/*.ts",
+		"../packages/core/src/**/*.ts",
 		"**/*.ts",
 		"**/*.tsx",
 		"**/.server/**/*.ts",
@@ -24,11 +26,12 @@
 		"module": "ES2022",
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
-		"baseUrl": ".",
 		"rootDirs": [".", "./.react-router/types"],
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"paths": {
+			"@fontsource-utils/core": ["../packages/core/src/index.ts"],
+			"collections/*": ["./.source/*"],
 			"@/docs/*": ["./docs/*"],
 			"@/*": ["./app/*"]
 		}
