@@ -15,7 +15,7 @@
 		"ci:test": "CI=true bun run build && bun --filter './packages/*' coverage",
 		"ci:version": "changeset version",
 		"ci:publish": "bun run build && bun --filter './packages/*' ci:publish",
-		"ci:publish-api": "bun run build && bun --filter cdn --filter api --filter upload deploy"
+		"ci:publish-api": "bun run build && bun --filter cdn --filter api --filter upload --filter fontsource-worker-api deploy"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^2.2.2",
