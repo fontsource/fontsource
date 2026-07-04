@@ -4,6 +4,7 @@ import { cloudflare } from '@cloudflare/vite-plugin';
 import { reactRouter } from '@react-router/dev/vite';
 import babel from '@rolldown/plugin-babel';
 import { reactCompilerPreset } from '@vitejs/plugin-react';
+import { boneyardPlugin } from 'boneyard-js/vite';
 import browserslist from 'browserslist';
 import mdx from 'fumadocs-mdx/vite';
 import { browserslistToTargets } from 'lightningcss';
@@ -55,6 +56,7 @@ export default defineConfig({
 			presets: [reactCompilerPreset()],
 		}),
 		reactRouter(),
+		boneyardPlugin(),
 	],
 	optimizeDeps: {
 		exclude: ['@fontsource-utils/core', '@glypht/core'],

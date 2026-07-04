@@ -1,14 +1,16 @@
 {
 	"name": "website",
 	"private": true,
-	"sideEffects": false,
+	"sideEffects": [
+		"./app/bones/registry.ts",
+		"**/*.css"
+	],
 	"type": "module",
 	"scripts": {
 		"build": "react-router build",
 		"deploy": "wrangler deploy",
 		"dev": "react-router dev",
 		"start": "wrangler dev",
-		"skeletons": "boneyard-js build && rm -f app/bones/registry.ts app/bones/registry.js",
 		"check": "biome check . --write",
 		"format": "biome format --write .",
 		"ci:format": "biome format .",

@@ -10,7 +10,9 @@
 			"!**/.source",
 			"!**/.wrangler",
 			"!**/worker-configuration.d.ts",
-			"!**/.react-router"
+			"!**/.react-router",
+			"!website/app/bones/registry.js",
+			"!website/app/bones/registry.ts"
 		]
 	},
 	"assist": { "actions": { "source": { "organizeImports": "on" } } },

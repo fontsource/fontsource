@@ -1,11 +1,9 @@
-import docsSearchResultsBones from '@/bones/docs-search-results.bones.json';
 import { Modal, VisuallyHidden } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
-import { Skeleton as BoneSkeleton } from 'boneyard-js/react';
 import { useEffect, useId, useState } from 'react';
 import { Link } from 'react-router';
 
-import { boneyardSkeletonProps } from '@/utils/boneyard';
+import { Skeleton } from '@/components/Skeleton';
 
 import classes from './SearchDialog.module.css';
 
@@ -168,12 +166,7 @@ export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 					</p>
 				)}
 				{showSearchSkeleton && (
-					<BoneSkeleton
-						name="docs-search-results"
-						loading
-						initialBones={docsSearchResultsBones}
-						{...boneyardSkeletonProps}
-					>
+					<Skeleton name="docs-search-results" loading>
 						<ul className={classes.list} aria-hidden="true">
 							{searchSkeletonRows.map((result) => (
 								<li key={result.breadcrumbs}>
@@ -186,7 +179,7 @@ export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 								</li>
 							))}
 						</ul>
-					</BoneSkeleton>
+					</Skeleton>
 				)}
 				{!showSearchSkeleton && results.length > 0 && (
 					<ul className={classes.list} aria-label="Search results">

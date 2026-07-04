@@ -1,0 +1,27 @@
+.fallback > [data-boneyard-fallback-variant] {
+	display: none;
+}
+
+.fallback > [data-boneyard-fallback-variant='375'] {
+	display: block;
+}
+
+@media (min-width: 768px) {
+	.fallback > [data-boneyard-fallback-variant='375'] {
+		display: none;
+	}
+
+	.fallback > [data-boneyard-fallback-variant='768'] {
+		display: block;
+	}
+}
+
+@media (min-width: 1280px) {
+	.fallback > [data-boneyard-fallback-variant='768'] {
+		display: none;
+	}
+
+	.fallback > [data-boneyard-fallback-variant='1280'] {
+		display: block;
+	}
+}

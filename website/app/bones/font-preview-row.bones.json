@@ -5,21 +5,21 @@
 			"viewportWidth": 327,
 			"width": 327,
 			"height": 58,
-			"bones": [{ "x": 0, "y": 14, "w": 86, "h": 30, "r": 4 }]
+			"bones": [[0, 14, 85.9996, 30, 4]]
 		},
 		"768": {
 			"name": "font-preview-row",
-			"viewportWidth": 704,
-			"width": 704,
+			"viewportWidth": 688,
+			"width": 688,
 			"height": 58,
-			"bones": [{ "x": 0, "y": 14, "w": 82, "h": 30, "r": 4 }]
+			"bones": [[0, 14, 81.9995, 30, 4]]
 		},
 		"1280": {
 			"name": "font-preview-row",
-			"viewportWidth": 820,
-			"width": 820,
+			"viewportWidth": 763,
+			"width": 763,
 			"height": 58,
-			"bones": [{ "x": 0, "y": 14, "w": 80, "h": 30, "r": 4 }]
+			"bones": [[0, 14, 80, 30, 4]]
 		}
 	}
 }

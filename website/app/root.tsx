@@ -1,5 +1,6 @@
 import '@fontsource-variable/ibm-plex-sans/wght.css';
 import '@fontsource-variable/source-code-pro/wght.css';
+import '@/bones/registry';
 import 'fallback-font/fallback-outline.css';
 
 // Mantine core

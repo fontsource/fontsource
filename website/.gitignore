@@ -6,5 +6,6 @@ node_modules
 /.cache
 /build
 /public/build
+/app/bones/registry.js
 .env
 .dev.vars
