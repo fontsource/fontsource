@@ -2,7 +2,7 @@ name = "fontsource-worker-api"
 main = "worker/src/index.ts"
 compatibility_date = "2026-05-10"
 compatibility_flags = ["nodejs_compat"]
-workers_dev = true
+workers_dev = false
 
 kv_namespaces = [
   { binding = "METADATA", id = "49e9d329349446cf948f84af9828914f" },
