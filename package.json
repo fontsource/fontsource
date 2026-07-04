@@ -15,7 +15,7 @@
 		"ci:test": "CI=true bun run build && bun --filter './packages/*' coverage",
 		"ci:version": "changeset version",
 		"ci:publish": "bun run build && bun --filter './packages/*' ci:publish",
-		"ci:publish-api": "bun run build && bun --filter './api/*' deploy"
+		"ci:publish-api": "bun run build && bun --filter cdn --filter api --filter upload deploy"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^2.2.2",
@@ -23,7 +23,7 @@
 		"@changesets/cli": "^2.27.11",
 		"@vitest/coverage-v8": "^0.34.4",
 		"vitest": "^0.34.4",
-		"wrangler": "^4.76.0"
+		"wrangler": "^4.107.0"
 	},
 	"workspaces": [
 		"packages/*",
