@@ -34,7 +34,7 @@ enabled = true
 invocation_logs = false
 
 [triggers]
-crons = []
+crons = ["0 */3 * * *"]
 
 [vars]
 FONTS_BUCKET_NAME = "fonts"
