@@ -4,10 +4,6 @@
 	min-width: 0;
 	min-height: calc(100vh - 130px);
 
-	@media (--lt-xl) {
-		grid-template-columns: minmax(0, 1fr) 220px;
-	}
-
 	@media (--lt-lg) {
 		grid-template-columns: 1fr;
 	}
