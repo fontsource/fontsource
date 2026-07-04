@@ -69,6 +69,7 @@ export default defineConfig({
 	},
 	resolve: {
 		tsconfigPaths: true,
+		dedupe: ['react', 'react-dom'],
 		mainFields: ['browser', 'module', 'main'],
 		alias: {
 			'@fontsource-utils/core': fileURLToPath(

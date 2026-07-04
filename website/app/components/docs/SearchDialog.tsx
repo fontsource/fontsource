@@ -1,7 +1,11 @@
+import docsSearchResultsBones from '@/bones/docs-search-results.bones.json';
 import { Modal, VisuallyHidden } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
+import { Skeleton as BoneSkeleton } from 'boneyard-js/react';
 import { useEffect, useId, useState } from 'react';
 import { Link } from 'react-router';
+
+import { boneyardSkeletonProps } from '@/utils/boneyard';
 
 import classes from './SearchDialog.module.css';
 
@@ -42,6 +46,21 @@ const renderResultContent = (value: string) => {
 	});
 };
 
+const searchSkeletonRows = [
+	{
+		breadcrumbs: 'Getting started / Install',
+		content: 'Install Fontsource packages in your project.',
+	},
+	{
+		breadcrumbs: 'Guides / Next.js',
+		content: 'Use Fontsource with framework-specific bundlers.',
+	},
+	{
+		breadcrumbs: 'API / Fonts',
+		content: 'Query font metadata and available variants.',
+	},
+];
+
 export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 	const inputId = useId();
 	const resultsId = useId();
@@ -50,6 +69,7 @@ export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 	const [results, setResults] = useState<SearchResult[]>([]);
 	const [loading, setLoading] = useState(false);
 	const trimmedQuery = query.trim();
+	const showSearchSkeleton = trimmedQuery.length >= 2 && loading;
 	const statusMessage =
 		trimmedQuery.length < 2
 			? 'Search by page title, heading, or text.'
@@ -137,12 +157,38 @@ export const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 				/>
 			</label>
 			<div className={classes.results} id={resultsId}>
-				{statusMessage && (
+				{statusMessage && showSearchSkeleton && (
+					<VisuallyHidden id={statusId} role="status">
+						{statusMessage}
+					</VisuallyHidden>
+				)}
+				{statusMessage && !showSearchSkeleton && (
 					<p className={classes.empty} id={statusId} role="status">
 						{statusMessage}
 					</p>
 				)}
-				{results.length > 0 && (
+				{showSearchSkeleton && (
+					<BoneSkeleton
+						name="docs-search-results"
+						loading
+						initialBones={docsSearchResultsBones}
+						{...boneyardSkeletonProps}
+					>
+						<ul className={classes.list} aria-hidden="true">
+							{searchSkeletonRows.map((result) => (
+								<li key={result.breadcrumbs}>
+									<span className={classes.result}>
+										<span className={classes.breadcrumbs}>
+											{result.breadcrumbs}
+										</span>
+										<span className={classes.content}>{result.content}</span>
+									</span>
+								</li>
+							))}
+						</ul>
+					</BoneSkeleton>
+				)}
+				{!showSearchSkeleton && results.length > 0 && (
 					<ul className={classes.list} aria-label="Search results">
 						{results.map((result) => (
 							<li key={result.id}>

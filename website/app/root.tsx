@@ -50,7 +50,6 @@ import '@mantine/core/styles/Tabs.css';
 
 // Feedback
 import '@mantine/core/styles/Progress.css';
-import '@mantine/core/styles/Skeleton.css';
 
 // Overlays
 import '@mantine/core/styles/Menu.css';

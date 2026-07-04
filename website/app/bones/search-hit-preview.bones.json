@@ -1,0 +1,30 @@
+{
+	"breakpoints": {
+		"375": {
+			"name": "search-hit-preview",
+			"viewportWidth": 327,
+			"width": 327,
+			"height": 252,
+			"bones": [
+				{ "x": 0, "y": 10, "w": 92, "h": 18, "r": 3 },
+				{ "x": 0, "y": 56, "w": 84, "h": 18, "r": 3 },
+				{ "x": 0, "y": 102, "w": 72, "h": 18, "r": 3 },
+				{ "x": 0, "y": 148, "w": 58, "h": 18, "r": 3 }
+			]
+		},
+		"768": {
+			"name": "search-hit-preview",
+			"viewportWidth": 276,
+			"width": 276,
+			"height": 42,
+			"bones": [{ "x": 0, "y": 12, "w": 74, "h": 18, "r": 3 }]
+		},
+		"1280": {
+			"name": "search-hit-preview",
+			"viewportWidth": 244,
+			"width": 244,
+			"height": 42,
+			"bones": [{ "x": 0, "y": 12, "w": 70, "h": 18, "r": 3 }]
+		}
+	}
+}

@@ -1,10 +1,13 @@
 import { observer, useComputed } from '@legendapp/state/react';
-import { Box, Group, SimpleGrid, Skeleton, Text } from '@mantine/core';
+import searchHitPreviewBones from '@/bones/search-hit-preview.bones.json';
+import { Skeleton as BoneSkeleton } from 'boneyard-js/react';
+import { Box, Group, SimpleGrid, Text } from '@mantine/core';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { Link as NavLink } from 'react-router';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
+import { boneyardSkeletonProps } from '@/utils/boneyard';
 import { getPreviewText } from '@/utils/language/language';
 import type { AlgoliaMetadata } from '@/utils/types';
 
@@ -128,14 +131,19 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 				}}
 				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton.
 			/>
-			<Skeleton visible={!isFontLoaded}>
+			<BoneSkeleton
+				name="search-hit-preview"
+				loading={!isFontLoaded}
+				initialBones={searchHitPreviewBones}
+				{...boneyardSkeletonProps}
+			>
 				<Text
 					fz={size}
 					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
 				>
 					{currentPreview$.get()}
 				</Text>
-			</Skeleton>
+			</BoneSkeleton>
 			<Group className={classes['text-group']}>
 				<Text fz={18} fw={700} component="span">
 					{hit.family}

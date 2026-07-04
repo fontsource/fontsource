@@ -1,8 +1,9 @@
 import { observer } from '@legendapp/state/react';
+import fontPreviewRowBones from '@/bones/font-preview-row.bones.json';
+import { Skeleton as BoneSkeleton } from 'boneyard-js/react';
 import {
 	Box,
 	Flex,
-	Skeleton,
 	Text,
 	TextInput,
 	useComputedColorScheme,
@@ -12,6 +13,7 @@ import { useEffect } from 'react';
 
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
+import { boneyardSkeletonProps } from '@/utils/boneyard';
 import type { Metadata } from '@/utils/types';
 
 import type { FontIDState } from './observables';
@@ -79,7 +81,12 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	return (
 		<>
 			<Box className={classes['text-wrapper']}>
-				<Skeleton visible={!isFontLoaded}>
+				<BoneSkeleton
+					name="font-preview-row"
+					loading={!isFontLoaded}
+					initialBones={fontPreviewRowBones}
+					{...boneyardSkeletonProps}
+				>
 					<TextInput
 						variant="unstyled"
 						className={classes.text}
@@ -104,7 +111,7 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 						autoComplete="off"
 						ref={ref}
 					/>
-				</Skeleton>
+				</BoneSkeleton>
 			</Box>
 			<Tag weight={weight} active={focused} />
 		</>
