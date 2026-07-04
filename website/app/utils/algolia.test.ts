@@ -6,6 +6,12 @@ describe('buildAlgoliaCacheKey', () => {
 	it('ignores unknown params', () => {
 		expect(
 			buildAlgoliaCacheKey(
+				'https://fontsource.org/?utm_source=bot&fbclid=garbage',
+			),
+		).toBe('algolia:ssr:root');
+
+		expect(
+			buildAlgoliaCacheKey(
 				'https://fontsource.org/?query=inter&utm_source=bot&fbclid=garbage',
 			),
 		).toBe('algolia:ssr:query=inter');
