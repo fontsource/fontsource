@@ -22,6 +22,7 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import type { SearchObject } from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
+import { buildAlgoliaCacheKey } from '@/utils/algolia';
 
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
@@ -125,6 +126,7 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	const { ALGOLIA } = context.cloudflare.env;
 	const serverUrl = request.url;
+	const cacheKey = buildAlgoliaCacheKey(serverUrl);
 
 	// Generate default state object for ssr
 	const state$ = observable<SearchObject>({
@@ -139,7 +141,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	});
 
 	// Check local cache for server state first to avoid unnecessary API calls
-	let serverState = await ALGOLIA.get(serverUrl, 'json');
+	let serverState = await ALGOLIA.get(cacheKey, 'json');
 	if (serverState) {
 		return data<SearchProps>({
 			serverState,
@@ -168,7 +170,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 
 	// Add server state to local cache before responding
 	context.cloudflare.ctx.waitUntil(
-		ALGOLIA.put(serverUrl, JSON.stringify(serverState), {
+		ALGOLIA.put(cacheKey, JSON.stringify(serverState), {
 			expirationTtl: ALGOLIA_TTL_SECONDS,
 		}),
 	);
