@@ -11,15 +11,16 @@ on:
       - "api/**"
 
 jobs:
-  metadata:
+  worker:
+    name: Worker
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: api/metadata
+        working-directory: api/worker
 
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -27,72 +28,6 @@ jobs:
 
       - name: Install
         run: bun install
-
-      - name: Run lints
-        run: bun run ci:lint
 
       - name: Run tests
-        run: bun run coverage
-
-  cdn:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: api/cdn
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install
-        run: bun install
-
-      - name: Run lints
-        run: bun run ci:lint
-
-      ## - name: Run tests
-      ##  run: bun run coverage
-
-  upload:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: api/upload
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install
-        run: bun install
-
-      - name: Run lints
-        run: bun run ci:lint
-
-      - name: Run tests
-        run: bun run coverage
-
-  download:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: api/download
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install
-        run: bun install
-
-      # - name: Run lints
-      #   run: bun run ci:lint
+        run: bun run test
