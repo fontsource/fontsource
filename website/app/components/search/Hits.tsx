@@ -58,6 +58,19 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
 	const isFontLoaded = useIsFontLoaded(hit.family, isStylesheetLoaded);
 
+	useEffect(() => {
+		if (isStylesheetLoaded) {
+			return;
+		}
+
+		for (const sheet of document.styleSheets) {
+			if (sheet.href === stylesheetHref) {
+				setStylesheetLoaded(true);
+				return;
+			}
+		}
+	}, [isStylesheetLoaded, stylesheetHref]);
+
 	const display = state$.display.get();
 	const size = state$.size.get();
 

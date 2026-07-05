@@ -183,7 +183,7 @@ export const Skeleton = ({ name, loading, children }: SkeletonProps) => {
 			loading={showSkeleton}
 			fallback={<Fallback name={name} />}
 			fixture={getFixture(name)}
-			animate="solid"
+			animate="pulse"
 			color={skeletonColor}
 		>
 			{children}
