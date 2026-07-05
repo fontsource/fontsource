@@ -39,6 +39,18 @@ interface DetailsMenuProps {
 	label: string;
 }
 
+const getSourcePath = (metadata: Metadata, variant: 'static' | 'variable') => {
+	if (metadata.category === 'icons') {
+		return variant === 'variable' ? 'variable-icons' : 'icons';
+	}
+
+	if (variant === 'variable') {
+		return metadata.type === 'google' ? 'variable' : metadata.type;
+	}
+
+	return metadata.type;
+};
+
 const handleMenuTriggerKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
 	if (event.key === 'Enter' || event.key === ' ') {
 		event.preventDefault();
@@ -90,9 +102,8 @@ const DetailsMenu = ({ ariaLabel, icon, items, label }: DetailsMenuProps) => (
 );
 
 export const InfoWrapper = ({ metadata, isCDN, hits }: InfoProps) => {
-	const staticSourcePath =
-		metadata.category === 'icons' ? 'icons' : metadata.type;
-	const staticSourceUrl = `https://github.com/fontsource/font-files/tree/main/fonts/${staticSourcePath}/${metadata.id}`;
+	const staticSourceUrl = `https://github.com/fontsource/font-files/tree/main/fonts/${getSourcePath(metadata, 'static')}/${metadata.id}`;
+	const variableSourceUrl = `https://github.com/fontsource/font-files/tree/main/fonts/${getSourcePath(metadata, 'variable')}/${metadata.id}`;
 
 	return (
 		<div className={classes.wrapper}>
@@ -121,11 +132,7 @@ export const InfoWrapper = ({ metadata, isCDN, hits }: InfoProps) => {
 							items={[
 								{
 									ariaLabel: 'Open variable GitHub source',
-									href: `https://github.com/fontsource/font-files/tree/main/fonts/${
-										metadata.category === 'icons'
-											? 'variable-icons'
-											: 'variable'
-									}/${metadata.id}`,
+									href: variableSourceUrl,
 									label: 'Variable',
 								},
 								{

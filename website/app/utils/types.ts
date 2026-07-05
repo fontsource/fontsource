@@ -22,7 +22,7 @@ export interface Metadata {
 	category: string;
 	source: string;
 	license: LicenseData;
-	type: 'google' | 'other';
+	type: 'google' | 'icons' | 'league' | 'other';
 	unicodeRange: UnicodeData;
 }
 
