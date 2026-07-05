@@ -165,16 +165,7 @@ export const useFontStatus = (
 				}
 			};
 		},
-		() => {
-			const status = fontStatusCache.get(cacheKey);
-			if (areFontsLoaded(fontFaces)) {
-				return 'loaded';
-			}
-			if (status === 'loaded') {
-				return 'loading';
-			}
-			return status;
-		},
+		() => fontStatusCache.get(cacheKey), // Client snapshot.
 		() => undefined, // Server snapshot should always be undefined (no fonts loaded on server).
 	);
 
