@@ -17,10 +17,6 @@ interface DownloadRequest extends IRequestStrict {
 }
 
 const router = Router<DownloadRequest, CFRouterContext>();
-const withRouteParams = withParams as (
-	request: DownloadRequest,
-	...args: CFRouterContext
-) => void;
 
 router.get('/v1/variable', async (request, env, ctx) => {
 	const { url } = request;
@@ -51,7 +47,7 @@ router.get('/v1/variable', async (request, env, ctx) => {
 	return response;
 });
 
-router.get('/v1/variable/:id', withRouteParams, async (request, env, ctx) => {
+router.get('/v1/variable/:id', withParams, async (request, env, ctx) => {
 	const { id, url } = request;
 
 	// Check cache first

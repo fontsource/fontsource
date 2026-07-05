@@ -14,7 +14,7 @@ export default {
 		ctx: ExecutionContext,
 	): Promise<Response> {
 		return await router
-			.fetch(request, env, ctx)
+			.handle(request, env, ctx)
 			.catch((error_) => {
 				console.error(error_);
 				return error(error_);

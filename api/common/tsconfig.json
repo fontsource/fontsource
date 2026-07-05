@@ -9,7 +9,6 @@
 		/* Modules */
 		"module": "es2022",
 		"moduleResolution": "node",
-		"ignoreDeprecations": "6.0",
 		"types": ["@cloudflare/workers-types"],
 		"resolveJsonModule": true,
 

@@ -14,7 +14,7 @@ export default {
 	port: process.env.PORT ?? 3001,
 	fetch: async (req: Request) => {
 		return await router
-			.fetch(req)
+			.handle(req)
 			.then((res: Response) => {
 				const path = new URL(req.url).pathname;
 				info(`${req.method} ${path} ${res.status}`);

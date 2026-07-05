@@ -22,7 +22,6 @@
 
 		// best practices
 		"strict": true,
-		"ignoreDeprecations": "6.0",
 		"forceConsistentCasingInFileNames": true,
 		"skipLibCheck": true,
 		"composite": true,

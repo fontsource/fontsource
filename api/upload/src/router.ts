@@ -22,11 +22,7 @@ interface DownloadRequest extends IRequestStrict {
 
 const router = Router<DownloadRequest, CFRouterContext>();
 
-router.get('/list', verifyAuth, () => {
-	throw new StatusError(400, 'Bad Request. Prefix is required.');
-});
-
-router.get<DownloadRequest, CFRouterContext>(
+router.get(
 	'/list/:prefix+',
 	withParams,
 	verifyAuth,
@@ -41,11 +37,7 @@ router.get<DownloadRequest, CFRouterContext>(
 	},
 );
 
-router.get('/get', verifyAuth, () => {
-	throw new StatusError(400, 'Bad Request. Path is required.');
-});
-
-router.get<DownloadRequest, CFRouterContext>(
+router.get(
 	'/get/:path+',
 	withParams,
 	verifyAuth,
@@ -68,7 +60,7 @@ router.get<DownloadRequest, CFRouterContext>(
 	},
 );
 
-router.post<DownloadRequest, CFRouterContext>(
+router.post(
 	'/multipart/:path+',
 	withParams,
 	verifyAuth,
@@ -124,7 +116,7 @@ router.post<DownloadRequest, CFRouterContext>(
 	},
 );
 
-router.put<DownloadRequest, CFRouterContext>(
+router.put(
 	'/multipart/:path+',
 	withParams,
 	verifyAuth,
@@ -144,7 +136,7 @@ router.put<DownloadRequest, CFRouterContext>(
 					throw new StatusError(400, 'Bad Request. Part number is required.');
 
 				const uploadId = formData.get('uploadId');
-				if (typeof uploadId !== 'string')
+				if (!uploadId)
 					throw new StatusError(400, 'Bad Request. Upload ID is required.');
 
 				const file = formData.get('file') as unknown as Blob | undefined;
@@ -182,7 +174,7 @@ router.put<DownloadRequest, CFRouterContext>(
 	},
 );
 
-router.delete<DownloadRequest, CFRouterContext>(
+router.delete(
 	'/multipart/:path+',
 	withParams,
 	verifyAuth,
@@ -224,11 +216,7 @@ router.delete<DownloadRequest, CFRouterContext>(
 	},
 );
 
-router.put('/put', verifyAuth, () => {
-	throw new StatusError(400, 'Bad Request. Path is required.');
-});
-
-router.put<DownloadRequest, CFRouterContext>(
+router.put(
 	'/put/:path+',
 	withParams,
 	verifyAuth,

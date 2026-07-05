@@ -13,10 +13,10 @@
 		"ci:lint": "biome lint ."
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^5.20260705.1",
-		"itty-router": "^5.0.24",
-		"typescript": "^6.0.3",
-		"vitest": "^4.1.9",
+		"@cloudflare/workers-types": "^4.20231121.0",
+		"itty-router": "^4.0.23",
+		"typescript": "^5.3.3",
+		"vitest": "^0.34.4",
 		"vitest-environment-miniflare": "^2.14.1"
 	}
 }

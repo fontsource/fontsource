@@ -17,12 +17,8 @@ interface StatsRequest extends IRequestStrict {
 }
 
 const router = Router<StatsRequest, CFRouterContext>();
-const withRouteParams = withParams as (
-	request: StatsRequest,
-	...args: CFRouterContext
-) => void;
 
-router.get('/v1/version/:id', withRouteParams, async (request, env, ctx) => {
+router.get('/v1/version/:id', withParams, async (request, env, ctx) => {
 	const { id, url } = request;
 
 	// Check cache first
@@ -81,7 +77,7 @@ router.get('/v1/stats', async (request, env, ctx) => {
 	return response;
 });
 
-router.get('/v1/stats/:id', withRouteParams, async (request, env, ctx) => {
+router.get('/v1/stats/:id', withParams, async (request, env, ctx) => {
 	const { id, url } = request;
 
 	// Check cache first
