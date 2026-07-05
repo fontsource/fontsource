@@ -18,6 +18,16 @@ const subscribers = new Map<string, Set<() => void>>();
 
 const isClient = typeof window !== 'undefined';
 
+const areFontsLoaded = (fontFaces: FontFace[], text = 'BESbswy') => {
+	if (!isClient || !document?.fonts) {
+		return false;
+	}
+
+	return fontFaces.every(({ family, weight = 'normal', style = 'normal' }) =>
+		document.fonts.check(`${style} ${weight} 100px "${family}"`, text),
+	);
+};
+
 const loadFont = async (
 	{ family, weight = 'normal', style = 'normal' }: FontFace,
 	text = 'BESbswy', // Default text to test font loading.
@@ -71,8 +81,18 @@ const notify = (cacheKey: string) => {
 };
 
 const triggerFontLoad = (cacheKey: string, fontFaces: FontFace[]) => {
-	if (fontStatusCache.has(cacheKey)) {
-		return; // Already loading or loaded.
+	const status = fontStatusCache.get(cacheKey);
+
+	if (areFontsLoaded(fontFaces)) {
+		if (status !== 'loaded') {
+			fontStatusCache.set(cacheKey, 'loaded');
+			notify(cacheKey);
+		}
+		return;
+	}
+
+	if (status === 'loading') {
+		return;
 	}
 
 	fontStatusCache.set(cacheKey, 'loading');
@@ -145,7 +165,16 @@ export const useFontStatus = (
 				}
 			};
 		},
-		() => fontStatusCache.get(cacheKey), // Client snapshot.
+		() => {
+			const status = fontStatusCache.get(cacheKey);
+			if (areFontsLoaded(fontFaces)) {
+				return 'loaded';
+			}
+			if (status === 'loaded') {
+				return 'loading';
+			}
+			return status;
+		},
 		() => undefined, // Server snapshot should always be undefined (no fonts loaded on server).
 	);
 
