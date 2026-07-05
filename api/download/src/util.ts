@@ -9,7 +9,7 @@ export const getMetadata = async (id: string) => {
 		throw new StatusError(resp.status, `Unable to fetch metadata for ${id}.`);
 	}
 
-	return await resp.json<IDResponse>();
+	return (await resp.json()) as IDResponse;
 };
 
 export const verifyAuth = (req: Request) => {

@@ -11,14 +11,14 @@
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "^20.8.0",
+		"@types/node": "^26.1.0",
 		"bun-types": "^1.0.3"
 	},
 	"dependencies": {
 		"diary": "^0.4.4",
 		"fflate": "^0.8.1",
-		"itty-router": "^4.0.23",
-		"p-queue": "^7.4.1",
+		"itty-router": "^5.0.24",
+		"p-queue": "^9.3.1",
 		"woff2sfnt-sfnt2woff": "^1.0.0"
 	}
 }

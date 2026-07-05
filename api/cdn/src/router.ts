@@ -1,6 +1,6 @@
 import { getMetadata, getVariableMetadata } from 'common-api/util';
 import {
-	createCors,
+	cors,
 	error,
 	type IRequestStrict,
 	Router,
@@ -27,13 +27,17 @@ interface CDNRequest extends IRequestStrict {
 const IMMUTABLE_CACHE = 'public, max-age=31536000, immutable';
 const STALE_CACHE = 'public, max-age=86400, stale-while-revalidate=604800';
 
-export const { preflight, corsify } = createCors();
+export const { preflight, corsify } = cors();
 
 const router = Router<CDNRequest, CFRouterContext>();
+const withRouteParams = withParams as (
+	request: CDNRequest,
+	...args: CFRouterContext
+) => void;
 
 router.all('*', preflight);
 
-router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
+router.get('/fonts/:tag/:file', withRouteParams, async (request, env, ctx) => {
 	const { tag, file, url } = request;
 
 	// Check cache first
@@ -126,7 +130,7 @@ router.get('/fonts/:tag/:file', withParams, async (request, env, ctx) => {
 	return response;
 });
 
-router.get('/css/:tag/:file', withParams, async (request, env, ctx) => {
+router.get('/css/:tag/:file', withRouteParams, async (request, env, ctx) => {
 	const { tag, file, url } = request;
 
 	// Check cache first

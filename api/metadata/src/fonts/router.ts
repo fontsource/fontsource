@@ -18,6 +18,10 @@ interface FontRequest extends IRequestStrict {
 }
 
 const router = Router<FontRequest, CFRouterContext>();
+const withRouteParams = withParams as (
+	request: FontRequest,
+	...args: CFRouterContext
+) => void;
 
 router.get('/v1/fonts', async (request, env, ctx) => {
 	const url = new URL(request.url);
@@ -84,7 +88,7 @@ router.get('/v1/fonts', async (request, env, ctx) => {
 	return response;
 });
 
-router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
+router.get('/v1/fonts/:id', withRouteParams, async (request, env, ctx) => {
 	const { id, url } = request;
 
 	// Check cache first
@@ -113,11 +117,15 @@ router.get('/v1/fonts/:id', withParams, async (request, env, ctx) => {
 });
 
 // This is a deprecated route, but we need to keep it for backwards compatibility
-router.get('/v1/fonts/:id/:file', withParams, async (request, _env, _ctx) => {
-	const { id, file } = request;
-	const url = `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${file}`;
-	return Response.redirect(url, 301);
-});
+router.get(
+	'/v1/fonts/:id/:file',
+	withRouteParams,
+	async (request, _env, _ctx) => {
+		const { id, file } = request;
+		const url = `https://cdn.jsdelivr.net/fontsource/fonts/${id}@latest/${file}`;
+		return Response.redirect(url, 301);
+	},
+);
 
 // 404 for everything else
 router.all('*', () =>

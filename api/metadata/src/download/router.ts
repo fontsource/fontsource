@@ -7,8 +7,12 @@ interface DownloadRequest extends IRequestStrict {
 }
 
 const router = Router<DownloadRequest, CFRouterContext>();
+const withRouteParams = withParams as (
+	request: DownloadRequest,
+	...args: CFRouterContext
+) => void;
 
-router.get('/v1/download/:id', withParams, async (request, _env, _ctx) => {
+router.get('/v1/download/:id', withRouteParams, async (request, _env, _ctx) => {
 	const { id } = request;
 	return Response.redirect(
 		`https://r2.fontsource.org/fonts/${id}@latest/download.zip`,

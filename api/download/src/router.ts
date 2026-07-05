@@ -35,7 +35,7 @@ router.get('/ping', () =>
 router.all('*', verifyAuth);
 
 /* Zip file download */
-router.post('/:tag', withParams, async (request) => {
+router.post<DownloadRequest>('/:tag', withParams, async (request) => {
 	const { tag } = request;
 	const [id, version] = tag.split('@');
 	if (!id || !version) {
@@ -57,7 +57,7 @@ router.post('/:tag', withParams, async (request) => {
 });
 
 /* Static font file download */
-router.post('/:tag/:file', withParams, async (request) => {
+router.post<DownloadRequest>('/:tag/:file', withParams, async (request) => {
 	const { tag, file } = request;
 	const [id, version] = tag.split('@');
 	if (!id || !version) {
@@ -72,7 +72,7 @@ router.post('/:tag/:file', withParams, async (request) => {
 });
 
 /* Variable font file download */
-router.post('/v/:tag/:file', withParams, async (request, env, _ctx) => {
+router.post<DownloadRequest>('/v/:tag/:file', withParams, async (request) => {
 	const { tag, file } = request;
 	const [id, version] = tag.split('@');
 	if (!id || !version) {

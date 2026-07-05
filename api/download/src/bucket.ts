@@ -70,7 +70,7 @@ export const listBucket = async (prefix: string) => {
 		handleBucketError(resp, 'Unable to list bucket.');
 	}
 
-	return await resp.json<ListBucket>();
+	return (await resp.json()) as ListBucket;
 };
 
 const abortMultiPartUpload = async (
@@ -120,7 +120,7 @@ const initiateMultipartUpload = async (bucketPath: string): Promise<string> => {
 		handleBucketError(resp, `Unable to initiate multipart upload. ${error}`);
 	}
 
-	const data = await resp.json();
+	const data = (await resp.json()) as { uploadId?: string };
 	if (!data.uploadId) {
 		throw new StatusError(
 			500,
@@ -167,7 +167,7 @@ const uploadPart = async (
 		handleBucketError(resp, msg);
 	}
 
-	const data = await resp.json();
+	const data = (await resp.json()) as { etag?: string };
 	if (!data.etag) {
 		throw new StatusError(
 			500,

@@ -9,7 +9,7 @@ export default {
 		ctx: ExecutionContext,
 	): Promise<Response> {
 		return await router
-			.handle(request, env, ctx)
+			.fetch(request, env, ctx)
 			.catch((error_) => {
 				console.error(error_);
 				const resp = error(error_);
