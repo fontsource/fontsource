@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { buildAlgoliaCacheKey } from './algolia';
 
 describe('buildAlgoliaCacheKey', () => {
-	it('ignores unknown params', () => {
+	it('ignores unknown params and skips search params', () => {
 		expect(
 			buildAlgoliaCacheKey(
 				'https://fontsource.org/?utm_source=bot&fbclid=garbage',
@@ -14,27 +14,15 @@ describe('buildAlgoliaCacheKey', () => {
 			buildAlgoliaCacheKey(
 				'https://fontsource.org/?query=inter&utm_source=bot&fbclid=garbage',
 			),
-		).toBe('algolia:ssr:query=inter');
+		).toBeUndefined();
 	});
 
-	it('normalizes param order', () => {
-		expect(
-			buildAlgoliaCacheKey(
-				'https://fontsource.org/?sort=newest&category=serif&query=inter',
-			),
-		).toBe(
-			buildAlgoliaCacheKey(
-				'https://fontsource.org/?query=inter&category=serif&sort=newest',
-			),
-		);
-	});
-
-	it('normalizes repeated and comma-separated subsets', () => {
+	it('skips repeated and comma-separated subsets', () => {
 		expect(
 			buildAlgoliaCacheKey(
 				'https://fontsource.org/?subsets=latin-ext,latin&subsets=latin',
 			),
-		).toBe('algolia:ssr:subsets=latin%2Clatin-ext');
+		).toBeUndefined();
 	});
 
 	it('omits an empty query', () => {
@@ -43,11 +31,11 @@ describe('buildAlgoliaCacheKey', () => {
 		);
 	});
 
-	it('preserves known params with arbitrary values', () => {
+	it('skips known params with arbitrary values', () => {
 		expect(
 			buildAlgoliaCacheKey(
 				'https://fontsource.org/?sort=garbage&category=unknown&variable=garbage',
 			),
-		).toBe('algolia:ssr:category=unknown&variable=true&sort=garbage');
+		).toBeUndefined();
 	});
 });

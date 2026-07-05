@@ -22,10 +22,10 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import type { SearchObject } from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
-import { buildAlgoliaCacheKey } from '@/utils/algolia';
 
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
+import { buildAlgoliaCacheKey } from '@/utils/algolia';
 
 interface SearchProps {
 	serverState?: InstantSearchServerState;
@@ -141,7 +141,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	});
 
 	// Check local cache for server state first to avoid unnecessary API calls
-	let serverState = await ALGOLIA.get(cacheKey, 'json');
+	let serverState = cacheKey ? await ALGOLIA.get(cacheKey, 'json') : null;
 	if (serverState) {
 		return data<SearchProps>({
 			serverState,
@@ -169,11 +169,13 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	);
 
 	// Add server state to local cache before responding
-	context.cloudflare.ctx.waitUntil(
-		ALGOLIA.put(cacheKey, JSON.stringify(serverState), {
-			expirationTtl: ALGOLIA_TTL_SECONDS,
-		}),
-	);
+	if (cacheKey) {
+		context.cloudflare.ctx.waitUntil(
+			ALGOLIA.put(cacheKey, JSON.stringify(serverState), {
+				expirationTtl: ALGOLIA_TTL_SECONDS,
+			}),
+		);
+	}
 
 	return data<SearchProps>(
 		{
