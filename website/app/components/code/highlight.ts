@@ -2,17 +2,7 @@ import {
 	type CodeHighlightAdapter,
 	stripShikiCodeBlocks,
 } from '@mantine/code-highlight';
-import { createHighlighterCoreSync } from 'shiki/core';
-import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
-import css from 'shiki/langs/css.mjs';
-import html from 'shiki/langs/html.mjs';
-import javascript from 'shiki/langs/javascript.mjs';
-import json from 'shiki/langs/json.mjs';
-import jsx from 'shiki/langs/jsx.mjs';
-import scss from 'shiki/langs/scss.mjs';
-import shellscript from 'shiki/langs/shellscript.mjs';
-import tsx from 'shiki/langs/tsx.mjs';
-import typescript from 'shiki/langs/typescript.mjs';
+import type { HighlighterCore, LanguageInput } from 'shiki/core';
 
 import { fontsourceCodeTheme } from './theme';
 
@@ -37,22 +27,54 @@ export const highlightLanguage = (language: string) => {
 	return languageAliases[normalized] ?? normalized;
 };
 
-const highlighter = createHighlighterCoreSync({
-	engine: createJavaScriptRegexEngine(),
-	langs: [css, html, javascript, json, jsx, scss, shellscript, tsx, typescript],
-	themes: [fontsourceCodeTheme],
-});
+const highlighterLanguages = [
+	() => import('shiki/langs/css.mjs'),
+	() => import('shiki/langs/html.mjs'),
+	() => import('shiki/langs/javascript.mjs'),
+	() => import('shiki/langs/json.mjs'),
+	() => import('shiki/langs/jsx.mjs'),
+	() => import('shiki/langs/scss.mjs'),
+	() => import('shiki/langs/shellscript.mjs'),
+	() => import('shiki/langs/tsx.mjs'),
+	() => import('shiki/langs/typescript.mjs'),
+] satisfies LanguageInput[];
+
+const createCodeHighlighter = async () => {
+	const [{ createHighlighterCore }, { createJavaScriptRegexEngine }] =
+		await Promise.all([
+			import('shiki/core'),
+			import('shiki/engine/javascript'),
+		]);
+
+	return createHighlighterCore({
+		engine: createJavaScriptRegexEngine(),
+		langs: highlighterLanguages,
+		themes: [fontsourceCodeTheme],
+	});
+};
+
+let highlighterPromise: Promise<HighlighterCore> | undefined;
+
+const loadHighlighter = () => {
+	highlighterPromise ??= createCodeHighlighter();
+	return highlighterPromise;
+};
 
 export const codeHighlightAdapter: CodeHighlightAdapter = {
+	loadContext: loadHighlighter,
 	getHighlighter:
-		() =>
-		({ code, language }) => ({
-			highlightedCode: stripShikiCodeBlocks(
-				highlighter.codeToHtml(code, {
-					lang: highlightLanguage(language ?? 'plaintext'),
-					theme: fontsourceCodeTheme.name,
-				}),
-			),
-			isHighlighted: true,
-		}),
+		(highlighter) =>
+		({ code, language }) => {
+			if (!highlighter) return { highlightedCode: code, isHighlighted: false };
+
+			return {
+				highlightedCode: stripShikiCodeBlocks(
+					highlighter.codeToHtml(code, {
+						lang: highlightLanguage(language ?? 'plaintext'),
+						theme: fontsourceCodeTheme.name,
+					}),
+				),
+				isHighlighted: true,
+			};
+		},
 };
