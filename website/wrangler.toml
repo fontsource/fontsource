@@ -9,6 +9,7 @@ compatibility_date = "2025-08-15"
 [assets]
 binding = "ASSETS"
 directory = "./build/client"
+html_handling = "drop-trailing-slash"
 
 [[kv_namespaces]]
 binding = "ALGOLIA"

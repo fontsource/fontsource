@@ -37,6 +37,9 @@ const nodeKey = (node: PageTree.Node) =>
 		? node.url
 		: `${node.type}-${String(node.name ?? node.type)}`);
 
+const normalizePathname = (pathname: string) =>
+	pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+
 const containsCurrentPage = (
 	node: PageTree.Node,
 	currentPath: string,
@@ -211,7 +214,8 @@ const LeftSidebar = ({ tree, toggle }: LeftSidebarProps) => {
 
 	if (!pageTree) return null;
 
-	const activeFolder = activeRootFolder(pageTree, location.pathname);
+	const currentPath = normalizePathname(location.pathname);
+	const activeFolder = activeRootFolder(pageTree, currentPath);
 
 	return (
 		<nav className={classes.wrapper} aria-label="Documentation">
@@ -220,7 +224,7 @@ const LeftSidebar = ({ tree, toggle }: LeftSidebarProps) => {
 					<RootSection
 						key={nodeKey(node)}
 						node={node}
-						currentPath={location.pathname}
+						currentPath={currentPath}
 						toggle={toggle}
 					/>
 				))}
@@ -229,7 +233,7 @@ const LeftSidebar = ({ tree, toggle }: LeftSidebarProps) => {
 				<Stack className={classes.activeSection} gap={3}>
 					<SidebarNodes
 						nodes={activeFolder.children}
-						currentPath={location.pathname}
+						currentPath={currentPath}
 						toggle={toggle}
 					/>
 				</Stack>
