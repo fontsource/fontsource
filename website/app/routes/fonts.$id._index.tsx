@@ -106,13 +106,13 @@ const generateDescription = (metadata: Metadata) => {
 	return `Download the ${family} ${variableDesc}${category}font family web typeface. Self-host typography for your website.`;
 };
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-	const title = data?.metadata.family
-		? `${data.metadata.family} | Fontsource`
+export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
+	const title = loaderData?.metadata.family
+		? `${loaderData.metadata.family} | Fontsource`
 		: 'Fontsource';
 
-	const description = data?.metadata
-		? generateDescription(data.metadata)
+	const description = loaderData?.metadata
+		? generateDescription(loaderData.metadata)
 		: undefined;
 	return ogMeta({ title, description });
 };

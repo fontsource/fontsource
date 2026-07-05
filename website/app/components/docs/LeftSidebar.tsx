@@ -22,7 +22,7 @@ interface LeftSidebarProps {
 const usePageTree = (tree?: PageTree.Root) => {
 	const matches = useMatches();
 	const serialized = matches.find((match) => match.id === 'routes/docs')
-		?.data as LayoutData | undefined;
+		?.loaderData as LayoutData | undefined;
 
 	return useMemo(() => {
 		if (tree) return tree;
