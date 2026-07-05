@@ -3,7 +3,7 @@ import {
 	Box,
 	Flex,
 	Text,
-	Textarea,
+	TextInput,
 	useComputedColorScheme,
 } from '@mantine/core';
 import { useFocusWithin } from '@mantine/hooks';
@@ -80,11 +80,9 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 		<Box className={classes.row} ref={ref}>
 			<Box className={classes['text-wrapper']}>
 				<Skeleton name="font-preview-row" loading={!isFontLoaded}>
-					<Textarea
+					<TextInput
 						variant="unstyled"
 						className={classes.text}
-						autosize
-						minRows={1}
 						styles={{
 							input: {
 								fontFamily: `"${family}", "Fallback Outline"`,
@@ -97,12 +95,10 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 								height: 'auto',
 								fontStyle: preview.italic ? 'italic' : 'normal',
 								fontVariationSettings: variation || undefined,
-								overflow: 'hidden',
-								resize: 'none',
 							},
 						}}
 						value={preview.text}
-						onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+						onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
 							state$.preview.text.set(event.currentTarget.value)
 						}
 						autoComplete="off"

@@ -15,10 +15,6 @@
 .text-wrapper {
 	padding: 24px 0 10px 0;
 	min-width: 0;
-
-	@media (--lt-sm) {
-		padding: 8px 0 2px 0;
-	}
 }
 
 .horizontal {
@@ -44,9 +40,5 @@
 	&[data-active="true"] {
 		color: var(--mantine-color-text-0);
 		background-color: var(--mantine-color-purple);
-	}
-
-	@media (--lt-sm) {
-		align-self: flex-start;
 	}
 }
