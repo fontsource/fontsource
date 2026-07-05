@@ -6,7 +6,6 @@ import {
 	Divider as MantineDivider,
 	Menu,
 	TextInput,
-	useMantineColorScheme,
 } from '@mantine/core';
 
 import { IconCaret } from '@/components/icons';
@@ -53,7 +52,6 @@ const ItemButton = observer(({ label, value, state$ }: ItemButtonProps) => {
 });
 
 const PreviewSelector = observer(({ state$ }: PreviewProps) => {
-	const { colorScheme } = useMantineColorScheme();
 	const label = state$.preview.label.get();
 
 	return (
@@ -118,17 +116,7 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 				}}
 				placeholder="Type something"
 				variant="unstyled"
-				styles={(theme) => ({
-					root: {
-						width: '60%',
-					},
-					input: {
-						backgroundColor:
-							colorScheme === 'dark'
-								? theme.colors.background[4]
-								: theme.colors.background[0],
-					},
-				})}
+				classNames={{ root: classes.inputRoot, input: classes.input }}
 			/>
 		</Group>
 	);
