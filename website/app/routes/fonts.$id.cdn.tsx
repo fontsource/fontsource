@@ -53,13 +53,13 @@ const generateDescription = (metadata: Metadata) => {
 	return `The ${family} ${variableDesc}font family is a versatile ${category} web typeface offering ${weightDesc}${italicDesc} for free. Hosted on a privacy-friendly CDN that is free to use and simple to integrate into your website.`;
 };
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-	const title = data?.metadata.family
-		? `${data.metadata.family} | CDN | Fontsource`
+export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
+	const title = loaderData?.metadata.family
+		? `${loaderData.metadata.family} | CDN | Fontsource`
 		: undefined;
 
-	const description = data?.metadata
-		? generateDescription(data.metadata)
+	const description = loaderData?.metadata
+		? generateDescription(loaderData.metadata)
 		: undefined;
 	return ogMeta({ title, description });
 };

@@ -108,8 +108,8 @@ export const clientLoader = async ({
 
 clientLoader.hydrate = true;
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-	const frontmatter = data?.frontmatter;
+export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
+	const frontmatter = loaderData?.frontmatter;
 	const title = frontmatter?.title
 		? `${frontmatter.title} | Documentation | Fontsource`
 		: 'Documentation | Fontsource';

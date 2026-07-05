@@ -4,6 +4,7 @@ import type { TOCItemType } from 'fumadocs-core/toc';
 import { AnchorProvider, TOCItem } from 'fumadocs-core/toc';
 import type { CSSProperties } from 'react';
 
+import { CarbonAd } from '@/components/CarbonAd';
 import classes from './Toc.module.css';
 
 interface TocProps {
@@ -45,5 +46,6 @@ export const Toc = ({ toc, editUrl }: TocProps) => (
 				<IconExternalLink size={14} stroke={1.8} aria-hidden="true" />
 			</a>
 		</Stack>
+		<CarbonAd w={238} mt={0} />
 	</aside>
 );

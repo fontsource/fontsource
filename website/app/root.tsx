@@ -1,5 +1,6 @@
 import '@fontsource-variable/ibm-plex-sans/wght.css';
 import '@fontsource-variable/source-code-pro/wght.css';
+import '@/bones/registry';
 import 'fallback-font/fallback-outline.css';
 
 // Mantine core
@@ -50,7 +51,6 @@ import '@mantine/core/styles/Tabs.css';
 
 // Feedback
 import '@mantine/core/styles/Progress.css';
-import '@mantine/core/styles/Skeleton.css';
 
 // Overlays
 import '@mantine/core/styles/Menu.css';

@@ -1,6 +1,7 @@
 /* Hits */
 .wrapper {
 	display: flex;
+	position: relative;
 	width: 100%;
 	flex-direction: column;
 	align-items: flex-start;
@@ -13,6 +14,7 @@
 	border-radius: 4px;
 
 	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
+	background: transparent;
 
 	/* Remove a tag hyperlink styles */
 	color: inherit;

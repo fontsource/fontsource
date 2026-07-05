@@ -2,7 +2,6 @@ import { observer } from '@legendapp/state/react';
 import {
 	Box,
 	Flex,
-	Skeleton,
 	Text,
 	TextInput,
 	useComputedColorScheme,
@@ -10,6 +9,7 @@ import {
 import { useFocusWithin } from '@mantine/hooks';
 import { useEffect } from 'react';
 
+import { Skeleton } from '@/components/Skeleton';
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
 import type { Metadata } from '@/utils/types';
@@ -79,7 +79,7 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	return (
 		<>
 			<Box className={classes['text-wrapper']}>
-				<Skeleton visible={!isFontLoaded}>
+				<Skeleton name="font-preview-row" loading={!isFontLoaded}>
 					<TextInput
 						variant="unstyled"
 						className={classes.text}

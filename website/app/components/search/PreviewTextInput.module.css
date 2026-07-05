@@ -31,6 +31,14 @@
 	}
 }
 
+.inputRoot {
+	width: 60%;
+}
+
+.input {
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+}
+
 .separator {
 	box-sizing: border-box;
 	text-align: left;
