@@ -22,11 +22,11 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import type { SearchObject } from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
-import { cloudflareContext } from '@/utils/cloudflare-context';
-
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
+import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
+import { cloudflareContext } from '@/utils/cloudflare-context';
 
 interface SearchProps {
 	serverState?: InstantSearchServerState;
@@ -127,7 +127,8 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	const { env, ctx } = context.get(cloudflareContext);
 	const { ALGOLIA } = env;
-	const serverUrl = request.url;
+	const requestUrl = new URL(request.url);
+	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
 	const cacheKey = buildAlgoliaCacheKey(serverUrl);
 
 	// Generate default state object for ssr
@@ -147,10 +148,15 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 		? await ALGOLIA.get<InstantSearchServerState>(cacheKey, 'json')
 		: null;
 	if (serverState) {
-		return data<SearchProps>({
-			serverState,
-			serverUrl,
-		});
+		return data<SearchProps>(
+			{
+				serverState,
+				serverUrl,
+			},
+			{
+				headers: cacheHeaders.short,
+			},
+		);
 	}
 
 	serverState = await getServerState(
@@ -187,9 +193,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 			serverUrl,
 		},
 		{
-			headers: {
-				'Cache-Control': 'public, max-age=300',
-			},
+			headers: cacheHeaders.short,
 		},
 	);
 };

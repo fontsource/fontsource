@@ -1,8 +1,8 @@
 import {
-	error as routerError,
 	type IRequestStrict,
 	json,
 	Router,
+	error as routerError,
 	StatusError,
 	withParams,
 } from 'itty-router';
@@ -132,15 +132,16 @@ router.put(
 				// Parse form data body
 				const formData = await request.formData();
 				const partNumber = formData.get('partNumber');
-				if (!partNumber)
+				if (typeof partNumber !== 'string')
 					throw new StatusError(400, 'Bad Request. Part number is required.');
 
 				const uploadId = formData.get('uploadId');
-				if (!uploadId)
+				if (typeof uploadId !== 'string')
 					throw new StatusError(400, 'Bad Request. Upload ID is required.');
 
-				const file = formData.get('file') as unknown as Blob | undefined;
-				if (!file) throw new StatusError(400, 'Bad Request. File is required.');
+				const file = formData.get('file');
+				if (!(file instanceof Blob))
+					throw new StatusError(400, 'Bad Request. File is required.');
 				const fileBuffer = await file.arrayBuffer();
 
 				const multipartUpload = env.BUCKET.resumeMultipartUpload(

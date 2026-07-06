@@ -1,10 +1,11 @@
 import type { LoaderFunction } from 'react-router';
 
-export const loader: LoaderFunction = async ({ request }) => {
-	const { origin } = new URL(request.url);
-	const iconUrl = `${origin}/favicon-16x16.png`;
-	const searchUrl = `${origin}/?query={searchTerms}`;
-	const selfUrl = `${origin}/opensearch.xml`;
+import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
+
+export const loader: LoaderFunction = async () => {
+	const iconUrl = `${PUBLIC_ORIGIN}/favicon-16x16.png`;
+	const searchUrl = `${PUBLIC_ORIGIN}/?query={searchTerms}`;
+	const selfUrl = `${PUBLIC_ORIGIN}/opensearch.xml`;
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
@@ -19,7 +20,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 	return new Response(xml, {
 		headers: {
 			'Content-Type': 'application/opensearchdescription+xml',
-			'Cache-Control': 'public, max-age=86400', // 1 day
+			...cacheHeaders.stable,
 		},
 	});
 };

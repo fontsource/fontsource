@@ -4,6 +4,7 @@ import invariant from 'tiny-invariant';
 
 import { CDN } from '@/components/preview/CDN';
 import { TabsWrapper } from '@/components/preview/Tabs';
+import { cacheHeaders } from '@/utils/cache';
 import { ogMeta } from '@/utils/meta';
 import { getMetadata, getStats, getVariable } from '@/utils/metadata.server';
 import type { Metadata, VariableData } from '@/utils/types';
@@ -31,9 +32,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	};
 
 	return data(res, {
-		headers: {
-			'Cache-Control': 'public, max-age=300',
-		},
+		headers: cacheHeaders.short,
 	});
 };
 

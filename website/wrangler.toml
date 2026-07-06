@@ -6,6 +6,9 @@ workers_dev = true
 compatibility_flags = ["nodejs_compat"]
 compatibility_date = "2025-08-15"
 
+[cache]
+enabled = true
+
 [assets]
 binding = "ASSETS"
 directory = "./build/client"

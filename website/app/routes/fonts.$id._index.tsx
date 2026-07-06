@@ -13,6 +13,7 @@ import {
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
 import classes from '@/styles/global.module.css';
+import { cacheHeaders } from '@/utils/cache';
 import { jsDelivrResolver } from '@/utils/cdn';
 import { getPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
@@ -92,9 +93,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	};
 
 	return data(res, {
-		headers: {
-			'Cache-Control': 'public, max-age=300',
-		},
+		headers: cacheHeaders.short,
 	});
 };
 
