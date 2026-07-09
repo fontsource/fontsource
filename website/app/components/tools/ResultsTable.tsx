@@ -2,6 +2,7 @@ import type { ConversionResult } from '@fontsource-utils/core';
 import { Box, Button, Stack, Table, Text, Title } from '@mantine/core';
 import { IconFileDownload } from '@tabler/icons-react';
 import { formatFileSize } from './utils';
+import classes from './ResultsTable.module.css';
 
 interface ResultsTableProps {
 	results: ConversionResult[];
@@ -47,6 +48,7 @@ export const ResultsTable = ({
 										onClick={() => onDownloadSingle(index)}
 										title="Download file"
 										disabled={disabled}
+										className={classes.downloadButton}
 									>
 										<IconFileDownload size={18} />
 									</Button>
