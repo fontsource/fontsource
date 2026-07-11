@@ -38,7 +38,8 @@ enabled = true
 invocation_logs = false
 
 [triggers]
-crons = ["0 */3 * * *"]
+# TODO: Enable when stable.
+# crons = ["0 */3 * * *"]
 
 [vars]
 FONTS_BUCKET_NAME = "fonts"
