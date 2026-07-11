@@ -820,7 +820,7 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 		const builder = installArtifactBuilderMock(testEnv);
 		installUpstreamFetchMock({
-			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0/flat`]:
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0?structure=flat`]:
 				new Response(
 					JSON.stringify({
 						files: [],
@@ -849,7 +849,7 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 		const builder = installArtifactBuilderMock(testEnv);
 		installUpstreamFetchMock({
-			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0/flat`]:
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0?structure=flat`]:
 				new Response('boom', { status: 500 }),
 		});
 
