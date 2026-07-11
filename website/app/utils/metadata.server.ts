@@ -6,11 +6,13 @@ import type {
 	VariableData,
 } from '@/utils/types';
 
-const METADATA_URL = 'https://api.fontsource.org/v1/fonts/';
+const METADATA_URL = 'https://fontsource-api.fontsource.workers.dev/v1/fonts/';
 const VARIABLE_URL = (id: string) =>
-	`https://api.fontsource.org/v1/variable/${id}`;
-const AXIS_REGISTRY_URL = 'https://api.fontsource.org/v1/axis-registry';
-const STATS_URL = (id: string) => `https://api.fontsource.org/v1/stats/${id}`;
+	`https://fontsource-api.fontsource.workers.dev/v1/variable/${id}`;
+const AXIS_REGISTRY_URL =
+	'https://fontsource-api.fontsource.workers.dev/v1/axis-registry';
+const STATS_URL = (id: string) =>
+	`https://fontsource-api.fontsource.workers.dev/v1/stats/${id}`;
 
 const getMetadata = async (id: string): Promise<Metadata> =>
 	await fetchApiData<Metadata>(METADATA_URL + id);

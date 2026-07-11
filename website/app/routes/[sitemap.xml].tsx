@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async () => {
 
 	// Pipe each font to stream
 	const fontlist = await fetchApiData<Record<string, string>>(
-		'https://api.fontsource.org/fontlist?family',
+		'https://fontsource-api.fontsource.workers.dev/fontlist?family',
 	);
 
 	for (const id of Object.keys(fontlist)) {
