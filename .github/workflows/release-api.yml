@@ -5,7 +5,11 @@ on:
     branches:
       - main
     paths:
-      - "api/**"
+      - "api/worker/**"
+      - "packages/core/**"
+      - "package.json"
+      - "bun.lock"
+      - ".github/workflows/release-api.yml"
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
@@ -27,6 +31,6 @@ jobs:
         run: bun install
 
       - name: Deploy Cloudflare Workers
-        run: bun run ci:publish-api
+        run: bun run ci:deploy-api
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

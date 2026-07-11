@@ -3,12 +3,20 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - "api/**"
+      - "api/worker/**"
+      - "packages/core/**"
+      - "package.json"
+      - "bun.lock"
+      - ".github/workflows/tests-api.yml"
 
   push:
     branches: [main]
     paths:
-      - "api/**"
+      - "api/worker/**"
+      - "packages/core/**"
+      - "package.json"
+      - "bun.lock"
+      - ".github/workflows/tests-api.yml"
 
 jobs:
   worker:
