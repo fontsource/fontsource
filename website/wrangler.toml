@@ -9,6 +9,10 @@ compatibility_date = "2025-08-15"
 [cache]
 enabled = true
 
+[[services]]
+binding = "API"
+service = "fontsource-api"
+
 [assets]
 binding = "ASSETS"
 directory = "./build/client"

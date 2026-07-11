@@ -1,5 +1,7 @@
+import { env } from 'cloudflare:workers';
+
 export const fetchApiData = async <T>(url: string): Promise<T> => {
-	const response = await fetch(url);
+	const response = await env.API.fetch(url);
 
 	if (!response.ok) {
 		throw new Response(`Failed to fetch data from ${url}`, {
