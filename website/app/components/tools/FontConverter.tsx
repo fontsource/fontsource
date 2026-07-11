@@ -30,7 +30,6 @@ export const FontConverter = observer(() => {
 	const isConverting = useValue(state$.isConverting);
 	const isCreatingZip = useValue(state$.isCreatingZip);
 	const formats = useValue(state$.formats);
-	const progress = useValue(state$.progress);
 	const downloadError = useValue(state$.downloadError);
 
 	const hasValidFiles = files.some((f) => !f.error);
@@ -99,10 +98,7 @@ export const FontConverter = observer(() => {
 				{isConverting ? 'Converting...' : 'Convert'}
 			</Button>
 
-			<ProgressIndicator
-				progress={progress}
-				isVisible={isConverting || isCreatingZip}
-			/>
+			<ProgressIndicator state$={state$} />
 
 			<div ref={resultsRef}>
 				{results.length > 0 && !isConverting && (

@@ -1,3 +1,4 @@
+import { batch } from '@legendapp/state';
 import { observer, useValue } from '@legendapp/state/react';
 import { ActionIcon, Group, Slider as MantineSlider } from '@mantine/core';
 
@@ -18,12 +19,10 @@ const SizeSlider = observer(({ state$, hasItalic }: SizeSliderProps) => {
 	const italic = useValue(state$.preview.italic);
 
 	const handleItalic = () => {
-		state$.preview.italic.toggle();
-		if (state$.variable.ital.get() === 1) {
-			state$.variable.ital.set(0);
-		} else {
-			state$.variable.ital.set(1);
-		}
+		batch(() => {
+			state$.preview.italic.toggle();
+			state$.variable.ital.set(state$.variable.ital.peek() === 1 ? 0 : 1);
+		});
 	};
 
 	const items = sizes.map((value) => ({

@@ -1,3 +1,4 @@
+import { batch } from '@legendapp/state';
 import { observer, useValue } from '@legendapp/state/react';
 import { ActionIcon, Box, Group, Slider, Text } from '@mantine/core';
 
@@ -27,18 +28,21 @@ const VariableButton = observer(
 		const value = useValue(state$.variable[tag]);
 
 		const handleVariation = (value: number) => {
-			// If ital is changed, set italic to true
-			if (tag === 'ital' && value > 0) {
-				state$.preview.italic.set(true);
-			} else if (tag === 'ital' && value === 0) {
-				state$.preview.italic.set(false);
-			}
-			state$.variable.assign({ [tag]: value });
+			batch(() => {
+				if (tag === 'ital') {
+					state$.preview.italic.set(value > 0);
+				}
+				state$.variable[tag].set(value);
+			});
 		};
 
 		const resetVariation = () => {
-			if (tag === 'ital') state$.preview.italic.set(false);
-			state$.variable.assign({ [tag]: undefined });
+			batch(() => {
+				if (tag === 'ital') {
+					state$.preview.italic.set(false);
+				}
+				state$.variable[tag].delete();
+			});
 		};
 
 		return (

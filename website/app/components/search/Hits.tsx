@@ -78,15 +78,18 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 
 	// We want a unique preview text for each font if it's not latin
 	const currentPreview = useValue(() => {
-		const previewValue = state$.preview.value.get();
-		const inputView = state$.preview.inputView.get();
+		const customValue = state$.preview.customValue.get();
+
+		if (customValue !== '') {
+			return customValue;
+		}
 
 		// Use language-specific preview for non-latin fonts when no custom input
-		if (inputView === '' && isNotLatin) {
+		if (isNotLatin) {
 			return getPreviewText(hit.defSubset, hit.objectID);
 		}
 
-		return previewValue;
+		return state$.preview.presetValue.get();
 	});
 
 	return (
@@ -190,7 +193,8 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const isSearchLoading = status === 'loading' || status === 'stalled';
 	const size = state$.size.get();
 	const gridPreviewHeight = getGridPreviewHeight(size);
-	const previewValue = state$.preview.value.get();
+	const previewValue =
+		state$.preview.customValue.get() || state$.preview.presetValue.get();
 	const searchKey = JSON.stringify({
 		menu: indexUiState.menu ?? {},
 		query: indexUiState.query ?? '',
@@ -301,13 +305,12 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 
 	useEffect(() => {
 		const unsubscribe = state$.language.onChange((e) => {
-			if (state$.preview.label.get() !== 'Custom') {
-				// For global preview updates, use the first hit or a default
-				const firstHit = items[0];
-				if (firstHit) {
-					const newPreview = getPreviewText(e.value, firstHit.objectID);
-					state$.preview.value.set(newPreview);
-				}
+			// Keep the preset current while custom text is active so clearing it
+			// immediately restores the selected language preview.
+			const firstHit = items[0];
+			if (firstHit) {
+				const newPreview = getPreviewText(e.value, firstHit.objectID);
+				state$.preview.presetValue.set(newPreview);
 			}
 		});
 

@@ -3,8 +3,10 @@ import {
 	generateCSS,
 	selectVariableAxisKey,
 } from '@fontsource-utils/core';
+import { batch } from '@legendapp/state';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
+import { useEffect } from 'react';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
@@ -13,6 +15,7 @@ import { Configure } from '@/components/preview/Configure';
 import {
 	createFontVariation,
 	type FontIDObject,
+	type FontIDState,
 } from '@/components/preview/observables';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
@@ -127,37 +130,31 @@ export default function Font() {
 	const data = useLoaderData<FontMetadata>();
 	const { metadata, variable, axisRegistry, staticCSS, variableCSS } = data;
 
-	const state$ = useObservable<FontIDObject>({
+	const state$: FontIDState = useObservable<FontIDObject>({
 		preview: {
-			language: 'latin',
+			language: metadata.defSubset,
 			size: 32,
 			italic: false,
 			lineHeight: 2,
 			letterSpacing: 0,
 			transparency: 100,
 			color: '#000000',
-
-			text: 'Sphinx of black quartz, judge my vow.',
+			text: getPreviewText(metadata.defSubset, metadata.id),
 		},
 		variable: {},
-		fontVariation: '',
+		fontVariation: (): string => createFontVariation(state$.variable.get()),
 	});
 
-	// If language changes, update text using getPreviewText
-	state$.preview.language.onChange((e) => {
-		state$.preview.text.set(getPreviewText(e.value));
-	});
-
-	// Verify that the color is a valid hex code
-	const COLOR_REGEX = /^#[\dA-Fa-f]{0,6}$/;
-	state$.preview.color.onChange((e) => {
-		if (!COLOR_REGEX.test(e.value)) state$.preview.color.set(e.getPrevious());
-	});
-
-	// Update fontVariation when variableState changes
-	state$.variable.onChange(() => {
-		state$.fontVariation.set(createFontVariation(state$.variable.get()));
-	});
+	useEffect(() => {
+		batch(() => {
+			state$.preview.assign({
+				language: metadata.defSubset,
+				text: getPreviewText(metadata.defSubset, metadata.id),
+				italic: false,
+			});
+			state$.variable.set({});
+		});
+	}, [metadata.defSubset, metadata.id, state$]);
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="preview">

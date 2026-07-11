@@ -11,7 +11,6 @@ import { useEffect } from 'react';
 
 import { Skeleton } from '@/components/Skeleton';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
-import { getPreviewText } from '@/utils/language/language';
 import type { Metadata } from '@/utils/types';
 
 import type { FontIDState } from './observables';
@@ -62,14 +61,6 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	const { ref, focused } = useFocusWithin();
 	const preview = useValue(state$.preview);
 	const variation = useValue(state$.fontVariation);
-	const colorScheme = useComputedColorScheme('light');
-
-	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
-	useEffect(() => {
-		colorScheme === 'dark'
-			? state$.preview.color.set('#FFFFFF')
-			: state$.preview.color.set('#000000');
-	}, [colorScheme]);
 
 	const isFontReady = useIsFontReady(family, true, {
 		weights: [weight],
@@ -116,20 +107,19 @@ const TextArea = ({
 	staticCSS,
 	variableCSS,
 }: TextAreaProps) => {
-	const { id, family, weights, variable, defSubset, category } = metadata;
+	const { family, weights, variable } = metadata;
 	const isVariable = Boolean(variable);
+	const colorScheme = useComputedColorScheme('light');
 
 	const isItal = useValue(state$.preview.italic);
 	const style = isItal ? 'italic' : 'normal';
 
-	const isNotLatin =
-		defSubset !== 'latin' || category === 'icons' || category === 'other';
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
 	useEffect(() => {
-		if (isNotLatin) {
-			state$.preview.text.set(getPreviewText(defSubset, id));
-		}
-	}, [isNotLatin, defSubset, id]);
+		colorScheme === 'dark'
+			? state$.preview.color.set('#FFFFFF')
+			: state$.preview.color.set('#000000');
+	}, [colorScheme]);
 
 	return (
 		<Flex direction="column">
@@ -144,7 +134,7 @@ const TextArea = ({
 					/>
 					{weights.map((weight) => (
 						<TextBox
-							key={`v-${weight}-${style}`}
+							key={`v-${weight}`}
 							state$={state$}
 							family={`${family} Variable`}
 							weight={weight}
@@ -163,7 +153,7 @@ const TextArea = ({
 					/>
 					{weights.map((weight) => (
 						<TextBox
-							key={`s-${weight}-${style}`}
+							key={`s-${weight}`}
 							state$={state$}
 							family={family}
 							weight={weight}

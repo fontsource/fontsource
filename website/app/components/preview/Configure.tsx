@@ -1,3 +1,4 @@
+import { batch } from '@legendapp/state';
 import {
 	ActionIcon,
 	Divider,
@@ -24,9 +25,10 @@ interface ConfigureProps {
 }
 
 const resetVariation = (state$: FontIDState) => {
-	// Reset variation to default
-	state$.preview.italic.set(false);
-	state$.variable.set({});
+	batch(() => {
+		state$.preview.italic.set(false);
+		state$.variable.set({});
+	});
 };
 
 const Configure = ({
@@ -52,8 +54,8 @@ const Configure = ({
 					<NormalButtonsGroup
 						state$={state$}
 						subsets={metadata.subsets}
-						defSubset={metadata.defSubset}
 						hasItalic={metadata.styles.includes('italic')}
+						fontId={metadata.id}
 					/>
 					{variable && (
 						<>
