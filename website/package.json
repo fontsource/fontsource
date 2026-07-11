@@ -47,6 +47,7 @@
 		"react-instantsearch": "^7.38.0",
 		"react-instantsearch-core": "^7.38.0",
 		"react-router": "^8.1.0",
+		"react-virtuoso": "^4.18.10",
 		"react-wrap-balancer": "^1.1.1",
 		"shiki": "4.3.1",
 		"sitemap": "^9.0.1",

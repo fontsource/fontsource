@@ -1,8 +1,14 @@
 import { observer, useComputed } from '@legendapp/state/react';
-import { Box, Group, SimpleGrid, Text } from '@mantine/core';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Box, Group, Text, VisuallyHidden } from '@mantine/core';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { Link as NavLink } from 'react-router';
+import { VirtuosoGrid } from 'react-virtuoso';
+import type {
+	GridComponents,
+	GridScrollSeekPlaceholderProps,
+	ScrollSeekConfiguration,
+} from 'react-virtuoso';
 
 import { Skeleton } from '@/components/Skeleton';
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
@@ -22,34 +28,22 @@ interface InfiniteHitsProps {
 	state$: SearchState;
 }
 
-function useInfiniteScroll(isLastPage: boolean, showMore: () => void) {
-	const sentinelRef = useRef<HTMLDivElement | null>(null);
+const placeholderKeys = Array.from(
+	{ length: 8 },
+	(_, index) => `loading-hit-${index}`,
+);
+const loadAhead = { top: 0, bottom: 1200 };
+const scrollSeek: ScrollSeekConfiguration = {
+	enter: (velocity) => Math.abs(velocity) > 1200,
+	exit: (velocity) => Math.abs(velocity) < 120,
+};
 
-	const handleIntersection = useCallback(
-		(entries: IntersectionObserverEntry[]) => {
-			for (const entry of entries) {
-				if (entry.isIntersecting && !isLastPage) {
-					showMore();
-				}
-			}
-		},
-		[isLastPage, showMore],
-	);
+type GridContext = {
+	display: 'grid' | 'list';
+	showPlaceholders: boolean;
+};
 
-	useEffect(() => {
-		const sentinel = sentinelRef.current;
-		if (!sentinel) return;
-
-		const observer = new IntersectionObserver(handleIntersection);
-		observer.observe(sentinel);
-
-		return () => {
-			observer.disconnect();
-		};
-	}, [handleIntersection]);
-
-	return sentinelRef;
-}
+const getItemKey = (_index: number, hit: AlgoliaMetadata) => hit.objectID;
 
 const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`;
@@ -72,21 +66,18 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	}, [isStylesheetLoaded, stylesheetHref]);
 
 	const display = state$.display.get();
-	const size = state$.size.get();
+	const previewSize = state$.size.get();
 
-	// Change preview text if hit.defSubset is not latin or if it's an ico
-	const isNotLatin =
+	const needsDefaultPreview =
 		hit.defSubset !== 'latin' ||
 		hit.category === 'icons' ||
 		hit.category === 'other';
 
-	// We want a unique preview text for each font if it's not latin
-	const currentPreview$ = useComputed(() => {
+	const previewText$ = useComputed(() => {
 		const previewValue = state$.preview.value.get();
 		const inputView = state$.preview.inputView.get();
 
-		// Use language-specific preview for non-latin fonts when no custom input
-		if (inputView === '' && isNotLatin) {
+		if (inputView === '' && needsDefaultPreview) {
 			return getPreviewText(hit.defSubset, hit.objectID);
 		}
 
@@ -109,10 +100,10 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 			/>
 			<Skeleton name="search-hit-preview" loading={!isFontLoaded}>
 				<Text
-					fz={size}
+					fz={previewSize}
 					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
 				>
-					{currentPreview$.get()}
+					{previewText$.get()}
 				</Text>
 			</Skeleton>
 			<Group className={classes['text-group']}>
@@ -129,29 +120,129 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	);
 });
 
+const HitPlaceholder = ({ display }: { display: 'grid' | 'list' }) => (
+	<Box
+		className={`${classes.wrapper} ${classes.placeholder}`}
+		mih={{ base: '150px', sm: display === 'grid' ? '332px' : '150px' }}
+		aria-hidden="true"
+	>
+		<Skeleton name="search-hit-preview" loading>
+			<div className={classes['placeholder-preview']}>Loading font preview</div>
+		</Skeleton>
+		<Group className={classes['text-group']}>
+			<Skeleton name="font-preview-row" loading>
+				<div className={classes['placeholder-metadata']}>
+					Loading font metadata
+				</div>
+			</Skeleton>
+		</Group>
+	</Box>
+);
+
+const ScrollSeekPlaceholder = ({
+	context,
+}: GridScrollSeekPlaceholderProps & { context: GridContext }) => (
+	<HitPlaceholder display={context.display} />
+);
+
+const LoadingFooter = ({ context }: { context: GridContext }) => {
+	if (!context.showPlaceholders) {
+		return null;
+	}
+
+	const className =
+		context.display === 'grid'
+			? `${classes['results-list']} ${classes['grid-mode']} ${classes['placeholder-footer']}`
+			: `${classes['results-list']} ${classes['placeholder-footer']}`;
+
+	return (
+		<div className={className} aria-hidden="true">
+			{placeholderKeys.map((key) => (
+				<div key={key} className={classes['result-item']}>
+					<HitPlaceholder display={context.display} />
+				</div>
+			))}
+		</div>
+	);
+};
+
+const gridComponents: GridComponents<GridContext> = {
+	Footer: LoadingFooter,
+	ScrollSeekPlaceholder,
+};
+
 const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const display = state$.display.get();
+	const loadingStatusId = useId();
+	const virtuosoRootRef = useRef<HTMLElement | null>(null);
+	const [isLoadingMore, setIsLoadingMore] = useState(false);
 
 	// Infinite Scrolling
-	const { results, indexUiState } = useInstantSearch();
+	const { results, indexUiState, status } = useInstantSearch();
 	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
+	const isSearchLoading = status === 'loading' || status === 'stalled';
+	const firstHitId = items[0]?.objectID ?? '';
+	const searchKey = JSON.stringify({
+		menu: indexUiState.menu ?? {},
+		query: indexUiState.query ?? '',
+		refinementList: indexUiState.refinementList ?? {},
+		sortBy: indexUiState.sortBy ?? '',
+		toggle: indexUiState.toggle ?? {},
+	});
+	const previousSearchKeyRef = useRef(searchKey);
+	const listClassName =
+		display === 'grid'
+			? `${classes['results-list']} ${classes['grid-mode']}`
+			: classes['results-list'];
 
-	const sentinelRef = useInfiniteScroll(isLastPage, showMore);
+	const renderItem = useCallback(
+		(_index: number, hit: AlgoliaMetadata) => (
+			<HitComponent state$={state$} hit={hit} />
+		),
+		[state$],
+	);
+
+	const requestMore = useCallback(() => {
+		if (typeof window === 'undefined' || isLastPage || isSearchLoading) {
+			return;
+		}
+
+		setIsLoadingMore(true);
+		showMore();
+	}, [isLastPage, isSearchLoading, showMore]);
+
+	useEffect(() => {
+		if (!isSearchLoading) {
+			setIsLoadingMore(false);
+		}
+	}, [isSearchLoading]);
+
+	useEffect(() => {
+		if (previousSearchKeyRef.current === searchKey) {
+			return;
+		}
+
+		previousSearchKeyRef.current = searchKey;
+		setIsLoadingMore(false);
+		window.scrollTo({
+			top: Math.max((virtuosoRootRef.current?.offsetTop ?? 0) - 16, 0),
+			behavior: 'auto',
+		});
+	}, [searchKey]);
 
 	useEffect(() => {
 		const unsubscribe = state$.language.onChange((e) => {
-			if (state$.preview.label.get() !== 'Custom') {
-				// For global preview updates, use the first hit or a default
-				const firstHit = items[0];
-				if (firstHit) {
-					const newPreview = getPreviewText(e.value, firstHit.objectID);
-					state$.preview.value.set(newPreview);
-				}
+			if (state$.preview.label.get() === 'Custom') {
+				return;
+			}
+
+			if (firstHitId !== '') {
+				state$.preview.value.set(getPreviewText(e.value, firstHitId));
 			}
 		});
 
 		return unsubscribe;
-	}, [state$.preview, state$.language, items]);
+	}, [state$.preview, state$.language, firstHitId]);
 
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
@@ -166,21 +257,34 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	return (
 		<div id="hits">
 			<Sort state$={state$} count={results.nbHits} />
-			{display === 'grid' ? (
-				<SimpleGrid cols={{ base: 1, sm: 2, md: 3, xl: 4 }} spacing={16}>
-					{items.map((item) => (
-						<HitComponent key={item.objectID} state$={state$} hit={item} />
-					))}
-					<div ref={sentinelRef} aria-hidden="true" />
-				</SimpleGrid>
-			) : (
-				<SimpleGrid cols={{ base: 1 }} spacing={16}>
-					{items.map((item) => (
-						<HitComponent key={item.objectID} state$={state$} hit={item} />
-					))}
-					<div ref={sentinelRef} aria-hidden="true" />
-				</SimpleGrid>
+			{isLoadingMore && (
+				<VisuallyHidden id={loadingStatusId} role="status">
+					Loading more font families
+				</VisuallyHidden>
 			)}
+			<VirtuosoGrid
+				key={searchKey}
+				aria-busy={isSearchLoading || isLoadingMore}
+				aria-describedby={isLoadingMore ? loadingStatusId : undefined}
+				components={gridComponents}
+				computeItemKey={getItemKey}
+				context={{
+					display,
+					showPlaceholders: !isLastPage && items.length > 0,
+				}}
+				data={items}
+				endReached={requestMore}
+				increaseViewportBy={loadAhead}
+				initialItemCount={Math.min(items.length, results.hitsPerPage)}
+				itemClassName={classes['result-item']}
+				itemContent={renderItem}
+				listClassName={listClassName}
+				scrollerRef={(ref) => {
+					virtuosoRootRef.current = ref;
+				}}
+				scrollSeekConfiguration={scrollSeek}
+				useWindowScroll
+			/>
 		</div>
 	);
 });
