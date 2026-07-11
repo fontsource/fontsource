@@ -4,6 +4,7 @@ import {
 } from 'fumadocs-core/mdx-plugins/remark-llms.runtime';
 
 import { cacheHeaders } from '../cache';
+import { getCanonicalUrl } from '../meta';
 import { getPackageManagerCommandBlock } from './packageManagers';
 import { source } from './source.server';
 
@@ -100,6 +101,7 @@ export const getDocsMarkdownResponse = async (pathname: string) => {
 		headers: {
 			'Content-Type': 'text/markdown; charset=utf-8',
 			...cacheHeaders.stable,
+			Link: `<${getCanonicalUrl(page.url)}>; rel="canonical"`,
 		},
 	});
 };
