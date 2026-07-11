@@ -215,6 +215,7 @@
         "@mantine/hooks": "^9.4.1",
         "@react-router/fs-routes": "^8.1.0",
         "@tabler/icons-react": "^3.44.0",
+        "@tanstack/react-virtual": "^3.14.5",
         "algoliasearch": "^5.55.1",
         "boneyard-js": "1.8.2",
         "browserslist": "^4.28.4",
@@ -871,6 +872,10 @@
     "@tabler/icons": ["@tabler/icons@3.44.0", "", {}, "sha512-Wn0AOZG9sg0L+bjfMqq4eNhC6pQjIrk94LvvWYNYkY8KH8wC3YILRzQlrnVJc4FUeMxH/AK97QsYCX35H3LndA=="],
 
     "@tabler/icons-react": ["@tabler/icons-react@3.44.0", "", { "dependencies": { "@tabler/icons": "3.44.0" }, "peerDependencies": { "react": ">= 16" } }, "sha512-8+rvzBbVm/1Z3sG3x7GUNAaxIKxwgz8xaMhRs23nrCnMTKRFAhEC+82zAIFeAA0seXdrAGX5HFCkaLpGK2rVHg=="],
+
+    "@tanstack/react-virtual": ["@tanstack/react-virtual@3.14.5", "", { "dependencies": { "@tanstack/virtual-core": "3.17.3" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-4EKRXh7zBLkbKbFmG3AUVkircuHd+7OdT1pocJSepxtfBd3qnrJgJ5rtPkRYyo9fmyVb2+pI2xPy5oYvMLQy6A=="],
+
+    "@tanstack/virtual-core": ["@tanstack/virtual-core@3.17.3", "", {}, "sha512-8Np/TFELpI0ySuJoVmjvOrQYXH/8sTX0Biv9szhFhY39xOdAAY+smrMxjxOum/ux3eM8MUJQsEJ0/R0UpvC8dw=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.3", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg=="],
 

@@ -31,6 +31,7 @@
 		"@mantine/hooks": "^9.4.1",
 		"@react-router/fs-routes": "^8.1.0",
 		"@tabler/icons-react": "^3.44.0",
+		"@tanstack/react-virtual": "^3.14.5",
 		"algoliasearch": "^5.55.1",
 		"boneyard-js": "1.8.2",
 		"browserslist": "^4.28.4",

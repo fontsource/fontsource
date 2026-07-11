@@ -7,7 +7,13 @@ import {
 	type SkeletonResult,
 } from 'boneyard-js';
 import { Skeleton as BoneyardSkeleton } from 'boneyard-js/react';
-import { type ReactNode, useEffect, useState } from 'react';
+import {
+	type ReactNode,
+	useEffect,
+	useState,
+	useSyncExternalStore,
+} from 'react';
+import { useLocation } from 'react-router';
 
 import classes from './Skeleton.module.css';
 
@@ -33,6 +39,27 @@ const getSkeletonVariants = (bones: ResponsiveBones) =>
 		.sort(([left], [right]) => Number(left) - Number(right))
 		.map(([breakpoint, skeleton]) => ({ breakpoint, skeleton }));
 
+const viewportListeners = new Set<() => void>();
+const notifyViewportListeners = () => {
+	for (const listener of viewportListeners) listener();
+};
+const subscribeToViewport = (listener: () => void) => {
+	if (viewportListeners.size === 0) {
+		window.addEventListener('resize', notifyViewportListeners);
+	}
+
+	viewportListeners.add(listener);
+	return () => {
+		viewportListeners.delete(listener);
+		if (viewportListeners.size === 0) {
+			window.removeEventListener('resize', notifyViewportListeners);
+		}
+	};
+};
+const getViewportBreakpoint = () =>
+	window.innerWidth >= 1280 ? '1280' : window.innerWidth >= 768 ? '768' : '375';
+const getServerViewportBreakpoint = () => '375' as const;
+
 const useSkeletonLoading = (loading: boolean) => {
 	const [hydrated, setHydrated] = useState(false);
 
@@ -44,63 +71,19 @@ const useSkeletonLoading = (loading: boolean) => {
 };
 
 const FontPreviewSkeletonFixture = () => {
-	const viewportWidth = typeof window === 'undefined' ? 375 : window.innerWidth;
-	const lineWidth =
-		viewportWidth >= 1280 ? '80%' : viewportWidth >= 768 ? '82%' : '86%';
-
 	return (
-		<div
-			style={{
-				display: 'flex',
-				alignItems: 'center',
-				width: '100%',
-				height: 58,
-			}}
-		>
-			<span
-				style={{
-					display: 'block',
-					width: lineWidth,
-					height: 30,
-					borderRadius: 4,
-				}}
-			/>
+		<div className={classes['font-preview-fixture']}>
+			<span />
 		</div>
 	);
 };
 
 const SearchHitSkeletonFixture = () => {
-	const viewportWidth = typeof window === 'undefined' ? 375 : window.innerWidth;
-	const isWide = viewportWidth >= 1280;
-	const isGrid = viewportWidth >= 768;
-	const lineWidths = isGrid
-		? [isWide ? '70%' : '74%']
-		: ['92%', '84%', '72%', '58%'];
-
 	return (
-		<div
-			style={{
-				display: 'flex',
-				flexDirection: 'column',
-				gap: isGrid ? 0 : 16,
-				justifyContent: isGrid ? 'center' : undefined,
-				width: isWide ? 244 : isGrid ? 276 : 327,
-				maxWidth: '100%',
-				height: isGrid ? 42 : 252,
-				paddingTop: isGrid ? 0 : 4,
-			}}
-		>
-			{lineWidths.map((width) => (
-				<span
-					key={width}
-					style={{
-						display: 'block',
-						width,
-						height: 30,
-						borderRadius: 4,
-					}}
-				/>
-			))}
+		<div className={classes['search-hit-fixture']}>
+			<span />
+			<span />
+			<span />
 		</div>
 	);
 };
@@ -176,13 +159,31 @@ const Fallback = ({ name }: { name: SkeletonName }) => (
 
 export const Skeleton = ({ name, loading, children }: SkeletonProps) => {
 	const showSkeleton = useSkeletonLoading(loading);
+	const location = useLocation();
+	const viewportBreakpoint = useSyncExternalStore(
+		subscribeToViewport,
+		getViewportBreakpoint,
+		getServerViewportBreakpoint,
+	);
+	const fixture = getFixture(name);
+	const isCaptureRoute =
+		import.meta.env.DEV && new URLSearchParams(location.search).has('boneyard');
+
+	if (isCaptureRoute) {
+		return (
+			<div data-boneyard={name} style={{ position: 'relative' }}>
+				<div>{fixture ?? children}</div>
+			</div>
+		);
+	}
 
 	return (
 		<BoneyardSkeleton
 			name={name}
 			loading={showSkeleton}
+			initialBones={skeletons[name].breakpoints[viewportBreakpoint]}
 			fallback={<Fallback name={name} />}
-			fixture={getFixture(name)}
+			fixture={fixture}
 			animate="pulse"
 			color={skeletonColor}
 		>

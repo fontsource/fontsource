@@ -86,13 +86,20 @@ import type {
 	LinksFunction,
 	MetaFunction,
 } from 'react-router';
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
+import {
+	Links,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
+	useLocation,
+} from 'react-router';
 
 import { ErrorBoundary as ErrorBoundaryComponent } from '@/components/ErrorBoundary';
 import { AppShell } from '@/components/layout/AppShell';
 import { theme } from '@/styles/theme';
 import { cacheHeaders } from '@/utils/cache';
-import { ogMeta } from '@/utils/meta';
+import { getCanonicalUrl, ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
 	return ogMeta({});
@@ -150,11 +157,16 @@ interface DocumentProps {
 }
 
 export const Document = ({ children }: DocumentProps) => {
+	const { pathname } = useLocation();
+	const canonical = getCanonicalUrl(pathname);
+
 	return (
 		<html lang="en" {...mantineHtmlProps}>
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width,initial-scale=1" />
+				<link rel="canonical" href={canonical} />
+				<meta property="og:url" content={canonical} />
 				<Meta />
 				<Links />
 				<ColorSchemeScript

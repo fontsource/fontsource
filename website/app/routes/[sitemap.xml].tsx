@@ -9,6 +9,12 @@ export const loader: LoaderFunction = async () => {
 
 	// Pipe base urls to stream
 	smStream.write({ url: '/', changefreq: 'daily', priority: 0.9 });
+	smStream.write({ url: '/tools', changefreq: 'weekly', priority: 0.7 });
+	smStream.write({
+		url: '/tools/converter',
+		changefreq: 'weekly',
+		priority: 0.7,
+	});
 
 	// Pipe each font to stream
 	const fontlist = await fetchApiData<Record<string, string>>(
