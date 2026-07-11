@@ -1,4 +1,4 @@
-import { observer, useMountOnce } from '@legendapp/state/react';
+import { observer, useMountOnce, useValue } from '@legendapp/state/react';
 
 import { DropdownSimple } from '@/components/Dropdown';
 import { subsetToLanguage } from '@/utils/language/subsets';
@@ -22,7 +22,7 @@ const LanguageSelector = observer(
 			}
 		});
 
-		const language = state$.preview.language.get();
+		const language = useValue(state$.preview.language);
 
 		const items = subsets
 			// Remove latin-ext from results as it's not a valid preview language

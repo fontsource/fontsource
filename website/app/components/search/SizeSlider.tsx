@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import { Box, Group, Slider as MantineSlider, Text } from '@mantine/core';
 
 import type { SearchState } from './observables';
@@ -9,7 +9,7 @@ interface SizeSliderProps {
 }
 
 const SizeSlider = observer(({ state$ }: SizeSliderProps) => {
-	const size = state$.size.get();
+	const size = useValue(state$.size);
 
 	return (
 		<Group className={classes.wrapper} gap={12} visibleFrom="md" wrap="nowrap">

@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import {
 	Group,
 	SegmentedControl,
@@ -34,7 +34,7 @@ const getSortItems = () => {
 };
 
 const Sort = observer(({ count, state$ }: SortProps) => {
-	const display = state$.display.get();
+	const display = useValue(state$.display);
 	const sortItems = getSortItems();
 
 	const { currentRefinement, refine } = useSortBy({

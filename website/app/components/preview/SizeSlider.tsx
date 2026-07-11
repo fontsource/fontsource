@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import { ActionIcon, Group, Slider as MantineSlider } from '@mantine/core';
 
 import { DropdownSimple } from '@/components/Dropdown';
@@ -14,6 +14,8 @@ interface SizeSliderProps {
 
 const SizeSlider = observer(({ state$, hasItalic }: SizeSliderProps) => {
 	const sizes = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64];
+	const size = useValue(state$.preview.size);
+	const italic = useValue(state$.preview.italic);
 
 	const handleItalic = () => {
 		state$.preview.italic.toggle();
@@ -24,17 +26,15 @@ const SizeSlider = observer(({ state$, hasItalic }: SizeSliderProps) => {
 		}
 	};
 
-	const items = sizes.map((size) => ({
-		label: `${size}px`,
-		value: String(size),
-		isRefined: size === state$.preview.size.get(),
+	const items = sizes.map((value) => ({
+		label: `${value}px`,
+		value: String(value),
+		isRefined: size === value,
 	}));
 
 	const setSize = (size: string) => {
 		state$.preview.size.set(Number(size));
 	};
-
-	const size = state$.preview.size.get();
 
 	// className={classes.button}
 	return (
@@ -62,7 +62,7 @@ const SizeSlider = observer(({ state$, hasItalic }: SizeSliderProps) => {
 				className={classes.italic}
 				onClick={handleItalic}
 				disabled={!hasItalic}
-				data-active={state$.preview.italic.get()}
+				data-active={italic}
 			>
 				<IconItalic />
 			</ActionIcon>

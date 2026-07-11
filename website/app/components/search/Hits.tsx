@@ -1,4 +1,4 @@
-import { observer, useComputed } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Text, VisuallyHidden } from '@mantine/core';
 import { useMounted, useViewportSize } from '@mantine/hooks';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
@@ -67,8 +67,8 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 		}
 	}, [isStylesheetLoaded, stylesheetHref]);
 
-	const display = state$.display.get();
-	const size = state$.size.get();
+	const display = useValue(state$.display);
+	const size = useValue(state$.size);
 
 	// Change preview text if hit.defSubset is not latin or if it's an ico
 	const isNotLatin =
@@ -77,7 +77,7 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 		hit.category === 'other';
 
 	// We want a unique preview text for each font if it's not latin
-	const currentPreview$ = useComputed(() => {
+	const currentPreview = useValue(() => {
 		const previewValue = state$.preview.value.get();
 		const inputView = state$.preview.inputView.get();
 
@@ -109,7 +109,7 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 					mih={display === 'grid' ? getGridPreviewHeight(size) : undefined}
 					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
 				>
-					{currentPreview$.get()}
+					{currentPreview}
 				</Text>
 			</Skeleton>
 			<Group className={classes['text-group']}>

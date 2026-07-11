@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import {
 	Box,
 	Flex,
@@ -60,8 +60,8 @@ const Tag = ({ weight, active }: TagProps) => {
 
 const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	const { ref, focused } = useFocusWithin();
-	const preview = state$.preview.get();
-	const variation = state$.fontVariation.get();
+	const preview = useValue(state$.preview);
+	const variation = useValue(state$.fontVariation);
 	const colorScheme = useComputedColorScheme('light');
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
@@ -119,7 +119,7 @@ const TextArea = ({
 	const { id, family, weights, variable, defSubset, category } = metadata;
 	const isVariable = Boolean(variable);
 
-	const isItal = state$.preview.italic.get();
+	const isItal = useValue(state$.preview.italic);
 	const style = isItal ? 'italic' : 'normal';
 
 	const isNotLatin =

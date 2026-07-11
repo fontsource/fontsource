@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import type { DividerProps } from '@mantine/core';
 import {
 	Button,
@@ -52,7 +52,8 @@ const ItemButton = observer(({ label, value, state$ }: ItemButtonProps) => {
 });
 
 const PreviewSelector = observer(({ state$ }: PreviewProps) => {
-	const label = state$.preview.label.get();
+	const label = useValue(state$.preview.label);
+	const inputView = useValue(state$.preview.inputView);
 
 	return (
 		<Group
@@ -110,7 +111,7 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 				</Menu.Dropdown>
 			</Menu>
 			<TextInput
-				value={state$.preview.inputView.get()}
+				value={inputView}
 				onChange={(e) => {
 					state$.preview.inputView.set(e.currentTarget.value);
 				}}

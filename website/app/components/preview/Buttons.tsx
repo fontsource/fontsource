@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import {
 	Button,
 	ColorInput,
@@ -78,10 +78,10 @@ export const SliderButton = ({
 
 const NormalButtonsGroup = observer(
 	({ state$, subsets, hasItalic, defSubset }: ButtonsProps) => {
-		const lineHeight = state$.preview.lineHeight.get();
-		const letterSpacing = state$.preview.letterSpacing.get();
-		const color = state$.preview.color.get();
-		const transparency = state$.preview.transparency.get();
+		const lineHeight = useValue(state$.preview.lineHeight);
+		const letterSpacing = useValue(state$.preview.letterSpacing);
+		const color = useValue(state$.preview.color);
+		const transparency = useValue(state$.preview.transparency);
 
 		return (
 			<>

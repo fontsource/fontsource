@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import { ActionIcon, Box, Group, Slider, Text } from '@mantine/core';
 
 import { IconRotate } from '@/components/icons';
@@ -24,6 +24,8 @@ interface VariableButtonProps {
 
 const VariableButton = observer(
 	({ state$, tag, label, axes, description }: VariableButtonProps) => {
+		const value = useValue(state$.variable[tag]);
+
 		const handleVariation = (value: number) => {
 			// If ital is changed, set italic to true
 			if (tag === 'ital' && value > 0) {
@@ -59,7 +61,7 @@ const VariableButton = observer(
 					step={Number(axes.step)}
 					precision={1}
 					onChange={handleVariation}
-					value={state$.variable.get()[tag] ?? Number(axes.default)}
+					value={value ?? Number(axes.default)}
 				/>
 				<Group justify="space-between" px={3} mt={8}>
 					<Text fz="sm">{axes.min}</Text>
