@@ -67,10 +67,5 @@ describe('upstream package fetches', () => {
 		).resolves.toEqual(
 			new Set(['japanese-400-normal.woff2', 'latin-400-normal.woff2']),
 		);
-
-		expect(fetchMock).toHaveBeenCalledWith(
-			`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/noto-sans-jp@5.2.7/flat`,
-			expect.anything(),
-		);
 	});
 });

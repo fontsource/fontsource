@@ -118,7 +118,7 @@ export const fetchPackageFileList = async (
 	isVariable = false,
 ): Promise<Set<string>> => {
 	const payload = await fetchCachedJson<JsDelivrFlatResponse>(
-		`${UPSTREAM_URLS.jsdelivrPackage}/${packageName(id, isVariable)}@${version}/flat`,
+		`${UPSTREAM_URLS.jsdelivrPackage}/${packageName(id, isVariable)}@${version}?structure=flat`,
 		86400,
 	);
 	const prefix = `/files/${id}-`;

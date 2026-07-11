@@ -708,10 +708,10 @@ export const installUpstreamFetchMock = (
 			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`)) {
 				const path = url.slice(`${UPSTREAM_URLS.jsdelivrPackage}/`.length);
 
-				if (path.endsWith('/flat')) {
-					const withoutFlat = path.slice(0, -'/flat'.length);
-					const packageRef = withoutFlat.replace(/@([^@/]+)$/, '');
-					const version = withoutFlat.match(/@([^@/]+)$/)?.[1];
+				if (path.endsWith('?structure=flat')) {
+					const packageVersion = path.slice(0, -'?structure=flat'.length);
+					const packageRef = packageVersion.replace(/@([^@/]+)$/, '');
+					const version = packageVersion.match(/@([^@/]+)$/)?.[1];
 
 					if (!version) {
 						throw new Error(`Unexpected jsDelivr flat URL: ${url}`);
