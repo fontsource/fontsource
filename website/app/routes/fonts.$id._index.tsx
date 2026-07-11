@@ -102,7 +102,7 @@ const generateDescription = (metadata: Metadata) => {
 
 	const variableDesc = variable ? 'variable ' : '';
 
-	return `Download the ${family} ${variableDesc}${category}font family web typeface. Self-host typography for your website.`;
+	return `Download the ${family} ${variableDesc}${category} font family web typeface. Self-host typography for your website.`;
 };
 
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {

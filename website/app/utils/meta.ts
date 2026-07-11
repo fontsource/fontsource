@@ -1,5 +1,14 @@
 import type { MetaDescriptor } from 'react-router';
 
+const SITE_ORIGIN = 'https://fontsource.org';
+const DEFAULT_TITLE = 'Fontsource — Self-host Open Source Fonts';
+const DEFAULT_DESCRIPTION =
+	'Discover and self-host 2,000+ open-source fonts with versioned npm packages, direct downloads, configurable CDN URLs, and a free API.';
+const DEFAULT_IMAGE = new URL('/og-image.png', SITE_ORIGIN).href;
+
+export const getCanonicalUrl = (pathname: string) =>
+	new URL(pathname.replace(/\/+$/, '') || '/', SITE_ORIGIN).href;
+
 interface OGMeta {
 	title?: string;
 	description?: string;
@@ -8,27 +17,27 @@ interface OGMeta {
 export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 	return [
 		{
-			title: title ?? 'Fontsource',
+			title: title ?? DEFAULT_TITLE,
 		},
 		{
 			name: 'description',
-			content:
-				description ??
-				'Download and self-host 1500+ open-source fonts in neatly bundled NPM packages. Access a comprehensive library of web typefaces for free.',
+			content: description ?? DEFAULT_DESCRIPTION,
 		},
 		{
 			property: 'og:title',
-			content: title ?? 'Fontsource',
+			content: title ?? DEFAULT_TITLE,
 		},
 		{
 			property: 'og:description',
-			content:
-				description ??
-				'Download and self-host 1500+ open-source fonts in neatly bundled NPM packages. Access a comprehensive library of web typefaces for free.',
+			content: description ?? DEFAULT_DESCRIPTION,
+		},
+		{
+			property: 'og:type',
+			content: 'website',
 		},
 		{
 			property: 'og:image',
-			content: '/og-image.png',
+			content: DEFAULT_IMAGE,
 		},
 		{
 			property: 'og:image:width',
@@ -48,35 +57,32 @@ export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 		},
 		{
 			name: 'twitter:title',
-			content: title ?? 'Fontsource',
+			content: title ?? DEFAULT_TITLE,
 		},
 		{
 			name: 'twitter:description',
-			content:
-				description ??
-				'Download and self-host 1500+ open-source fonts in neatly bundled NPM packages. Access a comprehensive library of web typefaces for free.',
+			content: description ?? DEFAULT_DESCRIPTION,
 		},
 		{
 			name: 'twitter:image',
-			content: '/og-image.png',
+			content: DEFAULT_IMAGE,
 		},
 		{
 			'script:ld+json': {
 				'@context': 'https://schema.org',
 				'@type': 'Organization',
 				name: 'Fontsource',
-				url: 'https://fontsource.org',
-				logo: 'https://fontsource.org/logo.png',
+				url: SITE_ORIGIN,
+				logo: new URL('/icon.png', SITE_ORIGIN).href,
 			},
 		},
 		{
 			'script:ld+json': {
 				'@context': 'https://schema.org',
 				'@type': 'WebSite',
-				url: 'https://fontsource.org',
+				url: SITE_ORIGIN,
 				name: 'Fontsource',
-				description:
-					'Download and self-host 1500+ open-source fonts in neatly bundled NPM packages. Access a comprehensive library of web typefaces for free.',
+				description: DEFAULT_DESCRIPTION,
 			},
 		},
 	];
