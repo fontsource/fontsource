@@ -243,7 +243,7 @@ describe('cdn routes', () => {
 			expect(css).toContain('.woff2');
 		});
 
-		it('uses published variable filenames in CSS for slanted axis combinations', async () => {
+		it('serves published CSS filenames for custom variable axes', async () => {
 			await testEnv.METADATA.put(
 				KV_KEYS.catalog,
 				JSON.stringify({
@@ -263,6 +263,17 @@ describe('cdn routes', () => {
 			expect(css).toContain('font-style: oblique 0deg 15deg;');
 			expect(css).toContain('slanted:vf@5.0.0/latin-full-normal.woff2');
 			expect(css).not.toContain('oblique%200deg%2015deg');
+
+			const customAxis = await dispatch(
+				'https://fontsource.test/css/slanted:vf@5.0.0/mono.css',
+			);
+			const customAxisCss = await customAxis.response.text();
+			await customAxis.settle();
+
+			expect(customAxis.response.status).toBe(200);
+			expect(customAxisCss).toContain(
+				'slanted:vf@5.0.0/latin-mono-normal.woff2',
+			);
 		});
 
 		it('builds canonical download zips for slanted variable families', async () => {

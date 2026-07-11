@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import type { DividerProps } from '@mantine/core';
 import {
 	Button,
@@ -36,23 +36,27 @@ interface ItemButtonProps {
 	value: string;
 	state$: SearchState;
 }
-const ItemButton = observer(({ label, value, state$ }: ItemButtonProps) => {
+const ItemButton = ({ label, value, state$ }: ItemButtonProps) => {
 	return (
 		<Menu.Item
 			component="button"
 			onClick={() => {
-				state$.preview.label.set(label);
-				state$.preview.value.set(value);
-				state$.preview.inputView.set('');
+				state$.preview.assign({
+					presetLabel: label,
+					presetValue: value,
+					customValue: '',
+				});
 			}}
 		>
 			{value}
 		</Menu.Item>
 	);
-});
+};
 
 const PreviewSelector = observer(({ state$ }: PreviewProps) => {
-	const label = state$.preview.label.get();
+	const presetLabel = useValue(state$.preview.presetLabel);
+	const customValue = useValue(state$.preview.customValue);
+	const label = customValue === '' ? presetLabel : 'Custom';
 
 	return (
 		<Group
@@ -110,9 +114,9 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 				</Menu.Dropdown>
 			</Menu>
 			<TextInput
-				value={state$.preview.inputView.get()}
+				value={customValue}
 				onChange={(e) => {
-					state$.preview.inputView.set(e.currentTarget.value);
+					state$.preview.customValue.set(e.currentTarget.value);
 				}}
 				placeholder="Type something"
 				variant="unstyled"

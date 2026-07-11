@@ -20,7 +20,7 @@ import { data, type LoaderFunctionArgs, useLoaderData } from 'react-router';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
-import type { SearchObject } from '@/components/search/observables';
+import { createSearchState } from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
@@ -132,16 +132,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	const cacheKey = buildAlgoliaCacheKey(serverUrl);
 
 	// Generate default state object for ssr
-	const state$ = observable<SearchObject>({
-		size: 32,
-		preview: {
-			label: 'Sentence',
-			value: 'Sphinx of black quartz, judge my vow.',
-			inputView: '',
-		},
-		language: 'latin',
-		display: 'grid',
-	});
+	const state$ = observable(createSearchState());
 
 	// Check local cache for server state first to avoid unnecessary API calls
 	let serverState = cacheKey
@@ -202,25 +193,7 @@ export default function Index() {
 	const { serverState, serverUrl } = useLoaderData<typeof loader>();
 	const searchRef = useRef<HTMLDivElement>(null);
 
-	const state$ = useObservable<SearchObject>({
-		size: 32,
-		preview: {
-			label: 'Sentence',
-			value: 'Sphinx of black quartz, judge my vow.',
-			inputView: '',
-		},
-		language: 'latin',
-		display: 'grid',
-	});
-
-	// Update the preset preview label to custom if
-	// a manual input is detected
-	state$.preview.inputView.onChange((e) => {
-		if (e.value !== '') {
-			state$.preview.label.set('Custom');
-			state$.preview.value.set(e.value ?? '');
-		}
-	});
+	const state$ = useObservable(createSearchState());
 
 	return (
 		<InstantSearchSSRProvider {...serverState}>

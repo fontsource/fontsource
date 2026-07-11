@@ -65,6 +65,7 @@ const findCssAsset = (
 		: ['woff2', 'woff'];
 	const config = buildFontConfig(metadata, { formats, axes: options.axes });
 
+	// Variable package CSS filenames are lowercase even when custom axis tags are not.
 	return generateCSSAssets(config, {
 		...options,
 		resolver: ({ face, source }) => {
@@ -81,7 +82,11 @@ const findCssAsset = (
 			const publicFilename = getPublicFilename(metadata.id, source.filename);
 			return buildPublicUrl(`fonts/${resolvedTag}/${publicFilename}`);
 		},
-	}).find((asset) => asset.filename === filename);
+	}).find(
+		(asset) =>
+			asset.filename === filename ||
+			(options.axes !== undefined && asset.filename.toLowerCase() === filename),
+	);
 };
 
 /**

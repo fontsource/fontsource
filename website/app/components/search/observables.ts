@@ -3,9 +3,9 @@ import type { ObservableObject } from '@legendapp/state';
 interface SearchObject {
 	size: number;
 	preview: {
-		label: string;
-		value: string;
-		inputView: string;
+		presetLabel: string;
+		presetValue: string;
+		customValue: string;
 	};
 	language: string;
 	display: 'list' | 'grid';
@@ -13,4 +13,15 @@ interface SearchObject {
 
 type SearchState = ObservableObject<SearchObject>;
 
-export type { SearchObject, SearchState };
+const createSearchState = (): SearchObject => ({
+	size: 32,
+	preview: {
+		presetLabel: 'Sentence',
+		presetValue: 'Sphinx of black quartz, judge my vow.',
+		customValue: '',
+	},
+	language: 'latin',
+	display: 'grid',
+});
+
+export { createSearchState, type SearchState };

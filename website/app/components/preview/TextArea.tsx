@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import {
 	Box,
 	Flex,
@@ -10,8 +10,7 @@ import { useFocusWithin } from '@mantine/hooks';
 import { useEffect } from 'react';
 
 import { Skeleton } from '@/components/Skeleton';
-import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
-import { getPreviewText } from '@/utils/language/language';
+import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import type { Metadata } from '@/utils/types';
 
 import type { FontIDState } from './observables';
@@ -60,18 +59,10 @@ const Tag = ({ weight, active }: TagProps) => {
 
 const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	const { ref, focused } = useFocusWithin();
-	const preview = state$.preview.get();
-	const variation = state$.fontVariation.get();
-	const colorScheme = useComputedColorScheme('light');
+	const preview = useValue(state$.preview);
+	const variation = useValue(state$.fontVariation);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
-	useEffect(() => {
-		colorScheme === 'dark'
-			? state$.preview.color.set('#FFFFFF')
-			: state$.preview.color.set('#000000');
-	}, [colorScheme]);
-
-	const isFontLoaded = useIsFontLoaded(family, true, {
+	const isFontReady = useIsFontReady(family, true, {
 		weights: [weight],
 		style,
 	});
@@ -79,7 +70,7 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	return (
 		<Box className={classes.row} ref={ref}>
 			<Box className={classes['text-wrapper']}>
-				<Skeleton name="font-preview-row" loading={!isFontLoaded}>
+				<Skeleton name="font-preview-row" loading={!isFontReady}>
 					<TextInput
 						variant="unstyled"
 						className={classes.text}
@@ -116,20 +107,19 @@ const TextArea = ({
 	staticCSS,
 	variableCSS,
 }: TextAreaProps) => {
-	const { id, family, weights, variable, defSubset, category } = metadata;
+	const { family, weights, variable } = metadata;
 	const isVariable = Boolean(variable);
+	const colorScheme = useComputedColorScheme('light');
 
-	const isItal = state$.preview.italic.get();
+	const isItal = useValue(state$.preview.italic);
 	const style = isItal ? 'italic' : 'normal';
 
-	const isNotLatin =
-		defSubset !== 'latin' || category === 'icons' || category === 'other';
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Selective.
 	useEffect(() => {
-		if (isNotLatin) {
-			state$.preview.text.set(getPreviewText(defSubset, id));
-		}
-	}, [isNotLatin, defSubset, id]);
+		colorScheme === 'dark'
+			? state$.preview.color.set('#FFFFFF')
+			: state$.preview.color.set('#000000');
+	}, [colorScheme]);
 
 	return (
 		<Flex direction="column">
@@ -144,7 +134,7 @@ const TextArea = ({
 					/>
 					{weights.map((weight) => (
 						<TextBox
-							key={`v-${weight}-${style}`}
+							key={`v-${weight}`}
 							state$={state$}
 							family={`${family} Variable`}
 							weight={weight}
@@ -163,7 +153,7 @@ const TextArea = ({
 					/>
 					{weights.map((weight) => (
 						<TextBox
-							key={`s-${weight}-${style}`}
+							key={`s-${weight}`}
 							state$={state$}
 							family={family}
 							weight={weight}

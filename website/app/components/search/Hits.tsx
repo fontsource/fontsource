@@ -1,4 +1,4 @@
-import { observer, useComputed } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Text, VisuallyHidden } from '@mantine/core';
 import { useMounted, useViewportSize } from '@mantine/hooks';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
@@ -14,7 +14,7 @@ import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { Link as NavLink } from 'react-router';
 
 import { Skeleton } from '@/components/Skeleton';
-import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
+import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
 import type { AlgoliaMetadata } from '@/utils/types';
 
@@ -52,7 +52,7 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 
 	// State to track if the font's CSS stylesheet has loaded.
 	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
-	const isFontLoaded = useIsFontLoaded(hit.family, isStylesheetLoaded);
+	const isFontReady = useIsFontReady(hit.family, isStylesheetLoaded);
 
 	useEffect(() => {
 		if (isStylesheetLoaded) {
@@ -67,8 +67,8 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 		}
 	}, [isStylesheetLoaded, stylesheetHref]);
 
-	const display = state$.display.get();
-	const size = state$.size.get();
+	const display = useValue(state$.display);
+	const size = useValue(state$.size);
 
 	// Change preview text if hit.defSubset is not latin or if it's an ico
 	const isNotLatin =
@@ -77,16 +77,19 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 		hit.category === 'other';
 
 	// We want a unique preview text for each font if it's not latin
-	const currentPreview$ = useComputed(() => {
-		const previewValue = state$.preview.value.get();
-		const inputView = state$.preview.inputView.get();
+	const currentPreview = useValue(() => {
+		const customValue = state$.preview.customValue.get();
+
+		if (customValue !== '') {
+			return customValue;
+		}
 
 		// Use language-specific preview for non-latin fonts when no custom input
-		if (inputView === '' && isNotLatin) {
+		if (isNotLatin) {
 			return getPreviewText(hit.defSubset, hit.objectID);
 		}
 
-		return previewValue;
+		return state$.preview.presetValue.get();
 	});
 
 	return (
@@ -103,13 +106,13 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 				onLoad={() => setStylesheetLoaded(true)}
 				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton.
 			/>
-			<Skeleton name="search-hit-preview" loading={!isFontLoaded}>
+			<Skeleton name="search-hit-preview" loading={!isFontReady}>
 				<Text
 					fz={size}
 					mih={display === 'grid' ? getGridPreviewHeight(size) : undefined}
 					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
 				>
-					{currentPreview$.get()}
+					{currentPreview}
 				</Text>
 			</Skeleton>
 			<Group className={classes['text-group']}>
@@ -190,7 +193,8 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const isSearchLoading = status === 'loading' || status === 'stalled';
 	const size = state$.size.get();
 	const gridPreviewHeight = getGridPreviewHeight(size);
-	const previewValue = state$.preview.value.get();
+	const previewValue =
+		state$.preview.customValue.get() || state$.preview.presetValue.get();
 	const searchKey = JSON.stringify({
 		menu: indexUiState.menu ?? {},
 		query: indexUiState.query ?? '',
@@ -301,13 +305,12 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 
 	useEffect(() => {
 		const unsubscribe = state$.language.onChange((e) => {
-			if (state$.preview.label.get() !== 'Custom') {
-				// For global preview updates, use the first hit or a default
-				const firstHit = items[0];
-				if (firstHit) {
-					const newPreview = getPreviewText(e.value, firstHit.objectID);
-					state$.preview.value.set(newPreview);
-				}
+			// Keep the preset current while custom text is active so clearing it
+			// immediately restores the selected language preview.
+			const firstHit = items[0];
+			if (firstHit) {
+				const newPreview = getPreviewText(e.value, firstHit.objectID);
+				state$.preview.presetValue.set(newPreview);
 			}
 		});
 

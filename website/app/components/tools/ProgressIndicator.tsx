@@ -1,20 +1,21 @@
+import type { ObservableObject } from '@legendapp/state';
+import { useValue } from '@legendapp/state/react';
 import { Progress } from '@mantine/core';
 
-interface ProgressData {
-	value: number;
-	text: string;
-}
+import type { ConverterState } from '@/hooks/useFontConverter';
 
 interface ProgressIndicatorProps {
-	progress: ProgressData;
-	isVisible: boolean;
+	state$: ObservableObject<ConverterState>;
 }
 
-export const ProgressIndicator = ({
-	progress,
-	isVisible,
-}: ProgressIndicatorProps) => {
-	if (!isVisible) {
+export const ProgressIndicator = ({ state$ }: ProgressIndicatorProps) => {
+	const progress = useValue(() =>
+		state$.isConverting.get() || state$.isCreatingZip.get()
+			? state$.progress.get()
+			: undefined,
+	);
+
+	if (!progress) {
 		return null;
 	}
 

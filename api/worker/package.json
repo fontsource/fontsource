@@ -8,7 +8,6 @@
 		"check": "biome check --write .",
 		"cf-typegen": "wrangler types",
 		"deploy": "bun run build && wrangler deploy",
-		"deploy:staging": "CLOUDFLARE_ENV=staging bun run deploy",
 		"dev": "bun --filter '@fontsource-utils/core' build && vite dev",
 		"preview": "bun run build && vite preview",
 		"test": "bun --filter '@fontsource-utils/core' build && vitest run",

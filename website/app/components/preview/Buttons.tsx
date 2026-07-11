@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import {
 	Button,
 	ColorInput,
@@ -18,9 +18,11 @@ import { SizeSlider } from './SizeSlider';
 interface ButtonsProps {
 	state$: FontIDState;
 	subsets: string[];
-	defSubset: string;
 	hasItalic: boolean;
+	fontId: string;
 }
+
+const COLOR_REGEX = /^#[\dA-Fa-f]{0,6}$/;
 
 interface SliderButtonProps {
 	label: string;
@@ -77,19 +79,15 @@ export const SliderButton = ({
 };
 
 const NormalButtonsGroup = observer(
-	({ state$, subsets, hasItalic, defSubset }: ButtonsProps) => {
-		const lineHeight = state$.preview.lineHeight.get();
-		const letterSpacing = state$.preview.letterSpacing.get();
-		const color = state$.preview.color.get();
-		const transparency = state$.preview.transparency.get();
+	({ state$, subsets, hasItalic, fontId }: ButtonsProps) => {
+		const lineHeight = useValue(state$.preview.lineHeight);
+		const letterSpacing = useValue(state$.preview.letterSpacing);
+		const color = useValue(state$.preview.color);
+		const transparency = useValue(state$.preview.transparency);
 
 		return (
 			<>
-				<LanguageSelector
-					state$={state$}
-					subsets={subsets}
-					defSubset={defSubset}
-				/>
+				<LanguageSelector state$={state$} subsets={subsets} fontId={fontId} />
 				<SizeSlider state$={state$} hasItalic={hasItalic} />
 				<Group grow>
 					<SliderButton
@@ -113,7 +111,11 @@ const NormalButtonsGroup = observer(
 						className={classes['color-button']}
 						variant="unstyled"
 						value={color}
-						onChange={state$.preview.color.set}
+						onChange={(value) => {
+							if (COLOR_REGEX.test(value)) {
+								state$.preview.color.set(value);
+							}
+						}}
 						withEyeDropper={false}
 					/>
 					<SliderButton
