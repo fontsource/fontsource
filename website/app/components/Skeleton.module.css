@@ -13,8 +13,7 @@
 	height: 58px;
 }
 
-.font-preview-fixture > span,
-.search-hit-fixture > span {
+.font-preview-fixture > span {
 	display: block;
 	height: 30px;
 	border-radius: 4px;
@@ -27,11 +26,16 @@
 .search-hit-fixture {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
-	width: 327px;
-	max-width: 100%;
-	height: 142px;
-	padding-top: 4px;
+	justify-content: center;
+	gap: 12px;
+	width: 100%;
+	height: 149px;
+}
+
+.search-hit-fixture > span {
+	display: block;
+	height: 20px;
+	border-radius: 4px;
 }
 
 .search-hit-fixture > span:nth-child(1) {
@@ -59,20 +63,16 @@
 		width: 82%;
 	}
 
-	.search-hit-fixture {
-		justify-content: center;
-		gap: 0;
-		width: 276px;
-		height: 42px;
-		padding-top: 0;
-	}
-
 	.search-hit-fixture > span:nth-child(1) {
 		width: 74%;
 	}
 
-	.search-hit-fixture > span:not(:first-child) {
-		display: none;
+	.search-hit-fixture > span:nth-child(2) {
+		width: 64%;
+	}
+
+	.search-hit-fixture > span:nth-child(3) {
+		width: 52%;
 	}
 }
 
@@ -89,11 +89,15 @@
 		width: 80%;
 	}
 
-	.search-hit-fixture {
-		width: 244px;
-	}
-
 	.search-hit-fixture > span:nth-child(1) {
 		width: 70%;
+	}
+
+	.search-hit-fixture > span:nth-child(2) {
+		width: 60%;
+	}
+
+	.search-hit-fixture > span:nth-child(3) {
+		width: 48%;
 	}
 }

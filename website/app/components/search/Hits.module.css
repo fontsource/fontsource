@@ -39,6 +39,10 @@
 	pointer-events: none;
 }
 
+.wrapper > [data-boneyard='search-hit-preview'] {
+	width: 100%;
+}
+
 .virtual-row {
 	position: absolute;
 	top: 0;
@@ -68,21 +72,16 @@
 
 .placeholder-preview {
 	width: 100%;
-	height: 142px;
 }
 
 .placeholder-metadata {
 	width: 100%;
-	height: 58px;
+	height: 28px;
 }
 
 @media (min-width: 768px) {
 	.result-row {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-
-	.placeholder-preview {
-		height: 42px;
 	}
 }
 

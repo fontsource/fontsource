@@ -35,6 +35,12 @@ const hitsPerVirtualRow = 12;
 const rowGap = 16;
 const loadingPlaceholderKeys = [0, 1, 2, 3];
 type Display = 'grid' | 'list';
+interface LoadingPlaceholderProps {
+	display: Display;
+	previewHeight: number;
+}
+
+const getGridPreviewHeight = (size: number) => Math.ceil(size * 1.55 * 3);
 
 const getRowClassName = (display: Display) =>
 	display === 'list'
@@ -100,6 +106,7 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 			<Skeleton name="search-hit-preview" loading={!isFontLoaded}>
 				<Text
 					fz={size}
+					mih={display === 'grid' ? getGridPreviewHeight(size) : undefined}
 					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
 				>
 					{currentPreview$.get()}
@@ -119,14 +126,22 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	);
 });
 
-const HitPlaceholder = ({ display }: { display: 'grid' | 'list' }) => (
+const HitPlaceholder = ({
+	display,
+	previewHeight,
+}: LoadingPlaceholderProps) => (
 	<Box
 		className={`${classes.wrapper} ${classes.placeholder}`}
 		mih={{ base: '150px', sm: display === 'grid' ? '332px' : '150px' }}
 		aria-hidden="true"
 	>
 		<Skeleton name="search-hit-preview" loading>
-			<div className={classes['placeholder-preview']}>Loading font preview</div>
+			<div
+				className={classes['placeholder-preview']}
+				style={{ height: display === 'grid' ? previewHeight : 42 }}
+			>
+				Loading font preview
+			</div>
 		</Skeleton>
 		<Group className={classes['text-group']}>
 			<Skeleton name="font-preview-row" loading>
@@ -138,10 +153,14 @@ const HitPlaceholder = ({ display }: { display: 'grid' | 'list' }) => (
 	</Box>
 );
 
-const LoadingRow = ({ display }: { display: Display }) => (
+const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 	<div className={getRowClassName(display)} aria-hidden="true">
 		{loadingPlaceholderKeys.map((key) => (
-			<HitPlaceholder key={key} display={display} />
+			<HitPlaceholder
+				key={key}
+				display={display}
+				previewHeight={previewHeight}
+			/>
 		))}
 	</div>
 );
@@ -170,6 +189,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
 	const isSearchLoading = status === 'loading' || status === 'stalled';
 	const size = state$.size.get();
+	const gridPreviewHeight = getGridPreviewHeight(size);
 	const previewValue = state$.preview.value.get();
 	const searchKey = JSON.stringify({
 		menu: indexUiState.menu ?? {},
@@ -345,7 +365,10 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 											))}
 										</div>
 									) : (
-										<LoadingRow display={display} />
+										<LoadingRow
+											display={display}
+											previewHeight={gridPreviewHeight}
+										/>
 									)}
 								</div>
 							);
