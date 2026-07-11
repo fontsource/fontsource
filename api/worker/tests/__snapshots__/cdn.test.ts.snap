@@ -13,8 +13,9 @@ exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = 
   unicode-range: U+0000-00FF;
 }",
   "headers": {
-    "cacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+    "cacheControl": "public, max-age=3600",
     "contentType": "text/css; charset=utf-8",
+    "edgeCacheControl": "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800",
     "etag": "<etag>",
     "lastModified": "<last-modified>",
   },
@@ -68,6 +69,7 @@ exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
     "status": 502,
   },
   "headers": {
+    "cacheControl": "no-store",
     "contentType": "application/json",
   },
   "status": 502,
@@ -81,6 +83,7 @@ exports[`cdn routes > returns 502 when version lookup upstream fails 1`] = `
     "status": 502,
   },
   "headers": {
+    "cacheControl": "no-store",
     "contentType": "application/json",
     "etag": "<etag>",
   },

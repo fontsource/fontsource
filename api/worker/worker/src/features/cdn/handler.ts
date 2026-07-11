@@ -12,7 +12,7 @@ import {
 import { getDownloadAttachmentFilename } from '../../../../shared/http-metadata';
 import { getBinaryKey } from '../../../../shared/storage';
 import { fetchPackageFileList } from '../../../../shared/upstream';
-import { CACHE_HEADERS, CONTENT_TYPES } from '../../constants';
+import { CACHE_POLICIES, CONTENT_TYPES } from '../../constants';
 import { ensureFileBuilt, ensureVersionBuilt } from '../../container/client';
 import type { AppEnv } from '../../env';
 import { toHttpDate } from '../../utils/cache';
@@ -53,10 +53,10 @@ type StoredBinaryAsset =
 			state: 'not_modified';
 	  });
 
-export const getAssetCacheControl = (requestedVersion: string): string =>
+export const getAssetCachePolicy = (requestedVersion: string) =>
 	isPinnedVersion(requestedVersion)
-		? CACHE_HEADERS.immutableAsset
-		: CACHE_HEADERS.floatingAsset;
+		? CACHE_POLICIES.immutable
+		: CACHE_POLICIES.floating;
 
 /**
  * Resolves a public CDN request to the exact package version that should serve
@@ -205,15 +205,13 @@ const ensurePublishedPinnedSource = async (
 const respondWithBinary = (
 	body: StoredBinaryAsset,
 	options: {
-		cacheControl: string;
+		cachePolicy: HeadersInit;
 		contentType: keyof typeof CONTENT_TYPES;
 		filename: string;
 	},
 ): Response => {
-	const headers = new Headers({
-		'Cache-Control': options.cacheControl,
-		'Content-Type': CONTENT_TYPES[options.contentType],
-	});
+	const headers = new Headers(options.cachePolicy);
+	headers.set('Content-Type', CONTENT_TYPES[options.contentType]);
 
 	if (body.etag) {
 		headers.set('ETag', body.etag);
@@ -261,7 +259,7 @@ export const getBinaryAsset = async (
 		// Exact-version requests can skip metadata resolution entirely when the
 		// object is already in R2.
 		return respondWithBinary(pinned, {
-			cacheControl: getAssetCacheControl(parsedTag.version),
+			cachePolicy: getAssetCachePolicy(parsedTag.version),
 			contentType,
 			filename: toAttachmentFilename(parsedTag.id, parsedTag.version, file),
 		});
@@ -294,7 +292,7 @@ export const getBinaryAsset = async (
 	// so skip straight to build. For floating versions, try R2 with the resolved version.
 	const respond = (asset: StoredBinaryAsset) =>
 		respondWithBinary(asset, {
-			cacheControl: getAssetCacheControl(resolved.tag.requestedVersion),
+			cachePolicy: getAssetCachePolicy(resolved.tag.requestedVersion),
 			contentType,
 			filename: toAttachmentFilename(
 				resolved.tag.id,

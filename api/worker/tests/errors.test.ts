@@ -80,5 +80,8 @@ describe('error responses', () => {
 		expect(response.status).toBe(expectedStatus);
 		expect(body.status).toBe(expectedStatus);
 		expect(body.error.toLowerCase()).toContain(errorContains.toLowerCase());
+		expect(response.headers.get('Cache-Control')).toBe(
+			expectedStatus === 404 ? 'public, max-age=60' : 'no-store',
+		);
 	});
 });

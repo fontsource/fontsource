@@ -11,15 +11,29 @@ export const KV_KEYS = {
 
 export { UPSTREAM_URLS } from '../../shared/upstream';
 
-/**
- * Cache policy for the public API and CDN routes.
- */
-export const CACHE_HEADERS = {
-	api: 'public, max-age=300',
-	apiEdge: 'max-age=86400',
-	floatingAsset: 'public, max-age=86400, stale-while-revalidate=604800',
-	immutableAsset: IMMUTABLE_ASSET_CACHE_CONTROL,
-	redirect: 'public, max-age=3600',
+export const CACHE_POLICIES = {
+	metadata: {
+		'Cache-Control': 'public, max-age=300',
+		'Cloudflare-CDN-Cache-Control':
+			'public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400',
+	},
+	floating: {
+		'Cache-Control': 'public, max-age=3600',
+		'Cloudflare-CDN-Cache-Control':
+			'public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800',
+	},
+	immutable: {
+		'Cache-Control': IMMUTABLE_ASSET_CACHE_CONTROL,
+	},
+	redirect: {
+		'Cache-Control': 'public, max-age=3600',
+	},
+	notFound: {
+		'Cache-Control': 'public, max-age=60',
+	},
+	noStore: {
+		'Cache-Control': 'no-store',
+	},
 } as const;
 
 export const KV_CACHE_TTLS = {

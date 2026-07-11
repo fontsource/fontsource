@@ -99,8 +99,8 @@ describe('metadata routes', () => {
 		expect(second.response.headers.get('Cache-Control')).toBe(
 			'public, max-age=300',
 		);
-		expect(second.response.headers.get('CDN-Cache-Control')).toBe(
-			'max-age=86400',
+		expect(second.response.headers.get('Cloudflare-CDN-Cache-Control')).toBe(
+			'public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400',
 		);
 	});
 
@@ -117,8 +117,9 @@ describe('metadata routes', () => {
 		expect(response.headers.get('Content-Disposition')).toBe(
 			'attachment; filename="abel_5.0.0.zip"',
 		);
-		expect(response.headers.get('Cache-Control')).toBe(
-			'public, max-age=86400, stale-while-revalidate=604800',
+		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
+		expect(response.headers.get('Cloudflare-CDN-Cache-Control')).toBe(
+			'public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800',
 		);
 	});
 

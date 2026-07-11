@@ -449,7 +449,7 @@ describe('cdn routes', () => {
 		// Variable zip alias redirects to the shared archive
 		expect(variableZipResult.response.status).toBe(302);
 		expect(variableZipResult.response.headers.get('Location')).toBe(
-			'https://fontsource.test/fonts/recursive@5.0.0/download.zip',
+			'/fonts/recursive@5.0.0/download.zip',
 		);
 
 		// Only one build was triggered
@@ -466,7 +466,7 @@ describe('cdn routes', () => {
 
 		expect(response.status).toBe(302);
 		expect(response.headers.get('Location')).toBe(
-			'https://fontsource.test/fonts/abel@5.0.0/download.zip',
+			'/fonts/abel@5.0.0/download.zip',
 		);
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
@@ -559,7 +559,7 @@ describe('cdn routes', () => {
 
 		expect(variableLatestResponse.status).toBe(302);
 		expect(variableLatestResponse.headers.get('Location')).toBe(
-			'https://fontsource.test/v1/download/recursive',
+			'/v1/download/recursive',
 		);
 	});
 
@@ -573,9 +573,7 @@ describe('cdn routes', () => {
 		await settle();
 
 		expect(response.status).toBe(302);
-		expect(response.headers.get('Location')).toBe(
-			'https://fontsource.test/v1/download/recursive',
-		);
+		expect(response.headers.get('Location')).toBe('/v1/download/recursive');
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
 
@@ -588,9 +586,7 @@ describe('cdn routes', () => {
 		await settle();
 
 		expect(response.status).toBe(302);
-		expect(response.headers.get('Location')).toBe(
-			'https://fontsource.test/v1/download/abel',
-		);
+		expect(response.headers.get('Location')).toBe('/v1/download/abel');
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
 

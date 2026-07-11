@@ -88,7 +88,7 @@ export const serializeHeaders = (
 ): Record<string, string> => {
 	const result: Record<string, string> = {};
 	const cacheControl = response.headers.get('Cache-Control');
-	const cdnCacheControl = response.headers.get('CDN-Cache-Control');
+	const edgeCacheControl = response.headers.get('Cloudflare-CDN-Cache-Control');
 	const contentDisposition = response.headers.get('Content-Disposition');
 	const contentType = response.headers.get('Content-Type');
 	const etag = response.headers.get('ETag');
@@ -96,7 +96,7 @@ export const serializeHeaders = (
 	const lastModified = response.headers.get('Last-Modified');
 
 	if (cacheControl) result.cacheControl = cacheControl;
-	if (cdnCacheControl) result.cdnCacheControl = cdnCacheControl;
+	if (edgeCacheControl) result.edgeCacheControl = edgeCacheControl;
 	if (contentDisposition) result.contentDisposition = contentDisposition;
 	if (contentType) result.contentType = contentType;
 	if (etag) result.etag = '<etag>';

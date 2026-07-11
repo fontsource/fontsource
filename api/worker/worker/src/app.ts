@@ -4,7 +4,7 @@ import { cors } from 'hono/cors';
 import { etag, RETAINED_304_HEADERS } from 'hono/etag';
 import { HTTPException } from 'hono/http-exception';
 
-import { CACHE_HEADERS } from './constants';
+import { CACHE_POLICIES } from './constants';
 import type { AppEnv } from './env';
 import {
 	GetFontRoute,
@@ -28,23 +28,22 @@ const app = new Hono<AppEnv>();
 
 app.use('*', cors());
 
-/**
- * Default cache policy for JSON API responses. CDN and download handlers set
- * their own Cache-Control, so this only applies when no handler has claimed the
- * header and the response succeeded.
- */
 app.use('*', async (c, next) => {
 	await next();
-	if (c.res.status < 400 && !c.res.headers.has('Cache-Control')) {
-		c.header('Cache-Control', CACHE_HEADERS.api);
-	}
-	if (
-		c.res.status < 400 &&
-		!c.res.headers.has('CDN-Cache-Control') &&
-		(c.res.headers.get('Content-Type')?.includes('application/json') ||
-			c.res.headers.get('Cache-Control') === CACHE_HEADERS.api)
-	) {
-		c.header('CDN-Cache-Control', CACHE_HEADERS.apiEdge);
+
+	const policy =
+		c.res.status === 404
+			? CACHE_POLICIES.notFound
+			: c.res.status >= 400
+				? CACHE_POLICIES.noStore
+				: c.res.headers.has('Cache-Control')
+					? undefined
+					: CACHE_POLICIES.metadata;
+
+	if (policy) {
+		for (const [name, value] of Object.entries(policy)) {
+			c.res.headers.set(name, value);
+		}
 	}
 });
 
@@ -54,7 +53,7 @@ app.use('*', async (c, next) => {
 
 const apiEtag = etag({
 	retainedHeaders: [
-		'cdn-cache-control',
+		'cloudflare-cdn-cache-control',
 		'content-type',
 		'last-modified',
 		...RETAINED_304_HEADERS,

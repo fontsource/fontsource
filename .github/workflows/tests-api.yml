@@ -29,5 +29,11 @@ jobs:
       - name: Install
         run: bun install
 
+      - name: Run typecheck
+        run: bun run typecheck
+
       - name: Run tests
         run: bun run test
+
+      - name: Run build
+        run: bun run build

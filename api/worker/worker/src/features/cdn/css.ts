@@ -14,7 +14,7 @@ import { UPSTREAM_URLS } from '../../constants';
 import type { AppEnv } from '../../env';
 import { toHttpDate } from '../../utils/cache';
 import { notFound } from '../../utils/errors';
-import { getAssetCacheControl, resolveFontRequest } from './handler';
+import { getAssetCachePolicy, resolveFontRequest } from './handler';
 
 /**
  * CDN CSS responses always use `font-display: swap` so the generated stylesheets
@@ -40,7 +40,7 @@ const createCssResponse = (
 	return new Response(content, {
 		status: 200,
 		headers: {
-			'Cache-Control': getAssetCacheControl(requestedVersion),
+			...getAssetCachePolicy(requestedVersion),
 			'Content-Type': 'text/css; charset=utf-8',
 			...(lastModified ? { 'Last-Modified': lastModified } : {}),
 		},

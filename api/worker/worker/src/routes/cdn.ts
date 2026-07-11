@@ -1,7 +1,7 @@
 import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
-import { CACHE_HEADERS } from '../constants';
+import { CACHE_POLICIES } from '../constants';
 import type { AppEnv } from '../env';
 import { getBinaryAsset, getCssFile } from '../features/cdn/handler';
 import { parseFontTag } from '../features/font-tag';
@@ -69,24 +69,20 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 		// they share one cached archive.
 		if (file === 'download.zip') {
 			const parsedTag = parseFontTag(tag);
-			const deploymentOrigin = new URL(c.req.url).origin;
 
 			if (parsedTag.isVariable) {
-				c.header('Cache-Control', CACHE_HEADERS.redirect);
+				c.header('Cache-Control', CACHE_POLICIES.redirect['Cache-Control']);
 				return c.redirect(
 					parsedTag.version === 'latest'
-						? `${deploymentOrigin}/v1/download/${parsedTag.id}`
-						: `${deploymentOrigin}/fonts/${parsedTag.id}@${parsedTag.version}/download.zip`,
+						? `/v1/download/${parsedTag.id}`
+						: `/fonts/${parsedTag.id}@${parsedTag.version}/download.zip`,
 					302,
 				);
 			}
 
 			if (parsedTag.version === 'latest') {
-				c.header('Cache-Control', CACHE_HEADERS.redirect);
-				return c.redirect(
-					`${deploymentOrigin}/v1/download/${parsedTag.id}`,
-					302,
-				);
+				c.header('Cache-Control', CACHE_POLICIES.redirect['Cache-Control']);
+				return c.redirect(`/v1/download/${parsedTag.id}`, 302);
 			}
 		}
 
