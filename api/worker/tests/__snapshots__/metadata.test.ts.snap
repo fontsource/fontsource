@@ -40,6 +40,7 @@ exports[`metadata routes > lists all stats 1`] = `
   },
   "headers": {
     "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
     "contentType": "application/json",
     "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
     "etag": "<etag>",
@@ -65,6 +66,7 @@ exports[`metadata routes > lists all variable fonts 1`] = `
   },
   "headers": {
     "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
     "contentType": "application/json",
     "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
     "etag": "<etag>",
@@ -88,6 +90,7 @@ exports[`metadata routes > matches public metadata responses 1`] = `
     },
     "headers": {
       "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "public, max-age=86400",
       "contentType": "application/json",
       "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
       "etag": "<etag>",
@@ -134,6 +137,7 @@ exports[`metadata routes > matches public metadata responses 1`] = `
     },
     "headers": {
       "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "public, max-age=86400",
       "contentType": "application/json",
       "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
       "etag": "<etag>",
@@ -149,6 +153,7 @@ exports[`metadata routes > matches public metadata responses 1`] = `
     },
     "headers": {
       "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "public, max-age=86400",
       "contentType": "application/json",
       "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
       "etag": "<etag>",
@@ -157,10 +162,11 @@ exports[`metadata routes > matches public metadata responses 1`] = `
   },
   "redirect": {
     "headers": {
-      "cacheControl": "public, max-age=3600",
+      "cacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+      "cdnCacheControl": "public, max-age=86400, stale-while-revalidate=604800",
       "contentDisposition": "attachment; filename="abel_5.0.0.zip"",
       "contentType": "application/zip",
-      "edgeCacheControl": "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800",
+      "edgeCacheControl": "public, max-age=900, stale-if-error=604800",
       "etag": "<etag>",
       "lastModified": "<last-modified>",
     },
@@ -189,6 +195,7 @@ exports[`metadata routes > matches public metadata responses 1`] = `
     },
     "headers": {
       "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "public, max-age=86400",
       "contentType": "application/json",
       "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
       "etag": "<etag>",
@@ -209,6 +216,7 @@ exports[`metadata routes > matches public metadata responses 1`] = `
     },
     "headers": {
       "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "public, max-age=86400",
       "contentType": "application/json",
       "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
       "etag": "<etag>",
@@ -228,6 +236,7 @@ exports[`metadata routes > matches public metadata responses 1`] = `
     },
     "headers": {
       "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "public, max-age=86400",
       "contentType": "application/json",
       "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
       "etag": "<etag>",
@@ -271,6 +280,7 @@ exports[`metadata routes > rebuilds stats when upstream datasets are sparse 1`] 
   },
   "headers": {
     "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
     "contentType": "application/json",
     "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
     "etag": "<etag>",

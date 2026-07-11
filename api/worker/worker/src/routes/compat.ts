@@ -1,7 +1,7 @@
 import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
-import { CACHE_POLICIES, UPSTREAM_URLS } from '../constants';
+import { UPSTREAM_URLS } from '../constants';
 import type { AppEnv } from '../env';
 import { getBinaryAsset } from '../features/cdn/handler';
 import {
@@ -73,7 +73,6 @@ export class LegacyFontFileRedirectRoute extends OpenAPIRoute {
 		const data = await this.getValidatedData<typeof this.schema>();
 		const { id, file } = data.params;
 
-		c.header('Cache-Control', CACHE_POLICIES.redirect['Cache-Control']);
 		return c.redirect(
 			`${UPSTREAM_URLS.publicCdn}/fonts/${id}@latest/${file}`,
 			301,

@@ -1,7 +1,6 @@
 import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
-import { CACHE_POLICIES } from '../constants';
 import type { AppEnv } from '../env';
 import { getBinaryAsset, getCssFile } from '../features/cdn/handler';
 import { parseFontTag } from '../features/font-tag';
@@ -71,7 +70,6 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 			const parsedTag = parseFontTag(tag);
 
 			if (parsedTag.isVariable) {
-				c.header('Cache-Control', CACHE_POLICIES.redirect['Cache-Control']);
 				return c.redirect(
 					parsedTag.version === 'latest'
 						? `/v1/download/${parsedTag.id}`
@@ -81,7 +79,6 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 			}
 
 			if (parsedTag.version === 'latest') {
-				c.header('Cache-Control', CACHE_POLICIES.redirect['Cache-Control']);
 				return c.redirect(`/v1/download/${parsedTag.id}`, 302);
 			}
 		}

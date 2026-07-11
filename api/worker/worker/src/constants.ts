@@ -14,25 +14,35 @@ export { UPSTREAM_URLS } from '../../shared/upstream';
 export const CACHE_POLICIES = {
 	metadata: {
 		'Cache-Control': 'public, max-age=300',
+		'CDN-Cache-Control': 'public, max-age=86400',
 		'Cloudflare-CDN-Cache-Control':
 			'public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400',
 	},
 	floating: {
-		'Cache-Control': 'public, max-age=3600',
+		'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
+		'CDN-Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
 		'Cloudflare-CDN-Cache-Control':
-			'public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800',
+			'public, max-age=900, stale-if-error=604800',
 	},
 	immutable: {
 		'Cache-Control': IMMUTABLE_ASSET_CACHE_CONTROL,
+		'CDN-Cache-Control': IMMUTABLE_ASSET_CACHE_CONTROL,
+		'Cloudflare-CDN-Cache-Control': IMMUTABLE_ASSET_CACHE_CONTROL,
 	},
 	redirect: {
 		'Cache-Control': 'public, max-age=3600',
+		'CDN-Cache-Control': 'public, max-age=3600',
+		'Cloudflare-CDN-Cache-Control': 'public, max-age=3600',
 	},
 	notFound: {
 		'Cache-Control': 'public, max-age=60',
+		'CDN-Cache-Control': 'public, max-age=60',
+		'Cloudflare-CDN-Cache-Control': 'public, max-age=60',
 	},
 	noStore: {
 		'Cache-Control': 'no-store',
+		'CDN-Cache-Control': 'no-store',
+		'Cloudflare-CDN-Cache-Control': 'no-store',
 	},
 } as const;
 

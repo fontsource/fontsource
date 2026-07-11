@@ -315,6 +315,12 @@ describe('cdn routes', () => {
 			expect(cold.response.headers.get('Cache-Control')).toBe(
 				'public, max-age=31536000, immutable',
 			);
+			expect(cold.response.headers.get('CDN-Cache-Control')).toBe(
+				'public, max-age=31536000, immutable',
+			);
+			expect(cold.response.headers.get('Cloudflare-CDN-Cache-Control')).toBe(
+				'public, max-age=31536000, immutable',
+			);
 
 			// Warm request returns identical result
 			const warm = await dispatch(url);

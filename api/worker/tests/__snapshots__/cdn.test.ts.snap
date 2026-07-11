@@ -13,9 +13,10 @@ exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = 
   unicode-range: U+0000-00FF;
 }",
   "headers": {
-    "cacheControl": "public, max-age=3600",
+    "cacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+    "cdnCacheControl": "public, max-age=86400, stale-while-revalidate=604800",
     "contentType": "text/css; charset=utf-8",
-    "edgeCacheControl": "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800",
+    "edgeCacheControl": "public, max-age=900, stale-if-error=604800",
     "etag": "<etag>",
     "lastModified": "<last-modified>",
   },
@@ -34,8 +35,10 @@ exports[`cdn routes > public asset outputs > serves zip archives with correct fi
     ],
     "headers": {
       "cacheControl": "public, max-age=31536000, immutable",
+      "cdnCacheControl": "public, max-age=31536000, immutable",
       "contentDisposition": "attachment; filename="abel_5.0.0.zip"",
       "contentType": "application/zip",
+      "edgeCacheControl": "public, max-age=31536000, immutable",
       "etag": "<etag>",
       "lastModified": "<last-modified>",
     },
@@ -52,8 +55,10 @@ exports[`cdn routes > public asset outputs > serves zip archives with correct fi
     ],
     "headers": {
       "cacheControl": "public, max-age=31536000, immutable",
+      "cdnCacheControl": "public, max-age=31536000, immutable",
       "contentDisposition": "attachment; filename="recursive_5.0.0.zip"",
       "contentType": "application/zip",
+      "edgeCacheControl": "public, max-age=31536000, immutable",
       "etag": "<etag>",
       "lastModified": "<last-modified>",
     },
@@ -70,7 +75,9 @@ exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
   },
   "headers": {
     "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
     "contentType": "application/json",
+    "edgeCacheControl": "no-store",
   },
   "status": 502,
 }
@@ -84,7 +91,9 @@ exports[`cdn routes > returns 502 when version lookup upstream fails 1`] = `
   },
   "headers": {
     "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
     "contentType": "application/json",
+    "edgeCacheControl": "no-store",
     "etag": "<etag>",
   },
   "status": 502,

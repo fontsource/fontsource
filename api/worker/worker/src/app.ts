@@ -34,11 +34,13 @@ app.use('*', async (c, next) => {
 	const policy =
 		c.res.status === 404
 			? CACHE_POLICIES.notFound
-			: c.res.status >= 400
-				? CACHE_POLICIES.noStore
-				: c.res.headers.has('Cache-Control')
-					? undefined
-					: CACHE_POLICIES.metadata;
+			: c.res.status === 301 || c.res.status === 302
+				? CACHE_POLICIES.redirect
+				: c.res.status >= 400
+					? CACHE_POLICIES.noStore
+					: c.res.headers.has('Cache-Control')
+						? undefined
+						: CACHE_POLICIES.metadata;
 
 	if (policy) {
 		for (const [name, value] of Object.entries(policy)) {
@@ -53,6 +55,7 @@ app.use('*', async (c, next) => {
 
 const apiEtag = etag({
 	retainedHeaders: [
+		'cdn-cache-control',
 		'cloudflare-cdn-cache-control',
 		'content-type',
 		'last-modified',
