@@ -26,15 +26,7 @@ jobs:
       - name: Install
         run: bun install
 
-      - name: Create Release Pull Request or Publish Cloudflare
-        id: cs
-        uses: changesets/action@v1
-        with:
-          version: "bun run ci:version"
-          publish: "bun run ci:publish-api"
-          commit: "chore(api): release versions"
-          title: "Release API 🤖"
+      - name: Deploy Cloudflare Workers
+        run: bun run ci:publish-api
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
