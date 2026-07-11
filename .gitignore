@@ -80,4 +80,5 @@ mise.local.toml
 # AI
 .serena
 .zed
+AGENT.md
 *.xml

@@ -3,7 +3,6 @@ import type {
 	FontFilterQueryKey,
 	FontListQueryKey,
 } from '../../../../../shared/catalog';
-import { UPSTREAM_URLS } from '../../../constants';
 import type { AppEnv } from '../../../env';
 import { toHttpDate } from '../../../utils/cache';
 import { badRequest, notFound } from '../../../utils/errors';
@@ -126,11 +125,7 @@ export const getFont = async (
 	const lastModified = toHttpDate(font.lastModified);
 
 	return c.json(
-		buildFontDetail(
-			font,
-			({ id: fontId, subset, weight, style, extension }) =>
-				`${UPSTREAM_URLS.publicCdn}/fonts/${fontId}@latest/${subset}-${weight}-${style}.${extension}`,
-		),
+		buildFontDetail(font),
 		200,
 		lastModified ? { 'Last-Modified': lastModified } : {},
 	);

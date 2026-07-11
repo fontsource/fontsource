@@ -1,4 +1,4 @@
-export { resolveFontFaces, resolvePublishedFaces } from './faces';
+export { resolveFontFaces } from './faces';
 export { generateStaticFilename, generateVariableFilename } from './filename';
 export {
 	extractStyleValue,

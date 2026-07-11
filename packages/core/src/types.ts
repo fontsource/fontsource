@@ -48,10 +48,6 @@ export interface FontSource {
 	filename: string;
 }
 
-export interface PublishedFontSource extends FontSource {
-	publicFilename: string;
-}
-
 interface FontFaceBase {
 	subset: string;
 	weight: number | string;
@@ -63,13 +59,6 @@ interface FontFaceBase {
 export interface FontFace extends FontFaceBase {
 	isVariable: boolean;
 	sources: FontSource[];
-	axisKey?: VariableAxisKey;
-	stretch?: string | null;
-}
-
-export interface PublishedFontFace extends FontFaceBase {
-	isVariable: boolean;
-	sources: PublishedFontSource[];
 	axisKey?: VariableAxisKey;
 	stretch?: string | null;
 }

@@ -9,6 +9,7 @@ import type {
 	VariableCatalog,
 } from '../../../../shared/catalog';
 import { getMetadataSubsetKeys } from '../../../../shared/catalog';
+import { UPSTREAM_URLS } from '../../constants';
 
 const buildFontListItem = (metadata: SourceFontMetadata): FontListItem => ({
 	id: metadata.id,
@@ -24,23 +25,8 @@ const buildFontListItem = (metadata: SourceFontMetadata): FontListItem => ({
 	type: metadata.type,
 });
 
-/**
- * Builds the full font detail response, including the nested variant map keyed
- * by weight, style, and subset.
- *
- * The `buildUrl` callback is injected by the caller so the URL shape can vary
- * between the metadata API (latest tag) and any future uses.
- */
-export const buildFontDetail = (
-	metadata: SourceFontMetadata,
-	buildUrl: (input: {
-		id: string;
-		subset: string;
-		weight: number;
-		style: string;
-		extension: 'woff2' | 'woff' | 'ttf';
-	}) => string,
-): FontDetail => {
+/** Builds the full font detail response, including its nested variant map. */
+export const buildFontDetail = (metadata: SourceFontMetadata): FontDetail => {
 	const variants: FontVariants = {};
 
 	for (const weight of metadata.weights) {
@@ -50,29 +36,12 @@ export const buildFontDetail = (
 			variants[String(weight)][style] = variants[String(weight)][style] ?? {};
 
 			for (const subset of getMetadataSubsetKeys(metadata)) {
+				const url = `${UPSTREAM_URLS.publicCdn}/fonts/${metadata.id}@latest/${subset}-${weight}-${style}`;
 				variants[String(weight)][style][subset] = {
 					url: {
-						woff2: buildUrl({
-							id: metadata.id,
-							subset,
-							weight,
-							style,
-							extension: 'woff2',
-						}),
-						woff: buildUrl({
-							id: metadata.id,
-							subset,
-							weight,
-							style,
-							extension: 'woff',
-						}),
-						ttf: buildUrl({
-							id: metadata.id,
-							subset,
-							weight,
-							style,
-							extension: 'ttf',
-						}),
+						woff2: `${url}.woff2`,
+						woff: `${url}.woff`,
+						ttf: `${url}.ttf`,
 					},
 				};
 			}

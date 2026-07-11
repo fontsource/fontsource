@@ -7,7 +7,7 @@ const builderStartupEnvSchema = z.object({
 	R2_SECRET_ACCESS_KEY: z.string(),
 });
 
-export type BuilderStartupEnv = z.infer<typeof builderStartupEnvSchema>;
+type BuilderStartupEnv = z.infer<typeof builderStartupEnvSchema>;
 
 export type AppEnv = {
 	Bindings: Env;

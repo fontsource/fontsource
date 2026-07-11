@@ -1,8 +1,8 @@
-import { resolvePublishedFaces } from '@fontsource-utils/core';
+import { resolveFontFaces } from '@fontsource-utils/core';
 import type { SourceFontMetadata, VariableAxes } from './catalog';
 import { buildFontConfig } from './font-config';
 
-export type FontBuildMode = 'copy' | 'convert-woff-to-ttf';
+type FontBuildMode = 'copy' | 'convert-woff-to-ttf';
 
 interface FontEntry {
 	filename: string;
@@ -35,8 +35,21 @@ export interface FontPackageTarget {
 	isVariable: boolean;
 }
 
+const resolveManifestFaces = (
+	metadata: SourceFontMetadata,
+	config: ReturnType<typeof buildFontConfig>,
+) =>
+	resolveFontFaces(config).map((face) => ({
+		...face,
+		sources: face.sources.map((source) => ({
+			...source,
+			publicFilename: source.filename.slice(metadata.id.length + 1),
+		})),
+	}));
+
 const buildStaticPlan = (metadata: SourceFontMetadata): StaticFontEntry[] => {
-	const faces = resolvePublishedFaces(
+	const faces = resolveManifestFaces(
+		metadata,
 		buildFontConfig(metadata, {
 			formats: ['woff2', 'woff', 'ttf'],
 		}),
@@ -82,7 +95,8 @@ const buildVariablePlan = (
 	metadata: SourceFontMetadata,
 	axes: VariableAxes,
 ): VariableFontEntry[] =>
-	resolvePublishedFaces(
+	resolveManifestFaces(
+		metadata,
 		buildFontConfig(metadata, { formats: ['woff2'], axes }),
 	).flatMap((face) => {
 		const axisKey = face.axisKey;
