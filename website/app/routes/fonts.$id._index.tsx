@@ -1,4 +1,8 @@
-import { type FontStyle, generateCSS } from '@fontsource-utils/core';
+import {
+	type FontStyle,
+	generateCSS,
+	selectVariableAxisKey,
+} from '@fontsource-utils/core';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
@@ -77,6 +81,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 					variable: variable.axes,
 				},
 				{
+					axisKeys: [
+						selectVariableAxisKey(variable.axes, Object.keys(variable.axes)),
+					],
 					resolver: jsDelivrResolver(id, true),
 					display: 'block',
 				},

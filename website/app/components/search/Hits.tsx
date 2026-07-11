@@ -14,7 +14,7 @@ import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { Link as NavLink } from 'react-router';
 
 import { Skeleton } from '@/components/Skeleton';
-import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
+import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
 import type { AlgoliaMetadata } from '@/utils/types';
 
@@ -52,7 +52,7 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 
 	// State to track if the font's CSS stylesheet has loaded.
 	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
-	const isFontLoaded = useIsFontLoaded(hit.family, isStylesheetLoaded);
+	const isFontReady = useIsFontReady(hit.family, isStylesheetLoaded);
 
 	useEffect(() => {
 		if (isStylesheetLoaded) {
@@ -103,7 +103,7 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 				onLoad={() => setStylesheetLoaded(true)}
 				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton.
 			/>
-			<Skeleton name="search-hit-preview" loading={!isFontLoaded}>
+			<Skeleton name="search-hit-preview" loading={!isFontReady}>
 				<Text
 					fz={size}
 					mih={display === 'grid' ? getGridPreviewHeight(size) : undefined}

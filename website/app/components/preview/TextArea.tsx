@@ -10,7 +10,7 @@ import { useFocusWithin } from '@mantine/hooks';
 import { useEffect } from 'react';
 
 import { Skeleton } from '@/components/Skeleton';
-import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
+import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
 import type { Metadata } from '@/utils/types';
 
@@ -71,7 +71,7 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 			: state$.preview.color.set('#000000');
 	}, [colorScheme]);
 
-	const isFontLoaded = useIsFontLoaded(family, true, {
+	const isFontReady = useIsFontReady(family, true, {
 		weights: [weight],
 		style,
 	});
@@ -79,7 +79,7 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	return (
 		<Box className={classes.row} ref={ref}>
 			<Box className={classes['text-wrapper']}>
-				<Skeleton name="font-preview-row" loading={!isFontLoaded}>
+				<Skeleton name="font-preview-row" loading={!isFontReady}>
 					<TextInput
 						variant="unstyled"
 						className={classes.text}

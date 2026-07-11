@@ -91,7 +91,7 @@ const triggerFontLoad = (cacheKey: string, fontFaces: FontFace[]) => {
 		return;
 	}
 
-	if (status === 'loading') {
+	if (status === 'loading' || status === 'failed') {
 		return;
 	}
 
@@ -177,10 +177,11 @@ export const useFontStatus = (
 	return status;
 };
 
-export const useIsFontLoaded = (
+export const useIsFontReady = (
 	family: string,
 	enabled = true,
 	options?: ObserverOptions,
 ) => {
-	return useFontStatus(family, enabled, options) === 'loaded';
+	const status = useFontStatus(family, enabled, options);
+	return status === 'loaded' || status === 'failed';
 };
