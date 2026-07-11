@@ -1,13 +1,16 @@
 import { pageSchema } from 'fumadocs-core/source/schema';
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config';
 import remarkSmartypants from 'remark-smartypants';
+import { z } from 'zod';
 
 import { fontsourceCodeTheme } from './app/components/code/theme';
 
 export const docs = defineDocs({
 	dir: 'docs',
 	docs: {
-		schema: pageSchema,
+		schema: pageSchema.extend({
+			description: z.string(),
+		}),
 		postprocess: {
 			includeProcessedMarkdown: {
 				mdxAsPlaceholder: ['PackageManagerCode'],
