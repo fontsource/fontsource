@@ -1,6 +1,6 @@
 import { observer, useComputed } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Text, VisuallyHidden } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
+import { useMounted, useViewportSize } from '@mantine/hooks';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import {
 	useEffect,
@@ -31,28 +31,15 @@ interface InfiniteHitsProps {
 	state$: SearchState;
 }
 
-const gridColumns = { base: 1, sm: 2, md: 3, xl: 4 };
 const hitsPerVirtualRow = 12;
 const rowGap = 16;
-const loadingPlaceholderKeys = Array.from({ length: 4 }, (_, index) =>
-	String(index),
-);
+const loadingPlaceholderKeys = [0, 1, 2, 3];
 type Display = 'grid' | 'list';
 
 const getRowClassName = (display: Display) =>
 	display === 'list'
 		? `${classes['result-row']} ${classes['list-mode']}`
 		: classes['result-row'];
-
-const estimateRowSize = (
-	itemCount: number,
-	display: Display,
-	columns: number,
-) => {
-	const visualRows = Math.ceil(itemCount / columns);
-	const cardHeight = display === 'list' ? 150 : columns === 1 ? 260 : 332;
-	return visualRows * cardHeight + Math.max(visualRows - 1, 0) * rowGap;
-};
 
 const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`;
@@ -75,18 +62,21 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	}, [isStylesheetLoaded, stylesheetHref]);
 
 	const display = state$.display.get();
-	const previewSize = state$.size.get();
+	const size = state$.size.get();
 
-	const needsDefaultPreview =
+	// Change preview text if hit.defSubset is not latin or if it's an ico
+	const isNotLatin =
 		hit.defSubset !== 'latin' ||
 		hit.category === 'icons' ||
 		hit.category === 'other';
 
-	const previewText$ = useComputed(() => {
+	// We want a unique preview text for each font if it's not latin
+	const currentPreview$ = useComputed(() => {
 		const previewValue = state$.preview.value.get();
 		const inputView = state$.preview.inputView.get();
 
-		if (inputView === '' && needsDefaultPreview) {
+		// Use language-specific preview for non-latin fonts when no custom input
+		if (inputView === '' && isNotLatin) {
 			return getPreviewText(hit.defSubset, hit.objectID);
 		}
 
@@ -109,10 +99,10 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 			/>
 			<Skeleton name="search-hit-preview" loading={!isFontLoaded}>
 				<Text
-					fz={previewSize}
+					fz={size}
 					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
 				>
-					{previewText$.get()}
+					{currentPreview$.get()}
 				</Text>
 			</Skeleton>
 			<Group className={classes['text-group']}>
@@ -160,7 +150,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
-	const [hydrated, setHydrated] = useState(false);
+	const mounted = useMounted();
 	const [isLoadingMore, setIsLoadingMore] = useState(false);
 	const [scrollMargin, setScrollMargin] = useState(0);
 	const { width: viewportWidth } = useViewportSize();
@@ -179,9 +169,8 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const { results, indexUiState, status } = useInstantSearch();
 	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
 	const isSearchLoading = status === 'loading' || status === 'stalled';
-	const previewSize = state$.size.get();
+	const size = state$.size.get();
 	const previewValue = state$.preview.value.get();
-	const firstHitId = items[0]?.objectID ?? '';
 	const searchKey = JSON.stringify({
 		menu: indexUiState.menu ?? {},
 		query: indexUiState.query ?? '',
@@ -206,16 +195,17 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const showLoadingRow = !isLastPage && items.length > 0;
 	const virtualRowCount = rows.length + (showLoadingRow ? 1 : 0);
 	const rowVirtualizer = useWindowVirtualizer<HTMLDivElement>({
-		count: hydrated ? virtualRowCount : 0,
-		enabled: hydrated,
-		estimateSize: (index) =>
-			estimateRowSize(
+		count: mounted ? virtualRowCount : 0,
+		enabled: mounted,
+		estimateSize: (index) => {
+			const itemCount =
 				index === rows.length
 					? loadingPlaceholderKeys.length
-					: hitsPerVirtualRow,
-				display,
-				columns,
-			),
+					: hitsPerVirtualRow;
+			const visualRows = Math.ceil(itemCount / columns);
+			const cardHeight = display === 'list' ? 150 : columns === 1 ? 260 : 332;
+			return visualRows * cardHeight + Math.max(visualRows - 1, 0) * rowGap;
+		},
 		gap: rowGap,
 		getItemKey: (index) => rows[index]?.[0]?.objectID ?? 'loading-row',
 		overscan: 2,
@@ -224,15 +214,11 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	});
 	const virtualRows = rowVirtualizer.getVirtualItems();
 	const lastVirtualIndex = virtualRows[virtualRows.length - 1]?.index ?? -1;
-	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${previewSize}:${previewValue}`;
-
-	useEffect(() => {
-		setHydrated(true);
-	}, []);
+	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${size}:${previewValue}`;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: viewport changes can move the results below responsive controls.
 	useLayoutEffect(() => {
-		if (!hydrated || !resultsRootRef.current) return;
+		if (!mounted || !resultsRootRef.current) return;
 
 		const nextScrollMargin = Math.round(
 			resultsRootRef.current.getBoundingClientRect().top + window.scrollY,
@@ -240,17 +226,17 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		setScrollMargin((current) =>
 			current === nextScrollMargin ? current : nextScrollMargin,
 		);
-	}, [hydrated, viewportWidth]);
+	}, [mounted, viewportWidth]);
 
 	useLayoutEffect(() => {
-		if (!hydrated) return;
+		if (!mounted) return;
 		void measurementKey;
 		rowVirtualizer.measure();
-	}, [hydrated, measurementKey, rowVirtualizer]);
+	}, [measurementKey, mounted, rowVirtualizer]);
 
 	useEffect(() => {
 		if (
-			!hydrated ||
+			!mounted ||
 			lastVirtualIndex < rows.length - 1 ||
 			isLastPage ||
 			isSearchLoading ||
@@ -262,7 +248,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		setIsLoadingMore(true);
 		showMore();
 	}, [
-		hydrated,
+		mounted,
 		isLastPage,
 		isLoadingMore,
 		isSearchLoading,
@@ -295,17 +281,18 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 
 	useEffect(() => {
 		const unsubscribe = state$.language.onChange((e) => {
-			if (state$.preview.label.get() === 'Custom') {
-				return;
-			}
-
-			if (firstHitId !== '') {
-				state$.preview.value.set(getPreviewText(e.value, firstHitId));
+			if (state$.preview.label.get() !== 'Custom') {
+				// For global preview updates, use the first hit or a default
+				const firstHit = items[0];
+				if (firstHit) {
+					const newPreview = getPreviewText(e.value, firstHit.objectID);
+					state$.preview.value.set(newPreview);
+				}
 			}
 		});
 
 		return unsubscribe;
-	}, [state$.preview, state$.language, firstHitId]);
+	}, [state$.preview, state$.language, items]);
 
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
@@ -330,7 +317,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 				aria-busy={isSearchLoading || isLoadingMore}
 				aria-describedby={isLoadingMore ? loadingStatusId : undefined}
 			>
-				{hydrated ? (
+				{mounted ? (
 					<div
 						className={classes['virtual-list']}
 						style={{ height: rowVirtualizer.getTotalSize() }}
@@ -366,7 +353,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 					</div>
 				) : (
 					<SimpleGrid
-						cols={display === 'grid' ? gridColumns : 1}
+						cols={display === 'grid' ? { base: 1, sm: 2, md: 3, xl: 4 } : 1}
 						spacing={rowGap}
 					>
 						{items.map((hit) => (

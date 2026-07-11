@@ -56,20 +56,9 @@ const subscribeToViewport = (listener: () => void) => {
 		}
 	};
 };
-const getViewportWidth = () => window.innerWidth;
-const getServerViewportWidth = () => 0;
-
-const getSkeletonForViewport = (name: SkeletonName, viewportWidth: number) => {
-	const variants = getSkeletonVariants(skeletons[name]);
-	let selected = variants[0].skeleton;
-
-	for (const variant of variants) {
-		if (viewportWidth < Number(variant.breakpoint)) break;
-		selected = variant.skeleton;
-	}
-
-	return selected;
-};
+const getViewportBreakpoint = () =>
+	window.innerWidth >= 1280 ? '1280' : window.innerWidth >= 768 ? '768' : '375';
+const getServerViewportBreakpoint = () => '375' as const;
 
 const useSkeletonLoading = (loading: boolean) => {
 	const [hydrated, setHydrated] = useState(false);
@@ -171,10 +160,10 @@ const Fallback = ({ name }: { name: SkeletonName }) => (
 export const Skeleton = ({ name, loading, children }: SkeletonProps) => {
 	const showSkeleton = useSkeletonLoading(loading);
 	const location = useLocation();
-	const viewportWidth = useSyncExternalStore(
+	const viewportBreakpoint = useSyncExternalStore(
 		subscribeToViewport,
-		getViewportWidth,
-		getServerViewportWidth,
+		getViewportBreakpoint,
+		getServerViewportBreakpoint,
 	);
 	const fixture = getFixture(name);
 	const isCaptureRoute =
@@ -192,7 +181,7 @@ export const Skeleton = ({ name, loading, children }: SkeletonProps) => {
 		<BoneyardSkeleton
 			name={name}
 			loading={showSkeleton}
-			initialBones={getSkeletonForViewport(name, viewportWidth)}
+			initialBones={skeletons[name].breakpoints[viewportBreakpoint]}
 			fallback={<Fallback name={name} />}
 			fixture={fixture}
 			animate="pulse"
