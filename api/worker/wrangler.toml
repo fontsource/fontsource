@@ -9,7 +9,7 @@ kv_namespaces = [
 ]
 
 r2_buckets = [
-  { binding = "FONTS", bucket_name = "fonts", preview_bucket_name = "fonts-preview" },
+  { binding = "FONTS", bucket_name = "fontsource-artifacts" },
 ]
 
 [[durable_objects.bindings]]
@@ -42,33 +42,4 @@ invocation_logs = false
 # crons = ["0 */3 * * *"]
 
 [vars]
-FONTS_BUCKET_NAME = "fonts"
-
-[env.staging]
-name = "fontsource-worker-api-staging"
-
-[env.staging.triggers]
-crons = []
-
-[env.staging.vars]
-FONTS_BUCKET_NAME = "fonts-preview"
-
-[[env.staging.kv_namespaces]]
-binding = "METADATA"
-id = "49e9d329349446cf948f84af9828914f"
-
-[[env.staging.r2_buckets]]
-binding = "FONTS"
-bucket_name = "fonts-preview"
-preview_bucket_name = "fonts-preview"
-
-[[env.staging.durable_objects.bindings]]
-name = "ARTIFACT_BUILDER"
-class_name = "ArtifactBuilder"
-
-[[env.staging.containers]]
-name = "fontsource-worker-api-artifactbuilder-staging"
-class_name = "ArtifactBuilder"
-image = "./container/Dockerfile"
-image_build_context = "../.."
-instance_type = "standard-3"
+FONTS_BUCKET_NAME = "fontsource-artifacts"
