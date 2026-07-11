@@ -1,14 +1,17 @@
 import { observer, useComputed } from '@legendapp/state/react';
-import { Box, Group, Text, VisuallyHidden } from '@mantine/core';
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { Box, Group, SimpleGrid, Text, VisuallyHidden } from '@mantine/core';
+import { useViewportSize } from '@mantine/hooks';
+import { useWindowVirtualizer } from '@tanstack/react-virtual';
+import {
+	useEffect,
+	useId,
+	useLayoutEffect,
+	useMemo,
+	useRef,
+	useState,
+} from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { Link as NavLink } from 'react-router';
-import { VirtuosoGrid } from 'react-virtuoso';
-import type {
-	GridComponents,
-	GridScrollSeekPlaceholderProps,
-	ScrollSeekConfiguration,
-} from 'react-virtuoso';
 
 import { Skeleton } from '@/components/Skeleton';
 import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
@@ -28,22 +31,28 @@ interface InfiniteHitsProps {
 	state$: SearchState;
 }
 
-const placeholderKeys = Array.from(
-	{ length: 8 },
-	(_, index) => `loading-hit-${index}`,
+const gridColumns = { base: 1, sm: 2, md: 3, xl: 4 };
+const hitsPerVirtualRow = 12;
+const rowGap = 16;
+const loadingPlaceholderKeys = Array.from({ length: 4 }, (_, index) =>
+	String(index),
 );
-const loadAhead = { top: 0, bottom: 1200 };
-const scrollSeek: ScrollSeekConfiguration = {
-	enter: (velocity) => Math.abs(velocity) > 1200,
-	exit: (velocity) => Math.abs(velocity) < 120,
-};
+type Display = 'grid' | 'list';
 
-type GridContext = {
-	display: 'grid' | 'list';
-	showPlaceholders: boolean;
-};
+const getRowClassName = (display: Display) =>
+	display === 'list'
+		? `${classes['result-row']} ${classes['list-mode']}`
+		: classes['result-row'];
 
-const getItemKey = (_index: number, hit: AlgoliaMetadata) => hit.objectID;
+const estimateRowSize = (
+	itemCount: number,
+	display: Display,
+	columns: number,
+) => {
+	const visualRows = Math.ceil(itemCount / columns);
+	const cardHeight = display === 'list' ? 150 : columns === 1 ? 260 : 332;
+	return visualRows * cardHeight + Math.max(visualRows - 1, 0) * rowGap;
+};
 
 const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`;
@@ -139,48 +148,39 @@ const HitPlaceholder = ({ display }: { display: 'grid' | 'list' }) => (
 	</Box>
 );
 
-const ScrollSeekPlaceholder = ({
-	context,
-}: GridScrollSeekPlaceholderProps & { context: GridContext }) => (
-	<HitPlaceholder display={context.display} />
+const LoadingRow = ({ display }: { display: Display }) => (
+	<div className={getRowClassName(display)} aria-hidden="true">
+		{loadingPlaceholderKeys.map((key) => (
+			<HitPlaceholder key={key} display={display} />
+		))}
+	</div>
 );
-
-const LoadingFooter = ({ context }: { context: GridContext }) => {
-	if (!context.showPlaceholders) {
-		return null;
-	}
-
-	const className =
-		context.display === 'grid'
-			? `${classes['results-list']} ${classes['grid-mode']} ${classes['placeholder-footer']}`
-			: `${classes['results-list']} ${classes['placeholder-footer']}`;
-
-	return (
-		<div className={className} aria-hidden="true">
-			{placeholderKeys.map((key) => (
-				<div key={key} className={classes['result-item']}>
-					<HitPlaceholder display={context.display} />
-				</div>
-			))}
-		</div>
-	);
-};
-
-const gridComponents: GridComponents<GridContext> = {
-	Footer: LoadingFooter,
-	ScrollSeekPlaceholder,
-};
 
 const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const display = state$.display.get();
 	const loadingStatusId = useId();
-	const virtuosoRootRef = useRef<HTMLElement | null>(null);
+	const resultsRootRef = useRef<HTMLDivElement | null>(null);
+	const [hydrated, setHydrated] = useState(false);
 	const [isLoadingMore, setIsLoadingMore] = useState(false);
+	const [scrollMargin, setScrollMargin] = useState(0);
+	const { width: viewportWidth } = useViewportSize();
+	const columns =
+		display === 'list'
+			? 1
+			: viewportWidth >= 1408
+				? 4
+				: viewportWidth >= 992
+					? 3
+					: viewportWidth >= 768
+						? 2
+						: 1;
 
 	// Infinite Scrolling
 	const { results, indexUiState, status } = useInstantSearch();
 	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
 	const isSearchLoading = status === 'loading' || status === 'stalled';
+	const previewSize = state$.size.get();
+	const previewValue = state$.preview.value.get();
 	const firstHitId = items[0]?.objectID ?? '';
 	const searchKey = JSON.stringify({
 		menu: indexUiState.menu ?? {},
@@ -190,26 +190,86 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		toggle: indexUiState.toggle ?? {},
 	});
 	const previousSearchKeyRef = useRef(searchKey);
-	const listClassName =
-		display === 'grid'
-			? `${classes['results-list']} ${classes['grid-mode']}`
-			: classes['results-list'];
-
-	const renderItem = useCallback(
-		(_index: number, hit: AlgoliaMetadata) => (
-			<HitComponent state$={state$} hit={hit} />
-		),
-		[state$],
+	// Twelve fills complete rows at every supported grid width: 1, 2, 3, and 4 columns.
+	const rows = useMemo(
+		() =>
+			Array.from(
+				{ length: Math.ceil(items.length / hitsPerVirtualRow) },
+				(_, index) =>
+					items.slice(
+						index * hitsPerVirtualRow,
+						(index + 1) * hitsPerVirtualRow,
+					),
+			),
+		[items],
 	);
+	const showLoadingRow = !isLastPage && items.length > 0;
+	const virtualRowCount = rows.length + (showLoadingRow ? 1 : 0);
+	const rowVirtualizer = useWindowVirtualizer<HTMLDivElement>({
+		count: hydrated ? virtualRowCount : 0,
+		enabled: hydrated,
+		estimateSize: (index) =>
+			estimateRowSize(
+				index === rows.length
+					? loadingPlaceholderKeys.length
+					: hitsPerVirtualRow,
+				display,
+				columns,
+			),
+		gap: rowGap,
+		getItemKey: (index) => rows[index]?.[0]?.objectID ?? 'loading-row',
+		overscan: 2,
+		scrollMargin,
+		useAnimationFrameWithResizeObserver: true,
+	});
+	const virtualRows = rowVirtualizer.getVirtualItems();
+	const lastVirtualIndex = virtualRows[virtualRows.length - 1]?.index ?? -1;
+	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${previewSize}:${previewValue}`;
 
-	const requestMore = useCallback(() => {
-		if (typeof window === 'undefined' || isLastPage || isSearchLoading) {
+	useEffect(() => {
+		setHydrated(true);
+	}, []);
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: viewport changes can move the results below responsive controls.
+	useLayoutEffect(() => {
+		if (!hydrated || !resultsRootRef.current) return;
+
+		const nextScrollMargin = Math.round(
+			resultsRootRef.current.getBoundingClientRect().top + window.scrollY,
+		);
+		setScrollMargin((current) =>
+			current === nextScrollMargin ? current : nextScrollMargin,
+		);
+	}, [hydrated, viewportWidth]);
+
+	useLayoutEffect(() => {
+		if (!hydrated) return;
+		void measurementKey;
+		rowVirtualizer.measure();
+	}, [hydrated, measurementKey, rowVirtualizer]);
+
+	useEffect(() => {
+		if (
+			!hydrated ||
+			lastVirtualIndex < rows.length - 1 ||
+			isLastPage ||
+			isSearchLoading ||
+			isLoadingMore
+		) {
 			return;
 		}
 
 		setIsLoadingMore(true);
 		showMore();
-	}, [isLastPage, isSearchLoading, showMore]);
+	}, [
+		hydrated,
+		isLastPage,
+		isLoadingMore,
+		isSearchLoading,
+		lastVirtualIndex,
+		rows.length,
+		showMore,
+	]);
 
 	useEffect(() => {
 		if (!isSearchLoading) {
@@ -224,8 +284,11 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 
 		previousSearchKeyRef.current = searchKey;
 		setIsLoadingMore(false);
+		const resultsTop = resultsRootRef.current
+			? resultsRootRef.current.getBoundingClientRect().top + window.scrollY
+			: 0;
 		window.scrollTo({
-			top: Math.max((virtuosoRootRef.current?.offsetTop ?? 0) - 16, 0),
+			top: Math.max(resultsTop - 16, 0),
 			behavior: 'auto',
 		});
 	}, [searchKey]);
@@ -262,29 +325,56 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 					Loading more font families
 				</VisuallyHidden>
 			)}
-			<VirtuosoGrid
-				key={searchKey}
+			<div
+				ref={resultsRootRef}
 				aria-busy={isSearchLoading || isLoadingMore}
 				aria-describedby={isLoadingMore ? loadingStatusId : undefined}
-				components={gridComponents}
-				computeItemKey={getItemKey}
-				context={{
-					display,
-					showPlaceholders: !isLastPage && items.length > 0,
-				}}
-				data={items}
-				endReached={requestMore}
-				increaseViewportBy={loadAhead}
-				initialItemCount={Math.min(items.length, results.hitsPerPage)}
-				itemClassName={classes['result-item']}
-				itemContent={renderItem}
-				listClassName={listClassName}
-				scrollerRef={(ref) => {
-					virtuosoRootRef.current = ref;
-				}}
-				scrollSeekConfiguration={scrollSeek}
-				useWindowScroll
-			/>
+			>
+				{hydrated ? (
+					<div
+						className={classes['virtual-list']}
+						style={{ height: rowVirtualizer.getTotalSize() }}
+					>
+						{virtualRows.map((virtualRow) => {
+							const row = rows[virtualRow.index];
+							return (
+								<div
+									key={virtualRow.key}
+									data-index={virtualRow.index}
+									ref={rowVirtualizer.measureElement}
+									className={classes['virtual-row']}
+									style={{
+										transform: `translateY(${virtualRow.start - scrollMargin}px)`,
+									}}
+								>
+									{row ? (
+										<div className={getRowClassName(display)}>
+											{row.map((hit) => (
+												<HitComponent
+													key={hit.objectID}
+													state$={state$}
+													hit={hit}
+												/>
+											))}
+										</div>
+									) : (
+										<LoadingRow display={display} />
+									)}
+								</div>
+							);
+						})}
+					</div>
+				) : (
+					<SimpleGrid
+						cols={display === 'grid' ? gridColumns : 1}
+						spacing={rowGap}
+					>
+						{items.map((hit) => (
+							<HitComponent key={hit.objectID} state$={state$} hit={hit} />
+						))}
+					</SimpleGrid>
+				)}
+			</div>
 		</div>
 	);
 });

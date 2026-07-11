@@ -4,7 +4,7 @@
       "name": "search-hit-preview",
       "viewportWidth": 327,
       "width": 327,
-      "height": 252,
+      "height": 142,
       "bones": [
         [
           0,
@@ -24,13 +24,6 @@
           0,
           96,
           71.9992,
-          30,
-          4
-        ],
-        [
-          0,
-          142,
-          57.9989,
           30,
           4
         ]
