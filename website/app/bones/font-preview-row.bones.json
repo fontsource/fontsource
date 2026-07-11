@@ -1,25 +1,49 @@
 {
-	"breakpoints": {
-		"375": {
-			"name": "font-preview-row",
-			"viewportWidth": 327,
-			"width": 327,
-			"height": 58,
-			"bones": [[0, 14, 85.9996, 30, 4]]
-		},
-		"768": {
-			"name": "font-preview-row",
-			"viewportWidth": 688,
-			"width": 688,
-			"height": 58,
-			"bones": [[0, 14, 81.9995, 30, 4]]
-		},
-		"1280": {
-			"name": "font-preview-row",
-			"viewportWidth": 763,
-			"width": 763,
-			"height": 58,
-			"bones": [[0, 14, 80, 30, 4]]
-		}
-	}
+  "breakpoints": {
+    "375": {
+      "name": "font-preview-row",
+      "viewportWidth": 327,
+      "width": 327,
+      "height": 58,
+      "bones": [
+        [
+          0,
+          14,
+          85.9996,
+          30,
+          4
+        ]
+      ]
+    },
+    "768": {
+      "name": "font-preview-row",
+      "viewportWidth": 688,
+      "width": 688,
+      "height": 58,
+      "bones": [
+        [
+          0,
+          14,
+          81.9995,
+          30,
+          4
+        ]
+      ]
+    },
+    "1280": {
+      "name": "font-preview-row",
+      "viewportWidth": 763,
+      "width": 763,
+      "height": 58,
+      "bones": [
+        [
+          0,
+          14,
+          80,
+          30,
+          4
+        ]
+      ]
+    }
+  }
 }

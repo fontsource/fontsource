@@ -5,7 +5,7 @@ const standardReadme = (
 	isVariable: boolean,
 ) => `# Fontsource ${family}
 
-[![npm (scoped)](https://img.shields.io/npm/v/@fontsource/${id}?color=brightgreen)](https://www.npmjs.com/package/@fontsource/${id}) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/${id})](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/${id})](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
+[![npm (scoped)](https://img.shields.io/npm/v/@fontsource/${id}?color=brightgreen)](https://www.npmjs.com/package/@fontsource/${id}) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource/${id})](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource/${id})](https://github.com/fontsource/fontsource)
 
 The CSS and web font files to easily self-host the “${family}” font. Please visit the main [Fontsource website](https://fontsource.org/fonts/${id}) to view more details on this package.
 ${
@@ -66,7 +66,7 @@ const variableReadme = ({
 	license,
 }: Metadata) => `# Fontsource ${family}
 
-[![npm (scoped)](https://img.shields.io/npm/v/@fontsource-variable/${id}?color=brightgreen)](https://www.npmjs.com/package/@fontsource-variable/${id}) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource-variable/${id})](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource-variable/${id})](https://github.com/fontsource/fontsource) [![GitHub stars](https://img.shields.io/github/stars/fontsource/fontsource.svg?style=social&label=Star)](https://github.com/fontsource/fontsource/stargazers)
+[![npm (scoped)](https://img.shields.io/npm/v/@fontsource-variable/${id}?color=brightgreen)](https://www.npmjs.com/package/@fontsource-variable/${id}) [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly downloads](https://badgen.net/npm/dm/@fontsource-variable/${id})](https://github.com/fontsource/fontsource) [![Total downloads](https://badgen.net/npm/dt/@fontsource-variable/${id})](https://github.com/fontsource/fontsource)
 
 The CSS and web font files to easily self-host the “${family}” variable font. Please visit the main [Fontsource website](https://fontsource.org/fonts/${id}) to view more details on this package.
 

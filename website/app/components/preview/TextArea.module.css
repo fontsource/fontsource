@@ -6,8 +6,15 @@
 	margin-bottom: 20px;
 }
 
+.row {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+
 .text-wrapper {
 	padding: 24px 0 10px 0;
+	min-width: 0;
 }
 
 .horizontal {
@@ -21,10 +28,10 @@
 }
 
 .tag {
+	align-self: flex-end;
 	font-size: 13px;
 	padding: 4px 8px;
 	border-radius: 4px 4px 0 0;
-	margin-left: auto;
 	line-height: 12px;
 
 	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));

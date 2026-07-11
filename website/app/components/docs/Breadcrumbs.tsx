@@ -12,7 +12,7 @@ interface BreadcrumbsProps {
 export const Breadcrumbs = ({ items }: BreadcrumbsProps) => (
 	<nav className={classes.breadcrumbs} aria-label="Breadcrumb">
 		{items.map((item, index) => (
-			<span key={item.url ?? item.name}>
+			<span key={`${item.url ?? ''}-${item.name}`}>
 				{item.url && index < items.length - 1 ? (
 					<Link to={item.url} prefetch="render">
 						{item.name}

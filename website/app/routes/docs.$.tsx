@@ -12,6 +12,7 @@ import classes from '@/components/docs/Page.module.css';
 import { PageActions } from '@/components/docs/PageActions';
 import { Pager } from '@/components/docs/Pager';
 import { Toc } from '@/components/docs/Toc';
+import { cacheHeaders } from '@/utils/cache';
 import type { Breadcrumb, Pager as PagerData } from '@/utils/docs/navigation';
 import { getBreadcrumbs, getPager } from '@/utils/docs/navigation';
 import { source } from '@/utils/docs/source.server';
@@ -67,7 +68,12 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	}
 
 	const redirectTo = sectionRedirects[route];
-	if (redirectTo) return redirect(redirectTo);
+	if (redirectTo) {
+		return redirect(redirectTo, {
+			status: 302,
+			headers: cacheHeaders.stable,
+		});
+	}
 
 	const page = source.getPage(route.split('/').filter(Boolean));
 
@@ -91,9 +97,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 			breadcrumbs: getBreadcrumbs(source.pageTree, page.url),
 		},
 		{
-			headers: {
-				'Cache-Control': 'public, max-age=300',
-			},
+			headers: cacheHeaders.short,
 		},
 	);
 };

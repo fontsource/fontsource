@@ -1,6 +1,7 @@
 import type { LoaderFunction } from 'react-router';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { fetchApiData } from '@/utils/api.server';
+import { cacheHeaders } from '@/utils/cache';
 import { source } from '@/utils/docs/source.server';
 
 export const loader: LoaderFunction = async () => {
@@ -38,7 +39,7 @@ export const loader: LoaderFunction = async () => {
 	return new Response(sitemap, {
 		headers: {
 			'Content-Type': 'application/xml',
-			'Cache-Control': 'public, max-age=86400', // 1 day
+			...cacheHeaders.stable,
 		},
 	});
 };

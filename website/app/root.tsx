@@ -91,15 +91,14 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 import { ErrorBoundary as ErrorBoundaryComponent } from '@/components/ErrorBoundary';
 import { AppShell } from '@/components/layout/AppShell';
 import { theme } from '@/styles/theme';
+import { cacheHeaders } from '@/utils/cache';
 import { ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
 	return ogMeta({});
 };
 
-export const headers: HeadersFunction = () => ({
-	'Cache-Control': 'public, s-maxage=60',
-});
+export const headers: HeadersFunction = () => cacheHeaders.document;
 
 export const links: LinksFunction = () => [
 	{

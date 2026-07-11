@@ -3,6 +3,7 @@ import {
 	renderPlaceholder,
 } from 'fumadocs-core/mdx-plugins/remark-llms.runtime';
 
+import { cacheHeaders } from '../cache';
 import { getPackageManagerCommandBlock } from './packageManagers';
 import { source } from './source.server';
 
@@ -98,7 +99,7 @@ export const getDocsMarkdownResponse = async (pathname: string) => {
 	return new Response(text, {
 		headers: {
 			'Content-Type': 'text/markdown; charset=utf-8',
-			'Cache-Control': 'public, max-age=300',
+			...cacheHeaders.stable,
 		},
 	});
 };

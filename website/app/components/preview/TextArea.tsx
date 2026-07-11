@@ -77,7 +77,7 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 	});
 
 	return (
-		<>
+		<Box className={classes.row} ref={ref}>
 			<Box className={classes['text-wrapper']}>
 				<Skeleton name="font-preview-row" loading={!isFontLoaded}>
 					<TextInput
@@ -102,12 +102,11 @@ const TextBox = observer(({ state$, family, weight, style }: TextBoxProps) => {
 							state$.preview.text.set(event.currentTarget.value)
 						}
 						autoComplete="off"
-						ref={ref}
 					/>
 				</Skeleton>
 			</Box>
 			<Tag weight={weight} active={focused} />
-		</>
+		</Box>
 	);
 });
 

@@ -1,5 +1,7 @@
 import type { LoaderFunction } from 'react-router';
 
+import { cacheHeaders } from '@/utils/cache';
+
 const prod = `User-agent: *
 Allow: /
 
@@ -9,7 +11,7 @@ export const loader: LoaderFunction = async () => {
 	return new Response(prod, {
 		headers: {
 			'Content-Type': 'text/plain',
-			'Cache-Control': 'public, max-age=86400', // 1 day
+			...cacheHeaders.stable,
 		},
 	});
 };
