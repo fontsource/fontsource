@@ -1,8 +1,9 @@
 import { HTTPException } from 'hono/http-exception';
 import { type BuildVersionRequest, getBuildKey } from '../shared/build';
-import { ensureBuilt } from './src/builder';
+import { buildArtifacts } from './src/artifacts';
 
 const PORT = 3000;
+let buildStarted = false;
 
 const resp404 = (): Response =>
 	Response.json(
@@ -24,7 +25,6 @@ const respError = (error: unknown, request?: BuildVersionRequest): Response => {
 			state: 'failed',
 			buildKey: request ? getBuildKey(request) : 'unknown',
 			error: message,
-			builtAt: new Date().toISOString(),
 		},
 		{ status: errorStatus(error) },
 	);
@@ -41,6 +41,13 @@ Bun.serve({
 				let payload: BuildVersionRequest | undefined;
 
 				try {
+					if (buildStarted) {
+						throw new HTTPException(409, {
+							message: 'This container instance already accepted a build.',
+						});
+					}
+					buildStarted = true;
+
 					payload = await request.json();
 					if (!payload) {
 						return respError(
@@ -48,17 +55,17 @@ Bun.serve({
 						);
 					}
 
+					const buildKey = getBuildKey(payload);
+					const startedAt = Date.now();
+					console.log(`[container] starting ${payload.mode} build ${buildKey}`);
+					const artifactCount = await buildArtifacts(payload);
+					const durationMs = Date.now() - startedAt;
+
 					console.log(
-						`[container] POST /build-version ${payload.mode} ${getBuildKey(payload)}`,
+						`[container] finished ${payload.mode} build ${buildKey} - ${artifactCount} artifacts in ${durationMs}ms`,
 					);
 
-					const snapshot = await ensureBuilt(payload);
-
-					console.log(
-						`[container] build complete ${snapshot.buildKey} - ${snapshot.artifactCount} artifacts in ${snapshot.durationMs}ms`,
-					);
-
-					return Response.json(snapshot, { status: 200 });
+					return Response.json({ state: 'ready', buildKey }, { status: 200 });
 				} catch (error) {
 					console.error(
 						`[container] build failed`,

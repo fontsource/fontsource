@@ -9,15 +9,12 @@ import {
 	staticWoff2Bytes,
 	staticWoffBytes,
 	testCatalog,
-	variableAxes,
 	variableMetadata,
 	variableWoff2Bytes,
 } from './helpers';
 
 const {
 	putObject,
-	fetchPackageAssetBytes,
-	fetchPackageFileList,
 	fetchPackageTarball,
 	convertFont,
 	destroy,
@@ -27,8 +24,6 @@ const {
 
 	return {
 		putObject: vi.fn(),
-		fetchPackageAssetBytes: vi.fn(),
-		fetchPackageFileList: vi.fn(),
 		fetchPackageTarball: vi.fn(),
 		convertFont: vi.fn(),
 		destroy,
@@ -48,8 +43,6 @@ vi.mock('../shared/upstream', async () => {
 
 	return {
 		...actual,
-		fetchPackageAssetBytes,
-		fetchPackageFileList,
 		fetchPackageTarball,
 	};
 });
@@ -127,64 +120,14 @@ describe('container artifact builder', () => {
 
 	beforeEach(() => {
 		putObject.mockReset();
-		fetchPackageAssetBytes.mockReset();
-		fetchPackageFileList.mockReset();
 		fetchPackageTarball.mockReset();
 		convertFont.mockReset();
 		destroy.mockReset();
 		createFontContext.mockClear();
 
-		fetchPackageFileList.mockImplementation(
-			async (id, _version, isVariable = false) => {
-				if (id === variableMetadata.id && isVariable) {
-					return new Set(
-						resolveFontPackageManifest(
-							variableMetadata,
-							variableAxes,
-						).variable.map((item) => item.sourceFilename),
-					);
-				}
-
-				if (id === testCatalog.familypack.id) {
-					return new Set(
-						resolveFontPackageManifest(testCatalog.familypack).static.map(
-							(item) => item.sourceFilename,
-						),
-					);
-				}
-
-				return new Set(
-					resolveFontPackageManifest(staticMetadata).static.map(
-						(item) => item.sourceFilename,
-					),
-				);
-			},
-		);
 		fetchPackageTarball.mockImplementation(
 			async (id: string, _version: string, isVariable = false) => {
 				return tarballStream(await createPackageTarball(id, isVariable));
-			},
-		);
-		fetchPackageAssetBytes.mockImplementation(
-			async (
-				_id: string,
-				_version: string,
-				file: string,
-				isVariable = false,
-			) => {
-				if (isVariable) {
-					return variableWoff2Bytes;
-				}
-
-				if (file.endsWith('.woff2')) {
-					return staticWoff2Bytes;
-				}
-
-				if (file.endsWith('.woff')) {
-					return staticWoffBytes;
-				}
-
-				throw new Error(`Unexpected upstream asset ${file}`);
 			},
 		);
 		convertFont.mockResolvedValue([{ data: staticTtfBytes }]);
@@ -194,93 +137,70 @@ describe('container artifact builder', () => {
 		vi.clearAllMocks();
 	});
 
-	it('builds only the requested static file in file mode', async () => {
+	it('builds every published static artifact in package mode', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
+		fetchPackageTarball.mockResolvedValueOnce(
+			tarballStream(
+				await createPackageTarball(
+					testCatalog.familypack.id,
+					false,
+					new Set(['latin-400-normal.woff2', 'latin-400-normal.woff']),
+				),
+			),
+		);
 		const request: BuildVersionRequest = {
-			mode: 'file',
+			mode: 'static',
 			tag: {
-				id: staticMetadata.id,
+				id: testCatalog.familypack.id,
 				version: '1.0.0',
 			},
-			metadata: staticMetadata,
-			target: {
-				file: 'latin-400-normal.woff2',
-				isVariable: false,
-			},
+			metadata: testCatalog.familypack,
 		};
 
-		await expect(buildArtifacts(request)).resolves.toBe(1);
+		await expect(buildArtifacts(request)).resolves.toBe(3);
 
-		expect(convertFont).not.toHaveBeenCalled();
-		expect(putObject).toHaveBeenCalledTimes(1);
-		expect(putObject).toHaveBeenCalledWith(
-			'abel@1.0.0/latin-400-normal.woff2',
-			staticWoff2Bytes,
-			expect.objectContaining({
-				contentType: 'font/woff2',
-			}),
+		expect(convertFont).toHaveBeenCalledTimes(1);
+		expect(putObject.mock.calls.map(([key]) => key).sort()).toEqual([
+			'familypack@1.0.0/latin-400-normal.ttf',
+			'familypack@1.0.0/latin-400-normal.woff',
+			'familypack@1.0.0/latin-400-normal.woff2',
+		]);
+		expect(fetchPackageTarball).toHaveBeenCalledWith(
+			'familypack',
+			'1.0.0',
+			false,
 		);
 	});
 
-	it('builds only the requested variable file in file mode', async () => {
+	it('builds every published variable artifact in package mode', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
 		const request: BuildVersionRequest = {
-			mode: 'file',
+			mode: 'variable',
 			tag: {
 				id: variableMetadata.id,
 				version: '1.0.0',
 			},
 			metadata: variableMetadata,
-			target: {
-				file: 'latin-full-normal.woff2',
-				isVariable: true,
-			},
 		};
 
-		await expect(buildArtifacts(request)).resolves.toBe(1);
+		const variableManifest = resolveFontPackageManifest(
+			variableMetadata,
+			variableMetadata.variable || undefined,
+		).variable;
+		await expect(buildArtifacts(request)).resolves.toBe(
+			variableManifest.length,
+		);
 
 		expect(convertFont).not.toHaveBeenCalled();
-		expect(putObject).toHaveBeenCalledTimes(1);
-		expect(putObject).toHaveBeenCalledWith(
-			'recursive@1.0.0/variable/latin-full-normal.woff2',
-			variableWoff2Bytes,
-			expect.objectContaining({
-				contentType: 'font/woff2',
-			}),
+		expect(putObject.mock.calls.map(([key]) => key).sort()).toEqual(
+			variableManifest
+				.map((entry) => `recursive@1.0.0/variable/${entry.filename}`)
+				.sort(),
 		);
-	});
-
-	it('converts static ttf files only when the requested file is ttf', async () => {
-		const { buildArtifacts } = await import('../container/src/artifacts');
-		const request: BuildVersionRequest = {
-			mode: 'file',
-			tag: {
-				id: staticMetadata.id,
-				version: '1.0.0',
-			},
-			metadata: staticMetadata,
-			target: {
-				file: 'latin-400-normal.ttf',
-				isVariable: false,
-			},
-		};
-
-		await expect(buildArtifacts(request)).resolves.toBe(1);
-
-		expect(fetchPackageAssetBytes).toHaveBeenCalledTimes(1);
-		expect(fetchPackageAssetBytes).toHaveBeenCalledWith(
-			'abel',
+		expect(fetchPackageTarball).toHaveBeenCalledWith(
+			'recursive',
 			'1.0.0',
-			'latin-400-normal.woff',
-		);
-		expect(convertFont).toHaveBeenCalledTimes(1);
-		expect(putObject).toHaveBeenCalledTimes(1);
-		expect(putObject).toHaveBeenCalledWith(
-			'abel@1.0.0/latin-400-normal.ttf',
-			staticTtfBytes,
-			expect.objectContaining({
-				contentType: 'font/ttf',
-			}),
+			true,
 		);
 	});
 
@@ -324,8 +244,6 @@ describe('container artifact builder', () => {
 		expect(archive['static/familypack-latin-700-normal.ttf']).toEqual(
 			staticTtfBytes,
 		);
-		expect(fetchPackageAssetBytes).not.toHaveBeenCalled();
-		expect(fetchPackageFileList).not.toHaveBeenCalled();
 		expect(fetchPackageTarball).toHaveBeenCalledWith(
 			'familypack',
 			'1.0.0',

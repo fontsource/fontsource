@@ -5,28 +5,23 @@ import {
 import { env } from 'cloudflare:workers';
 import type { Zippable } from 'fflate';
 import { zipSync } from 'fflate';
-import { HTTPException } from 'hono/http-exception';
 import { vi } from 'vitest';
 import type { AxisRegistry } from '../shared/axis-registry';
 import {
+	type BuildDownloadRequest,
 	type BuildVersionFailure,
 	type BuildVersionRequest,
 	type BuildVersionResponse,
 	type BuildVersionResult,
 	type BuildVersionStatus,
 	getBuildKey,
-	getBuildRequestKey,
 } from '../shared/build';
 import type {
 	FontCatalog,
 	SourceFontMetadata,
 	VariableAxes,
 } from '../shared/catalog';
-import {
-	type FontPackageEntry,
-	findFontPackageEntry,
-	resolveFontPackageManifest,
-} from '../shared/font-package-manifest';
+import { resolveFontPackageManifest } from '../shared/font-package-manifest';
 import {
 	BINARY_CONTENT_TYPES,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
@@ -288,11 +283,6 @@ export const staticWoffBytes = decodeInlineAsset(staticWoffUrl);
 export const variableWoff2Bytes = decodeInlineAsset(variableWoff2Url);
 export const staticTtfBytes = new Uint8Array([0, 1, 2, 3]);
 
-const isStaticEntry = (
-	item: FontPackageEntry,
-): item is ReturnType<typeof resolveFontPackageManifest>['static'][number] =>
-	!('axisKey' in item);
-
 const toResponse = (body: BodyInit, init?: ResponseInit): Response =>
 	new Response(body, {
 		status: 200,
@@ -468,12 +458,8 @@ const putVariableArtifacts = async (
 
 const putDownloadArtifacts = async (
 	env: Env,
-	request: BuildVersionRequest,
+	request: BuildDownloadRequest,
 ): Promise<number> => {
-	if (request.mode !== 'download') {
-		throw new Error('Expected a download build request.');
-	}
-
 	const { metadata } = request;
 	const axes = metadata.variable || undefined;
 	const zipFiles: Zippable = {};
@@ -513,78 +499,60 @@ const putDownloadArtifacts = async (
 	return artifactCount + 1;
 };
 
-const putRequestedArtifact = async (
+const putBuiltArtifacts = async (
 	env: Env,
 	request: BuildVersionRequest,
-): Promise<number> => {
-	if (request.mode !== 'file') {
-		return await putDownloadArtifacts(env, request);
+): Promise<void> => {
+	if (request.mode === 'download') {
+		await putDownloadArtifacts(env, request);
+		return;
 	}
 
 	const manifest = resolveFontPackageManifest(
 		request.metadata,
 		request.metadata.variable || undefined,
 	);
-	const entry = findFontPackageEntry(manifest, request.target);
-
-	if (!entry) {
+	const entries =
+		request.mode === 'variable' ? manifest.variable : manifest.static;
+	if (entries.length === 0) {
 		throw new Error(
-			`Mocked build produced no artifact for ${request.tag.id}@${request.tag.version}/${request.target.file}`,
+			`Mocked build produced no ${request.mode} artifacts for ${request.tag.id}@${request.tag.version}`,
 		);
 	}
 
-	if (request.target.isVariable) {
-		if (isStaticEntry(entry)) {
-			throw new Error(
-				`Mocked build resolved a static artifact for variable target ${request.target.file}`,
-			);
-		}
-
-		await putVariableArtifact(
-			env,
-			request.metadata,
-			request.tag.version,
-			entry,
+	if (request.mode === 'variable') {
+		await Promise.all(
+			manifest.variable.map((entry) =>
+				putVariableArtifact(env, request.metadata, request.tag.version, entry),
+			),
 		);
-		return 1;
-	}
-
-	if (!isStaticEntry(entry)) {
-		throw new Error(
-			`Mocked build resolved a variable artifact for static target ${request.target.file}`,
+	} else {
+		await Promise.all(
+			manifest.static.map((entry) =>
+				putStaticArtifact(env, request.metadata, request.tag.version, entry),
+			),
 		);
 	}
-
-	await putStaticArtifact(env, request.metadata, request.tag.version, entry);
-	return 1;
 };
 
 export const installArtifactBuilderMock = (
 	env: Env,
 	options: {
 		failBuildKeys?: string[];
-		failBuilds?: Array<{
-			buildKey: string;
-			mode?: BuildVersionRequest['mode'];
-			status?: number;
-		}>;
 		buildDelayMs?: number;
 	} = {},
 ) => {
 	const failBuildKeys = new Set(options.failBuildKeys ?? []);
-	const failBuilds = options.failBuilds ?? [];
 	const buildDelayMs = options.buildDelayMs ?? 0;
 	const calls = vi.fn<(request: BuildVersionRequest) => void>();
 	const activeBuilds = new Map<string, Promise<BuildVersionResponse>>();
-	const asyncBuilds = new Map<string, Promise<BuildVersionResult>>();
 	const failedBuilds = new Map<string, BuildVersionFailure>();
 
 	const ensureBuilt = async (
 		request: BuildVersionRequest,
 	): Promise<BuildVersionResponse> => {
 		const buildKey = getBuildKey(request);
-		const requestKey = getBuildRequestKey(request);
-		const activeBuild = activeBuilds.get(requestKey);
+		const activeBuild = activeBuilds.get(buildKey);
 
 		if (activeBuild) {
 			return await activeBuild;
@@ -592,28 +560,7 @@ export const installArtifactBuilderMock = (
 
 		calls(request);
 
-		if (
-			failBuildKeys.has(buildKey) ||
-			failBuilds.some(
-				(item) =>
-					item.buildKey === buildKey &&
-					(!item.mode || item.mode === request.mode),
-			)
-		) {
-			const matchingFailure = failBuilds.find(
-				(item) =>
-					item.buildKey === buildKey &&
-					(!item.mode || item.mode === request.mode),
-			);
-
-			if (matchingFailure?.status) {
-				return await Promise.reject(
-					new HTTPException(matchingFailure.status === 404 ? 404 : 500, {
-						message: `Mocked builder failure for ${buildKey}`,
-					}),
-				);
-			}
-
+		if (failBuildKeys.has(buildKey)) {
 			return await Promise.reject(
 				new Error(`Mocked builder failure for ${buildKey}`),
 			);
@@ -624,19 +571,17 @@ export const installArtifactBuilderMock = (
 				await new Promise((resolve) => setTimeout(resolve, buildDelayMs));
 			}
 
-			const artifactCount = await putRequestedArtifact(env, request);
+			await putBuiltArtifacts(env, request);
 			const response = {
 				state: 'ready',
 				buildKey,
-				mode: request.mode,
-				artifactCount,
 			} satisfies BuildVersionResponse;
 			return response;
 		})().finally(() => {
-			activeBuilds.delete(requestKey);
+			activeBuilds.delete(buildKey);
 		});
 
-		activeBuilds.set(requestKey, buildPromise);
+		activeBuilds.set(buildKey, buildPromise);
 		return await buildPromise;
 	};
 	const buildVersion = async (
@@ -649,44 +594,38 @@ export const installArtifactBuilderMock = (
 			return {
 				state: 'failed',
 				buildKey,
-				status: error instanceof HTTPException ? error.status : 502,
-				error:
-					error instanceof HTTPException
-						? error.message
-						: `Bad Gateway. Artifact build failed for ${buildKey}: ${error instanceof Error ? error.message : String(error)}`,
+				status: 502,
+				error: `Bad Gateway. Artifact build failed for ${buildKey}: ${error instanceof Error ? error.message : String(error)}`,
 			};
 		}
 	};
 	const startBuild = async (
 		request: BuildVersionRequest,
 	): Promise<BuildVersionStatus> => {
-		const requestKey = getBuildRequestKey(request);
-		const failed = failedBuilds.get(requestKey);
+		const buildKey = getBuildKey(request);
+		const failed = failedBuilds.get(buildKey);
 
 		if (failed) {
-			failedBuilds.delete(requestKey);
+			failedBuilds.delete(buildKey);
 			return failed;
 		}
 
-		if (asyncBuilds.has(requestKey)) {
+		if (activeBuilds.has(buildKey)) {
 			return {
 				state: 'building',
-				buildKey: getBuildKey(request),
+				buildKey,
 			};
 		}
 
-		const build = buildVersion(request).then((result) => {
-			asyncBuilds.delete(requestKey);
+		void buildVersion(request).then((result) => {
 			if (result.state === 'failed') {
-				failedBuilds.set(requestKey, result);
+				failedBuilds.set(buildKey, result);
 			}
-			return result;
 		});
-		asyncBuilds.set(requestKey, build);
 
 		return {
 			state: 'building',
-			buildKey: getBuildKey(request),
+			buildKey,
 		};
 	};
 

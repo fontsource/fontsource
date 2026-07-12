@@ -3,7 +3,7 @@ import { HTTPException } from 'hono/http-exception';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import {
 	type BuildDownloadRequest,
-	type BuildFileRequest,
+	type BuildPackageRequest,
 	type BuildVersionFailure,
 	type BuildVersionRequest,
 	type BuildVersionResponse,
@@ -70,20 +70,15 @@ export const startDownloadBuild = async (
 	return result;
 };
 
-export const ensureFileBuilt = async (
+export const ensurePackageBuilt = async (
 	c: Context<AppEnv>,
 	resolved: ResolvedFontRequest,
-	file: string,
 ): Promise<BuildVersionResponse> =>
 	buildVersion(c, {
-		mode: 'file',
+		mode: resolved.tag.isVariable ? 'variable' : 'static',
 		tag: {
 			id: resolved.tag.id,
 			version: resolved.tag.version,
 		},
 		metadata: resolved.metadata,
-		target: {
-			file,
-			isVariable: resolved.tag.isVariable,
-		},
-	} satisfies BuildFileRequest);
+	} satisfies BuildPackageRequest);

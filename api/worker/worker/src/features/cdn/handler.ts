@@ -11,7 +11,7 @@ import {
 import { getBinaryKey, getDownloadKey } from '../../../../shared/storage';
 import { fetchPackageFileList } from '../../../../shared/upstream';
 import { CACHE_POLICIES, CONTENT_TYPES } from '../../constants';
-import { ensureFileBuilt, startDownloadBuild } from '../../container/client';
+import { ensurePackageBuilt, startDownloadBuild } from '../../container/client';
 import type { AppEnv } from '../../env';
 import { toHttpDate } from '../../utils/cache';
 import { badGateway, badRequest, notFound } from '../../utils/errors';
@@ -378,7 +378,7 @@ export const getBinaryAsset = async (
 		}
 	}
 
-	await ensureFileBuilt(c, resolved, file);
+	await ensurePackageBuilt(c, resolved);
 	const built = await getStoredBinaryAsset(
 		c,
 		resolved.tag,

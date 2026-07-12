@@ -1,18 +1,15 @@
 import { convertFont, createFontContext } from '@fontsource-utils/core';
 import { zipSync } from 'fflate';
-import { HTTPException } from 'hono/http-exception';
 import limitConcur from 'limit-concur';
 import { createGzipDecoder, unpackTar } from 'modern-tar';
 import type {
 	BuildDownloadRequest,
-	BuildFileRequest,
+	BuildPackageRequest,
 	BuildVersionRequest,
 	BuildVersionTag,
 } from '../../shared/build';
 import {
-	type FontPackageEntry,
 	filterPublishedManifest,
-	findFontPackageEntry,
 	resolveFontPackageManifest,
 	type StaticFontEntry,
 	type VariableFontEntry,
@@ -26,12 +23,7 @@ import {
 	getStaticAssetKey,
 	getVariableAssetKey,
 } from '../../shared/storage';
-import {
-	fetchPackageAssetBytes,
-	fetchPackageFileList,
-	fetchPackageTarball,
-	UpstreamNotFoundError,
-} from '../../shared/upstream';
+import { fetchPackageTarball } from '../../shared/upstream';
 import { putObject } from './r2';
 
 interface BuiltArtifact {
@@ -39,21 +31,6 @@ interface BuiltArtifact {
 	bytes: Uint8Array;
 	extension: StaticFontEntry['extension'] | VariableFontEntry['extension'];
 }
-
-/** Catches `UpstreamNotFoundError` and returns `undefined` instead of throwing. */
-const ignoreUpstream404 = async <T>(
-	input: Promise<T> | (() => Promise<T>),
-): Promise<T | undefined> => {
-	try {
-		return await (typeof input === 'function' ? input() : input);
-	} catch (error) {
-		if (error instanceof UpstreamNotFoundError) {
-			return undefined;
-		}
-
-		throw error;
-	}
-};
 
 const createArtifact = (
 	key: string,
@@ -89,37 +66,11 @@ const uploadArtifacts = (
 		}),
 	);
 
-const storeArtifacts = async (
-	artifacts: readonly BuiltArtifact[],
-): Promise<void> => {
-	await Promise.all(uploadArtifacts(artifacts));
-};
-
 const buildStaticArtifacts = async (
 	tag: BuildVersionTag,
 	manifest: readonly StaticFontEntry[],
-	packageFiles?: ReadonlyMap<string, Uint8Array>,
+	packageFiles: ReadonlyMap<string, Uint8Array>,
 ): Promise<BuiltArtifact[]> => {
-	if (manifest.length === 0) {
-		return [];
-	}
-
-	// Memoize static package fetches so repeated `.woff` reads for TTF
-	// conversion do not hit the upstream CDN twice.
-	const fetchCache = new Map<string, Promise<Uint8Array>>();
-	const getStaticBytes = (filename: string): Promise<Uint8Array> => {
-		const existing = fetchCache.get(filename);
-		if (existing) {
-			return existing;
-		}
-
-		const load = packageFiles
-			? Promise.resolve(getPackageFile(packageFiles, filename))
-			: fetchPackageAssetBytes(tag.id, tag.version, filename);
-		fetchCache.set(filename, load);
-		return load;
-	};
-
 	const copyPlan = manifest.filter((item) => item.buildMode === 'copy');
 	const convertPlan = manifest.filter(
 		(item) => item.buildMode === 'convert-woff-to-ttf',
@@ -129,151 +80,59 @@ const buildStaticArtifacts = async (
 		`[artifacts] static build plan: copy=${copyPlan.length}, convert=${convertPlan.length}`,
 	);
 
-	const copiedPromise = Promise.all(
-		copyPlan.map(
-			limitConcur(
-				8,
-				async (item) =>
-					await ignoreUpstream404(async () =>
-						createArtifact(
-							getStaticAssetKey(tag.id, tag.version, item.filename),
-							await getStaticBytes(item.sourceFilename),
-							item.extension,
-						),
-					),
-			),
+	const copied = copyPlan.map((item) =>
+		createArtifact(
+			getStaticAssetKey(tag.id, tag.version, item.filename),
+			getPackageFile(packageFiles, item.sourceFilename),
+			item.extension,
 		),
 	);
 
 	if (convertPlan.length === 0) {
-		return (await copiedPromise).filter(
-			(artifact): artifact is BuiltArtifact => artifact !== undefined,
-		);
+		return copied;
 	}
 
-	const convertedPromise = (async () => {
-		const ctx = createFontContext();
+	const ctx = createFontContext();
+	try {
+		const converted = await Promise.all(
+			convertPlan.map(
+				limitConcur(8, async (item) => {
+					const [{ data }] = await convertFont(
+						ctx,
+						getPackageFile(packageFiles, item.sourceFilename),
+						['ttf'],
+						`${tag.id}-${item.sourceFilename}`,
+					);
 
-		try {
-			return await Promise.all(
-				convertPlan.map(
-					limitConcur(
-						8,
-						async (item) =>
-							await ignoreUpstream404(async () => {
-								const [{ data }] = await convertFont(
-									ctx,
-									await getStaticBytes(item.sourceFilename),
-									['ttf'],
-									`${tag.id}-${item.sourceFilename}`,
-								);
+					return createArtifact(
+						getStaticAssetKey(tag.id, tag.version, item.filename),
+						data,
+						item.extension,
+					);
+				}),
+			),
+		);
 
-								return createArtifact(
-									getStaticAssetKey(tag.id, tag.version, item.filename),
-									data,
-									item.extension,
-								);
-							}),
-					),
-				),
-			);
-		} finally {
-			ctx.destroy();
-		}
-	})();
-	const [copied, converted] = await Promise.all([
-		copiedPromise,
-		convertedPromise,
-	]);
-
-	return [...copied, ...converted].filter(
-		(artifact): artifact is BuiltArtifact => artifact !== undefined,
-	);
+		return [...copied, ...converted];
+	} finally {
+		ctx.destroy();
+	}
 };
 
-const buildVariableArtifacts = async (
+const buildVariableArtifacts = (
 	tag: BuildVersionTag,
 	manifest: readonly VariableFontEntry[],
-	packageFiles?: ReadonlyMap<string, Uint8Array>,
-): Promise<BuiltArtifact[]> => {
-	if (manifest.length === 0) {
-		return [];
-	}
-
+	packageFiles: ReadonlyMap<string, Uint8Array>,
+): BuiltArtifact[] => {
 	console.log(`[artifacts] variable build plan: files=${manifest.length}`);
 
-	return (
-		await Promise.all(
-			manifest.map(
-				limitConcur(
-					8,
-					async (item) =>
-						await ignoreUpstream404(async () => {
-							const bytes = packageFiles
-								? getPackageFile(packageFiles, item.sourceFilename)
-								: await fetchPackageAssetBytes(
-										tag.id,
-										tag.version,
-										item.sourceFilename,
-										true,
-									);
-
-							return createArtifact(
-								getVariableAssetKey(tag.id, tag.version, item.filename),
-								bytes,
-								item.extension,
-							);
-						}),
-				),
-			),
-		)
-	).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
-};
-
-const isStaticEntry = (item: FontPackageEntry): item is StaticFontEntry =>
-	!('axisKey' in item);
-
-const buildSingleArtifact = async (
-	request: BuildFileRequest,
-): Promise<number> => {
-	const publishedFiles = await fetchPackageFileList(
-		request.tag.id,
-		request.tag.version,
-		request.target.isVariable,
-	);
-	const manifest = filterPublishedManifest(
-		resolveFontPackageManifest(
-			request.metadata,
-			request.metadata.variable || undefined,
+	return manifest.map((item) =>
+		createArtifact(
+			getVariableAssetKey(tag.id, tag.version, item.filename),
+			getPackageFile(packageFiles, item.sourceFilename),
+			item.extension,
 		),
-		request.target.isVariable ? new Set() : publishedFiles,
-		request.target.isVariable ? publishedFiles : undefined,
 	);
-	const entry = findFontPackageEntry(manifest, request.target);
-
-	if (!entry) {
-		throw new HTTPException(404, {
-			message: `Requested file ${request.target.file} not found for ${request.tag.id}@${request.tag.version}`,
-		});
-	}
-
-	const built = isStaticEntry(entry)
-		? await buildStaticArtifacts(request.tag, [entry])
-		: await buildVariableArtifacts(request.tag, [entry]);
-
-	if (built.length === 0) {
-		throw new HTTPException(404, {
-			message: `No artifact published for ${request.tag.id}@${request.tag.version}/${request.target.file}`,
-		});
-	}
-
-	await storeArtifacts(built);
-
-	console.log(
-		`[artifacts] built single file ${request.tag.id}@${request.tag.version}/${request.target.file}`,
-	);
-
-	return built.length;
 };
 
 const readPackageArchive = async (
@@ -307,6 +166,51 @@ const readPackageArchive = async (
 	);
 };
 
+const buildPackageArtifacts = async (
+	request: BuildPackageRequest,
+): Promise<number> => {
+	const packageFiles = await readPackageArchive(
+		request.tag.id,
+		request.tag.version,
+		request.mode === 'variable',
+	);
+	const manifest = resolveFontPackageManifest(
+		request.metadata,
+		request.metadata.variable || undefined,
+	);
+
+	const built =
+		request.mode === 'variable'
+			? buildVariableArtifacts(
+					request.tag,
+					manifest.variable.filter((item) =>
+						packageFiles.has(item.sourceFilename),
+					),
+					packageFiles,
+				)
+			: await buildStaticArtifacts(
+					request.tag,
+					manifest.static.filter((item) =>
+						packageFiles.has(item.sourceFilename),
+					),
+					packageFiles,
+				);
+
+	if (built.length === 0) {
+		throw new Error(
+			`No ${request.mode} artifacts published for ${request.tag.id}@${request.tag.version}`,
+		);
+	}
+
+	await Promise.all(uploadArtifacts(built));
+
+	console.log(
+		`[artifacts] built ${built.length} ${request.mode} package artifacts for ${request.tag.id}@${request.tag.version}`,
+	);
+
+	return built.length;
+};
+
 const buildDownloadArtifacts = async (
 	request: BuildDownloadRequest,
 ): Promise<number> => {
@@ -338,11 +242,15 @@ const buildDownloadArtifacts = async (
 		);
 	}
 
-	const [staticArtifacts, variableArtifacts, license] = await Promise.all([
-		buildStaticArtifacts(staticTag, staticManifest, staticPackage),
-		buildVariableArtifacts(variableTag, variableManifest, variablePackage),
-		getPackageFile(staticPackage, 'LICENSE'),
-	]);
+	const license = getPackageFile(staticPackage, 'LICENSE');
+	const staticArtifacts = await buildStaticArtifacts(
+		staticTag,
+		staticManifest,
+		staticPackage,
+	);
+	const variableArtifacts = variablePackage
+		? buildVariableArtifacts(variableTag, variableManifest, variablePackage)
+		: [];
 	const artifacts = [...staticArtifacts, ...variableArtifacts];
 	const builtByKey = new Map(
 		artifacts.map((artifact) => [artifact.key, artifact.bytes]),
@@ -405,6 +313,6 @@ const buildDownloadArtifacts = async (
 export const buildArtifacts = async (
 	request: BuildVersionRequest,
 ): Promise<number> =>
-	request.mode === 'file'
-		? await buildSingleArtifact(request)
-		: await buildDownloadArtifacts(request);
+	request.mode === 'download'
+		? await buildDownloadArtifacts(request)
+		: await buildPackageArtifacts(request);

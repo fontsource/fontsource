@@ -1,6 +1,4 @@
 import type { SourceFontMetadata } from './catalog';
-import type { FontPackageTarget } from './font-package-manifest';
-
 /**
  * Version target shared by the Worker and container.
  */
@@ -9,11 +7,10 @@ export interface BuildVersionTag {
 	version: string;
 }
 
-export interface BuildFileRequest {
-	mode: 'file';
+export interface BuildPackageRequest {
+	mode: 'static' | 'variable';
 	tag: BuildVersionTag;
 	metadata: SourceFontMetadata;
-	target: FontPackageTarget;
 }
 
 export interface BuildDownloadRequest {
@@ -23,14 +20,11 @@ export interface BuildDownloadRequest {
 	metadata: SourceFontMetadata;
 }
 
-export type BuildVersionRequest = BuildDownloadRequest | BuildFileRequest;
+export type BuildVersionRequest = BuildDownloadRequest | BuildPackageRequest;
 
 export interface BuildVersionResponse {
 	state: 'ready';
 	buildKey: string;
-	mode?: BuildVersionRequest['mode'];
-	artifactCount?: number;
-	durationMs?: number;
 }
 
 export interface BuildVersionFailure {
@@ -50,15 +44,5 @@ export type BuildVersionStatus = BuildVersionBuilding | BuildVersionFailure;
 
 export const getBuildKey = (request: BuildVersionRequest): string =>
 	request.mode === 'download'
-		? `build:${request.metadata.id}@${request.staticVersion}${request.variableVersion && request.variableVersion !== request.staticVersion ? `+vf@${request.variableVersion}` : ''}`
-		: `build:${request.tag.id}@${request.tag.version}`;
-
-export const getBuildRequestKey = (request: BuildVersionRequest): string =>
-	request.mode === 'download'
-		? `${getBuildKey(request)}:download`
-		: [
-				getBuildKey(request),
-				'file',
-				request.target.isVariable ? 'variable' : 'static',
-				request.target.file,
-			].join(':');
+		? `build:${request.metadata.id}@${request.staticVersion}${request.variableVersion && request.variableVersion !== request.staticVersion ? `+vf@${request.variableVersion}` : ''}:download`
+		: `build:${request.tag.id}@${request.tag.version}:${request.mode}`;

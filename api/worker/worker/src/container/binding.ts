@@ -1,4 +1,4 @@
-import { Container } from '@cloudflare/containers';
+import { Container, type StopParams } from '@cloudflare/containers';
 
 import type {
 	BuildVersionFailure,
@@ -7,7 +7,7 @@ import type {
 	BuildVersionResult,
 	BuildVersionStatus,
 } from '../../../shared/build';
-import { getBuildKey, getBuildRequestKey } from '../../../shared/build';
+import { getBuildKey } from '../../../shared/build';
 import { getBuilderStartupEnv } from '../env';
 
 const BUILD_TIMEOUT_MS = 10 * 60_000;
@@ -41,10 +41,15 @@ export class ArtifactBuilder extends Container<Env> {
 	defaultPort = 3000;
 	sleepAfter = '2m';
 	enableInternet = true;
-	private activeBuilds = new Map<string, Promise<BuildVersionResult>>();
-	private failedBuilds = new Map<string, BuildVersionFailure>();
+	// The binding name is the build key, so each Durable Object owns one job.
+	private activeBuild?: Promise<BuildVersionResult>;
+	private failedBuild?: BuildVersionFailure;
 
-	async buildVersion(
+	override onStop({ exitCode, reason }: StopParams): void {
+		console.log('[container] stopped', { exitCode, reason });
+	}
+
+	private async executeBuild(
 		request: BuildVersionRequest,
 	): Promise<BuildVersionResult> {
 		try {
@@ -87,40 +92,75 @@ export class ArtifactBuilder extends Container<Env> {
 				status: 502,
 				error: `Bad Gateway. Artifact build failed for ${buildKey}: ${message}`,
 			};
+		} finally {
+			try {
+				await this.stop();
+			} catch (error) {
+				console.error(
+					'[container] failed to stop completed instance; destroying it',
+					error,
+				);
+				try {
+					await this.destroy();
+				} catch (destroyError) {
+					console.error(
+						'[container] failed to destroy completed instance',
+						destroyError,
+					);
+				}
+			}
 		}
 	}
 
-	async startBuild(request: BuildVersionRequest): Promise<BuildVersionStatus> {
-		const requestKey = getBuildRequestKey(request);
-		const failed = this.failedBuilds.get(requestKey);
-
-		if (failed) {
-			// Report the failure once; a later request can retry the cold build.
-			this.failedBuilds.delete(requestKey);
-			return failed;
+	private getOrStartBuild(
+		request: BuildVersionRequest,
+	): Promise<BuildVersionResult> {
+		if (this.activeBuild) {
+			return this.activeBuild;
 		}
 
-		if (this.activeBuilds.has(requestKey)) {
+		const build = this.executeBuild(request).finally(() => {
+			if (this.activeBuild === build) {
+				this.activeBuild = undefined;
+			}
+		});
+		this.activeBuild = build;
+		return build;
+	}
+
+	async buildVersion(
+		request: BuildVersionRequest,
+	): Promise<BuildVersionResult> {
+		return await this.getOrStartBuild(request);
+	}
+
+	async startBuild(request: BuildVersionRequest): Promise<BuildVersionStatus> {
+		if (this.failedBuild) {
+			// Report the failure once; a later request can retry the cold build.
+			const failure = this.failedBuild;
+			this.failedBuild = undefined;
+			return failure;
+		}
+
+		const buildKey = getBuildKey(request);
+		if (this.activeBuild) {
 			return {
 				state: 'building',
-				buildKey: getBuildKey(request),
+				buildKey,
 			};
 		}
 
-		// The pending container I/O keeps the Durable Object active after this RPC
-		// returns; the map makes later RPCs join the same logical build.
-		const build = this.buildVersion(request).then((result) => {
-			this.activeBuilds.delete(requestKey);
+		const build = this.getOrStartBuild(request).then((result) => {
 			if (result.state === 'failed') {
-				this.failedBuilds.set(requestKey, result);
+				this.failedBuild = result;
 			}
 			return result;
 		});
-		this.activeBuilds.set(requestKey, build);
+		this.ctx.waitUntil(build);
 
 		return {
 			state: 'building',
-			buildKey: getBuildKey(request),
+			buildKey,
 		};
 	}
 }

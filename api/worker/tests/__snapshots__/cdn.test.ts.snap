@@ -27,7 +27,7 @@ exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = 
 exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
 {
   "body": {
-    "error": "Bad Gateway. Artifact build failed for build:abel@5.0.0: Mocked builder failure for build:abel@5.0.0",
+    "error": "Bad Gateway. Artifact build failed for build:abel@5.0.0:static: Mocked builder failure for build:abel@5.0.0:static",
     "status": 502,
   },
   "headers": {

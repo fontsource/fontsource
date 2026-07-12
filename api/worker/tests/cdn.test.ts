@@ -493,7 +493,7 @@ describe('cdn routes', () => {
 
 	it('returns a failed asynchronous download build on the next poll', async () => {
 		const builder = installArtifactBuilderMock(testEnv, {
-			failBuildKeys: ['build:abel@5.0.0'],
+			failBuildKeys: ['build:abel@5.0.0:download'],
 		});
 		const url = 'https://fontsource.test/v1/download/abel';
 
@@ -508,7 +508,9 @@ describe('cdn routes', () => {
 		await failed.settle();
 
 		expect(failed.response.status).toBe(502);
-		expect(body.error).toContain('Mocked builder failure for build:abel@5.0.0');
+		expect(body.error).toContain(
+			'Mocked builder failure for build:abel@5.0.0:download',
+		);
 		expect(builder.calls).toHaveBeenCalledTimes(1);
 	});
 
@@ -573,15 +575,21 @@ describe('cdn routes', () => {
 
 		expect(builder.calls).toHaveBeenCalledTimes(1);
 		expect(builder.calls).toHaveBeenCalledWith(
-			expect.objectContaining({ mode: 'file' }),
+			expect.objectContaining({ mode: 'static' }),
 		);
 	});
 
-	it('joins concurrent cold requests for the same build key', async () => {
-		const builder = installArtifactBuilderMock(testEnv);
-		const url = 'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.ttf';
+	it('joins concurrent cold requests for different files in one package', async () => {
+		const builder = installArtifactBuilderMock(testEnv, { buildDelayMs: 25 });
+		const ttfUrl =
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.ttf';
+		const woff2Url =
+			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
 
-		const [first, second] = await Promise.all([dispatch(url), dispatch(url)]);
+		const [first, second] = await Promise.all([
+			dispatch(ttfUrl),
+			dispatch(woff2Url),
+		]);
 		const firstBytes = await first.response.arrayBuffer();
 		const secondBytes = await second.response.arrayBuffer();
 		await Promise.all([first.settle(), second.settle()]);
@@ -589,45 +597,46 @@ describe('cdn routes', () => {
 		expect(first.response.status).toBe(200);
 		expect(second.response.status).toBe(200);
 		expect(firstBytes.byteLength).toBe(staticTtfBytes.byteLength);
-		expect(secondBytes.byteLength).toBe(staticTtfBytes.byteLength);
+		expect(secondBytes.byteLength).toBe(staticWoff2Bytes.byteLength);
 		expect(builder.calls).toHaveBeenCalledTimes(1);
+	});
+
+	it('builds static and variable packages independently', async () => {
+		const builder = installArtifactBuilderMock(testEnv, { buildDelayMs: 25 });
+		const [staticResult, variableResult] = await Promise.all([
+			dispatch(
+				'https://fontsource.test/fonts/recursive@5.0.0/latin-400-normal.woff2',
+			),
+			dispatch(
+				'https://fontsource.test/fonts/recursive:vf@5.0.0/latin-full-normal.woff2',
+			),
+		]);
+		await Promise.all([
+			staticResult.response.arrayBuffer(),
+			variableResult.response.arrayBuffer(),
+		]);
+		await Promise.all([staticResult.settle(), variableResult.settle()]);
+
+		expect(staticResult.response.status).toBe(200);
+		expect(variableResult.response.status).toBe(200);
+		expect(builder.calls).toHaveBeenCalledTimes(2);
+		expect(builder.calls.mock.calls.map(([request]) => request)).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({ mode: 'static' }),
+				expect.objectContaining({ mode: 'variable' }),
+			]),
+		);
 	});
 
 	it('returns 502 when the artifact builder fails', async () => {
 		installArtifactBuilderMock(testEnv, {
-			failBuildKeys: ['build:abel@5.0.0'],
+			failBuildKeys: ['build:abel@5.0.0:static'],
 		});
 		expect(
 			await jsonSnapshot(
 				'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.ttf',
 			),
 		).toMatchSnapshot();
-	});
-
-	it('returns 404 when the requested exact-version file is not published', async () => {
-		installArtifactBuilderMock(testEnv, {
-			failBuilds: [
-				{
-					buildKey: 'build:abel@5.0.0',
-					mode: 'file',
-					status: 404,
-				},
-			],
-		});
-
-		const result = await dispatch(
-			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2',
-		);
-		const payload = (await result.response.json()) as {
-			status: number;
-			error: string;
-		};
-		await result.settle();
-
-		expect(result.response.status).toBe(404);
-		expect(payload.error).toContain(
-			'Mocked builder failure for build:abel@5.0.0',
-		);
 	});
 
 	it('short-circuits unpublished exact-version files before the builder runs', async () => {
