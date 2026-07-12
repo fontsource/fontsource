@@ -19,7 +19,7 @@ interface CollectionFilterProps {
 const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 	const store = useCollectionsStore();
 	const ready = useValue(store.ready$);
-	const collections = useValue(store.collections$);
+	const collections = useValue(store.getCollections);
 	const [createOpened, setCreateOpened] = useState(false);
 	const [manageOpened, setManageOpened] = useState(false);
 	const [query, setQuery] = useState('');

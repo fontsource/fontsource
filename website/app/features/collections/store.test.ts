@@ -1,3 +1,4 @@
+import { observe } from '@legendapp/state';
 import { describe, expect, it } from 'vitest';
 
 import type { FontSummary } from '@/utils/types';
@@ -18,6 +19,27 @@ const createReadyStore = () => {
 };
 
 describe('collections store', () => {
+	it('reacts to new collections and favorite changes', () => {
+		const store = createReadyStore();
+		const favoritesId = store.getFavoritesCollectionId();
+		let collectionCount = 0;
+		let isFavorite = false;
+		const disposeCollections = observe(() => {
+			collectionCount = store.getCollections().length;
+		});
+		const disposeFavorite = observe(() => {
+			isFavorite = store.hasFont(favoritesId, inter.id);
+		});
+
+		store.createCollection('Review');
+		store.addFontToCollection(favoritesId, inter);
+
+		expect(collectionCount).toBe(2);
+		expect(isFavorite).toBe(true);
+		disposeCollections();
+		disposeFavorite();
+	});
+
 	it('manages collections and prunes font metadata when it is no longer used', () => {
 		const store = createReadyStore();
 		const favoritesId = store.getFavoritesCollectionId();

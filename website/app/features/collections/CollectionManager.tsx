@@ -66,7 +66,7 @@ const CreateCollectionModal = ({
 	opened,
 }: CreateCollectionModalProps) => {
 	const store = useCollectionsStore();
-	const collections = useValue(store.collections$);
+	const collections = useValue(store.getCollections);
 	const fullScreen = useMediaQuery('(max-width: 48em)');
 	const [name, setName] = useState('');
 	const normalizedName = name.trim();
@@ -110,7 +110,6 @@ const CreateCollectionModal = ({
 						label="Collection name"
 						maxLength={MAX_COLLECTION_NAME_LENGTH}
 						onChange={(event) => setName(event.currentTarget.value)}
-						placeholder="Brand exploration"
 						value={name}
 					/>
 					{font && (
@@ -145,7 +144,7 @@ const ManageCollectionsModal = ({
 	opened,
 }: ManageCollectionsModalProps) => {
 	const store = useCollectionsStore();
-	const collections = useValue(store.collections$);
+	const collections = useValue(store.getCollections);
 	const fontCache = useValue(store.state$.fontCache);
 	const fullScreen = useMediaQuery('(max-width: 48em)');
 	const [query, setQuery] = useState('');

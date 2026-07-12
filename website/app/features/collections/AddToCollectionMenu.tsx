@@ -26,7 +26,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 	const store = useCollectionsStore();
 	const navigate = useNavigate();
 	const ready = useValue(store.ready$);
-	const collections = useValue(store.collections$);
+	const collections = useValue(store.getCollections);
 	const customCollections = collections.filter(
 		(collection) => collection.kind === 'custom',
 	);

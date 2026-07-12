@@ -48,11 +48,14 @@ const createCollectionsStore = (
 		invariant(id, 'Collections state is missing Favorites.');
 		return id;
 	};
+	const getCollections = () =>
+		state$.collections.map((collection$) => collection$.get());
 
 	const hasFont = (collectionId: string, fontId: string) =>
 		state$.collections
 			.find((collection$) => collection$.id.peek() === collectionId)
-			?.fontIds.includes(fontId) ?? false;
+			?.fontIds.get()
+			.includes(fontId) ?? false;
 
 	const createCollection = (name: string) => {
 		if (!isReady()) return;
@@ -141,6 +144,7 @@ const createCollectionsStore = (
 		state$,
 		collections$: state$.collections,
 		ready$,
+		getCollections,
 		getFavoritesCollectionId,
 		hasFont,
 		createCollection,
