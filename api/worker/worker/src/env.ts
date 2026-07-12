@@ -14,7 +14,13 @@ export type AppEnv = {
 };
 
 export const parseEnv = (env: Env): void => {
-	for (const binding of ['METADATA', 'FONTS', 'ARTIFACT_BUILDER'] as const) {
+	for (const binding of [
+		'METADATA',
+		'FONTS',
+		'ARTIFACT_BUILDER',
+		'STATS',
+		'STATS_QUEUE',
+	] as const) {
 		if (env[binding] === undefined) {
 			throw new Error(`Missing Worker binding: ${binding}`);
 		}

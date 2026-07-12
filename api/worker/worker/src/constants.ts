@@ -53,6 +53,9 @@ export const KV_CACHE_TTLS = {
 
 export const DERIVED_METADATA_CACHE_TTL_MS = 5 * 60 * 1000;
 
+export const METADATA_CRON = '0 */3 * * *';
+export const STATS_CRON = '15 0 * * *';
+
 export const CONTENT_TYPES: Record<string, string> = {
 	css: 'text/css; charset=utf-8',
 	json: 'application/json; charset=utf-8',
