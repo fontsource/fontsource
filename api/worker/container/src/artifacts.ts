@@ -9,12 +9,6 @@ import type {
 	BuildVersionTag,
 } from '../../shared/build';
 import {
-	filterPublishedManifest,
-	resolveFontPackageManifest,
-	type StaticFontEntry,
-	type VariableFontEntry,
-} from '../../shared/font-package-manifest';
-import {
 	BINARY_CONTENT_TYPES,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../../shared/http-metadata';
@@ -28,16 +22,19 @@ import { putObject } from './r2';
 
 interface BuiltArtifact {
 	key: string;
+	filename: string;
 	bytes: Uint8Array;
-	extension: StaticFontEntry['extension'] | VariableFontEntry['extension'];
+	extension: 'woff2' | 'woff' | 'ttf';
 }
 
 const createArtifact = (
 	key: string,
+	filename: string,
 	bytes: Uint8Array,
 	extension: BuiltArtifact['extension'],
 ): BuiltArtifact => ({
 	key,
+	filename,
 	bytes,
 	extension,
 });
@@ -68,23 +65,25 @@ const uploadArtifacts = (
 
 const buildStaticArtifacts = async (
 	tag: BuildVersionTag,
-	manifest: readonly StaticFontEntry[],
 	packageFiles: ReadonlyMap<string, Uint8Array>,
 ): Promise<BuiltArtifact[]> => {
-	const copyPlan = manifest.filter((item) => item.buildMode === 'copy');
-	const convertPlan = manifest.filter(
-		(item) => item.buildMode === 'convert-woff-to-ttf',
+	const copyPlan = [...packageFiles].filter(
+		([filename]) => filename.endsWith('.woff2') || filename.endsWith('.woff'),
+	);
+	const convertPlan = copyPlan.filter(([filename]) =>
+		filename.endsWith('.woff2'),
 	);
 
 	console.log(
 		`[artifacts] static build plan: copy=${copyPlan.length}, convert=${convertPlan.length}`,
 	);
 
-	const copied = copyPlan.map((item) =>
+	const copied = copyPlan.map(([filename, bytes]) =>
 		createArtifact(
-			getStaticAssetKey(tag.id, tag.version, item.filename),
-			getPackageFile(packageFiles, item.sourceFilename),
-			item.extension,
+			getStaticAssetKey(tag.id, tag.version, filename),
+			filename,
+			bytes,
+			filename.endsWith('.woff2') ? 'woff2' : 'woff',
 		),
 	);
 
@@ -96,18 +95,20 @@ const buildStaticArtifacts = async (
 	try {
 		const converted = await Promise.all(
 			convertPlan.map(
-				limitConcur(8, async (item) => {
+				limitConcur(8, async ([sourceFilename, bytes]) => {
+					const filename = sourceFilename.replace(/\.woff2$/, '.ttf');
 					const [{ data }] = await convertFont(
 						ctx,
-						getPackageFile(packageFiles, item.sourceFilename),
+						bytes,
 						['ttf'],
-						`${tag.id}-${item.sourceFilename}`,
+						`${tag.id}-${sourceFilename}`,
 					);
 
 					return createArtifact(
-						getStaticAssetKey(tag.id, tag.version, item.filename),
+						getStaticAssetKey(tag.id, tag.version, filename),
+						filename,
 						data,
-						item.extension,
+						'ttf',
 					);
 				}),
 			),
@@ -121,16 +122,19 @@ const buildStaticArtifacts = async (
 
 const buildVariableArtifacts = (
 	tag: BuildVersionTag,
-	manifest: readonly VariableFontEntry[],
 	packageFiles: ReadonlyMap<string, Uint8Array>,
 ): BuiltArtifact[] => {
-	console.log(`[artifacts] variable build plan: files=${manifest.length}`);
+	const sources = [...packageFiles].filter(([filename]) =>
+		filename.endsWith('.woff2'),
+	);
+	console.log(`[artifacts] variable build plan: files=${sources.length}`);
 
-	return manifest.map((item) =>
+	return sources.map(([filename, bytes]) =>
 		createArtifact(
-			getVariableAssetKey(tag.id, tag.version, item.filename),
-			getPackageFile(packageFiles, item.sourceFilename),
-			item.extension,
+			getVariableAssetKey(tag.id, tag.version, filename),
+			filename,
+			bytes,
+			'woff2',
 		),
 	);
 };
@@ -174,27 +178,11 @@ const buildPackageArtifacts = async (
 		request.tag.version,
 		request.mode === 'variable',
 	);
-	const manifest = resolveFontPackageManifest(
-		request.metadata,
-		request.metadata.variable || undefined,
-	);
 
 	const built =
 		request.mode === 'variable'
-			? buildVariableArtifacts(
-					request.tag,
-					manifest.variable.filter((item) =>
-						packageFiles.has(item.sourceFilename),
-					),
-					packageFiles,
-				)
-			: await buildStaticArtifacts(
-					request.tag,
-					manifest.static.filter((item) =>
-						packageFiles.has(item.sourceFilename),
-					),
-					packageFiles,
-				);
+			? buildVariableArtifacts(request.tag, packageFiles)
+			: await buildStaticArtifacts(request.tag, packageFiles);
 
 	if (built.length === 0) {
 		throw new Error(
@@ -229,60 +217,34 @@ const buildDownloadArtifacts = async (
 			? readPackageArchive(id, request.variableVersion, true)
 			: undefined,
 	]);
-	const { static: staticManifest, variable: variableManifest } =
-		filterPublishedManifest(
-			resolveFontPackageManifest(request.metadata, axes),
-			new Set(staticPackage.keys()),
-			variablePackage ? new Set(variablePackage.keys()) : undefined,
-		);
-
-	if (staticManifest.length === 0 || (axes && variableManifest.length === 0)) {
+	const license = getPackageFile(staticPackage, 'LICENSE');
+	const staticArtifacts = await buildStaticArtifacts(staticTag, staticPackage);
+	const variableArtifacts = variablePackage
+		? buildVariableArtifacts(variableTag, variablePackage)
+		: [];
+	if (staticArtifacts.length === 0) {
 		throw new Error(
-			`No artifacts published for ${id}@${request.staticVersion}`,
+			`No static artifacts published for ${id}@${request.staticVersion}`,
+		);
+	}
+	if (axes && variableArtifacts.length === 0) {
+		throw new Error(
+			`No variable artifacts published for ${id}@${request.variableVersion}`,
 		);
 	}
 
-	const license = getPackageFile(staticPackage, 'LICENSE');
-	const staticArtifacts = await buildStaticArtifacts(
-		staticTag,
-		staticManifest,
-		staticPackage,
-	);
-	const variableArtifacts = variablePackage
-		? buildVariableArtifacts(variableTag, variableManifest, variablePackage)
-		: [];
 	const artifacts = [...staticArtifacts, ...variableArtifacts];
-	const builtByKey = new Map(
-		artifacts.map((artifact) => [artifact.key, artifact.bytes]),
-	);
-	const archiveEntries = [
-		...staticManifest.map((item) => ({
-			item,
-			key: getStaticAssetKey(id, request.staticVersion, item.filename),
-			directory: 'static',
-		})),
-		...variableManifest.map((item) => ({
-			item,
-			key: getVariableAssetKey(id, variableVersion, item.filename),
-			directory: 'variable',
-		})),
-	].map(({ item, key, directory }) => {
-		const bytes = builtByKey.get(key);
-		if (!bytes) {
-			throw new Error(`Expected artifact ${key} was not built`);
-		}
-
-		return {
-			path: `${directory}/${id}-${item.filename}`,
-			bytes,
-			compress: item.buildMode === 'copy',
-		};
-	});
 	const archive = zipSync(
 		Object.fromEntries([
-			...archiveEntries.map((entry) => [
-				entry.path,
-				entry.compress ? [entry.bytes, { level: 0 }] : entry.bytes,
+			...staticArtifacts.map((artifact) => [
+				`static/${id}-${artifact.filename}`,
+				artifact.extension === 'ttf'
+					? artifact.bytes
+					: [artifact.bytes, { level: 0 }],
+			]),
+			...variableArtifacts.map((artifact) => [
+				`variable/${id}-${artifact.filename}`,
+				[artifact.bytes, { level: 0 }],
 			]),
 			['LICENSE', license],
 		]),

@@ -428,7 +428,7 @@ const putStaticArtifacts = async (
 	for (const item of resolveFontPackageManifest(metadata).static) {
 		const bytes = await putStaticArtifact(env, metadata, version, item);
 		zipFiles[`static/${metadata.id}-${item.filename}`] =
-			item.buildMode === 'copy' ? [bytes, { level: 0 }] : bytes;
+			item.extension === 'ttf' ? bytes : [bytes, { level: 0 }];
 		artifactCount += 1;
 	}
 

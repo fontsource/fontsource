@@ -160,6 +160,12 @@ describe('container artifact builder', () => {
 		await expect(buildArtifacts(request)).resolves.toBe(3);
 
 		expect(convertFont).toHaveBeenCalledTimes(1);
+		expect(convertFont).toHaveBeenCalledWith(
+			expect.anything(),
+			staticWoff2Bytes,
+			['ttf'],
+			'familypack-latin-400-normal.woff2',
+		);
 		expect(putObject.mock.calls.map(([key]) => key).sort()).toEqual([
 			'familypack@1.0.0/latin-400-normal.ttf',
 			'familypack@1.0.0/latin-400-normal.woff',
@@ -251,8 +257,27 @@ describe('container artifact builder', () => {
 		);
 	});
 
-	it('combines exact static and variable package versions', async () => {
+	it('combines exact package versions using published variable filenames', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
+		const fallbackFilename = 'fallback-mono-normal.woff2';
+		const variableTarball = gzipSync(
+			await packTar([
+				{
+					header: {
+						name: `package/files/recursive-${fallbackFilename}`,
+						size: variableWoff2Bytes.byteLength,
+						type: 'file',
+					},
+					body: variableWoff2Bytes,
+				},
+			]),
+		);
+		fetchPackageTarball.mockImplementation(
+			async (id: string, _version: string, isVariable = false) =>
+				tarballStream(
+					isVariable ? variableTarball : await createPackageTarball(id, false),
+				),
+		);
 
 		await buildArtifacts({
 			mode: 'download',
@@ -279,7 +304,7 @@ describe('container artifact builder', () => {
 		expect(Object.keys(archive)).toEqual(
 			expect.arrayContaining([
 				'static/recursive-latin-400-normal.woff2',
-				'variable/recursive-latin-full-normal.woff2',
+				`variable/recursive-${fallbackFilename}`,
 				'LICENSE',
 			]),
 		);

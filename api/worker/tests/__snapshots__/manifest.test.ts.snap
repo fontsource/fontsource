@@ -3,7 +3,6 @@
 exports[`generates static manifest entries 1`] = `
 [
   {
-    "buildMode": "copy",
     "extension": "woff2",
     "filename": "latin-400-normal.woff2",
     "sourceFilename": "latin-400-normal.woff2",
@@ -12,7 +11,6 @@ exports[`generates static manifest entries 1`] = `
     "weight": 400,
   },
   {
-    "buildMode": "copy",
     "extension": "woff",
     "filename": "latin-400-normal.woff",
     "sourceFilename": "latin-400-normal.woff",
@@ -21,10 +19,9 @@ exports[`generates static manifest entries 1`] = `
     "weight": 400,
   },
   {
-    "buildMode": "convert-woff-to-ttf",
     "extension": "ttf",
     "filename": "latin-400-normal.ttf",
-    "sourceFilename": "latin-400-normal.woff",
+    "sourceFilename": "latin-400-normal.woff2",
     "style": "normal",
     "subset": "latin",
     "weight": 400,
@@ -36,7 +33,6 @@ exports[`generates variable manifest entries 1`] = `
 [
   {
     "axisKey": "MONO",
-    "buildMode": "copy",
     "extension": "woff2",
     "filename": "latin-mono-normal.woff2",
     "sourceFilename": "latin-mono-normal.woff2",
@@ -45,7 +41,6 @@ exports[`generates variable manifest entries 1`] = `
   },
   {
     "axisKey": "full",
-    "buildMode": "copy",
     "extension": "woff2",
     "filename": "latin-full-normal.woff2",
     "sourceFilename": "latin-full-normal.woff2",
