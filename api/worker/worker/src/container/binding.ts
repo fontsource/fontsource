@@ -39,7 +39,7 @@ export const readBuildErrorMessage = async (
  */
 export class ArtifactBuilder extends Container<Env> {
 	defaultPort = 3000;
-	sleepAfter = '2m';
+	sleepAfter = '1s';
 	enableInternet = true;
 	private activeBuilds = new Map<string, Promise<BuildVersionResult>>();
 	private failedBuilds = new Map<string, BuildVersionFailure>();

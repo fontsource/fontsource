@@ -6,6 +6,9 @@ workers_dev = true
 compatibility_flags = ["nodejs_compat"]
 compatibility_date = "2025-08-15"
 
+[placement]
+mode = "smart"
+
 [cache]
 enabled = true
 

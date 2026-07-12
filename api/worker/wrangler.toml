@@ -12,6 +12,9 @@ r2_buckets = [
   { binding = "FONTS", bucket_name = "fontsource-artifacts" },
 ]
 
+[placement]
+mode = "smart"
+
 [[durable_objects.bindings]]
 name = "ARTIFACT_BUILDER"
 class_name = "ArtifactBuilder"
