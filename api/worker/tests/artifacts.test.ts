@@ -1,4 +1,5 @@
-import { unzipSync } from 'fflate';
+import { gzipSync, unzipSync } from 'fflate';
+import { packTar } from 'modern-tar';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { BuildVersionRequest } from '../shared/build';
 import { resolveFontPackageManifest } from '../shared/font-package-manifest';
@@ -17,7 +18,7 @@ const {
 	putObject,
 	fetchPackageAssetBytes,
 	fetchPackageFileList,
-	fetchPackageLicenseBytes,
+	fetchPackageTarball,
 	convertFont,
 	destroy,
 	createFontContext,
@@ -28,7 +29,7 @@ const {
 		putObject: vi.fn(),
 		fetchPackageAssetBytes: vi.fn(),
 		fetchPackageFileList: vi.fn(),
-		fetchPackageLicenseBytes: vi.fn(),
+		fetchPackageTarball: vi.fn(),
 		convertFont: vi.fn(),
 		destroy,
 		createFontContext: vi.fn(() => ({ destroy })),
@@ -49,7 +50,7 @@ vi.mock('../shared/upstream', async () => {
 		...actual,
 		fetchPackageAssetBytes,
 		fetchPackageFileList,
-		fetchPackageLicenseBytes,
+		fetchPackageTarball,
 	};
 });
 
@@ -66,11 +67,69 @@ vi.mock('@fontsource-utils/core', async () => {
 });
 
 describe('container artifact builder', () => {
+	const createPackageTarball = async (
+		id: string,
+		isVariable = false,
+		publishedFiles?: ReadonlySet<string>,
+	): Promise<Uint8Array> => {
+		const metadata = testCatalog[id];
+		if (!metadata) {
+			throw new Error(`Missing test metadata for ${id}`);
+		}
+
+		const manifest = resolveFontPackageManifest(
+			metadata,
+			isVariable ? metadata.variable || undefined : undefined,
+		);
+		const entries = isVariable ? manifest.variable : manifest.static;
+		const files: Array<[string, Uint8Array]> = [];
+
+		for (const filename of new Set(
+			entries.map((item) => item.sourceFilename),
+		)) {
+			if (publishedFiles && !publishedFiles.has(filename)) {
+				continue;
+			}
+
+			const bytes = isVariable
+				? variableWoff2Bytes
+				: filename.endsWith('.woff2')
+					? staticWoff2Bytes
+					: staticWoffBytes;
+			files.push([`package/files/${id}-${filename}`, bytes]);
+		}
+
+		if (!isVariable) {
+			files.push([
+				'package/LICENSE',
+				new TextEncoder().encode('Example License'),
+			]);
+		}
+
+		return gzipSync(
+			await packTar(
+				files.map(([name, body]) => ({
+					header: { name, size: body.byteLength, type: 'file' },
+					body,
+				})),
+			),
+		);
+	};
+
+	const tarballStream = (tarball: Uint8Array): ReadableStream<Uint8Array> => {
+		const body = new Response(tarball).body;
+		if (!body) {
+			throw new Error('Missing test tarball body');
+		}
+
+		return body;
+	};
+
 	beforeEach(() => {
 		putObject.mockReset();
 		fetchPackageAssetBytes.mockReset();
 		fetchPackageFileList.mockReset();
-		fetchPackageLicenseBytes.mockReset();
+		fetchPackageTarball.mockReset();
 		convertFont.mockReset();
 		destroy.mockReset();
 		createFontContext.mockClear();
@@ -101,8 +160,10 @@ describe('container artifact builder', () => {
 				);
 			},
 		);
-		fetchPackageLicenseBytes.mockResolvedValue(
-			new TextEncoder().encode('Example License'),
+		fetchPackageTarball.mockImplementation(
+			async (id: string, _version: string, isVariable = false) => {
+				return tarballStream(await createPackageTarball(id, isVariable));
+			},
 		);
 		fetchPackageAssetBytes.mockImplementation(
 			async (
@@ -150,7 +211,6 @@ describe('container artifact builder', () => {
 
 		await expect(buildArtifacts(request)).resolves.toBe(1);
 
-		expect(fetchPackageLicenseBytes).not.toHaveBeenCalled();
 		expect(convertFont).not.toHaveBeenCalled();
 		expect(putObject).toHaveBeenCalledTimes(1);
 		expect(putObject).toHaveBeenCalledWith(
@@ -179,7 +239,6 @@ describe('container artifact builder', () => {
 
 		await expect(buildArtifacts(request)).resolves.toBe(1);
 
-		expect(fetchPackageLicenseBytes).not.toHaveBeenCalled();
 		expect(convertFont).not.toHaveBeenCalled();
 		expect(putObject).toHaveBeenCalledTimes(1);
 		expect(putObject).toHaveBeenCalledWith(
@@ -215,7 +274,6 @@ describe('container artifact builder', () => {
 			'latin-400-normal.woff',
 		);
 		expect(convertFont).toHaveBeenCalledTimes(1);
-		expect(fetchPackageLicenseBytes).not.toHaveBeenCalled();
 		expect(putObject).toHaveBeenCalledTimes(1);
 		expect(putObject).toHaveBeenCalledWith(
 			'abel@1.0.0/latin-400-normal.ttf',
@@ -266,11 +324,55 @@ describe('container artifact builder', () => {
 		expect(archive['static/familypack-latin-700-normal.ttf']).toEqual(
 			staticTtfBytes,
 		);
+		expect(fetchPackageAssetBytes).not.toHaveBeenCalled();
+		expect(fetchPackageFileList).not.toHaveBeenCalled();
+		expect(fetchPackageTarball).toHaveBeenCalledWith(
+			'familypack',
+			'1.0.0',
+			false,
+		);
 	});
 
-	it('does not publish the family zip when an artifact upload fails', async () => {
+	it('combines exact static and variable package versions', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
-		putObject.mockRejectedValueOnce(new Error('artifact upload failed'));
+
+		await buildArtifacts({
+			mode: 'download',
+			staticVersion: '1.0.0',
+			variableVersion: '2.0.0',
+			metadata: variableMetadata,
+		});
+
+		expect(fetchPackageTarball).toHaveBeenCalledWith(
+			'recursive',
+			'1.0.0',
+			false,
+		);
+		expect(fetchPackageTarball).toHaveBeenCalledWith(
+			'recursive',
+			'2.0.0',
+			true,
+		);
+
+		const zipPut = putObject.mock.calls.find(
+			([key]) => key === 'recursive@1.0.0+vf@2.0.0/download.zip',
+		);
+		const archive = unzipSync(zipPut?.[1] as Uint8Array);
+		expect(Object.keys(archive)).toEqual(
+			expect.arrayContaining([
+				'static/recursive-latin-400-normal.woff2',
+				'variable/recursive-latin-full-normal.woff2',
+				'LICENSE',
+			]),
+		);
+	});
+
+	it('keeps the download available when an individual warm upload fails', async () => {
+		const { buildArtifacts } = await import('../container/src/artifacts');
+		const errorLog = vi.spyOn(console, 'error').mockImplementation(() => {});
+		putObject
+			.mockResolvedValueOnce(undefined)
+			.mockRejectedValueOnce(new Error('artifact upload failed'));
 
 		await expect(
 			buildArtifacts({
@@ -278,32 +380,69 @@ describe('container artifact builder', () => {
 				staticVersion: '1.0.0',
 				metadata: staticMetadata,
 			}),
-		).rejects.toThrow('artifact upload failed');
+		).resolves.toBeGreaterThan(1);
 
 		expect(
 			putObject.mock.calls.some(([key]) => key === 'abel@1.0.0/download.zip'),
-		).toBe(false);
+		).toBe(true);
+		expect(errorLog).toHaveBeenCalledWith(
+			expect.stringContaining('failed to warm 1/'),
+			expect.arrayContaining([expect.any(Error)]),
+		);
+		errorLog.mockRestore();
+	});
+
+	it('publishes the download before individual warming completes', async () => {
+		const { buildArtifacts } = await import('../container/src/artifacts');
+		const releaseUploads: Array<() => void> = [];
+		putObject.mockImplementation(async (key: string) => {
+			if (key === 'abel@1.0.0/download.zip') {
+				return;
+			}
+
+			await new Promise<void>((resolve) => {
+				releaseUploads.push(resolve);
+			});
+		});
+
+		let finished = false;
+		const build = buildArtifacts({
+			mode: 'download',
+			staticVersion: '1.0.0',
+			metadata: staticMetadata,
+		}).finally(() => {
+			finished = true;
+		});
+
+		await vi.waitFor(() => {
+			expect(
+				putObject.mock.calls.some(([key]) => key === 'abel@1.0.0/download.zip'),
+			).toBe(true);
+			expect(releaseUploads.length).toBeGreaterThan(0);
+		});
+		expect(finished).toBe(false);
+
+		for (const release of releaseUploads) {
+			release();
+		}
+		await expect(build).resolves.toBe(4);
 	});
 
 	it('filters download artifacts to files published for that version', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
-		fetchPackageFileList.mockImplementation(
-			async (id, _version, isVariable = false) => {
-				if (id === testCatalog.familypack.id && !isVariable) {
-					return new Set([
+		fetchPackageTarball.mockResolvedValueOnce(
+			tarballStream(
+				await createPackageTarball(
+					testCatalog.familypack.id,
+					false,
+					new Set([
 						'latin-400-normal.woff2',
 						'latin-400-normal.woff',
 						'latin-700-normal.woff2',
 						'latin-700-normal.woff',
-					]);
-				}
-
-				return new Set(
-					resolveFontPackageManifest(staticMetadata).static.map(
-						(item) => item.sourceFilename,
-					),
-				);
-			},
+					]),
+				),
+			),
 		);
 
 		const request: BuildVersionRequest = {

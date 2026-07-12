@@ -33,6 +33,7 @@ export const UPSTREAM_URLS = {
 		jsdelivrTotal:
 			'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/jsDelivrTotalPopular.json',
 	},
+	npmRegistry: 'https://registry.npmjs.org',
 	jsdelivrPackage: 'https://data.jsdelivr.com/v1/packages/npm',
 	jsdelivrNpm: 'https://cdn.jsdelivr.net/npm',
 	publicApi: 'https://api.fontsource.org',
@@ -70,17 +71,18 @@ const fetchWithCache = async (
 };
 
 /** Fetches an upstream binary with asset-specific cache policy. */
+const fetchBinary = (url: string): Promise<Response> =>
+	fetchWithCache(url, {
+		cacheEverything: true,
+		cacheTtlByStatus: {
+			'200-299': 86400,
+			404: 60,
+			'500-599': 0,
+		},
+	});
+
 const fetchBinaryBytes = async (url: string): Promise<Uint8Array> =>
-	(
-		await fetchWithCache(url, {
-			cacheEverything: true,
-			cacheTtlByStatus: {
-				'200-299': 86400,
-				404: 60,
-				'500-599': 0,
-			},
-		})
-	).bytes();
+	(await fetchBinary(url)).bytes();
 
 const packageScope = (isVariable: boolean): string =>
 	isVariable ? '@fontsource-variable' : '@fontsource';
@@ -131,6 +133,21 @@ export const fetchPackageFileList = async (
 	);
 };
 
+export const fetchPackageTarball = async (
+	id: string,
+	version: string,
+	isVariable = false,
+): Promise<ReadableStream<Uint8Array>> => {
+	const url = `${UPSTREAM_URLS.npmRegistry}/${packageName(id, isVariable)}/-/${id}-${version}.tgz`;
+	const response = await fetchBinary(url);
+
+	if (!response.body) {
+		throw new Error(`Upstream response body was empty: ${url}`);
+	}
+
+	return response.body;
+};
+
 export const fetchPackageAssetBytes = async (
 	id: string,
 	version: string,
@@ -139,13 +156,4 @@ export const fetchPackageAssetBytes = async (
 ): Promise<Uint8Array> =>
 	fetchBinaryBytes(
 		`${UPSTREAM_URLS.jsdelivrNpm}/${packageName(id, isVariable)}@${version}/files/${id}-${file}`,
-	);
-
-export const fetchPackageLicenseBytes = async (
-	id: string,
-	version: string,
-	isVariable = false,
-): Promise<Uint8Array> =>
-	fetchBinaryBytes(
-		`${UPSTREAM_URLS.jsdelivrNpm}/${packageName(id, isVariable)}@${version}/LICENSE`,
 	);

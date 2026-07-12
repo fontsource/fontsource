@@ -26,6 +26,7 @@
 		"fflate": "^0.8.2",
 		"hono": "^4.12.18",
 		"limit-concur": "^4.0.0",
+		"modern-tar": "0.7.6",
 		"zod": "4.4.3"
 	},
 	"devDependencies": {
