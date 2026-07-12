@@ -1,12 +1,9 @@
 import { HTTPException } from 'hono/http-exception';
-import {
-	type BuildVersionRequest,
-	type BuildVersionTag,
-	getBuildKey,
-} from '../shared/build';
-import { ensureBuilt } from './src/builder';
+import { type BuildVersionRequest, getBuildKey } from '../shared/build';
+import { buildArtifacts } from './src/artifacts';
 
 const PORT = 3000;
+let buildStarted = false;
 
 const resp404 = (): Response =>
 	Response.json(
@@ -20,15 +17,14 @@ const resp404 = (): Response =>
 const errorStatus = (error: unknown): number =>
 	error instanceof HTTPException ? error.status : 500;
 
-const respError = (error: unknown, tag?: BuildVersionTag): Response => {
+const respError = (error: unknown, request?: BuildVersionRequest): Response => {
 	const message = error instanceof Error ? error.message : String(error);
 
 	return Response.json(
 		{
 			state: 'failed',
-			buildKey: tag ? getBuildKey(tag) : 'unknown',
+			buildKey: request ? getBuildKey(request) : 'unknown',
 			error: message,
-			builtAt: new Date().toISOString(),
 		},
 		{ status: errorStatus(error) },
 	);
@@ -45,6 +41,13 @@ Bun.serve({
 				let payload: BuildVersionRequest | undefined;
 
 				try {
+					if (buildStarted) {
+						throw new HTTPException(409, {
+							message: 'This container instance already accepted a build.',
+						});
+					}
+					buildStarted = true;
+
 					payload = await request.json();
 					if (!payload) {
 						return respError(
@@ -52,28 +55,26 @@ Bun.serve({
 						);
 					}
 
+					const buildKey = getBuildKey(payload);
+					const startedAt = Date.now();
+					console.log(`[container] starting ${payload.mode} build ${buildKey}`);
+					const artifactCount = await buildArtifacts(payload);
+					const durationMs = Date.now() - startedAt;
+
 					console.log(
-						`[container] POST /build-version ${payload.mode} ${payload.tag.id}@${payload.tag.version}`,
+						`[container] finished ${payload.mode} build ${buildKey} - ${artifactCount} artifacts in ${durationMs}ms`,
 					);
 
-					const snapshot = await ensureBuilt(payload);
-
-					console.log(
-						`[container] build complete ${snapshot.buildKey} - ${snapshot.artifactCount} artifacts in ${snapshot.durationMs}ms`,
-					);
-
-					return Response.json(snapshot, { status: 200 });
+					return Response.json({ state: 'ready', buildKey }, { status: 200 });
 				} catch (error) {
 					console.error(
 						`[container] build failed`,
-						payload
-							? `${payload.tag.id}@${payload.tag.version}`
-							: '(no payload)',
+						payload ? getBuildKey(payload) : '(no payload)',
 						error,
 					);
 
 					if (payload) {
-						return respError(error, payload.tag);
+						return respError(error, payload);
 					}
 
 					return respError(error);

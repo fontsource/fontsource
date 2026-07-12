@@ -2,12 +2,9 @@ import { resolveFontFaces } from '@fontsource-utils/core';
 import type { SourceFontMetadata, VariableAxes } from './catalog';
 import { buildFontConfig } from './font-config';
 
-type FontBuildMode = 'copy' | 'convert-woff-to-ttf';
-
 interface FontEntry {
 	filename: string;
 	sourceFilename: string;
-	buildMode: FontBuildMode;
 	subset: string;
 	style: string;
 }
@@ -73,10 +70,8 @@ const buildStaticPlan = (metadata: SourceFontMetadata): StaticFontEntry[] => {
 				filename: source.publicFilename,
 				sourceFilename:
 					source.format === 'ttf'
-						? source.publicFilename.replace(/\.ttf$/, '.woff')
+						? source.publicFilename.replace(/\.ttf$/, '.woff2')
 						: source.publicFilename,
-				buildMode:
-					source.format === 'ttf' ? 'convert-woff-to-ttf' : ('copy' as const),
 				subset: face.subset,
 				weight,
 				style: face.style,
@@ -108,7 +103,6 @@ const buildVariablePlan = (
 			return {
 				filename: source.publicFilename,
 				sourceFilename: source.publicFilename,
-				buildMode: 'copy' as const,
 				subset: face.subset,
 				axisKey,
 				style: face.style,
@@ -132,18 +126,3 @@ export const findFontPackageEntry = (
 	target.isVariable
 		? manifest.variable.find((item) => item.filename === target.file)
 		: manifest.static.find((item) => item.filename === target.file);
-
-export const filterPublishedManifest = (
-	manifest: FontPackageManifest,
-	publishedStaticFiles: ReadonlySet<string>,
-	publishedVariableFiles?: ReadonlySet<string>,
-): FontPackageManifest => ({
-	static: manifest.static.filter((item) =>
-		publishedStaticFiles.has(item.sourceFilename),
-	),
-	variable: manifest.variable.filter((item) =>
-		publishedVariableFiles
-			? publishedVariableFiles.has(item.sourceFilename)
-			: false,
-	),
-});

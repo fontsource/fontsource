@@ -1,6 +1,4 @@
-import type { SourceFontMetadata, VariableAxes } from './catalog';
-import type { FontPackageTarget } from './font-package-manifest';
-
+import type { SourceFontMetadata } from './catalog';
 /**
  * Version target shared by the Worker and container.
  */
@@ -9,51 +7,42 @@ export interface BuildVersionTag {
 	version: string;
 }
 
-/**
- * Worker-to-container build request.
- */
-export interface BuildVersionRequestBase {
+export interface BuildPackageRequest {
+	mode: 'static' | 'variable';
 	tag: BuildVersionTag;
 	metadata: SourceFontMetadata;
-	axes?: VariableAxes;
 }
 
-export interface BuildFamilyRequest extends BuildVersionRequestBase {
-	mode: 'family';
+export interface BuildDownloadRequest {
+	mode: 'download';
+	staticVersion: string;
+	variableVersion?: string;
+	metadata: SourceFontMetadata;
 }
 
-export interface BuildFileRequest extends BuildVersionRequestBase {
-	mode: 'file';
-	target: FontPackageTarget;
-}
-
-export type BuildVersionRequest = BuildFamilyRequest | BuildFileRequest;
+export type BuildVersionRequest = BuildDownloadRequest | BuildPackageRequest;
 
 export interface BuildVersionResponse {
-	state: 'ready' | 'failed';
+	state: 'ready';
 	buildKey: string;
-	mode?: BuildVersionRequest['mode'];
-	artifactCount?: number;
-	durationMs?: number;
-	error?: string;
 }
 
-/**
- * Exact version cache key. This is also the named container identity, so the
- * format must stay stable across both runtimes.
- */
-export const getBuildKey = (tag: BuildVersionTag): string =>
-	`build:${tag.id}@${tag.version}`;
+export interface BuildVersionFailure {
+	state: 'failed';
+	buildKey: string;
+	status: number;
+	error: string;
+}
 
-export const getFamilyBuildRequestKey = (tag: BuildVersionTag): string =>
-	`${getBuildKey(tag)}:family`;
+export interface BuildVersionBuilding {
+	state: 'building';
+	buildKey: string;
+}
 
-export const getBuildRequestKey = (request: BuildVersionRequest): string =>
-	request.mode === 'family'
-		? getFamilyBuildRequestKey(request.tag)
-		: [
-				getBuildKey(request.tag),
-				'file',
-				request.target.isVariable ? 'variable' : 'static',
-				request.target.file,
-			].join(':');
+export type BuildVersionResult = BuildVersionResponse | BuildVersionFailure;
+export type BuildVersionStatus = BuildVersionBuilding | BuildVersionFailure;
+
+export const getBuildKey = (request: BuildVersionRequest): string =>
+	request.mode === 'download'
+		? `build:${request.metadata.id}@${request.staticVersion}${request.variableVersion && request.variableVersion !== request.staticVersion ? `+vf@${request.variableVersion}` : ''}:download`
+		: `build:${request.tag.id}@${request.tag.version}:${request.mode}`;

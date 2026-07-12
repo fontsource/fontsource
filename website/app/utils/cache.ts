@@ -14,4 +14,9 @@ export const cacheHeaders = {
 		'Cache-Control':
 			'public, max-age=86400, stale-while-revalidate=604800, stale-if-error=604800',
 	},
+	noStore: {
+		'Cache-Control': 'no-store',
+		'CDN-Cache-Control': 'no-store',
+		'Cloudflare-CDN-Cache-Control': 'no-store',
+	},
 } as const;

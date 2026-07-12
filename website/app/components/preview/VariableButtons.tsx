@@ -47,8 +47,8 @@ const VariableButton = observer(
 
 		return (
 			<Box className={classes.button}>
-				<Group justify="space-between" mb={5}>
-					<Group align="center" gap={2}>
+				<Group justify="space-between" mb={5} align="flex-start" wrap="nowrap">
+					<Group align="center" gap={2} className={classes.label}>
 						<Text fz="sm" fw={400}>
 							{label} <span>({tag})</span>
 						</Text>

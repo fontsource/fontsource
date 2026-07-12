@@ -29,7 +29,6 @@ const buildObjectUrl = (key: string): string =>
 
 interface PutObjectMetadata {
 	cacheControl?: string;
-	contentDisposition?: string;
 	contentType?: string;
 }
 
@@ -47,10 +46,6 @@ export const putObject = async (
 
 	if (metadata.cacheControl) {
 		headers['Cache-Control'] = metadata.cacheControl;
-	}
-
-	if (metadata.contentDisposition) {
-		headers['Content-Disposition'] = metadata.contentDisposition;
 	}
 
 	if (metadata.contentType) {
@@ -71,71 +66,4 @@ export const putObject = async (
 	}
 
 	console.log(`[r2] PUT ${key} (${body.byteLength} bytes)`);
-};
-
-/**
- * Lists all object keys under a given prefix via S3 ListObjectsV2.
- * Handles pagination automatically.
- */
-export const listKeys = async (prefix: string): Promise<Set<string>> => {
-	const keys = new Set<string>();
-	let token: string | undefined;
-	let pages = 0;
-
-	do {
-		const url = new URL(`${client.endpoint}/${client.bucket}`);
-		url.searchParams.set('list-type', '2');
-		url.searchParams.set('prefix', prefix);
-		if (token) {
-			url.searchParams.set('continuation-token', token);
-		}
-
-		const response = await client.client.fetch(url.toString());
-		if (!response.ok) {
-			const text = await response.text();
-			throw new Error(
-				`Failed to list R2 objects for prefix "${prefix}": ${response.status} ${text || response.statusText}`,
-			);
-		}
-
-		pages++;
-		const xml = await response.text();
-		for (const [, key] of xml.matchAll(/<Key>([^<]+)<\/Key>/g)) {
-			keys.add(key);
-		}
-
-		token = /<IsTruncated>true<\/IsTruncated>/.test(xml)
-			? xml.match(
-					/<NextContinuationToken>([^<]+)<\/NextContinuationToken>/,
-				)?.[1]
-			: undefined;
-	} while (token);
-
-	console.log(
-		`[r2] LIST prefix="${prefix}" found ${keys.size} keys (${pages} page${pages !== 1 ? 's' : ''})`,
-	);
-
-	return keys;
-};
-
-/**
- * Downloads an object's bytes from R2. Returns null when the key does not exist.
- */
-export const getObjectBytes = async (
-	key: string,
-): Promise<Uint8Array | null> => {
-	const response = await client.client.fetch(buildObjectUrl(key));
-	if (response.status === 404) {
-		console.log(`[r2] GET ${key} - not found`);
-		return null;
-	}
-	if (!response.ok) {
-		const text = await response.text();
-		throw new Error(
-			`Failed to download ${key}: ${response.status} ${text || response.statusText}`,
-		);
-	}
-	const bytes = new Uint8Array(await response.arrayBuffer());
-	console.log(`[r2] GET ${key} (${bytes.byteLength} bytes)`);
-	return bytes;
 };

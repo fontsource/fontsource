@@ -7,14 +7,3 @@ export const BINARY_CONTENT_TYPES = {
 	ttf: 'font/ttf',
 	zip: 'application/zip',
 } as const;
-
-export const getDownloadAttachmentFilename = (
-	id: string,
-	version: string,
-): string => `${id}_${version}.zip`;
-
-export const getDownloadContentDisposition = (
-	id: string,
-	version: string,
-): string =>
-	`attachment; filename="${getDownloadAttachmentFilename(id, version)}"`;

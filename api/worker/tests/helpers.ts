@@ -1,33 +1,30 @@
 import {
+	applyD1Migrations,
 	createExecutionContext,
 	waitOnExecutionContext,
 } from 'cloudflare:test';
 import { env } from 'cloudflare:workers';
 import type { Zippable } from 'fflate';
 import { zipSync } from 'fflate';
-import { HTTPException } from 'hono/http-exception';
 import { vi } from 'vitest';
 import type { AxisRegistry } from '../shared/axis-registry';
 import {
+	type BuildDownloadRequest,
+	type BuildVersionFailure,
 	type BuildVersionRequest,
 	type BuildVersionResponse,
+	type BuildVersionResult,
+	type BuildVersionStatus,
 	getBuildKey,
-	getBuildRequestKey,
-	getFamilyBuildRequestKey,
 } from '../shared/build';
 import type {
 	FontCatalog,
 	SourceFontMetadata,
 	VariableAxes,
 } from '../shared/catalog';
-import {
-	type FontPackageEntry,
-	findFontPackageEntry,
-	resolveFontPackageManifest,
-} from '../shared/font-package-manifest';
+import { resolveFontPackageManifest } from '../shared/font-package-manifest';
 import {
 	BINARY_CONTENT_TYPES,
-	getDownloadContentDisposition,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../shared/http-metadata';
 import type { StatsResponse } from '../shared/stats';
@@ -79,6 +76,18 @@ export const setupWorkerTest = async (): Promise<void> => {
 	clearMetadataCachesForTest();
 	installUpstreamFetchMock();
 	installArtifactBuilderMock(testEnv);
+	await applyD1Migrations(
+		testEnv.STATS,
+		(
+			testEnv as Env & {
+				TEST_MIGRATIONS: Parameters<typeof applyD1Migrations>[1];
+			}
+		).TEST_MIGRATIONS,
+	);
+	await testEnv.STATS.batch([
+		testEnv.STATS.prepare('DELETE FROM stats_periods'),
+		testEnv.STATS.prepare('DELETE FROM stats_packages'),
+	]);
 	await clearFontBucket(testEnv);
 	await seedMetadata(testEnv);
 };
@@ -287,11 +296,6 @@ export const staticWoffBytes = decodeInlineAsset(staticWoffUrl);
 export const variableWoff2Bytes = decodeInlineAsset(variableWoff2Url);
 export const staticTtfBytes = new Uint8Array([0, 1, 2, 3]);
 
-const isStaticEntry = (
-	item: FontPackageEntry,
-): item is ReturnType<typeof resolveFontPackageManifest>['static'][number] =>
-	!('axisKey' in item);
-
 const toResponse = (body: BodyInit, init?: ResponseInit): Response =>
 	new Response(body, {
 		status: 200,
@@ -309,6 +313,19 @@ const toResponse = (body: BodyInit, init?: ResponseInit): Response =>
 		},
 		...init,
 	});
+
+const dailyDownloads = (from: string, to: string) => {
+	const values: Array<{ day: string; downloads: number }> = [];
+	const current = new Date(`${from}T00:00:00.000Z`);
+	const end = new Date(`${to}T00:00:00.000Z`);
+
+	while (current <= end) {
+		values.push({ day: current.toISOString().slice(0, 10), downloads: 1 });
+		current.setUTCDate(current.getUTCDate() + 1);
+	}
+
+	return values;
+};
 
 const staticBinaryResponse = (url: string): Response => {
 	if (url.endsWith('.woff2')) {
@@ -372,14 +389,12 @@ const putBuiltObject = async (
 	key: string,
 	body: Uint8Array,
 	options: {
-		contentDisposition?: string;
 		contentType: keyof typeof BINARY_CONTENT_TYPES;
 	},
 ): Promise<void> => {
 	await env.FONTS.put(key, body, {
 		httpMetadata: {
 			cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-			contentDisposition: options.contentDisposition,
 			contentType: BINARY_CONTENT_TYPES[options.contentType],
 		},
 	});
@@ -439,7 +454,7 @@ const putStaticArtifacts = async (
 	for (const item of resolveFontPackageManifest(metadata).static) {
 		const bytes = await putStaticArtifact(env, metadata, version, item);
 		zipFiles[`static/${metadata.id}-${item.filename}`] =
-			item.buildMode === 'copy' ? [bytes, { level: 0 }] : bytes;
+			item.extension === 'ttf' ? bytes : [bytes, { level: 0 }];
 		artifactCount += 1;
 	}
 
@@ -467,45 +482,42 @@ const putVariableArtifacts = async (
 	return artifactCount;
 };
 
-const putCombinedArtifacts = async (
+const putDownloadArtifacts = async (
 	env: Env,
-	request: BuildVersionRequest,
+	request: BuildDownloadRequest,
 ): Promise<number> => {
-	const { metadata, tag, axes } = request;
+	const { metadata } = request;
+	const axes = metadata.variable || undefined;
 	const zipFiles: Zippable = {};
 	let artifactCount = await putStaticArtifacts(
 		env,
 		metadata,
-		tag.version,
+		request.staticVersion,
 		zipFiles,
 	);
 
-	if (axes) {
+	if (axes && request.variableVersion) {
 		artifactCount += await putVariableArtifacts(
 			env,
 			metadata,
 			axes,
-			tag.version,
+			request.variableVersion,
 			zipFiles,
 		);
 	}
 
 	if (artifactCount === 0) {
 		throw new Error(
-			`Mocked build produced no artifacts for ${tag.id}@${tag.version}`,
+			`Mocked build produced no artifacts for ${metadata.id}@${request.staticVersion}`,
 		);
 	}
 
 	zipFiles.LICENSE = new TextEncoder().encode('Example License');
 	await putBuiltObject(
 		env,
-		getDownloadKey(metadata.id, tag.version),
+		getDownloadKey(metadata.id, request.staticVersion, request.variableVersion),
 		zipSync(zipFiles),
 		{
-			contentDisposition: getDownloadContentDisposition(
-				metadata.id,
-				tag.version,
-			),
 			contentType: 'zip',
 		},
 	);
@@ -513,81 +525,60 @@ const putCombinedArtifacts = async (
 	return artifactCount + 1;
 };
 
-const putRequestedArtifact = async (
+const putBuiltArtifacts = async (
 	env: Env,
 	request: BuildVersionRequest,
-): Promise<number> => {
-	if (request.mode !== 'file') {
-		return await putCombinedArtifacts(env, request);
+): Promise<void> => {
+	if (request.mode === 'download') {
+		await putDownloadArtifacts(env, request);
+		return;
 	}
 
-	const manifest = resolveFontPackageManifest(request.metadata, request.axes);
-	const entry = findFontPackageEntry(manifest, request.target);
-
-	if (!entry) {
+	const manifest = resolveFontPackageManifest(
+		request.metadata,
+		request.metadata.variable || undefined,
+	);
+	const entries =
+		request.mode === 'variable' ? manifest.variable : manifest.static;
+	if (entries.length === 0) {
 		throw new Error(
-			`Mocked build produced no artifact for ${request.tag.id}@${request.tag.version}/${request.target.file}`,
+			`Mocked build produced no ${request.mode} artifacts for ${request.tag.id}@${request.tag.version}`,
 		);
 	}
 
-	if (request.target.isVariable) {
-		if (isStaticEntry(entry)) {
-			throw new Error(
-				`Mocked build resolved a static artifact for variable target ${request.target.file}`,
-			);
-		}
-
-		await putVariableArtifact(
-			env,
-			request.metadata,
-			request.tag.version,
-			entry,
+	if (request.mode === 'variable') {
+		await Promise.all(
+			manifest.variable.map((entry) =>
+				putVariableArtifact(env, request.metadata, request.tag.version, entry),
+			),
 		);
-		return 1;
-	}
-
-	if (!isStaticEntry(entry)) {
-		throw new Error(
-			`Mocked build resolved a variable artifact for static target ${request.target.file}`,
+	} else {
+		await Promise.all(
+			manifest.static.map((entry) =>
+				putStaticArtifact(env, request.metadata, request.tag.version, entry),
+			),
 		);
 	}
-
-	await putStaticArtifact(env, request.metadata, request.tag.version, entry);
-	return 1;
 };
 
 export const installArtifactBuilderMock = (
 	env: Env,
 	options: {
 		failBuildKeys?: string[];
-		failBuilds?: Array<{
-			buildKey: string;
-			mode?: BuildVersionRequest['mode'];
-			status?: number;
-		}>;
 		buildDelayMs?: number;
 	} = {},
 ) => {
 	const failBuildKeys = new Set(options.failBuildKeys ?? []);
-	const failBuilds = options.failBuilds ?? [];
 	const buildDelayMs = options.buildDelayMs ?? 0;
 	const calls = vi.fn<(request: BuildVersionRequest) => void>();
 	const activeBuilds = new Map<string, Promise<BuildVersionResponse>>();
+	const failedBuilds = new Map<string, BuildVersionFailure>();
 
 	const ensureBuilt = async (
 		request: BuildVersionRequest,
 	): Promise<BuildVersionResponse> => {
-		const buildKey = getBuildKey(request.tag);
-		const activeFamilyBuild = activeBuilds.get(
-			getFamilyBuildRequestKey(request.tag),
-		);
-
-		if (request.mode === 'file' && activeFamilyBuild) {
-			return await activeFamilyBuild;
-		}
-
-		const requestKey = getBuildRequestKey(request);
-		const activeBuild = activeBuilds.get(requestKey);
+		const buildKey = getBuildKey(request);
+		const activeBuild = activeBuilds.get(buildKey);
 
 		if (activeBuild) {
 			return await activeBuild;
@@ -595,28 +586,7 @@ export const installArtifactBuilderMock = (
 
 		calls(request);
 
-		if (
-			failBuildKeys.has(buildKey) ||
-			failBuilds.some(
-				(item) =>
-					item.buildKey === buildKey &&
-					(!item.mode || item.mode === request.mode),
-			)
-		) {
-			const matchingFailure = failBuilds.find(
-				(item) =>
-					item.buildKey === buildKey &&
-					(!item.mode || item.mode === request.mode),
-			);
-
-			if (matchingFailure?.status) {
-				return await Promise.reject(
-					new HTTPException(matchingFailure.status === 404 ? 404 : 500, {
-						message: `Mocked builder failure for ${buildKey}`,
-					}),
-				);
-			}
-
+		if (failBuildKeys.has(buildKey)) {
 			return await Promise.reject(
 				new Error(`Mocked builder failure for ${buildKey}`),
 			);
@@ -627,42 +597,69 @@ export const installArtifactBuilderMock = (
 				await new Promise((resolve) => setTimeout(resolve, buildDelayMs));
 			}
 
-			const artifactCount = await putRequestedArtifact(env, request);
+			await putBuiltArtifacts(env, request);
 			const response = {
 				state: 'ready',
 				buildKey,
-				mode: request.mode,
-				artifactCount,
 			} satisfies BuildVersionResponse;
 			return response;
 		})().finally(() => {
-			activeBuilds.delete(requestKey);
+			activeBuilds.delete(buildKey);
 		});
 
-		activeBuilds.set(requestKey, buildPromise);
+		activeBuilds.set(buildKey, buildPromise);
 		return await buildPromise;
+	};
+	const buildVersion = async (
+		request: BuildVersionRequest,
+	): Promise<BuildVersionResult> => {
+		try {
+			return await ensureBuilt(request);
+		} catch (error) {
+			const buildKey = getBuildKey(request);
+			return {
+				state: 'failed',
+				buildKey,
+				status: 502,
+				error: `Bad Gateway. Artifact build failed for ${buildKey}: ${error instanceof Error ? error.message : String(error)}`,
+			};
+		}
+	};
+	const startBuild = async (
+		request: BuildVersionRequest,
+	): Promise<BuildVersionStatus> => {
+		const buildKey = getBuildKey(request);
+		const failed = failedBuilds.get(buildKey);
+
+		if (failed) {
+			failedBuilds.delete(buildKey);
+			return failed;
+		}
+
+		if (activeBuilds.has(buildKey)) {
+			return {
+				state: 'building',
+				buildKey,
+			};
+		}
+
+		void buildVersion(request).then((result) => {
+			if (result.state === 'failed') {
+				failedBuilds.set(buildKey, result);
+			}
+		});
+
+		return {
+			state: 'building',
+			buildKey,
+		};
 	};
 
 	const artifactBuilder = {
-		getByName(name: string) {
+		getByName() {
 			return {
-				async buildVersion(
-					payload: BuildVersionRequest,
-				): Promise<BuildVersionResponse> {
-					try {
-						return await ensureBuilt(payload);
-					} catch (error) {
-						if (error instanceof HTTPException) {
-							throw error;
-						}
-
-						throw new Error(
-							error instanceof Error
-								? error.message
-								: `Mocked builder failure for ${name}: ${String(error)}`,
-						);
-					}
-				},
+				buildVersion,
+				startBuild,
 			} as unknown as ReturnType<Env['ARTIFACT_BUILDER']['getByName']>;
 		},
 	};
@@ -706,6 +703,67 @@ export const installUpstreamFetchMock = (
 				return typeof override === 'function'
 					? await override()
 					: override.clone();
+			}
+
+			if (url.startsWith(`${UPSTREAM_URLS.npmRegistry}/`)) {
+				const packageName = decodeURIComponent(
+					url.slice(`${UPSTREAM_URLS.npmRegistry}/`.length),
+				);
+				if (
+					!Object.hasOwn(versionPayloads, packageName) &&
+					packageName !== 'fontsource-abel'
+				) {
+					return toResponse('', { status: 404 });
+				}
+
+				return toResponse(
+					JSON.stringify({ time: { created: '2025-01-01T00:00:00.000Z' } }),
+				);
+			}
+
+			if (url.startsWith(`${UPSTREAM_URLS.npmDownloads}/`)) {
+				const [period] = url
+					.slice(`${UPSTREAM_URLS.npmDownloads}/`.length)
+					.split('/', 1);
+				const [from, to] = period?.split(':') ?? [];
+				if (!from || !to) {
+					throw new Error(`Unexpected npm stats URL: ${url}`);
+				}
+
+				return toResponse(
+					JSON.stringify({
+						start: from,
+						end: to,
+						downloads: dailyDownloads(from, to),
+					}),
+				);
+			}
+
+			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrStats}/`)) {
+				const packagePath = new URL(url).pathname.slice(
+					'/v1/stats/packages/npm/'.length,
+				);
+				if (packagePath.includes('/')) {
+					throw new Error(`Unexpected scoped jsDelivr stats URL: ${url}`);
+				}
+				const period = new URL(url).searchParams.get('period');
+				const currentYear = new Date().getUTCFullYear();
+				if (period === String(currentYear)) {
+					return toResponse('', { status: 400 });
+				}
+
+				const hits =
+					period === 'year'
+						? {
+								total: 1200,
+								dates: {
+									[`${currentYear - 1}-12-31`]: 1000,
+									[`${currentYear}-01-01`]: 80,
+									[`${currentYear}-01-02`]: 120,
+								},
+							}
+						: { total: period === 'month' ? 20 : 200 };
+				return toResponse(JSON.stringify({ hits }));
 			}
 
 			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`)) {

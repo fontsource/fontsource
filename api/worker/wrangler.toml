@@ -1,4 +1,3 @@
-# api/worker/wrangler.toml
 name = 'fontsource-api'
 main = "worker/src/index.ts"
 compatibility_date = "2026-05-10"
@@ -11,6 +10,23 @@ kv_namespaces = [
 r2_buckets = [
   { binding = "FONTS", bucket_name = "fontsource-artifacts" },
 ]
+
+[placement]
+mode = "smart"
+
+[[d1_databases]]
+binding = "STATS"
+database_name = "fontsource-stats"
+database_id = "6ef70249-202b-419f-8cf5-979afe45ad7b"
+
+[[queues.producers]]
+binding = "STATS_QUEUE"
+queue = "fontsource-stats"
+
+[[queues.consumers]]
+queue = "fontsource-stats"
+retry_delay = 300
+max_concurrency = 1
 
 [[durable_objects.bindings]]
 name = "ARTIFACT_BUILDER"
@@ -25,6 +41,7 @@ class_name = "ArtifactBuilder"
 image = "./container/Dockerfile"
 image_build_context = "../.."
 instance_type = "standard-1"
+max_instances = 150
 
 [cache]
 enabled = true
@@ -38,7 +55,7 @@ enabled = true
 invocation_logs = false
 
 [triggers]
-crons = ["0 */3 * * *"]
+crons = ["0 */3 * * *", "15 0 * * *"]
 
 [vars]
 FONTS_BUCKET_NAME = "fontsource-artifacts"

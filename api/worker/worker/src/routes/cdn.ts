@@ -5,6 +5,7 @@ import type { AppEnv } from '../env';
 import { getBinaryAsset, getCssFile } from '../features/cdn/handler';
 import { parseFontTag } from '../features/font-tag';
 import { ErrorResponseSchema, TagFileParamSchema } from '../schemas/common';
+import { notFound } from '../utils/errors';
 
 type AppContext = Context<AppEnv>;
 
@@ -14,9 +15,8 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 		operationId: 'getBinaryAsset',
 		summary: 'Get binary font asset',
 		description:
-			'Serves binary font files (woff2, woff, ttf) and download zips from the CDN. ' +
-			'Supports pinned and floating version tags. ' +
-			'Requests for download.zip on floating or variable tags may redirect to the canonical download endpoint.',
+			'Serves binary font files (woff2, woff, ttf) from the CDN. ' +
+			'Supports pinned and floating version tags. Latest download aliases redirect to the download endpoint.',
 		request: {
 			params: TagFileParamSchema,
 		},
@@ -33,14 +33,11 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 					'font/ttf': {
 						schema: z.string(),
 					},
-					'application/zip': {
-						schema: z.string(),
-					},
 				},
 			},
 			'302': {
 				description:
-					'Redirect to canonical download endpoint for floating/variable download.zip requests',
+					'Redirect a latest download alias to the download endpoint',
 			},
 			'304': {
 				description: 'Not modified (conditional request)',
@@ -64,23 +61,13 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 		const data = await this.getValidatedData<typeof this.schema>();
 		const { tag, file } = data.params;
 
-		// Route floating zip aliases through the canonical download endpoint so
-		// they share one cached archive.
 		if (file === 'download.zip') {
 			const parsedTag = parseFontTag(tag);
-
-			if (parsedTag.isVariable) {
-				return c.redirect(
-					parsedTag.version === 'latest'
-						? `/v1/download/${parsedTag.id}`
-						: `/fonts/${parsedTag.id}@${parsedTag.version}/download.zip`,
-					302,
-				);
-			}
-
 			if (parsedTag.version === 'latest') {
 				return c.redirect(`/v1/download/${parsedTag.id}`, 302);
 			}
+
+			throw notFound('Not Found. Versioned downloads are not supported.');
 		}
 
 		return getBinaryAsset(c, tag, file);

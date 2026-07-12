@@ -106,7 +106,8 @@ export const meta: MetaFunction = () => {
 	return ogMeta({});
 };
 
-export const headers: HeadersFunction = () => cacheHeaders.document;
+export const headers: HeadersFunction = ({ errorHeaders }) =>
+	errorHeaders ?? cacheHeaders.document;
 
 export const links: LinksFunction = () => [
 	{

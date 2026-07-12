@@ -3,7 +3,7 @@
 	margin-top: 2px;
 	padding: 8px 12px;
 	justify-content: space-between;
-	height: 94px;
+	min-height: 94px;
 
 	border-radius: 4px;
 
@@ -16,4 +16,9 @@
 			background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-3));
 		}
 	}
+}
+
+.label {
+	flex: 1;
+	min-width: 0;
 }

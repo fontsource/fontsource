@@ -1,5 +1,5 @@
 .container {
-	height: 100vh;
+	min-height: calc(100dvh - 73px);
 	padding: 40px 64px;
 	font-family: "IBM Plex Sans Variable", sans-serif;
 	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
@@ -36,6 +36,7 @@
 	line-height: 160%;
 	margin: 0;
 	opacity: 0.7;
+	overflow-wrap: anywhere;
 }
 
 .actions {

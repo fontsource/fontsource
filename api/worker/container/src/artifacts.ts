@@ -1,25 +1,15 @@
 import { convertFont, createFontContext } from '@fontsource-utils/core';
-import { type Zippable, zipSync } from 'fflate';
-import { HTTPException } from 'hono/http-exception';
+import { zipSync } from 'fflate';
 import limitConcur from 'limit-concur';
+import { createGzipDecoder, unpackTar } from 'modern-tar';
 import type {
-	BuildFamilyRequest,
-	BuildFileRequest,
+	BuildDownloadRequest,
+	BuildPackageRequest,
 	BuildVersionRequest,
 	BuildVersionTag,
 } from '../../shared/build';
 import {
-	type FontPackageEntry,
-	type FontPackageManifest,
-	filterPublishedManifest,
-	findFontPackageEntry,
-	resolveFontPackageManifest,
-	type StaticFontEntry,
-	type VariableFontEntry,
-} from '../../shared/font-package-manifest';
-import {
 	BINARY_CONTENT_TYPES,
-	getDownloadContentDisposition,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../../shared/http-metadata';
 import {
@@ -27,131 +17,102 @@ import {
 	getStaticAssetKey,
 	getVariableAssetKey,
 } from '../../shared/storage';
-import {
-	fetchPackageAssetBytes,
-	fetchPackageFileList,
-	fetchPackageLicenseBytes,
-	UpstreamNotFoundError,
-} from '../../shared/upstream';
-import { getObjectBytes, listKeys, putObject } from './r2';
+import { fetchPackageTarball } from '../../shared/upstream';
+import { putObject } from './r2';
 
 interface BuiltArtifact {
 	key: string;
+	filename: string;
 	bytes: Uint8Array;
+	extension: 'woff2' | 'woff' | 'ttf';
 }
 
-/** Catches `UpstreamNotFoundError` and returns `undefined` instead of throwing. */
-const ignoreUpstream404 = async <T>(
-	input: Promise<T> | (() => Promise<T>),
-): Promise<T | undefined> => {
-	try {
-		return await (typeof input === 'function' ? input() : input);
-	} catch (error) {
-		if (error instanceof UpstreamNotFoundError) {
-			return undefined;
-		}
-
-		throw error;
-	}
-};
-
-const storeArtifact = async (
+const createArtifact = (
 	key: string,
+	filename: string,
 	bytes: Uint8Array,
-	item: { extension: string },
-): Promise<BuiltArtifact> => {
-	await putObject(key, bytes, {
-		cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-		contentType:
-			BINARY_CONTENT_TYPES[item.extension as keyof typeof BINARY_CONTENT_TYPES],
-	});
+	extension: BuiltArtifact['extension'],
+): BuiltArtifact => ({
+	key,
+	filename,
+	bytes,
+	extension,
+});
 
-	return {
-		key,
-		bytes,
-	};
+const getPackageFile = (
+	files: ReadonlyMap<string, Uint8Array>,
+	filename: string,
+): Uint8Array => {
+	const bytes = files.get(filename);
+	if (!bytes) {
+		throw new Error(`Expected npm package file "${filename}" was not found`);
+	}
+
+	return bytes;
 };
+
+const uploadArtifacts = (
+	artifacts: readonly BuiltArtifact[],
+): Promise<void>[] =>
+	artifacts.map(
+		limitConcur(8, async (artifact) => {
+			await putObject(artifact.key, artifact.bytes, {
+				cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
+				contentType: BINARY_CONTENT_TYPES[artifact.extension],
+			});
+		}),
+	);
 
 const buildStaticArtifacts = async (
 	tag: BuildVersionTag,
-	manifest: readonly StaticFontEntry[],
+	packageFiles: ReadonlyMap<string, Uint8Array>,
 ): Promise<BuiltArtifact[]> => {
-	if (manifest.length === 0) {
-		return [];
-	}
-
-	// Memoize static package fetches so repeated `.woff` reads for TTF
-	// conversion do not hit the upstream CDN twice.
-	const fetchCache = new Map<string, Promise<Uint8Array>>();
-	const getStaticBytes = (filename: string): Promise<Uint8Array> => {
-		const existing = fetchCache.get(filename);
-		if (existing) {
-			return existing;
-		}
-
-		const load = fetchPackageAssetBytes(tag.id, tag.version, filename);
-		fetchCache.set(filename, load);
-		return load;
-	};
-
-	const copyPlan = manifest.filter((item) => item.buildMode === 'copy');
-	const convertPlan = manifest.filter(
-		(item) => item.buildMode === 'convert-woff-to-ttf',
+	const copyPlan = [...packageFiles].filter(
+		([filename]) => filename.endsWith('.woff2') || filename.endsWith('.woff'),
+	);
+	const convertPlan = copyPlan.filter(([filename]) =>
+		filename.endsWith('.woff2'),
 	);
 
 	console.log(
 		`[artifacts] static build plan: copy=${copyPlan.length}, convert=${convertPlan.length}`,
 	);
 
-	const copied = (
-		await Promise.all(
-			copyPlan.map(
-				limitConcur(
-					8,
-					async (item) =>
-						await ignoreUpstream404(
-							storeArtifact(
-								getStaticAssetKey(tag.id, tag.version, item.filename),
-								await getStaticBytes(item.sourceFilename),
-								item,
-							),
-						),
-				),
-			),
-		)
-	).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
+	const copied = copyPlan.map(([filename, bytes]) =>
+		createArtifact(
+			getStaticAssetKey(tag.id, tag.version, filename),
+			filename,
+			bytes,
+			filename.endsWith('.woff2') ? 'woff2' : 'woff',
+		),
+	);
 
 	if (convertPlan.length === 0) {
 		return copied;
 	}
 
 	const ctx = createFontContext();
-
 	try {
-		const converted = (
-			await Promise.all(
-				convertPlan.map(
-					limitConcur(
-						8,
-						async (item) =>
-							await ignoreUpstream404(async () => {
-								const [{ data }] = await convertFont(
-									ctx,
-									await getStaticBytes(item.sourceFilename),
-									['ttf'],
-									`${tag.id}-${item.sourceFilename}`,
-								);
+		const converted = await Promise.all(
+			convertPlan.map(
+				limitConcur(8, async ([sourceFilename, bytes]) => {
+					const filename = sourceFilename.replace(/\.woff2$/, '.ttf');
+					const [{ data }] = await convertFont(
+						ctx,
+						bytes,
+						['ttf'],
+						`${tag.id}-${sourceFilename}`,
+					);
 
-								return storeArtifact(
-									getStaticAssetKey(tag.id, tag.version, item.filename),
-									data,
-									item,
-								);
-							}),
-					),
-				),
-			)
-		).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
+					return createArtifact(
+						getStaticAssetKey(tag.id, tag.version, filename),
+						filename,
+						data,
+						'ttf',
+					);
+				}),
+			),
+		);
 
 		return [...copied, ...converted];
 	} finally {
@@ -159,264 +120,161 @@ const buildStaticArtifacts = async (
 	}
 };
 
-const buildVariableArtifacts = async (
+const buildVariableArtifacts = (
 	tag: BuildVersionTag,
-	manifest: readonly VariableFontEntry[],
-): Promise<BuiltArtifact[]> => {
-	if (manifest.length === 0) {
-		return [];
-	}
+	packageFiles: ReadonlyMap<string, Uint8Array>,
+): BuiltArtifact[] => {
+	const sources = [...packageFiles].filter(([filename]) =>
+		filename.endsWith('.woff2'),
+	);
+	console.log(`[artifacts] variable build plan: files=${sources.length}`);
 
-	console.log(`[artifacts] variable build plan: files=${manifest.length}`);
-
-	return (
-		await Promise.all(
-			manifest.map(
-				limitConcur(
-					8,
-					async (item) =>
-						await ignoreUpstream404(
-							storeArtifact(
-								getVariableAssetKey(tag.id, tag.version, item.filename),
-								await fetchPackageAssetBytes(
-									tag.id,
-									tag.version,
-									item.sourceFilename,
-									true,
-								),
-								item,
-							),
-						),
-				),
-			),
-		)
-	).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
-};
-
-const isStaticEntry = (item: FontPackageEntry): item is StaticFontEntry =>
-	!('axisKey' in item);
-
-const getPublishedManifest = async (
-	request: BuildVersionRequest,
-): Promise<FontPackageManifest> => {
-	const [publishedStaticFiles, publishedVariableFiles] = await Promise.all([
-		fetchPackageFileList(request.tag.id, request.tag.version, false),
-		request.axes
-			? fetchPackageFileList(request.tag.id, request.tag.version, true)
-			: Promise.resolve(undefined),
-	]);
-
-	return filterPublishedManifest(
-		resolveFontPackageManifest(request.metadata, request.axes),
-		publishedStaticFiles,
-		publishedVariableFiles,
+	return sources.map(([filename, bytes]) =>
+		createArtifact(
+			getVariableAssetKey(tag.id, tag.version, filename),
+			filename,
+			bytes,
+			'woff2',
+		),
 	);
 };
 
-const buildSingleArtifact = async (
-	request: BuildFileRequest,
+const readPackageArchive = async (
+	id: string,
+	version: string,
+	isVariable: boolean,
+): Promise<Map<string, Uint8Array>> => {
+	const assetPrefix = `package/files/${id}-`;
+	const entries = await unpackTar(
+		(await fetchPackageTarball(id, version, isVariable)).pipeThrough(
+			createGzipDecoder(),
+		),
+		{
+			strict: true,
+			filter: (header) =>
+				header.name === 'package/LICENSE' ||
+				header.name.startsWith(assetPrefix),
+		},
+	);
+
+	return new Map(
+		entries.flatMap((entry) => {
+			if (!entry.data) return [];
+
+			const filename =
+				entry.header.name === 'package/LICENSE'
+					? 'LICENSE'
+					: entry.header.name.slice(assetPrefix.length);
+			return [[filename, entry.data]];
+		}),
+	);
+};
+
+const buildPackageArtifacts = async (
+	request: BuildPackageRequest,
 ): Promise<number> => {
-	const manifest = await getPublishedManifest(request);
-	const entry = findFontPackageEntry(manifest, request.target);
+	const packageFiles = await readPackageArchive(
+		request.tag.id,
+		request.tag.version,
+		request.mode === 'variable',
+	);
 
-	if (!entry) {
-		throw new HTTPException(404, {
-			message: `Requested file ${request.target.file} not found for ${request.tag.id}@${request.tag.version}`,
-		});
-	}
-
-	const built = isStaticEntry(entry)
-		? await buildStaticArtifacts(request.tag, [entry])
-		: await buildVariableArtifacts(request.tag, [entry]);
+	const built =
+		request.mode === 'variable'
+			? buildVariableArtifacts(request.tag, packageFiles)
+			: await buildStaticArtifacts(request.tag, packageFiles);
 
 	if (built.length === 0) {
-		throw new HTTPException(404, {
-			message: `No artifact published for ${request.tag.id}@${request.tag.version}/${request.target.file}`,
-		});
+		throw new Error(
+			`No ${request.mode} artifacts published for ${request.tag.id}@${request.tag.version}`,
+		);
 	}
 
+	await Promise.all(uploadArtifacts(built));
+
 	console.log(
-		`[artifacts] built single file ${request.tag.id}@${request.tag.version}/${request.target.file}`,
+		`[artifacts] built ${built.length} ${request.mode} package artifacts for ${request.tag.id}@${request.tag.version}`,
 	);
 
 	return built.length;
 };
 
-/**
- * Builds the exact-version artifact set, skipping anything that already exists
- * in R2 and creating the combined family zip only when it is missing.
- */
-const buildFamilyArtifacts = async (
-	request: BuildFamilyRequest,
+const buildDownloadArtifacts = async (
+	request: BuildDownloadRequest,
 ): Promise<number> => {
-	const { tag } = request;
-	const { static: staticManifest, variable: variableManifest } =
-		await getPublishedManifest(request);
-
-	console.log(
-		`[artifacts] family manifest ${tag.id}@${tag.version}: static=${staticManifest.length}, variable=${variableManifest.length}`,
-	);
-
-	// Resolve R2 keys for every individual artifact and the download zip.
-	const staticKeys = staticManifest.map((item) =>
-		getStaticAssetKey(tag.id, tag.version, item.filename),
-	);
-	const variableKeys = variableManifest.map((item) =>
-		getVariableAssetKey(tag.id, tag.version, item.filename),
-	);
-	const downloadKey = getDownloadKey(tag.id, tag.version);
-
-	// One listing call to discover everything already stored for this version.
-	const existing = await listKeys(`${tag.id}@${tag.version}/`);
-
-	const totalCount = staticKeys.length + variableKeys.length + 1;
-
-	// If every artifact exists already, no build work is needed.
-	if (
-		existing.has(downloadKey) &&
-		staticKeys.every((k) => existing.has(k)) &&
-		variableKeys.every((k) => existing.has(k))
-	) {
-		console.log(
-			`[artifacts] family build skipped: all ${totalCount} artifacts already exist in R2`,
-		);
-		return totalCount;
+	const { id } = request.metadata;
+	const axes = request.metadata.variable || undefined;
+	if (axes && !request.variableVersion) {
+		throw new Error(`Variable package version required for ${id}`);
 	}
 
-	// Build only the missing individual artifacts.
-	const missingStatic = staticManifest.filter(
-		(_, i) => !existing.has(staticKeys[i]),
-	);
-	const missingVariable = variableManifest.filter(
-		(_, i) => !existing.has(variableKeys[i]),
-	);
-
-	console.log(
-		`[artifacts] missing: ${missingStatic.length} static, ${missingVariable.length} variable, zip=${!existing.has(downloadKey) ? 'yes' : 'no'}`,
-	);
-
-	const [maybeStaticArtifacts, maybeVariableArtifacts] = await Promise.all([
-		ignoreUpstream404(buildStaticArtifacts(tag, missingStatic)),
-		ignoreUpstream404(buildVariableArtifacts(tag, missingVariable)),
+	const variableVersion = request.variableVersion ?? request.staticVersion;
+	const staticTag = { id, version: request.staticVersion };
+	const variableTag = { id, version: variableVersion };
+	const [staticPackage, variablePackage] = await Promise.all([
+		readPackageArchive(id, request.staticVersion, false),
+		axes && request.variableVersion
+			? readPackageArchive(id, request.variableVersion, true)
+			: undefined,
 	]);
-	const newStaticArtifacts = maybeStaticArtifacts ?? [];
-	const newVariableArtifacts = maybeVariableArtifacts ?? [];
-	const newArtifacts = [...newStaticArtifacts, ...newVariableArtifacts];
-
-	console.log(`[artifacts] built ${newArtifacts.length} new artifacts`);
-
-	if (
-		newArtifacts.length === 0 &&
-		missingStatic.length + missingVariable.length > 0
-	) {
-		throw new Error(`No artifacts published for ${tag.id}@${tag.version}`);
+	const license = getPackageFile(staticPackage, 'LICENSE');
+	const staticArtifacts = await buildStaticArtifacts(staticTag, staticPackage);
+	const variableArtifacts = variablePackage
+		? buildVariableArtifacts(variableTag, variablePackage)
+		: [];
+	if (staticArtifacts.length === 0) {
+		throw new Error(
+			`No static artifacts published for ${id}@${request.staticVersion}`,
+		);
+	}
+	if (axes && variableArtifacts.length === 0) {
+		throw new Error(
+			`No variable artifacts published for ${id}@${request.variableVersion}`,
+		);
 	}
 
-	// Build the download zip only when it is missing.
-	if (!existing.has(downloadKey)) {
-		console.log(`[artifacts] assembling download zip`);
-
-		// Index freshly-built bytes by R2 key for quick lookup.
-		const builtByKey = new Map<string, BuiltArtifact>();
-		for (const artifact of newArtifacts) {
-			builtByKey.set(artifact.key, artifact);
-		}
-
-		// Collect every artifact for the archive, using fresh bytes first and
-		// loading existing objects from R2 when needed.
-		const allManifestEntries = [
-			...staticManifest.map((item, i) => ({
-				item,
-				key: staticKeys[i],
-				directory: 'static',
-			})),
-			...variableManifest.map((item, i) => ({
-				item,
-				key: variableKeys[i],
-				directory: 'variable',
-			})),
-		];
-
-		let fetchedFromR2 = 0;
-
-		const allArtifactEntries = await Promise.all(
-			allManifestEntries.map(
-				limitConcur(16, async ({ item, key, directory }) => {
-					const built = builtByKey.get(key);
-					if (!built) {
-						fetchedFromR2++;
-					}
-
-					const bytes = built?.bytes ?? (await getObjectBytes(key));
-					if (!bytes) {
-						throw new Error(`Expected artifact ${key} not found in R2`);
-					}
-
-					return {
-						archivePath: `${directory}/${tag.id}-${item.filename}`,
-						bytes,
-						compress: item.buildMode === 'copy',
-					};
-				}),
-			),
-		);
-
-		if (fetchedFromR2 > 0) {
-			console.log(
-				`[artifacts] fetched ${fetchedFromR2} existing artifacts from R2 for zip`,
-			);
-		}
-
-		if (allArtifactEntries.length === 0) {
-			throw new Error(`No artifacts for zip: ${tag.id}@${tag.version}`);
-		}
-
-		// Resolve LICENSE from the static or variable package.
-		const license =
-			(staticManifest.length > 0
-				? await ignoreUpstream404(
-						fetchPackageLicenseBytes(tag.id, tag.version, false),
-					)
-				: undefined) ??
-			(variableManifest.length > 0
-				? await ignoreUpstream404(
-						fetchPackageLicenseBytes(tag.id, tag.version, true),
-					)
-				: undefined);
-
-		if (!license) {
-			throw new Error(`Missing LICENSE for ${tag.id}@${tag.version}`);
-		}
-
-		const archiveFiles: Zippable = Object.fromEntries([
-			...allArtifactEntries.map((artifact) => [
-				artifact.archivePath,
-				artifact.compress ? [artifact.bytes, { level: 0 }] : artifact.bytes,
+	const artifacts = [...staticArtifacts, ...variableArtifacts];
+	const archive = zipSync(
+		Object.fromEntries([
+			...staticArtifacts.map((artifact) => [
+				`static/${id}-${artifact.filename}`,
+				artifact.extension === 'ttf'
+					? artifact.bytes
+					: [artifact.bytes, { level: 0 }],
+			]),
+			...variableArtifacts.map((artifact) => [
+				`variable/${id}-${artifact.filename}`,
+				[artifact.bytes, { level: 0 }],
 			]),
 			['LICENSE', license],
-		]);
+		]),
+	);
 
-		await putObject(
-			getDownloadKey(tag.id, tag.version),
-			zipSync(archiveFiles),
-			{
-				cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-				contentDisposition: getDownloadContentDisposition(tag.id, tag.version),
-				contentType: BINARY_CONTENT_TYPES.zip,
-			},
-		);
-
-		console.log(
-			`[artifacts] zip uploaded (${allArtifactEntries.length} entries + LICENSE)`,
+	await putObject(
+		getDownloadKey(id, request.staticVersion, request.variableVersion),
+		archive,
+		{
+			cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
+			contentType: BINARY_CONTENT_TYPES.zip,
+		},
+	);
+	const warmResults = await Promise.allSettled(uploadArtifacts(artifacts));
+	const warmFailures = warmResults.filter(
+		(result) => result.status === 'rejected',
+	);
+	if (warmFailures.length > 0) {
+		console.error(
+			`[artifacts] failed to warm ${warmFailures.length}/${artifacts.length} individual artifacts for ${id}@${request.staticVersion}`,
+			warmFailures.map((result) => result.reason),
 		);
 	}
 
-	return totalCount;
+	return artifacts.length + 1;
 };
 
 export const buildArtifacts = async (
 	request: BuildVersionRequest,
 ): Promise<number> =>
-	request.mode === 'file'
-		? await buildSingleArtifact(request)
-		: await buildFamilyArtifacts(request);
+	request.mode === 'download'
+		? await buildDownloadArtifacts(request)
+		: await buildPackageArtifacts(request);

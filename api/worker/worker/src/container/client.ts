@@ -1,10 +1,14 @@
 import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
+import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import {
-	type BuildFileRequest,
+	type BuildDownloadRequest,
+	type BuildPackageRequest,
+	type BuildVersionFailure,
 	type BuildVersionRequest,
-	type BuildVersionRequestBase,
 	type BuildVersionResponse,
+	type BuildVersionResult,
+	type BuildVersionStatus,
 	getBuildKey,
 } from '../../../shared/build';
 import type { AppEnv } from '../env';
@@ -14,60 +18,67 @@ const buildVersion = async (
 	c: Context<AppEnv>,
 	requestBody: BuildVersionRequest,
 ): Promise<BuildVersionResponse> => {
-	const buildKey = getBuildKey(requestBody.tag);
+	const buildKey = getBuildKey(requestBody);
+	let result: BuildVersionResult;
+
 	try {
-		return await c.env.ARTIFACT_BUILDER.getByName(buildKey).buildVersion(
-			requestBody,
-		);
+		result =
+			await c.env.ARTIFACT_BUILDER.getByName(buildKey).buildVersion(
+				requestBody,
+			);
 	} catch (error) {
 		const message = error instanceof Error ? error.message : String(error);
-
-		if (error instanceof HTTPException) {
-			throw new HTTPException(error.status, {
-				message,
-			});
-		}
-
 		throw new HTTPException(502, {
-			message: `Bad Gateway. Artifact build failed for ${buildKey}: ${message}`,
+			message: `Artifact builder request failed (${buildKey}): ${message}`,
 		});
 	}
+
+	if (result.state === 'failed') {
+		return throwBuildFailure(result);
+	}
+
+	return result;
 };
 
-const buildRequestBase = (
-	resolved: ResolvedFontRequest,
-): BuildVersionRequestBase => ({
-	tag: {
-		id: resolved.tag.id,
-		version: resolved.tag.version,
-	},
-	metadata: resolved.metadata,
-	axes: resolved.axes,
-});
-
-/**
- * Ensures the resolved exact-version package exists by delegating to the
- * private container for that build key.
- */
-export const ensureVersionBuilt = async (
-	c: Context<AppEnv>,
-	resolved: ResolvedFontRequest,
-): Promise<BuildVersionResponse> =>
-	buildVersion(c, {
-		...buildRequestBase(resolved),
-		mode: 'family',
+const throwBuildFailure = (failure: BuildVersionFailure): never => {
+	throw new HTTPException(failure.status as ContentfulStatusCode, {
+		message: failure.error,
 	});
+};
 
-export const ensureFileBuilt = async (
+export const startDownloadBuild = async (
+	c: Context<AppEnv>,
+	request: BuildDownloadRequest,
+): Promise<Exclude<BuildVersionStatus, BuildVersionFailure>> => {
+	const buildKey = getBuildKey(request);
+	let result: BuildVersionStatus;
+
+	try {
+		result =
+			await c.env.ARTIFACT_BUILDER.getByName(buildKey).startBuild(request);
+	} catch (error) {
+		const message = error instanceof Error ? error.message : String(error);
+		throw new HTTPException(502, {
+			message: `Artifact builder request failed (${buildKey}): ${message}`,
+		});
+	}
+
+	if (result.state === 'failed') {
+		return throwBuildFailure(result);
+	}
+
+	return result;
+};
+
+export const ensurePackageBuilt = async (
 	c: Context<AppEnv>,
 	resolved: ResolvedFontRequest,
-	file: string,
 ): Promise<BuildVersionResponse> =>
 	buildVersion(c, {
-		...buildRequestBase(resolved),
-		mode: 'file',
-		target: {
-			file,
-			isVariable: resolved.tag.isVariable,
+		mode: resolved.tag.isVariable ? 'variable' : 'static',
+		tag: {
+			id: resolved.tag.id,
+			version: resolved.tag.version,
 		},
-	} satisfies BuildFileRequest);
+		metadata: resolved.metadata,
+	} satisfies BuildPackageRequest);
