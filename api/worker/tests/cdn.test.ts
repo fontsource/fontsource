@@ -491,6 +491,56 @@ describe('cdn routes', () => {
 		);
 	});
 
+	it('serves version metadata and downloads for variable-only packages', async () => {
+		vi.restoreAllMocks();
+		installArtifactBuilderMock(testEnv);
+		installUpstreamFetchMock({
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/recursive`]: new Response(
+				'not found',
+				{ status: 404 },
+			),
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource-variable/recursive`]:
+				new Response(JSON.stringify({ versions: [{ version: '1.1.0' }] })),
+		});
+		clearMetadataCachesForTest();
+
+		const versionResult = await dispatch(
+			'https://fontsource.test/v1/version/recursive',
+		);
+		expect(await versionResult.response.json()).toEqual({
+			latest: '',
+			static: [],
+			latestVariable: '1.1.0',
+			variable: ['1.1.0'],
+		});
+		await versionResult.settle();
+
+		const accepted = await dispatch(
+			'https://fontsource.test/v1/download/recursive',
+		);
+		expect(accepted.response.status).toBe(202);
+		expect(await accepted.response.json()).toEqual({
+			state: 'building',
+			version: '1.1.0',
+		});
+		await accepted.settle();
+
+		for (let attempts = 0; attempts < 100; attempts += 1) {
+			if (await testEnv.FONTS.head('recursive:vf@1.1.0/download.zip')) {
+				break;
+			}
+			await new Promise((resolve) => setTimeout(resolve, 1));
+		}
+
+		const download = await dispatch(
+			'https://fontsource.test/v1/download/recursive',
+		);
+		await download.response.arrayBuffer();
+		await download.settle();
+
+		expect(download.response.status).toBe(200);
+	});
+
 	it('returns a failed asynchronous download build on the next poll', async () => {
 		const builder = installArtifactBuilderMock(testEnv, {
 			failBuildKeys: ['build:abel@5.0.0:download'],
@@ -668,12 +718,41 @@ describe('cdn routes', () => {
 		expect(builder.calls).not.toHaveBeenCalled();
 	});
 
-	it('falls back to the builder when the published-file preflight fails', async () => {
+	it('rejects missing exact package versions before the builder runs', async () => {
 		vi.restoreAllMocks();
 		const builder = installArtifactBuilderMock(testEnv);
 		installUpstreamFetchMock({
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@9.9.9?structure=flat`]:
+				new Response('not found', { status: 404 }),
+			[`${UPSTREAM_URLS.npmRegistry}/@fontsource/abel/9.9.9`]: new Response(
+				'not found',
+				{ status: 404 },
+			),
+		});
+
+		const result = await dispatch(
+			'https://fontsource.test/fonts/abel@9.9.9/latin-400-normal.woff2',
+		);
+		const payload = (await result.response.json()) as {
+			status: number;
+			error: string;
+		};
+		await result.settle();
+
+		expect(result.response.status).toBe(404);
+		expect(payload.error).toBe('Unable to resolve version "9.9.9"');
+		expect(builder.calls).not.toHaveBeenCalled();
+	});
+
+	it('falls back to the builder while jsdelivr is behind npm', async () => {
+		vi.restoreAllMocks();
+		installArtifactBuilderMock(testEnv);
+		installUpstreamFetchMock({
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0?structure=flat`]:
-				new Response('boom', { status: 500 }),
+				new Response('not found', { status: 404 }),
+			[`${UPSTREAM_URLS.npmRegistry}/@fontsource/abel/5.0.0`]: new Response(
+				JSON.stringify({ version: '5.0.0' }),
+			),
 		});
 
 		const result = await dispatch(
@@ -684,7 +763,6 @@ describe('cdn routes', () => {
 
 		expect(result.response.status).toBe(200);
 		expect(bytes.byteLength).toBe(staticWoff2Bytes.byteLength);
-		expect(builder.calls).toHaveBeenCalledTimes(1);
 	});
 
 	it('returns 502 when version lookup upstream fails', async () => {

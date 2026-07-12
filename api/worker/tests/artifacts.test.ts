@@ -92,12 +92,10 @@ describe('container artifact builder', () => {
 			files.push([`package/files/${id}-${filename}`, bytes]);
 		}
 
-		if (!isVariable) {
-			files.push([
-				'package/LICENSE',
-				new TextEncoder().encode('Example License'),
-			]);
-		}
+		files.push([
+			'package/LICENSE',
+			new TextEncoder().encode('Example License'),
+		]);
 
 		return gzipSync(
 			await packTar(
@@ -308,6 +306,28 @@ describe('container artifact builder', () => {
 				'LICENSE',
 			]),
 		);
+	});
+
+	it('builds downloads from a variable package without a static package', async () => {
+		const { buildArtifacts } = await import('../container/src/artifacts');
+
+		await buildArtifacts({
+			mode: 'download',
+			variableVersion: '2.0.0',
+			metadata: variableMetadata,
+		});
+
+		const zipPut = putObject.mock.calls.find(
+			([key]) => key === 'recursive:vf@2.0.0/download.zip',
+		);
+		const archive = unzipSync(zipPut?.[1] as Uint8Array);
+		expect(Object.keys(archive)).toContain('LICENSE');
+		expect(Object.keys(archive).some((key) => key.startsWith('static/'))).toBe(
+			false,
+		);
+		expect(
+			Object.keys(archive).some((key) => key.startsWith('variable/')),
+		).toBe(true);
 	});
 
 	it('keeps the download available when an individual warm upload fails', async () => {

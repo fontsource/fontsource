@@ -203,31 +203,39 @@ const buildDownloadArtifacts = async (
 	request: BuildDownloadRequest,
 ): Promise<number> => {
 	const { id } = request.metadata;
-	const axes = request.metadata.variable || undefined;
-	if (axes && !request.variableVersion) {
-		throw new Error(`Variable package version required for ${id}`);
-	}
-
-	const variableVersion = request.variableVersion ?? request.staticVersion;
-	const staticTag = { id, version: request.staticVersion };
-	const variableTag = { id, version: variableVersion };
 	const [staticPackage, variablePackage] = await Promise.all([
-		readPackageArchive(id, request.staticVersion, false),
-		axes && request.variableVersion
+		request.staticVersion
+			? readPackageArchive(id, request.staticVersion, false)
+			: undefined,
+		request.variableVersion
 			? readPackageArchive(id, request.variableVersion, true)
 			: undefined,
 	]);
-	const license = getPackageFile(staticPackage, 'LICENSE');
-	const staticArtifacts = await buildStaticArtifacts(staticTag, staticPackage);
-	const variableArtifacts = variablePackage
-		? buildVariableArtifacts(variableTag, variablePackage)
-		: [];
-	if (staticArtifacts.length === 0) {
+	const packageWithLicense = staticPackage ?? variablePackage;
+	if (!packageWithLicense) {
+		throw new Error(`No package versions provided for ${id}`);
+	}
+	const license = getPackageFile(packageWithLicense, 'LICENSE');
+	const staticArtifacts =
+		request.staticVersion && staticPackage
+			? await buildStaticArtifacts(
+					{ id, version: request.staticVersion },
+					staticPackage,
+				)
+			: [];
+	const variableArtifacts =
+		request.variableVersion && variablePackage
+			? buildVariableArtifacts(
+					{ id, version: request.variableVersion },
+					variablePackage,
+				)
+			: [];
+	if (request.staticVersion && staticArtifacts.length === 0) {
 		throw new Error(
 			`No static artifacts published for ${id}@${request.staticVersion}`,
 		);
 	}
-	if (axes && variableArtifacts.length === 0) {
+	if (request.variableVersion && variableArtifacts.length === 0) {
 		throw new Error(
 			`No variable artifacts published for ${id}@${request.variableVersion}`,
 		);
@@ -263,8 +271,9 @@ const buildDownloadArtifacts = async (
 		(result) => result.status === 'rejected',
 	);
 	if (warmFailures.length > 0) {
+		const version = request.staticVersion ?? `vf@${request.variableVersion}`;
 		console.error(
-			`[artifacts] failed to warm ${warmFailures.length}/${artifacts.length} individual artifacts for ${id}@${request.staticVersion}`,
+			`[artifacts] failed to warm ${warmFailures.length}/${artifacts.length} individual artifacts for ${id}@${version}`,
 			warmFailures.map((result) => result.reason),
 		);
 	}
