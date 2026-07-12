@@ -62,7 +62,7 @@ describe('upstream package fetches', () => {
 
 		expect(fetchMock).toHaveBeenCalledWith(
 			`${UPSTREAM_URLS.npmRegistry}/@fontsource-variable/recursive/-/recursive-5.2.8.tgz`,
-			expect.anything(),
+			undefined,
 		);
 	});
 });

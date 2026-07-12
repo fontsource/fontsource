@@ -71,18 +71,17 @@ const fetchWithCache = async (
 };
 
 /** Fetches an upstream binary with asset-specific cache policy. */
-const fetchBinary = (url: string): Promise<Response> =>
-	fetchWithCache(url, {
-		cacheEverything: true,
-		cacheTtlByStatus: {
-			'200-299': 86400,
-			404: 60,
-			'500-599': 0,
-		},
-	});
-
 const fetchBinaryBytes = async (url: string): Promise<Uint8Array> =>
-	(await fetchBinary(url)).bytes();
+	(
+		await fetchWithCache(url, {
+			cacheEverything: true,
+			cacheTtlByStatus: {
+				'200-299': 86400,
+				404: 60,
+				'500-599': 0,
+			},
+		})
+	).bytes();
 
 const packageScope = (isVariable: boolean): string =>
 	isVariable ? '@fontsource-variable' : '@fontsource';
@@ -139,7 +138,7 @@ export const fetchPackageTarball = async (
 	isVariable = false,
 ): Promise<ReadableStream<Uint8Array>> => {
 	const url = `${UPSTREAM_URLS.npmRegistry}/${packageName(id, isVariable)}/-/${id}-${version}.tgz`;
-	const response = await fetchBinary(url);
+	const response = await fetchWithCache(url);
 
 	if (!response.body) {
 		throw new Error(`Upstream response body was empty: ${url}`);
