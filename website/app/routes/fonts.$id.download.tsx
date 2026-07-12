@@ -2,11 +2,12 @@ import { env } from 'cloudflare:workers';
 import { Center, Flex, Loader, Text, Title } from '@mantine/core';
 import { useEffect, useRef } from 'react';
 import type { ActionFunctionArgs, MetaFunction } from 'react-router';
-import { redirectDocument, useFetcher } from 'react-router';
+import { data, redirectDocument, useFetcher } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import styles from '@/components/ErrorBoundary.module.css';
 import { throwApiResponseError } from '@/utils/api.server';
+import { cacheHeaders } from '@/utils/cache';
 
 export const meta: MetaFunction = () => [
 	{ title: 'Preparing download | Fontsource' },
@@ -19,6 +20,16 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 
 	const downloadUrl = `https://fontsource-api.fontsource.workers.dev/v1/download/${encodeURIComponent(id)}`;
 	const response = await env.API.fetch(downloadUrl);
+
+	if (response.status === 202) {
+		await response.body?.cancel();
+		const retryAfter = Number(response.headers.get('Retry-After')) || 3;
+
+		return data(
+			{ state: 'building' as const, retryAfter },
+			{ status: 202, headers: cacheHeaders.noStore },
+		);
+	}
 
 	if (!response.ok) {
 		await throwApiResponseError(response, downloadUrl);
@@ -33,7 +44,7 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 };
 
 export default function Download() {
-	const { submit } = useFetcher();
+	const { data: build, state, submit } = useFetcher<typeof action>();
 	const started = useRef(false);
 
 	useEffect(() => {
@@ -41,6 +52,16 @@ export default function Download() {
 		started.current = true;
 		void submit(null, { method: 'post' });
 	}, [submit]);
+
+	useEffect(() => {
+		if (state !== 'idle' || build?.state !== 'building') return;
+
+		const timeout = setTimeout(() => {
+			void submit(null, { method: 'post' });
+		}, build.retryAfter * 1000);
+
+		return () => clearTimeout(timeout);
+	}, [build, state, submit]);
 
 	return (
 		<Center className={styles.container}>
