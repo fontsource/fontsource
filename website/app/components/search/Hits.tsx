@@ -132,17 +132,13 @@ const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const collectionsStore = useCollectionsStore();
 	const collectionId = useValue(state$.collectionId);
-	const collectionMessage = useValue(() => {
-		const collection$ = collectionsStore.collections$.find(
-			(item$) => item$.id.peek() === collectionId,
-		);
-		if (!collection$) return;
-
-		const name = collection$.name.get();
-		return collection$.fontIds.length === 0
-			? `${name} does not have any fonts yet.`
-			: `No fonts in ${name} match these filters.`;
-	});
+	const collections = useValue(collectionsStore.getCollections);
+	const collection = collections.find((item) => item.id === collectionId);
+	const collectionMessage = collection
+		? collection.fontIds.length === 0
+			? `${collection.name} does not have any fonts yet.`
+			: `No fonts in ${collection.name} match these filters.`
+		: undefined;
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);

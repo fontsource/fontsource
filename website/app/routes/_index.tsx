@@ -1,6 +1,6 @@
 import { createFetchRequester } from '@algolia/requester-fetch';
 import { observable } from '@legendapp/state';
-import { useObservable } from '@legendapp/state/react';
+import { useObservable, useValue } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { UiState } from 'instantsearch.js';
@@ -30,7 +30,10 @@ import {
 	type SearchState,
 } from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
-import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
+import {
+	CollectionsProvider,
+	useCollectionsStore,
+} from '@/features/collections/CollectionsProvider';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
@@ -38,6 +41,7 @@ import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 
 interface SearchProps {
+	hasCollectionFilter: boolean;
 	serverState?: InstantSearchServerState;
 	serverUrl: string;
 }
@@ -157,10 +161,18 @@ const routing = (
 };
 
 export const loader = async ({ request, context }: LoaderFunctionArgs) => {
-	const { env, ctx } = context.get(cloudflareContext);
-	const { ALGOLIA } = env;
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
+	const hasCollectionFilter = requestUrl.searchParams.has('collection');
+	if (hasCollectionFilter) {
+		return data<SearchProps>(
+			{ hasCollectionFilter, serverUrl },
+			{ headers: cacheHeaders.short },
+		);
+	}
+
+	const { env, ctx } = context.get(cloudflareContext);
+	const { ALGOLIA } = env;
 	const cacheKey = buildAlgoliaCacheKey(serverUrl);
 
 	// Generate default state object for ssr
@@ -173,6 +185,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	if (serverState) {
 		return data<SearchProps>(
 			{
+				hasCollectionFilter,
 				serverState,
 				serverUrl,
 			},
@@ -215,6 +228,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 
 	return data<SearchProps>(
 		{
+			hasCollectionFilter,
 			serverState,
 			serverUrl,
 		},
@@ -225,10 +239,14 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 };
 
 export default function Index() {
-	const { serverState, serverUrl } = useLoaderData<typeof loader>();
+	const { hasCollectionFilter, serverState, serverUrl } =
+		useLoaderData<typeof loader>();
+	const collectionsStore = useCollectionsStore();
+	const collectionsReady = useValue(collectionsStore.ready$);
 	const searchRef = useRef<HTMLDivElement>(null);
 
 	const state$ = useObservable(createSearchState());
+	if (hasCollectionFilter && !collectionsReady) return null;
 
 	return (
 		<InstantSearchSSRProvider {...serverState}>
