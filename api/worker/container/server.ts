@@ -1,9 +1,5 @@
 import { HTTPException } from 'hono/http-exception';
-import {
-	type BuildVersionRequest,
-	type BuildVersionTag,
-	getBuildKey,
-} from '../shared/build';
+import { type BuildVersionRequest, getBuildKey } from '../shared/build';
 import { ensureBuilt } from './src/builder';
 
 const PORT = 3000;
@@ -20,13 +16,13 @@ const resp404 = (): Response =>
 const errorStatus = (error: unknown): number =>
 	error instanceof HTTPException ? error.status : 500;
 
-const respError = (error: unknown, tag?: BuildVersionTag): Response => {
+const respError = (error: unknown, request?: BuildVersionRequest): Response => {
 	const message = error instanceof Error ? error.message : String(error);
 
 	return Response.json(
 		{
 			state: 'failed',
-			buildKey: tag ? getBuildKey(tag) : 'unknown',
+			buildKey: request ? getBuildKey(request) : 'unknown',
 			error: message,
 			builtAt: new Date().toISOString(),
 		},
@@ -53,7 +49,7 @@ Bun.serve({
 					}
 
 					console.log(
-						`[container] POST /build-version ${payload.mode} ${payload.tag.id}@${payload.tag.version}`,
+						`[container] POST /build-version ${payload.mode} ${getBuildKey(payload)}`,
 					);
 
 					const snapshot = await ensureBuilt(payload);
@@ -66,14 +62,12 @@ Bun.serve({
 				} catch (error) {
 					console.error(
 						`[container] build failed`,
-						payload
-							? `${payload.tag.id}@${payload.tag.version}`
-							: '(no payload)',
+						payload ? getBuildKey(payload) : '(no payload)',
 						error,
 					);
 
 					if (payload) {
-						return respError(error, payload.tag);
+						return respError(error, payload);
 					}
 
 					return respError(error);

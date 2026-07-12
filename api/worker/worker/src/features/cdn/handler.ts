@@ -8,18 +8,10 @@ import {
 	findFontPackageEntry,
 	resolveFontPackageManifest,
 } from '../../../../shared/font-package-manifest';
-import { getDownloadAttachmentFilename } from '../../../../shared/http-metadata';
-import { getBinaryKey } from '../../../../shared/storage';
-import {
-	fetchPackageFileList,
-	UpstreamNotFoundError,
-} from '../../../../shared/upstream';
+import { getBinaryKey, getDownloadKey } from '../../../../shared/storage';
+import { fetchPackageFileList } from '../../../../shared/upstream';
 import { CACHE_POLICIES, CONTENT_TYPES } from '../../constants';
-import {
-	ensureFileBuilt,
-	ensureVersionBuilt,
-	startVersionBuild,
-} from '../../container/client';
+import { ensureFileBuilt, startDownloadBuild } from '../../container/client';
 import type { AppEnv } from '../../env';
 import { toHttpDate } from '../../utils/cache';
 import { badGateway, badRequest, notFound } from '../../utils/errors';
@@ -124,6 +116,13 @@ export const getStoredBinaryAsset = async (
 	tag: Pick<ParsedFontTag, 'id' | 'isVariable' | 'version'>,
 	file: string,
 	requestHeaders?: Headers,
+): Promise<StoredBinaryAsset | undefined> =>
+	getStoredBinaryObject(c, getBinaryKey(tag, file), requestHeaders);
+
+const getStoredBinaryObject = async (
+	c: Context<AppEnv>,
+	key: string,
+	requestHeaders?: Headers,
 ): Promise<StoredBinaryAsset | undefined> => {
 	const onlyIf =
 		requestHeaders &&
@@ -131,10 +130,7 @@ export const getStoredBinaryAsset = async (
 			requestHeaders.has('If-Modified-Since'))
 			? requestHeaders
 			: undefined;
-	const existing = await c.env.FONTS.get(
-		getBinaryKey(tag, file),
-		onlyIf ? { onlyIf } : undefined,
-	);
+	const existing = await c.env.FONTS.get(key, onlyIf ? { onlyIf } : undefined);
 
 	return existing
 		? existing.body === undefined
@@ -170,47 +166,32 @@ const toAttachmentFilename = (
 	id: string,
 	version: string,
 	file: string,
-): string =>
-	file === 'download.zip'
-		? getDownloadAttachmentFilename(id, version)
-		: `${id}_${version}_${file}`;
+): string => `${id}_${version}_${file}`;
 
 const ensurePublishedPinnedAsset = async (
 	resolved: ResolvedFontRequest,
 	file: string,
-	sourceFilename?: string,
+	sourceFilename: string,
 ): Promise<void> => {
 	try {
-		if (sourceFilename) {
-			const publishedFiles = await fetchPackageFileList(
-				resolved.tag.id,
-				resolved.tag.version,
-				resolved.tag.isVariable,
-			);
-
-			if (!publishedFiles.has(sourceFilename)) {
-				throw notFound(
-					`Requested file ${file} not found for ${resolved.tag.id}@${resolved.tag.version}`,
-				);
-			}
-			return;
-		}
-
-		resolveVersionTag(
+		const publishedFiles = await fetchPackageFileList(
+			resolved.tag.id,
 			resolved.tag.version,
-			await getPublishedVersions(resolved.tag.id, resolved.tag.isVariable),
+			resolved.tag.isVariable,
 		);
-	} catch (error) {
-		if (!sourceFilename && error instanceof UpstreamNotFoundError) {
-			throw notFound(`Unable to resolve version "${resolved.tag.version}"`);
-		}
 
+		if (!publishedFiles.has(sourceFilename)) {
+			throw notFound(
+				`Requested file ${file} not found for ${resolved.tag.id}@${resolved.tag.version}`,
+			);
+		}
+	} catch (error) {
 		if (error instanceof HTTPException && error.status === 404) {
 			throw error;
 		}
 
 		console.warn(
-			`[cdn] published-${sourceFilename ? 'file' : 'version'} preflight skipped for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}`,
+			`[cdn] published-file preflight skipped for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}`,
 			error,
 		);
 	}
@@ -251,6 +232,71 @@ const respondWithBinary = (
 	return new Response(body.body, { status: 200, headers });
 };
 
+export const getDownloadAsset = async (
+	c: Context<AppEnv>,
+	id: string,
+): Promise<Response> => {
+	const metadata = await getFontById(c, id);
+	if (!metadata) {
+		throw notFound('Not Found. Font does not exist.');
+	}
+
+	const axes = metadata.variable || undefined;
+	const [staticVersions, variableVersions] = await Promise.all([
+		getPublishedVersions(id, false),
+		axes ? getPublishedVersions(id, true) : undefined,
+	]);
+	const staticVersion = resolveVersionTag('latest', staticVersions);
+	const variableVersion = variableVersions
+		? resolveVersionTag('latest', variableVersions)
+		: undefined;
+	const downloadKey = getDownloadKey(id, staticVersion, variableVersion);
+	const readDownload = () =>
+		getStoredBinaryObject(c, downloadKey, c.req.raw.headers);
+	const respond = (asset: StoredBinaryAsset) =>
+		respondWithBinary(asset, {
+			cachePolicy: {
+				...CACHE_POLICIES.floating,
+				'Cache-Control': 'public, no-cache',
+			},
+			contentType: 'zip',
+			filename: `${id}.zip`,
+		});
+
+	const existing = await readDownload();
+	if (existing) {
+		return respond(existing);
+	}
+
+	const build = await startDownloadBuild(c, {
+		mode: 'download',
+		staticVersion,
+		variableVersion,
+		metadata,
+	});
+	if (build.state === 'building') {
+		return Response.json(
+			{ state: 'building', version: staticVersion },
+			{
+				status: 202,
+				headers: {
+					...CACHE_POLICIES.noStore,
+					'Retry-After': '3',
+				},
+			},
+		);
+	}
+
+	const built = await readDownload();
+	if (!built) {
+		throw badGateway(
+			`Bad Gateway. Artifact build completed without persisting "${downloadKey}".`,
+		);
+	}
+
+	return respond(built);
+};
+
 /**
  * Serves public binary assets from R2, building the exact version on demand if
  * the requested file has not been warmed yet.
@@ -259,7 +305,6 @@ export const getBinaryAsset = async (
 	c: Context<AppEnv>,
 	tag: string,
 	file: string,
-	options: { respondAsync?: boolean } = {},
 ): Promise<Response> => {
 	const contentType = getExtension(file);
 
@@ -268,7 +313,6 @@ export const getBinaryAsset = async (
 	}
 
 	const parsedTag = parseFontTag(tag);
-	const isDownload = file === 'download.zip';
 	const pinnedVersion = isPinnedVersion(parsedTag.version);
 
 	// Fast-path: pinned version already in R2
@@ -288,17 +332,15 @@ export const getBinaryAsset = async (
 
 	// Resolve version (for floating) or validate font exists (for pinned)
 	const resolved = await resolveFontRequest(c, parsedTag);
-	const requestedEntry = isDownload
-		? undefined
-		: findFontPackageEntry(
-				resolveFontPackageManifest(resolved.metadata, resolved.axes),
-				{
-					file,
-					isVariable: resolved.tag.isVariable,
-				},
-			);
+	const requestedEntry = findFontPackageEntry(
+		resolveFontPackageManifest(resolved.metadata, resolved.axes),
+		{
+			file,
+			isVariable: resolved.tag.isVariable,
+		},
+	);
 
-	if (!isDownload && !requestedEntry) {
+	if (!requestedEntry) {
 		throw notFound('Not Found. File does not exist.');
 	}
 
@@ -306,7 +348,7 @@ export const getBinaryAsset = async (
 		await ensurePublishedPinnedAsset(
 			resolved,
 			file,
-			requestedEntry?.sourceFilename,
+			requestedEntry.sourceFilename,
 		);
 	}
 
@@ -336,59 +378,17 @@ export const getBinaryAsset = async (
 		}
 	}
 
-	const readBuiltAsset = async () =>
-		await getStoredBinaryAsset(c, resolved.tag, file, c.req.raw.headers);
-	const scheduleFamilyWarm = () => {
-		c.executionCtx.waitUntil(
-			ensureVersionBuilt(c, resolved).catch((error) => {
-				console.error(
-					`[cdn] background family warm failed for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}`,
-					error,
-				);
-			}),
-		);
-	};
-
-	if (!isDownload) {
-		const build = await ensureFileBuilt(c, resolved, file);
-		const built = await readBuiltAsset();
-
-		if (!built) {
-			throw notFound('Not Found. File does not exist.');
-		}
-
-		if (build.mode === 'file') {
-			scheduleFamilyWarm();
-		}
-
-		return respond(built);
-	}
-
-	if (options.respondAsync) {
-		const build = await startVersionBuild(c, resolved);
-		if (build.state === 'building') {
-			return Response.json(
-				{ state: 'building', version: resolved.tag.version },
-				{
-					status: 202,
-					headers: {
-						...CACHE_POLICIES.noStore,
-						'Retry-After': '3',
-					},
-				},
-			);
-		}
-	} else {
-		await ensureVersionBuilt(c, resolved);
-	}
-	const built = await readBuiltAsset();
+	await ensureFileBuilt(c, resolved, file);
+	const built = await getStoredBinaryAsset(
+		c,
+		resolved.tag,
+		file,
+		c.req.raw.headers,
+	);
 
 	if (!built) {
-		throw badGateway(
-			`Bad Gateway. Artifact build completed without persisting "${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}".`,
-		);
+		throw notFound('Not Found. File does not exist.');
 	}
-
 	return respond(built);
 };
 

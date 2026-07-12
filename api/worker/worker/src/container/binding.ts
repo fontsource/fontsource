@@ -71,7 +71,7 @@ export class ArtifactBuilder extends Container<Env> {
 			if (!response.ok) {
 				return {
 					state: 'failed',
-					buildKey: getBuildKey(request.tag),
+					buildKey: getBuildKey(request),
 					status: response.status,
 					error: await readBuildErrorMessage(response),
 				};
@@ -79,7 +79,7 @@ export class ArtifactBuilder extends Container<Env> {
 
 			return (await response.json()) as BuildVersionResponse;
 		} catch (error) {
-			const buildKey = getBuildKey(request.tag);
+			const buildKey = getBuildKey(request);
 			const message = error instanceof Error ? error.message : String(error);
 			return {
 				state: 'failed',
@@ -103,7 +103,7 @@ export class ArtifactBuilder extends Container<Env> {
 		if (this.activeBuilds.has(requestKey)) {
 			return {
 				state: 'building',
-				buildKey: getBuildKey(request.tag),
+				buildKey: getBuildKey(request),
 			};
 		}
 
@@ -120,7 +120,7 @@ export class ArtifactBuilder extends Container<Env> {
 
 		return {
 			state: 'building',
-			buildKey: getBuildKey(request.tag),
+			buildKey: getBuildKey(request),
 		};
 	}
 }

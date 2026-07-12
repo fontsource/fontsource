@@ -23,7 +23,7 @@ export const TagFileParamSchema = z.object({
 	file: z
 		.string()
 		.min(1)
-		.describe('Asset filename (e.g. "latin-400-normal.woff2", "download.zip")'),
+		.describe('Binary asset filename (e.g. "latin-400-normal.woff2")'),
 });
 
 /** Path parameters for the legacy file redirect endpoint. */

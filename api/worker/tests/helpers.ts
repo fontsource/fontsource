@@ -16,7 +16,6 @@ import {
 	type BuildVersionStatus,
 	getBuildKey,
 	getBuildRequestKey,
-	getFamilyBuildRequestKey,
 } from '../shared/build';
 import type {
 	FontCatalog,
@@ -30,7 +29,6 @@ import {
 } from '../shared/font-package-manifest';
 import {
 	BINARY_CONTENT_TYPES,
-	getDownloadContentDisposition,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../shared/http-metadata';
 import type { StatsResponse } from '../shared/stats';
@@ -375,14 +373,12 @@ const putBuiltObject = async (
 	key: string,
 	body: Uint8Array,
 	options: {
-		contentDisposition?: string;
 		contentType: keyof typeof BINARY_CONTENT_TYPES;
 	},
 ): Promise<void> => {
 	await env.FONTS.put(key, body, {
 		httpMetadata: {
 			cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-			contentDisposition: options.contentDisposition,
 			contentType: BINARY_CONTENT_TYPES[options.contentType],
 		},
 	});
@@ -470,45 +466,46 @@ const putVariableArtifacts = async (
 	return artifactCount;
 };
 
-const putCombinedArtifacts = async (
+const putDownloadArtifacts = async (
 	env: Env,
 	request: BuildVersionRequest,
 ): Promise<number> => {
-	const { metadata, tag, axes } = request;
+	if (request.mode !== 'download') {
+		throw new Error('Expected a download build request.');
+	}
+
+	const { metadata } = request;
+	const axes = metadata.variable || undefined;
 	const zipFiles: Zippable = {};
 	let artifactCount = await putStaticArtifacts(
 		env,
 		metadata,
-		tag.version,
+		request.staticVersion,
 		zipFiles,
 	);
 
-	if (axes) {
+	if (axes && request.variableVersion) {
 		artifactCount += await putVariableArtifacts(
 			env,
 			metadata,
 			axes,
-			tag.version,
+			request.variableVersion,
 			zipFiles,
 		);
 	}
 
 	if (artifactCount === 0) {
 		throw new Error(
-			`Mocked build produced no artifacts for ${tag.id}@${tag.version}`,
+			`Mocked build produced no artifacts for ${metadata.id}@${request.staticVersion}`,
 		);
 	}
 
 	zipFiles.LICENSE = new TextEncoder().encode('Example License');
 	await putBuiltObject(
 		env,
-		getDownloadKey(metadata.id, tag.version),
+		getDownloadKey(metadata.id, request.staticVersion, request.variableVersion),
 		zipSync(zipFiles),
 		{
-			contentDisposition: getDownloadContentDisposition(
-				metadata.id,
-				tag.version,
-			),
 			contentType: 'zip',
 		},
 	);
@@ -521,10 +518,13 @@ const putRequestedArtifact = async (
 	request: BuildVersionRequest,
 ): Promise<number> => {
 	if (request.mode !== 'file') {
-		return await putCombinedArtifacts(env, request);
+		return await putDownloadArtifacts(env, request);
 	}
 
-	const manifest = resolveFontPackageManifest(request.metadata, request.axes);
+	const manifest = resolveFontPackageManifest(
+		request.metadata,
+		request.metadata.variable || undefined,
+	);
 	const entry = findFontPackageEntry(manifest, request.target);
 
 	if (!entry) {
@@ -582,15 +582,7 @@ export const installArtifactBuilderMock = (
 	const ensureBuilt = async (
 		request: BuildVersionRequest,
 	): Promise<BuildVersionResponse> => {
-		const buildKey = getBuildKey(request.tag);
-		const activeFamilyBuild = activeBuilds.get(
-			getFamilyBuildRequestKey(request.tag),
-		);
-
-		if (request.mode === 'file' && activeFamilyBuild) {
-			return await activeFamilyBuild;
-		}
-
+		const buildKey = getBuildKey(request);
 		const requestKey = getBuildRequestKey(request);
 		const activeBuild = activeBuilds.get(requestKey);
 
@@ -653,7 +645,7 @@ export const installArtifactBuilderMock = (
 		try {
 			return await ensureBuilt(request);
 		} catch (error) {
-			const buildKey = getBuildKey(request.tag);
+			const buildKey = getBuildKey(request);
 			return {
 				state: 'failed',
 				buildKey,
@@ -679,7 +671,7 @@ export const installArtifactBuilderMock = (
 		if (asyncBuilds.has(requestKey)) {
 			return {
 				state: 'building',
-				buildKey: getBuildKey(request.tag),
+				buildKey: getBuildKey(request),
 			};
 		}
 
@@ -694,7 +686,7 @@ export const installArtifactBuilderMock = (
 
 		return {
 			state: 'building',
-			buildKey: getBuildKey(request.tag),
+			buildKey: getBuildKey(request),
 		};
 	};
 
