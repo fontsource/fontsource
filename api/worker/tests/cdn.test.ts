@@ -845,6 +845,17 @@ describe('cdn routes', () => {
 		expect(builder.calls).not.toHaveBeenCalled();
 	});
 
+	it('short-circuits unpublished exact-version downloads before the builder runs', async () => {
+		const builder = installArtifactBuilderMock(testEnv);
+		const result = await dispatch(
+			'https://fontsource.test/fonts/abel@9.9.9/download.zip',
+		);
+		await result.settle();
+
+		expect(result.response.status).toBe(404);
+		expect(builder.calls).not.toHaveBeenCalled();
+	});
+
 	it('falls back to the builder when the published-file preflight fails', async () => {
 		vi.restoreAllMocks();
 		const builder = installArtifactBuilderMock(testEnv);
