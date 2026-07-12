@@ -1,10 +1,14 @@
 import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
+import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import {
 	type BuildFileRequest,
+	type BuildVersionFailure,
 	type BuildVersionRequest,
 	type BuildVersionRequestBase,
 	type BuildVersionResponse,
+	type BuildVersionResult,
+	type BuildVersionStatus,
 	getBuildKey,
 } from '../../../shared/build';
 import type { AppEnv } from '../env';
@@ -15,23 +19,31 @@ const buildVersion = async (
 	requestBody: BuildVersionRequest,
 ): Promise<BuildVersionResponse> => {
 	const buildKey = getBuildKey(requestBody.tag);
+	let result: BuildVersionResult;
+
 	try {
-		return await c.env.ARTIFACT_BUILDER.getByName(buildKey).buildVersion(
-			requestBody,
-		);
+		result =
+			await c.env.ARTIFACT_BUILDER.getByName(buildKey).buildVersion(
+				requestBody,
+			);
 	} catch (error) {
 		const message = error instanceof Error ? error.message : String(error);
-
-		if (error instanceof HTTPException) {
-			throw new HTTPException(error.status, {
-				message,
-			});
-		}
-
 		throw new HTTPException(502, {
-			message: `Bad Gateway. Artifact build failed for ${buildKey}: ${message}`,
+			message: `Artifact builder request failed (${buildKey}): ${message}`,
 		});
 	}
+
+	if (result.state === 'failed') {
+		return throwBuildFailure(result);
+	}
+
+	return result;
+};
+
+const throwBuildFailure = (failure: BuildVersionFailure): never => {
+	throw new HTTPException(failure.status as ContentfulStatusCode, {
+		message: failure.error,
+	});
 };
 
 const buildRequestBase = (
@@ -57,6 +69,34 @@ export const ensureVersionBuilt = async (
 		...buildRequestBase(resolved),
 		mode: 'family',
 	});
+
+export const startVersionBuild = async (
+	c: Context<AppEnv>,
+	resolved: ResolvedFontRequest,
+): Promise<Exclude<BuildVersionStatus, BuildVersionFailure>> => {
+	const request = {
+		...buildRequestBase(resolved),
+		mode: 'family',
+	} satisfies BuildVersionRequest;
+	const buildKey = getBuildKey(request.tag);
+	let result: BuildVersionStatus;
+
+	try {
+		result =
+			await c.env.ARTIFACT_BUILDER.getByName(buildKey).startBuild(request);
+	} catch (error) {
+		const message = error instanceof Error ? error.message : String(error);
+		throw new HTTPException(502, {
+			message: `Artifact builder request failed (${buildKey}): ${message}`,
+		});
+	}
+
+	if (result.state === 'failed') {
+		return throwBuildFailure(result);
+	}
+
+	return result;
+};
 
 export const ensureFileBuilt = async (
 	c: Context<AppEnv>,

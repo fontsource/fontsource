@@ -30,13 +30,27 @@ export interface BuildFileRequest extends BuildVersionRequestBase {
 export type BuildVersionRequest = BuildFamilyRequest | BuildFileRequest;
 
 export interface BuildVersionResponse {
-	state: 'ready' | 'failed';
+	state: 'ready';
 	buildKey: string;
 	mode?: BuildVersionRequest['mode'];
 	artifactCount?: number;
 	durationMs?: number;
-	error?: string;
 }
+
+export interface BuildVersionFailure {
+	state: 'failed';
+	buildKey: string;
+	status: number;
+	error: string;
+}
+
+export interface BuildVersionBuilding {
+	state: 'building';
+	buildKey: string;
+}
+
+export type BuildVersionResult = BuildVersionResponse | BuildVersionFailure;
+export type BuildVersionStatus = BuildVersionBuilding | BuildVersionFailure;
 
 /**
  * Exact version cache key. This is also the named container identity, so the

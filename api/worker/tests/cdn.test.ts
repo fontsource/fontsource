@@ -602,6 +602,69 @@ describe('cdn routes', () => {
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
 
+	it('deduplicates cold download builds and returns 202 until the archive is ready', async () => {
+		const builder = installArtifactBuilderMock(testEnv, { buildDelayMs: 25 });
+		const url = 'https://fontsource.test/v1/download/abel';
+
+		const [first, second] = await Promise.all([dispatch(url), dispatch(url)]);
+		const [firstBody, secondBody] = await Promise.all([
+			first.response.json(),
+			second.response.json(),
+		]);
+		await Promise.all([first.settle(), second.settle()]);
+
+		expect(first.response.status).toBe(202);
+		expect(second.response.status).toBe(202);
+		expect(firstBody).toEqual({ state: 'building', version: '5.0.0' });
+		expect(secondBody).toEqual(firstBody);
+		expect(first.response.headers.get('Retry-After')).toBe('3');
+		expect(first.response.headers.get('Cache-Control')).toBe('no-store');
+		expect(first.response.headers.get('CDN-Cache-Control')).toBe('no-store');
+		expect(first.response.headers.get('Cloudflare-CDN-Cache-Control')).toBe(
+			'no-store',
+		);
+		expect(builder.calls).toHaveBeenCalledTimes(1);
+
+		for (let attempts = 0; attempts < 100; attempts += 1) {
+			if (await testEnv.FONTS.head('abel@5.0.0/download.zip')) {
+				break;
+			}
+			await new Promise((resolve) => setTimeout(resolve, 1));
+		}
+		expect(await testEnv.FONTS.head('abel@5.0.0/download.zip')).not.toBeNull();
+
+		const ready = await dispatch(url);
+		const archive = await ready.response.arrayBuffer();
+		await ready.settle();
+
+		expect(ready.response.status).toBe(200);
+		expect(archive.byteLength).toBeGreaterThan(0);
+		expect(builder.calls).toHaveBeenCalledTimes(1);
+	});
+
+	it('returns the raw builder error when polling a failed download build', async () => {
+		const builder = installArtifactBuilderMock(testEnv, {
+			failBuildKeys: ['build:abel@5.0.0'],
+		});
+		const url = 'https://fontsource.test/v1/download/abel';
+
+		const accepted = await dispatch(url);
+		await accepted.response.json();
+		await accepted.settle();
+		expect(accepted.response.status).toBe(202);
+
+		await new Promise((resolve) => setTimeout(resolve, 0));
+		const failed = await dispatch(url);
+		const body = (await failed.response.json()) as { error: string };
+		await failed.settle();
+
+		expect(failed.response.status).toBe(502);
+		expect(body.error).toBe(
+			'Bad Gateway. Artifact build failed for build:abel@5.0.0: Mocked builder failure for build:abel@5.0.0',
+		);
+		expect(builder.calls).toHaveBeenCalledTimes(1);
+	});
+
 	it('triggers one version build on cold ttf miss and serves cached files afterwards', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		const ttfUrl =

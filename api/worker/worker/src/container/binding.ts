@@ -1,12 +1,16 @@
 import { Container } from '@cloudflare/containers';
-import { HTTPException } from 'hono/http-exception';
-import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
 import type {
+	BuildVersionFailure,
 	BuildVersionRequest,
 	BuildVersionResponse,
+	BuildVersionResult,
+	BuildVersionStatus,
 } from '../../../shared/build';
+import { getBuildKey, getBuildRequestKey } from '../../../shared/build';
 import { getBuilderStartupEnv } from '../env';
+
+const BUILD_TIMEOUT_MS = 10 * 60_000;
 
 export const readBuildErrorMessage = async (
 	response: Response,
@@ -37,44 +41,86 @@ export class ArtifactBuilder extends Container<Env> {
 	defaultPort = 3000;
 	sleepAfter = '2m';
 	enableInternet = true;
+	private activeBuilds = new Map<string, Promise<BuildVersionResult>>();
+	private failedBuilds = new Map<string, BuildVersionFailure>();
 
 	async buildVersion(
 		request: BuildVersionRequest,
-	): Promise<BuildVersionResponse> {
-		// Pass only the R2 credentials/config that the container needs to upload
-		// the built artifacts directly.
-		await this.startAndWaitForPorts({
-			startOptions: {
-				envVars: getBuilderStartupEnv(this.env),
-			},
-		});
-
-		const response = await this.containerFetch(
-			`http://localhost:${this.defaultPort}/build-version`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
+	): Promise<BuildVersionResult> {
+		try {
+			// Pass only the R2 credentials/config that the container needs to upload
+			// the built artifacts directly.
+			await this.startAndWaitForPorts({
+				startOptions: {
+					envVars: getBuilderStartupEnv(this.env),
 				},
-				body: JSON.stringify(request),
-				signal: AbortSignal.timeout(120_000),
-			},
-		);
-
-		if (!response.ok) {
-			throw new HTTPException(response.status as ContentfulStatusCode, {
-				message: await readBuildErrorMessage(response),
 			});
-		}
 
-		const payload = (await response.json()) as BuildVersionResponse;
-
-		if (payload.state !== 'ready') {
-			throw new Error(
-				payload.error ?? 'Artifact build did not complete successfully.',
+			const response = await this.containerFetch(
+				`http://localhost:${this.defaultPort}/build-version`,
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(request),
+					signal: AbortSignal.timeout(BUILD_TIMEOUT_MS),
+				},
 			);
+
+			if (!response.ok) {
+				return {
+					state: 'failed',
+					buildKey: getBuildKey(request.tag),
+					status: response.status,
+					error: await readBuildErrorMessage(response),
+				};
+			}
+
+			return (await response.json()) as BuildVersionResponse;
+		} catch (error) {
+			const buildKey = getBuildKey(request.tag);
+			const message = error instanceof Error ? error.message : String(error);
+			return {
+				state: 'failed',
+				buildKey,
+				status: 502,
+				error: `Bad Gateway. Artifact build failed for ${buildKey}: ${message}`,
+			};
+		}
+	}
+
+	async startBuild(request: BuildVersionRequest): Promise<BuildVersionStatus> {
+		const requestKey = getBuildRequestKey(request);
+		const failed = this.failedBuilds.get(requestKey);
+
+		if (failed) {
+			// Report the failure once; a later request can retry the cold build.
+			this.failedBuilds.delete(requestKey);
+			return failed;
 		}
 
-		return payload;
+		if (this.activeBuilds.has(requestKey)) {
+			return {
+				state: 'building',
+				buildKey: getBuildKey(request.tag),
+			};
+		}
+
+		// The pending container I/O keeps the Durable Object active after this RPC
+		// returns; the map makes later RPCs join the same logical build.
+		const build = this.buildVersion(request).then((result) => {
+			this.activeBuilds.delete(requestKey);
+			if (result.state === 'failed') {
+				this.failedBuilds.set(requestKey, result);
+			}
+			return result;
+		});
+		this.activeBuilds.set(requestKey, build);
+
+		return {
+			state: 'building',
+			buildKey: getBuildKey(request.tag),
+		};
 	}
 }

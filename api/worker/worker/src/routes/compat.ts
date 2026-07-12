@@ -12,6 +12,11 @@ import {
 
 type AppContext = Context<AppEnv>;
 
+const BuildInProgressSchema = z.object({
+	state: z.literal('building'),
+	version: z.string(),
+});
+
 export class DownloadFontRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Downloads'],
@@ -30,6 +35,10 @@ export class DownloadFontRoute extends OpenAPIRoute {
 					},
 				},
 			},
+			'202': {
+				description: 'Archive build accepted and still in progress',
+				...contentJson(BuildInProgressSchema),
+			},
 			'304': {
 				description: 'Not modified (conditional request)',
 			},
@@ -47,7 +56,9 @@ export class DownloadFontRoute extends OpenAPIRoute {
 	async handle(c: AppContext) {
 		const data = await this.getValidatedData<typeof this.schema>();
 		const { id } = data.params;
-		return getBinaryAsset(c, `${id}@latest`, 'download.zip');
+		return getBinaryAsset(c, `${id}@latest`, 'download.zip', {
+			respondAsync: true,
+		});
 	}
 }
 
