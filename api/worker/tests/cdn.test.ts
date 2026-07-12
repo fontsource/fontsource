@@ -488,6 +488,22 @@ describe('cdn routes', () => {
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
 
+	it('builds latest downloads through HEAD preflight requests', async () => {
+		installArtifactBuilderMock(testEnv);
+		const { response, settle } = await dispatch(
+			new Request('https://fontsource.test/v1/download/abel', {
+				method: 'HEAD',
+			}),
+		);
+		const body = await response.arrayBuffer();
+		await settle();
+
+		expect(response.status).toBe(200);
+		expect(body.byteLength).toBe(0);
+		expect(response.headers.get('Content-Type')).toBe('application/zip');
+		expect(await testEnv.FONTS.head('abel@5.0.0/download.zip')).not.toBeNull();
+	});
+
 	it('stores HTTP metadata on built binaries and download archives', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		const zipResult = await dispatch(

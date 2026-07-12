@@ -1,11 +1,11 @@
 import { Container } from '@cloudflare/containers';
-import { HTTPException } from 'hono/http-exception';
-import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
 import type {
 	BuildVersionRequest,
 	BuildVersionResponse,
+	BuildVersionResult,
 } from '../../../shared/build';
+import { getBuildKey } from '../../../shared/build';
 import { getBuilderStartupEnv } from '../env';
 
 export const readBuildErrorMessage = async (
@@ -40,7 +40,7 @@ export class ArtifactBuilder extends Container<Env> {
 
 	async buildVersion(
 		request: BuildVersionRequest,
-	): Promise<BuildVersionResponse> {
+	): Promise<BuildVersionResult> {
 		// Pass only the R2 credentials/config that the container needs to upload
 		// the built artifacts directly.
 		await this.startAndWaitForPorts({
@@ -62,19 +62,14 @@ export class ArtifactBuilder extends Container<Env> {
 		);
 
 		if (!response.ok) {
-			throw new HTTPException(response.status as ContentfulStatusCode, {
-				message: await readBuildErrorMessage(response),
-			});
+			return {
+				state: 'failed',
+				buildKey: getBuildKey(request.tag),
+				status: response.status,
+				error: await readBuildErrorMessage(response),
+			};
 		}
 
-		const payload = (await response.json()) as BuildVersionResponse;
-
-		if (payload.state !== 'ready') {
-			throw new Error(
-				payload.error ?? 'Artifact build did not complete successfully.',
-			);
-		}
-
-		return payload;
+		return (await response.json()) as BuildVersionResponse;
 	}
 }

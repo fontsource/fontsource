@@ -67,10 +67,12 @@ export const TabsWrapper = ({
 						<Tabs.Tab value="install">Install</Tabs.Tab>
 					</Link>
 					<a
-						href={`https://api.fontsource.org/v1/download/${metadata.id}`}
+						href={`/fonts/${metadata.id}/download`}
 						className={classes['download-button']}
 						ref={refDownload}
 						data-m:click={`download=${metadata.id}`}
+						target="_blank"
+						rel="noopener noreferrer"
 					>
 						<Group gap="xs">
 							<IconDownload height={19} data-active={hoveredDownload} />

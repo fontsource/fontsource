@@ -1,10 +1,16 @@
 import { Button, Center, Flex, Stack, Text, Title } from '@mantine/core';
-import { isRouteErrorResponse, Link, useRouteError } from 'react-router';
+import {
+	isRouteErrorResponse,
+	Link,
+	useLocation,
+	useRouteError,
+} from 'react-router';
 import styles from './ErrorBoundary.module.css';
 import { IconGithub } from './icons/Github';
 
 export function ErrorBoundary() {
 	const error = useRouteError();
+	const location = useLocation();
 
 	let status = 500;
 	let title = 'Something went wrong';
@@ -12,14 +18,34 @@ export function ErrorBoundary() {
 
 	if (isRouteErrorResponse(error)) {
 		status = error.status;
-		title = status === 404 ? 'Page not found' : 'Server error';
-		description =
-			status === 404
-				? "The page you're looking for doesn't exist."
-				: error.statusText || description;
+		const responseMessage =
+			typeof error.data === 'string'
+				? error.data
+				: error.data &&
+						typeof error.data === 'object' &&
+						'error' in error.data &&
+						typeof error.data.error === 'string'
+					? error.data.error
+					: undefined;
+
+		if (status === 404) {
+			title = 'Page not found';
+			description =
+				responseMessage ?? "The page you're looking for doesn't exist.";
+		} else if (status === 502) {
+			title = 'Bad gateway';
+			description =
+				responseMessage ??
+				'The upstream service could not complete the request. Please try again.';
+		} else {
+			title = 'Server error';
+			description = responseMessage ?? error.statusText ?? description;
+		}
 	} else if (error instanceof Error) {
 		description = error.message;
 	}
+
+	const canRetry = status === 502;
 
 	return (
 		<Center className={styles.container}>
@@ -35,12 +61,13 @@ export function ErrorBoundary() {
 				<Stack className={styles.actions} gap={12}>
 					<Button
 						component={Link}
-						to="/"
+						to={canRetry ? `${location.pathname}${location.search}` : '/'}
+						reloadDocument={canRetry}
 						size="md"
 						fullWidth
 						className={styles.primaryButton}
 					>
-						Go home
+						{canRetry ? 'Try again' : 'Go home'}
 					</Button>
 					<Button
 						component="a"

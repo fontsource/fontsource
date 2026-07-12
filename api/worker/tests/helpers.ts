@@ -5,12 +5,12 @@ import {
 import { env } from 'cloudflare:workers';
 import type { Zippable } from 'fflate';
 import { zipSync } from 'fflate';
-import { HTTPException } from 'hono/http-exception';
 import { vi } from 'vitest';
 import type { AxisRegistry } from '../shared/axis-registry';
 import {
 	type BuildVersionRequest,
 	type BuildVersionResponse,
+	type BuildVersionResult,
 	getBuildKey,
 	getBuildRequestKey,
 	getFamilyBuildRequestKey,
@@ -573,7 +573,7 @@ export const installArtifactBuilderMock = (
 
 	const ensureBuilt = async (
 		request: BuildVersionRequest,
-	): Promise<BuildVersionResponse> => {
+	): Promise<BuildVersionResult> => {
 		const buildKey = getBuildKey(request.tag);
 		const activeFamilyBuild = activeBuilds.get(
 			getFamilyBuildRequestKey(request.tag),
@@ -606,17 +606,12 @@ export const installArtifactBuilderMock = (
 					(!item.mode || item.mode === request.mode),
 			);
 
-			if (matchingFailure?.status) {
-				return await Promise.reject(
-					new HTTPException(matchingFailure.status === 404 ? 404 : 500, {
-						message: `Mocked builder failure for ${buildKey}`,
-					}),
-				);
-			}
-
-			return await Promise.reject(
-				new Error(`Mocked builder failure for ${buildKey}`),
-			);
+			return {
+				state: 'failed',
+				buildKey,
+				status: matchingFailure?.status ?? 500,
+				error: `Mocked builder failure for ${buildKey}`,
+			};
 		}
 
 		const buildPromise = (async () => {
@@ -641,24 +636,12 @@ export const installArtifactBuilderMock = (
 	};
 
 	const artifactBuilder = {
-		getByName(name: string) {
+		getByName() {
 			return {
-				async buildVersion(
+				buildVersion(
 					payload: BuildVersionRequest,
-				): Promise<BuildVersionResponse> {
-					try {
-						return await ensureBuilt(payload);
-					} catch (error) {
-						if (error instanceof HTTPException) {
-							throw error;
-						}
-
-						throw new Error(
-							error instanceof Error
-								? error.message
-								: `Mocked builder failure for ${name}: ${String(error)}`,
-						);
-					}
+				): Promise<BuildVersionResult> {
+					return ensureBuilt(payload);
 				},
 			} as unknown as ReturnType<Env['ARTIFACT_BUILDER']['getByName']>;
 		},
