@@ -24,7 +24,7 @@ new_sqlite_classes = ["ArtifactBuilder"]
 class_name = "ArtifactBuilder"
 image = "./container/Dockerfile"
 image_build_context = "../.."
-instance_type = "standard-3"
+instance_type = "standard-1"
 
 [cache]
 enabled = true
@@ -38,8 +38,7 @@ enabled = true
 invocation_logs = false
 
 [triggers]
-# TODO: Enable when stable.
-# crons = ["0 */3 * * *"]
+crons = ["0 */3 * * *"]
 
 [vars]
 FONTS_BUCKET_NAME = "fontsource-artifacts"
