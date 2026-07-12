@@ -5,12 +5,15 @@ import {
 import { env } from 'cloudflare:workers';
 import type { Zippable } from 'fflate';
 import { zipSync } from 'fflate';
+import { HTTPException } from 'hono/http-exception';
 import { vi } from 'vitest';
 import type { AxisRegistry } from '../shared/axis-registry';
 import {
+	type BuildVersionFailure,
 	type BuildVersionRequest,
 	type BuildVersionResponse,
 	type BuildVersionResult,
+	type BuildVersionStatus,
 	getBuildKey,
 	getBuildRequestKey,
 	getFamilyBuildRequestKey,
@@ -573,10 +576,12 @@ export const installArtifactBuilderMock = (
 	const buildDelayMs = options.buildDelayMs ?? 0;
 	const calls = vi.fn<(request: BuildVersionRequest) => void>();
 	const activeBuilds = new Map<string, Promise<BuildVersionResponse>>();
+	const asyncBuilds = new Map<string, Promise<BuildVersionResult>>();
+	const failedBuilds = new Map<string, BuildVersionFailure>();
 
 	const ensureBuilt = async (
 		request: BuildVersionRequest,
-	): Promise<BuildVersionResult> => {
+	): Promise<BuildVersionResponse> => {
 		const buildKey = getBuildKey(request.tag);
 		const activeFamilyBuild = activeBuilds.get(
 			getFamilyBuildRequestKey(request.tag),
@@ -609,12 +614,17 @@ export const installArtifactBuilderMock = (
 					(!item.mode || item.mode === request.mode),
 			);
 
-			return {
-				state: 'failed',
-				buildKey,
-				status: matchingFailure?.status ?? 500,
-				error: `Mocked builder failure for ${buildKey}`,
-			};
+			if (matchingFailure?.status) {
+				return await Promise.reject(
+					new HTTPException(matchingFailure.status === 404 ? 404 : 500, {
+						message: `Mocked builder failure for ${buildKey}`,
+					}),
+				);
+			}
+
+			return await Promise.reject(
+				new Error(`Mocked builder failure for ${buildKey}`),
+			);
 		}
 
 		const buildPromise = (async () => {
@@ -637,15 +647,62 @@ export const installArtifactBuilderMock = (
 		activeBuilds.set(requestKey, buildPromise);
 		return await buildPromise;
 	};
+	const buildVersion = async (
+		request: BuildVersionRequest,
+	): Promise<BuildVersionResult> => {
+		try {
+			return await ensureBuilt(request);
+		} catch (error) {
+			const buildKey = getBuildKey(request.tag);
+			return {
+				state: 'failed',
+				buildKey,
+				status: error instanceof HTTPException ? error.status : 502,
+				error:
+					error instanceof HTTPException
+						? error.message
+						: `Bad Gateway. Artifact build failed for ${buildKey}: ${error instanceof Error ? error.message : String(error)}`,
+			};
+		}
+	};
+	const startBuild = async (
+		request: BuildVersionRequest,
+	): Promise<BuildVersionStatus> => {
+		const requestKey = getBuildRequestKey(request);
+		const failed = failedBuilds.get(requestKey);
+
+		if (failed) {
+			failedBuilds.delete(requestKey);
+			return failed;
+		}
+
+		if (asyncBuilds.has(requestKey)) {
+			return {
+				state: 'building',
+				buildKey: getBuildKey(request.tag),
+			};
+		}
+
+		const build = buildVersion(request).then((result) => {
+			asyncBuilds.delete(requestKey);
+			if (result.state === 'failed') {
+				failedBuilds.set(requestKey, result);
+			}
+			return result;
+		});
+		asyncBuilds.set(requestKey, build);
+
+		return {
+			state: 'building',
+			buildKey: getBuildKey(request.tag),
+		};
+	};
 
 	const artifactBuilder = {
 		getByName() {
 			return {
-				buildVersion(
-					payload: BuildVersionRequest,
-				): Promise<BuildVersionResult> {
-					return ensureBuilt(payload);
-				},
+				buildVersion,
+				startBuild,
 			} as unknown as ReturnType<Env['ARTIFACT_BUILDER']['getByName']>;
 		},
 	};

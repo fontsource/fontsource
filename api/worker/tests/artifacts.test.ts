@@ -2,7 +2,6 @@ import { unzipSync } from 'fflate';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { BuildVersionRequest } from '../shared/build';
 import { resolveFontPackageManifest } from '../shared/font-package-manifest';
-import { UpstreamNotFoundError } from '../shared/upstream';
 import {
 	staticMetadata,
 	staticTtfBytes,
@@ -285,42 +284,23 @@ describe('container artifact builder', () => {
 		);
 	});
 
-	it('builds static files when the variable package version is unavailable', async () => {
+	it('does not publish the family zip when an artifact upload fails', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
-		const manifest = resolveFontPackageManifest(variableMetadata, variableAxes);
-		fetchPackageFileList.mockImplementation(
-			async (_id, _version, isVariable = false) => {
-				if (isVariable) {
-					throw new UpstreamNotFoundError('missing variable package');
-				}
+		putObject.mockRejectedValueOnce(new Error('artifact upload failed'));
 
-				return new Set(manifest.static.map((item) => item.sourceFilename));
-			},
-		);
+		await expect(
+			buildArtifacts({
+				mode: 'family',
+				tag: {
+					id: staticMetadata.id,
+					version: '1.0.0',
+				},
+				metadata: staticMetadata,
+			}),
+		).rejects.toThrow('artifact upload failed');
 
-		const request: BuildVersionRequest = {
-			mode: 'family',
-			tag: {
-				id: variableMetadata.id,
-				version: '1.0.0',
-			},
-			metadata: variableMetadata,
-			axes: variableAxes,
-		};
-
-		await expect(buildArtifacts(request)).resolves.toBe(
-			manifest.static.length + 1,
-		);
-
-		const zipPut = putObject.mock.calls.find(
-			([key]) => key === 'recursive@1.0.0/download.zip',
-		);
-		const archive = unzipSync(zipPut?.[1] as Uint8Array);
 		expect(
-			Object.keys(archive).some((file) => file.startsWith('static/')),
-		).toBe(true);
-		expect(
-			Object.keys(archive).some((file) => file.startsWith('variable/')),
+			putObject.mock.calls.some(([key]) => key === 'abel@1.0.0/download.zip'),
 		).toBe(false);
 	});
 

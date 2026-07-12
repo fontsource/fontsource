@@ -44,7 +44,13 @@ export interface BuildVersionFailure {
 	error: string;
 }
 
+export interface BuildVersionBuilding {
+	state: 'building';
+	buildKey: string;
+}
+
 export type BuildVersionResult = BuildVersionResponse | BuildVersionFailure;
+export type BuildVersionStatus = BuildVersionBuilding | BuildVersionFailure;
 
 /**
  * Exact version cache key. This is also the named container identity, so the

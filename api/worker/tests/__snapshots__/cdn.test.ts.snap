@@ -70,7 +70,7 @@ exports[`cdn routes > public asset outputs > serves zip archives with correct fi
 exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
 {
   "body": {
-    "error": "Artifact build failed (build:abel@5.0.0): Mocked builder failure for build:abel@5.0.0",
+    "error": "Bad Gateway. Artifact build failed for build:abel@5.0.0: Mocked builder failure for build:abel@5.0.0",
     "status": 502,
   },
   "headers": {

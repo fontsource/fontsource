@@ -15,7 +15,11 @@ import {
 	UpstreamNotFoundError,
 } from '../../../../shared/upstream';
 import { CACHE_POLICIES, CONTENT_TYPES } from '../../constants';
-import { ensureFileBuilt, ensureVersionBuilt } from '../../container/client';
+import {
+	ensureFileBuilt,
+	ensureVersionBuilt,
+	startVersionBuild,
+} from '../../container/client';
 import type { AppEnv } from '../../env';
 import { toHttpDate } from '../../utils/cache';
 import { badGateway, badRequest, notFound } from '../../utils/errors';
@@ -255,6 +259,7 @@ export const getBinaryAsset = async (
 	c: Context<AppEnv>,
 	tag: string,
 	file: string,
+	options: { respondAsync?: boolean } = {},
 ): Promise<Response> => {
 	const contentType = getExtension(file);
 
@@ -359,7 +364,23 @@ export const getBinaryAsset = async (
 		return respond(built);
 	}
 
-	await ensureVersionBuilt(c, resolved);
+	if (options.respondAsync) {
+		const build = await startVersionBuild(c, resolved);
+		if (build.state === 'building') {
+			return Response.json(
+				{ state: 'building', version: resolved.tag.version },
+				{
+					status: 202,
+					headers: {
+						...CACHE_POLICIES.noStore,
+						'Retry-After': '3',
+					},
+				},
+			);
+		}
+	} else {
+		await ensureVersionBuilt(c, resolved);
+	}
 	const built = await readBuiltAsset();
 
 	if (!built) {

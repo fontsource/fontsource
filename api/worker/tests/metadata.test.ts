@@ -52,12 +52,13 @@ describe('metadata routes', () => {
 	};
 
 	it('matches public metadata responses', async () => {
-		const redirectResult = await dispatch(
+		const downloadResult = await dispatch(
 			new Request('https://fontsource.test/v1/download/abel', {
 				redirect: 'manual',
 			}),
 		);
-		await redirectResult.settle();
+		const downloadBody = await downloadResult.response.json();
+		await downloadResult.settle();
 
 		expect({
 			fontlist: await jsonSnapshot('https://fontsource.test/fontlist'),
@@ -72,9 +73,11 @@ describe('metadata routes', () => {
 				'https://fontsource.test/v1/version/recursive',
 			),
 			stats: await jsonSnapshot('https://fontsource.test/v1/stats/recursive'),
-			redirect: {
-				status: redirectResult.response.status,
-				headers: serializeHeaders(redirectResult.response),
+			download: {
+				status: downloadResult.response.status,
+				headers: serializeHeaders(downloadResult.response),
+				retryAfter: downloadResult.response.headers.get('Retry-After'),
+				body: downloadBody,
 			},
 		}).toMatchSnapshot();
 	});
@@ -107,28 +110,20 @@ describe('metadata routes', () => {
 		);
 	});
 
-	it('serves canonical download requests directly', async () => {
+	it('accepts cold canonical download requests without redirecting', async () => {
 		const { response, settle } = await dispatch(
 			new Request('https://fontsource.test/v1/download/abel', {
 				redirect: 'manual',
 			}),
 		);
+		const body = await response.json();
 		await settle();
 
-		expect(response.status).toBe(200);
+		expect(response.status).toBe(202);
 		expect(response.headers.get('Location')).toBeNull();
-		expect(response.headers.get('Content-Disposition')).toBe(
-			'attachment; filename="abel_5.0.0.zip"',
-		);
-		expect(response.headers.get('Cache-Control')).toBe(
-			'public, max-age=86400, stale-while-revalidate=604800',
-		);
-		expect(response.headers.get('CDN-Cache-Control')).toBe(
-			'public, max-age=86400, stale-while-revalidate=604800',
-		);
-		expect(response.headers.get('Cloudflare-CDN-Cache-Control')).toBe(
-			'public, max-age=900, stale-if-error=604800',
-		);
+		expect(response.headers.get('Retry-After')).toBe('3');
+		expect(response.headers.get('Cache-Control')).toBe('no-store');
+		expect(body).toEqual({ state: 'building', version: '5.0.0' });
 	});
 
 	it('redirects legacy font download aliases to jsDelivr like the public API', async () => {
