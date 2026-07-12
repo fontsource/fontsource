@@ -3,7 +3,6 @@
 exports[`generates static manifest entries 1`] = `
 [
   {
-    "archivePath": "static/webfonts/abel-latin-400-normal.woff2",
     "buildMode": "copy",
     "extension": "woff2",
     "filename": "latin-400-normal.woff2",
@@ -13,7 +12,6 @@ exports[`generates static manifest entries 1`] = `
     "weight": 400,
   },
   {
-    "archivePath": "static/webfonts/abel-latin-400-normal.woff",
     "buildMode": "copy",
     "extension": "woff",
     "filename": "latin-400-normal.woff",
@@ -23,7 +21,6 @@ exports[`generates static manifest entries 1`] = `
     "weight": 400,
   },
   {
-    "archivePath": "static/ttf/abel-latin-400-normal.ttf",
     "buildMode": "convert-woff-to-ttf",
     "extension": "ttf",
     "filename": "latin-400-normal.ttf",
@@ -38,7 +35,6 @@ exports[`generates static manifest entries 1`] = `
 exports[`generates variable manifest entries 1`] = `
 [
   {
-    "archivePath": "variable/webfonts/recursive-latin-mono-normal.woff2",
     "axisKey": "MONO",
     "buildMode": "copy",
     "extension": "woff2",
@@ -48,7 +44,6 @@ exports[`generates variable manifest entries 1`] = `
     "subset": "latin",
   },
   {
-    "archivePath": "variable/webfonts/recursive-latin-full-normal.woff2",
     "axisKey": "full",
     "buildMode": "copy",
     "extension": "woff2",

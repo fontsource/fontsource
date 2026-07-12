@@ -438,7 +438,7 @@ const putStaticArtifacts = async (
 
 	for (const item of resolveFontPackageManifest(metadata).static) {
 		const bytes = await putStaticArtifact(env, metadata, version, item);
-		zipFiles[item.archivePath] =
+		zipFiles[`static/${metadata.id}-${item.filename}`] =
 			item.buildMode === 'copy' ? [bytes, { level: 0 }] : bytes;
 		artifactCount += 1;
 	}
@@ -457,7 +457,10 @@ const putVariableArtifacts = async (
 
 	for (const item of resolveFontPackageManifest(metadata, axes).variable) {
 		const bytes = await putVariableArtifact(env, metadata, version, item);
-		zipFiles[item.archivePath] = [bytes, { level: 0 }];
+		zipFiles[`variable/${metadata.id}-${item.filename}`] = [
+			bytes,
+			{ level: 0 },
+		];
 		artifactCount += 1;
 	}
 
@@ -691,10 +694,10 @@ export const installUpstreamFetchMock = (
 			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`)) {
 				const path = url.slice(`${UPSTREAM_URLS.jsdelivrPackage}/`.length);
 
-				if (path.endsWith('/flat')) {
-					const withoutFlat = path.slice(0, -'/flat'.length);
-					const packageRef = withoutFlat.replace(/@([^@/]+)$/, '');
-					const version = withoutFlat.match(/@([^@/]+)$/)?.[1];
+				if (path.endsWith('?structure=flat')) {
+					const packageVersion = path.slice(0, -'?structure=flat'.length);
+					const packageRef = packageVersion.replace(/@([^@/]+)$/, '');
+					const version = packageVersion.match(/@([^@/]+)$/)?.[1];
 
 					if (!version) {
 						throw new Error(`Unexpected jsDelivr flat URL: ${url}`);

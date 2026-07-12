@@ -7,7 +7,6 @@ type FontBuildMode = 'copy' | 'convert-woff-to-ttf';
 interface FontEntry {
 	filename: string;
 	sourceFilename: string;
-	archivePath: string;
 	buildMode: FontBuildMode;
 	subset: string;
 	style: string;
@@ -76,10 +75,6 @@ const buildStaticPlan = (metadata: SourceFontMetadata): StaticFontEntry[] => {
 					source.format === 'ttf'
 						? source.publicFilename.replace(/\.ttf$/, '.woff')
 						: source.publicFilename,
-				archivePath:
-					source.format === 'ttf'
-						? `static/ttf/${source.filename}`
-						: `static/webfonts/${source.filename}`,
 				buildMode:
 					source.format === 'ttf' ? 'convert-woff-to-ttf' : ('copy' as const),
 				subset: face.subset,
@@ -113,7 +108,6 @@ const buildVariablePlan = (
 			return {
 				filename: source.publicFilename,
 				sourceFilename: source.publicFilename,
-				archivePath: `variable/webfonts/${source.filename}`,
 				buildMode: 'copy' as const,
 				subset: face.subset,
 				axisKey,

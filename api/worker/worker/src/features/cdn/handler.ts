@@ -5,13 +5,15 @@ import type {
 	VariableAxes,
 } from '../../../../shared/catalog';
 import {
-	type FontPackageEntry,
 	findFontPackageEntry,
 	resolveFontPackageManifest,
 } from '../../../../shared/font-package-manifest';
 import { getDownloadAttachmentFilename } from '../../../../shared/http-metadata';
 import { getBinaryKey } from '../../../../shared/storage';
-import { fetchPackageFileList } from '../../../../shared/upstream';
+import {
+	fetchPackageFileList,
+	UpstreamNotFoundError,
+} from '../../../../shared/upstream';
 import { CACHE_POLICIES, CONTENT_TYPES } from '../../constants';
 import { ensureFileBuilt, ensureVersionBuilt } from '../../container/client';
 import type { AppEnv } from '../../env';
@@ -169,30 +171,42 @@ const toAttachmentFilename = (
 		? getDownloadAttachmentFilename(id, version)
 		: `${id}_${version}_${file}`;
 
-const ensurePublishedPinnedSource = async (
-	entry: FontPackageEntry,
+const ensurePublishedPinnedAsset = async (
 	resolved: ResolvedFontRequest,
 	file: string,
+	sourceFilename?: string,
 ): Promise<void> => {
 	try {
-		const publishedFiles = await fetchPackageFileList(
-			resolved.tag.id,
-			resolved.tag.version,
-			resolved.tag.isVariable,
-		);
-
-		if (!publishedFiles.has(entry.sourceFilename)) {
-			throw notFound(
-				`Requested file ${file} not found for ${resolved.tag.id}@${resolved.tag.version}`,
+		if (sourceFilename) {
+			const publishedFiles = await fetchPackageFileList(
+				resolved.tag.id,
+				resolved.tag.version,
+				resolved.tag.isVariable,
 			);
+
+			if (!publishedFiles.has(sourceFilename)) {
+				throw notFound(
+					`Requested file ${file} not found for ${resolved.tag.id}@${resolved.tag.version}`,
+				);
+			}
+			return;
 		}
+
+		resolveVersionTag(
+			resolved.tag.version,
+			await getPublishedVersions(resolved.tag.id, resolved.tag.isVariable),
+		);
 	} catch (error) {
+		if (!sourceFilename && error instanceof UpstreamNotFoundError) {
+			throw notFound(`Unable to resolve version "${resolved.tag.version}"`);
+		}
+
 		if (error instanceof HTTPException && error.status === 404) {
 			throw error;
 		}
 
 		console.warn(
-			`[cdn] published-file preflight skipped for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}`,
+			`[cdn] published-${sourceFilename ? 'file' : 'version'} preflight skipped for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}`,
 			error,
 		);
 	}
@@ -249,9 +263,11 @@ export const getBinaryAsset = async (
 	}
 
 	const parsedTag = parseFontTag(tag);
+	const isDownload = file === 'download.zip';
+	const pinnedVersion = isPinnedVersion(parsedTag.version);
 
 	// Fast-path: pinned version already in R2
-	const pinned = isPinnedVersion(parsedTag.version)
+	const pinned = pinnedVersion
 		? await getStoredBinaryAsset(c, parsedTag, file, c.req.raw.headers)
 		: undefined;
 
@@ -267,25 +283,26 @@ export const getBinaryAsset = async (
 
 	// Resolve version (for floating) or validate font exists (for pinned)
 	const resolved = await resolveFontRequest(c, parsedTag);
-	const packageManifest = resolveFontPackageManifest(
-		resolved.metadata,
-		resolved.axes,
-	);
-	let requestedEntry: FontPackageEntry | undefined;
+	const requestedEntry = isDownload
+		? undefined
+		: findFontPackageEntry(
+				resolveFontPackageManifest(resolved.metadata, resolved.axes),
+				{
+					file,
+					isVariable: resolved.tag.isVariable,
+				},
+			);
 
-	// Validate that the requested filename belongs to this package.
-	if (file !== 'download.zip') {
-		requestedEntry = findFontPackageEntry(packageManifest, {
+	if (!isDownload && !requestedEntry) {
+		throw notFound('Not Found. File does not exist.');
+	}
+
+	if (pinnedVersion) {
+		await ensurePublishedPinnedAsset(
+			resolved,
 			file,
-			isVariable: resolved.tag.isVariable,
-		});
-		if (!requestedEntry) {
-			throw notFound('Not Found. File does not exist.');
-		}
-
-		if (isPinnedVersion(parsedTag.version)) {
-			await ensurePublishedPinnedSource(requestedEntry, resolved, file);
-		}
+			requestedEntry?.sourceFilename,
+		);
 	}
 
 	// For pinned versions, the fast-path already checked R2 and missed,
@@ -301,7 +318,7 @@ export const getBinaryAsset = async (
 			),
 		});
 
-	if (!isPinnedVersion(parsedTag.version)) {
+	if (!pinnedVersion) {
 		const existing = await getStoredBinaryAsset(
 			c,
 			resolved.tag,
@@ -327,7 +344,7 @@ export const getBinaryAsset = async (
 		);
 	};
 
-	if (file !== 'download.zip') {
+	if (!isDownload) {
 		const build = await ensureFileBuilt(c, resolved, file);
 		const built = await readBuiltAsset();
 

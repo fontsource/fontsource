@@ -1,3 +1,4 @@
+import { env } from 'cloudflare:workers';
 import { Center, Flex, Loader, Text, Title } from '@mantine/core';
 import { useEffect, useRef } from 'react';
 import type { ActionFunctionArgs, MetaFunction } from 'react-router';
@@ -16,7 +17,7 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 	invariant(id, 'Missing font ID!');
 
 	const downloadUrl = `https://fontsource-api.fontsource.workers.dev/v1/download/${encodeURIComponent(id)}`;
-	const response = await fetch(downloadUrl, { method: 'HEAD' });
+	const response = await env.API.fetch(downloadUrl, { method: 'HEAD' });
 
 	if (!response.ok) {
 		throw data(null, {

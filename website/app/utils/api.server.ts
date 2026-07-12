@@ -1,3 +1,4 @@
+import { env } from 'cloudflare:workers';
 import { data } from 'react-router';
 
 import { cacheHeaders } from '@/utils/cache';
@@ -28,9 +29,8 @@ export const throwApiResponseError = async (
 		},
 	);
 };
-
 export const fetchApiData = async <T>(url: string): Promise<T> => {
-	const response = await fetch(url);
+	const response = await env.API.fetch(url);
 
 	if (!response.ok) {
 		await throwApiResponseError(response, url);

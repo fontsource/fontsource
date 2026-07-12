@@ -50,7 +50,18 @@ export default defineConfig({
 				}
 			},
 		},
-		cloudflare({ viteEnvironment: { name: 'ssr' } }),
+		cloudflare({
+			viteEnvironment: { name: 'ssr' },
+			auxiliaryWorkers: [
+				{
+					configPath: '../api/worker/wrangler.toml',
+					devOnly: true,
+					config: (config) => {
+						config.containers = [];
+					},
+				},
+			],
+		}),
 		mdx(MdxConfig),
 		babel({
 			presets: [reactCompilerPreset()],
