@@ -17,6 +17,7 @@ mode = "smart"
 [[d1_databases]]
 binding = "STATS"
 database_name = "fontsource-stats"
+database_id = "6ef70249-202b-419f-8cf5-979afe45ad7b"
 
 [[queues.producers]]
 binding = "STATS_QUEUE"
