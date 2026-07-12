@@ -1,4 +1,5 @@
 import {
+	applyD1Migrations,
 	createExecutionContext,
 	waitOnExecutionContext,
 } from 'cloudflare:test';
@@ -75,6 +76,18 @@ export const setupWorkerTest = async (): Promise<void> => {
 	clearMetadataCachesForTest();
 	installUpstreamFetchMock();
 	installArtifactBuilderMock(testEnv);
+	await applyD1Migrations(
+		testEnv.STATS,
+		(
+			testEnv as Env & {
+				TEST_MIGRATIONS: Parameters<typeof applyD1Migrations>[1];
+			}
+		).TEST_MIGRATIONS,
+	);
+	await testEnv.STATS.batch([
+		testEnv.STATS.prepare('DELETE FROM stats_periods'),
+		testEnv.STATS.prepare('DELETE FROM stats_packages'),
+	]);
 	await clearFontBucket(testEnv);
 	await seedMetadata(testEnv);
 };
@@ -300,6 +313,19 @@ const toResponse = (body: BodyInit, init?: ResponseInit): Response =>
 		},
 		...init,
 	});
+
+const dailyDownloads = (from: string, to: string) => {
+	const values: Array<{ day: string; downloads: number }> = [];
+	const current = new Date(`${from}T00:00:00.000Z`);
+	const end = new Date(`${to}T00:00:00.000Z`);
+
+	while (current <= end) {
+		values.push({ day: current.toISOString().slice(0, 10), downloads: 1 });
+		current.setUTCDate(current.getUTCDate() + 1);
+	}
+
+	return values;
+};
 
 const staticBinaryResponse = (url: string): Response => {
 	if (url.endsWith('.woff2')) {
@@ -677,6 +703,53 @@ export const installUpstreamFetchMock = (
 				return typeof override === 'function'
 					? await override()
 					: override.clone();
+			}
+
+			if (url.startsWith(`${UPSTREAM_URLS.npmRegistry}/`)) {
+				const packageName = decodeURIComponent(
+					url.slice(`${UPSTREAM_URLS.npmRegistry}/`.length),
+				);
+				if (
+					!Object.hasOwn(versionPayloads, packageName) &&
+					packageName !== 'fontsource-abel'
+				) {
+					return toResponse('', { status: 404 });
+				}
+
+				return toResponse(
+					JSON.stringify({ time: { created: '2025-01-01T00:00:00.000Z' } }),
+				);
+			}
+
+			if (url.startsWith(`${UPSTREAM_URLS.npmDownloads}/`)) {
+				const [period] = url
+					.slice(`${UPSTREAM_URLS.npmDownloads}/`.length)
+					.split('/', 1);
+				const [from, to] = period?.split(':') ?? [];
+				if (!from || !to) {
+					throw new Error(`Unexpected npm stats URL: ${url}`);
+				}
+
+				return toResponse(
+					JSON.stringify({
+						start: from,
+						end: to,
+						downloads: dailyDownloads(from, to),
+					}),
+				);
+			}
+
+			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrStats}/`)) {
+				const packagePath = new URL(url).pathname.slice(
+					'/v1/stats/packages/npm/'.length,
+				);
+				if (packagePath.includes('/')) {
+					throw new Error(`Unexpected scoped jsDelivr stats URL: ${url}`);
+				}
+				const period = new URL(url).searchParams.get('period');
+				return toResponse(
+					JSON.stringify({ hits: { total: period === 'month' ? 20 : 200 } }),
+				);
 			}
 
 			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`)) {
