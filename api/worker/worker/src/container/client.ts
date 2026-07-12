@@ -2,10 +2,10 @@ import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import {
+	type BuildDownloadRequest,
 	type BuildFileRequest,
 	type BuildVersionFailure,
 	type BuildVersionRequest,
-	type BuildVersionRequestBase,
 	type BuildVersionResponse,
 	type BuildVersionResult,
 	type BuildVersionStatus,
@@ -18,7 +18,7 @@ const buildVersion = async (
 	c: Context<AppEnv>,
 	requestBody: BuildVersionRequest,
 ): Promise<BuildVersionResponse> => {
-	const buildKey = getBuildKey(requestBody.tag);
+	const buildKey = getBuildKey(requestBody);
 	let result: BuildVersionResult;
 
 	try {
@@ -46,39 +46,11 @@ const throwBuildFailure = (failure: BuildVersionFailure): never => {
 	});
 };
 
-const buildRequestBase = (
-	resolved: ResolvedFontRequest,
-): BuildVersionRequestBase => ({
-	tag: {
-		id: resolved.tag.id,
-		version: resolved.tag.version,
-	},
-	metadata: resolved.metadata,
-	axes: resolved.axes,
-});
-
-/**
- * Ensures the resolved exact-version package exists by delegating to the
- * private container for that build key.
- */
-export const ensureVersionBuilt = async (
+export const startDownloadBuild = async (
 	c: Context<AppEnv>,
-	resolved: ResolvedFontRequest,
-): Promise<BuildVersionResponse> =>
-	buildVersion(c, {
-		...buildRequestBase(resolved),
-		mode: 'family',
-	});
-
-export const startVersionBuild = async (
-	c: Context<AppEnv>,
-	resolved: ResolvedFontRequest,
+	request: BuildDownloadRequest,
 ): Promise<Exclude<BuildVersionStatus, BuildVersionFailure>> => {
-	const request = {
-		...buildRequestBase(resolved),
-		mode: 'family',
-	} satisfies BuildVersionRequest;
-	const buildKey = getBuildKey(request.tag);
+	const buildKey = getBuildKey(request);
 	let result: BuildVersionStatus;
 
 	try {
@@ -104,8 +76,12 @@ export const ensureFileBuilt = async (
 	file: string,
 ): Promise<BuildVersionResponse> =>
 	buildVersion(c, {
-		...buildRequestBase(resolved),
 		mode: 'file',
+		tag: {
+			id: resolved.tag.id,
+			version: resolved.tag.version,
+		},
+		metadata: resolved.metadata,
 		target: {
 			file,
 			isVariable: resolved.tag.isVariable,

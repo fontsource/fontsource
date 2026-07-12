@@ -1,4 +1,4 @@
-import type { SourceFontMetadata, VariableAxes } from './catalog';
+import type { SourceFontMetadata } from './catalog';
 import type { FontPackageTarget } from './font-package-manifest';
 
 /**
@@ -9,25 +9,21 @@ export interface BuildVersionTag {
 	version: string;
 }
 
-/**
- * Worker-to-container build request.
- */
-export interface BuildVersionRequestBase {
+export interface BuildFileRequest {
+	mode: 'file';
 	tag: BuildVersionTag;
 	metadata: SourceFontMetadata;
-	axes?: VariableAxes;
-}
-
-export interface BuildFamilyRequest extends BuildVersionRequestBase {
-	mode: 'family';
-}
-
-export interface BuildFileRequest extends BuildVersionRequestBase {
-	mode: 'file';
 	target: FontPackageTarget;
 }
 
-export type BuildVersionRequest = BuildFamilyRequest | BuildFileRequest;
+export interface BuildDownloadRequest {
+	mode: 'download';
+	staticVersion: string;
+	variableVersion?: string;
+	metadata: SourceFontMetadata;
+}
+
+export type BuildVersionRequest = BuildDownloadRequest | BuildFileRequest;
 
 export interface BuildVersionResponse {
 	state: 'ready';
@@ -52,21 +48,16 @@ export interface BuildVersionBuilding {
 export type BuildVersionResult = BuildVersionResponse | BuildVersionFailure;
 export type BuildVersionStatus = BuildVersionBuilding | BuildVersionFailure;
 
-/**
- * Exact version cache key. This is also the named container identity, so the
- * format must stay stable across both runtimes.
- */
-export const getBuildKey = (tag: BuildVersionTag): string =>
-	`build:${tag.id}@${tag.version}`;
-
-export const getFamilyBuildRequestKey = (tag: BuildVersionTag): string =>
-	`${getBuildKey(tag)}:family`;
+export const getBuildKey = (request: BuildVersionRequest): string =>
+	request.mode === 'download'
+		? `build:${request.metadata.id}@${request.staticVersion}${request.variableVersion && request.variableVersion !== request.staticVersion ? `+vf@${request.variableVersion}` : ''}`
+		: `build:${request.tag.id}@${request.tag.version}`;
 
 export const getBuildRequestKey = (request: BuildVersionRequest): string =>
-	request.mode === 'family'
-		? getFamilyBuildRequestKey(request.tag)
+	request.mode === 'download'
+		? `${getBuildKey(request)}:download`
 		: [
-				getBuildKey(request.tag),
+				getBuildKey(request),
 				'file',
 				request.target.isVariable ? 'variable' : 'static',
 				request.target.file,

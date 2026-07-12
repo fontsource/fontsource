@@ -3,7 +3,7 @@ import type { Context } from 'hono';
 import { z } from 'zod';
 import { UPSTREAM_URLS } from '../constants';
 import type { AppEnv } from '../env';
-import { getBinaryAsset } from '../features/cdn/handler';
+import { getDownloadAsset } from '../features/cdn/handler';
 import {
 	ErrorResponseSchema,
 	FileRedirectParamSchema,
@@ -21,14 +21,15 @@ export class DownloadFontRoute extends OpenAPIRoute {
 	schema = {
 		tags: ['Downloads'],
 		operationId: 'downloadFont',
-		summary: 'Download latest font package',
-		description: 'Serves the latest pre-built zip archive for a font family.',
+		summary: 'Download latest font family',
+		description:
+			'Serves a zip archive containing the latest static and variable packages for a font family.',
 		request: {
 			params: IdParamSchema,
 		},
 		responses: {
 			'200': {
-				description: 'Zip archive of the latest font package',
+				description: 'Zip archive of the latest font family',
 				content: {
 					'application/zip': {
 						schema: z.string(),
@@ -56,9 +57,7 @@ export class DownloadFontRoute extends OpenAPIRoute {
 	async handle(c: AppContext) {
 		const data = await this.getValidatedData<typeof this.schema>();
 		const { id } = data.params;
-		return getBinaryAsset(c, `${id}@latest`, 'download.zip', {
-			respondAsync: true,
-		});
+		return getDownloadAsset(c, id);
 	}
 }
 

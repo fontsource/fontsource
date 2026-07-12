@@ -4,8 +4,14 @@ interface FontBinaryTag {
 	version: string;
 }
 
-export const getDownloadKey = (id: string, version: string): string =>
-	`${id}@${version}/download.zip`;
+export const getDownloadKey = (
+	id: string,
+	staticVersion: string,
+	variableVersion?: string,
+): string =>
+	variableVersion && variableVersion !== staticVersion
+		? `${id}@${staticVersion}+vf@${variableVersion}/download.zip`
+		: `${id}@${staticVersion}/download.zip`;
 
 /**
  * Static binaries live directly under `<id>@<version>/...`.
@@ -30,8 +36,6 @@ export const getVariableAssetKey = (
  * Resolves the final R2 key for any published binary artifact.
  */
 export const getBinaryKey = (tag: FontBinaryTag, file: string): string =>
-	file === 'download.zip'
-		? getDownloadKey(tag.id, tag.version)
-		: tag.isVariable
-			? getVariableAssetKey(tag.id, tag.version, file)
-			: getStaticAssetKey(tag.id, tag.version, file);
+	tag.isVariable
+		? getVariableAssetKey(tag.id, tag.version, file)
+		: getStaticAssetKey(tag.id, tag.version, file);

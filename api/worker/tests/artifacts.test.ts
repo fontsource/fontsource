@@ -15,8 +15,6 @@ import {
 
 const {
 	putObject,
-	listKeys,
-	getObjectBytes,
 	fetchPackageAssetBytes,
 	fetchPackageFileList,
 	fetchPackageLicenseBytes,
@@ -28,8 +26,6 @@ const {
 
 	return {
 		putObject: vi.fn(),
-		listKeys: vi.fn(),
-		getObjectBytes: vi.fn(),
 		fetchPackageAssetBytes: vi.fn(),
 		fetchPackageFileList: vi.fn(),
 		fetchPackageLicenseBytes: vi.fn(),
@@ -40,8 +36,6 @@ const {
 });
 
 vi.mock('../container/src/r2', () => ({
-	getObjectBytes,
-	listKeys,
 	putObject,
 }));
 
@@ -74,8 +68,6 @@ vi.mock('@fontsource-utils/core', async () => {
 describe('container artifact builder', () => {
 	beforeEach(() => {
 		putObject.mockReset();
-		listKeys.mockReset();
-		getObjectBytes.mockReset();
 		fetchPackageAssetBytes.mockReset();
 		fetchPackageFileList.mockReset();
 		fetchPackageLicenseBytes.mockReset();
@@ -83,8 +75,6 @@ describe('container artifact builder', () => {
 		destroy.mockReset();
 		createFontContext.mockClear();
 
-		listKeys.mockResolvedValue(new Set<string>());
-		getObjectBytes.mockResolvedValue(null);
 		fetchPackageFileList.mockImplementation(
 			async (id, _version, isVariable = false) => {
 				if (id === variableMetadata.id && isVariable) {
@@ -160,7 +150,6 @@ describe('container artifact builder', () => {
 
 		await expect(buildArtifacts(request)).resolves.toBe(1);
 
-		expect(listKeys).not.toHaveBeenCalled();
 		expect(fetchPackageLicenseBytes).not.toHaveBeenCalled();
 		expect(convertFont).not.toHaveBeenCalled();
 		expect(putObject).toHaveBeenCalledTimes(1);
@@ -182,7 +171,6 @@ describe('container artifact builder', () => {
 				version: '1.0.0',
 			},
 			metadata: variableMetadata,
-			axes: variableAxes,
 			target: {
 				file: 'latin-full-normal.woff2',
 				isVariable: true,
@@ -191,7 +179,6 @@ describe('container artifact builder', () => {
 
 		await expect(buildArtifacts(request)).resolves.toBe(1);
 
-		expect(listKeys).not.toHaveBeenCalled();
 		expect(fetchPackageLicenseBytes).not.toHaveBeenCalled();
 		expect(convertFont).not.toHaveBeenCalled();
 		expect(putObject).toHaveBeenCalledTimes(1);
@@ -239,14 +226,11 @@ describe('container artifact builder', () => {
 		);
 	});
 
-	it('assembles family zip entries from the correct built artifacts', async () => {
+	it('assembles download entries from the correct built artifacts', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
 		const request: BuildVersionRequest = {
-			mode: 'family',
-			tag: {
-				id: testCatalog.familypack.id,
-				version: '1.0.0',
-			},
+			mode: 'download',
+			staticVersion: '1.0.0',
 			metadata: testCatalog.familypack,
 		};
 
@@ -290,11 +274,8 @@ describe('container artifact builder', () => {
 
 		await expect(
 			buildArtifacts({
-				mode: 'family',
-				tag: {
-					id: staticMetadata.id,
-					version: '1.0.0',
-				},
+				mode: 'download',
+				staticVersion: '1.0.0',
 				metadata: staticMetadata,
 			}),
 		).rejects.toThrow('artifact upload failed');
@@ -304,7 +285,7 @@ describe('container artifact builder', () => {
 		).toBe(false);
 	});
 
-	it('filters family artifacts to the files actually published for that version', async () => {
+	it('filters download artifacts to files published for that version', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
 		fetchPackageFileList.mockImplementation(
 			async (id, _version, isVariable = false) => {
@@ -326,11 +307,8 @@ describe('container artifact builder', () => {
 		);
 
 		const request: BuildVersionRequest = {
-			mode: 'family',
-			tag: {
-				id: testCatalog.familypack.id,
-				version: '1.0.0',
-			},
+			mode: 'download',
+			staticVersion: '1.0.0',
 			metadata: testCatalog.familypack,
 		};
 

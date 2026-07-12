@@ -1,16 +1,15 @@
 import { convertFont, createFontContext } from '@fontsource-utils/core';
-import { type Zippable, zipSync } from 'fflate';
+import { zipSync } from 'fflate';
 import { HTTPException } from 'hono/http-exception';
 import limitConcur from 'limit-concur';
 import type {
-	BuildFamilyRequest,
+	BuildDownloadRequest,
 	BuildFileRequest,
 	BuildVersionRequest,
 	BuildVersionTag,
 } from '../../shared/build';
 import {
 	type FontPackageEntry,
-	type FontPackageManifest,
 	filterPublishedManifest,
 	findFontPackageEntry,
 	resolveFontPackageManifest,
@@ -19,7 +18,6 @@ import {
 } from '../../shared/font-package-manifest';
 import {
 	BINARY_CONTENT_TYPES,
-	getDownloadContentDisposition,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../../shared/http-metadata';
 import {
@@ -33,7 +31,7 @@ import {
 	fetchPackageLicenseBytes,
 	UpstreamNotFoundError,
 } from '../../shared/upstream';
-import { getObjectBytes, listKeys, putObject } from './r2';
+import { putObject } from './r2';
 
 interface BuiltArtifact {
 	key: string;
@@ -211,27 +209,22 @@ const buildVariableArtifacts = async (
 const isStaticEntry = (item: FontPackageEntry): item is StaticFontEntry =>
 	!('axisKey' in item);
 
-const getPublishedManifest = async (
-	request: BuildVersionRequest,
-): Promise<FontPackageManifest> => {
-	const [publishedStaticFiles, publishedVariableFiles] = await Promise.all([
-		fetchPackageFileList(request.tag.id, request.tag.version, false),
-		request.axes
-			? fetchPackageFileList(request.tag.id, request.tag.version, true)
-			: Promise.resolve(undefined),
-	]);
-
-	return filterPublishedManifest(
-		resolveFontPackageManifest(request.metadata, request.axes),
-		publishedStaticFiles,
-		publishedVariableFiles,
-	);
-};
-
 const buildSingleArtifact = async (
 	request: BuildFileRequest,
 ): Promise<number> => {
-	const manifest = await getPublishedManifest(request);
+	const publishedFiles = await fetchPackageFileList(
+		request.tag.id,
+		request.tag.version,
+		request.target.isVariable,
+	);
+	const manifest = filterPublishedManifest(
+		resolveFontPackageManifest(
+			request.metadata,
+			request.metadata.variable || undefined,
+		),
+		request.target.isVariable ? new Set() : publishedFiles,
+		request.target.isVariable ? publishedFiles : undefined,
+	);
 	const entry = findFontPackageEntry(manifest, request.target);
 
 	if (!entry) {
@@ -259,193 +252,86 @@ const buildSingleArtifact = async (
 	return built.length;
 };
 
-/**
- * Builds the exact-version artifact set, skipping anything that already exists
- * in R2 and creating the combined family zip only when it is missing.
- */
-const buildFamilyArtifacts = async (
-	request: BuildFamilyRequest,
+const buildDownloadArtifacts = async (
+	request: BuildDownloadRequest,
 ): Promise<number> => {
-	const { tag } = request;
-	const [manifest, existing] = await Promise.all([
-		getPublishedManifest(request),
-		listKeys(`${tag.id}@${tag.version}/`),
+	const { id } = request.metadata;
+	const axes = request.metadata.variable || undefined;
+	const variableVersion = request.variableVersion ?? request.staticVersion;
+	const staticTag = { id, version: request.staticVersion };
+	const variableTag = { id, version: variableVersion };
+	const [publishedStaticFiles, publishedVariableFiles] = await Promise.all([
+		fetchPackageFileList(id, request.staticVersion, false),
+		axes && request.variableVersion
+			? fetchPackageFileList(id, request.variableVersion, true)
+			: undefined,
 	]);
-	const { static: staticManifest, variable: variableManifest } = manifest;
-
-	console.log(
-		`[artifacts] family manifest ${tag.id}@${tag.version}: static=${staticManifest.length}, variable=${variableManifest.length}`,
-	);
-
-	// Resolve R2 keys for every individual artifact and the download zip.
-	const staticKeys = staticManifest.map((item) =>
-		getStaticAssetKey(tag.id, tag.version, item.filename),
-	);
-	const variableKeys = variableManifest.map((item) =>
-		getVariableAssetKey(tag.id, tag.version, item.filename),
-	);
-	const downloadKey = getDownloadKey(tag.id, tag.version);
-
-	const totalCount = staticKeys.length + variableKeys.length + 1;
-
-	// If every artifact exists already, no build work is needed.
-	if (
-		existing.has(downloadKey) &&
-		staticKeys.every((k) => existing.has(k)) &&
-		variableKeys.every((k) => existing.has(k))
-	) {
-		console.log(
-			`[artifacts] family build skipped: all ${totalCount} artifacts already exist in R2`,
+	const { static: staticManifest, variable: variableManifest } =
+		filterPublishedManifest(
+			resolveFontPackageManifest(request.metadata, axes),
+			publishedStaticFiles,
+			publishedVariableFiles,
 		);
-		return totalCount;
+
+	if (staticManifest.length === 0 && variableManifest.length === 0) {
+		throw new Error(
+			`No artifacts published for ${id}@${request.staticVersion}`,
+		);
 	}
 
-	// Build only the missing individual artifacts.
-	const missingStatic = staticManifest.filter(
-		(_, i) => !existing.has(staticKeys[i]),
+	const [staticArtifacts, variableArtifacts, license] = await Promise.all([
+		buildStaticArtifacts(staticTag, staticManifest),
+		buildVariableArtifacts(variableTag, variableManifest),
+		fetchPackageLicenseBytes(id, request.staticVersion, false),
+	]);
+	const artifacts = [...staticArtifacts, ...variableArtifacts];
+	const builtByKey = new Map(
+		artifacts.map((artifact) => [artifact.key, artifact.bytes]),
 	);
-	const missingVariable = variableManifest.filter(
-		(_, i) => !existing.has(variableKeys[i]),
-	);
-
-	console.log(
-		`[artifacts] missing: ${missingStatic.length} static, ${missingVariable.length} variable, zip=${!existing.has(downloadKey) ? 'yes' : 'no'}`,
-	);
-	const zipMissing = !existing.has(downloadKey);
-	const allManifestEntries = [
-		...staticManifest.map((item, i) => ({
+	const archiveEntries = [
+		...staticManifest.map((item) => ({
 			item,
-			key: staticKeys[i],
+			key: getStaticAssetKey(id, request.staticVersion, item.filename),
 			directory: 'static',
 		})),
-		...variableManifest.map((item, i) => ({
+		...variableManifest.map((item) => ({
 			item,
-			key: variableKeys[i],
+			key: getVariableAssetKey(id, variableVersion, item.filename),
 			directory: 'variable',
 		})),
-	];
-	const storedBytesPromise = zipMissing
-		? Promise.all(
-				allManifestEntries
-					.filter(({ key }) => existing.has(key))
-					.map(
-						limitConcur(16, async ({ key }) => {
-							const bytes = await getObjectBytes(key);
-							if (!bytes) {
-								throw new Error(`Expected artifact ${key} not found in R2`);
-							}
-							return [key, bytes] as const;
-						}),
-					),
-			).then((entries) => new Map(entries))
-		: undefined;
-	const licensePromise = zipMissing
-		? (async () =>
-				(staticManifest.length > 0
-					? await ignoreUpstream404(
-							fetchPackageLicenseBytes(tag.id, tag.version, false),
-						)
-					: undefined) ??
-				(variableManifest.length > 0
-					? await ignoreUpstream404(
-							fetchPackageLicenseBytes(tag.id, tag.version, true),
-						)
-					: undefined))()
-		: undefined;
-
-	const [maybeStaticArtifacts, maybeVariableArtifacts, storedBytes, license] =
-		await Promise.all([
-			ignoreUpstream404(buildStaticArtifacts(tag, missingStatic)),
-			ignoreUpstream404(buildVariableArtifacts(tag, missingVariable)),
-			storedBytesPromise,
-			licensePromise,
-		]);
-	const newArtifacts = [
-		...(maybeStaticArtifacts ?? []),
-		...(maybeVariableArtifacts ?? []),
-	];
-
-	console.log(`[artifacts] built ${newArtifacts.length} new artifacts`);
-
-	if (
-		newArtifacts.length === 0 &&
-		missingStatic.length + missingVariable.length > 0
-	) {
-		throw new Error(`No artifacts published for ${tag.id}@${tag.version}`);
-	}
-	const individualUploads = storeArtifacts(newArtifacts).then(
-		() => ({ ok: true as const }),
-		(error: unknown) => ({ ok: false as const, error }),
-	);
-	let archive: Uint8Array | undefined;
-
-	// Assemble the download zip while individual artifact uploads are running.
-	if (zipMissing) {
-		console.log(`[artifacts] assembling download zip`);
-
-		// Index freshly-built bytes by R2 key for quick lookup.
-		const builtByKey = new Map(
-			newArtifacts.map((artifact) => [artifact.key, artifact] as const),
-		);
-
-		const allArtifactEntries = allManifestEntries.map(
-			({ item, key, directory }) => {
-				const bytes = builtByKey.get(key)?.bytes ?? storedBytes?.get(key);
-				if (!bytes) {
-					throw new Error(`Expected artifact ${key} not found in R2`);
-				}
-
-				return {
-					archivePath: `${directory}/${tag.id}-${item.filename}`,
-					bytes,
-					compress: item.buildMode === 'copy',
-				};
-			},
-		);
-
-		if (storedBytes && storedBytes.size > 0) {
-			console.log(
-				`[artifacts] fetched ${storedBytes.size} existing artifacts from R2 for zip`,
-			);
+	].map(({ item, key, directory }) => {
+		const bytes = builtByKey.get(key);
+		if (!bytes) {
+			throw new Error(`Expected artifact ${key} was not built`);
 		}
 
-		if (allArtifactEntries.length === 0) {
-			throw new Error(`No artifacts for zip: ${tag.id}@${tag.version}`);
-		}
-
-		if (!license) {
-			throw new Error(`Missing LICENSE for ${tag.id}@${tag.version}`);
-		}
-
-		const archiveFiles: Zippable = Object.fromEntries([
-			...allArtifactEntries.map((artifact) => [
-				artifact.archivePath,
-				artifact.compress ? [artifact.bytes, { level: 0 }] : artifact.bytes,
+		return {
+			path: `${directory}/${id}-${item.filename}`,
+			bytes,
+			compress: item.buildMode === 'copy',
+		};
+	});
+	const archive = zipSync(
+		Object.fromEntries([
+			...archiveEntries.map((entry) => [
+				entry.path,
+				entry.compress ? [entry.bytes, { level: 0 }] : entry.bytes,
 			]),
 			['LICENSE', license],
-		]);
-		archive = zipSync(archiveFiles);
-	}
+		]),
+	);
 
-	const uploadResult = await individualUploads;
-	if (!uploadResult.ok) {
-		throw uploadResult.error;
-	}
-
-	if (archive) {
-		// A stored zip is the completion marker for the whole family build.
-		await putObject(downloadKey, archive, {
+	await storeArtifacts(artifacts);
+	await putObject(
+		getDownloadKey(id, request.staticVersion, request.variableVersion),
+		archive,
+		{
 			cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-			contentDisposition: getDownloadContentDisposition(tag.id, tag.version),
 			contentType: BINARY_CONTENT_TYPES.zip,
-		});
+		},
+	);
 
-		console.log(
-			`[artifacts] zip uploaded (${allManifestEntries.length} entries + LICENSE)`,
-		);
-	}
-
-	return totalCount;
+	return artifacts.length + 1;
 };
 
 export const buildArtifacts = async (
@@ -453,4 +339,4 @@ export const buildArtifacts = async (
 ): Promise<number> =>
 	request.mode === 'file'
 		? await buildSingleArtifact(request)
-		: await buildFamilyArtifacts(request);
+		: await buildDownloadArtifacts(request);
