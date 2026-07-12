@@ -1,9 +1,8 @@
 # Fontsource API Worker
 
-This is the current Fontsource API and CDN worker. It serves font metadata and
-artifacts, builds missing packages, and collects download stats.
+This is the current Fontsource API built on Cloudflare Workers. It serves font metadata and artifacts, builds missing packages, and collects download stats.
 
-## How it fits together
+## Bindings
 
 | Cloudflare service | What it does here |
 | --- | --- |
@@ -35,46 +34,3 @@ bun run test
 bun run typecheck
 bun run build
 ```
-
-## Stats resources
-
-Before the first stats deployment to a new Cloudflare account, create the D1
-database and Queue:
-
-```sh
-bun x wrangler d1 create fontsource-stats
-bun x wrangler queues create fontsource-stats
-```
-
-Copy the D1 UUID into the `STATS` binding in `wrangler.toml`, then apply the
-migration:
-
-```sh
-bun x wrangler d1 migrations apply STATS --remote
-```
-
-The Queue consumer, Durable Object, and Container are configured when the
-worker is deployed. They do not need separate setup commands. The KV and R2
-bindings point to existing Fontsource resources.
-
-## Scheduled refreshes
-
-Metadata refreshes every three hours. Download stats are refreshed daily at
-00:15 UTC. The stats schedule queues one job per active package; the Queue
-consumer does the slower provider requests in the background.
-
-To trigger the stats schedule locally:
-
-```sh
-bun x wrangler dev --test-scheduled
-```
-
-In another terminal:
-
-```sh
-curl "http://localhost:8787/cdn-cgi/handler/scheduled?cron=15+0+*+*+*&format=json"
-```
-
-This uses local bindings and does not touch production data. Remote development
-does not support Queue consumers, so production refreshes must run from a
-deployed worker. Wait for the Queue to drain before triggering it again.
