@@ -27,7 +27,11 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 		});
 	}
 
-	return redirectDocument(downloadUrl);
+	const redirectUrl = new URL(downloadUrl);
+	const etag = response.headers.get('ETag');
+	if (etag) redirectUrl.searchParams.set('etag', etag);
+
+	return redirectDocument(redirectUrl.toString());
 };
 
 export default function Download() {
