@@ -37,9 +37,7 @@ import { getObjectBytes, listKeys, putObject } from './r2';
 
 interface BuiltArtifact {
 	key: string;
-	archivePath: string;
 	bytes: Uint8Array;
-	compress: boolean;
 }
 
 /** Catches `UpstreamNotFoundError` and returns `undefined` instead of throwing. */
@@ -60,7 +58,7 @@ const ignoreUpstream404 = async <T>(
 const storeArtifact = async (
 	key: string,
 	bytes: Uint8Array,
-	item: { archivePath: string; extension: string; buildMode: string },
+	item: { extension: string },
 ): Promise<BuiltArtifact> => {
 	await putObject(key, bytes, {
 		cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
@@ -70,9 +68,7 @@ const storeArtifact = async (
 
 	return {
 		key,
-		archivePath: item.archivePath,
 		bytes,
-		compress: item.buildMode === 'copy',
 	};
 };
 
@@ -329,10 +325,15 @@ const buildFamilyArtifacts = async (
 		// Collect every artifact for the archive, using fresh bytes first and
 		// loading existing objects from R2 when needed.
 		const allManifestEntries = [
-			...staticManifest.map((item, i) => ({ item, key: staticKeys[i] })),
+			...staticManifest.map((item, i) => ({
+				item,
+				key: staticKeys[i],
+				directory: 'static',
+			})),
 			...variableManifest.map((item, i) => ({
 				item,
 				key: variableKeys[i],
+				directory: 'variable',
 			})),
 		];
 
@@ -340,23 +341,22 @@ const buildFamilyArtifacts = async (
 
 		const allArtifactEntries = await Promise.all(
 			allManifestEntries.map(
-				limitConcur(16, async ({ item, key }) => {
+				limitConcur(16, async ({ item, key, directory }) => {
 					const built = builtByKey.get(key);
-					if (built) return built;
+					if (!built) {
+						fetchedFromR2++;
+					}
 
-					// Load the existing artifact from R2 for the zip.
-					fetchedFromR2++;
-					const bytes = await getObjectBytes(key);
+					const bytes = built?.bytes ?? (await getObjectBytes(key));
 					if (!bytes) {
 						throw new Error(`Expected artifact ${key} not found in R2`);
 					}
 
 					return {
-						key,
-						archivePath: item.archivePath,
+						archivePath: `${directory}/${tag.id}-${item.filename}`,
 						bytes,
 						compress: item.buildMode === 'copy',
-					} as BuiltArtifact;
+					};
 				}),
 			),
 		);

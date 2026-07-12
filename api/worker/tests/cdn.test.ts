@@ -198,24 +198,20 @@ describe('cdn routes', () => {
 			await testEnv.FONTS.put(
 				'recursive@5.0.0/download.zip',
 				zipSync({
-					'static/webfonts/recursive-latin-400-normal.woff2': staticWoff2Bytes,
-					'static/webfonts/recursive-latin-400-normal.woff': new Uint8Array([
-						1,
-					]),
-					'static/ttf/recursive-latin-400-normal.ttf': new Uint8Array([2]),
-					'variable/webfonts/recursive-latin-mono-normal.woff2':
-						variableWoff2Bytes,
-					'variable/webfonts/recursive-latin-full-normal.woff2':
-						variableWoff2Bytes,
+					'static/recursive-latin-400-normal.woff2': staticWoff2Bytes,
+					'static/recursive-latin-400-normal.woff': new Uint8Array([1]),
+					'static/recursive-latin-400-normal.ttf': new Uint8Array([2]),
+					'variable/recursive-latin-mono-normal.woff2': variableWoff2Bytes,
+					'variable/recursive-latin-full-normal.woff2': variableWoff2Bytes,
 					LICENSE: new TextEncoder().encode('Example License'),
 				}),
 			);
 			await testEnv.FONTS.put(
 				'abel@5.0.0/download.zip',
 				zipSync({
-					'static/webfonts/abel-latin-400-normal.woff2': staticWoff2Bytes,
-					'static/webfonts/abel-latin-400-normal.woff': new Uint8Array([1]),
-					'static/ttf/abel-latin-400-normal.ttf': new Uint8Array([2]),
+					'static/abel-latin-400-normal.woff2': staticWoff2Bytes,
+					'static/abel-latin-400-normal.woff': new Uint8Array([1]),
+					'static/abel-latin-400-normal.ttf': new Uint8Array([2]),
 					LICENSE: new TextEncoder().encode('Example License'),
 				}),
 			);
@@ -299,12 +295,12 @@ describe('cdn routes', () => {
 			expect(builder.calls).toHaveBeenCalledTimes(1);
 			expect(Object.keys(archive)).toEqual(
 				expect.arrayContaining([
-					'static/webfonts/slanted-latin-400-normal.woff2',
-					'variable/webfonts/slanted-latin-mono-normal.woff2',
-					'variable/webfonts/slanted-latin-wght-normal.woff2',
-					'variable/webfonts/slanted-latin-slnt-normal.woff2',
-					'variable/webfonts/slanted-latin-standard-normal.woff2',
-					'variable/webfonts/slanted-latin-full-normal.woff2',
+					'static/slanted-latin-400-normal.woff2',
+					'variable/slanted-latin-mono-normal.woff2',
+					'variable/slanted-latin-wght-normal.woff2',
+					'variable/slanted-latin-slnt-normal.woff2',
+					'variable/slanted-latin-standard-normal.woff2',
+					'variable/slanted-latin-full-normal.woff2',
 					'LICENSE',
 				]),
 			);
@@ -420,23 +416,23 @@ describe('cdn routes', () => {
 		const files = Object.keys(archive).sort();
 		expect(files).toEqual([
 			'LICENSE',
-			'static/ttf/recursive-latin-400-normal.ttf',
-			'static/webfonts/recursive-latin-400-normal.woff',
-			'static/webfonts/recursive-latin-400-normal.woff2',
-			'variable/webfonts/recursive-latin-full-normal.woff2',
-			'variable/webfonts/recursive-latin-mono-normal.woff2',
+			'static/recursive-latin-400-normal.ttf',
+			'static/recursive-latin-400-normal.woff',
+			'static/recursive-latin-400-normal.woff2',
+			'variable/recursive-latin-full-normal.woff2',
+			'variable/recursive-latin-mono-normal.woff2',
 		]);
 
 		// Verify binary sizes match the fixtures
+		expect(archive['static/recursive-latin-400-normal.woff2'].byteLength).toBe(
+			staticWoff2Bytes.byteLength,
+		);
 		expect(
-			archive['static/webfonts/recursive-latin-400-normal.woff2'].byteLength,
-		).toBe(staticWoff2Bytes.byteLength);
-		expect(
-			archive['variable/webfonts/recursive-latin-full-normal.woff2'].byteLength,
+			archive['variable/recursive-latin-full-normal.woff2'].byteLength,
 		).toBe(variableWoff2Bytes.byteLength);
-		expect(
-			archive['static/ttf/recursive-latin-400-normal.ttf'].byteLength,
-		).toBe(staticTtfBytes.byteLength);
+		expect(archive['static/recursive-latin-400-normal.ttf'].byteLength).toBe(
+			staticTtfBytes.byteLength,
+		);
 
 		// LICENSE should be present and non-empty
 		expect(new TextDecoder().decode(archive.LICENSE)).toBe('Example License');
@@ -535,15 +531,14 @@ describe('cdn routes', () => {
 		await testEnv.FONTS.put(
 			'recursive@5.0.0/download.zip',
 			zipSync({
-				'static/webfonts/recursive-latin-400-normal.woff2': staticWoff2Bytes,
+				'static/recursive-latin-400-normal.woff2': staticWoff2Bytes,
 				LICENSE: new TextEncoder().encode('static latest'),
 			}),
 		);
 		await testEnv.FONTS.put(
 			'recursive@1.1.0/download.zip',
 			zipSync({
-				'variable/webfonts/recursive-latin-full-normal.woff2':
-					variableWoff2Bytes,
+				'variable/recursive-latin-full-normal.woff2': variableWoff2Bytes,
 				LICENSE: new TextEncoder().encode('variable latest'),
 			}),
 		);
