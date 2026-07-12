@@ -6,8 +6,7 @@ import {
 	Text,
 	UnstyledButton,
 } from '@mantine/core';
-import { millify } from 'millify';
-
+import type { KeyboardEvent, ReactNode } from 'react';
 import {
 	IconCaret,
 	IconDownload,
@@ -16,9 +15,13 @@ import {
 	IconNpm,
 } from '@/components/icons';
 import type { Metadata } from '@/utils/types';
-import type { KeyboardEvent, ReactNode } from 'react';
 
 import classes from './Info.module.css';
+
+const compactNumberFormatter = new Intl.NumberFormat('en', {
+	notation: 'compact',
+	maximumFractionDigits: 2,
+});
 
 interface InfoProps {
 	metadata: Metadata;
@@ -116,7 +119,7 @@ export const InfoWrapper = ({ metadata, isCDN, hits }: InfoProps) => {
 					<IconDownload />
 					<Text>
 						{isCDN ? 'CDN Hits' : 'Downloads'}:{' '}
-						{hits ? millify(hits, { precision: 2 }) : 'N/A'}
+						{hits ? compactNumberFormatter.format(hits) : 'N/A'}
 					</Text>
 				</Group>
 				<Group gap="xs">

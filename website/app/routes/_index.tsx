@@ -4,8 +4,7 @@ import { useObservable } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { UiState } from 'instantsearch.js';
-// @ts-expect-error - No type definitions available
-import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
+import { history } from 'instantsearch.js/es/lib/routers';
 import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
 import type { RouterProps } from 'instantsearch.js/es/middlewares';
 import { useRef } from 'react';
