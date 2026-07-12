@@ -2,11 +2,11 @@ import { env } from 'cloudflare:workers';
 import { Center, Flex, Loader, Text, Title } from '@mantine/core';
 import { useEffect, useRef } from 'react';
 import type { ActionFunctionArgs, MetaFunction } from 'react-router';
-import { data, redirectDocument, useFetcher } from 'react-router';
+import { redirectDocument, useFetcher } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import styles from '@/components/ErrorBoundary.module.css';
-import { cacheHeaders } from '@/utils/cache';
+import { throwApiResponseError } from '@/utils/api.server';
 
 export const meta: MetaFunction = () => [
 	{ title: 'Preparing download | Fontsource' },
@@ -18,15 +18,12 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 	invariant(id, 'Missing font ID!');
 
 	const downloadUrl = `https://fontsource-api.fontsource.workers.dev/v1/download/${encodeURIComponent(id)}`;
-	const response = await env.API.fetch(downloadUrl, { method: 'HEAD' });
+	const response = await env.API.fetch(downloadUrl);
 
 	if (!response.ok) {
-		throw data(null, {
-			status: response.status,
-			statusText: response.statusText,
-			headers: cacheHeaders.noStore,
-		});
+		await throwApiResponseError(response, downloadUrl);
 	}
+	await response.body?.cancel();
 
 	const redirectUrl = new URL(downloadUrl);
 	const etag = response.headers.get('ETag');

@@ -2,6 +2,7 @@ import { unzipSync } from 'fflate';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { BuildVersionRequest } from '../shared/build';
 import { resolveFontPackageManifest } from '../shared/font-package-manifest';
+import { UpstreamNotFoundError } from '../shared/upstream';
 import {
 	staticMetadata,
 	staticTtfBytes,
@@ -282,6 +283,45 @@ describe('container artifact builder', () => {
 		expect(archive['static/familypack-latin-700-normal.ttf']).toEqual(
 			staticTtfBytes,
 		);
+	});
+
+	it('builds static files when the variable package version is unavailable', async () => {
+		const { buildArtifacts } = await import('../container/src/artifacts');
+		const manifest = resolveFontPackageManifest(variableMetadata, variableAxes);
+		fetchPackageFileList.mockImplementation(
+			async (_id, _version, isVariable = false) => {
+				if (isVariable) {
+					throw new UpstreamNotFoundError('missing variable package');
+				}
+
+				return new Set(manifest.static.map((item) => item.sourceFilename));
+			},
+		);
+
+		const request: BuildVersionRequest = {
+			mode: 'family',
+			tag: {
+				id: variableMetadata.id,
+				version: '1.0.0',
+			},
+			metadata: variableMetadata,
+			axes: variableAxes,
+		};
+
+		await expect(buildArtifacts(request)).resolves.toBe(
+			manifest.static.length + 1,
+		);
+
+		const zipPut = putObject.mock.calls.find(
+			([key]) => key === 'recursive@1.0.0/download.zip',
+		);
+		const archive = unzipSync(zipPut?.[1] as Uint8Array);
+		expect(
+			Object.keys(archive).some((file) => file.startsWith('static/')),
+		).toBe(true);
+		expect(
+			Object.keys(archive).some((file) => file.startsWith('variable/')),
+		).toBe(false);
 	});
 
 	it('filters family artifacts to the files actually published for that version', async () => {

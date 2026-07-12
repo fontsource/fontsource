@@ -202,7 +202,9 @@ const getPublishedManifest = async (
 	const [publishedStaticFiles, publishedVariableFiles] = await Promise.all([
 		fetchPackageFileList(request.tag.id, request.tag.version, false),
 		request.axes
-			? fetchPackageFileList(request.tag.id, request.tag.version, true)
+			? ignoreUpstream404(
+					fetchPackageFileList(request.tag.id, request.tag.version, true),
+				)
 			: Promise.resolve(undefined),
 	]);
 
