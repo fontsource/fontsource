@@ -4,19 +4,24 @@ import { useObservable } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { UiState } from 'instantsearch.js';
-// @ts-expect-error - No type definitions available
-import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
+import { history } from 'instantsearch.js/es/lib/routers';
 import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
 import type { RouterProps } from 'instantsearch.js/es/middlewares';
 import { useRef } from 'react';
 import { renderToString } from 'react-dom/server';
 import {
+	Configure,
 	getServerState,
 	InstantSearch,
 	type InstantSearchServerState,
 	InstantSearchSSRProvider,
 } from 'react-instantsearch';
-import { data, type LoaderFunctionArgs, useLoaderData } from 'react-router';
+import {
+	data,
+	type LinksFunction,
+	type LoaderFunctionArgs,
+	useLoaderData,
+} from 'react-router';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
@@ -47,14 +52,24 @@ interface SearchRouteState {
 }
 
 const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
+const ALGOLIA_APP_ID = 'WNATE69PVR';
+const attributesToRetrieve = ['family', 'defSubset', 'category', 'variable'];
 
 const searchClient = algoliasearch(
-	'WNATE69PVR',
+	ALGOLIA_APP_ID,
 	'8b36fe56fca654afaeab5e6f822c14bd',
 	{
 		requester: createFetchRequester(),
 	},
 );
+
+export const links: LinksFunction = () => [
+	{
+		rel: 'preconnect',
+		href: `https://${ALGOLIA_APP_ID}-dsn.algolia.net`,
+		crossOrigin: 'anonymous',
+	},
+];
 
 const sortMap: Record<string, string> = {
 	prod_POPULAR: 'popular',
@@ -177,6 +192,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 					future={{ preserveSharedStateOnUnmount: true }}
 				>
 					<CollectionsProvider>
+						<Configure attributesToRetrieve={attributesToRetrieve} />
 						<Filters state$={state$} />
 						<InfiniteHits state$={state$} />
 					</CollectionsProvider>
@@ -222,6 +238,7 @@ export default function Index() {
 				routing={routing(serverUrl, state$)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
+				<Configure attributesToRetrieve={attributesToRetrieve} />
 				<Box className={classes.background}>
 					<Box className={classes.container} ref={searchRef}>
 						<Filters state$={state$} />

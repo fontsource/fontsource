@@ -489,12 +489,9 @@ const putDownloadArtifacts = async (
 	const { metadata } = request;
 	const axes = metadata.variable || undefined;
 	const zipFiles: Zippable = {};
-	let artifactCount = await putStaticArtifacts(
-		env,
-		metadata,
-		request.staticVersion,
-		zipFiles,
-	);
+	let artifactCount = request.staticVersion
+		? await putStaticArtifacts(env, metadata, request.staticVersion, zipFiles)
+		: 0;
 
 	if (axes && request.variableVersion) {
 		artifactCount += await putVariableArtifacts(
@@ -507,8 +504,9 @@ const putDownloadArtifacts = async (
 	}
 
 	if (artifactCount === 0) {
+		const version = request.staticVersion ?? `vf@${request.variableVersion}`;
 		throw new Error(
-			`Mocked build produced no artifacts for ${metadata.id}@${request.staticVersion}`,
+			`Mocked build produced no artifacts for ${metadata.id}@${version}`,
 		);
 	}
 

@@ -1,5 +1,6 @@
 import { HTTPException } from 'hono/http-exception';
 import { type BuildVersionRequest, getBuildKey } from '../shared/build';
+import { UpstreamNotFoundError } from '../shared/upstream';
 import { buildArtifacts } from './src/artifacts';
 
 const PORT = 3000;
@@ -15,7 +16,11 @@ const resp404 = (): Response =>
 	);
 
 const errorStatus = (error: unknown): number =>
-	error instanceof HTTPException ? error.status : 500;
+	error instanceof HTTPException
+		? error.status
+		: error instanceof UpstreamNotFoundError
+			? 404
+			: 500;
 
 const respError = (error: unknown, request?: BuildVersionRequest): Response => {
 	const message = error instanceof Error ? error.message : String(error);

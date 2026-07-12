@@ -15,7 +15,7 @@ export interface BuildPackageRequest {
 
 export interface BuildDownloadRequest {
 	mode: 'download';
-	staticVersion: string;
+	staticVersion?: string;
 	variableVersion?: string;
 	metadata: SourceFontMetadata;
 }
@@ -44,5 +44,7 @@ export type BuildVersionStatus = BuildVersionBuilding | BuildVersionFailure;
 
 export const getBuildKey = (request: BuildVersionRequest): string =>
 	request.mode === 'download'
-		? `build:${request.metadata.id}@${request.staticVersion}${request.variableVersion && request.variableVersion !== request.staticVersion ? `+vf@${request.variableVersion}` : ''}:download`
+		? request.staticVersion
+			? `build:${request.metadata.id}@${request.staticVersion}${request.variableVersion && request.variableVersion !== request.staticVersion ? `+vf@${request.variableVersion}` : ''}:download`
+			: `build:${request.metadata.id}:vf@${request.variableVersion}:download`
 		: `build:${request.tag.id}@${request.tag.version}:${request.mode}`;

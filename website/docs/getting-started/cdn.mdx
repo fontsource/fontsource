@@ -1,29 +1,54 @@
 ---
 title: CDN
-description: Load versioned Fontsource font files through the jsDelivr CDN.
+description: Load versioned Fontsource stylesheets and font files through the jsDelivr CDN.
 ---
 
 # CDN
 
-Fontsource has partnered with [jsDelivr](https://www.jsdelivr.com/) for a custom proxy for all of its font files, allowing for niche use cases where a stable font file link is required. All files are versioned according to [Semver](https://semver.org/), and using a specific version tag will give you longer lived caches.
+Fontsource has partnered with [jsDelivr](https://www.jsdelivr.com/) for a custom proxy for its stylesheets and font files, allowing for niche use cases where a stable asset link is required. All files are versioned according to [Semver](https://semver.org/), and using a specific version tag will give you longer lived caches.
 
 > **Note:** We recommend self-hosting your fonts if possible, but we understand there are suitable use cases for a CDN.
 
 ## Usage
 
-To leverage the Fontsource CDN for your project, you can use the import generator provided on the install page of each font. For example, to use [Roboto Flex](/fonts/roboto-flex/cdn), you can access its import generator to generate the relevant URLs and CSS necessary for your projec
+To leverage the Fontsource CDN for your project, you can use the import generator provided on the install page of each font. For example, to use [Roboto Flex](/fonts/roboto-flex/cdn), you can access its import generator to generate the relevant URLs and CSS necessary for your project.
 
 ## URL Formats
 
-The Fontsource CDN provides two primary URL formats for accessing font files:
+The Fontsource CDN serves generated CSS stylesheets and direct font files.
 
-### Static URLs
+### CSS Stylesheets
+
+Generated stylesheets include the matching `@font-face` declarations and font file URLs. Use `.min.css` instead of `.css` when you want the minified version.
+
+- Static: `https://cdn.jsdelivr.net/fontsource/css/{id}@{version}/{file}.css`
+- Variable: `https://cdn.jsdelivr.net/fontsource/css/{id}:vf@{version}/{file}.css`
+
+For example, load the default Open Sans stylesheet:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/open-sans@latest/index.css" />
+```
+
+Load only the minified Latin subset:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/open-sans@latest/latin.min.css" />
+```
+
+Variable font stylesheets use the same `.min.css` suffix:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/roboto-flex:vf@latest/index.min.css" />
+```
+
+### Static Font URLs
 
 Static font URLs follow this pattern:
 
 - `https://cdn.jsdelivr.net/fontsource/fonts/{id}@{version}/{subset}-{weight}-{style}.{extension}`
 
-### Variable Fonts URLs
+### Variable Font URLs
 
 Variable fonts URLs have the format:
 

@@ -6,6 +6,7 @@ import type {
 	MetaFunction,
 } from 'react-router';
 import { data, redirect, useLoaderData } from 'react-router';
+import Balancer, { Provider as BalancerProvider } from 'react-wrap-balancer';
 
 import { Breadcrumbs } from '@/components/docs/Breadcrumbs';
 import classes from '@/components/docs/Page.module.css';
@@ -50,7 +51,9 @@ const docsContentLoader =
 		component({ default: MDX }, { title, markdownUrl }) {
 			return (
 				<>
-					<h1 className={classes.title}>{title}</h1>
+					<Balancer as="h1" className={classes.title}>
+						{title}
+					</Balancer>
 					<PageActions markdownUrl={markdownUrl} />
 					<MDX components={mdxComponents} />
 				</>
@@ -126,16 +129,18 @@ export default function DocsPage() {
 	const loaderData = useLoaderData<typeof loader>() as LoaderData;
 
 	return (
-		<div className={classes.page}>
-			<article className={classes.article}>
-				<Breadcrumbs items={loaderData.breadcrumbs} />
-				{docsContentLoader.useContent(loaderData.path, {
-					title: loaderData.frontmatter.title,
-					markdownUrl: loaderData.markdownUrl,
-				})}
-				<Pager pager={loaderData.pager} />
-			</article>
-			<Toc toc={loaderData.toc} editUrl={loaderData.editUrl} />
-		</div>
+		<BalancerProvider>
+			<div className={classes.page}>
+				<article className={classes.article}>
+					<Breadcrumbs items={loaderData.breadcrumbs} />
+					{docsContentLoader.useContent(loaderData.path, {
+						title: loaderData.frontmatter.title,
+						markdownUrl: loaderData.markdownUrl,
+					})}
+					<Pager pager={loaderData.pager} />
+				</article>
+				<Toc toc={loaderData.toc} editUrl={loaderData.editUrl} />
+			</div>
+		</BalancerProvider>
 	);
 }
