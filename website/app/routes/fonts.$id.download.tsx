@@ -9,6 +9,7 @@ import styles from '@/components/ErrorBoundary.module.css';
 import { cacheHeaders } from '@/utils/cache';
 
 export const meta: MetaFunction = () => [
+	{ title: 'Preparing download | Fontsource' },
 	{ name: 'robots', content: 'noindex, nofollow' },
 ];
 
