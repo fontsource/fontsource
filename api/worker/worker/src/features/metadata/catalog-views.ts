@@ -78,8 +78,9 @@ export const filterFontIndex = (
 		const values = rawValue.split(',');
 		switch (key) {
 			case 'subsets':
+				return item.subsets.some((value) => values.includes(value));
 			case 'styles':
-				return values.some((value) => item[key].includes(value));
+				return item.styles.some((value) => values.includes(value));
 			case 'weights':
 				return values.some((value) => item.weights.includes(Number(value)));
 			case 'variable':

@@ -5,6 +5,11 @@ on:
     paths:
       - "api/worker/**"
       - "packages/core/**"
+      - "website/app/generated/api/**"
+      - "website/app/routes/*sitemap.xml*.tsx"
+      - "website/app/utils/api.server.ts"
+      - "website/app/routes/fonts.$id.*.tsx"
+      - "website/tsconfig.json"
       - "package.json"
       - "bun.lock"
       - ".github/workflows/tests-api.yml"
@@ -14,6 +19,11 @@ on:
     paths:
       - "api/worker/**"
       - "packages/core/**"
+      - "website/app/generated/api/**"
+      - "website/app/routes/*sitemap.xml*.tsx"
+      - "website/app/utils/api.server.ts"
+      - "website/app/routes/fonts.$id.*.tsx"
+      - "website/tsconfig.json"
       - "package.json"
       - "bun.lock"
       - ".github/workflows/tests-api.yml"
@@ -37,7 +47,17 @@ jobs:
       - name: Install
         run: bun install
 
+      - name: Generate website API client
+        run: bun run generate:website-client
+
+      - name: Check generated website API client
+        run: test -z "$(git -C ../.. status --short --untracked-files=all -- website/app/generated/api)"
+
       - name: Run typecheck
+        run: bun run typecheck
+
+      - name: Run website typecheck
+        working-directory: website
         run: bun run typecheck
 
       - name: Run tests

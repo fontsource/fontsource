@@ -5,12 +5,12 @@ import { Link } from 'react-router';
 
 import { IconDownload, IconGlobe } from '@/components/icons';
 import { ContentHeader } from '@/components/layout/ContentHeader';
-import type { Metadata } from '@/utils/types';
+import type { GetFontResponse } from '@/generated/api';
 
 import classes from './Tabs.module.css';
 
 interface TabWrapperProps extends BoxProps {
-	metadata: Metadata;
+	metadata: GetFontResponse;
 	tabsValue: string;
 	children: React.ReactNode;
 }

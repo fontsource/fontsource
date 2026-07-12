@@ -4,39 +4,38 @@ import invariant from 'tiny-invariant';
 
 import { CDN } from '@/components/preview/CDN';
 import { TabsWrapper } from '@/components/preview/Tabs';
+import {
+	getFont,
+	getFontStats,
+	getVariableFont,
+	type GetFontResponse,
+} from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { ogMeta } from '@/utils/meta';
-import { getMetadata, getStats, getVariable } from '@/utils/metadata.server';
-import type { Metadata, VariableData } from '@/utils/types';
 
-interface FontMetadata {
-	metadata: Metadata;
-	variable?: VariableData;
-	hits: number;
-}
-
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
+	const parameters = { id };
+	const options = { signal: request.signal };
 
 	const [metadata, variable, stats] = await Promise.all([
-		getMetadata(id),
-		getVariable(id).catch(() => undefined), // Always try to load, fail gracefully
-		getStats(id),
+		getFont(parameters, options),
+		getVariableFont(parameters, options).catch(() => undefined), // Always try to load, fail gracefully
+		getFontStats(parameters, options),
 	]);
 
-	const res: FontMetadata = {
-		metadata,
-		variable,
-		hits: stats.total.jsDelivrHitsTotal,
-	};
-
-	return data(res, {
-		headers: cacheHeaders.short,
-	});
+	return data(
+		{
+			metadata,
+			variable,
+			hits: stats.total.jsDelivrHitsTotal,
+		},
+		{ headers: cacheHeaders.short },
+	);
 };
 
-const generateDescription = (metadata: Metadata) => {
+const generateDescription = (metadata: GetFontResponse) => {
 	const { family, category, weights, styles, variable } = metadata;
 	const weightDesc =
 		weights.length > 1
@@ -64,8 +63,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 };
 
 export default function CDNPage() {
-	const data = useLoaderData<FontMetadata>();
-	const { metadata, variable, hits } = data;
+	const { metadata, variable, hits } = useLoaderData<typeof loader>();
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="cdn">

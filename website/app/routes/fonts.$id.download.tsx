@@ -21,12 +21,12 @@ export const meta: MetaFunction = () => [
 
 export const headers: HeadersFunction = () => cacheHeaders.noStore;
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 
 	const downloadUrl = `https://api.fontsource.org/v1/download/${encodeURIComponent(id)}`;
-	const response = await env.API.fetch(downloadUrl);
+	const response = await env.API.fetch(downloadUrl, { signal: request.signal });
 
 	if (response.status === 202) {
 		await response.body?.cancel();

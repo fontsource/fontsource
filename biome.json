@@ -11,6 +11,7 @@
 			"!**/.wrangler",
 			"!**/worker-configuration.d.ts",
 			"!**/.react-router",
+			"!website/app/generated/api",
 			"!website/app/bones/*.bones.json",
 			"!website/app/bones/registry.js",
 			"!website/app/bones/registry.ts"
