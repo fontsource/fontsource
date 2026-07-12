@@ -9,7 +9,11 @@ import {
 	resolveFontPackageManifest,
 } from '../../../../shared/font-package-manifest';
 import { getBinaryKey, getDownloadKey } from '../../../../shared/storage';
-import { fetchPackageFileList } from '../../../../shared/upstream';
+import {
+	fetchPackageFileList,
+	isPackageVersionPublished,
+	UpstreamNotFoundError,
+} from '../../../../shared/upstream';
 import { CACHE_POLICIES, CONTENT_TYPES } from '../../constants';
 import { ensurePackageBuilt, startDownloadBuild } from '../../container/client';
 import type { AppEnv } from '../../env';
@@ -186,6 +190,17 @@ const ensurePublishedPinnedAsset = async (
 			);
 		}
 	} catch (error) {
+		if (
+			error instanceof UpstreamNotFoundError &&
+			!(await isPackageVersionPublished(
+				resolved.tag.id,
+				resolved.tag.version,
+				resolved.tag.isVariable,
+			))
+		) {
+			throw notFound(`Unable to resolve version "${resolved.tag.version}"`);
+		}
+
 		if (error instanceof HTTPException && error.status === 404) {
 			throw error;
 		}
@@ -246,11 +261,28 @@ export const getDownloadAsset = async (
 		getPublishedVersions(id, false),
 		axes ? getPublishedVersions(id, true) : undefined,
 	]);
-	const staticVersion = resolveVersionTag('latest', staticVersions);
-	const variableVersion = variableVersions
+	const staticVersion =
+		staticVersions.length > 0
+			? resolveVersionTag('latest', staticVersions)
+			: undefined;
+	const variableVersion = variableVersions?.length
 		? resolveVersionTag('latest', variableVersions)
 		: undefined;
-	const downloadKey = getDownloadKey(id, staticVersion, variableVersion);
+	const versions = staticVersion
+		? { staticVersion, variableVersion }
+		: variableVersion
+			? { variableVersion }
+			: undefined;
+	if (!versions) {
+		throw notFound(
+			'Unable to resolve download: no published versions available',
+		);
+	}
+	const downloadKey = getDownloadKey(
+		id,
+		versions.staticVersion,
+		versions.variableVersion,
+	);
 	const readDownload = () =>
 		getStoredBinaryObject(c, downloadKey, c.req.raw.headers);
 	const respond = (asset: StoredBinaryAsset) =>
@@ -270,13 +302,15 @@ export const getDownloadAsset = async (
 
 	const build = await startDownloadBuild(c, {
 		mode: 'download',
-		staticVersion,
-		variableVersion,
+		...versions,
 		metadata,
 	});
 	if (build.state === 'building') {
 		return Response.json(
-			{ state: 'building', version: staticVersion },
+			{
+				state: 'building',
+				version: versions.staticVersion ?? versions.variableVersion,
+			},
 			{
 				status: 202,
 				headers: {

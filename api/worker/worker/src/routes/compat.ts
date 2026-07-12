@@ -23,7 +23,7 @@ export class DownloadFontRoute extends OpenAPIRoute {
 		operationId: 'downloadFont',
 		summary: 'Download latest font family',
 		description:
-			'Serves a zip archive containing the latest static and variable packages for a font family.',
+			'Serves a zip archive containing the latest available static and variable packages for a font family.',
 		request: {
 			params: IdParamSchema,
 		},

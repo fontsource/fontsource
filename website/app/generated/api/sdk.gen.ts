@@ -221,7 +221,7 @@ export const getBinaryAsset = <ThrowOnError extends boolean = true>(parameters: 
 /**
  * Get generated CSS stylesheet
  *
- * Serves dynamically generated CSS stylesheets for font face declarations. Supports both static and variable font tags.
+ * Serves dynamically generated CSS stylesheets for font face declarations. Supports static and variable font tags, with .min.css aliases for minified output.
  */
 export const getCssFile = <ThrowOnError extends boolean = true>(parameters: {
     tag: string;
@@ -239,7 +239,7 @@ export const getCssFile = <ThrowOnError extends boolean = true>(parameters: {
 /**
  * Download latest font family
  *
- * Serves a zip archive containing the latest static and variable packages for a font family.
+ * Serves a zip archive containing the latest available static and variable packages for a font family.
  */
 export const downloadFont = <ThrowOnError extends boolean = true>(parameters: {
     id: string;

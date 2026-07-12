@@ -107,10 +107,18 @@ export const fetchPackageVersions = async (
 	cacheTtl: number,
 	isVariable = false,
 ): Promise<string[]> => {
-	const payload = await fetchCachedJson<JsDelivrPackageResponse>(
-		`${UPSTREAM_URLS.jsdelivrPackage}/${packageName(id, isVariable)}`,
-		cacheTtl,
-	);
+	let payload: JsDelivrPackageResponse;
+	try {
+		payload = await fetchCachedJson<JsDelivrPackageResponse>(
+			`${UPSTREAM_URLS.jsdelivrPackage}/${packageName(id, isVariable)}`,
+			cacheTtl,
+		);
+	} catch (error) {
+		if (error instanceof UpstreamNotFoundError) {
+			return [];
+		}
+		throw error;
+	}
 
 	return (payload.versions ?? []).map((item) => item.version);
 };
@@ -132,6 +140,33 @@ export const fetchPackageFileList = async (
 			.filter((name) => name.startsWith(prefix))
 			.map((name) => name.slice(prefix.length)),
 	);
+};
+
+export const isPackageVersionPublished = async (
+	id: string,
+	version: string,
+	isVariable = false,
+): Promise<boolean> => {
+	try {
+		const response = await fetchWithCache(
+			`${UPSTREAM_URLS.npmRegistry}/${packageName(id, isVariable)}/${version}`,
+			{
+				cacheEverything: true,
+				cacheTtlByStatus: {
+					'200-299': 86400,
+					404: 60,
+					'500-599': 0,
+				},
+			},
+		);
+		await response.body?.cancel();
+		return true;
+	} catch (error) {
+		if (error instanceof UpstreamNotFoundError) {
+			return false;
+		}
+		throw error;
+	}
 };
 
 export const fetchPackageTarball = async (

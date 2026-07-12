@@ -81,7 +81,7 @@ export class GetCssFileRoute extends OpenAPIRoute {
 		summary: 'Get generated CSS stylesheet',
 		description:
 			'Serves dynamically generated CSS stylesheets for font face declarations. ' +
-			'Supports both static and variable font tags.',
+			'Supports static and variable font tags, with .min.css aliases for minified output.',
 		request: {
 			params: TagFileParamSchema,
 		},

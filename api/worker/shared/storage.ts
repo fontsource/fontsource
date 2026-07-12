@@ -6,12 +6,20 @@ interface FontBinaryTag {
 
 export const getDownloadKey = (
 	id: string,
-	staticVersion: string,
+	staticVersion?: string,
 	variableVersion?: string,
-): string =>
-	variableVersion && variableVersion !== staticVersion
+): string => {
+	if (!staticVersion) {
+		if (!variableVersion) {
+			throw new Error(`Download version required for ${id}`);
+		}
+		return `${id}:vf@${variableVersion}/download.zip`;
+	}
+
+	return variableVersion && variableVersion !== staticVersion
 		? `${id}@${staticVersion}+vf@${variableVersion}/download.zip`
 		: `${id}@${staticVersion}/download.zip`;
+};
 
 /**
  * Static binaries live directly under `<id>@<version>/...`.
