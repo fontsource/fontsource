@@ -34,20 +34,8 @@
 	}
 }
 
-.actions {
-	display: flex;
-	position: absolute;
-	top: 12px;
-	right: 12px;
-	z-index: 1;
-	gap: 4px;
-
-	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
-}
-
 .preview {
 	width: 100%;
-	padding-inline-end: 80px;
 }
 
 .text-group {

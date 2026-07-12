@@ -2,8 +2,6 @@ import { Box, Group, Text } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 
-import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
-import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
 import type { FontSummary } from '@/utils/types';
@@ -63,10 +61,6 @@ const FontCard = ({
 				onLoad={() => setStylesheetLoaded(true)}
 				onError={() => setStylesheetLoaded(true)}
 			/>
-			<div className={classes.actions}>
-				<FavoriteButton font={font} />
-				<AddToCollectionMenu font={font} />
-			</div>
 			<Link className={classes.link} prefetch="intent" to={`/fonts/${font.id}`}>
 				<div className={classes.preview}>
 					<Skeleton name="search-hit-preview" loading={!isFontReady}>

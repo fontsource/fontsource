@@ -185,7 +185,8 @@ export default function Collections() {
 							<Stack align="flex-start" gap="md" py={48}>
 								<Title order={3}>No fonts here yet</Title>
 								<Text>
-									Use the heart or collections menu on a font to add it here.
+									Open a font and use the heart or collections menu to add it
+									here.
 								</Text>
 								<Button component={Link} to="/">
 									Browse fonts

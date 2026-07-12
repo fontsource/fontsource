@@ -1,3 +1,4 @@
+import type { Change } from '@legendapp/state';
 import { ObservablePersistLocalStorage } from '@legendapp/state/persist-plugins/local-storage';
 import { useMount } from '@legendapp/state/react';
 import { syncObservable } from '@legendapp/state/sync';
@@ -11,6 +12,25 @@ const STORAGE_KEY = 'fontsource.collections';
 const CollectionsContext = createContext<CollectionsStore | undefined>(
 	undefined,
 );
+
+class CollectionsLocalStorage extends ObservablePersistLocalStorage {
+	private failed = false;
+
+	constructor(private readonly onError: () => void) {
+		super();
+	}
+
+	override set(table: string, changes: Change[]) {
+		if (this.failed) return;
+
+		try {
+			super.set(table, changes);
+		} catch {
+			this.failed = true;
+			this.onError();
+		}
+	}
+}
 
 const CollectionsProvider = ({ children }: { children: ReactNode }) => {
 	const [store] = useState(createCollectionsStore);
@@ -31,7 +51,7 @@ const CollectionsProvider = ({ children }: { children: ReactNode }) => {
 		syncObservable(store.state$, {
 			persist: {
 				name: STORAGE_KEY,
-				plugin: ObservablePersistLocalStorage,
+				plugin: new CollectionsLocalStorage(() => setStorageError(true)),
 			},
 		});
 	});
