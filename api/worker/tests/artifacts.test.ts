@@ -260,26 +260,26 @@ describe('container artifact builder', () => {
 		const archive = unzipSync(zipPut?.[1] as Uint8Array);
 		expect(Object.keys(archive).sort()).toEqual([
 			'LICENSE',
-			'static/ttf/familypack-latin-400-normal.ttf',
-			'static/ttf/familypack-latin-700-normal.ttf',
-			'static/ttf/familypack-latin-ext-400-normal.ttf',
-			'static/ttf/familypack-latin-ext-700-normal.ttf',
-			'static/webfonts/familypack-latin-400-normal.woff',
-			'static/webfonts/familypack-latin-400-normal.woff2',
-			'static/webfonts/familypack-latin-700-normal.woff',
-			'static/webfonts/familypack-latin-700-normal.woff2',
-			'static/webfonts/familypack-latin-ext-400-normal.woff',
-			'static/webfonts/familypack-latin-ext-400-normal.woff2',
-			'static/webfonts/familypack-latin-ext-700-normal.woff',
-			'static/webfonts/familypack-latin-ext-700-normal.woff2',
+			'static/familypack-latin-400-normal.ttf',
+			'static/familypack-latin-400-normal.woff',
+			'static/familypack-latin-400-normal.woff2',
+			'static/familypack-latin-700-normal.ttf',
+			'static/familypack-latin-700-normal.woff',
+			'static/familypack-latin-700-normal.woff2',
+			'static/familypack-latin-ext-400-normal.ttf',
+			'static/familypack-latin-ext-400-normal.woff',
+			'static/familypack-latin-ext-400-normal.woff2',
+			'static/familypack-latin-ext-700-normal.ttf',
+			'static/familypack-latin-ext-700-normal.woff',
+			'static/familypack-latin-ext-700-normal.woff2',
 		]);
-		expect(
-			archive['static/webfonts/familypack-latin-400-normal.woff2'],
-		).toEqual(staticWoff2Bytes);
-		expect(
-			archive['static/webfonts/familypack-latin-ext-700-normal.woff'],
-		).toEqual(staticWoffBytes);
-		expect(archive['static/ttf/familypack-latin-700-normal.ttf']).toEqual(
+		expect(archive['static/familypack-latin-400-normal.woff2']).toEqual(
+			staticWoff2Bytes,
+		);
+		expect(archive['static/familypack-latin-ext-700-normal.woff']).toEqual(
+			staticWoffBytes,
+		);
+		expect(archive['static/familypack-latin-700-normal.ttf']).toEqual(
 			staticTtfBytes,
 		);
 	});
@@ -324,12 +324,12 @@ describe('container artifact builder', () => {
 		const archive = unzipSync(zipPut?.[1] as Uint8Array);
 		expect(Object.keys(archive).sort()).toEqual([
 			'LICENSE',
-			'static/ttf/familypack-latin-400-normal.ttf',
-			'static/ttf/familypack-latin-700-normal.ttf',
-			'static/webfonts/familypack-latin-400-normal.woff',
-			'static/webfonts/familypack-latin-400-normal.woff2',
-			'static/webfonts/familypack-latin-700-normal.woff',
-			'static/webfonts/familypack-latin-700-normal.woff2',
+			'static/familypack-latin-400-normal.ttf',
+			'static/familypack-latin-400-normal.woff',
+			'static/familypack-latin-400-normal.woff2',
+			'static/familypack-latin-700-normal.ttf',
+			'static/familypack-latin-700-normal.woff',
+			'static/familypack-latin-700-normal.woff2',
 		]);
 	});
 });

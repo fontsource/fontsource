@@ -29,9 +29,9 @@ exports[`cdn routes > public asset outputs > serves zip archives with correct fi
   "abel": {
     "files": [
       "LICENSE",
-      "static/ttf/abel-latin-400-normal.ttf",
-      "static/webfonts/abel-latin-400-normal.woff",
-      "static/webfonts/abel-latin-400-normal.woff2",
+      "static/abel-latin-400-normal.ttf",
+      "static/abel-latin-400-normal.woff",
+      "static/abel-latin-400-normal.woff2",
     ],
     "headers": {
       "cacheControl": "public, max-age=31536000, immutable",
@@ -47,11 +47,11 @@ exports[`cdn routes > public asset outputs > serves zip archives with correct fi
   "recursive": {
     "files": [
       "LICENSE",
-      "static/ttf/recursive-latin-400-normal.ttf",
-      "static/webfonts/recursive-latin-400-normal.woff",
-      "static/webfonts/recursive-latin-400-normal.woff2",
-      "variable/webfonts/recursive-latin-full-normal.woff2",
-      "variable/webfonts/recursive-latin-mono-normal.woff2",
+      "static/recursive-latin-400-normal.ttf",
+      "static/recursive-latin-400-normal.woff",
+      "static/recursive-latin-400-normal.woff2",
+      "variable/recursive-latin-full-normal.woff2",
+      "variable/recursive-latin-mono-normal.woff2",
     ],
     "headers": {
       "cacheControl": "public, max-age=31536000, immutable",

@@ -438,7 +438,7 @@ const putStaticArtifacts = async (
 
 	for (const item of resolveFontPackageManifest(metadata).static) {
 		const bytes = await putStaticArtifact(env, metadata, version, item);
-		zipFiles[item.archivePath] =
+		zipFiles[`static/${metadata.id}-${item.filename}`] =
 			item.buildMode === 'copy' ? [bytes, { level: 0 }] : bytes;
 		artifactCount += 1;
 	}
@@ -457,7 +457,10 @@ const putVariableArtifacts = async (
 
 	for (const item of resolveFontPackageManifest(metadata, axes).variable) {
 		const bytes = await putVariableArtifact(env, metadata, version, item);
-		zipFiles[item.archivePath] = [bytes, { level: 0 }];
+		zipFiles[`variable/${metadata.id}-${item.filename}`] = [
+			bytes,
+			{ level: 0 },
+		];
 		artifactCount += 1;
 	}
 
