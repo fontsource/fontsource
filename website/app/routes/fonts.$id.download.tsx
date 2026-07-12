@@ -15,7 +15,7 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 
-	const downloadUrl = `https://api.fontsource.org/v1/download/${encodeURIComponent(id)}`;
+	const downloadUrl = `https://fontsource-api.fontsource.workers.dev/v1/download/${encodeURIComponent(id)}`;
 	const response = await fetch(downloadUrl, { method: 'HEAD' });
 
 	if (!response.ok) {

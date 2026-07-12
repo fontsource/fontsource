@@ -3,7 +3,7 @@ name = "fontsource-website"
 
 main = "./workers/app.ts"
 workers_dev = true
-compatibility_flags = ["nodejs_compat"]
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 compatibility_date = "2025-08-15"
 
 [cache]
