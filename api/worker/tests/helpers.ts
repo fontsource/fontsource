@@ -747,9 +747,23 @@ export const installUpstreamFetchMock = (
 					throw new Error(`Unexpected scoped jsDelivr stats URL: ${url}`);
 				}
 				const period = new URL(url).searchParams.get('period');
-				return toResponse(
-					JSON.stringify({ hits: { total: period === 'month' ? 20 : 200 } }),
-				);
+				const currentYear = new Date().getUTCFullYear();
+				if (period === String(currentYear)) {
+					return toResponse('', { status: 400 });
+				}
+
+				const hits =
+					period === 'year'
+						? {
+								total: 1200,
+								dates: {
+									[`${currentYear - 1}-12-31`]: 1000,
+									[`${currentYear}-01-01`]: 80,
+									[`${currentYear}-01-02`]: 120,
+								},
+							}
+						: { total: period === 'month' ? 20 : 200 };
+				return toResponse(JSON.stringify({ hits }));
 			}
 
 			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`)) {

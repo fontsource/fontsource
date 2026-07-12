@@ -76,6 +76,5 @@ curl "http://localhost:8787/cdn-cgi/handler/scheduled?cron=15+0+*+*+SUN&format=j
 ```
 
 This uses local bindings and does not touch production data. Remote development
-can use live bindings, so only run the same trigger with `--remote` when you
-intend to enqueue a full production refresh. Wait for the Queue to drain before
-triggering it again.
+does not support Queue consumers, so production refreshes must run from a
+deployed worker. Wait for the Queue to drain before triggering it again.

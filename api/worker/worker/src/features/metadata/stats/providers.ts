@@ -120,14 +120,33 @@ export const fetchJsDelivrDownloads = async (
 	packageName: string,
 	period: 'month' | number,
 ): Promise<number> => {
+	const isCurrentYear =
+		typeof period === 'number' && period === new Date().getUTCFullYear();
+	const queryPeriod = isCurrentYear ? 'year' : period;
 	const payload = await fetchJson(
-		`${UPSTREAM_URLS.jsdelivrStats}/${packagePath(packageName)}?period=${period}`,
+		`${UPSTREAM_URLS.jsdelivrStats}/${packagePath(packageName)}?period=${queryPeriod}`,
 		true,
-	);
-	await scheduler.wait(JSDELIVR_PACE_MS);
+	).finally(() => scheduler.wait(JSDELIVR_PACE_MS));
 	if (payload === null) return 0;
 
 	const hits = isRecord(payload) ? payload.hits : undefined;
+	if (isCurrentYear) {
+		const dates = isRecord(hits) ? hits.dates : undefined;
+		if (!isRecord(dates)) {
+			throw new Error(`Invalid jsDelivr stats response for ${packageName}`);
+		}
+
+		let total = 0;
+		for (const [day, downloads] of Object.entries(dates)) {
+			if (!day.startsWith(`${period}-`)) continue;
+			if (typeof downloads !== 'number' || downloads < 0) {
+				throw new Error(`Invalid jsDelivr stats response for ${packageName}`);
+			}
+			total += downloads;
+		}
+		return total;
+	}
+
 	const total = isRecord(hits) ? hits.total : undefined;
 	if (typeof total !== 'number' || total < 0) {
 		throw new Error(`Invalid jsDelivr stats response for ${packageName}`);
