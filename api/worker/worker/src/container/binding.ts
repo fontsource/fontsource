@@ -49,6 +49,12 @@ export class ArtifactBuilder extends Container<Env> {
 		console.log('[container] stopped', { exitCode, reason });
 	}
 
+	override async onActivityExpired(): Promise<void> {
+		if (!this.activeBuild) {
+			await this.destroy();
+		}
+	}
+
 	private async executeBuild(
 		request: BuildVersionRequest,
 	): Promise<BuildVersionResult> {
@@ -93,21 +99,15 @@ export class ArtifactBuilder extends Container<Env> {
 				error: `Bad Gateway. Artifact build failed for ${buildKey}: ${message}`,
 			};
 		} finally {
+			// The one-shot image has no cleanup left after its response is consumed.
+			// destroy() avoids waiting through the SIGTERM grace period used by stop().
 			try {
-				await this.stop();
+				await this.destroy();
 			} catch (error) {
 				console.error(
-					'[container] failed to stop completed instance; destroying it',
+					'[container] failed to destroy completed instance',
 					error,
 				);
-				try {
-					await this.destroy();
-				} catch (destroyError) {
-					console.error(
-						'[container] failed to destroy completed instance',
-						destroyError,
-					);
-				}
 			}
 		}
 	}
