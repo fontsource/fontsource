@@ -5,6 +5,8 @@ import { Link } from 'react-router';
 
 import { IconDownload, IconGlobe } from '@/components/icons';
 import { ContentHeader } from '@/components/layout/ContentHeader';
+import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
+import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import type { Metadata } from '@/utils/types';
 
 import classes from './Tabs.module.css';
@@ -24,6 +26,13 @@ export const TabsWrapper = ({
 		useHover<HTMLAnchorElement>();
 	const { hovered: hoveredGlobe, ref: refGlobe } =
 		useHover<HTMLButtonElement>();
+	const fontSummary = {
+		id: metadata.id,
+		family: metadata.family,
+		defSubset: metadata.defSubset,
+		category: metadata.category,
+		variable: metadata.variable,
+	};
 
 	return (
 		<Tabs
@@ -50,6 +59,8 @@ export const TabsWrapper = ({
 					<Badge color="gray" variant="light" className={classes.badge}>
 						{metadata.type}
 					</Badge>
+					<FavoriteButton font={fontSummary} />
+					<AddToCollectionMenu font={fontSummary} />
 				</Group>
 				<Tabs.List>
 					<Link

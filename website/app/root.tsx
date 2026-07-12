@@ -97,6 +97,7 @@ import {
 
 import { ErrorBoundary as ErrorBoundaryComponent } from '@/components/ErrorBoundary';
 import { AppShell } from '@/components/layout/AppShell';
+import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import { theme } from '@/styles/theme';
 import { cacheHeaders } from '@/utils/cache';
 import { getCanonicalUrl, ogMeta } from '@/utils/meta';
@@ -178,7 +179,9 @@ export const Document = ({ children }: DocumentProps) => {
 			<body>
 				<MantineProvider theme={theme}>
 					<ReactRouterProvider>
-						<AppShell>{children}</AppShell>
+						<CollectionsProvider>
+							<AppShell>{children}</AppShell>
+						</CollectionsProvider>
 					</ReactRouterProvider>
 					<ScrollRestoration />
 					<Scripts />

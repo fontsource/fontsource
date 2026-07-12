@@ -11,10 +11,9 @@ import {
 	useState,
 } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
-import { Link as NavLink } from 'react-router';
 
+import { FontCard } from '@/components/FontCard';
 import { Skeleton } from '@/components/Skeleton';
-import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { getPreviewText } from '@/utils/language/language';
 import type { AlgoliaMetadata } from '@/utils/types';
 
@@ -48,25 +47,6 @@ const getRowClassName = (display: Display) =>
 		: classes['result-row'];
 
 const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
-	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${hit.objectID}@latest/index.css`;
-
-	// State to track if the font's CSS stylesheet has loaded.
-	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
-	const isFontReady = useIsFontReady(hit.family, isStylesheetLoaded);
-
-	useEffect(() => {
-		if (isStylesheetLoaded) {
-			return;
-		}
-
-		for (const sheet of document.styleSheets) {
-			if (sheet.href === stylesheetHref) {
-				setStylesheetLoaded(true);
-				return;
-			}
-		}
-	}, [isStylesheetLoaded, stylesheetHref]);
-
 	const display = useValue(state$.display);
 	const size = useValue(state$.size);
 
@@ -93,39 +73,19 @@ const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
 	});
 
 	return (
-		<Box
-			renderRoot={({ ...others }) => (
-				<NavLink prefetch="intent" to={`/fonts/${hit.objectID}`} {...others} />
-			)}
-			className={classes.wrapper}
-			mih={{ base: '150px', sm: display === 'grid' ? '332px' : '150px' }}
-		>
-			<link
-				rel="stylesheet"
-				href={stylesheetHref}
-				onLoad={() => setStylesheetLoaded(true)}
-				onError={() => setStylesheetLoaded(true)} // Also enable on error to prevent infinite skeleton.
-			/>
-			<Skeleton name="search-hit-preview" loading={!isFontReady}>
-				<Text
-					fz={size}
-					mih={display === 'grid' ? getGridPreviewHeight(size) : undefined}
-					style={{ fontFamily: `"${hit.family}", "Fallback Outline"` }}
-				>
-					{currentPreview}
-				</Text>
-			</Skeleton>
-			<Group className={classes['text-group']}>
-				<Text fz={18} fw={700} component="span">
-					{hit.family}
-				</Text>
-				{hit.variable && (
-					<Text fz={15} fw={700} component="span">
-						Variable
-					</Text>
-				)}
-			</Group>
-		</Box>
+		<FontCard
+			font={{
+				id: hit.objectID,
+				family: hit.family,
+				defSubset: hit.defSubset,
+				category: hit.category,
+				variable: hit.variable,
+			}}
+			layout={display}
+			preview={currentPreview}
+			previewHeight={getGridPreviewHeight(size)}
+			size={size}
+		/>
 	);
 });
 

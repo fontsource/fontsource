@@ -26,6 +26,11 @@ export interface Metadata {
 	unicodeRange: UnicodeData;
 }
 
+export type FontSummary = Pick<
+	Metadata,
+	'id' | 'family' | 'defSubset' | 'category' | 'variable'
+>;
+
 export interface AxesData {
 	default: string;
 	min: string;

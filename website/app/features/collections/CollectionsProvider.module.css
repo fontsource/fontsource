@@ -1,0 +1,12 @@
+.error {
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	z-index: 1000;
+	max-width: min(420px, calc(100vw - 48px));
+	padding: 12px 16px;
+	border-radius: 4px;
+	color: var(--mantine-color-white);
+	background: var(--mantine-color-red-7);
+	box-shadow: var(--mantine-shadow-md);
+}
