@@ -178,8 +178,8 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 				>
 					<CollectionsProvider>
 						<Filters state$={state$} />
+						<InfiniteHits state$={state$} />
 					</CollectionsProvider>
-					<InfiniteHits state$={state$} />
 				</InstantSearch>
 			</InstantSearchSSRProvider>
 		</MantineProvider>,

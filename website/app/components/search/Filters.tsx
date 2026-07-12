@@ -43,14 +43,13 @@ const buildCollectionFilter = (fontIds: string[]) =>
 
 const Filters = ({ state$ }: FilterProps) => {
 	const collectionsStore = useCollectionsStore();
-	const collections = useValue(collectionsStore.collections$);
 	const collectionId = useValue(state$.collectionId);
-	const selectedCollection = collections.find(
-		(collection) => collection.id === collectionId,
-	);
-	const collectionFilter = selectedCollection
-		? buildCollectionFilter(selectedCollection.fontIds)
-		: '';
+	const collectionFilter = useValue(() => {
+		const collection$ = collectionsStore.collections$.find(
+			(item$) => item$.id.peek() === collectionId,
+		);
+		return collection$ ? buildCollectionFilter(collection$.fontIds.get()) : '';
+	});
 	const { setIndexUiState } = useInstantSearch();
 	const {
 		value: variableValue,

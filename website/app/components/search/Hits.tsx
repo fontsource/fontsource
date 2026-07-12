@@ -131,11 +131,18 @@ const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 
 const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const collectionsStore = useCollectionsStore();
-	const collections = useValue(collectionsStore.collections$);
 	const collectionId = useValue(state$.collectionId);
-	const selectedCollection = collections.find(
-		(collection) => collection.id === collectionId,
-	);
+	const collectionMessage = useValue(() => {
+		const collection$ = collectionsStore.collections$.find(
+			(item$) => item$.id.peek() === collectionId,
+		);
+		if (!collection$) return;
+
+		const name = collection$.name.get();
+		return collection$.fontIds.length === 0
+			? `${name} does not have any fonts yet.`
+			: `No fonts in ${name} match these filters.`;
+	});
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
@@ -288,12 +295,6 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
 	if (!results.__isArtificial && results.nbHits === 0) {
-		const collectionMessage = selectedCollection
-			? selectedCollection.fontIds.length === 0
-				? `${selectedCollection.name} does not have any fonts yet.`
-				: `No fonts in ${selectedCollection.name} match these filters.`
-			: undefined;
-
 		return (
 			<Box>
 				<Text>

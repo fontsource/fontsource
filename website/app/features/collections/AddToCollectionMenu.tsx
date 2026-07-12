@@ -9,6 +9,7 @@ import {
 } from '@mantine/core';
 import { IconFolderPlus, IconPlus, IconSettings } from '@tabler/icons-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 import type { FontSummary } from '@/utils/types';
 import {
@@ -23,6 +24,7 @@ interface AddToCollectionMenuProps {
 
 const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 	const store = useCollectionsStore();
+	const navigate = useNavigate();
 	const ready = useValue(store.ready$);
 	const collections = useValue(store.collections$);
 	const customCollections = collections.filter(
@@ -55,7 +57,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 							disabled={!ready}
 							size="lg"
 							type="button"
-							variant="subtle"
+							variant="transparent"
 						>
 							<IconFolderPlus size={20} />
 						</ActionIcon>
@@ -121,6 +123,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 				</Menu.Dropdown>
 			</Menu>
 			<CreateCollectionModal
+				font={font}
 				onClose={() => setCreateOpened(false)}
 				onCreated={(collectionId) =>
 					store.addFontToCollection(collectionId, font)
@@ -129,6 +132,10 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 			/>
 			<ManageCollectionsModal
 				onClose={() => setManageOpened(false)}
+				onCreateCollection={() => setCreateOpened(true)}
+				onViewCollection={(collectionId) =>
+					navigate(`/?collection=${encodeURIComponent(collectionId)}`)
+				}
 				opened={manageOpened}
 			/>
 		</>

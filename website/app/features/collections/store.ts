@@ -1,4 +1,4 @@
-import { observable, syncState } from '@legendapp/state';
+import { batch, observable, syncState } from '@legendapp/state';
 import invariant from 'tiny-invariant';
 
 import type { FontSummary } from '@/utils/types';
@@ -20,17 +20,6 @@ const createCollectionsStore = (
 		state$.collections
 			.peek()
 			.findIndex((collection) => collection.id === collectionId);
-	const replaceCollection = (
-		collectionIndex: number,
-		collection: CollectionsSnapshot['collections'][number],
-	) => {
-		const collections = state$.collections.peek();
-		state$.collections.set([
-			...collections.slice(0, collectionIndex),
-			collection,
-			...collections.slice(collectionIndex + 1),
-		]);
-	};
 	const getAvailableCollectionName = (name: string, ignoredId?: string) => {
 		const normalizedName = name.trim();
 		const invalidName =
@@ -54,16 +43,15 @@ const createCollectionsStore = (
 
 	const getFavoritesCollectionId = () => {
 		const id = state$.collections
-			.get()
-			.find((collection) => collection.kind === 'favorites')?.id;
+			.find((collection$) => collection$.kind.peek() === 'favorites')
+			?.id.get();
 		invariant(id, 'Collections state is missing Favorites.');
 		return id;
 	};
 
 	const hasFont = (collectionId: string, fontId: string) =>
 		state$.collections
-			.get()
-			.find((collection) => collection.id === collectionId)
+			.find((collection$) => collection$.id.peek() === collectionId)
 			?.fontIds.includes(fontId) ?? false;
 
 	const createCollection = (name: string) => {
@@ -73,15 +61,12 @@ const createCollectionsStore = (
 		if (!normalizedName) return;
 
 		const id = crypto.randomUUID();
-		state$.collections.set([
-			...state$.collections.peek(),
-			{
-				id,
-				kind: 'custom',
-				name: normalizedName,
-				fontIds: [],
-			},
-		]);
+		state$.collections.push({
+			id,
+			kind: 'custom',
+			name: normalizedName,
+			fontIds: [],
+		});
 		return id;
 	};
 
@@ -98,10 +83,7 @@ const createCollectionsStore = (
 		const normalizedName = getAvailableCollectionName(name, collectionId);
 		if (!normalizedName) return;
 
-		replaceCollection(collectionIndex, {
-			...state$.collections[collectionIndex].peek(),
-			name: normalizedName,
-		});
+		state$.collections[collectionIndex].name.set(normalizedName);
 		return true;
 	};
 
@@ -117,12 +99,10 @@ const createCollectionsStore = (
 		}
 
 		const fontIds = state$.collections[collectionIndex].fontIds.peek();
-		state$.collections.set(
-			state$.collections
-				.peek()
-				.filter((collection) => collection.id !== collectionId),
-		);
-		fontIds.forEach(pruneFont);
+		batch(() => {
+			state$.collections[collectionIndex].delete();
+			fontIds.forEach(pruneFont);
+		});
 	};
 
 	const addFontToCollection = (collectionId: string, font: FontSummary) => {
@@ -131,13 +111,12 @@ const createCollectionsStore = (
 		const collectionIndex = getCollectionIndex(collectionId);
 		if (collectionIndex === -1) return;
 
-		const collection = state$.collections[collectionIndex].peek();
-		if (collection.fontIds.includes(font.id)) return;
+		const fontIds$ = state$.collections[collectionIndex].fontIds;
+		if (fontIds$.peek().includes(font.id)) return;
 
-		state$.fontCache[font.id].set(font);
-		replaceCollection(collectionIndex, {
-			...collection,
-			fontIds: [font.id, ...collection.fontIds],
+		batch(() => {
+			state$.fontCache[font.id].set(font);
+			fontIds$.unshift(font.id);
 		});
 	};
 
@@ -152,12 +131,10 @@ const createCollectionsStore = (
 			.indexOf(fontId);
 		if (fontIndex === -1) return;
 
-		const collection = state$.collections[collectionIndex].peek();
-		replaceCollection(collectionIndex, {
-			...collection,
-			fontIds: collection.fontIds.filter((id) => id !== fontId),
+		batch(() => {
+			state$.collections[collectionIndex].fontIds[fontIndex].delete();
+			pruneFont(fontId);
 		});
-		pruneFont(fontId);
 	};
 
 	return {

@@ -35,7 +35,7 @@ const FavoriteButton = ({ font }: FavoriteButtonProps) => {
 				onClick={handleClick}
 				size="lg"
 				type="button"
-				variant="subtle"
+				variant="transparent"
 			>
 				<IconHeart fill={favorite ? 'currentColor' : 'none'} size={20} />
 			</ActionIcon>

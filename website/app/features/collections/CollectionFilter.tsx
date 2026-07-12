@@ -56,7 +56,7 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 						rightSectionPointerEvents="none"
 						w={250}
 					>
-						{selectedCollection?.name ?? 'All fonts'}
+						{selectedCollection?.name ?? 'Collections'}
 					</InputBase>
 				</Menu.Target>
 				<Menu.Dropdown>
@@ -64,7 +64,7 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 						leftSection={value === null ? <IconCheck size={16} /> : undefined}
 						onClick={() => onChange(null)}
 					>
-						All fonts
+						Show all fonts
 					</Menu.Item>
 					<Menu.Divider />
 					{collections.length >= 9 && (
@@ -118,7 +118,6 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 					>
 						Manage collections…
 					</Menu.Item>
-					<Menu.Label>Saved only in this browser</Menu.Label>
 				</Menu.Dropdown>
 			</Menu>
 			<CreateCollectionModal
@@ -127,6 +126,8 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 			/>
 			<ManageCollectionsModal
 				onClose={() => setManageOpened(false)}
+				onCreateCollection={() => setCreateOpened(true)}
+				onViewCollection={onChange}
 				opened={manageOpened}
 			/>
 		</>
