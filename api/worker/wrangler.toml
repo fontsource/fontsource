@@ -1,4 +1,3 @@
-# api/worker/wrangler.toml
 name = 'fontsource-api'
 main = "worker/src/index.ts"
 compatibility_date = "2026-05-10"
