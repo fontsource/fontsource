@@ -37,7 +37,7 @@ describe('download stats ingestion', () => {
 		await setupWorkerTest();
 	});
 
-	it('seeds the complete package set from the weekly cron', async () => {
+	it('seeds the complete package set from the daily cron', async () => {
 		await worker.scheduled(
 			createScheduledController({
 				cron: STATS_CRON,

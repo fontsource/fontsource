@@ -59,8 +59,8 @@ bindings point to existing Fontsource resources.
 
 ## Scheduled refreshes
 
-Metadata refreshes every three hours. Download stats are refreshed every Sunday
-at 00:15 UTC. The stats schedule queues one job per active package; the Queue
+Metadata refreshes every three hours. Download stats are refreshed daily at
+00:15 UTC. The stats schedule queues one job per active package; the Queue
 consumer does the slower provider requests in the background.
 
 To trigger the stats schedule locally:
@@ -72,7 +72,7 @@ bun x wrangler dev --test-scheduled
 In another terminal:
 
 ```sh
-curl "http://localhost:8787/cdn-cgi/handler/scheduled?cron=15+0+*+*+SUN&format=json"
+curl "http://localhost:8787/cdn-cgi/handler/scheduled?cron=15+0+*+*+*&format=json"
 ```
 
 This uses local bindings and does not touch production data. Remote development
