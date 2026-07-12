@@ -67,7 +67,6 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 						All fonts
 					</Menu.Item>
 					<Menu.Divider />
-					<Menu.Label>Your collections</Menu.Label>
 					{collections.length >= 9 && (
 						<div className={classes.search}>
 							<TextInput
