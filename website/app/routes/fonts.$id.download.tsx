@@ -1,8 +1,12 @@
 import { env } from 'cloudflare:workers';
 import { Center, Flex, Loader, Text, Title } from '@mantine/core';
-import { useEffect, useRef } from 'react';
-import type { ActionFunctionArgs, MetaFunction } from 'react-router';
-import { data, redirectDocument, useFetcher } from 'react-router';
+import { useEffect } from 'react';
+import type {
+	HeadersFunction,
+	LoaderFunctionArgs,
+	MetaFunction,
+} from 'react-router';
+import { redirectDocument, useLoaderData, useRevalidator } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import styles from '@/components/ErrorBoundary.module.css';
@@ -14,7 +18,9 @@ export const meta: MetaFunction = () => [
 	{ name: 'robots', content: 'noindex, nofollow' },
 ];
 
-export const action = async ({ params }: ActionFunctionArgs) => {
+export const headers: HeadersFunction = () => cacheHeaders.noStore;
+
+export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 
@@ -23,12 +29,7 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 
 	if (response.status === 202) {
 		await response.body?.cancel();
-		const retryAfter = Number(response.headers.get('Retry-After')) || 3;
-
-		return data(
-			{ state: 'building' as const, retryAfter },
-			{ status: 202, headers: cacheHeaders.noStore },
-		);
+		return { retryAfter: Number(response.headers.get('Retry-After')) || 3 };
 	}
 
 	if (!response.ok) {
@@ -44,24 +45,18 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 };
 
 export default function Download() {
-	const { data: build, state, submit } = useFetcher<typeof action>();
-	const started = useRef(false);
+	const { retryAfter } = useLoaderData<typeof loader>();
+	const { revalidate, state } = useRevalidator();
 
 	useEffect(() => {
-		if (started.current) return;
-		started.current = true;
-		void submit(null, { method: 'post' });
-	}, [submit]);
-
-	useEffect(() => {
-		if (state !== 'idle' || build?.state !== 'building') return;
+		if (state !== 'idle') return;
 
 		const timeout = setTimeout(() => {
-			void submit(null, { method: 'post' });
-		}, build.retryAfter * 1000);
+			void revalidate();
+		}, retryAfter * 1000);
 
 		return () => clearTimeout(timeout);
-	}, [build, state, submit]);
+	}, [retryAfter, revalidate, state]);
 
 	return (
 		<Center className={styles.container}>
