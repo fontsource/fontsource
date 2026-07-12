@@ -1,11 +1,15 @@
 import { Center, Flex, Loader, Text, Title } from '@mantine/core';
 import { useEffect, useRef } from 'react';
-import type { ActionFunctionArgs } from 'react-router';
-import { redirectDocument, useFetcher } from 'react-router';
+import type { ActionFunctionArgs, MetaFunction } from 'react-router';
+import { data, redirectDocument, useFetcher } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import styles from '@/components/ErrorBoundary.module.css';
-import { throwApiResponseError } from '@/utils/api.server';
+import { cacheHeaders } from '@/utils/cache';
+
+export const meta: MetaFunction = () => [
+	{ name: 'robots', content: 'noindex, nofollow' },
+];
 
 export const action = async ({ params }: ActionFunctionArgs) => {
 	const { id } = params;
@@ -15,7 +19,11 @@ export const action = async ({ params }: ActionFunctionArgs) => {
 	const response = await fetch(downloadUrl, { method: 'HEAD' });
 
 	if (!response.ok) {
-		await throwApiResponseError(response, downloadUrl);
+		throw data(null, {
+			status: response.status,
+			statusText: response.statusText,
+			headers: cacheHeaders.noStore,
+		});
 	}
 
 	return redirectDocument(downloadUrl);
@@ -45,9 +53,9 @@ export default function Download() {
 						Preparing your download
 					</Title>
 					<Text className={styles.description}>
-						New font versions can take up to a minute to prepare. Feel free to
-						keep browsing in the original tab. We’ll start your download here as
-						soon as it’s ready.
+						New font versions can take up to a minute to prepare. You can keep
+						browsing in the original tab and close this tab once the download
+						starts.
 					</Text>
 				</Flex>
 			</Flex>

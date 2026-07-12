@@ -72,7 +72,7 @@ export const TabsWrapper = ({
 						ref={refDownload}
 						data-m:click={`download=${metadata.id}`}
 						target="_blank"
-						rel="noopener noreferrer"
+						rel="noopener noreferrer nofollow"
 					>
 						<Group gap="xs">
 							<IconDownload height={19} data-active={hoveredDownload} />
