@@ -129,6 +129,7 @@ const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 );
 
 const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
+	const collectionId = useValue(state$.collectionId);
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
@@ -156,6 +157,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const previewValue =
 		state$.preview.customValue.get() || state$.preview.presetValue.get();
 	const searchKey = JSON.stringify({
+		collectionId,
 		menu: indexUiState.menu ?? {},
 		query: indexUiState.query ?? '',
 		refinementList: indexUiState.refinementList ?? {},
@@ -282,7 +284,11 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	if (!results.__isArtificial && results.nbHits === 0) {
 		return (
 			<Box>
-				<Text>No results found for &quot;{indexUiState.query}&quot;</Text>
+				<Text>
+					{collectionId
+						? 'No fonts in this collection match these filters.'
+						: `No results found for "${indexUiState.query ?? ''}"`}
+				</Text>
 			</Box>
 		);
 	}

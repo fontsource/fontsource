@@ -2,6 +2,7 @@ import type { ObservableObject } from '@legendapp/state';
 
 interface SearchObject {
 	size: number;
+	collectionId: string | null;
 	preview: {
 		presetLabel: string;
 		presetValue: string;
@@ -15,6 +16,7 @@ type SearchState = ObservableObject<SearchObject>;
 
 const createSearchState = (): SearchObject => ({
 	size: 32,
+	collectionId: null,
 	preview: {
 		presetLabel: 'Sentence',
 		presetValue: 'Sphinx of black quartz, judge my vow.',

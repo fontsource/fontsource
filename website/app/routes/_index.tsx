@@ -22,6 +22,7 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { createSearchState } from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
+import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
@@ -159,7 +160,9 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 					routing={routing(serverUrl)}
 					future={{ preserveSharedStateOnUnmount: true }}
 				>
-					<Filters state$={state$} />
+					<CollectionsProvider>
+						<Filters state$={state$} />
+					</CollectionsProvider>
 					<InfiniteHits state$={state$} />
 				</InstantSearch>
 			</InstantSearchSSRProvider>
