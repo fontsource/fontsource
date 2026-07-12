@@ -25,7 +25,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 
-	const downloadUrl = `https://fontsource-api.fontsource.workers.dev/v1/download/${encodeURIComponent(id)}`;
+	const downloadUrl = `https://api.fontsource.org/v1/download/${encodeURIComponent(id)}`;
 	const response = await env.API.fetch(downloadUrl);
 
 	if (response.status === 202) {
