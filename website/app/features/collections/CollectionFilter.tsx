@@ -56,7 +56,7 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 						rightSectionPointerEvents="none"
 						w={250}
 					>
-						{selectedCollection?.name ?? 'Collections'}
+						{selectedCollection?.name ?? 'All fonts'}
 					</InputBase>
 				</Menu.Target>
 				<Menu.Dropdown>
@@ -64,9 +64,10 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 						leftSection={value === null ? <IconCheck size={16} /> : undefined}
 						onClick={() => onChange(null)}
 					>
-						Show all fonts
+						All fonts
 					</Menu.Item>
 					<Menu.Divider />
+					<Menu.Label>Your collections</Menu.Label>
 					{collections.length >= 9 && (
 						<div className={classes.search}>
 							<TextInput
