@@ -30,6 +30,27 @@ const getPublicFilename = (id: string, filename: string): string => {
 	return filename.startsWith(prefix) ? filename.slice(prefix.length) : filename;
 };
 
+const minifyCss = (content: string): string => {
+	let minified = '';
+
+	// The core generator emits one comment, block marker, or declaration per line.
+	for (const rawLine of content.split('\n')) {
+		const line = rawLine.trim();
+		if (!line || line.startsWith('/*')) {
+			continue;
+		}
+
+		if (line === '@font-face {') {
+			minified += '@font-face{';
+			continue;
+		}
+
+		minified += line.replace(': ', ':');
+	}
+
+	return minified;
+};
+
 const createCssResponse = (
 	content: string,
 	requestedVersion: string,
@@ -106,8 +127,10 @@ export const getCssAsset = async (
 	const resolvedTag = tag.isVariable
 		? `${tag.id}:vf@${tag.version}`
 		: `${tag.id}@${tag.version}`;
+	const isMinified = filename.endsWith('.min.css');
+	const assetFilename = filename.replace(/\.min\.css$/, '.css');
 
-	const asset = findCssAsset(metadata, filename, resolvedTag, {
+	const asset = findCssAsset(metadata, assetFilename, resolvedTag, {
 		display: CSS_DISPLAY,
 		axes: tag.isVariable ? axes : undefined,
 	});
@@ -117,7 +140,7 @@ export const getCssAsset = async (
 	}
 
 	return createCssResponse(
-		asset.content,
+		isMinified ? minifyCss(asset.content) : asset.content,
 		tag.requestedVersion,
 		metadata.lastModified,
 	);

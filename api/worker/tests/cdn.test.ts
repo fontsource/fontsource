@@ -222,6 +222,20 @@ describe('cdn routes', () => {
 			).toMatchSnapshot();
 		});
 
+		it('serves minified CSS aliases', async () => {
+			const { response, settle } = await dispatch(
+				'https://fontsource.test/css/familypack@latest/latin.min.css',
+			);
+			const css = await response.text();
+			await settle();
+
+			expect(response.status).toBe(200);
+			expect(css).not.toContain('\n');
+			expect(css).not.toContain('/*');
+			expect(css.match(/@font-face{/g)).toHaveLength(2);
+			expect(css).toContain("font-family:'Family Pack';");
+		});
+
 		it('generates variable CSS output', async () => {
 			const { response, settle } = await dispatch(
 				'https://fontsource.test/css/recursive:vf@latest/index.css',
