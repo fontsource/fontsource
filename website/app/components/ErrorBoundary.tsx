@@ -45,7 +45,7 @@ export function ErrorBoundary() {
 		description = error.message;
 	}
 
-	const canRetry = status === 502;
+	const canRetry = status >= 500 && status < 600;
 
 	return (
 		<Center className={styles.container}>

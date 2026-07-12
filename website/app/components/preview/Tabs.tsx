@@ -1,5 +1,5 @@
 import type { BoxProps } from '@mantine/core';
-import { Badge, Group, Tabs, Title } from '@mantine/core';
+import { Badge, Group, Tabs, Title, VisuallyHidden } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link } from 'react-router';
 
@@ -75,8 +75,13 @@ export const TabsWrapper = ({
 						rel="noopener noreferrer nofollow"
 					>
 						<Group gap="xs">
-							<IconDownload height={19} data-active={hoveredDownload} />
+							<IconDownload
+								aria-hidden
+								height={19}
+								data-active={hoveredDownload}
+							/>
 							Download
+							<VisuallyHidden> (opens in a new tab)</VisuallyHidden>
 						</Group>
 					</a>
 					<Link
