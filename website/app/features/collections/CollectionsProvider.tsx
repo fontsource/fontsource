@@ -1,13 +1,8 @@
 import { ObservablePersistLocalStorage } from '@legendapp/state/persist-plugins/local-storage';
+import { useMount } from '@legendapp/state/react';
 import { syncObservable } from '@legendapp/state/sync';
-import {
-	createContext,
-	type ReactNode,
-	useContext,
-	useEffect,
-	useRef,
-	useState,
-} from 'react';
+import { createContext, type ReactNode, useContext, useState } from 'react';
+import invariant from 'tiny-invariant';
 import classes from './CollectionsProvider.module.css';
 import { collectionsSnapshotSchema } from './model';
 import { type CollectionsStore, createCollectionsStore } from './store';
@@ -19,13 +14,9 @@ const CollectionsContext = createContext<CollectionsStore | undefined>(
 
 const CollectionsProvider = ({ children }: { children: ReactNode }) => {
 	const [store] = useState(createCollectionsStore);
-	const initialized = useRef(false);
 	const [storageError, setStorageError] = useState(false);
 
-	useEffect(() => {
-		if (initialized.current) return;
-		initialized.current = true;
-
+	useMount(() => {
 		try {
 			const storedValue = localStorage.getItem(STORAGE_KEY);
 			if (storedValue !== null) {
@@ -43,7 +34,7 @@ const CollectionsProvider = ({ children }: { children: ReactNode }) => {
 				plugin: ObservablePersistLocalStorage,
 			},
 		});
-	}, [store]);
+	});
 
 	return (
 		<CollectionsContext.Provider value={store}>
@@ -59,11 +50,10 @@ const CollectionsProvider = ({ children }: { children: ReactNode }) => {
 
 const useCollectionsStore = () => {
 	const store = useContext(CollectionsContext);
-	if (!store) {
-		throw new Error(
-			'useCollectionsStore must be used within CollectionsProvider.',
-		);
-	}
+	invariant(
+		store,
+		'useCollectionsStore must be used within CollectionsProvider.',
+	);
 	return store;
 };
 

@@ -1,4 +1,5 @@
 import { observable, syncState } from '@legendapp/state';
+import invariant from 'tiny-invariant';
 
 import type { FontSummary } from '@/utils/types';
 import {
@@ -30,7 +31,7 @@ const createCollectionsStore = (
 		const id = state$.collections
 			.get()
 			.find((collection) => collection.kind === 'favorites')?.id;
-		if (!id) throw new Error('Collections state is missing Favorites.');
+		invariant(id, 'Collections state is missing Favorites.');
 		return id;
 	};
 
