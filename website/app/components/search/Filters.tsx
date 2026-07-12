@@ -7,6 +7,7 @@ import {
 	SimpleGrid,
 	UnstyledButton,
 } from '@mantine/core';
+import { useCallback } from 'react';
 import {
 	Configure,
 	useClearRefinements,
@@ -16,8 +17,8 @@ import {
 	useToggleRefinement,
 } from 'react-instantsearch';
 
-import { DropdownSimple } from '@/components/Dropdown';
 import { IconTrash } from '@/components/icons';
+import { CollectionFilter } from '@/features/collections/CollectionFilter';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 
 import { CategoriesDropdown, LanguagesDropdown } from './Dropdowns';
@@ -33,8 +34,6 @@ interface FilterProps {
 }
 
 const EMPTY_COLLECTION_FILTER = 'objectID:"__fontsource_empty_collection__"';
-const ALL_FONTS_VALUE = '__fontsource_all_fonts__';
-
 const buildCollectionFilter = (fontIds: string[]) =>
 	fontIds.length === 0
 		? EMPTY_COLLECTION_FILTER
@@ -53,18 +52,6 @@ const Filters = ({ state$ }: FilterProps) => {
 		? buildCollectionFilter(selectedCollection.fontIds)
 		: '';
 	const { setIndexUiState } = useInstantSearch();
-	const collectionItems = [
-		{
-			label: 'All fonts',
-			value: ALL_FONTS_VALUE,
-			isRefined: collectionId === null,
-		},
-		...collections.map((collection) => ({
-			label: collection.name,
-			value: collection.id,
-			isRefined: collection.id === collectionId,
-		})),
-	];
 	const {
 		value: variableValue,
 		refine: variableRefine,
@@ -84,13 +71,16 @@ const Filters = ({ state$ }: FilterProps) => {
 		clearRefinements();
 		clearSortBy('prod_POPULAR');
 	};
-	const handleCollectionChange = (value: string) => {
-		state$.collectionId.set(value === ALL_FONTS_VALUE ? null : value);
-		setIndexUiState((currentState) => ({
-			...currentState,
-			page: 0,
-		}));
-	};
+	const handleCollectionChange = useCallback(
+		(value: string | null) => {
+			state$.collectionId.set(value);
+			setIndexUiState((currentState) => ({
+				...currentState,
+				page: 0,
+			}));
+		},
+		[setIndexUiState, state$],
+	);
 
 	return (
 		<Box className={classes.container}>
@@ -102,10 +92,9 @@ const Filters = ({ state$ }: FilterProps) => {
 			</SimpleGrid>
 			<Box className={classes.filters}>
 				<Group justify="center" wrap="nowrap">
-					<DropdownSimple
-						items={collectionItems}
-						label={selectedCollection?.name ?? 'All fonts'}
-						refine={handleCollectionChange}
+					<CollectionFilter
+						onChange={handleCollectionChange}
+						value={collectionId}
 					/>
 					<CategoriesDropdown />
 					<LanguagesDropdown state$={state$} />

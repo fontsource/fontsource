@@ -99,11 +99,6 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 			<Stack>
 				<Stack px={24}>
 					<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
-					<HeaderNavLink
-						label="Collections"
-						to="/collections"
-						toggle={toggle}
-					/>
 					<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
 					<HeaderNavLink label="Tools" to="/tools" toggle={toggle} />
 					<Divider />
@@ -144,7 +139,6 @@ export const Header = ({ ...other }: ContainerProps) => {
 						<Tooltip.Group openDelay={600} closeDelay={100}>
 							<Group gap="md" justify="right">
 								<HeaderNavLink label="Fonts" to="/" />
-								<HeaderNavLink label="Collections" to="/collections" />
 								<HeaderNavLink label="Documentation" to="/docs" />
 
 								<HeaderNavLink label="Tools" to="/tools" />

@@ -88,4 +88,4 @@ const FontCard = ({
 	);
 };
 
-export { DEFAULT_PREVIEW_TEXT, FontCard };
+export { FontCard };

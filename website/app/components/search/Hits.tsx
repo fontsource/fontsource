@@ -14,6 +14,7 @@ import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 
 import { FontCard } from '@/components/FontCard';
 import { Skeleton } from '@/components/Skeleton';
+import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 import { getPreviewText } from '@/utils/language/language';
 import type { AlgoliaMetadata } from '@/utils/types';
 
@@ -129,7 +130,12 @@ const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 );
 
 const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
+	const collectionsStore = useCollectionsStore();
+	const collections = useValue(collectionsStore.collections$);
 	const collectionId = useValue(state$.collectionId);
+	const selectedCollection = collections.find(
+		(collection) => collection.id === collectionId,
+	);
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
@@ -282,11 +288,17 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
 	if (!results.__isArtificial && results.nbHits === 0) {
+		const collectionMessage = selectedCollection
+			? selectedCollection.fontIds.length === 0
+				? `${selectedCollection.name} does not have any fonts yet.`
+				: `No fonts in ${selectedCollection.name} match these filters.`
+			: undefined;
+
 		return (
 			<Box>
 				<Text>
-					{collectionId
-						? 'No fonts in this collection match these filters.'
+					{collectionMessage
+						? collectionMessage
 						: `No results found for "${indexUiState.query ?? ''}"`}
 				</Text>
 			</Box>

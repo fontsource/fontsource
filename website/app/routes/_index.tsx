@@ -20,7 +20,10 @@ import { data, type LoaderFunctionArgs, useLoaderData } from 'react-router';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
-import { createSearchState } from '@/components/search/observables';
+import {
+	createSearchState,
+	type SearchState,
+} from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import classes from '@/styles/global.module.css';
@@ -32,6 +35,15 @@ import { cloudflareContext } from '@/utils/cloudflare-context';
 interface SearchProps {
 	serverState?: InstantSearchServerState;
 	serverUrl: string;
+}
+
+interface SearchRouteState {
+	category?: string;
+	collection?: string;
+	query?: string;
+	sort?: string;
+	subsets?: string | string[];
+	variable?: boolean;
 }
 
 const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
@@ -65,7 +77,10 @@ const parseSubsets = (value: unknown): string[] | undefined => {
 	return subsets.length > 0 ? subsets : undefined;
 };
 
-const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
+const routing = (
+	serverUrl: string,
+	state$: SearchState,
+): RouterProps<UiState, SearchRouteState> => {
 	const indexName = 'prod_POPULAR';
 	return {
 		router: history({
@@ -75,13 +90,14 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 					: window.location;
 			},
 			cleanUrlOnDispose: true,
-		} satisfies Partial<BrowserHistoryArgs<UiState>>),
+		} satisfies Partial<BrowserHistoryArgs<SearchRouteState>>),
 		stateMapping: {
-			// @ts-expect-error - This is a valid function signature
 			stateToRoute(uiState) {
 				const index = uiState[indexName];
+				const collectionId = state$.collectionId.peek();
 				const result = {
 					query: index.query,
+					...(collectionId ? { collection: collectionId } : {}),
 					// RefinementList facets
 					...(index.refinementList?.subsets
 						? { subsets: index.refinementList.subsets.join(',') }
@@ -95,9 +111,9 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 				};
 				return result;
 			},
-			// @ts-expect-error - This is a valid function signature
 			routeToState(routeState) {
 				const subsets = parseSubsets(routeState.subsets);
+				state$.collectionId.set(routeState.collection ?? null);
 
 				const state = {
 					query: routeState.query,
@@ -112,7 +128,7 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 					// Sortby map
 					...(routeState.sort
 						? {
-								sortBy: sortMap[String(routeState.sort)],
+								sortBy: sortMap[routeState.sort],
 							}
 						: {}),
 				};
@@ -157,7 +173,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 				<InstantSearch
 					searchClient={searchClient}
 					indexName="prod_POPULAR"
-					routing={routing(serverUrl)}
+					routing={routing(serverUrl, state$)}
 					future={{ preserveSharedStateOnUnmount: true }}
 				>
 					<CollectionsProvider>
@@ -203,7 +219,7 @@ export default function Index() {
 			<InstantSearch
 				searchClient={searchClient}
 				indexName="prod_POPULAR"
-				routing={routing(serverUrl)}
+				routing={routing(serverUrl, state$)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
 				<Box className={classes.background}>
