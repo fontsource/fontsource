@@ -38,6 +38,7 @@ import { getObjectBytes, listKeys, putObject } from './r2';
 interface BuiltArtifact {
 	key: string;
 	bytes: Uint8Array;
+	extension: StaticFontEntry['extension'] | VariableFontEntry['extension'];
 }
 
 /** Catches `UpstreamNotFoundError` and returns `undefined` instead of throwing. */
@@ -55,21 +56,29 @@ const ignoreUpstream404 = async <T>(
 	}
 };
 
-const storeArtifact = async (
+const createArtifact = (
 	key: string,
 	bytes: Uint8Array,
-	item: { extension: string },
-): Promise<BuiltArtifact> => {
-	await putObject(key, bytes, {
-		cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-		contentType:
-			BINARY_CONTENT_TYPES[item.extension as keyof typeof BINARY_CONTENT_TYPES],
-	});
+	extension: BuiltArtifact['extension'],
+): BuiltArtifact => ({
+	key,
+	bytes,
+	extension,
+});
 
-	return {
-		key,
-		bytes,
-	};
+const storeArtifacts = async (
+	artifacts: readonly BuiltArtifact[],
+): Promise<void> => {
+	await Promise.all(
+		artifacts.map(
+			limitConcur(8, async (artifact) => {
+				await putObject(artifact.key, artifact.bytes, {
+					cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
+					contentType: BINARY_CONTENT_TYPES[artifact.extension],
+				});
+			}),
+		),
+	);
 };
 
 const buildStaticArtifacts = async (
@@ -103,33 +112,33 @@ const buildStaticArtifacts = async (
 		`[artifacts] static build plan: copy=${copyPlan.length}, convert=${convertPlan.length}`,
 	);
 
-	const copied = (
-		await Promise.all(
-			copyPlan.map(
-				limitConcur(
-					8,
-					async (item) =>
-						await ignoreUpstream404(
-							storeArtifact(
-								getStaticAssetKey(tag.id, tag.version, item.filename),
-								await getStaticBytes(item.sourceFilename),
-								item,
-							),
+	const copiedPromise = Promise.all(
+		copyPlan.map(
+			limitConcur(
+				8,
+				async (item) =>
+					await ignoreUpstream404(async () =>
+						createArtifact(
+							getStaticAssetKey(tag.id, tag.version, item.filename),
+							await getStaticBytes(item.sourceFilename),
+							item.extension,
 						),
-				),
+					),
 			),
-		)
-	).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
+		),
+	);
 
 	if (convertPlan.length === 0) {
-		return copied;
+		return (await copiedPromise).filter(
+			(artifact): artifact is BuiltArtifact => artifact !== undefined,
+		);
 	}
 
-	const ctx = createFontContext();
+	const convertedPromise = (async () => {
+		const ctx = createFontContext();
 
-	try {
-		const converted = (
-			await Promise.all(
+		try {
+			return await Promise.all(
 				convertPlan.map(
 					limitConcur(
 						8,
@@ -142,21 +151,27 @@ const buildStaticArtifacts = async (
 									`${tag.id}-${item.sourceFilename}`,
 								);
 
-								return storeArtifact(
+								return createArtifact(
 									getStaticAssetKey(tag.id, tag.version, item.filename),
 									data,
-									item,
+									item.extension,
 								);
 							}),
 					),
 				),
-			)
-		).filter((artifact): artifact is BuiltArtifact => artifact !== undefined);
+			);
+		} finally {
+			ctx.destroy();
+		}
+	})();
+	const [copied, converted] = await Promise.all([
+		copiedPromise,
+		convertedPromise,
+	]);
 
-		return [...copied, ...converted];
-	} finally {
-		ctx.destroy();
-	}
+	return [...copied, ...converted].filter(
+		(artifact): artifact is BuiltArtifact => artifact !== undefined,
+	);
 };
 
 const buildVariableArtifacts = async (
@@ -175,8 +190,8 @@ const buildVariableArtifacts = async (
 				limitConcur(
 					8,
 					async (item) =>
-						await ignoreUpstream404(
-							storeArtifact(
+						await ignoreUpstream404(async () =>
+							createArtifact(
 								getVariableAssetKey(tag.id, tag.version, item.filename),
 								await fetchPackageAssetBytes(
 									tag.id,
@@ -184,7 +199,7 @@ const buildVariableArtifacts = async (
 									item.sourceFilename,
 									true,
 								),
-								item,
+								item.extension,
 							),
 						),
 				),
@@ -235,6 +250,8 @@ const buildSingleArtifact = async (
 		});
 	}
 
+	await storeArtifacts(built);
+
 	console.log(
 		`[artifacts] built single file ${request.tag.id}@${request.tag.version}/${request.target.file}`,
 	);
@@ -250,8 +267,11 @@ const buildFamilyArtifacts = async (
 	request: BuildFamilyRequest,
 ): Promise<number> => {
 	const { tag } = request;
-	const { static: staticManifest, variable: variableManifest } =
-		await getPublishedManifest(request);
+	const [manifest, existing] = await Promise.all([
+		getPublishedManifest(request),
+		listKeys(`${tag.id}@${tag.version}/`),
+	]);
+	const { static: staticManifest, variable: variableManifest } = manifest;
 
 	console.log(
 		`[artifacts] family manifest ${tag.id}@${tag.version}: static=${staticManifest.length}, variable=${variableManifest.length}`,
@@ -265,9 +285,6 @@ const buildFamilyArtifacts = async (
 		getVariableAssetKey(tag.id, tag.version, item.filename),
 	);
 	const downloadKey = getDownloadKey(tag.id, tag.version);
-
-	// One listing call to discover everything already stored for this version.
-	const existing = await listKeys(`${tag.id}@${tag.version}/`);
 
 	const totalCount = staticKeys.length + variableKeys.length + 1;
 
@@ -294,14 +311,59 @@ const buildFamilyArtifacts = async (
 	console.log(
 		`[artifacts] missing: ${missingStatic.length} static, ${missingVariable.length} variable, zip=${!existing.has(downloadKey) ? 'yes' : 'no'}`,
 	);
+	const zipMissing = !existing.has(downloadKey);
+	const allManifestEntries = [
+		...staticManifest.map((item, i) => ({
+			item,
+			key: staticKeys[i],
+			directory: 'static',
+		})),
+		...variableManifest.map((item, i) => ({
+			item,
+			key: variableKeys[i],
+			directory: 'variable',
+		})),
+	];
+	const storedBytesPromise = zipMissing
+		? Promise.all(
+				allManifestEntries
+					.filter(({ key }) => existing.has(key))
+					.map(
+						limitConcur(16, async ({ key }) => {
+							const bytes = await getObjectBytes(key);
+							if (!bytes) {
+								throw new Error(`Expected artifact ${key} not found in R2`);
+							}
+							return [key, bytes] as const;
+						}),
+					),
+			).then((entries) => new Map(entries))
+		: undefined;
+	const licensePromise = zipMissing
+		? (async () =>
+				(staticManifest.length > 0
+					? await ignoreUpstream404(
+							fetchPackageLicenseBytes(tag.id, tag.version, false),
+						)
+					: undefined) ??
+				(variableManifest.length > 0
+					? await ignoreUpstream404(
+							fetchPackageLicenseBytes(tag.id, tag.version, true),
+						)
+					: undefined))()
+		: undefined;
 
-	const [maybeStaticArtifacts, maybeVariableArtifacts] = await Promise.all([
-		ignoreUpstream404(buildStaticArtifacts(tag, missingStatic)),
-		ignoreUpstream404(buildVariableArtifacts(tag, missingVariable)),
-	]);
-	const newStaticArtifacts = maybeStaticArtifacts ?? [];
-	const newVariableArtifacts = maybeVariableArtifacts ?? [];
-	const newArtifacts = [...newStaticArtifacts, ...newVariableArtifacts];
+	const [maybeStaticArtifacts, maybeVariableArtifacts, storedBytes, license] =
+		await Promise.all([
+			ignoreUpstream404(buildStaticArtifacts(tag, missingStatic)),
+			ignoreUpstream404(buildVariableArtifacts(tag, missingVariable)),
+			storedBytesPromise,
+			licensePromise,
+		]);
+	const newArtifacts = [
+		...(maybeStaticArtifacts ?? []),
+		...(maybeVariableArtifacts ?? []),
+	];
 
 	console.log(`[artifacts] built ${newArtifacts.length} new artifacts`);
 
@@ -311,78 +373,45 @@ const buildFamilyArtifacts = async (
 	) {
 		throw new Error(`No artifacts published for ${tag.id}@${tag.version}`);
 	}
+	const individualUploads = storeArtifacts(newArtifacts).then(
+		() => ({ ok: true as const }),
+		(error: unknown) => ({ ok: false as const, error }),
+	);
+	let archive: Uint8Array | undefined;
 
-	// Build the download zip only when it is missing.
-	if (!existing.has(downloadKey)) {
+	// Assemble the download zip while individual artifact uploads are running.
+	if (zipMissing) {
 		console.log(`[artifacts] assembling download zip`);
 
 		// Index freshly-built bytes by R2 key for quick lookup.
-		const builtByKey = new Map<string, BuiltArtifact>();
-		for (const artifact of newArtifacts) {
-			builtByKey.set(artifact.key, artifact);
-		}
-
-		// Collect every artifact for the archive, using fresh bytes first and
-		// loading existing objects from R2 when needed.
-		const allManifestEntries = [
-			...staticManifest.map((item, i) => ({
-				item,
-				key: staticKeys[i],
-				directory: 'static',
-			})),
-			...variableManifest.map((item, i) => ({
-				item,
-				key: variableKeys[i],
-				directory: 'variable',
-			})),
-		];
-
-		let fetchedFromR2 = 0;
-
-		const allArtifactEntries = await Promise.all(
-			allManifestEntries.map(
-				limitConcur(16, async ({ item, key, directory }) => {
-					const built = builtByKey.get(key);
-					if (!built) {
-						fetchedFromR2++;
-					}
-
-					const bytes = built?.bytes ?? (await getObjectBytes(key));
-					if (!bytes) {
-						throw new Error(`Expected artifact ${key} not found in R2`);
-					}
-
-					return {
-						archivePath: `${directory}/${tag.id}-${item.filename}`,
-						bytes,
-						compress: item.buildMode === 'copy',
-					};
-				}),
-			),
+		const builtByKey = new Map(
+			newArtifacts.map((artifact) => [artifact.key, artifact] as const),
 		);
 
-		if (fetchedFromR2 > 0) {
+		const allArtifactEntries = allManifestEntries.map(
+			({ item, key, directory }) => {
+				const bytes = builtByKey.get(key)?.bytes ?? storedBytes?.get(key);
+				if (!bytes) {
+					throw new Error(`Expected artifact ${key} not found in R2`);
+				}
+
+				return {
+					archivePath: `${directory}/${tag.id}-${item.filename}`,
+					bytes,
+					compress: item.buildMode === 'copy',
+				};
+			},
+		);
+
+		if (storedBytes && storedBytes.size > 0) {
 			console.log(
-				`[artifacts] fetched ${fetchedFromR2} existing artifacts from R2 for zip`,
+				`[artifacts] fetched ${storedBytes.size} existing artifacts from R2 for zip`,
 			);
 		}
 
 		if (allArtifactEntries.length === 0) {
 			throw new Error(`No artifacts for zip: ${tag.id}@${tag.version}`);
 		}
-
-		// Resolve LICENSE from the static or variable package.
-		const license =
-			(staticManifest.length > 0
-				? await ignoreUpstream404(
-						fetchPackageLicenseBytes(tag.id, tag.version, false),
-					)
-				: undefined) ??
-			(variableManifest.length > 0
-				? await ignoreUpstream404(
-						fetchPackageLicenseBytes(tag.id, tag.version, true),
-					)
-				: undefined);
 
 		if (!license) {
 			throw new Error(`Missing LICENSE for ${tag.id}@${tag.version}`);
@@ -395,19 +424,24 @@ const buildFamilyArtifacts = async (
 			]),
 			['LICENSE', license],
 		]);
+		archive = zipSync(archiveFiles);
+	}
 
-		await putObject(
-			getDownloadKey(tag.id, tag.version),
-			zipSync(archiveFiles),
-			{
-				cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-				contentDisposition: getDownloadContentDisposition(tag.id, tag.version),
-				contentType: BINARY_CONTENT_TYPES.zip,
-			},
-		);
+	const uploadResult = await individualUploads;
+	if (!uploadResult.ok) {
+		throw uploadResult.error;
+	}
+
+	if (archive) {
+		// A stored zip is the completion marker for the whole family build.
+		await putObject(downloadKey, archive, {
+			cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
+			contentDisposition: getDownloadContentDisposition(tag.id, tag.version),
+			contentType: BINARY_CONTENT_TYPES.zip,
+		});
 
 		console.log(
-			`[artifacts] zip uploaded (${allArtifactEntries.length} entries + LICENSE)`,
+			`[artifacts] zip uploaded (${allManifestEntries.length} entries + LICENSE)`,
 		);
 	}
 

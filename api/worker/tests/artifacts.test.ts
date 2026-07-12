@@ -284,6 +284,26 @@ describe('container artifact builder', () => {
 		);
 	});
 
+	it('does not publish the family zip when an artifact upload fails', async () => {
+		const { buildArtifacts } = await import('../container/src/artifacts');
+		putObject.mockRejectedValueOnce(new Error('artifact upload failed'));
+
+		await expect(
+			buildArtifacts({
+				mode: 'family',
+				tag: {
+					id: staticMetadata.id,
+					version: '1.0.0',
+				},
+				metadata: staticMetadata,
+			}),
+		).rejects.toThrow('artifact upload failed');
+
+		expect(
+			putObject.mock.calls.some(([key]) => key === 'abel@1.0.0/download.zip'),
+		).toBe(false);
+	});
+
 	it('filters family artifacts to the files actually published for that version', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
 		fetchPackageFileList.mockImplementation(
