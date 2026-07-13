@@ -1,0 +1,62 @@
+name = 'fontsource-api'
+main = "worker/src/index.ts"
+compatibility_date = "2026-05-10"
+compatibility_flags = ["nodejs_compat"]
+
+kv_namespaces = [
+  { binding = "METADATA", id = "49e9d329349446cf948f84af9828914f" },
+]
+
+r2_buckets = [
+  { binding = "FONTS", bucket_name = "fontsource-artifacts" },
+]
+
+[placement]
+mode = "smart"
+
+[[d1_databases]]
+binding = "STATS"
+database_name = "fontsource-stats"
+database_id = "6ef70249-202b-419f-8cf5-979afe45ad7b"
+
+[[queues.producers]]
+binding = "STATS_QUEUE"
+queue = "fontsource-stats"
+
+[[queues.consumers]]
+queue = "fontsource-stats"
+max_batch_size = 1
+retry_delay = 3600
+max_concurrency = 1
+
+[[durable_objects.bindings]]
+name = "ARTIFACT_BUILDER"
+class_name = "ArtifactBuilder"
+
+[[migrations]]
+tag = "artifact-builder-v1"
+new_sqlite_classes = ["ArtifactBuilder"]
+
+[[containers]]
+class_name = "ArtifactBuilder"
+image = "./container/Dockerfile"
+image_build_context = ".."
+instance_type = "standard-1"
+max_instances = 150
+
+[cache]
+enabled = true
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = true
+invocation_logs = false
+
+[triggers]
+crons = ["0 */3 * * *", "15 0 * * *"]
+
+[vars]
+FONTS_BUCKET_NAME = "fontsource-artifacts"

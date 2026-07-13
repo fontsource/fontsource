@@ -27,7 +27,7 @@
 	},
 	"workspaces": [
 		"packages/*",
-		"api/*",
+		"api",
 		"website"
 	],
 	"overrides": {

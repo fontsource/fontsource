@@ -1,37 +1,36 @@
-# Fontsource API
+# Fontsource API Worker
 
-This API uses Cloudflare Workers, KV and R2 to serve the API and CDN. We also use a custom proxy provided by [jsDelivr](https://www.jsdelivr.com/) to cache all R2 requests on the edge to also reduce costs.
+This is the current Fontsource API built on Cloudflare Workers. It serves font metadata and artifacts, builds missing packages, and collects download stats.
 
-Learn more about the API at [fontsource.org](https://fontsource.org/docs/api/introduction).
+## Bindings
 
-### Workers
+| Cloudflare service | What it does here |
+| --- | --- |
+| Workers | Handles API requests, scheduled refreshes, and queue messages. |
+| Workers Cache | Keeps cacheable responses close to callers. |
+| KV (`METADATA`) | Stores the font catalog, axis registry, and public metadata. |
+| R2 (`FONTS`) | Stores generated font files and package archives. |
+| D1 (`STATS`) | Stores incremental npm and jsDelivr download history. |
+| Queues (`STATS_QUEUE`) | Spreads stats refreshes across small, retryable package jobs. |
+| Durable Objects (`ARTIFACT_BUILDER`) | Coordinates package builds so the same artifact is not built twice. |
+| Containers | Build packages and upload the finished artifacts to R2. |
 
--   [worker](./worker) - The current combined API and CDN worker.
--   [cdn](./cdn) - The worker that acts as the origin for the jsDelivr CDN proxy.
--   [common](./common) - A shared library of common functions and types used by the other workers.
--   [metadata](./metadata) - The API worker that serves the KV metadata for the fonts.
--   [upload](./upload) - A worker that uploads font files from our website VM to R2.
+The bindings and schedules live in [`wrangler.toml`](./wrangler.toml).
 
-### Development
+## Development
 
-To run the API locally, you will need to install Node 18+ and `bun`.
+Install dependencies from the repository root, then start the worker:
 
-```bash
+```sh
 bun install
-```
-
-Each directory represents a different worker that is deployed to Cloudflare. To run a worker locally, you can use the following command:
-
-```bash
+cd api
 bun run dev
 ```
 
-As different workers are binded to each other, they may connect to the live service. Thus you will need to run `bun run dev` in each relevant directory to use the local workers dev registry.
+Useful checks:
 
-### Testing
-
-To run the tests, you can use the following command in each directory:
-
-```bash
+```sh
 bun run test
+bun run typecheck
+bun run build
 ```

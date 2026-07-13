@@ -1,12 +1,7 @@
 {
 	"exclude": ["node_modules"],
 	"references": [
-		{ "path": "api/cdn" },
-		{ "path": "api/common" },
-		{ "path": "api/download" },
-		{ "path": "api/metadata" },
-		{ "path": "api/upload" },
-		{ "path": "api/worker" },
+		{ "path": "api" },
 		{ "path": "packages/cli" },
 		{ "path": "packages/core" },
 		{ "path": "packages/generate" },

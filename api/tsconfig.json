@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "es2022",
+		"module": "es2022",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true
+	},
+	"exclude": ["node_modules"],
+	"$schema": "https://json.schemastore.org/tsconfig"
+}

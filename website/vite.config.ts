@@ -54,7 +54,7 @@ export default defineConfig({
 			viteEnvironment: { name: 'ssr' },
 			auxiliaryWorkers: [
 				{
-					configPath: '../api/worker/wrangler.toml',
+					configPath: '../api/wrangler.toml',
 					devOnly: true,
 					config: (config) => {
 						config.containers = [];

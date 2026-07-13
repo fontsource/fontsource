@@ -6,4 +6,4 @@
 **/dist
 **/build
 **/*.tsbuildinfo
-api/worker/bin
+api/bin

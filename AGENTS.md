@@ -5,7 +5,7 @@
 Fontsource is a Bun/TypeScript monorepo for self-hostable font packages, shared font tooling, Cloudflare API workers, and the Fontsource website/docs.
 
 - `packages/*` contains shared libraries and CLI/publishing tooling.
-- `api/*` contains Cloudflare Workers, shared API utilities, and the newer combined worker API.
+- `api` contains the combined Cloudflare API worker, artifact builder, and shared API utilities.
 - `website` contains the React Router/Vite web app and MDX documentation.
 - Preserve self-hosted font package behavior, metadata semantics, generated CSS/assets, package exports, and publishing behavior unless the task explicitly changes them.
 
@@ -37,7 +37,7 @@ Useful focused commands:
 - Core package: `cd packages/core && bun run typecheck`, `bun run test:unit`, or `bun run test:integration`.
 - Website: `cd website && bun run dev`, `bun run build`, or `bun run typecheck`.
 - Existing API workers: `cd api/<worker> && bun run dev`, `bun run test`, or `bun run coverage` when the package defines them.
-- Combined worker API: `cd api/worker && bun run dev`, `bun run test`, `bun run typecheck`, or `bun run cf-typegen`.
+- Combined worker API: `cd api && bun run dev`, `bun run test`, `bun run typecheck`, or `bun run cf-typegen`.
 
 Publish, deploy, release, upload, and version scripts exist for CI and maintainers. Do not run `ci:publish`, `ci:publish-api`, `ci:version`, `deploy`, `deploy:staging`, `release`, `bun publish`, `wrangler deploy`, `flyctl deploy`, or upload commands unless explicitly requested.
 
@@ -70,8 +70,7 @@ Publish, deploy, release, upload, and version scripts exist for CI and maintaine
 
 ## API Workers
 
-- Existing workers under `api/cdn`, `api/metadata`, and `api/upload` use Cloudflare Workers, Wrangler, KV/R2 bindings, and itty-router patterns.
-- `api/worker` uses Hono/Chanfana with Cloudflare Vite/Vitest tooling and a container-backed artifact builder; follow its local route/schema/test patterns.
+- `api` uses Hono/Chanfana with Cloudflare Vite/Vitest tooling and a container-backed artifact builder; follow its local route/schema/test patterns.
 - Do not deploy, upload, mutate R2/KV, or call production-like external services unless explicitly requested.
 - Preserve response bodies, status codes, cache headers, redirects, ETags, CORS behavior, scheduled refresh behavior, and compatibility endpoints unless the task explicitly changes them.
 - Treat secrets, `.dev.vars`, auth tokens, and worker bindings as sensitive. Do not print, commit, or hard-code them.
@@ -89,7 +88,7 @@ Publish, deploy, release, upload, and version scripts exist for CI and maintaine
 
 - `biome.json` is the formatting/linting source of truth; use repo scripts instead of manually enforcing style.
 - Biome intentionally excludes `coverage`, `__snapshots__`, `dist`, `build`, `worker-configuration.d.ts`, and `.react-router`.
-- Ignored/local outputs include `.wrangler`, `.dev.vars`, `dist`, `api/dist`, `api/worker/bin`, `*.tsbuildinfo`, `mise.local.toml`, root `AGENT.md`, and generated XML files.
+- Ignored/local outputs include `.wrangler`, `.dev.vars`, `dist`, `api/dist`, `api/bin`, `*.tsbuildinfo`, `mise.local.toml`, root `AGENT.md`, and generated XML files.
 - Do not weaken lint/format config unless explicitly requested.
 - If generated files changed, explain which source command or source change caused them.
 
