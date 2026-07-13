@@ -72,6 +72,10 @@ export const ogMeta = ({
 			content: 'website',
 		},
 		{
+			property: 'og:site_name',
+			content: 'Fontsource',
+		},
+		{
 			property: 'og:image',
 			content: image.url,
 		},
