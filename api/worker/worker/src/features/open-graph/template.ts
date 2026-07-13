@@ -24,6 +24,7 @@ interface OpenGraphTextLayout {
 const colors = {
 	border: '#e1e3ec',
 	ink: '#01112c',
+	muted: '#667086',
 	purple: '#625bf8',
 	white: '#ffffff',
 } as const;
@@ -227,7 +228,7 @@ const createMetadataChildren = (metadata: SourceFontMetadata): Node[] => {
 			type: 'text',
 			text: label.toUpperCase(),
 			style: {
-				color: colors.ink,
+				color: index === 0 ? colors.purple : colors.muted,
 				fontFamily: UI_FONT_FAMILY,
 				fontSize: 16,
 				fontWeight: 600,
@@ -317,7 +318,7 @@ const createTitleNode = (
 			left: 48,
 			overflow: 'hidden',
 			position: 'absolute',
-			top: 160,
+			top: 156,
 			width: 650,
 		},
 		children: layout.titleLines.map(
