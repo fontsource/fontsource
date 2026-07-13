@@ -5,10 +5,11 @@ import invariant from 'tiny-invariant';
 import { CDN } from '@/components/preview/CDN';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import {
+	type GetFontResponse,
 	getFont,
 	getFontStats,
+	getFontVersions,
 	getVariableFont,
-	type GetFontResponse,
 } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { ogMeta } from '@/utils/meta';
@@ -19,16 +20,23 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const parameters = { id };
 	const options = { signal: request.signal };
 
-	const [metadata, variable, stats] = await Promise.all([
+	const [metadata, variable, versions, stats] = await Promise.all([
 		getFont(parameters, options),
 		getVariableFont(parameters, options).catch(() => undefined), // Always try to load, fail gracefully
+		getFontVersions(parameters, options),
 		getFontStats(parameters, options),
 	]);
+	invariant(versions.latest, `Missing static package version for ${id}`);
+	invariant(
+		!variable || versions.latestVariable,
+		`Missing variable package version for ${id}`,
+	);
 
 	return data(
 		{
 			metadata,
 			variable,
+			versions,
 			hits: stats.total.jsDelivrHitsTotal,
 		},
 		{ headers: cacheHeaders.short },
@@ -63,11 +71,16 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 };
 
 export default function CDNPage() {
-	const { metadata, variable, hits } = useLoaderData<typeof loader>();
+	const { metadata, variable, versions, hits } = useLoaderData<typeof loader>();
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="cdn">
-			<CDN metadata={metadata} variable={variable} hits={hits} />
+			<CDN
+				metadata={metadata}
+				variable={variable}
+				versions={versions}
+				hits={hits}
+			/>
 		</TabsWrapper>
 	);
 }

@@ -13,7 +13,11 @@ import { Link } from 'react-router';
 
 import { Code } from '@/components/code/Code';
 import { IconExternal } from '@/components/icons';
-import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
+import type {
+	GetFontResponse,
+	GetFontVersionsResponse,
+	GetVariableFontResponse,
+} from '@/generated/api';
 import globalClasses from '@/styles/global.module.css';
 import { jsDelivrResolver } from '@/utils/cdn';
 
@@ -26,6 +30,7 @@ import { toggleKeyKeepOne, toggleVariableAxis } from './toggles';
 interface CDNProps {
 	metadata: GetFontResponse;
 	variable?: GetVariableFontResponse;
+	versions: GetFontVersionsResponse;
 	hits?: number;
 }
 
@@ -62,7 +67,7 @@ const BadgeGroup = ({ items, onClick, isActive }: BadgeGroupProps) => (
 	</Group>
 );
 
-const Variable = ({ metadata, variable }: CDNProps) => {
+const Variable = ({ metadata, variable, versions }: CDNProps) => {
 	const [isActive, setActive] = useState<ActiveVariants>({
 		axes: {
 			wght: true,
@@ -72,7 +77,7 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 	});
 
 	// Return early if no variable data
-	if (!variable) return null;
+	if (!variable || !versions.latestVariable) return null;
 
 	const handleActiveSubset = (value: string) => {
 		// Return early if only one subset is selected and it is the current one
@@ -118,7 +123,7 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 		subsets: isActive.subsets,
 		style: isItal ? 'italic' : 'normal',
 		display: isActive.display,
-		resolver: jsDelivrResolver(metadata.id, true),
+		resolver: jsDelivrResolver(metadata.id, true, versions.latestVariable),
 	});
 
 	return (
@@ -159,7 +164,7 @@ const Variable = ({ metadata, variable }: CDNProps) => {
 	);
 };
 
-const Static = ({ metadata }: CDNProps) => {
+const Static = ({ metadata, versions }: CDNProps) => {
 	// Active weights
 	const [isActiveWeight, setActiveWeight] = useState<Record<string, boolean>>({
 		400: true,
@@ -218,7 +223,7 @@ const Static = ({ metadata }: CDNProps) => {
 		style: isItal ? 'italic' : 'normal',
 		formats,
 		display: displayCurrent,
-		resolver: jsDelivrResolver(metadata.id),
+		resolver: jsDelivrResolver(metadata.id, false, versions.latest),
 	});
 
 	return (
@@ -290,7 +295,7 @@ const Static = ({ metadata }: CDNProps) => {
 	);
 };
 
-export const CDN = ({ metadata, variable, hits }: CDNProps) => {
+export const CDN = ({ metadata, variable, versions, hits }: CDNProps) => {
 	return (
 		<Grid className={globalClasses.container}>
 			<Grid.Col span={{ base: 12, md: 8 }}>
@@ -315,10 +320,14 @@ export const CDN = ({ metadata, variable, hits }: CDNProps) => {
 					</Tabs.List>
 
 					<Tabs.Panel value="variable">
-						<Variable metadata={metadata} variable={variable} />
+						<Variable
+							metadata={metadata}
+							variable={variable}
+							versions={versions}
+						/>
 					</Tabs.Panel>
 					<Tabs.Panel value="static">
-						<Static metadata={metadata} />
+						<Static metadata={metadata} versions={versions} />
 					</Tabs.Panel>
 				</Tabs>
 			</Grid.Col>
