@@ -172,4 +172,4 @@ app.onError(async (error, c) => {
 	return toErrorResponse(c, error);
 });
 
-export { app };
+export { app, openapi };

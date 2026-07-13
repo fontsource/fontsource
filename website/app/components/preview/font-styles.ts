@@ -3,7 +3,7 @@ import {
 	selectVariableAxisKey,
 	type UrlResolver,
 } from '@fontsource-utils/core';
-import type { Metadata, VariableData } from '@/utils/types';
+import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 
 interface StaticStyleSheetOptions {
 	subsets: string[];
@@ -23,7 +23,7 @@ interface VariableStyleSheetOptions {
 }
 
 export const buildStaticPreviewCSS = (
-	metadata: Metadata,
+	metadata: GetFontResponse,
 	options: StaticStyleSheetOptions,
 ): string =>
 	generateCSS(
@@ -43,8 +43,8 @@ export const buildStaticPreviewCSS = (
 	);
 
 export const buildVariablePreviewCSS = (
-	metadata: Metadata,
-	variable: VariableData,
+	metadata: GetFontResponse,
+	variable: GetVariableFontResponse,
 	options: VariableStyleSheetOptions,
 ): string => {
 	const axisKey = selectVariableAxisKey(variable.axes, options.activeAxes);
@@ -69,8 +69,8 @@ export const buildVariablePreviewCSS = (
 };
 
 export const getVariableImport = (
-	metadata: Metadata,
-	variable: VariableData,
+	metadata: GetFontResponse,
+	variable: GetVariableFontResponse,
 	activeAxes: string[],
 	style: 'normal' | 'italic',
 ): string => {

@@ -1,6 +1,7 @@
 import { env } from 'cloudflare:workers';
 import { data } from 'react-router';
 
+import type { CreateClientConfig } from '@/generated/api/client.gen';
 import { cacheHeaders } from '@/utils/cache';
 
 export const throwApiResponseError = async (
@@ -29,12 +30,18 @@ export const throwApiResponseError = async (
 		},
 	);
 };
-export const fetchApiData = async <T>(url: string): Promise<T> => {
-	const response = await env.API.fetch(url);
 
-	if (!response.ok) {
-		await throwApiResponseError(response, url);
-	}
+export const createClientConfig: CreateClientConfig = (config) => ({
+	...config,
+	baseUrl: 'https://api.fontsource.org',
+	fetch: async (input, init) => {
+		const request = new Request(input, init);
+		const response = await env.API.fetch(request);
 
-	return response.json() as T;
-};
+		if (!response.ok) {
+			await throwApiResponseError(response, request.url);
+		}
+
+		return response;
+	},
+});

@@ -7,6 +7,7 @@ import {
 	UnstyledButton,
 } from '@mantine/core';
 import type { KeyboardEvent, ReactNode } from 'react';
+import type { GetFontResponse } from '@/generated/api';
 import {
 	IconCaret,
 	IconDownload,
@@ -14,7 +15,6 @@ import {
 	IconGithub,
 	IconNpm,
 } from '@/components/icons';
-import type { Metadata } from '@/utils/types';
 
 import classes from './Info.module.css';
 
@@ -24,7 +24,7 @@ const compactNumberFormatter = new Intl.NumberFormat('en', {
 });
 
 interface InfoProps {
-	metadata: Metadata;
+	metadata: GetFontResponse;
 	isCDN?: boolean;
 	hits?: number;
 }
@@ -42,7 +42,10 @@ interface DetailsMenuProps {
 	label: string;
 }
 
-const getSourcePath = (metadata: Metadata, variant: 'static' | 'variable') => {
+const getSourcePath = (
+	metadata: GetFontResponse,
+	variant: 'static' | 'variable',
+) => {
 	if (metadata.category === 'icons') {
 		return variant === 'variable' ? 'variable-icons' : 'icons';
 	}

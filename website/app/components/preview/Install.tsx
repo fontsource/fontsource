@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import { IconExternal } from '@/components/icons';
+import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 import globalClasses from '@/styles/global.module.css';
-import type { Metadata, VariableData } from '@/utils/types';
 
 import { CarbonAd } from '../CarbonAd';
 import { InfoWrapper } from './Info';
@@ -12,8 +12,8 @@ import classes from './Install.module.css';
 import { InstallCode } from './InstallCode';
 
 interface InstallProps {
-	metadata: Metadata;
-	variable?: VariableData;
+	metadata: GetFontResponse;
+	variable?: GetVariableFontResponse;
 	downloadCount?: number;
 }
 

@@ -25,7 +25,8 @@ queue = "fontsource-stats"
 
 [[queues.consumers]]
 queue = "fontsource-stats"
-retry_delay = 300
+max_batch_size = 1
+retry_delay = 3600
 max_concurrency = 1
 
 [[durable_objects.bindings]]

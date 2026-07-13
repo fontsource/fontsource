@@ -18,6 +18,18 @@ export interface StatsPeriodWrite {
 	total: number;
 }
 
+const upsertStatsPeriod = (
+	env: Env,
+	packageName: string,
+	period: StatsPeriodWrite,
+): D1PreparedStatement =>
+	env.STATS.prepare(
+		`INSERT INTO stats_periods (package_name, provider, year, total)
+		VALUES (?, ?, ?, ?)
+		ON CONFLICT(package_name, provider, year) DO UPDATE SET
+			total = excluded.total`,
+	).bind(packageName, period.provider, period.year, period.total);
+
 // Unscoped packages are deprecated and no longer discoverable from the catalog.
 const packageSeeds = (catalog: FontCatalog) => [
 	...Object.values(catalog).flatMap((font) => [
@@ -107,6 +119,35 @@ export const getStatsPackage = (
 		.bind(packageName)
 		.first<StatsPackageRow>();
 
+export const prepareStatsBackfill = async (
+	env: Env,
+	packageName: string,
+	createdDay: string,
+): Promise<StatsPeriodWrite[]> => {
+	await env.STATS.prepare(
+		`UPDATE stats_packages SET created_day = ? WHERE package_name = ?`,
+	)
+		.bind(createdDay, packageName)
+		.run();
+
+	const periods = await env.STATS.prepare(
+		`SELECT provider, year, total
+		FROM stats_periods WHERE package_name = ?`,
+	)
+		.bind(packageName)
+		.all<StatsPeriodWrite>();
+
+	return periods.results;
+};
+
+export const saveStatsPeriod = async (
+	env: Env,
+	packageName: string,
+	period: StatsPeriodWrite,
+): Promise<void> => {
+	await upsertStatsPeriod(env, packageName, period).run();
+};
+
 export const markStatsPackageInactive = async (
 	env: Env,
 	packageName: string,
@@ -146,12 +187,7 @@ export const commitStatsPackage = async (
 	},
 ): Promise<void> => {
 	const statements = input.periods.map((period) =>
-		env.STATS.prepare(
-			`INSERT INTO stats_periods (package_name, provider, year, total)
-			VALUES (?, ?, ?, ?)
-			ON CONFLICT(package_name, provider, year) DO UPDATE SET
-				total = excluded.total`,
-		).bind(input.packageName, period.provider, period.year, period.total),
+		upsertStatsPeriod(env, input.packageName, period),
 	);
 
 	statements.push(

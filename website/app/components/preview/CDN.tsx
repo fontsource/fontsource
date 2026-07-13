@@ -13,9 +13,9 @@ import { Link } from 'react-router';
 
 import { Code } from '@/components/code/Code';
 import { IconExternal } from '@/components/icons';
+import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 import globalClasses from '@/styles/global.module.css';
 import { jsDelivrResolver } from '@/utils/cdn';
-import type { Metadata, VariableData } from '@/utils/types';
 
 import { CarbonAd } from '../CarbonAd';
 import classes from './CDN.module.css';
@@ -24,8 +24,8 @@ import { InfoWrapper } from './Info';
 import { toggleKeyKeepOne, toggleVariableAxis } from './toggles';
 
 interface CDNProps {
-	metadata: Metadata;
-	variable?: VariableData;
+	metadata: GetFontResponse;
+	variable?: GetVariableFontResponse;
 	hits?: number;
 }
 
