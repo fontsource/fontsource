@@ -1,10 +1,10 @@
 import type { LoaderFunction } from 'react-router';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { fetchApiData } from '@/utils/api.server';
+import { listFontValues } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { source } from '@/utils/docs/source.server';
 
-export const loader: LoaderFunction = async () => {
+export const loader: LoaderFunction = async ({ request }) => {
 	const smStream = new SitemapStream({ hostname: 'https://fontsource.org' });
 
 	// Pipe base urls to stream
@@ -17,8 +17,9 @@ export const loader: LoaderFunction = async () => {
 	});
 
 	// Pipe each font to stream
-	const fontlist = await fetchApiData<Record<string, string>>(
-		'https://api.fontsource.org/fontlist?family',
+	const fontlist = await listFontValues(
+		{ family: '' },
+		{ signal: request.signal },
 	);
 
 	for (const id of Object.keys(fontlist)) {

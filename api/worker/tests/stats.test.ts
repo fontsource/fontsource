@@ -4,7 +4,7 @@ import {
 	createScheduledController,
 	getQueueResult,
 } from 'cloudflare:test';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import legacyFontIds from '../shared/legacy-fonts.json';
 import { STATS_CRON } from '../worker/src/constants';
 import type { StatsQueueMessage } from '../worker/src/features/metadata/stats/ingest';
@@ -34,7 +34,13 @@ const processQueueMessage = async (packageName = '@fontsource/abel') => {
 
 describe('download stats ingestion', () => {
 	beforeEach(async () => {
+		vi.useFakeTimers({ toFake: ['Date'] });
+		vi.setSystemTime(new Date('2026-07-12T00:00:00.000Z'));
 		await setupWorkerTest();
+	});
+	afterEach(() => {
+		vi.useRealTimers();
+		vi.restoreAllMocks();
 	});
 
 	it('seeds the complete package set from the daily cron', async () => {
@@ -109,14 +115,9 @@ describe('download stats ingestion', () => {
 			.bind('2025-01-01', '2026-12-25T00:00:00.000Z', '@fontsource/abel')
 			.run();
 		vi.spyOn(scheduler, 'wait').mockResolvedValue();
-		vi.useFakeTimers();
 		vi.setSystemTime(new Date('2027-01-08T00:00:00.000Z'));
 
-		try {
-			await processQueueMessage();
-		} finally {
-			vi.useRealTimers();
-		}
+		await processQueueMessage();
 
 		const periods = await testEnv.STATS.prepare(
 			`SELECT provider, year FROM stats_periods
@@ -160,6 +161,7 @@ describe('download stats ingestion', () => {
 
 	it('records upstream failures and retries the package message', async () => {
 		await seedStatsPackages(testEnv, testCatalog);
+		vi.spyOn(scheduler, 'wait').mockResolvedValue();
 		installUpstreamFetchMock({
 			'https://api.npmjs.org/downloads/range/2026-06-13:2026-07-12/%40fontsource%2Fabel':
 				new Response('{}', { status: 500 }),
@@ -181,6 +183,87 @@ describe('download stats ingestion', () => {
 			explicitAcks: [],
 			retryMessages: [{ msgId: 'message-1' }],
 		});
+	});
+
+	it('paces npm requests and backs off rate limits in-process', async () => {
+		const wait = vi.spyOn(scheduler, 'wait').mockResolvedValue();
+		vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+		vi.mocked(globalThis.fetch)
+			.mockResolvedValueOnce(new Response('', { status: 429 }))
+			.mockResolvedValueOnce(
+				new Response('', {
+					status: 429,
+					headers: { 'Retry-After': '7' },
+				}),
+			)
+			.mockResolvedValueOnce(
+				new Response(
+					JSON.stringify({
+						downloads: [{ day: '2026-07-12', downloads: 1 }],
+					}),
+				),
+			);
+
+		await expect(
+			fetchNpmDownloads('@fontsource/abel', 2026, '2026-07-12', '2026-07-12'),
+		).resolves.toBe(1);
+		expect(wait.mock.calls.map(([delay]) => delay)).toEqual([
+			500, 5000, 500, 7000, 500,
+		]);
+	});
+
+	it('resumes an initial backfill from completed historical periods', async () => {
+		await seedStatsPackages(testEnv, testCatalog);
+		vi.spyOn(scheduler, 'wait').mockResolvedValue();
+		const currentYearUrl =
+			'https://api.npmjs.org/downloads/range/2026-01-01:2026-07-12/%40fontsource%2Fabel';
+		installUpstreamFetchMock({
+			[currentYearUrl]: new Response('{}', { status: 500 }),
+		});
+
+		const firstResult = await processQueueMessage();
+		const checkpoint = await testEnv.STATS.prepare(
+			`SELECT p.created_day, p.last_success_at, s.total
+			FROM stats_packages p
+			JOIN stats_periods s ON s.package_name = p.package_name
+			WHERE p.package_name = ? AND s.provider = 'npm' AND s.year = 2025`,
+		)
+			.bind('@fontsource/abel')
+			.first<{
+				created_day: string | null;
+				last_success_at: string | null;
+				total: number;
+			}>();
+
+		expect(firstResult).toMatchObject({
+			explicitAcks: [],
+			retryMessages: [{ msgId: 'message-1' }],
+		});
+		expect(checkpoint).toEqual({
+			created_day: '2025-01-01',
+			last_success_at: null,
+			total: 365,
+		});
+
+		const historicalYearUrl =
+			'https://api.npmjs.org/downloads/range/2025-01-01:2025-12-31/%40fontsource%2Fabel';
+		installUpstreamFetchMock({
+			[historicalYearUrl]: new Response('{}', { status: 500 }),
+		});
+		const secondResult = await processQueueMessage();
+		const completed = await testEnv.STATS.prepare(
+			`SELECT last_success_at, last_error FROM stats_packages
+			WHERE package_name = ?`,
+		)
+			.bind('@fontsource/abel')
+			.first<{ last_success_at: string | null; last_error: string | null }>();
+
+		expect(secondResult).toMatchObject({
+			explicitAcks: ['message-1'],
+			retryMessages: [],
+		});
+		expect(completed?.last_success_at).toBeTruthy();
+		expect(completed?.last_error).toBeNull();
 	});
 
 	it('rejects silently truncated npm ranges', async () => {

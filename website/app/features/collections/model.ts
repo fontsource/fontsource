@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import type { FontSummary } from '@/utils/types';
+import type { FontSummary } from '@/utils/font-summary';
 
 const FAVORITES_COLLECTION_ID = 'favorites';
 const MAX_COLLECTION_NAME_LENGTH = 64;

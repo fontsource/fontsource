@@ -9,7 +9,11 @@ import {
 } from '@mantine/core';
 
 import { IconRotate } from '@/components/icons';
-import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
+import type {
+	GetFontResponse,
+	GetVariableFontResponse,
+	ListAxisRegistryResponse,
+} from '@/generated/api';
 
 import { CarbonAd } from '../CarbonAd';
 import { NormalButtonsGroup } from './Buttons';
@@ -19,9 +23,9 @@ import { VariableButtonsGroup } from './VariableButtons';
 
 interface ConfigureProps {
 	state$: FontIDState;
-	metadata: Metadata;
-	variable?: VariableData;
-	axisRegistry?: AxisRegistryAll;
+	metadata: GetFontResponse;
+	variable?: GetVariableFontResponse;
+	axisRegistry?: ListAxisRegistryResponse;
 }
 
 const resetVariation = (state$: FontIDState) => {

@@ -4,6 +4,22 @@ export interface LicenseData {
 	attribution: string;
 }
 
+export const FONT_STYLES = ['normal', 'italic'] as const;
+export const FONT_CATEGORIES = [
+	'sans-serif',
+	'serif',
+	'display',
+	'handwriting',
+	'monospace',
+	'icons',
+	'other',
+] as const;
+export const FONT_TYPES = ['google', 'league', 'icons', 'other'] as const;
+
+type FontStyle = (typeof FONT_STYLES)[number];
+type FontCategory = (typeof FONT_CATEGORIES)[number];
+type FontType = (typeof FONT_TYPES)[number];
+
 export interface AxisValue {
 	default: string;
 	min: string;
@@ -24,11 +40,11 @@ interface SourceFontSummary {
 	family: string;
 	subsets: string[];
 	weights: number[];
-	styles: string[];
+	styles: FontStyle[];
 	defSubset: string;
 	lastModified: string;
-	category: string;
-	type: string;
+	category: FontCategory;
+	type: FontType;
 }
 
 export interface SourceFontMetadata extends SourceFontSummary {

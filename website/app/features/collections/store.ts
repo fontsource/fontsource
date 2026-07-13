@@ -1,7 +1,7 @@
 import { batch, observable, syncState } from '@legendapp/state';
 import invariant from 'tiny-invariant';
 
-import type { FontSummary } from '@/utils/types';
+import type { FontSummary } from '@/utils/font-summary';
 import {
 	type CollectionsSnapshot,
 	createEmptyCollectionsSnapshot,

@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import { Blockquote } from '@/components/Blockquote';
 import { Code } from '@/components/code/Code';
-import type { Metadata, VariableData } from '@/utils/types';
+import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 import {
 	buildStaticPreviewCSS,
 	buildVariablePreviewCSS,
@@ -36,8 +36,8 @@ interface ActiveVariants {
 }
 
 interface InstallCodeProps {
-	metadata: Metadata;
-	variable?: VariableData;
+	metadata: GetFontResponse;
+	variable?: GetVariableFontResponse;
 }
 
 // Accepted display values

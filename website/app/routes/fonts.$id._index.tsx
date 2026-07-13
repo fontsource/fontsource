@@ -1,8 +1,4 @@
-import {
-	type FontStyle,
-	generateCSS,
-	selectVariableAxisKey,
-} from '@fontsource-utils/core';
+import { generateCSS, selectVariableAxisKey } from '@fontsource-utils/core';
 import { batch } from '@legendapp/state';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
@@ -19,37 +15,30 @@ import {
 } from '@/components/preview/observables';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
+import {
+	getFont,
+	getFontStats,
+	getVariableFont,
+	listAxisRegistry,
+	type GetFontResponse,
+} from '@/generated/api';
 import classes from '@/styles/global.module.css';
 import { cacheHeaders } from '@/utils/cache';
 import { jsDelivrResolver } from '@/utils/cdn';
 import { getPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
-import {
-	getAxisRegistry,
-	getMetadata,
-	getStats,
-	getVariable,
-} from '@/utils/metadata.server';
-import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
 
-interface FontMetadata {
-	metadata: Metadata;
-	variable?: VariableData;
-	staticCSS: string;
-	variableCSS?: string;
-	axisRegistry?: AxisRegistryAll;
-	downloadCount: number;
-}
-
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
-	const metadata = await getMetadata(id);
+	const parameters = { id };
+	const options = { signal: request.signal };
+	const metadata = await getFont(parameters, options);
 
 	const [variable, axisRegistry, stats] = await Promise.all([
-		metadata.variable ? getVariable(id) : undefined,
-		metadata.variable ? getAxisRegistry() : undefined,
-		getStats(id),
+		metadata.variable ? getVariableFont(parameters, options) : undefined,
+		metadata.variable ? listAxisRegistry({}, options) : undefined,
+		getFontStats(parameters, options),
 	]);
 
 	const { family, weights, unicodeRange, styles, subsets } = metadata;
@@ -68,7 +57,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		family,
 		subsets: unicodeKeys,
 		weights,
-		styles: styles as FontStyle[],
+		styles,
 		unicodeRange,
 	};
 
@@ -93,21 +82,20 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 			)
 		: undefined;
 
-	const res: FontMetadata = {
-		metadata,
-		variable,
-		staticCSS,
-		variableCSS,
-		axisRegistry,
-		downloadCount: stats.total.npmDownloadTotal,
-	};
-
-	return data(res, {
-		headers: cacheHeaders.short,
-	});
+	return data(
+		{
+			metadata,
+			variable,
+			staticCSS,
+			variableCSS,
+			axisRegistry,
+			downloadCount: stats.total.npmDownloadTotal,
+		},
+		{ headers: cacheHeaders.short },
+	);
 };
 
-const generateDescription = (metadata: Metadata) => {
+const generateDescription = (metadata: GetFontResponse) => {
 	const { family, category, variable } = metadata;
 
 	const variableDesc = variable ? 'variable ' : '';
@@ -127,8 +115,8 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 };
 
 export default function Font() {
-	const data = useLoaderData<FontMetadata>();
-	const { metadata, variable, axisRegistry, staticCSS, variableCSS } = data;
+	const { metadata, variable, axisRegistry, staticCSS, variableCSS } =
+		useLoaderData<typeof loader>();
 
 	const state$: FontIDState = useObservable<FontIDObject>({
 		preview: {

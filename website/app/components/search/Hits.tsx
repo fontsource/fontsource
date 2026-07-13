@@ -2,6 +2,7 @@ import { observer, useValue } from '@legendapp/state/react';
 import { Box, Group, SimpleGrid, Text, VisuallyHidden } from '@mantine/core';
 import { useMounted, useViewportSize } from '@mantine/hooks';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
+import type { BaseHit } from 'instantsearch.js';
 import {
 	useEffect,
 	useId,
@@ -16,11 +17,18 @@ import { FontCard } from '@/components/FontCard';
 import { Skeleton } from '@/components/Skeleton';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 import { getPreviewText } from '@/utils/language/language';
-import type { AlgoliaMetadata } from '@/utils/types';
 
 import classes from './Hits.module.css';
 import type { SearchState } from './observables';
 import { Sort } from './Sort';
+
+interface AlgoliaMetadata extends BaseHit {
+	objectID: string;
+	family: string;
+	defSubset: string;
+	category: string;
+	variable: boolean;
+}
 
 interface HitComponentProps {
 	state$: SearchState;

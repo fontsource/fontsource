@@ -4,7 +4,7 @@ import { IconFolderPlus, IconPlus, IconSettings } from '@tabler/icons-react';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 
-import type { FontSummary } from '@/utils/types';
+import type { FontSummary } from '@/utils/font-summary';
 import {
 	CreateCollectionModal,
 	ManageCollectionsModal,

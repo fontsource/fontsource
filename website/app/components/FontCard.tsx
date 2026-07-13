@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
+import type { FontSummary } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
-import type { FontSummary } from '@/utils/types';
 import classes from './FontCard.module.css';
 import { Skeleton } from './Skeleton';
 

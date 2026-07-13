@@ -13,7 +13,9 @@ import {
 	getActiveStatsPackageNames,
 	getStatsPackage,
 	markStatsPackageInactive,
+	prepareStatsBackfill,
 	recordStatsFailure,
+	saveStatsPeriod,
 	seedStatsPackages,
 	type StatsPeriodWrite,
 } from './repository';
@@ -76,7 +78,27 @@ const processStatsPackage = async (
 		initialRefresh,
 		isJanuary,
 	);
+	const completedPeriods = initialRefresh
+		? await prepareStatsBackfill(env, packageName, createdDay)
+		: [];
 	const periods: StatsPeriodWrite[] = [];
+	const collectPeriod = async (period: StatsPeriodWrite): Promise<void> => {
+		if (initialRefresh) {
+			await saveStatsPeriod(env, packageName, period);
+			return;
+		}
+
+		periods.push(period);
+	};
+	const needsPeriod = (
+		provider: StatsPeriodWrite['provider'],
+		year: number,
+	): boolean =>
+		// Historical totals are final; always refresh the current year on retry.
+		year === currentYear ||
+		!completedPeriods.some(
+			(period) => period.provider === provider && period.year === year,
+		);
 
 	const npmMonthly = await fetchNpmDownloads(
 		packageName,
@@ -85,7 +107,8 @@ const processStatsPackage = async (
 		today,
 	);
 	for (const year of npmYears) {
-		periods.push({
+		if (!needsPeriod('npm', year)) continue;
+		await collectPeriod({
 			provider: 'npm',
 			year,
 			total: await fetchNpmDownloads(packageName, year, createdDay, today),
@@ -94,7 +117,8 @@ const processStatsPackage = async (
 
 	const jsdelivrMonthly = await fetchJsDelivrDownloads(packageName, 'month');
 	for (const year of jsdelivrYears) {
-		periods.push({
+		if (!needsPeriod('jsdelivr', year)) continue;
+		await collectPeriod({
 			provider: 'jsdelivr',
 			year,
 			total: await fetchJsDelivrDownloads(packageName, year),

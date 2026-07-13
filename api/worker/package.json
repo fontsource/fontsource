@@ -9,6 +9,7 @@
 		"cf-typegen": "wrangler types",
 		"deploy": "bun run build && wrangler deploy",
 		"dev": "bun --filter '@fontsource-utils/core' build && vite dev",
+		"generate:website-client": "bun --filter '@fontsource-utils/core' build && bun scripts/generate-website-client.ts",
 		"preview": "bun run build && vite preview",
 		"test": "bun --filter '@fontsource-utils/core' build && vitest run",
 		"typecheck": "bun --filter '@fontsource-utils/core' build && bun x tsc -p worker/tsconfig.json --noEmit && bun x tsc -p tests/tsconfig.json --noEmit && bun x tsc -p container/tsconfig.json --noEmit",
@@ -32,6 +33,7 @@
 	"devDependencies": {
 		"@cloudflare/vite-plugin": "^1.44.0",
 		"@cloudflare/vitest-pool-workers": "^0.18.4",
+		"@hey-api/openapi-ts": "0.99.0",
 		"@types/node": "^26.1.0",
 		"bun-types": "^1.3.13",
 		"typescript": "^6.0.3",

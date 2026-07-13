@@ -2,7 +2,7 @@ import { useValue } from '@legendapp/state/react';
 import { ActionIcon, Tooltip } from '@mantine/core';
 import { IconHeart } from '@tabler/icons-react';
 
-import type { FontSummary } from '@/utils/types';
+import type { FontSummary } from '@/utils/font-summary';
 import { useCollectionsStore } from './CollectionsProvider';
 
 interface FavoriteButtonProps {

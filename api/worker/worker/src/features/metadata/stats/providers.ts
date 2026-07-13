@@ -1,6 +1,8 @@
 import { UPSTREAM_URLS } from '../../../constants';
 
 const NPM_STATS_START_DAY = '2015-01-10';
+const NPM_PACE_MS = 500;
+const NPM_RETRY_DELAYS_MS = [5_000, 10_000, 20_000, 40_000, 80_000];
 // Keep sustained jsDelivr traffic below its 100 RPM coordination threshold.
 const JSDELIVR_PACE_MS = 650;
 
@@ -26,23 +28,58 @@ const inclusiveDayCount = (from: string, to: string): number =>
 const packagePath = (packageName: string): string =>
 	encodeURIComponent(packageName);
 
+const retryAfterMs = (value: string | null): number | null => {
+	if (value === null) return null;
+
+	const seconds = Number(value);
+	if (Number.isFinite(seconds) && seconds >= 0) return seconds * 1000;
+
+	const retryAt = Date.parse(value);
+	return Number.isFinite(retryAt) ? Math.max(0, retryAt - Date.now()) : null;
+};
+
 const fetchJson = async (
 	url: string,
-	allowNotFound = false,
+	options: {
+		allowNotFound?: boolean;
+		paceMs?: number;
+		retry429?: boolean;
+	} = {},
 ): Promise<unknown | null> => {
-	const response = await fetch(url, {
-		headers: {
-			Accept: 'application/json',
-			'User-Agent': 'Fontsource-Stats',
-		},
-	});
+	for (let attempt = 0; ; attempt += 1) {
+		const response = await fetch(url, {
+			headers: {
+				Accept: 'application/json',
+				'User-Agent': 'Fontsource-Stats',
+			},
+		}).finally(() =>
+			options.paceMs ? scheduler.wait(options.paceMs) : undefined,
+		);
 
-	if (allowNotFound && response.status === 404) return null;
-	if (!response.ok) {
-		throw new Error(`Stats upstream ${response.status}: ${url}`);
+		if (options.allowNotFound && response.status === 404) return null;
+		if (response.ok) return response.json();
+
+		const retryDelay = NPM_RETRY_DELAYS_MS[attempt];
+		if (
+			!options.retry429 ||
+			response.status !== 429 ||
+			retryDelay === undefined
+		) {
+			throw new Error(`Stats upstream ${response.status}: ${url}`);
+		}
+
+		const delayMs =
+			retryAfterMs(response.headers.get('Retry-After')) ?? retryDelay;
+		console.warn({
+			event: 'stats_upstream_retry',
+			provider: 'npm',
+			status: response.status,
+			attempt: attempt + 1,
+			delayMs,
+			url,
+		});
+		await scheduler.wait(delayMs);
 	}
-
-	return response.json();
 };
 
 export const fetchPackageCreatedDay = async (
@@ -51,7 +88,7 @@ export const fetchPackageCreatedDay = async (
 ): Promise<string | null> => {
 	const payload = await fetchJson(
 		`${UPSTREAM_URLS.npmRegistry}/${packagePath(packageName)}`,
-		isLegacy,
+		{ allowNotFound: isLegacy },
 	);
 	if (payload === null) return null;
 
@@ -72,7 +109,11 @@ const fetchNpmRange = async (
 ): Promise<number> => {
 	const payload = await fetchJson(
 		`${UPSTREAM_URLS.npmDownloads}/${from}:${to}/${packagePath(packageName)}`,
-		true,
+		{
+			allowNotFound: true,
+			paceMs: NPM_PACE_MS,
+			retry429: true,
+		},
 	);
 	if (payload === null) return 0;
 
@@ -125,7 +166,7 @@ export const fetchJsDelivrDownloads = async (
 	const queryPeriod = isCurrentYear ? 'year' : period;
 	const payload = await fetchJson(
 		`${UPSTREAM_URLS.jsdelivrStats}/${packagePath(packageName)}?period=${queryPeriod}`,
-		true,
+		{ allowNotFound: true },
 	).finally(() => scheduler.wait(JSDELIVR_PACE_MS));
 	if (payload === null) return 0;
 

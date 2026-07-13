@@ -1,4 +1,9 @@
 import { z } from 'zod';
+import {
+	FONT_CATEGORIES,
+	FONT_STYLES,
+	FONT_TYPES,
+} from '../../../shared/catalog';
 
 export const AxisValueSchema = z.object({
 	default: z.string(),
@@ -14,13 +19,13 @@ export const FontListItemSchema = z.object({
 	family: z.string(),
 	subsets: z.array(z.string()),
 	weights: z.array(z.number().int()),
-	styles: z.array(z.string()),
+	styles: z.array(z.enum(FONT_STYLES)),
 	defSubset: z.string(),
 	variable: z.boolean(),
 	lastModified: z.string(),
-	category: z.string(),
+	category: z.enum(FONT_CATEGORIES),
 	license: z.string(),
-	type: z.string(),
+	type: z.enum(FONT_TYPES),
 });
 
 export const FontVariantUrlsSchema = z.object({

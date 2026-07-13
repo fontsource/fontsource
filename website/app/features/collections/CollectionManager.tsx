@@ -28,7 +28,7 @@ import {
 } from '@tabler/icons-react';
 import { type FormEvent, useRef, useState } from 'react';
 
-import type { FontSummary } from '@/utils/types';
+import type { FontSummary } from '@/utils/font-summary';
 import classes from './CollectionManager.module.css';
 import menuClasses from './CollectionMenu.module.css';
 import { useCollectionsStore } from './CollectionsProvider';

@@ -10,6 +10,7 @@
 		"../container/src/**/*.d.ts",
 		"../worker/src/**/*.ts",
 		"../worker/src/**/*.d.ts",
+		"../scripts/**/*.ts",
 		"../shared/**/*.ts",
 		"../shared/**/*.d.ts",
 		"../worker-configuration.d.ts"

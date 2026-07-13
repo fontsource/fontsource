@@ -1,7 +1,7 @@
 import { observe } from '@legendapp/state';
 import { describe, expect, it } from 'vitest';
 
-import type { FontSummary } from '@/utils/types';
+import type { FontSummary } from '@/utils/font-summary';
 import { collectionsSnapshotSchema } from './model';
 import { createCollectionsStore } from './store';
 
