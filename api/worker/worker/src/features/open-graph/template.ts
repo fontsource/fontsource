@@ -318,7 +318,7 @@ const createTitleNode = (
 			left: 48,
 			overflow: 'hidden',
 			position: 'absolute',
-			top: 156,
+			top: layout.titleLines.length === 1 ? 134 : 156,
 			width: 650,
 		},
 		children: layout.titleLines.map(
