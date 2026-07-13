@@ -23,7 +23,7 @@ import classes from '@/styles/global.module.css';
 import { cacheHeaders } from '@/utils/cache';
 import { jsDelivrResolver } from '@/utils/cdn';
 import { getPreviewText } from '@/utils/language/language';
-import { ogMeta } from '@/utils/meta';
+import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import {
 	getAxisRegistry,
 	getMetadata,
@@ -123,7 +123,10 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 	const description = loaderData?.metadata
 		? generateDescription(loaderData.metadata)
 		: undefined;
-	return ogMeta({ title, description });
+	const image = loaderData?.metadata
+		? getFontOpenGraphImage(loaderData.metadata)
+		: undefined;
+	return ogMeta({ title, description, image });
 };
 
 export default function Font() {

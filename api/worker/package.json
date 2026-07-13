@@ -20,6 +20,7 @@
 	"dependencies": {
 		"@cloudflare/containers": "^0.3.7",
 		"@fontsource-utils/core": "workspace:*",
+		"@fontsource/ibm-plex-sans": "5.2.8",
 		"aws4fetch": "^1.0.20",
 		"chanfana": "^3.3.0",
 		"compare-versions": "^6.1.1",
@@ -27,6 +28,7 @@
 		"hono": "^4.12.18",
 		"limit-concur": "^4.0.0",
 		"modern-tar": "0.7.6",
+		"takumi-js": "2.1.1",
 		"zod": "4.4.3"
 	},
 	"devDependencies": {

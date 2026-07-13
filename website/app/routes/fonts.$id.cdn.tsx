@@ -5,7 +5,7 @@ import invariant from 'tiny-invariant';
 import { CDN } from '@/components/preview/CDN';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { cacheHeaders } from '@/utils/cache';
-import { ogMeta } from '@/utils/meta';
+import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import { getMetadata, getStats, getVariable } from '@/utils/metadata.server';
 import type { Metadata, VariableData } from '@/utils/types';
 
@@ -60,7 +60,10 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 	const description = loaderData?.metadata
 		? generateDescription(loaderData.metadata)
 		: undefined;
-	return ogMeta({ title, description });
+	const image = loaderData?.metadata
+		? getFontOpenGraphImage(loaderData.metadata)
+		: undefined;
+	return ogMeta({ title, description, image });
 };
 
 export default function CDNPage() {

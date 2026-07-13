@@ -4,7 +4,19 @@ const SITE_ORIGIN = 'https://fontsource.org';
 const DEFAULT_TITLE = 'Fontsource — Self-host Open Source Fonts';
 const DEFAULT_DESCRIPTION =
 	'Discover and self-host 2,000+ open-source fonts with versioned npm packages, direct downloads, configurable CDN URLs, and a free API.';
-const DEFAULT_IMAGE = new URL('/og-image.png', SITE_ORIGIN).href;
+const API_ORIGIN = 'https://api.fontsource.org';
+
+interface OpenGraphImage {
+	url: string;
+	width: number;
+	height: number;
+}
+
+const DEFAULT_IMAGE: OpenGraphImage = {
+	url: new URL('/og-image.png', SITE_ORIGIN).href,
+	width: 1200,
+	height: 800,
+};
 
 export const getCanonicalUrl = (pathname: string) =>
 	new URL(pathname.replace(/\/+$/, '') || '/', SITE_ORIGIN).href;
@@ -12,9 +24,33 @@ export const getCanonicalUrl = (pathname: string) =>
 interface OGMeta {
 	title?: string;
 	description?: string;
+	image?: OpenGraphImage;
 }
 
-export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
+interface FontOpenGraphMetadata {
+	id: string;
+	lastModified: string;
+}
+
+export const getFontOpenGraphImage = ({
+	id,
+	lastModified,
+}: FontOpenGraphMetadata): OpenGraphImage => {
+	const url = new URL(`/og/fonts/${encodeURIComponent(id)}`, API_ORIGIN);
+	url.searchParams.set('v', lastModified);
+
+	return {
+		url: url.href,
+		width: 1200,
+		height: 630,
+	};
+};
+
+export const ogMeta = ({
+	title,
+	description,
+	image = DEFAULT_IMAGE,
+}: OGMeta): MetaDescriptor[] => {
 	return [
 		{
 			title: title ?? DEFAULT_TITLE,
@@ -37,15 +73,15 @@ export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 		},
 		{
 			property: 'og:image',
-			content: DEFAULT_IMAGE,
+			content: image.url,
 		},
 		{
 			property: 'og:image:width',
-			content: '1200',
+			content: String(image.width),
 		},
 		{
 			property: 'og:image:height',
-			content: '800',
+			content: String(image.height),
 		},
 		{
 			name: 'twitter:card',
@@ -65,7 +101,7 @@ export const ogMeta = ({ title, description }: OGMeta): MetaDescriptor[] => {
 		},
 		{
 			name: 'twitter:image',
-			content: DEFAULT_IMAGE,
+			content: image.url,
 		},
 		{
 			'script:ld+json': {

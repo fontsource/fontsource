@@ -22,6 +22,7 @@ import {
 	DownloadFontRoute,
 	LegacyFontFileRedirectRoute,
 } from './routes/compat';
+import { GetFontOpenGraphRoute } from './routes/open-graph';
 import { DEFAULT_NOT_FOUND_MESSAGE, toErrorResponse } from './utils/errors';
 
 const app = new Hono<AppEnv>();
@@ -78,6 +79,7 @@ for (const path of [
 }
 
 app.use('/css/*', apiEtag);
+app.use('/og/fonts/*', apiEtag);
 
 const openapi = fromHono(app, {
 	docs_url: '/docs',
@@ -128,6 +130,10 @@ const openapi = fromHono(app, {
 				name: 'Compatibility',
 				description: 'Legacy redirect endpoints for backward compatibility.',
 			},
+			{
+				name: 'Open Graph',
+				description: 'Dynamic social preview images for font family pages.',
+			},
 		],
 	},
 });
@@ -141,6 +147,7 @@ openapi.get('/v1/axis-registry', ListAxisRegistryRoute);
 openapi.get('/v1/stats', ListStatsRoute);
 openapi.get('/v1/stats/:id', GetFontStatsRoute);
 openapi.get('/v1/version/:id', GetFontVersionsRoute);
+openapi.get('/og/fonts/:id', GetFontOpenGraphRoute);
 
 openapi.get('/fonts/:tag/:file', GetBinaryAssetRoute);
 openapi.get('/css/:tag/:file', GetCssFileRoute);

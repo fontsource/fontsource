@@ -203,6 +203,7 @@ describe('metadata routes', () => {
 			'/css/{tag}/{file}',
 			'/fontlist',
 			'/fonts/{tag}/{file}',
+			'/og/fonts/{id}',
 			'/v1/axis-registry',
 			'/v1/download/{id}',
 			'/v1/fonts',
