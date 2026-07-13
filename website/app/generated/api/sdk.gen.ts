@@ -2,7 +2,7 @@
 
 import { buildClientParams, type Client, type ClientMeta, type Options as Options2, type RequestResult, type TDataShape } from './client';
 import { client } from './client.gen';
-import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
+import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -195,6 +195,23 @@ export const getFontVersions = <ThrowOnError extends boolean = true>(parameters:
     return (options?.client ?? client).get<GetFontVersionsResponses, GetFontVersionsErrors, ThrowOnError, 'data'>({
         responseStyle: 'data',
         url: '/v1/version/{id}',
+        ...options,
+        ...params
+    });
+};
+
+/**
+ * Render a font Open Graph image
+ *
+ * Renders a 1200×630 PNG social card from the current font metadata and a published font face.
+ */
+export const getFontOpenGraphImage = <ThrowOnError extends boolean = true>(parameters: {
+    id: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<GetFontOpenGraphImageResponses, GetFontOpenGraphImageErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }] }]);
+    return (options?.client ?? client).get<GetFontOpenGraphImageResponses, GetFontOpenGraphImageErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/og/fonts/{id}',
         ...options,
         ...params
     });

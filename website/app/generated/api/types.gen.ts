@@ -519,6 +519,45 @@ export type GetFontVersionsResponses = {
 
 export type GetFontVersionsResponse = GetFontVersionsResponses[keyof GetFontVersionsResponses];
 
+export type GetFontOpenGraphImageData = {
+    body?: never;
+    path: {
+        /**
+         * Font family identifier (e.g. "roboto", "open-sans")
+         */
+        id: string;
+    };
+    query?: never;
+    url: '/og/fonts/{id}';
+};
+
+export type GetFontOpenGraphImageErrors = {
+    /**
+     * Font not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetFontOpenGraphImageError = GetFontOpenGraphImageErrors[keyof GetFontOpenGraphImageErrors];
+
+export type GetFontOpenGraphImageResponses = {
+    /**
+     * Rendered Open Graph image
+     */
+    200: string;
+};
+
+export type GetFontOpenGraphImageResponse = GetFontOpenGraphImageResponses[keyof GetFontOpenGraphImageResponses];
+
 export type GetBinaryAssetData = {
     body?: never;
     path: {
