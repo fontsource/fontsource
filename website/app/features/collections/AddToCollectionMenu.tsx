@@ -1,14 +1,7 @@
 import { useValue } from '@legendapp/state/react';
-import {
-	ActionIcon,
-	Box,
-	Menu,
-	ScrollArea,
-	TextInput,
-	Tooltip,
-} from '@mantine/core';
+import { ActionIcon, Menu, ScrollArea, VisuallyHidden } from '@mantine/core';
 import { IconFolderPlus, IconPlus, IconSettings } from '@tabler/icons-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 import type { FontSummary } from '@/utils/types';
@@ -16,7 +9,9 @@ import {
 	CreateCollectionModal,
 	ManageCollectionsModal,
 } from './CollectionManager';
+import menuClasses from './CollectionMenu.module.css';
 import { useCollectionsStore } from './CollectionsProvider';
+import { normalizeCollectionName } from './model';
 
 interface AddToCollectionMenuProps {
 	font: FontSummary;
@@ -31,52 +26,59 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 		(collection) => collection.kind === 'custom',
 	);
 	const [query, setQuery] = useState('');
-	const normalizedQuery = query.trim().toLowerCase();
+	const normalizedQuery = normalizeCollectionName(query);
 	const visibleCollections = normalizedQuery
 		? customCollections.filter((collection) =>
-				collection.name.toLowerCase().includes(normalizedQuery),
+				normalizeCollectionName(collection.name).includes(normalizedQuery),
 			)
 		: customCollections;
 	const [createOpened, setCreateOpened] = useState(false);
 	const [manageOpened, setManageOpened] = useState(false);
+	const targetRef = useRef<HTMLButtonElement>(null);
 	const label = `Manage collections for ${font.family}`;
+	const restoreFocus = () => {
+		if (!createOpened && !manageOpened) targetRef.current?.focus();
+	};
 
 	return (
 		<>
 			<Menu
+				classNames={{ dropdown: menuClasses.dropdown }}
 				closeOnItemClick={false}
 				onClose={() => setQuery('')}
 				position="bottom-end"
 				shadow="md"
 			>
 				<Menu.Target>
-					<Tooltip label={label} openDelay={500}>
-						<ActionIcon
-							aria-label={label}
-							color="purple.0"
-							disabled={!ready}
-							size="lg"
-							type="button"
-							variant="transparent"
-						>
-							<IconFolderPlus size={20} />
-						</ActionIcon>
-					</Tooltip>
+					<ActionIcon
+						aria-label={label}
+						color="purple.0"
+						disabled={!ready}
+						ref={targetRef}
+						size="lg"
+						title={label}
+						type="button"
+						variant="transparent"
+					>
+						<IconFolderPlus size={20} />
+					</ActionIcon>
 				</Menu.Target>
 				<Menu.Dropdown>
 					<Menu.Label>Collections</Menu.Label>
 					{customCollections.length >= 9 && (
-						<Box px="xs" pb={4}>
-							<TextInput
-								aria-label="Search collections"
-								onChange={(event) => setQuery(event.currentTarget.value)}
-								onClick={(event) => event.stopPropagation()}
-								placeholder="Search collections"
-								size="xs"
-								value={query}
-							/>
-						</Box>
+						<Menu.Search
+							aria-label="Search collections"
+							dir="auto"
+							onChange={(event) => setQuery(event.currentTarget.value)}
+							placeholder="Search collections"
+							value={query}
+						/>
 					)}
+					<VisuallyHidden role="status">
+						{normalizedQuery
+							? `${visibleCollections.length} matching ${visibleCollections.length === 1 ? 'collection' : 'collections'}.`
+							: ''}
+					</VisuallyHidden>
 					<ScrollArea.Autosize mah={240} type="scroll">
 						{visibleCollections.length > 0 ? (
 							visibleCollections.map((collection) => {
@@ -93,7 +95,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 											}
 										}}
 									>
-										{collection.name}
+										<span dir="auto">{collection.name}</span>
 									</Menu.CheckboxItem>
 								);
 							})
@@ -128,14 +130,21 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 				onCreated={(collectionId) =>
 					store.addFontToCollection(collectionId, font)
 				}
+				onExitTransitionEnd={restoreFocus}
 				opened={createOpened}
 			/>
 			<ManageCollectionsModal
 				onClose={() => setManageOpened(false)}
 				onCreateCollection={() => setCreateOpened(true)}
-				onViewCollection={(collectionId) =>
-					navigate(`/?collection=${encodeURIComponent(collectionId)}`)
-				}
+				onExitTransitionEnd={restoreFocus}
+				onViewCollection={(collectionId) => {
+					const collection = collections.find(
+						(item) => item.id === collectionId,
+					);
+					if (collection) {
+						navigate(`/?collection=${encodeURIComponent(collection.name)}`);
+					}
+				}}
 				opened={manageOpened}
 			/>
 		</>

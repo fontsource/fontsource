@@ -1,3 +1,20 @@
+.modal-content,
+.modal-header {
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+}
+
+.manage-body {
+	padding: 0 var(--mantine-spacing-md) var(--mantine-spacing-md);
+}
+
+.modal-content {
+	border-color: light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+}
+
+.error {
+	color: light-dark(var(--mantine-color-red-9), var(--mantine-color-red-4));
+}
+
 .context {
 	display: grid;
 	grid-template-columns: auto minmax(0, 1fr) auto;
@@ -5,7 +22,7 @@
 	gap: 12px;
 	padding: 12px 14px;
 	color: var(--mantine-color-purple-0);
-	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-4));
+	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-3));
 	border-radius: var(--mantine-radius-sm);
 }
 
@@ -21,7 +38,7 @@
 	height: 24px;
 	padding-inline: 7px;
 	font-variant-numeric: tabular-nums;
-	background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-4));
+	background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-3));
 	border-radius: 999px;
 }
 
@@ -32,6 +49,16 @@
 
 .controls input {
 	width: 245px;
+}
+
+.primary-action {
+	color: light-dark(var(--mantine-color-purple-0), var(--mantine-color-text-0));
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .row {

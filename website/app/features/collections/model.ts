@@ -4,6 +4,15 @@ import type { FontSummary } from '@/utils/types';
 
 const FAVORITES_COLLECTION_ID = 'favorites';
 const MAX_COLLECTION_NAME_LENGTH = 64;
+const collectionNameSegmenter = new Intl.Segmenter(undefined, {
+	granularity: 'grapheme',
+});
+
+const formatCollectionName = (name: string) => name.trim().normalize('NFC');
+const normalizeCollectionName = (name: string) =>
+	formatCollectionName(name).toLowerCase().normalize('NFC');
+const getCollectionNameLength = (name: string) =>
+	Array.from(collectionNameSegmenter.segment(name)).length;
 
 const fontSummarySchema: z.ZodType<FontSummary> = z.object({
 	id: z.string().min(1),
@@ -16,7 +25,13 @@ const fontSummarySchema: z.ZodType<FontSummary> = z.object({
 const fontCollectionSchema = z.object({
 	id: z.string().min(1),
 	kind: z.enum(['favorites', 'custom']),
-	name: z.string().trim().min(1).max(MAX_COLLECTION_NAME_LENGTH),
+	name: z
+		.string()
+		.trim()
+		.min(1)
+		.refine(
+			(name) => getCollectionNameLength(name) <= MAX_COLLECTION_NAME_LENGTH,
+		),
 	fontIds: z.array(z.string().min(1)),
 });
 
@@ -32,6 +47,15 @@ const collectionsSnapshotSchema = z
 				(collection) => collection.kind === 'favorites',
 			).length === 1,
 		{ message: 'Collections must contain exactly one Favorites collection.' },
+	)
+	.refine(
+		(snapshot) =>
+			new Set(
+				snapshot.collections.map((collection) =>
+					normalizeCollectionName(collection.name),
+				),
+			).size === snapshot.collections.length,
+		{ message: 'Collection names must be unique.' },
 	)
 	.refine(
 		(snapshot) =>
@@ -60,5 +84,8 @@ export type { CollectionsSnapshot };
 export {
 	collectionsSnapshotSchema,
 	createEmptyCollectionsSnapshot,
+	formatCollectionName,
+	getCollectionNameLength,
 	MAX_COLLECTION_NAME_LENGTH,
+	normalizeCollectionName,
 };

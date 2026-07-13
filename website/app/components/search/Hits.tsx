@@ -293,7 +293,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	if (!results.__isArtificial && results.nbHits === 0) {
 		return (
 			<Box>
-				<Text>
+				<Text role="status">
 					{collectionMessage
 						? collectionMessage
 						: `No results found for "${indexUiState.query ?? ''}"`}

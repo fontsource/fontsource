@@ -34,6 +34,8 @@ import {
 	CollectionsProvider,
 	useCollectionsStore,
 } from '@/features/collections/CollectionsProvider';
+import { normalizeCollectionName } from '@/features/collections/model';
+import type { CollectionsStore } from '@/features/collections/store';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
@@ -99,6 +101,7 @@ const parseSubsets = (value: unknown): string[] | undefined => {
 const routing = (
 	serverUrl: string,
 	state$: SearchState,
+	collectionsStore?: CollectionsStore,
 ): RouterProps<UiState, SearchRouteState> => {
 	const indexName = 'prod_POPULAR';
 	return {
@@ -114,9 +117,12 @@ const routing = (
 			stateToRoute(uiState) {
 				const index = uiState[indexName];
 				const collectionId = state$.collectionId.peek();
+				const collectionName = collectionsStore?.collections$
+					.peek()
+					.find((collection) => collection.id === collectionId)?.name;
 				const result = {
 					query: index.query,
-					...(collectionId ? { collection: collectionId } : {}),
+					...(collectionName ? { collection: collectionName } : {}),
 					// RefinementList facets
 					...(index.refinementList?.subsets
 						? { subsets: index.refinementList.subsets.join(',') }
@@ -132,7 +138,18 @@ const routing = (
 			},
 			routeToState(routeState) {
 				const subsets = parseSubsets(routeState.subsets);
-				state$.collectionId.set(routeState.collection ?? null);
+				const collectionRouteValue = routeState.collection;
+				const normalizedRouteValue = collectionRouteValue
+					? normalizeCollectionName(collectionRouteValue)
+					: undefined;
+				const collection = collectionsStore?.collections$
+					.peek()
+					.find(
+						(item) =>
+							item.id === collectionRouteValue ||
+							normalizeCollectionName(item.name) === normalizedRouteValue,
+					);
+				state$.collectionId.set(collection?.id ?? null);
 
 				const state = {
 					query: routeState.query,
@@ -253,7 +270,7 @@ export default function Index() {
 			<InstantSearch
 				searchClient={searchClient}
 				indexName="prod_POPULAR"
-				routing={routing(serverUrl, state$)}
+				routing={routing(serverUrl, state$, collectionsStore)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
 				<Configure attributesToRetrieve={attributesToRetrieve} />

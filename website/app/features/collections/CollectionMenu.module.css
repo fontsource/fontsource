@@ -1,0 +1,4 @@
+.dropdown {
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	border-color: light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+}

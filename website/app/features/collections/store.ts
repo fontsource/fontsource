@@ -5,7 +5,10 @@ import type { FontSummary } from '@/utils/types';
 import {
 	type CollectionsSnapshot,
 	createEmptyCollectionsSnapshot,
+	formatCollectionName,
+	getCollectionNameLength,
 	MAX_COLLECTION_NAME_LENGTH,
+	normalizeCollectionName,
 } from './model';
 
 const createCollectionsStore = (
@@ -21,16 +24,17 @@ const createCollectionsStore = (
 			.peek()
 			.findIndex((collection) => collection.id === collectionId);
 	const getAvailableCollectionName = (name: string, ignoredId?: string) => {
-		const normalizedName = name.trim();
+		const normalizedName = formatCollectionName(name);
+		const normalizedNameKey = normalizeCollectionName(normalizedName);
 		const invalidName =
 			normalizedName.length === 0 ||
-			normalizedName.length > MAX_COLLECTION_NAME_LENGTH ||
+			getCollectionNameLength(normalizedName) > MAX_COLLECTION_NAME_LENGTH ||
 			state$.collections
 				.peek()
 				.some(
 					(collection) =>
 						collection.id !== ignoredId &&
-						collection.name.toLowerCase() === normalizedName.toLowerCase(),
+						normalizeCollectionName(collection.name) === normalizedNameKey,
 				);
 		return invalidName ? undefined : normalizedName;
 	};

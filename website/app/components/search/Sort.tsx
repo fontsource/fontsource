@@ -52,7 +52,9 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 
 	return (
 		<Group className={classes.wrapper} justify="space-between" wrap="nowrap">
-			<Text>{count} families loaded</Text>
+			<Text aria-atomic="true" role="status">
+				{count} families loaded
+			</Text>
 			<Group>
 				<Group visibleFrom="sm">
 					<DropdownSimple
