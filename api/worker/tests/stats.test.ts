@@ -4,7 +4,7 @@ import {
 	createScheduledController,
 	getQueueResult,
 } from 'cloudflare:test';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import legacyFontIds from '../shared/legacy-fonts.json';
 import { STATS_CRON } from '../worker/src/constants';
 import type { StatsQueueMessage } from '../worker/src/features/metadata/stats/ingest';
@@ -34,8 +34,11 @@ const processQueueMessage = async (packageName = '@fontsource/abel') => {
 
 describe('download stats ingestion', () => {
 	beforeEach(async () => {
+		vi.useFakeTimers({ toFake: ['Date'] });
+		vi.setSystemTime(new Date('2026-07-12T00:00:00.000Z'));
 		await setupWorkerTest();
 	});
+	afterEach(() => vi.useRealTimers());
 
 	it('seeds the complete package set from the daily cron', async () => {
 		await worker.scheduled(
@@ -109,14 +112,9 @@ describe('download stats ingestion', () => {
 			.bind('2025-01-01', '2026-12-25T00:00:00.000Z', '@fontsource/abel')
 			.run();
 		vi.spyOn(scheduler, 'wait').mockResolvedValue();
-		vi.useFakeTimers();
 		vi.setSystemTime(new Date('2027-01-08T00:00:00.000Z'));
 
-		try {
-			await processQueueMessage();
-		} finally {
-			vi.useRealTimers();
-		}
+		await processQueueMessage();
 
 		const periods = await testEnv.STATS.prepare(
 			`SELECT provider, year FROM stats_periods
