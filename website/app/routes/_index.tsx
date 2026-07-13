@@ -116,6 +116,7 @@ const routing = (
 		stateMapping: {
 			stateToRoute(uiState) {
 				const index = uiState[indexName];
+				// Collection selection lives in Legend rather than InstantSearch state.
 				const collectionId = state$.collectionId.peek();
 				const collectionName = collectionsStore?.collections$
 					.peek()
@@ -138,16 +139,15 @@ const routing = (
 			},
 			routeToState(routeState) {
 				const subsets = parseSubsets(routeState.subsets);
-				const collectionRouteValue = routeState.collection;
-				const normalizedRouteValue = collectionRouteValue
-					? normalizeCollectionName(collectionRouteValue)
+				// URLs use readable collection names while state keeps the stable local ID.
+				const normalizedCollectionName = routeState.collection
+					? normalizeCollectionName(routeState.collection)
 					: undefined;
 				const collection = collectionsStore?.collections$
 					.peek()
 					.find(
 						(item) =>
-							item.id === collectionRouteValue ||
-							normalizeCollectionName(item.name) === normalizedRouteValue,
+							normalizeCollectionName(item.name) === normalizedCollectionName,
 					);
 				state$.collectionId.set(collection?.id ?? null);
 
@@ -181,6 +181,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
 	const hasCollectionFilter = requestUrl.searchParams.has('collection');
+	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
 			{ hasCollectionFilter, serverUrl },
@@ -263,6 +264,7 @@ export default function Index() {
 	const searchRef = useRef<HTMLDivElement>(null);
 
 	const state$ = useObservable(createSearchState());
+	// Resolve the collection name only after Legend has restored local persistence.
 	if (hasCollectionFilter && !collectionsReady) return null;
 
 	return (

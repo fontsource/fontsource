@@ -37,8 +37,9 @@
 	min-width: 24px;
 	height: 24px;
 	padding-inline: 7px;
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 	font-variant-numeric: tabular-nums;
-	background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-3));
+	background-color: light-dark(var(--mantine-color-purpleHover-0), var(--mantine-color-purpleHover-2));
 	border-radius: 999px;
 }
 
@@ -53,6 +54,11 @@
 
 .primary-action {
 	color: light-dark(var(--mantine-color-purple-0), var(--mantine-color-text-0));
+
+	&:hover {
+		color: light-dark(var(--mantine-color-purple-0), var(--mantine-color-text-0));
+		background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-6));
+	}
 }
 
 .list {

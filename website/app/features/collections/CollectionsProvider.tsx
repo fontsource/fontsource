@@ -20,6 +20,8 @@ class CollectionsLocalStorage extends ObservablePersistLocalStorage {
 		super();
 	}
 
+	// Browsers can reject localStorage writes when storage is unavailable or full.
+	// Stop retrying after the first failure while keeping in-memory changes usable.
 	override set(table: string, changes: Change[]) {
 		if (this.failed) return;
 
@@ -38,6 +40,8 @@ const CollectionsProvider = ({ children }: { children: ReactNode }) => {
 
 	useMount(() => {
 		try {
+			// Legend restores persisted values without applying the Zod schema. Validate
+			// first so incompatible or partial snapshots never enter the live store.
 			const storedValue = localStorage.getItem(STORAGE_KEY);
 			if (storedValue !== null) {
 				collectionsSnapshotSchema.parse(JSON.parse(storedValue));

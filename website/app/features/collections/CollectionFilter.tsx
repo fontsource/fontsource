@@ -48,9 +48,13 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 		if (!createOpened && !manageOpened) targetRef.current?.focus();
 	};
 
+	// Wait for persistence before treating a missing selection as deleted.
 	useEffect(() => {
 		if (ready && value && !selectedCollection) onChange(null);
 	}, [onChange, ready, selectedCollection, value]);
+
+	// Collection selection lives outside InstantSearch state, so renames do not
+	// trigger its router. Keep the readable collection name in the URL in sync.
 	useEffect(() => {
 		if (!ready || !value || !selectedCollectionName) return;
 

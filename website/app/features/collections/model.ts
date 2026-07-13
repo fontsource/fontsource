@@ -8,9 +8,14 @@ const collectionNameSegmenter = new Intl.Segmenter(undefined, {
 	granularity: 'grapheme',
 });
 
+// Preserve the user's spelling for display while comparing a normalized form so
+// visually equivalent Unicode input cannot create ambiguous collection URLs.
 const formatCollectionName = (name: string) => name.trim().normalize('NFC');
 const normalizeCollectionName = (name: string) =>
 	formatCollectionName(name).toLowerCase().normalize('NFC');
+
+// Collection limits are based on visible characters. Grapheme segmentation keeps
+// composed scripts and emoji from being penalized for their code point count.
 const getCollectionNameLength = (name: string) =>
 	Array.from(collectionNameSegmenter.segment(name)).length;
 
@@ -35,6 +40,8 @@ const fontCollectionSchema = z.object({
 	fontIds: z.array(z.string().min(1)),
 });
 
+// Persisted snapshots are untrusted input. These refinements protect the store
+// assumptions behind the permanent Favorites action and name based filtering.
 const collectionsSnapshotSchema = z
 	.object({
 		version: z.literal(1),

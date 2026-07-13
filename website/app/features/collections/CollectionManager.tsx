@@ -252,7 +252,7 @@ const ManageCollectionsModal = ({
 								<Text c="purple.0" fw={700} fz="xl">
 									Collections
 								</Text>
-								<Text className={classes.count} c="dimmed" fz="xs">
+								<Text className={classes.count} fz="xs">
 									{collections.length}
 								</Text>
 							</Group>

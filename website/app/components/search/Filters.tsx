@@ -33,7 +33,10 @@ interface FilterProps {
 	state$: SearchState;
 }
 
+// Algolia cannot read browser local collections. Convert local membership into
+// an object ID filter and use an impossible ID so empty collections show no fonts.
 const EMPTY_COLLECTION_FILTER = 'objectID:"__fontsource_empty_collection__"';
+
 const buildCollectionFilter = (fontIds: string[]) =>
 	fontIds.length === 0
 		? EMPTY_COLLECTION_FILTER
