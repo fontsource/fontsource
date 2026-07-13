@@ -192,16 +192,6 @@ export const fitOpenGraphText = async (
 	};
 };
 
-const getWeightRange = (metadata: SourceFontMetadata): string => {
-	const weights = metadata.weights.length > 0 ? metadata.weights : [400];
-	const minimumWeight = Math.min(...weights);
-	const maximumWeight = Math.max(...weights);
-
-	return minimumWeight === maximumWeight
-		? `Weight ${minimumWeight}`
-		: `Weight ${minimumWeight}–${maximumWeight}`;
-};
-
 const createMetadataChildren = (metadata: SourceFontMetadata): Node[] => {
 	const children: Node[] = [];
 	const weightCount = metadata.weights.length;
@@ -261,7 +251,7 @@ const createSpecimenNode = (
 			justifyContent: 'center',
 			left: 0,
 			position: 'absolute',
-			top: 34,
+			top: 72,
 			width: 434,
 		},
 		children:
@@ -338,25 +328,6 @@ const createTitleNode = (
 	};
 };
 
-const createSpecimenCaptionNode = (metadata: SourceFontMetadata): Node => ({
-	type: 'text',
-	text: getOpenGraphIconLigatures(metadata)
-		? 'Ligature icons'
-		: getWeightRange(metadata),
-	style: {
-		color: colors.purple,
-		fontFamily: UI_FONT_FAMILY,
-		fontSize: 24,
-		fontWeight: 500,
-		left: 732,
-		lineHeight: 1,
-		position: 'absolute',
-		textAlign: 'center',
-		top: 422,
-		width: 434,
-	},
-});
-
 export const createFontOpenGraphNode = (
 	metadata: SourceFontMetadata,
 	layout: OpenGraphTextLayout,
@@ -429,7 +400,6 @@ export const createFontOpenGraphNode = (
 				createSpecimenNode(metadata, layout, hasPreviewFont),
 			],
 		},
-		createSpecimenCaptionNode(metadata),
 		{
 			type: 'container',
 			style: {
