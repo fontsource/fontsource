@@ -37,6 +37,11 @@ jobs:
       - name: Install
         run: bun install
 
+      - name: Check generated website API client
+        run: |
+          bun run generate:website-client
+          git diff --exit-code -- ../../website/app/generated/api
+
       - name: Run typecheck
         run: bun run typecheck
 

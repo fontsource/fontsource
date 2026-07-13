@@ -3,7 +3,10 @@ import { observer, useValue } from '@legendapp/state/react';
 import { ActionIcon, Box, Group, Slider, Text } from '@mantine/core';
 
 import { IconRotate } from '@/components/icons';
-import type { AxesData, AxisRegistryAll, VariableData } from '@/utils/types';
+import type {
+	GetVariableFontResponse,
+	ListAxisRegistryResponse,
+} from '@/generated/api';
 
 import { InfoTooltip } from '../InfoTooltip';
 import type { FontIDState } from './observables';
@@ -11,15 +14,15 @@ import classes from './VariableButtons.module.css';
 
 interface VariableButtonGroupProps {
 	state$: FontIDState;
-	variable: VariableData;
-	axisRegistry?: AxisRegistryAll;
+	variable: GetVariableFontResponse;
+	axisRegistry?: ListAxisRegistryResponse;
 }
 
 interface VariableButtonProps {
 	state$: FontIDState;
 	tag: string;
 	label: string;
-	axes: AxesData;
+	axes: GetVariableFontResponse['axes'][string];
 	description: string;
 }
 

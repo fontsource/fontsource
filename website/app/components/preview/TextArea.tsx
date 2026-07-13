@@ -10,8 +10,8 @@ import { useFocusWithin } from '@mantine/hooks';
 import { useEffect } from 'react';
 
 import { Skeleton } from '@/components/Skeleton';
+import type { GetFontResponse } from '@/generated/api';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
-import type { Metadata } from '@/utils/types';
 
 import type { FontIDState } from './observables';
 import classes from './TextArea.module.css';
@@ -29,7 +29,7 @@ interface TextBoxProps {
 
 interface TextAreaProps {
 	state$: FontIDState;
-	metadata: Metadata;
+	metadata: GetFontResponse;
 	staticCSS: string;
 	variableCSS?: string;
 }
