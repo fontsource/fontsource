@@ -34,6 +34,7 @@ export const UPSTREAM_URLS = {
 			'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/jsDelivrTotalPopular.json',
 	},
 	npmDownloads: 'https://api.npmjs.org/downloads/range',
+	npmDownloadsPoint: 'https://api.npmjs.org/downloads/point',
 	npmRegistry: 'https://registry.npmjs.org',
 	jsdelivrPackage: 'https://data.jsdelivr.com/v1/packages/npm',
 	jsdelivrStats: 'https://data.jsdelivr.com/v1/stats/packages/npm',

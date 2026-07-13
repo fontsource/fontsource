@@ -719,6 +719,10 @@ export const installUpstreamFetchMock = (
 				);
 			}
 
+			if (url.startsWith(`${UPSTREAM_URLS.npmDownloadsPoint}/last-month/`)) {
+				return toResponse(JSON.stringify({ downloads: 42 }));
+			}
+
 			if (url.startsWith(`${UPSTREAM_URLS.npmDownloads}/`)) {
 				const [period] = url
 					.slice(`${UPSTREAM_URLS.npmDownloads}/`.length)

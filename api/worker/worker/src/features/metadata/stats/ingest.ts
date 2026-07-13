@@ -4,6 +4,7 @@ import { refreshCatalog } from '../refresh';
 import {
 	fetchJsDelivrDownloads,
 	fetchNpmDownloads,
+	fetchNpmMonthlyDownloads,
 	fetchPackageCreatedDay,
 	JSDELIVR_STATS_START_YEAR,
 	NPM_STATS_START_YEAR,
@@ -54,8 +55,7 @@ const processStatsPackage = async (
 	if (!row) return;
 
 	const createdDay =
-		row.created_day ??
-		(await fetchPackageCreatedDay(packageName, row.kind === 'legacy'));
+		row.created_day ?? (await fetchPackageCreatedDay(packageName));
 	if (createdDay === null) {
 		await markStatsPackageInactive(env, packageName);
 		return;
@@ -100,12 +100,7 @@ const processStatsPackage = async (
 			(period) => period.provider === provider && period.year === year,
 		);
 
-	const npmMonthly = await fetchNpmDownloads(
-		packageName,
-		'month',
-		createdDay,
-		today,
-	);
+	const npmMonthly = await fetchNpmMonthlyDownloads(packageName);
 	for (const year of npmYears) {
 		if (!needsPeriod('npm', year)) continue;
 		await collectPeriod({

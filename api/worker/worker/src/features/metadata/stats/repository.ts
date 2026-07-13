@@ -1,13 +1,10 @@
 import type { FontCatalog } from '../../../../../shared/catalog';
 import legacyFontIds from '../../../../../shared/legacy-fonts.json';
 
-type StatsPackageKind = 'legacy' | 'static' | 'variable';
-
 // Three values per seed keeps each statement below D1's 100-parameter limit.
 const SEED_BATCH_SIZE = 32;
 
 interface StatsPackageRow {
-	kind: StatsPackageKind;
 	created_day: string | null;
 	last_success_at: string | null;
 }
@@ -113,7 +110,7 @@ export const getStatsPackage = (
 	packageName: string,
 ): Promise<StatsPackageRow | null> =>
 	env.STATS.prepare(
-		`SELECT kind, created_day, last_success_at
+		`SELECT created_day, last_success_at
 		FROM stats_packages WHERE package_name = ? AND active = 1`,
 	)
 		.bind(packageName)

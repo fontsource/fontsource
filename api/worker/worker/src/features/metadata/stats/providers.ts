@@ -12,12 +12,6 @@ export const JSDELIVR_STATS_START_YEAR = 2020;
 const isRecord = (value: unknown): value is Record<string, unknown> =>
 	typeof value === 'object' && value !== null;
 
-const addDays = (day: string, amount: number): string => {
-	const date = new Date(`${day}T00:00:00.000Z`);
-	date.setUTCDate(date.getUTCDate() + amount);
-	return date.toISOString().slice(0, 10);
-};
-
 const inclusiveDayCount = (from: string, to: string): number =>
 	Math.floor(
 		(new Date(`${to}T00:00:00.000Z`).getTime() -
@@ -84,11 +78,10 @@ const fetchJson = async (
 
 export const fetchPackageCreatedDay = async (
 	packageName: string,
-	isLegacy: boolean,
 ): Promise<string | null> => {
 	const payload = await fetchJson(
 		`${UPSTREAM_URLS.npmRegistry}/${packagePath(packageName)}`,
-		{ allowNotFound: isLegacy },
+		{ allowNotFound: true },
 	);
 	if (payload === null) return null;
 
@@ -141,19 +134,40 @@ const fetchNpmRange = async (
 	return downloads.reduce((total, item) => total + item.downloads, 0);
 };
 
+export const fetchNpmMonthlyDownloads = async (
+	packageName: string,
+): Promise<number> => {
+	const payload = await fetchJson(
+		`${UPSTREAM_URLS.npmDownloadsPoint}/last-month/${packagePath(packageName)}`,
+		{
+			allowNotFound: true,
+			paceMs: NPM_PACE_MS,
+			retry429: true,
+		},
+	);
+	if (payload === null) return 0;
+
+	const downloads = isRecord(payload) ? payload.downloads : undefined;
+	if (
+		typeof downloads !== 'number' ||
+		!Number.isSafeInteger(downloads) ||
+		downloads < 0
+	) {
+		throw new Error(`Invalid npm stats response for ${packageName}`);
+	}
+
+	return downloads;
+};
+
 export const fetchNpmDownloads = (
 	packageName: string,
-	period: 'month' | number,
+	period: number,
 	createdDay: string,
 	today: string,
 ): Promise<number> => {
-	const periodStart =
-		period === 'month' ? addDays(today, -29) : `${period}-01-01`;
+	const periodStart = `${period}-01-01`;
 	const from = [periodStart, createdDay, NPM_STATS_START_DAY].sort().at(-1);
-	const to =
-		typeof period === 'number' && period !== Number(today.slice(0, 4))
-			? `${period}-12-31`
-			: today;
+	const to = period !== Number(today.slice(0, 4)) ? `${period}-12-31` : today;
 	return fetchNpmRange(packageName, from ?? today, to);
 };
 

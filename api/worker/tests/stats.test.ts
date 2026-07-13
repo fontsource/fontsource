@@ -89,7 +89,7 @@ describe('download stats ingestion', () => {
 			.all<{ provider: string; year: number; total: number }>();
 
 		expect(packageRow).toMatchObject({
-			npm_monthly: 30,
+			npm_monthly: 42,
 			jsdelivr_monthly: 20,
 		});
 		expect(packageRow?.last_success_at).toBeTruthy();
@@ -163,7 +163,7 @@ describe('download stats ingestion', () => {
 		await seedStatsPackages(testEnv, testCatalog);
 		vi.spyOn(scheduler, 'wait').mockResolvedValue();
 		installUpstreamFetchMock({
-			'https://api.npmjs.org/downloads/range/2026-06-13:2026-07-12/%40fontsource%2Fabel':
+			'https://api.npmjs.org/downloads/point/last-month/%40fontsource%2Fabel':
 				new Response('{}', { status: 500 }),
 		});
 		const result = await processQueueMessage();
@@ -176,13 +176,39 @@ describe('download stats ingestion', () => {
 			.first<{ last_error: string | null; last_success_at: string | null }>();
 		expect(failed).toMatchObject({
 			last_error:
-				'Stats upstream 500: https://api.npmjs.org/downloads/range/2026-06-13:2026-07-12/%40fontsource%2Fabel',
+				'Stats upstream 500: https://api.npmjs.org/downloads/point/last-month/%40fontsource%2Fabel',
 			last_success_at: null,
 		});
 		expect(result).toMatchObject({
 			explicitAcks: [],
 			retryMessages: [{ msgId: 'message-1' }],
 		});
+	});
+
+	it('parks missing scoped packages until the next catalog seed', async () => {
+		await seedStatsPackages(testEnv, testCatalog);
+		const readActive = () =>
+			testEnv.STATS.prepare(
+				`SELECT active FROM stats_packages WHERE package_name = ?`,
+			)
+				.bind('@fontsource/abel')
+				.first<number>('active');
+		installUpstreamFetchMock({
+			'https://registry.npmjs.org/%40fontsource%2Fabel': new Response('', {
+				status: 404,
+			}),
+		});
+
+		const result = await processQueueMessage();
+
+		expect(result).toMatchObject({
+			explicitAcks: ['message-1'],
+			retryMessages: [],
+		});
+		expect(await readActive()).toBe(0);
+
+		await seedStatsPackages(testEnv, testCatalog);
+		expect(await readActive()).toBe(1);
 	});
 
 	it('paces npm requests and backs off rate limits in-process', async () => {
