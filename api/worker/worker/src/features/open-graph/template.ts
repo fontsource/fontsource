@@ -260,7 +260,7 @@ const createSpecimenNode = (
 			justifyContent: 'center',
 			left: 0,
 			position: 'absolute',
-			top: 85,
+			top: 34,
 			width: 434,
 		},
 		children:
@@ -391,10 +391,10 @@ export const createFontOpenGraphNode = (
 			style: {
 				backgroundColor: colors.purple,
 				clipPath: 'polygon(0 0, 92% 0, 100% 8%, 100% 100%, 0 100%)',
-				height: 426,
+				height: 394,
 				left: 732,
 				position: 'absolute',
-				top: 74,
+				top: 125,
 				width: 434,
 			},
 			children: [
@@ -403,7 +403,7 @@ export const createFontOpenGraphNode = (
 					style: {
 						backgroundColor: colors.white,
 						clipPath: 'polygon(0 0, 92% 0, 100% 8%, 100% 100%, 0 100%)',
-						height: 424,
+						height: 392,
 						left: 1,
 						position: 'absolute',
 						top: 1,
