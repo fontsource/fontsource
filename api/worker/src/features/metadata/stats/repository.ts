@@ -92,13 +92,18 @@ export const seedStatsPackages = async (
 	await env.STATS.batch(statements);
 };
 
-export const getActiveStatsPackageNames = async (
+export const getStatsPackageNamesToRefresh = async (
 	env: Env,
 ): Promise<string[]> => {
 	const packages = await env.STATS.prepare(
 		`SELECT package_name
 		FROM stats_packages
-		WHERE active = 1
+		WHERE active = 1 AND (
+			last_success_at IS NULL OR NOT EXISTS (
+				SELECT 1 FROM stats_packages AS pending
+				WHERE pending.active = 1 AND pending.last_success_at IS NULL
+			)
+		)
 		ORDER BY package_name`,
 	).all<{ package_name: string }>();
 

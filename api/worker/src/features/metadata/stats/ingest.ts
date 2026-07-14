@@ -11,8 +11,8 @@ import {
 } from './providers';
 import {
 	commitStatsPackage,
-	getActiveStatsPackageNames,
 	getStatsPackage,
+	getStatsPackageNamesToRefresh,
 	markStatsPackageInactive,
 	prepareStatsBackfill,
 	recordStatsFailure,
@@ -135,7 +135,7 @@ export const scheduleStatsRefresh = async (env: Env): Promise<void> => {
 		(await env.METADATA.get<FontCatalog>(KV_KEYS.catalog, { type: 'json' })) ??
 		(await refreshCatalog(env));
 	await seedStatsPackages(env, catalog);
-	const packageNames = await getActiveStatsPackageNames(env);
+	const packageNames = await getStatsPackageNamesToRefresh(env);
 
 	for (let index = 0; index < packageNames.length; index += QUEUE_BATCH_SIZE) {
 		await env.STATS_QUEUE.sendBatch(

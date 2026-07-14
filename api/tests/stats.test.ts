@@ -9,7 +9,10 @@ import legacyFontIds from '../shared/legacy-fonts.json';
 import { STATS_CRON } from '../worker/src/constants';
 import type { StatsQueueMessage } from '../worker/src/features/metadata/stats/ingest';
 import { fetchNpmDownloads } from '../worker/src/features/metadata/stats/providers';
-import { seedStatsPackages } from '../worker/src/features/metadata/stats/repository';
+import {
+	getStatsPackageNamesToRefresh,
+	seedStatsPackages,
+} from '../worker/src/features/metadata/stats/repository';
 import worker from '../worker/src/index';
 import {
 	installUpstreamFetchMock,
@@ -63,6 +66,34 @@ describe('download stats ingestion', () => {
 			legacyFontIds.length;
 
 		expect(state).toEqual({ packages: packageCount, active: packageCount });
+	});
+
+	it('selects only unfinished packages until the initial backfill completes', async () => {
+		await seedStatsPackages(testEnv, testCatalog);
+		const active = await testEnv.STATS.prepare(
+			`SELECT package_name FROM stats_packages
+			WHERE active = 1 ORDER BY package_name`,
+		).all<{ package_name: string }>();
+		const activePackageNames = active.results.map(
+			({ package_name }) => package_name,
+		);
+		await testEnv.STATS.prepare(
+			`UPDATE stats_packages SET last_success_at = ? WHERE package_name = ?`,
+		)
+			.bind('2026-07-11T00:00:00.000Z', '@fontsource/abel')
+			.run();
+		const unfinished = await getStatsPackageNamesToRefresh(testEnv);
+		expect(unfinished).toEqual(
+			activePackageNames.filter((name) => name !== '@fontsource/abel'),
+		);
+
+		await testEnv.STATS.prepare(
+			`UPDATE stats_packages SET last_success_at = ? WHERE active = 1`,
+		)
+			.bind('2026-07-12T00:00:00.000Z')
+			.run();
+		const steadyState = await getStatsPackageNamesToRefresh(testEnv);
+		expect(steadyState).toEqual(activePackageNames);
 	});
 
 	it('stores a complete package refresh idempotently', async () => {
@@ -234,7 +265,7 @@ describe('download stats ingestion', () => {
 			fetchNpmDownloads('@fontsource/abel', 2026, '2026-07-12', '2026-07-12'),
 		).resolves.toBe(1);
 		expect(wait.mock.calls.map(([delay]) => delay)).toEqual([
-			500, 5000, 500, 7000, 500,
+			3000, 5000, 3000, 7000, 3000,
 		]);
 	});
 

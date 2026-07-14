@@ -1,7 +1,7 @@
 import { UPSTREAM_URLS } from '../../../constants';
 
 const NPM_STATS_START_DAY = '2015-01-10';
-const NPM_PACE_MS = 500;
+const NPM_PACE_MS = 3_000;
 const NPM_RETRY_DELAYS_MS = [5_000, 10_000, 20_000, 40_000, 80_000];
 // Keep sustained jsDelivr traffic below its 100 RPM coordination threshold.
 const JSDELIVR_PACE_MS = 650;
