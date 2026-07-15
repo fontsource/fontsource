@@ -7,7 +7,6 @@ import { parseEnv } from './env';
 import {
 	refreshAxisRegistry,
 	refreshCatalog,
-	refreshStats,
 } from './features/metadata/refresh';
 import {
 	consumeStatsQueue,
@@ -44,11 +43,7 @@ const worker = {
 		}
 
 		if (event.cron === METADATA_CRON) {
-			await Promise.all([
-				refreshCatalog(env),
-				refreshAxisRegistry(env),
-				refreshStats(env),
-			]);
+			await Promise.all([refreshCatalog(env), refreshAxisRegistry(env)]);
 		}
 	},
 

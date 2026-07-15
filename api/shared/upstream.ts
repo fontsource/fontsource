@@ -23,16 +23,6 @@ export const UPSTREAM_URLS = {
 		'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/fontsource.json',
 	axisRegistry:
 		'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/axis-registry.json',
-	stats: {
-		npmMonth:
-			'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/lastMonthPopular.json',
-		npmTotal:
-			'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/totalPopular.json',
-		jsdelivrMonth:
-			'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/jsDelivrMonthPopular.json',
-		jsdelivrTotal:
-			'https://raw.githubusercontent.com/fontsource/download-stat-aggregator/main/data/jsDelivrTotalPopular.json',
-	},
 	npmDownloads: 'https://api.npmjs.org/downloads/range',
 	npmDownloadsPoint: 'https://api.npmjs.org/downloads/point',
 	npmRegistry: 'https://registry.npmjs.org',

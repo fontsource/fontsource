@@ -6,7 +6,6 @@ import {
 export const KV_KEYS = {
 	catalog: 'catalog',
 	axisRegistry: 'axis_registry',
-	stats: 'download_stats',
 } as const;
 
 export { UPSTREAM_URLS } from '../../shared/upstream';

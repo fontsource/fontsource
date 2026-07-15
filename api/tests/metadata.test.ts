@@ -10,6 +10,7 @@ import worker from '../worker/src/index';
 import {
 	dispatch,
 	jsonSnapshot,
+	seedStats,
 	serializeHeaders,
 	setupWorkerTest,
 	testAxisRegistry,
@@ -38,6 +39,7 @@ const expandedAxisRegistry = {
 describe('metadata routes', () => {
 	beforeEach(async () => {
 		await setupWorkerTest();
+		await seedStats(testEnv);
 	});
 
 	afterEach(() => {
@@ -257,15 +259,7 @@ describe('metadata routes', () => {
 			axisRegistry: await testEnv.METADATA.get(KV_KEYS.axisRegistry, {
 				type: 'json',
 			}),
-			stats: await testEnv.METADATA.get(KV_KEYS.stats, { type: 'json' }),
 		}).toMatchSnapshot();
-	});
-
-	it('rebuilds stats when upstream datasets are sparse', async () => {
-		await testEnv.METADATA.delete(KV_KEYS.stats);
-		expect(
-			await jsonSnapshot('https://fontsource.test/v1/stats'),
-		).toMatchSnapshot();
 	});
 
 	it('lists all variable fonts', async () => {

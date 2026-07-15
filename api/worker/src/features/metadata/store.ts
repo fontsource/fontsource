@@ -6,7 +6,6 @@ import type {
 	SourceFontMetadata,
 	VariableCatalog,
 } from '../../../../shared/catalog';
-import type { StatsResponse } from '../../../../shared/stats';
 import { fetchPackageVersions } from '../../../../shared/upstream';
 import {
 	DERIVED_METADATA_CACHE_TTL_MS,
@@ -20,7 +19,7 @@ import {
 	buildFontlist,
 	buildVariableIndex,
 } from './catalog-views';
-import { refreshAxisRegistry, refreshCatalog, refreshStats } from './refresh';
+import { refreshAxisRegistry, refreshCatalog } from './refresh';
 
 export interface VersionResponse {
 	latest: string;
@@ -141,14 +140,6 @@ export const getVariableCatalog = (
  */
 export const getAxisRegistry = (c: Context<AppEnv>): Promise<AxisRegistry> =>
 	readKvJsonOrRefresh(c, KV_KEYS.axisRegistry, refreshAxisRegistry);
-
-/**
- * Returns the aggregated per-family statistics payload.
- */
-export const getStats = (
-	c: Context<AppEnv>,
-): Promise<Record<string, StatsResponse>> =>
-	readKvJsonOrRefresh(c, KV_KEYS.stats, refreshStats);
 
 /**
  * Returns the version payload for one family directly from jsDelivr metadata.

@@ -27,7 +27,6 @@ import {
 	BINARY_CONTENT_TYPES,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../shared/http-metadata';
-import type { StatsResponse } from '../shared/stats';
 import {
 	getDownloadKey,
 	getStaticAssetKey,
@@ -225,43 +224,6 @@ export const scheduledAxisRegistry = [
 	},
 ];
 
-export const testStats: Record<string, StatsResponse> = {
-	abel: {
-		total: {
-			npmDownloadMonthly: 10,
-			npmDownloadTotal: 100,
-			jsDelivrHitsMonthly: 20,
-			jsDelivrHitsTotal: 200,
-		},
-		static: {
-			npmDownloadMonthly: 10,
-			npmDownloadTotal: 100,
-			jsDelivrHitsMonthly: 20,
-			jsDelivrHitsTotal: 200,
-		},
-	},
-	recursive: {
-		total: {
-			npmDownloadMonthly: 15,
-			npmDownloadTotal: 150,
-			jsDelivrHitsMonthly: 25,
-			jsDelivrHitsTotal: 250,
-		},
-		static: {
-			npmDownloadMonthly: 5,
-			npmDownloadTotal: 50,
-			jsDelivrHitsMonthly: 10,
-			jsDelivrHitsTotal: 100,
-		},
-		variable: {
-			npmDownloadMonthly: 10,
-			npmDownloadTotal: 100,
-			jsDelivrHitsMonthly: 15,
-			jsDelivrHitsTotal: 150,
-		},
-	},
-};
-
 export const testVersions: Record<string, VersionResponse> = {
 	abel: {
 		latest: '5.0.0',
@@ -375,7 +337,35 @@ export const seedMetadata = async (env: Env): Promise<void> => {
 		KV_KEYS.axisRegistry,
 		JSON.stringify(testAxisRegistry),
 	);
-	await env.METADATA.put(KV_KEYS.stats, JSON.stringify(testStats));
+};
+
+export const seedStats = async (env: Env): Promise<void> => {
+	await env.STATS.batch([
+		env.STATS.prepare(
+			`INSERT INTO stats_packages
+				(package_name, family_id, kind, active, npm_monthly, jsdelivr_monthly)
+			VALUES
+				('@fontsource/abel', 'abel', 'static', 1, 7, 15),
+				('fontsource-abel', 'abel', 'legacy', 1, 3, 5),
+				('fontsource-abel-inactive', 'abel', 'legacy', 0, 1000, 1000),
+				('@fontsource/recursive', 'recursive', 'static', 1, 5, 10),
+				('@fontsource-variable/recursive', 'recursive', 'variable', 1, 10, 15)`,
+		),
+		env.STATS.prepare(
+			`INSERT INTO stats_periods (package_name, provider, year, total)
+			VALUES
+				('@fontsource/abel', 'npm', 2026, 70),
+				('@fontsource/abel', 'jsdelivr', 2026, 150),
+				('fontsource-abel', 'npm', 2026, 30),
+				('fontsource-abel', 'jsdelivr', 2026, 50),
+				('fontsource-abel-inactive', 'npm', 2026, 1000),
+				('fontsource-abel-inactive', 'jsdelivr', 2026, 1000),
+				('@fontsource/recursive', 'npm', 2026, 50),
+				('@fontsource/recursive', 'jsdelivr', 2026, 100),
+				('@fontsource-variable/recursive', 'npm', 2026, 100),
+				('@fontsource-variable/recursive', 'jsdelivr', 2026, 150)`,
+		),
+	]);
 };
 
 export const clearFontBucket = async (env: Env): Promise<void> => {
@@ -821,31 +811,6 @@ export const installUpstreamFetchMock = (
 					return toResponse(JSON.stringify(scheduledCatalog));
 				case UPSTREAM_URLS.axisRegistry:
 					return toResponse(JSON.stringify(scheduledAxisRegistry));
-				case UPSTREAM_URLS.stats.npmMonth:
-					return toResponse(
-						JSON.stringify({
-							'@fontsource/abel': 3,
-							'@fontsource/familypack': 2,
-						}),
-					);
-				case UPSTREAM_URLS.stats.npmTotal:
-					return toResponse(
-						JSON.stringify({
-							'@fontsource/abel': 30,
-						}),
-					);
-				case UPSTREAM_URLS.stats.jsdelivrMonth:
-					return toResponse(
-						JSON.stringify({
-							'@fontsource/abel': 4,
-						}),
-					);
-				case UPSTREAM_URLS.stats.jsdelivrTotal:
-					return toResponse(
-						JSON.stringify({
-							'@fontsource/abel': 40,
-						}),
-					);
 				default:
 					if (
 						url.startsWith('data:') ||

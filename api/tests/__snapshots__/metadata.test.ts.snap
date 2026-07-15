@@ -248,49 +248,6 @@ exports[`metadata routes > matches public metadata responses 1`] = `
 }
 `;
 
-exports[`metadata routes > rebuilds stats when upstream datasets are sparse 1`] = `
-{
-  "body": {
-    "abel": {
-      "static": {
-        "jsDelivrHitsMonthly": 4,
-        "jsDelivrHitsTotal": 40,
-        "npmDownloadMonthly": 3,
-        "npmDownloadTotal": 30,
-      },
-      "total": {
-        "jsDelivrHitsMonthly": 4,
-        "jsDelivrHitsTotal": 40,
-        "npmDownloadMonthly": 3,
-        "npmDownloadTotal": 30,
-      },
-    },
-    "familypack": {
-      "static": {
-        "jsDelivrHitsMonthly": 0,
-        "jsDelivrHitsTotal": 0,
-        "npmDownloadMonthly": 2,
-        "npmDownloadTotal": 0,
-      },
-      "total": {
-        "jsDelivrHitsMonthly": 0,
-        "jsDelivrHitsTotal": 0,
-        "npmDownloadMonthly": 2,
-        "npmDownloadTotal": 0,
-      },
-    },
-  },
-  "headers": {
-    "cacheControl": "public, max-age=300",
-    "cdnCacheControl": "public, max-age=86400",
-    "contentType": "application/json",
-    "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
-    "etag": "<etag>",
-  },
-  "status": 200,
-}
-`;
-
 exports[`metadata routes > refreshes scheduled metadata caches from upstream 1`] = `
 {
   "axisRegistry": {
@@ -331,36 +288,6 @@ exports[`metadata routes > refreshes scheduled metadata caches from upstream 1`]
       "weights": [
         400,
       ],
-    },
-  },
-  "stats": {
-    "abel": {
-      "static": {
-        "jsDelivrHitsMonthly": 4,
-        "jsDelivrHitsTotal": 40,
-        "npmDownloadMonthly": 3,
-        "npmDownloadTotal": 30,
-      },
-      "total": {
-        "jsDelivrHitsMonthly": 4,
-        "jsDelivrHitsTotal": 40,
-        "npmDownloadMonthly": 3,
-        "npmDownloadTotal": 30,
-      },
-    },
-    "familypack": {
-      "static": {
-        "jsDelivrHitsMonthly": 0,
-        "jsDelivrHitsTotal": 0,
-        "npmDownloadMonthly": 2,
-        "npmDownloadTotal": 0,
-      },
-      "total": {
-        "jsDelivrHitsMonthly": 0,
-        "jsDelivrHitsTotal": 0,
-        "npmDownloadMonthly": 2,
-        "npmDownloadTotal": 0,
-      },
     },
   },
 }

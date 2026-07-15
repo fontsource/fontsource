@@ -1,5 +1,6 @@
 import type { FontCatalog } from '../../../../../shared/catalog';
 import legacyFontIds from '../../../../../shared/legacy-fonts.json';
+import type { StatsResponse } from '../../../../../shared/stats';
 
 // Three values per seed keeps each statement below D1's 100-parameter limit.
 const SEED_BATCH_SIZE = 32;
@@ -7,6 +8,19 @@ const SEED_BATCH_SIZE = 32;
 interface StatsPackageRow {
 	created_day: string | null;
 	last_success_at: string | null;
+}
+
+interface AggregatedStatsRow {
+	family_id: string;
+	variable_packages: number;
+	static_npm_monthly: number;
+	static_npm_total: number;
+	static_jsdelivr_monthly: number;
+	static_jsdelivr_total: number;
+	variable_npm_monthly: number;
+	variable_npm_total: number;
+	variable_jsdelivr_monthly: number;
+	variable_jsdelivr_total: number;
 }
 
 export interface StatsPeriodWrite {
@@ -26,6 +40,80 @@ const upsertStatsPeriod = (
 		ON CONFLICT(package_name, provider, year) DO UPDATE SET
 			total = excluded.total`,
 	).bind(packageName, period.provider, period.year, period.total);
+
+export const getStats = async (
+	env: Env,
+	familyId?: string,
+): Promise<Record<string, StatsResponse>> => {
+	const result = await env.STATS.prepare(
+		`WITH package_totals AS (
+			SELECT
+				p.package_name,
+				p.family_id,
+				p.kind,
+				p.npm_monthly,
+				p.jsdelivr_monthly,
+				SUM(CASE WHEN s.provider = 'npm' THEN s.total ELSE 0 END) AS npm_total,
+				SUM(CASE WHEN s.provider = 'jsdelivr' THEN s.total ELSE 0 END) AS jsdelivr_total
+			FROM stats_packages p
+			LEFT JOIN stats_periods s ON s.package_name = p.package_name
+			WHERE p.active = 1 AND (? IS NULL OR p.family_id = ?)
+			GROUP BY p.package_name
+		)
+		SELECT
+			family_id,
+			SUM(CASE WHEN kind = 'variable' THEN 1 ELSE 0 END) AS variable_packages,
+			SUM(CASE WHEN kind = 'variable' THEN 0 ELSE npm_monthly END) AS static_npm_monthly,
+			SUM(CASE WHEN kind = 'variable' THEN 0 ELSE npm_total END) AS static_npm_total,
+			SUM(CASE WHEN kind = 'variable' THEN 0 ELSE jsdelivr_monthly END) AS static_jsdelivr_monthly,
+			SUM(CASE WHEN kind = 'variable' THEN 0 ELSE jsdelivr_total END) AS static_jsdelivr_total,
+			SUM(CASE WHEN kind = 'variable' THEN npm_monthly ELSE 0 END) AS variable_npm_monthly,
+			SUM(CASE WHEN kind = 'variable' THEN npm_total ELSE 0 END) AS variable_npm_total,
+			SUM(CASE WHEN kind = 'variable' THEN jsdelivr_monthly ELSE 0 END) AS variable_jsdelivr_monthly,
+			SUM(CASE WHEN kind = 'variable' THEN jsdelivr_total ELSE 0 END) AS variable_jsdelivr_total
+		FROM package_totals
+		GROUP BY family_id
+		ORDER BY family_id`,
+	)
+		.bind(familyId ?? null, familyId ?? null)
+		.all<AggregatedStatsRow>();
+
+	return Object.fromEntries(
+		result.results.map((row) => {
+			const staticStats = {
+				npmDownloadMonthly: row.static_npm_monthly,
+				npmDownloadTotal: row.static_npm_total,
+				jsDelivrHitsMonthly: row.static_jsdelivr_monthly,
+				jsDelivrHitsTotal: row.static_jsdelivr_total,
+			};
+			const variableStats = {
+				npmDownloadMonthly: row.variable_npm_monthly,
+				npmDownloadTotal: row.variable_npm_total,
+				jsDelivrHitsMonthly: row.variable_jsdelivr_monthly,
+				jsDelivrHitsTotal: row.variable_jsdelivr_total,
+			};
+
+			return [
+				row.family_id,
+				{
+					static: staticStats,
+					...(row.variable_packages > 0 ? { variable: variableStats } : {}),
+					total: {
+						npmDownloadMonthly:
+							staticStats.npmDownloadMonthly + variableStats.npmDownloadMonthly,
+						npmDownloadTotal:
+							staticStats.npmDownloadTotal + variableStats.npmDownloadTotal,
+						jsDelivrHitsMonthly:
+							staticStats.jsDelivrHitsMonthly +
+							variableStats.jsDelivrHitsMonthly,
+						jsDelivrHitsTotal:
+							staticStats.jsDelivrHitsTotal + variableStats.jsDelivrHitsTotal,
+					},
+				},
+			];
+		}),
+	);
+};
 
 // Unscoped packages are deprecated and no longer discoverable from the catalog.
 const packageSeeds = (catalog: FontCatalog) => [
