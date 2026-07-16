@@ -17,6 +17,12 @@ export const CACHE_POLICIES = {
 		'Cloudflare-CDN-Cache-Control':
 			'public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400',
 	},
+	stats: {
+		'Cache-Control': 'public, max-age=300',
+		'CDN-Cache-Control': 'public, max-age=86400',
+		'Cloudflare-CDN-Cache-Control':
+			'public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400',
+	},
 	floating: {
 		'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
 		'CDN-Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',

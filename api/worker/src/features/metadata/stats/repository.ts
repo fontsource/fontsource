@@ -45,7 +45,8 @@ export const getStats = async (
 	env: Env,
 	familyId?: string,
 ): Promise<Record<string, StatsResponse>> => {
-	const result = await env.STATS.prepare(
+	const familyFilter = familyId === undefined ? '' : ' AND p.family_id = ?';
+	const statement = env.STATS.prepare(
 		`WITH package_totals AS (
 			SELECT
 				p.package_name,
@@ -57,7 +58,7 @@ export const getStats = async (
 				SUM(CASE WHEN s.provider = 'jsdelivr' THEN s.total ELSE 0 END) AS jsdelivr_total
 			FROM stats_packages p
 			LEFT JOIN stats_periods s ON s.package_name = p.package_name
-			WHERE p.active = 1 AND (? IS NULL OR p.family_id = ?)
+			WHERE p.active = 1${familyFilter}
 			GROUP BY p.package_name
 		)
 		SELECT
@@ -74,9 +75,11 @@ export const getStats = async (
 		FROM package_totals
 		GROUP BY family_id
 		ORDER BY family_id`,
-	)
-		.bind(familyId ?? null, familyId ?? null)
-		.all<AggregatedStatsRow>();
+	);
+	const result = await (familyId === undefined
+		? statement
+		: statement.bind(familyId)
+	).all<AggregatedStatsRow>();
 
 	return Object.fromEntries(
 		result.results.map((row) => {
