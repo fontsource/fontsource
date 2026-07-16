@@ -212,6 +212,7 @@ describe('metadata routes', () => {
 			'/v1/fonts/{id}',
 			'/v1/fonts/{id}/{file}',
 			'/v1/stats',
+			'/v1/stats/badge/{metric}',
 			'/v1/stats/{id}',
 			'/v1/variable',
 			'/v1/variable/{id}',
@@ -272,6 +273,25 @@ describe('metadata routes', () => {
 		expect(
 			await jsonSnapshot('https://fontsource.test/v1/stats'),
 		).toMatchSnapshot();
+	});
+
+	it.each([
+		['npm-monthly', 'downloads', '25/month', 'brightgreen'],
+		['npm-total', 'downloads', '250', 'brightgreen'],
+		['jsdelivr-monthly', 'jsDelivr', '45/month', 'ff5627'],
+		['jsdelivr-total', 'jsDelivr', '450', 'ff5627'],
+	] as const)('serves the %s stats badge', async (metric, label, message, color) => {
+		const { response, settle } = await dispatch(
+			`https://fontsource.test/v1/stats/badge/${metric}`,
+		);
+		const body = await response.json();
+		await settle();
+
+		expect(response.status).toBe(200);
+		expect(body).toEqual({ schemaVersion: 1, label, message, color });
+		expect(response.headers.get('Cloudflare-CDN-Cache-Control')).toBe(
+			'public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400',
+		);
 	});
 
 	it.each([

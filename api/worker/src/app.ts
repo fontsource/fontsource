@@ -9,6 +9,7 @@ import type { AppEnv } from './env';
 import {
 	GetFontRoute,
 	GetFontStatsRoute,
+	GetStatsBadgeRoute,
 	GetFontVersionsRoute,
 	GetVariableFontRoute,
 	ListAxisRegistryRoute,
@@ -72,6 +73,7 @@ for (const path of [
 	'/v1/variable/:id',
 	'/v1/axis-registry',
 	'/v1/stats',
+	'/v1/stats/badge/:metric',
 	'/v1/stats/:id',
 	'/v1/version/:id',
 ] as const) {
@@ -145,6 +147,7 @@ openapi.get('/v1/variable', ListVariableFontsRoute);
 openapi.get('/v1/variable/:id', GetVariableFontRoute);
 openapi.get('/v1/axis-registry', ListAxisRegistryRoute);
 openapi.get('/v1/stats', ListStatsRoute);
+openapi.get('/v1/stats/badge/:metric', GetStatsBadgeRoute);
 openapi.get('/v1/stats/:id', GetFontStatsRoute);
 openapi.get('/v1/version/:id', GetFontVersionsRoute);
 openapi.get('/og/fonts/:id', GetFontOpenGraphRoute);

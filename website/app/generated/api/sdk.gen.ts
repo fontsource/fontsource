@@ -2,7 +2,7 @@
 
 import { buildClientParams, type Client, type ClientMeta, type Options as Options2, type RequestResult, type TDataShape } from './client';
 import { client } from './client.gen';
-import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
+import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -165,6 +165,23 @@ export const listStats = <ThrowOnError extends boolean = true>(options?: Options
     url: '/v1/stats',
     ...options
 });
+
+/**
+ * Get an aggregate download badge
+ *
+ * Returns aggregate download statistics formatted for a Shields endpoint badge.
+ */
+export const getStatsBadge = <ThrowOnError extends boolean = true>(parameters: {
+    metric: 'npm-monthly' | 'npm-total' | 'jsdelivr-monthly' | 'jsdelivr-total';
+}, options?: Options<never, ThrowOnError>): RequestResult<GetStatsBadgeResponses, GetStatsBadgeErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'metric' }] }]);
+    return (options?.client ?? client).get<GetStatsBadgeResponses, GetStatsBadgeErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/stats/badge/{metric}',
+        ...options,
+        ...params
+    });
+};
 
 /**
  * Get font download statistics

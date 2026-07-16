@@ -75,6 +75,20 @@ export const StatsResponseSchema = z.object({
 
 export const StatsMapSchema = z.record(z.string(), StatsResponseSchema);
 
+export const StatsBadgeMetricSchema = z.enum([
+	'npm-monthly',
+	'npm-total',
+	'jsdelivr-monthly',
+	'jsdelivr-total',
+]);
+
+export const StatsBadgeSchema = z.object({
+	schemaVersion: z.literal(1),
+	label: z.string(),
+	message: z.string(),
+	color: z.string(),
+});
+
 export const AxisRegistryEntrySchema = z.object({
 	name: z.string(),
 	description: z.string(),

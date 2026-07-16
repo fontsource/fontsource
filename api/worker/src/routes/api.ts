@@ -8,7 +8,11 @@ import {
 	listFonts,
 	listFontValues,
 } from '../features/metadata/catalog/handler';
-import { getFontStats, listStats } from '../features/metadata/stats/handler';
+import {
+	getFontStats,
+	getStatsBadge,
+	listStats,
+} from '../features/metadata/stats/handler';
 import {
 	getVariableFont,
 	listVariableFonts,
@@ -24,6 +28,8 @@ import {
 	FontlistQuerySchema,
 	FontlistResponseSchema,
 	StatsMapSchema,
+	StatsBadgeMetricSchema,
+	StatsBadgeSchema,
 	StatsResponseSchema,
 	VariableCatalogSchema,
 	VariableFontDetailSchema,
@@ -214,6 +220,34 @@ export class ListStatsRoute extends OpenAPIRoute {
 
 	async handle(c: AppContext) {
 		return listStats(c);
+	}
+}
+
+export class GetStatsBadgeRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['Metadata'],
+		operationId: 'getStatsBadge',
+		summary: 'Get an aggregate download badge',
+		description:
+			'Returns aggregate download statistics formatted for a Shields endpoint badge.',
+		request: {
+			params: z.object({ metric: StatsBadgeMetricSchema }),
+		},
+		responses: {
+			'200': {
+				description: 'Shields endpoint badge data',
+				...contentJson(StatsBadgeSchema),
+			},
+			'400': {
+				description: 'Invalid badge metric',
+				...contentJson(ErrorResponseSchema),
+			},
+		},
+	};
+
+	async handle(c: AppContext) {
+		const data = await this.getValidatedData<typeof this.schema>();
+		return getStatsBadge(c, data.params.metric);
 	}
 }
 
