@@ -2,7 +2,6 @@ import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
 import type { AppEnv } from '../env';
-import { getFontOpenGraphImage } from '../features/open-graph/handler';
 import { ErrorResponseSchema, IdParamSchema } from '../schemas/common';
 
 type AppContext = Context<AppEnv>;
@@ -38,6 +37,9 @@ export class GetFontOpenGraphRoute extends OpenAPIRoute {
 
 	async handle(c: AppContext) {
 		const data = await this.getValidatedData<typeof this.schema>();
+		const { getFontOpenGraphImage } = await import(
+			'../features/open-graph/handler'
+		);
 		return getFontOpenGraphImage(c, data.params.id);
 	}
 }

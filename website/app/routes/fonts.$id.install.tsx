@@ -5,10 +5,10 @@ import invariant from 'tiny-invariant';
 import { Install } from '@/components/preview/Install';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import {
+	type GetFontResponse,
 	getFont,
 	getFontStats,
 	getVariableFont,
-	type GetFontResponse,
 } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';

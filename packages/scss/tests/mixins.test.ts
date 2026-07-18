@@ -1,7 +1,7 @@
-import { compileString, NodePackageImporter } from 'sass';
-import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
+import { compileString, NodePackageImporter } from 'sass';
+import { describe, expect, it } from 'vitest';
 
 const mixins = fs.readFileSync(
 	path.join(__dirname, '../src/mixins.scss'),

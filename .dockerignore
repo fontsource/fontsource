@@ -1,5 +1,6 @@
 .git
 **/node_modules
+.pnpm-store
 **/.dev.vars
 **/.wrangler
 **/coverage

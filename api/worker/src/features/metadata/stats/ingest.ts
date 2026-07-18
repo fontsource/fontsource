@@ -16,9 +16,9 @@ import {
 	markStatsPackageInactive,
 	prepareStatsBackfill,
 	recordStatsFailure,
+	type StatsPeriodWrite,
 	saveStatsPeriod,
 	seedStatsPackages,
-	type StatsPeriodWrite,
 } from './repository';
 
 const QUEUE_BATCH_SIZE = 100;

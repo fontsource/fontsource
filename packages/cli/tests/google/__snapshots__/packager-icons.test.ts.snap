@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`packager icons > should generate Material Icons CSS successfully (static) 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "test/material-icons/400.css",
@@ -70,7 +70,7 @@ exports[`packager icons > should generate Material Icons CSS successfully (stati
 `;
 
 exports[`packager icons > should generate Material Symbols Sharp CSS successfully (variable) 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "test/material-symbols-sharp/opsz.css",

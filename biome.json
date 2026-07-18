@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.4/schema.json",
 	"files": {
 		"includes": [
 			"**",
@@ -14,7 +14,8 @@
 			"!website/app/generated/api",
 			"!website/app/bones/*.bones.json",
 			"!website/app/bones/registry.js",
-			"!website/app/bones/registry.ts"
+			"!website/app/bones/registry.ts",
+			"!website/public/**/*.svg"
 		]
 	},
 	"assist": { "actions": { "source": { "organizeImports": "on" } } },
@@ -37,33 +38,14 @@
 	"linter": {
 		"enabled": true,
 		"domains": {
-			"react": "all"
+			"react": "recommended"
 		},
 		"rules": {
-			"recommended": true,
+			"preset": "recommended",
 			"correctness": {
 				"useUniqueElementIds": "off",
 				"noUnknownMediaFeatureName": "off",
 				"noUnknownProperty": "off"
-			},
-			"style": {
-				"useComponentExportOnlyModules": {
-					"options": {
-						"allowExportNames": [
-							"action",
-							"clientAction",
-							"clientLoader",
-							"clientMiddleware",
-							"handle",
-							"headers",
-							"links",
-							"loader",
-							"meta",
-							"middleware",
-							"shouldRevalidate"
-						]
-					}
-				}
 			},
 			"suspicious": {
 				"noUnknownAtRules": "off"

@@ -369,18 +369,21 @@ describe('metadata routes', () => {
 			404,
 			{ status: 404, error: 'Not Found. No matching axis found.' },
 		],
-	] as const)('axis-registry: %s', async (_label, query, needsExpanded, expectedStatus, expectedBody) => {
-		if (needsExpanded) {
-			await seedAxisRegistry();
-		}
-		const { response, settle } = await dispatch(
-			`https://fontsource.test/v1/axis-registry${query}`,
-		);
-		const body = await response.json();
-		await settle();
-		expect(response.status).toBe(expectedStatus);
-		expect(body).toEqual(expectedBody);
-	});
+	] as const)(
+		'axis-registry: %s',
+		async (_label, query, needsExpanded, expectedStatus, expectedBody) => {
+			if (needsExpanded) {
+				await seedAxisRegistry();
+			}
+			const { response, settle } = await dispatch(
+				`https://fontsource.test/v1/axis-registry${query}`,
+			);
+			const body = await response.json();
+			await settle();
+			expect(response.status).toBe(expectedStatus);
+			expect(body).toEqual(expectedBody);
+		},
+	);
 
 	it.each([
 		['applies repeated filters sequentially', '?id=abel&id=recursive', 200, []],
@@ -410,13 +413,16 @@ describe('metadata routes', () => {
 				error: 'Bad Request. You can only use one query parameter.',
 			},
 		],
-	] as const)('fontlist: %s', async (_label, query, expectedStatus, expectedBody) => {
-		const { response, settle } = await dispatch(
-			`https://fontsource.test/fontlist${query}`,
-		);
-		const body = await response.json();
-		await settle();
-		expect(response.status).toBe(expectedStatus);
-		expect(body).toEqual(expectedBody);
-	});
+	] as const)(
+		'fontlist: %s',
+		async (_label, query, expectedStatus, expectedBody) => {
+			const { response, settle } = await dispatch(
+				`https://fontsource.test/fontlist${query}`,
+			);
+			const body = await response.json();
+			await settle();
+			expect(response.status).toBe(expectedStatus);
+			expect(body).toEqual(expectedBody);
+		},
+	);
 });

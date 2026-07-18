@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`packager v2 > should generate Abel CSS successfully 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "test/abel/400.css",
@@ -42,7 +42,7 @@ exports[`packager v2 > should generate Abel CSS successfully 1`] = `
 `;
 
 exports[`packager v2 > should generate Cabin CSS successfully 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "test/cabin/400-italic.css",
@@ -375,7 +375,7 @@ exports[`packager v2 > should generate Cabin CSS successfully 1`] = `
 `;
 
 exports[`packager v2 > should generate Noto Sans JP successfully 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "test/noto-sans-jp/100.css",

@@ -6,46 +6,44 @@
 		"fontsource-publish": "dist/cli.mjs"
 	},
 	"scripts": {
-		"build": "pkgroll --target=node14 && bun run ./scripts/add-hashbang.ts",
-		"dev": "bun run build && bun ./dist/cli.mjs",
-		"coverage": "vitest run --coverage",
-		"test": "vitest",
-		"prepublish": "bun run build",
-		"ci:publish": "bun run prepublish && bun publish",
-		"format": "biome format --write .",
-		"ci:format": "biome format .",
-		"lint": "biome lint --write .",
-		"ci:lint": "biome lint ."
+		"build": "tsdown",
+		"dev": "pnpm run build && node ./dist/cli.mjs",
+		"prepack": "pnpm run build",
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:watch": "vitest",
+		"typecheck": "tsc --noEmit"
 	},
 	"keywords": [],
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@clack/prompts": "^0.6.0",
-		"@npmcli/package-json": "^3.1.1",
-		"cac": "^6.7.14",
+		"@clack/prompts": "^1.7.0",
+		"@npmcli/package-json": "^8.0.0",
+		"cac": "^7.0.0",
 		"consola": "^3.1.0",
 		"defu": "^6.1.2",
-		"dotenv": "^16.1.4",
-		"execa": "^7.1.1",
+		"dotenv": "^17.4.2",
+		"execa": "^10.0.0",
 		"fs-extra": "^11.1.0",
 		"hash-wasm": "^4.9.0",
 		"json-stringify-pretty-compact": "^4.0.0",
-		"p-queue": "^7.4.1",
+		"p-queue": "^9.3.1",
 		"parse-git-config": "^3.0.0",
-		"pathe": "^1.1.1",
+		"pathe": "^2.0.3",
 		"picocolors": "^1.0.0",
 		"semver": "^7.5.1"
 	},
 	"devDependencies": {
 		"@types/folder-hash": "^4.0.2",
 		"@types/fs-extra": "^11.0.1",
-		"@types/node": "^20.7.1",
+		"@types/node": "catalog:node20",
 		"@types/parse-git-config": "^3.0.1",
 		"@types/semver": "^7.5.0",
-		"magic-string": "^0.30.0",
-		"pkgroll": "^2.5.0",
-		"typescript": "^5.2.2"
+		"@vitest/coverage-v8": "catalog:",
+		"tsdown": "catalog:",
+		"typescript": "catalog:",
+		"vitest": "catalog:"
 	},
 	"files": [
 		"dist/*"
@@ -53,10 +51,13 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://github.com/fontsource/fontsource/tree/main/utils/publish",
+	"engines": {
+		"node": "^22.22.2 || >=24.15.0"
+	},
+	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/publish",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/fontsource/fontsource.git",
-		"directory": "utils/publish"
+		"url": "https://github.com/fontsource/fontsource",
+		"directory": "packages/publish"
 	}
 }

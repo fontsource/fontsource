@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Fontsource is a Bun/TypeScript monorepo for self-hostable font packages, shared font tooling, Cloudflare API workers, and the Fontsource website/docs.
+Fontsource is a Node.js/TypeScript monorepo for self-hostable font packages, shared font tooling, Cloudflare API workers, and the Fontsource website/docs.
 
 - `packages/*` contains shared libraries and CLI/publishing tooling.
 - `api` contains the combined Cloudflare API worker, artifact builder, and shared API utilities.
@@ -16,30 +16,28 @@ Fontsource is a Bun/TypeScript monorepo for self-hostable font packages, shared 
 - Avoid drive-by refactors, broad formatting churn, file moves, renames, and dependency churn.
 - Preserve public package APIs, API response shapes, cache headers, worker bindings, website routes, and generated package output unless the task requires changing them.
 - Prefer existing workspace utilities and scripts over new tooling.
-- Treat `package.json`, `bun.lock`, `mise.toml`, `biome.json`, `tsconfig.json`, `vitest.workspace.ts`, and `.github/workflows/*` as sources of truth.
+- Treat `package.json`, `pnpm-workspace.yaml`, `pnpm-lock.yaml`, `mise.toml`, `biome.json`, `tsconfig.json`, and `.github/workflows/*` as sources of truth.
 
 ## Tooling and Commands
 
-Use Bun as the package manager/runtime. `mise.toml` is the local tool source of truth and currently selects Bun.
+Use pnpm as the package manager and Node.js as the runtime. `mise.toml` and the root `packageManager` field pin their versions.
 
-- Install dependencies: `bun install`.
-- Root build for package workspaces: `bun run build`.
-- Root tests: `bun run test`.
-- Root coverage: `bun run coverage`.
-- Root lint across workspaces: `bun run lint`.
-- Root CI lint: `bun run ci:lint`.
-- Root format write: `bun run format`.
-- Root format check: `bun run ci:format`.
-- Root CI package test flow: `bun run ci:test`.
+- Install dependencies: `pnpm install`.
+- Root build: `pnpm build`.
+- Root tests: `pnpm test`.
+- Root coverage: `pnpm test:coverage`.
+- Root formatting and lint checks: `pnpm check`.
+- Root formatting and lint fixes: `pnpm fix`.
+- Complete local validation: `pnpm ci`.
 
 Useful focused commands:
 
-- Core package: `cd packages/core && bun run typecheck`, `bun run test:unit`, or `bun run test:integration`.
-- Website: `cd website && bun run dev`, `bun run build`, or `bun run typecheck`.
-- Existing API workers: `cd api/<worker> && bun run dev`, `bun run test`, or `bun run coverage` when the package defines them.
-- Combined worker API: `cd api && bun run dev`, `bun run test`, `bun run typecheck`, or `bun run cf-typegen`.
+- Core package: `cd packages/core && pnpm typecheck`, `pnpm test:unit`, or `pnpm test:integration`.
+- Website: `cd website && pnpm dev`, `pnpm build`, or `pnpm typecheck`.
+- Existing API workers: `cd api/<worker> && pnpm dev`, `pnpm test`, or `pnpm test:coverage` when the package defines them.
+- Combined worker API: `cd api && pnpm dev`, `pnpm test`, `pnpm typecheck`, or `pnpm cf-typegen`.
 
-Publish, deploy, release, upload, and version scripts exist for CI and maintainers. Do not run `ci:publish`, `ci:publish-api`, `ci:version`, `deploy`, `deploy:staging`, `release`, `bun publish`, `wrangler deploy`, `flyctl deploy`, or upload commands unless explicitly requested.
+Publish, deploy, release, upload, and version operations exist for CI and maintainers. Do not run `npm publish`, `deploy`, `deploy:staging`, `wrangler deploy`, `flyctl deploy`, or upload commands unless explicitly requested.
 
 ## TypeScript and Monorepo Style
 
@@ -63,9 +61,9 @@ Publish, deploy, release, upload, and version scripts exist for CI and maintaine
 ## Website
 
 - Follow the existing React Router, Vite, MDX, Mantine, CSS module, and Cloudflare Worker conventions in `website`.
-- Keep routes, docs layout, `website/docs/sidebar.json`, metadata, cache headers, and loader behavior stable unless the task changes them.
+- Keep routes, docs layout, `website/docs/**/meta.json`, metadata, cache headers, and loader behavior stable unless the task changes them.
 - For docs-only changes under `website/docs`, avoid duplicating setup text that already lives in README files.
-- For UI changes, inspect rendered behavior or at least run `cd website && bun run build` or `bun run typecheck` when practical.
+- For UI changes, inspect rendered behavior or at least run `cd website && pnpm build` or `pnpm typecheck` when practical.
 - Keep accessibility, responsive states, loading states, empty/error states, and existing design language in mind.
 
 ## API Workers
@@ -74,7 +72,7 @@ Publish, deploy, release, upload, and version scripts exist for CI and maintaine
 - Do not deploy, upload, mutate R2/KV, or call production-like external services unless explicitly requested.
 - Preserve response bodies, status codes, cache headers, redirects, ETags, CORS behavior, scheduled refresh behavior, and compatibility endpoints unless the task explicitly changes them.
 - Treat secrets, `.dev.vars`, auth tokens, and worker bindings as sensitive. Do not print, commit, or hard-code them.
-- Regenerate worker binding types only through verified scripts such as `wrangler types`, `bun run typegen`, or `bun run cf-typegen`.
+- Regenerate worker binding types only through verified scripts such as `wrangler types`, `pnpm typegen`, or `pnpm cf-typegen`.
 
 ## Font Packages and Generation
 

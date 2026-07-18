@@ -31,16 +31,13 @@
 		}
 	},
 	"scripts": {
-		"build": "pkgroll --target=node20 && bun run ./scripts/add-hashbang.ts",
-		"cli": "bun run ./src/cli.ts",
-		"coverage": "vitest run --coverage",
-		"test": "vitest",
-		"prepublish": "bun run build",
-		"ci:publish": "bun run prepublish && bun publish",
-		"format": "biome format --write .",
-		"ci:format": "biome format .",
-		"lint": "biome lint --write .",
-		"ci:lint": "biome lint ."
+		"build": "tsdown",
+		"cli": "tsx ./src/cli.ts",
+		"prepack": "pnpm run build",
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:watch": "vitest",
+		"typecheck": "tsc --noEmit"
 	},
 	"keywords": [
 		"fontsource",
@@ -50,25 +47,27 @@
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@clack/prompts": "^0.6.3",
-		"@fontsource-utils/generate": "workspace:*",
-		"cac": "^6.7.14",
+		"@clack/prompts": "^1.7.0",
+		"@fontsource-utils/generate": "workspace:^",
+		"cac": "^7.0.0",
 		"consola": "^3.1.0",
-		"dotenv": "^16.1.4",
+		"dotenv": "^17.4.2",
 		"fs-extra": "^11.1.1",
 		"json-stringify-pretty-compact": "^4.0.0",
-		"p-queue": "^7.4.1",
-		"pathe": "^1.1.1",
+		"p-queue": "^9.3.1",
+		"pathe": "^2.0.3",
 		"picocolors": "^1.0.0"
 	},
 	"devDependencies": {
 		"@types/fs-extra": "^11.0.1",
-		"@types/node": "^20.7.1",
+		"@types/node": "catalog:node20",
+		"@vitest/coverage-v8": "catalog:",
 		"google-font-metadata": "^6.0.4",
-		"magic-string": "^0.30.0",
-		"pkgroll": "^2.6.0",
 		"sass": "^1.62.1",
-		"typescript": "^5.2.2"
+		"tsdown": "catalog:",
+		"tsx": "catalog:",
+		"typescript": "catalog:",
+		"vitest": "catalog:"
 	},
 	"peerDependencies": {
 		"google-font-metadata": "^6.0.4"
@@ -79,10 +78,13 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"engines": {
+		"node": ">=20.19.0"
+	},
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/cli",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/fontsource/fontsource.git",
+		"url": "https://github.com/fontsource/fontsource",
 		"directory": "packages/cli"
 	}
 }

@@ -22,15 +22,15 @@ The bindings and schedules live in [`wrangler.toml`](./wrangler.toml).
 Install dependencies from the repository root, then start the worker:
 
 ```sh
-bun install
+pnpm install
 cd api
-bun run dev
+pnpm dev
 ```
 
 Useful checks:
 
 ```sh
-bun run test
-bun run typecheck
-bun run build
+pnpm test
+pnpm typecheck
+pnpm build
 ```

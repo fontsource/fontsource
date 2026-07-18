@@ -7,7 +7,6 @@ import {
 	UnstyledButton,
 } from '@mantine/core';
 import type { KeyboardEvent, ReactNode } from 'react';
-import type { GetFontResponse } from '@/generated/api';
 import {
 	IconCaret,
 	IconDownload,
@@ -15,6 +14,7 @@ import {
 	IconGithub,
 	IconNpm,
 } from '@/components/icons';
+import type { GetFontResponse } from '@/generated/api';
 
 import classes from './Info.module.css';
 

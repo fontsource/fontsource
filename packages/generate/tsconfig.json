@@ -17,8 +17,8 @@
 		"useDefineForClassFields": true,
 
 		/* Modules */
-		"module": "esnext",
-		"moduleResolution": "node",
+		"module": "preserve",
+		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
 
 		/* Interop Constraints */

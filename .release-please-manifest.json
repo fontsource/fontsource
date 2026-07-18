@@ -1,0 +1,7 @@
+{
+	"packages/generate": "0.4.2",
+	"packages/cli": "0.7.1",
+	"packages/core": "0.1.0",
+	"packages/publish": "0.4.1",
+	"packages/scss": "0.2.2"
+}

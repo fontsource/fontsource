@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`packager variable > should generate standard variable font successfully (cabin) 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "test/cabin/wdth.css",
@@ -274,7 +274,7 @@ exports[`packager variable > should generate standard variable font successfully
 `;
 
 exports[`packager variable > should generate variable font with lots of axes (roboto-flex) 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "test/roboto-flex/opsz.css",
@@ -1291,7 +1291,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
 `;
 
 exports[`packager variable > should generate variable font without wght successfully (ballet) 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "test/ballet/opsz.css",

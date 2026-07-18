@@ -1,5 +1,5 @@
 {
-	"include": ["src"],
+	"include": ["src", "version.ts"],
 	"compilerOptions": {
 		"target": "esnext",
 		"lib": ["es2023"],

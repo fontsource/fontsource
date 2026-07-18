@@ -5,7 +5,7 @@ A low-level utility library for processing font files for the Fontsource ecosyst
 ## Installation
 
 ```bash
-bun install @fontsource-utils/core
+pnpm add @fontsource-utils/core
 ```
 
 ## Features

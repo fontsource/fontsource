@@ -1,4 +1,8 @@
 import {
+	CodeHighlightAdapterProvider,
+	CodeHighlight as MantineCodeHighlight,
+} from '@mantine/code-highlight';
+import {
 	ActionIcon,
 	type CodeProps,
 	Group,
@@ -6,10 +10,6 @@ import {
 	Text,
 	Tooltip,
 } from '@mantine/core';
-import {
-	CodeHighlight as MantineCodeHighlight,
-	CodeHighlightAdapterProvider,
-} from '@mantine/code-highlight';
 import { useClipboard } from '@mantine/hooks';
 import cx from 'clsx';
 import {

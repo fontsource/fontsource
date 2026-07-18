@@ -16,11 +16,11 @@ import {
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
 import {
+	type GetFontResponse,
 	getFont,
 	getFontStats,
 	getVariableFont,
 	listAxisRegistry,
-	type GetFontResponse,
 } from '@/generated/api';
 import classes from '@/styles/global.module.css';
 import { cacheHeaders } from '@/utils/cache';

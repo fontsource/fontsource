@@ -12,6 +12,7 @@ Thanks for supporting Fontsource!
   - [Development](#development)
     - [Useful Scripts](#useful-scripts)
     - [Website Development](#website-development)
+  - [Package Releases](#package-releases)
   - [Submit Documentation](#submit-documentation)
 
 ## Questions
@@ -22,9 +23,9 @@ For general support or questions, please make a [Discussion](https://github.com/
 
 ### Submitting an Issue
 
-Before you submit an issue, please search the issue tracker to prevent duplicates as existing discussion might inform you of workarounds readily available.
+Before submitting an issue, search the issue tracker for existing reports and available workarounds.
 
-For fixing bugs, we need to have the necessary information to reproduce and confirm it. At minimum we would expect device, browser and 3rd-party library usage information, however, it may be necessary to provide a minimal reproducible build for us to reproduce the error. Lack of information may lead to the issue being closed.
+Bug reports should include enough information to reproduce the problem, including the device, browser, and third-party libraries involved. A minimal reproduction may also be required. Reports without enough information may be closed.
 
 You can file issues by filling out an [issue form](https://github.com/fontsource/fontsource/issues/new/choose).
 
@@ -40,42 +41,61 @@ You can file issues by filling out an [issue form](https://github.com/fontsource
     ```
 
 4. Create your patch or feature addition, **including appropriate test cases in the tests directory**.
-5. Ensure all tests and lints pass.
-6. On GitHub, send a pull request to fontsource:main.
+5. Use a [Conventional Commit](https://www.conventionalcommits.org/) pull request title. Release Please uses the squashed title to prepare package releases.
+6. Ensure all tests and checks pass.
+7. On GitHub, open a pull request against `fontsource/fontsource`'s `main` branch.
 
-    - If we suggest changes then:
+    If we request changes:
 
-        - Make the required updates.
-        - Re-run the test suites to ensure tests are still passing.
-        - Rebase your branch and force push to your GitHub repository (this will update your PR):
+    - Make the requested updates.
+    - Re-run the relevant checks.
+    - Rebase your branch and update the pull request:
 
-        ```shell
-        git rebase main -i
-        git push -f
-        ```
+      ```shell
+      git rebase -i main
+      git push --force-with-lease
+      ```
 
-7. After your pull request is merged, you can safely delete your branch and pull changes from the main repository.
+8. After your pull request is merged, you can safely delete your branch and pull changes from the main repository.
 
 ## Development
 
-Fontsource is built completely with Typescript which extends to both the API and website. It uses [Bun](https://bun.sh/) as its package manager.
+Fontsource is a Node.js and TypeScript monorepo. The pinned Node.js and pnpm versions are available through [mise](https://mise.jdx.dev/).
 
 ```shell
-bun install
+mise install
+pnpm install
 ```
 
-The project uses Bun Workspaces, thus the packager, API and website should install in one command.
+The project uses pnpm workspaces, so package tooling, the API, and the website install together.
 
 ### Useful Scripts
 
--   `bun run test` - Runs tests.
+-   `pnpm check` - Checks formatting and lint rules.
+-   `pnpm typecheck` - Typechecks every workspace.
+-   `pnpm test` - Runs tests.
+-   `pnpm build` - Builds every workspace that defines a build.
+-   `pnpm ci` - Runs the complete local validation sequence.
 
 ### Website Development
 
 More details can be found in the [README.md](https://github.com/fontsource/fontsource/tree/main/website#readme) of the `website` directory.
 
+## Package Releases
+
+Release Please maintains one release pull request for the public packages under `packages/`. Merging that pull request creates package-scoped tags and publishes only the versions selected by Release Please. Package versions remain independent.
+
+Use `fix` for patch releases, `feat` for minor releases, and `!` for breaking changes in pull request titles. Changes under `api` and `website` are private and are not published to npm.
+
+Maintainer setup for the release workflow:
+
+-   Install a GitHub App on `fontsource` and `font-files` with repository contents, issue, and pull-request permissions. Store its credentials as `RELEASE_APP_ID` and `RELEASE_APP_PRIVATE_KEY` repository secrets.
+-   Protect the `npm` GitHub environment and configure npm trusted publishing for `.github/workflows/ci.yml` on each public package.
+-   Publish `@fontsource-utils/core@0.1.0` once with a maintainer token before enabling its trusted publisher; npm requires a package to exist before trusted publishing can be configured.
+-   Require the `Quality`, `Packages`, `API`, and `Website` checks on `main`, and squash merge with a Conventional Commit title so Release Please can classify the release.
+
 ## Submit Documentation
 
-Submitting new or updating documentation for the Fontsource website is painless and doesn't necessarily require much setup. Navigating to [`website/docs`](https://github.com/fontsource/fontsource/tree/main/website/docs) should contain a directory of markdown files. Editing those markdown files will reflect onto the website.
+Website documentation lives under [`website/docs`](https://github.com/fontsource/fontsource/tree/main/website/docs). Edit the relevant Markdown file and preview the website locally when practical.
 
-Please note when submitting brand new pages, it would be required to update [`website/src/configs/docsList.json`](https://github.com/fontsource/fontsource/blob/main/website/src/configs/docsList.json) appropriately for it to reflect on the website sidebar.
+When adding a page, also update the nearest [`meta.json`](https://github.com/fontsource/fontsource/blob/main/website/docs/meta.json) so it appears in the documentation sidebar.

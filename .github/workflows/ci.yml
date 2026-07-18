@@ -1,0 +1,356 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  NODE_VERSION: 24.18.0
+  PNPM_VERSION: 11.14.0
+
+jobs:
+  quality:
+    name: Quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check formatting and lint rules
+        run: pnpm check
+
+  packages:
+    name: Packages
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm build:packages
+
+      - name: Typecheck packages
+        run: pnpm typecheck:packages
+
+      - name: Test packages
+        run: pnpm test:packages
+
+      - name: Verify package tarballs
+        run: pnpm pack:check
+
+  api:
+    name: API
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check generated website API client
+        run: |
+          pnpm --filter fontsource-worker-api generate:website-client
+          git diff --exit-code -- website/app/generated/api
+
+      - name: Typecheck API
+        run: pnpm --filter fontsource-worker-api typecheck
+
+      - name: Test API
+        run: pnpm --filter fontsource-worker-api test
+
+      - name: Build API
+        run: pnpm --filter fontsource-worker-api build
+
+      - name: Build artifact container
+        run: >-
+          docker build
+          --file api/container/Dockerfile
+          --tag fontsource-artifact-container:test
+          .
+
+      - name: Smoke test artifact container
+        run: |
+          docker run \
+            --detach \
+            --name fontsource-artifact-container \
+            --publish 3000:3000 \
+            fontsource-artifact-container:test
+
+          curl \
+            --fail \
+            --retry 10 \
+            --retry-delay 1 \
+            --retry-connrefused \
+            http://127.0.0.1:3000/health
+
+      - name: Stop artifact container
+        if: always()
+        run: docker rm --force fontsource-artifact-container || true
+
+  website:
+    name: Website
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build core dependency
+        run: pnpm --filter '@fontsource-utils/core' build
+
+      - name: Typecheck website
+        run: pnpm --filter website typecheck
+
+      - name: Test website
+        run: pnpm --filter website test
+
+      - name: Build website
+        run: pnpm --filter website build
+
+  release:
+    name: Release Please
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      github.repository == 'fontsource/fontsource'
+    needs: [quality, packages, api, website]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    outputs:
+      paths: ${{ steps.release.outputs.paths_released || '[]' }}
+
+    steps:
+      - name: Create release token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ secrets.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: fontsource
+          permission-contents: write
+          permission-issues: write
+          permission-pull-requests: write
+
+      - name: Create or update release pull request
+        id: release
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish:
+    name: Publish ${{ matrix.path }}
+    if: needs.release.outputs.paths != '[]'
+    needs: release
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: npm
+
+    permissions:
+      contents: read
+      id-token: write
+
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        path: ${{ fromJSON(needs.release.outputs.paths) }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build dependencies and package
+        run: pnpm --filter '{${{ matrix.path }}}...' --if-present run build
+
+      - name: Typecheck package
+        run: pnpm --filter './${{ matrix.path }}' --if-present run typecheck
+
+      - name: Test package
+        run: pnpm --filter './${{ matrix.path }}' run test
+
+      - name: Pack package
+        working-directory: ${{ matrix.path }}
+        run: pnpm pack --out "$RUNNER_TEMP/package.tgz"
+
+      - name: Verify packed manifest
+        working-directory: ${{ matrix.path }}
+        run: |
+          tar \
+            --extract \
+            --gzip \
+            --to-stdout \
+            --file "$RUNNER_TEMP/package.tgz" \
+            package/package.json \
+            > "$RUNNER_TEMP/packed-package.json"
+
+          node --input-type=module --eval '
+            import fs from "node:fs";
+            const packed = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+            const source = JSON.parse(fs.readFileSync("package.json", "utf8"));
+            if (packed.name !== source.name || packed.version !== source.version) {
+              throw new Error("Packed package identity differs from source manifest");
+            }
+            if (/\b(?:workspace|catalog):/.test(JSON.stringify(packed))) {
+              throw new Error("Packed manifest contains a pnpm-only dependency protocol");
+            }
+          ' "$RUNNER_TEMP/packed-package.json"
+
+      - name: Check registry status
+        id: registry
+        working-directory: ${{ matrix.path }}
+        run: |
+          package_name=$(node --print "encodeURIComponent(require('./package.json').name)")
+          package_version=$(node --print "require('./package.json').version")
+          status=$(curl \
+            --silent \
+            --show-error \
+            --output /dev/null \
+            --write-out '%{http_code}' \
+            "https://registry.npmjs.org/${package_name}/${package_version}")
+
+          case "$status" in
+            200) echo "publish=false" >> "$GITHUB_OUTPUT" ;;
+            404) echo "publish=true" >> "$GITHUB_OUTPUT" ;;
+            *) echo "Unexpected npm registry status: $status" >&2; exit 1 ;;
+          esac
+
+      - name: Publish package
+        if: steps.registry.outputs.publish == 'true'
+        run: npm publish "$RUNNER_TEMP/package.tgz" --access public
+
+  notify-font-files:
+    name: Notify Font Files
+    if: needs.release.outputs.paths != '[]'
+    needs: [release, publish]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Create dispatch token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ secrets.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: font-files
+          permission-contents: write
+
+      - name: Dispatch dependency update
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: >-
+          gh api repos/fontsource/font-files/dispatches
+          --field event_type=update-deps

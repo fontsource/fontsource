@@ -10,8 +10,8 @@ import {
 } from './features/metadata/refresh';
 import {
 	consumeStatsQueue,
-	scheduleStatsRefresh,
 	type StatsQueueMessage,
+	scheduleStatsRefresh,
 } from './features/metadata/stats/ingest';
 
 /**

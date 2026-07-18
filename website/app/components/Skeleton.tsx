@@ -1,6 +1,3 @@
-import docsSearchResultsBones from '@/bones/docs-search-results.bones.json';
-import fontPreviewRowBones from '@/bones/font-preview-row.bones.json';
-import searchHitPreviewBones from '@/bones/search-hit-preview.bones.json';
 import {
 	normalizeBone,
 	type ResponsiveBones,
@@ -14,6 +11,9 @@ import {
 	useSyncExternalStore,
 } from 'react';
 import { useLocation } from 'react-router';
+import docsSearchResultsBones from '@/bones/docs-search-results.bones.json';
+import fontPreviewRowBones from '@/bones/font-preview-row.bones.json';
+import searchHitPreviewBones from '@/bones/search-hit-preview.bones.json';
 
 import classes from './Skeleton.module.css';
 
