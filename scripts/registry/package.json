@@ -3,7 +3,6 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"bootstrap-policy": "cd ../.. && node scripts/registry/bootstrap-policy.ts",
 		"generate": "cd ../.. && pnpm --filter '@fontsource-utils/core' build && node scripts/registry/generate.ts",
 		"test": "cd ../.. && pnpm --filter '@fontsource-utils/core' build && vitest run --config scripts/registry/vitest.config.ts",
 		"typecheck": "cd ../.. && pnpm --filter '@fontsource-utils/core' build && tsc --noEmit -p scripts/registry/tsconfig.json",

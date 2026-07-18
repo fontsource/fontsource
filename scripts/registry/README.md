@@ -16,14 +16,8 @@ pnpm --filter fontsource-registry-tools validate <registry-dir>
 Both source revisions must be exact 40-character commits. Generation also
 requires complete Git history so per-path provenance is accurate; shallow
 repositories are rejected.
-
-To seed package policy once from the current `font-files` inventory:
-
-~~~sh
-pnpm --filter fontsource-registry-tools bootstrap-policy <font-files-repo> <commit> <registry-dir>
-~~~
-
-Normal generation never changes `policy.json`.
+Generation validates existing `policy.json` files but never creates or changes
+package policy.
 
 ## Structure
 
@@ -36,7 +30,6 @@ Normal generation never changes `policy.json`.
   records.
 - `schema.ts` defines the Zod contracts; `validator.ts` checks files and
   cross-file references.
-- `bootstrap-policy.ts` is the one-time package-policy migration helper.
 
 ## Invariants
 
@@ -44,6 +37,7 @@ Normal generation never changes `policy.json`.
 - Output is canonical, deterministic, text-only, and schema-validated.
 - Provenance comes from Git history, not prior generated metadata.
 - Removed Google families remain recorded as unavailable.
+- Package policy is reviewed registry state, not derived from legacy catalogs.
 - Package variants are explicit relations, not weight/style cross-products.
 - Core owns generic font processing; these scripts own Google and NAM ingestion.
 

@@ -12,7 +12,6 @@ import {
 import { tmpdir } from 'node:os';
 import { dirname, join, relative, resolve } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
-import { bootstrapPolicy } from './bootstrap-policy.ts';
 import { generateRegistry } from './generate.ts';
 import { openGitSnapshot } from './git.ts';
 import { canonicalJson, compareStrings, readJson } from './shared.ts';
@@ -227,41 +226,6 @@ const createNamRepository = async (): Promise<{
 	};
 };
 
-const createFontFilesRepository = async (): Promise<{
-	repository: string;
-	revision: string;
-}> => {
-	const repository = await createGitRepository('font-files');
-	await writeFixture(
-		repository,
-		'metadata/fontsource.json',
-		canonicalJson({
-			abel: {
-				subsets: ['latin'],
-				defSubset: 'latin',
-				weights: [400, 700],
-				styles: ['normal', 'italic'],
-			},
-			'recursive-sans': {
-				subsets: ['latin'],
-				defSubset: 'latin',
-			},
-			'stale-sans': {
-				subsets: ['latin'],
-				defSubset: 'latin',
-			},
-		}),
-	);
-	await writeFixture(repository, 'fonts/google/abel/400.css', '');
-	await writeFixture(repository, 'fonts/variable/recursive-sans/full.css', '');
-	await writeFixture(repository, 'fonts/variable/recursive-sans/wght.css', '');
-	await writeFixture(repository, 'fonts/variable/stale-sans/mono.css', '');
-	return {
-		repository,
-		revision: commitAll(repository, 'legacy package inventory'),
-	};
-};
-
 describe('registry ingestion', () => {
 	it('rejects shallow repositories that cannot prove source history', async () => {
 		const source = await createGitRepository('source-history');
@@ -281,10 +245,9 @@ describe('registry ingestion', () => {
 		);
 	});
 
-	it('regenerates deterministically, bootstraps explicit variants, and retains missing families', async () => {
+	it('regenerates deterministically, preserves policy, and retains missing families', async () => {
 		const google = await createGoogleRepository();
 		const nam = await createNamRepository();
-		const fontFiles = await createFontFilesRepository();
 		const registry = await temporaryDirectory('registry');
 
 		await generateRegistry(
@@ -293,6 +256,18 @@ describe('registry ingestion', () => {
 			nam.repository,
 			nam.revision,
 			registry,
+		);
+		const abelPolicy = {
+			packages: {
+				static: { variants: [{ weight: 400, style: 'normal' }] },
+			},
+			defaultSubset: 'latin',
+			subsets: [{ id: 'latin', definition: 'latin' }],
+		};
+		await writeFixture(
+			registry,
+			'families/abel/policy.json',
+			canonicalJson(abelPolicy),
 		);
 
 		await writeFixture(
@@ -312,6 +287,11 @@ describe('registry ingestion', () => {
 			registry,
 		);
 		const freshRegistry = await temporaryDirectory('fresh-registry');
+		await writeFixture(
+			freshRegistry,
+			'families/abel/policy.json',
+			canonicalJson(abelPolicy),
+		);
 		await generateRegistry(
 			google.repository,
 			unrelatedRevision,
@@ -328,31 +308,9 @@ describe('registry ingestion', () => {
 		expect(await readJson(join(registry, 'subsets/latin.json'))).toMatchObject({
 			source: { revision: nam.revision },
 		});
-
-		await bootstrapPolicy(fontFiles.repository, fontFiles.revision, registry);
-
-		const abelPolicy = await readJson(
-			join(registry, 'families/abel/policy.json'),
+		expect(await readJson(join(registry, 'families/abel/policy.json'))).toEqual(
+			abelPolicy,
 		);
-		expect(abelPolicy).toMatchObject({
-			packages: { static: { variants: [{ weight: 400, style: 'normal' }] } },
-		});
-		const recursivePolicy = await readJson(
-			join(registry, 'families/recursive-sans/policy.json'),
-		);
-		expect(recursivePolicy).toMatchObject({
-			packages: {
-				variable: {
-					variants: [
-						{ axisKey: 'full', style: 'normal' },
-						{ axisKey: 'wght', style: 'normal' },
-					],
-				},
-			},
-		});
-		await expect(
-			readFile(join(registry, 'families/stale-sans/policy.json')),
-		).rejects.toMatchObject({ code: 'ENOENT' });
 		const description = await readFile(
 			join(registry, 'families/abel/description.en-US.md'),
 			'utf8',
