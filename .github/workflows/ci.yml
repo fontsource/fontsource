@@ -114,17 +114,17 @@ jobs:
 
       - name: Check generated website API client
         run: |
-          pnpm --filter fontsource-worker-api generate:website-client
+          pnpm --filter api generate:website-client
           git diff --exit-code -- website/app/generated/api
 
       - name: Typecheck API
-        run: pnpm --filter fontsource-worker-api typecheck
+        run: pnpm --filter api typecheck
 
       - name: Test API
-        run: pnpm --filter fontsource-worker-api test
+        run: pnpm --filter api test
 
       - name: Build API
-        run: pnpm --filter fontsource-worker-api build
+        run: pnpm --filter api build
 
   website:
     name: Website

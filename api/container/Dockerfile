@@ -22,8 +22,8 @@ COPY api ./api
 COPY packages/core ./packages/core
 
 RUN pnpm --filter '@fontsource-utils/core' build
-RUN pnpm --filter 'fontsource-worker-api' container:build
-RUN pnpm --filter 'fontsource-worker-api' --prod deploy /app/deploy
+RUN pnpm --filter 'api' container:build
+RUN pnpm --filter 'api' --prod deploy /app/deploy
 
 FROM node:24.18.0-bookworm-slim AS runtime
 
