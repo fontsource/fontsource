@@ -13,10 +13,13 @@ const COLOR_TABLES = new Set([
 	'SVG ',
 	'sbix',
 ]);
+const BITMAP_TABLES = new Set(['CBDT', 'EBDT', 'sbix']);
+
+type InspectionFile = FamilyInspection['files'][number];
 
 const hashCoverage = (
-	ranges: Array<number | readonly [number, number]>,
-): { codepointCount: number; sha256: string } => {
+	ranges: FontInspection['unicodeRanges'],
+): InspectionFile['cmap'] => {
 	const codepoints = new Set<number>();
 	for (const range of ranges) {
 		if (typeof range === 'number') {
@@ -27,7 +30,7 @@ const hashCoverage = (
 			codepoints.add(codepoint);
 		}
 	}
-	const sorted = [...codepoints].sort((left, right) => left - right);
+	const sorted = Array.from(codepoints).toSorted((left, right) => left - right);
 	const hash = createHash('sha256');
 	const bytes = new Uint8Array(4);
 	const view = new DataView(bytes.buffer);
@@ -38,13 +41,11 @@ const hashCoverage = (
 	return { codepointCount: sorted.length, sha256: hash.digest('hex') };
 };
 
-const outlineKind = (
-	tables: readonly string[],
-): FamilyInspection['files'][number]['outline'] => {
+const outlineKind = (tables: readonly string[]): InspectionFile['outline'] => {
 	if (tables.includes('glyf')) return 'glyf';
 	if (tables.includes('CFF2')) return 'cff2';
 	if (tables.includes('CFF ')) return 'cff';
-	if (tables.some((table) => ['CBDT', 'EBDT', 'sbix'].includes(table))) {
+	if (tables.some((table) => BITMAP_TABLES.has(table))) {
 		return 'bitmap';
 	}
 	throw new Error(`Unsupported font outline: ${tables.join(', ')}`);
@@ -53,7 +54,7 @@ const outlineKind = (
 export const normalizeInspection = (
 	path: string,
 	font: FontInspection,
-): FamilyInspection['files'][number] => ({
+): InspectionFile => ({
 	path,
 	fontVersion: font.fontVersion,
 	weight: font.weight,
@@ -63,5 +64,5 @@ export const normalizeInspection = (
 	outline: outlineKind(font.tables),
 	colorTables: font.tables
 		.filter((table) => COLOR_TABLES.has(table))
-		.sort(compareStrings),
+		.toSorted(compareStrings),
 });

@@ -1,16 +1,17 @@
 import { z } from 'zod';
 
 // Zod is the single schema source for committed registry data.
-const id = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-const revision = z.string().regex(/^[0-9a-f]{40}$/);
-const sha256 = z.string().regex(/^[0-9a-f]{64}$/);
-const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
-const finite = z.number().finite();
+const idSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+const revisionSchema = z.string().regex(/^[0-9a-f]{40}$/);
+const sha256Schema = z.string().regex(/^[0-9a-f]{64}$/);
+const dateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
+const finiteNumberSchema = z.number().finite();
+const fontStyleSchema = z.enum(['normal', 'italic']);
 const staticVariantSchema = z.strictObject({
 	weight: z.number().int().min(1).max(1000),
-	style: z.enum(['normal', 'italic']),
+	style: fontStyleSchema,
 });
-const sourcePath = z
+const sourcePathSchema = z
 	.string()
 	.min(1)
 	.refine(
@@ -26,26 +27,26 @@ export const registryIndexSchema = z.strictObject({
 	upstreams: z.strictObject({
 		googleFonts: z.strictObject({
 			repository: z.literal('google/fonts'),
-			revision,
+			revision: revisionSchema,
 		}),
 		namFiles: z.strictObject({
 			repository: z.literal('googlefonts/nam-files'),
-			revision,
+			revision: revisionSchema,
 		}),
 	}),
-	families: z.array(id),
-	subsets: z.array(id),
+	families: z.array(idSchema),
+	subsets: z.array(idSchema),
 });
 
 const sourceFileSchema = z.strictObject({
-	path: sourcePath,
-	sha256,
+	path: sourcePathSchema,
+	sha256: sha256Schema,
 	size: z.number().int().nonnegative(),
 	variant: staticVariantSchema.optional(),
 });
 
 export const familyMetadataSchema = z.strictObject({
-	id,
+	id: idSchema,
 	family: z.string().min(1),
 	displayName: z.string().min(1).optional(),
 	category: z.enum([
@@ -58,8 +59,8 @@ export const familyMetadataSchema = z.strictObject({
 		'other',
 	]),
 	designer: z.string().min(1).optional(),
-	dateAdded: date.optional(),
-	sourceModified: date,
+	dateAdded: dateSchema.optional(),
+	sourceModified: dateSchema,
 	license: z.strictObject({
 		id: z.string().min(1),
 		url: z.url({ protocol: /^https$/ }),
@@ -67,8 +68,8 @@ export const familyMetadataSchema = z.strictObject({
 	}),
 	origin: z.strictObject({
 		upstream: z.literal('googleFonts'),
-		revision,
-		directory: sourcePath,
+		revision: revisionSchema,
+		directory: sourcePathSchema,
 		available: z.boolean(),
 	}),
 	project: z
@@ -77,33 +78,37 @@ export const familyMetadataSchema = z.strictObject({
 			revision: z.string().min(1).optional(),
 		})
 		.optional(),
-	declaredSubsets: z.array(id),
+	declaredSubsets: z.array(idSchema),
 	sourceFiles: z.array(sourceFileSchema).min(1),
 });
 
 const axisSchema = z.strictObject({
 	tag: z.string().length(4),
-	min: finite,
-	max: finite,
-	default: finite,
+	min: finiteNumberSchema,
+	max: finiteNumberSchema,
+	default: finiteNumberSchema,
 });
 
 const weightSchema = z.union([
-	finite,
-	z.strictObject({ min: finite, max: finite, default: finite }),
+	finiteNumberSchema,
+	z.strictObject({
+		min: finiteNumberSchema,
+		max: finiteNumberSchema,
+		default: finiteNumberSchema,
+	}),
 ]);
 
 export const familyInspectionSchema = z.strictObject({
 	files: z.array(
 		z.strictObject({
-			path: sourcePath,
+			path: sourcePathSchema,
 			fontVersion: z.string().min(1).nullable(),
 			weight: weightSchema,
 			style: z.enum(['normal', 'italic', 'oblique']),
 			axes: z.array(axisSchema),
 			cmap: z.strictObject({
 				codepointCount: z.number().int().nonnegative(),
-				sha256,
+				sha256: sha256Schema,
 			}),
 			outline: z.enum(['glyf', 'cff', 'cff2', 'bitmap']),
 			colorTables: z.array(z.string().length(4)),
@@ -113,7 +118,7 @@ export const familyInspectionSchema = z.strictObject({
 
 const variableVariantSchema = z.strictObject({
 	axisKey: z.string().min(1),
-	style: z.enum(['normal', 'italic']),
+	style: fontStyleSchema,
 });
 
 export const familyPolicySchema = z.strictObject({
@@ -125,8 +130,10 @@ export const familyPolicySchema = z.strictObject({
 			.strictObject({ variants: z.array(variableVariantSchema).min(1) })
 			.optional(),
 	}),
-	defaultSubset: id,
-	subsets: z.array(z.strictObject({ id, definition: id })).min(1),
+	defaultSubset: idSchema,
+	subsets: z
+		.array(z.strictObject({ id: idSchema, definition: idSchema }))
+		.min(1),
 });
 
 const rangeSchema = z.tuple([
@@ -135,7 +142,7 @@ const rangeSchema = z.tuple([
 ]);
 
 export const subsetDefinitionSchema = z.strictObject({
-	id,
+	id: idSchema,
 	ranges: z.array(rangeSchema),
 	slices: z
 		.array(
@@ -147,9 +154,9 @@ export const subsetDefinitionSchema = z.strictObject({
 		.optional(),
 	source: z.strictObject({
 		upstream: z.literal('namFiles'),
-		revision,
-		path: sourcePath,
-		sha256,
+		revision: revisionSchema,
+		path: sourcePathSchema,
+		sha256: sha256Schema,
 	}),
 });
 
@@ -158,9 +165,9 @@ export const axisRegistrySchema = z.record(
 	z.strictObject({
 		name: z.string().min(1),
 		description: z.string(),
-		min: finite,
-		max: finite,
-		default: finite,
+		min: finiteNumberSchema,
+		max: finiteNumberSchema,
+		default: finiteNumberSchema,
 		precision: z.number().int(),
 	}),
 );

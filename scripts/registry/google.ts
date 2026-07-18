@@ -7,6 +7,7 @@ import { normalizeInspection } from './inspection.ts';
 import { loadProtoType, parseProto } from './protobuf.ts';
 import {
 	axisRegistrySchema,
+	type FamilyInspection,
 	type FamilyMetadata,
 	familyInspectionSchema,
 	familyMetadataSchema,
@@ -14,7 +15,7 @@ import {
 import {
 	compareStrings,
 	normalizeText,
-	readJsonIfExists,
+	readJson,
 	sha256,
 	writeJson,
 } from './shared.ts';
@@ -71,7 +72,7 @@ const familyProto = loadProtoType(
 );
 const axisProto = loadProtoType('./proto/google-axis.proto', 'AxisProto');
 
-const normalizedProject = (
+const normalizeProject = (
 	repository: string | undefined,
 	revision: string | undefined,
 ): GoogleFamily['project'] => {
@@ -107,7 +108,7 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 		throw new Error('Google family has no declared fonts');
 
 	const project = family.source
-		? normalizedProject(family.source.repository_url, family.source.commit)
+		? normalizeProject(family.source.repository_url, family.source.commit)
 		: undefined;
 
 	return {
@@ -123,7 +124,7 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 	};
 };
 
-const categoryMap: Record<string, FamilyMetadata['category']> = {
+const CATEGORY_MAP: Record<string, FamilyMetadata['category']> = {
 	DISPLAY: 'display',
 	HANDWRITING: 'handwriting',
 	MONOSPACE: 'monospace',
@@ -131,7 +132,7 @@ const categoryMap: Record<string, FamilyMetadata['category']> = {
 	SERIF: 'serif',
 };
 
-const licenseMap: Record<
+const LICENSES: Record<
 	string,
 	{ id: string; url: string; filenames: string[] }
 > = {
@@ -151,6 +152,11 @@ const licenseMap: Record<
 		filenames: ['UFL.txt', 'LICENCE.txt'],
 	},
 };
+
+const DOCUMENTS = [
+	['DESCRIPTION.en_us.html', 'description.en-US.md'],
+	['article/ARTICLE.en_us.html', 'article.en-US.md'],
+] as const;
 
 const turndown = new TurndownService({
 	bulletListMarker: '-',
@@ -260,45 +266,42 @@ const writeAxisRegistry = async (
 	);
 };
 
-const writeFamily = async (
+const inspectFamilySources = async (
 	snapshot: GitSnapshot,
 	id: string,
 	source: GoogleFamilyDirectory,
-	root: string,
 	ctx: ReturnType<typeof createFontContext>,
-): Promise<void> => {
-	const { directory, family: google, files } = source;
-	const category = categoryMap[google.category];
-	if (!category)
-		throw new Error(`${id} has unsupported category ${google.category}`);
-	const license = licenseMap[google.license];
-	if (!license)
-		throw new Error(`${id} has unsupported license ${google.license}`);
-	const licensePath = license.filenames
-		.map((filename) => `${directory}/${filename}`)
-		.find((path) => files.has(path));
-
+): Promise<{
+	sourceFiles: FamilyMetadata['sourceFiles'];
+	inspectionFiles: FamilyInspection['files'];
+}> => {
+	const { directory, family, files } = source;
+	const sourcePaths = new Set<string>();
 	const declaredVariants = new Map<string, GoogleFont>();
-	const declaredFiles = google.fonts.map((font) => {
-		const { filename } = font;
-		if (basename(filename) !== filename) {
-			throw new Error(`${id} declares non-root font path ${filename}`);
+
+	for (const font of family.fonts) {
+		if (basename(font.filename) !== font.filename) {
+			throw new Error(`${id} declares non-root font path ${font.filename}`);
 		}
-		const path = `${directory}/${filename}`;
-		if (!files.has(path))
+		const path = `${directory}/${font.filename}`;
+		if (!files.has(path)) {
 			throw new Error(`${id} is missing declared source ${path}`);
+		}
+		sourcePaths.add(path);
 		declaredVariants.set(path, font);
-		return path;
-	});
-	const staticFiles = [...files].filter(
-		(path) => path.startsWith(`${directory}/static/`) && path.endsWith('.ttf'),
-	);
-	const sourcePaths = [...new Set([...declaredFiles, ...staticFiles])].sort(
-		compareStrings,
-	);
+	}
+
+	for (const path of files) {
+		if (path.startsWith(`${directory}/static/`) && path.endsWith('.ttf')) {
+			sourcePaths.add(path);
+		}
+	}
+
 	const sourceFiles: FamilyMetadata['sourceFiles'] = [];
-	const inspectionFiles = [];
-	for (const path of sourcePaths) {
+	const inspectionFiles: FamilyInspection['files'] = [];
+
+	// Keep inspection sequential: a single source face can already be memory-heavy.
+	for (const path of Array.from(sourcePaths).toSorted(compareStrings)) {
 		const contents = snapshot.read(path);
 		const declared = declaredVariants.get(path);
 		sourceFiles.push({
@@ -317,13 +320,41 @@ const writeFamily = async (
 		);
 	}
 
-	const copyrights = [
-		...new Set(
+	return { sourceFiles, inspectionFiles };
+};
+
+const writeFamily = async (
+	snapshot: GitSnapshot,
+	id: string,
+	source: GoogleFamilyDirectory,
+	root: string,
+	ctx: ReturnType<typeof createFontContext>,
+): Promise<void> => {
+	const { directory, family: google, files } = source;
+	const category = CATEGORY_MAP[google.category];
+	if (!category)
+		throw new Error(`${id} has unsupported category ${google.category}`);
+	const license = LICENSES[google.license];
+	if (!license)
+		throw new Error(`${id} has unsupported license ${google.license}`);
+	const licensePath = license.filenames
+		.map((filename) => `${directory}/${filename}`)
+		.find((path) => files.has(path));
+
+	const { sourceFiles, inspectionFiles } = await inspectFamilySources(
+		snapshot,
+		id,
+		source,
+		ctx,
+	);
+
+	const copyrights = Array.from(
+		new Set(
 			google.fonts
 				.map((font) => font.copyright?.trim())
 				.filter((value): value is string => Boolean(value)),
 		),
-	].sort(compareStrings);
+	).toSorted(compareStrings);
 	const lastChanged = snapshot.lastChanged(directory);
 	const metadata = familyMetadataSchema.parse({
 		id,
@@ -347,7 +378,9 @@ const writeFamily = async (
 			available: true,
 		},
 		...(google.project ? { project: google.project } : {}),
-		declaredSubsets: [...new Set(google.subsets)].sort(compareStrings),
+		declaredSubsets: Array.from(new Set(google.subsets)).toSorted(
+			compareStrings,
+		),
 		sourceFiles,
 	});
 	const inspection = familyInspectionSchema.parse({
@@ -366,11 +399,7 @@ const writeFamily = async (
 		await rm(join(output, 'license.txt'), { force: true });
 	}
 
-	const documents = [
-		['DESCRIPTION.en_us.html', 'description.en-US.md'],
-		['article/ARTICLE.en_us.html', 'article.en-US.md'],
-	] as const;
-	for (const [sourcePath, outputName] of documents) {
+	for (const [sourcePath, outputName] of DOCUMENTS) {
 		const path = `${directory}/${sourcePath}`;
 		if (files.has(path)) {
 			await writeFile(
@@ -389,25 +418,24 @@ export const generateGoogle = async (
 	previousFamilyIds: readonly string[],
 ): Promise<string[]> => {
 	const families = readGoogleFamilies(snapshot);
-	const previousFamilies = new Set(previousFamilyIds);
+	const familyIds = new Set(previousFamilyIds);
 	const ctx = createFontContext();
 
 	try {
-		for (const [id, family] of [...families].sort(([left], [right]) =>
-			compareStrings(left, right),
+		for (const [id, family] of Array.from(families).toSorted(
+			([left], [right]) => compareStrings(left, right),
 		)) {
 			await writeFamily(snapshot, id, family, root, ctx);
+			familyIds.add(id);
 		}
 	} finally {
 		ctx.destroy();
 	}
 
-	for (const id of previousFamilies) {
+	for (const id of previousFamilyIds) {
 		if (families.has(id)) continue;
 		const metadataPath = join(root, 'families', id, 'metadata.json');
-		const metadata = familyMetadataSchema.parse(
-			await readJsonIfExists(metadataPath),
-		);
+		const metadata = familyMetadataSchema.parse(await readJson(metadataPath));
 		if (metadata.origin.available) {
 			await writeJson(metadataPath, {
 				...metadata,
@@ -417,7 +445,5 @@ export const generateGoogle = async (
 	}
 
 	await writeAxisRegistry(snapshot, root);
-	return [...new Set([...families.keys(), ...previousFamilies])].sort(
-		compareStrings,
-	);
+	return Array.from(familyIds).toSorted(compareStrings);
 };

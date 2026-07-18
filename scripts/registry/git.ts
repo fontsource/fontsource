@@ -3,48 +3,52 @@ import { compareStrings } from './shared.ts';
 
 const MAX_GIT_OUTPUT = 512 * 1024 * 1024;
 
-const runGit = (repository: string, args: string[]): Buffer =>
+const runGitBuffer = (repository: string, args: string[]): Buffer =>
 	execFileSync('git', ['-C', repository, ...args], {
 		maxBuffer: MAX_GIT_OUTPUT,
 		stdio: ['ignore', 'pipe', 'pipe'],
 	});
 
+const runGitText = (repository: string, args: string[]): string =>
+	runGitBuffer(repository, args).toString('utf8').trim();
+
 export type GitTree = {
 	revision: string;
 	paths: readonly string[];
-	read: (path: string) => Buffer;
+	read(path: string): Buffer;
 };
 
 export type GitSnapshot = GitTree & {
-	lastChanged: (path: string) => { revision: string; date: string };
+	lastChanged(path: string): { revision: string; date: string };
 };
 
 export const openGitTree = (repository: string, revision: string): GitTree => {
 	if (!/^[0-9a-f]{40}$/.test(revision)) {
 		throw new Error('Revision must be a full lowercase 40-character commit');
 	}
-	const resolved = runGit(repository, [
+	const resolved = runGitText(repository, [
 		'rev-parse',
 		'--verify',
 		`${revision}^{commit}`,
-	])
-		.toString('utf8')
-		.trim();
+	]);
 	if (resolved !== revision) {
 		throw new Error(`Revision ${revision} did not resolve exactly`);
 	}
 
-	const paths = runGit(repository, ['ls-tree', '-r', '--name-only', revision])
-		.toString('utf8')
-		.trim()
+	const paths = runGitText(repository, [
+		'ls-tree',
+		'-r',
+		'--name-only',
+		revision,
+	])
 		.split('\n')
 		.filter(Boolean)
-		.sort(compareStrings);
+		.toSorted(compareStrings);
 
 	return {
 		revision,
 		paths,
-		read: (path) => runGit(repository, ['show', `${revision}:${path}`]),
+		read: (path) => runGitBuffer(repository, ['show', `${revision}:${path}`]),
 	};
 };
 
@@ -54,9 +58,10 @@ export const openGitSnapshot = (
 	revision: string,
 ): GitSnapshot => {
 	const tree = openGitTree(repository, revision);
-	const shallow = runGit(repository, ['rev-parse', '--is-shallow-repository'])
-		.toString('utf8')
-		.trim();
+	const shallow = runGitText(repository, [
+		'rev-parse',
+		'--is-shallow-repository',
+	]);
 	if (shallow !== 'false') {
 		throw new Error('Registry generation requires complete Git history');
 	}
@@ -64,17 +69,14 @@ export const openGitSnapshot = (
 	return {
 		...tree,
 		lastChanged: (path) => {
-			const [changedRevision, date] = runGit(repository, [
+			const [changedRevision, date] = runGitText(repository, [
 				'log',
 				'-1',
 				'--format=%H%x00%cs',
 				tree.revision,
 				'--',
 				path,
-			])
-				.toString('utf8')
-				.trim()
-				.split('\0');
+			]).split('\0');
 			if (
 				!changedRevision ||
 				!date ||

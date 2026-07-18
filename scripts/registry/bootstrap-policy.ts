@@ -27,14 +27,25 @@ type VariableVariant = NonNullable<
 	FamilyPolicy['packages']['variable']
 >['variants'][number];
 
+type FamilyVariants = {
+	static: Map<string, StaticVariant>;
+	variable: Map<string, VariableVariant>;
+};
+
 const collectVariants = (
 	paths: readonly string[],
-): {
-	static: Map<string, Map<string, StaticVariant>>;
-	variable: Map<string, Map<string, VariableVariant>>;
-} => {
-	const staticFamilies = new Map<string, Map<string, StaticVariant>>();
-	const variableFamilies = new Map<string, Map<string, VariableVariant>>();
+): Map<string, FamilyVariants> => {
+	const families = new Map<string, FamilyVariants>();
+	const variantsFor = (familyId: string): FamilyVariants => {
+		const existing = families.get(familyId);
+		if (existing) return existing;
+		const variants: FamilyVariants = {
+			static: new Map(),
+			variable: new Map(),
+		};
+		families.set(familyId, variants);
+		return variants;
+	};
 
 	for (const path of paths) {
 		const match = path.match(
@@ -50,9 +61,7 @@ const collectVariants = (
 				weight: Number(variant[1]),
 				style: variant[2] ? 'italic' : 'normal',
 			};
-			const variants = staticFamilies.get(familyId) ?? new Map();
-			variants.set(`${value.weight}:${value.style}`, value);
-			staticFamilies.set(familyId, variants);
+			variantsFor(familyId).static.set(`${value.weight}:${value.style}`, value);
 			continue;
 		}
 
@@ -61,15 +70,19 @@ const collectVariants = (
 		const axisKey = stem.split('-').at(-1)?.toLowerCase();
 		if (!axisKey || !/^(?:standard|full|[a-z0-9]{4})$/.test(axisKey)) continue;
 		const value: VariableVariant = { axisKey, style };
-		const variants = variableFamilies.get(familyId) ?? new Map();
-		variants.set(`${value.axisKey}:${value.style}`, value);
-		variableFamilies.set(familyId, variants);
+		variantsFor(familyId).variable.set(
+			`${value.axisKey}:${value.style}`,
+			value,
+		);
 	}
 
-	return { static: staticFamilies, variable: variableFamilies };
+	return families;
 };
 
-const mapSubset = (id: string, available: ReadonlySet<string>): string => {
+const resolveSubsetDefinition = (
+	id: string,
+	available: ReadonlySet<string>,
+): string => {
 	const web = `${id}-web`;
 	return available.has(web) ? web : id;
 };
@@ -93,15 +106,16 @@ export const bootstrapPolicy = async (
 	for (const familyId of index.families) {
 		const policyPath = join(root, 'families', familyId, 'policy.json');
 		const catalogEntry = catalog[familyId];
-		const staticVariants = [
-			...(variants.static.get(familyId)?.values() ?? []),
-		].sort(
+		const familyVariants = variants.get(familyId);
+		const staticVariants = Array.from(
+			familyVariants?.static.values() ?? [],
+		).toSorted(
 			(left, right) =>
 				left.weight - right.weight || compareStrings(left.style, right.style),
 		);
-		const variableVariants = [
-			...(variants.variable.get(familyId)?.values() ?? []),
-		].sort(
+		const variableVariants = Array.from(
+			familyVariants?.variable.values() ?? [],
+		).toSorted(
 			(left, right) =>
 				compareStrings(left.axisKey, right.axisKey) ||
 				compareStrings(left.style, right.style),
@@ -114,9 +128,12 @@ export const bootstrapPolicy = async (
 			continue;
 		}
 
-		const policySubsets = [...new Set(catalogEntry.subsets)]
+		const policySubsets = Array.from(new Set(catalogEntry.subsets))
 			.filter((id) => id !== 'menu')
-			.map((id) => ({ id, definition: mapSubset(id, availableSubsets) }));
+			.map((id) => ({
+				id,
+				definition: resolveSubsetDefinition(id, availableSubsets),
+			}));
 		const unresolvedSubset = policySubsets.find(
 			(subset) => !availableSubsets.has(subset.definition),
 		);

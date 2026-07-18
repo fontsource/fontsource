@@ -1,5 +1,5 @@
 import { readdir, rm } from 'node:fs/promises';
-import { join } from 'node:path';
+import { join, posix } from 'node:path';
 import type { GitSnapshot } from './git.ts';
 import { loadProtoType, parseProto } from './protobuf.ts';
 import { type SubsetDefinition, subsetDefinitionSchema } from './schema.ts';
@@ -17,7 +17,9 @@ const slicingStrategyProto = loadProtoType(
 );
 
 const normalizeCodepoints = (values: Iterable<number>): number[] => {
-	const codepoints = [...new Set(values)].sort((left, right) => left - right);
+	const codepoints = Array.from(new Set(values)).toSorted(
+		(left, right) => left - right,
+	);
 	for (const codepoint of codepoints) {
 		if (
 			!Number.isInteger(codepoint) ||
@@ -72,7 +74,7 @@ export const parseSlices = (source: string): number[][] => {
 		normalizeCodepoints(subset.codepoints),
 	);
 	// Google stores the lowest-priority slice first; delivery order is reversed.
-	return slices.reverse();
+	return slices.toReversed();
 };
 
 const buildSubsetDefinition = (
@@ -106,8 +108,7 @@ export const generateNam = async (
 	for (const path of snapshot.paths.filter((path) =>
 		/^Lib\/gfsubsets\/data\/[^/]+_unique-glyphs\.nam$/.test(path),
 	)) {
-		const filename = path.split('/').at(-1);
-		if (!filename) continue;
+		const filename = posix.basename(path);
 		const id = filename
 			.replace(/_unique-glyphs\.nam$/, '')
 			.replaceAll('_', '-');
@@ -127,8 +128,7 @@ export const generateNam = async (
 	for (const path of snapshot.paths.filter((path) =>
 		/^slices\/[^/]+_default\.txt$/.test(path),
 	)) {
-		const filename = path.split('/').at(-1);
-		if (!filename) continue;
+		const filename = posix.basename(path);
 		const baseId = filename.replace(/_default\.txt$/, '').replaceAll('_', '-');
 		const id = `${baseId}-web`;
 		const contents = snapshot.read(path);
@@ -151,8 +151,8 @@ export const generateNam = async (
 	}
 
 	if (definitions.size === 0) throw new Error('No NAM definitions found');
-	for (const [id, value] of [...definitions].sort(([left], [right]) =>
-		compareStrings(left, right),
+	for (const [id, value] of Array.from(definitions).toSorted(
+		([left], [right]) => compareStrings(left, right),
 	)) {
 		await writeJson(join(root, 'subsets', `${id}.json`), value);
 	}
@@ -169,5 +169,5 @@ export const generateNam = async (
 		}
 	}
 
-	return [...definitions.keys()].sort(compareStrings);
+	return Array.from(definitions.keys()).toSorted(compareStrings);
 };

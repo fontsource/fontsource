@@ -16,10 +16,13 @@ export const generateRegistry = async (
 	const google = openGitSnapshot(googleRepository, googleRevision);
 	const nam = openGitSnapshot(namRepository, namRevision);
 	const previousValue = await readJsonIfExists(join(root, 'index.json'));
-	const previous = previousValue
-		? registryIndexSchema.parse(previousValue)
-		: null;
-	const families = await generateGoogle(google, root, previous?.families ?? []);
+	const previousIndex =
+		previousValue === null ? null : registryIndexSchema.parse(previousValue);
+	const families = await generateGoogle(
+		google,
+		root,
+		previousIndex?.families ?? [],
+	);
 	const subsets = await generateNam(nam, root);
 
 	await writeJson(join(root, 'index.json'), {

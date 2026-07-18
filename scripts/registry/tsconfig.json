@@ -1,18 +1,20 @@
 {
 	"compilerOptions": {
-		"target": "es2023",
+		"target": "esnext",
 		"lib": ["es2023", "dom"],
-		"module": "esnext",
+		"module": "preserve",
 		"moduleResolution": "bundler",
-		"paths": {
-			"@fontsource-utils/core": ["../../packages/core/src/index.ts"]
-		},
+		"moduleDetection": "force",
 		"strict": true,
 		"noEmit": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
 		"allowImportingTsExtensions": true,
 		"erasableSyntaxOnly": true,
+		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
+		"skipLibCheck": true,
 		"types": ["node"]
 	},
-	"include": ["*.ts", "../../packages/core/src"]
+	"include": ["*.ts"]
 }

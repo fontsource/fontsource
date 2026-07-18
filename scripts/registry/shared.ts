@@ -1,26 +1,26 @@
 import { createHash } from 'node:crypto';
-import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const compareStrings = (left: string, right: string): number =>
 	left < right ? -1 : left > right ? 1 : 0;
 
-const sortJson = (value: unknown): unknown => {
-	if (Array.isArray(value)) return value.map(sortJson);
+const sortJsonKeys = (value: unknown): unknown => {
+	if (Array.isArray(value)) return value.map(sortJsonKeys);
 	if (value && typeof value === 'object') {
 		return Object.fromEntries(
 			Object.entries(value)
 				.filter(([, entry]) => entry !== undefined)
-				.sort(([left], [right]) => compareStrings(left, right))
-				.map(([key, entry]) => [key, sortJson(entry)]),
+				.toSorted(([left], [right]) => compareStrings(left, right))
+				.map(([key, entry]) => [key, sortJsonKeys(entry)]),
 		);
 	}
 	return value;
 };
 
 export const canonicalJson = (value: unknown): string =>
-	`${JSON.stringify(sortJson(value), null, '\t')}\n`;
+	`${JSON.stringify(sortJsonKeys(value), null, '\t')}\n`;
 
 export const sha256 = (value: string | Uint8Array): string =>
 	createHash('sha256').update(value).digest('hex');
@@ -52,7 +52,7 @@ export const normalizeText = (value: string): string =>
 
 export const pathExists = async (path: string): Promise<boolean> => {
 	try {
-		await stat(path);
+		await access(path);
 		return true;
 	} catch (error) {
 		if ((error as NodeJS.ErrnoException).code === 'ENOENT') return false;

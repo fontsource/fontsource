@@ -160,11 +160,42 @@ jobs:
       - name: Build website
         run: pnpm --filter website build
 
+  registry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck registry tooling
+        run: pnpm --filter fontsource-registry-tools typecheck
+
+      - name: Test registry tooling
+        run: pnpm --filter fontsource-registry-tools test
+
   release:
     if: >-
       github.ref == 'refs/heads/main' &&
       github.repository == 'fontsource/fontsource'
-    needs: [lint, packages, api, website]
+    needs: [lint, packages, api, website, registry]
 
     permissions:
       contents: read

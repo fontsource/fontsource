@@ -1,3 +1,4 @@
+import { ok as assert, deepStrictEqual, strictEqual } from 'node:assert/strict';
 import { readdir, readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import type { z } from 'zod';
@@ -20,23 +21,15 @@ import {
 	readJson,
 } from './shared.ts';
 
-const assert: (condition: unknown, message: string) => asserts condition = (
-	condition,
-	message,
-) => {
-	if (!condition) throw new Error(message);
-};
-
 const assertSortedUnique = <Value>(
 	values: readonly Value[],
 	key: (value: Value) => string,
 	context: string,
 ): void => {
 	const keys = values.map(key);
-	const sorted = [...new Set(keys)].sort(compareStrings);
-	assert(
-		keys.length === sorted.length &&
-			keys.every((value, index) => value === sorted[index]),
+	deepStrictEqual(
+		keys,
+		Array.from(new Set(keys)).toSorted(compareStrings),
 		`${context} must be sorted and unique`,
 	);
 };
@@ -46,8 +39,9 @@ const validateCanonicalJson = async <Schema extends z.ZodType>(
 	schema: Schema,
 ): Promise<z.output<Schema>> => {
 	const value = schema.parse(await readJson(path));
-	assert(
-		(await readFile(path, 'utf8')) === canonicalJson(value),
+	strictEqual(
+		await readFile(path, 'utf8'),
+		canonicalJson(value),
 		`${path} is not canonical JSON`,
 	);
 	return value;
@@ -90,17 +84,29 @@ const expandRanges = (
 	return values;
 };
 
-const styleSupported = (
+const fontSupportsStyle = (
 	font: FamilyInspection['files'][number],
 	style: 'normal' | 'italic',
 ): boolean => {
-	const ital = font.axes.find((axis) => axis.tag.toLowerCase() === 'ital');
-	if (style === 'italic')
-		return font.style === 'italic' || Boolean(ital && ital.max >= 1);
+	const italicAxis = font.axes.find(
+		(axis) => axis.tag.toLowerCase() === 'ital',
+	);
+	if (style === 'italic') {
+		return font.style === 'italic' || (italicAxis?.max ?? 0) >= 1;
+	}
 	return (
-		font.style === 'normal' || Boolean(ital && ital.min <= 0 && ital.max >= 0)
+		font.style === 'normal' ||
+		Boolean(italicAxis && italicAxis.min <= 0 && italicAxis.max >= 0)
 	);
 };
+
+const fontSupportsWeight = (
+	font: FamilyInspection['files'][number],
+	weight: number,
+): boolean =>
+	typeof font.weight === 'number'
+		? font.weight === weight
+		: font.weight.min <= weight && font.weight.max >= weight;
 
 export const validatePolicyResolution = (
 	policy: FamilyPolicy,
@@ -113,15 +119,16 @@ export const validatePolicyResolution = (
 	const sourceFiles = new Map(
 		metadata.sourceFiles.map((source) => [source.path, source]),
 	);
-	const fonts = inspection.files.map((font) => ({
-		font,
-		source: sourceFiles.get(font.path),
-	}));
+	const fonts = inspection.files.map((font) => {
+		const source = sourceFiles.get(font.path);
+		assert(source, `${context} has no source metadata for ${font.path}`);
+		return { font, source };
+	});
 	for (const variant of policy.packages.static?.variants ?? []) {
 		const staticMatches = fonts.filter(
 			({ font, source }) =>
 				font.axes.length === 0 &&
-				source?.variant?.weight === variant.weight &&
+				source.variant?.weight === variant.weight &&
 				source.variant.style === variant.style,
 		);
 		if (staticMatches.length > 1) {
@@ -132,15 +139,10 @@ export const validatePolicyResolution = (
 		if (staticMatches.length === 1) continue;
 
 		const variableMatches = fonts.filter(({ font, source }) => {
-			if (font.axes.length === 0 || !source?.variant) return false;
-			const supportsWeight =
-				typeof font.weight === 'number'
-					? font.weight === variant.weight
-					: font.weight.min <= variant.weight &&
-						font.weight.max >= variant.weight;
+			if (font.axes.length === 0 || !source.variant) return false;
 			return (
-				supportsWeight &&
-				(styleSupported(font, variant.style) ||
+				fontSupportsWeight(font, variant.weight) &&
+				(fontSupportsStyle(font, variant.style) ||
 					source.variant.style === variant.style)
 			);
 		});
@@ -154,8 +156,8 @@ export const validatePolicyResolution = (
 		const matches = fonts.filter(({ font, source }) => {
 			if (
 				font.axes.length === 0 ||
-				!source?.variant ||
-				(!styleSupported(font, variant.style) &&
+				!source.variant ||
+				(!fontSupportsStyle(font, variant.style) &&
 					source.variant.style !== variant.style)
 			)
 				return false;
@@ -202,9 +204,9 @@ const validateFamily = async (
 		(file) => file.path,
 		`${id} inspection files`,
 	);
-	assert(
-		metadata.sourceFiles.map((file) => file.path).join('\0') ===
-			inspection.files.map((file) => file.path).join('\0'),
+	deepStrictEqual(
+		metadata.sourceFiles.map((file) => file.path),
+		inspection.files.map((file) => file.path),
 		`${id} source and inspection paths differ`,
 	);
 
@@ -290,22 +292,16 @@ const validateSubset = async (root: string, id: string): Promise<void> => {
 		}
 	}
 	const expected = expandRanges(definition.ranges);
-	assert(
-		union.size === expected.size &&
-			[...union].every((codepoint) => expected.has(codepoint)),
-		`${id} slice union differs from its ranges`,
-	);
+	deepStrictEqual(union, expected, `${id} slice union differs from its ranges`);
 };
 
-const listFiles = async (root: string, directory = root): Promise<string[]> => {
-	const files: string[] = [];
-	for (const entry of await readdir(directory, { withFileTypes: true })) {
-		const path = join(directory, entry.name);
-		if (entry.isDirectory()) files.push(...(await listFiles(root, path)));
-		else files.push(relative(root, path).replaceAll('\\', '/'));
-	}
-	return files.sort(compareStrings);
-};
+const listFiles = async (root: string): Promise<string[]> =>
+	(await readdir(root, { recursive: true, withFileTypes: true }))
+		.filter((entry) => !entry.isDirectory())
+		.map((entry) =>
+			relative(root, join(entry.parentPath, entry.name)).replaceAll('\\', '/'),
+		)
+		.toSorted(compareStrings);
 
 export const validateRegistry = async (root: string): Promise<void> => {
 	const index = await validateCanonicalJson(
@@ -320,17 +316,19 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	)
 		.filter((entry) => entry.isDirectory())
 		.map((entry) => entry.name)
-		.sort(compareStrings);
-	assert(
-		actualFamilies.join('\0') === index.families.join('\0'),
+		.toSorted(compareStrings);
+	deepStrictEqual(
+		actualFamilies,
+		index.families,
 		'Registry family index does not match family directories',
 	);
 	const actualSubsets = (await readdir(join(root, 'subsets')))
 		.filter((filename) => filename.endsWith('.json'))
 		.map((filename) => filename.slice(0, -5))
-		.sort(compareStrings);
-	assert(
-		actualSubsets.join('\0') === index.subsets.join('\0'),
+		.toSorted(compareStrings);
+	deepStrictEqual(
+		actualSubsets,
+		index.subsets,
 		'Registry subset index does not match subset files',
 	);
 
