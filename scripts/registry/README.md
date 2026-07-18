@@ -23,7 +23,7 @@ package policy.
 
 - `generate.ts` coordinates one complete registry build and validation.
 - `google.ts` writes family metadata, source inspection, documents, licenses,
-  and the axis registry.
+  and normalized axis metadata.
 - `nam.ts` writes Unicode subset and slicing definitions.
 - `git.ts` reads immutable Git trees and path history.
 - `inspection.ts` maps Core's provider-neutral font inspection into registry

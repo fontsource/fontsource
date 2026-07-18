@@ -335,14 +335,11 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	const subsetSet = new Set(index.subsets);
 	for (const id of index.families) await validateFamily(root, id, subsetSet);
 	for (const id of index.subsets) await validateSubset(root, id);
-	await validateCanonicalJson(
-		join(root, 'compat', 'axis-registry.json'),
-		axisRegistrySchema,
-	);
+	await validateCanonicalJson(join(root, 'axes.json'), axisRegistrySchema);
 
 	const allowed = new Set<string>([
 		'index.json',
-		'compat/axis-registry.json',
+		'axes.json',
 		...index.subsets.map((id) => `subsets/${id}.json`),
 	]);
 	for (const id of index.families) {

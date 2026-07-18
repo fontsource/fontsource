@@ -260,10 +260,7 @@ const writeAxisRegistry = async (
 			precision: axis.precision,
 		};
 	}
-	await writeJson(
-		join(root, 'compat', 'axis-registry.json'),
-		axisRegistrySchema.parse(registry),
-	);
+	await writeJson(join(root, 'axes.json'), axisRegistrySchema.parse(registry));
 };
 
 const inspectFamilySources = async (

@@ -12,17 +12,18 @@ const runGitBuffer = (repository: string, args: string[]): Buffer =>
 const runGitText = (repository: string, args: string[]): string =>
 	runGitBuffer(repository, args).toString('utf8').trim();
 
-export type GitTree = {
+export type GitSnapshot = {
 	revision: string;
 	paths: readonly string[];
 	read(path: string): Buffer;
-};
-
-export type GitSnapshot = GitTree & {
 	lastChanged(path: string): { revision: string; date: string };
 };
 
-export const openGitTree = (repository: string, revision: string): GitTree => {
+/** Open one immutable Git tree with the history required for provenance. */
+export const openGitSnapshot = (
+	repository: string,
+	revision: string,
+): GitSnapshot => {
 	if (!/^[0-9a-f]{40}$/.test(revision)) {
 		throw new Error('Revision must be a full lowercase 40-character commit');
 	}
@@ -33,6 +34,13 @@ export const openGitTree = (repository: string, revision: string): GitTree => {
 	]);
 	if (resolved !== revision) {
 		throw new Error(`Revision ${revision} did not resolve exactly`);
+	}
+	const shallow = runGitText(repository, [
+		'rev-parse',
+		'--is-shallow-repository',
+	]);
+	if (shallow !== 'false') {
+		throw new Error('Registry generation requires complete Git history');
 	}
 
 	const paths = runGitText(repository, [
@@ -49,31 +57,12 @@ export const openGitTree = (repository: string, revision: string): GitTree => {
 		revision,
 		paths,
 		read: (path) => runGitBuffer(repository, ['show', `${revision}:${path}`]),
-	};
-};
-
-/** Open one immutable Git tree with the history required for provenance. */
-export const openGitSnapshot = (
-	repository: string,
-	revision: string,
-): GitSnapshot => {
-	const tree = openGitTree(repository, revision);
-	const shallow = runGitText(repository, [
-		'rev-parse',
-		'--is-shallow-repository',
-	]);
-	if (shallow !== 'false') {
-		throw new Error('Registry generation requires complete Git history');
-	}
-
-	return {
-		...tree,
 		lastChanged: (path) => {
 			const [changedRevision, date] = runGitText(repository, [
 				'log',
 				'-1',
 				'--format=%H%x00%cs',
-				tree.revision,
+				revision,
 				'--',
 				path,
 			]).split('\0');
