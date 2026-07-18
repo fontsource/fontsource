@@ -19,8 +19,7 @@ env:
   PNPM_VERSION: 11.14.0
 
 jobs:
-  quality:
-    name: Quality
+  lint:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -49,7 +48,6 @@ jobs:
         run: pnpm check
 
   packages:
-    name: Packages
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -87,7 +85,6 @@ jobs:
         run: pnpm pack:check
 
   api:
-    name: API
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -127,7 +124,6 @@ jobs:
         run: pnpm --filter api build
 
   website:
-    name: Website
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -165,11 +161,10 @@ jobs:
         run: pnpm --filter website build
 
   release:
-    name: Release Please
     if: >-
       github.ref == 'refs/heads/main' &&
       github.repository == 'fontsource/fontsource'
-    needs: [quality, packages, api, website]
+    needs: [lint, packages, api, website]
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -203,7 +198,7 @@ jobs:
           manifest-file: .release-please-manifest.json
 
   publish:
-    name: Publish ${{ matrix.path }}
+    name: publish (${{ matrix.path }})
     if: needs.release.outputs.paths != '[]'
     needs: release
     runs-on: ubuntu-latest
@@ -301,8 +296,7 @@ jobs:
         if: steps.registry.outputs.publish == 'true'
         run: npm publish "$RUNNER_TEMP/package.tgz" --access public
 
-  notify-font-files:
-    name: Notify Font Files
+  notify:
     if: needs.release.outputs.paths != '[]'
     needs: [release, publish]
     runs-on: ubuntu-latest
