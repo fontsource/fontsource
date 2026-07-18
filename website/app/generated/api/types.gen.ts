@@ -417,6 +417,47 @@ export type ListStatsResponses = {
 
 export type ListStatsResponse = ListStatsResponses[keyof ListStatsResponses];
 
+export type GetStatsBadgeData = {
+    body?: never;
+    path: {
+        metric: 'npm-monthly' | 'npm-total' | 'jsdelivr-monthly' | 'jsdelivr-total';
+    };
+    query?: never;
+    url: '/v1/stats/badge/{metric}';
+};
+
+export type GetStatsBadgeErrors = {
+    /**
+     * Invalid badge metric
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetStatsBadgeError = GetStatsBadgeErrors[keyof GetStatsBadgeErrors];
+
+export type GetStatsBadgeResponses = {
+    /**
+     * Shields endpoint badge data
+     */
+    200: {
+        schemaVersion: 1;
+        label: string;
+        message: string;
+        color: string;
+    };
+};
+
+export type GetStatsBadgeResponse = GetStatsBadgeResponses[keyof GetStatsBadgeResponses];
+
 export type GetFontStatsData = {
     body?: never;
     path: {

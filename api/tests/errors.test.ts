@@ -64,6 +64,12 @@ describe('error responses', () => {
 			400,
 			'Version tags below @5 are not supported',
 		],
+		[
+			'GET /v1/stats/badge/:metric with invalid metric',
+			'https://fontsource.test/v1/stats/badge/weekly',
+			400,
+			'Bad Request',
+		],
 
 		// Unknown route
 		[
