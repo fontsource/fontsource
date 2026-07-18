@@ -3,7 +3,7 @@ import { openGitSnapshot } from './git.ts';
 import { generateGoogle } from './google.ts';
 import { generateNam } from './nam.ts';
 import { registryIndexSchema } from './schema.ts';
-import { isMain, readJsonIfExists, writeJson } from './shared.ts';
+import { readJsonIfExists, writeJson } from './shared.ts';
 import { validateRegistry } from './validator.ts';
 
 export const generateRegistry = async (
@@ -43,24 +43,18 @@ export const generateRegistry = async (
 	await validateRegistry(root);
 };
 
-if (isMain(import.meta.url)) {
-	const [
-		googleRepository,
-		googleRevision,
-		namRepository,
-		namRevision,
-		registryRoot,
-	] = process.argv.slice(2);
+if (import.meta.main) {
+	const [googleRepository, googleRevision, namRepository, namRevision] =
+		process.argv.slice(2);
 	if (
 		!googleRepository ||
 		!googleRevision ||
 		!namRepository ||
 		!namRevision ||
-		!registryRoot ||
-		process.argv.length !== 7
+		process.argv.length !== 6
 	) {
 		throw new Error(
-			'Usage: generate.ts <google-fonts-repo> <google-commit> <nam-files-repo> <nam-commit> <registry-dir>',
+			'Usage: generate.ts <google-fonts-repo> <google-commit> <nam-files-repo> <nam-commit>',
 		);
 	}
 	await generateRegistry(
@@ -68,6 +62,6 @@ if (isMain(import.meta.url)) {
 		googleRevision,
 		namRepository,
 		namRevision,
-		registryRoot,
+		join(import.meta.dirname, '..', 'data'),
 	);
 }

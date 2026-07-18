@@ -16,7 +16,6 @@ import {
 import {
 	canonicalJson,
 	compareStrings,
-	isMain,
 	pathExists,
 	readJson,
 } from './shared.ts';
@@ -360,10 +359,6 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	}
 };
 
-if (isMain(import.meta.url)) {
-	const [registryRoot] = process.argv.slice(2);
-	if (!registryRoot || process.argv.length !== 3) {
-		throw new Error('Usage: validator.ts <registry-dir>');
-	}
-	await validateRegistry(registryRoot);
+if (import.meta.main) {
+	await validateRegistry(join(import.meta.dirname, '..', 'data'));
 }

@@ -1,7 +1,6 @@
 import { createHash } from 'node:crypto';
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
 
 export const compareStrings = (left: string, right: string): number =>
 	left < right ? -1 : left > right ? 1 : 0;
@@ -59,7 +58,3 @@ export const pathExists = async (path: string): Promise<boolean> => {
 		throw error;
 	}
 };
-
-export const isMain = (url: string): boolean =>
-	process.argv[1] !== undefined &&
-	resolve(process.argv[1]) === resolve(fileURLToPath(url));

@@ -186,10 +186,10 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Typecheck registry tooling
-        run: pnpm --filter fontsource-registry-tools typecheck
+        run: pnpm --filter '@fontsource-utils/registry' typecheck
 
       - name: Test registry tooling
-        run: pnpm --filter fontsource-registry-tools test
+        run: pnpm --filter '@fontsource-utils/registry' test
 
   release:
     if: >-

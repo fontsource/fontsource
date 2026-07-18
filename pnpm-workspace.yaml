@@ -2,7 +2,7 @@ packages:
   - packages/*
   - api
   - website
-  - scripts/registry
+  - registry
 
 allowBuilds:
   '@parcel/watcher': true

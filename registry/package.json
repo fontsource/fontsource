@@ -1,0 +1,23 @@
+{
+	"name": "@fontsource-utils/registry",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"generate": "pnpm --filter '@fontsource-utils/core' build && node scripts/generate.ts",
+		"test": "pnpm --filter '@fontsource-utils/core' build && vitest run",
+		"typecheck": "pnpm --filter '@fontsource-utils/core' build && tsc --noEmit",
+		"validate": "node scripts/validator.ts"
+	},
+	"dependencies": {
+		"@fontsource-utils/core": "workspace:*",
+		"protobufjs": "8.7.1",
+		"turndown": "7.2.4",
+		"zod": "4.4.3"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:node24",
+		"@types/turndown": "5.0.6",
+		"typescript": "catalog:",
+		"vitest": "catalog:"
+	}
+}

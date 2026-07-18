@@ -74,7 +74,14 @@ const copyFont = async (
 ): Promise<void> => {
 	const output = join(repository, path);
 	await mkdir(dirname(output), { recursive: true });
-	await cp(resolve('packages/core/tests/fixtures/fonts', fixture), output);
+	await cp(
+		resolve(
+			import.meta.dirname,
+			'../../packages/core/tests/fixtures/fonts',
+			fixture,
+		),
+		output,
+	);
 };
 
 const treeHashes = async (root: string): Promise<Record<string, string>> => {

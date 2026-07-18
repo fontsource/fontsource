@@ -5,7 +5,12 @@ import { codepointsToRanges, parseNam, parseSlices } from './nam.ts';
 
 const fixture = (directory: string, filename: string): Promise<string> =>
 	readFile(
-		resolve('packages/core/tests/fixtures', directory, filename),
+		resolve(
+			import.meta.dirname,
+			'../../packages/core/tests/fixtures',
+			directory,
+			filename,
+		),
 		'utf8',
 	);
 
