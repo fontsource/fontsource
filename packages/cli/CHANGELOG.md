@@ -1,5 +1,13 @@
 # @fontsource-utils/cli
 
+## [0.7.2](https://github.com/fontsource/fontsource/compare/cli-v0.7.1...cli-v0.7.2) (2026-07-18)
+
+
+### Bug Fixes
+
+* **cli:** add css type declarations ([#1172](https://github.com/fontsource/fontsource/issues/1172)) ([8895f35](https://github.com/fontsource/fontsource/commit/8895f35378c9c1fae3bb20ec32bd8ef5c4976d02))
+* **cli:** generate variable index css fallback ([#1173](https://github.com/fontsource/fontsource/issues/1173)) ([b06aa6d](https://github.com/fontsource/fontsource/commit/b06aa6df73544b719f07214d8db3e4150e3a0c06))
+
 ## 0.7.1
 
 ### Patch Changes

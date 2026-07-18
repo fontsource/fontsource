@@ -1,5 +1,12 @@
 # @fontsource-utils/publish
 
+## [0.4.2](https://github.com/fontsource/fontsource/compare/publish-v0.4.1...publish-v0.4.2) (2026-07-18)
+
+
+### Bug Fixes
+
+* **publish:** stabilize changed package order ([#1176](https://github.com/fontsource/fontsource/issues/1176)) ([6b06bcb](https://github.com/fontsource/fontsource/commit/6b06bcbb479d543a391e815d77fe8c71e4dd41c8))
+
 ## 0.4.1
 
 ### Patch Changes

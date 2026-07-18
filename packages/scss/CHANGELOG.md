@@ -1,5 +1,12 @@
 # @fontsource-utils/scss
 
+## [0.2.3](https://github.com/fontsource/fontsource/compare/scss-v0.2.2...scss-v0.2.3) (2026-07-18)
+
+
+### Bug Fixes
+
+* **sass:** replace deprecated if() function with @if/[@else](https://github.com/else) blocks ([#1106](https://github.com/fontsource/fontsource/issues/1106)) ([c940bfd](https://github.com/fontsource/fontsource/commit/c940bfda535aaf84dbca9a1157dc9d41d7ec194a))
+
 ## 0.2.2
 
 ### Patch Changes
