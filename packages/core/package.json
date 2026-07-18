@@ -24,8 +24,8 @@
 		"./package.json": "./package.json"
 	},
 	"dependencies": {
-		"@glypht/bundler-utils": "^0.0.8",
-		"@glypht/core": "^0.0.8"
+		"@glypht/bundler-utils": "^0.0.9",
+		"@glypht/core": "^0.0.9"
 	},
 	"devDependencies": {
 		"@vitest/coverage-v8": "^3.2.4",

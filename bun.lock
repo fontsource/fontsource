@@ -77,8 +77,8 @@
       "name": "@fontsource-utils/core",
       "version": "0.1.0",
       "dependencies": {
-        "@glypht/bundler-utils": "^0.0.8",
-        "@glypht/core": "^0.0.8",
+        "@glypht/bundler-utils": "^0.0.9",
+        "@glypht/core": "^0.0.9",
       },
       "devDependencies": {
         "@vitest/coverage-v8": "^3.2.4",
@@ -480,9 +480,9 @@
 
     "@fontsource/noto-sans-jp": ["@fontsource/noto-sans-jp@5.2.0-alpha.1", "", {}, "sha512-DNAFscIl7fWr9xS1Fgs3wRYCgCE84oV9L5zlElSARVpMpjfT0vA6qDVXENfoTnX4GJSZ2O4TqlloTjyogQu1Yw=="],
 
-    "@glypht/bundler-utils": ["@glypht/bundler-utils@0.0.8", "", { "dependencies": { "@glypht/core": "^0.0.8" } }, "sha512-ZHet44BG6qWuRIi4CAPBvgVCbpSM1FVvAXqoA+eKjA4jjeEOEKKxuCrOD7e5Tk0gBy/pGsCARGKf5yAIjcObDw=="],
+    "@glypht/bundler-utils": ["@glypht/bundler-utils@0.0.9", "", { "dependencies": { "@glypht/core": "^0.0.9" } }, "sha512-DUNFC/3p/ih21xgcup9Z66B75CMgJ1rSBDHkuqKCeEIx5z3qA7VJoZThM/VamDSAu3iZKanvqcu/NZ4JxV8I7Q=="],
 
-    "@glypht/core": ["@glypht/core@0.0.8", "", { "dependencies": { "@glypht/web-worker": "^1.7.1", "@smol-range/decompress": "^0.1.0" } }, "sha512-9WLDXs3lslubw+vBwxFKRPScO+VZca0I1CtLWLZg3r3/gFROVRcjs+Qj25Mwl1i4QQkCG4x29CN9zf4+Bh5jNw=="],
+    "@glypht/core": ["@glypht/core@0.0.9", "", { "dependencies": { "@glypht/web-worker": "^1.7.1", "@smol-range/decompress": "^0.1.0" } }, "sha512-uqRlYm5D8WwWd65hHYoZHM7U0GEMSe3ZKUtBMs17KsF4Xlg5V5y1IsOjydA23mDVSCw4mdX0c8ZSpHNBaiN5gg=="],
 
     "@glypht/web-worker": ["@glypht/web-worker@1.7.1", "", {}, "sha512-YBtQBbkUgfo6S2280jPn5O8iJpZ6UeogV8TxiLxgzXe1sQfg4Yam0eQeZZiYvFbZE755ym6c4Et+Mk87ViZS1w=="],
 
