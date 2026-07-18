@@ -40,7 +40,7 @@ jobs:
           manifest-file: .release-please-manifest.json
 
   publish:
-    name: publish (${{ matrix.path }})
+    name: Publish (${{ matrix.path }})
     if: needs.release.outputs.paths != '[]'
     needs: release
     runs-on: ubuntu-latest
