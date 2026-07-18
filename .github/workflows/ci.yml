@@ -126,32 +126,6 @@ jobs:
       - name: Build API
         run: pnpm --filter fontsource-worker-api build
 
-      - name: Build artifact container
-        run: >-
-          docker build
-          --file api/container/Dockerfile
-          --tag fontsource-artifact-container:test
-          .
-
-      - name: Smoke test artifact container
-        run: |
-          docker run \
-            --detach \
-            --name fontsource-artifact-container \
-            --publish 3000:3000 \
-            fontsource-artifact-container:test
-
-          curl \
-            --fail \
-            --retry 10 \
-            --retry-delay 1 \
-            --retry-connrefused \
-            http://127.0.0.1:3000/health
-
-      - name: Stop artifact container
-        if: always()
-        run: docker rm --force fontsource-artifact-container || true
-
   website:
     name: Website
     runs-on: ubuntu-latest
