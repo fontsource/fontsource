@@ -1,3 +1,4 @@
+import { batch } from '@legendapp/state';
 import {
 	ActionIcon,
 	Divider,
@@ -8,7 +9,11 @@ import {
 } from '@mantine/core';
 
 import { IconRotate } from '@/components/icons';
-import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
+import type {
+	GetFontResponse,
+	GetVariableFontResponse,
+	ListAxisRegistryResponse,
+} from '@/generated/api';
 
 import { CarbonAd } from '../CarbonAd';
 import { NormalButtonsGroup } from './Buttons';
@@ -18,15 +23,16 @@ import { VariableButtonsGroup } from './VariableButtons';
 
 interface ConfigureProps {
 	state$: FontIDState;
-	metadata: Metadata;
-	variable?: VariableData;
-	axisRegistry?: AxisRegistryAll;
+	metadata: GetFontResponse;
+	variable?: GetVariableFontResponse;
+	axisRegistry?: ListAxisRegistryResponse;
 }
 
 const resetVariation = (state$: FontIDState) => {
-	// Reset variation to default
-	state$.preview.italic.set(false);
-	state$.variable.set({});
+	batch(() => {
+		state$.preview.italic.set(false);
+		state$.variable.set({});
+	});
 };
 
 const Configure = ({
@@ -52,8 +58,8 @@ const Configure = ({
 					<NormalButtonsGroup
 						state$={state$}
 						subsets={metadata.subsets}
-						defSubset={metadata.defSubset}
 						hasItalic={metadata.styles.includes('italic')}
+						fontId={metadata.id}
 					/>
 					{variable && (
 						<>

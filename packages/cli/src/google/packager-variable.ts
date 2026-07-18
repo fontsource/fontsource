@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import { APIv2, APIVariable } from 'google-font-metadata';
+import { APIVariable, APIv2 } from 'google-font-metadata';
 import * as path from 'pathe';
 
 import type { BuildOptions } from '../types';

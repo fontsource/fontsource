@@ -1,0 +1,128 @@
+import { resolveFontFaces } from '@fontsource-utils/core';
+import type { SourceFontMetadata, VariableAxes } from './catalog';
+import { buildFontConfig } from './font-config';
+
+interface FontEntry {
+	filename: string;
+	sourceFilename: string;
+	subset: string;
+	style: string;
+}
+
+export interface StaticFontEntry extends FontEntry {
+	weight: number;
+	extension: 'woff2' | 'woff' | 'ttf';
+}
+
+export interface VariableFontEntry extends FontEntry {
+	axisKey: string;
+	extension: 'woff2';
+}
+
+export interface FontPackageManifest {
+	static: StaticFontEntry[];
+	variable: VariableFontEntry[];
+}
+
+export type FontPackageEntry = StaticFontEntry | VariableFontEntry;
+
+export interface FontPackageTarget {
+	file: string;
+	isVariable: boolean;
+}
+
+const resolveManifestFaces = (
+	metadata: SourceFontMetadata,
+	config: ReturnType<typeof buildFontConfig>,
+) =>
+	resolveFontFaces(config).map((face) => ({
+		...face,
+		sources: face.sources.map((source) => ({
+			...source,
+			publicFilename: source.filename.slice(metadata.id.length + 1),
+		})),
+	}));
+
+const buildStaticPlan = (metadata: SourceFontMetadata): StaticFontEntry[] => {
+	const faces = resolveManifestFaces(
+		metadata,
+		buildFontConfig(metadata, {
+			formats: ['woff2', 'woff', 'ttf'],
+		}),
+	);
+
+	return faces.flatMap((face) => {
+		const weight = face.weight;
+		if (typeof weight !== 'number') {
+			return [];
+		}
+
+		return face.sources.flatMap((source) => {
+			if (
+				source.format !== 'woff2' &&
+				source.format !== 'woff' &&
+				source.format !== 'ttf'
+			) {
+				return [];
+			}
+
+			return {
+				filename: source.publicFilename,
+				sourceFilename:
+					source.format === 'ttf'
+						? source.publicFilename.replace(/\.ttf$/, '.woff2')
+						: source.publicFilename,
+				subset: face.subset,
+				weight,
+				style: face.style,
+				extension: source.format,
+			} satisfies StaticFontEntry;
+		});
+	});
+};
+
+const buildVariablePlan = (
+	metadata: SourceFontMetadata,
+	axes: VariableAxes,
+): VariableFontEntry[] =>
+	resolveManifestFaces(
+		metadata,
+		buildFontConfig(metadata, { formats: ['woff2'], axes }),
+	).flatMap((face) => {
+		const axisKey = face.axisKey;
+
+		if (!axisKey) {
+			return [];
+		}
+
+		return face.sources.flatMap((source) => {
+			if (source.format !== 'woff2') {
+				return [];
+			}
+
+			return {
+				filename: source.publicFilename,
+				sourceFilename: source.publicFilename,
+				subset: face.subset,
+				axisKey,
+				style: face.style,
+				extension: 'woff2' as const,
+			} satisfies VariableFontEntry;
+		});
+	});
+
+export const resolveFontPackageManifest = (
+	metadata: SourceFontMetadata,
+	axes?: VariableAxes,
+): FontPackageManifest => ({
+	static: buildStaticPlan(metadata),
+	variable: axes ? buildVariablePlan(metadata, axes) : [],
+});
+
+export const findFontPackageEntry = (
+	manifest: FontPackageManifest,
+	target: FontPackageTarget,
+): FontPackageEntry | undefined =>
+	target.isVariable
+		? manifest.variable.find((item) => item.filename === target.file)
+		: manifest.static.find((item) => item.filename === target.file);

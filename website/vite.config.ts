@@ -1,17 +1,15 @@
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { cloudflare } from '@cloudflare/vite-plugin';
-import mdx from '@mdx-js/rollup';
 import { reactRouter } from '@react-router/dev/vite';
+import babel from '@rolldown/plugin-babel';
+import { reactCompilerPreset } from '@vitejs/plugin-react';
+import { boneyardPlugin } from 'boneyard-js/vite';
 import browserslist from 'browserslist';
+import mdx from 'fumadocs-mdx/vite';
 import { browserslistToTargets } from 'lightningcss';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeSlug from 'rehype-slug';
-import remarkFrontmatter from 'remark-frontmatter';
-import remarkGfm from 'remark-gfm';
-import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
-import remarkSmartypants from 'remark-smartypants';
 import { defineConfig } from 'vite';
-import babel from 'vite-plugin-babel';
+import * as MdxConfig from './source.config';
 
 const targets = browserslistToTargets(
 	browserslist([
@@ -52,25 +50,24 @@ export default defineConfig({
 				}
 			},
 		},
-		cloudflare({ viteEnvironment: { name: 'ssr' } }),
-		mdx({
-			providerImportSource: '@mdx-js/react',
-			remarkPlugins: [
-				remarkFrontmatter,
-				remarkMdxFrontmatter,
-				remarkGfm,
-				remarkSmartypants,
+		cloudflare({
+			viteEnvironment: { name: 'ssr' },
+			auxiliaryWorkers: [
+				{
+					configPath: '../api/wrangler.toml',
+					devOnly: true,
+					config: (config) => {
+						config.containers = [];
+					},
+				},
 			],
-			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+		}),
+		mdx(MdxConfig),
+		babel({
+			presets: [reactCompilerPreset()],
 		}),
 		reactRouter(),
-		babel({
-			filter: /\.[jt]sx?$/,
-			babelConfig: {
-				presets: ['@babel/preset-typescript'],
-				plugins: [['babel-plugin-react-compiler', {}]],
-			},
-		}),
+		boneyardPlugin(),
 	],
 	optimizeDeps: {
 		exclude: ['@fontsource-utils/core', '@glypht/core'],
@@ -85,8 +82,12 @@ export default defineConfig({
 	},
 	resolve: {
 		tsconfigPaths: true,
+		dedupe: ['react', 'react-dom'],
 		mainFields: ['browser', 'module', 'main'],
 		alias: {
+			'@fontsource-utils/core': fileURLToPath(
+				new URL('../packages/core/src/index.ts', import.meta.url),
+			),
 			react: 'react',
 			'react-dom': 'react-dom',
 		},

@@ -1,0 +1,18 @@
+.link {
+	color: var(--mantine-color-purple-0);
+	font-weight: 500;
+	text-decoration-line: underline;
+	text-decoration-thickness: 1px;
+	text-decoration-color: light-dark(rgba(98, 91, 248, 0.36), rgba(98, 91, 248, 0.54));
+	text-underline-offset: 3px;
+	transition:
+		color 100ms ease,
+		text-decoration-color 100ms ease;
+
+	&:hover,
+	&:focus-visible {
+		outline: none;
+		color: light-dark(#473ef6, #8f8aff);
+		text-decoration-color: currentColor;
+	}
+}

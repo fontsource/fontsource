@@ -32,10 +32,16 @@ interface IconProps extends ActionIconProps {
 const Icon = ({ label, icon, href, ...others }: IconProps) => {
 	return (
 		<Tooltip label={label}>
-			<ActionIcon variant="transparent" {...others}>
-				<a href={href} target="_blank" rel="noreferrer">
-					{icon}
-				</a>
+			<ActionIcon
+				component="a"
+				href={href}
+				target="_blank"
+				rel="noreferrer"
+				variant="transparent"
+				aria-label={label}
+				{...others}
+			>
+				{icon}
 			</ActionIcon>
 		</Tooltip>
 	);
@@ -48,13 +54,6 @@ interface HeaderNavLinkProps {
 }
 
 const HeaderNavLink = ({ label, to, toggle }: HeaderNavLinkProps) => {
-	const handleToggle = () => {
-		// Wait to allow the browser to load new docs
-		setTimeout(() => {
-			toggle?.();
-		}, 100);
-	};
-
 	return (
 		<Text>
 			<NavLink
@@ -63,7 +62,7 @@ const HeaderNavLink = ({ label, to, toggle }: HeaderNavLinkProps) => {
 				className={({ isActive }) =>
 					isActive ? cx(classes.link, classes.active) : classes.link
 				}
-				onClick={handleToggle}
+				onClick={toggle}
 			>
 				{label}
 			</NavLink>
@@ -78,6 +77,7 @@ const MobileExternalIcon = ({ icon, label, href }: IconProps) => {
 			className={classes.mobileLink}
 			href={href}
 			target="_blank"
+			rel="noreferrer"
 		>
 			<Group>
 				{icon}
@@ -132,10 +132,10 @@ export const Header = ({ ...other }: ContainerProps) => {
 		<>
 			<Box component="header" className={classes.header}>
 				<Container className={classes.inner} {...other}>
-					<Link to="/" prefetch="intent">
+					<Link to="/" prefetch="intent" aria-label="Fontsource home">
 						<LogoText height={31} isHeader />
 					</Link>
-					<div className={classes.links}>
+					<Box className={classes.links} visibleFrom="sm">
 						<Tooltip.Group openDelay={600} closeDelay={100}>
 							<Group gap="md" justify="right">
 								<HeaderNavLink label="Fonts" to="/" />
@@ -152,12 +152,13 @@ export const Header = ({ ...other }: ContainerProps) => {
 								<Icon label="Discord" href="/discord" icon={<IconDiscord />} />
 							</Group>
 						</Tooltip.Group>
-					</div>
+					</Box>
 					<Burger
 						opened={opened}
 						onClick={toggle}
-						className={classes.burger}
+						hiddenFrom="sm"
 						size="sm"
+						aria-label={opened ? 'Close navigation' : 'Open navigation'}
 					/>
 				</Container>
 			</Box>

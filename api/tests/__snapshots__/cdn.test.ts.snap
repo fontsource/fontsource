@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = `
+{
+  "body": "/* abel-latin-400-normal */
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2) format('woff2'),
+       url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF;
+}",
+  "headers": {
+    "cacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+    "cdnCacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+    "contentType": "text/css; charset=utf-8",
+    "edgeCacheControl": "public, max-age=900, stale-if-error=604800",
+    "etag": "<etag>",
+    "lastModified": "<last-modified>",
+  },
+  "status": 200,
+}
+`;
+
+exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
+{
+  "body": {
+    "error": "Bad Gateway. Artifact build failed for build:abel@5.0.0:static: Mocked builder failure for build:abel@5.0.0:static",
+    "status": 502,
+  },
+  "headers": {
+    "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
+    "contentType": "application/json",
+    "edgeCacheControl": "no-store",
+  },
+  "status": 502,
+}
+`;
+
+exports[`cdn routes > returns 502 when version lookup upstream fails 1`] = `
+{
+  "body": {
+    "error": "Bad Gateway. Failed to fetch https://data.jsdelivr.com/v1/packages/npm/@fontsource/recursive: 500",
+    "status": 502,
+  },
+  "headers": {
+    "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
+    "contentType": "application/json",
+    "edgeCacheControl": "no-store",
+    "etag": "<etag>",
+  },
+  "status": 502,
+}
+`;

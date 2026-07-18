@@ -22,6 +22,7 @@ interface DropdownBaseProps {
 	noBorder?: boolean;
 	search?: (query: string) => void;
 	disabled?: boolean;
+	closeOnSelect?: boolean;
 }
 interface DropdownItems {
 	label: string;
@@ -47,6 +48,7 @@ const DropdownBase = ({
 	refine,
 	search,
 	disabled,
+	closeOnSelect,
 }: DropdownBaseProps) => {
 	const [searchQuery, setSearchQuery] = useState('');
 
@@ -62,6 +64,7 @@ const DropdownBase = ({
 
 	const handleValueSelect = (val: string) => {
 		if (refine) refine(val);
+		if (closeOnSelect) combobox.closeDropdown();
 	};
 
 	const handleSearchQuery = (query: string) => {
@@ -141,6 +144,7 @@ const DropdownSimple = ({
 			refine={refine}
 			w={w}
 			noBorder={noBorder}
+			closeOnSelect
 		/>
 	);
 };

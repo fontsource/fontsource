@@ -6,6 +6,11 @@ export {
 	generateCSSAssets,
 	type UrlResolver,
 } from './css';
+export {
+	type FontInspection,
+	type FontInspectionAxis,
+	inspectFont,
+} from './inspection';
 export { buildFont } from './processor';
 export type {
 	CSSAsset,
@@ -27,5 +32,6 @@ export type {
 export {
 	determineAxisKey,
 	getVariableAxisKeys,
+	resolveFontFaces,
 	selectVariableAxisKey,
 } from './utils';

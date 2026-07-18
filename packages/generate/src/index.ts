@@ -43,5 +43,5 @@ const generateFontFace = (font: FontObject) => {
 	return `${result}\n}`;
 };
 
-export { generateFontFace };
 export type { FontObject };
+export { generateFontFace };

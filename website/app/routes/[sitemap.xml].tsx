@@ -1,23 +1,25 @@
 import type { LoaderFunction } from 'react-router';
 import { SitemapStream, streamToPromise } from 'sitemap';
+import { listFontValues } from '@/generated/api';
+import { cacheHeaders } from '@/utils/cache';
+import { source } from '@/utils/docs/source.server';
 
-import { fetchApiData } from '@/utils/api.server';
-
-const docSlugs = Object.keys(
-	import.meta.glob('../../docs/**/*.mdx', {
-		eager: true,
-	}),
-).map((slug) => slug.replace('../../docs/', '').replace('.mdx', ''));
-
-export const loader: LoaderFunction = async () => {
+export const loader: LoaderFunction = async ({ request }) => {
 	const smStream = new SitemapStream({ hostname: 'https://fontsource.org' });
 
 	// Pipe base urls to stream
 	smStream.write({ url: '/', changefreq: 'daily', priority: 0.9 });
+	smStream.write({ url: '/tools', changefreq: 'weekly', priority: 0.7 });
+	smStream.write({
+		url: '/tools/converter',
+		changefreq: 'weekly',
+		priority: 0.7,
+	});
 
 	// Pipe each font to stream
-	const fontlist = await fetchApiData<Record<string, string>>(
-		'https://api.fontsource.org/fontlist?family',
+	const fontlist = await listFontValues(
+		{ family: '' },
+		{ signal: request.signal },
 	);
 
 	for (const id of Object.keys(fontlist)) {
@@ -28,10 +30,9 @@ export const loader: LoaderFunction = async () => {
 		});
 	}
 
-	// Pipe all docs to stream
-	for (const slug of docSlugs) {
+	for (const page of source.getPages()) {
 		smStream.write({
-			url: `/docs/${slug}`,
+			url: page.url,
 			changefreq: 'weekly',
 			priority: 0.7,
 		});
@@ -45,7 +46,7 @@ export const loader: LoaderFunction = async () => {
 	return new Response(sitemap, {
 		headers: {
 			'Content-Type': 'application/xml',
-			'Cache-Control': 'public, max-age=86400', // 1 day
+			...cacheHeaders.stable,
 		},
 	});
 };

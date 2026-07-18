@@ -1,0 +1,17 @@
+.input {
+	background-color: light-dark(transparent, var(--mantine-color-background-4));
+	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
+	text-align: left;
+
+	&:hover:not(:disabled) {
+		background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-6));
+	}
+}
+
+.dropdown {
+	min-width: 250px;
+}
+
+.count {
+	font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,26 @@
+{
+	"title": "Getting Started",
+	"defaultOpen": true,
+	"pages": [
+		"---Contents---",
+		"introduction",
+		"install",
+		"variable",
+		"subsets",
+		"display",
+		"preload",
+		"cdn",
+		"faq",
+		"ai-and-llms",
+		"---Icons---",
+		"material-icons",
+		"material-symbols",
+		"---Sass---",
+		"sass-introduction",
+		"sass-import",
+		"faces-mixin",
+		"generator-mixin",
+		"---Migration---",
+		"migrate-v5"
+	]
+}

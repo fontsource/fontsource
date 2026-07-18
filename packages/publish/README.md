@@ -18,4 +18,4 @@ npx @fontsource-utils/publish init
 
 1. Use folder hashes (recursive filehashes) to determine if a package has changed.
 2. Bump packages and validate they are publishable by comparing versions on the NPM registry.
-3. Use pacote and libnpmpublish to pack and publish the packages.
+3. Run `npm publish` for each changed package, with optional provenance attestations.

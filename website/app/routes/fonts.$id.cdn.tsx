@@ -4,40 +4,46 @@ import invariant from 'tiny-invariant';
 
 import { CDN } from '@/components/preview/CDN';
 import { TabsWrapper } from '@/components/preview/Tabs';
-import { ogMeta } from '@/utils/meta';
-import { getMetadata, getStats, getVariable } from '@/utils/metadata.server';
-import type { Metadata, VariableData } from '@/utils/types';
+import {
+	type GetFontResponse,
+	getFont,
+	getFontStats,
+	getFontVersions,
+	getVariableFont,
+} from '@/generated/api';
+import { cacheHeaders } from '@/utils/cache';
+import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
-interface FontMetadata {
-	metadata: Metadata;
-	variable?: VariableData;
-	hits: number;
-}
-
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
+	const parameters = { id };
+	const options = { signal: request.signal };
 
-	const [metadata, variable, stats] = await Promise.all([
-		getMetadata(id),
-		getVariable(id).catch(() => undefined), // Always try to load, fail gracefully
-		getStats(id),
+	const [metadata, variable, versions, stats] = await Promise.all([
+		getFont(parameters, options),
+		getVariableFont(parameters, options).catch(() => undefined), // Always try to load, fail gracefully
+		getFontVersions(parameters, options),
+		getFontStats(parameters, options),
 	]);
+	invariant(versions.latest, `Missing static package version for ${id}`);
+	invariant(
+		!variable || versions.latestVariable,
+		`Missing variable package version for ${id}`,
+	);
 
-	const res: FontMetadata = {
-		metadata,
-		variable,
-		hits: stats.total.jsDelivrHitsTotal,
-	};
-
-	return data(res, {
-		headers: {
-			'Cache-Control': 'public, max-age=300',
+	return data(
+		{
+			metadata,
+			variable,
+			versions,
+			hits: stats.total.jsDelivrHitsTotal,
 		},
-	});
+		{ headers: cacheHeaders.short },
+	);
 };
 
-const generateDescription = (metadata: Metadata) => {
+const generateDescription = (metadata: GetFontResponse) => {
 	const { family, category, weights, styles, variable } = metadata;
 	const weightDesc =
 		weights.length > 1
@@ -53,24 +59,31 @@ const generateDescription = (metadata: Metadata) => {
 	return `The ${family} ${variableDesc}font family is a versatile ${category} web typeface offering ${weightDesc}${italicDesc} for free. Hosted on a privacy-friendly CDN that is free to use and simple to integrate into your website.`;
 };
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-	const title = data?.metadata.family
-		? `${data.metadata.family} | CDN | Fontsource`
+export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
+	const title = loaderData?.metadata.family
+		? `${loaderData.metadata.family} | CDN | Fontsource`
 		: undefined;
 
-	const description = data?.metadata
-		? generateDescription(data.metadata)
+	const description = loaderData?.metadata
+		? generateDescription(loaderData.metadata)
 		: undefined;
-	return ogMeta({ title, description });
+	const image = loaderData?.metadata
+		? getFontOpenGraphImage(loaderData.metadata)
+		: undefined;
+	return ogMeta({ title, description, image });
 };
 
 export default function CDNPage() {
-	const data = useLoaderData<FontMetadata>();
-	const { metadata, variable, hits } = data;
+	const { metadata, variable, versions, hits } = useLoaderData<typeof loader>();
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="cdn">
-			<CDN metadata={metadata} variable={variable} hits={hits} />
+			<CDN
+				metadata={metadata}
+				variable={variable}
+				versions={versions}
+				hits={hits}
+			/>
 		</TabsWrapper>
 	);
 }

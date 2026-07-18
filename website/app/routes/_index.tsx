@@ -1,45 +1,81 @@
 import { createFetchRequester } from '@algolia/requester-fetch';
 import { observable } from '@legendapp/state';
-import { useObservable } from '@legendapp/state/react';
+import { useObservable, useValue } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { UiState } from 'instantsearch.js';
-// @ts-expect-error - No type definitions available
-import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
+import { history } from 'instantsearch.js/es/lib/routers';
 import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
 import type { RouterProps } from 'instantsearch.js/es/middlewares';
 import { useRef } from 'react';
 import { renderToString } from 'react-dom/server';
 import {
+	Configure,
 	getServerState,
 	InstantSearch,
 	type InstantSearchServerState,
 	InstantSearchSSRProvider,
 } from 'react-instantsearch';
-import { data, type LoaderFunctionArgs, useLoaderData } from 'react-router';
+import {
+	data,
+	type LinksFunction,
+	type LoaderFunctionArgs,
+	useLoaderData,
+} from 'react-router';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
-import type { SearchObject } from '@/components/search/observables';
+import {
+	createSearchState,
+	type SearchState,
+} from '@/components/search/observables';
 import { ScrollToTop } from '@/components/search/ScrollToTop';
-
+import {
+	CollectionsProvider,
+	useCollectionsStore,
+} from '@/features/collections/CollectionsProvider';
+import { normalizeCollectionName } from '@/features/collections/model';
+import type { CollectionsStore } from '@/features/collections/store';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
+import { buildAlgoliaCacheKey } from '@/utils/algolia';
+import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
+import { cloudflareContext } from '@/utils/cloudflare-context';
 
 interface SearchProps {
+	hasCollectionFilter: boolean;
 	serverState?: InstantSearchServerState;
 	serverUrl: string;
 }
 
+interface SearchRouteState {
+	category?: string;
+	collection?: string;
+	query?: string;
+	sort?: string;
+	subsets?: string | string[];
+	variable?: boolean;
+}
+
 const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
+const ALGOLIA_APP_ID = 'WNATE69PVR';
+const attributesToRetrieve = ['family', 'defSubset', 'category', 'variable'];
 
 const searchClient = algoliasearch(
-	'WNATE69PVR',
+	ALGOLIA_APP_ID,
 	'8b36fe56fca654afaeab5e6f822c14bd',
 	{
 		requester: createFetchRequester(),
 	},
 );
+
+export const links: LinksFunction = () => [
+	{
+		rel: 'preconnect',
+		href: `https://${ALGOLIA_APP_ID}-dsn.algolia.net`,
+		crossOrigin: 'anonymous',
+	},
+];
 
 const sortMap: Record<string, string> = {
 	prod_POPULAR: 'popular',
@@ -62,7 +98,11 @@ const parseSubsets = (value: unknown): string[] | undefined => {
 	return subsets.length > 0 ? subsets : undefined;
 };
 
-const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
+const routing = (
+	serverUrl: string,
+	state$: SearchState,
+	collectionsStore?: CollectionsStore,
+): RouterProps<UiState, SearchRouteState> => {
 	const indexName = 'prod_POPULAR';
 	return {
 		router: history({
@@ -72,13 +112,18 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 					: window.location;
 			},
 			cleanUrlOnDispose: true,
-		} satisfies Partial<BrowserHistoryArgs<UiState>>),
+		} satisfies Partial<BrowserHistoryArgs<SearchRouteState>>),
 		stateMapping: {
-			// @ts-expect-error - This is a valid function signature
 			stateToRoute(uiState) {
 				const index = uiState[indexName];
+				// Collection selection lives in Legend rather than InstantSearch state.
+				const collectionId = state$.collectionId.peek();
+				const collectionName = collectionsStore?.collections$
+					.peek()
+					.find((collection) => collection.id === collectionId)?.name;
 				const result = {
 					query: index.query,
+					...(collectionName ? { collection: collectionName } : {}),
 					// RefinementList facets
 					...(index.refinementList?.subsets
 						? { subsets: index.refinementList.subsets.join(',') }
@@ -92,9 +137,19 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 				};
 				return result;
 			},
-			// @ts-expect-error - This is a valid function signature
 			routeToState(routeState) {
 				const subsets = parseSubsets(routeState.subsets);
+				// URLs use readable collection names while state keeps the stable local ID.
+				const normalizedCollectionName = routeState.collection
+					? normalizeCollectionName(routeState.collection)
+					: undefined;
+				const collection = collectionsStore?.collections$
+					.peek()
+					.find(
+						(item) =>
+							normalizeCollectionName(item.name) === normalizedCollectionName,
+					);
+				state$.collectionId.set(collection?.id ?? null);
 
 				const state = {
 					query: routeState.query,
@@ -109,7 +164,7 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 					// Sortby map
 					...(routeState.sort
 						? {
-								sortBy: sortMap[String(routeState.sort)],
+								sortBy: sortMap[routeState.sort],
 							}
 						: {}),
 				};
@@ -123,28 +178,39 @@ const routing = (serverUrl: string): RouterProps<UiState, UiState> => {
 };
 
 export const loader = async ({ request, context }: LoaderFunctionArgs) => {
-	const { ALGOLIA } = context.cloudflare.env;
-	const serverUrl = request.url;
+	const requestUrl = new URL(request.url);
+	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
+	const hasCollectionFilter = requestUrl.searchParams.has('collection');
+	// Collection membership exists only in localStorage and is unavailable to SSR.
+	if (hasCollectionFilter) {
+		return data<SearchProps>(
+			{ hasCollectionFilter, serverUrl },
+			{ headers: cacheHeaders.short },
+		);
+	}
+
+	const { env, ctx } = context.get(cloudflareContext);
+	const { ALGOLIA } = env;
+	const cacheKey = buildAlgoliaCacheKey(serverUrl);
 
 	// Generate default state object for ssr
-	const state$ = observable<SearchObject>({
-		size: 32,
-		preview: {
-			label: 'Sentence',
-			value: 'Sphinx of black quartz, judge my vow.',
-			inputView: '',
-		},
-		language: 'latin',
-		display: 'grid',
-	});
+	const state$ = observable(createSearchState());
 
 	// Check local cache for server state first to avoid unnecessary API calls
-	let serverState = await ALGOLIA.get(serverUrl, 'json');
+	let serverState = cacheKey
+		? await ALGOLIA.get<InstantSearchServerState>(cacheKey, 'json')
+		: null;
 	if (serverState) {
-		return data<SearchProps>({
-			serverState,
-			serverUrl,
-		});
+		return data<SearchProps>(
+			{
+				hasCollectionFilter,
+				serverState,
+				serverUrl,
+			},
+			{
+				headers: cacheHeaders.short,
+			},
+		);
 	}
 
 	serverState = await getServerState(
@@ -153,11 +219,14 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 				<InstantSearch
 					searchClient={searchClient}
 					indexName="prod_POPULAR"
-					routing={routing(serverUrl)}
+					routing={routing(serverUrl, state$)}
 					future={{ preserveSharedStateOnUnmount: true }}
 				>
-					<Filters state$={state$} />
-					<InfiniteHits state$={state$} />
+					<CollectionsProvider>
+						<Configure attributesToRetrieve={attributesToRetrieve} />
+						<Filters state$={state$} />
+						<InfiniteHits state$={state$} />
+					</CollectionsProvider>
 				</InstantSearch>
 			</InstantSearchSSRProvider>
 		</MantineProvider>,
@@ -167,57 +236,46 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	);
 
 	// Add server state to local cache before responding
-	context.cloudflare.ctx.waitUntil(
-		ALGOLIA.put(serverUrl, JSON.stringify(serverState), {
-			expirationTtl: ALGOLIA_TTL_SECONDS,
-		}),
-	);
+	if (cacheKey) {
+		ctx.waitUntil(
+			ALGOLIA.put(cacheKey, JSON.stringify(serverState), {
+				expirationTtl: ALGOLIA_TTL_SECONDS,
+			}),
+		);
+	}
 
 	return data<SearchProps>(
 		{
+			hasCollectionFilter,
 			serverState,
 			serverUrl,
 		},
 		{
-			headers: {
-				'Cache-Control': 'public, max-age=300',
-			},
+			headers: cacheHeaders.short,
 		},
 	);
 };
 
 export default function Index() {
-	const { serverState, serverUrl } = useLoaderData<typeof loader>();
+	const { hasCollectionFilter, serverState, serverUrl } =
+		useLoaderData<typeof loader>();
+	const collectionsStore = useCollectionsStore();
+	const collectionsReady = useValue(collectionsStore.ready$);
 	const searchRef = useRef<HTMLDivElement>(null);
 
-	const state$ = useObservable<SearchObject>({
-		size: 32,
-		preview: {
-			label: 'Sentence',
-			value: 'Sphinx of black quartz, judge my vow.',
-			inputView: '',
-		},
-		language: 'latin',
-		display: 'grid',
-	});
-
-	// Update the preset preview label to custom if
-	// a manual input is detected
-	state$.preview.inputView.onChange((e) => {
-		if (e.value !== '') {
-			state$.preview.label.set('Custom');
-			state$.preview.value.set(e.value ?? '');
-		}
-	});
+	const state$ = useObservable(createSearchState());
+	// Resolve the collection name only after Legend has restored local persistence.
+	if (hasCollectionFilter && !collectionsReady) return null;
 
 	return (
 		<InstantSearchSSRProvider {...serverState}>
 			<InstantSearch
 				searchClient={searchClient}
 				indexName="prod_POPULAR"
-				routing={routing(serverUrl)}
+				routing={routing(serverUrl, state$, collectionsStore)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
+				<Configure attributesToRetrieve={attributesToRetrieve} />
 				<Box className={classes.background}>
 					<Box className={classes.container} ref={searchRef}>
 						<Filters state$={state$} />

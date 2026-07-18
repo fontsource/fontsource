@@ -3,9 +3,9 @@ import type { FontVariants, FontVariantsVariable } from 'google-font-metadata';
 import {
 	APIIconStatic,
 	APIIconVariable,
+	APIVariable,
 	APIv1,
 	APIv2,
-	APIVariable,
 } from 'google-font-metadata';
 import PQueue from 'p-queue';
 import * as path from 'pathe';

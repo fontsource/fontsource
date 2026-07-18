@@ -4,40 +4,38 @@ import invariant from 'tiny-invariant';
 
 import { Install } from '@/components/preview/Install';
 import { TabsWrapper } from '@/components/preview/Tabs';
-import { ogMeta } from '@/utils/meta';
-import { getMetadata, getStats, getVariable } from '@/utils/metadata.server';
-import type { Metadata, VariableData } from '@/utils/types';
+import {
+	type GetFontResponse,
+	getFont,
+	getFontStats,
+	getVariableFont,
+} from '@/generated/api';
+import { cacheHeaders } from '@/utils/cache';
+import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
-interface FontMetadata {
-	metadata: Metadata;
-	variable?: VariableData;
-	downloadCount: number;
-}
-
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
+	const parameters = { id };
+	const options = { signal: request.signal };
 
 	const [metadata, variable, stats] = await Promise.all([
-		getMetadata(id),
-		getVariable(id).catch(() => undefined), // Always try to load, fail gracefully
-		getStats(id),
+		getFont(parameters, options),
+		getVariableFont(parameters, options).catch(() => undefined), // Always try to load, fail gracefully
+		getFontStats(parameters, options),
 	]);
 
-	const res: FontMetadata = {
-		metadata,
-		variable,
-		downloadCount: stats.total.npmDownloadTotal,
-	};
-
-	return data(res, {
-		headers: {
-			'Cache-Control': 'public, max-age=300',
+	return data(
+		{
+			metadata,
+			variable,
+			downloadCount: stats.total.npmDownloadTotal,
 		},
-	});
+		{ headers: cacheHeaders.short },
+	);
 };
 
-const generateDescription = (metadata: Metadata) => {
+const generateDescription = (metadata: GetFontResponse) => {
 	const { family, category, weights, styles, variable } = metadata;
 	const weightDesc =
 		weights.length > 1
@@ -53,20 +51,22 @@ const generateDescription = (metadata: Metadata) => {
 	return `The ${family} ${variableDesc}font family is a versatile ${category} web typeface offering ${weightDesc}${italicDesc} for free. Download and self-host via an NPM package for performance and privacy, enhancing your website's typography and user experience.`;
 };
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-	const title = data?.metadata.family
-		? `${data.metadata.family} | Install | Fontsource`
+export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
+	const title = loaderData?.metadata.family
+		? `${loaderData.metadata.family} | Install | Fontsource`
 		: undefined;
 
-	const description = data?.metadata
-		? generateDescription(data.metadata)
+	const description = loaderData?.metadata
+		? generateDescription(loaderData.metadata)
 		: undefined;
-	return ogMeta({ title, description });
+	const image = loaderData?.metadata
+		? getFontOpenGraphImage(loaderData.metadata)
+		: undefined;
+	return ogMeta({ title, description, image });
 };
 
 export default function InstallPage() {
-	const data = useLoaderData<FontMetadata>();
-	const { metadata, variable, downloadCount } = data;
+	const { metadata, variable, downloadCount } = useLoaderData<typeof loader>();
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="install">

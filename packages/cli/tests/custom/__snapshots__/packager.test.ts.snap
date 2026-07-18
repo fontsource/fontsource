@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`packager custom > should generate custom CSS successfully 1`] = `
-[MockFunction writeFile] {
+[MockFunction] {
   "calls": [
     [
       "custom-font/400.css",

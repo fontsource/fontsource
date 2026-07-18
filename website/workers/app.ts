@@ -1,13 +1,7 @@
-import { createRequestHandler } from 'react-router';
+import { createRequestHandler, RouterContextProvider } from 'react-router';
 
-declare module 'react-router' {
-	export interface AppLoadContext {
-		cloudflare: {
-			env: Env;
-			ctx: ExecutionContext;
-		};
-	}
-}
+import { cloudflareContext } from '../app/utils/cloudflare-context';
+import { getDocsMarkdownResponse } from '../app/utils/docs/markdown.server';
 
 const requestHandler = createRequestHandler(
 	() => import('virtual:react-router/server-build'),
@@ -16,8 +10,14 @@ const requestHandler = createRequestHandler(
 
 export default {
 	async fetch(request, env, ctx) {
-		return requestHandler(request, {
-			cloudflare: { env, ctx },
-		});
+		const url = new URL(request.url);
+		const markdownResponse = await getDocsMarkdownResponse(url.pathname);
+
+		if (markdownResponse) return markdownResponse;
+
+		const context = new RouterContextProvider();
+		context.set(cloudflareContext, { env, ctx });
+
+		return requestHandler(request, context);
 	},
 } satisfies ExportedHandler<Env>;

@@ -1,4 +1,4 @@
-import { Group, Text } from '@mantine/core';
+import { Group, Stack, Text } from '@mantine/core';
 import { Dropzone } from '@mantine/dropzone';
 import { IconUpload, IconX } from '@tabler/icons-react';
 import classes from './FileUpload.module.css';
@@ -37,14 +37,12 @@ export const FileUpload = ({ onDrop, disabled }: FileUploadProps) => {
 				<Dropzone.Idle>
 					<IconUpload className={classes.idleIcon} stroke={1.5} />
 				</Dropzone.Idle>
-				<div>
-					<Text size="xl" inline>
-						Drag fonts here or click to select files
-					</Text>
-					<Text size="sm" c="dimmed" inline mt={7}>
+				<Stack gap={7}>
+					<Text size="xl">Drag fonts here or click to select files</Text>
+					<Text size="sm" c="dimmed">
 						Files are not uploaded to any server
 					</Text>
-				</div>
+				</Stack>
 			</Group>
 		</Dropzone>
 	);

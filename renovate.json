@@ -1,0 +1,40 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:recommended"],
+	"labels": ["dependencies"],
+	"prConcurrentLimit": 5,
+	"rangeStrategy": "replace",
+	"schedule": ["before 9am on monday"],
+	"timezone": "Asia/Tokyo",
+	"lockFileMaintenance": {
+		"enabled": true,
+		"schedule": ["before 9am on monday"]
+	},
+	"packageRules": [
+		{
+			"description": "Keep Vitest packages on the same version line",
+			"groupName": "vitest",
+			"matchPackageNames": ["vitest", "/^@vitest\\//"]
+		},
+		{
+			"description": "Update the Cloudflare toolchain together",
+			"groupName": "cloudflare toolchain",
+			"matchPackageNames": [
+				"wrangler",
+				"@cloudflare/vite-plugin",
+				"@cloudflare/vitest-pool-workers",
+				"@cloudflare/workers-types"
+			]
+		},
+		{
+			"description": "Pin GitHub Actions to immutable commit digests",
+			"matchManagers": ["github-actions"],
+			"pinDigests": true
+		},
+		{
+			"description": "Require manual review for major upgrades",
+			"automerge": false,
+			"matchUpdateTypes": ["major"]
+		}
+	]
+}

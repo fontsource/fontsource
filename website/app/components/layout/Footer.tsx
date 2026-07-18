@@ -24,10 +24,16 @@ interface IconProps extends ActionIconProps {
 const Icon = ({ label, icon, href, ...others }: IconProps) => {
 	return (
 		<Tooltip label={label}>
-			<ActionIcon variant="transparent" {...others}>
-				<a href={href} target="_blank" rel="noreferrer">
-					{icon}
-				</a>
+			<ActionIcon
+				component="a"
+				href={href}
+				target="_blank"
+				rel="noreferrer"
+				variant="transparent"
+				aria-label={label}
+				{...others}
+			>
+				{icon}
 			</ActionIcon>
 		</Tooltip>
 	);
@@ -58,7 +64,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 				<Link to="/" prefetch="intent">
 					<LogoText height={31} />
 				</Link>
-				<div className={classes.links}>
+				<Box className={classes.links} visibleFrom="sm">
 					<Tooltip.Group openDelay={600} closeDelay={100}>
 						<Group gap="md" justify="right">
 							<FooterNavLink label="Fonts" to="/" />
@@ -76,7 +82,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 							/>
 						</Group>
 					</Tooltip.Group>
-				</div>
+				</Box>
 			</Container>
 		</Box>
 	);

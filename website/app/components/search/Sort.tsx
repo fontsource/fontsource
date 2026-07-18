@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import {
 	Group,
 	SegmentedControl,
@@ -34,7 +34,7 @@ const getSortItems = () => {
 };
 
 const Sort = observer(({ count, state$ }: SortProps) => {
-	const display = state$.display.get();
+	const display = useValue(state$.display);
 	const sortItems = getSortItems();
 
 	const { currentRefinement, refine } = useSortBy({
@@ -51,10 +51,12 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 	});
 
 	return (
-		<div className={classes.wrapper}>
-			<Text>{count} families loaded</Text>
+		<Group className={classes.wrapper} justify="space-between" wrap="nowrap">
+			<Text aria-atomic="true" role="status">
+				{count} families loaded
+			</Text>
 			<Group>
-				<Group className={classes['display-group']}>
+				<Group visibleFrom="sm">
 					<DropdownSimple
 						label={sortMap[currentRefinement]}
 						items={sortMenuItems}
@@ -97,7 +99,7 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 					</Tooltip>
 				</Group>
 			</Group>
-		</div>
+		</Group>
 	);
 });
 

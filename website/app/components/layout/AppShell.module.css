@@ -1,0 +1,22 @@
+.skipLink {
+	position: fixed;
+	top: 12px;
+	left: 16px;
+	z-index: 1000;
+	padding: 9px 12px;
+	border: 1px solid var(--mantine-color-purple-0);
+	border-radius: 4px;
+	background: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-5));
+	color: var(--mantine-color-purple-0);
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+	transform: translateY(calc(-100% - 24px));
+	transition: transform 120ms ease;
+
+	&:focus-visible {
+		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline-offset: 2px;
+		transform: translateY(0);
+	}
+}

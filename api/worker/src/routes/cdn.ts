@@ -1,0 +1,113 @@
+import { contentJson, OpenAPIRoute } from 'chanfana';
+import type { Context } from 'hono';
+import { z } from 'zod';
+import type { AppEnv } from '../env';
+import { getBinaryAsset, getCssFile } from '../features/cdn/handler';
+import { parseFontTag } from '../features/font-tag';
+import { ErrorResponseSchema, TagFileParamSchema } from '../schemas/common';
+import { notFound } from '../utils/errors';
+
+type AppContext = Context<AppEnv>;
+
+export class GetBinaryAssetRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['CDN'],
+		operationId: 'getBinaryAsset',
+		summary: 'Get binary font asset',
+		description:
+			'Serves binary font files (woff2, woff, ttf) from the CDN. ' +
+			'Supports pinned and floating version tags. Latest download aliases redirect to the download endpoint.',
+		request: {
+			params: TagFileParamSchema,
+		},
+		responses: {
+			'200': {
+				description: 'Binary font asset',
+				content: {
+					'font/woff2': {
+						schema: z.string(),
+					},
+					'font/woff': {
+						schema: z.string(),
+					},
+					'font/ttf': {
+						schema: z.string(),
+					},
+				},
+			},
+			'302': {
+				description:
+					'Redirect a latest download alias to the download endpoint',
+			},
+			'304': {
+				description: 'Not modified (conditional request)',
+			},
+			'400': {
+				description: 'Invalid file extension or font tag',
+				...contentJson(ErrorResponseSchema),
+			},
+			'404': {
+				description: 'Font or file not found',
+				...contentJson(ErrorResponseSchema),
+			},
+			'502': {
+				description: 'Artifact build did not persist the requested file',
+				...contentJson(ErrorResponseSchema),
+			},
+		},
+	};
+
+	async handle(c: AppContext) {
+		const data = await this.getValidatedData<typeof this.schema>();
+		const { tag, file } = data.params;
+
+		if (file === 'download.zip') {
+			const parsedTag = parseFontTag(tag);
+			if (parsedTag.version === 'latest') {
+				return c.redirect(`/v1/download/${parsedTag.id}`, 302);
+			}
+
+			throw notFound('Not Found. Versioned downloads are not supported.');
+		}
+
+		return getBinaryAsset(c, tag, file);
+	}
+}
+
+export class GetCssFileRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['CDN'],
+		operationId: 'getCssFile',
+		summary: 'Get generated CSS stylesheet',
+		description:
+			'Serves dynamically generated CSS stylesheets for font face declarations. ' +
+			'Supports static and variable font tags, with .min.css aliases for minified output.',
+		request: {
+			params: TagFileParamSchema,
+		},
+		responses: {
+			'200': {
+				description: 'CSS stylesheet with @font-face declarations',
+				content: {
+					'text/css; charset=utf-8': {
+						schema: z.string(),
+					},
+				},
+			},
+			'400': {
+				description: 'Invalid file extension',
+				...contentJson(ErrorResponseSchema),
+			},
+			'404': {
+				description: 'Font or CSS file not found',
+				...contentJson(ErrorResponseSchema),
+			},
+		},
+	};
+
+	async handle(c: AppContext) {
+		const data = await this.getValidatedData<typeof this.schema>();
+		const { tag, file } = data.params;
+		return getCssFile(c, tag, file);
+	}
+}

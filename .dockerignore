@@ -1,0 +1,10 @@
+.git
+**/node_modules
+.pnpm-store
+**/.dev.vars
+**/.wrangler
+**/coverage
+**/dist
+**/build
+**/*.tsbuildinfo
+api/bin

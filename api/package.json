@@ -1,0 +1,47 @@
+{
+	"name": "api",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "pnpm --filter '@fontsource-utils/core' run build && vite build",
+		"cf-typegen": "wrangler types",
+		"container:build": "tsx scripts/build-container.ts",
+		"container:start": "node container/dist/server.mjs",
+		"deploy": "pnpm run build && wrangler deploy",
+		"dev": "pnpm --filter '@fontsource-utils/core' run build && vite dev",
+		"generate:website-client": "pnpm --filter '@fontsource-utils/core' run build && tsx scripts/generate-website-client.ts",
+		"preview": "pnpm run build && vite preview",
+		"test": "pnpm --filter '@fontsource-utils/core' run build && vitest run && vitest run --config vitest.container.config.ts",
+		"test:coverage": "pnpm --filter '@fontsource-utils/core' run build && vitest run --coverage && vitest run --coverage --config vitest.container.config.ts",
+		"test:watch": "pnpm --filter '@fontsource-utils/core' run build && vitest",
+		"typecheck": "pnpm --filter '@fontsource-utils/core' run build && tsc -p worker/tsconfig.json --noEmit && tsc -p tests/tsconfig.json --noEmit && tsc -p container/tsconfig.json --noEmit"
+	},
+	"dependencies": {
+		"@cloudflare/containers": "^0.3.7",
+		"@fontsource-utils/core": "workspace:*",
+		"@fontsource/ibm-plex-sans": "5.2.8",
+		"aws4fetch": "^1.0.20",
+		"chanfana": "^3.3.0",
+		"compare-versions": "^6.1.1",
+		"fflate": "^0.8.2",
+		"hono": "^4.12.18",
+		"limit-concur": "^4.0.0",
+		"modern-tar": "0.7.6",
+		"takumi-js": "2.2.3",
+		"zod": "4.4.3"
+	},
+	"devDependencies": {
+		"@cloudflare/vite-plugin": "catalog:",
+		"@cloudflare/vitest-pool-workers": "^0.18.6",
+		"@hey-api/openapi-ts": "0.99.0",
+		"@types/node": "catalog:node24",
+		"@vitest/coverage-v8": "catalog:",
+		"esbuild": "catalog:",
+		"tsx": "catalog:",
+		"typescript": "catalog:",
+		"vite": "catalog:",
+		"vitest": "catalog:",
+		"wrangler": "catalog:"
+	}
+}

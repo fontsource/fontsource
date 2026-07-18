@@ -1,28 +1,20 @@
-import { observer, useMountOnce } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 
 import { DropdownSimple } from '@/components/Dropdown';
+import { getPreviewText } from '@/utils/language/language';
 import { subsetToLanguage } from '@/utils/language/subsets';
 
 import type { FontIDState } from './observables';
 
 interface LanguageSelectorProps {
 	state$: FontIDState;
-	defSubset: string;
 	subsets: string[];
+	fontId: string;
 }
 
 const LanguageSelector = observer(
-	({ state$, defSubset, subsets }: LanguageSelectorProps) => {
-		// As we assume that defSubset is latin for ssr, we need
-		// to update the default preview text if defSubset is not latin
-		// on mount
-		useMountOnce(() => {
-			if (defSubset !== 'latin') {
-				state$.preview.language.set(defSubset);
-			}
-		});
-
-		const language = state$.preview.language.get();
+	({ state$, subsets, fontId }: LanguageSelectorProps) => {
+		const language = useValue(state$.preview.language);
 
 		const items = subsets
 			// Remove latin-ext from results as it's not a valid preview language
@@ -37,7 +29,12 @@ const LanguageSelector = observer(
 			<DropdownSimple
 				label={subsetToLanguage(language)}
 				items={items}
-				refine={state$.preview.language.set}
+				refine={(value) => {
+					state$.preview.assign({
+						language: value,
+						text: getPreviewText(value, fontId),
+					});
+				}}
 				w={284}
 			/>
 		);

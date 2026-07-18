@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { cac } from 'cac';
 import { consola } from 'consola';
 import * as dotenv from 'dotenv';

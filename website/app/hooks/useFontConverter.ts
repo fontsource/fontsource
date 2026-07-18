@@ -3,6 +3,7 @@ import {
 	convertFont,
 	createFontContext,
 } from '@fontsource-utils/core';
+import { batch } from '@legendapp/state';
 import { useObservable } from '@legendapp/state/react';
 import { Zip, ZipPassThrough } from 'fflate';
 import { useCallback } from 'react';
@@ -82,9 +83,10 @@ export const useFontConverter = () => {
 				return;
 			}
 
-			state$.results.set([]);
-			state$.downloadError.set(undefined);
-			state$.files.set((current) => [...current, ...uniqueNewFiles]);
+			batch(() => {
+				state$.assign({ results: [], downloadError: undefined });
+				state$.files.push(...uniqueNewFiles);
+			});
 		},
 		[state$],
 	);
@@ -96,16 +98,17 @@ export const useFontConverter = () => {
 			return;
 		}
 
-		state$.isConverting.set(true);
-		state$.results.set([]);
-		state$.downloadError.set(undefined);
-		state$.progress.set({ value: 0, text: 'Starting conversion...' });
-		state$.files.set((currentFiles) =>
-			currentFiles.map((fileEntry) => ({
-				...fileEntry,
-				error: undefined,
-			})),
-		);
+		batch(() => {
+			state$.assign({
+				isConverting: true,
+				results: [],
+				downloadError: undefined,
+				progress: { value: 0, text: 'Starting conversion...' },
+			});
+			filesToConvert.forEach((_, index) => {
+				state$.files[index].error.delete();
+			});
+		});
 
 		const { ttf, woff, woff2 } = state$.formats.get();
 		const requestedFormats: Array<'ttf' | 'woff' | 'woff2'> = [];
@@ -198,28 +201,30 @@ export const useFontConverter = () => {
 			}
 
 			if (fileErrors.size > 0) {
-				state$.files.set((currentFiles) =>
-					currentFiles.map((fileEntry) => ({
-						...fileEntry,
-						error: fileErrors.get(fileEntry.id),
-					})),
-				);
+				batch(() => {
+					filesToConvert.forEach(({ id }, index) => {
+						state$.files[index].error.set(fileErrors.get(id));
+					});
+				});
 			}
 
 			const dedupedResults = [...bestResultsByFilename.values()].map(
 				({ result }) => result,
 			);
 
-			state$.results.set(dedupedResults);
-			state$.progress.set({ value: 100, text: 'Conversion complete!' });
-
-			if (fileErrors.size > 0) {
-				state$.downloadError.set(
-					dedupedResults.length > 0
+			const downloadError =
+				fileErrors.size === 0
+					? undefined
+					: dedupedResults.length > 0
 						? 'Some files could not be converted. Check the file list for details.'
-						: 'Font conversion failed. One or more files may be invalid.',
-				);
-			}
+						: 'Font conversion failed. One or more files may be invalid.';
+
+			state$.assign({
+				results: dedupedResults,
+				progress: { value: 100, text: 'Conversion complete!' },
+				downloadError,
+				isConverting: false,
+			});
 		} finally {
 			ctx.destroy();
 			state$.isConverting.set(false);
@@ -231,9 +236,10 @@ export const useFontConverter = () => {
 		(id: number) => {
 			const index = state$.files.get().findIndex((f) => f.id === id);
 			if (index !== -1) {
-				state$.files.splice(index, 1);
-				state$.results.set([]);
-				state$.downloadError.set(undefined);
+				batch(() => {
+					state$.files[index].delete();
+					state$.assign({ results: [], downloadError: undefined });
+				});
 			}
 		},
 		[state$],
@@ -241,9 +247,7 @@ export const useFontConverter = () => {
 
 	// Clears all files and results.
 	const clearAllFiles = useCallback(() => {
-		state$.files.set([]);
-		state$.results.set([]);
-		state$.downloadError.set(undefined);
+		state$.assign({ files: [], results: [], downloadError: undefined });
 	}, [state$]);
 
 	// Triggers a browser download for a single conversion result.
@@ -272,9 +276,11 @@ export const useFontConverter = () => {
 		const results = state$.results.get();
 		if (results.length === 0) return;
 
-		state$.downloadError.set(undefined);
-		state$.isCreatingZip.set(true);
-		state$.progress.set({ value: 0, text: 'Creating ZIP file...' });
+		state$.assign({
+			downloadError: undefined,
+			isCreatingZip: true,
+			progress: { value: 0, text: 'Creating ZIP file...' },
+		});
 
 		const zip = new Zip();
 		const chunks: BlobPart[] = [];
@@ -284,10 +290,11 @@ export const useFontConverter = () => {
 		zip.ondata = (err, data, final) => {
 			if (err) {
 				console.error('ZIP failed:', err);
-				state$.downloadError.set(
-					'Failed to create ZIP file. Please try downloading individually.',
-				);
-				state$.isCreatingZip.set(false);
+				state$.assign({
+					downloadError:
+						'Failed to create ZIP file. Please try downloading individually.',
+					isCreatingZip: false,
+				});
 				return;
 			}
 
@@ -299,8 +306,10 @@ export const useFontConverter = () => {
 					new Blob(chunks, { type: 'application/zip' }),
 				);
 
-				state$.progress.set({ value: 100, text: 'Download complete!' });
-				state$.isCreatingZip.set(false);
+				state$.assign({
+					progress: { value: 100, text: 'Download complete!' },
+					isCreatingZip: false,
+				});
 				setTimeout(() => state$.progress.set({ value: 0, text: '' }), 2000);
 			}
 		};

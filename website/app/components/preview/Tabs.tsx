@@ -1,16 +1,18 @@
 import type { BoxProps } from '@mantine/core';
-import { Badge, Group, Tabs, Title } from '@mantine/core';
+import { Badge, Group, Tabs, Title, VisuallyHidden } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link } from 'react-router';
 
 import { IconDownload, IconGlobe } from '@/components/icons';
 import { ContentHeader } from '@/components/layout/ContentHeader';
-import type { Metadata } from '@/utils/types';
+import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
+import { FavoriteButton } from '@/features/collections/FavoriteButton';
+import type { GetFontResponse } from '@/generated/api';
 
 import classes from './Tabs.module.css';
 
 interface TabWrapperProps extends BoxProps {
-	metadata: Metadata;
+	metadata: GetFontResponse;
 	tabsValue: string;
 	children: React.ReactNode;
 }
@@ -24,6 +26,13 @@ export const TabsWrapper = ({
 		useHover<HTMLAnchorElement>();
 	const { hovered: hoveredGlobe, ref: refGlobe } =
 		useHover<HTMLButtonElement>();
+	const fontSummary = {
+		id: metadata.id,
+		family: metadata.family,
+		defSubset: metadata.defSubset,
+		category: metadata.category,
+		variable: metadata.variable,
+	};
 
 	return (
 		<Tabs
@@ -35,8 +44,13 @@ export const TabsWrapper = ({
 			}}
 		>
 			<ContentHeader>
-				<Group align="center" data-m:load={`view-tab=${tabsValue}`}>
-					<Title order={1} c="purple.0" pr="lg">
+				<Group
+					align="center"
+					gap="sm"
+					className={classes.heading}
+					data-m:load={`view-tab=${tabsValue}`}
+				>
+					<Title order={1} c="purple.0" className={classes.title}>
 						{metadata.family}
 					</Title>
 					<Badge color="gray" variant="light" className={classes.badge}>
@@ -45,36 +59,45 @@ export const TabsWrapper = ({
 					<Badge color="gray" variant="light" className={classes.badge}>
 						{metadata.type}
 					</Badge>
+					<FavoriteButton font={fontSummary} />
+					<AddToCollectionMenu font={fontSummary} />
 				</Group>
 				<Tabs.List>
 					<Link
 						to={`/fonts/${metadata.id}`}
-						style={{ textDecoration: 'none' }}
+						className={classes.link}
 						prefetch="intent"
 					>
 						<Tabs.Tab value="preview">Preview</Tabs.Tab>
 					</Link>
 					<Link
 						to={`/fonts/${metadata.id}/install`}
-						style={{ textDecoration: 'none' }}
+						className={classes.link}
 						prefetch="intent"
 					>
 						<Tabs.Tab value="install">Install</Tabs.Tab>
 					</Link>
 					<a
-						href={`https://api.fontsource.org/v1/download/${metadata.id}`}
+						href={`/fonts/${metadata.id}/download`}
 						className={classes['download-button']}
 						ref={refDownload}
 						data-m:click={`download=${metadata.id}`}
+						target="_blank"
+						rel="noopener noreferrer nofollow"
 					>
 						<Group gap="xs">
-							<IconDownload height={19} data-active={hoveredDownload} />
+							<IconDownload
+								aria-hidden
+								height={19}
+								data-active={hoveredDownload}
+							/>
 							Download
+							<VisuallyHidden> (opens in a new tab)</VisuallyHidden>
 						</Group>
 					</a>
 					<Link
 						to={`/fonts/${metadata.id}/cdn`}
-						style={{ textDecoration: 'none' }}
+						className={classes.link}
 						prefetch="intent"
 					>
 						<Tabs.Tab

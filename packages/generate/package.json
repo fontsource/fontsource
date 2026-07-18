@@ -16,23 +16,22 @@
 		}
 	},
 	"scripts": {
-		"build": "pkgroll --target=node14",
-		"coverage": "vitest run --coverage",
-		"test": "vitest",
-		"prepublish": "bun run build",
-		"ci:publish": "bun run prepublish && bun publish",
-		"format": "biome format --write .",
-		"ci:format": "biome format .",
-		"lint": "biome lint --write .",
-		"ci:lint": "biome lint ."
+		"build": "tsdown",
+		"prepack": "pnpm run build",
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:watch": "vitest",
+		"typecheck": "tsc --noEmit"
 	},
 	"keywords": [],
 	"author": "Ayuhito <hello@ayuhito.com>",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "^20.7.1",
-		"pkgroll": "^2.5.0",
-		"typescript": "^5.2.2"
+		"@types/node": "catalog:node20",
+		"@vitest/coverage-v8": "catalog:",
+		"tsdown": "catalog:",
+		"typescript": "catalog:",
+		"vitest": "catalog:"
 	},
 	"files": [
 		"dist/*"
@@ -40,10 +39,10 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://github.com/fontsource/fontsource/tree/main/utils/generate",
+	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/generate",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/fontsource/fontsource.git",
-		"directory": "utils/generate"
+		"url": "https://github.com/fontsource/fontsource",
+		"directory": "packages/generate"
 	}
 }

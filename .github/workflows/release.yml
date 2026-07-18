@@ -1,47 +1,122 @@
-name: Release Packager
+name: release
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "packages/**"
-  workflow_dispatch:
+  workflow_call:
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: 24.18.0
+  PNPM_VERSION: 11.14.0
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
-    if: github.repository == 'fontsource/fontsource'
+    timeout-minutes: 10
+
+    outputs:
+      paths: ${{ steps.release.outputs.paths_released || '[]' }}
+
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - uses: oven-sh/setup-bun@v2
+      - name: Create release token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
-          bun-version: latest
+          app-id: ${{ secrets.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: fontsource
+          permission-contents: write
+          permission-issues: write
+          permission-pull-requests: write
 
-      - name: Install
-        run: bun install
-
-      - name: Create Release Pull Request or Publish to npm
-        id: cs
-        uses: changesets/action@v1
+      - name: Create or update release pull request
+        id: release
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
         with:
-          version: "bun run ci:version"
-          publish: "bun run ci:publish"
-          commit: "chore: release versions"
-          title: "Release 🎉"
+          token: ${{ steps.app-token.outputs.token }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish:
+    name: Publish (${{ matrix.path }})
+    if: needs.release.outputs.paths != '[]'
+    needs: release
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: npm
+
+    permissions:
+      contents: read
+      id-token: write
+
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        path: ${{ fromJSON(needs.release.outputs.paths) }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build dependencies and package
+        run: pnpm --filter '{${{ matrix.path }}}...' --if-present run build
+
+      - name: Typecheck package
+        run: pnpm --filter './${{ matrix.path }}' --if-present run typecheck
+
+      - name: Test package
+        run: pnpm --filter './${{ matrix.path }}' run test
+
+      - name: Publish
+        working-directory: ${{ matrix.path }}
+        run: |
+          pnpm pack --out "$RUNNER_TEMP/package.tgz"
+          npm publish "$RUNNER_TEMP/package.tgz" --access public
+
+  notify:
+    if: needs.release.outputs.paths != '[]'
+    needs: [release, publish]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Create dispatch token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ secrets.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: font-files
+          permission-contents: write
+
+      - name: Dispatch dependency update
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Dispatch Dependency Update PR to font-files
-        if: steps.cs.outputs.published == 'true'
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.DISPATCH_PAT }}
-          repository: fontsource/font-files
-          event-type: update-deps
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: >-
+          gh api repos/fontsource/font-files/dispatches
+          --field event_type=update-deps

@@ -8,13 +8,17 @@
 			"sass": "./src/mixins.scss"
 		}
 	},
+	"files": [
+		"src"
+	],
 	"devDependencies": {
-		"@fontsource-variable/recursive": "5.2.0-alpha.1",
-		"@fontsource/carlito": "5.2.0-alpha.1",
-		"@fontsource/noto-sans-jp": "5.2.0-alpha.1",
+		"@fontsource-variable/recursive": "5.2.8",
+		"@fontsource/carlito": "5.2.8",
+		"@fontsource/noto-sans-jp": "5.2.9",
+		"@vitest/coverage-v8": "catalog:",
 		"sass": "^1.62.1",
-		"typescript": "^5.7.2",
-		"vitest": "^2.1.8"
+		"typescript": "catalog:",
+		"vitest": "catalog:"
 	},
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/scss",
 	"keywords": [
@@ -29,18 +33,13 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "echo 'No build step required for SCSS package.'",
-		"coverage": "vitest run",
-		"test": "vitest",
-		"ci:publish": "bun publish",
-		"format": "biome format --write .",
-		"ci:format": "biome format .",
-		"lint": "biome lint --write .",
-		"ci:lint": "biome lint ."
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:watch": "vitest"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/fontsource/fontsource.git",
+		"url": "https://github.com/fontsource/fontsource",
 		"directory": "packages/scss"
 	}
 }

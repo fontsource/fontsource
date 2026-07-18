@@ -1,6 +1,8 @@
-import { type FontStyle, generateCSS } from '@fontsource-utils/core';
+import { generateCSS, selectVariableAxisKey } from '@fontsource-utils/core';
+import { batch } from '@legendapp/state';
 import { useObservable } from '@legendapp/state/react';
 import { Grid } from '@mantine/core';
+import { useEffect } from 'react';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
@@ -9,39 +11,34 @@ import { Configure } from '@/components/preview/Configure';
 import {
 	createFontVariation,
 	type FontIDObject,
+	type FontIDState,
 } from '@/components/preview/observables';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import { TextArea } from '@/components/preview/TextArea';
+import {
+	type GetFontResponse,
+	getFont,
+	getFontStats,
+	getVariableFont,
+	listAxisRegistry,
+} from '@/generated/api';
 import classes from '@/styles/global.module.css';
+import { cacheHeaders } from '@/utils/cache';
 import { jsDelivrResolver } from '@/utils/cdn';
 import { getPreviewText } from '@/utils/language/language';
-import { ogMeta } from '@/utils/meta';
-import {
-	getAxisRegistry,
-	getMetadata,
-	getStats,
-	getVariable,
-} from '@/utils/metadata.server';
-import type { AxisRegistryAll, Metadata, VariableData } from '@/utils/types';
+import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
-interface FontMetadata {
-	metadata: Metadata;
-	variable?: VariableData;
-	staticCSS: string;
-	variableCSS?: string;
-	axisRegistry?: AxisRegistryAll;
-	downloadCount: number;
-}
-
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
-	const metadata = await getMetadata(id);
+	const parameters = { id };
+	const options = { signal: request.signal };
+	const metadata = await getFont(parameters, options);
 
 	const [variable, axisRegistry, stats] = await Promise.all([
-		metadata.variable ? getVariable(id) : undefined,
-		metadata.variable ? getAxisRegistry() : undefined,
-		getStats(id),
+		metadata.variable ? getVariableFont(parameters, options) : undefined,
+		metadata.variable ? listAxisRegistry({}, options) : undefined,
+		getFontStats(parameters, options),
 	]);
 
 	const { family, weights, unicodeRange, styles, subsets } = metadata;
@@ -60,7 +57,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		family,
 		subsets: unicodeKeys,
 		weights,
-		styles: styles as FontStyle[],
+		styles,
 		unicodeRange,
 	};
 
@@ -76,82 +73,79 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 					variable: variable.axes,
 				},
 				{
+					axisKeys: [
+						selectVariableAxisKey(variable.axes, Object.keys(variable.axes)),
+					],
 					resolver: jsDelivrResolver(id, true),
 					display: 'block',
 				},
 			)
 		: undefined;
 
-	const res: FontMetadata = {
-		metadata,
-		variable,
-		staticCSS,
-		variableCSS,
-		axisRegistry,
-		downloadCount: stats.total.npmDownloadTotal,
-	};
-
-	return data(res, {
-		headers: {
-			'Cache-Control': 'public, max-age=300',
+	return data(
+		{
+			metadata,
+			variable,
+			staticCSS,
+			variableCSS,
+			axisRegistry,
+			downloadCount: stats.total.npmDownloadTotal,
 		},
-	});
+		{ headers: cacheHeaders.short },
+	);
 };
 
-const generateDescription = (metadata: Metadata) => {
+const generateDescription = (metadata: GetFontResponse) => {
 	const { family, category, variable } = metadata;
 
 	const variableDesc = variable ? 'variable ' : '';
 
-	return `Download the ${family} ${variableDesc}${category}font family web typeface. Self-host typography for your website.`;
+	return `Download the ${family} ${variableDesc}${category} font family web typeface. Self-host typography for your website.`;
 };
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-	const title = data?.metadata.family
-		? `${data.metadata.family} | Fontsource`
+export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
+	const title = loaderData?.metadata.family
+		? `${loaderData.metadata.family} | Fontsource`
 		: 'Fontsource';
 
-	const description = data?.metadata
-		? generateDescription(data.metadata)
+	const description = loaderData?.metadata
+		? generateDescription(loaderData.metadata)
 		: undefined;
-	return ogMeta({ title, description });
+	const image = loaderData?.metadata
+		? getFontOpenGraphImage(loaderData.metadata)
+		: undefined;
+	return ogMeta({ title, description, image });
 };
 
 export default function Font() {
-	const data = useLoaderData<FontMetadata>();
-	const { metadata, variable, axisRegistry, staticCSS, variableCSS } = data;
+	const { metadata, variable, axisRegistry, staticCSS, variableCSS } =
+		useLoaderData<typeof loader>();
 
-	const state$ = useObservable<FontIDObject>({
+	const state$: FontIDState = useObservable<FontIDObject>({
 		preview: {
-			language: 'latin',
+			language: metadata.defSubset,
 			size: 32,
 			italic: false,
 			lineHeight: 2,
 			letterSpacing: 0,
 			transparency: 100,
 			color: '#000000',
-
-			text: 'Sphinx of black quartz, judge my vow.',
+			text: getPreviewText(metadata.defSubset, metadata.id),
 		},
 		variable: {},
-		fontVariation: '',
+		fontVariation: (): string => createFontVariation(state$.variable.get()),
 	});
 
-	// If language changes, update text using getPreviewText
-	state$.preview.language.onChange((e) => {
-		state$.preview.text.set(getPreviewText(e.value));
-	});
-
-	// Verify that the color is a valid hex code
-	const COLOR_REGEX = /^#[\dA-Fa-f]{0,6}$/;
-	state$.preview.color.onChange((e) => {
-		if (!COLOR_REGEX.test(e.value)) state$.preview.color.set(e.getPrevious());
-	});
-
-	// Update fontVariation when variableState changes
-	state$.variable.onChange(() => {
-		state$.fontVariation.set(createFontVariation(state$.variable.get()));
-	});
+	useEffect(() => {
+		batch(() => {
+			state$.preview.assign({
+				language: metadata.defSubset,
+				text: getPreviewText(metadata.defSubset, metadata.id),
+				italic: false,
+			});
+			state$.variable.set({});
+		});
+	}, [metadata.defSubset, metadata.id, state$]);
 
 	return (
 		<TabsWrapper metadata={metadata} tabsValue="preview">

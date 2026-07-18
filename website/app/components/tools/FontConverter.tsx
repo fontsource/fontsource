@@ -1,4 +1,4 @@
-import { observer } from '@legendapp/state/react';
+import { observer, useValue } from '@legendapp/state/react';
 import { Button, Text, Title } from '@mantine/core';
 import { IconTransform } from '@tabler/icons-react';
 import { useEffect, useRef } from 'react';
@@ -25,13 +25,12 @@ export const FontConverter = observer(() => {
 	// Track file count changes for scrolling logic.
 	const prevFilesLength = useRef(0);
 
-	const files = state$.files.get();
-	const results = state$.results.get();
-	const isConverting = state$.isConverting.get();
-	const isCreatingZip = state$.isCreatingZip.get();
-	const formats = state$.formats.get();
-	const progress = state$.progress.get();
-	const downloadError = state$.downloadError.get();
+	const files = useValue(state$.files);
+	const results = useValue(state$.results);
+	const isConverting = useValue(state$.isConverting);
+	const isCreatingZip = useValue(state$.isCreatingZip);
+	const formats = useValue(state$.formats);
+	const downloadError = useValue(state$.downloadError);
 
 	const hasValidFiles = files.some((f) => !f.error);
 
@@ -99,10 +98,7 @@ export const FontConverter = observer(() => {
 				{isConverting ? 'Converting...' : 'Convert'}
 			</Button>
 
-			<ProgressIndicator
-				progress={progress}
-				isVisible={isConverting || isCreatingZip}
-			/>
+			<ProgressIndicator state$={state$} />
 
 			<div ref={resultsRef}>
 				{results.length > 0 && !isConverting && (

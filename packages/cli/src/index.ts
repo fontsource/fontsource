@@ -1,3 +1,12 @@
+export {
+	APIIconStatic,
+	APIIconVariable,
+	APILicense,
+	APIRegistry,
+	APIVariable,
+	APIv1,
+	APIv2,
+} from 'google-font-metadata';
 export { create } from './custom/create';
 export { verify } from './custom/verify';
 export {
@@ -15,12 +24,3 @@ export { packagerV1 } from './google/packager-v1';
 export { packagerV2 } from './google/packager-v2';
 export { packagerVariable } from './google/packager-variable';
 export { processGoogle } from './google/queue';
-export {
-	APIIconStatic,
-	APIIconVariable,
-	APILicense,
-	APIRegistry,
-	APIv1,
-	APIv2,
-	APIVariable,
-} from 'google-font-metadata';
