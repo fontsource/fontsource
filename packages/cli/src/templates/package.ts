@@ -19,6 +19,7 @@ const template = (
 	version: existing?.oldVersion ?? BASE_VERSION,
 	description: `Self-host the ${family} font in a neatly bundled NPM package.`,
 	main: 'index.css',
+	types: 'index.d.css.ts',
 	publishConfig: { access: 'public' },
 	keywords: [
 		'fontsource',
@@ -36,6 +37,7 @@ const template = (
 	],
 	exports: {
 		'.': {
+			types: './index.d.css.ts',
 			sass: './index.css',
 			default: './index.css',
 		},
@@ -96,6 +98,7 @@ const packageJson = async (metadata: Metadata, opts: BuildOptions) => {
 		oldVersion: opts.version ?? oldVersion,
 		publishHash: opts.publishHash ?? oldPublishHash,
 	});
+	await fs.writeFile(path.join(opts.dir, 'index.d.css.ts'), 'export {};\n');
 	await fs.writeFile(path.join(opts.dir, 'package.json'), stringify(file));
 };
 
