@@ -41,7 +41,7 @@ const getChanged = async (ctx: Context) => {
 	}
 
 	await queue.onIdle();
-	return changedList;
+	return changedList.sort((a, b) => a.path.localeCompare(b.path));
 };
 
 const changed = async (options: ChangedFlags) => {
