@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+// Copied from googlefonts/gf-metadata axes.proto at
+// 5fa093254984c1fe609518636bd8c4d8331d2b97.
+message AxisProto {
+  optional string tag = 1;
+  optional float min_value = 2;
+  optional float default_value = 3;
+  optional float max_value = 4;
+  optional int32 precision = 5;
+  repeated FallbackProto fallback = 6;
+  optional string display_name = 7;
+  optional string description = 8;
+  optional bool fallback_only = 9;
+  optional string illustration_url = 10;
+}
+
+message FallbackProto {
+  optional string name = 1;
+  optional float value = 2;
+  optional string display_name = 3;
+}

@@ -1,0 +1,116 @@
+syntax = "proto2";
+
+// Fontsource's reviewed Google Fonts ingestion contract.
+// Based on googlefonts/gf-metadata fonts_public.proto at
+// 5fa093254984c1fe609518636bd8c4d8331d2b97.
+package google.fonts_public;
+
+message FamilyProto {
+  required string name = 1;
+  required string designer = 2;
+  required string license = 3;
+  repeated string category = 4;
+  required string date_added = 5;
+  repeated FontProto fonts = 6;
+  repeated string aliases = 7;
+  repeated string subsets = 8;
+  optional string ttf_autohint_args = 9;
+  repeated AxisSegmentProto axes = 10;
+  map<string, float> registry_default_overrides = 11;
+  optional SourceProto source = 12;
+  optional bool is_noto = 13;
+  repeated string languages = 14;
+  repeated FamilyFallbackProto fallbacks = 15;
+  map<string, string> sample_glyphs = 16;
+  optional SampleTextProto sample_text = 17;
+  optional string display_name = 18;
+  repeated GlyphGroupProto ordered_sample_glyphs = 19;
+  optional string minisite_url = 20;
+  optional string primary_script = 21;
+  optional string primary_language = 22;
+  optional string stroke = 23;
+  repeated string classifications = 25;
+}
+
+message FontProto {
+  required string name = 1;
+  required string style = 2;
+  required int32 weight = 3;
+  required string filename = 4;
+  required string post_script_name = 5;
+  required string full_name = 6;
+  optional string copyright = 7;
+
+  // Present in google/fonts metadata but absent from fonts_public.proto.
+  // This contract is only used for text-format ingestion, not binary protobuf.
+  repeated FontPositionProto position = 8;
+}
+
+message FontPositionProto {
+  optional string tag = 1;
+  optional float position = 2;
+}
+
+message AxisSegmentProto {
+  optional string tag = 1;
+  optional float min_value = 2;
+  // Upstream reserves default_value. It stays unknown here because Fontsource
+  // must fail rather than have a Text Format parser silently skip it.
+  optional float max_value = 4;
+}
+
+message SourceProto {
+  optional string repository_url = 1;
+  optional string commit = 2;
+  optional string archive_url = 3;
+  repeated SourceFileProto files = 4;
+  optional string branch = 5;
+  optional string config_yaml = 6;
+}
+
+message SourceFileProto {
+  optional string source_file = 1;
+  optional string dest_file = 2;
+}
+
+enum TargetTypeProto {
+  TARGET_UNSPECIFIED = 0;
+  TARGET_OS_WINDOWS = 1;
+  TARGET_OS_MAC = 2;
+  TARGET_OS_LINUX = 3;
+  TARGET_OS_ANDROID = 4;
+  TARGET_OS_IOS = 5;
+}
+
+message TargetProto {
+  optional TargetTypeProto target_type = 1;
+}
+
+message FamilyFallbackProto {
+  repeated AxisSegmentProto axis_target = 1;
+  repeated TargetProto target = 2;
+  optional float size_adjust_pct = 3;
+  repeated string local_src = 4;
+  optional float ascent_override_pct = 5;
+}
+
+message SampleTextProto {
+  optional string masthead_full = 1;
+  optional string masthead_partial = 2;
+  optional string styles = 3;
+  optional string tester = 4;
+  optional string poster_sm = 5;
+  optional string poster_md = 6;
+  optional string poster_lg = 7;
+  optional string specimen_48 = 8;
+  optional string specimen_36 = 9;
+  optional string specimen_32 = 10;
+  optional string specimen_21 = 11;
+  optional string specimen_16 = 12;
+  optional string note = 13;
+}
+
+message GlyphGroupProto {
+  optional string name = 1;
+  optional string glyphs = 2;
+}

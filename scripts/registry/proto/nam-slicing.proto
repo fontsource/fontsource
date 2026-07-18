@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+// Published by googlefonts/nam-files in slices/README.md.
+message SlicingStrategy {
+  repeated Subset subsets = 1;
+}
+
+message Subset {
+  repeated int32 codepoints = 1;
+}

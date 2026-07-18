@@ -1,0 +1,27 @@
+{
+	"name": "fontsource-registry-tools",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"bootstrap-policy": "cd ../.. && node scripts/registry/bootstrap-policy.ts",
+		"generate": "cd ../.. && bun run --filter '@fontsource-utils/core' build && node scripts/registry/generate.ts",
+		"test": "cd ../.. && bun run --filter '@fontsource-utils/core' build && vitest run --config scripts/registry/vitest.config.ts",
+		"typecheck": "tsc -p tsconfig.json",
+		"validate": "cd ../.. && node scripts/registry/validator.ts",
+		"lint": "biome check --write .",
+		"ci:lint": "biome check ."
+	},
+	"dependencies": {
+		"@fontsource-utils/core": "workspace:*",
+		"protobufjs": "8.7.1",
+		"turndown": "7.2.4",
+		"zod": "4.4.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.2",
+		"@types/node": "20.19.43",
+		"@types/turndown": "5.0.6",
+		"typescript": "5.9.3",
+		"vitest": "^3.2.4"
+	}
+}

@@ -2,6 +2,7 @@ packages:
   - packages/*
   - api
   - website
+  - scripts/registry
 
 allowBuilds:
   '@parcel/watcher': true
