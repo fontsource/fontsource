@@ -9,6 +9,8 @@ import type {
 import type { CSSGenerate } from '../types';
 import { findClosest } from '../utils';
 
+const REGISTERED_AXES = new Set(['wght', 'wdth', 'slnt', 'opsz']);
+
 /**
  * We need to generate all CSS in this one file to ensure that pkgroll
  * exports these functions without accidentally importing unnecessary
@@ -307,6 +309,34 @@ export const generateVariableCSS = (
 			// Some fonts may not have a wght axis, but usually have an opsz axis to compensate
 			if (indexCSS === '' && axesKey === 'opsz') indexCSS = css;
 		}
+	}
+
+	// No wght/opsz default was found, so fall back to:
+	// - `full` when a custom axis is present,
+	// - `standard` for multiple registered axes,
+	// - otherwise the sole axis.
+	if (!indexCSS) {
+		const activeAxes = Object.keys(axes).filter((axis) => axis !== 'ital');
+		const hasCustomAxis = activeAxes.some((axis) => !REGISTERED_AXES.has(axis));
+
+		let defaultAxis: string | undefined;
+		if (activeAxes.length > 1) {
+			defaultAxis = hasCustomAxis ? 'full' : 'standard';
+		} else {
+			defaultAxis = activeAxes[0]?.toLowerCase();
+		}
+
+		indexCSS =
+			cssGenerate.find((entry) => entry.filename === `${defaultAxis}.css`)
+				?.css ??
+			cssGenerate.find(
+				(entry) => entry.filename === `${defaultAxis}-italic.css`,
+			)?.css ??
+			'';
+	}
+
+	if (!indexCSS) {
+		throw new Error(`Unable to generate index.css for ${id}`);
 	}
 
 	// Write down index.css for variable package
