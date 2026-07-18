@@ -2,7 +2,6 @@
 	"$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
 	"bootstrap-sha": "fdfea6eb325ba176b9ca9de14be8165cbe5ffba9",
 	"bump-minor-pre-major": true,
-	"group-pull-request-title-pattern": "chore: release packages",
 	"include-component-in-tag": true,
 	"include-v-in-tag": true,
 	"separate-pull-requests": false,
