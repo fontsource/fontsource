@@ -7,6 +7,7 @@ import {
 } from 'fumadocs-core/source/client';
 import { useMemo } from 'react';
 import { Link, useLocation, useMatches } from 'react-router';
+import { firstInternalPageUrl } from '@/utils/docs/navigation';
 
 import classes from './LeftSidebar.module.css';
 
@@ -55,17 +56,6 @@ const activeRootFolder = (tree: PageTree.Root, currentPath: string) => {
 		(node): node is PageTree.Folder =>
 			node.type === 'folder' && containsCurrentPage(node, currentPath),
 	);
-};
-
-const firstInternalPageUrl = (node: PageTree.Node): string | undefined => {
-	if (node.type === 'page') return node.external ? undefined : node.url;
-	if (node.type !== 'folder') return undefined;
-	if (node.index && !node.index.external) return node.index.url;
-
-	for (const child of node.children) {
-		const url = firstInternalPageUrl(child);
-		if (url) return url;
-	}
 };
 
 const PageLink = ({

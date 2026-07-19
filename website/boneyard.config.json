@@ -1,9 +1,5 @@
 {
 	"breakpoints": [375, 768, 1280],
 	"out": "./app/bones",
-	"routes": ["/?boneyard=1", "/fonts/inter?boneyard=1"],
-	"skeletons": {
-		"font-preview-row": { "route": "/fonts/inter?boneyard=1" },
-		"search-hit-preview": { "route": "/?boneyard=1" }
-	}
+	"routes": ["/", "/fonts/inter"]
 }
