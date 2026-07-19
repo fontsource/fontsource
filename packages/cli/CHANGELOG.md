@@ -1,5 +1,12 @@
 # @fontsource-utils/cli
 
+## [0.7.3](https://github.com/fontsource/fontsource/compare/cli-v0.7.2...cli-v0.7.3) (2026-07-19)
+
+
+### Bug Fixes
+
+* **cli:** release generated packages at 5.3.0 ([#1185](https://github.com/fontsource/fontsource/issues/1185)) ([1e3b14c](https://github.com/fontsource/fontsource/commit/1e3b14c21fbf3ce939a6957f6ef7a9e823c23de7))
+
 ## [0.7.2](https://github.com/fontsource/fontsource/compare/cli-v0.7.1...cli-v0.7.2) (2026-07-18)
 
 

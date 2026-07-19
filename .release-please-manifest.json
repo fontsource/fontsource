@@ -1,6 +1,6 @@
 {
 	"packages/generate": "0.4.2",
-	"packages/cli": "0.7.2",
+	"packages/cli": "0.7.3",
 	"packages/core": "0.2.0",
 	"packages/publish": "0.4.2",
 	"packages/scss": "0.2.3"
