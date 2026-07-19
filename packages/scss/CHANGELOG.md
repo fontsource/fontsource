@@ -1,5 +1,12 @@
 # @fontsource-utils/scss
 
+## [0.2.4](https://github.com/fontsource/fontsource/compare/scss-v0.2.3...scss-v0.2.4) (2026-07-19)
+
+
+### Bug Fixes
+
+* **scss:** resolve variable axis bundles ([#1189](https://github.com/fontsource/fontsource/issues/1189)) ([a82cf22](https://github.com/fontsource/fontsource/commit/a82cf22cecef81620cf7aba9932c60d98f8425d7))
+
 ## [0.2.3](https://github.com/fontsource/fontsource/compare/scss-v0.2.2...scss-v0.2.3) (2026-07-18)
 
 

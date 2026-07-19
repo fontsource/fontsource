@@ -1,5 +1,44 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`sass mixins > should compile (wdth, wght) axes successfully 1`] = `
+"/* test-font-latin-wdth-normal */
+@font-face {
+  font-family: "Test Font Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  unicode-range: U+0000-00FF;
+  src: url("@fontsource-variable/test-font/files/test-font-latin-wdth-normal.woff2") format("woff2-variations");
+}"
+`;
+
+exports[`sass mixins > should compile all axes successfully 1`] = `
+"/* test-font-latin-wdth-normal */
+@font-face {
+  font-family: "Test Font Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  unicode-range: U+0000-00FF;
+  src: url("@fontsource-variable/test-font/files/test-font-latin-wdth-normal.woff2") format("woff2-variations");
+}"
+`;
+
+exports[`sass mixins > should compile full axes successfully 1`] = `
+"/* test-font-latin-wdth-normal */
+@font-face {
+  font-family: "Test Font Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  unicode-range: U+0000-00FF;
+  src: url("@fontsource-variable/test-font/files/test-font-latin-wdth-normal.woff2") format("woff2-variations");
+}"
+`;
+
 exports[`sass mixins > should compile sass for non unicode range font successfully 1`] = `
 "/* carlito-cyrillic-400-normal */
 @font-face {
@@ -2289,5 +2328,68 @@ exports[`sass mixins > should compile sass for variable font successfully 1`] = 
   font-weight: 300 1000;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   src: url("@fontsource-variable/recursive/files/recursive-latin-wght-normal.woff2") format("woff2-variations");
+}"
+`;
+
+exports[`sass mixins > should compile standard axes successfully 1`] = `
+"/* test-font-latin-standard-normal */
+@font-face {
+  font-family: "Test Font Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  unicode-range: U+0000-00FF;
+  src: url("@fontsource-variable/test-font/files/test-font-latin-standard-normal.woff2") format("woff2-variations");
+}"
+`;
+
+exports[`sass mixins > should compile wdth axes successfully 1`] = `
+"/* test-font-latin-wdth-normal */
+@font-face {
+  font-family: "Test Font Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  unicode-range: U+0000-00FF;
+  src: url("@fontsource-variable/test-font/files/test-font-latin-wdth-normal.woff2") format("woff2-variations");
+}"
+`;
+
+exports[`sass mixins > should keep the full bundle for custom axes 1`] = `
+"/* recursive-latin-full-normal */
+@font-face {
+  font-family: "Recursive Variable";
+  font-style: oblique -15deg 0deg;
+  font-display: swap;
+  font-weight: 300 1000;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("@fontsource-variable/recursive/files/recursive-latin-full-normal.woff2") format("woff2-variations");
+}"
+`;
+
+exports[`sass mixins > should use the default weight for a variable font without wght 1`] = `
+"/* optical-font-latin-opsz-normal */
+@font-face {
+  font-family: "Test Font Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  unicode-range: U+0000-00FF;
+  src: url("@fontsource-variable/optical-font/files/optical-font-latin-opsz-normal.woff2") format("woff2-variations");
+}"
+`;
+
+exports[`sass mixins > should use the standard bundle for multiple standard axes 1`] = `
+"/* aggregate-font-latin-standard-normal */
+@font-face {
+  font-family: "Test Font Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  unicode-range: U+0000-00FF;
+  src: url("@fontsource-variable/aggregate-font/files/aggregate-font-latin-standard-normal.woff2") format("woff2-variations");
 }"
 `;
