@@ -12,6 +12,14 @@ These will always contain changes from Fontsource's end.
 
 # 5.x Release
 
+## 5.3.x
+
+This update improves TypeScript support for Fontsource packages.
+
+### Features
+
+- Font packages now include a generated declaration for the default CSS entry point and expose it through the package manifest. This allows default imports such as `import "@fontsource/inter"` to work with TypeScript's [`noUncheckedSideEffectImports`](https://www.typescriptlang.org/tsconfig/#noUncheckedSideEffectImports) option. [#1172](https://github.com/fontsource/fontsource/pull/1172)
+
 ## 5.2.x
 
 This update primarily focuses on modernizing the SCSS integration with Fontsource.
