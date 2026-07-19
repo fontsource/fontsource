@@ -15,6 +15,55 @@ $weights: null !default;
 $styles: null !default;
 $axes: null !default;
 
+$-standard-axes: (wght, wdth, slnt, opsz);
+
+@function -normalize-axis($axis) {
+	@return string.to-lower-case($axis);
+}
+
+@function -select-variable-axis($metadata, $requested) {
+	$default: -normalize-axis(map.get($metadata, defaults, axis));
+
+	@if not $requested {
+		@return $default;
+	}
+
+	@if $requested == all or $requested == full {
+		$requested: map.keys(map.get($metadata, axes));
+	}
+
+	$active: ();
+	@each $axis in $requested {
+		$axis: -normalize-axis($axis);
+		@if $axis != ital {
+			$active: list.append($active, $axis);
+		}
+	}
+
+	@if list.length($active) == 0 {
+		@return $default;
+	}
+
+	@if list.length($active) == 1 {
+		@return list.nth($active, 1);
+	}
+
+	@if list.length($active) == 2 and list.index($active, wght) {
+		@if list.nth($active, 1) == wght {
+			@return list.nth($active, 2);
+		}
+		@return list.nth($active, 1);
+	}
+
+	@each $axis in $active {
+		@if not list.index($-standard-axes, $axis) {
+			@return full;
+		}
+	}
+
+	@return standard;
+}
+
 @mixin generator(
 	$metadata: $metadata,
 	$directory: $directory,
@@ -73,21 +122,9 @@ $axes: null !default;
 		$styles: $styles or map.get($metadata, defaults, style);
 	}
 
-	$axes-value: null;
-	@if $axes {
-		@if $axes == all {
-			$axes-value: full;
-		} @else {
-			$axes-value: $axes;
-		}
-	} @else if $isVariable {
-		@if map.has-key($metadata, axes, wght) {
-			$axes-value: wght;
-		} @else {
-			$axes-value: full;
-		}
+	@if $isVariable {
+		$axes: -select-variable-axis($metadata, $axes);
 	}
-	$axes: $axes-value;
 
 	@each $subset in $subsets {
 		@each $unicodeSubset, $unicodeRange in map.get($metadata, unicode) {
@@ -142,18 +179,24 @@ $axes: null !default;
 							}
 
 							$computed-font-style: $style;
-							@if (($axis == full) or ($axis == slnt)) and map.has-key($metadata, axes, slnt) {
+							@if list.index((full, standard, slnt), $axis) and map.has-key($metadata, axes, slnt) {
 								$computed-font-style: oblique map.get($metadata, axes, slnt, min) + deg map.get($metadata, axes, slnt, max) + deg;
 							}
 
 							$computed-font-weight: $weight;
-							@if (($axis == full) or ($axis == wght)) and map.has-key($metadata, axes, wght) {
-								$computed-font-weight: map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max);
+							@if $axis {
+								@if map.has-key($metadata, axes, wght) {
+									$computed-font-weight: map.get($metadata, axes, wght, min) map.get($metadata, axes, wght, max);
+								} @else {
+									$computed-font-weight: map.get($metadata, defaults, weight);
+								}
 							}
 
 							$computed-font-stretch: null;
-							@if (($axis == full) or ($axis == wdth)) and map.has-key($metadata, axes, wdth) {
-								$computed-font-stretch: '#{map.get($metadata, axes, wdth, min)}% #{map.get($metadata, axes, wdth, max)}%';
+							@if list.index((full, standard, wdth), $axis) and map.has-key($metadata, axes, wdth) {
+								$computed-font-stretch:
+									map.get($metadata, axes, wdth, min) * 1%
+									map.get($metadata, axes, wdth, max) * 1%;
 							}
 
 							@content ((
