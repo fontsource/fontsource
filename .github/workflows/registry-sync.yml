@@ -12,7 +12,6 @@ concurrency: registry-sync
 
 jobs:
   sync:
-    if: github.repository == 'fontsource/fontsource'
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
@@ -37,22 +36,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Checkout upstream repositories
-        id: upstreams
+      - name: Generate registry
         run: |
           git clone --filter=blob:none --sparse --single-branch https://github.com/google/fonts.git "$RUNNER_TEMP/google-fonts"
           git -C "$RUNNER_TEMP/google-fonts" sparse-checkout set ofl apache ufl axisregistry
           git clone --no-checkout --single-branch https://github.com/googlefonts/nam-files.git "$RUNNER_TEMP/nam-files"
-          echo "google_revision=$(git -C "$RUNNER_TEMP/google-fonts" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          echo "nam_revision=$(git -C "$RUNNER_TEMP/nam-files" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-      - name: Generate registry
-        run: >-
-          pnpm --filter '@fontsource-utils/registry' generate
-          "$RUNNER_TEMP/google-fonts"
-          "${{ steps.upstreams.outputs.google_revision }}"
-          "$RUNNER_TEMP/nam-files"
-          "${{ steps.upstreams.outputs.nam_revision }}"
+          pnpm --filter '@fontsource-utils/registry' generate \
+            "$RUNNER_TEMP/google-fonts" \
+            "$(git -C "$RUNNER_TEMP/google-fonts" rev-parse HEAD)" \
+            "$RUNNER_TEMP/nam-files" \
+            "$(git -C "$RUNNER_TEMP/nam-files" rev-parse HEAD)"
 
       - name: Validate registry
         run: |
