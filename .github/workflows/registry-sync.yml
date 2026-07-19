@@ -1,0 +1,99 @@
+name: Registry sync
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: registry-sync
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: 24.18.0
+  PNPM_VERSION: 11.14.0
+
+jobs:
+  sync:
+    if: github.repository == 'fontsource/fontsource'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Checkout upstream repositories
+        id: upstreams
+        run: |
+          git clone --no-checkout --single-branch https://github.com/google/fonts.git "$RUNNER_TEMP/google-fonts"
+          git clone --no-checkout --single-branch https://github.com/googlefonts/nam-files.git "$RUNNER_TEMP/nam-files"
+          echo "google_revision=$(git -C "$RUNNER_TEMP/google-fonts" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "nam_revision=$(git -C "$RUNNER_TEMP/nam-files" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Generate registry
+        run: >-
+          pnpm --filter '@fontsource-utils/registry' generate
+          "$RUNNER_TEMP/google-fonts"
+          "${{ steps.upstreams.outputs.google_revision }}"
+          "$RUNNER_TEMP/nam-files"
+          "${{ steps.upstreams.outputs.nam_revision }}"
+
+      - name: Verify deterministic output
+        run: |
+          git diff --exit-code -- . ':(exclude)registry/data'
+          git add registry/data
+          pnpm --filter '@fontsource-utils/registry' generate \
+            "$RUNNER_TEMP/google-fonts" \
+            "${{ steps.upstreams.outputs.google_revision }}" \
+            "$RUNNER_TEMP/nam-files" \
+            "${{ steps.upstreams.outputs.nam_revision }}"
+          git diff --exit-code -- registry/data
+
+      - name: Create pull request token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: fontsource
+          permission-contents: write
+          permission-pull-requests: write
+
+      - name: Create or update registry pull request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          add-paths: registry/data
+          commit-message: 'chore(registry): update metadata snapshot'
+          branch: chore/registry-update
+          delete-branch: true
+          base: ${{ github.event.repository.default_branch }}
+          title: 'chore(registry): update metadata snapshot'
+          body: |
+            Updates the generated registry from pinned upstream revisions.
+
+            - google/fonts: `${{ steps.upstreams.outputs.google_revision }}`
+            - googlefonts/nam-files: `${{ steps.upstreams.outputs.nam_revision }}`

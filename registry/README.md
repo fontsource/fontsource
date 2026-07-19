@@ -19,6 +19,13 @@ repositories are rejected.
 Generation validates existing `policy.json` files but never creates or changes
 package policy. Registry data is written to `data/`.
 
+## Updates
+
+The [registry sync workflow](../.github/workflows/registry-sync.yml) runs weekly
+or manually. It regenerates the complete registry and opens or updates a pull
+request only when tracked data changes. It does not publish fonts or modify
+production services.
+
 ## Structure
 
 - `scripts/generate.ts` coordinates one complete registry build and validation.
