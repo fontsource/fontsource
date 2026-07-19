@@ -60,16 +60,10 @@ jobs:
           git diff --exit-code -- . ':(exclude)registry/data'
 
       - name: Commit registry update
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          BOT_NAME: '${{ steps.app-token.outputs.app-slug }}[bot]'
-        run: |
-          git add registry/data
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          BOT_ID=$(gh api "/users/$BOT_NAME" --jq .id)
-          git config user.name "$BOT_NAME"
-          git config user.email "${BOT_ID}+${BOT_NAME}@users.noreply.github.com"
-          git commit -m "chore(registry): update metadata snapshot"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
+        with:
+          commit_message: 'chore(registry): update metadata snapshot'
+          file_pattern: registry/data
+          commit_user_name: 'fontsource-release[bot]'
+          commit_user_email: '306564713+fontsource-release[bot]@users.noreply.github.com'
+          commit_author: 'fontsource-release[bot] <306564713+fontsource-release[bot]@users.noreply.github.com>'
