@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency: registry-sync
 
@@ -21,7 +21,6 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           ref: main
-          persist-credentials: false
 
       - name: Set up tools
         uses: jdx/mise-action@dad1bfd3df957f44999b559dd69dc1671cb4e9ea # v4.2.1
@@ -46,37 +45,18 @@ jobs:
           "$RUNNER_TEMP/nam-files"
           "${{ steps.upstreams.outputs.nam_revision }}"
 
-      - name: Verify deterministic output
+      - name: Validate registry
         run: |
+          pnpm --filter '@fontsource-utils/registry' validate
           git diff --exit-code -- . ':(exclude)registry/data'
+
+      - name: Commit registry update
+        run: |
           git add registry/data
-          pnpm --filter '@fontsource-utils/registry' generate \
-            "$RUNNER_TEMP/google-fonts" \
-            "${{ steps.upstreams.outputs.google_revision }}" \
-            "$RUNNER_TEMP/nam-files" \
-            "${{ steps.upstreams.outputs.nam_revision }}"
-          git diff --exit-code -- registry/data
-
-      - name: Create pull request token
-        id: app-token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        with:
-          client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
-          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
-          permission-contents: write
-          permission-pull-requests: write
-
-      - name: Create or update registry pull request
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          add-paths: registry/data
-          commit-message: 'chore(registry): update metadata snapshot'
-          branch: chore/registry-update
-          delete-branch: true
-          title: 'chore(registry): update metadata snapshot'
-          body: |
-            Updates the generated registry from pinned upstream revisions.
-
-            - google/fonts: `${{ steps.upstreams.outputs.google_revision }}`
-            - googlefonts/nam-files: `${{ steps.upstreams.outputs.nam_revision }}`
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(registry): update metadata snapshot"
+          git push
