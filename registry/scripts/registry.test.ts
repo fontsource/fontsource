@@ -1,5 +1,4 @@
 import { execFileSync } from 'node:child_process';
-import { createHash } from 'node:crypto';
 import {
 	cp,
 	mkdir,
@@ -11,24 +10,14 @@ import {
 } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join, relative, resolve } from 'node:path';
-import { afterEach, describe, expect, it } from 'vitest';
+import { describe, expect, it, onTestFinished } from 'vitest';
 import { generateRegistry } from './generate.ts';
 import { openGitSnapshot } from './git.ts';
-import { canonicalJson, compareStrings, readJson } from './shared.ts';
-
-const temporaryDirectories: string[] = [];
-
-afterEach(async () => {
-	await Promise.all(
-		temporaryDirectories
-			.splice(0)
-			.map((path) => rm(path, { recursive: true, force: true })),
-	);
-});
+import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
 
 const temporaryDirectory = async (name: string): Promise<string> => {
 	const path = await mkdtemp(join(tmpdir(), `${name}-`));
-	temporaryDirectories.push(path);
+	onTestFinished(() => rm(path, { recursive: true, force: true }));
 	return path;
 };
 
@@ -91,12 +80,7 @@ const treeHashes = async (root: string): Promise<Record<string, string>> => {
 			.filter((entry) => !entry.isDirectory())
 			.map(async (entry) => {
 				const path = join(entry.parentPath, entry.name);
-				return [
-					relative(root, path),
-					createHash('sha256')
-						.update(await readFile(path))
-						.digest('hex'),
-				] as const;
+				return [relative(root, path), sha256(await readFile(path))] as const;
 			}),
 	);
 	return Object.fromEntries(

@@ -4,7 +4,7 @@ import { z } from 'zod';
 const idSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const revisionSchema = z.string().regex(/^[0-9a-f]{40}$/);
 const sha256Schema = z.string().regex(/^[0-9a-f]{64}$/);
-const dateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
+const dateSchema = z.iso.date();
 const finiteNumberSchema = z.number().finite();
 const fontStyleSchema = z.enum(['normal', 'italic']);
 const staticVariantSchema = z.strictObject({

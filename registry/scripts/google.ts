@@ -184,14 +184,10 @@ turndown.addRule('safe-links', {
 	replacement: (content, node) => {
 		const href = node.getAttribute('href');
 		if (!href) return content;
-		try {
-			const url = new URL(href);
-			return url.protocol === 'http:' || url.protocol === 'https:'
-				? `[${content}](${url.toString()})`
-				: content;
-		} catch {
-			return content;
-		}
+		const url = URL.parse(href);
+		return url?.protocol === 'http:' || url?.protocol === 'https:'
+			? `[${content}](${url.toString()})`
+			: content;
 	},
 });
 

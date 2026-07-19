@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+import { hash } from 'node:crypto';
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
@@ -22,7 +22,7 @@ export const canonicalJson = (value: unknown): string =>
 	`${JSON.stringify(sortJsonKeys(value), null, '\t')}\n`;
 
 export const sha256 = (value: string | Uint8Array): string =>
-	createHash('sha256').update(value).digest('hex');
+	hash('sha256', value);
 
 export const readJson = async (path: string): Promise<unknown> =>
 	JSON.parse(await readFile(path, 'utf8'));
