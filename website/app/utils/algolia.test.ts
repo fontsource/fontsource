@@ -31,6 +31,12 @@ describe('buildAlgoliaCacheKey', () => {
 		);
 	});
 
+	it('isolates clean discovery paths from the homepage cache', () => {
+		expect(
+			buildAlgoliaCacheKey('https://fontsource.org/languages/vietnamese'),
+		).toBe('algolia:ssr:languages:vietnamese');
+	});
+
 	it('skips known params with arbitrary values', () => {
 		expect(
 			buildAlgoliaCacheKey(

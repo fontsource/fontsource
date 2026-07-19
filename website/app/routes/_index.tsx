@@ -1,7 +1,7 @@
 import { createFetchRequester } from '@algolia/requester-fetch';
 import { observable } from '@legendapp/state';
 import { useObservable, useValue } from '@legendapp/state/react';
-import { Box, MantineProvider } from '@mantine/core';
+import { Box, MantineProvider, Stack, Text, Title } from '@mantine/core';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { UiState } from 'instantsearch.js';
 import { history } from 'instantsearch.js/es/lib/routers';
@@ -20,9 +20,13 @@ import {
 	data,
 	type LinksFunction,
 	type LoaderFunctionArgs,
+	type MetaFunction,
 	useLoaderData,
+	useNavigate,
 } from 'react-router';
 
+import { Breadcrumbs } from '@/components/docs/Breadcrumbs';
+import { ContentHeader } from '@/components/layout/ContentHeader';
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import {
@@ -41,8 +45,11 @@ import { theme } from '@/styles/theme';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
 import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
+import type { DiscoveryPage } from '@/utils/discovery';
+import { getPreviewText } from '@/utils/language/language';
 
-interface SearchProps {
+export interface SearchProps {
+	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
 	serverState?: InstantSearchServerState;
 	serverUrl: string;
@@ -77,6 +84,9 @@ export const links: LinksFunction = () => [
 	},
 ];
 
+export const meta: MetaFunction = ({ location }) =>
+	location.search ? [{ name: 'robots', content: 'noindex, follow' }] : [];
+
 const sortMap: Record<string, string> = {
 	prod_POPULAR: 'popular',
 	prod_NEWEST: 'newest',
@@ -98,10 +108,23 @@ const parseSubsets = (value: unknown): string[] | undefined => {
 	return subsets.length > 0 ? subsets : undefined;
 };
 
+const createPageSearchState = (discovery?: DiscoveryPage) => {
+	const state = createSearchState();
+	const subset = discovery?.routeState.subsets;
+	if (subset) {
+		state.language = subset;
+		state.preview.presetValue = getPreviewText(subset);
+	}
+
+	return state;
+};
+
 const routing = (
 	serverUrl: string,
 	state$: SearchState,
 	collectionsStore?: CollectionsStore,
+	discovery?: DiscoveryPage,
+	navigate?: (url: string) => void,
 ): RouterProps<UiState, SearchRouteState> => {
 	const indexName = 'prod_POPULAR';
 	return {
@@ -111,7 +134,16 @@ const routing = (
 					? (new URL(serverUrl) as unknown as Location)
 					: window.location;
 			},
-			cleanUrlOnDispose: true,
+			createURL: ({ qsModule, routeState }) => {
+				const query = qsModule.stringify(routeState);
+				if (discovery && query === qsModule.stringify(discovery.routeState)) {
+					return discovery.path;
+				}
+
+				return query ? `/?${query}` : '/';
+			},
+			...(navigate ? { push: (url: string) => void navigate(url) } : {}),
+			cleanUrlOnDispose: !discovery,
 		} satisfies Partial<BrowserHistoryArgs<SearchRouteState>>),
 		stateMapping: {
 			stateToRoute(uiState) {
@@ -138,10 +170,13 @@ const routing = (
 				return result;
 			},
 			routeToState(routeState) {
-				const subsets = parseSubsets(routeState.subsets);
+				const resolvedRouteState = discovery
+					? { ...discovery.routeState, ...routeState }
+					: routeState;
+				const subsets = parseSubsets(resolvedRouteState.subsets);
 				// URLs use readable collection names while state keeps the stable local ID.
-				const normalizedCollectionName = routeState.collection
-					? normalizeCollectionName(routeState.collection)
+				const normalizedCollectionName = resolvedRouteState.collection
+					? normalizeCollectionName(resolvedRouteState.collection)
 					: undefined;
 				const collection = collectionsStore?.collections$
 					.peek()
@@ -152,19 +187,21 @@ const routing = (
 				state$.collectionId.set(collection?.id ?? null);
 
 				const state = {
-					query: routeState.query,
+					query: resolvedRouteState.query,
 					// RefinementList facets
 					...(subsets?.length ? { refinementList: { subsets } } : {}),
 					// Menu facets
-					...(routeState.category
-						? { menu: { category: routeState.category } }
+					...(resolvedRouteState.category
+						? { menu: { category: resolvedRouteState.category } }
 						: {}),
 					// Variable toggle
-					...(routeState.variable ? { toggle: { variable: true } } : {}),
+					...(resolvedRouteState.variable
+						? { toggle: { variable: true } }
+						: {}),
 					// Sortby map
-					...(routeState.sort
+					...(resolvedRouteState.sort
 						? {
-								sortBy: sortMap[routeState.sort],
+								sortBy: sortMap[resolvedRouteState.sort],
 							}
 						: {}),
 				};
@@ -177,14 +214,17 @@ const routing = (
 	};
 };
 
-export const loader = async ({ request, context }: LoaderFunctionArgs) => {
+export const loadSearch = async (
+	{ request, context }: LoaderFunctionArgs,
+	discovery?: DiscoveryPage,
+) => {
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
 	const hasCollectionFilter = requestUrl.searchParams.has('collection');
 	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
-			{ hasCollectionFilter, serverUrl },
+			{ discovery, hasCollectionFilter, serverUrl },
 			{ headers: cacheHeaders.short },
 		);
 	}
@@ -194,7 +234,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	const cacheKey = buildAlgoliaCacheKey(serverUrl);
 
 	// Generate default state object for ssr
-	const state$ = observable(createSearchState());
+	const state$ = observable(createPageSearchState(discovery));
 
 	// Check local cache for server state first to avoid unnecessary API calls
 	let serverState = cacheKey
@@ -203,6 +243,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	if (serverState) {
 		return data<SearchProps>(
 			{
+				discovery,
 				hasCollectionFilter,
 				serverState,
 				serverUrl,
@@ -219,7 +260,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 				<InstantSearch
 					searchClient={searchClient}
 					indexName="prod_POPULAR"
-					routing={routing(serverUrl, state$)}
+					routing={routing(serverUrl, state$, undefined, discovery)}
 					future={{ preserveSharedStateOnUnmount: true }}
 				>
 					<CollectionsProvider>
@@ -246,6 +287,7 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 
 	return data<SearchProps>(
 		{
+			discovery,
 			hasCollectionFilter,
 			serverState,
 			serverUrl,
@@ -256,14 +298,17 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 	);
 };
 
-export default function Index() {
-	const { hasCollectionFilter, serverState, serverUrl } =
-		useLoaderData<typeof loader>();
+export const loader = (args: LoaderFunctionArgs) => loadSearch(args);
+
+export function CatalogSearchPage() {
+	const { discovery, hasCollectionFilter, serverState, serverUrl } =
+		useLoaderData<SearchProps>();
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
+	const navigate = useNavigate();
 	const searchRef = useRef<HTMLDivElement>(null);
 
-	const state$ = useObservable(createSearchState());
+	const state$ = useObservable(createPageSearchState(discovery));
 	// Resolve the collection name only after Legend has restored local persistence.
 	if (hasCollectionFilter && !collectionsReady) return null;
 
@@ -272,10 +317,33 @@ export default function Index() {
 			<InstantSearch
 				searchClient={searchClient}
 				indexName="prod_POPULAR"
-				routing={routing(serverUrl, state$, collectionsStore)}
+				routing={routing(
+					serverUrl,
+					state$,
+					collectionsStore,
+					discovery,
+					discovery ? navigate : undefined,
+				)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
 				<Configure attributesToRetrieve={attributesToRetrieve} />
+				{discovery && (
+					<ContentHeader>
+						<Stack gap="xs" maw={900}>
+							<Breadcrumbs
+								items={[
+									{ name: 'Fonts', url: '/' },
+									{ name: 'Browse Fonts', url: '/browse' },
+									{ name: discovery.heading },
+								]}
+							/>
+							<Title order={1} c="purple.0">
+								{discovery.heading}
+							</Title>
+							<Text>{discovery.intro}</Text>
+						</Stack>
+					</ContentHeader>
+				)}
 				<Box className={classes.background}>
 					<Box className={classes.container} ref={searchRef}>
 						<Filters state$={state$} />
@@ -288,4 +356,8 @@ export default function Index() {
 			</InstantSearch>
 		</InstantSearchSSRProvider>
 	);
+}
+
+export default function Index() {
+	return <CatalogSearchPage />;
 }
