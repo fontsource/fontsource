@@ -1,8 +1,18 @@
-import { Card, Container, SimpleGrid, Stack, Text, Title } from '@mantine/core';
+import {
+	Card,
+	Container,
+	Group,
+	SimpleGrid,
+	Stack,
+	Text,
+	Title,
+} from '@mantine/core';
+import { IconArrowRight } from '@tabler/icons-react';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, Link, useLoaderData } from 'react-router';
 
 import { ContentHeader } from '@/components/layout/ContentHeader';
+import classes from '@/styles/browse.module.css';
 import { cacheHeaders } from '@/utils/cache';
 import type { DiscoveryPage } from '@/utils/discovery';
 import { loadDiscoveryPages } from '@/utils/discovery.server';
@@ -28,24 +38,47 @@ const PageGrid = ({ pages }: { pages: DiscoveryPage[] }) => (
 				key={page.path}
 				component={Link}
 				to={page.path}
+				prefetch="intent"
 				padding="lg"
-				withBorder
-				style={{ color: 'inherit', textDecoration: 'none' }}
+				radius="md"
+				className={classes.card}
 			>
-				<Title order={3}>{page.heading}</Title>
-				<Text mt="xs" c="dimmed">
-					{page.count} families
-				</Text>
+				<Group justify="space-between" align="center" wrap="nowrap">
+					<div>
+						<Title order={3}>{page.heading}</Title>
+						<Text mt="xs" c="dimmed" size="sm">
+							{page.count} families
+						</Text>
+					</div>
+					<IconArrowRight aria-hidden size={20} />
+				</Group>
 			</Card>
 		))}
 	</SimpleGrid>
 );
 
+const PageSection = ({
+	title,
+	description,
+	pages,
+}: {
+	title: string;
+	description: string;
+	pages: DiscoveryPage[];
+}) => (
+	<section>
+		<Title order={2}>{title}</Title>
+		<Text c="dimmed" mt="xs" mb="md">
+			{description}
+		</Text>
+		<PageGrid pages={pages} />
+	</section>
+);
+
 export default function Browse() {
 	const { pages } = useLoaderData<typeof loader>();
 	const languages = pages.filter((page) => page.kind === 'language');
-	const categories = pages.filter((page) => page.kind === 'category');
-	const features = pages.filter((page) => page.kind === 'variable');
+	const stylesAndFeatures = pages.filter((page) => page.kind !== 'language');
 
 	return (
 		<>
@@ -55,31 +88,23 @@ export default function Browse() {
 						Browse Fonts
 					</Title>
 					<Text>
-						Start with a useful catalog view, then refine it with the same
-						flexible filters and previews available on the main font search.
+						Choose a starting point, then refine the results with the same
+						filters and previews available in the full font catalog.
 					</Text>
 				</Stack>
 			</ContentHeader>
 			<Container size="xl" py="xl">
 				<Stack gap="xl">
-					<section>
-						<Title order={2} mb="md">
-							Languages
-						</Title>
-						<PageGrid pages={languages} />
-					</section>
-					<section>
-						<Title order={2} mb="md">
-							Categories
-						</Title>
-						<PageGrid pages={categories} />
-					</section>
-					<section>
-						<Title order={2} mb="md">
-							Features
-						</Title>
-						<PageGrid pages={features} />
-					</section>
+					<PageSection
+						title="Browse by style and features"
+						description="Start with a broad font category or explore families with variable axes."
+						pages={stylesAndFeatures}
+					/>
+					<PageSection
+						title="Language support"
+						description="Find font families that publish the character subset your project needs."
+						pages={languages}
+					/>
 				</Stack>
 			</Container>
 		</>

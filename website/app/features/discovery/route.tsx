@@ -8,7 +8,11 @@ import { getCanonicalUrl, ogMeta } from '@/utils/meta';
 export { links };
 
 export const loader = async (args: LoaderFunctionArgs) => {
-	const pathname = new URL(args.request.url).pathname.replace(/\/+$/, '');
+	const pathname = args.params.language
+		? `/languages/${args.params.language}`
+		: args.params.category
+			? `/categories/${args.params.category}`
+			: '/variable-fonts';
 	const page = (await loadDiscoveryPages(args.request.signal)).find(
 		(item) => item.path === pathname,
 	);

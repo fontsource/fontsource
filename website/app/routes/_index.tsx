@@ -142,6 +142,15 @@ const routing = (
 
 				return query ? `/?${query}` : '/';
 			},
+			parseURL: ({ qsModule, location }) => {
+				const routeState = qsModule.parse(location.search.slice(1), {
+					arrayLimit: 99,
+				}) as SearchRouteState;
+
+				return discovery
+					? { ...discovery.routeState, ...routeState }
+					: routeState;
+			},
 			...(navigate ? { push: (url: string) => void navigate(url) } : {}),
 			cleanUrlOnDispose: !discovery,
 		} satisfies Partial<BrowserHistoryArgs<SearchRouteState>>),
