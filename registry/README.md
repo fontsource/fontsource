@@ -21,10 +21,9 @@ package policy. Registry data is written to `data/`.
 
 ## Updates
 
-The [registry sync workflow](../.github/workflows/registry-sync.yml) runs weekly
-or manually. It regenerates the complete registry and opens or updates a pull
-request only when tracked data changes. It does not publish fonts or modify
-production services.
+The [registry sync workflow](../.github/workflows/registry-sync.yml) regenerates
+the complete registry weekly or on demand and opens or updates a pull request
+only when data changes. It never publishes fonts or modifies production services.
 
 ## Structure
 

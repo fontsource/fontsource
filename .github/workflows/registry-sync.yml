@@ -8,13 +8,7 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: registry-sync
-  cancel-in-progress: false
-
-env:
-  NODE_VERSION: 24.18.0
-  PNPM_VERSION: 11.14.0
+concurrency: registry-sync
 
 jobs:
   sync:
@@ -26,20 +20,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
-          ref: ${{ github.event.repository.default_branch }}
+          ref: main
           persist-credentials: false
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
-        with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: false
-
-      - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
+      - name: Set up tools
+        uses: jdx/mise-action@dad1bfd3df957f44999b559dd69dc1671cb4e9ea # v4.2.1
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -47,7 +32,8 @@ jobs:
       - name: Checkout upstream repositories
         id: upstreams
         run: |
-          git clone --no-checkout --single-branch https://github.com/google/fonts.git "$RUNNER_TEMP/google-fonts"
+          git clone --filter=blob:none --sparse --single-branch https://github.com/google/fonts.git "$RUNNER_TEMP/google-fonts"
+          git -C "$RUNNER_TEMP/google-fonts" sparse-checkout set ofl apache ufl axisregistry
           git clone --no-checkout --single-branch https://github.com/googlefonts/nam-files.git "$RUNNER_TEMP/nam-files"
           echo "google_revision=$(git -C "$RUNNER_TEMP/google-fonts" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           echo "nam_revision=$(git -C "$RUNNER_TEMP/nam-files" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
@@ -77,8 +63,6 @@ jobs:
         with:
           client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
           private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
-          owner: ${{ github.repository_owner }}
-          repositories: fontsource
           permission-contents: write
           permission-pull-requests: write
 
@@ -90,7 +74,6 @@ jobs:
           commit-message: 'chore(registry): update metadata snapshot'
           branch: chore/registry-update
           delete-branch: true
-          base: ${{ github.event.repository.default_branch }}
           title: 'chore(registry): update metadata snapshot'
           body: |
             Updates the generated registry from pinned upstream revisions.
