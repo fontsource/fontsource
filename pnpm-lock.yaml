@@ -65,6 +65,9 @@ importers:
       '@fontsource/ibm-plex-sans':
         specifier: 5.2.8
         version: 5.2.8
+      '@hono/node-server':
+        specifier: ^2.0.10
+        version: 2.0.10(hono@4.12.30)
       aws4fetch:
         specifier: ^1.0.20
         version: 1.0.20
@@ -1158,6 +1161,12 @@ packages:
 
   '@hey-api/types@0.1.4':
     resolution: {integrity: sha512-thWfawrDIP7wSI9ioT13I5soaaqB5vAPIiZmgD8PbeEVKNrkonc0N/Sjj97ezl7oQgusZmaNphGdMKipPO6IBg==}
+
+  '@hono/node-server@2.0.10':
+    resolution: {integrity: sha512-ZcnNVhKTmyDJeg0UlnZjvM73JBsTAuhrH/J4fjwGOw59PwOW51r4J+p6CsKZWXdKSme4MFqU62CZMOsdDrU4CA==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      hono: ^4
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -5175,6 +5184,10 @@ snapshots:
       '@hey-api/types': 0.1.4
 
   '@hey-api/types@0.1.4': {}
+
+  '@hono/node-server@2.0.10(hono@4.12.30)':
+    dependencies:
+      hono: 4.12.30
 
   '@img/colour@1.1.0': {}
 

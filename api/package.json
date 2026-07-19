@@ -21,6 +21,7 @@
 		"@cloudflare/containers": "^0.3.7",
 		"@fontsource-utils/core": "workspace:*",
 		"@fontsource/ibm-plex-sans": "5.2.8",
+		"@hono/node-server": "^2.0.10",
 		"aws4fetch": "^1.0.20",
 		"chanfana": "^3.3.0",
 		"compare-versions": "^6.1.1",
